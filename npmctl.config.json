@@ -24,7 +24,11 @@
   "deploy": {
     "target": "self-hosted-docker",
     "service": "groupsum-xyz",
-    "composeFile": "docker-compose.yaml"
+    "composeFile": "docker-compose.yaml",
+    "proxyManager": {
+      "provider": "nginx-proxy-manager",
+      "apiEndpoint": "https://nginx.bz23.xyz/"
+    }
   },
   "commands": {
     "install": "npm ci",

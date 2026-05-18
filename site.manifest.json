@@ -20,5 +20,9 @@
       "value": "groupsum.xyz",
       "ttl": 300
     }
-  ]
+  ],
+  "proxyManager": {
+    "provider": "nginx-proxy-manager",
+    "apiEndpoint": "https://nginx.bz23.xyz/"
+  }
 }
