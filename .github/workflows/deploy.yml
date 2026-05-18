@@ -13,7 +13,7 @@ jobs:
     env:
       NPM_BASE_URL: ${{ vars.NPM_BASE_URL || 'https://nginx.bz23.xyz/' }}
       NPM_IDENTITY: ${{ secrets.NPM_IDENTITY || secrets.NGINX_PROXY_MANAGER_IDENTITY }}
-      NPM_SECRET: ${{ secrets.NPM_SECRET || secrets.NGINX_PROXY_MANAGER_SECRET }}
+      NPM_SECRET: ${{ secrets.NPM_SECRET || secrets.NPM_PASSWORD || secrets.NGINX_PROXY_MANAGER_SECRET }}
       NPM_TIMEOUT_S: 30
     steps:
       - uses: actions/checkout@v4
