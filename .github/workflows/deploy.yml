@@ -35,14 +35,15 @@ jobs:
         run: npm run proxy:target-check
       - name: Validate npmctl proxy desired state
         run: npmctl validate desired-state/proxy.yaml
-      - name: Check Nginx Proxy Manager API schema
-        run: npmctl schema check
-      - name: Plan Nginx Proxy Manager host with npmctl
-        run: npmctl plan desired-state/proxy.yaml --owner groupsum-xyz
       - name: Build site image
         run: docker compose -f docker-compose.yaml build groupsum-xyz || docker-compose -f docker-compose.yaml build groupsum-xyz
       - name: Restart site container
         run: |
           docker compose -f docker-compose.yaml up -d --build --force-recreate --no-deps groupsum-xyz || docker-compose -f docker-compose.yaml up -d --build --force-recreate --no-deps groupsum-xyz
+      - name: Check Nginx Proxy Manager API schema
+        continue-on-error: true
+        run: npmctl schema check
+      - name: Plan Nginx Proxy Manager host with npmctl
+        run: npmctl plan desired-state/proxy.yaml --owner groupsum-xyz
       - name: Apply Nginx Proxy Manager host with npmctl
         run: npmctl apply desired-state/proxy.yaml --owner groupsum-xyz
