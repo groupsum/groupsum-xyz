@@ -28,7 +28,7 @@
     "composeFile": "docker-compose.yaml",
     "proxyManager": {
       "provider": "nginx-proxy-manager",
-      "apiEndpoint": "https://nginx.bz23.xyz/"
+      "apiEndpoint": "https://nginx.bz23.xyz/api"
     }
   },
   "commands": {
@@ -52,6 +52,6 @@
     "package": "npmctl",
     "dnsProviderPackage": "npmctl-namecheap",
     "installCommand": "python -m pip install --upgrade npmctl npmctl-namecheap",
-    "proxyManagerApiEndpoint": "https://nginx.bz23.xyz/"
+    "proxyManagerApiEndpoint": "https://nginx.bz23.xyz/api"
   }
 }
