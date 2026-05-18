@@ -6,7 +6,7 @@ dns_records:
     zone: groupsum.xyz
     type: A
     name: "@"
-    value: 149.255.33.251
+    value: __SITE_SERVER_IP__
     ttl: 300
     meta:
       managed_by: npmctl

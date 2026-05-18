@@ -24,6 +24,7 @@ jobs:
       NAMECHEAP_API_KEY: ${{ secrets.NAMECHEAP_API_KEY }}
       NAMECHEAP_USERNAME: ${{ secrets.NAMECHEAP_USERNAME }}
       NAMECHEAP_CLIENT_IP: ${{ secrets.NAMECHEAP_CLIENT_IP }}
+      SITE_SERVER_IP: ${{ secrets.SITE_SERVER_IP || secrets.SERVER_IP || secrets.DEPLOY_SERVER_IP }}
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -31,13 +32,22 @@ jobs:
           python-version: '3.12'
       - name: Install npmctl from PyPI
         run: python -m pip install --upgrade npmctl npmctl-namecheap
+      - name: Render DNS desired state
+        shell: bash
+        run: |
+          if [ -z "${SITE_SERVER_IP}" ]; then
+            echo "Set SITE_SERVER_IP, SERVER_IP, or DEPLOY_SERVER_IP secret for DNS A records."
+            exit 1
+          fi
+          mkdir -p .tmp
+          sed "s/__SITE_SERVER_IP__/${SITE_SERVER_IP}/g" desired-state/dns.yaml > .tmp/dns.yaml
       - name: Validate desired DNS state
-        run: npmctl validate desired-state/dns.yaml
+        run: npmctl validate .tmp/dns.yaml
       - name: Validate Namecheap provider
         run: npmctl dns doctor --provider namecheap
       - name: Plan Namecheap DNS with npmctl
         if: ${{ github.event.inputs.mode != 'apply' }}
-        run: npmctl plan desired-state/dns.yaml --owner groupsum-xyz
+        run: npmctl plan .tmp/dns.yaml --owner groupsum-xyz
       - name: Apply Namecheap DNS with npmctl
         if: ${{ github.event.inputs.mode == 'apply' }}
-        run: npmctl apply desired-state/dns.yaml --owner groupsum-xyz
+        run: npmctl apply .tmp/dns.yaml --owner groupsum-xyz
