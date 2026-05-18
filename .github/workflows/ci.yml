@@ -23,6 +23,8 @@ jobs:
       - run: npm ci
       - run: npm run check
       - run: npm run build
+      - name: Validate Docker proxy target
+        run: npm run proxy:target-check
       - name: Validate npmctl desired state
         run: npmctl validate desired-state
       - run: npm run docker:build

@@ -31,6 +31,8 @@ jobs:
       - run: npm ci
       - run: npm run check
       - run: npm run build
+      - name: Validate Docker proxy target
+        run: npm run proxy:target-check
       - name: Validate npmctl proxy desired state
         run: npmctl validate desired-state/proxy.yaml
       - name: Check Nginx Proxy Manager API schema

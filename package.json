@@ -19,7 +19,8 @@
     "dns:doctor": "npmctl dns doctor --provider namecheap",
     "proxy:validate": "npmctl validate desired-state/proxy.yaml",
     "proxy:plan": "npmctl plan desired-state/proxy.yaml --owner groupsum-xyz",
-    "proxy:apply": "npmctl apply desired-state/proxy.yaml --owner groupsum-xyz"
+    "proxy:apply": "npmctl apply desired-state/proxy.yaml --owner groupsum-xyz",
+    "proxy:target-check": "node scripts/validate-proxy-target.mjs"
   },
   "dependencies": {
     "@mdwrk/lander-core": "^0.1.2",
