@@ -6,5 +6,5 @@ services:
     labels:
       site.host: groupsum.xyz
       site.kind: mdwrk-lander
-    ports:
-      - "127.0.0.1:0:80"
+    expose:
+      - "80"
