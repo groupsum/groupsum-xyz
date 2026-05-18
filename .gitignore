@@ -5,3 +5,5 @@ coverage/
 .env.local
 npm-debug.log*
 .DS_Store
+.tmp-docker-config/
+docker-compose.local.yaml

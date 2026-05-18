@@ -10,6 +10,11 @@ concurrency:
 jobs:
   deploy:
     runs-on: [self-hosted, docker]
+    env:
+      NPM_BASE_URL: ${{ vars.NPM_BASE_URL || 'https://nginx.bz23.xyz/' }}
+      NPM_IDENTITY: ${{ secrets.NPM_IDENTITY || secrets.NGINX_PROXY_MANAGER_IDENTITY }}
+      NPM_SECRET: ${{ secrets.NPM_SECRET || secrets.NGINX_PROXY_MANAGER_SECRET }}
+      NPM_TIMEOUT_S: 30
     steps:
       - uses: actions/checkout@v4
         with:
@@ -18,8 +23,24 @@ jobs:
         with:
           node-version: 20
           cache: npm
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install npmctl from PyPI
+        run: python -m pip install --upgrade npmctl npmctl-namecheap
       - run: npm ci
       - run: npm run check
       - run: npm run build
-      - run: npm run deploy:dry-run
-      - run: docker compose -f docker-compose.yaml up -d --build --force-recreate --no-deps groupsum-xyz
+      - name: Validate npmctl proxy desired state
+        run: npmctl validate desired-state/proxy.yaml
+      - name: Check Nginx Proxy Manager API schema
+        run: npmctl schema check
+      - name: Plan Nginx Proxy Manager host with npmctl
+        run: npmctl plan desired-state/proxy.yaml --owner groupsum-xyz
+      - name: Build site image
+        run: docker compose -f docker-compose.yaml build groupsum-xyz || docker-compose -f docker-compose.yaml build groupsum-xyz
+      - name: Restart site container
+        run: |
+          docker compose -f docker-compose.yaml up -d --build --force-recreate --no-deps groupsum-xyz || docker-compose -f docker-compose.yaml up -d --build --force-recreate --no-deps groupsum-xyz
+      - name: Apply Nginx Proxy Manager host with npmctl
+        run: npmctl apply desired-state/proxy.yaml --owner groupsum-xyz

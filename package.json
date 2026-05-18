@@ -6,18 +6,20 @@
   "scripts": {
     "dev": "vite --host 0.0.0.0",
     "build:content": "npm --prefix packages/site-content-pack run build",
+    "import:wordpress": "node scripts/import-wordpress.mjs",
     "build": "npm run build:content && tsc --noEmit && vite build && npm run generate:static",
     "check": "npm run build:content && npm --prefix packages/site-content-pack run test && tsc --noEmit",
     "generate:static": "node scripts/generate-static.mjs",
     "preview": "vite preview --host 0.0.0.0",
     "docker:build": "docker compose build groupsum-xyz",
-    "dns:plan": "node scripts/namecheap-dns.mjs --plan",
-    "dns:apply": "node scripts/namecheap-dns.mjs --apply",
+    "dns:plan": "npmctl plan desired-state/dns.yaml --owner groupsum-xyz",
+    "dns:apply": "npmctl apply desired-state/dns.yaml --owner groupsum-xyz",
     "deploy:dry-run": "node scripts/deploy.mjs --dry-run",
     "deploy": "docker compose -f docker-compose.yaml up -d --build --force-recreate --no-deps groupsum-xyz",
-    "npmctl:install": "npmctl install",
-    "npmctl:check": "npmctl check",
-    "npmctl:build": "npmctl build"
+    "dns:doctor": "npmctl dns doctor --provider namecheap",
+    "proxy:validate": "npmctl validate desired-state/proxy.yaml",
+    "proxy:plan": "npmctl plan desired-state/proxy.yaml --owner groupsum-xyz",
+    "proxy:apply": "npmctl apply desired-state/proxy.yaml --owner groupsum-xyz"
   },
   "dependencies": {
     "@mdwrk/lander-core": "^0.1.2",

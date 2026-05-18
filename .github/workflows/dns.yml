@@ -15,21 +15,29 @@ concurrency:
 jobs:
   dns:
     runs-on: ubuntu-latest
+    env:
+      NPM_BASE_URL: ${{ vars.NPM_BASE_URL || 'https://nginx.bz23.xyz/' }}
+      NPM_IDENTITY: ${{ secrets.NPM_IDENTITY || secrets.NGINX_PROXY_MANAGER_IDENTITY }}
+      NPM_SECRET: ${{ secrets.NPM_SECRET || secrets.NGINX_PROXY_MANAGER_SECRET }}
+      NPM_TIMEOUT_S: 30
+      NAMECHEAP_API_USER: ${{ secrets.NAMECHEAP_API_USER }}
+      NAMECHEAP_API_KEY: ${{ secrets.NAMECHEAP_API_KEY }}
+      NAMECHEAP_USERNAME: ${{ secrets.NAMECHEAP_USERNAME }}
+      NAMECHEAP_CLIENT_IP: ${{ secrets.NAMECHEAP_CLIENT_IP }}
     steps:
       - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-python@v5
         with:
-          node-version: 20
-          cache: npm
-      - run: npm ci
-      - name: Plan Namecheap DNS
+          python-version: '3.12'
+      - name: Install npmctl from PyPI
+        run: python -m pip install --upgrade npmctl npmctl-namecheap
+      - name: Validate desired DNS state
+        run: npmctl validate desired-state/dns.yaml
+      - name: Validate Namecheap provider
+        run: npmctl dns doctor --provider namecheap
+      - name: Plan Namecheap DNS with npmctl
         if: ${{ github.event.inputs.mode != 'apply' }}
-        run: npm run dns:plan
-      - name: Apply Namecheap DNS
+        run: npmctl plan desired-state/dns.yaml --owner groupsum-xyz
+      - name: Apply Namecheap DNS with npmctl
         if: ${{ github.event.inputs.mode == 'apply' }}
-        env:
-          NAMECHEAP_API_USER: ${{ secrets.NAMECHEAP_API_USER }}
-          NAMECHEAP_API_KEY: ${{ secrets.NAMECHEAP_API_KEY }}
-          NAMECHEAP_USERNAME: ${{ secrets.NAMECHEAP_USERNAME }}
-          NAMECHEAP_CLIENT_IP: ${{ secrets.NAMECHEAP_CLIENT_IP }}
-        run: npm run dns:apply
+        run: npmctl apply desired-state/dns.yaml --owner groupsum-xyz

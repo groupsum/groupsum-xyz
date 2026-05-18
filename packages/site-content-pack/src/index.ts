@@ -47,10 +47,10 @@ export const siteContent = {
           { title: "Independent deploys", description: "CI, Docker deployment, and Namecheap DNS live in this repository." }
         ] },
         { id: "proof", kind: "proof_matrix", title: "Operational proof", items: [
-          { claim: "The site is independently buildable.", status: "planned", evidence: "npmctl build delegates to the local npm build and Docker image build." },
+          { claim: "The site is independently buildable.", status: "planned", evidence: "npm run build produces the local static artifact and Docker image build input." },
           { claim: "DNS ownership is explicit.", status: "planned", evidence: "site.manifest.json records the Namecheap zone and records owned by this repository." }
         ] },
-        { id: "cta", kind: "cta", title: "Build from source", body: "Use npmctl install, npmctl check, npmctl build, npmctl dns:plan, and npmctl deploy:dry-run before publishing." }
+        { id: "cta", kind: "cta", title: "Build from source", body: "Use npm ci, npm run check, npm run build, npm run dns:plan, and npm run proxy:plan before publishing." }
       ],
       schema: [
         { kind: "Organization", data: { name: "GroupSum", url: "https://groupsum.xyz" } },
@@ -84,14 +84,15 @@ export const siteContent = {
       intro: "The proof page gives operators a quick inventory of the commands and artifacts required before publication.",
       sections: [
         { id: "commands", kind: "package_grid", title: "Verification commands", packages: [
-          { name: "Install", description: "Install deterministic dependencies.", install: "npmctl install", api: ["npm ci"] },
-          { name: "Check", description: "Run type and content-pack checks.", install: "npmctl check", api: ["npm run check"] },
-          { name: "Build", description: "Build the content pack and static site.", install: "npmctl build", api: ["npm run build"] },
-          { name: "DNS plan", description: "Render the Namecheap record plan.", install: "npmctl dns:plan", api: ["npm run dns:plan"] }
+          { name: "Install", description: "Install deterministic dependencies.", install: "npm ci", api: ["npm ci"] },
+          { name: "Check", description: "Run type and content-pack checks.", install: "npm run check", api: ["npm run check"] },
+          { name: "Build", description: "Build the content pack and static site.", install: "npm run build", api: ["npm run build"] },
+          { name: "DNS plan", description: "Render the Namecheap record plan.", install: "npm run dns:plan", api: ["npmctl plan desired-state/dns.yaml"] }
         ] }
       ]
     }
   ]
 };
 
+export { importedArticles as articles } from "./articles.generated.js";
 export default siteContent;

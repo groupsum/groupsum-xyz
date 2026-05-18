@@ -14,7 +14,14 @@ jobs:
         with:
           node-version: 20
           cache: npm
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install npmctl from PyPI
+        run: python -m pip install --upgrade npmctl npmctl-namecheap
       - run: npm ci
       - run: npm run check
       - run: npm run build
+      - name: Validate npmctl desired state
+        run: npmctl validate desired-state
       - run: npm run docker:build
