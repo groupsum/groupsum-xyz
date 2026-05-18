@@ -17,7 +17,7 @@ jobs:
     runs-on: deployment
     env:
       NPM_BASE_URL: ${{ vars.NPM_BASE_URL || 'https://nginx.bz23.xyz/api' }}
-      NPM_IDENTITY: ${{ secrets.NPM_IDENTITY || secrets.NGINX_PROXY_MANAGER_IDENTITY }}
+      NPM_IDENTITY: jacob@groupsum.xyz
       NPM_SECRET: ${{ secrets.NPM_SECRET || secrets.NPM_PASSWORD || secrets.NGINX_PROXY_MANAGER_SECRET }}
       NPM_TIMEOUT_S: 30
       NAMECHEAP_API_USER: ${{ secrets.NAMECHEAP_API_USER }}
