@@ -8,3 +8,12 @@ services:
       site.kind: mdwrk-lander
     expose:
       - "80"
+    networks:
+      dockerwp:
+        aliases:
+          - groupsum-xyz
+
+networks:
+  dockerwp:
+    name: dockerwp
+    external: true
