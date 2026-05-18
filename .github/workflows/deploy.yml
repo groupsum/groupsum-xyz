@@ -46,6 +46,8 @@ jobs:
       - name: Check Nginx Proxy Manager API schema
         continue-on-error: true
         run: npmctl schema check
+      - name: Adopt matching unmanaged NPM resources
+        run: npmctl adopt desired-state/proxy.yaml --owner groupsum-xyz --force
       - name: Plan Nginx Proxy Manager host with npmctl
         run: npmctl plan desired-state/proxy.yaml --owner groupsum-xyz
       - name: Apply Nginx Proxy Manager host with npmctl
