@@ -1,0 +1,36 @@
+{
+  "name": "groupsum-xyz",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host 0.0.0.0",
+    "build:content": "npm --prefix packages/site-content-pack run build",
+    "build": "npm run build:content && tsc --noEmit && vite build && npm run generate:static",
+    "check": "npm run build:content && npm --prefix packages/site-content-pack run test && tsc --noEmit",
+    "generate:static": "node scripts/generate-static.mjs",
+    "preview": "vite preview --host 0.0.0.0",
+    "docker:build": "docker compose build groupsum-xyz",
+    "dns:plan": "node scripts/namecheap-dns.mjs --plan",
+    "dns:apply": "node scripts/namecheap-dns.mjs --apply",
+    "deploy:dry-run": "node scripts/deploy.mjs --dry-run",
+    "deploy": "docker compose -f docker-compose.yaml up -d --build --force-recreate --no-deps groupsum-xyz",
+    "npmctl:install": "npmctl install",
+    "npmctl:check": "npmctl check",
+    "npmctl:build": "npmctl build"
+  },
+  "dependencies": {
+    "@mdwrk/lander-core": "^0.1.2",
+    "@mdwrk/lander-react": "^0.1.2",
+    "@mdwrk/lander-theme": "^0.1.4",
+    "@vitejs/plugin-react": "^4.3.4",
+    "vite": "^6.0.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "typescript": "^5.8.0"
+  },
+  "devDependencies": {
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0"
+  }
+}

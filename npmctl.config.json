@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 1,
+  "site": "groupsum.xyz",
+  "repository": "groupsum/groupsum-xyz",
+  "orchestrator": "npmctl",
+  "dns": {
+    "provider": "namecheap",
+    "zone": "groupsum.xyz",
+    "records": [
+      {
+        "type": "A",
+        "host": "@",
+        "value": "SELF_HOSTED_DOCKER_IP",
+        "ttl": 300
+      },
+      {
+        "type": "CNAME",
+        "host": "www",
+        "value": "groupsum.xyz",
+        "ttl": 300
+      }
+    ]
+  },
+  "deploy": {
+    "target": "self-hosted-docker",
+    "service": "groupsum-xyz",
+    "composeFile": "docker-compose.yaml"
+  },
+  "commands": {
+    "install": "npm ci",
+    "check": "npm run check",
+    "build": "npm run build",
+    "docker:build": "docker compose build groupsum-xyz",
+    "dns:plan": "node scripts/namecheap-dns.mjs --plan",
+    "deploy:dry-run": "node scripts/deploy.mjs --dry-run",
+    "deploy": "docker compose up -d --build --force-recreate --no-deps groupsum-xyz"
+  }
+}

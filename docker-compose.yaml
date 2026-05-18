@@ -1,0 +1,10 @@
+services:
+  groupsum-xyz:
+    build: .
+    container_name: groupsum-xyz
+    restart: unless-stopped
+    labels:
+      site.host: groupsum.xyz
+      site.kind: mdwrk-lander
+    ports:
+      - "127.0.0.1:0:80"
