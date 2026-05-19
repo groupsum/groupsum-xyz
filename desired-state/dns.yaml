@@ -15,7 +15,7 @@ dns_records:
   - provider: namecheap
     zone: groupsum.xyz
     type: A
-    name: "*"
+    name: "*.groupsum.xyz"
     value: __SITE_SERVER_IP__
     ttl: 300
     meta:
