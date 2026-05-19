@@ -1,28 +1,34 @@
 {
-  "host": "groupsum.xyz",
-  "zone": "groupsum.xyz",
-  "repository": "groupsum/groupsum-xyz",
-  "siteKind": "mdwrk-lander",
-  "orchestrator": "npmctl",
-  "dnsProvider": "namecheap",
-  "deployment": "self-hosted-docker",
-  "dockerService": "groupsum-xyz",
-  "records": [
-    {
-      "type": "A",
-      "host": "@",
-      "value": "SELF_HOSTED_DOCKER_IP",
-      "ttl": 300
-    },
-    {
-      "type": "CNAME",
-      "host": "www",
-      "value": "groupsum.xyz",
-      "ttl": 300
-    }
-  ],
-  "proxyManager": {
-    "provider": "nginx-proxy-manager",
-    "apiEndpoint": "https://nginx.bz23.xyz/"
-  }
+    "host":  "groupsum.xyz",
+    "zone":  "groupsum.xyz",
+    "repository":  "groupsum/groupsum-xyz",
+    "siteKind":  "mdwrk-lander",
+    "orchestrator":  "npmctl",
+    "dnsProvider":  "namecheap",
+    "deployment":  "self-hosted-docker",
+    "dockerService":  "groupsum-xyz",
+    "records":  [
+                    {
+                        "type":  "A",
+                        "host":  "@",
+                        "value":  "SITE_SERVER_IP_SECRET",
+                        "ttl":  300
+                    },
+                    {
+                        "type":  "A",
+                        "host":  "*",
+                        "value":  "SITE_SERVER_IP_SECRET",
+                        "ttl":  300
+                    },
+                    {
+                        "type":  "CNAME",
+                        "host":  "www",
+                        "value":  "groupsum.xyz",
+                        "ttl":  300
+                    }
+                ],
+    "proxyManager":  {
+                         "provider":  "nginx-proxy-manager",
+                         "apiEndpoint":  "NPM_BASE_URL_SECRET"
+                     }
 }

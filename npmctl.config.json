@@ -1,57 +1,63 @@
 {
-  "schemaVersion": 1,
-  "site": "groupsum.xyz",
-  "repository": "groupsum/groupsum-xyz",
-  "orchestrator": "npmctl-pypi",
-  "dns": {
-    "provider": "namecheap",
-    "zone": "groupsum.xyz",
-    "records": [
-      {
-        "type": "A",
-        "host": "@",
-        "value": "SELF_HOSTED_DOCKER_IP",
-        "ttl": 300
-      },
-      {
-        "type": "CNAME",
-        "host": "www",
-        "value": "groupsum.xyz",
-        "ttl": 300
-      }
-    ],
-    "providerPackage": "npmctl-namecheap"
-  },
-  "deploy": {
-    "target": "self-hosted-docker",
-    "service": "groupsum-xyz",
-    "composeFile": "docker-compose.yaml",
-    "proxyManager": {
-      "provider": "nginx-proxy-manager",
-      "apiEndpoint": "https://nginx.bz23.xyz/api"
-    }
-  },
-  "commands": {
-    "install": "npm ci",
-    "check": "npm run check",
-    "build": "npm run build",
-    "docker:build": "docker compose build groupsum-xyz",
-    "dns:plan": "npmctl plan desired-state/dns.yaml --owner groupsum-xyz",
-    "deploy:dry-run": "node scripts/deploy.mjs --dry-run",
-    "deploy": "docker compose up -d --build --force-recreate --no-deps groupsum-xyz",
-    "npmctl:install": "python -m pip install --upgrade npmctl npmctl-namecheap",
-    "npmctl:validate": "npmctl validate desired-state",
-    "npmctl:schema": "npmctl schema check",
-    "dns:doctor": "npmctl dns doctor --provider namecheap",
-    "dns:apply": "npmctl apply desired-state/dns.yaml --owner groupsum-xyz",
-    "proxy:validate": "npmctl validate desired-state/proxy.yaml",
-    "proxy:plan": "npmctl plan desired-state/proxy.yaml --owner groupsum-xyz",
-    "proxy:apply": "npmctl apply desired-state/proxy.yaml --owner groupsum-xyz"
-  },
-  "npmctl": {
-    "package": "npmctl",
-    "dnsProviderPackage": "npmctl-namecheap",
-    "installCommand": "python -m pip install --upgrade npmctl npmctl-namecheap",
-    "proxyManagerApiEndpoint": "https://nginx.bz23.xyz/api"
-  }
+    "schemaVersion":  1,
+    "site":  "groupsum.xyz",
+    "repository":  "groupsum/groupsum-xyz",
+    "orchestrator":  "npmctl-pypi",
+    "dns":  {
+                "provider":  "namecheap",
+                "zone":  "groupsum.xyz",
+                "records":  [
+                                {
+                                    "type":  "A",
+                                    "host":  "@",
+                                    "value":  "SITE_SERVER_IP_SECRET",
+                                    "ttl":  300
+                                },
+                                {
+                                    "type":  "A",
+                                    "host":  "*",
+                                    "value":  "SITE_SERVER_IP_SECRET",
+                                    "ttl":  300
+                                },
+                                {
+                                    "type":  "CNAME",
+                                    "host":  "www",
+                                    "value":  "groupsum.xyz",
+                                    "ttl":  300
+                                }
+                            ],
+                "providerPackage":  "npmctl-namecheap"
+            },
+    "deploy":  {
+                   "target":  "self-hosted-docker",
+                   "service":  "groupsum-xyz",
+                   "composeFile":  "docker-compose.yaml",
+                   "proxyManager":  {
+                                        "provider":  "nginx-proxy-manager",
+                                        "apiEndpoint":  "NPM_BASE_URL_SECRET"
+                                    }
+               },
+    "commands":  {
+                     "install":  "npm ci",
+                     "check":  "npm run check",
+                     "build":  "npm run build",
+                     "docker:build":  "docker compose build groupsum-xyz",
+                     "dns:plan":  "npmctl plan desired-state/dns.yaml --owner groupsum-xyz",
+                     "deploy:dry-run":  "node scripts/deploy.mjs --dry-run",
+                     "deploy":  "docker compose up -d --build --force-recreate --no-deps groupsum-xyz",
+                     "npmctl:install":  "python -m pip install --upgrade npmctl npmctl-namecheap",
+                     "npmctl:validate":  "npmctl validate desired-state",
+                     "npmctl:schema":  "npmctl schema check",
+                     "dns:doctor":  "npmctl dns doctor --provider namecheap",
+                     "dns:apply":  "npmctl apply desired-state/dns.yaml --owner groupsum-xyz",
+                     "proxy:validate":  "npmctl validate desired-state/proxy.yaml",
+                     "proxy:plan":  "npmctl plan desired-state/proxy.yaml --owner groupsum-xyz",
+                     "proxy:apply":  "npmctl apply desired-state/proxy.yaml --owner groupsum-xyz"
+                 },
+    "npmctl":  {
+                   "package":  "npmctl",
+                   "dnsProviderPackage":  "npmctl-namecheap",
+                   "installCommand":  "python -m pip install --upgrade npmctl npmctl-namecheap",
+                   "proxyManagerApiEndpoint":  "NPM_BASE_URL_SECRET"
+               }
 }
