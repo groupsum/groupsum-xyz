@@ -1,6 +1,6 @@
 ---
-apiVersion: npmctl.com/v1
-schemaVersion: 2
+apiVersion: npmctl.io/v1
+schemaVersion: 1
 proxy_hosts:
   - domain_names:
       - groupsum.xyz

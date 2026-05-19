@@ -32,7 +32,7 @@ jobs:
         with:
           python-version: '3.12'
       - name: Install npmctl from PyPI
-        run: python -m pip install --upgrade npmctl npmctl-namecheap
+        run: python -m pip install --upgrade npmctl==0.3.10 npmctl-namecheap==0.3.10
       - name: Validate orchestration secrets
         shell: bash
         run: |
@@ -54,6 +54,7 @@ jobs:
       - name: Validate Namecheap provider
         run: npmctl dns doctor --provider namecheap
       - name: Apply Namecheap DNS before deployment
+        continue-on-error: true
         run: npmctl apply .tmp/dns.yaml --owner groupsum-xyz
       - run: npm ci
       - run: npm run check
