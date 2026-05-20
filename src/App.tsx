@@ -90,7 +90,7 @@ function SiteChrome({ children }: { children: React.ReactNode }) {
     <div className="site-shell">
       <header className="site-header">
         <a className="site-brand" href="/" aria-label="GroupSum home">
-          <img src="/assets/groupsum-brand-horizontal.png" alt="GroupSum" />
+          <img src="/assets/groupsum-vertical-lockup.png" alt="GroupSum" />
         </a>
         <nav aria-label="Primary navigation">
           <a href="/">Home</a>

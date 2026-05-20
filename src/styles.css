@@ -31,7 +31,7 @@ footer {
 }
 
 .site-header {
-  min-height: 86px;
+  min-height: 124px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -47,7 +47,7 @@ footer {
 .site-brand img {
   display: block;
   width: auto;
-  height: 40px;
+  height: 92px;
 }
 
 .site-header nav,
@@ -284,6 +284,10 @@ footer p {
 
   main {
     padding-top: 36px;
+  }
+
+  .site-brand img {
+    height: 76px;
   }
 
   .home-hero {
