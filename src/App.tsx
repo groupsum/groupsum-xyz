@@ -3,6 +3,7 @@ import siteContent from "../packages/site-content-pack/src/index";
 import type { ImportedArticle } from "../packages/site-content-pack/src/articles.generated";
 
 const root = siteContent.product.canonicalUrl.replace(/\/+$/, "");
+const defaultEmbedImage = `${root}/assets/groupsum-wordmark.png`;
 
 const normalizePath = (value: string) => {
   const path = value === "" ? "/" : value.split(/[?#]/)[0] ?? "/";
@@ -89,8 +90,7 @@ function SiteChrome({ children }: { children: React.ReactNode }) {
     <div className="site-shell">
       <header className="site-header">
         <a className="site-brand" href="/" aria-label="GroupSum home">
-          <span className="site-brand-mark" aria-hidden="true">GS</span>
-          <span>GroupSum</span>
+          <img src="/assets/groupsum-brand-horizontal.png" alt="GroupSum" />
         </a>
         <nav aria-label="Primary navigation">
           <a href="/">Home</a>
@@ -178,7 +178,7 @@ function ArticlePage({ article }: { article: ImportedArticle }) {
               datePublished: article.date,
               dateModified: article.modified,
               mainEntityOfPage: article.canonicalUrl || `${root}${normalizePath(article.legacyPath)}`,
-              image: article.featuredImage ? [article.featuredImage] : undefined
+              image: [article.featuredImage || defaultEmbedImage]
             })
           }}
         />
