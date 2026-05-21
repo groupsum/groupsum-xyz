@@ -185,6 +185,22 @@ footer p {
   line-height: 1.55;
 }
 
+.footer-copy {
+  display: grid;
+  gap: 8px;
+}
+
+.footer-copy small {
+  color: #8ea0b8;
+  font-size: 12px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.footer-links {
+  justify-content: flex-end;
+}
+
 .article-page {
   max-width: 820px;
   padding-bottom: 54px;

@@ -85,6 +85,16 @@ const homeArticles = [
   }
 ];
 
+const currentYear = new Date().getUTCFullYear();
+const footerLinks = [
+  { label: "Home", href: "/" },
+  { label: "About", href: "/about/" },
+  { label: "Contact", href: "/contact/" },
+  { label: "Privacy", href: "/privacy-policy/" },
+  { label: "Terms", href: "/terms-of-service/" },
+  ...(siteContent.footer?.links ?? []),
+].filter((link, index, array) => array.findIndex((candidate) => candidate.href === link.href) === index);
+
 function SiteChrome({ children }: { children: React.ReactNode }) {
   return (
     <div className="site-shell">
@@ -100,11 +110,14 @@ function SiteChrome({ children }: { children: React.ReactNode }) {
       </header>
       <main>{children}</main>
       <footer>
-        <p>GroupSum keeps product notes, research summaries, and technical articles readable in one durable archive.</p>
-        <div>
-          <a href="/">Home</a>
-          <a href="/privacy-policy/">Privacy</a>
-          <a href="/terms-of-service/">Terms</a>
+        <div className="footer-copy">
+          <p>{siteContent.footer?.note || "GroupSum keeps product notes, research summaries, and technical articles readable in one durable archive."}</p>
+          <small>Copyright {currentYear} {siteContent.product.name}. All rights reserved.</small>
+        </div>
+        <div className="footer-links">
+          {footerLinks.map((link) => (
+            <a key={link.href} href={link.href}>{link.label}</a>
+          ))}
         </div>
       </footer>
     </div>
