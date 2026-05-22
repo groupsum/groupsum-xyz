@@ -128,7 +128,7 @@ function HomePage() {
   return (
     <SiteChrome>
       <section className="home-hero" aria-labelledby="hero-title">
-        <p className="eyebrow">GroupSum</p>
+        <p className="eyebrow">Decision archive</p>
         <h1 id="hero-title">Structured notes for technical decisions.</h1>
         <p>
           A compact archive for summaries, technical writeups, and research notes that make comparison and review easier
@@ -155,7 +155,8 @@ function HomePage() {
       <section className="compact-links" aria-label="Site links">
         <a href="/about/">About</a>
         <a href="/contact/">Contact</a>
-        <a href="/2023/12/21/a-benchmark-for-sparse-logistic-regression/">Sample article</a>
+        <a href="/privacy-policy/">Privacy</a>
+        <a href="/2023/12/21/a-benchmark-for-sparse-logistic-regression/">Featured article</a>
       </section>
     </SiteChrome>
   );
