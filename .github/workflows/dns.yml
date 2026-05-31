@@ -15,6 +15,7 @@ concurrency:
 jobs:
   dns:
     runs-on: deployment
+    environment: deployment
     env:
       NPM_BASE_URL: ${{ secrets.NPM_BASE_URL }}
       NPM_IDENTITY: ${{ secrets.NPM_IDENTITY }}
