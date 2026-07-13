@@ -1,3 +1,5 @@
+[![Managed with npmctl](https://img.shields.io/badge/managed%20with-npmctl-2f6f4e.svg)](https://npmctl.com)
+
 # groupsum.xyz
 
 Standalone MdWrk lander repository for [groupsum.xyz](https://groupsum.xyz).
