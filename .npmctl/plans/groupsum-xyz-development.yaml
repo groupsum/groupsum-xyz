@@ -1,0 +1,34 @@
+apiVersion: npmctl.com/v1
+kind: NpmctlPlan
+schemaVersion: 1
+metadata:
+  name: groupsum-xyz-development
+  owner: groupsum-xyz
+  environment: development
+baseline:
+  repository: groupsum/groupsum-xyz
+  commit: null
+  npmctl:
+    source: pypi
+    version: "0.3.10"
+    desiredStateApiVersion: npmctl.com/v1
+    desiredStateSchemaVersion: 2
+  providers:
+    - package: npmctl-namecheap
+      version: "0.3.10"
+desiredState:
+  enabled: false
+  dns: null
+  proxy: null
+resources: []
+operations: []
+workflow:
+  enabled: false
+approvals: []
+verification: []
+recovery: []
+unresolved:
+  - fact: development environment
+    value: null
+    impact: No development DNS zone, NPM endpoint, upstream, or release policy has been approved.
+    resolutionOwner: groupsum/groupsum-xyz

@@ -1,0 +1,31 @@
+apiVersion: npmctl.com/v1
+kind: NpmctlMigration
+schemaVersion: 1
+metadata:
+  name: 0001-import-current-state
+  owner: groupsum-xyz
+  environment: production
+spec:
+  status: planned
+  mutation: false
+  source: legacy-checked-in-desired-state
+  desiredState:
+    dns: .npmctl/desired-state/production/dns.yaml
+    proxy: .npmctl/desired-state/production/proxy.yaml
+  stages:
+    - inspect-provider-authority
+    - capture-complete-namecheap-zones
+    - capture-npm-resources
+    - classify-owned-unmanaged-and-foreign-resources
+    - produce-reviewed-live-plan
+  adoption:
+    allowed: false
+  prune:
+    allowed: false
+  completionEvidence:
+    - sanitized-live-state-fingerprint
+    - reviewed-plan-artifact
+  unresolved:
+    - fact: live resource ownership
+      value: null
+      resolutionOwner: infrastructure

@@ -1,0 +1,185 @@
+name: npmctl
+
+on:
+  pull_request:
+    paths:
+      - ".npmctl/**"
+      - ".github/workflows/npmctl.yml"
+  push:
+    paths:
+      - ".npmctl/**"
+      - ".github/workflows/npmctl.yml"
+  workflow_dispatch:
+    inputs:
+      apply:
+        description: Apply the reviewed production plan after environment approval
+        required: true
+        default: false
+        type: boolean
+
+permissions:
+  contents: read
+
+concurrency:
+  group: npmctl-groupsum-xyz-production
+  cancel-in-progress: false
+
+env:
+  NPMCTL_VERSION: "0.3.10"
+  NPMCTL_NAMECHEAP_VERSION: "0.3.10"
+  NPMCTL_OWNER: groupsum-xyz
+  NPMCTL_SHARED_LOCK_CONFIRMED: ${{ vars.NPMCTL_SHARED_LOCK_CONFIRMED }}
+  PYTHON_VERSION: "3.12"
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
+      - uses: astral-sh/setup-uv@94527f2e458b27549849d47d273a16bec83a01e9 # v7
+        with:
+          python-version: ${{ env.PYTHON_VERSION }}
+          enable-cache: true
+      - name: Install pinned toolchain
+        run: |
+          uv venv
+          uv pip install "npmctl==$NPMCTL_VERSION" "npmctl-namecheap==$NPMCTL_NAMECHEAP_VERSION"
+      - name: Validate canonical layout and desired state
+        run: |
+          uv run python .npmctl/validate.py
+          uv run npmctl validate .npmctl/desired-state/development
+          uv run npmctl validate .npmctl/desired-state/production
+
+  plan:
+    if: ${{ github.event_name == 'workflow_dispatch' && github.ref == format('refs/heads/{0}', github.event.repository.default_branch) }}
+    needs: validate
+    runs-on: deployment
+    env: &npmctl-secrets
+      NPM_BASE_URL: ${{ secrets.NPM_BASE_URL }}
+      NPM_IDENTITY: ${{ secrets.NPM_IDENTITY }}
+      NPM_SECRET: ${{ secrets.NPM_SECRET || secrets.NPM_PASSWORD || secrets.NGINX_PROXY_MANAGER_SECRET }}
+      NPM_TIMEOUT_S: "30"
+      NAMECHEAP_API_USER: ${{ secrets.NAMECHEAP_API_USER }}
+      NAMECHEAP_API_KEY: ${{ secrets.NAMECHEAP_API_KEY }}
+      NAMECHEAP_USERNAME: ${{ secrets.NAMECHEAP_USERNAME }}
+      NAMECHEAP_CLIENT_IP: ${{ secrets.NAMECHEAP_CLIENT_IP }}
+      SITE_SERVER_IP: ${{ secrets.SITE_SERVER_IP || secrets.SERVER_IP || secrets.DEPLOY_SERVER_IP }}
+    steps:
+      - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
+      - uses: astral-sh/setup-uv@94527f2e458b27549849d47d273a16bec83a01e9 # v7
+        with:
+          python-version: ${{ env.PYTHON_VERSION }}
+          enable-cache: true
+      - name: Install pinned toolchain
+        run: |
+          uv venv
+          uv pip install "npmctl==$NPMCTL_VERSION" "npmctl-namecheap==$NPMCTL_NAMECHEAP_VERSION"
+      - name: Check required configuration
+        shell: bash
+        run: |
+          set -euo pipefail
+          for name in NPM_BASE_URL NPM_IDENTITY NPM_SECRET NAMECHEAP_API_USER NAMECHEAP_API_KEY NAMECHEAP_USERNAME NAMECHEAP_CLIENT_IP; do
+            test -n "$(printenv "$name")" || { echo "Missing $name" >&2; exit 1; }
+          done
+          if grep -Rqs '__SITE_SERVER_IP__' .npmctl/desired-state/production; then
+            test -n "$SITE_SERVER_IP" || { echo "Missing SITE_SERVER_IP" >&2; exit 1; }
+          fi
+      - name: Run read-only diagnostics
+        run: |
+          uv run npmctl plugins list
+          uv run npmctl doctor
+          uv run npmctl schema check
+          uv run npmctl dns doctor --provider namecheap
+      - name: Verify proxy target
+        run: |
+          test "$(docker inspect --format '{{.State.Running}}' groupsum-xyz)" = "true"
+      - name: Render and plan
+        shell: bash
+        run: |
+          set -euo pipefail
+          artifact="$RUNNER_TEMP/npmctl-plan"
+          mkdir -p "$artifact/desired-state"
+          for source in .npmctl/desired-state/production/*.yaml; do
+            target="$artifact/desired-state/$(basename "$source")"
+            sed -e "s|__SITE_SERVER_IP__|$SITE_SERVER_IP|g" -e "s|__LETSENCRYPT_EMAIL__|$NPM_IDENTITY|g" "$source" > "$target"
+          done
+          uv run npmctl validate "$artifact/desired-state"
+          uv run npmctl --output json plan "$artifact/desired-state" --owner "$NPMCTL_OWNER" --validate-output > "$artifact/plan.json"
+          (cd "$artifact" && sha256sum desired-state/*.yaml plan.json > checksums.sha256)
+          {
+            echo "repository=$GITHUB_REPOSITORY"
+            echo "commit=$GITHUB_SHA"
+            echo "owner=$NPMCTL_OWNER"
+            echo "environment=production"
+            echo "npmctl=$NPMCTL_VERSION"
+            echo "npmctl-namecheap=$NPMCTL_NAMECHEAP_VERSION"
+            echo "python=$(uv run python --version 2>&1)"
+            echo "uv=$(uv --version)"
+          } > "$artifact/manifest.txt"
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        with:
+          name: npmctl-plan-${{ env.NPMCTL_OWNER }}-${{ github.sha }}
+          path: ${{ runner.temp }}/npmctl-plan/
+          if-no-files-found: error
+          retention-days: 7
+
+  apply:
+    if: ${{ github.event_name == 'workflow_dispatch' && inputs.apply && github.ref == format('refs/heads/{0}', github.event.repository.default_branch) }}
+    needs: plan
+    runs-on: deployment
+    environment: production-npmctl
+    env: *npmctl-secrets
+    steps:
+      - uses: astral-sh/setup-uv@94527f2e458b27549849d47d273a16bec83a01e9 # v7
+        with:
+          python-version: ${{ env.PYTHON_VERSION }}
+          enable-cache: true
+      - name: Install pinned toolchain
+        run: |
+          uv venv
+          uv pip install "npmctl==$NPMCTL_VERSION" "npmctl-namecheap==$NPMCTL_NAMECHEAP_VERSION"
+      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093 # v4
+        with:
+          name: npmctl-plan-${{ env.NPMCTL_OWNER }}-${{ github.sha }}
+          path: ${{ runner.temp }}/npmctl-plan
+      - name: Verify and apply reviewed artifact under global DNS lock
+        shell: bash
+        run: |
+          set -euo pipefail
+          test "$NPMCTL_SHARED_LOCK_CONFIRMED" = "true" || {
+            echo "Set NPMCTL_SHARED_LOCK_CONFIRMED=true only after all deployment runners share /tmp/npmctl-namecheap-sethosts.lock." >&2
+            exit 1
+          }
+          artifact="$RUNNER_TEMP/npmctl-plan"
+          grep -Fx "repository=$GITHUB_REPOSITORY" "$artifact/manifest.txt"
+          grep -Fx "commit=$GITHUB_SHA" "$artifact/manifest.txt"
+          grep -Fx "owner=$NPMCTL_OWNER" "$artifact/manifest.txt"
+          grep -Fx "environment=production" "$artifact/manifest.txt"
+          grep -Fx "npmctl=$NPMCTL_VERSION" "$artifact/manifest.txt"
+          grep -Fx "npmctl-namecheap=$NPMCTL_NAMECHEAP_VERSION" "$artifact/manifest.txt"
+          (cd "$artifact" && sha256sum --check checksums.sha256)
+          export artifact
+          flock -w 1800 /tmp/npmctl-namecheap-sethosts.lock bash -euo pipefail -c '
+            uv run npmctl validate "$artifact/desired-state"
+            uv run npmctl --output json plan "$artifact/desired-state" --owner "$NPMCTL_OWNER" --validate-output > "$artifact/current-plan.json"
+            diff --unified "$artifact/plan.json" "$artifact/current-plan.json"
+            mkdir -p "$artifact/evidence/backup"
+            uv run npmctl apply "$artifact/desired-state" --owner "$NPMCTL_OWNER" --certificate-mode create               --backup-dir "$artifact/evidence/backup"               --report "$artifact/evidence/apply-report.json"               --rollback-plan "$artifact/evidence/rollback-plan.json"               --audit-log "$artifact/evidence/audit-log.json"               --validate-output
+          '
+      - name: Verify public endpoints
+        shell: bash
+        run: |
+          set -euo pipefail
+          for host in groupsum.xyz www.groupsum.xyz; do
+            getent ahostsv4 "$host" | awk '{print $1}' | grep -Fx "$SITE_SERVER_IP"
+            code="$(curl --silent --show-error --location --max-time 30 --output /dev/null --write-out '%{http_code}' "https://$host/")"
+            test "$code" -ge 200
+            test "$code" -lt 500
+          done
+      - if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        with:
+          name: npmctl-evidence-${{ env.NPMCTL_OWNER }}-${{ github.sha }}
+          path: ${{ runner.temp }}/npmctl-plan/evidence/
+          if-no-files-found: warn
+          retention-days: 30

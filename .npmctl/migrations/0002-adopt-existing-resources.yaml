@@ -1,0 +1,26 @@
+apiVersion: npmctl.com/v1
+kind: NpmctlMigration
+schemaVersion: 1
+metadata:
+  name: 0002-adopt-existing-resources
+  owner: groupsum-xyz
+  environment: production
+spec:
+  status: disabled
+  mutation: true
+  command: npmctl adopt .npmctl/desired-state/production --owner groupsum-xyz --metadata-only
+  preconditions:
+    - Migration 0001 is complete.
+    - Every candidate exactly matches reviewed desired state.
+    - No candidate is foreign-owned.
+    - A protected production approval explicitly enables this migration.
+  ordinaryApplyAllowed: false
+  allowFieldDrift: false
+  force: false
+  prune:
+    allowed: false
+  rollback: Forward repair ownership metadata from the pre-migration backup.
+  unresolved:
+    - fact: adoption candidates
+      value: null
+      resolutionOwner: infrastructure

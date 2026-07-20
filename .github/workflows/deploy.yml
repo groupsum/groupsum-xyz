@@ -11,16 +11,6 @@ jobs:
   deploy:
     runs-on: deployment
     environment: deployment
-    env:
-      NPM_BASE_URL: ${{ secrets.NPM_BASE_URL }}
-      NPM_IDENTITY: ${{ secrets.NPM_IDENTITY }}
-      NPM_SECRET: ${{ secrets.NPM_SECRET || secrets.NPM_PASSWORD || secrets.NGINX_PROXY_MANAGER_SECRET }}
-      NPM_TIMEOUT_S: 30
-      NAMECHEAP_API_USER: ${{ secrets.NAMECHEAP_API_USER }}
-      NAMECHEAP_API_KEY: ${{ secrets.NAMECHEAP_API_KEY }}
-      NAMECHEAP_USERNAME: ${{ secrets.NAMECHEAP_USERNAME }}
-      NAMECHEAP_CLIENT_IP: ${{ secrets.NAMECHEAP_CLIENT_IP }}
-      SITE_SERVER_IP: ${{ secrets.SITE_SERVER_IP || secrets.SERVER_IP || secrets.DEPLOY_SERVER_IP }}
     steps:
       - uses: actions/checkout@v4
         with:
@@ -32,38 +22,11 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-      - name: Install npmctl from PyPI
-        run: python -m pip install --upgrade npmctl==0.3.10 npmctl-namecheap==0.3.10
-      - name: Validate orchestration secrets
-        shell: bash
-        run: |
-          missing=0
-          for name in NPM_BASE_URL NPM_IDENTITY NPM_SECRET NAMECHEAP_API_USER NAMECHEAP_API_KEY NAMECHEAP_USERNAME NAMECHEAP_CLIENT_IP SITE_SERVER_IP; do
-            if [ -z "${!name}" ]; then
-              echo "Missing required secret-backed environment variable: ${name}"
-              missing=1
-            fi
-          done
-          exit ${missing}
-      - name: Render DNS desired state
-        shell: bash
-        run: |
-          mkdir -p .tmp
-          sed "s/__SITE_SERVER_IP__/${SITE_SERVER_IP}/g" desired-state/dns.yaml > .tmp/dns.yaml
-      - name: Validate DNS desired state
-        run: npmctl validate .tmp/dns.yaml
-      - name: Validate Namecheap provider
-        run: npmctl dns doctor --provider namecheap
-      - name: Apply Namecheap DNS before deployment
-        continue-on-error: true
-        run: npmctl apply .tmp/dns.yaml --owner groupsum-xyz
       - run: npm ci
       - run: npm run check
       - run: npm run build
       - name: Validate Docker proxy target
         run: npm run proxy:target-check
-      - name: Validate npmctl proxy desired state
-        run: npmctl validate desired-state/proxy.yaml
       - name: Build site image
         run: docker-compose -f docker-compose.yaml build groupsum-xyz
       - name: Restart site container
@@ -72,12 +35,3 @@ jobs:
           docker-compose -f docker-compose.yaml rm -f groupsum-xyz || true
           docker rm -f groupsum-xyz || true
           docker-compose -f docker-compose.yaml up -d --no-build --force-recreate --no-deps groupsum-xyz
-      - name: Check Nginx Proxy Manager API schema
-        continue-on-error: true
-        run: npmctl schema check
-      - name: Adopt matching unmanaged NPM resources
-        run: npmctl adopt desired-state/proxy.yaml --owner groupsum-xyz --force
-      - name: Plan Nginx Proxy Manager host with npmctl
-        run: npmctl plan desired-state/proxy.yaml --owner groupsum-xyz
-      - name: Apply Nginx Proxy Manager host with npmctl
-        run: npmctl apply desired-state/proxy.yaml --owner groupsum-xyz

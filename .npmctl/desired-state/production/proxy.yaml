@@ -1,0 +1,36 @@
+apiVersion: npmctl.com/v1
+schemaVersion: 2
+certificates:
+  - name: groupsum-xyz-letsencrypt
+    domain_names:
+      - "groupsum.xyz"
+      - "www.groupsum.xyz"
+    certificate_type: letsencrypt
+    api_payload:
+      provider: letsencrypt
+      meta:
+        letsencrypt_email: "__LETSENCRYPT_EMAIL__"
+        letsencrypt_agree: true
+        dns_challenge: false
+    meta:
+      managed_by: npmctl
+      owner: groupsum-xyz
+      resource_id: cert.groupsum-xyz
+proxy_hosts:
+  - domain_names:
+      - "groupsum.xyz"
+      - "www.groupsum.xyz"
+    forward_scheme: http
+    forward_host: groupsum-xyz
+    forward_port: 80
+    certificate_ref: cert.groupsum-xyz
+    ssl_forced: 1
+    http2_support: 1
+    hsts_enabled: 1
+    hsts_subdomains: 0
+    allow_websocket_upgrade: 1
+    block_exploits: 1
+    meta:
+      managed_by: npmctl
+      owner: groupsum-xyz
+      resource_id: proxy.groupsum-xyz

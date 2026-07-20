@@ -1,32 +1,31 @@
----
 apiVersion: npmctl.com/v1
 schemaVersion: 2
 dns_records:
   - provider: namecheap
-    zone: groupsum.xyz
+    zone: "groupsum.xyz"
     type: A
     name: "@"
-    value: __SITE_SERVER_IP__
+    value: "__SITE_SERVER_IP__"
     ttl: 300
     meta:
       managed_by: npmctl
       owner: groupsum-xyz
       resource_id: dns.groupsum-xyz.root-a
   - provider: namecheap
-    zone: groupsum.xyz
+    zone: "groupsum.xyz"
     type: A
     name: "*.groupsum.xyz"
-    value: __SITE_SERVER_IP__
+    value: "__SITE_SERVER_IP__"
     ttl: 300
     meta:
       managed_by: npmctl
       owner: groupsum-xyz
       resource_id: dns.groupsum-xyz.wildcard-a
   - provider: namecheap
-    zone: groupsum.xyz
+    zone: "groupsum.xyz"
     type: CNAME
     name: "www"
-    value: groupsum.xyz
+    value: "groupsum.xyz"
     ttl: 300
     meta:
       managed_by: npmctl

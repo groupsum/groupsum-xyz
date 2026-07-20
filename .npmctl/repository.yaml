@@ -1,0 +1,34 @@
+apiVersion: npmctl.com/v1
+kind: NpmctlRepository
+schemaVersion: 1
+metadata:
+  name: groupsum-xyz
+  repository: groupsum/groupsum-xyz
+spec:
+  owner: groupsum-xyz
+  defaultBranch: master
+  environments:
+    development:
+      enabled: false
+      plan: .npmctl/plans/groupsum-xyz-development.yaml
+      desiredState:
+        dns: .npmctl/desired-state/development/dns.yaml
+        proxy: .npmctl/desired-state/development/proxy.yaml
+    production:
+      enabled: true
+      plan: .npmctl/plans/groupsum-xyz-production.yaml
+      desiredState:
+        dns: .npmctl/desired-state/production/dns.yaml
+        proxy: .npmctl/desired-state/production/proxy.yaml
+  workflow: .github/workflows/npmctl.yml
+  toolchain:
+    python: "3.12"
+    npmctl: "0.3.10"
+    npmctl-namecheap: "0.3.10"
+  dnsCoordination:
+    provider: namecheap
+    mutationModel: complete-zone-setHosts
+    mechanism: shared-runner-flock
+    lockFile: /tmp/npmctl-namecheap-sethosts.lock
+    scope: all-namecheap-zones
+    prerequisite: All production npmctl apply jobs use the same deployment runner filesystem.
