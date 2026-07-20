@@ -23,6 +23,10 @@ export type Maturity =
   | "archived"
   | "unknown";
 
+export type EvidenceLevel = "source" | "implementation" | "tests" | "documentation" | "package" | "release" | "live" | "external-validation";
+
+export type CatalogView = "rows" | "cards";
+
 export type PublicationDisposition =
   | "public"
   | "public-grouped"
@@ -67,6 +71,14 @@ export interface PortfolioEntity {
   approved: boolean;
   disposition: PublicationDisposition;
   technologies: string[];
+  portfolioFamily?: string;
+  evidenceLevels?: EvidenceLevel[];
+  role?: string;
+  relatedSolutionSlugs?: string[];
+  relatedServiceSlugs?: string[];
+  relatedProductSlugs?: string[];
+  claimBoundary?: string;
+
 }
 
 export interface PortfolioItem {

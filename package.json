@@ -7,8 +7,8 @@
     "dev": "vite --host 0.0.0.0",
     "build:content": "npm --prefix packages/site-content-pack run build",
     "import:wordpress": "node scripts/import-wordpress.mjs",
-    "build": "npm run build:content && npm run build:insights && npm run validate:portfolio && tsc --noEmit && vite build && npm run generate:static && npm run validate:discovery",
-    "check": "npm run build:content && npm run build:insights && npm run validate:portfolio && npm --prefix packages/site-content-pack run test && tsc --noEmit",
+    "build": "npm run build:content && npm run build:insights && npm run validate:portfolio && npm run validate:catalog && tsc --noEmit && vite build && npm run generate:static && npm run validate:discovery",
+    "check": "npm run build:content && npm run build:insights && npm run validate:portfolio && npm run validate:catalog && npm --prefix packages/site-content-pack run test && tsc --noEmit",
     "generate:static": "node scripts/generate-static.mjs",
     "preview": "vite preview --host 0.0.0.0",
     "docker:build": "docker compose build groupsum-xyz",
@@ -23,7 +23,8 @@
     "proxy:target-check": "node scripts/validate-proxy-target.mjs",
     "build:insights": "node scripts/generate-insights-index.mjs",
     "validate:discovery": "node scripts/validate-discovery.mjs",
-    "validate:portfolio": "node scripts/validate-portfolio-content.mjs"
+    "validate:portfolio": "node scripts/validate-portfolio-content.mjs",
+    "validate:catalog": "node scripts/validate-catalog-content.mjs"
   },
   "dependencies": {
     "@mdwrk/lander-core": "^0.1.2",

@@ -18,6 +18,9 @@ import { BlogPost, PortfolioItem, PortfolioEntity, SolutionItem, ServiceItem } f
 import { MarkdownRenderer } from "mdwrk/renderer-core";
 import { CapabilityBand } from "./components/CapabilityBand";
 import { groupSumVision, horizontalCapabilities } from "./data/vision";
+import { useCatalogFilters } from "./hooks/useCatalogFilters";
+import { CatalogToolbar } from "./components/CatalogToolbar";
+import { CatalogGroup } from "./components/CatalogGroup";
 import { StructuredData } from "mdwrk/structured-data";
 import { 
   ArrowRight, 
@@ -749,6 +752,9 @@ function PortfolioPage({ onNavigate }: RouteProps) {
     return portfolioItems.filter(p => p.approved && p.capabilityFamily === activeFilter);
   }, [activeFilter]);
 
+  return <DenseCatalog entities={portfolioEntities.filter((entity) => entity.approved)} onNavigate={onNavigate} title="GroupSum portfolio catalog" description="Browse the complete cross-ecosystem catalog by capability, organization, entity type, maturity, and evidence." />;
+
+  /* Legacy featured-card layout retained below for reference. */
   return (
     <div className="max-w-[var(--content-max)] mx-auto px-4 sm:px-6 lg:px-8 py-12 space-y-10">
       <div className="max-w-2xl space-y-3">
@@ -1291,7 +1297,18 @@ function InsightsPage({ onNavigate }: RouteProps) {
   );
 }
 
-/* ==========================================================================
+function DenseCatalog({ entities, onNavigate, title, description }: { entities: PortfolioEntity[]; onNavigate: (path: string) => void; title: string; description: string }) {
+  const [mobileFiltersOpen, setMobileFiltersOpen] = useState(false);
+  const catalog = useCatalogFilters(entities);
+  const groups = [
+    ["Suites & products", catalog.filtered.filter((entity) => entity.kind === "suite" || entity.kind === "product")],
+    ["Projects & applications", catalog.filtered.filter((entity) => entity.kind === "project" || entity.kind === "application" || entity.kind === "demo-example")],
+    ["Packages & modules", catalog.filtered.filter((entity) => entity.kind === "package" || entity.kind === "package-family")],
+    ["Specifications & packs", catalog.filtered.filter((entity) => entity.kind === "specification-pack" || entity.kind === "site-docs")],
+  ] as const;
+  return <div className="max-w-[var(--content-max)] mx-auto px-4 sm:px-6 lg:px-8 py-12 space-y-8"><div className="max-w-3xl space-y-3"><span className="text-xs font-mono uppercase tracking-wider text-accent font-bold block">Dense portfolio catalog</span><h1 className="font-serif text-4xl font-bold tracking-tight text-ink">{title}</h1><p className="text-ink-muted text-base leading-relaxed">{description}</p></div><CatalogToolbar {...catalog} entities={entities} mobileFiltersOpen={mobileFiltersOpen} setMobileFiltersOpen={setMobileFiltersOpen} />{catalog.view === "cards" ? <div className="grid grid-cols-1 md:grid-cols-2 gap-4">{catalog.filtered.map((entity) => <button key={entity.id} type="button" onClick={() => onNavigate(`/products/${entity.slug}`)} className="text-left p-5 bg-surface border border-[var(--color-border-soft)] rounded-[var(--radius-md)] hover:border-accent"><span className="text-[10px] font-mono uppercase text-accent">{entity.kind} · {entity.maturity}</span><h2 className="font-serif text-lg font-bold text-ink mt-2">{entity.displayName}</h2><p className="text-xs text-ink-muted mt-1 leading-relaxed">{entity.summary}</p></button>)}</div> : <div className="space-y-8">{groups.map(([group, items]) => <CatalogGroup key={group} title={group} entities={items} onNavigate={onNavigate} />)}</div>}{catalog.filtered.length === 0 && <div className="p-10 text-center bg-surface border border-[var(--color-border-soft)] rounded-[var(--radius-md)] text-sm text-ink-muted">No catalog records match these filters.</div>}</div>;
+}
+/* ========================================================================== 
    PRODUCTS INDEX PAGE
    ========================================================================== */
 function ProductsIndexPage({ onNavigate }: RouteProps) {
@@ -1452,6 +1469,8 @@ function ProductsOrgPage({ org, onNavigate }: { org: string; onNavigate: (path: 
   const suitesAndProducts = filteredEntities.filter((e) => e.kind === "suite" || e.kind === "product");
   const subPackages = filteredEntities.filter((e) => e.kind === "package");
   const specsAndPacks = filteredEntities.filter((e) => e.kind === "specification-pack");
+
+  return <DenseCatalog entities={orgEntities} onNavigate={onNavigate} title={`${meta.name} ecosystem catalog`} description={`${meta.domain} Browse suites, products, projects, packages, and specifications in one filterable catalog.`} />;
 
   return (
     <div className="max-w-[var(--content-max)] mx-auto px-4 sm:px-6 lg:px-8 py-12 space-y-12">
