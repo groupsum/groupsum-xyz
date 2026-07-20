@@ -6,8 +6,8 @@ services:
     labels:
       site.host: groupsum.xyz
       site.kind: mdwrk-lander
-    expose:
-      - "80"
+    ports:
+      - "8082:80"
     networks:
       dockerwp:
         aliases:
