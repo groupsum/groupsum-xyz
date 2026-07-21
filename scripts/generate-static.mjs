@@ -1,6 +1,7 @@
 import fs from "node:fs";
 import path from "node:path";
 import { articles } from "../packages/site-content-pack/dist/index.js";
+import { jsonLdHtml } from "./structured-data.mjs";
 
 const OUT = "dist";
 const root = "https://groupsum.xyz";
@@ -13,7 +14,7 @@ const absolute = (value) => `${root}${normalizePath(value)}`;
 const escapeHtml = (value) => String(value ?? "").replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
 const escapeXml = (value) => escapeHtml(value).replace(/'/g, "&apos;");
 const stripHtml = (value) => String(value || "").replace(/<[^>]*>/g, " ").replace(/&amp;/g, "&").replace(/&hellip;/g, "...").replace(/&#8217;/g, "'").replace(/&#8211;/g, "-").replace(/\s+/g, " ").trim();
-const trim = (value, size = 180) => { const text = stripHtml(value); return text.length > size ? `${text.slice(0, size - 1).trimEnd()}…` : text; };
+const trim = (value, size = 180) => { const text = stripHtml(value); return text.length > size ? `${text.slice(0, size - 1).trimEnd()}ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã¢â‚¬Â¦Ãƒâ€šÃ‚Â¡ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã‚Â¡ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¦` : text; };
 const safeFile = (value) => String(value).replace(/[^a-z0-9_-]+/gi, "-").replace(/^-|-$/g, "").toLowerCase();
 const defaultImage = { url: `${root}/social/groupsum-default.svg`, type: "image/svg+xml", width: "1200", height: "630", alt: "GroupSum structured software and clear decisions" };
 
@@ -53,7 +54,7 @@ function pageMetaHtml(record) {
   if (record.type === "article") { if (record.published) lines.push(`<meta property="article:published_time" content="${escapeHtml(record.published)}" />`); if (record.modified) lines.push(`<meta property="article:modified_time" content="${escapeHtml(record.modified)}" />`); if (record.author) lines.push(`<meta property="article:author" content="${escapeHtml(record.author)}" />`); if (record.section) lines.push(`<meta property="article:section" content="${escapeHtml(record.section)}" />`); for (const tag of record.tags.slice(0, 12)) lines.push(`<meta property="article:tag" content="${escapeHtml(tag)}" />`); }
   return lines.join("\n    ");
 }
-function injectHeadMeta(html, record) { return html.replace(/\s*<title>.*?<\/title>\s*/gis, "").replace(/\s*<meta (?:name|property)="(?:description|robots|og:[^"]+|twitter:[^"]+|article:[^"]+)"[^>]*>\s*/gi, "").replace(/\s*<link rel="canonical"[^>]*>\s*/gi, "").replace("</head>", `    ${pageMetaHtml(record)}\n  </head>`); }
+function injectHeadMeta(html, record) { const replacement = "    " + pageMetaHtml(record) + "\n    " + jsonLdHtml(record) + "\n  </head>"; return html.replace(/<script type="application\/ld\+json">[\s\S]*?<\/script>/gi, "").replace(/\s*<title>.*?<\/title>\s*/gis, "").replace(/\s*<meta (?:name|property)="(?:description|robots|og:[^"]+|twitter:[^"]+|article:[^"]+)"[^>]*>\s*/gi, "").replace(/\s*<link rel="canonical"[^>]*>\s*/gi, "").replace("</head>", replacement); }
 function urlset(records) { return `<?xml version="1.0" encoding="UTF-8"?>\n<?xml-stylesheet type="text/xsl" href="${root}/sitemap.xsl"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${records.map((record) => { const lastmod = record.modified || record.published; return `  <url><loc>${escapeXml(record.url)}</loc>${lastmod ? `<lastmod>${escapeXml(lastmod)}</lastmod>` : ""}</url>`; }).join("\n")}\n</urlset>\n`; }
 
 function writeDiscovery() {
@@ -64,7 +65,7 @@ function writeDiscovery() {
   fs.writeFileSync(path.join(OUT, "robots.txt"), `User-agent: *\nAllow: /\nSitemap: ${root}/sitemap.xml\n`);
   const llms = `# GroupSum\n\n> GroupSum builds structured software, platforms, and services for teams that need clear decisions.\n\n## Start here\n\n- [Home](${root}/)\n- [Products](${root}/products/)\n- [Portfolio](${root}/portfolio/)\n- [Solutions](${root}/solutions/)\n- [Services](${root}/services/)\n- [Insights](${root}/insights/)\n- [About](${root}/about/)\n- [Contact](${root}/contact/)\n\n## Machine-readable indexes\n\n- [Full content manifest](${root}/llms-full.txt)\n- [Legacy alias](${root}/full-llms.txt)\n- [XML sitemap](${root}/sitemap.xml)\n`; fs.writeFileSync(path.join(OUT, "llms.txt"), llms);
   const fullDir = path.join(OUT, "llms-full"); fs.mkdirSync(fullDir, { recursive: true }); const sections = [];
-  for (const [key, records] of [...sitemapGroups.entries()].sort(([a], [b]) => a.localeCompare(b))) { const filename = `${safeFile(key)}.md`; const body = [`# ${key.replace(/-/g, " ")}`, "", ...records.map((record) => `- [${record.title}](${record.url})${record.modified || record.published ? ` — ${record.modified || record.published}` : ""}${record.description ? `\n  ${record.description}` : ""}`), ""].join("\n"); fs.writeFileSync(path.join(fullDir, filename), body); sections.push(`- [${key}](${root}/llms-full/${filename})`); }
+  for (const [key, records] of [...sitemapGroups.entries()].sort(([a], [b]) => a.localeCompare(b))) { const filename = `${safeFile(key)}.md`; const body = [`# ${key.replace(/-/g, " ")}`, "", ...records.map((record) => `- [${record.title}](${record.url})${record.modified || record.published ? ` ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã¢â‚¬Â¦Ãƒâ€šÃ‚Â¡ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã‚Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â ${record.modified || record.published}` : ""}${record.description ? `\n  ${record.description}` : ""}`), ""].join("\n"); fs.writeFileSync(path.join(fullDir, filename), body); sections.push(`- [${key}](${root}/llms-full/${filename})`); }
   const full = `# GroupSum full content manifest\n\nThis generated index covers public pages and legacy articles. Canonical URLs remain the source of truth for full HTML content.\n\n${sections.join("\n")}\n`; fs.writeFileSync(path.join(OUT, "llms-full.txt"), full); fs.writeFileSync(path.join(OUT, "full-llms.txt"), full);
   fs.writeFileSync(path.join(OUT, "site-content.json"), JSON.stringify({ generatedAt: new Date().toISOString(), routes: inventory.map(({ route, url, title, description, type }) => ({ route, url, title, description, type })) }, null, 2));
 }
