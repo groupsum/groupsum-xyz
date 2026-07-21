@@ -292,3 +292,22 @@ body {
     font-size: 0.72rem;
   }
 }
+
+/* Portfolio catalog: keep header and row cells on the same explicit tracks. */
+.catalog-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.8fr) 7rem minmax(10rem, 1.1fr) 8rem 7rem;
+  align-items: center;
+  column-gap: 1rem;
+}
+
+.catalog-grid > * {
+  min-width: 0;
+}
+
+@media (max-width: 1023px) {
+  .catalog-grid {
+    grid-template-columns: minmax(0, 1fr) auto;
+    column-gap: 0.75rem;
+  }
+}
