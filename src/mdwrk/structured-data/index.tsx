@@ -4,7 +4,7 @@
  */
 
 import React, { useEffect, useMemo } from "react";
-import { PortfolioItem, BlogPost, ServiceItem } from "../../types";
+import { PortfolioItem, PortfolioEntity, BlogPost, ServiceItem } from "../../types";
 
 interface StructuredDataProps {
   type: "organization" | "portfolio" | "blog" | "solutions" | "about";
@@ -51,16 +51,21 @@ export function StructuredData({ type, data }: StructuredDataProps) {
         return defaultOrg;
 
       case "portfolio": {
-        const item = data as PortfolioItem;
+        const item = data as PortfolioItem | PortfolioEntity;
         if (!item) return null;
+        const name = "name" in item ? item.name : item.displayName;
+        const description = "description" in item ? item.description : item.summary;
+        const evidence = "evidenceLabel" in item ? item.evidenceLabel : item.evidence.map((entry) => entry.label).join("; ");
+        const links = "links" in item ? item.links.map((link) => ("href" in link ? link.href : "" )).filter(Boolean) : [];
         return {
           "@context": baseContext,
           "@type": "SoftwareApplication",
-          "name": item.name,
+          "name": name,
+          "url": `https://groupsum.xyz/portfolio/${item.slug}`,
           "applicationCategory": "DeveloperApplication",
           "operatingSystem": "Linux, Cloud Environments",
-          "description": item.description,
-          "releaseNotes": item.evidenceLabel,
+          "description": description,
+          "releaseNotes": evidence,
           "author": {
             "@type": "Organization",
             "name": "Groupsum LLC",
@@ -70,14 +75,8 @@ export function StructuredData({ type, data }: StructuredDataProps) {
             "@type": "Organization",
             "name": "Groupsum LLC"
           },
-          "softwareVersion": "v2.0-governed",
-          "offers": {
-            "@type": "Offer",
-            "price": "0",
-            "priceCurrency": "USD",
-            "category": "Enterprise Governance Services"
-          },
           "featureList": item.technologies.join(", "),
+          "sameAs": links,
           "identifier": `SPEC-${item.slug.toUpperCase()}-STABLE`
         };
       }
@@ -138,6 +137,7 @@ export function StructuredData({ type, data }: StructuredDataProps) {
   // Inject JSON-LD into head dynamically
   useEffect(() => {
     if (!jsonLd) return;
+    if (document.querySelector('script[type="application/ld+json"]')) return;
 
     // Generate a unique ID for this script element
     const scriptId = `jsonld-${type}-${data?.slug || "general"}`;
@@ -188,7 +188,7 @@ export function StructuredData({ type, data }: StructuredDataProps) {
             <div className="col-span-1 md:col-span-2 border-t border-[var(--color-border-soft)] pt-2 mt-1">
               <span className="font-semibold text-accent uppercase text-[9px] block mb-1">Active Artifact Specs</span>
             </div>
-            <div><span className="opacity-40">Artifact Name:</span> {data.name}</div>
+            <div><span className="opacity-40">Artifact Name:</span> {"name" in data ? data.name : data.displayName}</div>
             <div><span className="opacity-40">Reference Code:</span> SPEC-{data.slug.toUpperCase()}-STABLE</div>
             <div><span className="opacity-40">Maturity Status:</span> {data.maturity}</div>
             <div><span className="opacity-40">Tech Stack:</span> {data.technologies.slice(0, 3).join(", ")}</div>

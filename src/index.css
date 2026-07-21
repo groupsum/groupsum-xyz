@@ -200,3 +200,95 @@ body {
   color: var(--color-ink);
   background-color: var(--color-surface);
 }
+
+/* Shared MdWrk rendering surface: portfolio and publication content use the site system. */
+:root {
+  --color-code-surface: #e8e6dd;
+  --color-code-header: #dedbd0;
+  --color-code-ink: #26332e;
+}
+
+.markdown-body.mdwrk-renderer {
+  max-width: none;
+  min-width: 0;
+  overflow: visible;
+  font-family: var(--font-sans);
+  color: var(--color-ink-muted);
+}
+
+.markdown-body.mdwrk-renderer > * {
+  max-width: 100%;
+}
+
+.markdown-body.mdwrk-renderer h1,
+.markdown-body.mdwrk-renderer h2,
+.markdown-body.mdwrk-renderer h3,
+.markdown-body.mdwrk-renderer h4 {
+  font-family: var(--font-serif);
+}
+
+.markdown-body.mdwrk-renderer h2 {
+  border-bottom: 1px solid var(--color-border-soft);
+}
+
+.mdwrk-code-block {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  background: var(--color-code-surface) !important;
+  border: 1px solid var(--color-border-soft);
+  border-radius: var(--radius-md);
+  color: var(--color-code-ink);
+  white-space: pre;
+  tab-size: 2;
+  -webkit-overflow-scrolling: touch;
+}
+
+.mdwrk-code-block + .mdwrk-code-block {
+  margin-top: 1rem;
+}
+
+.mdwrk-code-content {
+  display: block;
+  min-width: max-content;
+  background: transparent !important;
+  color: inherit;
+  white-space: inherit;
+}
+
+.code-token-comment { color: #69736c; font-style: italic; }
+.code-token-string { color: #9b5633; }
+.code-token-keyword { color: #176b5b; font-weight: 700; }
+.code-token-property { color: #205c53; font-weight: 600; }
+.code-token-function { color: #315f7a; font-weight: 600; }
+.code-token-preprocessor { color: #9b6a28; font-weight: 600; }
+.code-token-number,
+.code-token-boolean { color: #a86628; }
+.code-token-operator { color: #5c6863; }
+.code-token-punctuation { color: #65716a; }
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-code-surface: #252d2a;
+    --color-code-header: #303a35;
+    --color-code-ink: #e4ebe5;
+  }
+
+  .code-token-comment { color: #91a198; }
+  .code-token-string { color: #e9a379; }
+  .code-token-keyword,
+  .code-token-property { color: #8bd0bf; }
+  .code-token-function { color: #9fc7e4; }
+  .code-token-preprocessor,
+  .code-token-number,
+  .code-token-boolean { color: #efb27d; }
+  .code-token-operator,
+  .code-token-punctuation { color: #b3c0b7; }
+}
+
+@media (max-width: 640px) {
+  .mdwrk-code-block {
+    border-radius: var(--radius-sm);
+    font-size: 0.72rem;
+  }
+}

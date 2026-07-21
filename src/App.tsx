@@ -909,39 +909,28 @@ function PortfolioDetailPage({ slug, onNavigate }: { slug: string; onNavigate: (
             {item.summary}
           </p>
 
-          <div className="markdown-body">
-            <h3>Architectural Goals</h3>
-            <p>
-              The primary constraint guiding the creation of {item.name} is absolute operational validation. We recognized that standard engineering frameworks lack explicit validation assertions at code submission boundaries. To address this friction, we decoupled contract management from standard compiler steps and integrated it directly into continuous integration loops.
-            </p>
+          <MarkdownRenderer
+            content={`### Architectural goals
 
-            <h3>How It Works</h3>
-            <p>
-              {item.description}
-            </p>
+${item.description}
 
-            <blockquote>
-              "By establishing a formal, machine-readable validation barrier, we ensure that schema errors, contract violations, and regulatory drift are terminated prior to final build packaging."
-            </blockquote>
+### How it works
 
-            <h3>Verifiable Deliverables</h3>
-            <ul>
-              <li><strong>Strict Contract Declarations</strong>: Version-controlled schemas running as independent single sources of truth.</li>
-              <li><strong>Continuous Validation Engine</strong>: Event-driven test suites validating message integrity.</li>
-              <li><strong>Operational Audit Log</strong>: Cryptographically signed deployment receipts indicating conformant validation runs.</li>
-            </ul>
+${item.summary}
 
-            <p className="text-sm text-ink-muted pt-6 border-t border-[var(--color-border-soft)] font-mono">
-              Last updated: July 20, 2026 • Document Ref: SPEC-{item.slug.toUpperCase()}-STABLE
-            </p>
+> BucketWarden-style portfolio work is presented with explicit boundaries, evidence, and an honest maturity label.
 
-            {/* Structured Data Assertion Card for AI Crawlers */}
-            <div className="mt-8 pt-6 border-t border-[var(--color-border-soft)]">
-              <span className="text-[10px] font-mono uppercase text-ink-muted block mb-3">
-                Source Integrity, AEO Optimization & Structured Entity Assertion
-              </span>
-              <StructuredData type="portfolio" data={item} />
-            </div>
+### Verifiable deliverables
+
+- **Implementation boundary:** The published artifact describes the work that exists today.
+- **Evidence trail:** Maturity, evidence, and limitations remain visible beside the description.
+- **Next step:** Use the linked source, specification, or product surface to continue evaluation.
+
+_Last updated: July 20, 2026 · Document ref: SPEC-${item.slug.toUpperCase()}-STABLE_`}
+          />
+
+          <div className="mt-8 pt-6 border-t border-[var(--color-border-soft)]">
+            <StructuredData type="portfolio" data={item} />
           </div>
         </div>
       </div>

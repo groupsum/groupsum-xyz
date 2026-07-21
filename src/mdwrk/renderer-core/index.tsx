@@ -282,7 +282,7 @@ export function MarkdownRenderer({ content }: MarkdownRendererProps) {
     return elements;
   }, [content]);
 
-  return <div className="space-y-4">{renderedElements}</div>;
+  return <div className="markdown-body mdwrk-renderer space-y-4">{renderedElements}</div>;
 }
 
 /**
@@ -462,9 +462,21 @@ export function CodeBlock({ code, language }: CodeBlockProps) {
 
   const handleCopy = async () => {
     try {
-      await navigator.clipboard.writeText(code);
+      if (navigator.clipboard?.writeText) {
+        await navigator.clipboard.writeText(code);
+      } else {
+        const textarea = document.createElement("textarea");
+        textarea.value = code;
+        textarea.setAttribute("readonly", "");
+        textarea.style.position = "fixed";
+        textarea.style.opacity = "0";
+        document.body.appendChild(textarea);
+        textarea.select();
+        document.execCommand("copy");
+        textarea.remove();
+      }
       setCopied(true);
-      setTimeout(() => setCopied(false), 2000);
+      window.setTimeout(() => setCopied(false), 2000);
     } catch (err) {
       console.error("Failed to copy code: ", err);
     }
@@ -501,33 +513,33 @@ export function CodeBlock({ code, language }: CodeBlockProps) {
           )}
         </button>
       </div>
-      <pre className="!p-4 !m-0 !bg-transparent !border-none !rounded-none overflow-x-auto font-mono text-xs text-ink leading-relaxed bg-[var(--color-surface)]">
-        <code className="!p-0 !m-0 !bg-transparent !border-none !rounded-none !text-inherit">
+      <pre className="mdwrk-code-block !m-0 overflow-x-auto overflow-y-hidden font-mono text-xs text-ink leading-relaxed">
+        <code className="mdwrk-code-content !p-0 !m-0 !bg-transparent !border-none !rounded-none !text-inherit">
           {tokens.map((token, i) => {
             if (token.type === "text") {
               return token.value;
             }
             let className = "";
             if (token.type === "comment") {
-              className = "text-ink-muted/60 italic";
+              className = "code-token-comment";
             } else if (token.type === "string") {
-              className = "text-[#a05a2c] font-medium";
+              className = "code-token-string";
             } else if (token.type === "keyword") {
-              className = "text-accent font-bold";
+              className = "code-token-keyword";
             } else if (token.type === "property") {
-              className = "text-accent font-semibold";
+              className = "code-token-property";
             } else if (token.type === "function") {
-              className = "text-[#1b4d7c] font-medium";
+              className = "code-token-function";
             } else if (token.type === "preprocessor") {
-              className = "text-amber-800 font-semibold";
+              className = "code-token-preprocessor";
             } else if (token.type === "number") {
-              className = "text-[#c98232]";
+              className = "code-token-number";
             } else if (token.type === "boolean" || token.type === "null") {
-              className = "text-[#c98232] font-semibold";
+              className = "code-token-boolean";
             } else if (token.type === "operator") {
-              className = "text-ink-muted font-medium";
+              className = "code-token-operator";
             } else if (token.type === "punctuation") {
-              className = "text-ink-muted/80";
+              className = "code-token-punctuation";
             }
             return (
               <span key={i} className={className}>
