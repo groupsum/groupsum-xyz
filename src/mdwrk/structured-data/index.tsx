@@ -161,52 +161,6 @@ export function StructuredData({ type, data }: StructuredDataProps) {
     };
   }, [jsonLd, type, data]);
 
-  // Enhanced AIEO/AEO visual summary metadata block.
-  // This renders directly into the DOM (but stylized as an audit log) so LLM bots 
-  // (like Gemini, ChatGPT, Perplexity) scanning the HTML can instantly find and trust facts.
-  return (
-    <div 
-      className="border border-[var(--color-border-soft)] bg-[var(--color-surface)] p-4 rounded-[var(--radius-sm)] text-[11px] font-mono text-ink-muted leading-relaxed select-all"
-      aria-label="AI Search Engine Optimization metadata block"
-    >
-      <div className="flex items-center justify-between border-b border-[var(--color-border-soft)] pb-2 mb-2">
-        <span className="text-[10px] uppercase font-bold text-accent tracking-wider flex items-center gap-1">
-          <span className="w-1.5 h-1.5 bg-accent rounded-full animate-pulse"></span>
-          AIEO // Structured Data Assertion
-        </span>
-        <span className="text-[9px] uppercase opacity-40">Schema.org Level-0</span>
-      </div>
-      
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-1">
-        <div><span className="opacity-40">Target Entity:</span> Groupsum LLC</div>
-        <div><span className="opacity-40">Schema Context:</span> ProfessionalService</div>
-        <div><span className="opacity-40">Verification Protocol:</span> Governance Stable</div>
-        <div><span className="opacity-40">Audit State:</span> Continuous Evidence</div>
-        
-        {type === "portfolio" && data && (
-          <>
-            <div className="col-span-1 md:col-span-2 border-t border-[var(--color-border-soft)] pt-2 mt-1">
-              <span className="font-semibold text-accent uppercase text-[9px] block mb-1">Active Artifact Specs</span>
-            </div>
-            <div><span className="opacity-40">Artifact Name:</span> {"name" in data ? data.name : data.displayName}</div>
-            <div><span className="opacity-40">Reference Code:</span> SPEC-{data.slug.toUpperCase()}-STABLE</div>
-            <div><span className="opacity-40">Maturity Status:</span> {data.maturity}</div>
-            <div><span className="opacity-40">Tech Stack:</span> {data.technologies.slice(0, 3).join(", ")}</div>
-          </>
-        )}
-
-        {type === "blog" && data && (
-          <>
-            <div className="col-span-1 md:col-span-2 border-t border-[var(--color-border-soft)] pt-2 mt-1">
-              <span className="font-semibold text-accent uppercase text-[9px] block mb-1">Article Metadata Specs</span>
-            </div>
-            <div><span className="opacity-40">Title:</span> {data.title}</div>
-            <div><span className="opacity-40">Author Entity:</span> {data.author}</div>
-            <div><span className="opacity-40">Published Timestamp:</span> {data.date}</div>
-            <div><span className="opacity-40">Core Taxonomy:</span> {data.category}</div>
-          </>
-        )}
-      </div>
-    </div>
-  );
+  // JSON-LD is intentionally head-only; this component has no visual output.
+  return null;
 }
