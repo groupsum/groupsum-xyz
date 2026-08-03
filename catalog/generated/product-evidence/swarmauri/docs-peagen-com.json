@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-03T17:22:36Z",
+  "generated_at": "2026-08-03T22:06:00Z",
   "packages": [
     {
       "claim_boundary": "Publication is reported only when confirmed by the named public registry.",
@@ -17,7 +17,7 @@
       "evidence": [
         {
           "kind": "source",
-          "observed_at": "2026-08-03T17:22:36Z",
+          "observed_at": "2026-08-03T22:06:00Z",
           "url": "https://github.com/swarmauri/docs-peagen-com/blob/HEAD/package.json"
         }
       ],
@@ -31,7 +31,7 @@
       "license_status": "not-observed",
       "manifest_path": "package.json",
       "name": "docs-peagen-com",
-      "observed_at": "2026-08-03T17:22:36Z",
+      "observed_at": "2026-08-03T22:06:00Z",
       "owner": "swarmauri",
       "private": true,
       "publication_status": "manifest_private",
@@ -165,7 +165,7 @@
       "evidence": [
         {
           "kind": "source",
-          "observed_at": "2026-08-03T17:22:36Z",
+          "observed_at": "2026-08-03T22:06:00Z",
           "url": "https://github.com/swarmauri/docs-peagen-com/blob/HEAD/pyproject.toml"
         }
       ],
@@ -179,10 +179,10 @@
       "license_status": "not-observed",
       "manifest_path": "pyproject.toml",
       "name": "docs-peagen-com",
-      "observed_at": "2026-08-03T17:22:36Z",
+      "observed_at": "2026-08-03T22:06:00Z",
       "owner": "swarmauri",
       "private": false,
-      "publication_status": "registry_not_found",
+      "publication_status": "not-confirmed",
       "published": false,
       "registry_url": null,
       "relationship_count": 12,
@@ -340,7 +340,7 @@
     "evidence": [
       {
         "kind": "source",
-        "observed_at": "2026-08-03T17:22:38Z",
+        "observed_at": "2026-08-03T22:06:02Z",
         "url": "https://github.com/swarmauri/docs-peagen-com"
       }
     ],
@@ -379,7 +379,7 @@
       "watchers": 0
     },
     "name": "docs-peagen-com",
-    "observed_at": "2026-08-03T17:22:38Z",
+    "observed_at": "2026-08-03T22:06:02Z",
     "owner": "swarmauri",
     "package_ids": [
       "package:npm:docs-peagen-com:swarmauri/docs-peagen-com:package.json",
@@ -394,7 +394,7 @@
         "legal_evidence": [],
         "legal_inherits_from": "repository:swarmauri/docs-peagen-com",
         "name": "docs/assets",
-        "observed_at": "2026-08-03T17:22:38Z",
+        "observed_at": "2026-08-03T22:06:02Z",
         "path": "docs/assets",
         "repository": "swarmauri/docs-peagen-com",
         "repository_route": "/catalog/repositories/swarmauri/docs-peagen-com",
@@ -408,7 +408,7 @@
         "legal_evidence": [],
         "legal_inherits_from": "repository:swarmauri/docs-peagen-com",
         "name": "docs/guide",
-        "observed_at": "2026-08-03T17:22:38Z",
+        "observed_at": "2026-08-03T22:06:02Z",
         "path": "docs/guide",
         "repository": "swarmauri/docs-peagen-com",
         "repository_route": "/catalog/repositories/swarmauri/docs-peagen-com",
@@ -422,7 +422,7 @@
         "legal_evidence": [],
         "legal_inherits_from": "repository:swarmauri/docs-peagen-com",
         "name": "docs/home",
-        "observed_at": "2026-08-03T17:22:38Z",
+        "observed_at": "2026-08-03T22:06:02Z",
         "path": "docs/home",
         "repository": "swarmauri/docs-peagen-com",
         "repository_route": "/catalog/repositories/swarmauri/docs-peagen-com",
@@ -436,7 +436,7 @@
         "legal_evidence": [],
         "legal_inherits_from": "repository:swarmauri/docs-peagen-com",
         "name": "docs/index.md",
-        "observed_at": "2026-08-03T17:22:38Z",
+        "observed_at": "2026-08-03T22:06:02Z",
         "path": "docs/index.md",
         "repository": "swarmauri/docs-peagen-com",
         "repository_route": "/catalog/repositories/swarmauri/docs-peagen-com",
@@ -450,7 +450,7 @@
         "legal_evidence": [],
         "legal_inherits_from": "repository:swarmauri/docs-peagen-com",
         "name": "docs/news",
-        "observed_at": "2026-08-03T17:22:38Z",
+        "observed_at": "2026-08-03T22:06:02Z",
         "path": "docs/news",
         "repository": "swarmauri/docs-peagen-com",
         "repository_route": "/catalog/repositories/swarmauri/docs-peagen-com",
@@ -468,8 +468,8 @@
       "counts": {},
       "coverage": {},
       "governed": false,
-      "observation_status": "not_found",
-      "observed_at": "2026-08-03T19:58:17Z",
+      "observation_status": "error",
+      "observed_at": "2026-08-03T22:06:02Z",
       "present": false,
       "registry_url": null,
       "status_counts": {},

@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-03T17:22:36Z",
+  "generated_at": "2026-08-03T22:06:00Z",
   "packages": [
     {
       "claim_boundary": "Publication is reported only when confirmed by the named public registry.",
@@ -261,7 +261,7 @@
       "evidence": [
         {
           "kind": "registry",
-          "observed_at": "2026-08-03T17:22:36Z",
+          "observed_at": "2026-08-03T22:06:00Z",
           "url": "https://www.npmjs.com/package/@groupsum/document-viewer"
         }
       ],
@@ -310,7 +310,7 @@
       "license_status": "observed",
       "manifest_path": "packages/document-viewer/package.json",
       "name": "@groupsum/document-viewer",
-      "observed_at": "2026-08-03T17:22:36Z",
+      "observed_at": "2026-08-03T22:06:00Z",
       "owner": "groupsum",
       "private": false,
       "publication_status": "published",
@@ -330,7 +330,7 @@
           "legal_inherits_from": "package:npm:@groupsum/document-viewer:groupsum/document-viewer:packages/document-viewer/package.json",
           "license_expression": "UNLICENSED",
           "license_status": "observed",
-          "observed_at": "2026-08-03T17:22:36Z",
+          "observed_at": "2026-08-03T22:06:00Z",
           "published_at": "2026-06-15T10:50:00.799Z",
           "release_kind": "npm",
           "route": "/catalog/releases/npm/groupsum-document-viewer-41c1759bf1",
@@ -360,7 +360,7 @@
       "evidence": [
         {
           "kind": "source",
-          "observed_at": "2026-08-03T17:22:36Z",
+          "observed_at": "2026-08-03T22:06:00Z",
           "url": "https://github.com/groupsum/document-viewer/blob/HEAD/package.json"
         }
       ],
@@ -393,7 +393,7 @@
       "license_status": "observed",
       "manifest_path": "package.json",
       "name": "document-viewer-workspace",
-      "observed_at": "2026-08-03T17:22:36Z",
+      "observed_at": "2026-08-03T22:06:00Z",
       "owner": "groupsum",
       "private": true,
       "publication_status": "manifest_private",
@@ -437,7 +437,7 @@
       "evidence": [
         {
           "kind": "source",
-          "observed_at": "2026-08-03T17:22:36Z",
+          "observed_at": "2026-08-03T22:06:00Z",
           "url": "https://github.com/groupsum/document-viewer/blob/HEAD/pyproject.toml"
         }
       ],
@@ -470,10 +470,10 @@
       "license_status": "observed",
       "manifest_path": "pyproject.toml",
       "name": "document-viewer-workspace",
-      "observed_at": "2026-08-03T17:22:36Z",
+      "observed_at": "2026-08-03T22:06:00Z",
       "owner": "groupsum",
       "private": false,
-      "publication_status": "registry_not_found",
+      "publication_status": "not-confirmed",
       "published": false,
       "registry_url": null,
       "relationship_count": 2,
@@ -630,12 +630,12 @@
     "evidence": [
       {
         "kind": "ssot-registry",
-        "observed_at": "2026-08-03T19:58:16Z",
+        "observed_at": "2026-08-03T22:06:00Z",
         "url": "https://github.com/groupsum/document-viewer/blob/master/.ssot/registry.json"
       },
       {
         "kind": "source",
-        "observed_at": "2026-08-03T17:22:37Z",
+        "observed_at": "2026-08-03T22:06:00Z",
         "url": "https://github.com/groupsum/document-viewer"
       }
     ],
@@ -650,7 +650,7 @@
         "legal_inherits_from": "repository:groupsum/document-viewer",
         "license_expression": "NOASSERTION",
         "license_status": "observed",
-        "observed_at": "2026-08-03T17:22:37Z",
+        "observed_at": "2026-08-03T22:06:00Z",
         "prerelease": false,
         "published_at": "2026-06-15T10:49:47Z",
         "release_kind": "github",
@@ -718,7 +718,7 @@
       "watchers": 0
     },
     "name": "document-viewer",
-    "observed_at": "2026-08-03T17:22:37Z",
+    "observed_at": "2026-08-03T22:06:00Z",
     "owner": "groupsum",
     "package_ids": [
       "package:npm:@groupsum/document-viewer:groupsum/document-viewer:packages/document-viewer/package.json",
@@ -754,7 +754,7 @@
       },
       "evidence_type": "ssot.registry",
       "governed": true,
-      "observed_at": "2026-08-03T19:58:16Z",
+      "observed_at": "2026-08-03T22:06:00Z",
       "present": true,
       "raw_url": "https://raw.githubusercontent.com/groupsum/document-viewer/master/.ssot/registry.json",
       "registry_url": "https://github.com/groupsum/document-viewer/blob/master/.ssot/registry.json",

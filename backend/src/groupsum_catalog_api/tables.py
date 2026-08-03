@@ -48,6 +48,88 @@ class Person(RestTable):
     profile_url = Column(String(2048), nullable=True)
 
 
+class EntityType(RestTable):
+    __tablename__ = "entity_types"
+    __allow_unmapped__ = True
+    id = Column(String(80), primary_key=True)
+    label = Column(String(160), nullable=False)
+    semantic_class = Column(String(60), nullable=False, index=True)
+    description = Column(Text, nullable=True)
+
+
+class CatalogEntity(RestTable):
+    __tablename__ = "catalog_entities"
+    __allow_unmapped__ = True
+    id = Column(String(360), primary_key=True)
+    entity_type_id = Column(String(80), ForeignKey("entity_types.id"), nullable=False, index=True)
+    organization_id = Column(String(160), ForeignKey("organizations.id"), nullable=True, index=True)
+    slug = Column(String(300), nullable=False, index=True)
+    name = Column(String(300), nullable=False)
+    summary = Column(Text, nullable=True)
+    canonical_url = Column(String(2048), nullable=True)
+    source_table = Column(String(80), nullable=False, index=True)
+    source_id = Column(String(320), nullable=False, index=True)
+    visibility = Column(String(40), nullable=False, default="public")
+    maturity = Column(String(60), nullable=True)
+    observed_at = Column(DateTime, nullable=True)
+    __table_args__ = (
+        UniqueConstraint("source_table", "source_id", name="uq_catalog_entity_source"),
+    )
+
+
+class EntityAlias(RestTable):
+    __tablename__ = "entity_aliases"
+    __allow_unmapped__ = True
+    id = Column(String(380), primary_key=True)
+    entity_id = Column(String(360), ForeignKey("catalog_entities.id"), nullable=False, index=True)
+    alias_kind = Column(String(40), nullable=False)
+    alias = Column(String(1000), nullable=False)
+    __table_args__ = (UniqueConstraint("alias_kind", "alias", name="uq_entity_alias"),)
+
+
+class EntityUrl(RestTable):
+    __tablename__ = "entity_urls"
+    __allow_unmapped__ = True
+    id = Column(String(380), primary_key=True)
+    entity_id = Column(String(360), ForeignKey("catalog_entities.id"), nullable=False, index=True)
+    url_role = Column(String(60), nullable=False)
+    url = Column(String(2048), nullable=False)
+    label = Column(String(240), nullable=True)
+    evidence_type = Column(String(80), nullable=False)
+    observed_at = Column(DateTime, nullable=True)
+    __table_args__ = (
+        UniqueConstraint("entity_id", "url_role", "url", name="uq_entity_url"),
+    )
+
+
+class EntityRelationship(RestTable):
+    __tablename__ = "entity_relationships"
+    __allow_unmapped__ = True
+    id = Column(String(400), primary_key=True)
+    source_entity_id = Column(
+        String(360), ForeignKey("catalog_entities.id"), nullable=False, index=True
+    )
+    target_entity_id = Column(
+        String(360), ForeignKey("catalog_entities.id"), nullable=False, index=True
+    )
+    relationship_type = Column(String(80), nullable=False, index=True)
+    role = Column(String(80), nullable=True)
+    evidence_type = Column(String(80), nullable=False)
+    source_url = Column(String(2048), nullable=True)
+    confidence = Column(String(40), nullable=False, default="observed")
+    status = Column(String(40), nullable=False, default="active")
+    observed_at = Column(DateTime, nullable=True)
+    __table_args__ = (
+        UniqueConstraint(
+            "source_entity_id",
+            "target_entity_id",
+            "relationship_type",
+            "role",
+            name="uq_entity_relationship",
+        ),
+    )
+
+
 class Record(RestTable):
     __tablename__ = "records"
     __allow_unmapped__ = True
@@ -435,6 +517,11 @@ class MetricObservation(TableBase):
 ALL_TABLES = (
     Organization,
     Person,
+    EntityType,
+    CatalogEntity,
+    EntityAlias,
+    EntityUrl,
+    EntityRelationship,
     Record,
     RecordAlias,
     RecordRelation,

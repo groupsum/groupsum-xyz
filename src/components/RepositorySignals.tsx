@@ -53,7 +53,7 @@ function CommitBars({ points }: { points: CommitActivityPoint[] }) {
         <title>{`${total} commits across the persisted ${points.length}-day window`}</title>
         {points.map((point, index) => {
           const barHeight = point.count === 0 ? 1 : Math.max(2, (point.count / maximum) * (height - 2));
-          return <rect key={point.date} x={index * (barWidth + gap)} y={height - barHeight} width={barWidth} height={barHeight} rx="0.6" fill="currentColor"><title>{`${point.date}: ${point.count} commits`}</title></rect>;
+          return <rect key={point.date} x={index * (barWidth + gap)} y={height - barHeight} width={barWidth} height={barHeight} rx="0.6" fill="currentColor" aria-label={`${point.date}: ${point.count} commits`} />;
         })}
       </svg>
       <span className="block text-[9px] font-mono text-ink-muted">{compactNumber(total)} commits · {points.length} days</span>

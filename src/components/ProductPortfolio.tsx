@@ -15,6 +15,7 @@ import {
 import { portfolioEntities } from "../data/entities";
 import { PortfolioEntity } from "../types";
 import { RepositorySignalStrip } from "./RepositorySignals";
+import { EntityOwnership, EntityRelationshipRows } from "./EntityIdentity";
 
 type Navigate = (path: string) => void;
 type CollectionMode = "products" | "portfolio";
@@ -144,6 +145,13 @@ function humanize(value: string): string {
 
 function ecosystemLabel(value: string): string {
   return ({ pypi: "PyPI", npm: "npm", crates: "crates.io", ghcr: "GHCR", github: "GitHub Releases", "github-npm": "GitHub npm" } as Record<string, string>)[value] || humanize(value);
+}
+
+const stableDate = new Intl.DateTimeFormat("en-US", { dateStyle: "medium", timeZone: "UTC" });
+const stableTimestamp = new Intl.DateTimeFormat("en-US", { dateStyle: "medium", timeStyle: "short", timeZone: "UTC" });
+function formatObserved(value: string, includeTime = false): string {
+  const date = new Date(value);
+  return Number.isNaN(date.valueOf()) ? value : (includeTime ? stableTimestamp : stableDate).format(date);
 }
 
 function dependencyName(item: DependencyEvidence): string {
@@ -412,7 +420,7 @@ function SsotRegistryReport({ registries }: { registries: ProductPageModel["gove
         </div>
         <DetailRows rows={[
           ["Schema", registry.schema_version || "Not recorded"],
-          ["Observed", registry.observed_at ? new Date(registry.observed_at).toLocaleString() : "Not recorded"],
+          ["Observed", registry.observed_at ? formatObserved(registry.observed_at, true) : "Not recorded"],
           ["Registry inventory", ssotInventoryOrder.map((key) => `${humanize(key)} ${Number(counts[key] || 0).toLocaleString()}`).join(" Â· ")],
           ["Claim evidence coverage", `${Number(coverage.claims_with_evidence || 0).toLocaleString()} linked Â· ${Number(coverage.claims_without_evidence || 0).toLocaleString()} without evidence Â· ${Number(coverage.claims_with_tests || 0).toLocaleString()} linked to tests`],
         ]} />
@@ -523,7 +531,7 @@ export function ProductRecordPage({
       <header className="max-w-5xl min-w-0 space-y-6">
         <button onClick={() => onNavigate(recordType === "product" ? `/products/${recordOrganization}` : "/portfolio")} className="text-xs font-mono text-accent hover:underline inline-flex items-center gap-1 cursor-pointer"><ArrowLeft className="w-3.5 h-3.5" /> {recordType === "product" ? `${organizationNames[recordOrganization] || humanize(recordOrganization)} products` : "Portfolio collection"}</button>
         <div className="space-y-3">
-          <span className="text-xs font-mono uppercase tracking-wider text-accent font-bold">{humanize(displayKind)} · {organizationNames[recordOrganization] || humanize(recordOrganization)}</span>
+          <span className="text-xs font-mono uppercase tracking-wider text-accent font-bold">{pageModel?.graph?.entity.type_label || humanize(displayKind)} record</span>
           <h1 className="font-serif text-4xl sm:text-6xl font-bold tracking-tight text-ink">{displayName}</h1>
           <p className="text-lg sm:text-xl text-ink-muted leading-relaxed max-w-4xl break-words">{summary}</p>
         </div>
@@ -533,6 +541,7 @@ export function ProductRecordPage({
           {sourceUrl && <a href={sourceUrl} target="_blank" rel="noreferrer" className="px-4 py-2 bg-accent text-white rounded-[var(--radius-sm)] text-xs font-mono font-semibold inline-flex items-center gap-1">{primaryLink?.label || "Public source"}<ExternalLink className="w-3.5 h-3.5" /></a>}
           <button onClick={() => onNavigate("/contact")} className="px-4 py-2 border border-[var(--color-border-muted)] rounded-[var(--radius-sm)] text-xs font-mono font-semibold text-ink hover:border-accent cursor-pointer">Discuss this product</button>
         </div>
+        <EntityOwnership graph={pageModel?.graph} onNavigate={onNavigate} />
       </header>
 
       <nav aria-label="Product record sections" className="sticky top-16 z-20 bg-canvas/95 backdrop-blur border-y border-[var(--color-border-soft)] py-3 flex flex-wrap gap-x-5 gap-y-2 text-xs font-mono">
@@ -543,7 +552,6 @@ export function ProductRecordPage({
         <aside className="lg:sticky lg:top-32 space-y-5 mb-10 lg:mb-0">
           <h2 className="font-serif text-xl font-bold text-ink">Product profile</h2>
           <DetailRows rows={[
-            ["Organization", organizationNames[recordOrganization] || humanize(recordOrganization)],
             ["Audience", audience.join(", ") || "Not classified"],
             ["Record type", humanize(displayKind)],
             ["Maturity", humanize(maturity)],
@@ -565,7 +573,7 @@ export function ProductRecordPage({
             {evidenceState === "unavailable" && <p className="text-sm text-ink-muted">No matching public repository is present in the current catalog scope.</p>}
             {bundle && <><EvidenceMetrics bundle={bundle} /><RepositorySignalStrip signals={pageModel?.implementation.signals} /><DetailRows rows={[
               ["Repository", <a href={bundle.repository.url} target="_blank" rel="noreferrer" className="text-accent hover:underline">{bundle.repository.full_name}</a>],
-              ["Observed", new Date(bundle.generated_at).toLocaleString()],
+              ["Observed", formatObserved(bundle.generated_at, true)],
               ["Latest release", String(bundle.repository.latest_release?.name || bundle.repository.latest_release?.tag || "No GitHub release observed")],
               ["Latest deployment", bundle.repository.latest_deployment?.environment ? `${humanize(String(bundle.repository.latest_deployment.environment))} · ${humanize(String(bundle.repository.latest_deployment.state || "state not recorded"))}` : "No deployment observed"],
             ]} />
@@ -588,8 +596,8 @@ export function ProductRecordPage({
 
           <ProductSection id="releases" title="Release activity" intro="Registry and GitHub releases are aggregated on this parent record. Publication dates are shown when the source registry exposes them.">
             {releaseSummary.length > 0 ? <div className="space-y-5">
-              <dl className="grid grid-cols-2 sm:grid-cols-3 gap-x-6 gap-y-4 border-y border-[var(--color-border-soft)] py-5">{releaseSummary.map((item) => <div key={item.release_kind}><dt className="text-[10px] font-mono uppercase text-ink-muted">{ecosystemLabel(item.release_kind)}</dt><dd className="font-serif text-2xl font-bold text-ink">{item.release_count.toLocaleString()}</dd><dd className="text-[10px] text-ink-muted">{item.latest_at ? `Latest observation ${new Date(item.latest_at).toLocaleDateString()}` : "Publication date unavailable"}</dd></div>)}</dl>
-              <div><h3 className="text-xs font-mono uppercase text-ink font-semibold mb-2">Recent observed releases</h3><ul className="border-y border-[var(--color-border-soft)] divide-y divide-[var(--color-border-soft)]">{releaseRows.slice(0, 40).map((release: ReleaseEvidence) => <li key={release.id} className="py-3 sm:flex sm:items-baseline sm:justify-between gap-5"><div className="min-w-0"><span className="text-[10px] font-mono uppercase text-accent">{ecosystemLabel(release.ecosystem || release.release_kind)}</span><p className="text-sm text-ink break-all">{release.package_name || [release.repository_owner, release.repository_name].filter(Boolean).join("/") || displayName} <span className="font-mono text-ink-muted">{release.version}</span></p></div><div className="flex items-center gap-3 shrink-0"><span className="text-[10px] text-ink-muted">{release.published_at ? new Date(release.published_at).toLocaleDateString() : "date not exposed"}</span><a href={release.url} target="_blank" rel="noreferrer" className="text-xs font-mono text-accent hover:underline">Release</a></div></li>)}</ul></div>
+              <dl className="grid grid-cols-2 sm:grid-cols-3 gap-x-6 gap-y-4 border-y border-[var(--color-border-soft)] py-5">{releaseSummary.map((item) => <div key={item.release_kind}><dt className="text-[10px] font-mono uppercase text-ink-muted">{ecosystemLabel(item.release_kind)}</dt><dd className="font-serif text-2xl font-bold text-ink">{item.release_count.toLocaleString()}</dd><dd className="text-[10px] text-ink-muted">{item.latest_at ? `Latest observation ${formatObserved(item.latest_at)}` : "Publication date unavailable"}</dd></div>)}</dl>
+              <div><h3 className="text-xs font-mono uppercase text-ink font-semibold mb-2">Recent observed releases</h3><ul className="border-y border-[var(--color-border-soft)] divide-y divide-[var(--color-border-soft)]">{releaseRows.slice(0, 40).map((release: ReleaseEvidence) => <li key={release.id} className="py-3 sm:flex sm:items-baseline sm:justify-between gap-5"><div className="min-w-0"><span className="text-[10px] font-mono uppercase text-accent">{ecosystemLabel(release.ecosystem || release.release_kind)}</span><p className="text-sm text-ink break-all">{release.package_name || [release.repository_owner, release.repository_name].filter(Boolean).join("/") || displayName} <span className="font-mono text-ink-muted">{release.version}</span></p></div><div className="flex items-center gap-3 shrink-0"><span className="text-[10px] text-ink-muted">{release.published_at ? formatObserved(release.published_at) : "date not exposed"}</span><a href={release.url} target="_blank" rel="noreferrer" className="text-xs font-mono text-accent hover:underline">Release</a></div></li>)}</ul></div>
               {releaseSummary.reduce((total, item) => total + item.release_count, 0) > releaseRows.length && <p className="text-xs text-ink-muted">Showing the most recent {releaseRows.length} of {releaseSummary.reduce((total, item) => total + item.release_count, 0).toLocaleString()} observed releases. The complete release table remains available through the REST API.</p>}
             </div> : <p className="text-sm text-ink-muted">No registry or GitHub releases are attached to this record.</p>}
           </ProductSection>
@@ -604,16 +612,17 @@ export function ProductRecordPage({
           </ProductSection>
 
           <ProductSection id="resources" title="Demos, APIs, examples, and related resources" intro="These links are discovered from repository homepages, contracts, and source paths. A source path does not prove a live deployment.">
+            {pageModel?.graph && <div className="mb-7"><h3 className="text-xs font-mono uppercase text-ink font-semibold mb-2">Typed resource relationships</h3><EntityRelationshipRows graph={pageModel.graph} onNavigate={onNavigate} exclude={["implemented_by", "distributed_as"]} /></div>}
             {resourcesByKind.size > 0 ? <div className="space-y-7">{[...resourcesByKind.entries()].sort(([left], [right]) => left.localeCompare(right)).map(([resourceKind, resources]) => <section key={resourceKind} className="space-y-2"><h3 className="text-xs font-mono uppercase tracking-wide text-ink font-semibold">{humanize(resourceKind)} <span className="text-ink-muted">({resources.length})</span></h3><ul className="border-y border-[var(--color-border-soft)] divide-y divide-[var(--color-border-soft)]">{resources.slice(0, 20).map((resource) => <li key={resource.id} className="py-3"><a href={resource.url} target="_blank" rel="noreferrer" className="text-sm text-accent hover:underline inline-flex items-start gap-1 break-all">{resource.name || humanize(resourceKind)}<ExternalLink className="w-3.5 h-3.5 shrink-0 mt-0.5" /></a></li>)}</ul>{resources.length > 20 && <p className="text-xs text-ink-muted">Showing 20 of {resources.length} observed {humanize(resourceKind).toLowerCase()} resources.</p>}</section>)}</div> : <p className="text-sm text-ink-muted">{evidenceState === "loading" ? "Loading related resources…" : "No API, demo, example, showcase, documentation, UI, or website paths were observed for this repository."}</p>}
           </ProductSection>
 
           {connected.length > 0 && <ProductSection title="Connected portfolio records" intro="Reviewed products, applications, and packages grouped with this product."><ul className="border-y border-[var(--color-border-soft)] divide-y divide-[var(--color-border-soft)]">{connected.map((candidate) => <li key={candidate.id}><a href={productRoute(candidate)} onClick={(event) => { event.preventDefault(); onNavigate(productRoute(candidate)); }} className="group flex items-start justify-between gap-4 py-4"><div><span className="text-[10px] font-mono uppercase text-accent">{humanize(candidate.kind)}</span><h3 className="font-serif text-lg font-bold text-ink group-hover:text-accent">{candidate.displayName}</h3><p className="text-xs text-ink-muted mt-1">{candidate.summary}</p></div><ArrowRight className="w-4 h-4 text-accent shrink-0 mt-2" /></a></li>)}</ul></ProductSection>}
 
-          <ProductSection id="evidence" title="Evidence and limitations">
+          <ProductSection id="evidence" title="SSOT evidence and limitations">
             <div className="space-y-6">
               {claimRooting && <div><h3 className="text-xs font-mono uppercase text-ink font-semibold mb-2">Claim rooting</h3><DetailRows rows={[["SSOT-rooted claims", claimRooting.rooted.toLocaleString()], ["Unrooted claims", claimRooting.unrooted.toLocaleString()], ["Status", humanize(claimRooting.status)]]} />{claimRooting.limitation && <p className="text-xs text-ink-muted border-l-2 border-[var(--color-border-muted)] pl-3 mt-3">{claimRooting.limitation}</p>}</div>}
               {claims.length > 0 && <div><h3 className="text-xs font-mono uppercase text-ink font-semibold mb-2">Claims</h3><ul className="border-y border-[var(--color-border-soft)] divide-y divide-[var(--color-border-soft)]">{claims.map((claim) => <li key={String(claim.id)} className="py-3 sm:flex sm:justify-between gap-4 text-sm"><span className="text-ink">{String(claim.statement)}</span><span className={`text-[10px] font-mono uppercase shrink-0 ${claim.rooted_in_ssot ? "text-accent" : "text-ink-muted"}`}>{claim.rooted_in_ssot ? "SSOT linked" : "Not SSOT linked"}</span></li>)}</ul></div>}
-              <div><h3 className="text-xs font-mono uppercase text-ink font-semibold mb-2">Evidence</h3><ul className="border-y border-[var(--color-border-soft)] divide-y divide-[var(--color-border-soft)]">{evidenceRows.map((item, index) => <li key={`${item.label}-${index}`} className="py-3 sm:flex sm:justify-between gap-4 text-sm text-ink"><span className="font-medium">{item.url ? <a href={item.url} target="_blank" rel="noreferrer" className="text-accent hover:underline">{item.label}</a> : item.label}<span className="text-ink-muted"> · observed {item.checkedAt}</span></span>{"rootedInSsot" in item && <span className={`text-[10px] font-mono uppercase shrink-0 ${item.rootedInSsot ? "text-accent" : "text-ink-muted"}`}>{item.rootedInSsot ? "SSOT linked" : "Not SSOT linked"}</span>}</li>)}</ul></div>
+              <div><h3 className="text-xs font-mono uppercase text-ink font-semibold mb-2">SSOT evidence</h3><ul className="border-y border-[var(--color-border-soft)] divide-y divide-[var(--color-border-soft)]">{evidenceRows.map((item, index) => <li key={`${item.label}-${index}`} className="py-3 sm:flex sm:justify-between gap-4 text-sm text-ink"><span className="font-medium">{item.url ? <a href={item.url} target="_blank" rel="noreferrer" className="text-accent hover:underline">{item.label}</a> : item.label}<span className="text-ink-muted"> · observed {item.checkedAt}</span></span>{"rootedInSsot" in item && <span className={`text-[10px] font-mono uppercase shrink-0 ${item.rootedInSsot ? "text-accent" : "text-ink-muted"}`}>{item.rootedInSsot ? "SSOT linked" : "Not SSOT linked"}</span>}</li>)}</ul></div>
               <div><h3 className="text-xs font-mono uppercase text-ink font-semibold mb-2">Limitations</h3><ul className="list-disc pl-5 space-y-2 text-sm text-ink-muted">{limitationRows.map((limitation) => <li key={limitation}>{limitation}</li>)}</ul></div>
               {relatedLinks.length > 0 && <div className="flex flex-wrap gap-4">{relatedLinks.map((link) => <a key={`${link.kind}-${link.href}`} href={link.href} target="_blank" rel="noreferrer" className="text-sm text-accent hover:underline inline-flex items-center gap-1">{link.label}<ExternalLink className="w-3.5 h-3.5" /></a>)}</div>}
             </div>

@@ -103,6 +103,19 @@ def validate_site(site_dir: Path, typescript: Path) -> list[str]:
                 errors.append(f"published package missing registry URL: {identity}")
             if name == "packages" and not {"release_count", "dependency_count", "downstream_count", "relationship_count", "relationship_counts"} <= record.keys():
                 errors.append(f"package missing child aggregates: {identity}")
+            if name == "resources":
+                resource_path = str(record.get("path") or "").replace("\\", "/")
+                if resource_path.startswith(".ssot/"):
+                    errors.append(f"SSOT registry artifact misclassified as public resource: {identity}")
+                if record.get("resource_type") == "api_definition":
+                    filename = Path(resource_path).name.casefold()
+                    valid_contract = filename in {
+                        "openapi.json", "openapi.yaml", "openapi.yml", "openrpc.json",
+                        "openrpc.yaml", "openrpc.yml", "asyncapi.json", "asyncapi.yaml",
+                        "asyncapi.yml",
+                    } or filename.endswith(".proto")
+                    if not valid_contract:
+                        errors.append(f"API definition lacks a canonical contract filename: {identity}")
             if name == "organizations" and not {"github_releases", "package_releases", "deployments", "relationships"} <= record.keys():
                 errors.append(f"organization missing child aggregates: {identity}")
     if not typescript.exists():

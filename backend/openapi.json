@@ -1,6 +1,426 @@
 {
   "components": {
     "schemas": {
+      "CatalogEntityCountResponse": {
+        "description": "Tigrbl v3 CatalogEntity count schema",
+        "properties": {
+          "canonical_url": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Canonical Url"
+          },
+          "entity_type_id": {
+            "title": "Entity Type Id",
+            "type": "string"
+          },
+          "id": {
+            "default": null,
+            "title": "Id",
+            "type": "string"
+          },
+          "maturity": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Maturity"
+          },
+          "name": {
+            "title": "Name",
+            "type": "string"
+          },
+          "observed_at": {
+            "anyOf": [
+              {
+                "format": "date-time",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Observed At"
+          },
+          "organization_id": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Organization Id"
+          },
+          "slug": {
+            "title": "Slug",
+            "type": "string"
+          },
+          "source_id": {
+            "title": "Source Id",
+            "type": "string"
+          },
+          "source_table": {
+            "title": "Source Table",
+            "type": "string"
+          },
+          "summary": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Summary"
+          },
+          "visibility": {
+            "default": null,
+            "title": "Visibility",
+            "type": "string"
+          }
+        },
+        "required": [
+          "entity_type_id",
+          "slug",
+          "name",
+          "source_table",
+          "source_id"
+        ],
+        "title": "CatalogEntityCountResponse",
+        "type": "object"
+      },
+      "CatalogEntityExistsResponse": {
+        "description": "Tigrbl v3 CatalogEntity exists schema",
+        "properties": {
+          "canonical_url": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Canonical Url"
+          },
+          "entity_type_id": {
+            "title": "Entity Type Id",
+            "type": "string"
+          },
+          "id": {
+            "default": null,
+            "title": "Id",
+            "type": "string"
+          },
+          "maturity": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Maturity"
+          },
+          "name": {
+            "title": "Name",
+            "type": "string"
+          },
+          "observed_at": {
+            "anyOf": [
+              {
+                "format": "date-time",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Observed At"
+          },
+          "organization_id": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Organization Id"
+          },
+          "slug": {
+            "title": "Slug",
+            "type": "string"
+          },
+          "source_id": {
+            "title": "Source Id",
+            "type": "string"
+          },
+          "source_table": {
+            "title": "Source Table",
+            "type": "string"
+          },
+          "summary": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Summary"
+          },
+          "visibility": {
+            "default": null,
+            "title": "Visibility",
+            "type": "string"
+          }
+        },
+        "required": [
+          "entity_type_id",
+          "slug",
+          "name",
+          "source_table",
+          "source_id"
+        ],
+        "title": "CatalogEntityExistsResponse",
+        "type": "object"
+      },
+      "CatalogEntityGroupByRequest": {
+        "description": "Tigrbl v3 CatalogEntity group_by schema",
+        "properties": {
+          "canonical_url": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Canonical Url"
+          },
+          "entity_type_id": {
+            "title": "Entity Type Id",
+            "type": "string"
+          },
+          "id": {
+            "default": null,
+            "title": "Id",
+            "type": "string"
+          },
+          "maturity": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Maturity"
+          },
+          "name": {
+            "title": "Name",
+            "type": "string"
+          },
+          "observed_at": {
+            "anyOf": [
+              {
+                "format": "date-time",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Observed At"
+          },
+          "organization_id": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Organization Id"
+          },
+          "slug": {
+            "title": "Slug",
+            "type": "string"
+          },
+          "source_id": {
+            "title": "Source Id",
+            "type": "string"
+          },
+          "source_table": {
+            "title": "Source Table",
+            "type": "string"
+          },
+          "summary": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Summary"
+          },
+          "visibility": {
+            "default": null,
+            "title": "Visibility",
+            "type": "string"
+          }
+        },
+        "required": [
+          "entity_type_id",
+          "slug",
+          "name",
+          "source_table",
+          "source_id"
+        ],
+        "title": "CatalogEntityGroupByRequest",
+        "type": "object"
+      },
+      "CatalogEntityGroupByResponse": {
+        "description": "Tigrbl v3 CatalogEntity group_by schema",
+        "properties": {
+          "canonical_url": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Canonical Url"
+          },
+          "entity_type_id": {
+            "title": "Entity Type Id",
+            "type": "string"
+          },
+          "id": {
+            "default": null,
+            "title": "Id",
+            "type": "string"
+          },
+          "maturity": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Maturity"
+          },
+          "name": {
+            "title": "Name",
+            "type": "string"
+          },
+          "observed_at": {
+            "anyOf": [
+              {
+                "format": "date-time",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Observed At"
+          },
+          "organization_id": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Organization Id"
+          },
+          "slug": {
+            "title": "Slug",
+            "type": "string"
+          },
+          "source_id": {
+            "title": "Source Id",
+            "type": "string"
+          },
+          "source_table": {
+            "title": "Source Table",
+            "type": "string"
+          },
+          "summary": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Summary"
+          },
+          "visibility": {
+            "default": null,
+            "title": "Visibility",
+            "type": "string"
+          }
+        },
+        "required": [
+          "entity_type_id",
+          "slug",
+          "name",
+          "source_table",
+          "source_id"
+        ],
+        "title": "CatalogEntityGroupByResponse",
+        "type": "object"
+      },
       "ClaimCountResponse": {
         "description": "Tigrbl v3 Claim count schema",
         "properties": {
@@ -987,6 +1407,826 @@
           "url"
         ],
         "title": "DeploymentGroupByResponse",
+        "type": "object"
+      },
+      "EntityAliasCountResponse": {
+        "description": "Tigrbl v3 EntityAlias count schema",
+        "properties": {
+          "alias": {
+            "title": "Alias",
+            "type": "string"
+          },
+          "alias_kind": {
+            "title": "Alias Kind",
+            "type": "string"
+          },
+          "entity_id": {
+            "title": "Entity Id",
+            "type": "string"
+          },
+          "id": {
+            "default": null,
+            "title": "Id",
+            "type": "string"
+          }
+        },
+        "required": [
+          "entity_id",
+          "alias_kind",
+          "alias"
+        ],
+        "title": "EntityAliasCountResponse",
+        "type": "object"
+      },
+      "EntityAliasExistsResponse": {
+        "description": "Tigrbl v3 EntityAlias exists schema",
+        "properties": {
+          "alias": {
+            "title": "Alias",
+            "type": "string"
+          },
+          "alias_kind": {
+            "title": "Alias Kind",
+            "type": "string"
+          },
+          "entity_id": {
+            "title": "Entity Id",
+            "type": "string"
+          },
+          "id": {
+            "default": null,
+            "title": "Id",
+            "type": "string"
+          }
+        },
+        "required": [
+          "entity_id",
+          "alias_kind",
+          "alias"
+        ],
+        "title": "EntityAliasExistsResponse",
+        "type": "object"
+      },
+      "EntityAliasGroupByRequest": {
+        "description": "Tigrbl v3 EntityAlias group_by schema",
+        "properties": {
+          "alias": {
+            "title": "Alias",
+            "type": "string"
+          },
+          "alias_kind": {
+            "title": "Alias Kind",
+            "type": "string"
+          },
+          "entity_id": {
+            "title": "Entity Id",
+            "type": "string"
+          },
+          "id": {
+            "default": null,
+            "title": "Id",
+            "type": "string"
+          }
+        },
+        "required": [
+          "entity_id",
+          "alias_kind",
+          "alias"
+        ],
+        "title": "EntityAliasGroupByRequest",
+        "type": "object"
+      },
+      "EntityAliasGroupByResponse": {
+        "description": "Tigrbl v3 EntityAlias group_by schema",
+        "properties": {
+          "alias": {
+            "title": "Alias",
+            "type": "string"
+          },
+          "alias_kind": {
+            "title": "Alias Kind",
+            "type": "string"
+          },
+          "entity_id": {
+            "title": "Entity Id",
+            "type": "string"
+          },
+          "id": {
+            "default": null,
+            "title": "Id",
+            "type": "string"
+          }
+        },
+        "required": [
+          "entity_id",
+          "alias_kind",
+          "alias"
+        ],
+        "title": "EntityAliasGroupByResponse",
+        "type": "object"
+      },
+      "EntityRelationshipCountResponse": {
+        "description": "Tigrbl v3 EntityRelationship count schema",
+        "properties": {
+          "confidence": {
+            "default": null,
+            "title": "Confidence",
+            "type": "string"
+          },
+          "evidence_type": {
+            "title": "Evidence Type",
+            "type": "string"
+          },
+          "id": {
+            "default": null,
+            "title": "Id",
+            "type": "string"
+          },
+          "observed_at": {
+            "anyOf": [
+              {
+                "format": "date-time",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Observed At"
+          },
+          "relationship_type": {
+            "title": "Relationship Type",
+            "type": "string"
+          },
+          "role": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Role"
+          },
+          "source_entity_id": {
+            "title": "Source Entity Id",
+            "type": "string"
+          },
+          "source_url": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Source Url"
+          },
+          "status": {
+            "default": null,
+            "title": "Status",
+            "type": "string"
+          },
+          "target_entity_id": {
+            "title": "Target Entity Id",
+            "type": "string"
+          }
+        },
+        "required": [
+          "source_entity_id",
+          "target_entity_id",
+          "relationship_type",
+          "evidence_type"
+        ],
+        "title": "EntityRelationshipCountResponse",
+        "type": "object"
+      },
+      "EntityRelationshipExistsResponse": {
+        "description": "Tigrbl v3 EntityRelationship exists schema",
+        "properties": {
+          "confidence": {
+            "default": null,
+            "title": "Confidence",
+            "type": "string"
+          },
+          "evidence_type": {
+            "title": "Evidence Type",
+            "type": "string"
+          },
+          "id": {
+            "default": null,
+            "title": "Id",
+            "type": "string"
+          },
+          "observed_at": {
+            "anyOf": [
+              {
+                "format": "date-time",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Observed At"
+          },
+          "relationship_type": {
+            "title": "Relationship Type",
+            "type": "string"
+          },
+          "role": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Role"
+          },
+          "source_entity_id": {
+            "title": "Source Entity Id",
+            "type": "string"
+          },
+          "source_url": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Source Url"
+          },
+          "status": {
+            "default": null,
+            "title": "Status",
+            "type": "string"
+          },
+          "target_entity_id": {
+            "title": "Target Entity Id",
+            "type": "string"
+          }
+        },
+        "required": [
+          "source_entity_id",
+          "target_entity_id",
+          "relationship_type",
+          "evidence_type"
+        ],
+        "title": "EntityRelationshipExistsResponse",
+        "type": "object"
+      },
+      "EntityRelationshipGroupByRequest": {
+        "description": "Tigrbl v3 EntityRelationship group_by schema",
+        "properties": {
+          "confidence": {
+            "default": null,
+            "title": "Confidence",
+            "type": "string"
+          },
+          "evidence_type": {
+            "title": "Evidence Type",
+            "type": "string"
+          },
+          "id": {
+            "default": null,
+            "title": "Id",
+            "type": "string"
+          },
+          "observed_at": {
+            "anyOf": [
+              {
+                "format": "date-time",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Observed At"
+          },
+          "relationship_type": {
+            "title": "Relationship Type",
+            "type": "string"
+          },
+          "role": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Role"
+          },
+          "source_entity_id": {
+            "title": "Source Entity Id",
+            "type": "string"
+          },
+          "source_url": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Source Url"
+          },
+          "status": {
+            "default": null,
+            "title": "Status",
+            "type": "string"
+          },
+          "target_entity_id": {
+            "title": "Target Entity Id",
+            "type": "string"
+          }
+        },
+        "required": [
+          "source_entity_id",
+          "target_entity_id",
+          "relationship_type",
+          "evidence_type"
+        ],
+        "title": "EntityRelationshipGroupByRequest",
+        "type": "object"
+      },
+      "EntityRelationshipGroupByResponse": {
+        "description": "Tigrbl v3 EntityRelationship group_by schema",
+        "properties": {
+          "confidence": {
+            "default": null,
+            "title": "Confidence",
+            "type": "string"
+          },
+          "evidence_type": {
+            "title": "Evidence Type",
+            "type": "string"
+          },
+          "id": {
+            "default": null,
+            "title": "Id",
+            "type": "string"
+          },
+          "observed_at": {
+            "anyOf": [
+              {
+                "format": "date-time",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Observed At"
+          },
+          "relationship_type": {
+            "title": "Relationship Type",
+            "type": "string"
+          },
+          "role": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Role"
+          },
+          "source_entity_id": {
+            "title": "Source Entity Id",
+            "type": "string"
+          },
+          "source_url": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Source Url"
+          },
+          "status": {
+            "default": null,
+            "title": "Status",
+            "type": "string"
+          },
+          "target_entity_id": {
+            "title": "Target Entity Id",
+            "type": "string"
+          }
+        },
+        "required": [
+          "source_entity_id",
+          "target_entity_id",
+          "relationship_type",
+          "evidence_type"
+        ],
+        "title": "EntityRelationshipGroupByResponse",
+        "type": "object"
+      },
+      "EntityTypeCountResponse": {
+        "description": "Tigrbl v3 EntityType count schema",
+        "properties": {
+          "description": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Description"
+          },
+          "id": {
+            "default": null,
+            "title": "Id",
+            "type": "string"
+          },
+          "label": {
+            "title": "Label",
+            "type": "string"
+          },
+          "semantic_class": {
+            "title": "Semantic Class",
+            "type": "string"
+          }
+        },
+        "required": [
+          "label",
+          "semantic_class"
+        ],
+        "title": "EntityTypeCountResponse",
+        "type": "object"
+      },
+      "EntityTypeExistsResponse": {
+        "description": "Tigrbl v3 EntityType exists schema",
+        "properties": {
+          "description": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Description"
+          },
+          "id": {
+            "default": null,
+            "title": "Id",
+            "type": "string"
+          },
+          "label": {
+            "title": "Label",
+            "type": "string"
+          },
+          "semantic_class": {
+            "title": "Semantic Class",
+            "type": "string"
+          }
+        },
+        "required": [
+          "label",
+          "semantic_class"
+        ],
+        "title": "EntityTypeExistsResponse",
+        "type": "object"
+      },
+      "EntityTypeGroupByRequest": {
+        "description": "Tigrbl v3 EntityType group_by schema",
+        "properties": {
+          "description": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Description"
+          },
+          "id": {
+            "default": null,
+            "title": "Id",
+            "type": "string"
+          },
+          "label": {
+            "title": "Label",
+            "type": "string"
+          },
+          "semantic_class": {
+            "title": "Semantic Class",
+            "type": "string"
+          }
+        },
+        "required": [
+          "label",
+          "semantic_class"
+        ],
+        "title": "EntityTypeGroupByRequest",
+        "type": "object"
+      },
+      "EntityTypeGroupByResponse": {
+        "description": "Tigrbl v3 EntityType group_by schema",
+        "properties": {
+          "description": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Description"
+          },
+          "id": {
+            "default": null,
+            "title": "Id",
+            "type": "string"
+          },
+          "label": {
+            "title": "Label",
+            "type": "string"
+          },
+          "semantic_class": {
+            "title": "Semantic Class",
+            "type": "string"
+          }
+        },
+        "required": [
+          "label",
+          "semantic_class"
+        ],
+        "title": "EntityTypeGroupByResponse",
+        "type": "object"
+      },
+      "EntityUrlCountResponse": {
+        "description": "Tigrbl v3 EntityUrl count schema",
+        "properties": {
+          "entity_id": {
+            "title": "Entity Id",
+            "type": "string"
+          },
+          "evidence_type": {
+            "title": "Evidence Type",
+            "type": "string"
+          },
+          "id": {
+            "default": null,
+            "title": "Id",
+            "type": "string"
+          },
+          "label": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Label"
+          },
+          "observed_at": {
+            "anyOf": [
+              {
+                "format": "date-time",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Observed At"
+          },
+          "url": {
+            "title": "Url",
+            "type": "string"
+          },
+          "url_role": {
+            "title": "Url Role",
+            "type": "string"
+          }
+        },
+        "required": [
+          "entity_id",
+          "url_role",
+          "url",
+          "evidence_type"
+        ],
+        "title": "EntityUrlCountResponse",
+        "type": "object"
+      },
+      "EntityUrlExistsResponse": {
+        "description": "Tigrbl v3 EntityUrl exists schema",
+        "properties": {
+          "entity_id": {
+            "title": "Entity Id",
+            "type": "string"
+          },
+          "evidence_type": {
+            "title": "Evidence Type",
+            "type": "string"
+          },
+          "id": {
+            "default": null,
+            "title": "Id",
+            "type": "string"
+          },
+          "label": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Label"
+          },
+          "observed_at": {
+            "anyOf": [
+              {
+                "format": "date-time",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Observed At"
+          },
+          "url": {
+            "title": "Url",
+            "type": "string"
+          },
+          "url_role": {
+            "title": "Url Role",
+            "type": "string"
+          }
+        },
+        "required": [
+          "entity_id",
+          "url_role",
+          "url",
+          "evidence_type"
+        ],
+        "title": "EntityUrlExistsResponse",
+        "type": "object"
+      },
+      "EntityUrlGroupByRequest": {
+        "description": "Tigrbl v3 EntityUrl group_by schema",
+        "properties": {
+          "entity_id": {
+            "title": "Entity Id",
+            "type": "string"
+          },
+          "evidence_type": {
+            "title": "Evidence Type",
+            "type": "string"
+          },
+          "id": {
+            "default": null,
+            "title": "Id",
+            "type": "string"
+          },
+          "label": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Label"
+          },
+          "observed_at": {
+            "anyOf": [
+              {
+                "format": "date-time",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Observed At"
+          },
+          "url": {
+            "title": "Url",
+            "type": "string"
+          },
+          "url_role": {
+            "title": "Url Role",
+            "type": "string"
+          }
+        },
+        "required": [
+          "entity_id",
+          "url_role",
+          "url",
+          "evidence_type"
+        ],
+        "title": "EntityUrlGroupByRequest",
+        "type": "object"
+      },
+      "EntityUrlGroupByResponse": {
+        "description": "Tigrbl v3 EntityUrl group_by schema",
+        "properties": {
+          "entity_id": {
+            "title": "Entity Id",
+            "type": "string"
+          },
+          "evidence_type": {
+            "title": "Evidence Type",
+            "type": "string"
+          },
+          "id": {
+            "default": null,
+            "title": "Id",
+            "type": "string"
+          },
+          "label": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Label"
+          },
+          "observed_at": {
+            "anyOf": [
+              {
+                "format": "date-time",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Observed At"
+          },
+          "url": {
+            "title": "Url",
+            "type": "string"
+          },
+          "url_role": {
+            "title": "Url Role",
+            "type": "string"
+          }
+        },
+        "required": [
+          "entity_id",
+          "url_role",
+          "url",
+          "evidence_type"
+        ],
+        "title": "EntityUrlGroupByResponse",
         "type": "object"
       },
       "EvidenceCountResponse": {
@@ -7067,6 +8307,76 @@
         }
       }
     },
+    "/api/v1/entities": {
+      "get": {
+        "operationId": "entities",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        },
+        "summary": "Canonical catalog entity collection",
+        "x-tigrbl-auth": {
+          "policy": "public-by-default",
+          "public": true,
+          "security": []
+        },
+        "x-tigrbl-surface": {
+          "binding": {
+            "exchange": "request_response",
+            "family": "request",
+            "framing": "json",
+            "framingSpec": "JsonFramingSpec",
+            "methods": [
+              "GET"
+            ],
+            "path": "/api/v1/entities",
+            "proto": "http.rest",
+            "rpcMethod": null
+          }
+        }
+      }
+    },
+    "/api/v1/entities/{entity_id}": {
+      "get": {
+        "operationId": "entity",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "entity_id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        },
+        "summary": "Canonical catalog entity graph",
+        "x-tigrbl-auth": {
+          "policy": "public-by-default",
+          "public": true,
+          "security": []
+        },
+        "x-tigrbl-surface": {
+          "binding": {
+            "exchange": "request_response",
+            "family": "request",
+            "framing": "json",
+            "framingSpec": "JsonFramingSpec",
+            "methods": [
+              "GET"
+            ],
+            "path": "/api/v1/entities/{entity_id}",
+            "proto": "http.rest",
+            "rpcMethod": null
+          }
+        }
+      }
+    },
     "/api/v1/insights": {
       "get": {
         "operationId": "insights",
@@ -7484,6 +8794,380 @@
             "proto": "http.rest",
             "rpcMethod": null
           }
+        }
+      }
+    },
+    "/catalogentity": {
+      "get": {
+        "operationId": "CatalogEntity.count",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "id",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "entity_type_id",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "organization_id",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "slug",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "name",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "summary",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "canonical_url",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "source_table",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "source_id",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "visibility",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "maturity",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "observed_at",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CatalogEntityCountResponse"
+                }
+              }
+            },
+            "description": "Successful Response"
+          }
+        },
+        "tags": [
+          "CatalogEntity"
+        ],
+        "x-tigrbl-auth": {
+          "policy": "public-by-default",
+          "public": true,
+          "security": []
+        },
+        "x-tigrbl-surface": {
+          "binding": {
+            "exchange": "request_response",
+            "family": "request",
+            "framing": "json",
+            "framingSpec": "JsonFramingSpec",
+            "methods": [
+              "GET"
+            ],
+            "path": "/catalogentity",
+            "proto": "http.rest",
+            "rpcMethod": null
+          },
+          "bindings": [
+            {
+              "exchange": "request_response",
+              "family": "request",
+              "framing": "json",
+              "framingSpec": "JsonFramingSpec",
+              "methods": [
+                "GET"
+              ],
+              "path": "/catalogentity",
+              "proto": "http.rest",
+              "rpcMethod": null
+            }
+          ],
+          "family": "crud"
+        }
+      },
+      "post": {
+        "operationId": "CatalogEntity.group_by",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CatalogEntityGroupByRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CatalogEntityGroupByResponse"
+                }
+              }
+            },
+            "description": "Successful Response"
+          }
+        },
+        "tags": [
+          "CatalogEntity"
+        ],
+        "x-tigrbl-auth": {
+          "policy": "public-by-default",
+          "public": true,
+          "security": []
+        },
+        "x-tigrbl-surface": {
+          "binding": {
+            "exchange": "request_response",
+            "family": "request",
+            "framing": "json",
+            "framingSpec": "JsonFramingSpec",
+            "methods": [
+              "POST"
+            ],
+            "path": "/catalogentity",
+            "proto": "http.rest",
+            "rpcMethod": null
+          },
+          "bindings": [
+            {
+              "exchange": "request_response",
+              "family": "request",
+              "framing": "json",
+              "framingSpec": "JsonFramingSpec",
+              "methods": [
+                "POST"
+              ],
+              "path": "/catalogentity",
+              "proto": "http.rest",
+              "rpcMethod": null
+            }
+          ],
+          "family": "crud"
+        }
+      }
+    },
+    "/catalogentity/{item_id}": {
+      "get": {
+        "operationId": "CatalogEntity.exists",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "item_id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "id",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "entity_type_id",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "organization_id",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "slug",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "name",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "summary",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "canonical_url",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "source_table",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "source_id",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "visibility",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "maturity",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "observed_at",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CatalogEntityExistsResponse"
+                }
+              }
+            },
+            "description": "Successful Response"
+          }
+        },
+        "tags": [
+          "CatalogEntity"
+        ],
+        "x-tigrbl-auth": {
+          "policy": "public-by-default",
+          "public": true,
+          "security": []
+        },
+        "x-tigrbl-surface": {
+          "binding": {
+            "exchange": "request_response",
+            "family": "request",
+            "framing": "json",
+            "framingSpec": "JsonFramingSpec",
+            "methods": [
+              "GET"
+            ],
+            "path": "/catalogentity/{item_id}",
+            "proto": "http.rest",
+            "rpcMethod": null
+          },
+          "bindings": [
+            {
+              "exchange": "request_response",
+              "family": "request",
+              "framing": "json",
+              "framingSpec": "JsonFramingSpec",
+              "methods": [
+                "GET"
+              ],
+              "path": "/catalogentity/{item_id}",
+              "proto": "http.rest",
+              "rpcMethod": null
+            }
+          ],
+          "family": "crud"
         }
       }
     },
@@ -8671,6 +10355,1134 @@
                 "GET"
               ],
               "path": "/deployment/{item_id}",
+              "proto": "http.rest",
+              "rpcMethod": null
+            }
+          ],
+          "family": "crud"
+        }
+      }
+    },
+    "/entityalias": {
+      "get": {
+        "operationId": "EntityAlias.count",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "id",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "entity_id",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "alias_kind",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "alias",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/EntityAliasCountResponse"
+                }
+              }
+            },
+            "description": "Successful Response"
+          }
+        },
+        "tags": [
+          "EntityAlias"
+        ],
+        "x-tigrbl-auth": {
+          "policy": "public-by-default",
+          "public": true,
+          "security": []
+        },
+        "x-tigrbl-surface": {
+          "binding": {
+            "exchange": "request_response",
+            "family": "request",
+            "framing": "json",
+            "framingSpec": "JsonFramingSpec",
+            "methods": [
+              "GET"
+            ],
+            "path": "/entityalias",
+            "proto": "http.rest",
+            "rpcMethod": null
+          },
+          "bindings": [
+            {
+              "exchange": "request_response",
+              "family": "request",
+              "framing": "json",
+              "framingSpec": "JsonFramingSpec",
+              "methods": [
+                "GET"
+              ],
+              "path": "/entityalias",
+              "proto": "http.rest",
+              "rpcMethod": null
+            }
+          ],
+          "family": "crud"
+        }
+      },
+      "post": {
+        "operationId": "EntityAlias.group_by",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/EntityAliasGroupByRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/EntityAliasGroupByResponse"
+                }
+              }
+            },
+            "description": "Successful Response"
+          }
+        },
+        "tags": [
+          "EntityAlias"
+        ],
+        "x-tigrbl-auth": {
+          "policy": "public-by-default",
+          "public": true,
+          "security": []
+        },
+        "x-tigrbl-surface": {
+          "binding": {
+            "exchange": "request_response",
+            "family": "request",
+            "framing": "json",
+            "framingSpec": "JsonFramingSpec",
+            "methods": [
+              "POST"
+            ],
+            "path": "/entityalias",
+            "proto": "http.rest",
+            "rpcMethod": null
+          },
+          "bindings": [
+            {
+              "exchange": "request_response",
+              "family": "request",
+              "framing": "json",
+              "framingSpec": "JsonFramingSpec",
+              "methods": [
+                "POST"
+              ],
+              "path": "/entityalias",
+              "proto": "http.rest",
+              "rpcMethod": null
+            }
+          ],
+          "family": "crud"
+        }
+      }
+    },
+    "/entityalias/{item_id}": {
+      "get": {
+        "operationId": "EntityAlias.exists",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "item_id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "id",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "entity_id",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "alias_kind",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "alias",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/EntityAliasExistsResponse"
+                }
+              }
+            },
+            "description": "Successful Response"
+          }
+        },
+        "tags": [
+          "EntityAlias"
+        ],
+        "x-tigrbl-auth": {
+          "policy": "public-by-default",
+          "public": true,
+          "security": []
+        },
+        "x-tigrbl-surface": {
+          "binding": {
+            "exchange": "request_response",
+            "family": "request",
+            "framing": "json",
+            "framingSpec": "JsonFramingSpec",
+            "methods": [
+              "GET"
+            ],
+            "path": "/entityalias/{item_id}",
+            "proto": "http.rest",
+            "rpcMethod": null
+          },
+          "bindings": [
+            {
+              "exchange": "request_response",
+              "family": "request",
+              "framing": "json",
+              "framingSpec": "JsonFramingSpec",
+              "methods": [
+                "GET"
+              ],
+              "path": "/entityalias/{item_id}",
+              "proto": "http.rest",
+              "rpcMethod": null
+            }
+          ],
+          "family": "crud"
+        }
+      }
+    },
+    "/entityrelationship": {
+      "get": {
+        "operationId": "EntityRelationship.count",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "id",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "source_entity_id",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "target_entity_id",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "relationship_type",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "role",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "evidence_type",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "source_url",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "confidence",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "status",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "observed_at",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/EntityRelationshipCountResponse"
+                }
+              }
+            },
+            "description": "Successful Response"
+          }
+        },
+        "tags": [
+          "EntityRelationship"
+        ],
+        "x-tigrbl-auth": {
+          "policy": "public-by-default",
+          "public": true,
+          "security": []
+        },
+        "x-tigrbl-surface": {
+          "binding": {
+            "exchange": "request_response",
+            "family": "request",
+            "framing": "json",
+            "framingSpec": "JsonFramingSpec",
+            "methods": [
+              "GET"
+            ],
+            "path": "/entityrelationship",
+            "proto": "http.rest",
+            "rpcMethod": null
+          },
+          "bindings": [
+            {
+              "exchange": "request_response",
+              "family": "request",
+              "framing": "json",
+              "framingSpec": "JsonFramingSpec",
+              "methods": [
+                "GET"
+              ],
+              "path": "/entityrelationship",
+              "proto": "http.rest",
+              "rpcMethod": null
+            }
+          ],
+          "family": "crud"
+        }
+      },
+      "post": {
+        "operationId": "EntityRelationship.group_by",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/EntityRelationshipGroupByRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/EntityRelationshipGroupByResponse"
+                }
+              }
+            },
+            "description": "Successful Response"
+          }
+        },
+        "tags": [
+          "EntityRelationship"
+        ],
+        "x-tigrbl-auth": {
+          "policy": "public-by-default",
+          "public": true,
+          "security": []
+        },
+        "x-tigrbl-surface": {
+          "binding": {
+            "exchange": "request_response",
+            "family": "request",
+            "framing": "json",
+            "framingSpec": "JsonFramingSpec",
+            "methods": [
+              "POST"
+            ],
+            "path": "/entityrelationship",
+            "proto": "http.rest",
+            "rpcMethod": null
+          },
+          "bindings": [
+            {
+              "exchange": "request_response",
+              "family": "request",
+              "framing": "json",
+              "framingSpec": "JsonFramingSpec",
+              "methods": [
+                "POST"
+              ],
+              "path": "/entityrelationship",
+              "proto": "http.rest",
+              "rpcMethod": null
+            }
+          ],
+          "family": "crud"
+        }
+      }
+    },
+    "/entityrelationship/{item_id}": {
+      "get": {
+        "operationId": "EntityRelationship.exists",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "item_id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "id",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "source_entity_id",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "target_entity_id",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "relationship_type",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "role",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "evidence_type",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "source_url",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "confidence",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "status",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "observed_at",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/EntityRelationshipExistsResponse"
+                }
+              }
+            },
+            "description": "Successful Response"
+          }
+        },
+        "tags": [
+          "EntityRelationship"
+        ],
+        "x-tigrbl-auth": {
+          "policy": "public-by-default",
+          "public": true,
+          "security": []
+        },
+        "x-tigrbl-surface": {
+          "binding": {
+            "exchange": "request_response",
+            "family": "request",
+            "framing": "json",
+            "framingSpec": "JsonFramingSpec",
+            "methods": [
+              "GET"
+            ],
+            "path": "/entityrelationship/{item_id}",
+            "proto": "http.rest",
+            "rpcMethod": null
+          },
+          "bindings": [
+            {
+              "exchange": "request_response",
+              "family": "request",
+              "framing": "json",
+              "framingSpec": "JsonFramingSpec",
+              "methods": [
+                "GET"
+              ],
+              "path": "/entityrelationship/{item_id}",
+              "proto": "http.rest",
+              "rpcMethod": null
+            }
+          ],
+          "family": "crud"
+        }
+      }
+    },
+    "/entitytype": {
+      "get": {
+        "operationId": "EntityType.count",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "id",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "label",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "semantic_class",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "description",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/EntityTypeCountResponse"
+                }
+              }
+            },
+            "description": "Successful Response"
+          }
+        },
+        "tags": [
+          "EntityType"
+        ],
+        "x-tigrbl-auth": {
+          "policy": "public-by-default",
+          "public": true,
+          "security": []
+        },
+        "x-tigrbl-surface": {
+          "binding": {
+            "exchange": "request_response",
+            "family": "request",
+            "framing": "json",
+            "framingSpec": "JsonFramingSpec",
+            "methods": [
+              "GET"
+            ],
+            "path": "/entitytype",
+            "proto": "http.rest",
+            "rpcMethod": null
+          },
+          "bindings": [
+            {
+              "exchange": "request_response",
+              "family": "request",
+              "framing": "json",
+              "framingSpec": "JsonFramingSpec",
+              "methods": [
+                "GET"
+              ],
+              "path": "/entitytype",
+              "proto": "http.rest",
+              "rpcMethod": null
+            }
+          ],
+          "family": "crud"
+        }
+      },
+      "post": {
+        "operationId": "EntityType.group_by",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/EntityTypeGroupByRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/EntityTypeGroupByResponse"
+                }
+              }
+            },
+            "description": "Successful Response"
+          }
+        },
+        "tags": [
+          "EntityType"
+        ],
+        "x-tigrbl-auth": {
+          "policy": "public-by-default",
+          "public": true,
+          "security": []
+        },
+        "x-tigrbl-surface": {
+          "binding": {
+            "exchange": "request_response",
+            "family": "request",
+            "framing": "json",
+            "framingSpec": "JsonFramingSpec",
+            "methods": [
+              "POST"
+            ],
+            "path": "/entitytype",
+            "proto": "http.rest",
+            "rpcMethod": null
+          },
+          "bindings": [
+            {
+              "exchange": "request_response",
+              "family": "request",
+              "framing": "json",
+              "framingSpec": "JsonFramingSpec",
+              "methods": [
+                "POST"
+              ],
+              "path": "/entitytype",
+              "proto": "http.rest",
+              "rpcMethod": null
+            }
+          ],
+          "family": "crud"
+        }
+      }
+    },
+    "/entitytype/{item_id}": {
+      "get": {
+        "operationId": "EntityType.exists",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "item_id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "id",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "label",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "semantic_class",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "description",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/EntityTypeExistsResponse"
+                }
+              }
+            },
+            "description": "Successful Response"
+          }
+        },
+        "tags": [
+          "EntityType"
+        ],
+        "x-tigrbl-auth": {
+          "policy": "public-by-default",
+          "public": true,
+          "security": []
+        },
+        "x-tigrbl-surface": {
+          "binding": {
+            "exchange": "request_response",
+            "family": "request",
+            "framing": "json",
+            "framingSpec": "JsonFramingSpec",
+            "methods": [
+              "GET"
+            ],
+            "path": "/entitytype/{item_id}",
+            "proto": "http.rest",
+            "rpcMethod": null
+          },
+          "bindings": [
+            {
+              "exchange": "request_response",
+              "family": "request",
+              "framing": "json",
+              "framingSpec": "JsonFramingSpec",
+              "methods": [
+                "GET"
+              ],
+              "path": "/entitytype/{item_id}",
+              "proto": "http.rest",
+              "rpcMethod": null
+            }
+          ],
+          "family": "crud"
+        }
+      }
+    },
+    "/entityurl": {
+      "get": {
+        "operationId": "EntityUrl.count",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "id",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "entity_id",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "url_role",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "url",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "label",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "evidence_type",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "observed_at",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/EntityUrlCountResponse"
+                }
+              }
+            },
+            "description": "Successful Response"
+          }
+        },
+        "tags": [
+          "EntityUrl"
+        ],
+        "x-tigrbl-auth": {
+          "policy": "public-by-default",
+          "public": true,
+          "security": []
+        },
+        "x-tigrbl-surface": {
+          "binding": {
+            "exchange": "request_response",
+            "family": "request",
+            "framing": "json",
+            "framingSpec": "JsonFramingSpec",
+            "methods": [
+              "GET"
+            ],
+            "path": "/entityurl",
+            "proto": "http.rest",
+            "rpcMethod": null
+          },
+          "bindings": [
+            {
+              "exchange": "request_response",
+              "family": "request",
+              "framing": "json",
+              "framingSpec": "JsonFramingSpec",
+              "methods": [
+                "GET"
+              ],
+              "path": "/entityurl",
+              "proto": "http.rest",
+              "rpcMethod": null
+            }
+          ],
+          "family": "crud"
+        }
+      },
+      "post": {
+        "operationId": "EntityUrl.group_by",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/EntityUrlGroupByRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/EntityUrlGroupByResponse"
+                }
+              }
+            },
+            "description": "Successful Response"
+          }
+        },
+        "tags": [
+          "EntityUrl"
+        ],
+        "x-tigrbl-auth": {
+          "policy": "public-by-default",
+          "public": true,
+          "security": []
+        },
+        "x-tigrbl-surface": {
+          "binding": {
+            "exchange": "request_response",
+            "family": "request",
+            "framing": "json",
+            "framingSpec": "JsonFramingSpec",
+            "methods": [
+              "POST"
+            ],
+            "path": "/entityurl",
+            "proto": "http.rest",
+            "rpcMethod": null
+          },
+          "bindings": [
+            {
+              "exchange": "request_response",
+              "family": "request",
+              "framing": "json",
+              "framingSpec": "JsonFramingSpec",
+              "methods": [
+                "POST"
+              ],
+              "path": "/entityurl",
+              "proto": "http.rest",
+              "rpcMethod": null
+            }
+          ],
+          "family": "crud"
+        }
+      }
+    },
+    "/entityurl/{item_id}": {
+      "get": {
+        "operationId": "EntityUrl.exists",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "item_id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "id",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "entity_id",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "url_role",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "url",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "label",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "evidence_type",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "observed_at",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/EntityUrlExistsResponse"
+                }
+              }
+            },
+            "description": "Successful Response"
+          }
+        },
+        "tags": [
+          "EntityUrl"
+        ],
+        "x-tigrbl-auth": {
+          "policy": "public-by-default",
+          "public": true,
+          "security": []
+        },
+        "x-tigrbl-surface": {
+          "binding": {
+            "exchange": "request_response",
+            "family": "request",
+            "framing": "json",
+            "framingSpec": "JsonFramingSpec",
+            "methods": [
+              "GET"
+            ],
+            "path": "/entityurl/{item_id}",
+            "proto": "http.rest",
+            "rpcMethod": null
+          },
+          "bindings": [
+            {
+              "exchange": "request_response",
+              "family": "request",
+              "framing": "json",
+              "framingSpec": "JsonFramingSpec",
+              "methods": [
+                "GET"
+              ],
+              "path": "/entityurl/{item_id}",
               "proto": "http.rest",
               "rpcMethod": null
             }

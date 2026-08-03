@@ -122,10 +122,19 @@ class CatalogCollectorTests(unittest.TestCase):
     def test_related_resources_are_attached_to_the_repository(self):
         resources = discover_related_resources(
             self.repo,
-            ["examples/quickstart.py", "docs/openapi.yaml", "showcases/admin/index.tsx"],
+            [
+                "examples/quickstart.py",
+                "docs/openapi.yaml",
+                "showcases/admin/index.tsx",
+                ".ssot/evidence/openapi-selection-tests.json",
+            ],
             {"examples", "docs", "showcases"},
         )
-        self.assertEqual({item["kind"] for item in resources}, {"api", "documentation", "example", "showcase", "website"})
+        self.assertEqual(
+            {item["kind"] for item in resources},
+            {"api_definition", "documentation", "example", "showcase", "website"},
+        )
+        self.assertFalse(any(str(item.get("path", "")).startswith(".ssot/") for item in resources))
 
     def test_cached_file_resource_links_are_normalized(self):
         item = {

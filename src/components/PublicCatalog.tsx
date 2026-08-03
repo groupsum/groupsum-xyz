@@ -5,9 +5,10 @@ import {
   catalogSummary,
   catalogTechnologies,
 } from "../data/catalog.generated";
-import { getRepositoryMetricSnapshot, RepositoryMetricRecord } from "../api/catalog.generated";
+import { EntityGraph, getEntityPageModel, getRepositoryMetricSnapshot, RepositoryMetricRecord } from "../api/catalog.generated";
 import { ArrowLeft, ArrowRight, ExternalLink, Search } from "lucide-react";
 import { RepositorySignalStrip } from "./RepositorySignals";
+import { EntityOwnership, EntityRelationshipRows } from "./EntityIdentity";
 
 type CatalogRecord = Record<string, unknown> & {
   id: string;
@@ -25,6 +26,7 @@ type CatalogRecord = Record<string, unknown> & {
   evidence?: Array<{ kind?: string; url?: string; observed_at?: string }>;
   legal_evidence?: Array<Record<string, unknown>>;
   ssot_governance?: Record<string, unknown>;
+  entity_graph?: EntityGraph | null;
 };
 
 const datasetOrder = ["repositories", "packages", "resources", "technologies"] as const;
@@ -501,8 +503,27 @@ export function PublicCatalogDetail({ path, onNavigate }: { path: string; onNavi
       })
       .then((records: CatalogRecord[]) => {
         const match = records.find((item) => item.route === normalizedPath);
-        setRecord(match || null);
-        setState(match ? "ready" : "missing");
+        if (!match) { setRecord(null); setState("missing"); return; }
+        if (dataset === "packages" || dataset === "resources") {
+          const routeKey = segments.at(-1) || "";
+          fetch(`/api/v1/catalog/${dataset}/${encodeURIComponent(routeKey)}`, { signal: controller.signal })
+            .then((response) => response.ok ? response.json() : Promise.reject(new Error(`resource response ${response.status}`)))
+            .then((model: Record<string, unknown>) => {
+              const item = valueRecord(model.item); const legal = valueRecord(model.legal); const implementation = valueRecord(model.implementation);
+              setRecord({ ...match, ...item, resource_type: model.resource_type || match.resource_type, parent: model.parent, entity_graph: model.graph as EntityGraph | null, legal_evidence: valueRecords(legal.evidence), license_expression: legal.license_expression, license_status: legal.status, releases: implementation.releases, dependencies: implementation.dependencies, dependents: implementation.dependents, downloads: valueRecord(implementation.downloads).value } as CatalogRecord);
+              setState("ready");
+            })
+            .catch(() => { setRecord(match); setState("ready"); });
+          return;
+        }
+        if (dataset === "repositories") {
+          const owner = String(match.owner || segments.at(-2) || ""); const name = String(match.name || segments.at(-1) || "");
+          getEntityPageModel(`entity:repositories:github:${owner}/${name}`, controller.signal)
+            .then((model) => { setRecord({ ...match, entity_graph: model.graph }); setState("ready"); })
+            .catch(() => { setRecord(match); setState("ready"); });
+          return;
+        }
+        setRecord(match); setState("ready");
       })
       .catch((error: Error) => { if (error.name !== "AbortError") setState("error"); });
     return () => controller.abort();
@@ -530,13 +551,15 @@ export function PublicCatalogDetail({ path, onNavigate }: { path: string; onNavi
           {primaryUrl && <a href={String(primaryUrl)} target="_blank" rel="noreferrer" className="text-accent hover:underline inline-flex items-center gap-1">Open primary source <ExternalLink className="w-3.5 h-3.5" /></a>}
         </div>
       </header>
-      {record.claim_boundary && <aside className="border-l-2 border-accent pl-4 py-1 text-sm text-ink-muted leading-relaxed"><strong className="text-ink block mb-1">Evidence boundary</strong>{String(record.claim_boundary)}</aside>}
+      <EntityOwnership graph={record.entity_graph} onNavigate={onNavigate} />
+      {record.claim_boundary && <aside className="border-l-2 border-accent pl-4 py-1 text-sm text-ink-muted leading-relaxed"><strong className="text-ink block mb-1">Source boundary</strong>{String(record.claim_boundary)}</aside>}
       {record.kind === "repository" && <RepositoryDetail record={record} onNavigate={onNavigate} />}
       {record.kind === "package" && <PackageDetail record={record} onNavigate={onNavigate} />}
       {record.kind === "resource" && <ResourceDetail record={record} />}
       {record.kind === "release" && <ReleaseDetail record={record} onNavigate={onNavigate} />}
       {record.kind === "technology" && <TechnologyDetail record={record} />}
-      {record.evidence && record.evidence.length > 0 && <DetailSection title="Evidence"><ul className="divide-y divide-[var(--color-border-soft)] border-y border-[var(--color-border-soft)]">{record.evidence.map((item, index) => <li key={`${item.url || item.kind}-${index}`} className="py-3 text-sm">{item.url ? <a href={item.url} target="_blank" rel="noreferrer" className="text-accent hover:underline inline-flex items-center gap-1">{humanLabel(item.kind || "source")}<ExternalLink className="w-3.5 h-3.5" /></a> : <span className="text-ink-muted">{humanLabel(item.kind || "source")} · observed {formatDate(item.observed_at)}</span>}</li>)}</ul></DetailSection>}
+      {record.entity_graph && <DetailSection title="Connected resources" intro="Typed graph relationships keep ownership, implementation, distribution, and source-code roles explicit."><EntityRelationshipRows graph={record.entity_graph} onNavigate={onNavigate} /></DetailSection>}
+      {record.evidence && record.evidence.length > 0 && <DetailSection title="Source provenance"><ul className="divide-y divide-[var(--color-border-soft)] border-y border-[var(--color-border-soft)]">{record.evidence.map((item, index) => <li key={`${item.url || item.kind}-${index}`} className="py-3 text-sm">{item.url ? <a href={item.url} target="_blank" rel="noreferrer" className="text-accent hover:underline inline-flex items-center gap-1">{humanLabel(item.kind || "source")}<ExternalLink className="w-3.5 h-3.5" /></a> : <span className="text-ink-muted">{humanLabel(item.kind || "source")} · observed {formatDate(item.observed_at)}</span>}</li>)}</ul></DetailSection>}
     </article>
   );
 }

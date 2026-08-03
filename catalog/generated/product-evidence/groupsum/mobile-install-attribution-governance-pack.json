@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-03T17:22:36Z",
+  "generated_at": "2026-08-03T22:06:00Z",
   "packages": [
     {
       "claim_boundary": "Publication is reported only when confirmed by the named public registry.",
@@ -63,7 +63,7 @@
       "evidence": [
         {
           "kind": "registry",
-          "observed_at": "2026-08-03T17:22:36Z",
+          "observed_at": "2026-08-03T22:06:00Z",
           "url": "https://pypi.org/project/mobile-install-attribution-governance-pack/"
         }
       ],
@@ -112,7 +112,7 @@
       "license_status": "observed",
       "manifest_path": "pyproject.toml",
       "name": "mobile-install-attribution-governance-pack",
-      "observed_at": "2026-08-03T17:22:36Z",
+      "observed_at": "2026-08-03T22:06:00Z",
       "owner": "groupsum",
       "private": false,
       "publication_status": "published",
@@ -133,7 +133,7 @@
           "legal_inherits_from": "package:pypi:mobile-install-attribution-governance-pack:groupsum/mobile-install-attribution-governance-pack:pyproject.toml",
           "license_expression": "Apache-2.0",
           "license_status": "observed",
-          "observed_at": "2026-08-03T17:22:36Z",
+          "observed_at": "2026-08-03T22:06:00Z",
           "published_at": "2026-05-18T09:25:19.245809Z",
           "release_kind": "pypi",
           "route": "/catalog/releases/pypi/mobile-install-attribution-governance-pack-b147e878e4",
@@ -293,12 +293,12 @@
     "evidence": [
       {
         "kind": "ssot-registry",
-        "observed_at": "2026-08-03T19:58:16Z",
+        "observed_at": "2026-08-03T22:06:01Z",
         "url": "https://github.com/groupsum/mobile-install-attribution-governance-pack/blob/master/.ssot/registry.json"
       },
       {
         "kind": "source",
-        "observed_at": "2026-08-03T17:22:37Z",
+        "observed_at": "2026-08-03T22:06:00Z",
         "url": "https://github.com/groupsum/mobile-install-attribution-governance-pack"
       }
     ],
@@ -313,7 +313,7 @@
         "legal_inherits_from": "repository:groupsum/mobile-install-attribution-governance-pack",
         "license_expression": "Apache-2.0",
         "license_status": "observed",
-        "observed_at": "2026-08-03T17:22:37Z",
+        "observed_at": "2026-08-03T22:06:00Z",
         "prerelease": false,
         "published_at": "2026-05-18T09:25:06Z",
         "release_kind": "github",
@@ -398,7 +398,7 @@
       "watchers": 0
     },
     "name": "mobile-install-attribution-governance-pack",
-    "observed_at": "2026-08-03T17:22:37Z",
+    "observed_at": "2026-08-03T22:06:00Z",
     "owner": "groupsum",
     "package_ids": [
       "package:pypi:mobile-install-attribution-governance-pack:groupsum/mobile-install-attribution-governance-pack:pyproject.toml"
@@ -412,7 +412,7 @@
         "legal_evidence": [],
         "legal_inherits_from": "repository:groupsum/mobile-install-attribution-governance-pack",
         "name": "docs/governance",
-        "observed_at": "2026-08-03T17:22:37Z",
+        "observed_at": "2026-08-03T22:06:00Z",
         "path": "docs/governance",
         "repository": "groupsum/mobile-install-attribution-governance-pack",
         "repository_route": "/catalog/repositories/groupsum/mobile-install-attribution-governance-pack",
@@ -448,7 +448,7 @@
       },
       "evidence_type": "ssot.registry",
       "governed": true,
-      "observed_at": "2026-08-03T19:58:16Z",
+      "observed_at": "2026-08-03T22:06:01Z",
       "present": true,
       "raw_url": "https://raw.githubusercontent.com/groupsum/mobile-install-attribution-governance-pack/master/.ssot/registry.json",
       "registry_url": "https://github.com/groupsum/mobile-install-attribution-governance-pack/blob/master/.ssot/registry.json",

@@ -205,7 +205,7 @@ def filter_repositories(repositories: Iterable[dict[str, Any]], config: dict[str
 def discover_related_resources(
     repo: dict[str, Any], paths: Iterable[str], markers: set[str], limit: int = 200
 ) -> list[dict[str, Any]]:
-    """Find source-backed child resources without promoting them to standalone catalog entities."""
+    """Find typed resources from direct source evidence without guessing live surfaces."""
     resources: dict[tuple[str, str], dict[str, Any]] = {}
     homepage = str(repo.get("homepage") or "").strip()
     if homepage:
@@ -214,7 +214,7 @@ def discover_related_resources(
             "evidence": "repository.homepage",
         }
     kind_by_marker = {
-        "api": "api", "apis": "api", "demo": "demo", "demos": "demo",
+        "api": "api_source", "apis": "api_source", "demo": "demo", "demos": "demo",
         "docs": "documentation", "example": "example", "examples": "example",
         "showcase": "showcase", "showcases": "showcase", "ui": "ui", "uis": "ui",
         "website": "website", "websites": "website",
@@ -223,11 +223,20 @@ def discover_related_resources(
         path_parts = list(Path(path).parts)
         lower_parts = [part.lower() for part in path_parts]
         filename = Path(path).name.lower()
-        if any(token in filename for token in ("openapi", "openrpc", "asyncapi")) or Path(path).suffix.lower() == ".proto":
-            resources[("api", path)] = {
-                "kind": "api", "name": path, "path": path,
+        if lower_parts and lower_parts[0] == ".ssot":
+            # Governance artifacts are projected from the canonical SSOT registry,
+            # never reclassified as documentation, examples, or API contracts.
+            continue
+        api_definition_names = {
+            "openapi.json", "openapi.yaml", "openapi.yml",
+            "openrpc.json", "openrpc.yaml", "openrpc.yml",
+            "asyncapi.json", "asyncapi.yaml", "asyncapi.yml",
+        }
+        if filename in api_definition_names or Path(path).suffix.lower() == ".proto":
+            resources[("api_definition", path)] = {
+                "kind": "api_definition", "name": path, "path": path,
                 "url": f"{repo['html_url']}/blob/{repo['default_branch']}/{path}",
-                "evidence": "repository.contract_file",
+                "evidence": "repository.api_definition",
             }
         matching_indexes = [index for index, part in enumerate(lower_parts) if part in markers]
         if not matching_indexes:

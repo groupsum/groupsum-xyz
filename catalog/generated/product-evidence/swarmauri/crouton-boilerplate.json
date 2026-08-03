@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-03T17:22:36Z",
+  "generated_at": "2026-08-03T22:06:00Z",
   "packages": [],
   "repository": {
     "archived": false,
@@ -141,7 +141,7 @@
     "evidence": [
       {
         "kind": "source",
-        "observed_at": "2026-08-03T17:22:38Z",
+        "observed_at": "2026-08-03T22:06:01Z",
         "url": "https://github.com/swarmauri/crouton-boilerplate"
       }
     ],
@@ -199,7 +199,7 @@
       "watchers": 0
     },
     "name": "crouton-boilerplate",
-    "observed_at": "2026-08-03T17:22:38Z",
+    "observed_at": "2026-08-03T22:06:01Z",
     "owner": "swarmauri",
     "package_ids": [],
     "pushed_at": "2024-12-17T08:00:37Z",
@@ -211,7 +211,7 @@
         "legal_evidence": [],
         "legal_inherits_from": "repository:swarmauri/crouton-boilerplate",
         "name": "crouton-boilerplate",
-        "observed_at": "2026-08-03T17:22:38Z",
+        "observed_at": "2026-08-03T22:06:01Z",
         "path": null,
         "repository": "swarmauri/crouton-boilerplate",
         "repository_route": "/catalog/repositories/swarmauri/crouton-boilerplate",
@@ -228,8 +228,8 @@
       "counts": {},
       "coverage": {},
       "governed": false,
-      "observation_status": "not_found",
-      "observed_at": "2026-08-03T19:58:16Z",
+      "observation_status": "error",
+      "observed_at": "2026-08-03T22:06:02Z",
       "present": false,
       "registry_url": null,
       "status_counts": {},

@@ -1,5 +1,5 @@
 // Generated from backend/openapi.json. Do not edit manually.
-export const OPENAPI_SHA256 = "76e3f154ab21e8cbb3b16360fa95e05c05646c9918d82fa010525fd90d823490" as const;
+export const OPENAPI_SHA256 = "dffb86f9f9f2a0feebdeaf2d580fd8001cc463d0e2dfea4e4da08606c2e5840d" as const;
 
 export type TaxonomyItem = { slug: string; label: string; category: string | null };
 export type MetricPoint = { observed_at: string; value: number };
@@ -78,6 +78,30 @@ export type RecordSummary = {
 export type RecordCollectionPageModel = {
   kind: string; generated_at: string | null; count: number; records: RecordSummary[];
 };
+export type CatalogEntity = {
+  id: string; entity_type_id: string; type_label: string; semantic_class: string;
+  organization_id?: string | null; slug: string; name: string; summary?: string | null;
+  canonical_url?: string | null; route?: string | null; maturity?: string | null;
+  observed_at?: string | null;
+};
+export type EntityRelationship = {
+  id: string; relationship_type: string; role?: string | null; evidence_type: string;
+  source_url?: string | null; confidence: string; status: string; observed_at?: string | null;
+  entity_id: string; entity_type_id: string; type_label: string; semantic_class: string;
+  name: string; summary?: string | null; canonical_url?: string | null; route?: string | null;
+  organization_id?: string | null; direction: "outgoing" | "incoming";
+};
+export type EntityGraph = {
+  entity: CatalogEntity; owner?: EntityRelationship | null;
+  urls: Array<{ url_role: string; url: string; label?: string | null; evidence_type: string; observed_at?: string | null }>;
+  relationships: EntityRelationship[]; outgoing: EntityRelationship[]; incoming: EntityRelationship[];
+};
+export type EntityPageModel = { kind: "entity_record"; graph: EntityGraph };
+export type EntityCollectionPageModel = {
+  kind: "entity_collection"; entity_type?: string | null; query: string; page: number;
+  page_size: number; total: number; page_count: number;
+  entities: Array<CatalogEntity & { relationship_count: number }>;
+};
 export type RecordPageModel = {
   kind: string; generated_at: string;
   record: Record<string, unknown> & { id: string; slug: string; title: string; summary: string };
@@ -102,6 +126,7 @@ export type RecordPageModel = {
       summary: SsotGovernanceSummary;
     }>;
   };
+  graph?: EntityGraph | null;
 };
 
 export async function getRecordPageModel(path: string, signal?: AbortSignal): Promise<RecordPageModel> {
@@ -123,4 +148,12 @@ export async function getRepositoryMetricSnapshot(owner = "", signal?: AbortSign
   });
   if (!response.ok) throw new Error(`Repository metric response ${response.status}`);
   return response.json() as Promise<RepositoryMetricSnapshot>;
+}
+
+export async function getEntityPageModel(entityId: string, signal?: AbortSignal): Promise<EntityPageModel> {
+  const response = await fetch(`/api/v1/entities/${encodeURIComponent(entityId)}`, {
+    signal, headers: { Accept: "application/json" }, cache: "default",
+  });
+  if (!response.ok) throw new Error(`Entity API response ${response.status}`);
+  return response.json() as Promise<EntityPageModel>;
 }

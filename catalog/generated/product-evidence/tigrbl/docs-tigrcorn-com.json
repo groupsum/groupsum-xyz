@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-03T17:22:36Z",
+  "generated_at": "2026-08-03T22:06:00Z",
   "packages": [
     {
       "claim_boundary": "Publication is reported only when confirmed by the named public registry.",
@@ -17,7 +17,7 @@
       "evidence": [
         {
           "kind": "source",
-          "observed_at": "2026-08-03T17:22:36Z",
+          "observed_at": "2026-08-03T22:06:00Z",
           "url": "https://github.com/tigrbl/docs-tigrcorn-com/blob/HEAD/package.json"
         }
       ],
@@ -31,7 +31,7 @@
       "license_status": "not-observed",
       "manifest_path": "package.json",
       "name": "docs-tigrcorn-com",
-      "observed_at": "2026-08-03T17:22:36Z",
+      "observed_at": "2026-08-03T22:06:00Z",
       "owner": "tigrbl",
       "private": true,
       "publication_status": "manifest_private",
@@ -165,7 +165,7 @@
       "evidence": [
         {
           "kind": "source",
-          "observed_at": "2026-08-03T17:22:36Z",
+          "observed_at": "2026-08-03T22:06:00Z",
           "url": "https://github.com/tigrbl/docs-tigrcorn-com/blob/HEAD/pyproject.toml"
         }
       ],
@@ -179,10 +179,10 @@
       "license_status": "not-observed",
       "manifest_path": "pyproject.toml",
       "name": "docs-tigrcorn-com",
-      "observed_at": "2026-08-03T17:22:36Z",
+      "observed_at": "2026-08-03T22:06:00Z",
       "owner": "tigrbl",
       "private": false,
-      "publication_status": "registry_not_found",
+      "publication_status": "not-confirmed",
       "published": false,
       "registry_url": null,
       "relationship_count": 12,
@@ -340,7 +340,7 @@
     "evidence": [
       {
         "kind": "source",
-        "observed_at": "2026-08-03T17:22:38Z",
+        "observed_at": "2026-08-03T22:06:01Z",
         "url": "https://github.com/tigrbl/docs-tigrcorn-com"
       }
     ],
@@ -379,7 +379,7 @@
       "watchers": 0
     },
     "name": "docs-tigrcorn-com",
-    "observed_at": "2026-08-03T17:22:38Z",
+    "observed_at": "2026-08-03T22:06:01Z",
     "owner": "tigrbl",
     "package_ids": [
       "package:npm:docs-tigrcorn-com:tigrbl/docs-tigrcorn-com:package.json",
@@ -394,7 +394,7 @@
         "legal_evidence": [],
         "legal_inherits_from": "repository:tigrbl/docs-tigrcorn-com",
         "name": "docs/getting-started.md",
-        "observed_at": "2026-08-03T17:22:38Z",
+        "observed_at": "2026-08-03T22:06:01Z",
         "path": "docs/getting-started.md",
         "repository": "tigrbl/docs-tigrcorn-com",
         "repository_route": "/catalog/repositories/tigrbl/docs-tigrcorn-com",
@@ -408,7 +408,7 @@
         "legal_evidence": [],
         "legal_inherits_from": "repository:tigrbl/docs-tigrcorn-com",
         "name": "docs/guides",
-        "observed_at": "2026-08-03T17:22:38Z",
+        "observed_at": "2026-08-03T22:06:01Z",
         "path": "docs/guides",
         "repository": "tigrbl/docs-tigrcorn-com",
         "repository_route": "/catalog/repositories/tigrbl/docs-tigrcorn-com",
@@ -422,7 +422,7 @@
         "legal_evidence": [],
         "legal_inherits_from": "repository:tigrbl/docs-tigrcorn-com",
         "name": "docs/index.md",
-        "observed_at": "2026-08-03T17:22:38Z",
+        "observed_at": "2026-08-03T22:06:01Z",
         "path": "docs/index.md",
         "repository": "tigrbl/docs-tigrcorn-com",
         "repository_route": "/catalog/repositories/tigrbl/docs-tigrcorn-com",
@@ -436,7 +436,7 @@
         "legal_evidence": [],
         "legal_inherits_from": "repository:tigrbl/docs-tigrcorn-com",
         "name": "docs/reference",
-        "observed_at": "2026-08-03T17:22:38Z",
+        "observed_at": "2026-08-03T22:06:01Z",
         "path": "docs/reference",
         "repository": "tigrbl/docs-tigrcorn-com",
         "repository_route": "/catalog/repositories/tigrbl/docs-tigrcorn-com",
@@ -454,8 +454,8 @@
       "counts": {},
       "coverage": {},
       "governed": false,
-      "observation_status": "not_found",
-      "observed_at": "2026-08-03T19:58:17Z",
+      "observation_status": "error",
+      "observed_at": "2026-08-03T22:06:01Z",
       "present": false,
       "registry_url": null,
       "status_counts": {},

@@ -83,6 +83,9 @@ const generatedPortfolioRecords = generatedPortfolioCollection.records.map((item
     forks: signals.forks,
     contributors: signals.contributors,
     commits: signals.commits,
+    organizationName: model.record.organization_name,
+    organizationUrl: model.record.organization_url,
+    organizationId: `${root}/products/${model.record.organization_slug}/#organization`,
   };
 });
 const detailRecords = [
@@ -92,7 +95,7 @@ const detailRecords = [
   ...productMetadataRecords.map((item) => {
     const model = readOptionalPageModel("product", item.slug);
     const signals = model?.implementation?.signals?.metrics || {};
-    return { route: `/products/records/${item.slug}/`, url: absolute(`/products/records/${item.slug}/`), title: `${item.name} | GroupSum products`, description: cleanTrim(item.summary), type: "website", schemaFamily: "product-detail", stars: signals.stars, forks: signals.forks, contributors: signals.contributors, commits: signals.commits };
+    return { route: `/products/records/${item.slug}/`, url: absolute(`/products/records/${item.slug}/`), title: `${item.name} | GroupSum products`, description: cleanTrim(item.summary), type: "website", schemaFamily: "product-detail", stars: signals.stars, forks: signals.forks, contributors: signals.contributors, commits: signals.commits, organizationName: model?.record?.organization_name, organizationUrl: model?.record?.organization_url, organizationId: model?.record?.organization_slug ? `${root}/products/${model.record.organization_slug}/#organization` : undefined };
   }),
   ...generatedPortfolioRecords
 ];

@@ -90,6 +90,366 @@ def ensure_repository_ssot_columns(connection: Connection) -> None:
             connection.execute(f"ALTER TABLE repositories ADD COLUMN {name} {definition}")
 
 
+ENTITY_TYPES = {
+    "organization": ("Organization", "party"),
+    "product": ("Product", "offering"),
+    "portfolio": ("Portfolio", "collection"),
+    "solution": ("Solution", "offering"),
+    "service": ("Service", "offering"),
+    "insight": ("Insight", "content"),
+    "repository": ("Repository", "resource"),
+    "package": ("Package", "resource"),
+    "website": ("Website", "experience"),
+    "documentation": ("Documentation", "content"),
+    "api_definition": ("API definition", "resource"),
+    "api_source": ("API source", "resource"),
+    "api": ("Live API", "experience"),
+    "demo": ("Demo", "experience"),
+    "example": ("Example", "content"),
+    "showcase": ("Showcase", "experience"),
+    "ui": ("User interface", "experience"),
+    "resource": ("Resource", "resource"),
+    "governance_registry": ("SSOT registry", "governance"),
+}
+
+
+def catalog_entity_id(source_table: str, source_id: str) -> str:
+    return stable_id("entity", source_table, source_id)
+
+
+def rebuild_entity_graph(connection: Connection, generated_at: str) -> dict[str, int]:
+    """Project normalized tables into one canonical, evidence-bearing entity graph."""
+    for table in ("entity_relationships", "entity_urls", "entity_aliases", "catalog_entities"):
+        connection.execute(f"DELETE FROM {table}")
+    connection.execute("DELETE FROM entity_types")
+    for type_id, (label, semantic_class) in ENTITY_TYPES.items():
+        upsert(
+            connection,
+            "entity_types",
+            {
+                "id": type_id,
+                "label": label,
+                "semantic_class": semantic_class,
+                "description": None,
+            },
+        )
+
+    def add_entity(
+        source_table: str,
+        source_id: str,
+        entity_type: str,
+        slug: str,
+        name: str,
+        *,
+        organization_id: str | None = None,
+        summary: str | None = None,
+        canonical_url: str | None = None,
+        visibility: str = "public",
+        maturity: str | None = None,
+        observed_at: str | None = None,
+        source_url: str | None = None,
+    ) -> str:
+        entity_id = catalog_entity_id(source_table, source_id)
+        upsert(
+            connection,
+            "catalog_entities",
+            {
+                "id": entity_id,
+                "entity_type_id": entity_type if entity_type in ENTITY_TYPES else "resource",
+                "organization_id": organization_id,
+                "slug": slug,
+                "name": name,
+                "summary": summary,
+                "canonical_url": canonical_url,
+                "source_table": source_table,
+                "source_id": source_id,
+                "visibility": visibility,
+                "maturity": maturity,
+                "observed_at": observed_at or generated_at,
+            },
+        )
+        for role, url, label, evidence_type in (
+            ("canonical", canonical_url, "Canonical record", "catalog.projection"),
+            ("source", source_url, "Primary source", "source.observation"),
+        ):
+            if not url:
+                continue
+            upsert(
+                connection,
+                "entity_urls",
+                {
+                    "id": stable_id("entity-url", entity_id, role, url),
+                    "entity_id": entity_id,
+                    "url_role": role,
+                    "url": url,
+                    "label": label,
+                    "evidence_type": evidence_type,
+                    "observed_at": observed_at or generated_at,
+                },
+            )
+        if canonical_url:
+            upsert(
+                connection,
+                "entity_aliases",
+                {
+                    "id": stable_id("entity-alias", entity_id, "route", canonical_url),
+                    "entity_id": entity_id,
+                    "alias_kind": "route",
+                    "alias": canonical_url,
+                },
+            )
+        return entity_id
+
+    def link(
+        source_entity: str,
+        target_entity: str,
+        relationship_type: str,
+        *,
+        role: str | None = None,
+        evidence_type: str,
+        source_url: str | None = None,
+        observed_at: str | None = None,
+        confidence: str = "observed",
+    ) -> None:
+        upsert(
+            connection,
+            "entity_relationships",
+            {
+                "id": stable_id(
+                    "entity-relationship",
+                    source_entity,
+                    target_entity,
+                    relationship_type,
+                    role or "",
+                ),
+                "source_entity_id": source_entity,
+                "target_entity_id": target_entity,
+                "relationship_type": relationship_type,
+                "role": role,
+                "evidence_type": evidence_type,
+                "source_url": source_url,
+                "confidence": confidence,
+                "status": "active",
+                "observed_at": observed_at or generated_at,
+            },
+        )
+
+    organization_entities: dict[str, str] = {}
+    for row in connection.execute("SELECT * FROM organizations").fetchall():
+        item = dict(row)
+        organization_entities[item["id"]] = add_entity(
+            "organizations",
+            item["id"],
+            "organization",
+            item["slug"],
+            item["name"],
+            organization_id=item["id"],
+            summary=item.get("summary"),
+            canonical_url=f"https://groupsum.xyz/products/{item['slug']}",
+            observed_at=item.get("observed_at"),
+            source_url=item.get("source_url"),
+        )
+
+    for row in connection.execute("SELECT * FROM records").fetchall():
+        item = dict(row)
+        entity_id = add_entity(
+            "records",
+            item["id"],
+            item["record_type"],
+            item["slug"],
+            item["title"],
+            organization_id=item["organization_id"],
+            summary=item.get("summary"),
+            canonical_url=item.get("canonical_url"),
+            visibility=item.get("visibility") or "public",
+            maturity=item.get("maturity"),
+            observed_at=item.get("updated_at"),
+            source_url=item.get("source_url"),
+        )
+        owner = organization_entities.get(item["organization_id"])
+        if owner:
+            link(
+                entity_id,
+                owner,
+                "owned_by",
+                evidence_type="editorial.organization_id",
+                source_url=item.get("canonical_url"),
+                observed_at=item.get("updated_at"),
+            )
+
+    for row in connection.execute("SELECT * FROM repositories").fetchall():
+        item = dict(row)
+        canonical = f"https://groupsum.xyz/catalog/repositories/{item['owner']}/{item['name']}"
+        entity_id = add_entity(
+            "repositories",
+            item["id"],
+            "repository",
+            f"{item['owner']}/{item['name']}",
+            f"{item['owner']}/{item['name']}",
+            organization_id=item.get("organization_id"),
+            summary=item.get("description"),
+            canonical_url=canonical,
+            maturity="archived" if item.get("is_archived") else "observed-public-source",
+            observed_at=item.get("observed_at"),
+            source_url=item.get("url"),
+        )
+        owner = organization_entities.get(item.get("organization_id"))
+        if owner:
+            link(
+                entity_id,
+                owner,
+                "owned_by",
+                evidence_type="github.repository_owner",
+                source_url=item.get("url"),
+                observed_at=item.get("observed_at"),
+            )
+        if item.get("ssot_governed") and item.get("ssot_registry_url"):
+            registry_id = add_entity(
+                "ssot_registries",
+                item["id"],
+                "governance_registry",
+                f"{item['owner']}/{item['name']}/ssot-registry",
+                f"{item['owner']}/{item['name']} SSOT registry",
+                organization_id=item.get("organization_id"),
+                summary="Canonical repository governance registry.",
+                canonical_url=item["ssot_registry_url"],
+                observed_at=item.get("ssot_observed_at"),
+                source_url=item["ssot_registry_url"],
+            )
+            link(
+                entity_id,
+                registry_id,
+                "governed_by",
+                evidence_type="ssot.registry",
+                source_url=item["ssot_registry_url"],
+                observed_at=item.get("ssot_observed_at"),
+            )
+
+    for row in connection.execute("SELECT * FROM packages").fetchall():
+        item = dict(row)
+        route = (
+            f"https://groupsum.xyz/catalog/packages/{item['ecosystem']}/{item['route_key']}"
+            if item.get("route_key")
+            else item.get("registry_url")
+        )
+        add_entity(
+            "packages",
+            item["id"],
+            "package",
+            f"{item['ecosystem']}:{item['name']}",
+            item["name"],
+            summary=item.get("description"),
+            canonical_url=route,
+            maturity=item.get("publication_status"),
+            observed_at=item.get("observed_at"),
+            source_url=item.get("registry_url") or item.get("source_url"),
+        )
+
+    for row in connection.execute("SELECT * FROM resources").fetchall():
+        item = dict(row)
+        resource_type = item.get("resource_type") or "resource"
+        route = (
+            f"https://groupsum.xyz/catalog/resources/{resource_type}/{item['route_key']}"
+            if item.get("route_key")
+            else item.get("url")
+        )
+        add_entity(
+            "resources",
+            item["id"],
+            resource_type,
+            item.get("route_key") or item["id"],
+            item["title"],
+            summary=item.get("summary"),
+            canonical_url=route,
+            observed_at=item.get("observed_at"),
+            source_url=item.get("url"),
+        )
+
+    record_repository_edges = connection.execute(
+        "SELECT rr.*, repo.url FROM record_repositories rr "
+        "JOIN repositories repo ON repo.id = rr.repository_id"
+    ).fetchall()
+    for row in record_repository_edges:
+        item = dict(row)
+        link(
+            catalog_entity_id("records", item["record_id"]),
+            catalog_entity_id("repositories", item["repository_id"]),
+            "implemented_by",
+            role=item.get("role"),
+            evidence_type="catalog.record_repository",
+            source_url=item.get("url"),
+        )
+    for row in connection.execute("SELECT * FROM record_packages").fetchall():
+        item = dict(row)
+        link(
+            catalog_entity_id("records", item["record_id"]),
+            catalog_entity_id("packages", item["package_id"]),
+            "distributed_as",
+            role=item.get("role"),
+            evidence_type="catalog.record_package",
+        )
+    resource_relationships = {
+        "website": "presented_at",
+        "documentation": "documented_by",
+        "api_definition": "defines_api_with",
+        "api_source": "implements_api_with",
+        "api": "exposes_api",
+        "demo": "demonstrated_by",
+        "example": "has_example",
+        "showcase": "showcased_by",
+        "ui": "has_ui",
+    }
+    for row in connection.execute(
+        "SELECT rr.*, rs.resource_type, rs.url FROM record_resources rr "
+        "JOIN resources rs ON rs.id = rr.resource_id"
+    ).fetchall():
+        item = dict(row)
+        link(
+            catalog_entity_id("records", item["record_id"]),
+            catalog_entity_id("resources", item["resource_id"]),
+            resource_relationships.get(item["resource_type"], "related_to"),
+            role=item.get("role"),
+            evidence_type="catalog.record_resource",
+            source_url=item.get("url"),
+        )
+    for row in connection.execute("SELECT * FROM package_repositories").fetchall():
+        item = dict(row)
+        link(
+            catalog_entity_id("packages", item["package_id"]),
+            catalog_entity_id("repositories", item["repository_id"]),
+            "source_code_at",
+            role=item.get("path"),
+            evidence_type="repository.manifest",
+        )
+    for row in connection.execute(
+        "SELECT id, repository_id, url, path FROM resources WHERE repository_id IS NOT NULL"
+    ).fetchall():
+        item = dict(row)
+        link(
+            catalog_entity_id("resources", item["id"]),
+            catalog_entity_id("repositories", item["repository_id"]),
+            "source_code_at",
+            role=item.get("path"),
+            evidence_type="repository.resource_path",
+            source_url=item.get("url"),
+        )
+    for row in connection.execute("SELECT * FROM record_relations").fetchall():
+        item = dict(row)
+        link(
+            catalog_entity_id("records", item["source_record_id"]),
+            catalog_entity_id("records", item["target_record_id"]),
+            item["relation_type"],
+            role=item.get("note"),
+            evidence_type="editorial.record_relation",
+        )
+    return {
+        "entities": connection.execute("SELECT COUNT(*) FROM catalog_entities").fetchone()[0],
+        "entity_relationships": connection.execute(
+            "SELECT COUNT(*) FROM entity_relationships"
+        ).fetchone()[0],
+    }
+
+
 def import_catalog(
     database_path: str | Path,
     repo_root: Path,
@@ -1037,6 +1397,7 @@ def import_catalog(
                         "sort_order": 0,
                     },
                 )
+        counts.update(rebuild_entity_graph(connection, generated_at))
         public_records = connection.execute(
             """
             SELECT id FROM records

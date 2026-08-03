@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-03T17:22:36Z",
+  "generated_at": "2026-08-03T22:06:00Z",
   "packages": [
     {
       "claim_boundary": "Publication is reported only when confirmed by the named public registry.",
@@ -207,7 +207,7 @@
       "evidence": [
         {
           "kind": "source",
-          "observed_at": "2026-08-03T17:22:36Z",
+          "observed_at": "2026-08-03T22:06:00Z",
           "url": "https://github.com/swarmauri/swarmauri-com/blob/HEAD/package.json"
         }
       ],
@@ -221,7 +221,7 @@
       "license_status": "not-observed",
       "manifest_path": "package.json",
       "name": "swarmauri-com",
-      "observed_at": "2026-08-03T17:22:36Z",
+      "observed_at": "2026-08-03T22:06:00Z",
       "owner": "swarmauri",
       "private": true,
       "publication_status": "manifest_private",
@@ -285,7 +285,7 @@
       "evidence": [
         {
           "kind": "source",
-          "observed_at": "2026-08-03T17:22:36Z",
+          "observed_at": "2026-08-03T22:06:00Z",
           "url": "https://github.com/swarmauri/swarmauri-com/blob/HEAD/pyproject.toml"
         }
       ],
@@ -299,10 +299,10 @@
       "license_status": "not-observed",
       "manifest_path": "pyproject.toml",
       "name": "swarmauri-com",
-      "observed_at": "2026-08-03T17:22:36Z",
+      "observed_at": "2026-08-03T22:06:00Z",
       "owner": "swarmauri",
       "private": false,
-      "publication_status": "registry_not_found",
+      "publication_status": "not-confirmed",
       "published": false,
       "registry_url": null,
       "relationship_count": 4,
@@ -459,7 +459,7 @@
     "evidence": [
       {
         "kind": "source",
-        "observed_at": "2026-08-03T17:22:39Z",
+        "observed_at": "2026-08-03T22:06:02Z",
         "url": "https://github.com/swarmauri/swarmauri-com"
       }
     ],
@@ -504,7 +504,7 @@
       "watchers": 0
     },
     "name": "swarmauri-com",
-    "observed_at": "2026-08-03T17:22:39Z",
+    "observed_at": "2026-08-03T22:06:02Z",
     "owner": "swarmauri",
     "package_ids": [
       "package:npm:swarmauri-com:swarmauri/swarmauri-com:package.json",
@@ -519,7 +519,7 @@
         "legal_evidence": [],
         "legal_inherits_from": "repository:swarmauri/swarmauri-com",
         "name": "docs/unified_swarmauri_company_portfolio_brief.md",
-        "observed_at": "2026-08-03T17:22:39Z",
+        "observed_at": "2026-08-03T22:06:02Z",
         "path": "docs/unified_swarmauri_company_portfolio_brief.md",
         "repository": "swarmauri/swarmauri-com",
         "repository_route": "/catalog/repositories/swarmauri/swarmauri-com",
@@ -537,8 +537,8 @@
       "counts": {},
       "coverage": {},
       "governed": false,
-      "observation_status": "not_found",
-      "observed_at": "2026-08-03T19:58:17Z",
+      "observation_status": "error",
+      "observed_at": "2026-08-03T22:06:02Z",
       "present": false,
       "registry_url": null,
       "status_counts": {},

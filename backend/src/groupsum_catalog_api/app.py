@@ -14,6 +14,8 @@ from .config import Settings
 from .migrations import migrate
 from .page_models import (
     catalog_resource_detail,
+    entity_collection,
+    entity_detail,
     insight_collection,
     organization_detail,
     record_collection,
@@ -170,6 +172,34 @@ def build_app(
     @catalog_app.get("/api/v1/organizations/{slug}", summary="Organization record page model")
     def organization(request: Request, slug: str):
         return organization_detail(database, request, slug)
+
+    @catalog_app.get("/api/v1/entities", summary="Canonical catalog entity collection")
+    def entities(
+        request: Request,
+        entity_type: str = "",
+        q: str = "",
+        page: int = 1,
+        page_size: int = 50,
+    ):
+        requested_type = request.query_params.get("entity_type", entity_type)
+        requested_query = request.query_params.get("q", q)
+        try:
+            requested_page = int(request.query_params.get("page", page))
+            requested_page_size = int(request.query_params.get("page_size", page_size))
+        except (TypeError, ValueError):
+            requested_page, requested_page_size = page, page_size
+        return entity_collection(
+            database,
+            request,
+            requested_type,
+            requested_query,
+            requested_page,
+            requested_page_size,
+        )
+
+    @catalog_app.get("/api/v1/entities/{entity_id}", summary="Canonical catalog entity graph")
+    def entity(request: Request, entity_id: str):
+        return entity_detail(database, request, entity_id)
 
     @catalog_app.get(
         "/api/v1/repository-metrics",

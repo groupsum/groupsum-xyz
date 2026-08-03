@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-03T17:22:36Z",
+  "generated_at": "2026-08-03T22:06:00Z",
   "packages": [
     {
       "claim_boundary": "Publication is reported only when confirmed by the named public registry.",
@@ -63,7 +63,7 @@
       "evidence": [
         {
           "kind": "source",
-          "observed_at": "2026-08-03T17:22:36Z",
+          "observed_at": "2026-08-03T22:06:00Z",
           "url": "https://github.com/groupsum/authorization-policy-governance-pack/blob/HEAD/pyproject.toml"
         }
       ],
@@ -104,10 +104,10 @@
       "license_status": "observed",
       "manifest_path": "pyproject.toml",
       "name": "authorization-policy-governance-pack",
-      "observed_at": "2026-08-03T17:22:36Z",
+      "observed_at": "2026-08-03T22:06:00Z",
       "owner": "groupsum",
       "private": false,
-      "publication_status": "registry_not_found",
+      "publication_status": "not-confirmed",
       "published": false,
       "registry_url": null,
       "relationship_count": 6,
@@ -265,7 +265,7 @@
     "evidence": [
       {
         "kind": "source",
-        "observed_at": "2026-08-03T17:22:37Z",
+        "observed_at": "2026-08-03T22:06:00Z",
         "url": "https://github.com/groupsum/authorization-policy-governance-pack"
       }
     ],
@@ -323,7 +323,7 @@
       "watchers": 0
     },
     "name": "authorization-policy-governance-pack",
-    "observed_at": "2026-08-03T17:22:37Z",
+    "observed_at": "2026-08-03T22:06:00Z",
     "owner": "groupsum",
     "package_ids": [
       "package:pypi:authorization-policy-governance-pack:groupsum/authorization-policy-governance-pack:pyproject.toml"
@@ -337,7 +337,7 @@
         "legal_evidence": [],
         "legal_inherits_from": "repository:groupsum/authorization-policy-governance-pack",
         "name": "docs/governance",
-        "observed_at": "2026-08-03T17:22:37Z",
+        "observed_at": "2026-08-03T22:06:00Z",
         "path": "docs/governance",
         "repository": "groupsum/authorization-policy-governance-pack",
         "repository_route": "/catalog/repositories/groupsum/authorization-policy-governance-pack",
@@ -355,8 +355,8 @@
       "counts": {},
       "coverage": {},
       "governed": false,
-      "observation_status": "not_found",
-      "observed_at": "2026-08-03T19:58:16Z",
+      "observation_status": "error",
+      "observed_at": "2026-08-03T22:06:00Z",
       "present": false,
       "registry_url": null,
       "status_counts": {},

@@ -22,7 +22,7 @@ async def test_health_and_openapi(tmp_path: Path) -> None:
             "status": "ok",
             "database": "sqlite-test",
             "analytics": "duckdb",
-            "schema_tables": 28,
+            "schema_tables": 33,
         }
         assert health.headers["cache-control"] == "no-store"
 
@@ -35,6 +35,8 @@ async def test_health_and_openapi(tmp_path: Path) -> None:
         assert "/repositorycontributor" in openapi.json()["paths"]
         assert "/api/v1/products/{slug}" in openapi.json()["paths"]
         assert "/api/v1/repository-metrics" in openapi.json()["paths"]
+        assert "/api/v1/entities" in openapi.json()["paths"]
+        assert "/api/v1/entities/{entity_id}" in openapi.json()["paths"]
         operation_ids = {
             operation["operationId"]
             for path in ("/record", "/record/{item_id}")
@@ -58,6 +60,8 @@ async def test_peagen_page_model_has_explicit_attachments(tmp_path: Path) -> Non
     assert counts["packages"] == 1_125
     assert counts["releases"] > 17_000
     assert counts["dependencies"] > 8_000
+    assert counts["entities"] > 1_700
+    assert counts["entity_relationships"] > 1_000
     assert import_catalog(database_path, repo_root) == counts
     with connect(database_path) as connection:
         release_count = connection.execute("SELECT COUNT(*) FROM releases").fetchone()[0]
@@ -79,6 +83,13 @@ async def test_peagen_page_model_has_explicit_attachments(tmp_path: Path) -> Non
         assert response.status_code == 200, response.text
         model = response.json()
         assert model["record"]["title"] == "Peagen"
+        assert model["graph"]["entity"]["type_label"] == "Product"
+        assert model["graph"]["owner"]["name"] == "Swarmauri"
+        assert model["graph"]["owner"]["relationship_type"] == "owned_by"
+        assert any(
+            relation["relationship_type"] == "documented_by"
+            for relation in model["graph"]["relationships"]
+        )
         assert len(model["implementation"]["repositories"]) == 3
         assert len(model["implementation"]["packages"]) == 5
         assert len(model["implementation"]["resources"]) == 7
@@ -196,3 +207,17 @@ async def test_peagen_page_model_has_explicit_attachments(tmp_path: Path) -> Non
         assert package_detail.status_code == 200
         assert package_detail.json()["legal"]["evidence"]
         assert "dependencies" in package_detail.json()["implementation"]
+        assert package_detail.json()["graph"]["entity"]["entity_type_id"] == "package"
+
+        entities = await client.get("/api/v1/entities?entity_type=website&page_size=5")
+        assert entities.status_code == 200
+        assert entities.json()["total"] > 0
+        assert all(
+            entity["entity_type_id"] == "website"
+            for entity in entities.json()["entities"]
+        )
+
+        entity_id = model["graph"]["entity"]["id"]
+        entity_record = await client.get(f"/api/v1/entities/{entity_id}")
+        assert entity_record.status_code == 200
+        assert entity_record.json()["graph"]["owner"]["type_label"] == "Organization"
