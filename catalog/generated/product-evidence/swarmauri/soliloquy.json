@@ -1,9 +1,121 @@
 {
-  "generated_at": "2026-08-03T10:05:58Z",
+  "generated_at": "2026-08-03T13:56:23Z",
   "packages": [
     {
       "claim_boundary": "Publication is reported only when confirmed by the named public registry.",
+      "dependencies": [
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "poetry-core",
+          "package_key": "pypi:poetry-core",
+          "requirement": ">=1.0.0",
+          "scope": "build-system.requires"
+        },
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "requests",
+          "package_key": "pypi:requests",
+          "requirement": "*",
+          "scope": "dependencies"
+        },
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "tomlkit",
+          "package_key": "pypi:tomlkit",
+          "requirement": "*",
+          "scope": "dependencies"
+        },
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "packaging",
+          "package_key": "pypi:packaging",
+          "requirement": "*",
+          "scope": "dependencies"
+        },
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "ruff",
+          "package_key": "pypi:ruff",
+          "requirement": "*",
+          "scope": "dependencies"
+        },
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "pytest",
+          "package_key": "pypi:pytest",
+          "requirement": "^8.0.0",
+          "scope": "dependencies"
+        },
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "pytest-xdist",
+          "package_key": "pypi:pytest-xdist",
+          "requirement": "^3.6.1",
+          "scope": "dependencies"
+        },
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "pytest-asyncio",
+          "package_key": "pypi:pytest-asyncio",
+          "requirement": "0.24.0",
+          "scope": "dependencies"
+        },
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "pytest",
+          "package_key": "pypi:pytest",
+          "requirement": "^8.0.0",
+          "scope": "tool.poetry.group.dev.dependencies"
+        },
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "flake8",
+          "package_key": "pypi:flake8",
+          "requirement": "^7.1.1",
+          "scope": "tool.poetry.group.dev.dependencies"
+        },
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "pytest-mock",
+          "package_key": "pypi:pytest-mock",
+          "requirement": "*",
+          "scope": "tool.poetry.group.dev.dependencies"
+        },
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "requests",
+          "package_key": "pypi:requests",
+          "requirement": "*",
+          "scope": "tool.poetry.group.dev.dependencies"
+        }
+      ],
       "dependency_count": 12,
+      "dependent_count": 0,
+      "dependents": [],
       "description": "Observed pypi package record for soliloquy.",
       "description_source": "generated-factual",
       "display_name": "soliloquy",
@@ -14,7 +126,7 @@
       "evidence": [
         {
           "kind": "registry",
-          "observed_at": "2026-08-03T10:05:58Z",
+          "observed_at": "2026-08-03T13:56:23Z",
           "url": "https://pypi.org/project/soliloquy/"
         }
       ],
@@ -23,18 +135,524 @@
       "latest_version": "0.1.4",
       "manifest_path": "pyproject.toml",
       "name": "soliloquy",
-      "observed_at": "2026-08-03T10:05:58Z",
+      "observed_at": "2026-08-03T13:56:23Z",
       "owner": "swarmauri",
       "private": false,
       "publication_status": "published",
       "published": true,
       "registry_url": "https://pypi.org/project/soliloquy/",
-      "relationship_count": 11,
+      "relationship_count": 13,
       "relationship_counts": {
-        "package_depends_on_external": 10,
+        "package_depends_on_external": 12,
         "repository_contains_package": 1
       },
       "release_count": 63,
+      "releases": [
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2025-02-18T04:49:45.998235Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/soliloquy/0.1.5.dev1/",
+          "version": "0.1.5.dev1"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2025-02-13T16:00:24.812705Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/soliloquy/0.1.4/",
+          "version": "0.1.4"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2025-02-13T10:46:03.149893Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/soliloquy/0.1.3.dev9/",
+          "version": "0.1.3.dev9"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2025-02-13T10:35:15.597468Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/soliloquy/0.1.3.dev8/",
+          "version": "0.1.3.dev8"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2025-02-13T10:14:29.135995Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/soliloquy/0.1.3.dev7/",
+          "version": "0.1.3.dev7"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2025-02-13T09:25:21.363421Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/soliloquy/0.1.3.dev6/",
+          "version": "0.1.3.dev6"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2025-02-05T09:43:07.657574Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/soliloquy/0.1.3.dev5/",
+          "version": "0.1.3.dev5"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2025-02-05T07:39:09.127297Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/soliloquy/0.1.3.dev4/",
+          "version": "0.1.3.dev4"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2025-02-05T07:21:42.214638Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/soliloquy/0.1.3.dev3/",
+          "version": "0.1.3.dev3"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2025-02-04T16:13:00.871093Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/soliloquy/0.1.3.dev2/",
+          "version": "0.1.3.dev2"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2025-02-04T16:10:59.603885Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/soliloquy/0.1.3.dev1/",
+          "version": "0.1.3.dev1"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2025-02-04T14:49:38.636182Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/soliloquy/0.1.2/",
+          "version": "0.1.2"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2025-02-04T12:19:23.744108Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/soliloquy/0.1.1/",
+          "version": "0.1.1"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2025-02-04T07:24:39.859864Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/soliloquy/0.1.1.dev64/",
+          "version": "0.1.1.dev64"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2025-02-04T06:40:58.022317Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/soliloquy/0.1.1.dev61/",
+          "version": "0.1.1.dev61"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2025-02-04T06:18:43.224522Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/soliloquy/0.1.1.dev60/",
+          "version": "0.1.1.dev60"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2025-02-04T06:03:53.946268Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/soliloquy/0.1.1.dev58/",
+          "version": "0.1.1.dev58"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2025-02-04T05:43:50.311993Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/soliloquy/0.1.1.dev57/",
+          "version": "0.1.1.dev57"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2025-02-04T05:32:46.826667Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/soliloquy/0.1.1.dev56/",
+          "version": "0.1.1.dev56"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2025-02-04T04:45:50.012310Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/soliloquy/0.1.1.dev55/",
+          "version": "0.1.1.dev55"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2025-02-04T04:36:53.230842Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/soliloquy/0.1.1.dev54/",
+          "version": "0.1.1.dev54"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2025-02-04T04:33:33.403436Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/soliloquy/0.1.1.dev53/",
+          "version": "0.1.1.dev53"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2025-02-04T03:38:03.480330Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/soliloquy/0.1.1.dev50/",
+          "version": "0.1.1.dev50"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2025-02-04T03:10:15.210949Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/soliloquy/0.1.1.dev49/",
+          "version": "0.1.1.dev49"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2025-02-04T03:04:36.771841Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/soliloquy/0.1.1.dev48/",
+          "version": "0.1.1.dev48"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2025-02-04T02:48:01.665285Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/soliloquy/0.1.1.dev47/",
+          "version": "0.1.1.dev47"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2025-01-28T19:34:19.019272Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/soliloquy/0.1.1.dev46/",
+          "version": "0.1.1.dev46"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2025-01-28T19:09:27.824276Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/soliloquy/0.1.1.dev45/",
+          "version": "0.1.1.dev45"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2025-01-28T18:16:25.261773Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/soliloquy/0.1.1.dev44/",
+          "version": "0.1.1.dev44"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2025-01-28T17:53:46.146593Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/soliloquy/0.1.1.dev43/",
+          "version": "0.1.1.dev43"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2025-01-28T17:33:09.970459Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/soliloquy/0.1.1.dev42/",
+          "version": "0.1.1.dev42"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2025-01-28T16:35:26.934370Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/soliloquy/0.1.1.dev41/",
+          "version": "0.1.1.dev41"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2025-01-28T16:06:10.499114Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/soliloquy/0.1.1.dev40/",
+          "version": "0.1.1.dev40"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2025-01-28T15:47:26.650162Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/soliloquy/0.1.1.dev39/",
+          "version": "0.1.1.dev39"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2025-01-28T15:17:15.602403Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/soliloquy/0.1.1.dev38/",
+          "version": "0.1.1.dev38"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2025-01-28T14:51:49.435599Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/soliloquy/0.1.1.dev37/",
+          "version": "0.1.1.dev37"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2025-01-28T14:45:50.189548Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/soliloquy/0.1.1.dev36/",
+          "version": "0.1.1.dev36"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2025-01-28T13:37:06.730830Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/soliloquy/0.1.1.dev35/",
+          "version": "0.1.1.dev35"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2025-01-28T13:32:21.854536Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/soliloquy/0.1.1.dev34/",
+          "version": "0.1.1.dev34"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2025-01-28T13:19:31.454627Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/soliloquy/0.1.1.dev32/",
+          "version": "0.1.1.dev32"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2025-01-28T12:53:31.673369Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/soliloquy/0.1.1.dev31/",
+          "version": "0.1.1.dev31"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2025-01-28T11:59:35.042691Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/soliloquy/0.1.1.dev30/",
+          "version": "0.1.1.dev30"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2025-01-28T11:51:10.941164Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/soliloquy/0.1.1.dev29/",
+          "version": "0.1.1.dev29"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2025-01-28T11:46:04.221763Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/soliloquy/0.1.1.dev28/",
+          "version": "0.1.1.dev28"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2025-01-28T11:44:04.051798Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/soliloquy/0.1.1.dev27/",
+          "version": "0.1.1.dev27"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2025-01-28T11:31:15.792776Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/soliloquy/0.1.1.dev26/",
+          "version": "0.1.1.dev26"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2025-01-28T11:27:47.043172Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/soliloquy/0.1.1.dev25/",
+          "version": "0.1.1.dev25"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2025-01-28T11:24:43.238137Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/soliloquy/0.1.1.dev24/",
+          "version": "0.1.1.dev24"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2025-01-28T10:21:41.308349Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/soliloquy/0.1.1.dev23/",
+          "version": "0.1.1.dev23"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2025-01-28T10:16:20.915934Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/soliloquy/0.1.1.dev22/",
+          "version": "0.1.1.dev22"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2025-01-28T09:58:44.507537Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/soliloquy/0.1.1.dev21/",
+          "version": "0.1.1.dev21"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2025-01-28T09:53:12.289355Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/soliloquy/0.1.1.dev20/",
+          "version": "0.1.1.dev20"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2025-01-28T09:50:12.655290Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/soliloquy/0.1.1.dev19/",
+          "version": "0.1.1.dev19"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2025-01-28T07:22:30.142633Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/soliloquy/0.1.1.dev15/",
+          "version": "0.1.1.dev15"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2025-01-27T05:59:27.242387Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/soliloquy/0.1.1.dev14/",
+          "version": "0.1.1.dev14"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2025-01-27T05:18:00.447131Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/soliloquy/0.1.1.dev13/",
+          "version": "0.1.1.dev13"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2025-01-26T04:39:53.862423Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/soliloquy/0.1.1.dev11/",
+          "version": "0.1.1.dev11"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2025-01-26T03:43:24.736875Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/soliloquy/0.1.1.dev9/",
+          "version": "0.1.1.dev9"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2025-01-26T01:21:53.006851Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/soliloquy/0.1.1.dev8/",
+          "version": "0.1.1.dev8"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2025-01-26T01:12:25.379560Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/soliloquy/0.1.1.dev6/",
+          "version": "0.1.1.dev6"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2025-01-26T00:12:14.403837Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/soliloquy/0.1.1.dev4/",
+          "version": "0.1.1.dev4"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2025-01-23T10:02:07.758196Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/soliloquy/0.1.1.dev2/",
+          "version": "0.1.1.dev2"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2025-01-23T09:43:40.023487Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/soliloquy/0.1.0/",
+          "version": "0.1.0"
+        }
+      ],
       "repository": "swarmauri/soliloquy",
       "reviewed": false,
       "route": "/catalog/packages/pypi/soliloquy-8d3798eb",
@@ -53,12 +671,13 @@
     "evidence": [
       {
         "kind": "source",
-        "observed_at": "2026-08-03T10:05:58Z",
+        "observed_at": "2026-08-03T13:56:25Z",
         "url": "https://github.com/swarmauri/soliloquy"
       }
     ],
     "fork": false,
     "full_name": "swarmauri/soliloquy",
+    "github_releases": [],
     "homepage": "https://swarmauri.com",
     "id": "repository:swarmauri/soliloquy",
     "kind": "repository",
@@ -90,7 +709,7 @@
       "watchers": 0
     },
     "name": "soliloquy",
-    "observed_at": "2026-08-03T10:05:58Z",
+    "observed_at": "2026-08-03T13:56:25Z",
     "owner": "swarmauri",
     "package_ids": [
       "package:pypi:soliloquy:swarmauri/soliloquy:pyproject.toml"

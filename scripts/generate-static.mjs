@@ -54,11 +54,33 @@ const productRecordsFrom = (file) => {
     .map((match) => ({ slug: match[1], name: match[2], summary: match[3] }));
 };
 const productMetadataRecords = productRecordsFrom("src/data/entities.ts");
+const readPageModel = (family, name) => JSON.parse(fs.readFileSync(`backend/generated/page-models/${family}/${name}.json`, "utf8"));
+const generatedPortfolioCollection = readPageModel("portfolio", "index");
+const generatedPortfolioRecords = generatedPortfolioCollection.records.map((item) => {
+  const model = readPageModel("portfolio", item.slug);
+  return {
+    route: `/portfolio/records/${item.slug}/`,
+    url: absolute(`/portfolio/records/${item.slug}/`),
+    title: `${item.title} | GroupSum portfolio`,
+    description: cleanTrim(item.summary),
+    type: "website",
+    modified: item.updated_at,
+    schemaFamily: "portfolio-evidence",
+    sourceUrl: model.record.source_url,
+    repositoryCount: item.repository_count,
+    packageCount: item.package_count,
+    releaseCount: item.release_count,
+    resourceCount: item.resource_count,
+    dependencyCount: item.dependency_count,
+    dependentCount: item.dependent_count,
+  };
+});
 const detailRecords = [
   ...slugsFrom("src/data/portfolio.ts").flatMap((slug) => ["", "projects/", "packages/", "specifications/"].map((prefix) => ({ route: `/portfolio/${prefix}${slug}/`, url: absolute(`/portfolio/${prefix}${slug}/`), title: `${slug.replace(/[-_]/g, " ")} | GroupSum portfolio`, description: `Portfolio record for ${slug.replace(/[-_]/g, " ")}.`, type: "website" }))),
   ...slugsFrom("src/data/solutions.ts").map((slug) => ({ route: `/solutions/${slug}/`, url: absolute(`/solutions/${slug}/`), title: `${slug.replace(/[-_]/g, " ")} solution | GroupSum`, description: `Solution path for ${slug.replace(/[-_]/g, " ")}.`, type: "website" })),
   ...slugsFrom("src/data/services.ts").map((slug) => ({ route: `/services/${slug}/`, url: absolute(`/services/${slug}/`), title: `${slug.replace(/[-_]/g, " ")} service | GroupSum`, description: `Service detail for ${slug.replace(/[-_]/g, " ")}.`, type: "website" })),
-  ...productMetadataRecords.map((item) => ({ route: `/products/records/${item.slug}/`, url: absolute(`/products/records/${item.slug}/`), title: `${item.name} | GroupSum products`, description: cleanTrim(item.summary), type: "website", schemaFamily: "product-detail" }))
+  ...productMetadataRecords.map((item) => ({ route: `/products/records/${item.slug}/`, url: absolute(`/products/records/${item.slug}/`), title: `${item.name} | GroupSum products`, description: cleanTrim(item.summary), type: "website", schemaFamily: "product-detail" })),
+  ...generatedPortfolioRecords
 ];
 const catalogDetailRecords = [
   ...catalogRepositories.map((item) => ({ route: normalizePath(item.route), url: absolute(item.route), title: `${item.display_name} repository | GroupSum catalog`, description: cleanTrim(item.description), type: "website", modified: item.observed_at, schemaFamily: "catalog-repository", sourceUrl: item.url })),
@@ -123,12 +145,15 @@ function writeCleanFullManifest() {
 fs.mkdirSync(OUT, { recursive: true }); const shellHtml = fs.readFileSync(path.join(OUT, "index.html"), "utf8");
 for (const record of inventory) { if (record.route === "/") continue; const outputDir = path.join(OUT, record.route); fs.mkdirSync(outputDir, { recursive: true }); fs.writeFileSync(path.join(outputDir, "index.html"), injectRenderedApp(injectHeadMeta(shellHtml, record), record)); }
 fs.writeFileSync(path.join(OUT, "index.html"), injectRenderedApp(injectHeadMeta(shellHtml, pages[0]), pages[0]));
-for (const item of productMetadataRecords) {
-  const model = getPageModel(`/products/records/${item.slug}/`);
-  if (!model) continue;
-  const apiTarget = path.join(OUT, "api", "v1", "products", item.slug);
-  fs.mkdirSync(path.dirname(apiTarget), { recursive: true });
-  fs.writeFileSync(apiTarget, JSON.stringify(model));
+for (const [family, apiFamily] of [["product", "products"], ["portfolio", "portfolio"]]) {
+  const modelDir = path.join("backend", "generated", "page-models", family);
+  for (const filename of fs.readdirSync(modelDir).filter((name) => name.endsWith(".json"))) {
+    if (filename === "index.json") continue;
+    const apiName = filename.replace(/\.json$/, "");
+    const apiTarget = path.join(OUT, "api", "v1", apiFamily, apiName);
+    fs.mkdirSync(path.dirname(apiTarget), { recursive: true });
+    fs.writeFileSync(apiTarget, fs.readFileSync(path.join(modelDir, filename)));
+  }
 }
 writeDiscovery();
 writeCleanFullManifest();

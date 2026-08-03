@@ -1,9 +1,139 @@
 {
-  "generated_at": "2026-08-03T10:05:58Z",
+  "generated_at": "2026-08-03T13:56:23Z",
   "packages": [
     {
       "claim_boundary": "Publication is reported only when confirmed by the named public registry.",
+      "dependencies": [
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "httpx",
+          "package_key": "pypi:httpx",
+          "requirement": ">=0.27",
+          "scope": "dependencies"
+        },
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": true,
+          "name": "tigrbl",
+          "package_key": "pypi:tigrbl",
+          "requirement": ">=0.3.4",
+          "scope": "dependencies"
+        },
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "grpcio",
+          "package_key": "pypi:grpcio",
+          "requirement": ">=1.64",
+          "scope": "optional-dependencies.grpc"
+        },
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "poetry-core",
+          "package_key": "pypi:poetry-core",
+          "requirement": ">=1.8.0",
+          "scope": "build-system.requires"
+        },
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "pytest",
+          "package_key": "pypi:pytest",
+          "requirement": ">=8.0",
+          "scope": "dependency-groups.dev"
+        },
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "pytest-asyncio",
+          "package_key": "pypi:pytest-asyncio",
+          "requirement": ">=0.24.0",
+          "scope": "dependency-groups.dev"
+        },
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "pytest-xdist",
+          "package_key": "pypi:pytest-xdist",
+          "requirement": ">=3.6.1",
+          "scope": "dependency-groups.dev"
+        },
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "pytest-json-report",
+          "package_key": "pypi:pytest-json-report",
+          "requirement": ">=1.5.0",
+          "scope": "dependency-groups.dev"
+        },
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "python-dotenv",
+          "package_key": "pypi:python-dotenv",
+          "requirement": "*",
+          "scope": "dependency-groups.dev"
+        },
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "requests",
+          "package_key": "pypi:requests",
+          "requirement": ">=2.32.3",
+          "scope": "dependency-groups.dev"
+        },
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "flake8",
+          "package_key": "pypi:flake8",
+          "requirement": ">=7.0",
+          "scope": "dependency-groups.dev"
+        },
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "pytest-timeout",
+          "package_key": "pypi:pytest-timeout",
+          "requirement": ">=2.3.1",
+          "scope": "dependency-groups.dev"
+        },
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "ruff",
+          "package_key": "pypi:ruff",
+          "requirement": ">=0.9.9",
+          "scope": "dependency-groups.dev"
+        },
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "pytest-benchmark",
+          "package_key": "pypi:pytest-benchmark",
+          "requirement": ">=4.0.0",
+          "scope": "dependency-groups.dev"
+        }
+      ],
       "dependency_count": 14,
+      "dependent_count": 0,
+      "dependents": [],
       "description": "Observed pypi package record for tigrbl_spiffe.",
       "description_source": "generated-factual",
       "display_name": "tigrbl_spiffe",
@@ -14,7 +144,7 @@
       "evidence": [
         {
           "kind": "registry",
-          "observed_at": "2026-08-03T10:05:58Z",
+          "observed_at": "2026-08-03T13:56:23Z",
           "url": "https://pypi.org/project/tigrbl_spiffe/"
         }
       ],
@@ -23,7 +153,7 @@
       "latest_version": "0.4.1",
       "manifest_path": "pyproject.toml",
       "name": "tigrbl_spiffe",
-      "observed_at": "2026-08-03T10:05:58Z",
+      "observed_at": "2026-08-03T13:56:23Z",
       "owner": "tigrbl",
       "private": false,
       "publication_status": "published",
@@ -36,6 +166,224 @@
         "repository_contains_package": 1
       },
       "release_count": 27,
+      "releases": [
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2026-05-19T22:21:31.854435Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/tigrbl_spiffe/0.4.1/",
+          "version": "0.4.1"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2026-05-19T06:42:10.861346Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/tigrbl_spiffe/0.4.1.dev6/",
+          "version": "0.4.1.dev6"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2026-05-13T05:10:42.303367Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/tigrbl_spiffe/0.4.1.dev3/",
+          "version": "0.4.1.dev3"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2026-05-04T21:50:49.719647Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/tigrbl_spiffe/0.4.0/",
+          "version": "0.4.0"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2026-05-04T10:27:48.470152Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/tigrbl_spiffe/0.4.0.dev2/",
+          "version": "0.4.0.dev2"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2026-05-04T00:15:52.407585Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/tigrbl_spiffe/0.1.14.dev1/",
+          "version": "0.1.14.dev1"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2026-05-03T14:25:19.763165Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/tigrbl_spiffe/0.1.13/",
+          "version": "0.1.13"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2026-04-25T00:34:37.911728Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/tigrbl_spiffe/0.1.13.dev1/",
+          "version": "0.1.13.dev1"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2026-04-24T23:52:37.422865Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/tigrbl_spiffe/0.1.12/",
+          "version": "0.1.12"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2026-04-24T23:40:27.291158Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/tigrbl_spiffe/0.1.12.dev2/",
+          "version": "0.1.12.dev2"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2026-04-24T22:25:16.148977Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/tigrbl_spiffe/0.1.12.dev1/",
+          "version": "0.1.12.dev1"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2026-04-24T22:13:42.593360Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/tigrbl_spiffe/0.1.11.dev1/",
+          "version": "0.1.11.dev1"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2026-03-24T06:02:49.199522Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/tigrbl_spiffe/0.1.1/",
+          "version": "0.1.1"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2026-03-23T07:41:26.293718Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/tigrbl_spiffe/0.1.1.dev24/",
+          "version": "0.1.1.dev24"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2026-03-20T17:58:47.328136Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/tigrbl_spiffe/0.1.1.dev22/",
+          "version": "0.1.1.dev22"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2026-03-20T17:20:24.093616Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/tigrbl_spiffe/0.1.1.dev21/",
+          "version": "0.1.1.dev21"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2026-03-20T10:04:32.921578Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/tigrbl_spiffe/0.1.1.dev20/",
+          "version": "0.1.1.dev20"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2026-03-20T09:45:18.329866Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/tigrbl_spiffe/0.1.1.dev19/",
+          "version": "0.1.1.dev19"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2026-03-20T09:22:10.444478Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/tigrbl_spiffe/0.1.1.dev18/",
+          "version": "0.1.1.dev18"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2026-03-20T08:03:44.299363Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/tigrbl_spiffe/0.1.1.dev16/",
+          "version": "0.1.1.dev16"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2026-03-20T07:42:10.444533Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/tigrbl_spiffe/0.1.1.dev15/",
+          "version": "0.1.1.dev15"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2026-03-20T05:28:21.322446Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/tigrbl_spiffe/0.1.1.dev14/",
+          "version": "0.1.1.dev14"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2026-03-04T12:49:09.315195Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/tigrbl_spiffe/0.1.1.dev10/",
+          "version": "0.1.1.dev10"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2026-03-04T08:00:43.397364Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/tigrbl_spiffe/0.1.1.dev6/",
+          "version": "0.1.1.dev6"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2026-02-23T10:27:28.792101Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/tigrbl_spiffe/0.1.1.dev5/",
+          "version": "0.1.1.dev5"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2026-02-17T19:40:12.104803Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/tigrbl_spiffe/0.1.1.dev3/",
+          "version": "0.1.1.dev3"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2026-02-17T18:05:11.050979Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/tigrbl_spiffe/0.1.1.dev2/",
+          "version": "0.1.1.dev2"
+        }
+      ],
       "repository": "tigrbl/tigrbl_spiffe",
       "reviewed": false,
       "route": "/catalog/packages/pypi/tigrbl-spiffe-dacd35c4",
@@ -54,12 +402,13 @@
     "evidence": [
       {
         "kind": "source",
-        "observed_at": "2026-08-03T10:05:58Z",
+        "observed_at": "2026-08-03T13:56:25Z",
         "url": "https://github.com/tigrbl/tigrbl_spiffe"
       }
     ],
     "fork": false,
     "full_name": "tigrbl/tigrbl_spiffe",
+    "github_releases": [],
     "homepage": null,
     "id": "repository:tigrbl/tigrbl_spiffe",
     "kind": "repository",
@@ -91,7 +440,7 @@
       "watchers": 0
     },
     "name": "tigrbl_spiffe",
-    "observed_at": "2026-08-03T10:05:58Z",
+    "observed_at": "2026-08-03T13:56:25Z",
     "owner": "tigrbl",
     "package_ids": [
       "package:pypi:tigrbl_spiffe:tigrbl/tigrbl_spiffe:pyproject.toml"
@@ -99,70 +448,70 @@
     "pushed_at": "2026-05-20T02:22:04Z",
     "related_resources": [
       {
-        "evidence_type": "repository.tree",
+        "evidence_type": "repository.blob",
         "id": "resource:38bc43b3b42b",
         "kind": "example",
         "name": "examples/_e2e_shared.py",
         "url": "https://github.com/tigrbl/tigrbl_spiffe/blob/master/examples/_e2e_shared.py"
       },
       {
-        "evidence_type": "repository.tree",
+        "evidence_type": "repository.blob",
         "id": "resource:3b586e8b6395",
         "kind": "example",
         "name": "examples/e2e_uds_multi_client.py",
         "url": "https://github.com/tigrbl/tigrbl_spiffe/blob/master/examples/e2e_uds_multi_client.py"
       },
       {
-        "evidence_type": "repository.tree",
+        "evidence_type": "repository.blob",
         "id": "resource:3063ebf79a6b",
         "kind": "example",
         "name": "examples/e2e_uds_one_client.py",
         "url": "https://github.com/tigrbl/tigrbl_spiffe/blob/master/examples/e2e_uds_one_client.py"
       },
       {
-        "evidence_type": "repository.tree",
+        "evidence_type": "repository.blob",
         "id": "resource:66edefcb7a38",
         "kind": "example",
         "name": "examples/exchange_jwt_bearer.py",
         "url": "https://github.com/tigrbl/tigrbl_spiffe/blob/master/examples/exchange_jwt_bearer.py"
       },
       {
-        "evidence_type": "repository.tree",
+        "evidence_type": "repository.blob",
         "id": "resource:08343c4fb38a",
         "kind": "example",
         "name": "examples/exchange_mtls.py",
         "url": "https://github.com/tigrbl/tigrbl_spiffe/blob/master/examples/exchange_mtls.py"
       },
       {
-        "evidence_type": "repository.tree",
+        "evidence_type": "repository.blob",
         "id": "resource:bf1899d0e86a",
         "kind": "example",
         "name": "examples/quickstart_agent.py",
         "url": "https://github.com/tigrbl/tigrbl_spiffe/blob/master/examples/quickstart_agent.py"
       },
       {
-        "evidence_type": "repository.tree",
+        "evidence_type": "repository.blob",
         "id": "resource:0f6677fc362e",
         "kind": "example",
         "name": "examples/registrar_merge.py",
         "url": "https://github.com/tigrbl/tigrbl_spiffe/blob/master/examples/registrar_merge.py"
       },
       {
-        "evidence_type": "repository.tree",
+        "evidence_type": "repository.blob",
         "id": "resource:e992f3f68a7a",
         "kind": "example",
         "name": "examples/server_side_bundle_sync.py",
         "url": "https://github.com/tigrbl/tigrbl_spiffe/blob/master/examples/server_side_bundle_sync.py"
       },
       {
-        "evidence_type": "repository.tree",
+        "evidence_type": "repository.blob",
         "id": "resource:de5a15fcd7da",
         "kind": "example",
         "name": "examples/server_side_registrar_admin.py",
         "url": "https://github.com/tigrbl/tigrbl_spiffe/blob/master/examples/server_side_registrar_admin.py"
       },
       {
-        "evidence_type": "repository.tree",
+        "evidence_type": "repository.blob",
         "id": "resource:8287f4eb4371",
         "kind": "example",
         "name": "examples/tls_client.py",

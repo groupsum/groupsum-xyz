@@ -384,6 +384,16 @@
       "DependencyCountResponse": {
         "description": "Tigrbl v3 Dependency count schema",
         "properties": {
+          "completeness": {
+            "default": null,
+            "title": "Completeness",
+            "type": "string"
+          },
+          "evidence_type": {
+            "default": null,
+            "title": "Evidence Type",
+            "type": "string"
+          },
           "id": {
             "default": null,
             "title": "Id",
@@ -433,6 +443,18 @@
           "source_kind": {
             "title": "Source Kind",
             "type": "string"
+          },
+          "source_url": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Source Url"
           },
           "target_id": {
             "title": "Target Id",
@@ -455,6 +477,16 @@
       "DependencyExistsResponse": {
         "description": "Tigrbl v3 Dependency exists schema",
         "properties": {
+          "completeness": {
+            "default": null,
+            "title": "Completeness",
+            "type": "string"
+          },
+          "evidence_type": {
+            "default": null,
+            "title": "Evidence Type",
+            "type": "string"
+          },
           "id": {
             "default": null,
             "title": "Id",
@@ -504,6 +536,18 @@
           "source_kind": {
             "title": "Source Kind",
             "type": "string"
+          },
+          "source_url": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Source Url"
           },
           "target_id": {
             "title": "Target Id",
@@ -526,6 +570,16 @@
       "DependencyGroupByRequest": {
         "description": "Tigrbl v3 Dependency group_by schema",
         "properties": {
+          "completeness": {
+            "default": null,
+            "title": "Completeness",
+            "type": "string"
+          },
+          "evidence_type": {
+            "default": null,
+            "title": "Evidence Type",
+            "type": "string"
+          },
           "id": {
             "default": null,
             "title": "Id",
@@ -575,6 +629,18 @@
           "source_kind": {
             "title": "Source Kind",
             "type": "string"
+          },
+          "source_url": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Source Url"
           },
           "target_id": {
             "title": "Target Id",
@@ -597,6 +663,16 @@
       "DependencyGroupByResponse": {
         "description": "Tigrbl v3 Dependency group_by schema",
         "properties": {
+          "completeness": {
+            "default": null,
+            "title": "Completeness",
+            "type": "string"
+          },
+          "evidence_type": {
+            "default": null,
+            "title": "Evidence Type",
+            "type": "string"
+          },
           "id": {
             "default": null,
             "title": "Id",
@@ -646,6 +722,18 @@
           "source_kind": {
             "title": "Source Kind",
             "type": "string"
+          },
+          "source_url": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Source Url"
           },
           "target_id": {
             "title": "Target Id",
@@ -1973,6 +2061,18 @@
             "default": null,
             "title": "Latest Version"
           },
+          "manifest_path": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Manifest Path"
+          },
           "name": {
             "title": "Name",
             "type": "string"
@@ -1990,6 +2090,30 @@
             "default": null,
             "title": "Observed At"
           },
+          "publication_status": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Publication Status"
+          },
+          "published": {
+            "anyOf": [
+              {
+                "type": "boolean"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Published"
+          },
           "published_at": {
             "anyOf": [
               {
@@ -2006,6 +2130,18 @@
           "registry_url": {
             "title": "Registry Url",
             "type": "string"
+          },
+          "source_url": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Source Url"
           }
         },
         "required": [
@@ -2052,6 +2188,18 @@
             "default": null,
             "title": "Latest Version"
           },
+          "manifest_path": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Manifest Path"
+          },
           "name": {
             "title": "Name",
             "type": "string"
@@ -2069,6 +2217,30 @@
             "default": null,
             "title": "Observed At"
           },
+          "publication_status": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Publication Status"
+          },
+          "published": {
+            "anyOf": [
+              {
+                "type": "boolean"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Published"
+          },
           "published_at": {
             "anyOf": [
               {
@@ -2085,6 +2257,18 @@
           "registry_url": {
             "title": "Registry Url",
             "type": "string"
+          },
+          "source_url": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Source Url"
           }
         },
         "required": [
@@ -2131,6 +2315,18 @@
             "default": null,
             "title": "Latest Version"
           },
+          "manifest_path": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Manifest Path"
+          },
           "name": {
             "title": "Name",
             "type": "string"
@@ -2148,6 +2344,30 @@
             "default": null,
             "title": "Observed At"
           },
+          "publication_status": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Publication Status"
+          },
+          "published": {
+            "anyOf": [
+              {
+                "type": "boolean"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Published"
+          },
           "published_at": {
             "anyOf": [
               {
@@ -2164,6 +2384,18 @@
           "registry_url": {
             "title": "Registry Url",
             "type": "string"
+          },
+          "source_url": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Source Url"
           }
         },
         "required": [
@@ -2210,6 +2442,18 @@
             "default": null,
             "title": "Latest Version"
           },
+          "manifest_path": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Manifest Path"
+          },
           "name": {
             "title": "Name",
             "type": "string"
@@ -2227,6 +2471,30 @@
             "default": null,
             "title": "Observed At"
           },
+          "publication_status": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Publication Status"
+          },
+          "published": {
+            "anyOf": [
+              {
+                "type": "boolean"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Published"
+          },
           "published_at": {
             "anyOf": [
               {
@@ -2243,6 +2511,18 @@
           "registry_url": {
             "title": "Registry Url",
             "type": "string"
+          },
+          "source_url": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Source Url"
           }
         },
         "required": [
@@ -4208,6 +4488,27 @@
       "ReleaseCountResponse": {
         "description": "Tigrbl v3 Release count schema",
         "properties": {
+          "downloads": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "pattern": "^(?!^[-+.]*$)[+-]?0*\\d*\\.?\\d*$",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Downloads"
+          },
+          "draft": {
+            "default": null,
+            "title": "Draft",
+            "type": "boolean"
+          },
           "id": {
             "default": null,
             "title": "Id",
@@ -4237,6 +4538,11 @@
             ],
             "default": null,
             "title": "Package Id"
+          },
+          "prerelease": {
+            "default": null,
+            "title": "Prerelease",
+            "type": "boolean"
           },
           "published_at": {
             "anyOf": [
@@ -4287,6 +4593,27 @@
       "ReleaseExistsResponse": {
         "description": "Tigrbl v3 Release exists schema",
         "properties": {
+          "downloads": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "pattern": "^(?!^[-+.]*$)[+-]?0*\\d*\\.?\\d*$",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Downloads"
+          },
+          "draft": {
+            "default": null,
+            "title": "Draft",
+            "type": "boolean"
+          },
           "id": {
             "default": null,
             "title": "Id",
@@ -4316,6 +4643,11 @@
             ],
             "default": null,
             "title": "Package Id"
+          },
+          "prerelease": {
+            "default": null,
+            "title": "Prerelease",
+            "type": "boolean"
           },
           "published_at": {
             "anyOf": [
@@ -4366,6 +4698,27 @@
       "ReleaseGroupByRequest": {
         "description": "Tigrbl v3 Release group_by schema",
         "properties": {
+          "downloads": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "pattern": "^(?!^[-+.]*$)[+-]?0*\\d*\\.?\\d*$",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Downloads"
+          },
+          "draft": {
+            "default": null,
+            "title": "Draft",
+            "type": "boolean"
+          },
           "id": {
             "default": null,
             "title": "Id",
@@ -4395,6 +4748,11 @@
             ],
             "default": null,
             "title": "Package Id"
+          },
+          "prerelease": {
+            "default": null,
+            "title": "Prerelease",
+            "type": "boolean"
           },
           "published_at": {
             "anyOf": [
@@ -4445,6 +4803,27 @@
       "ReleaseGroupByResponse": {
         "description": "Tigrbl v3 Release group_by schema",
         "properties": {
+          "downloads": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "pattern": "^(?!^[-+.]*$)[+-]?0*\\d*\\.?\\d*$",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Downloads"
+          },
+          "draft": {
+            "default": null,
+            "title": "Draft",
+            "type": "boolean"
+          },
           "id": {
             "default": null,
             "title": "Id",
@@ -4474,6 +4853,11 @@
             ],
             "default": null,
             "title": "Package Id"
+          },
+          "prerelease": {
+            "default": null,
+            "title": "Prerelease",
+            "type": "boolean"
           },
           "published_at": {
             "anyOf": [
@@ -6371,6 +6755,30 @@
           },
           {
             "in": "query",
+            "name": "evidence_type",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "source_url",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "completeness",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
             "name": "observed_at",
             "required": false,
             "schema": {
@@ -6554,6 +6962,30 @@
           {
             "in": "query",
             "name": "scope",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "evidence_type",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "source_url",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "completeness",
             "required": false,
             "schema": {
               "type": "string"
@@ -8141,6 +8573,22 @@
           },
           {
             "in": "query",
+            "name": "source_url",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "manifest_path",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
             "name": "description",
             "required": false,
             "schema": {
@@ -8150,6 +8598,22 @@
           {
             "in": "query",
             "name": "latest_version",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "published",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "publication_status",
             "required": false,
             "schema": {
               "type": "string"
@@ -8331,6 +8795,22 @@
           },
           {
             "in": "query",
+            "name": "source_url",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "manifest_path",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
             "name": "description",
             "required": false,
             "schema": {
@@ -8340,6 +8820,22 @@
           {
             "in": "query",
             "name": "latest_version",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "published",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "publication_status",
             "required": false,
             "schema": {
               "type": "string"
@@ -11421,6 +11917,30 @@
           },
           {
             "in": "query",
+            "name": "downloads",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "prerelease",
+            "required": false,
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
+            "in": "query",
+            "name": "draft",
+            "required": false,
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
+            "in": "query",
             "name": "observed_at",
             "required": false,
             "schema": {
@@ -11607,6 +12127,30 @@
             "required": false,
             "schema": {
               "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "downloads",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "prerelease",
+            "required": false,
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
+            "in": "query",
+            "name": "draft",
+            "required": false,
+            "schema": {
+              "type": "boolean"
             }
           },
           {

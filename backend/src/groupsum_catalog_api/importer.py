@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import hashlib
 import json
+import re
 import sqlite3
 from datetime import UTC, datetime
 from pathlib import Path
@@ -13,6 +14,15 @@ def stable_id(*parts: str) -> str:
     if len(readable) <= 300:
         return readable
     return f"sha256:{hashlib.sha256(readable.encode()).hexdigest()}"
+
+
+def package_key(ecosystem: str, name: str) -> str:
+    return f"{ecosystem}:{name.casefold().replace('_', '-')}"
+
+
+def record_slug(owner: str, name: str) -> str:
+    value = re.sub(r"[^a-z0-9]+", "-", f"catalog-{owner}-{name}".lower()).strip("-")
+    return value or hashlib.sha256(f"{owner}/{name}".encode()).hexdigest()[:16]
 
 
 def connect(database_path: Path) -> sqlite3.Connection:
@@ -39,9 +49,12 @@ def import_catalog(database_path: Path, repo_root: Path) -> dict[str, int]:
     run_id = stable_id("collection-run", "website-editorial", generated_at)
     counts = {
         "organizations": 0,
+        "repositories": 0,
         "records": 0,
         "insights": 0,
         "packages": 0,
+        "releases": 0,
+        "dependencies": 0,
         "resources": 0,
     }
 
@@ -77,6 +90,12 @@ def import_catalog(database_path: Path, repo_root: Path) -> dict[str, int]:
                 f"DELETE FROM record_relations WHERE source_record_id IN ({placeholders})",
                 record_ids,
             )
+        # These tables are a deterministic projection of the current public catalog,
+        # not append-only observations. Replacing them prevents removed relationships
+        # and release IDs from older importer versions from surviving a refresh.
+        connection.execute("DELETE FROM package_repositories")
+        connection.execute("DELETE FROM dependencies")
+        connection.execute("DELETE FROM releases")
         for organization in editorial["organizations"]:
             upsert(
                 connection,
@@ -344,6 +363,402 @@ def import_catalog(database_path: Path, repo_root: Path) -> dict[str, int]:
                     },
                 )
 
+        site_root = repo_root / "catalog" / "generated" / "site"
+        site_repositories = json.loads((site_root / "repositories.json").read_text())
+        site_packages = json.loads((site_root / "packages.json").read_text())
+        claimed_repositories: set[str] = set()
+        for record in editorial["records"]:
+            if record["record_type"] not in {"product", "portfolio"}:
+                continue
+            bundle_path = (
+                repo_root
+                / "catalog"
+                / "generated"
+                / "product-evidence"
+                / record["organization_id"]
+                / f"{record['source_name']}.json"
+            )
+            if not bundle_path.exists():
+                continue
+            bundle = json.loads(bundle_path.read_text())
+            attached = bundle["repository"].get("attached_repositories") or [
+                bundle["repository"]
+            ]
+            claimed_repositories.update(
+                item.get("full_name")
+                for item in attached
+                if item.get("full_name")
+            )
+
+        connection.execute(
+            "UPDATE records SET visibility = 'retired' WHERE id LIKE 'catalog-repository:%'"
+        )
+        generated_records: dict[str, str] = {}
+        repository_ids: dict[str, str] = {}
+        for repository in site_repositories:
+            full_name = repository["full_name"]
+            repository_id = repository["id"]
+            repository_ids[full_name] = repository_id
+            owner, name = full_name.split("/", 1)
+            upsert(
+                connection,
+                "repositories",
+                {
+                    "id": repository_id,
+                    "organization_id": owner,
+                    "provider": "github",
+                    "owner": owner,
+                    "name": name,
+                    "url": repository["url"],
+                    "description": repository.get("description"),
+                    "default_branch": repository.get("default_branch"),
+                    "is_archived": int(repository.get("archived", False)),
+                    "is_fork": int(repository.get("fork", False)),
+                    "observed_at": repository.get("observed_at") or generated_at,
+                },
+            )
+            counts["repositories"] += 1
+            for metric, value in repository.get("metrics", {}).items():
+                if not isinstance(value, int | float):
+                    continue
+                upsert(
+                    connection,
+                    "metric_observations",
+                    {
+                        "id": stable_id(
+                            "metric",
+                            repository_id,
+                            metric,
+                            repository.get("observed_at") or generated_at,
+                        ),
+                        "subject_kind": "repository",
+                        "subject_id": repository_id,
+                        "metric": metric,
+                        "value": value,
+                        "unit": "count",
+                        "period_start": None,
+                        "period_end": None,
+                        "source_url": repository["url"],
+                        "observed_at": repository.get("observed_at") or generated_at,
+                    },
+                )
+            for release in repository.get("github_releases", []):
+                version = str(release["version"])
+                upsert(
+                    connection,
+                    "releases",
+                    {
+                        "id": stable_id("release", repository_id, "github", version),
+                        "package_id": None,
+                        "repository_id": repository_id,
+                        "release_kind": "github",
+                        "version": version,
+                        "url": release["url"],
+                        "published_at": release.get("published_at"),
+                        "downloads": release.get("downloads"),
+                        "prerelease": int(release.get("prerelease", False)),
+                        "draft": int(release.get("draft", False)),
+                        "observed_at": release.get("observed_at") or generated_at,
+                    },
+                )
+                counts["releases"] += 1
+            if full_name in claimed_repositories:
+                continue
+            generated_record_id = stable_id("catalog-repository", full_name)
+            generated_records[full_name] = generated_record_id
+            generated_slug = record_slug(owner, name)
+            summary = repository.get("description") or f"Public source repository {full_name}."
+            upsert(
+                connection,
+                "records",
+                {
+                    "id": generated_record_id,
+                    "slug": generated_slug,
+                    "organization_id": owner,
+                    "record_type": "portfolio",
+                    "title": repository.get("display_name") or name,
+                    "eyebrow": "public repository",
+                    "summary": summary,
+                    "body_markdown": None,
+                    "content": json.dumps(
+                        {
+                            "generated_from": "public-catalog",
+                            "full_name": full_name,
+                            "reviewed_positioning": False,
+                        }
+                    ),
+                    "maturity": (
+                        "archived"
+                        if repository.get("archived")
+                        else "observed-public-source"
+                    ),
+                    "visibility": "public",
+                    "featured": 0,
+                    "canonical_url": f"https://groupsum.xyz/portfolio/records/{generated_slug}",
+                    "source_url": repository["url"],
+                    "published_at": None,
+                    "updated_at": repository.get("observed_at") or generated_at,
+                    "content_revision": 1,
+                },
+            )
+            upsert(
+                connection,
+                "record_repositories",
+                {
+                    "id": stable_id("record-repository", generated_record_id, repository_id),
+                    "record_id": generated_record_id,
+                    "repository_id": repository_id,
+                    "role": "primary-public-evidence",
+                },
+            )
+            claim_id = stable_id("claim", generated_record_id, "catalog-observation")
+            evidence_id = stable_id("evidence", generated_record_id, "repository")
+            upsert(
+                connection,
+                "claims",
+                {
+                    "id": claim_id,
+                    "record_id": generated_record_id,
+                    "claim_type": "catalog-observation",
+                    "statement": summary,
+                    "status": "observed",
+                    "ssot_claim_id": None,
+                    "reviewed_at": None,
+                },
+            )
+            upsert(
+                connection,
+                "evidence",
+                {
+                    "id": evidence_id,
+                    "evidence_type": "source",
+                    "title": "Public GitHub repository observation",
+                    "source_url": repository["url"],
+                    "locator": None,
+                    "excerpt": None,
+                    "observed_at": repository.get("observed_at") or generated_at,
+                    "expires_at": None,
+                },
+            )
+            upsert(
+                connection,
+                "claim_evidence",
+                {
+                    "id": stable_id("claim-evidence", claim_id, evidence_id),
+                    "claim_id": claim_id,
+                    "evidence_id": evidence_id,
+                    "support": "supports",
+                },
+            )
+            upsert(
+                connection,
+                "limitations",
+                {
+                    "id": stable_id("limitation", generated_record_id, "generated-record"),
+                    "record_id": generated_record_id,
+                    "title": "Editorial status",
+                    "description": (
+                        "Catalog-generated evidence record; product positioning and "
+                        "maturity have not been editorially reviewed."
+                    ),
+                    "severity": None,
+                    "evidence_id": evidence_id,
+                    "reviewed_at": None,
+                },
+            )
+            for resource in repository.get("related_resources", []):
+                if not resource.get("url"):
+                    continue
+                resource_id = stable_id("resource-url", resource["url"])
+                upsert(
+                    connection,
+                    "resources",
+                    {
+                        "id": resource_id,
+                        "resource_type": resource.get("kind") or "resource",
+                        "title": resource.get("name") or resource.get("kind") or "Related resource",
+                        "url": resource["url"],
+                        "summary": None,
+                        "source_url": resource["url"],
+                        "observed_at": repository.get("observed_at") or generated_at,
+                    },
+                )
+                upsert(
+                    connection,
+                    "record_resources",
+                    {
+                        "id": stable_id("record-resource", generated_record_id, resource_id),
+                        "record_id": generated_record_id,
+                        "resource_id": resource_id,
+                        "role": resource.get("kind") or "resource",
+                        "sort_order": 0,
+                    },
+                )
+                counts["resources"] += 1
+            counts["records"] += 1
+
+        package_ids_by_key: dict[str, list[str]] = {}
+        for package in site_packages:
+            package_id = package["id"]
+            ecosystem = package["ecosystem"]
+            name = package["name"]
+            natural_key = package_key(ecosystem, name)
+            package_ids_by_key.setdefault(natural_key, []).append(package_id)
+            package_url = package.get("registry_url") or package.get("source_url")
+            if not package_url:
+                continue
+            upsert(
+                connection,
+                "packages",
+                {
+                    "id": package_id,
+                    "ecosystem": ecosystem,
+                    "name": name,
+                    "registry_url": package_url,
+                    "source_url": package.get("source_url"),
+                    "manifest_path": package.get("manifest_path"),
+                    "description": package.get("description"),
+                    "latest_version": package.get("latest_version"),
+                    "published": (
+                        int(package.get("published"))
+                        if package.get("published") is not None
+                        else None
+                    ),
+                    "publication_status": package.get("publication_status"),
+                    "published_at": None,
+                    "observed_at": package.get("observed_at") or generated_at,
+                },
+            )
+            repository_name = package.get("repository")
+            repository_id = repository_ids.get(repository_name)
+            if repository_id:
+                upsert(
+                    connection,
+                    "package_repositories",
+                    {
+                        "id": stable_id(
+                            "package-repository",
+                            package_id,
+                            repository_id,
+                            package.get("manifest_path") or "",
+                        ),
+                        "package_id": package_id,
+                        "repository_id": repository_id,
+                        "path": package.get("manifest_path"),
+                    },
+                )
+                generated_record_id = generated_records.get(repository_name)
+                if generated_record_id:
+                    upsert(
+                        connection,
+                        "record_packages",
+                        {
+                            "id": stable_id("record-package", generated_record_id, package_id),
+                            "record_id": generated_record_id,
+                            "package_id": package_id,
+                            "role": "repository-package",
+                        },
+                    )
+            for release in package.get("releases", []):
+                version = str(release["version"])
+                upsert(
+                    connection,
+                    "releases",
+                    {
+                        "id": stable_id("release", package_id, ecosystem, version),
+                        "package_id": package_id,
+                        "repository_id": None,
+                        "release_kind": release.get("release_kind") or ecosystem,
+                        "version": version,
+                        "url": release["url"],
+                        "published_at": release.get("published_at"),
+                        "downloads": release.get("downloads"),
+                        "prerelease": int(release.get("prerelease", False)),
+                        "draft": int(release.get("draft", False)),
+                        "observed_at": release.get("observed_at") or generated_at,
+                    },
+                )
+                counts["releases"] += 1
+            for dependency in package.get("dependencies", []):
+                target_key = dependency["package_key"]
+                upsert(
+                    connection,
+                    "dependencies",
+                    {
+                        "id": stable_id(
+                            "dependency",
+                            package_id,
+                            target_key,
+                            str(dependency.get("scope") or "dependencies"),
+                        ),
+                        "source_kind": "package",
+                        "source_id": package_id,
+                        "target_kind": (
+                            "package"
+                            if dependency.get("internal")
+                            else "external-package"
+                        ),
+                        "target_id": target_key,
+                        "requirement": dependency.get("requirement"),
+                        "scope": dependency.get("scope"),
+                        "evidence_type": dependency.get("evidence") or "repository.manifest",
+                        "source_url": package.get("source_url"),
+                        "completeness": "catalog-observed",
+                        "observed_at": package.get("observed_at") or generated_at,
+                    },
+                )
+                counts["dependencies"] += 1
+            for dependent in package.get("dependents", []):
+                if dependent.get("evidence") == "repository.manifest":
+                    continue
+                upsert(
+                    connection,
+                    "dependencies",
+                    {
+                        "id": stable_id(
+                            "registry-dependent",
+                            dependent["package_key"],
+                            natural_key,
+                        ),
+                        "source_kind": "observed-dependent",
+                        "source_id": dependent["package_key"],
+                        "target_kind": "package",
+                        "target_id": natural_key,
+                        "requirement": dependent.get("requirement"),
+                        "scope": dependent.get("scope") or "registry-dependent",
+                        "evidence_type": (
+                            dependent.get("evidence")
+                            or "registry.reverse_dependencies"
+                        ),
+                        "source_url": package.get("registry_url"),
+                        "completeness": (
+                            dependent.get("completeness")
+                            or "bounded-registry-observation"
+                        ),
+                        "observed_at": package.get("observed_at") or generated_at,
+                    },
+                )
+                counts["dependencies"] += 1
+            if isinstance(package.get("downloads"), int | float):
+                observed = package.get("observed_at") or generated_at
+                upsert(
+                    connection,
+                    "metric_observations",
+                    {
+                        "id": stable_id("metric", package_id, "downloads", observed),
+                        "subject_kind": "package",
+                        "subject_id": package_id,
+                        "metric": "downloads",
+                        "value": package["downloads"],
+                        "unit": "count",
+                        "period_start": None,
+                        "period_end": None,
+                        "source_url": package_url,
+                        "observed_at": observed,
+                    },
+                )
+            counts["packages"] += 1
+
         for record in editorial["records"]:
             if record["record_type"] not in {"product", "portfolio"}:
                 continue
@@ -419,23 +834,6 @@ def import_catalog(database_path: Path, repo_root: Path) -> dict[str, int]:
                             "observed_at": bundle["generated_at"],
                         },
                     )
-                latest_release = repository.get("latest_release")
-                if latest_release and latest_release.get("url"):
-                    version = latest_release.get("tag") or latest_release.get("name", "latest")
-                    upsert(
-                        connection,
-                        "releases",
-                        {
-                            "id": stable_id("release", repository_id, version),
-                            "package_id": None,
-                            "repository_id": repository_id,
-                            "release_kind": "github",
-                            "version": version,
-                            "url": latest_release["url"],
-                            "published_at": latest_release.get("published_at"),
-                            "observed_at": bundle["generated_at"],
-                        },
-                    )
                 latest_deployment = repository.get("latest_deployment")
                 if latest_deployment and latest_deployment.get("log_url"):
                     environment = latest_deployment.get("environment") or "unknown"
@@ -455,11 +853,7 @@ def import_catalog(database_path: Path, repo_root: Path) -> dict[str, int]:
                         },
                     )
             for package in bundle["packages"]:
-                existing_package = connection.execute(
-                    "SELECT id FROM packages WHERE ecosystem = ? AND name = ?",
-                    (package["ecosystem"], package["name"]),
-                ).fetchone()
-                package_id = existing_package["id"] if existing_package else package["id"]
+                package_id = package["id"]
                 upsert(
                     connection,
                     "packages",
@@ -468,8 +862,16 @@ def import_catalog(database_path: Path, repo_root: Path) -> dict[str, int]:
                         "ecosystem": package["ecosystem"],
                         "name": package["name"],
                         "registry_url": package.get("registry_url") or package["source_url"],
+                        "source_url": package.get("source_url"),
+                        "manifest_path": package.get("manifest_path"),
                         "description": package.get("description"),
                         "latest_version": package.get("latest_version"),
+                        "published": (
+                            int(package.get("published"))
+                            if package.get("published") is not None
+                            else None
+                        ),
+                        "publication_status": package.get("publication_status"),
                         "published_at": None,
                         "observed_at": package.get("observed_at") or bundle["generated_at"],
                     },
@@ -484,40 +886,6 @@ def import_catalog(database_path: Path, repo_root: Path) -> dict[str, int]:
                         "role": package.get("attachment_role") or "distribution",
                     },
                 )
-                counts["packages"] += 1
-                if package.get("published") and package.get("latest_version"):
-                    upsert(
-                        connection,
-                        "releases",
-                        {
-                            "id": stable_id("release", package_id, str(package["latest_version"])),
-                            "package_id": package_id,
-                            "repository_id": None,
-                            "release_kind": package["ecosystem"],
-                            "version": str(package["latest_version"]),
-                            "url": package.get("registry_url") or package["source_url"],
-                            "published_at": None,
-                            "observed_at": package.get("observed_at") or bundle["generated_at"],
-                        },
-                    )
-                if isinstance(package.get("downloads"), int | float):
-                    observed_at = package.get("observed_at") or bundle["generated_at"]
-                    upsert(
-                        connection,
-                        "metric_observations",
-                        {
-                            "id": stable_id("metric", package_id, "downloads", observed_at),
-                            "subject_kind": "package",
-                            "subject_id": package_id,
-                            "metric": "downloads",
-                            "value": package["downloads"],
-                            "unit": "count",
-                            "period_start": None,
-                            "period_end": None,
-                            "source_url": package.get("registry_url") or package["source_url"],
-                            "observed_at": observed_at,
-                        },
-                    )
             for resource in bundle["repository"].get("related_resources", []):
                 resource_id = stable_id("resource-url", resource["url"])
                 upsert(
@@ -544,7 +912,12 @@ def import_catalog(database_path: Path, repo_root: Path) -> dict[str, int]:
                         "sort_order": 0,
                     },
                 )
-                counts["resources"] += 1
+        counts["releases"] = connection.execute(
+            "SELECT COUNT(*) FROM releases"
+        ).fetchone()[0]
+        counts["dependencies"] = connection.execute(
+            "SELECT COUNT(*) FROM dependencies"
+        ).fetchone()[0]
         connection.execute(
             "UPDATE collection_runs SET completed_at = ?, status = ?, summary = ? WHERE id = ?",
             (generated_at, "complete", json.dumps(counts, sort_keys=True), run_id),

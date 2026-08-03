@@ -1,9 +1,49 @@
 {
-  "generated_at": "2026-08-03T10:05:58Z",
+  "generated_at": "2026-08-03T13:56:23Z",
   "packages": [
     {
       "claim_boundary": "Publication is reported only when confirmed by the named public registry.",
+      "dependencies": [
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "poetry-core",
+          "package_key": "pypi:poetry-core",
+          "requirement": ">=1.0.0",
+          "scope": "build-system.requires"
+        },
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "gradio",
+          "package_key": "pypi:gradio",
+          "requirement": "==5.1.0",
+          "scope": "dependencies"
+        },
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": true,
+          "name": "swarmauri",
+          "package_key": "pypi:swarmauri",
+          "requirement": "==0.5.1",
+          "scope": "dependencies"
+        },
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "PyMuPDF",
+          "package_key": "pypi:pymupdf",
+          "requirement": "*",
+          "scope": "dependencies"
+        }
+      ],
       "dependency_count": 4,
+      "dependent_count": 0,
+      "dependents": [],
       "description": "Observed pypi package record for rag_assistant.",
       "description_source": "generated-factual",
       "display_name": "rag_assistant",
@@ -14,7 +54,7 @@
       "evidence": [
         {
           "kind": "registry",
-          "observed_at": "2026-08-03T10:05:58Z",
+          "observed_at": "2026-08-03T13:56:23Z",
           "url": "https://pypi.org/project/rag_assistant/"
         }
       ],
@@ -23,7 +63,7 @@
       "latest_version": "0.2.4",
       "manifest_path": "pyproject.toml",
       "name": "rag_assistant",
-      "observed_at": "2026-08-03T10:05:58Z",
+      "observed_at": "2026-08-03T13:56:23Z",
       "owner": "swarmauri",
       "private": false,
       "publication_status": "published",
@@ -36,6 +76,368 @@
         "repository_contains_package": 1
       },
       "release_count": 45,
+      "releases": [
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2024-10-30T00:53:55.899375Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/rag_assistant/0.2.5.dev1/",
+          "version": "0.2.5.dev1"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2024-10-23T19:41:38.214446Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/rag_assistant/0.2.4/",
+          "version": "0.2.4"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2024-10-23T19:38:04.227681Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/rag_assistant/0.2.3/",
+          "version": "0.2.3"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2024-10-23T19:36:00.352182Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/rag_assistant/0.2.2/",
+          "version": "0.2.2"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2024-10-23T19:33:36.187069Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/rag_assistant/0.2.1/",
+          "version": "0.2.1"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2024-10-23T19:15:18.013863Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/rag_assistant/0.2.0/",
+          "version": "0.2.0"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2024-08-04T07:44:41.510174Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/rag_assistant/0.1.23/",
+          "version": "0.1.23"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2024-08-04T07:29:42.071875Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/rag_assistant/0.1.22/",
+          "version": "0.1.22"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2024-08-04T00:27:53.219836Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/rag_assistant/0.1.20/",
+          "version": "0.1.20"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2024-06-03T03:25:39.460322Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/rag_assistant/0.1.19/",
+          "version": "0.1.19"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2024-06-03T03:24:17.291288Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/rag_assistant/0.1.18/",
+          "version": "0.1.18"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2024-06-01T23:58:05.197337Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/rag_assistant/0.1.17/",
+          "version": "0.1.17"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2024-06-01T08:24:03.114247Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/rag_assistant/0.1.16/",
+          "version": "0.1.16"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2024-06-01T08:08:16.752566Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/rag_assistant/0.1.15.dev1/",
+          "version": "0.1.15.dev1"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2024-06-01T04:55:42.374711Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/rag_assistant/0.1.14/",
+          "version": "0.1.14"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2024-06-01T04:42:49.217607Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/rag_assistant/0.1.13.dev22/",
+          "version": "0.1.13.dev22"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2024-06-01T04:42:20.171135Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/rag_assistant/0.1.13.dev21/",
+          "version": "0.1.13.dev21"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2024-06-01T04:29:16.600712Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/rag_assistant/0.1.13.dev20/",
+          "version": "0.1.13.dev20"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2024-06-01T04:12:50.027467Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/rag_assistant/0.1.13.dev19/",
+          "version": "0.1.13.dev19"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2024-06-01T03:59:49.104558Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/rag_assistant/0.1.13.dev18/",
+          "version": "0.1.13.dev18"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2024-06-01T03:52:06.860118Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/rag_assistant/0.1.13.dev17/",
+          "version": "0.1.13.dev17"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2024-06-01T03:43:38.302516Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/rag_assistant/0.1.13.dev16/",
+          "version": "0.1.13.dev16"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2024-06-01T03:23:30.257530Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/rag_assistant/0.1.13.dev14/",
+          "version": "0.1.13.dev14"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2024-06-01T03:11:24.940288Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/rag_assistant/0.1.13.dev12/",
+          "version": "0.1.13.dev12"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2024-06-01T02:58:01.834176Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/rag_assistant/0.1.13.dev11/",
+          "version": "0.1.13.dev11"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2024-06-01T02:45:22.137307Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/rag_assistant/0.1.13.dev10/",
+          "version": "0.1.13.dev10"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2024-06-01T02:38:56.353236Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/rag_assistant/0.1.13.dev9/",
+          "version": "0.1.13.dev9"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2024-06-01T02:21:03.838751Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/rag_assistant/0.1.13.dev8/",
+          "version": "0.1.13.dev8"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2024-06-01T01:52:29.006451Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/rag_assistant/0.1.13.dev7/",
+          "version": "0.1.13.dev7"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2024-06-01T01:39:03.631459Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/rag_assistant/0.1.13.dev6/",
+          "version": "0.1.13.dev6"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2024-06-01T01:24:11.063947Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/rag_assistant/0.1.13.dev5/",
+          "version": "0.1.13.dev5"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2024-06-01T01:00:26.671072Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/rag_assistant/0.1.13.dev3/",
+          "version": "0.1.13.dev3"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2024-06-01T00:29:03.682822Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/rag_assistant/0.1.13.dev1/",
+          "version": "0.1.13.dev1"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2024-05-21T07:51:29.446896Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/rag_assistant/0.1.12/",
+          "version": "0.1.12"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2024-05-21T02:13:56.904505Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/rag_assistant/0.1.10/",
+          "version": "0.1.10"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2024-05-17T20:57:00.206335Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/rag_assistant/0.1.9/",
+          "version": "0.1.9"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2024-05-17T04:24:38.220327Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/rag_assistant/0.1.8/",
+          "version": "0.1.8"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2024-05-17T04:20:16.527003Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/rag_assistant/0.1.7/",
+          "version": "0.1.7"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2024-05-17T03:53:20.608519Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/rag_assistant/0.1.6/",
+          "version": "0.1.6"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2024-05-17T03:42:54.324563Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/rag_assistant/0.1.5/",
+          "version": "0.1.5"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2024-05-17T03:32:54.793347Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/rag_assistant/0.1.4/",
+          "version": "0.1.4"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2024-05-17T01:58:51.928580Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/rag_assistant/0.1.3/",
+          "version": "0.1.3"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2024-05-15T22:21:19.786507Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/rag_assistant/0.1.2/",
+          "version": "0.1.2"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2024-05-15T21:47:23.394901Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/rag_assistant/0.1.1/",
+          "version": "0.1.1"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2024-05-15T21:32:38.825453Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/rag_assistant/0.0.1.dev1/",
+          "version": "0.0.1.dev1"
+        }
+      ],
       "repository": "swarmauri/rag_assistant",
       "reviewed": false,
       "route": "/catalog/packages/pypi/rag-assistant-8e539276",
@@ -54,12 +456,24 @@
     "evidence": [
       {
         "kind": "source",
-        "observed_at": "2026-08-03T10:05:58Z",
+        "observed_at": "2026-08-03T13:56:25Z",
         "url": "https://github.com/swarmauri/rag_assistant"
       }
     ],
     "fork": false,
     "full_name": "swarmauri/rag_assistant",
+    "github_releases": [
+      {
+        "downloads": 0,
+        "draft": false,
+        "observed_at": "2026-08-03T13:56:25Z",
+        "prerelease": true,
+        "published_at": "2024-08-04T00:12:04Z",
+        "release_kind": "github",
+        "url": "https://github.com/swarmauri/rag_assistant/releases/tag/v0.1.19",
+        "version": "v0.1.19"
+      }
+    ],
     "homepage": "https://swarmauri.com",
     "id": "repository:swarmauri/rag_assistant",
     "kind": "repository",
@@ -99,7 +513,7 @@
       "watchers": 0
     },
     "name": "rag_assistant",
-    "observed_at": "2026-08-03T10:05:58Z",
+    "observed_at": "2026-08-03T13:56:25Z",
     "owner": "swarmauri",
     "package_ids": [
       "package:pypi:rag_assistant:swarmauri/rag_assistant:pyproject.toml"

@@ -1,9 +1,40 @@
 {
-  "generated_at": "2026-08-03T10:05:58Z",
+  "generated_at": "2026-08-03T13:56:23Z",
   "packages": [
     {
       "claim_boundary": "Publication is reported only when confirmed by the named public registry.",
+      "dependencies": [
+        {
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "internal": true,
+          "name": "@mdwrk/lander-content-contract",
+          "package_key": "npm:@mdwrk/lander-content-contract",
+          "requirement": "^0.1.2",
+          "scope": "dependencies"
+        },
+        {
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "internal": true,
+          "name": "@mdwrk/lander-core",
+          "package_key": "npm:@mdwrk/lander-core",
+          "requirement": "^0.1.2",
+          "scope": "dependencies"
+        },
+        {
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "typescript",
+          "package_key": "npm:typescript",
+          "requirement": "^5.8.0",
+          "scope": "devDependencies"
+        }
+      ],
       "dependency_count": 3,
+      "dependent_count": 0,
+      "dependents": [],
       "description": "Observed npm package record for @groupsum/npmctl-com-content-pack.",
       "description_source": "generated-factual",
       "display_name": "@groupsum/npmctl-com-content-pack",
@@ -14,7 +45,7 @@
       "evidence": [
         {
           "kind": "source",
-          "observed_at": "2026-08-03T10:05:58Z",
+          "observed_at": "2026-08-03T13:56:23Z",
           "url": "https://github.com/groupsum/npmctl-com/blob/HEAD/packages/site-content-pack/package.json"
         }
       ],
@@ -23,7 +54,7 @@
       "latest_version": "0.1.0",
       "manifest_path": "packages/site-content-pack/package.json",
       "name": "@groupsum/npmctl-com-content-pack",
-      "observed_at": "2026-08-03T10:05:58Z",
+      "observed_at": "2026-08-03T13:56:23Z",
       "owner": "groupsum",
       "private": true,
       "publication_status": "manifest_private",
@@ -36,6 +67,7 @@
         "repository_contains_package": 1
       },
       "release_count": 0,
+      "releases": [],
       "repository": "groupsum/npmctl-com",
       "reviewed": false,
       "route": "/catalog/packages/npm/groupsum-npmctl-com-content-pack-a07019fe",
@@ -44,7 +76,173 @@
     },
     {
       "claim_boundary": "Publication is reported only when confirmed by the named public registry.",
+      "dependencies": [
+        {
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "@google/genai",
+          "package_key": "npm:@google/genai",
+          "requirement": "^2.4.0",
+          "scope": "dependencies"
+        },
+        {
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "@tailwindcss/vite",
+          "package_key": "npm:@tailwindcss/vite",
+          "requirement": "^4.1.14",
+          "scope": "dependencies"
+        },
+        {
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "@vitejs/plugin-react",
+          "package_key": "npm:@vitejs/plugin-react",
+          "requirement": "^5.0.4",
+          "scope": "dependencies"
+        },
+        {
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "lucide-react",
+          "package_key": "npm:lucide-react",
+          "requirement": "^0.546.0",
+          "scope": "dependencies"
+        },
+        {
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "react",
+          "package_key": "npm:react",
+          "requirement": "^19.0.1",
+          "scope": "dependencies"
+        },
+        {
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "react-dom",
+          "package_key": "npm:react-dom",
+          "requirement": "^19.0.1",
+          "scope": "dependencies"
+        },
+        {
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "vite",
+          "package_key": "npm:vite",
+          "requirement": "^6.2.3",
+          "scope": "dependencies"
+        },
+        {
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "express",
+          "package_key": "npm:express",
+          "requirement": "^4.21.2",
+          "scope": "dependencies"
+        },
+        {
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "dotenv",
+          "package_key": "npm:dotenv",
+          "requirement": "^17.2.3",
+          "scope": "dependencies"
+        },
+        {
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "motion",
+          "package_key": "npm:motion",
+          "requirement": "^12.23.24",
+          "scope": "dependencies"
+        },
+        {
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "@types/node",
+          "package_key": "npm:@types/node",
+          "requirement": "^22.14.0",
+          "scope": "devDependencies"
+        },
+        {
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "autoprefixer",
+          "package_key": "npm:autoprefixer",
+          "requirement": "^10.4.21",
+          "scope": "devDependencies"
+        },
+        {
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "esbuild",
+          "package_key": "npm:esbuild",
+          "requirement": "^0.25.0",
+          "scope": "devDependencies"
+        },
+        {
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "tailwindcss",
+          "package_key": "npm:tailwindcss",
+          "requirement": "^4.1.14",
+          "scope": "devDependencies"
+        },
+        {
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "tsx",
+          "package_key": "npm:tsx",
+          "requirement": "^4.21.0",
+          "scope": "devDependencies"
+        },
+        {
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "typescript",
+          "package_key": "npm:typescript",
+          "requirement": "~5.8.2",
+          "scope": "devDependencies"
+        },
+        {
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "vite",
+          "package_key": "npm:vite",
+          "requirement": "^6.2.3",
+          "scope": "devDependencies"
+        },
+        {
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "@types/express",
+          "package_key": "npm:@types/express",
+          "requirement": "^4.17.21",
+          "scope": "devDependencies"
+        }
+      ],
       "dependency_count": 18,
+      "dependent_count": 0,
+      "dependents": [],
       "description": "Observed npm package record for react-example.",
       "description_source": "generated-factual",
       "display_name": "react-example",
@@ -55,7 +253,7 @@
       "evidence": [
         {
           "kind": "source",
-          "observed_at": "2026-08-03T10:05:58Z",
+          "observed_at": "2026-08-03T13:56:23Z",
           "url": "https://github.com/groupsum/npmctl-com/blob/HEAD/package.json"
         }
       ],
@@ -64,18 +262,19 @@
       "latest_version": "0.0.0",
       "manifest_path": "package.json",
       "name": "react-example",
-      "observed_at": "2026-08-03T10:05:58Z",
+      "observed_at": "2026-08-03T13:56:23Z",
       "owner": "groupsum",
       "private": true,
       "publication_status": "manifest_private",
       "published": false,
       "registry_url": null,
-      "relationship_count": 26,
+      "relationship_count": 27,
       "relationship_counts": {
-        "package_depends_on_external": 23,
+        "package_depends_on_external": 24,
         "repository_contains_package": 3
       },
       "release_count": 0,
+      "releases": [],
       "repository": "groupsum/npmctl-com",
       "reviewed": false,
       "route": "/catalog/packages/npm/react-example-457df34e",
@@ -84,7 +283,38 @@
     },
     {
       "claim_boundary": "Publication is reported only when confirmed by the named public registry.",
+      "dependencies": [
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": true,
+          "name": "npmctl",
+          "package_key": "pypi:npmctl",
+          "requirement": ">=0.3.10",
+          "scope": "dependency-groups.dev"
+        },
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": true,
+          "name": "npmctl-namecheap",
+          "package_key": "pypi:npmctl-namecheap",
+          "requirement": ">=0.3.10",
+          "scope": "dependency-groups.dev"
+        },
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": true,
+          "name": "ssot-registry",
+          "package_key": "pypi:ssot-registry",
+          "requirement": ">=0.2.18",
+          "scope": "dependency-groups.dev"
+        }
+      ],
       "dependency_count": 3,
+      "dependent_count": 0,
+      "dependents": [],
       "description": "Observed pypi package record for npmctl-com.",
       "description_source": "generated-factual",
       "display_name": "npmctl-com",
@@ -95,7 +325,7 @@
       "evidence": [
         {
           "kind": "source",
-          "observed_at": "2026-08-03T10:05:58Z",
+          "observed_at": "2026-08-03T13:56:23Z",
           "url": "https://github.com/groupsum/npmctl-com/blob/HEAD/pyproject.toml"
         }
       ],
@@ -104,10 +334,10 @@
       "latest_version": "0.1.0",
       "manifest_path": "pyproject.toml",
       "name": "npmctl-com",
-      "observed_at": "2026-08-03T10:05:58Z",
+      "observed_at": "2026-08-03T13:56:23Z",
       "owner": "groupsum",
       "private": false,
-      "publication_status": "not-confirmed",
+      "publication_status": "registry_not_found",
       "published": false,
       "registry_url": null,
       "relationship_count": 4,
@@ -116,6 +346,7 @@
         "repository_contains_package": 1
       },
       "release_count": 0,
+      "releases": [],
       "repository": "groupsum/npmctl-com",
       "reviewed": false,
       "route": "/catalog/packages/pypi/npmctl-com-f70a8ac1",
@@ -134,12 +365,13 @@
     "evidence": [
       {
         "kind": "source",
-        "observed_at": "2026-08-03T10:05:58Z",
+        "observed_at": "2026-08-03T13:56:24Z",
         "url": "https://github.com/groupsum/npmctl-com"
       }
     ],
     "fork": false,
     "full_name": "groupsum/npmctl-com",
+    "github_releases": [],
     "homepage": null,
     "id": "repository:groupsum/npmctl-com",
     "kind": "repository",
@@ -177,7 +409,7 @@
       "watchers": 0
     },
     "name": "npmctl-com",
-    "observed_at": "2026-08-03T10:05:58Z",
+    "observed_at": "2026-08-03T13:56:24Z",
     "owner": "groupsum",
     "package_ids": [
       "package:npm:@groupsum/npmctl-com-content-pack:groupsum/npmctl-com:packages/site-content-pack/package.json",

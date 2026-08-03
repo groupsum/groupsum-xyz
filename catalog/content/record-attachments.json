@@ -1,6 +1,35 @@
 {
   "schema_version": "1.0.0",
   "records": {
+    "groupsum/mdwrk": {
+      "primary_repository": "groupsum/mdwrk",
+      "repositories": [
+        "groupsum/mdwrk",
+        "groupsum/mdwrk-pages",
+        "groupsum/mdwrkcom-content-pack"
+      ],
+      "repository_roles": {
+        "groupsum/mdwrk": "primary-implementation",
+        "groupsum/mdwrk-pages": "application-and-examples",
+        "groupsum/mdwrkcom-content-pack": "website-content"
+      }
+    },
+    "groupsum/npmctl": {
+      "primary_repository": "groupsum/npmctl",
+      "repositories": ["groupsum/npmctl", "groupsum/npmctl-com"],
+      "repository_roles": {
+        "groupsum/npmctl": "primary-implementation",
+        "groupsum/npmctl-com": "product-website"
+      }
+    },
+    "groupsum/ssot-registry": {
+      "primary_repository": "groupsum/ssot-registry",
+      "repositories": ["groupsum/ssot-registry", "groupsum/ssot-registry-com"],
+      "repository_roles": {
+        "groupsum/ssot-registry": "primary-implementation",
+        "groupsum/ssot-registry-com": "product-website"
+      }
+    },
     "swarmauri/peagen": {
       "primary_repository": "swarmauri/peagen-com",
       "repositories": [
@@ -36,6 +65,47 @@
         }
       ],
       "resource_contains": ["peagen"]
+    },
+    "swarmauri/swarmauri-sdk": {
+      "primary_repository": "swarmauri/swarmauri-sdk",
+      "repositories": [
+        "swarmauri/swarmauri-sdk",
+        "swarmauri/docs-swarmauri-com",
+        "swarmauri/swarmauri-com"
+      ],
+      "repository_roles": {
+        "swarmauri/swarmauri-sdk": "primary-implementation",
+        "swarmauri/docs-swarmauri-com": "documentation",
+        "swarmauri/swarmauri-com": "product-website"
+      }
+    },
+    "tigrbl/tigrbl": {
+      "primary_repository": "tigrbl/tigrbl",
+      "repositories": [
+        "tigrbl/tigrbl",
+        "tigrbl/tigr-asgi-contract",
+        "tigrbl/docs-tigrbl-com",
+        "tigrbl/tigrbl-com"
+      ],
+      "repository_roles": {
+        "tigrbl/tigrbl": "primary-implementation",
+        "tigrbl/tigr-asgi-contract": "protocol-contracts",
+        "tigrbl/docs-tigrbl-com": "documentation",
+        "tigrbl/tigrbl-com": "product-website"
+      }
+    },
+    "tigrbl/tigrcorn": {
+      "primary_repository": "tigrbl/tigrcorn",
+      "repositories": [
+        "tigrbl/tigrcorn",
+        "tigrbl/docs-tigrcorn-com",
+        "tigrbl/tigrcorn-com"
+      ],
+      "repository_roles": {
+        "tigrbl/tigrcorn": "primary-implementation",
+        "tigrbl/docs-tigrcorn-com": "documentation",
+        "tigrbl/tigrcorn-com": "product-website"
+      }
     }
   }
 }

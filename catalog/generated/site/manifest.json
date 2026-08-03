@@ -23,31 +23,31 @@
       "dataset": "organizations",
       "path": "organizations.json",
       "records": 4,
-      "sha256": "4be854913e59e9e0e19227be3331b5e8021a3c1056ac1debb3b5b7ebdc11ac37"
+      "sha256": "d8220c7c0f5ad929cedac14f876fac4a85e4ad1430a7b389134be9a0e2c6e92c"
     },
     {
-      "bytes": 1881997,
+      "bytes": 8540983,
       "dataset": "packages",
       "path": "packages.json",
       "records": 1124,
-      "sha256": "3dba91438ac9d3b0bf0c8d3968cd58c40ed42130264a24bc986cfc40ed9bd558"
+      "sha256": "fb4859fe52fcf3b458f92478c54143d59948a46d89c891712b1da76ccf038f50"
     },
     {
-      "bytes": 596289,
+      "bytes": 3547850,
       "dataset": "repositories",
       "path": "repositories.json",
       "records": 68,
-      "sha256": "4e03c28992740a1afa7eff3c040660489f5cea19b754cff5493ee54f48c8e02b"
+      "sha256": "b0f58acc0c979a2e82fa3bb26f43a3fd6b543cf775acf9e205e9a4c5a2c3b276"
     },
     {
       "bytes": 13753,
       "dataset": "technologies",
       "path": "technologies.json",
       "records": 18,
-      "sha256": "4124f2f0eb20ee500bb6720bade6ca0bb9e5b0a46467a84cdde5f1cdce48d4f6"
+      "sha256": "28081484c530ef4ca5f29f02898b97c6c6864e908ce412b720db10122b3a3f2a"
     }
   ],
-  "generated_at": "2026-08-03T10:05:58Z",
+  "generated_at": "2026-08-03T13:56:23Z",
   "product_evidence": {
     "path": "/catalog/product-evidence/",
     "records": 69
@@ -55,8 +55,8 @@
   "schema_version": "1.0.0",
   "source": "/catalog/catalog.json",
   "source_counts": {
-    "deployments": 3950,
-    "relationships": 10648,
+    "deployments": 3955,
+    "relationships": 10845,
     "releases": 17313
   }
 }

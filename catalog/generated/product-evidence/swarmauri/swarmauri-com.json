@@ -1,9 +1,202 @@
 {
-  "generated_at": "2026-08-03T10:05:58Z",
+  "generated_at": "2026-08-03T13:56:23Z",
   "packages": [
     {
       "claim_boundary": "Publication is reported only when confirmed by the named public registry.",
+      "dependencies": [
+        {
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "internal": true,
+          "name": "@mdwrk/markdown-renderer-core",
+          "package_key": "npm:@mdwrk/markdown-renderer-core",
+          "requirement": "^1.2.1",
+          "scope": "dependencies"
+        },
+        {
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "internal": true,
+          "name": "@mdwrk/markdown-renderer-react",
+          "package_key": "npm:@mdwrk/markdown-renderer-react",
+          "requirement": "^1.2.1",
+          "scope": "dependencies"
+        },
+        {
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "internal": true,
+          "name": "@mdwrk/structured-data",
+          "package_key": "npm:@mdwrk/structured-data",
+          "requirement": "^0.1.11",
+          "scope": "dependencies"
+        },
+        {
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "@tailwindcss/vite",
+          "package_key": "npm:@tailwindcss/vite",
+          "requirement": "^4.1.14",
+          "scope": "dependencies"
+        },
+        {
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "@vitejs/plugin-react",
+          "package_key": "npm:@vitejs/plugin-react",
+          "requirement": "^5.0.4",
+          "scope": "dependencies"
+        },
+        {
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "dotenv",
+          "package_key": "npm:dotenv",
+          "requirement": "^17.2.3",
+          "scope": "dependencies"
+        },
+        {
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "express",
+          "package_key": "npm:express",
+          "requirement": "^4.21.2",
+          "scope": "dependencies"
+        },
+        {
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "lucide-react",
+          "package_key": "npm:lucide-react",
+          "requirement": "^0.546.0",
+          "scope": "dependencies"
+        },
+        {
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "motion",
+          "package_key": "npm:motion",
+          "requirement": "^12.23.24",
+          "scope": "dependencies"
+        },
+        {
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "react",
+          "package_key": "npm:react",
+          "requirement": "^19.0.1",
+          "scope": "dependencies"
+        },
+        {
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "react-dom",
+          "package_key": "npm:react-dom",
+          "requirement": "^19.0.1",
+          "scope": "dependencies"
+        },
+        {
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "react-router-dom",
+          "package_key": "npm:react-router-dom",
+          "requirement": "^7.18.0",
+          "scope": "dependencies"
+        },
+        {
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "vite",
+          "package_key": "npm:vite",
+          "requirement": "^6.2.3",
+          "scope": "dependencies"
+        },
+        {
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "@types/express",
+          "package_key": "npm:@types/express",
+          "requirement": "^4.17.21",
+          "scope": "devDependencies"
+        },
+        {
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "@types/node",
+          "package_key": "npm:@types/node",
+          "requirement": "^22.14.0",
+          "scope": "devDependencies"
+        },
+        {
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "autoprefixer",
+          "package_key": "npm:autoprefixer",
+          "requirement": "^10.4.21",
+          "scope": "devDependencies"
+        },
+        {
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "esbuild",
+          "package_key": "npm:esbuild",
+          "requirement": "^0.25.0",
+          "scope": "devDependencies"
+        },
+        {
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "tailwindcss",
+          "package_key": "npm:tailwindcss",
+          "requirement": "^4.1.14",
+          "scope": "devDependencies"
+        },
+        {
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "tsx",
+          "package_key": "npm:tsx",
+          "requirement": "^4.21.0",
+          "scope": "devDependencies"
+        },
+        {
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "typescript",
+          "package_key": "npm:typescript",
+          "requirement": "~5.8.2",
+          "scope": "devDependencies"
+        },
+        {
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "vite",
+          "package_key": "npm:vite",
+          "requirement": "^6.2.3",
+          "scope": "devDependencies"
+        }
+      ],
       "dependency_count": 21,
+      "dependent_count": 0,
+      "dependents": [],
       "description": "Observed npm package record for swarmauri-com.",
       "description_source": "generated-factual",
       "display_name": "swarmauri-com",
@@ -14,7 +207,7 @@
       "evidence": [
         {
           "kind": "source",
-          "observed_at": "2026-08-03T10:05:58Z",
+          "observed_at": "2026-08-03T13:56:23Z",
           "url": "https://github.com/swarmauri/swarmauri-com/blob/HEAD/package.json"
         }
       ],
@@ -23,19 +216,20 @@
       "latest_version": "0.1.0",
       "manifest_path": "package.json",
       "name": "swarmauri-com",
-      "observed_at": "2026-08-03T10:05:58Z",
+      "observed_at": "2026-08-03T13:56:23Z",
       "owner": "swarmauri",
       "private": true,
       "publication_status": "manifest_private",
       "published": false,
       "registry_url": null,
-      "relationship_count": 21,
+      "relationship_count": 22,
       "relationship_counts": {
-        "package_depends_on_external": 17,
+        "package_depends_on_external": 18,
         "package_depends_on_package": 3,
         "repository_contains_package": 1
       },
       "release_count": 0,
+      "releases": [],
       "repository": "swarmauri/swarmauri-com",
       "reviewed": false,
       "route": "/catalog/packages/npm/swarmauri-com-f1b7d107",
@@ -44,7 +238,38 @@
     },
     {
       "claim_boundary": "Publication is reported only when confirmed by the named public registry.",
+      "dependencies": [
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": true,
+          "name": "npmctl",
+          "package_key": "pypi:npmctl",
+          "requirement": ">=0.3.10",
+          "scope": "dependency-groups.dev"
+        },
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": true,
+          "name": "npmctl-namecheap",
+          "package_key": "pypi:npmctl-namecheap",
+          "requirement": ">=0.3.10",
+          "scope": "dependency-groups.dev"
+        },
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": true,
+          "name": "ssot-registry",
+          "package_key": "pypi:ssot-registry",
+          "requirement": ">=0.2.18",
+          "scope": "dependency-groups.dev"
+        }
+      ],
       "dependency_count": 3,
+      "dependent_count": 0,
+      "dependents": [],
       "description": "Observed pypi package record for swarmauri-com.",
       "description_source": "generated-factual",
       "display_name": "swarmauri-com",
@@ -55,7 +280,7 @@
       "evidence": [
         {
           "kind": "source",
-          "observed_at": "2026-08-03T10:05:58Z",
+          "observed_at": "2026-08-03T13:56:23Z",
           "url": "https://github.com/swarmauri/swarmauri-com/blob/HEAD/pyproject.toml"
         }
       ],
@@ -64,10 +289,10 @@
       "latest_version": "0.1.0",
       "manifest_path": "pyproject.toml",
       "name": "swarmauri-com",
-      "observed_at": "2026-08-03T10:05:58Z",
+      "observed_at": "2026-08-03T13:56:23Z",
       "owner": "swarmauri",
       "private": false,
-      "publication_status": "not-confirmed",
+      "publication_status": "registry_not_found",
       "published": false,
       "registry_url": null,
       "relationship_count": 4,
@@ -76,6 +301,7 @@
         "repository_contains_package": 1
       },
       "release_count": 0,
+      "releases": [],
       "repository": "swarmauri/swarmauri-com",
       "reviewed": false,
       "route": "/catalog/packages/pypi/swarmauri-com-0c0ecf8a",
@@ -94,12 +320,13 @@
     "evidence": [
       {
         "kind": "source",
-        "observed_at": "2026-08-03T10:05:58Z",
+        "observed_at": "2026-08-03T13:56:25Z",
         "url": "https://github.com/swarmauri/swarmauri-com"
       }
     ],
     "fork": false,
     "full_name": "swarmauri/swarmauri-com",
+    "github_releases": [],
     "homepage": null,
     "id": "repository:swarmauri/swarmauri-com",
     "kind": "repository",
@@ -137,7 +364,7 @@
       "watchers": 0
     },
     "name": "swarmauri-com",
-    "observed_at": "2026-08-03T10:05:58Z",
+    "observed_at": "2026-08-03T13:56:25Z",
     "owner": "swarmauri",
     "package_ids": [
       "package:npm:swarmauri-com:swarmauri/swarmauri-com:package.json",
@@ -146,7 +373,7 @@
     "pushed_at": "2026-07-13T22:28:59Z",
     "related_resources": [
       {
-        "evidence_type": "repository.tree",
+        "evidence_type": "repository.blob",
         "id": "resource:2f807a28d7c8",
         "kind": "documentation",
         "name": "docs/unified_swarmauri_company_portfolio_brief.md",

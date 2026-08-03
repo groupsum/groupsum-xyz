@@ -163,8 +163,12 @@ class Package(RestTable):
     ecosystem = Column(String(60), nullable=False, index=True)
     name = Column(String(300), nullable=False)
     registry_url = Column(String(2048), nullable=False)
+    source_url = Column(String(2048), nullable=True)
+    manifest_path = Column(String(1000), nullable=True)
     description = Column(Text, nullable=True)
     latest_version = Column(String(120), nullable=True)
+    published = Column(Boolean, nullable=True)
+    publication_status = Column(String(60), nullable=True)
     published_at = Column(DateTime, nullable=True)
     observed_at = Column(DateTime, nullable=True)
 
@@ -203,6 +207,9 @@ class Release(RestOlapTable):
     version = Column(String(160), nullable=False)
     url = Column(String(2048), nullable=False)
     published_at = Column(DateTime, nullable=True)
+    downloads = Column(Numeric(24, 4), nullable=True)
+    prerelease = Column(Boolean, nullable=False, default=False)
+    draft = Column(Boolean, nullable=False, default=False)
     observed_at = Column(DateTime, nullable=True)
 
 
@@ -253,6 +260,9 @@ class Dependency(RestTable):
     target_id = Column(String(260), nullable=False)
     requirement = Column(String(240), nullable=True)
     scope = Column(String(60), nullable=True)
+    evidence_type = Column(String(80), nullable=False, default="repository.manifest")
+    source_url = Column(String(2048), nullable=True)
+    completeness = Column(String(80), nullable=False, default="catalog-observed")
     observed_at = Column(DateTime, nullable=True)
     __table_args__ = (
         UniqueConstraint(

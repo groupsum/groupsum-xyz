@@ -1,9 +1,40 @@
 {
-  "generated_at": "2026-08-03T10:05:58Z",
+  "generated_at": "2026-08-03T13:56:23Z",
   "packages": [
     {
       "claim_boundary": "Publication is reported only when confirmed by the named public registry.",
+      "dependencies": [
+        {
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "internal": true,
+          "name": "@mdwrk/lander-content-contract",
+          "package_key": "npm:@mdwrk/lander-content-contract",
+          "requirement": "^0.1.2",
+          "scope": "dependencies"
+        },
+        {
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "internal": true,
+          "name": "@mdwrk/lander-core",
+          "package_key": "npm:@mdwrk/lander-core",
+          "requirement": "^0.1.2",
+          "scope": "dependencies"
+        },
+        {
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "typescript",
+          "package_key": "npm:typescript",
+          "requirement": "^5.8.0",
+          "scope": "devDependencies"
+        }
+      ],
       "dependency_count": 3,
+      "dependent_count": 0,
+      "dependents": [],
       "description": "Observed npm package record for @groupsum/groupsum-xyz-content-pack.",
       "description_source": "generated-factual",
       "display_name": "@groupsum/groupsum-xyz-content-pack",
@@ -14,7 +45,7 @@
       "evidence": [
         {
           "kind": "source",
-          "observed_at": "2026-08-03T10:05:58Z",
+          "observed_at": "2026-08-03T13:56:23Z",
           "url": "https://github.com/groupsum/groupsum-xyz/blob/HEAD/packages/site-content-pack/package.json"
         }
       ],
@@ -23,7 +54,7 @@
       "latest_version": "0.1.0",
       "manifest_path": "packages/site-content-pack/package.json",
       "name": "@groupsum/groupsum-xyz-content-pack",
-      "observed_at": "2026-08-03T10:05:58Z",
+      "observed_at": "2026-08-03T13:56:23Z",
       "owner": "groupsum",
       "private": true,
       "publication_status": "manifest_private",
@@ -36,6 +67,7 @@
         "repository_contains_package": 1
       },
       "release_count": 0,
+      "releases": [],
       "repository": "groupsum/groupsum-xyz",
       "reviewed": false,
       "route": "/catalog/packages/npm/groupsum-groupsum-xyz-content-pack-f0edd9b4",
@@ -44,7 +76,146 @@
     },
     {
       "claim_boundary": "Publication is reported only when confirmed by the named public registry.",
+      "dependencies": [
+        {
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "internal": true,
+          "name": "@mdwrk/lander-core",
+          "package_key": "npm:@mdwrk/lander-core",
+          "requirement": "^0.1.2",
+          "scope": "dependencies"
+        },
+        {
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "internal": true,
+          "name": "@mdwrk/lander-react",
+          "package_key": "npm:@mdwrk/lander-react",
+          "requirement": "^0.1.2",
+          "scope": "dependencies"
+        },
+        {
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "internal": true,
+          "name": "@mdwrk/lander-theme",
+          "package_key": "npm:@mdwrk/lander-theme",
+          "requirement": "^0.1.4",
+          "scope": "dependencies"
+        },
+        {
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "@tailwindcss/vite",
+          "package_key": "npm:@tailwindcss/vite",
+          "requirement": "^4.1.14",
+          "scope": "dependencies"
+        },
+        {
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "@vitejs/plugin-react",
+          "package_key": "npm:@vitejs/plugin-react",
+          "requirement": "^4.3.4",
+          "scope": "dependencies"
+        },
+        {
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "lucide-react",
+          "package_key": "npm:lucide-react",
+          "requirement": "^0.546.0",
+          "scope": "dependencies"
+        },
+        {
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "react",
+          "package_key": "npm:react",
+          "requirement": "^19.0.0",
+          "scope": "dependencies"
+        },
+        {
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "react-dom",
+          "package_key": "npm:react-dom",
+          "requirement": "^19.0.0",
+          "scope": "dependencies"
+        },
+        {
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "react-router-dom",
+          "package_key": "npm:react-router-dom",
+          "requirement": "^7.18.1",
+          "scope": "dependencies"
+        },
+        {
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "tailwindcss",
+          "package_key": "npm:tailwindcss",
+          "requirement": "^4.1.14",
+          "scope": "dependencies"
+        },
+        {
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "typescript",
+          "package_key": "npm:typescript",
+          "requirement": "^5.8.0",
+          "scope": "dependencies"
+        },
+        {
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "vite",
+          "package_key": "npm:vite",
+          "requirement": "^6.0.0",
+          "scope": "dependencies"
+        },
+        {
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "@types/node",
+          "package_key": "npm:@types/node",
+          "requirement": "^22.14.0",
+          "scope": "devDependencies"
+        },
+        {
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "@types/react",
+          "package_key": "npm:@types/react",
+          "requirement": "^19.0.0",
+          "scope": "devDependencies"
+        },
+        {
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "@types/react-dom",
+          "package_key": "npm:@types/react-dom",
+          "requirement": "^19.0.0",
+          "scope": "devDependencies"
+        }
+      ],
       "dependency_count": 15,
+      "dependent_count": 0,
+      "dependents": [],
       "description": "Observed npm package record for groupsum-xyz.",
       "description_source": "generated-factual",
       "display_name": "groupsum-xyz",
@@ -55,7 +226,7 @@
       "evidence": [
         {
           "kind": "source",
-          "observed_at": "2026-08-03T10:05:58Z",
+          "observed_at": "2026-08-03T13:56:23Z",
           "url": "https://github.com/groupsum/groupsum-xyz/blob/HEAD/package.json"
         }
       ],
@@ -64,7 +235,7 @@
       "latest_version": "0.1.0",
       "manifest_path": "package.json",
       "name": "groupsum-xyz",
-      "observed_at": "2026-08-03T10:05:58Z",
+      "observed_at": "2026-08-03T13:56:23Z",
       "owner": "groupsum",
       "private": true,
       "publication_status": "manifest_private",
@@ -77,6 +248,7 @@
         "repository_contains_package": 1
       },
       "release_count": 0,
+      "releases": [],
       "repository": "groupsum/groupsum-xyz",
       "reviewed": false,
       "route": "/catalog/packages/npm/groupsum-xyz-e18f6ace",
@@ -95,37 +267,38 @@
     "evidence": [
       {
         "kind": "source",
-        "observed_at": "2026-08-03T10:05:58Z",
+        "observed_at": "2026-08-03T13:56:24Z",
         "url": "https://github.com/groupsum/groupsum-xyz"
       }
     ],
     "fork": false,
     "full_name": "groupsum/groupsum-xyz",
+    "github_releases": [],
     "homepage": null,
     "id": "repository:groupsum/groupsum-xyz",
     "kind": "repository",
     "latest_commit": {
       "author": "cobycloud",
-      "authored_at": "2026-08-03T03:30:30Z",
-      "committed_at": "2026-08-03T03:30:30Z",
+      "authored_at": "2026-08-03T09:48:48Z",
+      "committed_at": "2026-08-03T09:48:48Z",
       "committer": "cobycloud",
-      "message": "Replace website claims with verified content",
-      "sha": "0ef006fba7abed76b50c76c2d25a530b8916bec2",
-      "url": "https://github.com/groupsum/groupsum-xyz/commit/0ef006fba7abed76b50c76c2d25a530b8916bec2"
+      "message": "redesign catalog record pages",
+      "sha": "7670210b05ca127778ce4633e2f32f18547fbd38",
+      "url": "https://github.com/groupsum/groupsum-xyz/commit/7670210b05ca127778ce4633e2f32f18547fbd38"
     },
     "latest_deployment": {
       "environment": "deployment",
       "environment_url": "",
-      "log_url": "https://github.com/groupsum/groupsum-xyz/actions/runs/30782003991/job/91588397725",
+      "log_url": "https://github.com/groupsum/groupsum-xyz/actions/runs/30803006553/job/91651789842",
       "state": "success",
-      "updated_at": "2026-08-03T03:32:08Z"
+      "updated_at": "2026-08-03T09:50:00Z"
     },
     "latest_release": null,
     "license": null,
     "metrics": {
-      "commits": 46,
+      "commits": 50,
       "contributors": 1,
-      "deployments": 3,
+      "deployments": 7,
       "environments": 1,
       "forks": 0,
       "github_releases": 0,
@@ -133,18 +306,18 @@
       "packages": 2,
       "related_resources": 0,
       "relationships": 2,
-      "size_kb": 4728,
+      "size_kb": 8419,
       "stars": 0,
       "watchers": 0
     },
     "name": "groupsum-xyz",
-    "observed_at": "2026-08-03T10:05:58Z",
+    "observed_at": "2026-08-03T13:56:24Z",
     "owner": "groupsum",
     "package_ids": [
       "package:npm:@groupsum/groupsum-xyz-content-pack:groupsum/groupsum-xyz:packages/site-content-pack/package.json",
       "package:npm:groupsum-xyz:groupsum/groupsum-xyz:package.json"
     ],
-    "pushed_at": "2026-08-03T03:30:43Z",
+    "pushed_at": "2026-08-03T09:48:48Z",
     "related_resources": [],
     "relationship_counts": {
       "repository_contains_package": 2
@@ -171,7 +344,7 @@
       "npmctl",
       "static-site"
     ],
-    "updated_at": "2026-08-03T03:30:47Z",
+    "updated_at": "2026-08-03T09:50:21Z",
     "url": "https://github.com/groupsum/groupsum-xyz",
     "visibility": "public"
   },

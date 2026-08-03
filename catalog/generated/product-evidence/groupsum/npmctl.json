@@ -1,9 +1,486 @@
 {
-  "generated_at": "2026-08-03T10:05:58Z",
+  "generated_at": "2026-08-03T13:56:23Z",
   "packages": [
     {
+      "attachment_role": "distribution",
       "claim_boundary": "Publication is reported only when confirmed by the named public registry.",
+      "dependencies": [
+        {
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "internal": true,
+          "name": "@mdwrk/lander-content-contract",
+          "package_key": "npm:@mdwrk/lander-content-contract",
+          "requirement": "^0.1.2",
+          "scope": "dependencies"
+        },
+        {
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "internal": true,
+          "name": "@mdwrk/lander-core",
+          "package_key": "npm:@mdwrk/lander-core",
+          "requirement": "^0.1.2",
+          "scope": "dependencies"
+        },
+        {
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "typescript",
+          "package_key": "npm:typescript",
+          "requirement": "^5.8.0",
+          "scope": "devDependencies"
+        }
+      ],
+      "dependency_count": 3,
+      "dependent_count": 0,
+      "dependents": [],
+      "description": "Observed npm package record for @groupsum/npmctl-com-content-pack.",
+      "description_source": "generated-factual",
+      "display_name": "@groupsum/npmctl-com-content-pack",
+      "downloads": null,
+      "downstream_completeness": "not-observed",
+      "downstream_count": 0,
+      "ecosystem": "npm",
+      "evidence": [
+        {
+          "kind": "source",
+          "observed_at": "2026-08-03T13:56:23Z",
+          "url": "https://github.com/groupsum/npmctl-com/blob/HEAD/packages/site-content-pack/package.json"
+        }
+      ],
+      "id": "package:npm:@groupsum/npmctl-com-content-pack:groupsum/npmctl-com:packages/site-content-pack/package.json",
+      "kind": "package",
+      "latest_version": "0.1.0",
+      "manifest_path": "packages/site-content-pack/package.json",
+      "name": "@groupsum/npmctl-com-content-pack",
+      "observed_at": "2026-08-03T13:56:23Z",
+      "owner": "groupsum",
+      "private": true,
+      "publication_status": "manifest_private",
+      "published": false,
+      "registry_url": null,
+      "relationship_count": 4,
+      "relationship_counts": {
+        "package_depends_on_external": 1,
+        "package_depends_on_package": 2,
+        "repository_contains_package": 1
+      },
+      "release_count": 0,
+      "releases": [],
+      "repository": "groupsum/npmctl-com",
+      "reviewed": false,
+      "route": "/catalog/packages/npm/groupsum-npmctl-com-content-pack-a07019fe",
+      "source_url": "https://github.com/groupsum/npmctl-com/blob/HEAD/packages/site-content-pack/package.json",
+      "version_declared": "0.1.0"
+    },
+    {
+      "attachment_role": "distribution",
+      "claim_boundary": "Publication is reported only when confirmed by the named public registry.",
+      "dependencies": [
+        {
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "@google/genai",
+          "package_key": "npm:@google/genai",
+          "requirement": "^2.4.0",
+          "scope": "dependencies"
+        },
+        {
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "@tailwindcss/vite",
+          "package_key": "npm:@tailwindcss/vite",
+          "requirement": "^4.1.14",
+          "scope": "dependencies"
+        },
+        {
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "@vitejs/plugin-react",
+          "package_key": "npm:@vitejs/plugin-react",
+          "requirement": "^5.0.4",
+          "scope": "dependencies"
+        },
+        {
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "lucide-react",
+          "package_key": "npm:lucide-react",
+          "requirement": "^0.546.0",
+          "scope": "dependencies"
+        },
+        {
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "react",
+          "package_key": "npm:react",
+          "requirement": "^19.0.1",
+          "scope": "dependencies"
+        },
+        {
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "react-dom",
+          "package_key": "npm:react-dom",
+          "requirement": "^19.0.1",
+          "scope": "dependencies"
+        },
+        {
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "vite",
+          "package_key": "npm:vite",
+          "requirement": "^6.2.3",
+          "scope": "dependencies"
+        },
+        {
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "express",
+          "package_key": "npm:express",
+          "requirement": "^4.21.2",
+          "scope": "dependencies"
+        },
+        {
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "dotenv",
+          "package_key": "npm:dotenv",
+          "requirement": "^17.2.3",
+          "scope": "dependencies"
+        },
+        {
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "motion",
+          "package_key": "npm:motion",
+          "requirement": "^12.23.24",
+          "scope": "dependencies"
+        },
+        {
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "@types/node",
+          "package_key": "npm:@types/node",
+          "requirement": "^22.14.0",
+          "scope": "devDependencies"
+        },
+        {
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "autoprefixer",
+          "package_key": "npm:autoprefixer",
+          "requirement": "^10.4.21",
+          "scope": "devDependencies"
+        },
+        {
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "esbuild",
+          "package_key": "npm:esbuild",
+          "requirement": "^0.25.0",
+          "scope": "devDependencies"
+        },
+        {
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "tailwindcss",
+          "package_key": "npm:tailwindcss",
+          "requirement": "^4.1.14",
+          "scope": "devDependencies"
+        },
+        {
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "tsx",
+          "package_key": "npm:tsx",
+          "requirement": "^4.21.0",
+          "scope": "devDependencies"
+        },
+        {
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "typescript",
+          "package_key": "npm:typescript",
+          "requirement": "~5.8.2",
+          "scope": "devDependencies"
+        },
+        {
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "vite",
+          "package_key": "npm:vite",
+          "requirement": "^6.2.3",
+          "scope": "devDependencies"
+        },
+        {
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "@types/express",
+          "package_key": "npm:@types/express",
+          "requirement": "^4.17.21",
+          "scope": "devDependencies"
+        }
+      ],
+      "dependency_count": 18,
+      "dependent_count": 0,
+      "dependents": [],
+      "description": "Observed npm package record for react-example.",
+      "description_source": "generated-factual",
+      "display_name": "react-example",
+      "downloads": null,
+      "downstream_completeness": "not-observed",
+      "downstream_count": 0,
+      "ecosystem": "npm",
+      "evidence": [
+        {
+          "kind": "source",
+          "observed_at": "2026-08-03T13:56:23Z",
+          "url": "https://github.com/groupsum/npmctl-com/blob/HEAD/package.json"
+        }
+      ],
+      "id": "package:npm:react-example:groupsum/npmctl-com:package.json",
+      "kind": "package",
+      "latest_version": "0.0.0",
+      "manifest_path": "package.json",
+      "name": "react-example",
+      "observed_at": "2026-08-03T13:56:23Z",
+      "owner": "groupsum",
+      "private": true,
+      "publication_status": "manifest_private",
+      "published": false,
+      "registry_url": null,
+      "relationship_count": 27,
+      "relationship_counts": {
+        "package_depends_on_external": 24,
+        "repository_contains_package": 3
+      },
+      "release_count": 0,
+      "releases": [],
+      "repository": "groupsum/npmctl-com",
+      "reviewed": false,
+      "route": "/catalog/packages/npm/react-example-457df34e",
+      "source_url": "https://github.com/groupsum/npmctl-com/blob/HEAD/package.json",
+      "version_declared": "0.0.0"
+    },
+    {
+      "attachment_role": "distribution",
+      "claim_boundary": "Publication is reported only when confirmed by the named public registry.",
+      "dependencies": [
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "wyrmctl",
+          "package_key": "pypi:wyrmctl",
+          "requirement": ">=0.4.0,<1",
+          "scope": "dependencies"
+        },
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "PyYAML",
+          "package_key": "pypi:pyyaml",
+          "requirement": ">=6.0.2",
+          "scope": "dependencies"
+        },
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "requests",
+          "package_key": "pypi:requests",
+          "requirement": ">=2.32.0",
+          "scope": "dependencies"
+        },
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "tomli",
+          "package_key": "pypi:tomli",
+          "requirement": ">=2.0.1; python_version < '3.11'",
+          "scope": "dependencies"
+        },
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "cryptography",
+          "package_key": "pypi:cryptography",
+          "requirement": ">=44.0.0",
+          "scope": "optional-dependencies.signing"
+        },
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "uv-build",
+          "package_key": "pypi:uv-build",
+          "requirement": ">=0.11.8,<0.12",
+          "scope": "build-system.requires"
+        }
+      ],
       "dependency_count": 6,
+      "dependent_count": 15,
+      "dependents": [
+        {
+          "completeness": "catalog-observed",
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "name": "docs-peagen-com",
+          "package_key": "pypi:docs-peagen-com",
+          "requirement": ">=0.3.10",
+          "scope": "dependency-groups.dev"
+        },
+        {
+          "completeness": "catalog-observed",
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "name": "docs-swarmauri-com",
+          "package_key": "pypi:docs-swarmauri-com",
+          "requirement": ">=0.3.10",
+          "scope": "dependency-groups.dev"
+        },
+        {
+          "completeness": "catalog-observed",
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "name": "docs-tigrbl-com",
+          "package_key": "pypi:docs-tigrbl-com",
+          "requirement": ">=0.3.10",
+          "scope": "dependency-groups.dev"
+        },
+        {
+          "completeness": "catalog-observed",
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "name": "docs-tigrcorn-com",
+          "package_key": "pypi:docs-tigrcorn-com",
+          "requirement": ">=0.3.10",
+          "scope": "dependency-groups.dev"
+        },
+        {
+          "completeness": "catalog-observed",
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "name": "npmctl-cloudflare",
+          "package_key": "pypi:npmctl-cloudflare",
+          "requirement": ">=0.4.0,<1",
+          "scope": "dependencies"
+        },
+        {
+          "completeness": "catalog-observed",
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "name": "npmctl-com",
+          "package_key": "pypi:npmctl-com",
+          "requirement": ">=0.3.10",
+          "scope": "dependency-groups.dev"
+        },
+        {
+          "completeness": "catalog-observed",
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "name": "npmctl-digitalocean",
+          "package_key": "pypi:npmctl-digitalocean",
+          "requirement": ">=0.4.0,<1",
+          "scope": "dependencies"
+        },
+        {
+          "completeness": "catalog-observed",
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "name": "npmctl-godaddy",
+          "package_key": "pypi:npmctl-godaddy",
+          "requirement": ">=0.4.0,<1",
+          "scope": "dependencies"
+        },
+        {
+          "completeness": "catalog-observed",
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "name": "npmctl-namecheap",
+          "package_key": "pypi:npmctl-namecheap",
+          "requirement": ">=0.4.0,<1",
+          "scope": "dependencies"
+        },
+        {
+          "completeness": "catalog-observed",
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "name": "npmctl-route53",
+          "package_key": "pypi:npmctl-route53",
+          "requirement": ">=0.4.0,<1",
+          "scope": "dependencies"
+        },
+        {
+          "completeness": "catalog-observed",
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "name": "peagen-com",
+          "package_key": "pypi:peagen-com",
+          "requirement": ">=0.3.10",
+          "scope": "dependency-groups.dev"
+        },
+        {
+          "completeness": "catalog-observed",
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "name": "ssot-registry-com",
+          "package_key": "pypi:ssot-registry-com",
+          "requirement": ">=0.3.10",
+          "scope": "dependency-groups.dev"
+        },
+        {
+          "completeness": "catalog-observed",
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "name": "swarmauri-com",
+          "package_key": "pypi:swarmauri-com",
+          "requirement": ">=0.3.10",
+          "scope": "dependency-groups.dev"
+        },
+        {
+          "completeness": "catalog-observed",
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "name": "tigrbl-com",
+          "package_key": "pypi:tigrbl-com",
+          "requirement": ">=0.3.10",
+          "scope": "dependency-groups.dev"
+        },
+        {
+          "completeness": "catalog-observed",
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "name": "tigrcorn-com",
+          "package_key": "pypi:tigrcorn-com",
+          "requirement": ">=0.3.10",
+          "scope": "dependency-groups.dev"
+        }
+      ],
       "description": "Observed pypi package record for npmctl.",
       "description_source": "generated-factual",
       "display_name": "npmctl",
@@ -14,7 +491,7 @@
       "evidence": [
         {
           "kind": "registry",
-          "observed_at": "2026-08-03T10:05:58Z",
+          "observed_at": "2026-08-03T13:56:23Z",
           "url": "https://pypi.org/project/npmctl/"
         }
       ],
@@ -23,7 +500,7 @@
       "latest_version": "0.3.10",
       "manifest_path": "packages/npmctl/pyproject.toml",
       "name": "npmctl",
-      "observed_at": "2026-08-03T10:05:58Z",
+      "observed_at": "2026-08-03T13:56:23Z",
       "owner": "groupsum",
       "private": false,
       "publication_status": "published",
@@ -36,6 +513,80 @@
         "repository_contains_package": 1
       },
       "release_count": 9,
+      "releases": [
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2026-05-19T04:51:00.799249Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/npmctl/0.3.10/",
+          "version": "0.3.10"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2026-05-18T23:51:49.023628Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/npmctl/0.3.8/",
+          "version": "0.3.8"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2026-05-18T09:03:56.440928Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/npmctl/0.3.7/",
+          "version": "0.3.7"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2026-05-13T11:02:39.916652Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/npmctl/0.3.6/",
+          "version": "0.3.6"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2026-05-13T10:18:07.984697Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/npmctl/0.3.5/",
+          "version": "0.3.5"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2026-05-13T06:16:46.322471Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/npmctl/0.3.4/",
+          "version": "0.3.4"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2026-05-13T05:28:56.169352Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/npmctl/0.3.3/",
+          "version": "0.3.3"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2026-05-07T15:33:57.285872Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/npmctl/0.3.2/",
+          "version": "0.3.2"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2026-05-07T05:23:45.267982Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/npmctl/0.3.1/",
+          "version": "0.3.1"
+        }
+      ],
       "repository": "groupsum/npmctl",
       "reviewed": false,
       "route": "/catalog/packages/pypi/npmctl-61a2ac33",
@@ -43,8 +594,49 @@
       "version_declared": "0.4.0"
     },
     {
+      "attachment_role": "distribution",
       "claim_boundary": "Publication is reported only when confirmed by the named public registry.",
+      "dependencies": [
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": true,
+          "name": "npmctl",
+          "package_key": "pypi:npmctl",
+          "requirement": ">=0.4.0,<1",
+          "scope": "dependencies"
+        },
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "wyrmctl-cloudflare",
+          "package_key": "pypi:wyrmctl-cloudflare",
+          "requirement": ">=0.4.0,<1",
+          "scope": "dependencies"
+        },
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "requests",
+          "package_key": "pypi:requests",
+          "requirement": ">=2.32.0",
+          "scope": "dependencies"
+        },
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "uv-build",
+          "package_key": "pypi:uv-build",
+          "requirement": ">=0.11.8,<0.12",
+          "scope": "build-system.requires"
+        }
+      ],
       "dependency_count": 4,
+      "dependent_count": 0,
+      "dependents": [],
       "description": "Observed pypi package record for npmctl-cloudflare.",
       "description_source": "generated-factual",
       "display_name": "npmctl-cloudflare",
@@ -55,7 +647,7 @@
       "evidence": [
         {
           "kind": "registry",
-          "observed_at": "2026-08-03T10:05:58Z",
+          "observed_at": "2026-08-03T13:56:23Z",
           "url": "https://pypi.org/project/npmctl-cloudflare/"
         }
       ],
@@ -64,7 +656,7 @@
       "latest_version": "0.3.10",
       "manifest_path": "packages/npmctl-cloudflare/pyproject.toml",
       "name": "npmctl-cloudflare",
-      "observed_at": "2026-08-03T10:05:58Z",
+      "observed_at": "2026-08-03T13:56:23Z",
       "owner": "groupsum",
       "private": false,
       "publication_status": "published",
@@ -77,6 +669,40 @@
         "repository_contains_package": 1
       },
       "release_count": 4,
+      "releases": [
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2026-05-19T04:51:02.351088Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/npmctl-cloudflare/0.3.10/",
+          "version": "0.3.10"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2026-05-18T23:51:50.737757Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/npmctl-cloudflare/0.3.8/",
+          "version": "0.3.8"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2026-05-18T09:03:58.507072Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/npmctl-cloudflare/0.3.7/",
+          "version": "0.3.7"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2026-05-13T11:02:44.104761Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/npmctl-cloudflare/0.3.6/",
+          "version": "0.3.6"
+        }
+      ],
       "repository": "groupsum/npmctl",
       "reviewed": false,
       "route": "/catalog/packages/pypi/npmctl-cloudflare-42aed335",
@@ -84,8 +710,122 @@
       "version_declared": "0.4.0"
     },
     {
+      "attachment_role": "distribution",
       "claim_boundary": "Publication is reported only when confirmed by the named public registry.",
+      "dependencies": [
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": true,
+          "name": "npmctl",
+          "package_key": "pypi:npmctl",
+          "requirement": ">=0.3.10",
+          "scope": "dependency-groups.dev"
+        },
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": true,
+          "name": "npmctl-namecheap",
+          "package_key": "pypi:npmctl-namecheap",
+          "requirement": ">=0.3.10",
+          "scope": "dependency-groups.dev"
+        },
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": true,
+          "name": "ssot-registry",
+          "package_key": "pypi:ssot-registry",
+          "requirement": ">=0.2.18",
+          "scope": "dependency-groups.dev"
+        }
+      ],
+      "dependency_count": 3,
+      "dependent_count": 0,
+      "dependents": [],
+      "description": "Observed pypi package record for npmctl-com.",
+      "description_source": "generated-factual",
+      "display_name": "npmctl-com",
+      "downloads": null,
+      "downstream_completeness": "not-observed",
+      "downstream_count": 0,
+      "ecosystem": "pypi",
+      "evidence": [
+        {
+          "kind": "source",
+          "observed_at": "2026-08-03T13:56:23Z",
+          "url": "https://github.com/groupsum/npmctl-com/blob/HEAD/pyproject.toml"
+        }
+      ],
+      "id": "package:pypi:npmctl-com:groupsum/npmctl-com:pyproject.toml",
+      "kind": "package",
+      "latest_version": "0.1.0",
+      "manifest_path": "pyproject.toml",
+      "name": "npmctl-com",
+      "observed_at": "2026-08-03T13:56:23Z",
+      "owner": "groupsum",
+      "private": false,
+      "publication_status": "registry_not_found",
+      "published": false,
+      "registry_url": null,
+      "relationship_count": 4,
+      "relationship_counts": {
+        "package_depends_on_package": 3,
+        "repository_contains_package": 1
+      },
+      "release_count": 0,
+      "releases": [],
+      "repository": "groupsum/npmctl-com",
+      "reviewed": false,
+      "route": "/catalog/packages/pypi/npmctl-com-f70a8ac1",
+      "source_url": "https://github.com/groupsum/npmctl-com/blob/HEAD/pyproject.toml",
+      "version_declared": "0.1.0"
+    },
+    {
+      "attachment_role": "distribution",
+      "claim_boundary": "Publication is reported only when confirmed by the named public registry.",
+      "dependencies": [
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": true,
+          "name": "npmctl",
+          "package_key": "pypi:npmctl",
+          "requirement": ">=0.4.0,<1",
+          "scope": "dependencies"
+        },
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "wyrmctl-digitalocean",
+          "package_key": "pypi:wyrmctl-digitalocean",
+          "requirement": ">=0.4.0,<1",
+          "scope": "dependencies"
+        },
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "requests",
+          "package_key": "pypi:requests",
+          "requirement": ">=2.32.0",
+          "scope": "dependencies"
+        },
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "uv-build",
+          "package_key": "pypi:uv-build",
+          "requirement": ">=0.11.8,<0.12",
+          "scope": "build-system.requires"
+        }
+      ],
       "dependency_count": 4,
+      "dependent_count": 0,
+      "dependents": [],
       "description": "Observed pypi package record for npmctl-digitalocean.",
       "description_source": "generated-factual",
       "display_name": "npmctl-digitalocean",
@@ -96,7 +836,7 @@
       "evidence": [
         {
           "kind": "registry",
-          "observed_at": "2026-08-03T10:05:58Z",
+          "observed_at": "2026-08-03T13:56:23Z",
           "url": "https://pypi.org/project/npmctl-digitalocean/"
         }
       ],
@@ -105,7 +845,7 @@
       "latest_version": "0.3.10",
       "manifest_path": "packages/npmctl-digitalocean/pyproject.toml",
       "name": "npmctl-digitalocean",
-      "observed_at": "2026-08-03T10:05:58Z",
+      "observed_at": "2026-08-03T13:56:23Z",
       "owner": "groupsum",
       "private": false,
       "publication_status": "published",
@@ -118,6 +858,40 @@
         "repository_contains_package": 1
       },
       "release_count": 4,
+      "releases": [
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2026-05-19T04:51:03.673759Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/npmctl-digitalocean/0.3.10/",
+          "version": "0.3.10"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2026-05-18T23:51:52.210819Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/npmctl-digitalocean/0.3.8/",
+          "version": "0.3.8"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2026-05-18T09:04:00.397978Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/npmctl-digitalocean/0.3.7/",
+          "version": "0.3.7"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2026-05-13T11:02:45.475717Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/npmctl-digitalocean/0.3.6/",
+          "version": "0.3.6"
+        }
+      ],
       "repository": "groupsum/npmctl",
       "reviewed": false,
       "route": "/catalog/packages/pypi/npmctl-digitalocean-456f94a1",
@@ -125,8 +899,49 @@
       "version_declared": "0.4.0"
     },
     {
+      "attachment_role": "distribution",
       "claim_boundary": "Publication is reported only when confirmed by the named public registry.",
+      "dependencies": [
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": true,
+          "name": "npmctl",
+          "package_key": "pypi:npmctl",
+          "requirement": ">=0.4.0,<1",
+          "scope": "dependencies"
+        },
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "wyrmctl-godaddy",
+          "package_key": "pypi:wyrmctl-godaddy",
+          "requirement": ">=0.4.0,<1",
+          "scope": "dependencies"
+        },
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "requests",
+          "package_key": "pypi:requests",
+          "requirement": ">=2.32.0",
+          "scope": "dependencies"
+        },
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "uv-build",
+          "package_key": "pypi:uv-build",
+          "requirement": ">=0.11.8,<0.12",
+          "scope": "build-system.requires"
+        }
+      ],
       "dependency_count": 4,
+      "dependent_count": 0,
+      "dependents": [],
       "description": "Observed pypi package record for npmctl-godaddy.",
       "description_source": "generated-factual",
       "display_name": "npmctl-godaddy",
@@ -137,7 +952,7 @@
       "evidence": [
         {
           "kind": "registry",
-          "observed_at": "2026-08-03T10:05:58Z",
+          "observed_at": "2026-08-03T13:56:23Z",
           "url": "https://pypi.org/project/npmctl-godaddy/"
         }
       ],
@@ -146,7 +961,7 @@
       "latest_version": "0.3.10",
       "manifest_path": "packages/npmctl-godaddy/pyproject.toml",
       "name": "npmctl-godaddy",
-      "observed_at": "2026-08-03T10:05:58Z",
+      "observed_at": "2026-08-03T13:56:23Z",
       "owner": "groupsum",
       "private": false,
       "publication_status": "published",
@@ -159,6 +974,40 @@
         "repository_contains_package": 1
       },
       "release_count": 4,
+      "releases": [
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2026-05-19T04:51:04.845461Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/npmctl-godaddy/0.3.10/",
+          "version": "0.3.10"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2026-05-18T23:51:53.444100Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/npmctl-godaddy/0.3.8/",
+          "version": "0.3.8"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2026-05-18T09:04:01.623977Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/npmctl-godaddy/0.3.7/",
+          "version": "0.3.7"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2026-05-13T11:02:46.595751Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/npmctl-godaddy/0.3.6/",
+          "version": "0.3.6"
+        }
+      ],
       "repository": "groupsum/npmctl",
       "reviewed": false,
       "route": "/catalog/packages/pypi/npmctl-godaddy-0a2d50c9",
@@ -166,8 +1015,140 @@
       "version_declared": "0.4.0"
     },
     {
+      "attachment_role": "distribution",
       "claim_boundary": "Publication is reported only when confirmed by the named public registry.",
+      "dependencies": [
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": true,
+          "name": "npmctl",
+          "package_key": "pypi:npmctl",
+          "requirement": ">=0.4.0,<1",
+          "scope": "dependencies"
+        },
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "wyrmctl-namecheap",
+          "package_key": "pypi:wyrmctl-namecheap",
+          "requirement": ">=0.4.0,<1",
+          "scope": "dependencies"
+        },
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "requests",
+          "package_key": "pypi:requests",
+          "requirement": ">=2.32.0",
+          "scope": "dependencies"
+        },
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "uv-build",
+          "package_key": "pypi:uv-build",
+          "requirement": ">=0.11.8,<0.12",
+          "scope": "build-system.requires"
+        }
+      ],
       "dependency_count": 4,
+      "dependent_count": 10,
+      "dependents": [
+        {
+          "completeness": "catalog-observed",
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "name": "docs-peagen-com",
+          "package_key": "pypi:docs-peagen-com",
+          "requirement": ">=0.3.10",
+          "scope": "dependency-groups.dev"
+        },
+        {
+          "completeness": "catalog-observed",
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "name": "docs-swarmauri-com",
+          "package_key": "pypi:docs-swarmauri-com",
+          "requirement": ">=0.3.10",
+          "scope": "dependency-groups.dev"
+        },
+        {
+          "completeness": "catalog-observed",
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "name": "docs-tigrbl-com",
+          "package_key": "pypi:docs-tigrbl-com",
+          "requirement": ">=0.3.10",
+          "scope": "dependency-groups.dev"
+        },
+        {
+          "completeness": "catalog-observed",
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "name": "docs-tigrcorn-com",
+          "package_key": "pypi:docs-tigrcorn-com",
+          "requirement": ">=0.3.10",
+          "scope": "dependency-groups.dev"
+        },
+        {
+          "completeness": "catalog-observed",
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "name": "npmctl-com",
+          "package_key": "pypi:npmctl-com",
+          "requirement": ">=0.3.10",
+          "scope": "dependency-groups.dev"
+        },
+        {
+          "completeness": "catalog-observed",
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "name": "peagen-com",
+          "package_key": "pypi:peagen-com",
+          "requirement": ">=0.3.10",
+          "scope": "dependency-groups.dev"
+        },
+        {
+          "completeness": "catalog-observed",
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "name": "ssot-registry-com",
+          "package_key": "pypi:ssot-registry-com",
+          "requirement": ">=0.3.10",
+          "scope": "dependency-groups.dev"
+        },
+        {
+          "completeness": "catalog-observed",
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "name": "swarmauri-com",
+          "package_key": "pypi:swarmauri-com",
+          "requirement": ">=0.3.10",
+          "scope": "dependency-groups.dev"
+        },
+        {
+          "completeness": "catalog-observed",
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "name": "tigrbl-com",
+          "package_key": "pypi:tigrbl-com",
+          "requirement": ">=0.3.10",
+          "scope": "dependency-groups.dev"
+        },
+        {
+          "completeness": "catalog-observed",
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "name": "tigrcorn-com",
+          "package_key": "pypi:tigrcorn-com",
+          "requirement": ">=0.3.10",
+          "scope": "dependency-groups.dev"
+        }
+      ],
       "description": "Observed pypi package record for npmctl-namecheap.",
       "description_source": "generated-factual",
       "display_name": "npmctl-namecheap",
@@ -178,7 +1159,7 @@
       "evidence": [
         {
           "kind": "registry",
-          "observed_at": "2026-08-03T10:05:58Z",
+          "observed_at": "2026-08-03T13:56:23Z",
           "url": "https://pypi.org/project/npmctl-namecheap/"
         }
       ],
@@ -187,7 +1168,7 @@
       "latest_version": "0.3.10",
       "manifest_path": "packages/npmctl-namecheap/pyproject.toml",
       "name": "npmctl-namecheap",
-      "observed_at": "2026-08-03T10:05:58Z",
+      "observed_at": "2026-08-03T13:56:23Z",
       "owner": "groupsum",
       "private": false,
       "publication_status": "published",
@@ -200,6 +1181,64 @@
         "repository_contains_package": 1
       },
       "release_count": 7,
+      "releases": [
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2026-05-19T04:51:05.937057Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/npmctl-namecheap/0.3.10/",
+          "version": "0.3.10"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2026-05-18T23:51:54.823791Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/npmctl-namecheap/0.3.8/",
+          "version": "0.3.8"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2026-05-18T09:04:03.007472Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/npmctl-namecheap/0.3.7/",
+          "version": "0.3.7"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2026-05-13T11:02:47.972704Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/npmctl-namecheap/0.3.6/",
+          "version": "0.3.6"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2026-05-13T06:16:47.993929Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/npmctl-namecheap/0.3.4/",
+          "version": "0.3.4"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2026-05-13T05:28:57.565344Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/npmctl-namecheap/0.3.3/",
+          "version": "0.3.3"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2026-05-07T15:33:59.017355Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/npmctl-namecheap/0.3.2/",
+          "version": "0.3.2"
+        }
+      ],
       "repository": "groupsum/npmctl",
       "reviewed": false,
       "route": "/catalog/packages/pypi/npmctl-namecheap-351b7aff",
@@ -207,8 +1246,49 @@
       "version_declared": "0.4.0"
     },
     {
+      "attachment_role": "distribution",
       "claim_boundary": "Publication is reported only when confirmed by the named public registry.",
+      "dependencies": [
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": true,
+          "name": "npmctl",
+          "package_key": "pypi:npmctl",
+          "requirement": ">=0.4.0,<1",
+          "scope": "dependencies"
+        },
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "wyrmctl-route53",
+          "package_key": "pypi:wyrmctl-route53",
+          "requirement": ">=0.4.0,<1",
+          "scope": "dependencies"
+        },
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "boto3",
+          "package_key": "pypi:boto3",
+          "requirement": ">=1.34.0",
+          "scope": "dependencies"
+        },
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "uv-build",
+          "package_key": "pypi:uv-build",
+          "requirement": ">=0.11.8,<0.12",
+          "scope": "build-system.requires"
+        }
+      ],
       "dependency_count": 4,
+      "dependent_count": 0,
+      "dependents": [],
       "description": "Observed pypi package record for npmctl-route53.",
       "description_source": "generated-factual",
       "display_name": "npmctl-route53",
@@ -219,7 +1299,7 @@
       "evidence": [
         {
           "kind": "registry",
-          "observed_at": "2026-08-03T10:05:58Z",
+          "observed_at": "2026-08-03T13:56:23Z",
           "url": "https://pypi.org/project/npmctl-route53/"
         }
       ],
@@ -228,7 +1308,7 @@
       "latest_version": "0.3.10",
       "manifest_path": "packages/npmctl-route53/pyproject.toml",
       "name": "npmctl-route53",
-      "observed_at": "2026-08-03T10:05:58Z",
+      "observed_at": "2026-08-03T13:56:23Z",
       "owner": "groupsum",
       "private": false,
       "publication_status": "published",
@@ -241,6 +1321,40 @@
         "repository_contains_package": 1
       },
       "release_count": 4,
+      "releases": [
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2026-05-19T04:51:07.237211Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/npmctl-route53/0.3.10/",
+          "version": "0.3.10"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2026-05-18T23:51:56.390363Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/npmctl-route53/0.3.8/",
+          "version": "0.3.8"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2026-05-18T09:04:04.264969Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/npmctl-route53/0.3.7/",
+          "version": "0.3.7"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2026-05-13T11:02:49.153814Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/npmctl-route53/0.3.6/",
+          "version": "0.3.6"
+        }
+      ],
       "repository": "groupsum/npmctl",
       "reviewed": false,
       "route": "/catalog/packages/pypi/npmctl-route53-df5dc203",
@@ -248,8 +1362,112 @@
       "version_declared": "0.4.0"
     },
     {
+      "attachment_role": "distribution",
       "claim_boundary": "Publication is reported only when confirmed by the named public registry.",
+      "dependencies": [
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "build",
+          "package_key": "pypi:build",
+          "requirement": ">=1.2.2",
+          "scope": "dependency-groups.dev"
+        },
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "coverage",
+          "package_key": "pypi:coverage",
+          "requirement": "[toml]>=7.8.0",
+          "scope": "dependency-groups.dev"
+        },
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "jsonschema",
+          "package_key": "pypi:jsonschema",
+          "requirement": ">=4.25.0",
+          "scope": "dependency-groups.dev"
+        },
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "pytest",
+          "package_key": "pypi:pytest",
+          "requirement": ">=8.3.0",
+          "scope": "dependency-groups.dev"
+        },
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "pytest-cov",
+          "package_key": "pypi:pytest-cov",
+          "requirement": ">=6.0.0",
+          "scope": "dependency-groups.dev"
+        },
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "PyYAML",
+          "package_key": "pypi:pyyaml",
+          "requirement": ">=6.0.2",
+          "scope": "dependency-groups.dev"
+        },
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "requests",
+          "package_key": "pypi:requests",
+          "requirement": ">=2.32.0",
+          "scope": "dependency-groups.dev"
+        },
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "ruff",
+          "package_key": "pypi:ruff",
+          "requirement": ">=0.12.0",
+          "scope": "dependency-groups.dev"
+        },
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": true,
+          "name": "ssot-registry",
+          "package_key": "pypi:ssot-registry",
+          "requirement": "==0.2.13",
+          "scope": "dependency-groups.dev"
+        },
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "uv-build",
+          "package_key": "pypi:uv-build",
+          "requirement": ">=0.11.8,<0.12",
+          "scope": "dependency-groups.dev"
+        },
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "yamllint",
+          "package_key": "pypi:yamllint",
+          "requirement": ">=1.35.0",
+          "scope": "dependency-groups.dev"
+        }
+      ],
       "dependency_count": 11,
+      "dependent_count": 0,
+      "dependents": [],
       "description": "Observed pypi package record for npmctl-workspace.",
       "description_source": "generated-factual",
       "display_name": "npmctl-workspace",
@@ -260,7 +1478,7 @@
       "evidence": [
         {
           "kind": "source",
-          "observed_at": "2026-08-03T10:05:58Z",
+          "observed_at": "2026-08-03T13:56:23Z",
           "url": "https://github.com/groupsum/npmctl/blob/HEAD/pyproject.toml"
         }
       ],
@@ -269,10 +1487,10 @@
       "latest_version": "0.4.0",
       "manifest_path": "pyproject.toml",
       "name": "npmctl-workspace",
-      "observed_at": "2026-08-03T10:05:58Z",
+      "observed_at": "2026-08-03T13:56:23Z",
       "owner": "groupsum",
       "private": false,
-      "publication_status": "not-confirmed",
+      "publication_status": "registry_not_found",
       "published": false,
       "registry_url": null,
       "relationship_count": 12,
@@ -282,6 +1500,7 @@
         "repository_contains_package": 1
       },
       "release_count": 0,
+      "releases": [],
       "repository": "groupsum/npmctl",
       "reviewed": false,
       "route": "/catalog/packages/pypi/npmctl-workspace-30c25452",
@@ -291,6 +1510,298 @@
   ],
   "repository": {
     "archived": false,
+    "attached_repositories": [
+      {
+        "archived": false,
+        "attachment_role": "primary-implementation",
+        "default_branch": "master",
+        "description": "Owner-scoped GitOps controller for Nginx Proxy Manager proxy hosts, SSL certificates, and access lists.",
+        "fork": false,
+        "full_name": "groupsum/npmctl",
+        "github_releases": [
+          {
+            "downloads": 0,
+            "draft": false,
+            "observed_at": "2026-08-03T13:56:24Z",
+            "prerelease": false,
+            "published_at": "2026-05-19T04:36:02Z",
+            "release_kind": "github",
+            "url": "https://github.com/groupsum/npmctl/releases/tag/v0.3.10",
+            "version": "v0.3.10"
+          },
+          {
+            "downloads": 26,
+            "draft": false,
+            "observed_at": "2026-08-03T13:56:24Z",
+            "prerelease": false,
+            "published_at": "2026-05-18T23:51:24Z",
+            "release_kind": "github",
+            "url": "https://github.com/groupsum/npmctl/releases/tag/v0.3.8",
+            "version": "v0.3.8"
+          },
+          {
+            "downloads": 12,
+            "draft": false,
+            "observed_at": "2026-08-03T13:56:24Z",
+            "prerelease": false,
+            "published_at": "2026-05-18T09:23:02Z",
+            "release_kind": "github",
+            "url": "https://github.com/groupsum/npmctl/releases/tag/v0.3.7",
+            "version": "v0.3.7"
+          },
+          {
+            "downloads": 12,
+            "draft": false,
+            "observed_at": "2026-08-03T13:56:24Z",
+            "prerelease": false,
+            "published_at": "2026-05-18T09:22:57Z",
+            "release_kind": "github",
+            "url": "https://github.com/groupsum/npmctl/releases/tag/v0.3.6",
+            "version": "v0.3.6"
+          },
+          {
+            "downloads": 12,
+            "draft": false,
+            "observed_at": "2026-08-03T13:56:24Z",
+            "prerelease": false,
+            "published_at": "2026-05-18T09:22:51Z",
+            "release_kind": "github",
+            "url": "https://github.com/groupsum/npmctl/releases/tag/v0.3.5",
+            "version": "v0.3.5"
+          },
+          {
+            "downloads": 4,
+            "draft": false,
+            "observed_at": "2026-08-03T13:56:24Z",
+            "prerelease": false,
+            "published_at": "2026-05-18T09:22:45Z",
+            "release_kind": "github",
+            "url": "https://github.com/groupsum/npmctl/releases/tag/v0.3.4",
+            "version": "v0.3.4"
+          },
+          {
+            "downloads": 4,
+            "draft": false,
+            "observed_at": "2026-08-03T13:56:24Z",
+            "prerelease": false,
+            "published_at": "2026-05-18T09:22:41Z",
+            "release_kind": "github",
+            "url": "https://github.com/groupsum/npmctl/releases/tag/v0.3.3",
+            "version": "v0.3.3"
+          },
+          {
+            "downloads": 4,
+            "draft": false,
+            "observed_at": "2026-08-03T13:56:24Z",
+            "prerelease": false,
+            "published_at": "2026-05-18T09:22:37Z",
+            "release_kind": "github",
+            "url": "https://github.com/groupsum/npmctl/releases/tag/v0.3.2",
+            "version": "v0.3.2"
+          },
+          {
+            "downloads": 2,
+            "draft": false,
+            "observed_at": "2026-08-03T13:56:24Z",
+            "prerelease": false,
+            "published_at": "2026-05-18T09:22:32Z",
+            "release_kind": "github",
+            "url": "https://github.com/groupsum/npmctl/releases/tag/v0.3.1",
+            "version": "v0.3.1"
+          }
+        ],
+        "id": "repository:groupsum/npmctl",
+        "latest_deployment": {
+          "environment": "pypi",
+          "environment_url": "",
+          "log_url": "https://github.com/groupsum/npmctl/actions/runs/26076811343/job/76669794267",
+          "state": "success",
+          "updated_at": "2026-05-19T04:51:19Z"
+        },
+        "latest_release": {
+          "assets": [
+            {
+              "downloads": 0,
+              "name": "npmctl-0.3.10-py3-none-any.whl",
+              "url": "https://github.com/groupsum/npmctl/releases/download/v0.3.10/npmctl-0.3.10-py3-none-any.whl"
+            },
+            {
+              "downloads": 0,
+              "name": "npmctl-0.3.10-py3-none-any.whl.publish.attestation",
+              "url": "https://github.com/groupsum/npmctl/releases/download/v0.3.10/npmctl-0.3.10-py3-none-any.whl.publish.attestation"
+            },
+            {
+              "downloads": 0,
+              "name": "npmctl-0.3.10.tar.gz",
+              "url": "https://github.com/groupsum/npmctl/releases/download/v0.3.10/npmctl-0.3.10.tar.gz"
+            },
+            {
+              "downloads": 0,
+              "name": "npmctl-0.3.10.tar.gz.publish.attestation",
+              "url": "https://github.com/groupsum/npmctl/releases/download/v0.3.10/npmctl-0.3.10.tar.gz.publish.attestation"
+            },
+            {
+              "downloads": 0,
+              "name": "npmctl_cloudflare-0.3.10-py3-none-any.whl",
+              "url": "https://github.com/groupsum/npmctl/releases/download/v0.3.10/npmctl_cloudflare-0.3.10-py3-none-any.whl"
+            },
+            {
+              "downloads": 0,
+              "name": "npmctl_cloudflare-0.3.10-py3-none-any.whl.publish.attestation",
+              "url": "https://github.com/groupsum/npmctl/releases/download/v0.3.10/npmctl_cloudflare-0.3.10-py3-none-any.whl.publish.attestation"
+            },
+            {
+              "downloads": 0,
+              "name": "npmctl_cloudflare-0.3.10.tar.gz",
+              "url": "https://github.com/groupsum/npmctl/releases/download/v0.3.10/npmctl_cloudflare-0.3.10.tar.gz"
+            },
+            {
+              "downloads": 0,
+              "name": "npmctl_cloudflare-0.3.10.tar.gz.publish.attestation",
+              "url": "https://github.com/groupsum/npmctl/releases/download/v0.3.10/npmctl_cloudflare-0.3.10.tar.gz.publish.attestation"
+            },
+            {
+              "downloads": 0,
+              "name": "npmctl_digitalocean-0.3.10-py3-none-any.whl",
+              "url": "https://github.com/groupsum/npmctl/releases/download/v0.3.10/npmctl_digitalocean-0.3.10-py3-none-any.whl"
+            },
+            {
+              "downloads": 0,
+              "name": "npmctl_digitalocean-0.3.10-py3-none-any.whl.publish.attestation",
+              "url": "https://github.com/groupsum/npmctl/releases/download/v0.3.10/npmctl_digitalocean-0.3.10-py3-none-any.whl.publish.attestation"
+            },
+            {
+              "downloads": 0,
+              "name": "npmctl_digitalocean-0.3.10.tar.gz",
+              "url": "https://github.com/groupsum/npmctl/releases/download/v0.3.10/npmctl_digitalocean-0.3.10.tar.gz"
+            },
+            {
+              "downloads": 0,
+              "name": "npmctl_digitalocean-0.3.10.tar.gz.publish.attestation",
+              "url": "https://github.com/groupsum/npmctl/releases/download/v0.3.10/npmctl_digitalocean-0.3.10.tar.gz.publish.attestation"
+            },
+            {
+              "downloads": 0,
+              "name": "npmctl_godaddy-0.3.10-py3-none-any.whl",
+              "url": "https://github.com/groupsum/npmctl/releases/download/v0.3.10/npmctl_godaddy-0.3.10-py3-none-any.whl"
+            },
+            {
+              "downloads": 0,
+              "name": "npmctl_godaddy-0.3.10-py3-none-any.whl.publish.attestation",
+              "url": "https://github.com/groupsum/npmctl/releases/download/v0.3.10/npmctl_godaddy-0.3.10-py3-none-any.whl.publish.attestation"
+            },
+            {
+              "downloads": 0,
+              "name": "npmctl_godaddy-0.3.10.tar.gz",
+              "url": "https://github.com/groupsum/npmctl/releases/download/v0.3.10/npmctl_godaddy-0.3.10.tar.gz"
+            },
+            {
+              "downloads": 0,
+              "name": "npmctl_godaddy-0.3.10.tar.gz.publish.attestation",
+              "url": "https://github.com/groupsum/npmctl/releases/download/v0.3.10/npmctl_godaddy-0.3.10.tar.gz.publish.attestation"
+            },
+            {
+              "downloads": 0,
+              "name": "npmctl_namecheap-0.3.10-py3-none-any.whl",
+              "url": "https://github.com/groupsum/npmctl/releases/download/v0.3.10/npmctl_namecheap-0.3.10-py3-none-any.whl"
+            },
+            {
+              "downloads": 0,
+              "name": "npmctl_namecheap-0.3.10-py3-none-any.whl.publish.attestation",
+              "url": "https://github.com/groupsum/npmctl/releases/download/v0.3.10/npmctl_namecheap-0.3.10-py3-none-any.whl.publish.attestation"
+            },
+            {
+              "downloads": 0,
+              "name": "npmctl_namecheap-0.3.10.tar.gz",
+              "url": "https://github.com/groupsum/npmctl/releases/download/v0.3.10/npmctl_namecheap-0.3.10.tar.gz"
+            },
+            {
+              "downloads": 0,
+              "name": "npmctl_namecheap-0.3.10.tar.gz.publish.attestation",
+              "url": "https://github.com/groupsum/npmctl/releases/download/v0.3.10/npmctl_namecheap-0.3.10.tar.gz.publish.attestation"
+            },
+            {
+              "downloads": 0,
+              "name": "npmctl_route53-0.3.10-py3-none-any.whl",
+              "url": "https://github.com/groupsum/npmctl/releases/download/v0.3.10/npmctl_route53-0.3.10-py3-none-any.whl"
+            },
+            {
+              "downloads": 0,
+              "name": "npmctl_route53-0.3.10-py3-none-any.whl.publish.attestation",
+              "url": "https://github.com/groupsum/npmctl/releases/download/v0.3.10/npmctl_route53-0.3.10-py3-none-any.whl.publish.attestation"
+            },
+            {
+              "downloads": 0,
+              "name": "npmctl_route53-0.3.10.tar.gz",
+              "url": "https://github.com/groupsum/npmctl/releases/download/v0.3.10/npmctl_route53-0.3.10.tar.gz"
+            },
+            {
+              "downloads": 0,
+              "name": "npmctl_route53-0.3.10.tar.gz.publish.attestation",
+              "url": "https://github.com/groupsum/npmctl/releases/download/v0.3.10/npmctl_route53-0.3.10.tar.gz.publish.attestation"
+            }
+          ],
+          "draft": false,
+          "name": "npmctl v0.3.10",
+          "prerelease": false,
+          "published_at": "2026-05-19T04:36:02Z",
+          "tag": "v0.3.10",
+          "url": "https://github.com/groupsum/npmctl/releases/tag/v0.3.10"
+        },
+        "metrics": {
+          "commits": 92,
+          "contributors": 2,
+          "deployments": 6,
+          "environments": 1,
+          "forks": 0,
+          "github_releases": 9,
+          "open_issues": 0,
+          "packages": 7,
+          "related_resources": 40,
+          "relationships": 47,
+          "size_kb": 11109,
+          "stars": 1,
+          "watchers": 0
+        },
+        "route": "/catalog/repositories/groupsum/npmctl",
+        "source_url": "https://github.com/groupsum/npmctl"
+      },
+      {
+        "archived": false,
+        "attachment_role": "product-website",
+        "default_branch": "master",
+        "description": "MdWrk lander website for npmctl.com.",
+        "fork": false,
+        "full_name": "groupsum/npmctl-com",
+        "github_releases": [],
+        "id": "repository:groupsum/npmctl-com",
+        "latest_deployment": {
+          "environment": "deployment",
+          "environment_url": "",
+          "log_url": "https://github.com/groupsum/npmctl-com/actions/runs/29158990779/job/86560726539",
+          "state": "success",
+          "updated_at": "2026-07-11T16:01:29Z"
+        },
+        "latest_release": null,
+        "metrics": {
+          "commits": 43,
+          "contributors": 1,
+          "deployments": 3,
+          "environments": 1,
+          "forks": 0,
+          "github_releases": 0,
+          "open_issues": 0,
+          "packages": 3,
+          "related_resources": 0,
+          "relationships": 3,
+          "size_kb": 207,
+          "stars": 0,
+          "watchers": 0
+        },
+        "route": "/catalog/repositories/groupsum/npmctl-com",
+        "source_url": "https://github.com/groupsum/npmctl-com"
+      }
+    ],
     "claim_boundary": "Repository, release, deployment, and live-service states are reported separately.",
     "created_at": "2026-05-05T04:47:35Z",
     "default_branch": "master",
@@ -300,12 +1811,104 @@
     "evidence": [
       {
         "kind": "source",
-        "observed_at": "2026-08-03T10:05:58Z",
+        "observed_at": "2026-08-03T13:56:24Z",
         "url": "https://github.com/groupsum/npmctl"
       }
     ],
     "fork": false,
     "full_name": "groupsum/npmctl",
+    "github_releases": [
+      {
+        "downloads": 0,
+        "draft": false,
+        "observed_at": "2026-08-03T13:56:24Z",
+        "prerelease": false,
+        "published_at": "2026-05-19T04:36:02Z",
+        "release_kind": "github",
+        "url": "https://github.com/groupsum/npmctl/releases/tag/v0.3.10",
+        "version": "v0.3.10"
+      },
+      {
+        "downloads": 26,
+        "draft": false,
+        "observed_at": "2026-08-03T13:56:24Z",
+        "prerelease": false,
+        "published_at": "2026-05-18T23:51:24Z",
+        "release_kind": "github",
+        "url": "https://github.com/groupsum/npmctl/releases/tag/v0.3.8",
+        "version": "v0.3.8"
+      },
+      {
+        "downloads": 12,
+        "draft": false,
+        "observed_at": "2026-08-03T13:56:24Z",
+        "prerelease": false,
+        "published_at": "2026-05-18T09:23:02Z",
+        "release_kind": "github",
+        "url": "https://github.com/groupsum/npmctl/releases/tag/v0.3.7",
+        "version": "v0.3.7"
+      },
+      {
+        "downloads": 12,
+        "draft": false,
+        "observed_at": "2026-08-03T13:56:24Z",
+        "prerelease": false,
+        "published_at": "2026-05-18T09:22:57Z",
+        "release_kind": "github",
+        "url": "https://github.com/groupsum/npmctl/releases/tag/v0.3.6",
+        "version": "v0.3.6"
+      },
+      {
+        "downloads": 12,
+        "draft": false,
+        "observed_at": "2026-08-03T13:56:24Z",
+        "prerelease": false,
+        "published_at": "2026-05-18T09:22:51Z",
+        "release_kind": "github",
+        "url": "https://github.com/groupsum/npmctl/releases/tag/v0.3.5",
+        "version": "v0.3.5"
+      },
+      {
+        "downloads": 4,
+        "draft": false,
+        "observed_at": "2026-08-03T13:56:24Z",
+        "prerelease": false,
+        "published_at": "2026-05-18T09:22:45Z",
+        "release_kind": "github",
+        "url": "https://github.com/groupsum/npmctl/releases/tag/v0.3.4",
+        "version": "v0.3.4"
+      },
+      {
+        "downloads": 4,
+        "draft": false,
+        "observed_at": "2026-08-03T13:56:24Z",
+        "prerelease": false,
+        "published_at": "2026-05-18T09:22:41Z",
+        "release_kind": "github",
+        "url": "https://github.com/groupsum/npmctl/releases/tag/v0.3.3",
+        "version": "v0.3.3"
+      },
+      {
+        "downloads": 4,
+        "draft": false,
+        "observed_at": "2026-08-03T13:56:24Z",
+        "prerelease": false,
+        "published_at": "2026-05-18T09:22:37Z",
+        "release_kind": "github",
+        "url": "https://github.com/groupsum/npmctl/releases/tag/v0.3.2",
+        "version": "v0.3.2"
+      },
+      {
+        "downloads": 2,
+        "draft": false,
+        "observed_at": "2026-08-03T13:56:24Z",
+        "prerelease": false,
+        "published_at": "2026-05-18T09:22:32Z",
+        "release_kind": "github",
+        "url": "https://github.com/groupsum/npmctl/releases/tag/v0.3.1",
+        "version": "v0.3.1"
+      }
+    ],
     "homepage": null,
     "id": "repository:groupsum/npmctl",
     "kind": "repository",
@@ -472,7 +2075,7 @@
       "watchers": 0
     },
     "name": "npmctl",
-    "observed_at": "2026-08-03T10:05:58Z",
+    "observed_at": "2026-08-03T13:56:24Z",
     "owner": "groupsum",
     "package_ids": [
       "package:pypi:npmctl-cloudflare:groupsum/npmctl:packages/npmctl-cloudflare/pyproject.toml",
@@ -500,21 +2103,21 @@
         "url": "https://github.com/groupsum/npmctl/blob/master/schemas/npm/2.10.4/openapi.json"
       },
       {
-        "evidence_type": "repository.tree",
+        "evidence_type": "repository.blob",
         "id": "resource:87cb605c2a5a",
         "kind": "documentation",
         "name": "docs/AGENTS.md",
         "url": "https://github.com/groupsum/npmctl/blob/master/docs/AGENTS.md"
       },
       {
-        "evidence_type": "repository.tree",
+        "evidence_type": "repository.blob",
         "id": "resource:daf481b53d59",
         "kind": "documentation",
         "name": "docs/access-lists.md",
         "url": "https://github.com/groupsum/npmctl/blob/master/docs/access-lists.md"
       },
       {
-        "evidence_type": "repository.tree",
+        "evidence_type": "repository.blob",
         "id": "resource:adc8bf8a9870",
         "kind": "documentation",
         "name": "docs/adoption.md",
@@ -528,7 +2131,7 @@
         "url": "https://github.com/groupsum/npmctl/tree/master/docs/adrs"
       },
       {
-        "evidence_type": "repository.tree",
+        "evidence_type": "repository.blob",
         "id": "resource:afd926df6aa0",
         "kind": "documentation",
         "name": "docs/artifact-trust.md",
@@ -542,42 +2145,42 @@
         "url": "https://github.com/groupsum/npmctl/tree/master/docs/brand"
       },
       {
-        "evidence_type": "repository.tree",
+        "evidence_type": "repository.blob",
         "id": "resource:1d877159a3f8",
         "kind": "documentation",
         "name": "docs/cli.md",
         "url": "https://github.com/groupsum/npmctl/blob/master/docs/cli.md"
       },
       {
-        "evidence_type": "repository.tree",
+        "evidence_type": "repository.blob",
         "id": "resource:19710332d476",
         "kind": "documentation",
         "name": "docs/compliance.md",
         "url": "https://github.com/groupsum/npmctl/blob/master/docs/compliance.md"
       },
       {
-        "evidence_type": "repository.tree",
+        "evidence_type": "repository.blob",
         "id": "resource:4888a7affd20",
         "kind": "documentation",
         "name": "docs/contracts.md",
         "url": "https://github.com/groupsum/npmctl/blob/master/docs/contracts.md"
       },
       {
-        "evidence_type": "repository.tree",
+        "evidence_type": "repository.blob",
         "id": "resource:746ed28fe4ee",
         "kind": "documentation",
         "name": "docs/desired-state.md",
         "url": "https://github.com/groupsum/npmctl/blob/master/docs/desired-state.md"
       },
       {
-        "evidence_type": "repository.tree",
+        "evidence_type": "repository.blob",
         "id": "resource:cc126f526d19",
         "kind": "documentation",
         "name": "docs/dns-providers.md",
         "url": "https://github.com/groupsum/npmctl/blob/master/docs/dns-providers.md"
       },
       {
-        "evidence_type": "repository.tree",
+        "evidence_type": "repository.blob",
         "id": "resource:828772d57366",
         "kind": "documentation",
         "name": "docs/dns.md",
@@ -598,7 +2201,7 @@
         "url": "https://github.com/groupsum/npmctl/tree/master/docs/examples"
       },
       {
-        "evidence_type": "repository.tree",
+        "evidence_type": "repository.blob",
         "id": "resource:15f302fee19e",
         "kind": "documentation",
         "name": "docs/extensions.md",
@@ -612,7 +2215,7 @@
         "url": "https://github.com/groupsum/npmctl/tree/master/docs/fragments"
       },
       {
-        "evidence_type": "repository.tree",
+        "evidence_type": "repository.blob",
         "id": "resource:0b249343bcf5",
         "kind": "documentation",
         "name": "docs/github-actions.md",
@@ -626,56 +2229,56 @@
         "url": "https://github.com/groupsum/npmctl/tree/master/docs/images"
       },
       {
-        "evidence_type": "repository.tree",
+        "evidence_type": "repository.blob",
         "id": "resource:f1a6a743c25a",
         "kind": "documentation",
         "name": "docs/index.md",
         "url": "https://github.com/groupsum/npmctl/blob/master/docs/index.md"
       },
       {
-        "evidence_type": "repository.tree",
+        "evidence_type": "repository.blob",
         "id": "resource:1dea2fb47f60",
         "kind": "documentation",
         "name": "docs/migration-manifests.md",
         "url": "https://github.com/groupsum/npmctl/blob/master/docs/migration-manifests.md"
       },
       {
-        "evidence_type": "repository.tree",
+        "evidence_type": "repository.blob",
         "id": "resource:d185254919f1",
         "kind": "documentation",
         "name": "docs/migration-recovery.md",
         "url": "https://github.com/groupsum/npmctl/blob/master/docs/migration-recovery.md"
       },
       {
-        "evidence_type": "repository.tree",
+        "evidence_type": "repository.blob",
         "id": "resource:640f5b32d3ef",
         "kind": "documentation",
         "name": "docs/namecheap.md",
         "url": "https://github.com/groupsum/npmctl/blob/master/docs/namecheap.md"
       },
       {
-        "evidence_type": "repository.tree",
+        "evidence_type": "repository.blob",
         "id": "resource:bb65f0a4c55d",
         "kind": "documentation",
         "name": "docs/npm-api-compatibility.md",
         "url": "https://github.com/groupsum/npmctl/blob/master/docs/npm-api-compatibility.md"
       },
       {
-        "evidence_type": "repository.tree",
+        "evidence_type": "repository.blob",
         "id": "resource:53550074928c",
         "kind": "documentation",
         "name": "docs/operational-hardening.md",
         "url": "https://github.com/groupsum/npmctl/blob/master/docs/operational-hardening.md"
       },
       {
-        "evidence_type": "repository.tree",
+        "evidence_type": "repository.blob",
         "id": "resource:18ea9f797a36",
         "kind": "documentation",
         "name": "docs/owner-scoped-reconcile.md",
         "url": "https://github.com/groupsum/npmctl/blob/master/docs/owner-scoped-reconcile.md"
       },
       {
-        "evidence_type": "repository.tree",
+        "evidence_type": "repository.blob",
         "id": "resource:e380ed649940",
         "kind": "documentation",
         "name": "docs/plan-artifacts.md",
@@ -689,28 +2292,28 @@
         "url": "https://github.com/groupsum/npmctl/tree/master/docs/plans"
       },
       {
-        "evidence_type": "repository.tree",
+        "evidence_type": "repository.blob",
         "id": "resource:496014100327",
         "kind": "documentation",
         "name": "docs/provider-capabilities.md",
         "url": "https://github.com/groupsum/npmctl/blob/master/docs/provider-capabilities.md"
       },
       {
-        "evidence_type": "repository.tree",
+        "evidence_type": "repository.blob",
         "id": "resource:f8050e01be85",
         "kind": "documentation",
         "name": "docs/repository-manifest.md",
         "url": "https://github.com/groupsum/npmctl/blob/master/docs/repository-manifest.md"
       },
       {
-        "evidence_type": "repository.tree",
+        "evidence_type": "repository.blob",
         "id": "resource:9ea4d1056a78",
         "kind": "documentation",
         "name": "docs/schema-migrations.md",
         "url": "https://github.com/groupsum/npmctl/blob/master/docs/schema-migrations.md"
       },
       {
-        "evidence_type": "repository.tree",
+        "evidence_type": "repository.blob",
         "id": "resource:5e086eb4f674",
         "kind": "documentation",
         "name": "docs/security.md",
@@ -724,7 +2327,7 @@
         "url": "https://github.com/groupsum/npmctl/tree/master/docs/seo"
       },
       {
-        "evidence_type": "repository.tree",
+        "evidence_type": "repository.blob",
         "id": "resource:97214b96a5c7",
         "kind": "documentation",
         "name": "docs/seo-aeo-aieo.md",
@@ -738,7 +2341,7 @@
         "url": "https://github.com/groupsum/npmctl/tree/master/docs/specs"
       },
       {
-        "evidence_type": "repository.tree",
+        "evidence_type": "repository.blob",
         "id": "resource:3b48727fe46d",
         "kind": "documentation",
         "name": "docs/ssl-certificates.md",

@@ -1,9 +1,121 @@
 {
-  "generated_at": "2026-08-03T10:05:58Z",
+  "generated_at": "2026-08-03T13:56:23Z",
   "packages": [
     {
       "claim_boundary": "Publication is reported only when confirmed by the named public registry.",
+      "dependencies": [
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": true,
+          "name": "tigrbl",
+          "package_key": "pypi:tigrbl",
+          "requirement": ">=0.4.5.dev4",
+          "scope": "dependencies"
+        },
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "poetry-core",
+          "package_key": "pypi:poetry-core",
+          "requirement": ">=1.0.0",
+          "scope": "build-system.requires"
+        },
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "pytest",
+          "package_key": "pypi:pytest",
+          "requirement": ">=8.0",
+          "scope": "dependency-groups.dev"
+        },
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "pytest-asyncio",
+          "package_key": "pypi:pytest-asyncio",
+          "requirement": ">=0.24.0",
+          "scope": "dependency-groups.dev"
+        },
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "pytest-xdist",
+          "package_key": "pypi:pytest-xdist",
+          "requirement": ">=3.6.1",
+          "scope": "dependency-groups.dev"
+        },
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "pytest-json-report",
+          "package_key": "pypi:pytest-json-report",
+          "requirement": ">=1.5.0",
+          "scope": "dependency-groups.dev"
+        },
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "python-dotenv",
+          "package_key": "pypi:python-dotenv",
+          "requirement": "*",
+          "scope": "dependency-groups.dev"
+        },
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "requests",
+          "package_key": "pypi:requests",
+          "requirement": ">=2.32.3",
+          "scope": "dependency-groups.dev"
+        },
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "flake8",
+          "package_key": "pypi:flake8",
+          "requirement": ">=7.0",
+          "scope": "dependency-groups.dev"
+        },
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "pytest-timeout",
+          "package_key": "pypi:pytest-timeout",
+          "requirement": ">=2.3.1",
+          "scope": "dependency-groups.dev"
+        },
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "ruff",
+          "package_key": "pypi:ruff",
+          "requirement": ">=0.9.9",
+          "scope": "dependency-groups.dev"
+        },
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "pytest-benchmark",
+          "package_key": "pypi:pytest-benchmark",
+          "requirement": ">=4.0.0",
+          "scope": "dependency-groups.dev"
+        }
+      ],
       "dependency_count": 12,
+      "dependent_count": 0,
+      "dependents": [],
       "description": "Observed pypi package record for tigrbl-cron.",
       "description_source": "generated-factual",
       "display_name": "tigrbl-cron",
@@ -14,7 +126,7 @@
       "evidence": [
         {
           "kind": "source",
-          "observed_at": "2026-08-03T10:05:58Z",
+          "observed_at": "2026-08-03T13:56:23Z",
           "url": "https://github.com/tigrbl/tigrbl_api_cron/blob/HEAD/pyproject.toml"
         }
       ],
@@ -23,10 +135,10 @@
       "latest_version": "0.2.0",
       "manifest_path": "pyproject.toml",
       "name": "tigrbl-cron",
-      "observed_at": "2026-08-03T10:05:58Z",
+      "observed_at": "2026-08-03T13:56:23Z",
       "owner": "tigrbl",
       "private": false,
-      "publication_status": "not-confirmed",
+      "publication_status": "registry_not_found",
       "published": false,
       "registry_url": null,
       "relationship_count": 13,
@@ -36,6 +148,7 @@
         "repository_contains_package": 1
       },
       "release_count": 0,
+      "releases": [],
       "repository": "tigrbl/tigrbl_api_cron",
       "reviewed": false,
       "route": "/catalog/packages/pypi/tigrbl-cron-86f68fde",
@@ -54,12 +167,13 @@
     "evidence": [
       {
         "kind": "source",
-        "observed_at": "2026-08-03T10:05:58Z",
+        "observed_at": "2026-08-03T13:56:24Z",
         "url": "https://github.com/tigrbl/tigrbl_api_cron"
       }
     ],
     "fork": false,
     "full_name": "tigrbl/tigrbl_api_cron",
+    "github_releases": [],
     "homepage": null,
     "id": "repository:tigrbl/tigrbl_api_cron",
     "kind": "repository",
@@ -91,7 +205,7 @@
       "watchers": 0
     },
     "name": "tigrbl_api_cron",
-    "observed_at": "2026-08-03T10:05:58Z",
+    "observed_at": "2026-08-03T13:56:24Z",
     "owner": "tigrbl",
     "package_ids": [
       "package:pypi:tigrbl-cron:tigrbl/tigrbl_api_cron:pyproject.toml"

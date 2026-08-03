@@ -1,9 +1,40 @@
 {
-  "generated_at": "2026-08-03T10:05:58Z",
+  "generated_at": "2026-08-03T13:56:23Z",
   "packages": [
     {
       "claim_boundary": "Publication is reported only when confirmed by the named public registry.",
+      "dependencies": [
+        {
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "internal": true,
+          "name": "@mdwrk/lander-content-contract",
+          "package_key": "npm:@mdwrk/lander-content-contract",
+          "requirement": "^0.1.2",
+          "scope": "dependencies"
+        },
+        {
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "internal": true,
+          "name": "@mdwrk/lander-core",
+          "package_key": "npm:@mdwrk/lander-core",
+          "requirement": "^0.1.2",
+          "scope": "dependencies"
+        },
+        {
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "typescript",
+          "package_key": "npm:typescript",
+          "requirement": "^5.8.0",
+          "scope": "devDependencies"
+        }
+      ],
       "dependency_count": 3,
+      "dependent_count": 0,
+      "dependents": [],
       "description": "Observed npm package record for @tigrbl/tigrbl-com-content-pack.",
       "description_source": "generated-factual",
       "display_name": "@tigrbl/tigrbl-com-content-pack",
@@ -14,7 +45,7 @@
       "evidence": [
         {
           "kind": "source",
-          "observed_at": "2026-08-03T10:05:58Z",
+          "observed_at": "2026-08-03T13:56:23Z",
           "url": "https://github.com/tigrbl/tigrbl-com/blob/HEAD/packages/site-content-pack/package.json"
         }
       ],
@@ -23,7 +54,7 @@
       "latest_version": "0.1.0",
       "manifest_path": "packages/site-content-pack/package.json",
       "name": "@tigrbl/tigrbl-com-content-pack",
-      "observed_at": "2026-08-03T10:05:58Z",
+      "observed_at": "2026-08-03T13:56:23Z",
       "owner": "tigrbl",
       "private": true,
       "publication_status": "manifest_private",
@@ -36,6 +67,7 @@
         "repository_contains_package": 1
       },
       "release_count": 0,
+      "releases": [],
       "repository": "tigrbl/tigrbl-com",
       "reviewed": false,
       "route": "/catalog/packages/npm/tigrbl-tigrbl-com-content-pack-fc859df9",
@@ -44,7 +76,101 @@
     },
     {
       "claim_boundary": "Publication is reported only when confirmed by the named public registry.",
+      "dependencies": [
+        {
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "internal": true,
+          "name": "@mdwrk/lander-core",
+          "package_key": "npm:@mdwrk/lander-core",
+          "requirement": "^0.1.2",
+          "scope": "dependencies"
+        },
+        {
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "internal": true,
+          "name": "@mdwrk/lander-react",
+          "package_key": "npm:@mdwrk/lander-react",
+          "requirement": "^0.1.2",
+          "scope": "dependencies"
+        },
+        {
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "internal": true,
+          "name": "@mdwrk/lander-theme",
+          "package_key": "npm:@mdwrk/lander-theme",
+          "requirement": "^0.1.4",
+          "scope": "dependencies"
+        },
+        {
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "@vitejs/plugin-react",
+          "package_key": "npm:@vitejs/plugin-react",
+          "requirement": "^4.3.4",
+          "scope": "dependencies"
+        },
+        {
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "vite",
+          "package_key": "npm:vite",
+          "requirement": "^6.0.0",
+          "scope": "dependencies"
+        },
+        {
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "react",
+          "package_key": "npm:react",
+          "requirement": "^19.0.0",
+          "scope": "dependencies"
+        },
+        {
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "react-dom",
+          "package_key": "npm:react-dom",
+          "requirement": "^19.0.0",
+          "scope": "dependencies"
+        },
+        {
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "typescript",
+          "package_key": "npm:typescript",
+          "requirement": "^5.8.0",
+          "scope": "dependencies"
+        },
+        {
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "@types/react",
+          "package_key": "npm:@types/react",
+          "requirement": "^19.0.0",
+          "scope": "devDependencies"
+        },
+        {
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "@types/react-dom",
+          "package_key": "npm:@types/react-dom",
+          "requirement": "^19.0.0",
+          "scope": "devDependencies"
+        }
+      ],
       "dependency_count": 10,
+      "dependent_count": 0,
+      "dependents": [],
       "description": "Observed npm package record for tigrbl-com.",
       "description_source": "generated-factual",
       "display_name": "tigrbl-com",
@@ -55,7 +181,7 @@
       "evidence": [
         {
           "kind": "source",
-          "observed_at": "2026-08-03T10:05:58Z",
+          "observed_at": "2026-08-03T13:56:23Z",
           "url": "https://github.com/tigrbl/tigrbl-com/blob/HEAD/package.json"
         }
       ],
@@ -64,7 +190,7 @@
       "latest_version": "0.1.0",
       "manifest_path": "package.json",
       "name": "tigrbl-com",
-      "observed_at": "2026-08-03T10:05:58Z",
+      "observed_at": "2026-08-03T13:56:23Z",
       "owner": "tigrbl",
       "private": true,
       "publication_status": "manifest_private",
@@ -77,6 +203,7 @@
         "repository_contains_package": 1
       },
       "release_count": 0,
+      "releases": [],
       "repository": "tigrbl/tigrbl-com",
       "reviewed": false,
       "route": "/catalog/packages/npm/tigrbl-com-be4b2a34",
@@ -85,7 +212,38 @@
     },
     {
       "claim_boundary": "Publication is reported only when confirmed by the named public registry.",
+      "dependencies": [
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": true,
+          "name": "npmctl",
+          "package_key": "pypi:npmctl",
+          "requirement": ">=0.3.10",
+          "scope": "dependency-groups.dev"
+        },
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": true,
+          "name": "npmctl-namecheap",
+          "package_key": "pypi:npmctl-namecheap",
+          "requirement": ">=0.3.10",
+          "scope": "dependency-groups.dev"
+        },
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": true,
+          "name": "ssot-registry",
+          "package_key": "pypi:ssot-registry",
+          "requirement": ">=0.2.18",
+          "scope": "dependency-groups.dev"
+        }
+      ],
       "dependency_count": 3,
+      "dependent_count": 0,
+      "dependents": [],
       "description": "Observed pypi package record for tigrbl-com.",
       "description_source": "generated-factual",
       "display_name": "tigrbl-com",
@@ -96,7 +254,7 @@
       "evidence": [
         {
           "kind": "source",
-          "observed_at": "2026-08-03T10:05:58Z",
+          "observed_at": "2026-08-03T13:56:23Z",
           "url": "https://github.com/tigrbl/tigrbl-com/blob/HEAD/pyproject.toml"
         }
       ],
@@ -105,10 +263,10 @@
       "latest_version": "0.1.0",
       "manifest_path": "pyproject.toml",
       "name": "tigrbl-com",
-      "observed_at": "2026-08-03T10:05:58Z",
+      "observed_at": "2026-08-03T13:56:23Z",
       "owner": "tigrbl",
       "private": false,
-      "publication_status": "not-confirmed",
+      "publication_status": "registry_not_found",
       "published": false,
       "registry_url": null,
       "relationship_count": 4,
@@ -117,6 +275,7 @@
         "repository_contains_package": 1
       },
       "release_count": 0,
+      "releases": [],
       "repository": "tigrbl/tigrbl-com",
       "reviewed": false,
       "route": "/catalog/packages/pypi/tigrbl-com-ada06730",
@@ -135,12 +294,13 @@
     "evidence": [
       {
         "kind": "source",
-        "observed_at": "2026-08-03T10:05:58Z",
+        "observed_at": "2026-08-03T13:56:24Z",
         "url": "https://github.com/tigrbl/tigrbl-com"
       }
     ],
     "fork": false,
     "full_name": "tigrbl/tigrbl-com",
+    "github_releases": [],
     "homepage": null,
     "id": "repository:tigrbl/tigrbl-com",
     "kind": "repository",
@@ -178,7 +338,7 @@
       "watchers": 0
     },
     "name": "tigrbl-com",
-    "observed_at": "2026-08-03T10:05:58Z",
+    "observed_at": "2026-08-03T13:56:24Z",
     "owner": "tigrbl",
     "package_ids": [
       "package:npm:@tigrbl/tigrbl-com-content-pack:tigrbl/tigrbl-com:packages/site-content-pack/package.json",

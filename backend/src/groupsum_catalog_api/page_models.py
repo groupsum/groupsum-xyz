@@ -49,7 +49,25 @@ def record_collection(
                    o.id AS organization_id, o.name AS organization_name,
                    COUNT(DISTINCT rp.package_id) AS package_count,
                    COUNT(DISTINCT rr.repository_id) AS repository_count,
-                   COUNT(DISTINCT rs.resource_id) AS resource_count
+                   COUNT(DISTINCT rs.resource_id) AS resource_count,
+                   (SELECT COUNT(*) FROM releases rel
+                     WHERE rel.package_id IN (
+                               SELECT package_id FROM record_packages WHERE record_id = r.id
+                           )
+                        OR rel.repository_id IN (
+                               SELECT repository_id FROM record_repositories WHERE record_id = r.id
+                           )) AS release_count,
+                   (SELECT COUNT(*) FROM dependencies dep
+                     WHERE dep.source_kind = 'package' AND dep.source_id IN (
+                               SELECT package_id FROM record_packages WHERE record_id = r.id
+                           )) AS dependency_count,
+                   (SELECT COUNT(*) FROM dependencies dep
+                     WHERE dep.target_id IN (
+                               SELECT ecosystem || ':' || REPLACE(LOWER(name), '_', '-')
+                                 FROM packages WHERE id IN (
+                                     SELECT package_id FROM record_packages WHERE record_id = r.id
+                                 )
+                           )) AS dependent_count
               FROM records r
               JOIN organizations o ON o.id = r.organization_id
          LEFT JOIN record_packages rp ON rp.record_id = r.id
@@ -250,12 +268,29 @@ def record_detail(
             connection,
             """
             SELECT p.id, p.ecosystem, p.name, p.registry_url, p.description,
-                   p.latest_version, p.published_at, p.observed_at, rp.role
+                   p.source_url, p.manifest_path, p.latest_version, p.published,
+                   p.publication_status, p.published_at, p.observed_at, rp.role,
+                   (SELECT COUNT(*) FROM releases rel WHERE rel.package_id = p.id)
+                       AS release_count,
+                   (SELECT COUNT(*) FROM dependencies dep
+                     WHERE dep.source_kind = 'package' AND dep.source_id = p.id)
+                       AS dependency_count,
+                   (SELECT COUNT(*) FROM dependencies dep
+                     WHERE dep.target_id = p.ecosystem || ':' || REPLACE(LOWER(p.name), '_', '-'))
+                       AS dependent_count,
+                   (SELECT mo.value FROM metric_observations mo
+                     WHERE mo.subject_kind = 'package' AND mo.subject_id = p.id
+                       AND mo.metric = 'downloads'
+                     ORDER BY mo.observed_at DESC LIMIT 1) AS downloads
               FROM packages p JOIN record_packages rp ON rp.package_id = p.id
              WHERE rp.record_id = ? ORDER BY p.ecosystem, p.name COLLATE NOCASE
             """,
             (record["id"],),
         )
+        for package in packages:
+            package["published"] = (
+                bool(package["published"]) if package["published"] is not None else None
+            )
         resources = rows(
             connection,
             """
@@ -270,8 +305,13 @@ def record_detail(
             connection,
             """
             SELECT rel.id, rel.release_kind, rel.version, rel.url, rel.published_at,
-                   rel.observed_at, rel.package_id, rel.repository_id
+                   rel.downloads, rel.prerelease, rel.draft, rel.observed_at,
+                   rel.package_id, rel.repository_id, p.name AS package_name,
+                   p.ecosystem, repo.owner AS repository_owner,
+                   repo.name AS repository_name
               FROM releases rel
+         LEFT JOIN packages p ON p.id = rel.package_id
+         LEFT JOIN repositories repo ON repo.id = rel.repository_id
              WHERE rel.package_id IN (
                        SELECT package_id FROM record_packages WHERE record_id = ?
                    )
@@ -279,9 +319,102 @@ def record_detail(
                        SELECT repository_id FROM record_repositories WHERE record_id = ?
                    )
           ORDER BY COALESCE(rel.published_at, rel.observed_at) DESC
+             LIMIT 100
             """,
             (record["id"], record["id"]),
         )
+        for release in releases:
+            release["prerelease"] = bool(release["prerelease"])
+            release["draft"] = bool(release["draft"])
+        release_summary = rows(
+            connection,
+            """
+            SELECT COALESCE(p.ecosystem, rel.release_kind) AS release_kind,
+                   COUNT(*) AS release_count,
+                   MAX(COALESCE(rel.published_at, rel.observed_at)) AS latest_at,
+                   SUM(COALESCE(rel.downloads, 0)) AS downloads
+              FROM releases rel
+         LEFT JOIN packages p ON p.id = rel.package_id
+             WHERE rel.package_id IN (
+                       SELECT package_id FROM record_packages WHERE record_id = ?
+                   )
+                OR rel.repository_id IN (
+                       SELECT repository_id FROM record_repositories WHERE record_id = ?
+                   )
+          GROUP BY COALESCE(p.ecosystem, rel.release_kind)
+          ORDER BY release_count DESC, release_kind
+            """,
+            (record["id"], record["id"]),
+        )
+        dependencies = rows(
+            connection,
+            """
+            SELECT dep.id, dep.source_id, source.ecosystem AS source_ecosystem,
+                   source.name AS source_name, dep.target_kind, dep.target_id,
+                   dep.requirement, dep.scope, dep.evidence_type, dep.source_url,
+                   dep.completeness, dep.observed_at
+              FROM dependencies dep
+              JOIN packages source ON source.id = dep.source_id
+             WHERE dep.source_kind = 'package'
+               AND dep.source_id IN (
+                     SELECT package_id FROM record_packages WHERE record_id = ?
+               )
+          ORDER BY source.ecosystem, source.name COLLATE NOCASE,
+                   dep.scope, dep.target_id
+             LIMIT 200
+            """,
+            (record["id"],),
+        )
+        dependents = rows(
+            connection,
+            """
+            SELECT dep.id, dep.source_kind, dep.source_id,
+                   source.ecosystem AS source_ecosystem,
+                   source.name AS source_name, dep.target_id,
+                   dep.requirement, dep.scope, dep.evidence_type, dep.source_url,
+                   dep.completeness, dep.observed_at
+              FROM dependencies dep
+         LEFT JOIN packages source ON source.id = dep.source_id
+             WHERE dep.target_id IN (
+                       SELECT ecosystem || ':' || REPLACE(LOWER(name), '_', '-')
+                         FROM packages
+                        WHERE id IN (
+                            SELECT package_id FROM record_packages WHERE record_id = ?
+                        )
+                   )
+          ORDER BY COALESCE(source.ecosystem, dep.source_kind),
+                   COALESCE(source.name, dep.source_id) COLLATE NOCASE
+             LIMIT 200
+            """,
+            (record["id"],),
+        )
+        dependency_counts = connection.execute(
+            """
+            SELECT
+              (SELECT COUNT(*) FROM dependencies
+                WHERE source_kind = 'package' AND source_id IN (
+                    SELECT package_id FROM record_packages WHERE record_id = ?
+                )) AS dependencies,
+              (SELECT COUNT(*) FROM dependencies
+                WHERE target_id IN (
+                    SELECT ecosystem || ':' || REPLACE(LOWER(name), '_', '-')
+                      FROM packages WHERE id IN (
+                          SELECT package_id FROM record_packages WHERE record_id = ?
+                      )
+                )) AS dependents,
+              (SELECT COUNT(*) FROM dependencies
+                WHERE source_kind = 'package' AND target_kind = 'package'
+                  AND source_id IN (
+                      SELECT package_id FROM record_packages WHERE record_id = ?
+                  )) AS internal_dependencies,
+              (SELECT COUNT(*) FROM dependencies
+                WHERE source_kind = 'package' AND target_kind = 'external-package'
+                  AND source_id IN (
+                      SELECT package_id FROM record_packages WHERE record_id = ?
+                  )) AS external_dependencies
+            """,
+            (record["id"], record["id"], record["id"], record["id"]),
+        ).fetchone()
         deployments = rows(
             connection,
             """
@@ -342,7 +475,20 @@ def record_detail(
                 "packages": packages,
                 "resources": resources,
                 "releases": releases,
+                "release_summary": release_summary,
                 "deployments": deployments,
+                "dependencies": dependencies,
+                "dependents": dependents,
+                "dependency_summary": {
+                    **dict(dependency_counts),
+                    "dependency_rows_returned": len(dependencies),
+                    "dependent_rows_returned": len(dependents),
+                    "dependent_coverage": (
+                        "All reverse edges within this collected catalog plus bounded registry "
+                        "reverse-dependency observations where a registry exposes them; not a "
+                        "complete global npm or PyPI dependent count."
+                    ),
+                },
             },
             "relations": relations,
             "governance": {

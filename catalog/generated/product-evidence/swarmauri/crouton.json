@@ -1,9 +1,85 @@
 {
-  "generated_at": "2026-08-03T10:05:58Z",
+  "generated_at": "2026-08-03T13:56:23Z",
   "packages": [
     {
       "claim_boundary": "Publication is reported only when confirmed by the named public registry.",
+      "dependencies": [
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "poetry-core",
+          "package_key": "pypi:poetry-core",
+          "requirement": ">=1.0.0",
+          "scope": "build-system.requires"
+        },
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "fastapi",
+          "package_key": "pypi:fastapi",
+          "requirement": "*",
+          "scope": "dependencies"
+        },
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "databases",
+          "package_key": "pypi:databases",
+          "requirement": "*",
+          "scope": "dependencies"
+        },
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "SQLAlchemy-Utils",
+          "package_key": "pypi:sqlalchemy-utils",
+          "requirement": "*",
+          "scope": "dependencies"
+        },
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "httpx",
+          "package_key": "pypi:httpx",
+          "requirement": "*",
+          "scope": "dependencies"
+        },
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "flake8",
+          "package_key": "pypi:flake8",
+          "requirement": "^7.0",
+          "scope": "tool.poetry.group.dev.dependencies"
+        },
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "pytest",
+          "package_key": "pypi:pytest",
+          "requirement": "^8.0",
+          "scope": "tool.poetry.group.dev.dependencies"
+        },
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "pytest-asyncio",
+          "package_key": "pypi:pytest-asyncio",
+          "requirement": ">=0.24.0",
+          "scope": "tool.poetry.group.dev.dependencies"
+        }
+      ],
       "dependency_count": 8,
+      "dependent_count": 0,
+      "dependents": [],
       "description": "Observed pypi package record for crouton.",
       "description_source": "generated-factual",
       "display_name": "crouton",
@@ -14,7 +90,7 @@
       "evidence": [
         {
           "kind": "registry",
-          "observed_at": "2026-08-03T10:05:58Z",
+          "observed_at": "2026-08-03T13:56:23Z",
           "url": "https://pypi.org/project/crouton/"
         }
       ],
@@ -23,7 +99,7 @@
       "latest_version": "0.1.6",
       "manifest_path": "pkgs/crouton/pyproject.toml",
       "name": "crouton",
-      "observed_at": "2026-08-03T10:05:58Z",
+      "observed_at": "2026-08-03T13:56:23Z",
       "owner": "swarmauri",
       "private": false,
       "publication_status": "published",
@@ -35,6 +111,200 @@
         "repository_contains_package": 1
       },
       "release_count": 24,
+      "releases": [
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2025-07-01T10:15:39.507866Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/crouton/0.1.6/",
+          "version": "0.1.6"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2025-07-01T10:03:26.415726Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/crouton/0.1.4/",
+          "version": "0.1.4"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2025-07-01T09:40:04.243112Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/crouton/0.1.3/",
+          "version": "0.1.3"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2025-01-23T03:31:24.636233Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/crouton/0.1.0/",
+          "version": "0.1.0"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2025-01-23T03:26:24.719746Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/crouton/0.0.6/",
+          "version": "0.0.6"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2025-01-23T03:22:14.482607Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/crouton/0.0.5.dev2/",
+          "version": "0.0.5.dev2"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2025-01-23T03:19:33.951083Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/crouton/0.0.5.dev1/",
+          "version": "0.0.5.dev1"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2025-01-23T03:16:14.255253Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/crouton/0.0.4/",
+          "version": "0.0.4"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2025-01-15T12:30:04.583207Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/crouton/0.0.4.dev14/",
+          "version": "0.0.4.dev14"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2024-12-03T07:42:54.743243Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/crouton/0.0.4.dev12/",
+          "version": "0.0.4.dev12"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2024-11-30T04:05:12.962640Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/crouton/0.0.4.dev9/",
+          "version": "0.0.4.dev9"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2024-11-20T11:36:30.669875Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/crouton/0.0.4.dev7/",
+          "version": "0.0.4.dev7"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2024-11-20T11:33:25.402113Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/crouton/0.0.4.dev6/",
+          "version": "0.0.4.dev6"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2024-11-12T09:06:19.129609Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/crouton/0.0.4.dev5/",
+          "version": "0.0.4.dev5"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2024-11-11T10:12:19.842969Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/crouton/0.0.4.dev4/",
+          "version": "0.0.4.dev4"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2024-11-07T09:32:33.232589Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/crouton/0.0.4.dev3/",
+          "version": "0.0.4.dev3"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2024-11-07T09:18:19.099996Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/crouton/0.0.4.dev2/",
+          "version": "0.0.4.dev2"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2024-11-01T08:26:40.103361Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/crouton/0.0.4.dev1/",
+          "version": "0.0.4.dev1"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2024-11-01T08:08:01.634512Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/crouton/0.0.3/",
+          "version": "0.0.3"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2024-11-01T08:06:16.968610Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/crouton/0.0.3.dev3/",
+          "version": "0.0.3.dev3"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2024-11-01T07:59:52.971010Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/crouton/0.0.3.dev2/",
+          "version": "0.0.3.dev2"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2024-11-01T07:48:30.552653Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/crouton/0.0.3.dev1/",
+          "version": "0.0.3.dev1"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2024-11-01T07:31:11.277230Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/crouton/0.0.2/",
+          "version": "0.0.2"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2024-10-24T17:08:17.302862Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/crouton/0.0.1/",
+          "version": "0.0.1"
+        }
+      ],
       "repository": "swarmauri/crouton",
       "reviewed": false,
       "route": "/catalog/packages/pypi/crouton-476b846d",
@@ -43,7 +313,74 @@
     },
     {
       "claim_boundary": "Publication is reported only when confirmed by the named public registry.",
+      "dependencies": [
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "poetry-core",
+          "package_key": "pypi:poetry-core",
+          "requirement": ">=1.0.0",
+          "scope": "build-system.requires"
+        },
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "requests",
+          "package_key": "pypi:requests",
+          "requirement": "*",
+          "scope": "dependencies"
+        },
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "pydantic",
+          "package_key": "pypi:pydantic",
+          "requirement": "*",
+          "scope": "dependencies"
+        },
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "httpx",
+          "package_key": "pypi:httpx",
+          "requirement": "*",
+          "scope": "dependencies"
+        },
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "flake8",
+          "package_key": "pypi:flake8",
+          "requirement": "^7.0",
+          "scope": "tool.poetry.group.dev.dependencies"
+        },
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "pytest",
+          "package_key": "pypi:pytest",
+          "requirement": "^8.0",
+          "scope": "tool.poetry.group.dev.dependencies"
+        },
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "pytest-asyncio",
+          "package_key": "pypi:pytest-asyncio",
+          "requirement": ">=0.24.0",
+          "scope": "tool.poetry.group.dev.dependencies"
+        }
+      ],
       "dependency_count": 7,
+      "dependent_count": 0,
+      "dependents": [],
       "description": "Observed pypi package record for crouton_client.",
       "description_source": "generated-factual",
       "display_name": "crouton_client",
@@ -54,7 +391,7 @@
       "evidence": [
         {
           "kind": "registry",
-          "observed_at": "2026-08-03T10:05:58Z",
+          "observed_at": "2026-08-03T13:56:23Z",
           "url": "https://pypi.org/project/crouton_client/"
         }
       ],
@@ -63,7 +400,7 @@
       "latest_version": "0.1.6",
       "manifest_path": "pkgs/crouton_client/pyproject.toml",
       "name": "crouton_client",
-      "observed_at": "2026-08-03T10:05:58Z",
+      "observed_at": "2026-08-03T13:56:23Z",
       "owner": "swarmauri",
       "private": false,
       "publication_status": "published",
@@ -75,6 +412,152 @@
         "repository_contains_package": 1
       },
       "release_count": 18,
+      "releases": [
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2025-07-01T10:15:35.249764Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/crouton_client/0.1.6/",
+          "version": "0.1.6"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2025-07-01T10:03:35.788405Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/crouton_client/0.1.4/",
+          "version": "0.1.4"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2025-07-01T09:40:03.436455Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/crouton_client/0.1.3/",
+          "version": "0.1.3"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2025-07-01T09:28:15.185485Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/crouton_client/0.1.1/",
+          "version": "0.1.1"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2025-01-23T03:31:16.238011Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/crouton_client/0.1.0/",
+          "version": "0.1.0"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2025-01-23T03:26:22.204373Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/crouton_client/0.0.6/",
+          "version": "0.0.6"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2025-01-23T03:22:12.785415Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/crouton_client/0.0.5.dev2/",
+          "version": "0.0.5.dev2"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2025-01-23T03:19:31.488993Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/crouton_client/0.0.5.dev1/",
+          "version": "0.0.5.dev1"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2025-01-23T03:16:10.783064Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/crouton_client/0.0.4/",
+          "version": "0.0.4"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2025-01-15T12:29:59.799984Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/crouton_client/0.0.4.dev14/",
+          "version": "0.0.4.dev14"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2024-12-03T07:43:06.767107Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/crouton_client/0.0.4.dev12/",
+          "version": "0.0.4.dev12"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2024-11-30T04:05:11.537612Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/crouton_client/0.0.4.dev9/",
+          "version": "0.0.4.dev9"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2024-11-20T11:36:28.536901Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/crouton_client/0.0.4.dev7/",
+          "version": "0.0.4.dev7"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2024-11-12T09:06:16.164052Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/crouton_client/0.0.4.dev5/",
+          "version": "0.0.4.dev5"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2024-11-11T10:12:17.131143Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/crouton_client/0.0.4.dev4/",
+          "version": "0.0.4.dev4"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2024-11-07T09:32:29.323672Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/crouton_client/0.0.4.dev3/",
+          "version": "0.0.4.dev3"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2024-11-01T08:26:30.098881Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/crouton_client/0.0.3/",
+          "version": "0.0.3"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2024-11-01T08:06:31.784060Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/crouton_client/0.0.3.dev3/",
+          "version": "0.0.3.dev3"
+        }
+      ],
       "repository": "swarmauri/crouton",
       "reviewed": false,
       "route": "/catalog/packages/pypi/crouton-client-4c739a33",
@@ -93,12 +576,13 @@
     "evidence": [
       {
         "kind": "source",
-        "observed_at": "2026-08-03T10:05:58Z",
+        "observed_at": "2026-08-03T13:56:25Z",
         "url": "https://github.com/swarmauri/crouton"
       }
     ],
     "fork": false,
     "full_name": "swarmauri/crouton",
+    "github_releases": [],
     "homepage": "https://swarmauri.com",
     "id": "repository:swarmauri/crouton",
     "kind": "repository",
@@ -130,7 +614,7 @@
       "watchers": 0
     },
     "name": "crouton",
-    "observed_at": "2026-08-03T10:05:58Z",
+    "observed_at": "2026-08-03T13:56:25Z",
     "owner": "swarmauri",
     "package_ids": [
       "package:pypi:crouton:swarmauri/crouton:pkgs/crouton/pyproject.toml",

@@ -337,7 +337,21 @@ def registry_record(client: ApiClient, package: dict[str, Any]) -> tuple[dict[st
         observations.append(obs)
         if body:
             record.update({"published": True, "registry_url": f"https://pypi.org/project/{name}/", "latest_version": body.get("info", {}).get("version")})
-            record["releases"] = sorted(body.get("releases", {}).keys(), reverse=True)
+            record["releases"] = [
+                {
+                    "version": version,
+                    "published_at": next(
+                        (
+                            file.get("upload_time_iso_8601") or file.get("upload_time")
+                            for file in files
+                            if file.get("upload_time_iso_8601") or file.get("upload_time")
+                        ),
+                        None,
+                    ),
+                    "url": f"https://pypi.org/project/{name}/{version}/",
+                }
+                for version, files in sorted((body.get("releases") or {}).items(), reverse=True)
+            ]
         elif obs.status == "not_found":
             record.update({"published": False, "publication_status": "registry_not_found"})
     elif ecosystem == "npm":
@@ -347,7 +361,15 @@ def registry_record(client: ApiClient, package: dict[str, Any]) -> tuple[dict[st
         observations.append(obs)
         if body:
             record.update({"published": True, "registry_url": f"https://www.npmjs.com/package/{name}", "latest_version": (body.get("dist-tags") or {}).get("latest")})
-            record["releases"] = sorted((body.get("versions") or {}).keys(), reverse=True)
+            published_times = body.get("time") or {}
+            record["releases"] = [
+                {
+                    "version": version,
+                    "published_at": published_times.get(version),
+                    "url": f"https://www.npmjs.com/package/{name}/v/{version}",
+                }
+                for version in sorted((body.get("versions") or {}).keys(), reverse=True)
+            ]
         elif obs.status == "not_found":
             record.update({"published": False, "publication_status": "registry_not_found"})
     elif ecosystem == "crates":
@@ -357,7 +379,16 @@ def registry_record(client: ApiClient, package: dict[str, Any]) -> tuple[dict[st
         if body:
             crate = body.get("crate", {})
             record.update({"published": True, "registry_url": f"https://crates.io/crates/{name}", "latest_version": crate.get("newest_version"), "downloads": crate.get("downloads")})
-            record["releases"] = [version.get("num") for version in body.get("versions", []) if version.get("num")]
+            record["releases"] = [
+                {
+                    "version": version.get("num"),
+                    "published_at": version.get("created_at") or version.get("updated_at"),
+                    "downloads": version.get("downloads"),
+                    "url": f"https://crates.io/crates/{name}/{version.get('num')}",
+                }
+                for version in body.get("versions", [])
+                if version.get("num")
+            ]
             reverse_url = f"https://crates.io/api/v1/crates/{urllib.parse.quote(name)}/reverse_dependencies?page=1&per_page=100"
             reverse, _, reverse_obs = client.request_json(reverse_url, allow_404=True)
             observations.append(reverse_obs)
@@ -590,7 +621,7 @@ def discover_github_downstream(
 
 
 def relation_rows(repositories: list[dict[str, Any]], packages: list[dict[str, Any]]) -> list[dict[str, Any]]:
-    relations: dict[tuple[str, str, str], dict[str, Any]] = {}
+    relations: dict[tuple[str, ...], dict[str, Any]] = {}
     package_index: dict[str, list[dict[str, Any]]] = {}
     for package in packages:
         for key in {package.get("name", "").lower(), package.get("name", "").lower().replace("_", "-")}:
@@ -607,11 +638,23 @@ def relation_rows(repositories: list[dict[str, Any]], packages: list[dict[str, A
             if candidates:
                 for target_package in candidates:
                     target = f"{target_package['ecosystem']}:{target_package['name']}"
-                    key = ("package_depends_on_package", source, target)
-                    relations[key] = {"kind": key[0], "source": source, "target": target, "requirement": dependency.get("requirement"), "evidence": "repository.manifest"}
+                    scope = str(dependency.get("scope") or "dependencies")
+                    key = ("package_depends_on_package", source, target, scope)
+                    relations[key] = {"kind": key[0], "source": source, "target": target, "requirement": dependency.get("requirement"), "scope": scope, "evidence": "repository.manifest"}
             else:
-                key = ("package_depends_on_external", source, dependency["name"])
-                relations[key] = {"kind": key[0], "source": source, "target": dependency["name"], "requirement": dependency.get("requirement"), "evidence": "repository.manifest"}
+                scope = str(dependency.get("scope") or "dependencies")
+                key = ("package_depends_on_external", source, dependency["name"], scope)
+                relations[key] = {"kind": key[0], "source": source, "target": dependency["name"], "requirement": dependency.get("requirement"), "scope": scope, "evidence": "repository.manifest"}
+        for dependent in package.get("downstream") or []:
+            target = f"{package['ecosystem']}:{dependent}"
+            key = ("package_has_registry_dependent", source, target)
+            relations[key] = {
+                "kind": key[0],
+                "source": source,
+                "target": target,
+                "evidence": f"{package['ecosystem']}.reverse_dependencies",
+                "completeness": package.get("downstream_completeness") or "bounded-registry-observation",
+            }
     for repo in repositories:
         for resource in repo.get("related_resources", []):
             target = f"{resource.get('kind')}:{resource.get('name')}"

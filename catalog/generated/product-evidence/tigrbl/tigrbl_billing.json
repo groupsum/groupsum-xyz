@@ -1,9 +1,121 @@
 {
-  "generated_at": "2026-08-03T10:05:58Z",
+  "generated_at": "2026-08-03T13:56:23Z",
   "packages": [
     {
       "claim_boundary": "Publication is reported only when confirmed by the named public registry.",
+      "dependencies": [
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": true,
+          "name": "tigrbl",
+          "package_key": "pypi:tigrbl",
+          "requirement": "*",
+          "scope": "dependencies"
+        },
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "poetry-core",
+          "package_key": "pypi:poetry-core",
+          "requirement": ">=1.0.0",
+          "scope": "build-system.requires"
+        },
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "pytest",
+          "package_key": "pypi:pytest",
+          "requirement": ">=8.0",
+          "scope": "dependency-groups.dev"
+        },
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "pytest-asyncio",
+          "package_key": "pypi:pytest-asyncio",
+          "requirement": ">=0.24.0",
+          "scope": "dependency-groups.dev"
+        },
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "pytest-xdist",
+          "package_key": "pypi:pytest-xdist",
+          "requirement": ">=3.6.1",
+          "scope": "dependency-groups.dev"
+        },
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "pytest-json-report",
+          "package_key": "pypi:pytest-json-report",
+          "requirement": ">=1.5.0",
+          "scope": "dependency-groups.dev"
+        },
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "python-dotenv",
+          "package_key": "pypi:python-dotenv",
+          "requirement": "*",
+          "scope": "dependency-groups.dev"
+        },
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "requests",
+          "package_key": "pypi:requests",
+          "requirement": ">=2.32.3",
+          "scope": "dependency-groups.dev"
+        },
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "flake8",
+          "package_key": "pypi:flake8",
+          "requirement": ">=7.0",
+          "scope": "dependency-groups.dev"
+        },
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "pytest-timeout",
+          "package_key": "pypi:pytest-timeout",
+          "requirement": ">=2.3.1",
+          "scope": "dependency-groups.dev"
+        },
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "ruff",
+          "package_key": "pypi:ruff",
+          "requirement": ">=0.9.9",
+          "scope": "dependency-groups.dev"
+        },
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "pytest-benchmark",
+          "package_key": "pypi:pytest-benchmark",
+          "requirement": ">=4.0.0",
+          "scope": "dependency-groups.dev"
+        }
+      ],
       "dependency_count": 12,
+      "dependent_count": 0,
+      "dependents": [],
       "description": "Observed pypi package record for tigrbl_billing.",
       "description_source": "generated-factual",
       "display_name": "tigrbl_billing",
@@ -14,7 +126,7 @@
       "evidence": [
         {
           "kind": "registry",
-          "observed_at": "2026-08-03T10:05:58Z",
+          "observed_at": "2026-08-03T13:56:23Z",
           "url": "https://pypi.org/project/tigrbl_billing/"
         }
       ],
@@ -23,7 +135,7 @@
       "latest_version": "0.1.2",
       "manifest_path": "pyproject.toml",
       "name": "tigrbl_billing",
-      "observed_at": "2026-08-03T10:05:58Z",
+      "observed_at": "2026-08-03T13:56:23Z",
       "owner": "tigrbl",
       "private": false,
       "publication_status": "published",
@@ -36,6 +148,112 @@
         "repository_contains_package": 1
       },
       "release_count": 13,
+      "releases": [
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2026-03-24T06:03:56.423173Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/tigrbl_billing/0.1.2/",
+          "version": "0.1.2"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2026-03-23T07:42:41.896717Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/tigrbl_billing/0.1.2.dev15/",
+          "version": "0.1.2.dev15"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2026-03-20T18:00:27.280409Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/tigrbl_billing/0.1.2.dev14/",
+          "version": "0.1.2.dev14"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2026-03-20T17:22:35.011360Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/tigrbl_billing/0.1.2.dev13/",
+          "version": "0.1.2.dev13"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2026-03-20T10:05:53.211956Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/tigrbl_billing/0.1.2.dev12/",
+          "version": "0.1.2.dev12"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2026-03-20T09:46:37.634381Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/tigrbl_billing/0.1.2.dev11/",
+          "version": "0.1.2.dev11"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2026-03-20T08:04:59.726196Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/tigrbl_billing/0.1.2.dev10/",
+          "version": "0.1.2.dev10"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2026-02-23T10:27:36.287033Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/tigrbl_billing/0.1.2.dev9/",
+          "version": "0.1.2.dev9"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2026-02-17T19:40:24.815490Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/tigrbl_billing/0.1.2.dev7/",
+          "version": "0.1.2.dev7"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2026-02-17T18:05:18.537176Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/tigrbl_billing/0.1.2.dev6/",
+          "version": "0.1.2.dev6"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2026-02-12T08:26:26.803192Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/tigrbl_billing/0.1.2.dev4/",
+          "version": "0.1.2.dev4"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2026-01-28T08:17:16.313560Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/tigrbl_billing/0.1.1/",
+          "version": "0.1.1"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2026-01-28T00:54:26.975489Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/tigrbl_billing/0.1.0/",
+          "version": "0.1.0"
+        }
+      ],
       "repository": "tigrbl/tigrbl_billing",
       "reviewed": false,
       "route": "/catalog/packages/pypi/tigrbl-billing-45d6972f",
@@ -54,12 +272,13 @@
     "evidence": [
       {
         "kind": "source",
-        "observed_at": "2026-08-03T10:05:58Z",
+        "observed_at": "2026-08-03T13:56:25Z",
         "url": "https://github.com/tigrbl/tigrbl_billing"
       }
     ],
     "fork": false,
     "full_name": "tigrbl/tigrbl_billing",
+    "github_releases": [],
     "homepage": null,
     "id": "repository:tigrbl/tigrbl_billing",
     "kind": "repository",
@@ -91,7 +310,7 @@
       "watchers": 0
     },
     "name": "tigrbl_billing",
-    "observed_at": "2026-08-03T10:05:58Z",
+    "observed_at": "2026-08-03T13:56:25Z",
     "owner": "tigrbl",
     "package_ids": [
       "package:pypi:tigrbl_billing:tigrbl/tigrbl_billing:pyproject.toml"
@@ -99,301 +318,301 @@
     "pushed_at": "2026-05-20T03:06:58Z",
     "related_resources": [
       {
-        "evidence_type": "repository.tree",
+        "evidence_type": "repository.blob",
         "id": "resource:96b7b3f560c1",
         "kind": "api",
         "name": "src/tigrbl_billing/api/__init__.py",
         "url": "https://github.com/tigrbl/tigrbl_billing/blob/master/src/tigrbl_billing/api/__init__.py"
       },
       {
-        "evidence_type": "repository.tree",
+        "evidence_type": "repository.blob",
         "id": "resource:dae3008f4bf9",
         "kind": "api",
         "name": "src/tigrbl_billing/api/api_balance_top_off.py",
         "url": "https://github.com/tigrbl/tigrbl_billing/blob/master/src/tigrbl_billing/api/api_balance_top_off.py"
       },
       {
-        "evidence_type": "repository.tree",
+        "evidence_type": "repository.blob",
         "id": "resource:d24363122597",
         "kind": "api",
         "name": "src/tigrbl_billing/api/api_banded_pricing.py",
         "url": "https://github.com/tigrbl/tigrbl_billing/blob/master/src/tigrbl_billing/api/api_banded_pricing.py"
       },
       {
-        "evidence_type": "repository.tree",
+        "evidence_type": "repository.blob",
         "id": "resource:98a01d0ccf63",
         "kind": "api",
         "name": "src/tigrbl_billing/api/api_basic_subscriptions.py",
         "url": "https://github.com/tigrbl/tigrbl_billing/blob/master/src/tigrbl_billing/api/api_basic_subscriptions.py"
       },
       {
-        "evidence_type": "repository.tree",
+        "evidence_type": "repository.blob",
         "id": "resource:a32f71f1d1c9",
         "kind": "api",
         "name": "src/tigrbl_billing/api/api_checkout.py",
         "url": "https://github.com/tigrbl/tigrbl_billing/blob/master/src/tigrbl_billing/api/api_checkout.py"
       },
       {
-        "evidence_type": "repository.tree",
+        "evidence_type": "repository.blob",
         "id": "resource:8c89563118d2",
         "kind": "api",
         "name": "src/tigrbl_billing/api/api_complex_tiers.py",
         "url": "https://github.com/tigrbl/tigrbl_billing/blob/master/src/tigrbl_billing/api/api_complex_tiers.py"
       },
       {
-        "evidence_type": "repository.tree",
+        "evidence_type": "repository.blob",
         "id": "resource:d45bd5a15dfb",
         "kind": "api",
         "name": "src/tigrbl_billing/api/api_credit_usage.py",
         "url": "https://github.com/tigrbl/tigrbl_billing/blob/master/src/tigrbl_billing/api/api_credit_usage.py"
       },
       {
-        "evidence_type": "repository.tree",
+        "evidence_type": "repository.blob",
         "id": "resource:3bfd3d43559a",
         "kind": "api",
         "name": "src/tigrbl_billing/api/api_customer_to_customer.py",
         "url": "https://github.com/tigrbl/tigrbl_billing/blob/master/src/tigrbl_billing/api/api_customer_to_customer.py"
       },
       {
-        "evidence_type": "repository.tree",
+        "evidence_type": "repository.blob",
         "id": "resource:1bd34615471c",
         "kind": "api",
         "name": "src/tigrbl_billing/api/api_grants.py",
         "url": "https://github.com/tigrbl/tigrbl_billing/blob/master/src/tigrbl_billing/api/api_grants.py"
       },
       {
-        "evidence_type": "repository.tree",
+        "evidence_type": "repository.blob",
         "id": "resource:b1d2f28d9196",
         "kind": "api",
         "name": "src/tigrbl_billing/api/api_invoice_payment.py",
         "url": "https://github.com/tigrbl/tigrbl_billing/blob/master/src/tigrbl_billing/api/api_invoice_payment.py"
       },
       {
-        "evidence_type": "repository.tree",
+        "evidence_type": "repository.blob",
         "id": "resource:546e1c7b9c51",
         "kind": "api",
         "name": "src/tigrbl_billing/api/api_metered.py",
         "url": "https://github.com/tigrbl/tigrbl_billing/blob/master/src/tigrbl_billing/api/api_metered.py"
       },
       {
-        "evidence_type": "repository.tree",
+        "evidence_type": "repository.blob",
         "id": "resource:40518f1a3d66",
         "kind": "api",
         "name": "src/tigrbl_billing/api/api_payment_splitting.py",
         "url": "https://github.com/tigrbl/tigrbl_billing/blob/master/src/tigrbl_billing/api/api_payment_splitting.py"
       },
       {
-        "evidence_type": "repository.tree",
+        "evidence_type": "repository.blob",
         "id": "resource:b684e3376bf4",
         "kind": "api",
         "name": "src/tigrbl_billing/api/api_product_price.py",
         "url": "https://github.com/tigrbl/tigrbl_billing/blob/master/src/tigrbl_billing/api/api_product_price.py"
       },
       {
-        "evidence_type": "repository.tree",
+        "evidence_type": "repository.blob",
         "id": "resource:a87548e68593",
         "kind": "api",
         "name": "src/tigrbl_billing/api/api_seats.py",
         "url": "https://github.com/tigrbl/tigrbl_billing/blob/master/src/tigrbl_billing/api/api_seats.py"
       },
       {
-        "evidence_type": "repository.tree",
+        "evidence_type": "repository.blob",
         "id": "resource:41ae9d6f81fa",
         "kind": "api",
         "name": "src/tigrbl_billing/api/api_stripe_connected_accounts.py",
         "url": "https://github.com/tigrbl/tigrbl_billing/blob/master/src/tigrbl_billing/api/api_stripe_connected_accounts.py"
       },
       {
-        "evidence_type": "repository.tree",
+        "evidence_type": "repository.blob",
         "id": "resource:f28783d06ee7",
         "kind": "api",
         "name": "src/tigrbl_billing/api/api_stripe_customer_accounts.py",
         "url": "https://github.com/tigrbl/tigrbl_billing/blob/master/src/tigrbl_billing/api/api_stripe_customer_accounts.py"
       },
       {
-        "evidence_type": "repository.tree",
+        "evidence_type": "repository.blob",
         "id": "resource:68fcee0aa680",
         "kind": "api",
         "name": "src/tigrbl_billing/api/api_subscriptions_trials.py",
         "url": "https://github.com/tigrbl/tigrbl_billing/blob/master/src/tigrbl_billing/api/api_subscriptions_trials.py"
       },
       {
-        "evidence_type": "repository.tree",
+        "evidence_type": "repository.blob",
         "id": "resource:8fe942a8947f",
         "kind": "api",
         "name": "src/tigrbl_billing/api/api_tiered.py",
         "url": "https://github.com/tigrbl/tigrbl_billing/blob/master/src/tigrbl_billing/api/api_tiered.py"
       },
       {
-        "evidence_type": "repository.tree",
+        "evidence_type": "repository.blob",
         "id": "resource:e6f4ee2b88e2",
         "kind": "api",
         "name": "src/tigrbl_billing/api/api_usage_based.py",
         "url": "https://github.com/tigrbl/tigrbl_billing/blob/master/src/tigrbl_billing/api/api_usage_based.py"
       },
       {
-        "evidence_type": "repository.tree",
+        "evidence_type": "repository.blob",
         "id": "resource:75a621dd8368",
         "kind": "api",
         "name": "tests/api/test_api_balance_top_off.py",
         "url": "https://github.com/tigrbl/tigrbl_billing/blob/master/tests/api/test_api_balance_top_off.py"
       },
       {
-        "evidence_type": "repository.tree",
+        "evidence_type": "repository.blob",
         "id": "resource:5ac80bc4ad1f",
         "kind": "api",
         "name": "tests/api/test_api_banded_pricing.py",
         "url": "https://github.com/tigrbl/tigrbl_billing/blob/master/tests/api/test_api_banded_pricing.py"
       },
       {
-        "evidence_type": "repository.tree",
+        "evidence_type": "repository.blob",
         "id": "resource:a6017403cb5c",
         "kind": "api",
         "name": "tests/api/test_api_basic_subscriptions.py",
         "url": "https://github.com/tigrbl/tigrbl_billing/blob/master/tests/api/test_api_basic_subscriptions.py"
       },
       {
-        "evidence_type": "repository.tree",
+        "evidence_type": "repository.blob",
         "id": "resource:db76f3ea453b",
         "kind": "api",
         "name": "tests/api/test_api_checkout.py",
         "url": "https://github.com/tigrbl/tigrbl_billing/blob/master/tests/api/test_api_checkout.py"
       },
       {
-        "evidence_type": "repository.tree",
+        "evidence_type": "repository.blob",
         "id": "resource:74362dd8a0d2",
         "kind": "api",
         "name": "tests/api/test_api_complex_tiers.py",
         "url": "https://github.com/tigrbl/tigrbl_billing/blob/master/tests/api/test_api_complex_tiers.py"
       },
       {
-        "evidence_type": "repository.tree",
+        "evidence_type": "repository.blob",
         "id": "resource:0e5c39aea4fb",
         "kind": "api",
         "name": "tests/api/test_api_credit_usage.py",
         "url": "https://github.com/tigrbl/tigrbl_billing/blob/master/tests/api/test_api_credit_usage.py"
       },
       {
-        "evidence_type": "repository.tree",
+        "evidence_type": "repository.blob",
         "id": "resource:4ed124a46c20",
         "kind": "api",
         "name": "tests/api/test_api_customer_to_customer.py",
         "url": "https://github.com/tigrbl/tigrbl_billing/blob/master/tests/api/test_api_customer_to_customer.py"
       },
       {
-        "evidence_type": "repository.tree",
+        "evidence_type": "repository.blob",
         "id": "resource:70fad2ac127f",
         "kind": "api",
         "name": "tests/api/test_api_grants.py",
         "url": "https://github.com/tigrbl/tigrbl_billing/blob/master/tests/api/test_api_grants.py"
       },
       {
-        "evidence_type": "repository.tree",
+        "evidence_type": "repository.blob",
         "id": "resource:f1aaafbb2733",
         "kind": "api",
         "name": "tests/api/test_api_invoice_payment.py",
         "url": "https://github.com/tigrbl/tigrbl_billing/blob/master/tests/api/test_api_invoice_payment.py"
       },
       {
-        "evidence_type": "repository.tree",
+        "evidence_type": "repository.blob",
         "id": "resource:c92f59c0179e",
         "kind": "api",
         "name": "tests/api/test_api_metered.py",
         "url": "https://github.com/tigrbl/tigrbl_billing/blob/master/tests/api/test_api_metered.py"
       },
       {
-        "evidence_type": "repository.tree",
+        "evidence_type": "repository.blob",
         "id": "resource:ee13ab5a1523",
         "kind": "api",
         "name": "tests/api/test_api_payment_splitting.py",
         "url": "https://github.com/tigrbl/tigrbl_billing/blob/master/tests/api/test_api_payment_splitting.py"
       },
       {
-        "evidence_type": "repository.tree",
+        "evidence_type": "repository.blob",
         "id": "resource:d818463c7cbb",
         "kind": "api",
         "name": "tests/api/test_api_product_price.py",
         "url": "https://github.com/tigrbl/tigrbl_billing/blob/master/tests/api/test_api_product_price.py"
       },
       {
-        "evidence_type": "repository.tree",
+        "evidence_type": "repository.blob",
         "id": "resource:e0ac517828e0",
         "kind": "api",
         "name": "tests/api/test_api_seats.py",
         "url": "https://github.com/tigrbl/tigrbl_billing/blob/master/tests/api/test_api_seats.py"
       },
       {
-        "evidence_type": "repository.tree",
+        "evidence_type": "repository.blob",
         "id": "resource:62fc71993f02",
         "kind": "api",
         "name": "tests/api/test_api_stripe_connected_accounts.py",
         "url": "https://github.com/tigrbl/tigrbl_billing/blob/master/tests/api/test_api_stripe_connected_accounts.py"
       },
       {
-        "evidence_type": "repository.tree",
+        "evidence_type": "repository.blob",
         "id": "resource:8bcf487a514a",
         "kind": "api",
         "name": "tests/api/test_api_stripe_customer_accounts.py",
         "url": "https://github.com/tigrbl/tigrbl_billing/blob/master/tests/api/test_api_stripe_customer_accounts.py"
       },
       {
-        "evidence_type": "repository.tree",
+        "evidence_type": "repository.blob",
         "id": "resource:f6544cf24c79",
         "kind": "api",
         "name": "tests/api/test_api_subscriptions_trials.py",
         "url": "https://github.com/tigrbl/tigrbl_billing/blob/master/tests/api/test_api_subscriptions_trials.py"
       },
       {
-        "evidence_type": "repository.tree",
+        "evidence_type": "repository.blob",
         "id": "resource:a16512930c5b",
         "kind": "api",
         "name": "tests/api/test_api_tiered.py",
         "url": "https://github.com/tigrbl/tigrbl_billing/blob/master/tests/api/test_api_tiered.py"
       },
       {
-        "evidence_type": "repository.tree",
+        "evidence_type": "repository.blob",
         "id": "resource:69e066a93cfa",
         "kind": "api",
         "name": "tests/api/test_api_usage_based.py",
         "url": "https://github.com/tigrbl/tigrbl_billing/blob/master/tests/api/test_api_usage_based.py"
       },
       {
-        "evidence_type": "repository.tree",
+        "evidence_type": "repository.blob",
         "id": "resource:733c8208a840",
         "kind": "example",
         "name": "src/tigrbl_billing/examples/product_billing_app.py",
         "url": "https://github.com/tigrbl/tigrbl_billing/blob/master/src/tigrbl_billing/examples/product_billing_app.py"
       },
       {
-        "evidence_type": "repository.tree",
+        "evidence_type": "repository.blob",
         "id": "resource:bd295ef51dd9",
         "kind": "example",
         "name": "src/tigrbl_billing/examples/subscription_billing_app.py",
         "url": "https://github.com/tigrbl/tigrbl_billing/blob/master/src/tigrbl_billing/examples/subscription_billing_app.py"
       },
       {
-        "evidence_type": "repository.tree",
+        "evidence_type": "repository.blob",
         "id": "resource:981b10f10d02",
         "kind": "example",
         "name": "src/tigrbl_billing/examples/subscription_tiers_app.py",
         "url": "https://github.com/tigrbl/tigrbl_billing/blob/master/src/tigrbl_billing/examples/subscription_tiers_app.py"
       },
       {
-        "evidence_type": "repository.tree",
+        "evidence_type": "repository.blob",
         "id": "resource:5aca62269b9f",
         "kind": "example",
         "name": "tests/examples/test_product_billing_example.py",
         "url": "https://github.com/tigrbl/tigrbl_billing/blob/master/tests/examples/test_product_billing_example.py"
       },
       {
-        "evidence_type": "repository.tree",
+        "evidence_type": "repository.blob",
         "id": "resource:1bfa1201e374",
         "kind": "example",
         "name": "tests/examples/test_subscription_billing_example.py",
         "url": "https://github.com/tigrbl/tigrbl_billing/blob/master/tests/examples/test_subscription_billing_example.py"
       },
       {
-        "evidence_type": "repository.tree",
+        "evidence_type": "repository.blob",
         "id": "resource:9b131c4dcf98",
         "kind": "example",
         "name": "tests/examples/test_subscription_tiers_example.py",

@@ -1,9 +1,32 @@
 {
-  "generated_at": "2026-08-03T10:05:58Z",
+  "generated_at": "2026-08-03T13:56:23Z",
   "packages": [
     {
       "claim_boundary": "Publication is reported only when confirmed by the named public registry.",
+      "dependencies": [
+        {
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "internal": true,
+          "name": "@mdwrk/lander-content-contract",
+          "package_key": "npm:@mdwrk/lander-content-contract",
+          "requirement": "^0.1.0",
+          "scope": "dependencies"
+        }
+      ],
       "dependency_count": 1,
+      "dependent_count": 1,
+      "dependents": [
+        {
+          "completeness": "catalog-observed",
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "name": "@mdwrk/mdwrkcom",
+          "package_key": "npm:@mdwrk/mdwrkcom",
+          "requirement": "^0.1.8",
+          "scope": "dependencies"
+        }
+      ],
       "description": "Observed npm package record for @mdwrk/mdwrkcom-content-pack.",
       "description_source": "generated-factual",
       "display_name": "@mdwrk/mdwrkcom-content-pack",
@@ -14,7 +37,7 @@
       "evidence": [
         {
           "kind": "registry",
-          "observed_at": "2026-08-03T10:05:58Z",
+          "observed_at": "2026-08-03T13:56:23Z",
           "url": "https://www.npmjs.com/package/@mdwrk/mdwrkcom-content-pack"
         }
       ],
@@ -23,7 +46,7 @@
       "latest_version": "0.1.6",
       "manifest_path": "packages/content/mdwrkcom-content-pack/package.json",
       "name": "@mdwrk/mdwrkcom-content-pack",
-      "observed_at": "2026-08-03T10:05:58Z",
+      "observed_at": "2026-08-03T13:56:23Z",
       "owner": "groupsum",
       "private": false,
       "publication_status": "published",
@@ -35,6 +58,24 @@
         "repository_contains_package": 1
       },
       "release_count": 2,
+      "releases": [
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2026-05-18T16:40:27.385Z",
+          "release_kind": "npm",
+          "url": "https://www.npmjs.com/package/@mdwrk/mdwrkcom-content-pack/v/0.1.6",
+          "version": "0.1.6"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2026-05-16T08:01:04.283Z",
+          "release_kind": "npm",
+          "url": "https://www.npmjs.com/package/@mdwrk/mdwrkcom-content-pack/v/0.1.5",
+          "version": "0.1.5"
+        }
+      ],
       "repository": "groupsum/mdwrkcom-content-pack",
       "reviewed": false,
       "route": "/catalog/packages/npm/mdwrk-mdwrkcom-content-pack-fc2ad22e",
@@ -43,7 +84,29 @@
     },
     {
       "claim_boundary": "Publication is reported only when confirmed by the named public registry.",
+      "dependencies": [
+        {
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "internal": true,
+          "name": "@mdwrk/lander-content-contract",
+          "package_key": "npm:@mdwrk/lander-content-contract",
+          "requirement": "^0.1.2",
+          "scope": "dependencies"
+        },
+        {
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "typescript",
+          "package_key": "npm:typescript",
+          "requirement": "5.9.3",
+          "scope": "devDependencies"
+        }
+      ],
       "dependency_count": 2,
+      "dependent_count": 0,
+      "dependents": [],
       "description": "Observed npm package record for mdwrkcom-content-pack.",
       "description_source": "generated-factual",
       "display_name": "mdwrkcom-content-pack",
@@ -54,7 +117,7 @@
       "evidence": [
         {
           "kind": "source",
-          "observed_at": "2026-08-03T10:05:58Z",
+          "observed_at": "2026-08-03T13:56:23Z",
           "url": "https://github.com/groupsum/mdwrkcom-content-pack/blob/HEAD/package.json"
         }
       ],
@@ -63,7 +126,7 @@
       "latest_version": "0.1.0",
       "manifest_path": "package.json",
       "name": "mdwrkcom-content-pack",
-      "observed_at": "2026-08-03T10:05:58Z",
+      "observed_at": "2026-08-03T13:56:23Z",
       "owner": "groupsum",
       "private": true,
       "publication_status": "manifest_private",
@@ -76,6 +139,7 @@
         "repository_contains_package": 1
       },
       "release_count": 0,
+      "releases": [],
       "repository": "groupsum/mdwrkcom-content-pack",
       "reviewed": false,
       "route": "/catalog/packages/npm/mdwrkcom-content-pack-ecc5c6e7",
@@ -94,12 +158,13 @@
     "evidence": [
       {
         "kind": "source",
-        "observed_at": "2026-08-03T10:05:58Z",
+        "observed_at": "2026-08-03T13:56:24Z",
         "url": "https://github.com/groupsum/mdwrkcom-content-pack"
       }
     ],
     "fork": false,
     "full_name": "groupsum/mdwrkcom-content-pack",
+    "github_releases": [],
     "homepage": "https://mdwrk.com",
     "id": "repository:groupsum/mdwrkcom-content-pack",
     "kind": "repository",
@@ -131,7 +196,7 @@
       "watchers": 0
     },
     "name": "mdwrkcom-content-pack",
-    "observed_at": "2026-08-03T10:05:58Z",
+    "observed_at": "2026-08-03T13:56:24Z",
     "owner": "groupsum",
     "package_ids": [
       "package:npm:@mdwrk/mdwrkcom-content-pack:groupsum/mdwrkcom-content-pack:packages/content/mdwrkcom-content-pack/package.json",
@@ -140,28 +205,28 @@
     "pushed_at": "2026-06-16T02:39:56Z",
     "related_resources": [
       {
-        "evidence_type": "repository.tree",
+        "evidence_type": "repository.blob",
         "id": "resource:6ad7a8201916",
         "kind": "documentation",
         "name": "packages/content/mdwrkcom-content-pack/content/pages/docs/extensions.md",
         "url": "https://github.com/groupsum/mdwrkcom-content-pack/blob/master/packages/content/mdwrkcom-content-pack/content/pages/docs/extensions.md"
       },
       {
-        "evidence_type": "repository.tree",
+        "evidence_type": "repository.blob",
         "id": "resource:eebe76dc1154",
         "kind": "documentation",
         "name": "packages/content/mdwrkcom-content-pack/content/pages/docs/quickstart.md",
         "url": "https://github.com/groupsum/mdwrkcom-content-pack/blob/master/packages/content/mdwrkcom-content-pack/content/pages/docs/quickstart.md"
       },
       {
-        "evidence_type": "repository.tree",
+        "evidence_type": "repository.blob",
         "id": "resource:39e66566b00c",
         "kind": "documentation",
         "name": "packages/content/mdwrkcom-content-pack/content/pages/docs/theme-packs.md",
         "url": "https://github.com/groupsum/mdwrkcom-content-pack/blob/master/packages/content/mdwrkcom-content-pack/content/pages/docs/theme-packs.md"
       },
       {
-        "evidence_type": "repository.tree",
+        "evidence_type": "repository.blob",
         "id": "resource:42e198a4d1bc",
         "kind": "documentation",
         "name": "packages/content/mdwrkcom-content-pack/content/pages/es/docs/quickstart.md",
@@ -196,7 +261,7 @@
         "url": "https://github.com/groupsum/mdwrkcom-content-pack/tree/master/packages/content/mdwrkcom-content-pack/data/markdown/docs/getting-started"
       },
       {
-        "evidence_type": "repository.tree",
+        "evidence_type": "repository.blob",
         "id": "resource:fc05b574500e",
         "kind": "documentation",
         "name": "packages/content/mdwrkcom-content-pack/data/markdown/docs/github-sync.md",

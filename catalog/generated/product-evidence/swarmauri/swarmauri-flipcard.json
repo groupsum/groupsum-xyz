@@ -1,9 +1,68 @@
 {
-  "generated_at": "2026-08-03T10:05:58Z",
+  "generated_at": "2026-08-03T13:56:23Z",
   "packages": [
     {
       "claim_boundary": "Publication is reported only when confirmed by the named public registry.",
+      "dependencies": [
+        {
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "@sveltejs/vite-plugin-svelte",
+          "package_key": "npm:@sveltejs/vite-plugin-svelte",
+          "requirement": "^3.1.1",
+          "scope": "devDependencies"
+        },
+        {
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "internal": true,
+          "name": "svelte",
+          "package_key": "npm:svelte",
+          "requirement": "^4.2.18",
+          "scope": "devDependencies"
+        },
+        {
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "vite",
+          "package_key": "npm:vite",
+          "requirement": "^5.4.1",
+          "scope": "devDependencies"
+        }
+      ],
       "dependency_count": 3,
+      "dependent_count": 3,
+      "dependents": [
+        {
+          "completeness": "catalog-observed",
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "name": "@swarmakit/svelte",
+          "package_key": "npm:@swarmakit/svelte",
+          "requirement": "^5.1.3",
+          "scope": "devDependencies"
+        },
+        {
+          "completeness": "catalog-observed",
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "name": "@swarmakit/sveltekit",
+          "package_key": "npm:@swarmakit/sveltekit",
+          "requirement": "^4.2.7",
+          "scope": "devDependencies"
+        },
+        {
+          "completeness": "catalog-observed",
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "name": "svelte",
+          "package_key": "npm:svelte",
+          "requirement": "^4.2.18",
+          "scope": "devDependencies"
+        }
+      ],
       "description": "Observed npm package record for svelte.",
       "description_source": "generated-factual",
       "display_name": "svelte",
@@ -14,7 +73,7 @@
       "evidence": [
         {
           "kind": "source",
-          "observed_at": "2026-08-03T10:05:58Z",
+          "observed_at": "2026-08-03T13:56:23Z",
           "url": "https://github.com/swarmauri/swarmauri-flipcard/blob/HEAD/svelte/package.json"
         }
       ],
@@ -23,7 +82,7 @@
       "latest_version": "0.0.0",
       "manifest_path": "svelte/package.json",
       "name": "svelte",
-      "observed_at": "2026-08-03T10:05:58Z",
+      "observed_at": "2026-08-03T13:56:23Z",
       "owner": "swarmauri",
       "private": true,
       "publication_status": "manifest_private",
@@ -36,6 +95,7 @@
         "repository_contains_package": 1
       },
       "release_count": 0,
+      "releases": [],
       "repository": "swarmauri/swarmauri-flipcard",
       "reviewed": false,
       "route": "/catalog/packages/npm/svelte-b9c27ccb",
@@ -54,12 +114,13 @@
     "evidence": [
       {
         "kind": "source",
-        "observed_at": "2026-08-03T10:05:58Z",
+        "observed_at": "2026-08-03T13:56:25Z",
         "url": "https://github.com/swarmauri/swarmauri-flipcard"
       }
     ],
     "fork": false,
     "full_name": "swarmauri/swarmauri-flipcard",
+    "github_releases": [],
     "homepage": null,
     "id": "repository:swarmauri/swarmauri-flipcard",
     "kind": "repository",
@@ -91,7 +152,7 @@
       "watchers": 0
     },
     "name": "swarmauri-flipcard",
-    "observed_at": "2026-08-03T10:05:58Z",
+    "observed_at": "2026-08-03T13:56:25Z",
     "owner": "swarmauri",
     "package_ids": [
       "package:npm:svelte:swarmauri/swarmauri-flipcard:svelte/package.json"

@@ -1,9 +1,12 @@
 {
-  "generated_at": "2026-08-03T10:05:58Z",
+  "generated_at": "2026-08-03T13:56:23Z",
   "packages": [
     {
       "claim_boundary": "Publication is reported only when confirmed by the named public registry.",
+      "dependencies": [],
       "dependency_count": 0,
+      "dependent_count": 0,
+      "dependents": [],
       "description": "Observed npm package record for docs-tigrcorn-com.",
       "description_source": "generated-factual",
       "display_name": "docs-tigrcorn-com",
@@ -14,7 +17,7 @@
       "evidence": [
         {
           "kind": "source",
-          "observed_at": "2026-08-03T10:05:58Z",
+          "observed_at": "2026-08-03T13:56:23Z",
           "url": "https://github.com/tigrbl/docs-tigrcorn-com/blob/HEAD/package.json"
         }
       ],
@@ -23,7 +26,7 @@
       "latest_version": "0.1.0",
       "manifest_path": "package.json",
       "name": "docs-tigrcorn-com",
-      "observed_at": "2026-08-03T10:05:58Z",
+      "observed_at": "2026-08-03T13:56:23Z",
       "owner": "tigrbl",
       "private": true,
       "publication_status": "manifest_private",
@@ -34,6 +37,7 @@
         "repository_contains_package": 1
       },
       "release_count": 0,
+      "releases": [],
       "repository": "tigrbl/docs-tigrcorn-com",
       "reviewed": false,
       "route": "/catalog/packages/npm/docs-tigrcorn-com-f523de38",
@@ -42,7 +46,110 @@
     },
     {
       "claim_boundary": "Publication is reported only when confirmed by the named public registry.",
+      "dependencies": [
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": true,
+          "name": "zdx",
+          "package_key": "pypi:zdx",
+          "requirement": ">=0.2.3",
+          "scope": "dependency-groups.dev"
+        },
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "mkdocs",
+          "package_key": "pypi:mkdocs",
+          "requirement": ">=1.6.0",
+          "scope": "dependency-groups.dev"
+        },
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "mkdocs-material",
+          "package_key": "pypi:mkdocs-material",
+          "requirement": ">=9.6.4,<10.0.0",
+          "scope": "dependency-groups.dev"
+        },
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "mkdocstrings",
+          "package_key": "pypi:mkdocstrings",
+          "requirement": "[python]>=0.28.1,<0.29.0",
+          "scope": "dependency-groups.dev"
+        },
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "mkdocs-gen-files",
+          "package_key": "pypi:mkdocs-gen-files",
+          "requirement": ">=0.5.0",
+          "scope": "dependency-groups.dev"
+        },
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "mkdocs-literate-nav",
+          "package_key": "pypi:mkdocs-literate-nav",
+          "requirement": ">=0.6.0",
+          "scope": "dependency-groups.dev"
+        },
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "mkdocs-autorefs",
+          "package_key": "pypi:mkdocs-autorefs",
+          "requirement": ">=1.4.0",
+          "scope": "dependency-groups.dev"
+        },
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "griffe-typingdoc",
+          "package_key": "pypi:griffe-typingdoc",
+          "requirement": ">=0.2.8",
+          "scope": "dependency-groups.dev"
+        },
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": true,
+          "name": "npmctl",
+          "package_key": "pypi:npmctl",
+          "requirement": ">=0.3.10",
+          "scope": "dependency-groups.dev"
+        },
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": true,
+          "name": "npmctl-namecheap",
+          "package_key": "pypi:npmctl-namecheap",
+          "requirement": ">=0.3.10",
+          "scope": "dependency-groups.dev"
+        },
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": true,
+          "name": "ssot-registry",
+          "package_key": "pypi:ssot-registry",
+          "requirement": ">=0.2.18",
+          "scope": "dependency-groups.dev"
+        }
+      ],
       "dependency_count": 11,
+      "dependent_count": 0,
+      "dependents": [],
       "description": "Observed pypi package record for docs-tigrcorn-com.",
       "description_source": "generated-factual",
       "display_name": "docs-tigrcorn-com",
@@ -53,7 +160,7 @@
       "evidence": [
         {
           "kind": "source",
-          "observed_at": "2026-08-03T10:05:58Z",
+          "observed_at": "2026-08-03T13:56:23Z",
           "url": "https://github.com/tigrbl/docs-tigrcorn-com/blob/HEAD/pyproject.toml"
         }
       ],
@@ -62,10 +169,10 @@
       "latest_version": "0.1.0",
       "manifest_path": "pyproject.toml",
       "name": "docs-tigrcorn-com",
-      "observed_at": "2026-08-03T10:05:58Z",
+      "observed_at": "2026-08-03T13:56:23Z",
       "owner": "tigrbl",
       "private": false,
-      "publication_status": "not-confirmed",
+      "publication_status": "registry_not_found",
       "published": false,
       "registry_url": null,
       "relationship_count": 12,
@@ -75,6 +182,7 @@
         "repository_contains_package": 1
       },
       "release_count": 0,
+      "releases": [],
       "repository": "tigrbl/docs-tigrcorn-com",
       "reviewed": false,
       "route": "/catalog/packages/pypi/docs-tigrcorn-com-4dd54142",
@@ -93,12 +201,13 @@
     "evidence": [
       {
         "kind": "source",
-        "observed_at": "2026-08-03T10:05:58Z",
+        "observed_at": "2026-08-03T13:56:24Z",
         "url": "https://github.com/tigrbl/docs-tigrcorn-com"
       }
     ],
     "fork": false,
     "full_name": "tigrbl/docs-tigrcorn-com",
+    "github_releases": [],
     "homepage": null,
     "id": "repository:tigrbl/docs-tigrcorn-com",
     "kind": "repository",
@@ -130,7 +239,7 @@
       "watchers": 0
     },
     "name": "docs-tigrcorn-com",
-    "observed_at": "2026-08-03T10:05:58Z",
+    "observed_at": "2026-08-03T13:56:24Z",
     "owner": "tigrbl",
     "package_ids": [
       "package:npm:docs-tigrcorn-com:tigrbl/docs-tigrcorn-com:package.json",
@@ -139,7 +248,7 @@
     "pushed_at": "2026-07-13T22:29:03Z",
     "related_resources": [
       {
-        "evidence_type": "repository.tree",
+        "evidence_type": "repository.blob",
         "id": "resource:1e093bd21bbf",
         "kind": "documentation",
         "name": "docs/getting-started.md",
@@ -153,7 +262,7 @@
         "url": "https://github.com/tigrbl/docs-tigrcorn-com/tree/master/docs/guides"
       },
       {
-        "evidence_type": "repository.tree",
+        "evidence_type": "repository.blob",
         "id": "resource:f7fc888ad5b2",
         "kind": "documentation",
         "name": "docs/index.md",

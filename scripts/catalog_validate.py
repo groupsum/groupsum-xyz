@@ -69,10 +69,11 @@ def validate(catalog: dict[str, Any], max_age_hours: int = 48) -> list[str]:
         if package.get("published") is True and not package.get("registry_url") and package["ecosystem"] not in {"ghcr", "github-npm"}:
             errors.append(f"published package lacks registry URL: {identity}")
 
-    relation_ids: set[tuple[str, str, str]] = set()
+    relation_ids: set[tuple[str, str, str, str]] = set()
     for relation in catalog["relationships"]:
-        identity = (relation.get("kind", ""), relation.get("source", ""), relation.get("target", ""))
-        if not all(identity):
+        required_identity = (relation.get("kind", ""), relation.get("source", ""), relation.get("target", ""))
+        identity = (*required_identity, relation.get("scope", ""))
+        if not all(required_identity):
             errors.append("relationship missing kind, source, or target")
         if identity in relation_ids:
             errors.append(f"duplicate relationship: {identity}")

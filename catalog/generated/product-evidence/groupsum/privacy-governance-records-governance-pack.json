@@ -1,9 +1,58 @@
 {
-  "generated_at": "2026-08-03T10:05:58Z",
+  "generated_at": "2026-08-03T13:56:23Z",
   "packages": [
     {
       "claim_boundary": "Publication is reported only when confirmed by the named public registry.",
+      "dependencies": [
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": true,
+          "name": "ssot-pack-contracts",
+          "package_key": "pypi:ssot-pack-contracts",
+          "requirement": ">=0.2.17,<0.3.0",
+          "scope": "dependencies"
+        },
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "tomli",
+          "package_key": "pypi:tomli",
+          "requirement": ">=2.0.1; python_version < '3.11'",
+          "scope": "dependencies"
+        },
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "setuptools",
+          "package_key": "pypi:setuptools",
+          "requirement": ">=69",
+          "scope": "build-system.requires"
+        },
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "wheel",
+          "package_key": "pypi:wheel",
+          "requirement": "*",
+          "scope": "build-system.requires"
+        },
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "pytest",
+          "package_key": "pypi:pytest",
+          "requirement": ">=8.0",
+          "scope": "dependency-groups.dev"
+        }
+      ],
       "dependency_count": 5,
+      "dependent_count": 0,
+      "dependents": [],
       "description": "Observed pypi package record for privacy-governance-records-governance-pack.",
       "description_source": "generated-factual",
       "display_name": "privacy-governance-records-governance-pack",
@@ -14,7 +63,7 @@
       "evidence": [
         {
           "kind": "registry",
-          "observed_at": "2026-08-03T10:05:58Z",
+          "observed_at": "2026-08-03T13:56:23Z",
           "url": "https://pypi.org/project/privacy-governance-records-governance-pack/"
         }
       ],
@@ -23,7 +72,7 @@
       "latest_version": "0.1.1.dev1",
       "manifest_path": "pyproject.toml",
       "name": "privacy-governance-records-governance-pack",
-      "observed_at": "2026-08-03T10:05:58Z",
+      "observed_at": "2026-08-03T13:56:23Z",
       "owner": "groupsum",
       "private": false,
       "publication_status": "published",
@@ -36,6 +85,16 @@
         "repository_contains_package": 1
       },
       "release_count": 1,
+      "releases": [
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2026-05-18T09:25:00.527092Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/privacy-governance-records-governance-pack/0.1.1.dev1/",
+          "version": "0.1.1.dev1"
+        }
+      ],
       "repository": "groupsum/privacy-governance-records-governance-pack",
       "reviewed": false,
       "route": "/catalog/packages/pypi/privacy-governance-records-governance-pack-4eecda97",
@@ -54,12 +113,24 @@
     "evidence": [
       {
         "kind": "source",
-        "observed_at": "2026-08-03T10:05:58Z",
+        "observed_at": "2026-08-03T13:56:24Z",
         "url": "https://github.com/groupsum/privacy-governance-records-governance-pack"
       }
     ],
     "fork": false,
     "full_name": "groupsum/privacy-governance-records-governance-pack",
+    "github_releases": [
+      {
+        "downloads": 0,
+        "draft": false,
+        "observed_at": "2026-08-03T13:56:24Z",
+        "prerelease": false,
+        "published_at": "2026-05-18T09:24:53Z",
+        "release_kind": "github",
+        "url": "https://github.com/groupsum/privacy-governance-records-governance-pack/releases/tag/v0.1.1.dev1",
+        "version": "v0.1.1.dev1"
+      }
+    ],
     "homepage": null,
     "id": "repository:groupsum/privacy-governance-records-governance-pack",
     "kind": "repository",
@@ -116,7 +187,7 @@
       "watchers": 0
     },
     "name": "privacy-governance-records-governance-pack",
-    "observed_at": "2026-08-03T10:05:58Z",
+    "observed_at": "2026-08-03T13:56:24Z",
     "owner": "groupsum",
     "package_ids": [
       "package:pypi:privacy-governance-records-governance-pack:groupsum/privacy-governance-records-governance-pack:pyproject.toml"

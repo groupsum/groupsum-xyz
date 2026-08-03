@@ -1,9 +1,58 @@
 {
-  "generated_at": "2026-08-03T10:05:58Z",
+  "generated_at": "2026-08-03T13:56:23Z",
   "packages": [
     {
       "claim_boundary": "Publication is reported only when confirmed by the named public registry.",
+      "dependencies": [
+        {
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "@gradio/atoms",
+          "package_key": "npm:@gradio/atoms",
+          "requirement": "0.8.0",
+          "scope": "dependencies"
+        },
+        {
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "@gradio/icons",
+          "package_key": "npm:@gradio/icons",
+          "requirement": "0.7.1",
+          "scope": "dependencies"
+        },
+        {
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "@gradio/statustracker",
+          "package_key": "npm:@gradio/statustracker",
+          "requirement": "0.7.5",
+          "scope": "dependencies"
+        },
+        {
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "@gradio/utils",
+          "package_key": "npm:@gradio/utils",
+          "requirement": "0.6.0",
+          "scope": "dependencies"
+        },
+        {
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "@gradio/preview",
+          "package_key": "npm:@gradio/preview",
+          "requirement": "0.11.0",
+          "scope": "devDependencies"
+        }
+      ],
       "dependency_count": 5,
+      "dependent_count": 0,
+      "dependents": [],
       "description": "Observed npm package record for gradio_mycomponent.",
       "description_source": "generated-factual",
       "display_name": "gradio_mycomponent",
@@ -14,7 +63,7 @@
       "evidence": [
         {
           "kind": "source",
-          "observed_at": "2026-08-03T10:05:58Z",
+          "observed_at": "2026-08-03T13:56:23Z",
           "url": "https://github.com/swarmauri/swarmauri-piechart/blob/HEAD/mycomponent/frontend/package.json"
         }
       ],
@@ -23,10 +72,10 @@
       "latest_version": "0.2.12",
       "manifest_path": "mycomponent/frontend/package.json",
       "name": "gradio_mycomponent",
-      "observed_at": "2026-08-03T10:05:58Z",
+      "observed_at": "2026-08-03T13:56:23Z",
       "owner": "swarmauri",
       "private": false,
-      "publication_status": "not-confirmed",
+      "publication_status": "registry_not_found",
       "published": false,
       "registry_url": null,
       "relationship_count": 6,
@@ -35,6 +84,7 @@
         "repository_contains_package": 1
       },
       "release_count": 0,
+      "releases": [],
       "repository": "swarmauri/swarmauri-piechart",
       "reviewed": false,
       "route": "/catalog/packages/npm/gradio-mycomponent-a1c0d108",
@@ -43,7 +93,65 @@
     },
     {
       "claim_boundary": "Publication is reported only when confirmed by the named public registry.",
+      "dependencies": [
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "gradio",
+          "package_key": "pypi:gradio",
+          "requirement": ">=4.0,<5.0",
+          "scope": "dependencies"
+        },
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "build",
+          "package_key": "pypi:build",
+          "requirement": "*",
+          "scope": "optional-dependencies.dev"
+        },
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "twine",
+          "package_key": "pypi:twine",
+          "requirement": "*",
+          "scope": "optional-dependencies.dev"
+        },
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "hatchling",
+          "package_key": "pypi:hatchling",
+          "requirement": "*",
+          "scope": "build-system.requires"
+        },
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "hatch-requirements-txt",
+          "package_key": "pypi:hatch-requirements-txt",
+          "requirement": "*",
+          "scope": "build-system.requires"
+        },
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "hatch-fancy-pypi-readme",
+          "package_key": "pypi:hatch-fancy-pypi-readme",
+          "requirement": ">=22.5.0",
+          "scope": "build-system.requires"
+        }
+      ],
       "dependency_count": 6,
+      "dependent_count": 0,
+      "dependents": [],
       "description": "Observed pypi package record for gradio_mycomponent.",
       "description_source": "generated-factual",
       "display_name": "gradio_mycomponent",
@@ -54,7 +162,7 @@
       "evidence": [
         {
           "kind": "registry",
-          "observed_at": "2026-08-03T10:05:58Z",
+          "observed_at": "2026-08-03T13:56:23Z",
           "url": "https://pypi.org/project/gradio_mycomponent/"
         }
       ],
@@ -63,7 +171,7 @@
       "latest_version": "0.0.1",
       "manifest_path": "mycomponent/pyproject.toml",
       "name": "gradio_mycomponent",
-      "observed_at": "2026-08-03T10:05:58Z",
+      "observed_at": "2026-08-03T13:56:23Z",
       "owner": "swarmauri",
       "private": false,
       "publication_status": "published",
@@ -75,6 +183,16 @@
         "repository_contains_package": 1
       },
       "release_count": 1,
+      "releases": [
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2024-05-09T14:13:16.542756Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/gradio_mycomponent/0.0.1/",
+          "version": "0.0.1"
+        }
+      ],
       "repository": "swarmauri/swarmauri-piechart",
       "reviewed": false,
       "route": "/catalog/packages/pypi/gradio-mycomponent-6ec563b6",
@@ -93,12 +211,13 @@
     "evidence": [
       {
         "kind": "source",
-        "observed_at": "2026-08-03T10:05:58Z",
+        "observed_at": "2026-08-03T13:56:25Z",
         "url": "https://github.com/swarmauri/swarmauri-piechart"
       }
     ],
     "fork": false,
     "full_name": "swarmauri/swarmauri-piechart",
+    "github_releases": [],
     "homepage": null,
     "id": "repository:swarmauri/swarmauri-piechart",
     "kind": "repository",
@@ -130,7 +249,7 @@
       "watchers": 0
     },
     "name": "swarmauri-piechart",
-    "observed_at": "2026-08-03T10:05:58Z",
+    "observed_at": "2026-08-03T13:56:25Z",
     "owner": "swarmauri",
     "package_ids": [
       "package:npm:gradio_mycomponent:swarmauri/swarmauri-piechart:mycomponent/frontend/package.json",
@@ -139,21 +258,21 @@
     "pushed_at": "2024-09-04T08:20:30Z",
     "related_resources": [
       {
-        "evidence_type": "repository.tree",
+        "evidence_type": "repository.blob",
         "id": "resource:0573842bb9b3",
         "kind": "demo",
         "name": "mycomponent/demo/__init__.py",
         "url": "https://github.com/swarmauri/swarmauri-piechart/blob/master/mycomponent/demo/__init__.py"
       },
       {
-        "evidence_type": "repository.tree",
+        "evidence_type": "repository.blob",
         "id": "resource:5ebc117351e9",
         "kind": "demo",
         "name": "mycomponent/demo/app.py",
         "url": "https://github.com/swarmauri/swarmauri-piechart/blob/master/mycomponent/demo/app.py"
       },
       {
-        "evidence_type": "repository.tree",
+        "evidence_type": "repository.blob",
         "id": "resource:20a1e422215c",
         "kind": "demo",
         "name": "mycomponent/demo/requirements.txt",

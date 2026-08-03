@@ -1,9 +1,121 @@
 {
-  "generated_at": "2026-08-03T10:05:58Z",
+  "generated_at": "2026-08-03T13:56:23Z",
   "packages": [
     {
       "claim_boundary": "Publication is reported only when confirmed by the named public registry.",
+      "dependencies": [
+        {
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "lucide-react",
+          "package_key": "npm:lucide-react",
+          "requirement": "^0.468.0",
+          "scope": "dependencies"
+        },
+        {
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "react",
+          "package_key": "npm:react",
+          "requirement": "^19.1.0",
+          "scope": "dependencies"
+        },
+        {
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "react-dom",
+          "package_key": "npm:react-dom",
+          "requirement": "^19.1.0",
+          "scope": "dependencies"
+        },
+        {
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "@axe-core/playwright",
+          "package_key": "npm:@axe-core/playwright",
+          "requirement": "^4.12.1",
+          "scope": "devDependencies"
+        },
+        {
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "@tailwindcss/vite",
+          "package_key": "npm:@tailwindcss/vite",
+          "requirement": "^4.1.0",
+          "scope": "devDependencies"
+        },
+        {
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "@types/react",
+          "package_key": "npm:@types/react",
+          "requirement": "^19.1.0",
+          "scope": "devDependencies"
+        },
+        {
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "@types/react-dom",
+          "package_key": "npm:@types/react-dom",
+          "requirement": "^19.1.0",
+          "scope": "devDependencies"
+        },
+        {
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "@vitejs/plugin-react",
+          "package_key": "npm:@vitejs/plugin-react",
+          "requirement": "^4.4.0",
+          "scope": "devDependencies"
+        },
+        {
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "playwright",
+          "package_key": "npm:playwright",
+          "requirement": "^1.61.1",
+          "scope": "devDependencies"
+        },
+        {
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "tailwindcss",
+          "package_key": "npm:tailwindcss",
+          "requirement": "^4.1.0",
+          "scope": "devDependencies"
+        },
+        {
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "typescript",
+          "package_key": "npm:typescript",
+          "requirement": "~5.8.2",
+          "scope": "devDependencies"
+        },
+        {
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "vite",
+          "package_key": "npm:vite",
+          "requirement": "^6.2.0",
+          "scope": "devDependencies"
+        }
+      ],
       "dependency_count": 12,
+      "dependent_count": 0,
+      "dependents": [],
       "description": "Observed npm package record for portwyrm-uix.",
       "description_source": "generated-factual",
       "display_name": "portwyrm-uix",
@@ -14,7 +126,7 @@
       "evidence": [
         {
           "kind": "source",
-          "observed_at": "2026-08-03T10:05:58Z",
+          "observed_at": "2026-08-03T13:56:23Z",
           "url": "https://github.com/groupsum/portwyrm/blob/HEAD/frontend/package.json"
         }
       ],
@@ -23,7 +135,7 @@
       "latest_version": "0.1.0",
       "manifest_path": "frontend/package.json",
       "name": "portwyrm-uix",
-      "observed_at": "2026-08-03T10:05:58Z",
+      "observed_at": "2026-08-03T13:56:23Z",
       "owner": "groupsum",
       "private": true,
       "publication_status": "manifest_private",
@@ -35,6 +147,7 @@
         "repository_contains_package": 1
       },
       "release_count": 0,
+      "releases": [],
       "repository": "groupsum/portwyrm",
       "reviewed": false,
       "route": "/catalog/packages/npm/portwyrm-uix-c303fb0f",
@@ -43,7 +156,146 @@
     },
     {
       "claim_boundary": "Publication is reported only when confirmed by the named public registry.",
+      "dependencies": [
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "argon2-cffi",
+          "package_key": "pypi:argon2-cffi",
+          "requirement": ">=25.1,<26",
+          "scope": "dependencies"
+        },
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "bcrypt",
+          "package_key": "pypi:bcrypt",
+          "requirement": ">=4,<6",
+          "scope": "dependencies"
+        },
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "cryptography",
+          "package_key": "pypi:cryptography",
+          "requirement": ">=48.0.1,<49",
+          "scope": "dependencies"
+        },
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "psycopg",
+          "package_key": "pypi:psycopg",
+          "requirement": "[binary]>=3.2,<4",
+          "scope": "dependencies"
+        },
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "pyjwt",
+          "package_key": "pypi:pyjwt",
+          "requirement": "[crypto]>=2.10,<3",
+          "scope": "dependencies"
+        },
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "pyotp",
+          "package_key": "pypi:pyotp",
+          "requirement": ">=2.9,<3",
+          "scope": "dependencies"
+        },
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "sqlalchemy",
+          "package_key": "pypi:sqlalchemy",
+          "requirement": ">=2.0.51,<3",
+          "scope": "dependencies"
+        },
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": true,
+          "name": "tigrbl",
+          "package_key": "pypi:tigrbl",
+          "requirement": "[postgres]>=0.4.4,<0.5",
+          "scope": "dependencies"
+        },
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "uvicorn",
+          "package_key": "pypi:uvicorn",
+          "requirement": ">=0.35,<1",
+          "scope": "dependencies"
+        },
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "setuptools",
+          "package_key": "pypi:setuptools",
+          "requirement": ">=80",
+          "scope": "build-system.requires"
+        },
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "httpx",
+          "package_key": "pypi:httpx",
+          "requirement": ">=0.28,<1",
+          "scope": "dependency-groups.dev"
+        },
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "pytest",
+          "package_key": "pypi:pytest",
+          "requirement": ">=8.4,<9",
+          "scope": "dependency-groups.dev"
+        },
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "ruff",
+          "package_key": "pypi:ruff",
+          "requirement": ">=0.12,<1",
+          "scope": "dependency-groups.dev"
+        },
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": true,
+          "name": "ssot-registry",
+          "package_key": "pypi:ssot-registry",
+          "requirement": ">=0.2.26,<0.3",
+          "scope": "dependency-groups.dev"
+        },
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "websockets",
+          "package_key": "pypi:websockets",
+          "requirement": ">=15,<16",
+          "scope": "dependency-groups.dev"
+        }
+      ],
       "dependency_count": 15,
+      "dependent_count": 0,
+      "dependents": [],
       "description": "Observed pypi package record for portwyrm.",
       "description_source": "generated-factual",
       "display_name": "portwyrm",
@@ -54,7 +306,7 @@
       "evidence": [
         {
           "kind": "registry",
-          "observed_at": "2026-08-03T10:05:58Z",
+          "observed_at": "2026-08-03T13:56:23Z",
           "url": "https://pypi.org/project/portwyrm/"
         }
       ],
@@ -63,7 +315,7 @@
       "latest_version": "0.1.0a4",
       "manifest_path": "pyproject.toml",
       "name": "portwyrm",
-      "observed_at": "2026-08-03T10:05:58Z",
+      "observed_at": "2026-08-03T13:56:23Z",
       "owner": "groupsum",
       "private": false,
       "publication_status": "published",
@@ -76,6 +328,32 @@
         "repository_contains_package": 1
       },
       "release_count": 3,
+      "releases": [
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2026-07-25T15:00:22.572323Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/portwyrm/0.1.0a4/",
+          "version": "0.1.0a4"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2026-07-25T14:43:28.105314Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/portwyrm/0.1.0a3/",
+          "version": "0.1.0a3"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2026-07-24T04:54:38.472671Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/portwyrm/0.1.0a1/",
+          "version": "0.1.0a1"
+        }
+      ],
       "repository": "groupsum/portwyrm",
       "reviewed": false,
       "route": "/catalog/packages/pypi/portwyrm-3f693826",
@@ -94,12 +372,34 @@
     "evidence": [
       {
         "kind": "source",
-        "observed_at": "2026-08-03T10:05:58Z",
+        "observed_at": "2026-08-03T13:56:24Z",
         "url": "https://github.com/groupsum/portwyrm"
       }
     ],
     "fork": false,
     "full_name": "groupsum/portwyrm",
+    "github_releases": [
+      {
+        "downloads": 0,
+        "draft": false,
+        "observed_at": "2026-08-03T13:56:24Z",
+        "prerelease": false,
+        "published_at": "2026-07-25T14:43:39Z",
+        "release_kind": "github",
+        "url": "https://github.com/groupsum/portwyrm/releases/tag/v0.1.0-a3",
+        "version": "v0.1.0-a3"
+      },
+      {
+        "downloads": 0,
+        "draft": false,
+        "observed_at": "2026-08-03T13:56:24Z",
+        "prerelease": true,
+        "published_at": "2026-07-25T15:00:38Z",
+        "release_kind": "github",
+        "url": "https://github.com/groupsum/portwyrm/releases/tag/v0.1.0-a4",
+        "version": "v0.1.0-a4"
+      }
+    ],
     "homepage": null,
     "id": "repository:groupsum/portwyrm",
     "kind": "repository",
@@ -156,7 +456,7 @@
       "watchers": 0
     },
     "name": "portwyrm",
-    "observed_at": "2026-08-03T10:05:58Z",
+    "observed_at": "2026-08-03T13:56:24Z",
     "owner": "groupsum",
     "package_ids": [
       "package:npm:portwyrm-uix:groupsum/portwyrm:frontend/package.json",
@@ -165,14 +465,14 @@
     "pushed_at": "2026-07-25T14:58:56Z",
     "related_resources": [
       {
-        "evidence_type": "repository.tree",
+        "evidence_type": "repository.blob",
         "id": "resource:99614c6dc294",
         "kind": "api",
         "name": "src/portwyrm/api/__init__.py",
         "url": "https://github.com/groupsum/portwyrm/blob/master/src/portwyrm/api/__init__.py"
       },
       {
-        "evidence_type": "repository.tree",
+        "evidence_type": "repository.blob",
         "id": "resource:c8496545ed5c",
         "kind": "api",
         "name": "src/portwyrm/api/app.py",
@@ -186,14 +486,14 @@
         "url": "https://github.com/groupsum/portwyrm/tree/master/src/portwyrm/api/compat"
       },
       {
-        "evidence_type": "repository.tree",
+        "evidence_type": "repository.blob",
         "id": "resource:6b06aaed3059",
         "kind": "api",
         "name": "src/portwyrm/api/mfa.py",
         "url": "https://github.com/groupsum/portwyrm/blob/master/src/portwyrm/api/mfa.py"
       },
       {
-        "evidence_type": "repository.tree",
+        "evidence_type": "repository.blob",
         "id": "resource:558554dc8ad5",
         "kind": "api",
         "name": "src/portwyrm/api/middleware.py",
@@ -207,14 +507,14 @@
         "url": "https://github.com/groupsum/portwyrm/tree/master/src/portwyrm/api/native"
       },
       {
-        "evidence_type": "repository.tree",
+        "evidence_type": "repository.blob",
         "id": "resource:3ad412361d5f",
         "kind": "api",
         "name": "src/portwyrm/api/portability.py",
         "url": "https://github.com/groupsum/portwyrm/blob/master/src/portwyrm/api/portability.py"
       },
       {
-        "evidence_type": "repository.tree",
+        "evidence_type": "repository.blob",
         "id": "resource:4c59597a70d3",
         "kind": "api",
         "name": "src/portwyrm/api/security.py",

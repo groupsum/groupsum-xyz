@@ -68,6 +68,59 @@ def evidence(kind: str, url: str | None, checked_at: str) -> list[dict[str, str]
     return [{"kind": kind, "url": url, "observed_at": checked_at}]
 
 
+def canonical_package_name(value: str) -> str:
+    return value.casefold().replace("_", "-")
+
+
+def package_key(ecosystem: str, name: str) -> str:
+    return f"{ecosystem}:{canonical_package_name(name)}"
+
+
+def release_url(ecosystem: str, name: str, version: str, fallback: str | None) -> str:
+    if ecosystem == "pypi":
+        return f"https://pypi.org/project/{name}/{version}/"
+    if ecosystem == "npm":
+        return f"https://www.npmjs.com/package/{name}/v/{version}"
+    if ecosystem == "crates":
+        return f"https://crates.io/crates/{name}/{version}"
+    return fallback or "https://github.com"
+
+
+def normalized_releases(package: dict[str, Any], observed: str) -> list[dict[str, Any]]:
+    ecosystem = str(package.get("ecosystem") or "unknown")
+    name = str(package.get("name") or "unnamed")
+    raw_releases = package.get("releases") or package.get("versions") or []
+    releases: list[dict[str, Any]] = []
+    for raw in raw_releases:
+        if isinstance(raw, str):
+            version = raw
+            published_at = None
+            downloads = None
+            url = release_url(ecosystem, name, version, package.get("registry_url") or package.get("url"))
+        else:
+            version = str(raw.get("version") or raw.get("name") or raw.get("id") or "unknown")
+            published_at = raw.get("published_at") or raw.get("created_at") or raw.get("updated_at")
+            downloads = raw.get("downloads")
+            url = raw.get("url") or release_url(
+                ecosystem, name, version, package.get("registry_url") or package.get("url")
+            )
+        releases.append(
+            {
+                "release_kind": ecosystem,
+                "version": version,
+                "url": url,
+                "published_at": published_at,
+                "downloads": downloads,
+                "observed_at": observed,
+            }
+        )
+    return sorted(
+        releases,
+        key=lambda item: (str(item.get("published_at") or ""), item["version"]),
+        reverse=True,
+    )
+
+
 def compile_catalog(catalog: dict[str, Any], editorial: dict[str, Any]) -> dict[str, list[dict[str, Any]]]:
     generated_at = catalog["generated_at"]
     overrides = editorial.get("entities", {})
@@ -82,6 +135,46 @@ def compile_catalog(catalog: dict[str, Any], editorial: dict[str, Any]) -> dict[
         for identity in {str(relationship.get("source") or ""), str(relationship.get("target") or "")} - {""}:
             relationship_counts[identity][kind] += 1
 
+    known_package_keys = {
+        package_key(str(package.get("ecosystem") or "unknown"), str(package.get("name") or ""))
+        for package in catalog.get("packages", [])
+        if package.get("name")
+    }
+    dependents_by_key: dict[str, list[dict[str, Any]]] = defaultdict(list)
+    for package in catalog.get("packages", []):
+        ecosystem = str(package.get("ecosystem") or "unknown")
+        source_name = str(package.get("name") or "unnamed")
+        source_key = package_key(ecosystem, source_name)
+        for dependency in package.get("dependencies") or []:
+            target_name = str(dependency.get("name") or "unknown")
+            target_key = package_key(ecosystem, target_name)
+            if target_key not in known_package_keys:
+                continue
+            dependents_by_key[target_key].append(
+                {
+                    "name": source_name,
+                    "ecosystem": ecosystem,
+                    "package_key": source_key,
+                    "requirement": dependency.get("requirement"),
+                    "scope": dependency.get("scope"),
+                    "evidence": "repository.manifest",
+                    "completeness": "catalog-observed",
+                }
+            )
+        for downstream in package.get("downstream") or []:
+            dependents_by_key[source_key].append(
+                {
+                    "name": str(downstream),
+                    "ecosystem": ecosystem,
+                    "package_key": package_key(ecosystem, str(downstream)),
+                    "requirement": None,
+                    "scope": "registry-dependent",
+                    "evidence": f"{ecosystem}.reverse_dependencies",
+                    "completeness": package.get("downstream_completeness")
+                    or "bounded-registry-observation",
+                }
+            )
+
     for package in catalog.get("packages", []):
         ecosystem = str(package.get("ecosystem") or "unknown")
         name = str(package.get("name") or "unnamed")
@@ -93,6 +186,31 @@ def compile_catalog(catalog: dict[str, Any], editorial: dict[str, Any]) -> dict[
         override = overrides.get(package_id, {})
         registry_url = package.get("registry_url") or package.get("url")
         source_url = f"https://github.com/{repository}/blob/HEAD/{package.get('manifest_path')}" if repository and package.get("manifest_path") else None
+        release_records = normalized_releases(package, checked_at)
+        dependencies = [
+            {
+                "name": str(item.get("name") or "unknown"),
+                "ecosystem": ecosystem,
+                "package_key": package_key(ecosystem, str(item.get("name") or "unknown")),
+                "requirement": item.get("requirement"),
+                "scope": item.get("scope"),
+                "internal": package_key(ecosystem, str(item.get("name") or "unknown"))
+                in known_package_keys,
+                "evidence": "repository.manifest",
+            }
+            for item in package.get("dependencies") or []
+        ]
+        dependent_records = sorted(
+            {
+                (
+                    item["package_key"],
+                    str(item.get("scope") or ""),
+                    str(item.get("requirement") or ""),
+                ): item
+                for item in dependents_by_key.get(package_key(ecosystem, name), [])
+            }.values(),
+            key=lambda item: (item["ecosystem"], item["name"], str(item.get("scope") or "")),
+        )
         record = {
             "id": package_id,
             "kind": "package",
@@ -111,8 +229,12 @@ def compile_catalog(catalog: dict[str, Any], editorial: dict[str, Any]) -> dict[
             "publication_status": package.get("publication_status") or ("published" if package.get("published") else "not-confirmed"),
             "latest_version": package.get("latest_version") or package.get("version_declared"),
             "version_declared": package.get("version_declared"),
-            "release_count": len(package.get("releases") or package.get("versions") or []),
-            "dependency_count": len(package.get("dependencies") or []),
+            "release_count": len(release_records),
+            "releases": release_records,
+            "dependency_count": len(dependencies),
+            "dependencies": dependencies,
+            "dependent_count": len(dependent_records),
+            "dependents": dependent_records,
             "downstream_count": len(package.get("downstream") or []),
             "relationship_count": sum(relationship_counts[f"{ecosystem}:{name}"].values()),
             "relationship_counts": dict(sorted(relationship_counts[f"{ecosystem}:{name}"].items())),
@@ -193,6 +315,21 @@ def compile_catalog(catalog: dict[str, Any], editorial: dict[str, Any]) -> dict[
             "package_ids": sorted(packages_by_repo.get(full_name, [])),
             "latest_commit": activity.get("latest_commit"),
             "latest_release": latest_release,
+            "github_releases": [
+                {
+                    "release_kind": "github",
+                    "version": str(item.get("tag") or item.get("name") or "unknown"),
+                    "url": item.get("url") or repo.get("url"),
+                    "published_at": item.get("published_at"),
+                    "downloads": sum(
+                        int(asset.get("downloads") or 0) for asset in item.get("assets") or []
+                    ),
+                    "observed_at": checked_at,
+                    "prerelease": bool(item.get("prerelease")),
+                    "draft": bool(item.get("draft")),
+                }
+                for item in repo.get("github_releases") or []
+            ],
             "latest_deployment": {
                 "environment": (latest_deployment or {}).get("environment"),
                 "state": (latest_status or {}).get("state"),
@@ -328,7 +465,6 @@ def write_product_evidence(
         }
         write_json(directory / owner / f"{name}.json", bundle)
 
-    attachment_count = 0
     if attachments_path and attachments_path.exists():
         attachments = json.loads(attachments_path.read_text(encoding="utf-8"))
         for record_key, attachment in attachments.get("records", {}).items():
@@ -354,6 +490,7 @@ def write_product_evidence(
                     "fork": repository.get("fork", False),
                     "metrics": repository.get("metrics", {}),
                     "latest_release": repository.get("latest_release"),
+                    "github_releases": repository.get("github_releases", []),
                     "latest_deployment": repository.get("latest_deployment"),
                     "attachment_role": attachment.get("repository_roles", {}).get(
                         repository["full_name"], "implementation"
@@ -409,8 +546,7 @@ def write_product_evidence(
                     "packages": merged_packages,
                 },
             )
-            attachment_count += 1
-    return len(repositories) + attachment_count
+    return len(list(directory.glob("*/*.json")))
 
 
 def main() -> int:

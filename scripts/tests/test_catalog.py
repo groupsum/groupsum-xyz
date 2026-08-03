@@ -7,7 +7,13 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ROOT / "scripts"))
 
-from catalog_collect import discover_related_resources, filter_repositories, manifest_package, parse_next_link  # noqa: E402
+from catalog_collect import (  # noqa: E402
+    discover_related_resources,
+    filter_repositories,
+    manifest_package,
+    parse_next_link,
+    relation_rows,
+)
 from catalog_render import compile_catalog, related_resource_url  # noqa: E402
 from catalog_validate import validate  # noqa: E402
 
@@ -49,6 +55,20 @@ class CatalogCollectorTests(unittest.TestCase):
         filtered = filter_repositories(repositories, {"excluded_repository_names": [".github"]})
         self.assertEqual([item["full_name"] for item in filtered], ["groupsum/example-com"])
 
+    def test_dependency_scope_and_registry_dependents_are_preserved(self):
+        relations = relation_rows([], [{
+            "ecosystem": "crates",
+            "name": "example",
+            "repository": "groupsum/example",
+            "dependencies": [{"name": "serde", "requirement": "1", "scope": "dependencies"}],
+            "downstream": ["example-user"],
+            "downstream_completeness": "first_100_registry_reverse_dependencies",
+        }])
+        dependency = next(item for item in relations if item["kind"] == "package_depends_on_external")
+        dependent = next(item for item in relations if item["kind"] == "package_has_registry_dependent")
+        self.assertEqual(dependency["scope"], "dependencies")
+        self.assertEqual(dependent["target"], "crates:example-user")
+
     def test_related_resources_are_attached_to_the_repository(self):
         resources = discover_related_resources(
             self.repo,
@@ -82,6 +102,19 @@ class CatalogCollectorTests(unittest.TestCase):
         }
         self.assertEqual(validate(catalog), [])
 
+    def test_relationship_validation_distinguishes_dependency_scopes(self):
+        now = dt.datetime.now(dt.timezone.utc).replace(microsecond=0).isoformat().replace("+00:00", "Z")
+        catalog = {
+            "schema_version": "1.0.0", "generated_at": now,
+            "scope": {"owners": [], "owner_definitions": []}, "completeness": {},
+            "repositories": [], "packages": [], "observations": [],
+            "relationships": [
+                {"kind": "package_depends_on_external", "source": "npm:example", "target": "react", "scope": "dependencies", "evidence": [{"source_url": "https://example.test/package.json"}]},
+                {"kind": "package_depends_on_external", "source": "npm:example", "target": "react", "scope": "devDependencies", "evidence": [{"source_url": "https://example.test/package.json"}]},
+            ],
+        }
+        self.assertEqual(validate(catalog), [])
+
     def test_display_catalog_compilation(self):
         now = "2026-08-03T00:00:00Z"
         catalog = {
@@ -106,6 +139,8 @@ class CatalogCollectorTests(unittest.TestCase):
         self.assertIn("relationship_counts", datasets["repositories"][0])
         self.assertEqual(datasets["organizations"][0]["package_releases"], 1)
         self.assertTrue(datasets["packages"][0]["route"].startswith("/catalog/packages/pypi/example-"))
+        self.assertEqual(datasets["packages"][0]["releases"][0]["version"], "1.0.0")
+        self.assertEqual(datasets["packages"][0]["releases"][0]["release_kind"], "pypi")
         self.assertEqual(datasets["technologies"][0]["repository_count"], 1)
 
 

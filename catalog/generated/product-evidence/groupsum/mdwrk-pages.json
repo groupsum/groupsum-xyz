@@ -1,9 +1,130 @@
 {
-  "generated_at": "2026-08-03T10:05:58Z",
+  "generated_at": "2026-08-03T13:56:23Z",
   "packages": [
     {
       "claim_boundary": "Publication is reported only when confirmed by the named public registry.",
+      "dependencies": [
+        {
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "internal": true,
+          "name": "@mdwrk/lander-content-contract",
+          "package_key": "npm:@mdwrk/lander-content-contract",
+          "requirement": "^0.1.0",
+          "scope": "dependencies"
+        },
+        {
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "internal": true,
+          "name": "@mdwrk/lander-core",
+          "package_key": "npm:@mdwrk/lander-core",
+          "requirement": "^0.1.0",
+          "scope": "dependencies"
+        },
+        {
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "internal": true,
+          "name": "@mdwrk/lander-page-template-presets",
+          "package_key": "npm:@mdwrk/lander-page-template-presets",
+          "requirement": "^0.1.0",
+          "scope": "dependencies"
+        },
+        {
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "internal": true,
+          "name": "@mdwrk/lander-page-templates",
+          "package_key": "npm:@mdwrk/lander-page-templates",
+          "requirement": "^0.1.0",
+          "scope": "dependencies"
+        },
+        {
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "internal": true,
+          "name": "@mdwrk/lander-react",
+          "package_key": "npm:@mdwrk/lander-react",
+          "requirement": "^0.1.0",
+          "scope": "dependencies"
+        },
+        {
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "internal": true,
+          "name": "@mdwrk/lander-react-structured-data",
+          "package_key": "npm:@mdwrk/lander-react-structured-data",
+          "requirement": "^0.1.0",
+          "scope": "dependencies"
+        },
+        {
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "react",
+          "package_key": "npm:react",
+          "requirement": "^19.2.4",
+          "scope": "dependencies"
+        },
+        {
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "react-dom",
+          "package_key": "npm:react-dom",
+          "requirement": "^19.2.4",
+          "scope": "dependencies"
+        },
+        {
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "@types/react",
+          "package_key": "npm:@types/react",
+          "requirement": "^19.0.8",
+          "scope": "devDependencies"
+        },
+        {
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "@types/react-dom",
+          "package_key": "npm:@types/react-dom",
+          "requirement": "^19.0.3",
+          "scope": "devDependencies"
+        },
+        {
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "@vitejs/plugin-react",
+          "package_key": "npm:@vitejs/plugin-react",
+          "requirement": "^5.0.0",
+          "scope": "devDependencies"
+        },
+        {
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "typescript",
+          "package_key": "npm:typescript",
+          "requirement": "~5.8.2",
+          "scope": "devDependencies"
+        },
+        {
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "vite",
+          "package_key": "npm:vite",
+          "requirement": "^6.2.0",
+          "scope": "devDependencies"
+        }
+      ],
       "dependency_count": 13,
+      "dependent_count": 0,
+      "dependents": [],
       "description": "Observed npm package record for @mdwrk/example-learning-path-demo.",
       "description_source": "generated-factual",
       "display_name": "@mdwrk/example-learning-path-demo",
@@ -14,7 +135,7 @@
       "evidence": [
         {
           "kind": "source",
-          "observed_at": "2026-08-03T10:05:58Z",
+          "observed_at": "2026-08-03T13:56:23Z",
           "url": "https://github.com/groupsum/mdwrk-pages/blob/HEAD/packages/70-demos/learning-path-demo/package.json"
         }
       ],
@@ -23,7 +144,7 @@
       "latest_version": "0.1.0",
       "manifest_path": "packages/70-demos/learning-path-demo/package.json",
       "name": "@mdwrk/example-learning-path-demo",
-      "observed_at": "2026-08-03T10:05:58Z",
+      "observed_at": "2026-08-03T13:56:23Z",
       "owner": "groupsum",
       "private": true,
       "publication_status": "manifest_private",
@@ -36,6 +157,7 @@
         "repository_contains_package": 1
       },
       "release_count": 0,
+      "releases": [],
       "repository": "groupsum/mdwrk-pages",
       "reviewed": false,
       "route": "/catalog/packages/npm/mdwrk-example-learning-path-demo-f14e8811",
@@ -44,7 +166,119 @@
     },
     {
       "claim_boundary": "Publication is reported only when confirmed by the named public registry.",
+      "dependencies": [
+        {
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "internal": true,
+          "name": "@mdwrk/lander-core",
+          "package_key": "npm:@mdwrk/lander-core",
+          "requirement": "^0.1.0",
+          "scope": "dependencies"
+        },
+        {
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "internal": true,
+          "name": "@mdwrk/lander-page-templates",
+          "package_key": "npm:@mdwrk/lander-page-templates",
+          "requirement": "^0.1.0",
+          "scope": "dependencies"
+        },
+        {
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "internal": true,
+          "name": "@mdwrk/lander-react",
+          "package_key": "npm:@mdwrk/lander-react",
+          "requirement": "^0.1.0",
+          "scope": "dependencies"
+        },
+        {
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "internal": true,
+          "name": "@mdwrk/lander-react-structured-data",
+          "package_key": "npm:@mdwrk/lander-react-structured-data",
+          "requirement": "^0.1.0",
+          "scope": "dependencies"
+        },
+        {
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "internal": true,
+          "name": "@mdwrk/page-template-demo-content-pack",
+          "package_key": "npm:@mdwrk/page-template-demo-content-pack",
+          "requirement": "^0.1.0",
+          "scope": "dependencies"
+        },
+        {
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "react",
+          "package_key": "npm:react",
+          "requirement": "^19.2.4",
+          "scope": "dependencies"
+        },
+        {
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "react-dom",
+          "package_key": "npm:react-dom",
+          "requirement": "^19.2.4",
+          "scope": "dependencies"
+        },
+        {
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "@types/react",
+          "package_key": "npm:@types/react",
+          "requirement": "^19.0.8",
+          "scope": "devDependencies"
+        },
+        {
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "@types/react-dom",
+          "package_key": "npm:@types/react-dom",
+          "requirement": "^19.0.3",
+          "scope": "devDependencies"
+        },
+        {
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "@vitejs/plugin-react",
+          "package_key": "npm:@vitejs/plugin-react",
+          "requirement": "^5.0.0",
+          "scope": "devDependencies"
+        },
+        {
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "typescript",
+          "package_key": "npm:typescript",
+          "requirement": "~5.8.2",
+          "scope": "devDependencies"
+        },
+        {
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "vite",
+          "package_key": "npm:vite",
+          "requirement": "^6.2.0",
+          "scope": "devDependencies"
+        }
+      ],
       "dependency_count": 12,
+      "dependent_count": 0,
+      "dependents": [],
       "description": "Observed npm package record for @mdwrk/example-page-template-demo.",
       "description_source": "generated-factual",
       "display_name": "@mdwrk/example-page-template-demo",
@@ -55,7 +289,7 @@
       "evidence": [
         {
           "kind": "source",
-          "observed_at": "2026-08-03T10:05:58Z",
+          "observed_at": "2026-08-03T13:56:23Z",
           "url": "https://github.com/groupsum/mdwrk-pages/blob/HEAD/packages/70-demos/page-template-demo/package.json"
         }
       ],
@@ -64,7 +298,7 @@
       "latest_version": "0.1.1",
       "manifest_path": "packages/70-demos/page-template-demo/package.json",
       "name": "@mdwrk/example-page-template-demo",
-      "observed_at": "2026-08-03T10:05:58Z",
+      "observed_at": "2026-08-03T13:56:23Z",
       "owner": "groupsum",
       "private": true,
       "publication_status": "manifest_private",
@@ -77,6 +311,7 @@
         "repository_contains_package": 2
       },
       "release_count": 0,
+      "releases": [],
       "repository": "groupsum/mdwrk-pages",
       "reviewed": false,
       "route": "/catalog/packages/npm/mdwrk-example-page-template-demo-aaa3b72f",
@@ -85,7 +320,128 @@
     },
     {
       "claim_boundary": "Publication is reported only when confirmed by the named public registry.",
+      "dependencies": [
+        {
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "internal": true,
+          "name": "@mdwrk/lander-content-contract",
+          "package_key": "npm:@mdwrk/lander-content-contract",
+          "requirement": "^0.1.0",
+          "scope": "dependencies"
+        },
+        {
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "internal": true,
+          "name": "@mdwrk/lander-core",
+          "package_key": "npm:@mdwrk/lander-core",
+          "requirement": "^0.1.0",
+          "scope": "dependencies"
+        },
+        {
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "internal": true,
+          "name": "@mdwrk/lander-primitives",
+          "package_key": "npm:@mdwrk/lander-primitives",
+          "requirement": "^0.1.0",
+          "scope": "dependencies"
+        },
+        {
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "internal": true,
+          "name": "@mdwrk/lander-react",
+          "package_key": "npm:@mdwrk/lander-react",
+          "requirement": "^0.1.0",
+          "scope": "dependencies"
+        },
+        {
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "internal": true,
+          "name": "@mdwrk/lander-react-structured-data",
+          "package_key": "npm:@mdwrk/lander-react-structured-data",
+          "requirement": "^0.1.0",
+          "scope": "dependencies"
+        },
+        {
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "internal": true,
+          "name": "@mdwrk/structured-data",
+          "package_key": "npm:@mdwrk/structured-data",
+          "requirement": "^0.1.0",
+          "scope": "dependencies"
+        },
+        {
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "react",
+          "package_key": "npm:react",
+          "requirement": "^19.2.4",
+          "scope": "dependencies"
+        },
+        {
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "react-dom",
+          "package_key": "npm:react-dom",
+          "requirement": "^19.2.4",
+          "scope": "dependencies"
+        },
+        {
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "@types/react",
+          "package_key": "npm:@types/react",
+          "requirement": "^19.0.8",
+          "scope": "devDependencies"
+        },
+        {
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "@types/react-dom",
+          "package_key": "npm:@types/react-dom",
+          "requirement": "^19.0.3",
+          "scope": "devDependencies"
+        },
+        {
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "@vitejs/plugin-react",
+          "package_key": "npm:@vitejs/plugin-react",
+          "requirement": "^5.0.0",
+          "scope": "devDependencies"
+        },
+        {
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "typescript",
+          "package_key": "npm:typescript",
+          "requirement": "~5.8.2",
+          "scope": "devDependencies"
+        },
+        {
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "vite",
+          "package_key": "npm:vite",
+          "requirement": "^6.2.0",
+          "scope": "devDependencies"
+        }
+      ],
       "dependency_count": 13,
+      "dependent_count": 0,
+      "dependents": [],
       "description": "Observed npm package record for @mdwrk/example-semantic-components-demo.",
       "description_source": "generated-factual",
       "display_name": "@mdwrk/example-semantic-components-demo",
@@ -96,7 +452,7 @@
       "evidence": [
         {
           "kind": "source",
-          "observed_at": "2026-08-03T10:05:58Z",
+          "observed_at": "2026-08-03T13:56:23Z",
           "url": "https://github.com/groupsum/mdwrk-pages/blob/HEAD/packages/70-demos/semantic-components-demo/package.json"
         }
       ],
@@ -105,7 +461,7 @@
       "latest_version": "0.1.7",
       "manifest_path": "packages/70-demos/semantic-components-demo/package.json",
       "name": "@mdwrk/example-semantic-components-demo",
-      "observed_at": "2026-08-03T10:05:58Z",
+      "observed_at": "2026-08-03T13:56:23Z",
       "owner": "groupsum",
       "private": true,
       "publication_status": "manifest_private",
@@ -118,6 +474,7 @@
         "repository_contains_package": 1
       },
       "release_count": 0,
+      "releases": [],
       "repository": "groupsum/mdwrk-pages",
       "reviewed": false,
       "route": "/catalog/packages/npm/mdwrk-example-semantic-components-demo-34bc2482",
@@ -126,7 +483,137 @@
     },
     {
       "claim_boundary": "Publication is reported only when confirmed by the named public registry.",
+      "dependencies": [
+        {
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "internal": true,
+          "name": "@mdwrk/lander-commerce-contract",
+          "package_key": "npm:@mdwrk/lander-commerce-contract",
+          "requirement": "^0.1.0",
+          "scope": "dependencies"
+        },
+        {
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "internal": true,
+          "name": "@mdwrk/lander-content-contract",
+          "package_key": "npm:@mdwrk/lander-content-contract",
+          "requirement": "^0.1.0",
+          "scope": "dependencies"
+        },
+        {
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "internal": true,
+          "name": "@mdwrk/lander-core",
+          "package_key": "npm:@mdwrk/lander-core",
+          "requirement": "^0.1.0",
+          "scope": "dependencies"
+        },
+        {
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "internal": true,
+          "name": "@mdwrk/lander-react",
+          "package_key": "npm:@mdwrk/lander-react",
+          "requirement": "^0.1.0",
+          "scope": "dependencies"
+        },
+        {
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "internal": true,
+          "name": "@mdwrk/lander-react-commerce",
+          "package_key": "npm:@mdwrk/lander-react-commerce",
+          "requirement": "^0.1.0",
+          "scope": "dependencies"
+        },
+        {
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "internal": true,
+          "name": "@mdwrk/lander-react-structured-data",
+          "package_key": "npm:@mdwrk/lander-react-structured-data",
+          "requirement": "^0.1.0",
+          "scope": "dependencies"
+        },
+        {
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "internal": true,
+          "name": "@mdwrk/subscription-store-content-pack",
+          "package_key": "npm:@mdwrk/subscription-store-content-pack",
+          "requirement": "^0.1.0",
+          "scope": "dependencies"
+        },
+        {
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "react",
+          "package_key": "npm:react",
+          "requirement": "^19.2.4",
+          "scope": "dependencies"
+        },
+        {
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "react-dom",
+          "package_key": "npm:react-dom",
+          "requirement": "^19.2.4",
+          "scope": "dependencies"
+        },
+        {
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "@types/react",
+          "package_key": "npm:@types/react",
+          "requirement": "^19.0.8",
+          "scope": "devDependencies"
+        },
+        {
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "@types/react-dom",
+          "package_key": "npm:@types/react-dom",
+          "requirement": "^19.0.3",
+          "scope": "devDependencies"
+        },
+        {
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "@vitejs/plugin-react",
+          "package_key": "npm:@vitejs/plugin-react",
+          "requirement": "^5.0.0",
+          "scope": "devDependencies"
+        },
+        {
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "typescript",
+          "package_key": "npm:typescript",
+          "requirement": "~5.8.2",
+          "scope": "devDependencies"
+        },
+        {
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "vite",
+          "package_key": "npm:vite",
+          "requirement": "^6.2.0",
+          "scope": "devDependencies"
+        }
+      ],
       "dependency_count": 14,
+      "dependent_count": 0,
+      "dependents": [],
       "description": "Observed npm package record for @mdwrk/example-subscription-store-demo.",
       "description_source": "generated-factual",
       "display_name": "@mdwrk/example-subscription-store-demo",
@@ -137,7 +624,7 @@
       "evidence": [
         {
           "kind": "source",
-          "observed_at": "2026-08-03T10:05:58Z",
+          "observed_at": "2026-08-03T13:56:23Z",
           "url": "https://github.com/groupsum/mdwrk-pages/blob/HEAD/packages/70-demos/subscription-store-demo/package.json"
         }
       ],
@@ -146,7 +633,7 @@
       "latest_version": "0.1.0",
       "manifest_path": "packages/70-demos/subscription-store-demo/package.json",
       "name": "@mdwrk/example-subscription-store-demo",
-      "observed_at": "2026-08-03T10:05:58Z",
+      "observed_at": "2026-08-03T13:56:23Z",
       "owner": "groupsum",
       "private": true,
       "publication_status": "manifest_private",
@@ -159,6 +646,7 @@
         "repository_contains_package": 1
       },
       "release_count": 0,
+      "releases": [],
       "repository": "groupsum/mdwrk-pages",
       "reviewed": false,
       "route": "/catalog/packages/npm/mdwrk-example-subscription-store-demo-e6e8914a",
@@ -167,7 +655,29 @@
     },
     {
       "claim_boundary": "Publication is reported only when confirmed by the named public registry.",
+      "dependencies": [],
       "dependency_count": 0,
+      "dependent_count": 2,
+      "dependents": [
+        {
+          "completeness": "catalog-observed",
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "name": "@mdwrk/example-subscription-store-demo",
+          "package_key": "npm:@mdwrk/example-subscription-store-demo",
+          "requirement": "^0.1.0",
+          "scope": "dependencies"
+        },
+        {
+          "completeness": "catalog-observed",
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "name": "@mdwrk/lander-react-commerce",
+          "package_key": "npm:@mdwrk/lander-react-commerce",
+          "requirement": "^0.1.0",
+          "scope": "dependencies"
+        }
+      ],
       "description": "Observed npm package record for @mdwrk/lander-commerce-contract.",
       "description_source": "generated-factual",
       "display_name": "@mdwrk/lander-commerce-contract",
@@ -178,7 +688,7 @@
       "evidence": [
         {
           "kind": "registry",
-          "observed_at": "2026-08-03T10:05:58Z",
+          "observed_at": "2026-08-03T13:56:23Z",
           "url": "https://www.npmjs.com/package/@mdwrk/lander-commerce-contract"
         }
       ],
@@ -187,7 +697,7 @@
       "latest_version": "0.1.0",
       "manifest_path": "packages/00-contracts/lander-commerce-contract/package.json",
       "name": "@mdwrk/lander-commerce-contract",
-      "observed_at": "2026-08-03T10:05:58Z",
+      "observed_at": "2026-08-03T13:56:23Z",
       "owner": "groupsum",
       "private": false,
       "publication_status": "published",
@@ -199,6 +709,16 @@
         "repository_contains_package": 1
       },
       "release_count": 1,
+      "releases": [
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2026-06-16T20:57:46.086Z",
+          "release_kind": "npm",
+          "url": "https://www.npmjs.com/package/@mdwrk/lander-commerce-contract/v/0.1.0",
+          "version": "0.1.0"
+        }
+      ],
       "repository": "groupsum/mdwrk-pages",
       "reviewed": false,
       "route": "/catalog/packages/npm/mdwrk-lander-commerce-contract-53c27ced",
@@ -207,7 +727,227 @@
     },
     {
       "claim_boundary": "Publication is reported only when confirmed by the named public registry.",
+      "dependencies": [],
       "dependency_count": 0,
+      "dependent_count": 24,
+      "dependents": [
+        {
+          "completeness": "catalog-observed",
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "name": "@groupsum/groupsum-xyz-content-pack",
+          "package_key": "npm:@groupsum/groupsum-xyz-content-pack",
+          "requirement": "^0.1.2",
+          "scope": "dependencies"
+        },
+        {
+          "completeness": "catalog-observed",
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "name": "@groupsum/npmctl-com-content-pack",
+          "package_key": "npm:@groupsum/npmctl-com-content-pack",
+          "requirement": "^0.1.2",
+          "scope": "dependencies"
+        },
+        {
+          "completeness": "catalog-observed",
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "name": "@mdwrk/example-learning-path-demo",
+          "package_key": "npm:@mdwrk/example-learning-path-demo",
+          "requirement": "^0.1.0",
+          "scope": "dependencies"
+        },
+        {
+          "completeness": "catalog-observed",
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "name": "@mdwrk/example-semantic-components-demo",
+          "package_key": "npm:@mdwrk/example-semantic-components-demo",
+          "requirement": "^0.1.0",
+          "scope": "dependencies"
+        },
+        {
+          "completeness": "catalog-observed",
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "name": "@mdwrk/example-subscription-store-demo",
+          "package_key": "npm:@mdwrk/example-subscription-store-demo",
+          "requirement": "^0.1.0",
+          "scope": "dependencies"
+        },
+        {
+          "completeness": "catalog-observed",
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "name": "@mdwrk/lander-core",
+          "package_key": "npm:@mdwrk/lander-core",
+          "requirement": "^0.1.3",
+          "scope": "dependencies"
+        },
+        {
+          "completeness": "catalog-observed",
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "name": "@mdwrk/lander-core",
+          "package_key": "npm:@mdwrk/lander-core",
+          "requirement": "^0.1.5",
+          "scope": "dependencies"
+        },
+        {
+          "completeness": "catalog-observed",
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "name": "@mdwrk/lander-markdown-content-adapter",
+          "package_key": "npm:@mdwrk/lander-markdown-content-adapter",
+          "requirement": "^0.1.3",
+          "scope": "dependencies"
+        },
+        {
+          "completeness": "catalog-observed",
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "name": "@mdwrk/lander-markdown-content-adapter",
+          "package_key": "npm:@mdwrk/lander-markdown-content-adapter",
+          "requirement": "^0.1.5",
+          "scope": "dependencies"
+        },
+        {
+          "completeness": "catalog-observed",
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "name": "@mdwrk/lander-page-template-presets",
+          "package_key": "npm:@mdwrk/lander-page-template-presets",
+          "requirement": "^0.1.3",
+          "scope": "dependencies"
+        },
+        {
+          "completeness": "catalog-observed",
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "name": "@mdwrk/lander-page-template-presets",
+          "package_key": "npm:@mdwrk/lander-page-template-presets",
+          "requirement": "^0.1.5",
+          "scope": "dependencies"
+        },
+        {
+          "completeness": "catalog-observed",
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "name": "@mdwrk/lander-page-templates",
+          "package_key": "npm:@mdwrk/lander-page-templates",
+          "requirement": "^0.1.3",
+          "scope": "dependencies"
+        },
+        {
+          "completeness": "catalog-observed",
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "name": "@mdwrk/lander-page-templates",
+          "package_key": "npm:@mdwrk/lander-page-templates",
+          "requirement": "^0.1.6",
+          "scope": "dependencies"
+        },
+        {
+          "completeness": "catalog-observed",
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "name": "@mdwrk/lander-react",
+          "package_key": "npm:@mdwrk/lander-react",
+          "requirement": "^0.1.3",
+          "scope": "dependencies"
+        },
+        {
+          "completeness": "catalog-observed",
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "name": "@mdwrk/lander-react",
+          "package_key": "npm:@mdwrk/lander-react",
+          "requirement": "^0.1.5",
+          "scope": "dependencies"
+        },
+        {
+          "completeness": "catalog-observed",
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "name": "@mdwrk/mdwrkcom",
+          "package_key": "npm:@mdwrk/mdwrkcom",
+          "requirement": "^0.1.0",
+          "scope": "dependencies"
+        },
+        {
+          "completeness": "catalog-observed",
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "name": "@mdwrk/mdwrkcom-content-pack",
+          "package_key": "npm:@mdwrk/mdwrkcom-content-pack",
+          "requirement": "^0.1.0",
+          "scope": "dependencies"
+        },
+        {
+          "completeness": "catalog-observed",
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "name": "@mdwrk/page-template-demo-content-pack",
+          "package_key": "npm:@mdwrk/page-template-demo-content-pack",
+          "requirement": "^0.1.3",
+          "scope": "dependencies"
+        },
+        {
+          "completeness": "catalog-observed",
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "name": "@mdwrk/page-template-demo-content-pack",
+          "package_key": "npm:@mdwrk/page-template-demo-content-pack",
+          "requirement": "^0.1.5",
+          "scope": "dependencies"
+        },
+        {
+          "completeness": "catalog-observed",
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "name": "@mdwrk/subscription-store-content-pack",
+          "package_key": "npm:@mdwrk/subscription-store-content-pack",
+          "requirement": "^0.1.5",
+          "scope": "dependencies"
+        },
+        {
+          "completeness": "catalog-observed",
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "name": "@swarmauri/peagen-com-content-pack",
+          "package_key": "npm:@swarmauri/peagen-com-content-pack",
+          "requirement": "^0.1.2",
+          "scope": "dependencies"
+        },
+        {
+          "completeness": "catalog-observed",
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "name": "@tigrbl/tigrbl-com-content-pack",
+          "package_key": "npm:@tigrbl/tigrbl-com-content-pack",
+          "requirement": "^0.1.2",
+          "scope": "dependencies"
+        },
+        {
+          "completeness": "catalog-observed",
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "name": "@tigrbl/tigrcorn-com-content-pack",
+          "package_key": "npm:@tigrbl/tigrcorn-com-content-pack",
+          "requirement": "^0.1.2",
+          "scope": "dependencies"
+        },
+        {
+          "completeness": "catalog-observed",
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "name": "mdwrkcom-content-pack",
+          "package_key": "npm:mdwrkcom-content-pack",
+          "requirement": "^0.1.2",
+          "scope": "dependencies"
+        }
+      ],
       "description": "Observed npm package record for @mdwrk/lander-content-contract.",
       "description_source": "generated-factual",
       "display_name": "@mdwrk/lander-content-contract",
@@ -218,7 +958,7 @@
       "evidence": [
         {
           "kind": "registry",
-          "observed_at": "2026-08-03T10:05:58Z",
+          "observed_at": "2026-08-03T13:56:23Z",
           "url": "https://www.npmjs.com/package/@mdwrk/lander-content-contract"
         }
       ],
@@ -227,7 +967,7 @@
       "latest_version": "0.1.10",
       "manifest_path": "packages/00-contracts/lander-content-contract/package.json",
       "name": "@mdwrk/lander-content-contract",
-      "observed_at": "2026-08-03T10:05:58Z",
+      "observed_at": "2026-08-03T13:56:23Z",
       "owner": "groupsum",
       "private": false,
       "publication_status": "published",
@@ -239,6 +979,24 @@
         "repository_contains_package": 2
       },
       "release_count": 2,
+      "releases": [
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2026-06-16T20:57:57.135Z",
+          "release_kind": "npm",
+          "url": "https://www.npmjs.com/package/@mdwrk/lander-content-contract/v/0.1.10",
+          "version": "0.1.10"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2026-05-16T07:20:10.683Z",
+          "release_kind": "npm",
+          "url": "https://www.npmjs.com/package/@mdwrk/lander-content-contract/v/0.1.2",
+          "version": "0.1.2"
+        }
+      ],
       "repository": "groupsum/mdwrk-pages",
       "reviewed": false,
       "route": "/catalog/packages/npm/mdwrk-lander-content-contract-0298324a",
@@ -247,7 +1005,174 @@
     },
     {
       "claim_boundary": "Publication is reported only when confirmed by the named public registry.",
+      "dependencies": [
+        {
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "internal": true,
+          "name": "@mdwrk/lander-content-contract",
+          "package_key": "npm:@mdwrk/lander-content-contract",
+          "requirement": "^0.1.5",
+          "scope": "dependencies"
+        }
+      ],
       "dependency_count": 1,
+      "dependent_count": 17,
+      "dependents": [
+        {
+          "completeness": "catalog-observed",
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "name": "@groupsum/groupsum-xyz-content-pack",
+          "package_key": "npm:@groupsum/groupsum-xyz-content-pack",
+          "requirement": "^0.1.2",
+          "scope": "dependencies"
+        },
+        {
+          "completeness": "catalog-observed",
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "name": "@groupsum/npmctl-com-content-pack",
+          "package_key": "npm:@groupsum/npmctl-com-content-pack",
+          "requirement": "^0.1.2",
+          "scope": "dependencies"
+        },
+        {
+          "completeness": "catalog-observed",
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "name": "@mdwrk/example-learning-path-demo",
+          "package_key": "npm:@mdwrk/example-learning-path-demo",
+          "requirement": "^0.1.0",
+          "scope": "dependencies"
+        },
+        {
+          "completeness": "catalog-observed",
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "name": "@mdwrk/example-page-template-demo",
+          "package_key": "npm:@mdwrk/example-page-template-demo",
+          "requirement": "^0.1.0",
+          "scope": "dependencies"
+        },
+        {
+          "completeness": "catalog-observed",
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "name": "@mdwrk/example-semantic-components-demo",
+          "package_key": "npm:@mdwrk/example-semantic-components-demo",
+          "requirement": "^0.1.0",
+          "scope": "dependencies"
+        },
+        {
+          "completeness": "catalog-observed",
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "name": "@mdwrk/example-subscription-store-demo",
+          "package_key": "npm:@mdwrk/example-subscription-store-demo",
+          "requirement": "^0.1.0",
+          "scope": "dependencies"
+        },
+        {
+          "completeness": "catalog-observed",
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "name": "@mdwrk/lander-markdown-content-adapter",
+          "package_key": "npm:@mdwrk/lander-markdown-content-adapter",
+          "requirement": "^0.1.5",
+          "scope": "dependencies"
+        },
+        {
+          "completeness": "catalog-observed",
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "name": "@mdwrk/lander-react",
+          "package_key": "npm:@mdwrk/lander-react",
+          "requirement": "^0.1.5",
+          "scope": "dependencies"
+        },
+        {
+          "completeness": "catalog-observed",
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "name": "@mdwrk/lander-react-structured-data",
+          "package_key": "npm:@mdwrk/lander-react-structured-data",
+          "requirement": "^0.1.5",
+          "scope": "dependencies"
+        },
+        {
+          "completeness": "catalog-observed",
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "name": "@mdwrk/lander-seo",
+          "package_key": "npm:@mdwrk/lander-seo",
+          "requirement": "^0.1.5",
+          "scope": "dependencies"
+        },
+        {
+          "completeness": "catalog-observed",
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "name": "@mdwrk/mdwrkcom",
+          "package_key": "npm:@mdwrk/mdwrkcom",
+          "requirement": "^0.1.0",
+          "scope": "dependencies"
+        },
+        {
+          "completeness": "catalog-observed",
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "name": "@swarmauri/peagen-com-content-pack",
+          "package_key": "npm:@swarmauri/peagen-com-content-pack",
+          "requirement": "^0.1.2",
+          "scope": "dependencies"
+        },
+        {
+          "completeness": "catalog-observed",
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "name": "@tigrbl/tigrbl-com-content-pack",
+          "package_key": "npm:@tigrbl/tigrbl-com-content-pack",
+          "requirement": "^0.1.2",
+          "scope": "dependencies"
+        },
+        {
+          "completeness": "catalog-observed",
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "name": "@tigrbl/tigrcorn-com-content-pack",
+          "package_key": "npm:@tigrbl/tigrcorn-com-content-pack",
+          "requirement": "^0.1.2",
+          "scope": "dependencies"
+        },
+        {
+          "completeness": "catalog-observed",
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "name": "groupsum-xyz",
+          "package_key": "npm:groupsum-xyz",
+          "requirement": "^0.1.2",
+          "scope": "dependencies"
+        },
+        {
+          "completeness": "catalog-observed",
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "name": "peagen-com",
+          "package_key": "npm:peagen-com",
+          "requirement": "^0.1.2",
+          "scope": "dependencies"
+        },
+        {
+          "completeness": "catalog-observed",
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "name": "tigrbl-com",
+          "package_key": "npm:tigrbl-com",
+          "requirement": "^0.1.2",
+          "scope": "dependencies"
+        }
+      ],
       "description": "Observed npm package record for @mdwrk/lander-core.",
       "description_source": "generated-factual",
       "display_name": "@mdwrk/lander-core",
@@ -258,7 +1183,7 @@
       "evidence": [
         {
           "kind": "registry",
-          "observed_at": "2026-08-03T10:05:58Z",
+          "observed_at": "2026-08-03T13:56:23Z",
           "url": "https://www.npmjs.com/package/@mdwrk/lander-core"
         }
       ],
@@ -267,7 +1192,7 @@
       "latest_version": "0.1.5",
       "manifest_path": "packages/10-core/lander-core/package.json",
       "name": "@mdwrk/lander-core",
-      "observed_at": "2026-08-03T10:05:58Z",
+      "observed_at": "2026-08-03T13:56:23Z",
       "owner": "groupsum",
       "private": false,
       "publication_status": "published",
@@ -279,6 +1204,32 @@
         "repository_contains_package": 2
       },
       "release_count": 3,
+      "releases": [
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2026-06-16T20:57:47.968Z",
+          "release_kind": "npm",
+          "url": "https://www.npmjs.com/package/@mdwrk/lander-core/v/0.1.5",
+          "version": "0.1.5"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2026-05-18T16:04:29.029Z",
+          "release_kind": "npm",
+          "url": "https://www.npmjs.com/package/@mdwrk/lander-core/v/0.1.3",
+          "version": "0.1.3"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2026-05-16T07:20:34.978Z",
+          "release_kind": "npm",
+          "url": "https://www.npmjs.com/package/@mdwrk/lander-core/v/0.1.2",
+          "version": "0.1.2"
+        }
+      ],
       "repository": "groupsum/mdwrk-pages",
       "reviewed": false,
       "route": "/catalog/packages/npm/mdwrk-lander-core-704db13d",
@@ -287,7 +1238,29 @@
     },
     {
       "claim_boundary": "Publication is reported only when confirmed by the named public registry.",
+      "dependencies": [
+        {
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "internal": true,
+          "name": "@mdwrk/lander-content-contract",
+          "package_key": "npm:@mdwrk/lander-content-contract",
+          "requirement": "^0.1.5",
+          "scope": "dependencies"
+        },
+        {
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "internal": true,
+          "name": "@mdwrk/lander-core",
+          "package_key": "npm:@mdwrk/lander-core",
+          "requirement": "^0.1.5",
+          "scope": "dependencies"
+        }
+      ],
       "dependency_count": 2,
+      "dependent_count": 0,
+      "dependents": [],
       "description": "Observed npm package record for @mdwrk/lander-markdown-content-adapter.",
       "description_source": "generated-factual",
       "display_name": "@mdwrk/lander-markdown-content-adapter",
@@ -298,7 +1271,7 @@
       "evidence": [
         {
           "kind": "registry",
-          "observed_at": "2026-08-03T10:05:58Z",
+          "observed_at": "2026-08-03T13:56:23Z",
           "url": "https://www.npmjs.com/package/@mdwrk/lander-markdown-content-adapter"
         }
       ],
@@ -307,7 +1280,7 @@
       "latest_version": "0.1.5",
       "manifest_path": "packages/10-core/lander-markdown-content-adapter/package.json",
       "name": "@mdwrk/lander-markdown-content-adapter",
-      "observed_at": "2026-08-03T10:05:58Z",
+      "observed_at": "2026-08-03T13:56:23Z",
       "owner": "groupsum",
       "private": false,
       "publication_status": "published",
@@ -319,6 +1292,24 @@
         "repository_contains_package": 2
       },
       "release_count": 2,
+      "releases": [
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2026-06-16T20:57:21.163Z",
+          "release_kind": "npm",
+          "url": "https://www.npmjs.com/package/@mdwrk/lander-markdown-content-adapter/v/0.1.5",
+          "version": "0.1.5"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2026-05-16T07:20:49.154Z",
+          "release_kind": "npm",
+          "url": "https://www.npmjs.com/package/@mdwrk/lander-markdown-content-adapter/v/0.1.1",
+          "version": "0.1.1"
+        }
+      ],
       "repository": "groupsum/mdwrk-pages",
       "reviewed": false,
       "route": "/catalog/packages/npm/mdwrk-lander-markdown-content-adapter-8ca7bb06",
@@ -327,7 +1318,66 @@
     },
     {
       "claim_boundary": "Publication is reported only when confirmed by the named public registry.",
+      "dependencies": [
+        {
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "internal": true,
+          "name": "@mdwrk/lander-content-contract",
+          "package_key": "npm:@mdwrk/lander-content-contract",
+          "requirement": "^0.1.5",
+          "scope": "dependencies"
+        },
+        {
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "internal": true,
+          "name": "@mdwrk/lander-page-templates",
+          "package_key": "npm:@mdwrk/lander-page-templates",
+          "requirement": "^0.1.2",
+          "scope": "dependencies"
+        }
+      ],
       "dependency_count": 2,
+      "dependent_count": 4,
+      "dependents": [
+        {
+          "completeness": "catalog-observed",
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "name": "@mdwrk/example-learning-path-demo",
+          "package_key": "npm:@mdwrk/example-learning-path-demo",
+          "requirement": "^0.1.0",
+          "scope": "dependencies"
+        },
+        {
+          "completeness": "catalog-observed",
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "name": "@mdwrk/page-template-demo-content-pack",
+          "package_key": "npm:@mdwrk/page-template-demo-content-pack",
+          "requirement": "^0.1.1",
+          "scope": "dependencies"
+        },
+        {
+          "completeness": "catalog-observed",
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "name": "@mdwrk/page-template-demo-content-pack",
+          "package_key": "npm:@mdwrk/page-template-demo-content-pack",
+          "requirement": "^0.1.2",
+          "scope": "dependencies"
+        },
+        {
+          "completeness": "catalog-observed",
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "name": "@mdwrk/subscription-store-content-pack",
+          "package_key": "npm:@mdwrk/subscription-store-content-pack",
+          "requirement": "^0.1.2",
+          "scope": "dependencies"
+        }
+      ],
       "description": "Observed npm package record for @mdwrk/lander-page-template-presets.",
       "description_source": "generated-factual",
       "display_name": "@mdwrk/lander-page-template-presets",
@@ -338,7 +1388,7 @@
       "evidence": [
         {
           "kind": "registry",
-          "observed_at": "2026-08-03T10:05:58Z",
+          "observed_at": "2026-08-03T13:56:23Z",
           "url": "https://www.npmjs.com/package/@mdwrk/lander-page-template-presets"
         }
       ],
@@ -347,7 +1397,7 @@
       "latest_version": "0.1.2",
       "manifest_path": "packages/20-page-systems/lander-page-template-presets/package.json",
       "name": "@mdwrk/lander-page-template-presets",
-      "observed_at": "2026-08-03T10:05:58Z",
+      "observed_at": "2026-08-03T13:56:23Z",
       "owner": "groupsum",
       "private": false,
       "publication_status": "published",
@@ -359,6 +1409,24 @@
         "repository_contains_package": 2
       },
       "release_count": 2,
+      "releases": [
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2026-06-16T20:57:55.753Z",
+          "release_kind": "npm",
+          "url": "https://www.npmjs.com/package/@mdwrk/lander-page-template-presets/v/0.1.2",
+          "version": "0.1.2"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2026-05-18T16:04:31.910Z",
+          "release_kind": "npm",
+          "url": "https://www.npmjs.com/package/@mdwrk/lander-page-template-presets/v/0.1.0",
+          "version": "0.1.0"
+        }
+      ],
       "repository": "groupsum/mdwrk-pages",
       "reviewed": false,
       "route": "/catalog/packages/npm/mdwrk-lander-page-template-presets-3ca6aed4",
@@ -367,7 +1435,66 @@
     },
     {
       "claim_boundary": "Publication is reported only when confirmed by the named public registry.",
+      "dependencies": [
+        {
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "internal": true,
+          "name": "@mdwrk/lander-content-contract",
+          "package_key": "npm:@mdwrk/lander-content-contract",
+          "requirement": "^0.1.6",
+          "scope": "dependencies"
+        }
+      ],
       "dependency_count": 1,
+      "dependent_count": 5,
+      "dependents": [
+        {
+          "completeness": "catalog-observed",
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "name": "@mdwrk/example-learning-path-demo",
+          "package_key": "npm:@mdwrk/example-learning-path-demo",
+          "requirement": "^0.1.0",
+          "scope": "dependencies"
+        },
+        {
+          "completeness": "catalog-observed",
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "name": "@mdwrk/example-page-template-demo",
+          "package_key": "npm:@mdwrk/example-page-template-demo",
+          "requirement": "^0.1.0",
+          "scope": "dependencies"
+        },
+        {
+          "completeness": "catalog-observed",
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "name": "@mdwrk/lander-page-template-presets",
+          "package_key": "npm:@mdwrk/lander-page-template-presets",
+          "requirement": "^0.1.2",
+          "scope": "dependencies"
+        },
+        {
+          "completeness": "catalog-observed",
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "name": "@mdwrk/page-template-demo-content-pack",
+          "package_key": "npm:@mdwrk/page-template-demo-content-pack",
+          "requirement": "^0.1.2",
+          "scope": "dependencies"
+        },
+        {
+          "completeness": "catalog-observed",
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "name": "@mdwrk/subscription-store-content-pack",
+          "package_key": "npm:@mdwrk/subscription-store-content-pack",
+          "requirement": "^0.1.2",
+          "scope": "dependencies"
+        }
+      ],
       "description": "Observed npm package record for @mdwrk/lander-page-templates.",
       "description_source": "generated-factual",
       "display_name": "@mdwrk/lander-page-templates",
@@ -378,7 +1505,7 @@
       "evidence": [
         {
           "kind": "registry",
-          "observed_at": "2026-08-03T10:05:58Z",
+          "observed_at": "2026-08-03T13:56:23Z",
           "url": "https://www.npmjs.com/package/@mdwrk/lander-page-templates"
         }
       ],
@@ -387,7 +1514,7 @@
       "latest_version": "0.1.3",
       "manifest_path": "packages/20-page-systems/lander-page-templates/package.json",
       "name": "@mdwrk/lander-page-templates",
-      "observed_at": "2026-08-03T10:05:58Z",
+      "observed_at": "2026-08-03T13:56:23Z",
       "owner": "groupsum",
       "private": false,
       "publication_status": "published",
@@ -399,6 +1526,24 @@
         "repository_contains_package": 2
       },
       "release_count": 2,
+      "releases": [
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2026-06-16T20:57:54.373Z",
+          "release_kind": "npm",
+          "url": "https://www.npmjs.com/package/@mdwrk/lander-page-templates/v/0.1.3",
+          "version": "0.1.3"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2026-05-18T16:04:30.496Z",
+          "release_kind": "npm",
+          "url": "https://www.npmjs.com/package/@mdwrk/lander-page-templates/v/0.1.0",
+          "version": "0.1.0"
+        }
+      ],
       "repository": "groupsum/mdwrk-pages",
       "reviewed": false,
       "route": "/catalog/packages/npm/mdwrk-lander-page-templates-614d4dac",
@@ -407,7 +1552,66 @@
     },
     {
       "claim_boundary": "Publication is reported only when confirmed by the named public registry.",
+      "dependencies": [
+        {
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "@types/react",
+          "package_key": "npm:@types/react",
+          "requirement": "^19.0.8",
+          "scope": "devDependencies"
+        },
+        {
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "@types/react-dom",
+          "package_key": "npm:@types/react-dom",
+          "requirement": "^19.0.3",
+          "scope": "devDependencies"
+        },
+        {
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "react",
+          "package_key": "npm:react",
+          "requirement": "^19.0.0",
+          "scope": "peerDependencies"
+        },
+        {
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "react-dom",
+          "package_key": "npm:react-dom",
+          "requirement": "^19.0.0",
+          "scope": "peerDependencies"
+        }
+      ],
       "dependency_count": 4,
+      "dependent_count": 2,
+      "dependents": [
+        {
+          "completeness": "catalog-observed",
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "name": "@mdwrk/example-semantic-components-demo",
+          "package_key": "npm:@mdwrk/example-semantic-components-demo",
+          "requirement": "^0.1.0",
+          "scope": "dependencies"
+        },
+        {
+          "completeness": "catalog-observed",
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "name": "@mdwrk/lander-react",
+          "package_key": "npm:@mdwrk/lander-react",
+          "requirement": "^0.1.0",
+          "scope": "dependencies"
+        }
+      ],
       "description": "Observed npm package record for @mdwrk/lander-primitives.",
       "description_source": "generated-factual",
       "display_name": "@mdwrk/lander-primitives",
@@ -418,7 +1622,7 @@
       "evidence": [
         {
           "kind": "registry",
-          "observed_at": "2026-08-03T10:05:58Z",
+          "observed_at": "2026-08-03T13:56:23Z",
           "url": "https://www.npmjs.com/package/@mdwrk/lander-primitives"
         }
       ],
@@ -427,7 +1631,7 @@
       "latest_version": "0.1.2",
       "manifest_path": "packages/30-ui-foundation/lander-primitives/package.json",
       "name": "@mdwrk/lander-primitives",
-      "observed_at": "2026-08-03T10:05:58Z",
+      "observed_at": "2026-08-03T13:56:23Z",
       "owner": "groupsum",
       "private": false,
       "publication_status": "published",
@@ -440,6 +1644,16 @@
         "repository_contains_package": 1
       },
       "release_count": 1,
+      "releases": [
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2026-06-16T20:57:55.083Z",
+          "release_kind": "npm",
+          "url": "https://www.npmjs.com/package/@mdwrk/lander-primitives/v/0.1.2",
+          "version": "0.1.2"
+        }
+      ],
       "repository": "groupsum/mdwrk-pages",
       "reviewed": false,
       "route": "/catalog/packages/npm/mdwrk-lander-primitives-0cadd94a",
@@ -448,7 +1662,156 @@
     },
     {
       "claim_boundary": "Publication is reported only when confirmed by the named public registry.",
+      "dependencies": [
+        {
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "internal": true,
+          "name": "@mdwrk/lander-content-contract",
+          "package_key": "npm:@mdwrk/lander-content-contract",
+          "requirement": "^0.1.5",
+          "scope": "dependencies"
+        },
+        {
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "internal": true,
+          "name": "@mdwrk/lander-core",
+          "package_key": "npm:@mdwrk/lander-core",
+          "requirement": "^0.1.5",
+          "scope": "dependencies"
+        },
+        {
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "internal": true,
+          "name": "@mdwrk/lander-primitives",
+          "package_key": "npm:@mdwrk/lander-primitives",
+          "requirement": "^0.1.0",
+          "scope": "dependencies"
+        },
+        {
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "internal": true,
+          "name": "@mdwrk/lander-react-structured-data",
+          "package_key": "npm:@mdwrk/lander-react-structured-data",
+          "requirement": "^0.1.4",
+          "scope": "dependencies"
+        },
+        {
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "@types/react",
+          "package_key": "npm:@types/react",
+          "requirement": "^19.0.8",
+          "scope": "devDependencies"
+        },
+        {
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "@types/react-dom",
+          "package_key": "npm:@types/react-dom",
+          "requirement": "^19.0.3",
+          "scope": "devDependencies"
+        },
+        {
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "react",
+          "package_key": "npm:react",
+          "requirement": "^19.0.0",
+          "scope": "peerDependencies"
+        },
+        {
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "react-dom",
+          "package_key": "npm:react-dom",
+          "requirement": "^19.0.0",
+          "scope": "peerDependencies"
+        }
+      ],
       "dependency_count": 8,
+      "dependent_count": 8,
+      "dependents": [
+        {
+          "completeness": "catalog-observed",
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "name": "@mdwrk/example-learning-path-demo",
+          "package_key": "npm:@mdwrk/example-learning-path-demo",
+          "requirement": "^0.1.0",
+          "scope": "dependencies"
+        },
+        {
+          "completeness": "catalog-observed",
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "name": "@mdwrk/example-page-template-demo",
+          "package_key": "npm:@mdwrk/example-page-template-demo",
+          "requirement": "^0.1.0",
+          "scope": "dependencies"
+        },
+        {
+          "completeness": "catalog-observed",
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "name": "@mdwrk/example-semantic-components-demo",
+          "package_key": "npm:@mdwrk/example-semantic-components-demo",
+          "requirement": "^0.1.0",
+          "scope": "dependencies"
+        },
+        {
+          "completeness": "catalog-observed",
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "name": "@mdwrk/example-subscription-store-demo",
+          "package_key": "npm:@mdwrk/example-subscription-store-demo",
+          "requirement": "^0.1.0",
+          "scope": "dependencies"
+        },
+        {
+          "completeness": "catalog-observed",
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "name": "@mdwrk/mdwrkcom",
+          "package_key": "npm:@mdwrk/mdwrkcom",
+          "requirement": "^0.1.0",
+          "scope": "dependencies"
+        },
+        {
+          "completeness": "catalog-observed",
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "name": "groupsum-xyz",
+          "package_key": "npm:groupsum-xyz",
+          "requirement": "^0.1.2",
+          "scope": "dependencies"
+        },
+        {
+          "completeness": "catalog-observed",
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "name": "peagen-com",
+          "package_key": "npm:peagen-com",
+          "requirement": "^0.1.2",
+          "scope": "dependencies"
+        },
+        {
+          "completeness": "catalog-observed",
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "name": "tigrbl-com",
+          "package_key": "npm:tigrbl-com",
+          "requirement": "^0.1.2",
+          "scope": "dependencies"
+        }
+      ],
       "description": "Observed npm package record for @mdwrk/lander-react.",
       "description_source": "generated-factual",
       "display_name": "@mdwrk/lander-react",
@@ -459,7 +1822,7 @@
       "evidence": [
         {
           "kind": "registry",
-          "observed_at": "2026-08-03T10:05:58Z",
+          "observed_at": "2026-08-03T13:56:23Z",
           "url": "https://www.npmjs.com/package/@mdwrk/lander-react"
         }
       ],
@@ -468,7 +1831,7 @@
       "latest_version": "0.1.23",
       "manifest_path": "packages/40-react-renderers/lander-react/package.json",
       "name": "@mdwrk/lander-react",
-      "observed_at": "2026-08-03T10:05:58Z",
+      "observed_at": "2026-08-03T13:56:23Z",
       "owner": "groupsum",
       "private": false,
       "publication_status": "published",
@@ -481,6 +1844,24 @@
         "repository_contains_package": 2
       },
       "release_count": 2,
+      "releases": [
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2026-06-16T20:58:11.739Z",
+          "release_kind": "npm",
+          "url": "https://www.npmjs.com/package/@mdwrk/lander-react/v/0.1.23",
+          "version": "0.1.23"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2026-05-16T07:21:22.097Z",
+          "release_kind": "npm",
+          "url": "https://www.npmjs.com/package/@mdwrk/lander-react/v/0.1.2",
+          "version": "0.1.2"
+        }
+      ],
       "repository": "groupsum/mdwrk-pages",
       "reviewed": false,
       "route": "/catalog/packages/npm/mdwrk-lander-react-9727145b",
@@ -489,7 +1870,66 @@
     },
     {
       "claim_boundary": "Publication is reported only when confirmed by the named public registry.",
+      "dependencies": [
+        {
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "internal": true,
+          "name": "@mdwrk/lander-commerce-contract",
+          "package_key": "npm:@mdwrk/lander-commerce-contract",
+          "requirement": "^0.1.0",
+          "scope": "dependencies"
+        },
+        {
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "@types/react",
+          "package_key": "npm:@types/react",
+          "requirement": "^19.0.8",
+          "scope": "devDependencies"
+        },
+        {
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "@types/react-dom",
+          "package_key": "npm:@types/react-dom",
+          "requirement": "^19.0.3",
+          "scope": "devDependencies"
+        },
+        {
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "react",
+          "package_key": "npm:react",
+          "requirement": "^19.0.0",
+          "scope": "peerDependencies"
+        },
+        {
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "react-dom",
+          "package_key": "npm:react-dom",
+          "requirement": "^19.0.0",
+          "scope": "peerDependencies"
+        }
+      ],
       "dependency_count": 5,
+      "dependent_count": 1,
+      "dependents": [
+        {
+          "completeness": "catalog-observed",
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "name": "@mdwrk/example-subscription-store-demo",
+          "package_key": "npm:@mdwrk/example-subscription-store-demo",
+          "requirement": "^0.1.0",
+          "scope": "dependencies"
+        }
+      ],
       "description": "Observed npm package record for @mdwrk/lander-react-commerce.",
       "description_source": "generated-factual",
       "display_name": "@mdwrk/lander-react-commerce",
@@ -500,7 +1940,7 @@
       "evidence": [
         {
           "kind": "registry",
-          "observed_at": "2026-08-03T10:05:58Z",
+          "observed_at": "2026-08-03T13:56:23Z",
           "url": "https://www.npmjs.com/package/@mdwrk/lander-react-commerce"
         }
       ],
@@ -509,7 +1949,7 @@
       "latest_version": "0.1.0",
       "manifest_path": "packages/40-react-renderers/lander-react-commerce/package.json",
       "name": "@mdwrk/lander-react-commerce",
-      "observed_at": "2026-08-03T10:05:58Z",
+      "observed_at": "2026-08-03T13:56:23Z",
       "owner": "groupsum",
       "private": false,
       "publication_status": "published",
@@ -522,6 +1962,16 @@
         "repository_contains_package": 1
       },
       "release_count": 1,
+      "releases": [
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2026-06-16T20:57:15.294Z",
+          "release_kind": "npm",
+          "url": "https://www.npmjs.com/package/@mdwrk/lander-react-commerce/v/0.1.0",
+          "version": "0.1.0"
+        }
+      ],
       "repository": "groupsum/mdwrk-pages",
       "reviewed": false,
       "route": "/catalog/packages/npm/mdwrk-lander-react-commerce-b6cd9dd8",
@@ -530,7 +1980,111 @@
     },
     {
       "claim_boundary": "Publication is reported only when confirmed by the named public registry.",
+      "dependencies": [
+        {
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "internal": true,
+          "name": "@mdwrk/lander-core",
+          "package_key": "npm:@mdwrk/lander-core",
+          "requirement": "^0.1.5",
+          "scope": "dependencies"
+        },
+        {
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "internal": true,
+          "name": "@mdwrk/structured-data",
+          "package_key": "npm:@mdwrk/structured-data",
+          "requirement": "^0.1.11",
+          "scope": "dependencies"
+        },
+        {
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "@types/react",
+          "package_key": "npm:@types/react",
+          "requirement": "^19.0.8",
+          "scope": "devDependencies"
+        },
+        {
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "@types/react-dom",
+          "package_key": "npm:@types/react-dom",
+          "requirement": "^19.0.3",
+          "scope": "devDependencies"
+        },
+        {
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "react",
+          "package_key": "npm:react",
+          "requirement": "^19.0.0",
+          "scope": "peerDependencies"
+        },
+        {
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "react-dom",
+          "package_key": "npm:react-dom",
+          "requirement": "^19.0.0",
+          "scope": "peerDependencies"
+        }
+      ],
       "dependency_count": 6,
+      "dependent_count": 5,
+      "dependents": [
+        {
+          "completeness": "catalog-observed",
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "name": "@mdwrk/example-learning-path-demo",
+          "package_key": "npm:@mdwrk/example-learning-path-demo",
+          "requirement": "^0.1.0",
+          "scope": "dependencies"
+        },
+        {
+          "completeness": "catalog-observed",
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "name": "@mdwrk/example-page-template-demo",
+          "package_key": "npm:@mdwrk/example-page-template-demo",
+          "requirement": "^0.1.0",
+          "scope": "dependencies"
+        },
+        {
+          "completeness": "catalog-observed",
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "name": "@mdwrk/example-semantic-components-demo",
+          "package_key": "npm:@mdwrk/example-semantic-components-demo",
+          "requirement": "^0.1.0",
+          "scope": "dependencies"
+        },
+        {
+          "completeness": "catalog-observed",
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "name": "@mdwrk/example-subscription-store-demo",
+          "package_key": "npm:@mdwrk/example-subscription-store-demo",
+          "requirement": "^0.1.0",
+          "scope": "dependencies"
+        },
+        {
+          "completeness": "catalog-observed",
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "name": "@mdwrk/lander-react",
+          "package_key": "npm:@mdwrk/lander-react",
+          "requirement": "^0.1.4",
+          "scope": "dependencies"
+        }
+      ],
       "description": "Observed npm package record for @mdwrk/lander-react-structured-data.",
       "description_source": "generated-factual",
       "display_name": "@mdwrk/lander-react-structured-data",
@@ -541,7 +2095,7 @@
       "evidence": [
         {
           "kind": "registry",
-          "observed_at": "2026-08-03T10:05:58Z",
+          "observed_at": "2026-08-03T13:56:23Z",
           "url": "https://www.npmjs.com/package/@mdwrk/lander-react-structured-data"
         }
       ],
@@ -550,7 +2104,7 @@
       "latest_version": "0.1.4",
       "manifest_path": "packages/50-machine-output/lander-react-structured-data/package.json",
       "name": "@mdwrk/lander-react-structured-data",
-      "observed_at": "2026-08-03T10:05:58Z",
+      "observed_at": "2026-08-03T13:56:23Z",
       "owner": "groupsum",
       "private": false,
       "publication_status": "published",
@@ -563,6 +2117,16 @@
         "repository_contains_package": 1
       },
       "release_count": 1,
+      "releases": [
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2026-06-16T20:58:05.174Z",
+          "release_kind": "npm",
+          "url": "https://www.npmjs.com/package/@mdwrk/lander-react-structured-data/v/0.1.4",
+          "version": "0.1.4"
+        }
+      ],
       "repository": "groupsum/mdwrk-pages",
       "reviewed": false,
       "route": "/catalog/packages/npm/mdwrk-lander-react-structured-data-496cbfa0",
@@ -571,7 +2135,30 @@
     },
     {
       "claim_boundary": "Publication is reported only when confirmed by the named public registry.",
+      "dependencies": [
+        {
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "internal": true,
+          "name": "@mdwrk/lander-core",
+          "package_key": "npm:@mdwrk/lander-core",
+          "requirement": "^0.1.5",
+          "scope": "dependencies"
+        }
+      ],
       "dependency_count": 1,
+      "dependent_count": 1,
+      "dependents": [
+        {
+          "completeness": "catalog-observed",
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "name": "@mdwrk/mdwrkcom",
+          "package_key": "npm:@mdwrk/mdwrkcom",
+          "requirement": "^0.1.0",
+          "scope": "dependencies"
+        }
+      ],
       "description": "Observed npm package record for @mdwrk/lander-seo.",
       "description_source": "generated-factual",
       "display_name": "@mdwrk/lander-seo",
@@ -582,7 +2169,7 @@
       "evidence": [
         {
           "kind": "registry",
-          "observed_at": "2026-08-03T10:05:58Z",
+          "observed_at": "2026-08-03T13:56:23Z",
           "url": "https://www.npmjs.com/package/@mdwrk/lander-seo"
         }
       ],
@@ -591,7 +2178,7 @@
       "latest_version": "0.1.5",
       "manifest_path": "packages/50-machine-output/lander-seo/package.json",
       "name": "@mdwrk/lander-seo",
-      "observed_at": "2026-08-03T10:05:58Z",
+      "observed_at": "2026-08-03T13:56:23Z",
       "owner": "groupsum",
       "private": false,
       "publication_status": "published",
@@ -603,6 +2190,32 @@
         "repository_contains_package": 2
       },
       "release_count": 3,
+      "releases": [
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2026-06-16T20:57:58.798Z",
+          "release_kind": "npm",
+          "url": "https://www.npmjs.com/package/@mdwrk/lander-seo/v/0.1.5",
+          "version": "0.1.5"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2026-05-18T16:04:31.197Z",
+          "release_kind": "npm",
+          "url": "https://www.npmjs.com/package/@mdwrk/lander-seo/v/0.1.3",
+          "version": "0.1.3"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2026-05-16T07:21:11.150Z",
+          "release_kind": "npm",
+          "url": "https://www.npmjs.com/package/@mdwrk/lander-seo/v/0.1.2",
+          "version": "0.1.2"
+        }
+      ],
       "repository": "groupsum/mdwrk-pages",
       "reviewed": false,
       "route": "/catalog/packages/npm/mdwrk-lander-seo-163743c4",
@@ -611,7 +2224,57 @@
     },
     {
       "claim_boundary": "Publication is reported only when confirmed by the named public registry.",
+      "dependencies": [
+        {
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "internal": true,
+          "name": "@mdwrk/pages-ui-tokens",
+          "package_key": "npm:@mdwrk/pages-ui-tokens",
+          "requirement": "^0.1.0",
+          "scope": "dependencies"
+        }
+      ],
       "dependency_count": 1,
+      "dependent_count": 4,
+      "dependents": [
+        {
+          "completeness": "catalog-observed",
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "name": "@mdwrk/mdwrkcom",
+          "package_key": "npm:@mdwrk/mdwrkcom",
+          "requirement": "^0.1.2",
+          "scope": "dependencies"
+        },
+        {
+          "completeness": "catalog-observed",
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "name": "groupsum-xyz",
+          "package_key": "npm:groupsum-xyz",
+          "requirement": "^0.1.4",
+          "scope": "dependencies"
+        },
+        {
+          "completeness": "catalog-observed",
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "name": "peagen-com",
+          "package_key": "npm:peagen-com",
+          "requirement": "^0.1.4",
+          "scope": "dependencies"
+        },
+        {
+          "completeness": "catalog-observed",
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "name": "tigrbl-com",
+          "package_key": "npm:tigrbl-com",
+          "requirement": "^0.1.4",
+          "scope": "dependencies"
+        }
+      ],
       "description": "Observed npm package record for @mdwrk/lander-theme.",
       "description_source": "generated-factual",
       "display_name": "@mdwrk/lander-theme",
@@ -622,7 +2285,7 @@
       "evidence": [
         {
           "kind": "registry",
-          "observed_at": "2026-08-03T10:05:58Z",
+          "observed_at": "2026-08-03T13:56:23Z",
           "url": "https://www.npmjs.com/package/@mdwrk/lander-theme"
         }
       ],
@@ -631,7 +2294,7 @@
       "latest_version": "0.1.6",
       "manifest_path": "packages/30-ui-foundation/lander-theme/package.json",
       "name": "@mdwrk/lander-theme",
-      "observed_at": "2026-08-03T10:05:58Z",
+      "observed_at": "2026-08-03T13:56:23Z",
       "owner": "groupsum",
       "private": false,
       "publication_status": "published",
@@ -643,6 +2306,24 @@
         "repository_contains_package": 2
       },
       "release_count": 2,
+      "releases": [
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2026-06-16T20:58:02.658Z",
+          "release_kind": "npm",
+          "url": "https://www.npmjs.com/package/@mdwrk/lander-theme/v/0.1.6",
+          "version": "0.1.6"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2026-05-16T07:21:02.269Z",
+          "release_kind": "npm",
+          "url": "https://www.npmjs.com/package/@mdwrk/lander-theme/v/0.1.4",
+          "version": "0.1.4"
+        }
+      ],
       "repository": "groupsum/mdwrk-pages",
       "reviewed": false,
       "route": "/catalog/packages/npm/mdwrk-lander-theme-ab97533c",
@@ -651,7 +2332,48 @@
     },
     {
       "claim_boundary": "Publication is reported only when confirmed by the named public registry.",
+      "dependencies": [
+        {
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "internal": true,
+          "name": "@mdwrk/lander-content-contract",
+          "package_key": "npm:@mdwrk/lander-content-contract",
+          "requirement": "^0.1.5",
+          "scope": "dependencies"
+        },
+        {
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "internal": true,
+          "name": "@mdwrk/lander-page-template-presets",
+          "package_key": "npm:@mdwrk/lander-page-template-presets",
+          "requirement": "^0.1.2",
+          "scope": "dependencies"
+        },
+        {
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "internal": true,
+          "name": "@mdwrk/lander-page-templates",
+          "package_key": "npm:@mdwrk/lander-page-templates",
+          "requirement": "^0.1.2",
+          "scope": "dependencies"
+        }
+      ],
       "dependency_count": 3,
+      "dependent_count": 1,
+      "dependents": [
+        {
+          "completeness": "catalog-observed",
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "name": "@mdwrk/example-page-template-demo",
+          "package_key": "npm:@mdwrk/example-page-template-demo",
+          "requirement": "^0.1.0",
+          "scope": "dependencies"
+        }
+      ],
       "description": "Observed npm package record for @mdwrk/page-template-demo-content-pack.",
       "description_source": "generated-factual",
       "display_name": "@mdwrk/page-template-demo-content-pack",
@@ -662,7 +2384,7 @@
       "evidence": [
         {
           "kind": "registry",
-          "observed_at": "2026-08-03T10:05:58Z",
+          "observed_at": "2026-08-03T13:56:23Z",
           "url": "https://www.npmjs.com/package/@mdwrk/page-template-demo-content-pack"
         }
       ],
@@ -671,7 +2393,7 @@
       "latest_version": "0.1.2",
       "manifest_path": "packages/60-content-packs/page-template-demo-content-pack/package.json",
       "name": "@mdwrk/page-template-demo-content-pack",
-      "observed_at": "2026-08-03T10:05:58Z",
+      "observed_at": "2026-08-03T13:56:23Z",
       "owner": "groupsum",
       "private": false,
       "publication_status": "published",
@@ -683,6 +2405,16 @@
         "repository_contains_package": 2
       },
       "release_count": 1,
+      "releases": [
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2026-06-16T20:58:03.973Z",
+          "release_kind": "npm",
+          "url": "https://www.npmjs.com/package/@mdwrk/page-template-demo-content-pack/v/0.1.2",
+          "version": "0.1.2"
+        }
+      ],
       "repository": "groupsum/mdwrk-pages",
       "reviewed": false,
       "route": "/catalog/packages/npm/mdwrk-page-template-demo-content-pack-236bda02",
@@ -691,7 +2423,20 @@
     },
     {
       "claim_boundary": "Publication is reported only when confirmed by the named public registry.",
+      "dependencies": [],
       "dependency_count": 0,
+      "dependent_count": 1,
+      "dependents": [
+        {
+          "completeness": "catalog-observed",
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "name": "@mdwrk/lander-theme",
+          "package_key": "npm:@mdwrk/lander-theme",
+          "requirement": "^0.1.0",
+          "scope": "dependencies"
+        }
+      ],
       "description": "Observed npm package record for @mdwrk/pages-ui-tokens.",
       "description_source": "generated-factual",
       "display_name": "@mdwrk/pages-ui-tokens",
@@ -702,7 +2447,7 @@
       "evidence": [
         {
           "kind": "registry",
-          "observed_at": "2026-08-03T10:05:58Z",
+          "observed_at": "2026-08-03T13:56:23Z",
           "url": "https://www.npmjs.com/package/@mdwrk/pages-ui-tokens"
         }
       ],
@@ -711,7 +2456,7 @@
       "latest_version": "0.1.13",
       "manifest_path": "packages/30-ui-foundation/pages-ui-tokens/package.json",
       "name": "@mdwrk/pages-ui-tokens",
-      "observed_at": "2026-08-03T10:05:58Z",
+      "observed_at": "2026-08-03T13:56:23Z",
       "owner": "groupsum",
       "private": false,
       "publication_status": "published",
@@ -723,6 +2468,16 @@
         "repository_contains_package": 1
       },
       "release_count": 1,
+      "releases": [
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2026-06-16T20:58:53.569Z",
+          "release_kind": "npm",
+          "url": "https://www.npmjs.com/package/@mdwrk/pages-ui-tokens/v/0.1.13",
+          "version": "0.1.13"
+        }
+      ],
       "repository": "groupsum/mdwrk-pages",
       "reviewed": false,
       "route": "/catalog/packages/npm/mdwrk-pages-ui-tokens-b910e940",
@@ -731,7 +2486,65 @@
     },
     {
       "claim_boundary": "Publication is reported only when confirmed by the named public registry.",
+      "dependencies": [],
       "dependency_count": 0,
+      "dependent_count": 6,
+      "dependents": [
+        {
+          "completeness": "catalog-observed",
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "name": "@mdwrk/example-semantic-components-demo",
+          "package_key": "npm:@mdwrk/example-semantic-components-demo",
+          "requirement": "^0.1.0",
+          "scope": "dependencies"
+        },
+        {
+          "completeness": "catalog-observed",
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "name": "@mdwrk/lander-react",
+          "package_key": "npm:@mdwrk/lander-react",
+          "requirement": "^0.1.5",
+          "scope": "dependencies"
+        },
+        {
+          "completeness": "catalog-observed",
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "name": "@mdwrk/lander-react-structured-data",
+          "package_key": "npm:@mdwrk/lander-react-structured-data",
+          "requirement": "^0.1.11",
+          "scope": "dependencies"
+        },
+        {
+          "completeness": "catalog-observed",
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "name": "@mdwrk/mdwrkcom",
+          "package_key": "npm:@mdwrk/mdwrkcom",
+          "requirement": "^0.1.1",
+          "scope": "dependencies"
+        },
+        {
+          "completeness": "catalog-observed",
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "name": "ssot-registry-com",
+          "package_key": "npm:ssot-registry-com",
+          "requirement": "^0.2.0",
+          "scope": "dependencies"
+        },
+        {
+          "completeness": "catalog-observed",
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "name": "swarmauri-com",
+          "package_key": "npm:swarmauri-com",
+          "requirement": "^0.1.11",
+          "scope": "dependencies"
+        }
+      ],
       "description": "Observed npm package record for @mdwrk/structured-data.",
       "description_source": "generated-factual",
       "display_name": "@mdwrk/structured-data",
@@ -742,7 +2555,7 @@
       "evidence": [
         {
           "kind": "registry",
-          "observed_at": "2026-08-03T10:05:58Z",
+          "observed_at": "2026-08-03T13:56:23Z",
           "url": "https://www.npmjs.com/package/@mdwrk/structured-data"
         }
       ],
@@ -751,7 +2564,7 @@
       "latest_version": "0.2.0",
       "manifest_path": "packages/00-contracts/structured-data/package.json",
       "name": "@mdwrk/structured-data",
-      "observed_at": "2026-08-03T10:05:58Z",
+      "observed_at": "2026-08-03T13:56:23Z",
       "owner": "groupsum",
       "private": false,
       "publication_status": "published",
@@ -763,6 +2576,40 @@
         "repository_contains_package": 2
       },
       "release_count": 4,
+      "releases": [
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2026-07-13T20:58:57.015Z",
+          "release_kind": "npm",
+          "url": "https://www.npmjs.com/package/@mdwrk/structured-data/v/0.2.0",
+          "version": "0.2.0"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2026-06-16T20:58:51.411Z",
+          "release_kind": "npm",
+          "url": "https://www.npmjs.com/package/@mdwrk/structured-data/v/0.1.11",
+          "version": "0.1.11"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2026-05-18T16:04:24.557Z",
+          "release_kind": "npm",
+          "url": "https://www.npmjs.com/package/@mdwrk/structured-data/v/0.1.4",
+          "version": "0.1.4"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2026-05-16T07:21:35.540Z",
+          "release_kind": "npm",
+          "url": "https://www.npmjs.com/package/@mdwrk/structured-data/v/0.1.3",
+          "version": "0.1.3"
+        }
+      ],
       "repository": "groupsum/mdwrk-pages",
       "reviewed": false,
       "route": "/catalog/packages/npm/mdwrk-structured-data-fb682e1f",
@@ -771,7 +2618,48 @@
     },
     {
       "claim_boundary": "Publication is reported only when confirmed by the named public registry.",
+      "dependencies": [
+        {
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "internal": true,
+          "name": "@mdwrk/lander-content-contract",
+          "package_key": "npm:@mdwrk/lander-content-contract",
+          "requirement": "^0.1.5",
+          "scope": "dependencies"
+        },
+        {
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "internal": true,
+          "name": "@mdwrk/lander-page-template-presets",
+          "package_key": "npm:@mdwrk/lander-page-template-presets",
+          "requirement": "^0.1.2",
+          "scope": "dependencies"
+        },
+        {
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "internal": true,
+          "name": "@mdwrk/lander-page-templates",
+          "package_key": "npm:@mdwrk/lander-page-templates",
+          "requirement": "^0.1.2",
+          "scope": "dependencies"
+        }
+      ],
       "dependency_count": 3,
+      "dependent_count": 1,
+      "dependents": [
+        {
+          "completeness": "catalog-observed",
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "name": "@mdwrk/example-subscription-store-demo",
+          "package_key": "npm:@mdwrk/example-subscription-store-demo",
+          "requirement": "^0.1.0",
+          "scope": "dependencies"
+        }
+      ],
       "description": "Observed npm package record for @mdwrk/subscription-store-content-pack.",
       "description_source": "generated-factual",
       "display_name": "@mdwrk/subscription-store-content-pack",
@@ -782,7 +2670,7 @@
       "evidence": [
         {
           "kind": "registry",
-          "observed_at": "2026-08-03T10:05:58Z",
+          "observed_at": "2026-08-03T13:56:23Z",
           "url": "https://www.npmjs.com/package/@mdwrk/subscription-store-content-pack"
         }
       ],
@@ -791,7 +2679,7 @@
       "latest_version": "0.1.0",
       "manifest_path": "packages/60-content-packs/subscription-store-content-pack/package.json",
       "name": "@mdwrk/subscription-store-content-pack",
-      "observed_at": "2026-08-03T10:05:58Z",
+      "observed_at": "2026-08-03T13:56:23Z",
       "owner": "groupsum",
       "private": false,
       "publication_status": "published",
@@ -803,6 +2691,16 @@
         "repository_contains_package": 1
       },
       "release_count": 1,
+      "releases": [
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2026-06-16T20:58:09.319Z",
+          "release_kind": "npm",
+          "url": "https://www.npmjs.com/package/@mdwrk/subscription-store-content-pack/v/0.1.0",
+          "version": "0.1.0"
+        }
+      ],
       "repository": "groupsum/mdwrk-pages",
       "reviewed": false,
       "route": "/catalog/packages/npm/mdwrk-subscription-store-content-pack-3176826f",
@@ -811,7 +2709,38 @@
     },
     {
       "claim_boundary": "Publication is reported only when confirmed by the named public registry.",
+      "dependencies": [
+        {
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "react",
+          "package_key": "npm:react",
+          "requirement": "^19.2.4",
+          "scope": "dependencies"
+        },
+        {
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "react-dom",
+          "package_key": "npm:react-dom",
+          "requirement": "^19.2.4",
+          "scope": "dependencies"
+        },
+        {
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "typescript",
+          "package_key": "npm:typescript",
+          "requirement": "5.9.3",
+          "scope": "devDependencies"
+        }
+      ],
       "dependency_count": 3,
+      "dependent_count": 0,
+      "dependents": [],
       "description": "Observed npm package record for mdwrk-pages.",
       "description_source": "generated-factual",
       "display_name": "mdwrk-pages",
@@ -822,7 +2751,7 @@
       "evidence": [
         {
           "kind": "source",
-          "observed_at": "2026-08-03T10:05:58Z",
+          "observed_at": "2026-08-03T13:56:23Z",
           "url": "https://github.com/groupsum/mdwrk-pages/blob/HEAD/package.json"
         }
       ],
@@ -831,7 +2760,7 @@
       "latest_version": "0.1.31",
       "manifest_path": "package.json",
       "name": "mdwrk-pages",
-      "observed_at": "2026-08-03T10:05:58Z",
+      "observed_at": "2026-08-03T13:56:23Z",
       "owner": "groupsum",
       "private": true,
       "publication_status": "manifest_private",
@@ -843,6 +2772,7 @@
         "repository_contains_package": 1
       },
       "release_count": 0,
+      "releases": [],
       "repository": "groupsum/mdwrk-pages",
       "reviewed": false,
       "route": "/catalog/packages/npm/mdwrk-pages-0326af86",
@@ -851,7 +2781,20 @@
     },
     {
       "claim_boundary": "Publication is reported only when confirmed by the named public registry.",
+      "dependencies": [
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": true,
+          "name": "ssot-registry",
+          "package_key": "pypi:ssot-registry",
+          "requirement": ">=0.2.18",
+          "scope": "dependency-groups.dev"
+        }
+      ],
       "dependency_count": 1,
+      "dependent_count": 0,
+      "dependents": [],
       "description": "Observed pypi package record for mdwrk-pages.",
       "description_source": "generated-factual",
       "display_name": "mdwrk-pages",
@@ -862,7 +2805,7 @@
       "evidence": [
         {
           "kind": "source",
-          "observed_at": "2026-08-03T10:05:58Z",
+          "observed_at": "2026-08-03T13:56:23Z",
           "url": "https://github.com/groupsum/mdwrk-pages/blob/HEAD/pyproject.toml"
         }
       ],
@@ -871,10 +2814,10 @@
       "latest_version": "0.1.0",
       "manifest_path": "pyproject.toml",
       "name": "mdwrk-pages",
-      "observed_at": "2026-08-03T10:05:58Z",
+      "observed_at": "2026-08-03T13:56:23Z",
       "owner": "groupsum",
       "private": false,
-      "publication_status": "not-confirmed",
+      "publication_status": "registry_not_found",
       "published": false,
       "registry_url": null,
       "relationship_count": 2,
@@ -883,6 +2826,7 @@
         "repository_contains_package": 1
       },
       "release_count": 0,
+      "releases": [],
       "repository": "groupsum/mdwrk-pages",
       "reviewed": false,
       "route": "/catalog/packages/pypi/mdwrk-pages-22afb60e",
@@ -901,12 +2845,13 @@
     "evidence": [
       {
         "kind": "source",
-        "observed_at": "2026-08-03T10:05:58Z",
+        "observed_at": "2026-08-03T13:56:24Z",
         "url": "https://github.com/groupsum/mdwrk-pages"
       }
     ],
     "fork": false,
     "full_name": "groupsum/mdwrk-pages",
+    "github_releases": [],
     "homepage": null,
     "id": "repository:groupsum/mdwrk-pages",
     "kind": "repository",
@@ -938,7 +2883,7 @@
       "watchers": 0
     },
     "name": "mdwrk-pages",
-    "observed_at": "2026-08-03T10:05:58Z",
+    "observed_at": "2026-08-03T13:56:24Z",
     "owner": "groupsum",
     "package_ids": [
       "package:npm:@mdwrk/example-learning-path-demo:groupsum/mdwrk-pages:packages/70-demos/learning-path-demo/package.json",
@@ -967,14 +2912,14 @@
     "pushed_at": "2026-07-13T21:06:00Z",
     "related_resources": [
       {
-        "evidence_type": "repository.tree",
+        "evidence_type": "repository.blob",
         "id": "resource:5bb4c933b147",
         "kind": "documentation",
         "name": "docs/AGENTS.md",
         "url": "https://github.com/groupsum/mdwrk-pages/blob/master/docs/AGENTS.md"
       },
       {
-        "evidence_type": "repository.tree",
+        "evidence_type": "repository.blob",
         "id": "resource:27e5213f294f",
         "kind": "documentation",
         "name": "docs/README.md",
@@ -988,63 +2933,63 @@
         "url": "https://github.com/groupsum/mdwrk-pages/tree/master/docs/assets"
       },
       {
-        "evidence_type": "repository.tree",
+        "evidence_type": "repository.blob",
         "id": "resource:566b2ad10ec3",
         "kind": "documentation",
         "name": "docs/generated-schemaorg-page-family-presence.csv",
         "url": "https://github.com/groupsum/mdwrk-pages/blob/master/docs/generated-schemaorg-page-family-presence.csv"
       },
       {
-        "evidence_type": "repository.tree",
+        "evidence_type": "repository.blob",
         "id": "resource:f9d44da48687",
         "kind": "documentation",
         "name": "docs/structured-data-presence.csv",
         "url": "https://github.com/groupsum/mdwrk-pages/blob/master/docs/structured-data-presence.csv"
       },
       {
-        "evidence_type": "repository.tree",
+        "evidence_type": "repository.blob",
         "id": "resource:e10366737c3d",
         "kind": "documentation",
         "name": "docs/structured-data-semantic-component-matrix.md",
         "url": "https://github.com/groupsum/mdwrk-pages/blob/master/docs/structured-data-semantic-component-matrix.md"
       },
       {
-        "evidence_type": "repository.tree",
+        "evidence_type": "repository.blob",
         "id": "resource:5b1549c82855",
         "kind": "documentation",
         "name": "docs/structured-data-type-support-matrix.md",
         "url": "https://github.com/groupsum/mdwrk-pages/blob/master/docs/structured-data-type-support-matrix.md"
       },
       {
-        "evidence_type": "repository.tree",
+        "evidence_type": "repository.blob",
         "id": "resource:4fe687407df0",
         "kind": "documentation",
         "name": "docs/typography-overflow-text-fit-matrix.md",
         "url": "https://github.com/groupsum/mdwrk-pages/blob/master/docs/typography-overflow-text-fit-matrix.md"
       },
       {
-        "evidence_type": "repository.tree",
+        "evidence_type": "repository.blob",
         "id": "resource:8d1194a81bef",
         "kind": "example",
         "name": "packages/20-page-systems/lander-page-templates/src/examples/education.ts",
         "url": "https://github.com/groupsum/mdwrk-pages/blob/master/packages/20-page-systems/lander-page-templates/src/examples/education.ts"
       },
       {
-        "evidence_type": "repository.tree",
+        "evidence_type": "repository.blob",
         "id": "resource:c1a67f041704",
         "kind": "example",
         "name": "packages/20-page-systems/lander-page-templates/src/examples/generic.ts",
         "url": "https://github.com/groupsum/mdwrk-pages/blob/master/packages/20-page-systems/lander-page-templates/src/examples/generic.ts"
       },
       {
-        "evidence_type": "repository.tree",
+        "evidence_type": "repository.blob",
         "id": "resource:3d00e664f442",
         "kind": "example",
         "name": "packages/20-page-systems/lander-page-templates/src/examples/product.ts",
         "url": "https://github.com/groupsum/mdwrk-pages/blob/master/packages/20-page-systems/lander-page-templates/src/examples/product.ts"
       },
       {
-        "evidence_type": "repository.tree",
+        "evidence_type": "repository.blob",
         "id": "resource:6e5cc86749b4",
         "kind": "example",
         "name": "packages/20-page-systems/lander-page-templates/src/examples/support.ts",

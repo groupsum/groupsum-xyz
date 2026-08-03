@@ -1,9 +1,157 @@
 {
-  "generated_at": "2026-08-03T10:05:58Z",
+  "generated_at": "2026-08-03T13:56:23Z",
   "packages": [
     {
       "claim_boundary": "Publication is reported only when confirmed by the named public registry.",
+      "dependencies": [
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "pgpy",
+          "package_key": "pypi:pgpy",
+          "requirement": ">=0.6.0",
+          "scope": "dependencies"
+        },
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "python-multipart",
+          "package_key": "pypi:python-multipart",
+          "requirement": ">=0.0.7",
+          "scope": "dependencies"
+        },
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": true,
+          "name": "tigrbl",
+          "package_key": "pypi:tigrbl",
+          "requirement": "*",
+          "scope": "dependencies"
+        },
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "uvicorn",
+          "package_key": "pypi:uvicorn",
+          "requirement": "[standard]>=0.30",
+          "scope": "optional-dependencies.server"
+        },
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "poetry-core",
+          "package_key": "pypi:poetry-core",
+          "requirement": ">=1.0.0",
+          "scope": "build-system.requires"
+        },
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "pytest",
+          "package_key": "pypi:pytest",
+          "requirement": ">=8.0",
+          "scope": "dependency-groups.dev"
+        },
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "pytest-asyncio",
+          "package_key": "pypi:pytest-asyncio",
+          "requirement": ">=0.24.0",
+          "scope": "dependency-groups.dev"
+        },
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "pytest-xdist",
+          "package_key": "pypi:pytest-xdist",
+          "requirement": ">=3.6.1",
+          "scope": "dependency-groups.dev"
+        },
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "pytest-json-report",
+          "package_key": "pypi:pytest-json-report",
+          "requirement": ">=1.5.0",
+          "scope": "dependency-groups.dev"
+        },
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "python-dotenv",
+          "package_key": "pypi:python-dotenv",
+          "requirement": "*",
+          "scope": "dependency-groups.dev"
+        },
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "requests",
+          "package_key": "pypi:requests",
+          "requirement": ">=2.32.3",
+          "scope": "dependency-groups.dev"
+        },
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "flake8",
+          "package_key": "pypi:flake8",
+          "requirement": ">=7.0",
+          "scope": "dependency-groups.dev"
+        },
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "pytest-timeout",
+          "package_key": "pypi:pytest-timeout",
+          "requirement": ">=2.3.1",
+          "scope": "dependency-groups.dev"
+        },
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "ruff",
+          "package_key": "pypi:ruff",
+          "requirement": ">=0.9.9",
+          "scope": "dependency-groups.dev"
+        },
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "pytest-benchmark",
+          "package_key": "pypi:pytest-benchmark",
+          "requirement": ">=4.0.0",
+          "scope": "dependency-groups.dev"
+        },
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "httpx",
+          "package_key": "pypi:httpx",
+          "requirement": ">=0.27",
+          "scope": "dependency-groups.dev"
+        }
+      ],
       "dependency_count": 16,
+      "dependent_count": 0,
+      "dependents": [],
       "description": "Observed pypi package record for tigrbl_api_hpks.",
       "description_source": "generated-factual",
       "display_name": "tigrbl_api_hpks",
@@ -14,7 +162,7 @@
       "evidence": [
         {
           "kind": "registry",
-          "observed_at": "2026-08-03T10:05:58Z",
+          "observed_at": "2026-08-03T13:56:23Z",
           "url": "https://pypi.org/project/tigrbl_api_hpks/"
         }
       ],
@@ -23,7 +171,7 @@
       "latest_version": "0.1.2",
       "manifest_path": "pyproject.toml",
       "name": "tigrbl_api_hpks",
-      "observed_at": "2026-08-03T10:05:58Z",
+      "observed_at": "2026-08-03T13:56:23Z",
       "owner": "tigrbl",
       "private": false,
       "publication_status": "published",
@@ -36,6 +184,136 @@
         "repository_contains_package": 1
       },
       "release_count": 16,
+      "releases": [
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2026-05-20T07:50:21.046652Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/tigrbl_api_hpks/0.1.3.dev1/",
+          "version": "0.1.3.dev1"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2026-03-24T06:01:35.887953Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/tigrbl_api_hpks/0.1.2/",
+          "version": "0.1.2"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2026-03-23T07:40:11.077870Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/tigrbl_api_hpks/0.1.2.dev19/",
+          "version": "0.1.2.dev19"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2026-03-20T17:57:39.343098Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/tigrbl_api_hpks/0.1.2.dev17/",
+          "version": "0.1.2.dev17"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2026-03-20T17:37:53.583399Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/tigrbl_api_hpks/0.1.2.dev16/",
+          "version": "0.1.2.dev16"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2026-03-20T10:03:13.874445Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/tigrbl_api_hpks/0.1.2.dev15/",
+          "version": "0.1.2.dev15"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2026-03-20T09:44:05.453208Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/tigrbl_api_hpks/0.1.2.dev14/",
+          "version": "0.1.2.dev14"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2026-03-20T09:20:56.902323Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/tigrbl_api_hpks/0.1.2.dev13/",
+          "version": "0.1.2.dev13"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2026-03-20T08:02:45.470329Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/tigrbl_api_hpks/0.1.2.dev11/",
+          "version": "0.1.2.dev11"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2026-03-20T07:41:15.619599Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/tigrbl_api_hpks/0.1.2.dev10/",
+          "version": "0.1.2.dev10"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2026-02-23T10:26:13.649207Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/tigrbl_api_hpks/0.1.2.dev9/",
+          "version": "0.1.2.dev9"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2026-02-17T19:39:05.803083Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/tigrbl_api_hpks/0.1.2.dev8/",
+          "version": "0.1.2.dev8"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2026-02-12T08:26:29.891142Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/tigrbl_api_hpks/0.1.2.dev5/",
+          "version": "0.1.2.dev5"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2026-01-28T08:17:21.271916Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/tigrbl_api_hpks/0.1.1/",
+          "version": "0.1.1"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2026-01-28T00:54:33.009851Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/tigrbl_api_hpks/0.1.0/",
+          "version": "0.1.0"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2026-01-27T23:01:41.184891Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/tigrbl_api_hpks/0.1.0.dev11/",
+          "version": "0.1.0.dev11"
+        }
+      ],
       "repository": "tigrbl/tigrbl_api_hpks",
       "reviewed": false,
       "route": "/catalog/packages/pypi/tigrbl-api-hpks-ce01f928",
@@ -54,12 +332,13 @@
     "evidence": [
       {
         "kind": "source",
-        "observed_at": "2026-08-03T10:05:58Z",
+        "observed_at": "2026-08-03T13:56:24Z",
         "url": "https://github.com/tigrbl/tigrbl_api_hpks"
       }
     ],
     "fork": false,
     "full_name": "tigrbl/tigrbl_api_hpks",
+    "github_releases": [],
     "homepage": null,
     "id": "repository:tigrbl/tigrbl_api_hpks",
     "kind": "repository",
@@ -91,7 +370,7 @@
       "watchers": 0
     },
     "name": "tigrbl_api_hpks",
-    "observed_at": "2026-08-03T10:05:58Z",
+    "observed_at": "2026-08-03T13:56:24Z",
     "owner": "tigrbl",
     "package_ids": [
       "package:pypi:tigrbl_api_hpks:tigrbl/tigrbl_api_hpks:pyproject.toml"

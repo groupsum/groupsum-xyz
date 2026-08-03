@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-03T10:05:58Z",
+  "generated_at": "2026-08-03T13:56:23Z",
   "packages": [],
   "repository": {
     "archived": false,
@@ -12,12 +12,24 @@
     "evidence": [
       {
         "kind": "source",
-        "observed_at": "2026-08-03T10:05:58Z",
+        "observed_at": "2026-08-03T13:56:25Z",
         "url": "https://github.com/swarmauri/swarmauri-notebooks"
       }
     ],
     "fork": false,
     "full_name": "swarmauri/swarmauri-notebooks",
+    "github_releases": [
+      {
+        "downloads": 0,
+        "draft": false,
+        "observed_at": "2026-08-03T13:56:25Z",
+        "prerelease": true,
+        "published_at": "2024-09-01T16:48:46Z",
+        "release_kind": "github",
+        "url": "https://github.com/swarmauri/swarmauri-notebooks/releases/tag/v0.4.1.dev1",
+        "version": "v0.4.1.dev1"
+      }
+    ],
     "homepage": "https://swarmauri.com",
     "id": "repository:swarmauri/swarmauri-notebooks",
     "kind": "repository",
@@ -57,7 +69,7 @@
       "watchers": 4
     },
     "name": "swarmauri-notebooks",
-    "observed_at": "2026-08-03T10:05:58Z",
+    "observed_at": "2026-08-03T13:56:25Z",
     "owner": "swarmauri",
     "package_ids": [],
     "pushed_at": "2025-01-12T05:17:11Z",

@@ -6,7 +6,7 @@ import httpx
 import pytest
 
 from groupsum_catalog_api.app import build_app
-from groupsum_catalog_api.importer import import_catalog
+from groupsum_catalog_api.importer import connect, import_catalog
 
 
 @pytest.mark.anyio
@@ -45,7 +45,16 @@ async def test_peagen_page_model_has_explicit_attachments(tmp_path: Path) -> Non
     app = build_app(database_path)
     counts = import_catalog(database_path, repo_root)
     assert counts["records"] >= 32
+    assert counts["repositories"] == 68
+    assert counts["packages"] == 1_124
+    assert counts["releases"] > 17_000
+    assert counts["dependencies"] > 8_000
     assert import_catalog(database_path, repo_root) == counts
+    with connect(database_path) as connection:
+        release_count = connection.execute("SELECT COUNT(*) FROM releases").fetchone()[0]
+        dependency_count = connection.execute("SELECT COUNT(*) FROM dependencies").fetchone()[0]
+        assert release_count == counts["releases"]
+        assert dependency_count == counts["dependencies"]
 
     transport = httpx.ASGITransport(app=app)
     async with httpx.AsyncClient(transport=transport, base_url="http://test") as client:
@@ -61,6 +70,8 @@ async def test_peagen_page_model_has_explicit_attachments(tmp_path: Path) -> Non
             "documentation-support",
             "website-support",
         }
+        assert all("release_count" in package for package in model["implementation"]["packages"])
+        assert "dependency_summary" in model["implementation"]
         assert any(
             limitation["description"].startswith("No public core implementation repository")
             for limitation in model["governance"]["limitations"]
@@ -88,3 +99,30 @@ async def test_peagen_page_model_has_explicit_attachments(tmp_path: Path) -> Non
         organization_model = organization.json()
         assert organization_model["organization"]["slug"] == "swarmauri"
         assert any(record["slug"] == "peagen" for record in organization_model["records"])
+
+        tigrbl = await client.get("/api/v1/products/tigrbl")
+        assert tigrbl.status_code == 200
+        tigrbl_model = tigrbl.json()
+        assert len(tigrbl_model["implementation"]["repositories"]) == 4
+        release_kinds = {
+            item["release_kind"]
+            for item in tigrbl_model["implementation"]["release_summary"]
+        }
+        assert release_kinds >= {
+            "crates",
+            "github",
+            "npm",
+            "pypi",
+        }
+        assert tigrbl_model["implementation"]["dependency_summary"]["dependencies"] > 500
+        assert tigrbl_model["implementation"]["dependency_summary"]["dependents"] > 100
+        assert len(tigrbl_model["implementation"]["releases"]) == 100
+
+        portfolio = await client.get("/api/v1/portfolio")
+        assert portfolio.status_code == 200
+        assert portfolio.json()["count"] >= 40
+        generated = await client.get("/api/v1/portfolio/catalog-groupsum-groupsum-xyz")
+        assert generated.status_code == 200
+        generated_model = generated.json()
+        assert generated_model["record"]["content"]["generated_from"] == "public-catalog"
+        assert generated_model["implementation"]["repositories"][0]["name"] == "groupsum-xyz"

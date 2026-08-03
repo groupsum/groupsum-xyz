@@ -1,3 +1,9 @@
+import {
+  softwareApplicationNode,
+  softwareSourceCodeNode,
+  stableId,
+} from "@mdwrk/structured-data";
+
 const ROOT = "https://groupsum.xyz";
 const id = (url, fragment) => `${url}#${fragment}`;
 const organization = { "@type": "ProfessionalService", "@id": id(ROOT, "organization"), name: "Groupsum LLC", url: `${ROOT}/`, logo: `${ROOT}/social/groupsum-default.svg`, description: "Groupsum builds structured software, platforms, and services for teams that need clear decisions." };
@@ -16,7 +22,12 @@ const graph = (record) => {
   if (schemaFamily === "catalog") nodes.push({ "@type": "DataCatalog", "@id": id(record.url, "catalog"), name: record.title, description: record.description, url: record.url, publisher: { "@id": id(ROOT, "organization") } });
   if (["catalog-repository", "catalog-package"].includes(schemaFamily)) nodes.push({ "@type": "SoftwareSourceCode", "@id": id(record.url, "artifact"), name: record.title.replace(/ \|.*$/, ""), description: record.description, url: record.url, ...(record.sourceUrl ? { codeRepository: record.sourceUrl } : {}), publisher: { "@id": id(ROOT, "organization") } });
   if (record.type === "article") nodes.push({ "@type": "TechArticle", "@id": id(record.url, "article"), url: record.url, headline: record.title, description: record.description, ...(record.published ? { datePublished: record.published } : {}), ...(record.modified ? { dateModified: record.modified } : {}), articleSection: record.section || "Technical Research", keywords: record.tags || [], author: { "@type": "Person", name: record.author || "Groupsum LLC" }, publisher: { "@id": id(ROOT, "organization") }, mainEntityOfPage: { "@id": id(record.url, "page") }, ...(record.image?.url ? { image: record.image.url } : {}) });
-  if (["product-detail", "portfolio-detail"].includes(schemaFamily)) nodes.push({ "@type": "SoftwareApplication", "@id": id(record.url, "software"), url: record.url, name: record.title.replace(/ \|.*$/, ""), description: record.description, applicationCategory: "DeveloperApplication", operatingSystem: "Cross-platform", provider: { "@id": id(ROOT, "organization") } });
+  if (["product-detail", "portfolio-detail"].includes(schemaFamily)) nodes.push(softwareApplicationNode({ id: stableId(record.url, "software"), url: record.url, name: record.title.replace(/ \|.*$/, ""), description: record.description, applicationCategory: "DeveloperApplication", operatingSystem: "Cross-platform" }));
+  if (schemaFamily === "portfolio-evidence") {
+    const artifact = softwareSourceCodeNode({ id: stableId(record.url, "source"), url: record.url, name: record.title.replace(/ \|.*$/, ""), description: record.description, codeRepository: record.sourceUrl });
+    artifact.additionalProperty = [["Repositories", record.repositoryCount], ["Packages", record.packageCount], ["Releases", record.releaseCount], ["Related resources", record.resourceCount], ["Dependencies", record.dependencyCount], ["Observed dependents", record.dependentCount]].filter(([, value]) => Number(value) > 0).map(([name, value]) => ({ "@type": "PropertyValue", name, value }));
+    nodes.push(artifact);
+  }
   if (["project", "package", "specification"].includes(schemaFamily)) nodes.push({ "@type": schemaFamily === "specification" ? "TechArticle" : "SoftwareSourceCode", "@id": id(record.url, "artifact"), url: record.url, name: record.title.replace(/ \|.*$/, ""), description: record.description, author: { "@id": id(ROOT, "organization") }, publisher: { "@id": id(ROOT, "organization") } });
   if (["solution-detail", "service-detail"].includes(schemaFamily)) nodes.push({ "@type": "Service", "@id": id(record.url, "service"), url: record.url, name: record.title.replace(/ \\|.*$/, ""), description: record.description, provider: { "@id": id(ROOT, "organization") } });
   if (["portfolio-detail", "project", "package", "specification", "solution-detail", "service-detail"].includes(schemaFamily)) nodes.push({ "@type": "Claim", "@id": id(record.url, "claim"), claimReviewed: record.title, text: record.description, author: { "@id": id(ROOT, "organization") }, appearance: { "@id": id(record.url, "page") } });

@@ -1,9 +1,58 @@
 {
-  "generated_at": "2026-08-03T10:05:58Z",
+  "generated_at": "2026-08-03T13:56:23Z",
   "packages": [
     {
       "claim_boundary": "Publication is reported only when confirmed by the named public registry.",
+      "dependencies": [
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": true,
+          "name": "ssot-pack-contracts",
+          "package_key": "pypi:ssot-pack-contracts",
+          "requirement": ">=0.2.17,<0.3.0",
+          "scope": "dependencies"
+        },
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "tomli",
+          "package_key": "pypi:tomli",
+          "requirement": ">=2.0.1; python_version < '3.11'",
+          "scope": "dependencies"
+        },
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "setuptools",
+          "package_key": "pypi:setuptools",
+          "requirement": ">=69",
+          "scope": "build-system.requires"
+        },
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "wheel",
+          "package_key": "pypi:wheel",
+          "requirement": "*",
+          "scope": "build-system.requires"
+        },
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "pytest",
+          "package_key": "pypi:pytest",
+          "requirement": ">=8.0",
+          "scope": "dependency-groups.dev"
+        }
+      ],
       "dependency_count": 5,
+      "dependent_count": 0,
+      "dependents": [],
       "description": "Observed pypi package record for web-performance-rum-governance-pack.",
       "description_source": "generated-factual",
       "display_name": "web-performance-rum-governance-pack",
@@ -14,7 +63,7 @@
       "evidence": [
         {
           "kind": "registry",
-          "observed_at": "2026-08-03T10:05:58Z",
+          "observed_at": "2026-08-03T13:56:23Z",
           "url": "https://pypi.org/project/web-performance-rum-governance-pack/"
         }
       ],
@@ -23,7 +72,7 @@
       "latest_version": "0.1.1.dev1",
       "manifest_path": "pyproject.toml",
       "name": "web-performance-rum-governance-pack",
-      "observed_at": "2026-08-03T10:05:58Z",
+      "observed_at": "2026-08-03T13:56:23Z",
       "owner": "groupsum",
       "private": false,
       "publication_status": "published",
@@ -36,6 +85,16 @@
         "repository_contains_package": 1
       },
       "release_count": 1,
+      "releases": [
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2026-05-18T09:30:04.015306Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/web-performance-rum-governance-pack/0.1.1.dev1/",
+          "version": "0.1.1.dev1"
+        }
+      ],
       "repository": "groupsum/web-performance-rum-governance-pack",
       "reviewed": false,
       "route": "/catalog/packages/pypi/web-performance-rum-governance-pack-bdc8e4b0",
@@ -54,12 +113,24 @@
     "evidence": [
       {
         "kind": "source",
-        "observed_at": "2026-08-03T10:05:58Z",
+        "observed_at": "2026-08-03T13:56:24Z",
         "url": "https://github.com/groupsum/web-performance-rum-governance-pack"
       }
     ],
     "fork": false,
     "full_name": "groupsum/web-performance-rum-governance-pack",
+    "github_releases": [
+      {
+        "downloads": 0,
+        "draft": false,
+        "observed_at": "2026-08-03T13:56:24Z",
+        "prerelease": false,
+        "published_at": "2026-05-18T09:29:30Z",
+        "release_kind": "github",
+        "url": "https://github.com/groupsum/web-performance-rum-governance-pack/releases/tag/v0.1.1.dev1",
+        "version": "v0.1.1.dev1"
+      }
+    ],
     "homepage": null,
     "id": "repository:groupsum/web-performance-rum-governance-pack",
     "kind": "repository",
@@ -116,7 +187,7 @@
       "watchers": 0
     },
     "name": "web-performance-rum-governance-pack",
-    "observed_at": "2026-08-03T10:05:58Z",
+    "observed_at": "2026-08-03T13:56:24Z",
     "owner": "groupsum",
     "package_ids": [
       "package:pypi:web-performance-rum-governance-pack:groupsum/web-performance-rum-governance-pack:pyproject.toml"

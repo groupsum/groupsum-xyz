@@ -1,9 +1,115 @@
 {
-  "generated_at": "2026-08-03T10:05:58Z",
+  "generated_at": "2026-08-03T13:56:23Z",
   "packages": [
     {
+      "attachment_role": "distribution",
       "claim_boundary": "Publication is reported only when confirmed by the named public registry.",
+      "dependencies": [
+        {
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "internal": true,
+          "name": "@mdwrk/lander-content-contract",
+          "package_key": "npm:@mdwrk/lander-content-contract",
+          "requirement": "^0.1.2",
+          "scope": "dependencies"
+        },
+        {
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "internal": true,
+          "name": "@mdwrk/lander-core",
+          "package_key": "npm:@mdwrk/lander-core",
+          "requirement": "^0.1.2",
+          "scope": "dependencies"
+        },
+        {
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "typescript",
+          "package_key": "npm:typescript",
+          "requirement": "^5.8.0",
+          "scope": "devDependencies"
+        }
+      ],
       "dependency_count": 3,
+      "dependent_count": 0,
+      "dependents": [],
+      "description": "Observed npm package record for @tigrbl/tigrcorn-com-content-pack.",
+      "description_source": "generated-factual",
+      "display_name": "@tigrbl/tigrcorn-com-content-pack",
+      "downloads": null,
+      "downstream_completeness": "not-observed",
+      "downstream_count": 0,
+      "ecosystem": "npm",
+      "evidence": [
+        {
+          "kind": "source",
+          "observed_at": "2026-08-03T13:56:23Z",
+          "url": "https://github.com/tigrbl/tigrcorn-com/blob/HEAD/packages/site-content-pack/package.json"
+        }
+      ],
+      "id": "package:npm:@tigrbl/tigrcorn-com-content-pack:tigrbl/tigrcorn-com:packages/site-content-pack/package.json",
+      "kind": "package",
+      "latest_version": "0.1.0",
+      "manifest_path": "packages/site-content-pack/package.json",
+      "name": "@tigrbl/tigrcorn-com-content-pack",
+      "observed_at": "2026-08-03T13:56:23Z",
+      "owner": "tigrbl",
+      "private": true,
+      "publication_status": "manifest_private",
+      "published": false,
+      "registry_url": null,
+      "relationship_count": 4,
+      "relationship_counts": {
+        "package_depends_on_external": 1,
+        "package_depends_on_package": 2,
+        "repository_contains_package": 1
+      },
+      "release_count": 0,
+      "releases": [],
+      "repository": "tigrbl/tigrcorn-com",
+      "reviewed": false,
+      "route": "/catalog/packages/npm/tigrbl-tigrcorn-com-content-pack-376d5dda",
+      "source_url": "https://github.com/tigrbl/tigrcorn-com/blob/HEAD/packages/site-content-pack/package.json",
+      "version_declared": "0.1.0"
+    },
+    {
+      "attachment_role": "distribution",
+      "claim_boundary": "Publication is reported only when confirmed by the named public registry.",
+      "dependencies": [
+        {
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "@playwright/test",
+          "package_key": "npm:@playwright/test",
+          "requirement": "^1.52.0",
+          "scope": "devDependencies"
+        },
+        {
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "typescript",
+          "package_key": "npm:typescript",
+          "requirement": "^5.8.3",
+          "scope": "devDependencies"
+        },
+        {
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "vitest",
+          "package_key": "npm:vitest",
+          "requirement": "^3.1.3",
+          "scope": "devDependencies"
+        }
+      ],
+      "dependency_count": 3,
+      "dependent_count": 0,
+      "dependents": [],
       "description": "Observed npm package record for @tigrcorn/wt-peer-probes.",
       "description_source": "generated-factual",
       "display_name": "@tigrcorn/wt-peer-probes",
@@ -14,7 +120,7 @@
       "evidence": [
         {
           "kind": "registry",
-          "observed_at": "2026-08-03T10:05:58Z",
+          "observed_at": "2026-08-03T13:56:23Z",
           "url": "https://www.npmjs.com/package/@tigrcorn/wt-peer-probes"
         }
       ],
@@ -23,7 +129,7 @@
       "latest_version": "0.1.9-dev.5",
       "manifest_path": "packages/wt-peer-probes/package.json",
       "name": "@tigrcorn/wt-peer-probes",
-      "observed_at": "2026-08-03T10:05:58Z",
+      "observed_at": "2026-08-03T13:56:23Z",
       "owner": "tigrbl",
       "private": false,
       "publication_status": "published",
@@ -35,6 +141,72 @@
         "repository_contains_package": 1
       },
       "release_count": 8,
+      "releases": [
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2026-06-19T16:36:11.238Z",
+          "release_kind": "npm",
+          "url": "https://www.npmjs.com/package/@tigrcorn/wt-peer-probes/v/0.1.9-dev.5",
+          "version": "0.1.9-dev.5"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2026-06-19T04:17:08.116Z",
+          "release_kind": "npm",
+          "url": "https://www.npmjs.com/package/@tigrcorn/wt-peer-probes/v/0.1.9-dev.4",
+          "version": "0.1.9-dev.4"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2026-05-06T12:03:36.600Z",
+          "release_kind": "npm",
+          "url": "https://www.npmjs.com/package/@tigrcorn/wt-peer-probes/v/0.1.7-dev.5",
+          "version": "0.1.7-dev.5"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2026-05-06T09:14:43.587Z",
+          "release_kind": "npm",
+          "url": "https://www.npmjs.com/package/@tigrcorn/wt-peer-probes/v/0.1.7-dev.4",
+          "version": "0.1.7-dev.4"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2026-05-06T09:07:05.860Z",
+          "release_kind": "npm",
+          "url": "https://www.npmjs.com/package/@tigrcorn/wt-peer-probes/v/0.1.7-dev.3",
+          "version": "0.1.7-dev.3"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2026-05-06T08:56:39.012Z",
+          "release_kind": "npm",
+          "url": "https://www.npmjs.com/package/@tigrcorn/wt-peer-probes/v/0.1.7-dev.2",
+          "version": "0.1.7-dev.2"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2026-05-06T08:00:41.503Z",
+          "release_kind": "npm",
+          "url": "https://www.npmjs.com/package/@tigrcorn/wt-peer-probes/v/0.1.6",
+          "version": "0.1.6"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2026-05-06T07:53:01.563Z",
+          "release_kind": "npm",
+          "url": "https://www.npmjs.com/package/@tigrcorn/wt-peer-probes/v/0.1.5",
+          "version": "0.1.5"
+        }
+      ],
       "repository": "tigrbl/tigrcorn",
       "reviewed": false,
       "route": "/catalog/packages/npm/tigrcorn-wt-peer-probes-27b5a6ed",
@@ -42,11 +214,15 @@
       "version_declared": "0.1.9-dev.5"
     },
     {
+      "attachment_role": "distribution",
       "claim_boundary": "Publication is reported only when confirmed by the named public registry.",
+      "dependencies": [],
       "dependency_count": 0,
-      "description": "Observed npm package record for tigrcorn-js-workspace.",
+      "dependent_count": 0,
+      "dependents": [],
+      "description": "Observed npm package record for docs-tigrcorn-com.",
       "description_source": "generated-factual",
-      "display_name": "tigrcorn-js-workspace",
+      "display_name": "docs-tigrcorn-com",
       "downloads": null,
       "downstream_completeness": "not-observed",
       "downstream_count": 0,
@@ -54,16 +230,16 @@
       "evidence": [
         {
           "kind": "source",
-          "observed_at": "2026-08-03T10:05:58Z",
-          "url": "https://github.com/tigrbl/tigrcorn/blob/HEAD/package.json"
+          "observed_at": "2026-08-03T13:56:23Z",
+          "url": "https://github.com/tigrbl/docs-tigrcorn-com/blob/HEAD/package.json"
         }
       ],
-      "id": "package:npm:tigrcorn-js-workspace:tigrbl/tigrcorn:package.json",
+      "id": "package:npm:docs-tigrcorn-com:tigrbl/docs-tigrcorn-com:package.json",
       "kind": "package",
-      "latest_version": null,
+      "latest_version": "0.1.0",
       "manifest_path": "package.json",
-      "name": "tigrcorn-js-workspace",
-      "observed_at": "2026-08-03T10:05:58Z",
+      "name": "docs-tigrcorn-com",
+      "observed_at": "2026-08-03T13:56:23Z",
       "owner": "tigrbl",
       "private": true,
       "publication_status": "manifest_private",
@@ -74,6 +250,277 @@
         "repository_contains_package": 1
       },
       "release_count": 0,
+      "releases": [],
+      "repository": "tigrbl/docs-tigrcorn-com",
+      "reviewed": false,
+      "route": "/catalog/packages/npm/docs-tigrcorn-com-f523de38",
+      "source_url": "https://github.com/tigrbl/docs-tigrcorn-com/blob/HEAD/package.json",
+      "version_declared": "0.1.0"
+    },
+    {
+      "attachment_role": "distribution",
+      "claim_boundary": "Publication is reported only when confirmed by the named public registry.",
+      "dependencies": [
+        {
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "@google/genai",
+          "package_key": "npm:@google/genai",
+          "requirement": "^2.4.0",
+          "scope": "dependencies"
+        },
+        {
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "@tailwindcss/vite",
+          "package_key": "npm:@tailwindcss/vite",
+          "requirement": "^4.1.14",
+          "scope": "dependencies"
+        },
+        {
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "@types/prismjs",
+          "package_key": "npm:@types/prismjs",
+          "requirement": "^1.26.6",
+          "scope": "dependencies"
+        },
+        {
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "@vitejs/plugin-react",
+          "package_key": "npm:@vitejs/plugin-react",
+          "requirement": "^5.0.4",
+          "scope": "dependencies"
+        },
+        {
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "dotenv",
+          "package_key": "npm:dotenv",
+          "requirement": "^17.2.3",
+          "scope": "dependencies"
+        },
+        {
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "express",
+          "package_key": "npm:express",
+          "requirement": "^4.21.2",
+          "scope": "dependencies"
+        },
+        {
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "lucide-react",
+          "package_key": "npm:lucide-react",
+          "requirement": "^0.546.0",
+          "scope": "dependencies"
+        },
+        {
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "motion",
+          "package_key": "npm:motion",
+          "requirement": "^12.23.24",
+          "scope": "dependencies"
+        },
+        {
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "prismjs",
+          "package_key": "npm:prismjs",
+          "requirement": "^1.30.0",
+          "scope": "dependencies"
+        },
+        {
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "react",
+          "package_key": "npm:react",
+          "requirement": "^19.0.1",
+          "scope": "dependencies"
+        },
+        {
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "react-dom",
+          "package_key": "npm:react-dom",
+          "requirement": "^19.0.1",
+          "scope": "dependencies"
+        },
+        {
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "vite",
+          "package_key": "npm:vite",
+          "requirement": "^6.2.3",
+          "scope": "dependencies"
+        },
+        {
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "@types/express",
+          "package_key": "npm:@types/express",
+          "requirement": "^4.17.21",
+          "scope": "devDependencies"
+        },
+        {
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "@types/node",
+          "package_key": "npm:@types/node",
+          "requirement": "^22.14.0",
+          "scope": "devDependencies"
+        },
+        {
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "autoprefixer",
+          "package_key": "npm:autoprefixer",
+          "requirement": "^10.4.21",
+          "scope": "devDependencies"
+        },
+        {
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "esbuild",
+          "package_key": "npm:esbuild",
+          "requirement": "^0.25.0",
+          "scope": "devDependencies"
+        },
+        {
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "tailwindcss",
+          "package_key": "npm:tailwindcss",
+          "requirement": "^4.1.14",
+          "scope": "devDependencies"
+        },
+        {
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "tsx",
+          "package_key": "npm:tsx",
+          "requirement": "^4.21.0",
+          "scope": "devDependencies"
+        },
+        {
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "typescript",
+          "package_key": "npm:typescript",
+          "requirement": "~5.8.2",
+          "scope": "devDependencies"
+        },
+        {
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "vite",
+          "package_key": "npm:vite",
+          "requirement": "^6.2.3",
+          "scope": "devDependencies"
+        }
+      ],
+      "dependency_count": 20,
+      "dependent_count": 0,
+      "dependents": [],
+      "description": "Observed npm package record for react-example.",
+      "description_source": "generated-factual",
+      "display_name": "react-example",
+      "downloads": null,
+      "downstream_completeness": "not-observed",
+      "downstream_count": 0,
+      "ecosystem": "npm",
+      "evidence": [
+        {
+          "kind": "source",
+          "observed_at": "2026-08-03T13:56:23Z",
+          "url": "https://github.com/tigrbl/tigrcorn-com/blob/HEAD/package.json"
+        }
+      ],
+      "id": "package:npm:react-example:tigrbl/tigrcorn-com:package.json",
+      "kind": "package",
+      "latest_version": "0.0.0",
+      "manifest_path": "package.json",
+      "name": "react-example",
+      "observed_at": "2026-08-03T13:56:23Z",
+      "owner": "tigrbl",
+      "private": true,
+      "publication_status": "manifest_private",
+      "published": false,
+      "registry_url": null,
+      "relationship_count": 27,
+      "relationship_counts": {
+        "package_depends_on_external": 24,
+        "repository_contains_package": 3
+      },
+      "release_count": 0,
+      "releases": [],
+      "repository": "tigrbl/tigrcorn-com",
+      "reviewed": false,
+      "route": "/catalog/packages/npm/react-example-62f1bfdd",
+      "source_url": "https://github.com/tigrbl/tigrcorn-com/blob/HEAD/package.json",
+      "version_declared": "0.0.0"
+    },
+    {
+      "attachment_role": "distribution",
+      "claim_boundary": "Publication is reported only when confirmed by the named public registry.",
+      "dependencies": [],
+      "dependency_count": 0,
+      "dependent_count": 0,
+      "dependents": [],
+      "description": "Observed npm package record for tigrcorn-js-workspace.",
+      "description_source": "generated-factual",
+      "display_name": "tigrcorn-js-workspace",
+      "downloads": null,
+      "downstream_completeness": "not-observed",
+      "downstream_count": 0,
+      "ecosystem": "npm",
+      "evidence": [
+        {
+          "kind": "source",
+          "observed_at": "2026-08-03T13:56:23Z",
+          "url": "https://github.com/tigrbl/tigrcorn/blob/HEAD/package.json"
+        }
+      ],
+      "id": "package:npm:tigrcorn-js-workspace:tigrbl/tigrcorn:package.json",
+      "kind": "package",
+      "latest_version": null,
+      "manifest_path": "package.json",
+      "name": "tigrcorn-js-workspace",
+      "observed_at": "2026-08-03T13:56:23Z",
+      "owner": "tigrbl",
+      "private": true,
+      "publication_status": "manifest_private",
+      "published": false,
+      "registry_url": null,
+      "relationship_count": 1,
+      "relationship_counts": {
+        "repository_contains_package": 1
+      },
+      "release_count": 0,
+      "releases": [],
       "repository": "tigrbl/tigrcorn",
       "reviewed": false,
       "route": "/catalog/packages/npm/tigrcorn-js-workspace-a0397e8e",
@@ -81,8 +528,673 @@
       "version_declared": null
     },
     {
+      "attachment_role": "distribution",
       "claim_boundary": "Publication is reported only when confirmed by the named public registry.",
+      "dependencies": [
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": true,
+          "name": "zdx",
+          "package_key": "pypi:zdx",
+          "requirement": ">=0.2.3",
+          "scope": "dependency-groups.dev"
+        },
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "mkdocs",
+          "package_key": "pypi:mkdocs",
+          "requirement": ">=1.6.0",
+          "scope": "dependency-groups.dev"
+        },
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "mkdocs-material",
+          "package_key": "pypi:mkdocs-material",
+          "requirement": ">=9.6.4,<10.0.0",
+          "scope": "dependency-groups.dev"
+        },
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "mkdocstrings",
+          "package_key": "pypi:mkdocstrings",
+          "requirement": "[python]>=0.28.1,<0.29.0",
+          "scope": "dependency-groups.dev"
+        },
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "mkdocs-gen-files",
+          "package_key": "pypi:mkdocs-gen-files",
+          "requirement": ">=0.5.0",
+          "scope": "dependency-groups.dev"
+        },
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "mkdocs-literate-nav",
+          "package_key": "pypi:mkdocs-literate-nav",
+          "requirement": ">=0.6.0",
+          "scope": "dependency-groups.dev"
+        },
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "mkdocs-autorefs",
+          "package_key": "pypi:mkdocs-autorefs",
+          "requirement": ">=1.4.0",
+          "scope": "dependency-groups.dev"
+        },
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "griffe-typingdoc",
+          "package_key": "pypi:griffe-typingdoc",
+          "requirement": ">=0.2.8",
+          "scope": "dependency-groups.dev"
+        },
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": true,
+          "name": "npmctl",
+          "package_key": "pypi:npmctl",
+          "requirement": ">=0.3.10",
+          "scope": "dependency-groups.dev"
+        },
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": true,
+          "name": "npmctl-namecheap",
+          "package_key": "pypi:npmctl-namecheap",
+          "requirement": ">=0.3.10",
+          "scope": "dependency-groups.dev"
+        },
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": true,
+          "name": "ssot-registry",
+          "package_key": "pypi:ssot-registry",
+          "requirement": ">=0.2.18",
+          "scope": "dependency-groups.dev"
+        }
+      ],
+      "dependency_count": 11,
+      "dependent_count": 0,
+      "dependents": [],
+      "description": "Observed pypi package record for docs-tigrcorn-com.",
+      "description_source": "generated-factual",
+      "display_name": "docs-tigrcorn-com",
+      "downloads": null,
+      "downstream_completeness": "not-observed",
+      "downstream_count": 0,
+      "ecosystem": "pypi",
+      "evidence": [
+        {
+          "kind": "source",
+          "observed_at": "2026-08-03T13:56:23Z",
+          "url": "https://github.com/tigrbl/docs-tigrcorn-com/blob/HEAD/pyproject.toml"
+        }
+      ],
+      "id": "package:pypi:docs-tigrcorn-com:tigrbl/docs-tigrcorn-com:pyproject.toml",
+      "kind": "package",
+      "latest_version": "0.1.0",
+      "manifest_path": "pyproject.toml",
+      "name": "docs-tigrcorn-com",
+      "observed_at": "2026-08-03T13:56:23Z",
+      "owner": "tigrbl",
+      "private": false,
+      "publication_status": "registry_not_found",
+      "published": false,
+      "registry_url": null,
+      "relationship_count": 12,
+      "relationship_counts": {
+        "package_depends_on_external": 7,
+        "package_depends_on_package": 4,
+        "repository_contains_package": 1
+      },
+      "release_count": 0,
+      "releases": [],
+      "repository": "tigrbl/docs-tigrcorn-com",
+      "reviewed": false,
+      "route": "/catalog/packages/pypi/docs-tigrcorn-com-4dd54142",
+      "source_url": "https://github.com/tigrbl/docs-tigrcorn-com/blob/HEAD/pyproject.toml",
+      "version_declared": "0.1.0"
+    },
+    {
+      "attachment_role": "distribution",
+      "claim_boundary": "Publication is reported only when confirmed by the named public registry.",
+      "dependencies": [
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": true,
+          "name": "tigrcorn-core",
+          "package_key": "pypi:tigrcorn-core",
+          "requirement": "==0.3.18.dev2",
+          "scope": "dependencies"
+        },
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": true,
+          "name": "tigrcorn-config",
+          "package_key": "pypi:tigrcorn-config",
+          "requirement": "==0.3.18.dev2",
+          "scope": "dependencies"
+        },
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": true,
+          "name": "tigrcorn-asgi",
+          "package_key": "pypi:tigrcorn-asgi",
+          "requirement": "==0.3.18.dev2",
+          "scope": "dependencies"
+        },
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": true,
+          "name": "tigrcorn-contract",
+          "package_key": "pypi:tigrcorn-contract",
+          "requirement": "==0.3.18.dev2",
+          "scope": "dependencies"
+        },
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": true,
+          "name": "tigrcorn-transports",
+          "package_key": "pypi:tigrcorn-transports",
+          "requirement": "==0.3.18.dev2",
+          "scope": "dependencies"
+        },
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": true,
+          "name": "tigrcorn-protocols",
+          "package_key": "pypi:tigrcorn-protocols",
+          "requirement": "==0.3.18.dev2",
+          "scope": "dependencies"
+        },
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": true,
+          "name": "tigrcorn-http",
+          "package_key": "pypi:tigrcorn-http",
+          "requirement": "==0.3.18.dev2",
+          "scope": "dependencies"
+        },
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": true,
+          "name": "tigrcorn-security",
+          "package_key": "pypi:tigrcorn-security",
+          "requirement": "==0.3.18.dev2",
+          "scope": "dependencies"
+        },
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": true,
+          "name": "tigrcorn-runtime",
+          "package_key": "pypi:tigrcorn-runtime",
+          "requirement": "==0.3.18.dev2",
+          "scope": "dependencies"
+        },
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": true,
+          "name": "tigrcorn-static",
+          "package_key": "pypi:tigrcorn-static",
+          "requirement": "==0.3.18.dev2",
+          "scope": "dependencies"
+        },
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": true,
+          "name": "tigrcorn-observability",
+          "package_key": "pypi:tigrcorn-observability",
+          "requirement": "==0.3.18.dev2",
+          "scope": "dependencies"
+        },
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": true,
+          "name": "tigrcorn-compat",
+          "package_key": "pypi:tigrcorn-compat",
+          "requirement": "==0.3.18.dev2",
+          "scope": "dependencies"
+        },
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": true,
+          "name": "tigrcorn-certification",
+          "package_key": "pypi:tigrcorn-certification",
+          "requirement": "==0.3.18.dev2",
+          "scope": "dependencies"
+        },
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": true,
+          "name": "tigr-asgi-contract",
+          "package_key": "pypi:tigr-asgi-contract",
+          "requirement": ">=0.3.2",
+          "scope": "dependencies"
+        },
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "cryptography",
+          "package_key": "pypi:cryptography",
+          "requirement": ">=46.0.0",
+          "scope": "optional-dependencies.tls-x509"
+        },
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "cryptography",
+          "package_key": "pypi:cryptography",
+          "requirement": ">=46.0.0",
+          "scope": "optional-dependencies.certification"
+        },
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "aioquic",
+          "package_key": "pypi:aioquic",
+          "requirement": ">=1.3.0",
+          "scope": "optional-dependencies.certification"
+        },
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "h11",
+          "package_key": "pypi:h11",
+          "requirement": ">=0.14.0",
+          "scope": "optional-dependencies.certification"
+        },
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "h2",
+          "package_key": "pypi:h2",
+          "requirement": ">=4.1.0",
+          "scope": "optional-dependencies.certification"
+        },
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "websockets",
+          "package_key": "pypi:websockets",
+          "requirement": ">=12.0",
+          "scope": "optional-dependencies.certification"
+        },
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "wsproto",
+          "package_key": "pypi:wsproto",
+          "requirement": ">=1.3.0",
+          "scope": "optional-dependencies.certification"
+        },
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "PyYAML",
+          "package_key": "pypi:pyyaml",
+          "requirement": ">=6.0",
+          "scope": "optional-dependencies.config-yaml"
+        },
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "brotli",
+          "package_key": "pypi:brotli",
+          "requirement": ">=1.1.0",
+          "scope": "optional-dependencies.compression"
+        },
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "uvloop",
+          "package_key": "pypi:uvloop",
+          "requirement": ">=0.19.0; platform_system != 'Windows'",
+          "scope": "optional-dependencies.runtime-uvloop"
+        },
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "trio",
+          "package_key": "pypi:trio",
+          "requirement": ">=0.25.0",
+          "scope": "optional-dependencies.runtime-trio"
+        },
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "cryptography",
+          "package_key": "pypi:cryptography",
+          "requirement": ">=46.0.0",
+          "scope": "optional-dependencies.full-featured"
+        },
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "PyYAML",
+          "package_key": "pypi:pyyaml",
+          "requirement": ">=6.0",
+          "scope": "optional-dependencies.full-featured"
+        },
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "brotli",
+          "package_key": "pypi:brotli",
+          "requirement": ">=1.1.0",
+          "scope": "optional-dependencies.full-featured"
+        },
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "uvloop",
+          "package_key": "pypi:uvloop",
+          "requirement": ">=0.19.0; platform_system != 'Windows'",
+          "scope": "optional-dependencies.full-featured"
+        },
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "cryptography",
+          "package_key": "pypi:cryptography",
+          "requirement": ">=46.0.0",
+          "scope": "optional-dependencies.dev"
+        },
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "pytest",
+          "package_key": "pypi:pytest",
+          "requirement": ">=8.0",
+          "scope": "optional-dependencies.dev"
+        },
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": true,
+          "name": "ssot-registry",
+          "package_key": "pypi:ssot-registry",
+          "requirement": ">=0.2.18",
+          "scope": "optional-dependencies.dev"
+        },
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "tomli",
+          "package_key": "pypi:tomli",
+          "requirement": ">=2.0.0; python_version < '3.11'",
+          "scope": "optional-dependencies.dev"
+        },
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "aioquic",
+          "package_key": "pypi:aioquic",
+          "requirement": ">=1.3.0",
+          "scope": "optional-dependencies.dev"
+        },
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "h11",
+          "package_key": "pypi:h11",
+          "requirement": ">=0.14.0",
+          "scope": "optional-dependencies.dev"
+        },
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "h2",
+          "package_key": "pypi:h2",
+          "requirement": ">=4.1.0",
+          "scope": "optional-dependencies.dev"
+        },
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "websockets",
+          "package_key": "pypi:websockets",
+          "requirement": ">=12.0",
+          "scope": "optional-dependencies.dev"
+        },
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "wsproto",
+          "package_key": "pypi:wsproto",
+          "requirement": ">=1.3.0",
+          "scope": "optional-dependencies.dev"
+        },
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "PyYAML",
+          "package_key": "pypi:pyyaml",
+          "requirement": ">=6.0",
+          "scope": "optional-dependencies.dev"
+        },
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "brotli",
+          "package_key": "pypi:brotli",
+          "requirement": ">=1.1.0",
+          "scope": "optional-dependencies.dev"
+        },
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "uvloop",
+          "package_key": "pypi:uvloop",
+          "requirement": ">=0.19.0; platform_system != 'Windows'",
+          "scope": "optional-dependencies.dev"
+        },
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "setuptools",
+          "package_key": "pypi:setuptools",
+          "requirement": ">=69",
+          "scope": "build-system.requires"
+        },
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "wheel",
+          "package_key": "pypi:wheel",
+          "requirement": "*",
+          "scope": "build-system.requires"
+        },
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "aioquic",
+          "package_key": "pypi:aioquic",
+          "requirement": ">=1.3.0",
+          "scope": "dependency-groups.dev"
+        },
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "brotli",
+          "package_key": "pypi:brotli",
+          "requirement": ">=1.1.0",
+          "scope": "dependency-groups.dev"
+        },
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "cryptography",
+          "package_key": "pypi:cryptography",
+          "requirement": ">=46.0.0",
+          "scope": "dependency-groups.dev"
+        },
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "h11",
+          "package_key": "pypi:h11",
+          "requirement": ">=0.14.0",
+          "scope": "dependency-groups.dev"
+        },
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "h2",
+          "package_key": "pypi:h2",
+          "requirement": ">=4.1.0",
+          "scope": "dependency-groups.dev"
+        },
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "pytest",
+          "package_key": "pypi:pytest",
+          "requirement": ">=8.0",
+          "scope": "dependency-groups.dev"
+        },
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "PyYAML",
+          "package_key": "pypi:pyyaml",
+          "requirement": ">=6.0",
+          "scope": "dependency-groups.dev"
+        },
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": true,
+          "name": "ssot-registry",
+          "package_key": "pypi:ssot-registry",
+          "requirement": ">=0.2.18",
+          "scope": "dependency-groups.dev"
+        },
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "tomli",
+          "package_key": "pypi:tomli",
+          "requirement": ">=2.0.0; python_version < '3.11'",
+          "scope": "dependency-groups.dev"
+        },
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "uvloop",
+          "package_key": "pypi:uvloop",
+          "requirement": ">=0.19.0; platform_system != 'Windows'",
+          "scope": "dependency-groups.dev"
+        },
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "websockets",
+          "package_key": "pypi:websockets",
+          "requirement": ">=12.0",
+          "scope": "dependency-groups.dev"
+        },
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "wsproto",
+          "package_key": "pypi:wsproto",
+          "requirement": ">=1.3.0",
+          "scope": "dependency-groups.dev"
+        }
+      ],
       "dependency_count": 55,
+      "dependent_count": 2,
+      "dependents": [
+        {
+          "completeness": "catalog-observed",
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "name": "tigrbl-identity-runtime",
+          "package_key": "pypi:tigrbl-identity-runtime",
+          "requirement": "==0.3.8; python_version >= '3.11'",
+          "scope": "optional-dependencies.servers"
+        },
+        {
+          "completeness": "catalog-observed",
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "name": "tigrbl-identity-runtime",
+          "package_key": "pypi:tigrbl-identity-runtime",
+          "requirement": "==0.3.8; python_version >= '3.11'",
+          "scope": "optional-dependencies.tigrcorn"
+        }
+      ],
       "description": "Observed pypi package record for tigrcorn.",
       "description_source": "generated-factual",
       "display_name": "tigrcorn",
@@ -93,7 +1205,7 @@
       "evidence": [
         {
           "kind": "registry",
-          "observed_at": "2026-08-03T10:05:58Z",
+          "observed_at": "2026-08-03T13:56:23Z",
           "url": "https://pypi.org/project/tigrcorn/"
         }
       ],
@@ -102,19 +1214,245 @@
       "latest_version": "0.3.17",
       "manifest_path": "pyproject.toml",
       "name": "tigrcorn",
-      "observed_at": "2026-08-03T10:05:58Z",
+      "observed_at": "2026-08-03T13:56:23Z",
       "owner": "tigrbl",
       "private": false,
       "publication_status": "published",
       "published": true,
       "registry_url": "https://pypi.org/project/tigrcorn/",
-      "relationship_count": 31,
+      "relationship_count": 58,
       "relationship_counts": {
-        "package_depends_on_external": 14,
-        "package_depends_on_package": 16,
+        "package_depends_on_external": 39,
+        "package_depends_on_package": 18,
         "repository_contains_package": 1
       },
       "release_count": 28,
+      "releases": [
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2026-06-19T16:36:50.591749Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/tigrcorn/0.3.18.dev2/",
+          "version": "0.3.18.dev2"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2026-06-19T01:40:02.492441Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/tigrcorn/0.3.18.dev1/",
+          "version": "0.3.18.dev1"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2026-06-18T21:16:51.709575Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/tigrcorn/0.3.17/",
+          "version": "0.3.17"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2026-06-18T20:07:44.956681Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/tigrcorn/0.3.17.dev1/",
+          "version": "0.3.17.dev1"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2026-06-01T22:23:28.171331Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/tigrcorn/0.3.16/",
+          "version": "0.3.16"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2026-06-01T22:03:58.010961Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/tigrcorn/0.3.16.dev13/",
+          "version": "0.3.16.dev13"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2026-06-01T21:55:05.846173Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/tigrcorn/0.3.16.dev12/",
+          "version": "0.3.16.dev12"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2026-06-01T20:39:02.627878Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/tigrcorn/0.3.16.dev11/",
+          "version": "0.3.16.dev11"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2026-06-01T14:59:17.162966Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/tigrcorn/0.3.16.dev10/",
+          "version": "0.3.16.dev10"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2026-06-01T14:48:32.557168Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/tigrcorn/0.3.16.dev9/",
+          "version": "0.3.16.dev9"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2026-06-01T14:33:39.028848Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/tigrcorn/0.3.16.dev8/",
+          "version": "0.3.16.dev8"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2026-05-06T12:04:34.599424Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/tigrcorn/0.3.16.dev5/",
+          "version": "0.3.16.dev5"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2026-05-06T09:16:26.353496Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/tigrcorn/0.3.16.dev4/",
+          "version": "0.3.16.dev4"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2026-05-06T09:08:27.405923Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/tigrcorn/0.3.16.dev3/",
+          "version": "0.3.16.dev3"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2026-05-06T08:01:57.699562Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/tigrcorn/0.3.15/",
+          "version": "0.3.15"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2026-03-28T09:53:44.004402Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/tigrcorn/0.3.9/",
+          "version": "0.3.9"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2026-03-24T13:02:23.205058Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/tigrcorn/0.3.8/",
+          "version": "0.3.8"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2026-03-24T06:01:41.295125Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/tigrcorn/0.1.0/",
+          "version": "0.1.0"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2026-03-23T18:13:36.441346Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/tigrcorn/0.3.6/",
+          "version": "0.3.6"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2026-03-23T17:55:17.302883Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/tigrcorn/0.1.0.dev12/",
+          "version": "0.1.0.dev12"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2026-03-20T17:57:53.728001Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/tigrcorn/0.1.0.dev10/",
+          "version": "0.1.0.dev10"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2026-03-20T17:34:36.856422Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/tigrcorn/0.1.0.dev9/",
+          "version": "0.1.0.dev9"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2026-03-20T10:02:15.464997Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/tigrcorn/0.1.0.dev8/",
+          "version": "0.1.0.dev8"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2026-03-20T09:43:28.039261Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/tigrcorn/0.1.0.dev7/",
+          "version": "0.1.0.dev7"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2026-03-20T09:21:24.803212Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/tigrcorn/0.1.0.dev6/",
+          "version": "0.1.0.dev6"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2026-03-20T08:09:33.460539Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/tigrcorn/0.1.0.dev4/",
+          "version": "0.1.0.dev4"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2026-03-20T05:37:57.656048Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/tigrcorn/0.1.0.dev3/",
+          "version": "0.1.0.dev3"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2026-03-19T01:08:08.325493Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/tigrcorn/0.1.0.dev1/",
+          "version": "0.1.0.dev1"
+        }
+      ],
       "repository": "tigrbl/tigrcorn",
       "reviewed": false,
       "route": "/catalog/packages/pypi/tigrcorn-2848b6b0",
@@ -122,8 +1460,95 @@
       "version_declared": "0.3.18.dev2"
     },
     {
+      "attachment_role": "distribution",
       "claim_boundary": "Publication is reported only when confirmed by the named public registry.",
+      "dependencies": [
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": true,
+          "name": "tigrcorn-core",
+          "package_key": "pypi:tigrcorn-core",
+          "requirement": "==0.3.18.dev2",
+          "scope": "dependencies"
+        },
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "setuptools",
+          "package_key": "pypi:setuptools",
+          "requirement": ">=69",
+          "scope": "build-system.requires"
+        },
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "wheel",
+          "package_key": "pypi:wheel",
+          "requirement": "*",
+          "scope": "build-system.requires"
+        }
+      ],
       "dependency_count": 3,
+      "dependent_count": 6,
+      "dependents": [
+        {
+          "completeness": "catalog-observed",
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "name": "tigrcorn",
+          "package_key": "pypi:tigrcorn",
+          "requirement": "==0.3.18.dev2",
+          "scope": "dependencies"
+        },
+        {
+          "completeness": "catalog-observed",
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "name": "tigrcorn-compat",
+          "package_key": "pypi:tigrcorn-compat",
+          "requirement": "==0.3.18.dev2",
+          "scope": "dependencies"
+        },
+        {
+          "completeness": "catalog-observed",
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "name": "tigrcorn-contract",
+          "package_key": "pypi:tigrcorn-contract",
+          "requirement": "==0.3.18.dev2",
+          "scope": "dependencies"
+        },
+        {
+          "completeness": "catalog-observed",
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "name": "tigrcorn-protocols",
+          "package_key": "pypi:tigrcorn-protocols",
+          "requirement": "==0.3.18.dev2",
+          "scope": "dependencies"
+        },
+        {
+          "completeness": "catalog-observed",
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "name": "tigrcorn-runtime",
+          "package_key": "pypi:tigrcorn-runtime",
+          "requirement": "==0.3.18.dev2",
+          "scope": "dependencies"
+        },
+        {
+          "completeness": "catalog-observed",
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "name": "tigrcorn-static",
+          "package_key": "pypi:tigrcorn-static",
+          "requirement": "==0.3.18.dev2",
+          "scope": "dependencies"
+        }
+      ],
       "description": "Observed pypi package record for tigrcorn-asgi.",
       "description_source": "generated-factual",
       "display_name": "tigrcorn-asgi",
@@ -134,7 +1559,7 @@
       "evidence": [
         {
           "kind": "registry",
-          "observed_at": "2026-08-03T10:05:58Z",
+          "observed_at": "2026-08-03T13:56:23Z",
           "url": "https://pypi.org/project/tigrcorn-asgi/"
         }
       ],
@@ -143,7 +1568,7 @@
       "latest_version": "0.3.17",
       "manifest_path": "pkgs/tigrcorn-asgi/pyproject.toml",
       "name": "tigrcorn-asgi",
-      "observed_at": "2026-08-03T10:05:58Z",
+      "observed_at": "2026-08-03T13:56:23Z",
       "owner": "tigrbl",
       "private": false,
       "publication_status": "published",
@@ -156,6 +1581,80 @@
         "repository_contains_package": 1
       },
       "release_count": 9,
+      "releases": [
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2026-06-19T16:36:51.998221Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/tigrcorn-asgi/0.3.18.dev2/",
+          "version": "0.3.18.dev2"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2026-06-19T01:40:07.155315Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/tigrcorn-asgi/0.3.18.dev1/",
+          "version": "0.3.18.dev1"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2026-06-18T21:16:53.259332Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/tigrcorn-asgi/0.3.17/",
+          "version": "0.3.17"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2026-06-18T20:08:12.408716Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/tigrcorn-asgi/0.3.17.dev1/",
+          "version": "0.3.17.dev1"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2026-06-01T22:23:27.434520Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/tigrcorn-asgi/0.3.16/",
+          "version": "0.3.16"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2026-06-01T22:03:59.005988Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/tigrcorn-asgi/0.3.16.dev13/",
+          "version": "0.3.16.dev13"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2026-06-01T21:55:07.198708Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/tigrcorn-asgi/0.3.16.dev12/",
+          "version": "0.3.16.dev12"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2026-06-01T20:39:00.123385Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/tigrcorn-asgi/0.3.16.dev11/",
+          "version": "0.3.16.dev11"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2026-05-06T12:04:36.200542Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/tigrcorn-asgi/0.3.16.dev5/",
+          "version": "0.3.16.dev5"
+        }
+      ],
       "repository": "tigrbl/tigrcorn",
       "reviewed": false,
       "route": "/catalog/packages/pypi/tigrcorn-asgi-d5ba85b5",
@@ -163,8 +1662,122 @@
       "version_declared": "0.3.18.dev2"
     },
     {
+      "attachment_role": "distribution",
       "claim_boundary": "Publication is reported only when confirmed by the named public registry.",
+      "dependencies": [
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": true,
+          "name": "tigrcorn-compat",
+          "package_key": "pypi:tigrcorn-compat",
+          "requirement": "==0.3.18.dev2",
+          "scope": "dependencies"
+        },
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": true,
+          "name": "tigrcorn-runtime",
+          "package_key": "pypi:tigrcorn-runtime",
+          "requirement": "==0.3.18.dev2",
+          "scope": "dependencies"
+        },
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": true,
+          "name": "tigrcorn-static",
+          "package_key": "pypi:tigrcorn-static",
+          "requirement": "==0.3.18.dev2",
+          "scope": "dependencies"
+        },
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "tomli",
+          "package_key": "pypi:tomli",
+          "requirement": ">=2.0.0; python_version < '3.11'",
+          "scope": "dependencies"
+        },
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "cryptography",
+          "package_key": "pypi:cryptography",
+          "requirement": ">=46.0.0",
+          "scope": "dependencies"
+        },
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "aioquic",
+          "package_key": "pypi:aioquic",
+          "requirement": ">=1.3.0",
+          "scope": "dependencies"
+        },
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "h2",
+          "package_key": "pypi:h2",
+          "requirement": ">=4.1.0",
+          "scope": "dependencies"
+        },
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "websockets",
+          "package_key": "pypi:websockets",
+          "requirement": ">=12.0",
+          "scope": "dependencies"
+        },
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "wsproto",
+          "package_key": "pypi:wsproto",
+          "requirement": ">=1.3.0",
+          "scope": "dependencies"
+        },
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "setuptools",
+          "package_key": "pypi:setuptools",
+          "requirement": ">=69",
+          "scope": "build-system.requires"
+        },
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "wheel",
+          "package_key": "pypi:wheel",
+          "requirement": "*",
+          "scope": "build-system.requires"
+        }
+      ],
       "dependency_count": 11,
+      "dependent_count": 1,
+      "dependents": [
+        {
+          "completeness": "catalog-observed",
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "name": "tigrcorn",
+          "package_key": "pypi:tigrcorn",
+          "requirement": "==0.3.18.dev2",
+          "scope": "dependencies"
+        }
+      ],
       "description": "Observed pypi package record for tigrcorn-certification.",
       "description_source": "generated-factual",
       "display_name": "tigrcorn-certification",
@@ -175,7 +1788,7 @@
       "evidence": [
         {
           "kind": "registry",
-          "observed_at": "2026-08-03T10:05:58Z",
+          "observed_at": "2026-08-03T13:56:23Z",
           "url": "https://pypi.org/project/tigrcorn-certification/"
         }
       ],
@@ -184,7 +1797,7 @@
       "latest_version": "0.3.17",
       "manifest_path": "pkgs/tigrcorn-certification/pyproject.toml",
       "name": "tigrcorn-certification",
-      "observed_at": "2026-08-03T10:05:58Z",
+      "observed_at": "2026-08-03T13:56:23Z",
       "owner": "tigrbl",
       "private": false,
       "publication_status": "published",
@@ -197,6 +1810,80 @@
         "repository_contains_package": 1
       },
       "release_count": 9,
+      "releases": [
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2026-06-19T16:36:49.559354Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/tigrcorn-certification/0.3.18.dev2/",
+          "version": "0.3.18.dev2"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2026-06-19T01:40:04.752403Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/tigrcorn-certification/0.3.18.dev1/",
+          "version": "0.3.18.dev1"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2026-06-18T21:16:52.131813Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/tigrcorn-certification/0.3.17/",
+          "version": "0.3.17"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2026-06-18T20:08:34.693935Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/tigrcorn-certification/0.3.17.dev1/",
+          "version": "0.3.17.dev1"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2026-06-01T22:23:28.665664Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/tigrcorn-certification/0.3.16/",
+          "version": "0.3.16"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2026-06-01T22:04:00.156819Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/tigrcorn-certification/0.3.16.dev13/",
+          "version": "0.3.16.dev13"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2026-06-01T21:55:07.030041Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/tigrcorn-certification/0.3.16.dev12/",
+          "version": "0.3.16.dev12"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2026-06-01T20:39:02.829279Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/tigrcorn-certification/0.3.16.dev11/",
+          "version": "0.3.16.dev11"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2026-05-06T12:04:37.934957Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/tigrcorn-certification/0.3.16.dev5/",
+          "version": "0.3.16.dev5"
+        }
+      ],
       "repository": "tigrbl/tigrcorn",
       "reviewed": false,
       "route": "/catalog/packages/pypi/tigrcorn-certification-d863af0d",
@@ -204,8 +1891,150 @@
       "version_declared": "0.3.18.dev2"
     },
     {
+      "attachment_role": "distribution",
       "claim_boundary": "Publication is reported only when confirmed by the named public registry.",
+      "dependencies": [
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": true,
+          "name": "npmctl",
+          "package_key": "pypi:npmctl",
+          "requirement": ">=0.3.10",
+          "scope": "dependency-groups.dev"
+        },
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": true,
+          "name": "npmctl-namecheap",
+          "package_key": "pypi:npmctl-namecheap",
+          "requirement": ">=0.3.10",
+          "scope": "dependency-groups.dev"
+        },
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": true,
+          "name": "ssot-registry",
+          "package_key": "pypi:ssot-registry",
+          "requirement": ">=0.2.18",
+          "scope": "dependency-groups.dev"
+        }
+      ],
+      "dependency_count": 3,
+      "dependent_count": 0,
+      "dependents": [],
+      "description": "Observed pypi package record for tigrcorn-com.",
+      "description_source": "generated-factual",
+      "display_name": "tigrcorn-com",
+      "downloads": null,
+      "downstream_completeness": "not-observed",
+      "downstream_count": 0,
+      "ecosystem": "pypi",
+      "evidence": [
+        {
+          "kind": "source",
+          "observed_at": "2026-08-03T13:56:23Z",
+          "url": "https://github.com/tigrbl/tigrcorn-com/blob/HEAD/pyproject.toml"
+        }
+      ],
+      "id": "package:pypi:tigrcorn-com:tigrbl/tigrcorn-com:pyproject.toml",
+      "kind": "package",
+      "latest_version": "0.1.0",
+      "manifest_path": "pyproject.toml",
+      "name": "tigrcorn-com",
+      "observed_at": "2026-08-03T13:56:23Z",
+      "owner": "tigrbl",
+      "private": false,
+      "publication_status": "registry_not_found",
+      "published": false,
+      "registry_url": null,
+      "relationship_count": 4,
+      "relationship_counts": {
+        "package_depends_on_package": 3,
+        "repository_contains_package": 1
+      },
+      "release_count": 0,
+      "releases": [],
+      "repository": "tigrbl/tigrcorn-com",
+      "reviewed": false,
+      "route": "/catalog/packages/pypi/tigrcorn-com-19638b9b",
+      "source_url": "https://github.com/tigrbl/tigrcorn-com/blob/HEAD/pyproject.toml",
+      "version_declared": "0.1.0"
+    },
+    {
+      "attachment_role": "distribution",
+      "claim_boundary": "Publication is reported only when confirmed by the named public registry.",
+      "dependencies": [
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": true,
+          "name": "tigrcorn-core",
+          "package_key": "pypi:tigrcorn-core",
+          "requirement": "==0.3.18.dev2",
+          "scope": "dependencies"
+        },
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": true,
+          "name": "tigrcorn-asgi",
+          "package_key": "pypi:tigrcorn-asgi",
+          "requirement": "==0.3.18.dev2",
+          "scope": "dependencies"
+        },
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": true,
+          "name": "tigrcorn-runtime",
+          "package_key": "pypi:tigrcorn-runtime",
+          "requirement": "==0.3.18.dev2",
+          "scope": "dependencies"
+        },
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "setuptools",
+          "package_key": "pypi:setuptools",
+          "requirement": ">=69",
+          "scope": "build-system.requires"
+        },
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "wheel",
+          "package_key": "pypi:wheel",
+          "requirement": "*",
+          "scope": "build-system.requires"
+        }
+      ],
       "dependency_count": 5,
+      "dependent_count": 2,
+      "dependents": [
+        {
+          "completeness": "catalog-observed",
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "name": "tigrcorn",
+          "package_key": "pypi:tigrcorn",
+          "requirement": "==0.3.18.dev2",
+          "scope": "dependencies"
+        },
+        {
+          "completeness": "catalog-observed",
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "name": "tigrcorn-certification",
+          "package_key": "pypi:tigrcorn-certification",
+          "requirement": "==0.3.18.dev2",
+          "scope": "dependencies"
+        }
+      ],
       "description": "Observed pypi package record for tigrcorn-compat.",
       "description_source": "generated-factual",
       "display_name": "tigrcorn-compat",
@@ -216,7 +2045,7 @@
       "evidence": [
         {
           "kind": "registry",
-          "observed_at": "2026-08-03T10:05:58Z",
+          "observed_at": "2026-08-03T13:56:23Z",
           "url": "https://pypi.org/project/tigrcorn-compat/"
         }
       ],
@@ -225,7 +2054,7 @@
       "latest_version": "0.3.17",
       "manifest_path": "pkgs/tigrcorn-compat/pyproject.toml",
       "name": "tigrcorn-compat",
-      "observed_at": "2026-08-03T10:05:58Z",
+      "observed_at": "2026-08-03T13:56:23Z",
       "owner": "tigrbl",
       "private": false,
       "publication_status": "published",
@@ -238,6 +2067,80 @@
         "repository_contains_package": 1
       },
       "release_count": 9,
+      "releases": [
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2026-06-19T16:36:48.133324Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/tigrcorn-compat/0.3.18.dev2/",
+          "version": "0.3.18.dev2"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2026-06-19T01:40:02.473487Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/tigrcorn-compat/0.3.18.dev1/",
+          "version": "0.3.18.dev1"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2026-06-18T21:16:54.789028Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/tigrcorn-compat/0.3.17/",
+          "version": "0.3.17"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2026-06-18T20:07:38.144449Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/tigrcorn-compat/0.3.17.dev1/",
+          "version": "0.3.17.dev1"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2026-06-01T22:23:24.944101Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/tigrcorn-compat/0.3.16/",
+          "version": "0.3.16"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2026-06-01T22:03:58.202618Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/tigrcorn-compat/0.3.16.dev13/",
+          "version": "0.3.16.dev13"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2026-06-01T21:55:07.959123Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/tigrcorn-compat/0.3.16.dev12/",
+          "version": "0.3.16.dev12"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2026-06-01T20:39:00.326120Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/tigrcorn-compat/0.3.16.dev11/",
+          "version": "0.3.16.dev11"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2026-05-06T12:04:39.394884Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/tigrcorn-compat/0.3.16.dev5/",
+          "version": "0.3.16.dev5"
+        }
+      ],
       "repository": "tigrbl/tigrcorn",
       "reviewed": false,
       "route": "/catalog/packages/pypi/tigrcorn-compat-0b87f87c",
@@ -245,8 +2148,104 @@
       "version_declared": "0.3.18.dev2"
     },
     {
+      "attachment_role": "distribution",
       "claim_boundary": "Publication is reported only when confirmed by the named public registry.",
+      "dependencies": [
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": true,
+          "name": "tigrcorn-core",
+          "package_key": "pypi:tigrcorn-core",
+          "requirement": "==0.3.18.dev2",
+          "scope": "dependencies"
+        },
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "PyYAML",
+          "package_key": "pypi:pyyaml",
+          "requirement": ">=6.0",
+          "scope": "optional-dependencies.yaml"
+        },
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "setuptools",
+          "package_key": "pypi:setuptools",
+          "requirement": ">=69",
+          "scope": "build-system.requires"
+        },
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "wheel",
+          "package_key": "pypi:wheel",
+          "requirement": "*",
+          "scope": "build-system.requires"
+        }
+      ],
       "dependency_count": 4,
+      "dependent_count": 6,
+      "dependents": [
+        {
+          "completeness": "catalog-observed",
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "name": "tigrcorn",
+          "package_key": "pypi:tigrcorn",
+          "requirement": "==0.3.18.dev2",
+          "scope": "dependencies"
+        },
+        {
+          "completeness": "catalog-observed",
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "name": "tigrcorn-observability",
+          "package_key": "pypi:tigrcorn-observability",
+          "requirement": "==0.3.18.dev2",
+          "scope": "dependencies"
+        },
+        {
+          "completeness": "catalog-observed",
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "name": "tigrcorn-protocols",
+          "package_key": "pypi:tigrcorn-protocols",
+          "requirement": "==0.3.18.dev2",
+          "scope": "dependencies"
+        },
+        {
+          "completeness": "catalog-observed",
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "name": "tigrcorn-runtime",
+          "package_key": "pypi:tigrcorn-runtime",
+          "requirement": "==0.3.18.dev2",
+          "scope": "dependencies"
+        },
+        {
+          "completeness": "catalog-observed",
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "name": "tigrcorn-security",
+          "package_key": "pypi:tigrcorn-security",
+          "requirement": "==0.3.18.dev2",
+          "scope": "dependencies"
+        },
+        {
+          "completeness": "catalog-observed",
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "name": "tigrcorn-transports",
+          "package_key": "pypi:tigrcorn-transports",
+          "requirement": "==0.3.18.dev2",
+          "scope": "dependencies"
+        }
+      ],
       "description": "Observed pypi package record for tigrcorn-config.",
       "description_source": "generated-factual",
       "display_name": "tigrcorn-config",
@@ -257,7 +2256,7 @@
       "evidence": [
         {
           "kind": "registry",
-          "observed_at": "2026-08-03T10:05:58Z",
+          "observed_at": "2026-08-03T13:56:23Z",
           "url": "https://pypi.org/project/tigrcorn-config/"
         }
       ],
@@ -266,7 +2265,7 @@
       "latest_version": "0.3.17",
       "manifest_path": "pkgs/tigrcorn-config/pyproject.toml",
       "name": "tigrcorn-config",
-      "observed_at": "2026-08-03T10:05:58Z",
+      "observed_at": "2026-08-03T13:56:23Z",
       "owner": "tigrbl",
       "private": false,
       "publication_status": "published",
@@ -279,6 +2278,80 @@
         "repository_contains_package": 1
       },
       "release_count": 9,
+      "releases": [
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2026-06-19T16:36:49.172878Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/tigrcorn-config/0.3.18.dev2/",
+          "version": "0.3.18.dev2"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2026-06-19T01:40:02.168925Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/tigrcorn-config/0.3.18.dev1/",
+          "version": "0.3.18.dev1"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2026-06-18T21:16:59.138621Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/tigrcorn-config/0.3.17/",
+          "version": "0.3.17"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2026-06-18T20:08:27.553928Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/tigrcorn-config/0.3.17.dev1/",
+          "version": "0.3.17.dev1"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2026-06-01T22:23:27.744694Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/tigrcorn-config/0.3.16/",
+          "version": "0.3.16"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2026-06-01T22:03:59.577919Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/tigrcorn-config/0.3.16.dev13/",
+          "version": "0.3.16.dev13"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2026-06-01T21:55:06.237002Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/tigrcorn-config/0.3.16.dev12/",
+          "version": "0.3.16.dev12"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2026-06-01T20:38:59.966037Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/tigrcorn-config/0.3.16.dev11/",
+          "version": "0.3.16.dev11"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2026-05-06T12:04:40.753413Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/tigrcorn-config/0.3.16.dev5/",
+          "version": "0.3.16.dev5"
+        }
+      ],
       "repository": "tigrbl/tigrcorn",
       "reviewed": false,
       "route": "/catalog/packages/pypi/tigrcorn-config-291e7a33",
@@ -286,8 +2359,68 @@
       "version_declared": "0.3.18.dev2"
     },
     {
+      "attachment_role": "distribution",
       "claim_boundary": "Publication is reported only when confirmed by the named public registry.",
+      "dependencies": [
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": true,
+          "name": "tigrcorn-core",
+          "package_key": "pypi:tigrcorn-core",
+          "requirement": "==0.3.18.dev2",
+          "scope": "dependencies"
+        },
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": true,
+          "name": "tigrcorn-asgi",
+          "package_key": "pypi:tigrcorn-asgi",
+          "requirement": "==0.3.18.dev2",
+          "scope": "dependencies"
+        },
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": true,
+          "name": "tigr-asgi-contract",
+          "package_key": "pypi:tigr-asgi-contract",
+          "requirement": ">=0.3.2",
+          "scope": "dependencies"
+        },
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "setuptools",
+          "package_key": "pypi:setuptools",
+          "requirement": ">=69",
+          "scope": "build-system.requires"
+        },
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "wheel",
+          "package_key": "pypi:wheel",
+          "requirement": "*",
+          "scope": "build-system.requires"
+        }
+      ],
       "dependency_count": 5,
+      "dependent_count": 1,
+      "dependents": [
+        {
+          "completeness": "catalog-observed",
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "name": "tigrcorn",
+          "package_key": "pypi:tigrcorn",
+          "requirement": "==0.3.18.dev2",
+          "scope": "dependencies"
+        }
+      ],
       "description": "Observed pypi package record for tigrcorn-contract.",
       "description_source": "generated-factual",
       "display_name": "tigrcorn-contract",
@@ -298,7 +2431,7 @@
       "evidence": [
         {
           "kind": "registry",
-          "observed_at": "2026-08-03T10:05:58Z",
+          "observed_at": "2026-08-03T13:56:23Z",
           "url": "https://pypi.org/project/tigrcorn-contract/"
         }
       ],
@@ -307,7 +2440,7 @@
       "latest_version": "0.3.17",
       "manifest_path": "pkgs/tigrcorn-contract/pyproject.toml",
       "name": "tigrcorn-contract",
-      "observed_at": "2026-08-03T10:05:58Z",
+      "observed_at": "2026-08-03T13:56:23Z",
       "owner": "tigrbl",
       "private": false,
       "publication_status": "published",
@@ -320,6 +2453,72 @@
         "repository_contains_package": 1
       },
       "release_count": 8,
+      "releases": [
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2026-06-19T16:36:50.284248Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/tigrcorn-contract/0.3.18.dev2/",
+          "version": "0.3.18.dev2"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2026-06-19T01:40:05.564906Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/tigrcorn-contract/0.3.18.dev1/",
+          "version": "0.3.18.dev1"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2026-06-18T21:16:51.964455Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/tigrcorn-contract/0.3.17/",
+          "version": "0.3.17"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2026-06-18T20:08:06.245225Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/tigrcorn-contract/0.3.17.dev1/",
+          "version": "0.3.17.dev1"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2026-06-01T22:23:29.795726Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/tigrcorn-contract/0.3.16/",
+          "version": "0.3.16"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2026-06-01T22:04:00.126450Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/tigrcorn-contract/0.3.16.dev13/",
+          "version": "0.3.16.dev13"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2026-06-01T21:55:08.932451Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/tigrcorn-contract/0.3.16.dev12/",
+          "version": "0.3.16.dev12"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2026-05-06T12:04:42.363946Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/tigrcorn-contract/0.3.16.dev5/",
+          "version": "0.3.16.dev5"
+        }
+      ],
       "repository": "tigrbl/tigrcorn",
       "reviewed": false,
       "route": "/catalog/packages/pypi/tigrcorn-contract-99b340c6",
@@ -327,8 +2526,140 @@
       "version_declared": "0.3.18.dev2"
     },
     {
+      "attachment_role": "distribution",
       "claim_boundary": "Publication is reported only when confirmed by the named public registry.",
+      "dependencies": [
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "setuptools",
+          "package_key": "pypi:setuptools",
+          "requirement": ">=69",
+          "scope": "build-system.requires"
+        },
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "wheel",
+          "package_key": "pypi:wheel",
+          "requirement": "*",
+          "scope": "build-system.requires"
+        }
+      ],
       "dependency_count": 2,
+      "dependent_count": 12,
+      "dependents": [
+        {
+          "completeness": "catalog-observed",
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "name": "tigrcorn",
+          "package_key": "pypi:tigrcorn",
+          "requirement": "==0.3.18.dev2",
+          "scope": "dependencies"
+        },
+        {
+          "completeness": "catalog-observed",
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "name": "tigrcorn-asgi",
+          "package_key": "pypi:tigrcorn-asgi",
+          "requirement": "==0.3.18.dev2",
+          "scope": "dependencies"
+        },
+        {
+          "completeness": "catalog-observed",
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "name": "tigrcorn-compat",
+          "package_key": "pypi:tigrcorn-compat",
+          "requirement": "==0.3.18.dev2",
+          "scope": "dependencies"
+        },
+        {
+          "completeness": "catalog-observed",
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "name": "tigrcorn-config",
+          "package_key": "pypi:tigrcorn-config",
+          "requirement": "==0.3.18.dev2",
+          "scope": "dependencies"
+        },
+        {
+          "completeness": "catalog-observed",
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "name": "tigrcorn-contract",
+          "package_key": "pypi:tigrcorn-contract",
+          "requirement": "==0.3.18.dev2",
+          "scope": "dependencies"
+        },
+        {
+          "completeness": "catalog-observed",
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "name": "tigrcorn-http",
+          "package_key": "pypi:tigrcorn-http",
+          "requirement": "==0.3.18.dev2",
+          "scope": "dependencies"
+        },
+        {
+          "completeness": "catalog-observed",
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "name": "tigrcorn-observability",
+          "package_key": "pypi:tigrcorn-observability",
+          "requirement": "==0.3.18.dev2",
+          "scope": "dependencies"
+        },
+        {
+          "completeness": "catalog-observed",
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "name": "tigrcorn-protocols",
+          "package_key": "pypi:tigrcorn-protocols",
+          "requirement": "==0.3.18.dev2",
+          "scope": "dependencies"
+        },
+        {
+          "completeness": "catalog-observed",
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "name": "tigrcorn-runtime",
+          "package_key": "pypi:tigrcorn-runtime",
+          "requirement": "==0.3.18.dev2",
+          "scope": "dependencies"
+        },
+        {
+          "completeness": "catalog-observed",
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "name": "tigrcorn-security",
+          "package_key": "pypi:tigrcorn-security",
+          "requirement": "==0.3.18.dev2",
+          "scope": "dependencies"
+        },
+        {
+          "completeness": "catalog-observed",
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "name": "tigrcorn-static",
+          "package_key": "pypi:tigrcorn-static",
+          "requirement": "==0.3.18.dev2",
+          "scope": "dependencies"
+        },
+        {
+          "completeness": "catalog-observed",
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "name": "tigrcorn-transports",
+          "package_key": "pypi:tigrcorn-transports",
+          "requirement": "==0.3.18.dev2",
+          "scope": "dependencies"
+        }
+      ],
       "description": "Observed pypi package record for tigrcorn-core.",
       "description_source": "generated-factual",
       "display_name": "tigrcorn-core",
@@ -339,7 +2670,7 @@
       "evidence": [
         {
           "kind": "registry",
-          "observed_at": "2026-08-03T10:05:58Z",
+          "observed_at": "2026-08-03T13:56:23Z",
           "url": "https://pypi.org/project/tigrcorn-core/"
         }
       ],
@@ -348,7 +2679,7 @@
       "latest_version": "0.3.17",
       "manifest_path": "pkgs/tigrcorn-core/pyproject.toml",
       "name": "tigrcorn-core",
-      "observed_at": "2026-08-03T10:05:58Z",
+      "observed_at": "2026-08-03T13:56:23Z",
       "owner": "tigrbl",
       "private": false,
       "publication_status": "published",
@@ -361,6 +2692,80 @@
         "repository_contains_package": 1
       },
       "release_count": 9,
+      "releases": [
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2026-06-19T16:36:51.765760Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/tigrcorn-core/0.3.18.dev2/",
+          "version": "0.3.18.dev2"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2026-06-19T01:40:06.029211Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/tigrcorn-core/0.3.18.dev1/",
+          "version": "0.3.18.dev1"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2026-06-18T21:16:55.682915Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/tigrcorn-core/0.3.17/",
+          "version": "0.3.17"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2026-06-18T20:07:58.921558Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/tigrcorn-core/0.3.17.dev1/",
+          "version": "0.3.17.dev1"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2026-06-01T22:23:27.408609Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/tigrcorn-core/0.3.16/",
+          "version": "0.3.16"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2026-06-01T22:04:00.882242Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/tigrcorn-core/0.3.16.dev13/",
+          "version": "0.3.16.dev13"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2026-06-01T21:55:06.546697Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/tigrcorn-core/0.3.16.dev12/",
+          "version": "0.3.16.dev12"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2026-06-01T20:38:59.564231Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/tigrcorn-core/0.3.16.dev11/",
+          "version": "0.3.16.dev11"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2026-05-06T12:04:44.046502Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/tigrcorn-core/0.3.16.dev5/",
+          "version": "0.3.16.dev5"
+        }
+      ],
       "repository": "tigrbl/tigrcorn",
       "reviewed": false,
       "route": "/catalog/packages/pypi/tigrcorn-core-38b8c689",
@@ -368,8 +2773,77 @@
       "version_declared": "0.3.18.dev2"
     },
     {
+      "attachment_role": "distribution",
       "claim_boundary": "Publication is reported only when confirmed by the named public registry.",
+      "dependencies": [
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": true,
+          "name": "tigrcorn-core",
+          "package_key": "pypi:tigrcorn-core",
+          "requirement": "==0.3.18.dev2",
+          "scope": "dependencies"
+        },
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "brotli",
+          "package_key": "pypi:brotli",
+          "requirement": ">=1.1.0",
+          "scope": "optional-dependencies.compression"
+        },
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "setuptools",
+          "package_key": "pypi:setuptools",
+          "requirement": ">=69",
+          "scope": "build-system.requires"
+        },
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "wheel",
+          "package_key": "pypi:wheel",
+          "requirement": "*",
+          "scope": "build-system.requires"
+        }
+      ],
       "dependency_count": 4,
+      "dependent_count": 3,
+      "dependents": [
+        {
+          "completeness": "catalog-observed",
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "name": "tigrcorn",
+          "package_key": "pypi:tigrcorn",
+          "requirement": "==0.3.18.dev2",
+          "scope": "dependencies"
+        },
+        {
+          "completeness": "catalog-observed",
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "name": "tigrcorn-protocols",
+          "package_key": "pypi:tigrcorn-protocols",
+          "requirement": "==0.3.18.dev2",
+          "scope": "dependencies"
+        },
+        {
+          "completeness": "catalog-observed",
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "name": "tigrcorn-static",
+          "package_key": "pypi:tigrcorn-static",
+          "requirement": "==0.3.18.dev2",
+          "scope": "dependencies"
+        }
+      ],
       "description": "Observed pypi package record for tigrcorn-http.",
       "description_source": "generated-factual",
       "display_name": "tigrcorn-http",
@@ -380,7 +2854,7 @@
       "evidence": [
         {
           "kind": "registry",
-          "observed_at": "2026-08-03T10:05:58Z",
+          "observed_at": "2026-08-03T13:56:23Z",
           "url": "https://pypi.org/project/tigrcorn-http/"
         }
       ],
@@ -389,7 +2863,7 @@
       "latest_version": "0.3.17",
       "manifest_path": "pkgs/tigrcorn-http/pyproject.toml",
       "name": "tigrcorn-http",
-      "observed_at": "2026-08-03T10:05:58Z",
+      "observed_at": "2026-08-03T13:56:23Z",
       "owner": "tigrbl",
       "private": false,
       "publication_status": "published",
@@ -402,6 +2876,80 @@
         "repository_contains_package": 1
       },
       "release_count": 9,
+      "releases": [
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2026-06-19T16:36:49.767067Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/tigrcorn-http/0.3.18.dev2/",
+          "version": "0.3.18.dev2"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2026-06-19T01:40:04.028255Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/tigrcorn-http/0.3.18.dev1/",
+          "version": "0.3.18.dev1"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2026-06-18T21:16:52.104685Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/tigrcorn-http/0.3.17/",
+          "version": "0.3.17"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2026-06-18T20:08:10.737817Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/tigrcorn-http/0.3.17.dev1/",
+          "version": "0.3.17.dev1"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2026-06-01T22:23:25.098463Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/tigrcorn-http/0.3.16/",
+          "version": "0.3.16"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2026-06-01T22:03:57.173313Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/tigrcorn-http/0.3.16.dev13/",
+          "version": "0.3.16.dev13"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2026-06-01T21:55:07.253269Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/tigrcorn-http/0.3.16.dev12/",
+          "version": "0.3.16.dev12"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2026-06-01T20:39:00.791214Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/tigrcorn-http/0.3.16.dev11/",
+          "version": "0.3.16.dev11"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2026-05-06T12:04:45.687046Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/tigrcorn-http/0.3.16.dev5/",
+          "version": "0.3.16.dev5"
+        }
+      ],
       "repository": "tigrbl/tigrcorn",
       "reviewed": false,
       "route": "/catalog/packages/pypi/tigrcorn-http-6dd542e5",
@@ -409,8 +2957,59 @@
       "version_declared": "0.3.18.dev2"
     },
     {
+      "attachment_role": "distribution",
       "claim_boundary": "Publication is reported only when confirmed by the named public registry.",
+      "dependencies": [
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": true,
+          "name": "tigrcorn-core",
+          "package_key": "pypi:tigrcorn-core",
+          "requirement": "==0.3.18.dev2",
+          "scope": "dependencies"
+        },
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": true,
+          "name": "tigrcorn-config",
+          "package_key": "pypi:tigrcorn-config",
+          "requirement": "==0.3.18.dev2",
+          "scope": "dependencies"
+        },
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "setuptools",
+          "package_key": "pypi:setuptools",
+          "requirement": ">=69",
+          "scope": "build-system.requires"
+        },
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "wheel",
+          "package_key": "pypi:wheel",
+          "requirement": "*",
+          "scope": "build-system.requires"
+        }
+      ],
       "dependency_count": 4,
+      "dependent_count": 1,
+      "dependents": [
+        {
+          "completeness": "catalog-observed",
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "name": "tigrcorn",
+          "package_key": "pypi:tigrcorn",
+          "requirement": "==0.3.18.dev2",
+          "scope": "dependencies"
+        }
+      ],
       "description": "Observed pypi package record for tigrcorn-observability.",
       "description_source": "generated-factual",
       "display_name": "tigrcorn-observability",
@@ -421,7 +3020,7 @@
       "evidence": [
         {
           "kind": "registry",
-          "observed_at": "2026-08-03T10:05:58Z",
+          "observed_at": "2026-08-03T13:56:23Z",
           "url": "https://pypi.org/project/tigrcorn-observability/"
         }
       ],
@@ -430,7 +3029,7 @@
       "latest_version": "0.3.17",
       "manifest_path": "pkgs/tigrcorn-observability/pyproject.toml",
       "name": "tigrcorn-observability",
-      "observed_at": "2026-08-03T10:05:58Z",
+      "observed_at": "2026-08-03T13:56:23Z",
       "owner": "tigrbl",
       "private": false,
       "publication_status": "published",
@@ -443,6 +3042,80 @@
         "repository_contains_package": 1
       },
       "release_count": 9,
+      "releases": [
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2026-06-19T16:36:52.119132Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/tigrcorn-observability/0.3.18.dev2/",
+          "version": "0.3.18.dev2"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2026-06-19T01:40:05.484293Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/tigrcorn-observability/0.3.18.dev1/",
+          "version": "0.3.18.dev1"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2026-06-18T21:16:52.369815Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/tigrcorn-observability/0.3.17/",
+          "version": "0.3.17"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2026-06-18T20:08:30.971878Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/tigrcorn-observability/0.3.17.dev1/",
+          "version": "0.3.17.dev1"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2026-06-01T22:23:28.603278Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/tigrcorn-observability/0.3.16/",
+          "version": "0.3.16"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2026-06-01T22:03:58.240030Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/tigrcorn-observability/0.3.16.dev13/",
+          "version": "0.3.16.dev13"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2026-06-01T21:55:04.710608Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/tigrcorn-observability/0.3.16.dev12/",
+          "version": "0.3.16.dev12"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2026-06-01T20:39:01.937218Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/tigrcorn-observability/0.3.16.dev11/",
+          "version": "0.3.16.dev11"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2026-05-06T12:04:47.004373Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/tigrcorn-observability/0.3.16.dev5/",
+          "version": "0.3.16.dev5"
+        }
+      ],
       "repository": "tigrbl/tigrcorn",
       "reviewed": false,
       "route": "/catalog/packages/pypi/tigrcorn-observability-7b0816ff",
@@ -450,8 +3123,95 @@
       "version_declared": "0.3.18.dev2"
     },
     {
+      "attachment_role": "distribution",
       "claim_boundary": "Publication is reported only when confirmed by the named public registry.",
+      "dependencies": [
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": true,
+          "name": "tigrcorn-core",
+          "package_key": "pypi:tigrcorn-core",
+          "requirement": "==0.3.18.dev2",
+          "scope": "dependencies"
+        },
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": true,
+          "name": "tigrcorn-config",
+          "package_key": "pypi:tigrcorn-config",
+          "requirement": "==0.3.18.dev2",
+          "scope": "dependencies"
+        },
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": true,
+          "name": "tigrcorn-asgi",
+          "package_key": "pypi:tigrcorn-asgi",
+          "requirement": "==0.3.18.dev2",
+          "scope": "dependencies"
+        },
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": true,
+          "name": "tigrcorn-http",
+          "package_key": "pypi:tigrcorn-http",
+          "requirement": "==0.3.18.dev2",
+          "scope": "dependencies"
+        },
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": true,
+          "name": "tigrcorn-transports",
+          "package_key": "pypi:tigrcorn-transports",
+          "requirement": "==0.3.18.dev2",
+          "scope": "dependencies"
+        },
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "setuptools",
+          "package_key": "pypi:setuptools",
+          "requirement": ">=69",
+          "scope": "build-system.requires"
+        },
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "wheel",
+          "package_key": "pypi:wheel",
+          "requirement": "*",
+          "scope": "build-system.requires"
+        }
+      ],
       "dependency_count": 7,
+      "dependent_count": 2,
+      "dependents": [
+        {
+          "completeness": "catalog-observed",
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "name": "tigrcorn",
+          "package_key": "pypi:tigrcorn",
+          "requirement": "==0.3.18.dev2",
+          "scope": "dependencies"
+        },
+        {
+          "completeness": "catalog-observed",
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "name": "tigrcorn-runtime",
+          "package_key": "pypi:tigrcorn-runtime",
+          "requirement": "==0.3.18.dev2",
+          "scope": "dependencies"
+        }
+      ],
       "description": "Observed pypi package record for tigrcorn-protocols.",
       "description_source": "generated-factual",
       "display_name": "tigrcorn-protocols",
@@ -462,7 +3222,7 @@
       "evidence": [
         {
           "kind": "registry",
-          "observed_at": "2026-08-03T10:05:58Z",
+          "observed_at": "2026-08-03T13:56:23Z",
           "url": "https://pypi.org/project/tigrcorn-protocols/"
         }
       ],
@@ -471,7 +3231,7 @@
       "latest_version": "0.3.17",
       "manifest_path": "pkgs/tigrcorn-protocols/pyproject.toml",
       "name": "tigrcorn-protocols",
-      "observed_at": "2026-08-03T10:05:58Z",
+      "observed_at": "2026-08-03T13:56:23Z",
       "owner": "tigrbl",
       "private": false,
       "publication_status": "published",
@@ -484,6 +3244,80 @@
         "repository_contains_package": 1
       },
       "release_count": 9,
+      "releases": [
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2026-06-19T16:36:50.912121Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/tigrcorn-protocols/0.3.18.dev2/",
+          "version": "0.3.18.dev2"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2026-06-19T01:40:08.922287Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/tigrcorn-protocols/0.3.18.dev1/",
+          "version": "0.3.18.dev1"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2026-06-18T21:16:53.353678Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/tigrcorn-protocols/0.3.17/",
+          "version": "0.3.17"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2026-06-18T20:07:47.422261Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/tigrcorn-protocols/0.3.17.dev1/",
+          "version": "0.3.17.dev1"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2026-06-01T22:23:26.567349Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/tigrcorn-protocols/0.3.16/",
+          "version": "0.3.16"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2026-06-01T22:03:58.268082Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/tigrcorn-protocols/0.3.16.dev13/",
+          "version": "0.3.16.dev13"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2026-06-01T21:55:06.342214Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/tigrcorn-protocols/0.3.16.dev12/",
+          "version": "0.3.16.dev12"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2026-06-01T20:39:02.568281Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/tigrcorn-protocols/0.3.16.dev11/",
+          "version": "0.3.16.dev11"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2026-05-06T12:04:48.440512Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/tigrcorn-protocols/0.3.16.dev5/",
+          "version": "0.3.16.dev5"
+        }
+      ],
       "repository": "tigrbl/tigrcorn",
       "reviewed": false,
       "route": "/catalog/packages/pypi/tigrcorn-protocols-4fc643e4",
@@ -491,8 +3325,131 @@
       "version_declared": "0.3.18.dev2"
     },
     {
+      "attachment_role": "distribution",
       "claim_boundary": "Publication is reported only when confirmed by the named public registry.",
+      "dependencies": [
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": true,
+          "name": "tigrcorn-core",
+          "package_key": "pypi:tigrcorn-core",
+          "requirement": "==0.3.18.dev2",
+          "scope": "dependencies"
+        },
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": true,
+          "name": "tigrcorn-config",
+          "package_key": "pypi:tigrcorn-config",
+          "requirement": "==0.3.18.dev2",
+          "scope": "dependencies"
+        },
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": true,
+          "name": "tigrcorn-asgi",
+          "package_key": "pypi:tigrcorn-asgi",
+          "requirement": "==0.3.18.dev2",
+          "scope": "dependencies"
+        },
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": true,
+          "name": "tigrcorn-transports",
+          "package_key": "pypi:tigrcorn-transports",
+          "requirement": "==0.3.18.dev2",
+          "scope": "dependencies"
+        },
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": true,
+          "name": "tigrcorn-protocols",
+          "package_key": "pypi:tigrcorn-protocols",
+          "requirement": "==0.3.18.dev2",
+          "scope": "dependencies"
+        },
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": true,
+          "name": "tigrcorn-security",
+          "package_key": "pypi:tigrcorn-security",
+          "requirement": "==0.3.18.dev2",
+          "scope": "dependencies"
+        },
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "uvloop",
+          "package_key": "pypi:uvloop",
+          "requirement": ">=0.19.0; platform_system != 'Windows'",
+          "scope": "optional-dependencies.uvloop"
+        },
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "trio",
+          "package_key": "pypi:trio",
+          "requirement": ">=0.25.0",
+          "scope": "optional-dependencies.trio"
+        },
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "setuptools",
+          "package_key": "pypi:setuptools",
+          "requirement": ">=69",
+          "scope": "build-system.requires"
+        },
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "wheel",
+          "package_key": "pypi:wheel",
+          "requirement": "*",
+          "scope": "build-system.requires"
+        }
+      ],
       "dependency_count": 10,
+      "dependent_count": 3,
+      "dependents": [
+        {
+          "completeness": "catalog-observed",
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "name": "tigrcorn",
+          "package_key": "pypi:tigrcorn",
+          "requirement": "==0.3.18.dev2",
+          "scope": "dependencies"
+        },
+        {
+          "completeness": "catalog-observed",
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "name": "tigrcorn-certification",
+          "package_key": "pypi:tigrcorn-certification",
+          "requirement": "==0.3.18.dev2",
+          "scope": "dependencies"
+        },
+        {
+          "completeness": "catalog-observed",
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "name": "tigrcorn-compat",
+          "package_key": "pypi:tigrcorn-compat",
+          "requirement": "==0.3.18.dev2",
+          "scope": "dependencies"
+        }
+      ],
       "description": "Observed pypi package record for tigrcorn-runtime.",
       "description_source": "generated-factual",
       "display_name": "tigrcorn-runtime",
@@ -503,7 +3460,7 @@
       "evidence": [
         {
           "kind": "registry",
-          "observed_at": "2026-08-03T10:05:58Z",
+          "observed_at": "2026-08-03T13:56:23Z",
           "url": "https://pypi.org/project/tigrcorn-runtime/"
         }
       ],
@@ -512,7 +3469,7 @@
       "latest_version": "0.3.17",
       "manifest_path": "pkgs/tigrcorn-runtime/pyproject.toml",
       "name": "tigrcorn-runtime",
-      "observed_at": "2026-08-03T10:05:58Z",
+      "observed_at": "2026-08-03T13:56:23Z",
       "owner": "tigrbl",
       "private": false,
       "publication_status": "published",
@@ -525,6 +3482,80 @@
         "repository_contains_package": 1
       },
       "release_count": 9,
+      "releases": [
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2026-06-19T16:36:48.193720Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/tigrcorn-runtime/0.3.18.dev2/",
+          "version": "0.3.18.dev2"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2026-06-19T01:40:02.402109Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/tigrcorn-runtime/0.3.18.dev1/",
+          "version": "0.3.18.dev1"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2026-06-18T21:16:55.237575Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/tigrcorn-runtime/0.3.17/",
+          "version": "0.3.17"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2026-06-18T20:08:42.130219Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/tigrcorn-runtime/0.3.17.dev1/",
+          "version": "0.3.17.dev1"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2026-06-01T22:23:25.798161Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/tigrcorn-runtime/0.3.16/",
+          "version": "0.3.16"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2026-06-01T22:03:58.392491Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/tigrcorn-runtime/0.3.16.dev13/",
+          "version": "0.3.16.dev13"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2026-06-01T21:55:07.402068Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/tigrcorn-runtime/0.3.16.dev12/",
+          "version": "0.3.16.dev12"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2026-06-01T20:38:58.723365Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/tigrcorn-runtime/0.3.16.dev11/",
+          "version": "0.3.16.dev11"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2026-05-06T12:04:50.255049Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/tigrcorn-runtime/0.3.16.dev5/",
+          "version": "0.3.16.dev5"
+        }
+      ],
       "repository": "tigrbl/tigrcorn",
       "reviewed": false,
       "route": "/catalog/packages/pypi/tigrcorn-runtime-a11f2b3c",
@@ -532,8 +3563,77 @@
       "version_declared": "0.3.18.dev2"
     },
     {
+      "attachment_role": "distribution",
       "claim_boundary": "Publication is reported only when confirmed by the named public registry.",
+      "dependencies": [
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": true,
+          "name": "tigrcorn-core",
+          "package_key": "pypi:tigrcorn-core",
+          "requirement": "==0.3.18.dev2",
+          "scope": "dependencies"
+        },
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": true,
+          "name": "tigrcorn-config",
+          "package_key": "pypi:tigrcorn-config",
+          "requirement": "==0.3.18.dev2",
+          "scope": "dependencies"
+        },
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "cryptography",
+          "package_key": "pypi:cryptography",
+          "requirement": ">=46.0.0",
+          "scope": "optional-dependencies.x509"
+        },
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "setuptools",
+          "package_key": "pypi:setuptools",
+          "requirement": ">=69",
+          "scope": "build-system.requires"
+        },
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "wheel",
+          "package_key": "pypi:wheel",
+          "requirement": "*",
+          "scope": "build-system.requires"
+        }
+      ],
       "dependency_count": 5,
+      "dependent_count": 2,
+      "dependents": [
+        {
+          "completeness": "catalog-observed",
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "name": "tigrcorn",
+          "package_key": "pypi:tigrcorn",
+          "requirement": "==0.3.18.dev2",
+          "scope": "dependencies"
+        },
+        {
+          "completeness": "catalog-observed",
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "name": "tigrcorn-runtime",
+          "package_key": "pypi:tigrcorn-runtime",
+          "requirement": "==0.3.18.dev2",
+          "scope": "dependencies"
+        }
+      ],
       "description": "Observed pypi package record for tigrcorn-security.",
       "description_source": "generated-factual",
       "display_name": "tigrcorn-security",
@@ -544,7 +3644,7 @@
       "evidence": [
         {
           "kind": "registry",
-          "observed_at": "2026-08-03T10:05:58Z",
+          "observed_at": "2026-08-03T13:56:23Z",
           "url": "https://pypi.org/project/tigrcorn-security/"
         }
       ],
@@ -553,7 +3653,7 @@
       "latest_version": "0.3.17",
       "manifest_path": "pkgs/tigrcorn-security/pyproject.toml",
       "name": "tigrcorn-security",
-      "observed_at": "2026-08-03T10:05:58Z",
+      "observed_at": "2026-08-03T13:56:23Z",
       "owner": "tigrbl",
       "private": false,
       "publication_status": "published",
@@ -566,6 +3666,80 @@
         "repository_contains_package": 1
       },
       "release_count": 9,
+      "releases": [
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2026-06-19T16:36:52.532081Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/tigrcorn-security/0.3.18.dev2/",
+          "version": "0.3.18.dev2"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2026-06-19T01:40:04.845619Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/tigrcorn-security/0.3.18.dev1/",
+          "version": "0.3.18.dev1"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2026-06-18T21:16:57.108962Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/tigrcorn-security/0.3.17/",
+          "version": "0.3.17"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2026-06-18T20:08:30.487243Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/tigrcorn-security/0.3.17.dev1/",
+          "version": "0.3.17.dev1"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2026-06-01T22:23:30.255132Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/tigrcorn-security/0.3.16/",
+          "version": "0.3.16"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2026-06-01T22:04:00.900151Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/tigrcorn-security/0.3.16.dev13/",
+          "version": "0.3.16.dev13"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2026-06-01T21:55:06.723608Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/tigrcorn-security/0.3.16.dev12/",
+          "version": "0.3.16.dev12"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2026-06-01T20:39:04.285387Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/tigrcorn-security/0.3.16.dev11/",
+          "version": "0.3.16.dev11"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2026-05-06T12:04:51.655592Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/tigrcorn-security/0.3.16.dev5/",
+          "version": "0.3.16.dev5"
+        }
+      ],
       "repository": "tigrbl/tigrcorn",
       "reviewed": false,
       "route": "/catalog/packages/pypi/tigrcorn-security-7aafc445",
@@ -573,8 +3747,77 @@
       "version_declared": "0.3.18.dev2"
     },
     {
+      "attachment_role": "distribution",
       "claim_boundary": "Publication is reported only when confirmed by the named public registry.",
+      "dependencies": [
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": true,
+          "name": "tigrcorn-core",
+          "package_key": "pypi:tigrcorn-core",
+          "requirement": "==0.3.18.dev2",
+          "scope": "dependencies"
+        },
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": true,
+          "name": "tigrcorn-asgi",
+          "package_key": "pypi:tigrcorn-asgi",
+          "requirement": "==0.3.18.dev2",
+          "scope": "dependencies"
+        },
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": true,
+          "name": "tigrcorn-http",
+          "package_key": "pypi:tigrcorn-http",
+          "requirement": "==0.3.18.dev2",
+          "scope": "dependencies"
+        },
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "setuptools",
+          "package_key": "pypi:setuptools",
+          "requirement": ">=69",
+          "scope": "build-system.requires"
+        },
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "wheel",
+          "package_key": "pypi:wheel",
+          "requirement": "*",
+          "scope": "build-system.requires"
+        }
+      ],
       "dependency_count": 5,
+      "dependent_count": 2,
+      "dependents": [
+        {
+          "completeness": "catalog-observed",
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "name": "tigrcorn",
+          "package_key": "pypi:tigrcorn",
+          "requirement": "==0.3.18.dev2",
+          "scope": "dependencies"
+        },
+        {
+          "completeness": "catalog-observed",
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "name": "tigrcorn-certification",
+          "package_key": "pypi:tigrcorn-certification",
+          "requirement": "==0.3.18.dev2",
+          "scope": "dependencies"
+        }
+      ],
       "description": "Observed pypi package record for tigrcorn-static.",
       "description_source": "generated-factual",
       "display_name": "tigrcorn-static",
@@ -585,7 +3828,7 @@
       "evidence": [
         {
           "kind": "registry",
-          "observed_at": "2026-08-03T10:05:58Z",
+          "observed_at": "2026-08-03T13:56:23Z",
           "url": "https://pypi.org/project/tigrcorn-static/"
         }
       ],
@@ -594,7 +3837,7 @@
       "latest_version": "0.3.17",
       "manifest_path": "pkgs/tigrcorn-static/pyproject.toml",
       "name": "tigrcorn-static",
-      "observed_at": "2026-08-03T10:05:58Z",
+      "observed_at": "2026-08-03T13:56:23Z",
       "owner": "tigrbl",
       "private": false,
       "publication_status": "published",
@@ -607,6 +3850,80 @@
         "repository_contains_package": 1
       },
       "release_count": 9,
+      "releases": [
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2026-06-19T16:36:53.242088Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/tigrcorn-static/0.3.18.dev2/",
+          "version": "0.3.18.dev2"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2026-06-19T01:40:03.021798Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/tigrcorn-static/0.3.18.dev1/",
+          "version": "0.3.18.dev1"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2026-06-18T21:16:52.098108Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/tigrcorn-static/0.3.17/",
+          "version": "0.3.17"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2026-06-18T20:07:57.273623Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/tigrcorn-static/0.3.17.dev1/",
+          "version": "0.3.17.dev1"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2026-06-01T22:23:25.900109Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/tigrcorn-static/0.3.16/",
+          "version": "0.3.16"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2026-06-01T22:03:59.081952Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/tigrcorn-static/0.3.16.dev13/",
+          "version": "0.3.16.dev13"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2026-06-01T21:55:04.368236Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/tigrcorn-static/0.3.16.dev12/",
+          "version": "0.3.16.dev12"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2026-06-01T20:39:05.832745Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/tigrcorn-static/0.3.16.dev11/",
+          "version": "0.3.16.dev11"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2026-05-06T12:04:53.334381Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/tigrcorn-static/0.3.16.dev5/",
+          "version": "0.3.16.dev5"
+        }
+      ],
       "repository": "tigrbl/tigrcorn",
       "reviewed": false,
       "route": "/catalog/packages/pypi/tigrcorn-static-108ea708",
@@ -614,8 +3931,77 @@
       "version_declared": "0.3.18.dev2"
     },
     {
+      "attachment_role": "distribution",
       "claim_boundary": "Publication is reported only when confirmed by the named public registry.",
+      "dependencies": [
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": true,
+          "name": "tigrcorn-core",
+          "package_key": "pypi:tigrcorn-core",
+          "requirement": "==0.3.18.dev2",
+          "scope": "dependencies"
+        },
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": true,
+          "name": "tigrcorn-config",
+          "package_key": "pypi:tigrcorn-config",
+          "requirement": "==0.3.18.dev2",
+          "scope": "dependencies"
+        },
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "setuptools",
+          "package_key": "pypi:setuptools",
+          "requirement": ">=69",
+          "scope": "build-system.requires"
+        },
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "wheel",
+          "package_key": "pypi:wheel",
+          "requirement": "*",
+          "scope": "build-system.requires"
+        }
+      ],
       "dependency_count": 4,
+      "dependent_count": 3,
+      "dependents": [
+        {
+          "completeness": "catalog-observed",
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "name": "tigrcorn",
+          "package_key": "pypi:tigrcorn",
+          "requirement": "==0.3.18.dev2",
+          "scope": "dependencies"
+        },
+        {
+          "completeness": "catalog-observed",
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "name": "tigrcorn-protocols",
+          "package_key": "pypi:tigrcorn-protocols",
+          "requirement": "==0.3.18.dev2",
+          "scope": "dependencies"
+        },
+        {
+          "completeness": "catalog-observed",
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "name": "tigrcorn-runtime",
+          "package_key": "pypi:tigrcorn-runtime",
+          "requirement": "==0.3.18.dev2",
+          "scope": "dependencies"
+        }
+      ],
       "description": "Observed pypi package record for tigrcorn-transports.",
       "description_source": "generated-factual",
       "display_name": "tigrcorn-transports",
@@ -626,7 +4012,7 @@
       "evidence": [
         {
           "kind": "registry",
-          "observed_at": "2026-08-03T10:05:58Z",
+          "observed_at": "2026-08-03T13:56:23Z",
           "url": "https://pypi.org/project/tigrcorn-transports/"
         }
       ],
@@ -635,7 +4021,7 @@
       "latest_version": "0.3.17",
       "manifest_path": "pkgs/tigrcorn-transports/pyproject.toml",
       "name": "tigrcorn-transports",
-      "observed_at": "2026-08-03T10:05:58Z",
+      "observed_at": "2026-08-03T13:56:23Z",
       "owner": "tigrbl",
       "private": false,
       "publication_status": "published",
@@ -648,6 +4034,80 @@
         "repository_contains_package": 1
       },
       "release_count": 9,
+      "releases": [
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2026-06-19T16:36:51.022181Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/tigrcorn-transports/0.3.18.dev2/",
+          "version": "0.3.18.dev2"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2026-06-19T01:40:02.422133Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/tigrcorn-transports/0.3.18.dev1/",
+          "version": "0.3.18.dev1"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2026-06-18T21:16:55.858158Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/tigrcorn-transports/0.3.17/",
+          "version": "0.3.17"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2026-06-18T20:08:43.721078Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/tigrcorn-transports/0.3.17.dev1/",
+          "version": "0.3.17.dev1"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2026-06-01T22:23:28.677867Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/tigrcorn-transports/0.3.16/",
+          "version": "0.3.16"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2026-06-01T22:04:01.578808Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/tigrcorn-transports/0.3.16.dev13/",
+          "version": "0.3.16.dev13"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2026-06-01T21:55:04.633591Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/tigrcorn-transports/0.3.16.dev12/",
+          "version": "0.3.16.dev12"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2026-06-01T20:39:03.114341Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/tigrcorn-transports/0.3.16.dev11/",
+          "version": "0.3.16.dev11"
+        },
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2026-05-06T12:04:54.800243Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/tigrcorn-transports/0.3.16.dev5/",
+          "version": "0.3.16.dev5"
+        }
+      ],
       "repository": "tigrbl/tigrcorn",
       "reviewed": false,
       "route": "/catalog/packages/pypi/tigrcorn-transports-9e6d1500",
@@ -657,6 +4117,757 @@
   ],
   "repository": {
     "archived": false,
+    "attached_repositories": [
+      {
+        "archived": false,
+        "attachment_role": "primary-implementation",
+        "default_branch": "master",
+        "description": "ASGI3 server with built-in HTTP/1.1, HTTP/2, HTTP/3, QUIC, WebSocket, TLS, static delivery, and release validation.",
+        "fork": false,
+        "full_name": "tigrbl/tigrcorn",
+        "github_releases": [
+          {
+            "downloads": 0,
+            "draft": true,
+            "observed_at": "2026-08-03T13:56:25Z",
+            "prerelease": true,
+            "published_at": null,
+            "release_kind": "github",
+            "url": "https://github.com/tigrbl/tigrcorn/releases/tag/untagged-3f45172aa213bd3fb586",
+            "version": "tigrcorn==0.3.18.dev2"
+          },
+          {
+            "downloads": 0,
+            "draft": true,
+            "observed_at": "2026-08-03T13:56:25Z",
+            "prerelease": true,
+            "published_at": null,
+            "release_kind": "github",
+            "url": "https://github.com/tigrbl/tigrcorn/releases/tag/untagged-add896d6f87afb369482",
+            "version": "tigrcorn==0.3.18.dev1"
+          },
+          {
+            "downloads": 0,
+            "draft": true,
+            "observed_at": "2026-08-03T13:56:25Z",
+            "prerelease": true,
+            "published_at": null,
+            "release_kind": "github",
+            "url": "https://github.com/tigrbl/tigrcorn/releases/tag/untagged-a66502c5a0737a52aef5",
+            "version": "@tigrcorn/wt-peer-probes==0.1.9-dev.5"
+          },
+          {
+            "downloads": 0,
+            "draft": true,
+            "observed_at": "2026-08-03T13:56:25Z",
+            "prerelease": true,
+            "published_at": null,
+            "release_kind": "github",
+            "url": "https://github.com/tigrbl/tigrcorn/releases/tag/untagged-b5185a70c0bfe3377a40",
+            "version": "@tigrcorn/wt-peer-probes==0.1.9-dev.1"
+          },
+          {
+            "downloads": 0,
+            "draft": true,
+            "observed_at": "2026-08-03T13:56:25Z",
+            "prerelease": false,
+            "published_at": null,
+            "release_kind": "github",
+            "url": "https://github.com/tigrbl/tigrcorn/releases/tag/untagged-4c97c7d0b41ccb7f4d21",
+            "version": "@tigrcorn/wt-peer-probes==0.1.8"
+          },
+          {
+            "downloads": 0,
+            "draft": true,
+            "observed_at": "2026-08-03T13:56:25Z",
+            "prerelease": true,
+            "published_at": null,
+            "release_kind": "github",
+            "url": "https://github.com/tigrbl/tigrcorn/releases/tag/untagged-5208cd6810e62b01a84f",
+            "version": "tigrcorn==0.3.17.dev1"
+          },
+          {
+            "downloads": 0,
+            "draft": true,
+            "observed_at": "2026-08-03T13:56:25Z",
+            "prerelease": true,
+            "published_at": null,
+            "release_kind": "github",
+            "url": "https://github.com/tigrbl/tigrcorn/releases/tag/untagged-2042d7fff3df8ab2786f",
+            "version": "@tigrcorn/wt-peer-probes==0.1.8-dev.1"
+          },
+          {
+            "downloads": 0,
+            "draft": true,
+            "observed_at": "2026-08-03T13:56:25Z",
+            "prerelease": false,
+            "published_at": null,
+            "release_kind": "github",
+            "url": "https://github.com/tigrbl/tigrcorn/releases/tag/untagged-afbde7b667e84f7229ba",
+            "version": "@tigrcorn/wt-peer-probes==0.1.7"
+          },
+          {
+            "downloads": 0,
+            "draft": true,
+            "observed_at": "2026-08-03T13:56:25Z",
+            "prerelease": true,
+            "published_at": null,
+            "release_kind": "github",
+            "url": "https://github.com/tigrbl/tigrcorn/releases/tag/untagged-f374b44c00b508e68ada",
+            "version": "tigrcorn==0.3.16.dev9"
+          },
+          {
+            "downloads": 0,
+            "draft": true,
+            "observed_at": "2026-08-03T13:56:25Z",
+            "prerelease": true,
+            "published_at": null,
+            "release_kind": "github",
+            "url": "https://github.com/tigrbl/tigrcorn/releases/tag/untagged-6ddc46eb59148617db38",
+            "version": "tigrcorn==0.3.16.dev8"
+          },
+          {
+            "downloads": 0,
+            "draft": true,
+            "observed_at": "2026-08-03T13:56:25Z",
+            "prerelease": true,
+            "published_at": null,
+            "release_kind": "github",
+            "url": "https://github.com/tigrbl/tigrcorn/releases/tag/untagged-38d799bdbfd34d3492e5",
+            "version": "tigrcorn==0.3.16.dev7"
+          },
+          {
+            "downloads": 0,
+            "draft": true,
+            "observed_at": "2026-08-03T13:56:25Z",
+            "prerelease": true,
+            "published_at": null,
+            "release_kind": "github",
+            "url": "https://github.com/tigrbl/tigrcorn/releases/tag/untagged-034290865afeefac1a8a",
+            "version": "tigrcorn==0.3.16.dev6"
+          },
+          {
+            "downloads": 0,
+            "draft": true,
+            "observed_at": "2026-08-03T13:56:25Z",
+            "prerelease": true,
+            "published_at": null,
+            "release_kind": "github",
+            "url": "https://github.com/tigrbl/tigrcorn/releases/tag/untagged-26a85d6e8fd67bc1810e",
+            "version": "tigrcorn==0.3.16.dev13"
+          },
+          {
+            "downloads": 0,
+            "draft": true,
+            "observed_at": "2026-08-03T13:56:25Z",
+            "prerelease": true,
+            "published_at": null,
+            "release_kind": "github",
+            "url": "https://github.com/tigrbl/tigrcorn/releases/tag/untagged-619c992a4591d02f67aa",
+            "version": "tigrcorn==0.3.16.dev12"
+          },
+          {
+            "downloads": 0,
+            "draft": true,
+            "observed_at": "2026-08-03T13:56:25Z",
+            "prerelease": true,
+            "published_at": null,
+            "release_kind": "github",
+            "url": "https://github.com/tigrbl/tigrcorn/releases/tag/untagged-e9186693ec0df9cf7435",
+            "version": "tigrcorn==0.3.16.dev11"
+          },
+          {
+            "downloads": 0,
+            "draft": true,
+            "observed_at": "2026-08-03T13:56:25Z",
+            "prerelease": true,
+            "published_at": null,
+            "release_kind": "github",
+            "url": "https://github.com/tigrbl/tigrcorn/releases/tag/untagged-c31ab5e99962cecf86da",
+            "version": "tigrcorn==0.3.16.dev10"
+          },
+          {
+            "downloads": 0,
+            "draft": true,
+            "observed_at": "2026-08-03T13:56:25Z",
+            "prerelease": true,
+            "published_at": null,
+            "release_kind": "github",
+            "url": "https://github.com/tigrbl/tigrcorn/releases/tag/untagged-e3d46ad2055129d18b20",
+            "version": "@tigrcorn/wt-peer-probes==0.1.7-dev.9"
+          },
+          {
+            "downloads": 0,
+            "draft": true,
+            "observed_at": "2026-08-03T13:56:25Z",
+            "prerelease": true,
+            "published_at": null,
+            "release_kind": "github",
+            "url": "https://github.com/tigrbl/tigrcorn/releases/tag/untagged-220de99d31d219d83d2f",
+            "version": "@tigrcorn/wt-peer-probes==0.1.7-dev.8"
+          },
+          {
+            "downloads": 0,
+            "draft": true,
+            "observed_at": "2026-08-03T13:56:25Z",
+            "prerelease": true,
+            "published_at": null,
+            "release_kind": "github",
+            "url": "https://github.com/tigrbl/tigrcorn/releases/tag/untagged-47f3eca9eea668c2fd11",
+            "version": "@tigrcorn/wt-peer-probes==0.1.7-dev.7"
+          },
+          {
+            "downloads": 0,
+            "draft": true,
+            "observed_at": "2026-08-03T13:56:25Z",
+            "prerelease": true,
+            "published_at": null,
+            "release_kind": "github",
+            "url": "https://github.com/tigrbl/tigrcorn/releases/tag/untagged-d3ee54f874005d898c2f",
+            "version": "@tigrcorn/wt-peer-probes==0.1.7-dev.6"
+          },
+          {
+            "downloads": 0,
+            "draft": true,
+            "observed_at": "2026-08-03T13:56:25Z",
+            "prerelease": true,
+            "published_at": null,
+            "release_kind": "github",
+            "url": "https://github.com/tigrbl/tigrcorn/releases/tag/untagged-9ee2edfc3815114e4605",
+            "version": "@tigrcorn/wt-peer-probes==0.1.7-dev.13"
+          },
+          {
+            "downloads": 0,
+            "draft": true,
+            "observed_at": "2026-08-03T13:56:25Z",
+            "prerelease": true,
+            "published_at": null,
+            "release_kind": "github",
+            "url": "https://github.com/tigrbl/tigrcorn/releases/tag/untagged-f19e0a3287f0e3efeff6",
+            "version": "@tigrcorn/wt-peer-probes==0.1.7-dev.12"
+          },
+          {
+            "downloads": 0,
+            "draft": true,
+            "observed_at": "2026-08-03T13:56:25Z",
+            "prerelease": true,
+            "published_at": null,
+            "release_kind": "github",
+            "url": "https://github.com/tigrbl/tigrcorn/releases/tag/untagged-1c8c2b71ecf39689d943",
+            "version": "@tigrcorn/wt-peer-probes==0.1.7-dev.11"
+          },
+          {
+            "downloads": 0,
+            "draft": true,
+            "observed_at": "2026-08-03T13:56:25Z",
+            "prerelease": true,
+            "published_at": null,
+            "release_kind": "github",
+            "url": "https://github.com/tigrbl/tigrcorn/releases/tag/untagged-506df4aa423f9f51d6a6",
+            "version": "@tigrcorn/wt-peer-probes==0.1.7-dev.10"
+          },
+          {
+            "downloads": 0,
+            "draft": true,
+            "observed_at": "2026-08-03T13:56:25Z",
+            "prerelease": true,
+            "published_at": null,
+            "release_kind": "github",
+            "url": "https://github.com/tigrbl/tigrcorn/releases/tag/untagged-a864eb5355c7d515dbca",
+            "version": "tigrcorn==0.3.16.dev5"
+          },
+          {
+            "downloads": 0,
+            "draft": true,
+            "observed_at": "2026-08-03T13:56:25Z",
+            "prerelease": true,
+            "published_at": null,
+            "release_kind": "github",
+            "url": "https://github.com/tigrbl/tigrcorn/releases/tag/untagged-ef480aed4bcfb7a0dcea",
+            "version": "tigrcorn==0.3.16.dev4"
+          },
+          {
+            "downloads": 0,
+            "draft": true,
+            "observed_at": "2026-08-03T13:56:25Z",
+            "prerelease": true,
+            "published_at": null,
+            "release_kind": "github",
+            "url": "https://github.com/tigrbl/tigrcorn/releases/tag/untagged-a9318fed44afb6429694",
+            "version": "tigrcorn==0.3.16.dev3"
+          },
+          {
+            "downloads": 0,
+            "draft": true,
+            "observed_at": "2026-08-03T13:56:25Z",
+            "prerelease": true,
+            "published_at": null,
+            "release_kind": "github",
+            "url": "https://github.com/tigrbl/tigrcorn/releases/tag/untagged-0129d684a27b64da999d",
+            "version": "@tigrcorn/wt-peer-probes==0.1.7-dev.5"
+          },
+          {
+            "downloads": 0,
+            "draft": true,
+            "observed_at": "2026-08-03T13:56:25Z",
+            "prerelease": true,
+            "published_at": null,
+            "release_kind": "github",
+            "url": "https://github.com/tigrbl/tigrcorn/releases/tag/untagged-894a3c929e2a86686fe5",
+            "version": "@tigrcorn/wt-peer-probes==0.1.7-dev.4"
+          },
+          {
+            "downloads": 0,
+            "draft": true,
+            "observed_at": "2026-08-03T13:56:25Z",
+            "prerelease": true,
+            "published_at": null,
+            "release_kind": "github",
+            "url": "https://github.com/tigrbl/tigrcorn/releases/tag/untagged-69f1fdcd46c6d4ff8541",
+            "version": "@tigrcorn/wt-peer-probes==0.1.7-dev.3"
+          },
+          {
+            "downloads": 0,
+            "draft": true,
+            "observed_at": "2026-08-03T13:56:25Z",
+            "prerelease": true,
+            "published_at": null,
+            "release_kind": "github",
+            "url": "https://github.com/tigrbl/tigrcorn/releases/tag/untagged-27a15fc3509bd6459015",
+            "version": "@tigrcorn/wt-peer-probes==0.1.7-dev.2"
+          },
+          {
+            "downloads": 0,
+            "draft": false,
+            "observed_at": "2026-08-03T13:56:25Z",
+            "prerelease": false,
+            "published_at": "2026-06-18T23:11:49Z",
+            "release_kind": "github",
+            "url": "https://github.com/tigrbl/tigrcorn/releases/tag/tigrcorn%3D%3D0.3.17",
+            "version": "tigrcorn==0.3.17"
+          },
+          {
+            "downloads": 0,
+            "draft": false,
+            "observed_at": "2026-08-03T13:56:25Z",
+            "prerelease": false,
+            "published_at": "2026-06-01T22:23:34Z",
+            "release_kind": "github",
+            "url": "https://github.com/tigrbl/tigrcorn/releases/tag/tigrcorn%3D%3D0.3.16",
+            "version": "tigrcorn==0.3.16"
+          },
+          {
+            "downloads": 1,
+            "draft": false,
+            "observed_at": "2026-08-03T13:56:25Z",
+            "prerelease": false,
+            "published_at": "2026-05-06T08:00:38Z",
+            "release_kind": "github",
+            "url": "https://github.com/tigrbl/tigrcorn/releases/tag/v0.3.15",
+            "version": "v0.3.15"
+          },
+          {
+            "downloads": 0,
+            "draft": false,
+            "observed_at": "2026-08-03T13:56:25Z",
+            "prerelease": false,
+            "published_at": "2026-05-06T07:52:56Z",
+            "release_kind": "github",
+            "url": "https://github.com/tigrbl/tigrcorn/releases/tag/v0.3.14",
+            "version": "v0.3.14"
+          },
+          {
+            "downloads": 0,
+            "draft": false,
+            "observed_at": "2026-08-03T13:56:25Z",
+            "prerelease": false,
+            "published_at": "2026-05-06T07:47:02Z",
+            "release_kind": "github",
+            "url": "https://github.com/tigrbl/tigrcorn/releases/tag/v0.3.13",
+            "version": "v0.3.13"
+          },
+          {
+            "downloads": 0,
+            "draft": false,
+            "observed_at": "2026-08-03T13:56:25Z",
+            "prerelease": true,
+            "published_at": "2026-05-06T08:58:02Z",
+            "release_kind": "github",
+            "url": "https://github.com/tigrbl/tigrcorn/releases/tag/tigrcorn%3D%3D0.3.16.dev2",
+            "version": "tigrcorn==0.3.16.dev2"
+          },
+          {
+            "downloads": 0,
+            "draft": false,
+            "observed_at": "2026-08-03T13:56:25Z",
+            "prerelease": false,
+            "published_at": "2026-03-28T09:53:31Z",
+            "release_kind": "github",
+            "url": "https://github.com/tigrbl/tigrcorn/releases/tag/tigrcorn%3D%3D0.3.9",
+            "version": "tigrcorn==0.3.9"
+          },
+          {
+            "downloads": 0,
+            "draft": false,
+            "observed_at": "2026-08-03T13:56:25Z",
+            "prerelease": false,
+            "published_at": "2026-03-28T03:50:29Z",
+            "release_kind": "github",
+            "url": "https://github.com/tigrbl/tigrcorn/releases/tag/tigrcorn%3D%3Dv0.3.8",
+            "version": "tigrcorn==v0.3.8"
+          },
+          {
+            "downloads": 0,
+            "draft": false,
+            "observed_at": "2026-08-03T13:56:25Z",
+            "prerelease": false,
+            "published_at": "2026-03-19T01:30:59Z",
+            "release_kind": "github",
+            "url": "https://github.com/tigrbl/tigrcorn/releases/tag/tigrcorn%3D%3Dv0.3.6",
+            "version": "tigrcorn==v0.3.6"
+          }
+        ],
+        "id": "repository:tigrbl/tigrcorn",
+        "latest_deployment": {
+          "environment": "ci",
+          "environment_url": "",
+          "log_url": "https://github.com/tigrbl/tigrcorn/actions/runs/30798538881/job/91637565717",
+          "state": "success",
+          "updated_at": "2026-08-03T08:46:12Z"
+        },
+        "latest_release": {
+          "assets": [
+            {
+              "downloads": 0,
+              "name": "claim_rep.json",
+              "url": "https://github.com/tigrbl/tigrcorn/releases/download/untagged-3f45172aa213bd3fb586/claim_rep.json"
+            },
+            {
+              "downloads": 0,
+              "name": "claim_rep.md",
+              "url": "https://github.com/tigrbl/tigrcorn/releases/download/untagged-3f45172aa213bd3fb586/claim_rep.md"
+            },
+            {
+              "downloads": 0,
+              "name": "CURRENT_REPOSITORY_STATE.md",
+              "url": "https://github.com/tigrbl/tigrcorn/releases/download/untagged-3f45172aa213bd3fb586/CURRENT_REPOSITORY_STATE.md"
+            },
+            {
+              "downloads": 0,
+              "name": "evidence_ix.json",
+              "url": "https://github.com/tigrbl/tigrcorn/releases/download/untagged-3f45172aa213bd3fb586/evidence_ix.json"
+            },
+            {
+              "downloads": 0,
+              "name": "evidence_ix.md",
+              "url": "https://github.com/tigrbl/tigrcorn/releases/download/untagged-3f45172aa213bd3fb586/evidence_ix.md"
+            },
+            {
+              "downloads": 0,
+              "name": "release_auto.json",
+              "url": "https://github.com/tigrbl/tigrcorn/releases/download/untagged-3f45172aa213bd3fb586/release_auto.json"
+            },
+            {
+              "downloads": 0,
+              "name": "RELEASE_NOTES_0.3.10.md",
+              "url": "https://github.com/tigrbl/tigrcorn/releases/download/untagged-3f45172aa213bd3fb586/RELEASE_NOTES_0.3.10.md"
+            },
+            {
+              "downloads": 0,
+              "name": "RELEASE_NOTES_0.3.11.md",
+              "url": "https://github.com/tigrbl/tigrcorn/releases/download/untagged-3f45172aa213bd3fb586/RELEASE_NOTES_0.3.11.md"
+            },
+            {
+              "downloads": 0,
+              "name": "RELEASE_NOTES_0.3.12.md",
+              "url": "https://github.com/tigrbl/tigrcorn/releases/download/untagged-3f45172aa213bd3fb586/RELEASE_NOTES_0.3.12.md"
+            },
+            {
+              "downloads": 0,
+              "name": "RELEASE_NOTES_0.3.13.md",
+              "url": "https://github.com/tigrbl/tigrcorn/releases/download/untagged-3f45172aa213bd3fb586/RELEASE_NOTES_0.3.13.md"
+            },
+            {
+              "downloads": 0,
+              "name": "RELEASE_NOTES_0.3.14.md",
+              "url": "https://github.com/tigrbl/tigrcorn/releases/download/untagged-3f45172aa213bd3fb586/RELEASE_NOTES_0.3.14.md"
+            },
+            {
+              "downloads": 0,
+              "name": "RELEASE_NOTES_0.3.15.md",
+              "url": "https://github.com/tigrbl/tigrcorn/releases/download/untagged-3f45172aa213bd3fb586/RELEASE_NOTES_0.3.15.md"
+            },
+            {
+              "downloads": 0,
+              "name": "RELEASE_NOTES_0.3.16.md",
+              "url": "https://github.com/tigrbl/tigrcorn/releases/download/untagged-3f45172aa213bd3fb586/RELEASE_NOTES_0.3.16.md"
+            },
+            {
+              "downloads": 0,
+              "name": "RELEASE_NOTES_0.3.17.md",
+              "url": "https://github.com/tigrbl/tigrcorn/releases/download/untagged-3f45172aa213bd3fb586/RELEASE_NOTES_0.3.17.md"
+            },
+            {
+              "downloads": 0,
+              "name": "RELEASE_NOTES_0.3.8.md",
+              "url": "https://github.com/tigrbl/tigrcorn/releases/download/untagged-3f45172aa213bd3fb586/RELEASE_NOTES_0.3.8.md"
+            },
+            {
+              "downloads": 0,
+              "name": "RELEASE_NOTES_0.3.9.md",
+              "url": "https://github.com/tigrbl/tigrcorn/releases/download/untagged-3f45172aa213bd3fb586/RELEASE_NOTES_0.3.9.md"
+            },
+            {
+              "downloads": 0,
+              "name": "relnotes.json",
+              "url": "https://github.com/tigrbl/tigrcorn/releases/download/untagged-3f45172aa213bd3fb586/relnotes.json"
+            },
+            {
+              "downloads": 0,
+              "name": "relnotes.md",
+              "url": "https://github.com/tigrbl/tigrcorn/releases/download/untagged-3f45172aa213bd3fb586/relnotes.md"
+            },
+            {
+              "downloads": 0,
+              "name": "risk_stat.json",
+              "url": "https://github.com/tigrbl/tigrcorn/releases/download/untagged-3f45172aa213bd3fb586/risk_stat.json"
+            },
+            {
+              "downloads": 0,
+              "name": "risk_stat.md",
+              "url": "https://github.com/tigrbl/tigrcorn/releases/download/untagged-3f45172aa213bd3fb586/risk_stat.md"
+            },
+            {
+              "downloads": 0,
+              "name": "tigrcorn-0.3.18.dev2-py3-none-any.whl",
+              "url": "https://github.com/tigrbl/tigrcorn/releases/download/untagged-3f45172aa213bd3fb586/tigrcorn-0.3.18.dev2-py3-none-any.whl"
+            },
+            {
+              "downloads": 0,
+              "name": "tigrcorn-0.3.18.dev2.tar.gz",
+              "url": "https://github.com/tigrbl/tigrcorn/releases/download/untagged-3f45172aa213bd3fb586/tigrcorn-0.3.18.dev2.tar.gz"
+            },
+            {
+              "downloads": 0,
+              "name": "tigrcorn_asgi-0.3.18.dev2-py3-none-any.whl",
+              "url": "https://github.com/tigrbl/tigrcorn/releases/download/untagged-3f45172aa213bd3fb586/tigrcorn_asgi-0.3.18.dev2-py3-none-any.whl"
+            },
+            {
+              "downloads": 0,
+              "name": "tigrcorn_asgi-0.3.18.dev2.tar.gz",
+              "url": "https://github.com/tigrbl/tigrcorn/releases/download/untagged-3f45172aa213bd3fb586/tigrcorn_asgi-0.3.18.dev2.tar.gz"
+            },
+            {
+              "downloads": 0,
+              "name": "tigrcorn_certification-0.3.18.dev2-py3-none-any.whl",
+              "url": "https://github.com/tigrbl/tigrcorn/releases/download/untagged-3f45172aa213bd3fb586/tigrcorn_certification-0.3.18.dev2-py3-none-any.whl"
+            },
+            {
+              "downloads": 0,
+              "name": "tigrcorn_certification-0.3.18.dev2.tar.gz",
+              "url": "https://github.com/tigrbl/tigrcorn/releases/download/untagged-3f45172aa213bd3fb586/tigrcorn_certification-0.3.18.dev2.tar.gz"
+            },
+            {
+              "downloads": 0,
+              "name": "tigrcorn_compat-0.3.18.dev2-py3-none-any.whl",
+              "url": "https://github.com/tigrbl/tigrcorn/releases/download/untagged-3f45172aa213bd3fb586/tigrcorn_compat-0.3.18.dev2-py3-none-any.whl"
+            },
+            {
+              "downloads": 0,
+              "name": "tigrcorn_compat-0.3.18.dev2.tar.gz",
+              "url": "https://github.com/tigrbl/tigrcorn/releases/download/untagged-3f45172aa213bd3fb586/tigrcorn_compat-0.3.18.dev2.tar.gz"
+            },
+            {
+              "downloads": 0,
+              "name": "tigrcorn_config-0.3.18.dev2-py3-none-any.whl",
+              "url": "https://github.com/tigrbl/tigrcorn/releases/download/untagged-3f45172aa213bd3fb586/tigrcorn_config-0.3.18.dev2-py3-none-any.whl"
+            },
+            {
+              "downloads": 0,
+              "name": "tigrcorn_config-0.3.18.dev2.tar.gz",
+              "url": "https://github.com/tigrbl/tigrcorn/releases/download/untagged-3f45172aa213bd3fb586/tigrcorn_config-0.3.18.dev2.tar.gz"
+            },
+            {
+              "downloads": 0,
+              "name": "tigrcorn_contract-0.3.18.dev2-py3-none-any.whl",
+              "url": "https://github.com/tigrbl/tigrcorn/releases/download/untagged-3f45172aa213bd3fb586/tigrcorn_contract-0.3.18.dev2-py3-none-any.whl"
+            },
+            {
+              "downloads": 0,
+              "name": "tigrcorn_contract-0.3.18.dev2.tar.gz",
+              "url": "https://github.com/tigrbl/tigrcorn/releases/download/untagged-3f45172aa213bd3fb586/tigrcorn_contract-0.3.18.dev2.tar.gz"
+            },
+            {
+              "downloads": 0,
+              "name": "tigrcorn_core-0.3.18.dev2-py3-none-any.whl",
+              "url": "https://github.com/tigrbl/tigrcorn/releases/download/untagged-3f45172aa213bd3fb586/tigrcorn_core-0.3.18.dev2-py3-none-any.whl"
+            },
+            {
+              "downloads": 0,
+              "name": "tigrcorn_core-0.3.18.dev2.tar.gz",
+              "url": "https://github.com/tigrbl/tigrcorn/releases/download/untagged-3f45172aa213bd3fb586/tigrcorn_core-0.3.18.dev2.tar.gz"
+            },
+            {
+              "downloads": 0,
+              "name": "tigrcorn_http-0.3.18.dev2-py3-none-any.whl",
+              "url": "https://github.com/tigrbl/tigrcorn/releases/download/untagged-3f45172aa213bd3fb586/tigrcorn_http-0.3.18.dev2-py3-none-any.whl"
+            },
+            {
+              "downloads": 0,
+              "name": "tigrcorn_http-0.3.18.dev2.tar.gz",
+              "url": "https://github.com/tigrbl/tigrcorn/releases/download/untagged-3f45172aa213bd3fb586/tigrcorn_http-0.3.18.dev2.tar.gz"
+            },
+            {
+              "downloads": 0,
+              "name": "tigrcorn_observability-0.3.18.dev2-py3-none-any.whl",
+              "url": "https://github.com/tigrbl/tigrcorn/releases/download/untagged-3f45172aa213bd3fb586/tigrcorn_observability-0.3.18.dev2-py3-none-any.whl"
+            },
+            {
+              "downloads": 0,
+              "name": "tigrcorn_observability-0.3.18.dev2.tar.gz",
+              "url": "https://github.com/tigrbl/tigrcorn/releases/download/untagged-3f45172aa213bd3fb586/tigrcorn_observability-0.3.18.dev2.tar.gz"
+            },
+            {
+              "downloads": 0,
+              "name": "tigrcorn_protocols-0.3.18.dev2-py3-none-any.whl",
+              "url": "https://github.com/tigrbl/tigrcorn/releases/download/untagged-3f45172aa213bd3fb586/tigrcorn_protocols-0.3.18.dev2-py3-none-any.whl"
+            },
+            {
+              "downloads": 0,
+              "name": "tigrcorn_protocols-0.3.18.dev2.tar.gz",
+              "url": "https://github.com/tigrbl/tigrcorn/releases/download/untagged-3f45172aa213bd3fb586/tigrcorn_protocols-0.3.18.dev2.tar.gz"
+            },
+            {
+              "downloads": 0,
+              "name": "tigrcorn_runtime-0.3.18.dev2-py3-none-any.whl",
+              "url": "https://github.com/tigrbl/tigrcorn/releases/download/untagged-3f45172aa213bd3fb586/tigrcorn_runtime-0.3.18.dev2-py3-none-any.whl"
+            },
+            {
+              "downloads": 0,
+              "name": "tigrcorn_runtime-0.3.18.dev2.tar.gz",
+              "url": "https://github.com/tigrbl/tigrcorn/releases/download/untagged-3f45172aa213bd3fb586/tigrcorn_runtime-0.3.18.dev2.tar.gz"
+            },
+            {
+              "downloads": 0,
+              "name": "tigrcorn_security-0.3.18.dev2-py3-none-any.whl",
+              "url": "https://github.com/tigrbl/tigrcorn/releases/download/untagged-3f45172aa213bd3fb586/tigrcorn_security-0.3.18.dev2-py3-none-any.whl"
+            },
+            {
+              "downloads": 0,
+              "name": "tigrcorn_security-0.3.18.dev2.tar.gz",
+              "url": "https://github.com/tigrbl/tigrcorn/releases/download/untagged-3f45172aa213bd3fb586/tigrcorn_security-0.3.18.dev2.tar.gz"
+            },
+            {
+              "downloads": 0,
+              "name": "tigrcorn_static-0.3.18.dev2-py3-none-any.whl",
+              "url": "https://github.com/tigrbl/tigrcorn/releases/download/untagged-3f45172aa213bd3fb586/tigrcorn_static-0.3.18.dev2-py3-none-any.whl"
+            },
+            {
+              "downloads": 0,
+              "name": "tigrcorn_static-0.3.18.dev2.tar.gz",
+              "url": "https://github.com/tigrbl/tigrcorn/releases/download/untagged-3f45172aa213bd3fb586/tigrcorn_static-0.3.18.dev2.tar.gz"
+            },
+            {
+              "downloads": 0,
+              "name": "tigrcorn_transports-0.3.18.dev2-py3-none-any.whl",
+              "url": "https://github.com/tigrbl/tigrcorn/releases/download/untagged-3f45172aa213bd3fb586/tigrcorn_transports-0.3.18.dev2-py3-none-any.whl"
+            },
+            {
+              "downloads": 0,
+              "name": "tigrcorn_transports-0.3.18.dev2.tar.gz",
+              "url": "https://github.com/tigrbl/tigrcorn/releases/download/untagged-3f45172aa213bd3fb586/tigrcorn_transports-0.3.18.dev2.tar.gz"
+            }
+          ],
+          "draft": true,
+          "name": "tigrcorn==0.3.18.dev2",
+          "prerelease": true,
+          "published_at": null,
+          "tag": "tigrcorn==0.3.18.dev2",
+          "url": "https://github.com/tigrbl/tigrcorn/releases/tag/untagged-3f45172aa213bd3fb586"
+        },
+        "metrics": {
+          "commits": 272,
+          "contributors": 4,
+          "deployments": 2416,
+          "environments": 6,
+          "forks": 2,
+          "github_releases": 40,
+          "open_issues": 15,
+          "packages": 16,
+          "related_resources": 37,
+          "relationships": 53,
+          "size_kb": 18565,
+          "stars": 3,
+          "watchers": 1
+        },
+        "route": "/catalog/repositories/tigrbl/tigrcorn",
+        "source_url": "https://github.com/tigrbl/tigrcorn"
+      },
+      {
+        "archived": false,
+        "attachment_role": "documentation",
+        "default_branch": "master",
+        "description": "ZDX and MkDocs Material documentation website for docs.tigrcorn.com.",
+        "fork": false,
+        "full_name": "tigrbl/docs-tigrcorn-com",
+        "github_releases": [],
+        "id": "repository:tigrbl/docs-tigrcorn-com",
+        "latest_deployment": null,
+        "latest_release": null,
+        "metrics": {
+          "commits": 34,
+          "contributors": 1,
+          "deployments": 0,
+          "environments": 1,
+          "forks": 0,
+          "github_releases": 0,
+          "open_issues": 0,
+          "packages": 2,
+          "related_resources": 4,
+          "relationships": 6,
+          "size_kb": 130,
+          "stars": 0,
+          "watchers": 0
+        },
+        "route": "/catalog/repositories/tigrbl/docs-tigrcorn-com",
+        "source_url": "https://github.com/tigrbl/docs-tigrcorn-com"
+      },
+      {
+        "archived": false,
+        "attachment_role": "product-website",
+        "default_branch": "master",
+        "description": "MdWrk lander website for tigrcorn.com.",
+        "fork": false,
+        "full_name": "tigrbl/tigrcorn-com",
+        "github_releases": [],
+        "id": "repository:tigrbl/tigrcorn-com",
+        "latest_deployment": {
+          "environment": "deployment",
+          "environment_url": "",
+          "log_url": "https://github.com/tigrbl/tigrcorn-com/actions/runs/29159238570/job/86561353550",
+          "state": "success",
+          "updated_at": "2026-07-11T16:09:19Z"
+        },
+        "latest_release": null,
+        "metrics": {
+          "commits": 50,
+          "contributors": 1,
+          "deployments": 8,
+          "environments": 1,
+          "forks": 0,
+          "github_releases": 0,
+          "open_issues": 0,
+          "packages": 3,
+          "related_resources": 1,
+          "relationships": 4,
+          "size_kb": 1816,
+          "stars": 0,
+          "watchers": 0
+        },
+        "route": "/catalog/repositories/tigrbl/tigrcorn-com",
+        "source_url": "https://github.com/tigrbl/tigrcorn-com"
+      }
+    ],
     "claim_boundary": "Repository, release, deployment, and live-service states are reported separately.",
     "created_at": "2026-03-19T01:25:35Z",
     "default_branch": "master",
@@ -666,12 +4877,414 @@
     "evidence": [
       {
         "kind": "source",
-        "observed_at": "2026-08-03T10:05:58Z",
+        "observed_at": "2026-08-03T13:56:25Z",
         "url": "https://github.com/tigrbl/tigrcorn"
       }
     ],
     "fork": false,
     "full_name": "tigrbl/tigrcorn",
+    "github_releases": [
+      {
+        "downloads": 0,
+        "draft": true,
+        "observed_at": "2026-08-03T13:56:25Z",
+        "prerelease": true,
+        "published_at": null,
+        "release_kind": "github",
+        "url": "https://github.com/tigrbl/tigrcorn/releases/tag/untagged-3f45172aa213bd3fb586",
+        "version": "tigrcorn==0.3.18.dev2"
+      },
+      {
+        "downloads": 0,
+        "draft": true,
+        "observed_at": "2026-08-03T13:56:25Z",
+        "prerelease": true,
+        "published_at": null,
+        "release_kind": "github",
+        "url": "https://github.com/tigrbl/tigrcorn/releases/tag/untagged-add896d6f87afb369482",
+        "version": "tigrcorn==0.3.18.dev1"
+      },
+      {
+        "downloads": 0,
+        "draft": true,
+        "observed_at": "2026-08-03T13:56:25Z",
+        "prerelease": true,
+        "published_at": null,
+        "release_kind": "github",
+        "url": "https://github.com/tigrbl/tigrcorn/releases/tag/untagged-a66502c5a0737a52aef5",
+        "version": "@tigrcorn/wt-peer-probes==0.1.9-dev.5"
+      },
+      {
+        "downloads": 0,
+        "draft": true,
+        "observed_at": "2026-08-03T13:56:25Z",
+        "prerelease": true,
+        "published_at": null,
+        "release_kind": "github",
+        "url": "https://github.com/tigrbl/tigrcorn/releases/tag/untagged-b5185a70c0bfe3377a40",
+        "version": "@tigrcorn/wt-peer-probes==0.1.9-dev.1"
+      },
+      {
+        "downloads": 0,
+        "draft": true,
+        "observed_at": "2026-08-03T13:56:25Z",
+        "prerelease": false,
+        "published_at": null,
+        "release_kind": "github",
+        "url": "https://github.com/tigrbl/tigrcorn/releases/tag/untagged-4c97c7d0b41ccb7f4d21",
+        "version": "@tigrcorn/wt-peer-probes==0.1.8"
+      },
+      {
+        "downloads": 0,
+        "draft": true,
+        "observed_at": "2026-08-03T13:56:25Z",
+        "prerelease": true,
+        "published_at": null,
+        "release_kind": "github",
+        "url": "https://github.com/tigrbl/tigrcorn/releases/tag/untagged-5208cd6810e62b01a84f",
+        "version": "tigrcorn==0.3.17.dev1"
+      },
+      {
+        "downloads": 0,
+        "draft": true,
+        "observed_at": "2026-08-03T13:56:25Z",
+        "prerelease": true,
+        "published_at": null,
+        "release_kind": "github",
+        "url": "https://github.com/tigrbl/tigrcorn/releases/tag/untagged-2042d7fff3df8ab2786f",
+        "version": "@tigrcorn/wt-peer-probes==0.1.8-dev.1"
+      },
+      {
+        "downloads": 0,
+        "draft": true,
+        "observed_at": "2026-08-03T13:56:25Z",
+        "prerelease": false,
+        "published_at": null,
+        "release_kind": "github",
+        "url": "https://github.com/tigrbl/tigrcorn/releases/tag/untagged-afbde7b667e84f7229ba",
+        "version": "@tigrcorn/wt-peer-probes==0.1.7"
+      },
+      {
+        "downloads": 0,
+        "draft": true,
+        "observed_at": "2026-08-03T13:56:25Z",
+        "prerelease": true,
+        "published_at": null,
+        "release_kind": "github",
+        "url": "https://github.com/tigrbl/tigrcorn/releases/tag/untagged-f374b44c00b508e68ada",
+        "version": "tigrcorn==0.3.16.dev9"
+      },
+      {
+        "downloads": 0,
+        "draft": true,
+        "observed_at": "2026-08-03T13:56:25Z",
+        "prerelease": true,
+        "published_at": null,
+        "release_kind": "github",
+        "url": "https://github.com/tigrbl/tigrcorn/releases/tag/untagged-6ddc46eb59148617db38",
+        "version": "tigrcorn==0.3.16.dev8"
+      },
+      {
+        "downloads": 0,
+        "draft": true,
+        "observed_at": "2026-08-03T13:56:25Z",
+        "prerelease": true,
+        "published_at": null,
+        "release_kind": "github",
+        "url": "https://github.com/tigrbl/tigrcorn/releases/tag/untagged-38d799bdbfd34d3492e5",
+        "version": "tigrcorn==0.3.16.dev7"
+      },
+      {
+        "downloads": 0,
+        "draft": true,
+        "observed_at": "2026-08-03T13:56:25Z",
+        "prerelease": true,
+        "published_at": null,
+        "release_kind": "github",
+        "url": "https://github.com/tigrbl/tigrcorn/releases/tag/untagged-034290865afeefac1a8a",
+        "version": "tigrcorn==0.3.16.dev6"
+      },
+      {
+        "downloads": 0,
+        "draft": true,
+        "observed_at": "2026-08-03T13:56:25Z",
+        "prerelease": true,
+        "published_at": null,
+        "release_kind": "github",
+        "url": "https://github.com/tigrbl/tigrcorn/releases/tag/untagged-26a85d6e8fd67bc1810e",
+        "version": "tigrcorn==0.3.16.dev13"
+      },
+      {
+        "downloads": 0,
+        "draft": true,
+        "observed_at": "2026-08-03T13:56:25Z",
+        "prerelease": true,
+        "published_at": null,
+        "release_kind": "github",
+        "url": "https://github.com/tigrbl/tigrcorn/releases/tag/untagged-619c992a4591d02f67aa",
+        "version": "tigrcorn==0.3.16.dev12"
+      },
+      {
+        "downloads": 0,
+        "draft": true,
+        "observed_at": "2026-08-03T13:56:25Z",
+        "prerelease": true,
+        "published_at": null,
+        "release_kind": "github",
+        "url": "https://github.com/tigrbl/tigrcorn/releases/tag/untagged-e9186693ec0df9cf7435",
+        "version": "tigrcorn==0.3.16.dev11"
+      },
+      {
+        "downloads": 0,
+        "draft": true,
+        "observed_at": "2026-08-03T13:56:25Z",
+        "prerelease": true,
+        "published_at": null,
+        "release_kind": "github",
+        "url": "https://github.com/tigrbl/tigrcorn/releases/tag/untagged-c31ab5e99962cecf86da",
+        "version": "tigrcorn==0.3.16.dev10"
+      },
+      {
+        "downloads": 0,
+        "draft": true,
+        "observed_at": "2026-08-03T13:56:25Z",
+        "prerelease": true,
+        "published_at": null,
+        "release_kind": "github",
+        "url": "https://github.com/tigrbl/tigrcorn/releases/tag/untagged-e3d46ad2055129d18b20",
+        "version": "@tigrcorn/wt-peer-probes==0.1.7-dev.9"
+      },
+      {
+        "downloads": 0,
+        "draft": true,
+        "observed_at": "2026-08-03T13:56:25Z",
+        "prerelease": true,
+        "published_at": null,
+        "release_kind": "github",
+        "url": "https://github.com/tigrbl/tigrcorn/releases/tag/untagged-220de99d31d219d83d2f",
+        "version": "@tigrcorn/wt-peer-probes==0.1.7-dev.8"
+      },
+      {
+        "downloads": 0,
+        "draft": true,
+        "observed_at": "2026-08-03T13:56:25Z",
+        "prerelease": true,
+        "published_at": null,
+        "release_kind": "github",
+        "url": "https://github.com/tigrbl/tigrcorn/releases/tag/untagged-47f3eca9eea668c2fd11",
+        "version": "@tigrcorn/wt-peer-probes==0.1.7-dev.7"
+      },
+      {
+        "downloads": 0,
+        "draft": true,
+        "observed_at": "2026-08-03T13:56:25Z",
+        "prerelease": true,
+        "published_at": null,
+        "release_kind": "github",
+        "url": "https://github.com/tigrbl/tigrcorn/releases/tag/untagged-d3ee54f874005d898c2f",
+        "version": "@tigrcorn/wt-peer-probes==0.1.7-dev.6"
+      },
+      {
+        "downloads": 0,
+        "draft": true,
+        "observed_at": "2026-08-03T13:56:25Z",
+        "prerelease": true,
+        "published_at": null,
+        "release_kind": "github",
+        "url": "https://github.com/tigrbl/tigrcorn/releases/tag/untagged-9ee2edfc3815114e4605",
+        "version": "@tigrcorn/wt-peer-probes==0.1.7-dev.13"
+      },
+      {
+        "downloads": 0,
+        "draft": true,
+        "observed_at": "2026-08-03T13:56:25Z",
+        "prerelease": true,
+        "published_at": null,
+        "release_kind": "github",
+        "url": "https://github.com/tigrbl/tigrcorn/releases/tag/untagged-f19e0a3287f0e3efeff6",
+        "version": "@tigrcorn/wt-peer-probes==0.1.7-dev.12"
+      },
+      {
+        "downloads": 0,
+        "draft": true,
+        "observed_at": "2026-08-03T13:56:25Z",
+        "prerelease": true,
+        "published_at": null,
+        "release_kind": "github",
+        "url": "https://github.com/tigrbl/tigrcorn/releases/tag/untagged-1c8c2b71ecf39689d943",
+        "version": "@tigrcorn/wt-peer-probes==0.1.7-dev.11"
+      },
+      {
+        "downloads": 0,
+        "draft": true,
+        "observed_at": "2026-08-03T13:56:25Z",
+        "prerelease": true,
+        "published_at": null,
+        "release_kind": "github",
+        "url": "https://github.com/tigrbl/tigrcorn/releases/tag/untagged-506df4aa423f9f51d6a6",
+        "version": "@tigrcorn/wt-peer-probes==0.1.7-dev.10"
+      },
+      {
+        "downloads": 0,
+        "draft": true,
+        "observed_at": "2026-08-03T13:56:25Z",
+        "prerelease": true,
+        "published_at": null,
+        "release_kind": "github",
+        "url": "https://github.com/tigrbl/tigrcorn/releases/tag/untagged-a864eb5355c7d515dbca",
+        "version": "tigrcorn==0.3.16.dev5"
+      },
+      {
+        "downloads": 0,
+        "draft": true,
+        "observed_at": "2026-08-03T13:56:25Z",
+        "prerelease": true,
+        "published_at": null,
+        "release_kind": "github",
+        "url": "https://github.com/tigrbl/tigrcorn/releases/tag/untagged-ef480aed4bcfb7a0dcea",
+        "version": "tigrcorn==0.3.16.dev4"
+      },
+      {
+        "downloads": 0,
+        "draft": true,
+        "observed_at": "2026-08-03T13:56:25Z",
+        "prerelease": true,
+        "published_at": null,
+        "release_kind": "github",
+        "url": "https://github.com/tigrbl/tigrcorn/releases/tag/untagged-a9318fed44afb6429694",
+        "version": "tigrcorn==0.3.16.dev3"
+      },
+      {
+        "downloads": 0,
+        "draft": true,
+        "observed_at": "2026-08-03T13:56:25Z",
+        "prerelease": true,
+        "published_at": null,
+        "release_kind": "github",
+        "url": "https://github.com/tigrbl/tigrcorn/releases/tag/untagged-0129d684a27b64da999d",
+        "version": "@tigrcorn/wt-peer-probes==0.1.7-dev.5"
+      },
+      {
+        "downloads": 0,
+        "draft": true,
+        "observed_at": "2026-08-03T13:56:25Z",
+        "prerelease": true,
+        "published_at": null,
+        "release_kind": "github",
+        "url": "https://github.com/tigrbl/tigrcorn/releases/tag/untagged-894a3c929e2a86686fe5",
+        "version": "@tigrcorn/wt-peer-probes==0.1.7-dev.4"
+      },
+      {
+        "downloads": 0,
+        "draft": true,
+        "observed_at": "2026-08-03T13:56:25Z",
+        "prerelease": true,
+        "published_at": null,
+        "release_kind": "github",
+        "url": "https://github.com/tigrbl/tigrcorn/releases/tag/untagged-69f1fdcd46c6d4ff8541",
+        "version": "@tigrcorn/wt-peer-probes==0.1.7-dev.3"
+      },
+      {
+        "downloads": 0,
+        "draft": true,
+        "observed_at": "2026-08-03T13:56:25Z",
+        "prerelease": true,
+        "published_at": null,
+        "release_kind": "github",
+        "url": "https://github.com/tigrbl/tigrcorn/releases/tag/untagged-27a15fc3509bd6459015",
+        "version": "@tigrcorn/wt-peer-probes==0.1.7-dev.2"
+      },
+      {
+        "downloads": 0,
+        "draft": false,
+        "observed_at": "2026-08-03T13:56:25Z",
+        "prerelease": false,
+        "published_at": "2026-06-18T23:11:49Z",
+        "release_kind": "github",
+        "url": "https://github.com/tigrbl/tigrcorn/releases/tag/tigrcorn%3D%3D0.3.17",
+        "version": "tigrcorn==0.3.17"
+      },
+      {
+        "downloads": 0,
+        "draft": false,
+        "observed_at": "2026-08-03T13:56:25Z",
+        "prerelease": false,
+        "published_at": "2026-06-01T22:23:34Z",
+        "release_kind": "github",
+        "url": "https://github.com/tigrbl/tigrcorn/releases/tag/tigrcorn%3D%3D0.3.16",
+        "version": "tigrcorn==0.3.16"
+      },
+      {
+        "downloads": 1,
+        "draft": false,
+        "observed_at": "2026-08-03T13:56:25Z",
+        "prerelease": false,
+        "published_at": "2026-05-06T08:00:38Z",
+        "release_kind": "github",
+        "url": "https://github.com/tigrbl/tigrcorn/releases/tag/v0.3.15",
+        "version": "v0.3.15"
+      },
+      {
+        "downloads": 0,
+        "draft": false,
+        "observed_at": "2026-08-03T13:56:25Z",
+        "prerelease": false,
+        "published_at": "2026-05-06T07:52:56Z",
+        "release_kind": "github",
+        "url": "https://github.com/tigrbl/tigrcorn/releases/tag/v0.3.14",
+        "version": "v0.3.14"
+      },
+      {
+        "downloads": 0,
+        "draft": false,
+        "observed_at": "2026-08-03T13:56:25Z",
+        "prerelease": false,
+        "published_at": "2026-05-06T07:47:02Z",
+        "release_kind": "github",
+        "url": "https://github.com/tigrbl/tigrcorn/releases/tag/v0.3.13",
+        "version": "v0.3.13"
+      },
+      {
+        "downloads": 0,
+        "draft": false,
+        "observed_at": "2026-08-03T13:56:25Z",
+        "prerelease": true,
+        "published_at": "2026-05-06T08:58:02Z",
+        "release_kind": "github",
+        "url": "https://github.com/tigrbl/tigrcorn/releases/tag/tigrcorn%3D%3D0.3.16.dev2",
+        "version": "tigrcorn==0.3.16.dev2"
+      },
+      {
+        "downloads": 0,
+        "draft": false,
+        "observed_at": "2026-08-03T13:56:25Z",
+        "prerelease": false,
+        "published_at": "2026-03-28T09:53:31Z",
+        "release_kind": "github",
+        "url": "https://github.com/tigrbl/tigrcorn/releases/tag/tigrcorn%3D%3D0.3.9",
+        "version": "tigrcorn==0.3.9"
+      },
+      {
+        "downloads": 0,
+        "draft": false,
+        "observed_at": "2026-08-03T13:56:25Z",
+        "prerelease": false,
+        "published_at": "2026-03-28T03:50:29Z",
+        "release_kind": "github",
+        "url": "https://github.com/tigrbl/tigrcorn/releases/tag/tigrcorn%3D%3Dv0.3.8",
+        "version": "tigrcorn==v0.3.8"
+      },
+      {
+        "downloads": 0,
+        "draft": false,
+        "observed_at": "2026-08-03T13:56:25Z",
+        "prerelease": false,
+        "published_at": "2026-03-19T01:30:59Z",
+        "release_kind": "github",
+        "url": "https://github.com/tigrbl/tigrcorn/releases/tag/tigrcorn%3D%3Dv0.3.6",
+        "version": "tigrcorn==v0.3.6"
+      }
+    ],
     "homepage": "https://tigrcorn.com",
     "id": "repository:tigrbl/tigrcorn",
     "kind": "repository",
@@ -687,9 +5300,9 @@
     "latest_deployment": {
       "environment": "ci",
       "environment_url": "",
-      "log_url": "https://github.com/tigrbl/tigrcorn/actions/runs/30251375263/job/89929930624",
+      "log_url": "https://github.com/tigrbl/tigrcorn/actions/runs/30798538881/job/91637565717",
       "state": "success",
-      "updated_at": "2026-07-27T08:51:33Z"
+      "updated_at": "2026-08-03T08:46:12Z"
     },
     "latest_release": {
       "assets": [
@@ -945,7 +5558,7 @@
     "metrics": {
       "commits": 272,
       "contributors": 4,
-      "deployments": 2415,
+      "deployments": 2416,
       "environments": 6,
       "forks": 2,
       "github_releases": 40,
@@ -958,7 +5571,7 @@
       "watchers": 1
     },
     "name": "tigrcorn",
-    "observed_at": "2026-08-03T10:05:58Z",
+    "observed_at": "2026-08-03T13:56:25Z",
     "owner": "tigrbl",
     "package_ids": [
       "package:npm:@tigrcorn/wt-peer-probes:tigrbl/tigrcorn:packages/wt-peer-probes/package.json",
@@ -981,21 +5594,28 @@
     "pushed_at": "2026-07-27T08:35:25Z",
     "related_resources": [
       {
-        "evidence_type": "repository.tree",
+        "evidence_type": "repository.blob",
+        "id": "resource:f37bf4cbe292",
+        "kind": "documentation",
+        "name": "docs/FRONTEND_APP_BRIEF.md",
+        "url": "https://github.com/tigrbl/tigrcorn-com/blob/master/docs/FRONTEND_APP_BRIEF.md"
+      },
+      {
+        "evidence_type": "repository.blob",
         "id": "resource:b9e95dbd8adb",
         "kind": "documentation",
         "name": "docs/LIFECYCLE_AND_EMBEDDED_SERVER.md",
         "url": "https://github.com/tigrbl/tigrcorn/blob/master/docs/LIFECYCLE_AND_EMBEDDED_SERVER.md"
       },
       {
-        "evidence_type": "repository.tree",
+        "evidence_type": "repository.blob",
         "id": "resource:aca6f63ff582",
         "kind": "documentation",
         "name": "docs/MUT.json",
         "url": "https://github.com/tigrbl/tigrcorn/blob/master/docs/MUT.json"
       },
       {
-        "evidence_type": "repository.tree",
+        "evidence_type": "repository.blob",
         "id": "resource:0f6ff1cddc05",
         "kind": "documentation",
         "name": "docs/README.md",
@@ -1030,6 +5650,13 @@
         "url": "https://github.com/tigrbl/tigrcorn/tree/master/docs/conformance"
       },
       {
+        "evidence_type": "repository.blob",
+        "id": "resource:1e093bd21bbf",
+        "kind": "documentation",
+        "name": "docs/getting-started.md",
+        "url": "https://github.com/tigrbl/docs-tigrcorn-com/blob/master/docs/getting-started.md"
+      },
+      {
         "evidence_type": "repository.tree",
         "id": "resource:fe804de2cc0b",
         "kind": "documentation",
@@ -1042,6 +5669,20 @@
         "kind": "documentation",
         "name": "docs/governance",
         "url": "https://github.com/tigrbl/tigrcorn/tree/master/docs/governance"
+      },
+      {
+        "evidence_type": "repository.tree",
+        "id": "resource:0ee0d56af56f",
+        "kind": "documentation",
+        "name": "docs/guides",
+        "url": "https://github.com/tigrbl/docs-tigrcorn-com/tree/master/docs/guides"
+      },
+      {
+        "evidence_type": "repository.blob",
+        "id": "resource:f7fc888ad5b2",
+        "kind": "documentation",
+        "name": "docs/index.md",
+        "url": "https://github.com/tigrbl/docs-tigrcorn-com/blob/master/docs/index.md"
       },
       {
         "evidence_type": "repository.tree",
@@ -1080,6 +5721,13 @@
       },
       {
         "evidence_type": "repository.tree",
+        "id": "resource:6e233b851cdc",
+        "kind": "documentation",
+        "name": "docs/reference",
+        "url": "https://github.com/tigrbl/docs-tigrcorn-com/tree/master/docs/reference"
+      },
+      {
+        "evidence_type": "repository.tree",
         "id": "resource:206243ae7028",
         "kind": "documentation",
         "name": "docs/release-notes",
@@ -1093,28 +5741,28 @@
         "url": "https://github.com/tigrbl/tigrcorn/tree/master/docs/review"
       },
       {
-        "evidence_type": "repository.tree",
+        "evidence_type": "repository.blob",
         "id": "resource:f306335a479c",
         "kind": "example",
         "name": "examples/MUT.json",
         "url": "https://github.com/tigrbl/tigrcorn/blob/master/examples/MUT.json"
       },
       {
-        "evidence_type": "repository.tree",
+        "evidence_type": "repository.blob",
         "id": "resource:0a9e27995256",
         "kind": "example",
         "name": "examples/PHASE4_PROTOCOL_PAIRING.md",
         "url": "https://github.com/tigrbl/tigrcorn/blob/master/examples/PHASE4_PROTOCOL_PAIRING.md"
       },
       {
-        "evidence_type": "repository.tree",
+        "evidence_type": "repository.blob",
         "id": "resource:fcb51bb8e80b",
         "kind": "example",
         "name": "examples/README.md",
         "url": "https://github.com/tigrbl/tigrcorn/blob/master/examples/README.md"
       },
       {
-        "evidence_type": "repository.tree",
+        "evidence_type": "repository.blob",
         "id": "resource:716af3f6c1d9",
         "kind": "example",
         "name": "examples/__init__.py",
@@ -1226,7 +5874,7 @@
         "url": "https://github.com/tigrbl/tigrcorn/tree/master/examples/wss_asgi3_lab"
       },
       {
-        "evidence_type": "repository.tree",
+        "evidence_type": "repository.blob",
         "id": "resource:89466fb17d6b",
         "kind": "example",
         "name": "packages/wt-peer-probes/examples/browser.html",

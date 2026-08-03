@@ -128,6 +128,9 @@ function RouteSwitcher({ path, onNavigate }: { path: string; onNavigate: (path: 
       return <ProductCollectionPage mode="portfolio" onNavigate={onNavigate} />;
     }
     const sub = segments[1];
+    if (sub === "records" && segments[2]) {
+      return <ProductRecordPage slug={segments[2]} recordType="portfolio" onNavigate={onNavigate} />;
+    }
     const recordSlug = ["projects", "packages", "specifications"].includes(sub) ? segments[2] : sub;
     if (recordSlug && portfolioEntities.some((entity) => entity.slug === recordSlug && entity.approved)) {
       return <ProductRecordPage slug={recordSlug} onNavigate={onNavigate} />;

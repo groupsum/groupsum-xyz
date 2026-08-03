@@ -1,19 +1,20 @@
 {
   "archived_repositories": 0,
-  "commits": 23641,
+  "commits": 23645,
   "contributors_unique": 42,
-  "deployments": 3950,
+  "deployments": 3955,
   "environments": 130,
   "fork_repositories": 0,
   "forks": 108,
-  "generated_at": "2026-08-03T10:05:58Z",
+  "generated_at": "2026-08-03T13:56:23Z",
   "github_package_versions": 27,
   "github_releases": 7534,
   "observations_by_status": {
-    "cached": 6731,
-    "error": 526
+    "cached": 6240,
+    "not_found": 526,
+    "observed": 497
   },
-  "observations_with_errors": 526,
+  "observations_with_errors": 0,
   "owners": 4,
   "package_ecosystems": {
     "crates": 5,
@@ -24,7 +25,7 @@
   "packages": 1124,
   "published_packages": 490,
   "registry_release_versions": 9752,
-  "relationships": 10648,
+  "relationships": 10845,
   "repositories": 68,
   "schema_version": "1.0.0",
   "stars": 198,

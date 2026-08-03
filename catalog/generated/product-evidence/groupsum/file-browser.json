@@ -1,9 +1,157 @@
 {
-  "generated_at": "2026-08-03T10:05:58Z",
+  "generated_at": "2026-08-03T13:56:23Z",
   "packages": [
     {
       "claim_boundary": "Publication is reported only when confirmed by the named public registry.",
+      "dependencies": [
+        {
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "lucide-react",
+          "package_key": "npm:lucide-react",
+          "requirement": "^0.546.0",
+          "scope": "dependencies"
+        },
+        {
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "motion",
+          "package_key": "npm:motion",
+          "requirement": "^12.23.24",
+          "scope": "dependencies"
+        },
+        {
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "@tailwindcss/vite",
+          "package_key": "npm:@tailwindcss/vite",
+          "requirement": "^4.1.14",
+          "scope": "devDependencies"
+        },
+        {
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "@types/node",
+          "package_key": "npm:@types/node",
+          "requirement": "^22.14.0",
+          "scope": "devDependencies"
+        },
+        {
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "@vitejs/plugin-react",
+          "package_key": "npm:@vitejs/plugin-react",
+          "requirement": "^5.0.4",
+          "scope": "devDependencies"
+        },
+        {
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "autoprefixer",
+          "package_key": "npm:autoprefixer",
+          "requirement": "^10.4.21",
+          "scope": "devDependencies"
+        },
+        {
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "esbuild",
+          "package_key": "npm:esbuild",
+          "requirement": "^0.25.0",
+          "scope": "devDependencies"
+        },
+        {
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "react",
+          "package_key": "npm:react",
+          "requirement": "^19.0.1",
+          "scope": "devDependencies"
+        },
+        {
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "react-dom",
+          "package_key": "npm:react-dom",
+          "requirement": "^19.0.1",
+          "scope": "devDependencies"
+        },
+        {
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "rimraf",
+          "package_key": "npm:rimraf",
+          "requirement": "^6.0.1",
+          "scope": "devDependencies"
+        },
+        {
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "tailwindcss",
+          "package_key": "npm:tailwindcss",
+          "requirement": "^4.1.14",
+          "scope": "devDependencies"
+        },
+        {
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "tsx",
+          "package_key": "npm:tsx",
+          "requirement": "^4.21.0",
+          "scope": "devDependencies"
+        },
+        {
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "typescript",
+          "package_key": "npm:typescript",
+          "requirement": "~5.8.2",
+          "scope": "devDependencies"
+        },
+        {
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "vite",
+          "package_key": "npm:vite",
+          "requirement": "^6.2.3",
+          "scope": "devDependencies"
+        },
+        {
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "react",
+          "package_key": "npm:react",
+          "requirement": ">=18",
+          "scope": "peerDependencies"
+        },
+        {
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "react-dom",
+          "package_key": "npm:react-dom",
+          "requirement": ">=18",
+          "scope": "peerDependencies"
+        }
+      ],
       "dependency_count": 16,
+      "dependent_count": 0,
+      "dependents": [],
       "description": "Observed npm package record for @groupsum/file-browser.",
       "description_source": "generated-factual",
       "display_name": "@groupsum/file-browser",
@@ -14,7 +162,7 @@
       "evidence": [
         {
           "kind": "registry",
-          "observed_at": "2026-08-03T10:05:58Z",
+          "observed_at": "2026-08-03T13:56:23Z",
           "url": "https://www.npmjs.com/package/@groupsum/file-browser"
         }
       ],
@@ -23,18 +171,28 @@
       "latest_version": "0.1.0",
       "manifest_path": "packages/file-browser/package.json",
       "name": "@groupsum/file-browser",
-      "observed_at": "2026-08-03T10:05:58Z",
+      "observed_at": "2026-08-03T13:56:23Z",
       "owner": "groupsum",
       "private": false,
       "publication_status": "published",
       "published": true,
       "registry_url": "https://www.npmjs.com/package/@groupsum/file-browser",
-      "relationship_count": 15,
+      "relationship_count": 17,
       "relationship_counts": {
-        "package_depends_on_external": 14,
+        "package_depends_on_external": 16,
         "repository_contains_package": 1
       },
       "release_count": 1,
+      "releases": [
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2026-06-15T10:49:52.263Z",
+          "release_kind": "npm",
+          "url": "https://www.npmjs.com/package/@groupsum/file-browser/v/0.1.0",
+          "version": "0.1.0"
+        }
+      ],
       "repository": "groupsum/file-browser",
       "reviewed": false,
       "route": "/catalog/packages/npm/groupsum-file-browser-d2f97a3a",
@@ -43,7 +201,10 @@
     },
     {
       "claim_boundary": "Publication is reported only when confirmed by the named public registry.",
+      "dependencies": [],
       "dependency_count": 0,
+      "dependent_count": 0,
+      "dependents": [],
       "description": "Observed npm package record for file-browser-workspace.",
       "description_source": "generated-factual",
       "display_name": "file-browser-workspace",
@@ -54,7 +215,7 @@
       "evidence": [
         {
           "kind": "source",
-          "observed_at": "2026-08-03T10:05:58Z",
+          "observed_at": "2026-08-03T13:56:23Z",
           "url": "https://github.com/groupsum/file-browser/blob/HEAD/package.json"
         }
       ],
@@ -63,7 +224,7 @@
       "latest_version": "0.1.0",
       "manifest_path": "package.json",
       "name": "file-browser-workspace",
-      "observed_at": "2026-08-03T10:05:58Z",
+      "observed_at": "2026-08-03T13:56:23Z",
       "owner": "groupsum",
       "private": true,
       "publication_status": "manifest_private",
@@ -74,6 +235,7 @@
         "repository_contains_package": 1
       },
       "release_count": 0,
+      "releases": [],
       "repository": "groupsum/file-browser",
       "reviewed": false,
       "route": "/catalog/packages/npm/file-browser-workspace-d3fdf784",
@@ -82,7 +244,20 @@
     },
     {
       "claim_boundary": "Publication is reported only when confirmed by the named public registry.",
+      "dependencies": [
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": true,
+          "name": "ssot-registry",
+          "package_key": "pypi:ssot-registry",
+          "requirement": ">=0.2.24",
+          "scope": "dependency-groups.dev"
+        }
+      ],
       "dependency_count": 1,
+      "dependent_count": 0,
+      "dependents": [],
       "description": "Observed pypi package record for file-browser-workspace.",
       "description_source": "generated-factual",
       "display_name": "file-browser-workspace",
@@ -93,7 +268,7 @@
       "evidence": [
         {
           "kind": "source",
-          "observed_at": "2026-08-03T10:05:58Z",
+          "observed_at": "2026-08-03T13:56:23Z",
           "url": "https://github.com/groupsum/file-browser/blob/HEAD/pyproject.toml"
         }
       ],
@@ -102,10 +277,10 @@
       "latest_version": "0.1.0",
       "manifest_path": "pyproject.toml",
       "name": "file-browser-workspace",
-      "observed_at": "2026-08-03T10:05:58Z",
+      "observed_at": "2026-08-03T13:56:23Z",
       "owner": "groupsum",
       "private": false,
-      "publication_status": "not-confirmed",
+      "publication_status": "registry_not_found",
       "published": false,
       "registry_url": null,
       "relationship_count": 2,
@@ -114,6 +289,7 @@
         "repository_contains_package": 1
       },
       "release_count": 0,
+      "releases": [],
       "repository": "groupsum/file-browser",
       "reviewed": false,
       "route": "/catalog/packages/pypi/file-browser-workspace-d907dc0b",
@@ -132,12 +308,24 @@
     "evidence": [
       {
         "kind": "source",
-        "observed_at": "2026-08-03T10:05:58Z",
+        "observed_at": "2026-08-03T13:56:24Z",
         "url": "https://github.com/groupsum/file-browser"
       }
     ],
     "fork": false,
     "full_name": "groupsum/file-browser",
+    "github_releases": [
+      {
+        "downloads": 0,
+        "draft": false,
+        "observed_at": "2026-08-03T13:56:24Z",
+        "prerelease": false,
+        "published_at": "2026-06-15T10:49:40Z",
+        "release_kind": "github",
+        "url": "https://github.com/groupsum/file-browser/releases/tag/v0.1.0",
+        "version": "v0.1.0"
+      }
+    ],
     "homepage": null,
     "id": "repository:groupsum/file-browser",
     "kind": "repository",
@@ -177,7 +365,7 @@
       "watchers": 0
     },
     "name": "file-browser",
-    "observed_at": "2026-08-03T10:05:58Z",
+    "observed_at": "2026-08-03T13:56:24Z",
     "owner": "groupsum",
     "package_ids": [
       "package:npm:@groupsum/file-browser:groupsum/file-browser:packages/file-browser/package.json",

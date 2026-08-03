@@ -1,9 +1,76 @@
 {
-  "generated_at": "2026-08-03T10:05:58Z",
+  "generated_at": "2026-08-03T13:56:23Z",
   "packages": [
     {
       "claim_boundary": "Publication is reported only when confirmed by the named public registry.",
+      "dependencies": [
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "pydantic",
+          "package_key": "pypi:pydantic",
+          "requirement": ">=2",
+          "scope": "dependencies"
+        },
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": true,
+          "name": "tigrbl",
+          "package_key": "pypi:tigrbl",
+          "requirement": ">=0.1.0",
+          "scope": "optional-dependencies.tigrbl"
+        },
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "hatchling",
+          "package_key": "pypi:hatchling",
+          "requirement": "*",
+          "scope": "build-system.requires"
+        },
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": true,
+          "name": "marketing-attribution-conversion-governance-pack",
+          "package_key": "pypi:marketing-attribution-conversion-governance-pack",
+          "requirement": ">=0.1.1",
+          "scope": "dependency-groups.dev"
+        },
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "pytest",
+          "package_key": "pypi:pytest",
+          "requirement": ">=9.0.3",
+          "scope": "dependency-groups.dev"
+        },
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": true,
+          "name": "ssot-registry",
+          "package_key": "pypi:ssot-registry",
+          "requirement": ">=0.2.21",
+          "scope": "dependency-groups.dev"
+        },
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": true,
+          "name": "url-query-attribution-foundations-governance-pack",
+          "package_key": "pypi:url-query-attribution-foundations-governance-pack",
+          "requirement": ">=0.1.1",
+          "scope": "dependency-groups.dev"
+        }
+      ],
       "dependency_count": 7,
+      "dependent_count": 0,
+      "dependents": [],
       "description": "Observed pypi package record for attribution-campaign-context.",
       "description_source": "generated-factual",
       "display_name": "attribution-campaign-context",
@@ -14,7 +81,7 @@
       "evidence": [
         {
           "kind": "registry",
-          "observed_at": "2026-08-03T10:05:58Z",
+          "observed_at": "2026-08-03T13:56:23Z",
           "url": "https://pypi.org/project/attribution-campaign-context/"
         }
       ],
@@ -23,7 +90,7 @@
       "latest_version": "0.1.0",
       "manifest_path": "pyproject.toml",
       "name": "attribution-campaign-context",
-      "observed_at": "2026-08-03T10:05:58Z",
+      "observed_at": "2026-08-03T13:56:23Z",
       "owner": "tigrbl",
       "private": false,
       "publication_status": "published",
@@ -36,6 +103,16 @@
         "repository_contains_package": 1
       },
       "release_count": 1,
+      "releases": [
+        {
+          "downloads": null,
+          "observed_at": "2026-08-03T13:56:23Z",
+          "published_at": "2026-06-14T10:49:53.870015Z",
+          "release_kind": "pypi",
+          "url": "https://pypi.org/project/attribution-campaign-context/0.1.0/",
+          "version": "0.1.0"
+        }
+      ],
       "repository": "tigrbl/attribution-campaign-context",
       "reviewed": false,
       "route": "/catalog/packages/pypi/attribution-campaign-context-d7634189",
@@ -54,12 +131,13 @@
     "evidence": [
       {
         "kind": "source",
-        "observed_at": "2026-08-03T10:05:58Z",
+        "observed_at": "2026-08-03T13:56:24Z",
         "url": "https://github.com/tigrbl/attribution-campaign-context"
       }
     ],
     "fork": false,
     "full_name": "tigrbl/attribution-campaign-context",
+    "github_releases": [],
     "homepage": null,
     "id": "repository:tigrbl/attribution-campaign-context",
     "kind": "repository",
@@ -97,7 +175,7 @@
       "watchers": 0
     },
     "name": "attribution-campaign-context",
-    "observed_at": "2026-08-03T10:05:58Z",
+    "observed_at": "2026-08-03T13:56:24Z",
     "owner": "tigrbl",
     "package_ids": [
       "package:pypi:attribution-campaign-context:tigrbl/attribution-campaign-context:pyproject.toml"
@@ -105,21 +183,21 @@
     "pushed_at": "2026-06-14T10:49:16Z",
     "related_resources": [
       {
-        "evidence_type": "repository.tree",
+        "evidence_type": "repository.blob",
         "id": "resource:0d8b2d78bbde",
         "kind": "documentation",
         "name": "docs/attribution-keys.md",
         "url": "https://github.com/tigrbl/attribution-campaign-context/blob/master/docs/attribution-keys.md"
       },
       {
-        "evidence_type": "repository.tree",
+        "evidence_type": "repository.blob",
         "id": "resource:ffd6080c61cc",
         "kind": "documentation",
         "name": "docs/public-operator-surfaces.md",
         "url": "https://github.com/tigrbl/attribution-campaign-context/blob/master/docs/public-operator-surfaces.md"
       },
       {
-        "evidence_type": "repository.tree",
+        "evidence_type": "repository.blob",
         "id": "resource:569f81016037",
         "kind": "documentation",
         "name": "docs/ssot-governance-packs.md",
