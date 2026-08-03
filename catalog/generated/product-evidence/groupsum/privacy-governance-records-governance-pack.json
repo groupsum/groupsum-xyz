@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-03T13:56:23Z",
+  "generated_at": "2026-08-03T17:22:36Z",
   "packages": [
     {
       "claim_boundary": "Publication is reported only when confirmed by the named public registry.",
@@ -63,16 +63,56 @@
       "evidence": [
         {
           "kind": "registry",
-          "observed_at": "2026-08-03T13:56:23Z",
+          "observed_at": "2026-08-03T17:22:36Z",
           "url": "https://pypi.org/project/privacy-governance-records-governance-pack/"
         }
       ],
       "id": "package:pypi:privacy-governance-records-governance-pack:groupsum/privacy-governance-records-governance-pack:pyproject.toml",
       "kind": "package",
       "latest_version": "0.1.1.dev1",
+      "legal_evidence": [
+        {
+          "evidence_type": "repository.manifest",
+          "expression": "Apache-2.0",
+          "kind": "license-expression",
+          "name": "Package manifest license",
+          "scope": "direct",
+          "url": "https://github.com/groupsum/privacy-governance-records-governance-pack/blob/HEAD/pyproject.toml"
+        },
+        {
+          "evidence_type": "pypi.registry",
+          "expression": "Apache-2.0",
+          "kind": "license-expression",
+          "name": "Registry license metadata",
+          "scope": "direct",
+          "url": "https://pypi.org/project/privacy-governance-records-governance-pack/"
+        },
+        {
+          "evidence_type": "github.repository.license",
+          "expression": "Apache-2.0",
+          "kind": "license-expression",
+          "name": "GitHub detected license",
+          "path": null,
+          "scope": "inherited",
+          "url": "https://github.com/groupsum/privacy-governance-records-governance-pack"
+        },
+        {
+          "evidence_type": "repository.tree",
+          "expression": null,
+          "kind": "license-file",
+          "name": "LICENSE",
+          "path": "LICENSE",
+          "scope": "inherited",
+          "url": "https://github.com/groupsum/privacy-governance-records-governance-pack/blob/master/LICENSE"
+        }
+      ],
+      "legal_repository": "groupsum/privacy-governance-records-governance-pack",
+      "license_classifiers": [],
+      "license_expression": "Apache-2.0",
+      "license_status": "observed",
       "manifest_path": "pyproject.toml",
       "name": "privacy-governance-records-governance-pack",
-      "observed_at": "2026-08-03T13:56:23Z",
+      "observed_at": "2026-08-03T17:22:36Z",
       "owner": "groupsum",
       "private": false,
       "publication_status": "published",
@@ -88,9 +128,15 @@
       "releases": [
         {
           "downloads": null,
-          "observed_at": "2026-08-03T13:56:23Z",
+          "id": "release:7f1d46caf118fd1d",
+          "legal_evidence": [],
+          "legal_inherits_from": "package:pypi:privacy-governance-records-governance-pack:groupsum/privacy-governance-records-governance-pack:pyproject.toml",
+          "license_expression": "Apache-2.0",
+          "license_status": "observed",
+          "observed_at": "2026-08-03T17:22:36Z",
           "published_at": "2026-05-18T09:25:00.527092Z",
           "release_kind": "pypi",
+          "route": "/catalog/releases/pypi/privacy-governance-records-governance-pack-b6dc46d32e",
           "url": "https://pypi.org/project/privacy-governance-records-governance-pack/0.1.1.dev1/",
           "version": "0.1.1.dev1"
         }
@@ -247,7 +293,7 @@
     "evidence": [
       {
         "kind": "source",
-        "observed_at": "2026-08-03T13:56:24Z",
+        "observed_at": "2026-08-03T17:22:38Z",
         "url": "https://github.com/groupsum/privacy-governance-records-governance-pack"
       }
     ],
@@ -257,10 +303,16 @@
       {
         "downloads": 0,
         "draft": false,
-        "observed_at": "2026-08-03T13:56:24Z",
+        "id": "release:6ddc0d6460262aed",
+        "legal_evidence": [],
+        "legal_inherits_from": "repository:groupsum/privacy-governance-records-governance-pack",
+        "license_expression": "Apache-2.0",
+        "license_status": "observed",
+        "observed_at": "2026-08-03T17:22:38Z",
         "prerelease": false,
         "published_at": "2026-05-18T09:24:53Z",
         "release_kind": "github",
+        "route": "/catalog/releases/github/privacy-governance-records-governance-pack-d62af8c067",
         "url": "https://github.com/groupsum/privacy-governance-records-governance-pack/releases/tag/v0.1.1.dev1",
         "version": "v0.1.1.dev1"
       }
@@ -304,6 +356,26 @@
       "tag": "v0.1.1.dev1",
       "url": "https://github.com/groupsum/privacy-governance-records-governance-pack/releases/tag/v0.1.1.dev1"
     },
+    "legal_evidence": [
+      {
+        "evidence_type": "github.repository.license",
+        "expression": "Apache-2.0",
+        "kind": "license-expression",
+        "name": "GitHub detected license",
+        "path": null,
+        "scope": "direct",
+        "url": "https://github.com/groupsum/privacy-governance-records-governance-pack"
+      },
+      {
+        "evidence_type": "repository.tree",
+        "expression": null,
+        "kind": "license-file",
+        "name": "LICENSE",
+        "path": "LICENSE",
+        "scope": "direct",
+        "url": "https://github.com/groupsum/privacy-governance-records-governance-pack/blob/master/LICENSE"
+      }
+    ],
     "license": "Apache-2.0",
     "metrics": {
       "commits": 19,
@@ -321,7 +393,7 @@
       "watchers": 0
     },
     "name": "privacy-governance-records-governance-pack",
-    "observed_at": "2026-08-03T13:56:24Z",
+    "observed_at": "2026-08-03T17:22:38Z",
     "owner": "groupsum",
     "package_ids": [
       "package:pypi:privacy-governance-records-governance-pack:groupsum/privacy-governance-records-governance-pack:pyproject.toml"
@@ -330,9 +402,16 @@
     "related_resources": [
       {
         "evidence_type": "repository.tree",
-        "id": "resource:b274d6e28ebb",
+        "id": "resource:3bcea206904a",
         "kind": "documentation",
+        "legal_evidence": [],
+        "legal_inherits_from": "repository:groupsum/privacy-governance-records-governance-pack",
         "name": "docs/governance",
+        "observed_at": "2026-08-03T17:22:38Z",
+        "path": "docs/governance",
+        "repository": "groupsum/privacy-governance-records-governance-pack",
+        "repository_route": "/catalog/repositories/groupsum/privacy-governance-records-governance-pack",
+        "route": "/catalog/resources/documentation/3bcea206904a",
         "url": "https://github.com/groupsum/privacy-governance-records-governance-pack/tree/master/docs/governance"
       }
     ],

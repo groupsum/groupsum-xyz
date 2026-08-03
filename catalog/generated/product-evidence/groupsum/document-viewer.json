@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-03T13:56:23Z",
+  "generated_at": "2026-08-03T17:22:36Z",
   "packages": [
     {
       "claim_boundary": "Publication is reported only when confirmed by the named public registry.",
@@ -261,16 +261,56 @@
       "evidence": [
         {
           "kind": "registry",
-          "observed_at": "2026-08-03T13:56:23Z",
+          "observed_at": "2026-08-03T17:22:36Z",
           "url": "https://www.npmjs.com/package/@groupsum/document-viewer"
         }
       ],
       "id": "package:npm:@groupsum/document-viewer:groupsum/document-viewer:packages/document-viewer/package.json",
       "kind": "package",
       "latest_version": "0.1.0",
+      "legal_evidence": [
+        {
+          "evidence_type": "repository.manifest",
+          "expression": "UNLICENSED",
+          "kind": "license-expression",
+          "name": "Package manifest license",
+          "scope": "direct",
+          "url": "https://github.com/groupsum/document-viewer/blob/HEAD/packages/document-viewer/package.json"
+        },
+        {
+          "evidence_type": "npm.registry",
+          "expression": "UNLICENSED",
+          "kind": "license-expression",
+          "name": "Registry license metadata",
+          "scope": "direct",
+          "url": "https://www.npmjs.com/package/@groupsum/document-viewer"
+        },
+        {
+          "evidence_type": "repository.tree",
+          "expression": null,
+          "kind": "license-file",
+          "name": "LICENSE.md",
+          "path": "LICENSE.md",
+          "scope": "inherited",
+          "url": "https://github.com/groupsum/document-viewer/blob/master/LICENSE.md"
+        },
+        {
+          "evidence_type": "repository.tree",
+          "expression": null,
+          "kind": "notice-file",
+          "name": "NOTICE.md",
+          "path": "NOTICE.md",
+          "scope": "inherited",
+          "url": "https://github.com/groupsum/document-viewer/blob/master/NOTICE.md"
+        }
+      ],
+      "legal_repository": "groupsum/document-viewer",
+      "license_classifiers": [],
+      "license_expression": "UNLICENSED",
+      "license_status": "observed",
       "manifest_path": "packages/document-viewer/package.json",
       "name": "@groupsum/document-viewer",
-      "observed_at": "2026-08-03T13:56:23Z",
+      "observed_at": "2026-08-03T17:22:36Z",
       "owner": "groupsum",
       "private": false,
       "publication_status": "published",
@@ -285,9 +325,15 @@
       "releases": [
         {
           "downloads": null,
-          "observed_at": "2026-08-03T13:56:23Z",
+          "id": "release:2bd60c426245c08d",
+          "legal_evidence": [],
+          "legal_inherits_from": "package:npm:@groupsum/document-viewer:groupsum/document-viewer:packages/document-viewer/package.json",
+          "license_expression": "UNLICENSED",
+          "license_status": "observed",
+          "observed_at": "2026-08-03T17:22:36Z",
           "published_at": "2026-06-15T10:50:00.799Z",
           "release_kind": "npm",
+          "route": "/catalog/releases/npm/groupsum-document-viewer-41c1759bf1",
           "url": "https://www.npmjs.com/package/@groupsum/document-viewer/v/0.1.0",
           "version": "0.1.0"
         }
@@ -314,16 +360,40 @@
       "evidence": [
         {
           "kind": "source",
-          "observed_at": "2026-08-03T13:56:23Z",
+          "observed_at": "2026-08-03T17:22:36Z",
           "url": "https://github.com/groupsum/document-viewer/blob/HEAD/package.json"
         }
       ],
       "id": "package:npm:document-viewer-workspace:groupsum/document-viewer:package.json",
       "kind": "package",
       "latest_version": "0.1.0",
+      "legal_evidence": [
+        {
+          "evidence_type": "repository.tree",
+          "expression": null,
+          "kind": "license-file",
+          "name": "LICENSE.md",
+          "path": "LICENSE.md",
+          "scope": "inherited",
+          "url": "https://github.com/groupsum/document-viewer/blob/master/LICENSE.md"
+        },
+        {
+          "evidence_type": "repository.tree",
+          "expression": null,
+          "kind": "notice-file",
+          "name": "NOTICE.md",
+          "path": "NOTICE.md",
+          "scope": "inherited",
+          "url": "https://github.com/groupsum/document-viewer/blob/master/NOTICE.md"
+        }
+      ],
+      "legal_repository": "groupsum/document-viewer",
+      "license_classifiers": [],
+      "license_expression": "NOASSERTION",
+      "license_status": "observed",
       "manifest_path": "package.json",
       "name": "document-viewer-workspace",
-      "observed_at": "2026-08-03T13:56:23Z",
+      "observed_at": "2026-08-03T17:22:36Z",
       "owner": "groupsum",
       "private": true,
       "publication_status": "manifest_private",
@@ -367,16 +437,40 @@
       "evidence": [
         {
           "kind": "source",
-          "observed_at": "2026-08-03T13:56:23Z",
+          "observed_at": "2026-08-03T17:22:36Z",
           "url": "https://github.com/groupsum/document-viewer/blob/HEAD/pyproject.toml"
         }
       ],
       "id": "package:pypi:document-viewer-workspace:groupsum/document-viewer:pyproject.toml",
       "kind": "package",
       "latest_version": "0.1.0",
+      "legal_evidence": [
+        {
+          "evidence_type": "repository.tree",
+          "expression": null,
+          "kind": "license-file",
+          "name": "LICENSE.md",
+          "path": "LICENSE.md",
+          "scope": "inherited",
+          "url": "https://github.com/groupsum/document-viewer/blob/master/LICENSE.md"
+        },
+        {
+          "evidence_type": "repository.tree",
+          "expression": null,
+          "kind": "notice-file",
+          "name": "NOTICE.md",
+          "path": "NOTICE.md",
+          "scope": "inherited",
+          "url": "https://github.com/groupsum/document-viewer/blob/master/NOTICE.md"
+        }
+      ],
+      "legal_repository": "groupsum/document-viewer",
+      "license_classifiers": [],
+      "license_expression": "NOASSERTION",
+      "license_status": "observed",
       "manifest_path": "pyproject.toml",
       "name": "document-viewer-workspace",
-      "observed_at": "2026-08-03T13:56:23Z",
+      "observed_at": "2026-08-03T17:22:36Z",
       "owner": "groupsum",
       "private": false,
       "publication_status": "registry_not_found",
@@ -536,7 +630,7 @@
     "evidence": [
       {
         "kind": "source",
-        "observed_at": "2026-08-03T13:56:23Z",
+        "observed_at": "2026-08-03T17:22:37Z",
         "url": "https://github.com/groupsum/document-viewer"
       }
     ],
@@ -546,10 +640,16 @@
       {
         "downloads": 0,
         "draft": false,
-        "observed_at": "2026-08-03T13:56:23Z",
+        "id": "release:dfca31a7d4f2675d",
+        "legal_evidence": [],
+        "legal_inherits_from": "repository:groupsum/document-viewer",
+        "license_expression": "NOASSERTION",
+        "license_status": "observed",
+        "observed_at": "2026-08-03T17:22:37Z",
         "prerelease": false,
         "published_at": "2026-06-15T10:49:47Z",
         "release_kind": "github",
+        "route": "/catalog/releases/github/document-viewer-49506d408e",
         "url": "https://github.com/groupsum/document-viewer/releases/tag/v0.1.0",
         "version": "v0.1.0"
       }
@@ -576,6 +676,26 @@
       "tag": "v0.1.0",
       "url": "https://github.com/groupsum/document-viewer/releases/tag/v0.1.0"
     },
+    "legal_evidence": [
+      {
+        "evidence_type": "repository.tree",
+        "expression": null,
+        "kind": "license-file",
+        "name": "LICENSE.md",
+        "path": "LICENSE.md",
+        "scope": "direct",
+        "url": "https://github.com/groupsum/document-viewer/blob/master/LICENSE.md"
+      },
+      {
+        "evidence_type": "repository.tree",
+        "expression": null,
+        "kind": "notice-file",
+        "name": "NOTICE.md",
+        "path": "NOTICE.md",
+        "scope": "direct",
+        "url": "https://github.com/groupsum/document-viewer/blob/master/NOTICE.md"
+      }
+    ],
     "license": "NOASSERTION",
     "metrics": {
       "commits": 7,
@@ -593,7 +713,7 @@
       "watchers": 0
     },
     "name": "document-viewer",
-    "observed_at": "2026-08-03T13:56:23Z",
+    "observed_at": "2026-08-03T17:22:37Z",
     "owner": "groupsum",
     "package_ids": [
       "package:npm:@groupsum/document-viewer:groupsum/document-viewer:packages/document-viewer/package.json",

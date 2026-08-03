@@ -16,6 +16,8 @@ docker-compose.local.yaml
 backend/.venv/
 backend/data/*.sqlite3
 backend/data/*.sqlite3-*
+backend/data/*.duckdb
+backend/data/*.duckdb-*
 backend/data/backups/
 backend/generated/
 backend/.pytest_cache/

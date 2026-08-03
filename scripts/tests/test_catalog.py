@@ -138,7 +138,10 @@ class CatalogCollectorTests(unittest.TestCase):
         self.assertEqual(datasets["repositories"][0]["contributors"][0]["login"], "dev")
         self.assertEqual(len(datasets["repositories"][0]["commit_activity"]), 30)
         self.assertEqual(datasets["repositories"][0]["commit_activity"][-1]["count"], 1)
-        self.assertEqual(set(datasets), {"organizations", "repositories", "packages", "technologies"})
+        self.assertEqual(
+            set(datasets),
+            {"organizations", "repositories", "packages", "resources", "technologies"},
+        )
         self.assertIn("relationship_counts", datasets["repositories"][0])
         self.assertEqual(datasets["organizations"][0]["package_releases"], 1)
         self.assertTrue(datasets["packages"][0]["route"].startswith("/catalog/packages/pypi/example-"))

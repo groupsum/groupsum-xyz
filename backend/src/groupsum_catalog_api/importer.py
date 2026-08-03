@@ -3,10 +3,12 @@ from __future__ import annotations
 import hashlib
 import json
 import re
-import sqlite3
 from datetime import UTC, datetime, timedelta
 from pathlib import Path
 from typing import Any
+
+from .analytics import connect_analytics, default_analytics_path, upsert_metric
+from .database import Connection, connect
 
 
 def stable_id(*parts: str) -> str:
@@ -25,14 +27,7 @@ def record_slug(owner: str, name: str) -> str:
     return value or hashlib.sha256(f"{owner}/{name}".encode()).hexdigest()[:16]
 
 
-def connect(database_path: Path) -> sqlite3.Connection:
-    connection = sqlite3.connect(database_path)
-    connection.row_factory = sqlite3.Row
-    connection.execute("PRAGMA foreign_keys=ON")
-    return connection
-
-
-def upsert(connection: sqlite3.Connection, table: str, values: dict[str, Any]) -> None:
+def upsert(connection: Connection, table: str, values: dict[str, Any]) -> None:
     columns = tuple(values)
     placeholders = ", ".join("?" for _ in columns)
     assignments = ", ".join(f"{column}=excluded.{column}" for column in columns if column != "id")
@@ -43,7 +38,42 @@ def upsert(connection: sqlite3.Connection, table: str, values: dict[str, Any]) -
     )
 
 
-def import_catalog(database_path: Path, repo_root: Path) -> dict[str, int]:
+def import_legal_evidence(
+    connection: Connection,
+    subject_kind: str,
+    subject_id: str,
+    evidence: list[dict[str, Any]],
+    observed_at: str,
+) -> None:
+    for item in evidence:
+        url = item.get("url")
+        if not url:
+            continue
+        evidence_kind = item.get("kind") or "license"
+        upsert(
+            connection,
+            "legal_evidence",
+            {
+                "id": stable_id("legal", subject_kind, subject_id, evidence_kind, url),
+                "subject_kind": subject_kind,
+                "subject_id": subject_id,
+                "evidence_kind": evidence_kind,
+                "name": item.get("name") or item.get("path") or evidence_kind.title(),
+                "expression": item.get("expression"),
+                "path": item.get("path"),
+                "url": url,
+                "scope": item.get("scope") or "direct",
+                "evidence_type": item.get("evidence") or "repository.file",
+                "observed_at": observed_at,
+            },
+        )
+
+
+def import_catalog(
+    database_path: str | Path,
+    repo_root: Path,
+    analytics_path: Path | None = None,
+) -> dict[str, int]:
     editorial = json.loads((repo_root / "catalog" / "content" / "records.json").read_text())
     generated_at = datetime.now(UTC).replace(microsecond=0).isoformat()
     run_id = stable_id("collection-run", "website-editorial", generated_at)
@@ -58,7 +88,14 @@ def import_catalog(database_path: Path, repo_root: Path) -> dict[str, int]:
         "resources": 0,
     }
 
-    with connect(database_path) as connection:
+    analytics_path = analytics_path or default_analytics_path(database_path)
+    with connect(database_path) as connection, connect_analytics(analytics_path) as analytics:
+        # Release pages inherit legal evidence from their package or repository parent.
+        # Remove legacy duplicated rows so refreshes converge to the compact model.
+        connection.execute(
+            "DELETE FROM legal_evidence WHERE subject_kind IN (?, ?)",
+            ("release", "resource"),
+        )
         upsert(
             connection,
             "collection_runs",
@@ -97,6 +134,7 @@ def import_catalog(database_path: Path, repo_root: Path) -> dict[str, int]:
         connection.execute("DELETE FROM repository_contributors")
         connection.execute("DELETE FROM dependencies")
         connection.execute("DELETE FROM releases")
+        connection.execute("DELETE FROM legal_evidence")
         for organization in editorial["organizations"]:
             upsert(
                 connection,
@@ -127,7 +165,7 @@ def import_catalog(database_path: Path, repo_root: Path) -> dict[str, int]:
                     "content": json.dumps(record.get("content", {})),
                     "maturity": record["maturity"],
                     "visibility": record["visibility"],
-                    "featured": int(record["featured"]),
+                    "featured": bool(record["featured"]),
                     "canonical_url": record["canonical_url"],
                     "source_url": next(
                         (link["href"] for link in record["links"] if link.get("kind") == "source"),
@@ -315,7 +353,7 @@ def import_catalog(database_path: Path, repo_root: Path) -> dict[str, int]:
                         ),
                         "maturity": "historical-unreviewed",
                         "visibility": "public",
-                        "featured": 0,
+                        "featured": False,
                         "canonical_url": article["canonicalUrl"],
                         "source_url": article["canonicalUrl"],
                         "published_at": article.get("date"),
@@ -392,7 +430,8 @@ def import_catalog(database_path: Path, repo_root: Path) -> dict[str, int]:
             )
 
         connection.execute(
-            "UPDATE records SET visibility = 'retired' WHERE id LIKE 'catalog-repository:%'"
+            "UPDATE records SET visibility = 'retired' WHERE id LIKE ?",
+            ("catalog-repository:%",),
         )
         generated_records: dict[str, str] = {}
         repository_ids: dict[str, str] = {}
@@ -413,18 +452,32 @@ def import_catalog(database_path: Path, repo_root: Path) -> dict[str, int]:
                     "url": repository["url"],
                     "description": repository.get("description"),
                     "default_branch": repository.get("default_branch"),
-                    "is_archived": int(repository.get("archived", False)),
-                    "is_fork": int(repository.get("fork", False)),
+                    "is_archived": bool(repository.get("archived", False)),
+                    "is_fork": bool(repository.get("fork", False)),
+                    "license_expression": next(
+                        (
+                            item.get("expression")
+                            for item in repository.get("legal_evidence", [])
+                            if item.get("expression")
+                        ),
+                        None,
+                    ),
                     "observed_at": repository.get("observed_at") or generated_at,
                 },
+            )
+            import_legal_evidence(
+                connection,
+                "repository",
+                repository_id,
+                repository.get("legal_evidence", []),
+                repository.get("observed_at") or generated_at,
             )
             counts["repositories"] += 1
             for metric, value in repository.get("metrics", {}).items():
                 if not isinstance(value, int | float):
                     continue
-                upsert(
-                    connection,
-                    "metric_observations",
+                upsert_metric(
+                    analytics,
                     {
                         "id": stable_id(
                             "metric",
@@ -466,9 +519,8 @@ def import_catalog(database_path: Path, repo_root: Path) -> dict[str, int]:
                     datetime.fromisoformat(period_start.replace("Z", "+00:00"))
                     + timedelta(days=1)
                 ).isoformat()
-                upsert(
-                    connection,
-                    "metric_observations",
+                upsert_metric(
+                    analytics,
                     {
                         "id": stable_id("metric", repository_id, "commits_daily", day),
                         "subject_kind": "repository",
@@ -484,20 +536,22 @@ def import_catalog(database_path: Path, repo_root: Path) -> dict[str, int]:
                 )
             for release in repository.get("github_releases", []):
                 version = str(release["version"])
+                release_id = stable_id("release", repository_id, "github", version)
                 upsert(
                     connection,
                     "releases",
                     {
-                        "id": stable_id("release", repository_id, "github", version),
+                        "id": release_id,
                         "package_id": None,
                         "repository_id": repository_id,
                         "release_kind": "github",
                         "version": version,
+                        "route_key": release.get("route", "").rstrip("/").split("/")[-1] or None,
                         "url": release["url"],
                         "published_at": release.get("published_at"),
                         "downloads": release.get("downloads"),
-                        "prerelease": int(release.get("prerelease", False)),
-                        "draft": int(release.get("draft", False)),
+                        "prerelease": bool(release.get("prerelease", False)),
+                        "draft": bool(release.get("draft", False)),
                         "observed_at": release.get("observed_at") or generated_at,
                     },
                 )
@@ -533,7 +587,7 @@ def import_catalog(database_path: Path, repo_root: Path) -> dict[str, int]:
                         else "observed-public-source"
                     ),
                     "visibility": "public",
-                    "featured": 0,
+                    "featured": False,
                     "canonical_url": f"https://groupsum.xyz/portfolio/records/{generated_slug}",
                     "source_url": repository["url"],
                     "published_at": None,
@@ -616,6 +670,9 @@ def import_catalog(database_path: Path, repo_root: Path) -> dict[str, int]:
                     {
                         "id": resource_id,
                         "resource_type": resource.get("kind") or "resource",
+                        "route_key": resource.get("route", "").rstrip("/").split("/")[-1] or None,
+                        "repository_id": repository_id,
+                        "path": resource.get("path"),
                         "title": resource.get("name") or resource.get("kind") or "Related resource",
                         "url": resource["url"],
                         "summary": None,
@@ -660,14 +717,24 @@ def import_catalog(database_path: Path, repo_root: Path) -> dict[str, int]:
                     "description": package.get("description"),
                     "latest_version": package.get("latest_version"),
                     "published": (
-                        int(package.get("published"))
+                        bool(package.get("published"))
                         if package.get("published") is not None
                         else None
                     ),
                     "publication_status": package.get("publication_status"),
+                    "route_key": package.get("route", "").rstrip("/").split("/")[-1] or None,
+                    "license_expression": package.get("license_expression"),
+                    "license_status": package.get("license_status"),
                     "published_at": None,
                     "observed_at": package.get("observed_at") or generated_at,
                 },
+            )
+            import_legal_evidence(
+                connection,
+                "package",
+                package_id,
+                package.get("legal_evidence", []),
+                package.get("observed_at") or generated_at,
             )
             repository_name = package.get("repository")
             repository_id = repository_ids.get(repository_name)
@@ -701,20 +768,22 @@ def import_catalog(database_path: Path, repo_root: Path) -> dict[str, int]:
                     )
             for release in package.get("releases", []):
                 version = str(release["version"])
+                release_id = stable_id("release", package_id, ecosystem, version)
                 upsert(
                     connection,
                     "releases",
                     {
-                        "id": stable_id("release", package_id, ecosystem, version),
+                        "id": release_id,
                         "package_id": package_id,
                         "repository_id": None,
                         "release_kind": release.get("release_kind") or ecosystem,
                         "version": version,
+                        "route_key": release.get("route", "").rstrip("/").split("/")[-1] or None,
                         "url": release["url"],
                         "published_at": release.get("published_at"),
                         "downloads": release.get("downloads"),
-                        "prerelease": int(release.get("prerelease", False)),
-                        "draft": int(release.get("draft", False)),
+                        "prerelease": bool(release.get("prerelease", False)),
+                        "draft": bool(release.get("draft", False)),
                         "observed_at": release.get("observed_at") or generated_at,
                     },
                 )
@@ -781,9 +850,8 @@ def import_catalog(database_path: Path, repo_root: Path) -> dict[str, int]:
                 counts["dependencies"] += 1
             if isinstance(package.get("downloads"), int | float):
                 observed = package.get("observed_at") or generated_at
-                upsert(
-                    connection,
-                    "metric_observations",
+                upsert_metric(
+                    analytics,
                     {
                         "id": stable_id("metric", package_id, "downloads", observed),
                         "subject_kind": "package",
@@ -835,8 +903,8 @@ def import_catalog(database_path: Path, repo_root: Path) -> dict[str, int]:
                         "url": repository.get("source_url") or repository.get("url"),
                         "description": repository.get("description"),
                         "default_branch": repository.get("default_branch"),
-                        "is_archived": int(repository.get("archived", False)),
-                        "is_fork": int(repository.get("fork", False)),
+                        "is_archived": bool(repository.get("archived", False)),
+                        "is_fork": bool(repository.get("fork", False)),
                         "observed_at": bundle["generated_at"],
                     },
                 )
@@ -883,7 +951,7 @@ def import_catalog(database_path: Path, repo_root: Path) -> dict[str, int]:
                         "description": package.get("description"),
                         "latest_version": package.get("latest_version"),
                         "published": (
-                            int(package.get("published"))
+                            bool(package.get("published"))
                             if package.get("published") is not None
                             else None
                         ),
@@ -910,6 +978,11 @@ def import_catalog(database_path: Path, repo_root: Path) -> dict[str, int]:
                     {
                         "id": resource_id,
                         "resource_type": resource["kind"],
+                        "route_key": resource.get("route", "").rstrip("/").split("/")[-1] or None,
+                        "repository_id": repository_ids.get(
+                            bundle["repository"].get("full_name")
+                        ),
+                        "path": resource.get("path"),
                         "title": resource.get("name") or resource["kind"],
                         "url": resource["url"],
                         "summary": None,
@@ -934,7 +1007,8 @@ def import_catalog(database_path: Path, repo_root: Path) -> dict[str, int]:
              WHERE visibility = 'public' AND record_type IN ('product', 'portfolio')
             """
         ).fetchall()
-        for (record_id,) in public_records:
+        for record_row in public_records:
+            record_id = record_row[0]
             repository_rows = connection.execute(
                 """
                 SELECT repo.id, repo.observed_at
@@ -953,7 +1027,7 @@ def import_catalog(database_path: Path, repo_root: Path) -> dict[str, int]:
                 default=generated_at,
             )
             aggregate_metrics = {
-                metric: connection.execute(
+                metric: analytics.execute(
                     f"""
                     SELECT COALESCE(SUM(value), 0) FROM metric_observations mo
                      WHERE mo.subject_kind = 'repository' AND mo.metric = ?
@@ -968,7 +1042,7 @@ def import_catalog(database_path: Path, repo_root: Path) -> dict[str, int]:
                     """,
                     (metric, *repository_id_rows),
                 ).fetchone()[0]
-                for metric in ("stars", "forks", "commits")
+                for metric in ("stars", "forks", "watchers", "commits")
             }
             aggregate_metrics["contributors"] = connection.execute(
                 f"SELECT COUNT(DISTINCT login) FROM repository_contributors "
@@ -976,9 +1050,8 @@ def import_catalog(database_path: Path, repo_root: Path) -> dict[str, int]:
                 repository_id_rows,
             ).fetchone()[0]
             for metric, value in aggregate_metrics.items():
-                upsert(
-                    connection,
-                    "metric_observations",
+                upsert_metric(
+                    analytics,
                     {
                         "id": stable_id("metric", "record", record_id, metric, observed),
                         "subject_kind": "record",
@@ -992,6 +1065,40 @@ def import_catalog(database_path: Path, repo_root: Path) -> dict[str, int]:
                         "observed_at": observed,
                     },
                 )
+
+            aggregate_counts = connection.execute(
+                """
+                SELECT
+                  (SELECT COUNT(*) FROM record_repositories WHERE record_id = ?) repositories,
+                  (SELECT COUNT(*) FROM record_packages WHERE record_id = ?) packages,
+                  (SELECT COUNT(*) FROM record_resources WHERE record_id = ?) resources,
+                  (SELECT COUNT(*) FROM releases WHERE package_id IN
+                    (SELECT package_id FROM record_packages WHERE record_id = ?)
+                    OR repository_id IN
+                    (SELECT repository_id FROM record_repositories WHERE record_id = ?)) releases,
+                  (SELECT COUNT(*) FROM dependencies WHERE source_id IN
+                    (SELECT package_id FROM record_packages WHERE record_id = ?)) dependencies,
+                  (SELECT COUNT(*) FROM dependencies WHERE target_id IN
+                    (SELECT ecosystem || ':' || REPLACE(LOWER(name), '_', '-') FROM packages
+                     WHERE id IN (SELECT package_id FROM record_packages
+                                   WHERE record_id = ?))) dependents
+                """,
+                (record_id,) * 7,
+            ).fetchone()
+            analytics.execute(
+                """
+                INSERT INTO record_aggregates VALUES (?, ?, ?, ?, ?, ?, ?, ?)
+                ON CONFLICT(record_id) DO UPDATE SET
+                  repository_count=excluded.repository_count,
+                  package_count=excluded.package_count,
+                  resource_count=excluded.resource_count,
+                  release_count=excluded.release_count,
+                  dependency_count=excluded.dependency_count,
+                  dependent_count=excluded.dependent_count,
+                  refreshed_at=excluded.refreshed_at
+                """,
+                (record_id, *tuple(aggregate_counts.values()), generated_at),
+            )
 
         counts["releases"] = connection.execute(
             "SELECT COUNT(*) FROM releases"

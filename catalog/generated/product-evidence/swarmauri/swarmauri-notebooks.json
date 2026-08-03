@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-03T13:56:23Z",
+  "generated_at": "2026-08-03T17:22:36Z",
   "packages": [],
   "repository": {
     "archived": false,
@@ -236,7 +236,7 @@
     "evidence": [
       {
         "kind": "source",
-        "observed_at": "2026-08-03T13:56:25Z",
+        "observed_at": "2026-08-03T17:22:39Z",
         "url": "https://github.com/swarmauri/swarmauri-notebooks"
       }
     ],
@@ -246,10 +246,16 @@
       {
         "downloads": 0,
         "draft": false,
-        "observed_at": "2026-08-03T13:56:25Z",
+        "id": "release:53e82dd14e6ff972",
+        "legal_evidence": [],
+        "legal_inherits_from": "repository:swarmauri/swarmauri-notebooks",
+        "license_expression": "Apache-2.0",
+        "license_status": "observed",
+        "observed_at": "2026-08-03T17:22:39Z",
         "prerelease": true,
         "published_at": "2024-09-01T16:48:46Z",
         "release_kind": "github",
+        "route": "/catalog/releases/github/swarmauri-notebooks-774375ee49",
         "url": "https://github.com/swarmauri/swarmauri-notebooks/releases/tag/v0.4.1.dev1",
         "version": "v0.4.1.dev1"
       }
@@ -276,6 +282,26 @@
       "tag": "v0.4.1.dev1",
       "url": "https://github.com/swarmauri/swarmauri-notebooks/releases/tag/v0.4.1.dev1"
     },
+    "legal_evidence": [
+      {
+        "evidence_type": "github.repository.license",
+        "expression": "Apache-2.0",
+        "kind": "license-expression",
+        "name": "GitHub detected license",
+        "path": null,
+        "scope": "direct",
+        "url": "https://github.com/swarmauri/swarmauri-notebooks"
+      },
+      {
+        "evidence_type": "repository.tree",
+        "expression": null,
+        "kind": "license-file",
+        "name": "LICENSE",
+        "path": "LICENSE",
+        "scope": "direct",
+        "url": "https://github.com/swarmauri/swarmauri-notebooks/blob/master/LICENSE"
+      }
+    ],
     "license": "Apache-2.0",
     "metrics": {
       "commits": 378,
@@ -293,16 +319,23 @@
       "watchers": 4
     },
     "name": "swarmauri-notebooks",
-    "observed_at": "2026-08-03T13:56:25Z",
+    "observed_at": "2026-08-03T17:22:39Z",
     "owner": "swarmauri",
     "package_ids": [],
     "pushed_at": "2025-01-12T05:17:11Z",
     "related_resources": [
       {
         "evidence_type": "repository.homepage",
-        "id": "resource:32579cfddf5d",
+        "id": "resource:39984854789a",
         "kind": "website",
+        "legal_evidence": [],
+        "legal_inherits_from": "repository:swarmauri/swarmauri-notebooks",
         "name": "swarmauri-notebooks",
+        "observed_at": "2026-08-03T17:22:39Z",
+        "path": null,
+        "repository": "swarmauri/swarmauri-notebooks",
+        "repository_route": "/catalog/repositories/swarmauri/swarmauri-notebooks",
+        "route": "/catalog/resources/website/39984854789a",
         "url": "https://swarmauri.com"
       }
     ],

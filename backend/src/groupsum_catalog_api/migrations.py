@@ -1,10 +1,10 @@
 from __future__ import annotations
 
-import sqlite3
 from collections.abc import Callable
 from dataclasses import dataclass
 from pathlib import Path
 
+from .database import Connection
 from .importer import connect
 
 
@@ -12,11 +12,11 @@ from .importer import connect
 class Migration:
     version: int
     name: str
-    apply: Callable[[sqlite3.Connection], None]
+    apply: Callable[[Connection], None]
 
 
-def _baseline(connection: sqlite3.Connection) -> None:
-    expected = {"records", "packages", "resources", "metric_observations"}
+def _baseline(connection: Connection) -> None:
+    expected = {"records", "packages", "resources", "releases"}
     present = {
         row[0] for row in connection.execute("SELECT name FROM sqlite_master WHERE type = 'table'")
     }
@@ -25,13 +25,13 @@ def _baseline(connection: sqlite3.Connection) -> None:
         raise RuntimeError(f"Tigrbl baseline schema is incomplete: {sorted(missing)}")
 
 
-def _add_record_content(connection: sqlite3.Connection) -> None:
+def _add_record_content(connection: Connection) -> None:
     columns = {row[1] for row in connection.execute("PRAGMA table_info(records)")}
     if "content" not in columns:
         connection.execute("ALTER TABLE records ADD COLUMN content JSON")
 
 
-def _add_registry_evidence_fields(connection: sqlite3.Connection) -> None:
+def _add_registry_evidence_fields(connection: Connection) -> None:
     additions = {
         "packages": {
             "source_url": "TEXT",
@@ -57,10 +57,33 @@ def _add_registry_evidence_fields(connection: sqlite3.Connection) -> None:
                 connection.execute(f"ALTER TABLE {table} ADD COLUMN {name} {definition}")
 
 
+def _add_routes_and_legal_fields(connection: Connection) -> None:
+    additions = {
+        "repositories": {"license_expression": "TEXT"},
+        "packages": {
+            "route_key": "TEXT",
+            "license_expression": "TEXT",
+            "license_status": "TEXT",
+        },
+        "releases": {"route_key": "TEXT"},
+        "resources": {
+            "route_key": "TEXT",
+            "repository_id": "TEXT",
+            "path": "TEXT",
+        },
+    }
+    for table, columns in additions.items():
+        present = {row[1] for row in connection.execute(f"PRAGMA table_info({table})")}
+        for name, definition in columns.items():
+            if name not in present:
+                connection.execute(f"ALTER TABLE {table} ADD COLUMN {name} {definition}")
+
+
 MIGRATIONS = (
     Migration(1, "tigrbl_normalized_catalog_baseline", _baseline),
     Migration(2, "add_structured_record_content", _add_record_content),
     Migration(3, "add_registry_release_and_dependency_evidence", _add_registry_evidence_fields),
+    Migration(4, "add_catalog_routes_and_legal_evidence", _add_routes_and_legal_fields),
 )
 
 

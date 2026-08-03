@@ -26,6 +26,7 @@ const defaultImage = { url: `${root}/social/groupsum-default.svg`, type: "image/
 const readCatalogDataset = (name) => JSON.parse(fs.readFileSync(`catalog/generated/site/${name}.json`, "utf8"));
 const catalogRepositories = readCatalogDataset("repositories");
 const catalogPackages = readCatalogDataset("packages");
+const catalogResources = readCatalogDataset("resources");
 const catalogTechnologies = readCatalogDataset("technologies");
 
 const pages = [
@@ -98,6 +99,7 @@ const detailRecords = [
 const catalogDetailRecords = [
   ...catalogRepositories.map((item) => ({ route: normalizePath(item.route), url: absolute(item.route), title: `${item.display_name} repository | GroupSum catalog`, description: cleanTrim(item.description), type: "website", modified: item.observed_at, schemaFamily: "catalog-repository", sourceUrl: item.url })),
   ...catalogPackages.map((item) => ({ route: normalizePath(item.route), url: absolute(item.route), title: `${item.display_name} package | GroupSum catalog`, description: cleanTrim(item.description), type: "website", modified: item.observed_at, schemaFamily: "catalog-package", sourceUrl: item.registry_url || item.source_url })),
+  ...catalogResources.map((item) => ({ route: normalizePath(item.route), url: absolute(item.route), title: `${item.display_name} ${item.resource_type} | GroupSum catalog`, description: cleanTrim(item.description), type: "website", modified: item.observed_at, schemaFamily: "catalog-resource", sourceUrl: item.url })),
   ...catalogTechnologies.map((item) => ({ route: normalizePath(item.route), url: absolute(item.route), title: `${item.name} technology evidence | GroupSum catalog`, description: `${item.name} was observed through GitHub language data in ${item.repository_count} public repositories.`, type: "website", modified: item.observed_at, schemaFamily: "catalog-technology" }))
 ];
 detailRecords.push(...catalogDetailRecords);

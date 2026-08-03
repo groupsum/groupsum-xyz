@@ -1,4 +1,22 @@
 services:
+  groupsum-postgres:
+    image: postgres:17-alpine
+    container_name: groupsum-postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: groupsum
+      POSTGRES_USER: groupsum
+      POSTGRES_PASSWORD: ${GROUPSUM_POSTGRES_PASSWORD:-groupsum}
+    volumes:
+      - groupsum-postgres-data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U groupsum -d groupsum"]
+      interval: 5s
+      timeout: 5s
+      retries: 30
+    networks:
+      - dockerwp
+
   groupsum-catalog-api:
     build:
       context: .
@@ -6,14 +24,46 @@ services:
     container_name: groupsum-catalog-api
     restart: unless-stopped
     environment:
-      GROUPSUM_DATABASE_PATH: /data/groupsum-catalog.sqlite3
+      GROUPSUM_DATABASE_URL: postgresql+psycopg://groupsum:${GROUPSUM_POSTGRES_PASSWORD:-groupsum}@groupsum-postgres:5432/groupsum
+      GROUPSUM_ANALYTICS_PATH: /analytics/groupsum-metrics.duckdb
       GROUPSUM_PUBLIC_BASE_URL: https://groupsum.xyz
     volumes:
-      - groupsum-catalog-data:/data
+      - groupsum-duckdb-data:/analytics
+    depends_on:
+      groupsum-postgres:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8000/healthz')"]
+      start_period: 20m
+      interval: 10s
+      timeout: 5s
+      retries: 60
     networks:
       dockerwp:
         aliases:
           - groupsum-catalog-api
+
+  groupsum-duckdb:
+    build:
+      context: .
+      dockerfile: backend/Dockerfile
+    container_name: groupsum-duckdb
+    restart: unless-stopped
+    command: ["python", "-m", "groupsum_catalog_api.duckdb_service"]
+    environment:
+      GROUPSUM_ANALYTICS_PATH: /analytics/groupsum-metrics.duckdb
+    volumes:
+      - groupsum-duckdb-data:/analytics:ro
+    depends_on:
+      groupsum-catalog-api:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8001/healthz')"]
+      interval: 10s
+      timeout: 5s
+      retries: 30
+    networks:
+      - dockerwp
 
   groupsum-xyz:
     build: .
@@ -25,7 +75,10 @@ services:
     ports:
       - "8082:80"
     depends_on:
-      - groupsum-catalog-api
+      groupsum-catalog-api:
+        condition: service_healthy
+      groupsum-duckdb:
+        condition: service_healthy
     networks:
       dockerwp:
         aliases:
@@ -37,5 +90,7 @@ networks:
     external: true
 
 volumes:
-  groupsum-catalog-data:
-    name: groupsum-xyz-catalog-data
+  groupsum-postgres-data:
+    name: groupsum-xyz-postgres-data
+  groupsum-duckdb-data:
+    name: groupsum-xyz-duckdb-data

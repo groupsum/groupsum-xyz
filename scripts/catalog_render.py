@@ -154,6 +154,11 @@ def compile_catalog(catalog: dict[str, Any], editorial: dict[str, Any]) -> dict[
     technology_repositories: dict[str, set[str]] = defaultdict(set)
     technology_bytes: Counter[str] = Counter()
     relationship_counts: dict[str, Counter[str]] = defaultdict(Counter)
+    source_repositories = {
+        str(repository.get("full_name")): repository
+        for repository in catalog.get("repositories", [])
+        if repository.get("full_name")
+    }
     for relationship in catalog.get("relationships") or []:
         kind = str(relationship.get("kind") or "related")
         for identity in {str(relationship.get("source") or ""), str(relationship.get("target") or "")} - {""}:
@@ -203,6 +208,11 @@ def compile_catalog(catalog: dict[str, Any], editorial: dict[str, Any]) -> dict[
         ecosystem = str(package.get("ecosystem") or "unknown")
         name = str(package.get("name") or "unnamed")
         repository = package.get("repository")
+        legal_repository = repository
+        if not legal_repository and package.get("owner") and package.get("name"):
+            candidate = f"{package['owner']}/{package['name']}"
+            if candidate in source_repositories:
+                legal_repository = candidate
         package_identity = f"{ecosystem}:{name}:{repository or package.get('owner') or 'registry'}:{package.get('manifest_path') or 'package'}"
         package_id = f"package:{package_identity}"
         package_slug = f"{slug(name)}-{stable_hash(package_id, 8)}"
@@ -211,6 +221,82 @@ def compile_catalog(catalog: dict[str, Any], editorial: dict[str, Any]) -> dict[
         registry_url = package.get("registry_url") or package.get("url")
         source_url = f"https://github.com/{repository}/blob/HEAD/{package.get('manifest_path')}" if repository and package.get("manifest_path") else None
         release_records = normalized_releases(package, checked_at)
+        for release in release_records:
+            release_id = f"release:{stable_hash(f'{package_id}:{release['release_kind']}:{release['version']}', 16)}"
+            release["id"] = release_id
+            release["route"] = (
+                f"/catalog/releases/{release['release_kind']}/"
+                f"{slug(name)}-{stable_hash(release_id, 10)}"
+            )
+        source_repository = source_repositories.get(str(legal_repository), {})
+        manifest_directory = str(package.get("manifest_path") or "").rsplit("/", 1)[0]
+        license_expression = (
+            package.get("license_expression")
+            or package.get("registry_license_expression")
+            or source_repository.get("license")
+        )
+        legal_evidence: list[dict[str, Any]] = []
+        if package.get("license_expression"):
+            legal_evidence.append(
+                {
+                    "kind": "license-expression",
+                    "name": "Package manifest license",
+                    "expression": package["license_expression"],
+                    "url": source_url,
+                    "scope": "direct",
+                    "evidence_type": "repository.manifest",
+                }
+            )
+        if package.get("registry_license_expression"):
+            legal_evidence.append(
+                {
+                    "kind": "license-expression",
+                    "name": "Registry license metadata",
+                    "expression": package["registry_license_expression"],
+                    "url": registry_url,
+                    "scope": "direct",
+                    "evidence_type": f"{ecosystem}.registry",
+                }
+            )
+        if package.get("license_file") and repository:
+            license_path = "/".join(
+                item for item in (manifest_directory, str(package["license_file"])) if item
+            )
+            legal_evidence.append(
+                {
+                    "kind": "license-file",
+                    "name": str(package["license_file"]),
+                    "path": license_path,
+                    "url": f"https://github.com/{repository}/blob/HEAD/{license_path}",
+                    "scope": "direct",
+                    "evidence_type": "repository.manifest",
+                }
+            )
+        for item in source_repository.get("legal_evidence") or []:
+            legal_path = str(item.get("path") or "")
+            is_root_evidence = bool(legal_path) and "/" not in legal_path
+            is_package_evidence = bool(manifest_directory) and (
+                legal_path == manifest_directory
+                or legal_path.startswith(f"{manifest_directory}/")
+            )
+            if legal_path and not (is_root_evidence or is_package_evidence):
+                continue
+            legal_evidence.append(
+                {
+                    "kind": item.get("kind"),
+                    "name": item.get("name"),
+                    "expression": item.get("expression"),
+                    "path": item.get("path"),
+                    "url": item.get("url"),
+                    "scope": "inherited",
+                    "evidence_type": item.get("evidence"),
+                }
+            )
+        for release in release_records:
+            release["license_expression"] = license_expression
+            release["license_status"] = "observed" if license_expression else "not-observed"
+            release["legal_evidence"] = []
+            release["legal_inherits_from"] = package_id
         dependencies = [
             {
                 "name": str(item.get("name") or "unknown"),
@@ -247,6 +333,7 @@ def compile_catalog(catalog: dict[str, Any], editorial: dict[str, Any]) -> dict[
             "ecosystem": ecosystem,
             "owner": package.get("owner") or (str(repository).split("/", 1)[0] if repository else None),
             "repository": repository,
+            "legal_repository": legal_repository,
             "manifest_path": package.get("manifest_path"),
             "private": bool(package.get("private")),
             "published": package.get("published") is True,
@@ -264,6 +351,10 @@ def compile_catalog(catalog: dict[str, Any], editorial: dict[str, Any]) -> dict[
             "relationship_counts": dict(sorted(relationship_counts[f"{ecosystem}:{name}"].items())),
             "downstream_completeness": package.get("downstream_completeness") or "not-observed",
             "downloads": package.get("downloads"),
+            "license_expression": license_expression,
+            "license_status": "observed" if license_expression else "not-observed",
+            "license_classifiers": package.get("license_classifiers") or [],
+            "legal_evidence": legal_evidence,
             "registry_url": registry_url,
             "source_url": source_url,
             "observed_at": checked_at,
@@ -285,14 +376,58 @@ def compile_catalog(catalog: dict[str, Any], editorial: dict[str, Any]) -> dict[
         latest_release = next(iter(repo.get("github_releases") or []), None)
         latest_deployment = next(iter(repo.get("deployments") or []), None)
         latest_status = next(iter((latest_deployment or {}).get("statuses") or []), None)
-        related_resources = [
-            {
-                "id": f"resource:{stable_hash(f'{full_name}:{item.get("kind")}:{item.get("name")}')}",
-                "kind": item.get("kind"), "name": item.get("name"),
-                "url": related_resource_url(item), "evidence_type": item.get("evidence"),
-            }
-            for item in repo.get("related_resources") or []
-        ]
+        related_resources = []
+        for item in repo.get("related_resources") or []:
+            resource_url = related_resource_url(item)
+            if not resource_url:
+                continue
+            resource_kind = str(item.get("kind") or "resource")
+            resource_key = stable_hash(resource_url, 12)
+            related_resources.append(
+                {
+                    "id": f"resource:{resource_key}",
+                    "kind": resource_kind,
+                    "name": item.get("name"),
+                    "url": resource_url,
+                    "path": item.get("path"),
+                    "route": f"/catalog/resources/{slug(resource_kind)}/{resource_key}",
+                    "repository": full_name,
+                    "repository_route": (
+                        f"/catalog/repositories/{repo.get('owner')}/{repo.get('name')}"
+                    ),
+                    "evidence_type": item.get("evidence"),
+                    "observed_at": checked_at,
+                    "legal_evidence": [],
+                    "legal_inherits_from": repo_id,
+                }
+            )
+        github_release_records = []
+        for item in repo.get("github_releases") or []:
+            version = str(item.get("tag") or item.get("name") or "unknown")
+            release_id = f"release:{stable_hash(f'{repo_id}:github:{version}', 16)}"
+            github_release_records.append(
+                {
+                    "id": release_id,
+                    "route": (
+                        f"/catalog/releases/github/{slug(repo.get('name') or 'release')}-"
+                        f"{stable_hash(release_id, 10)}"
+                    ),
+                    "release_kind": "github",
+                    "version": version,
+                    "url": item.get("url") or repo.get("url"),
+                    "published_at": item.get("published_at"),
+                    "downloads": sum(
+                        int(asset.get("downloads") or 0) for asset in item.get("assets") or []
+                    ),
+                    "observed_at": checked_at,
+                    "prerelease": bool(item.get("prerelease")),
+                    "draft": bool(item.get("draft")),
+                    "license_expression": repo.get("license"),
+                    "license_status": "observed" if repo.get("license") else "not-observed",
+                    "legal_evidence": [],
+                    "legal_inherits_from": repo_id,
+                }
+            )
         description = override.get("description") or repo.get("description") or f"Public source repository {full_name}."
         record = {
             "id": repo_id,
@@ -313,6 +448,18 @@ def compile_catalog(catalog: dict[str, Any], editorial: dict[str, Any]) -> dict[
             "template": bool(repo.get("template")),
             "default_branch": repo.get("default_branch"),
             "license": repo.get("license"),
+            "legal_evidence": [
+                {
+                    "kind": item.get("kind"),
+                    "name": item.get("name"),
+                    "expression": item.get("expression"),
+                    "path": item.get("path"),
+                    "url": item.get("url"),
+                    "scope": "direct",
+                    "evidence_type": item.get("evidence"),
+                }
+                for item in repo.get("legal_evidence") or []
+            ],
             "topics": sorted(repo.get("topics") or []),
             "created_at": repo.get("created_at"),
             "updated_at": repo.get("updated_at"),
@@ -349,21 +496,7 @@ def compile_catalog(catalog: dict[str, Any], editorial: dict[str, Any]) -> dict[
             "package_ids": sorted(packages_by_repo.get(full_name, [])),
             "latest_commit": activity.get("latest_commit"),
             "latest_release": latest_release,
-            "github_releases": [
-                {
-                    "release_kind": "github",
-                    "version": str(item.get("tag") or item.get("name") or "unknown"),
-                    "url": item.get("url") or repo.get("url"),
-                    "published_at": item.get("published_at"),
-                    "downloads": sum(
-                        int(asset.get("downloads") or 0) for asset in item.get("assets") or []
-                    ),
-                    "observed_at": checked_at,
-                    "prerelease": bool(item.get("prerelease")),
-                    "draft": bool(item.get("draft")),
-                }
-                for item in repo.get("github_releases") or []
-            ],
+            "github_releases": github_release_records,
             "latest_deployment": {
                 "environment": (latest_deployment or {}).get("environment"),
                 "state": (latest_status or {}).get("state"),
@@ -378,6 +511,32 @@ def compile_catalog(catalog: dict[str, Any], editorial: dict[str, Any]) -> dict[
         for language, byte_count in languages.items():
             technology_repositories[language].add(full_name)
             technology_bytes[language] += int(byte_count or 0)
+
+    resource_records = list(
+        {
+            resource["id"]: {
+                **resource,
+                "kind": "resource",
+                "resource_type": resource["kind"],
+                "display_name": resource.get("name") or resource["kind"],
+                "description": (
+                    f"Observed {resource['kind']} resource from {resource['repository']}."
+                ),
+                "description_source": "generated-factual",
+                "evidence": evidence(
+                    resource.get("evidence_type") or "source",
+                    resource.get("url"),
+                    resource["observed_at"],
+                ),
+                "claim_boundary": (
+                    "The catalog confirms a public source location; runtime availability "
+                    "and completeness are not inferred."
+                ),
+            }
+            for repository in repository_records
+            for resource in repository.get("related_resources", [])
+        }.values()
+    )
 
     technology_records = [{
         "id": f"technology:{slug(name)}:{stable_hash(name, 8)}",
@@ -448,6 +607,7 @@ def compile_catalog(catalog: dict[str, Any], editorial: dict[str, Any]) -> dict[
         "organizations": organization_records,
         "repositories": repository_records,
         "packages": package_records,
+        "resources": resource_records,
         "technologies": technology_records,
     }
     for records in result.values():

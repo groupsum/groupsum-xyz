@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-03T13:56:23Z",
+  "generated_at": "2026-08-03T17:22:36Z",
   "packages": [
     {
       "claim_boundary": "Publication is reported only when confirmed by the named public registry.",
@@ -73,16 +73,40 @@
       "evidence": [
         {
           "kind": "source",
-          "observed_at": "2026-08-03T13:56:23Z",
+          "observed_at": "2026-08-03T17:22:36Z",
           "url": "https://github.com/swarmauri/swarmauri-flipcard/blob/HEAD/svelte/package.json"
         }
       ],
       "id": "package:npm:svelte:swarmauri/swarmauri-flipcard:svelte/package.json",
       "kind": "package",
       "latest_version": "0.0.0",
+      "legal_evidence": [
+        {
+          "evidence_type": "github.repository.license",
+          "expression": "Apache-2.0",
+          "kind": "license-expression",
+          "name": "GitHub detected license",
+          "path": null,
+          "scope": "inherited",
+          "url": "https://github.com/swarmauri/swarmauri-flipcard"
+        },
+        {
+          "evidence_type": "repository.tree",
+          "expression": null,
+          "kind": "license-file",
+          "name": "LICENSE",
+          "path": "LICENSE",
+          "scope": "inherited",
+          "url": "https://github.com/swarmauri/swarmauri-flipcard/blob/master/LICENSE"
+        }
+      ],
+      "legal_repository": "swarmauri/swarmauri-flipcard",
+      "license_classifiers": [],
+      "license_expression": "Apache-2.0",
+      "license_status": "observed",
       "manifest_path": "svelte/package.json",
       "name": "svelte",
-      "observed_at": "2026-08-03T13:56:23Z",
+      "observed_at": "2026-08-03T17:22:36Z",
       "owner": "swarmauri",
       "private": true,
       "publication_status": "manifest_private",
@@ -248,7 +272,7 @@
     "evidence": [
       {
         "kind": "source",
-        "observed_at": "2026-08-03T13:56:25Z",
+        "observed_at": "2026-08-03T17:22:39Z",
         "url": "https://github.com/swarmauri/swarmauri-flipcard"
       }
     ],
@@ -269,6 +293,26 @@
     },
     "latest_deployment": null,
     "latest_release": null,
+    "legal_evidence": [
+      {
+        "evidence_type": "github.repository.license",
+        "expression": "Apache-2.0",
+        "kind": "license-expression",
+        "name": "GitHub detected license",
+        "path": null,
+        "scope": "direct",
+        "url": "https://github.com/swarmauri/swarmauri-flipcard"
+      },
+      {
+        "evidence_type": "repository.tree",
+        "expression": null,
+        "kind": "license-file",
+        "name": "LICENSE",
+        "path": "LICENSE",
+        "scope": "direct",
+        "url": "https://github.com/swarmauri/swarmauri-flipcard/blob/master/LICENSE"
+      }
+    ],
     "license": "Apache-2.0",
     "metrics": {
       "commits": 3,
@@ -286,7 +330,7 @@
       "watchers": 0
     },
     "name": "swarmauri-flipcard",
-    "observed_at": "2026-08-03T13:56:25Z",
+    "observed_at": "2026-08-03T17:22:39Z",
     "owner": "swarmauri",
     "package_ids": [
       "package:npm:svelte:swarmauri/swarmauri-flipcard:svelte/package.json"

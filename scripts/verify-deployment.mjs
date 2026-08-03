@@ -1,7 +1,7 @@
 const baseUrl = (process.env.DEPLOY_VERIFY_URL || "https://groupsum.xyz").replace(/\/$/, "");
 const expected = {
   repositories: 68,
-  packages: 1124,
+  packages: 1125,
 };
 
 const delay = (milliseconds) => new Promise((resolve) => setTimeout(resolve, milliseconds));

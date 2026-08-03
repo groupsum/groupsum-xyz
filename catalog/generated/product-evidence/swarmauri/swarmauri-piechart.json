@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-03T13:56:23Z",
+  "generated_at": "2026-08-03T17:22:36Z",
   "packages": [
     {
       "claim_boundary": "Publication is reported only when confirmed by the named public registry.",
@@ -63,16 +63,48 @@
       "evidence": [
         {
           "kind": "source",
-          "observed_at": "2026-08-03T13:56:23Z",
+          "observed_at": "2026-08-03T17:22:36Z",
           "url": "https://github.com/swarmauri/swarmauri-piechart/blob/HEAD/mycomponent/frontend/package.json"
         }
       ],
       "id": "package:npm:gradio_mycomponent:swarmauri/swarmauri-piechart:mycomponent/frontend/package.json",
       "kind": "package",
       "latest_version": "0.2.12",
+      "legal_evidence": [
+        {
+          "evidence_type": "repository.manifest",
+          "expression": "ISC",
+          "kind": "license-expression",
+          "name": "Package manifest license",
+          "scope": "direct",
+          "url": "https://github.com/swarmauri/swarmauri-piechart/blob/HEAD/mycomponent/frontend/package.json"
+        },
+        {
+          "evidence_type": "github.repository.license",
+          "expression": "Apache-2.0",
+          "kind": "license-expression",
+          "name": "GitHub detected license",
+          "path": null,
+          "scope": "inherited",
+          "url": "https://github.com/swarmauri/swarmauri-piechart"
+        },
+        {
+          "evidence_type": "repository.tree",
+          "expression": null,
+          "kind": "license-file",
+          "name": "LICENSE",
+          "path": "LICENSE",
+          "scope": "inherited",
+          "url": "https://github.com/swarmauri/swarmauri-piechart/blob/master/LICENSE"
+        }
+      ],
+      "legal_repository": "swarmauri/swarmauri-piechart",
+      "license_classifiers": [],
+      "license_expression": "ISC",
+      "license_status": "observed",
       "manifest_path": "mycomponent/frontend/package.json",
       "name": "gradio_mycomponent",
-      "observed_at": "2026-08-03T13:56:23Z",
+      "observed_at": "2026-08-03T17:22:36Z",
       "owner": "swarmauri",
       "private": false,
       "publication_status": "registry_not_found",
@@ -162,16 +194,48 @@
       "evidence": [
         {
           "kind": "registry",
-          "observed_at": "2026-08-03T13:56:23Z",
+          "observed_at": "2026-08-03T17:22:36Z",
           "url": "https://pypi.org/project/gradio_mycomponent/"
         }
       ],
       "id": "package:pypi:gradio_mycomponent:swarmauri/swarmauri-piechart:mycomponent/pyproject.toml",
       "kind": "package",
       "latest_version": "0.0.1",
+      "legal_evidence": [
+        {
+          "evidence_type": "repository.manifest",
+          "expression": "apache-2.0",
+          "kind": "license-expression",
+          "name": "Package manifest license",
+          "scope": "direct",
+          "url": "https://github.com/swarmauri/swarmauri-piechart/blob/HEAD/mycomponent/pyproject.toml"
+        },
+        {
+          "evidence_type": "github.repository.license",
+          "expression": "Apache-2.0",
+          "kind": "license-expression",
+          "name": "GitHub detected license",
+          "path": null,
+          "scope": "inherited",
+          "url": "https://github.com/swarmauri/swarmauri-piechart"
+        },
+        {
+          "evidence_type": "repository.tree",
+          "expression": null,
+          "kind": "license-file",
+          "name": "LICENSE",
+          "path": "LICENSE",
+          "scope": "inherited",
+          "url": "https://github.com/swarmauri/swarmauri-piechart/blob/master/LICENSE"
+        }
+      ],
+      "legal_repository": "swarmauri/swarmauri-piechart",
+      "license_classifiers": [],
+      "license_expression": "apache-2.0",
+      "license_status": "observed",
       "manifest_path": "mycomponent/pyproject.toml",
       "name": "gradio_mycomponent",
-      "observed_at": "2026-08-03T13:56:23Z",
+      "observed_at": "2026-08-03T17:22:36Z",
       "owner": "swarmauri",
       "private": false,
       "publication_status": "published",
@@ -186,9 +250,15 @@
       "releases": [
         {
           "downloads": null,
-          "observed_at": "2026-08-03T13:56:23Z",
+          "id": "release:180f7e6b39ddab82",
+          "legal_evidence": [],
+          "legal_inherits_from": "package:pypi:gradio_mycomponent:swarmauri/swarmauri-piechart:mycomponent/pyproject.toml",
+          "license_expression": "apache-2.0",
+          "license_status": "observed",
+          "observed_at": "2026-08-03T17:22:36Z",
           "published_at": "2024-05-09T14:13:16.542756Z",
           "release_kind": "pypi",
+          "route": "/catalog/releases/pypi/gradio-mycomponent-7fe3827a77",
           "url": "https://pypi.org/project/gradio_mycomponent/0.0.1/",
           "version": "0.0.1"
         }
@@ -345,7 +415,7 @@
     "evidence": [
       {
         "kind": "source",
-        "observed_at": "2026-08-03T13:56:25Z",
+        "observed_at": "2026-08-03T17:22:39Z",
         "url": "https://github.com/swarmauri/swarmauri-piechart"
       }
     ],
@@ -366,6 +436,26 @@
     },
     "latest_deployment": null,
     "latest_release": null,
+    "legal_evidence": [
+      {
+        "evidence_type": "github.repository.license",
+        "expression": "Apache-2.0",
+        "kind": "license-expression",
+        "name": "GitHub detected license",
+        "path": null,
+        "scope": "direct",
+        "url": "https://github.com/swarmauri/swarmauri-piechart"
+      },
+      {
+        "evidence_type": "repository.tree",
+        "expression": null,
+        "kind": "license-file",
+        "name": "LICENSE",
+        "path": "LICENSE",
+        "scope": "direct",
+        "url": "https://github.com/swarmauri/swarmauri-piechart/blob/master/LICENSE"
+      }
+    ],
     "license": "Apache-2.0",
     "metrics": {
       "commits": 5,
@@ -383,7 +473,7 @@
       "watchers": 0
     },
     "name": "swarmauri-piechart",
-    "observed_at": "2026-08-03T13:56:25Z",
+    "observed_at": "2026-08-03T17:22:39Z",
     "owner": "swarmauri",
     "package_ids": [
       "package:npm:gradio_mycomponent:swarmauri/swarmauri-piechart:mycomponent/frontend/package.json",
@@ -393,23 +483,44 @@
     "related_resources": [
       {
         "evidence_type": "repository.blob",
-        "id": "resource:0573842bb9b3",
+        "id": "resource:9ced4772d683",
         "kind": "demo",
+        "legal_evidence": [],
+        "legal_inherits_from": "repository:swarmauri/swarmauri-piechart",
         "name": "mycomponent/demo/__init__.py",
+        "observed_at": "2026-08-03T17:22:39Z",
+        "path": "mycomponent/demo/__init__.py",
+        "repository": "swarmauri/swarmauri-piechart",
+        "repository_route": "/catalog/repositories/swarmauri/swarmauri-piechart",
+        "route": "/catalog/resources/demo/9ced4772d683",
         "url": "https://github.com/swarmauri/swarmauri-piechart/blob/master/mycomponent/demo/__init__.py"
       },
       {
         "evidence_type": "repository.blob",
-        "id": "resource:5ebc117351e9",
+        "id": "resource:eb66ec5d09e9",
         "kind": "demo",
+        "legal_evidence": [],
+        "legal_inherits_from": "repository:swarmauri/swarmauri-piechart",
         "name": "mycomponent/demo/app.py",
+        "observed_at": "2026-08-03T17:22:39Z",
+        "path": "mycomponent/demo/app.py",
+        "repository": "swarmauri/swarmauri-piechart",
+        "repository_route": "/catalog/repositories/swarmauri/swarmauri-piechart",
+        "route": "/catalog/resources/demo/eb66ec5d09e9",
         "url": "https://github.com/swarmauri/swarmauri-piechart/blob/master/mycomponent/demo/app.py"
       },
       {
         "evidence_type": "repository.blob",
-        "id": "resource:20a1e422215c",
+        "id": "resource:48681d1e31a0",
         "kind": "demo",
+        "legal_evidence": [],
+        "legal_inherits_from": "repository:swarmauri/swarmauri-piechart",
         "name": "mycomponent/demo/requirements.txt",
+        "observed_at": "2026-08-03T17:22:39Z",
+        "path": "mycomponent/demo/requirements.txt",
+        "repository": "swarmauri/swarmauri-piechart",
+        "repository_route": "/catalog/repositories/swarmauri/swarmauri-piechart",
+        "route": "/catalog/resources/demo/48681d1e31a0",
         "url": "https://github.com/swarmauri/swarmauri-piechart/blob/master/mycomponent/demo/requirements.txt"
       }
     ],

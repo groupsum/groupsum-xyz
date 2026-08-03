@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-03T13:56:23Z",
+  "generated_at": "2026-08-03T17:22:36Z",
   "packages": [
     {
       "claim_boundary": "Publication is reported only when confirmed by the named public registry.",
@@ -45,16 +45,30 @@
       "evidence": [
         {
           "kind": "source",
-          "observed_at": "2026-08-03T13:56:23Z",
+          "observed_at": "2026-08-03T17:22:36Z",
           "url": "https://github.com/tigrbl/tigrcorn-com/blob/HEAD/packages/site-content-pack/package.json"
         }
       ],
       "id": "package:npm:@tigrbl/tigrcorn-com-content-pack:tigrbl/tigrcorn-com:packages/site-content-pack/package.json",
       "kind": "package",
       "latest_version": "0.1.0",
+      "legal_evidence": [
+        {
+          "evidence_type": "repository.manifest",
+          "expression": "Apache-2.0",
+          "kind": "license-expression",
+          "name": "Package manifest license",
+          "scope": "direct",
+          "url": "https://github.com/tigrbl/tigrcorn-com/blob/HEAD/packages/site-content-pack/package.json"
+        }
+      ],
+      "legal_repository": "tigrbl/tigrcorn-com",
+      "license_classifiers": [],
+      "license_expression": "Apache-2.0",
+      "license_status": "observed",
       "manifest_path": "packages/site-content-pack/package.json",
       "name": "@tigrbl/tigrcorn-com-content-pack",
-      "observed_at": "2026-08-03T13:56:23Z",
+      "observed_at": "2026-08-03T17:22:36Z",
       "owner": "tigrbl",
       "private": true,
       "publication_status": "manifest_private",
@@ -271,16 +285,21 @@
       "evidence": [
         {
           "kind": "source",
-          "observed_at": "2026-08-03T13:56:23Z",
+          "observed_at": "2026-08-03T17:22:36Z",
           "url": "https://github.com/tigrbl/tigrcorn-com/blob/HEAD/package.json"
         }
       ],
       "id": "package:npm:react-example:tigrbl/tigrcorn-com:package.json",
       "kind": "package",
       "latest_version": "0.0.0",
+      "legal_evidence": [],
+      "legal_repository": "tigrbl/tigrcorn-com",
+      "license_classifiers": [],
+      "license_expression": null,
+      "license_status": "not-observed",
       "manifest_path": "package.json",
       "name": "react-example",
-      "observed_at": "2026-08-03T13:56:23Z",
+      "observed_at": "2026-08-03T17:22:36Z",
       "owner": "tigrbl",
       "private": true,
       "publication_status": "manifest_private",
@@ -343,16 +362,21 @@
       "evidence": [
         {
           "kind": "source",
-          "observed_at": "2026-08-03T13:56:23Z",
+          "observed_at": "2026-08-03T17:22:36Z",
           "url": "https://github.com/tigrbl/tigrcorn-com/blob/HEAD/pyproject.toml"
         }
       ],
       "id": "package:pypi:tigrcorn-com:tigrbl/tigrcorn-com:pyproject.toml",
       "kind": "package",
       "latest_version": "0.1.0",
+      "legal_evidence": [],
+      "legal_repository": "tigrbl/tigrcorn-com",
+      "license_classifiers": [],
+      "license_expression": null,
+      "license_status": "not-observed",
       "manifest_path": "pyproject.toml",
       "name": "tigrcorn-com",
-      "observed_at": "2026-08-03T13:56:23Z",
+      "observed_at": "2026-08-03T17:22:36Z",
       "owner": "tigrbl",
       "private": false,
       "publication_status": "registry_not_found",
@@ -512,7 +536,7 @@
     "evidence": [
       {
         "kind": "source",
-        "observed_at": "2026-08-03T13:56:25Z",
+        "observed_at": "2026-08-03T17:22:38Z",
         "url": "https://github.com/tigrbl/tigrcorn-com"
       }
     ],
@@ -539,6 +563,7 @@
       "updated_at": "2026-07-11T16:09:19Z"
     },
     "latest_release": null,
+    "legal_evidence": [],
     "license": null,
     "metrics": {
       "commits": 50,
@@ -556,7 +581,7 @@
       "watchers": 0
     },
     "name": "tigrcorn-com",
-    "observed_at": "2026-08-03T13:56:25Z",
+    "observed_at": "2026-08-03T17:22:38Z",
     "owner": "tigrbl",
     "package_ids": [
       "package:npm:@tigrbl/tigrcorn-com-content-pack:tigrbl/tigrcorn-com:packages/site-content-pack/package.json",
@@ -567,9 +592,16 @@
     "related_resources": [
       {
         "evidence_type": "repository.blob",
-        "id": "resource:f37bf4cbe292",
+        "id": "resource:b90a9a252352",
         "kind": "documentation",
+        "legal_evidence": [],
+        "legal_inherits_from": "repository:tigrbl/tigrcorn-com",
         "name": "docs/FRONTEND_APP_BRIEF.md",
+        "observed_at": "2026-08-03T17:22:38Z",
+        "path": "docs/FRONTEND_APP_BRIEF.md",
+        "repository": "tigrbl/tigrcorn-com",
+        "repository_route": "/catalog/repositories/tigrbl/tigrcorn-com",
+        "route": "/catalog/resources/documentation/b90a9a252352",
         "url": "https://github.com/tigrbl/tigrcorn-com/blob/master/docs/FRONTEND_APP_BRIEF.md"
       }
     ],

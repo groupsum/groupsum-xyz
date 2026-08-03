@@ -141,6 +141,7 @@ class Repository(RestTable):
     default_branch = Column(String(160), nullable=True)
     is_archived = Column(Boolean, nullable=False, default=False)
     is_fork = Column(Boolean, nullable=False, default=False)
+    license_expression = Column(String(200), nullable=True)
     observed_at = Column(DateTime, nullable=True)
 
 
@@ -187,6 +188,9 @@ class Package(RestTable):
     latest_version = Column(String(120), nullable=True)
     published = Column(Boolean, nullable=True)
     publication_status = Column(String(60), nullable=True)
+    route_key = Column(String(80), nullable=True, unique=True, index=True)
+    license_expression = Column(String(200), nullable=True)
+    license_status = Column(String(60), nullable=True)
     published_at = Column(DateTime, nullable=True)
     observed_at = Column(DateTime, nullable=True)
 
@@ -223,6 +227,7 @@ class Release(RestOlapTable):
     repository_id = Column(String(240), ForeignKey("repositories.id"), nullable=True, index=True)
     release_kind = Column(String(40), nullable=False)
     version = Column(String(160), nullable=False)
+    route_key = Column(String(80), nullable=True, unique=True, index=True)
     url = Column(String(2048), nullable=False)
     published_at = Column(DateTime, nullable=True)
     downloads = Column(Numeric(24, 4), nullable=True)
@@ -236,10 +241,29 @@ class Resource(RestTable):
     __allow_unmapped__ = True
     id = Column(String(280), primary_key=True)
     resource_type = Column(String(60), nullable=False, index=True)
+    route_key = Column(String(80), nullable=True, unique=True, index=True)
+    repository_id = Column(String(240), ForeignKey("repositories.id"), nullable=True, index=True)
+    path = Column(String(1000), nullable=True)
     title = Column(String(300), nullable=False)
     url = Column(String(2048), nullable=False, unique=True)
     summary = Column(Text, nullable=True)
     source_url = Column(String(2048), nullable=True)
+    observed_at = Column(DateTime, nullable=True)
+
+
+class LegalEvidence(RestTable):
+    __tablename__ = "legal_evidence"
+    __allow_unmapped__ = True
+    id = Column(String(320), primary_key=True)
+    subject_kind = Column(String(40), nullable=False, index=True)
+    subject_id = Column(String(300), nullable=False, index=True)
+    evidence_kind = Column(String(60), nullable=False)
+    name = Column(String(300), nullable=False)
+    expression = Column(String(200), nullable=True)
+    path = Column(String(1000), nullable=True)
+    url = Column(String(2048), nullable=False)
+    scope = Column(String(40), nullable=False, default="direct")
+    evidence_type = Column(String(80), nullable=False)
     observed_at = Column(DateTime, nullable=True)
 
 
@@ -419,6 +443,7 @@ ALL_TABLES = (
     PackageRepository,
     Release,
     Resource,
+    LegalEvidence,
     RecordResource,
     Deployment,
     Dependency,
@@ -430,5 +455,4 @@ ALL_TABLES = (
     Limitation,
     CollectionRun,
     Observation,
-    MetricObservation,
 )

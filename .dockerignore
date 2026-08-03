@@ -10,4 +10,7 @@ backend/.pytest_cache
 .pytest_cache
 .uv-cache
 backend/data
+backend/.ruff_cache
 .lighthouseci
+.catalog-cache
+dist-server

@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-03T13:56:23Z",
+  "generated_at": "2026-08-03T17:22:36Z",
   "packages": [],
   "repository": {
     "archived": false,
@@ -156,7 +156,7 @@
     "evidence": [
       {
         "kind": "source",
-        "observed_at": "2026-08-03T13:56:25Z",
+        "observed_at": "2026-08-03T17:22:39Z",
         "url": "https://github.com/swarmauri/swarmauri-playground"
       }
     ],
@@ -177,6 +177,26 @@
     },
     "latest_deployment": null,
     "latest_release": null,
+    "legal_evidence": [
+      {
+        "evidence_type": "github.repository.license",
+        "expression": "Apache-2.0",
+        "kind": "license-expression",
+        "name": "GitHub detected license",
+        "path": null,
+        "scope": "direct",
+        "url": "https://github.com/swarmauri/swarmauri-playground"
+      },
+      {
+        "evidence_type": "repository.tree",
+        "expression": null,
+        "kind": "license-file",
+        "name": "LICENSE",
+        "path": "LICENSE",
+        "scope": "direct",
+        "url": "https://github.com/swarmauri/swarmauri-playground/blob/master/LICENSE"
+      }
+    ],
     "license": "Apache-2.0",
     "metrics": {
       "commits": 37,
@@ -194,16 +214,23 @@
       "watchers": 1
     },
     "name": "swarmauri-playground",
-    "observed_at": "2026-08-03T13:56:25Z",
+    "observed_at": "2026-08-03T17:22:39Z",
     "owner": "swarmauri",
     "package_ids": [],
     "pushed_at": "2024-10-22T10:15:54Z",
     "related_resources": [
       {
         "evidence_type": "repository.homepage",
-        "id": "resource:e603f162f929",
+        "id": "resource:39984854789a",
         "kind": "website",
+        "legal_evidence": [],
+        "legal_inherits_from": "repository:swarmauri/swarmauri-playground",
         "name": "swarmauri-playground",
+        "observed_at": "2026-08-03T17:22:39Z",
+        "path": null,
+        "repository": "swarmauri/swarmauri-playground",
+        "repository_route": "/catalog/repositories/swarmauri/swarmauri-playground",
+        "route": "/catalog/resources/website/39984854789a",
         "url": "https://swarmauri.com"
       }
     ],

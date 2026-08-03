@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-03T13:56:23Z",
+  "generated_at": "2026-08-03T17:22:36Z",
   "packages": [
     {
       "claim_boundary": "Publication is reported only when confirmed by the named public registry.",
@@ -17,16 +17,21 @@
       "evidence": [
         {
           "kind": "source",
-          "observed_at": "2026-08-03T13:56:23Z",
+          "observed_at": "2026-08-03T17:22:36Z",
           "url": "https://github.com/swarmauri/docs-peagen-com/blob/HEAD/package.json"
         }
       ],
       "id": "package:npm:docs-peagen-com:swarmauri/docs-peagen-com:package.json",
       "kind": "package",
       "latest_version": "0.1.0",
+      "legal_evidence": [],
+      "legal_repository": "swarmauri/docs-peagen-com",
+      "license_classifiers": [],
+      "license_expression": null,
+      "license_status": "not-observed",
       "manifest_path": "package.json",
       "name": "docs-peagen-com",
-      "observed_at": "2026-08-03T13:56:23Z",
+      "observed_at": "2026-08-03T17:22:36Z",
       "owner": "swarmauri",
       "private": true,
       "publication_status": "manifest_private",
@@ -160,16 +165,21 @@
       "evidence": [
         {
           "kind": "source",
-          "observed_at": "2026-08-03T13:56:23Z",
+          "observed_at": "2026-08-03T17:22:36Z",
           "url": "https://github.com/swarmauri/docs-peagen-com/blob/HEAD/pyproject.toml"
         }
       ],
       "id": "package:pypi:docs-peagen-com:swarmauri/docs-peagen-com:pyproject.toml",
       "kind": "package",
       "latest_version": "0.1.0",
+      "legal_evidence": [],
+      "legal_repository": "swarmauri/docs-peagen-com",
+      "license_classifiers": [],
+      "license_expression": null,
+      "license_status": "not-observed",
       "manifest_path": "pyproject.toml",
       "name": "docs-peagen-com",
-      "observed_at": "2026-08-03T13:56:23Z",
+      "observed_at": "2026-08-03T17:22:36Z",
       "owner": "swarmauri",
       "private": false,
       "publication_status": "registry_not_found",
@@ -330,7 +340,7 @@
     "evidence": [
       {
         "kind": "source",
-        "observed_at": "2026-08-03T13:56:25Z",
+        "observed_at": "2026-08-03T17:22:38Z",
         "url": "https://github.com/swarmauri/docs-peagen-com"
       }
     ],
@@ -351,6 +361,7 @@
     },
     "latest_deployment": null,
     "latest_release": null,
+    "legal_evidence": [],
     "license": null,
     "metrics": {
       "commits": 35,
@@ -368,7 +379,7 @@
       "watchers": 0
     },
     "name": "docs-peagen-com",
-    "observed_at": "2026-08-03T13:56:25Z",
+    "observed_at": "2026-08-03T17:22:38Z",
     "owner": "swarmauri",
     "package_ids": [
       "package:npm:docs-peagen-com:swarmauri/docs-peagen-com:package.json",
@@ -378,37 +389,72 @@
     "related_resources": [
       {
         "evidence_type": "repository.tree",
-        "id": "resource:6b303c699f69",
+        "id": "resource:bd9ad818da8d",
         "kind": "documentation",
+        "legal_evidence": [],
+        "legal_inherits_from": "repository:swarmauri/docs-peagen-com",
         "name": "docs/assets",
+        "observed_at": "2026-08-03T17:22:38Z",
+        "path": "docs/assets",
+        "repository": "swarmauri/docs-peagen-com",
+        "repository_route": "/catalog/repositories/swarmauri/docs-peagen-com",
+        "route": "/catalog/resources/documentation/bd9ad818da8d",
         "url": "https://github.com/swarmauri/docs-peagen-com/tree/master/docs/assets"
       },
       {
         "evidence_type": "repository.tree",
-        "id": "resource:d3ad0a453a66",
+        "id": "resource:3a7b248f3231",
         "kind": "documentation",
+        "legal_evidence": [],
+        "legal_inherits_from": "repository:swarmauri/docs-peagen-com",
         "name": "docs/guide",
+        "observed_at": "2026-08-03T17:22:38Z",
+        "path": "docs/guide",
+        "repository": "swarmauri/docs-peagen-com",
+        "repository_route": "/catalog/repositories/swarmauri/docs-peagen-com",
+        "route": "/catalog/resources/documentation/3a7b248f3231",
         "url": "https://github.com/swarmauri/docs-peagen-com/tree/master/docs/guide"
       },
       {
         "evidence_type": "repository.tree",
-        "id": "resource:c08f9474f070",
+        "id": "resource:5bb1be36ac30",
         "kind": "documentation",
+        "legal_evidence": [],
+        "legal_inherits_from": "repository:swarmauri/docs-peagen-com",
         "name": "docs/home",
+        "observed_at": "2026-08-03T17:22:38Z",
+        "path": "docs/home",
+        "repository": "swarmauri/docs-peagen-com",
+        "repository_route": "/catalog/repositories/swarmauri/docs-peagen-com",
+        "route": "/catalog/resources/documentation/5bb1be36ac30",
         "url": "https://github.com/swarmauri/docs-peagen-com/tree/master/docs/home"
       },
       {
         "evidence_type": "repository.blob",
-        "id": "resource:0e93f6f7c31f",
+        "id": "resource:a81fd45655a3",
         "kind": "documentation",
+        "legal_evidence": [],
+        "legal_inherits_from": "repository:swarmauri/docs-peagen-com",
         "name": "docs/index.md",
+        "observed_at": "2026-08-03T17:22:38Z",
+        "path": "docs/index.md",
+        "repository": "swarmauri/docs-peagen-com",
+        "repository_route": "/catalog/repositories/swarmauri/docs-peagen-com",
+        "route": "/catalog/resources/documentation/a81fd45655a3",
         "url": "https://github.com/swarmauri/docs-peagen-com/blob/master/docs/index.md"
       },
       {
         "evidence_type": "repository.tree",
-        "id": "resource:dd05a9b40e1a",
+        "id": "resource:32aee68489b3",
         "kind": "documentation",
+        "legal_evidence": [],
+        "legal_inherits_from": "repository:swarmauri/docs-peagen-com",
         "name": "docs/news",
+        "observed_at": "2026-08-03T17:22:38Z",
+        "path": "docs/news",
+        "repository": "swarmauri/docs-peagen-com",
+        "repository_route": "/catalog/repositories/swarmauri/docs-peagen-com",
+        "route": "/catalog/resources/documentation/32aee68489b3",
         "url": "https://github.com/swarmauri/docs-peagen-com/tree/master/docs/news"
       }
     ],

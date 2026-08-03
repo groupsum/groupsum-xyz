@@ -2,7 +2,6 @@ from __future__ import annotations
 
 import hashlib
 import json
-import sqlite3
 from collections import defaultdict
 from datetime import UTC, datetime
 from pathlib import Path
@@ -10,14 +9,14 @@ from typing import Any
 
 from tigrbl import JSONResponse, Request, Response
 
+from .analytics import connect_analytics, default_analytics_path, metric_rows
+from .database import Connection
 from .importer import connect
 
 CACHE_CONTROL = "public, max-age=60, s-maxage=300, stale-while-revalidate=86400"
 
 
-def rows(
-    connection: sqlite3.Connection, query: str, parameters: tuple[Any, ...] = ()
-) -> list[dict]:
+def rows(connection: Connection, query: str, parameters: tuple[Any, ...] = ()) -> list[dict]:
     return [dict(row) for row in connection.execute(query, parameters).fetchall()]
 
 
@@ -40,16 +39,23 @@ def metric_number(value: Any) -> int | float:
     return int(number) if number.is_integer() else number
 
 
-def repository_signals(
-    connection: sqlite3.Connection, repository_id: str
-) -> dict[str, Any]:
-    snapshot_rows = rows(
+def analytics_rows(
+    connection: Connection, query: str, parameters: tuple[Any, ...] = ()
+) -> list[dict[str, Any]]:
+    with connect_analytics(
+        default_analytics_path(connection.database), read_only=True
+    ) as analytics:
+        return metric_rows(analytics, query, parameters)
+
+
+def repository_signals(connection: Connection, repository_id: str) -> dict[str, Any]:
+    snapshot_rows = analytics_rows(
         connection,
         """
         SELECT metric, value, observed_at
           FROM metric_observations
          WHERE subject_kind = 'repository' AND subject_id = ?
-           AND metric IN ('stars', 'forks', 'contributors', 'commits')
+           AND metric IN ('stars', 'forks', 'watchers', 'contributors', 'commits')
            AND period_start IS NULL
       ORDER BY observed_at
         """,
@@ -71,11 +77,11 @@ def repository_signals(
     ).fetchone()[0]
     metrics = {
         metric: metric_number(latest.get(metric, {}).get("value"))
-        for metric in ("stars", "forks", "contributors", "commits")
+        for metric in ("stars", "forks", "watchers", "contributors", "commits")
     }
     if contributor_count or "contributors" not in latest:
         metrics["contributors"] = contributor_count
-    commit_activity = rows(
+    commit_activity = analytics_rows(
         connection,
         """
         SELECT DATE(period_start) AS date, value AS count
@@ -94,14 +100,14 @@ def repository_signals(
         "metrics": metrics,
         "history": {
             metric: list(history_by_day[metric].values())[-30:]
-            for metric in ("stars", "forks", "contributors")
+            for metric in ("stars", "forks", "watchers", "contributors")
         },
         "commit_activity": commit_activity,
         "observed_at": max(observed_values, default=None),
     }
 
 
-def record_signals(connection: sqlite3.Connection, record_id: str) -> dict[str, Any]:
+def record_signals(connection: Connection, record_id: str) -> dict[str, Any]:
     repository_ids = [
         item["repository_id"]
         for item in rows(
@@ -113,19 +119,23 @@ def record_signals(connection: sqlite3.Connection, record_id: str) -> dict[str, 
     if not repository_ids:
         return {
             "repository_count": 0,
-            "metrics": {metric: 0 for metric in ("stars", "forks", "contributors", "commits")},
-            "history": {metric: [] for metric in ("stars", "forks", "contributors")},
+            "metrics": {
+                metric: 0 for metric in ("stars", "forks", "watchers", "contributors", "commits")
+            },
+            "history": {
+                metric: [] for metric in ("stars", "forks", "watchers", "contributors")
+            },
             "commit_activity": [],
             "observed_at": None,
         }
     signals = [repository_signals(connection, repository_id) for repository_id in repository_ids]
-    snapshot_rows = rows(
+    snapshot_rows = analytics_rows(
         connection,
         """
         SELECT metric, value, observed_at
           FROM metric_observations
          WHERE subject_kind = 'record' AND subject_id = ?
-           AND metric IN ('stars', 'forks', 'contributors', 'commits')
+           AND metric IN ('stars', 'forks', 'watchers', 'contributors', 'commits')
            AND period_start IS NULL
       ORDER BY observed_at
         """,
@@ -142,16 +152,16 @@ def record_signals(connection: sqlite3.Connection, record_id: str) -> dict[str, 
         }
     metrics = {
         metric: metric_number(latest.get(metric, {}).get("value"))
-        for metric in ("stars", "forks", "contributors", "commits")
+        for metric in ("stars", "forks", "watchers", "contributors", "commits")
     }
     if not snapshot_rows:
         metrics = {
             metric: sum(signal["metrics"][metric] for signal in signals)
-            for metric in ("stars", "forks", "contributors", "commits")
+            for metric in ("stars", "forks", "watchers", "contributors", "commits")
         }
     history = {
         metric: list(by_metric_day[metric].values())[-30:]
-        for metric in ("stars", "forks", "contributors")
+        for metric in ("stars", "forks", "watchers", "contributors")
     }
     commit_days: dict[str, int | float] = defaultdict(int)
     for signal in signals:
@@ -255,7 +265,7 @@ def record_collection(
          LEFT JOIN record_repositories rr ON rr.record_id = r.id
          LEFT JOIN record_resources rs ON rs.record_id = r.id
              WHERE r.record_type = ? AND r.visibility = 'public'
-          GROUP BY r.id
+          GROUP BY r.id, o.id
           ORDER BY r.featured DESC, r.title COLLATE NOCASE
             """,
             (record_type,),
@@ -372,6 +382,174 @@ def organization_detail(
     )
 
 
+def catalog_resource_detail(
+    database_path: str | Path,
+    request: Request,
+    resource_kind: str,
+    route_key: str,
+) -> JSONResponse | Response:
+    table = {"package": "packages", "release": "releases", "resource": "resources"}.get(
+        resource_kind
+    )
+    if table is None:
+        return JSONResponse({"detail": "Unsupported catalog resource"}, status_code=404)
+    with connect(database_path) as connection:
+        item_row = connection.execute(
+            f"SELECT * FROM {table} WHERE route_key = ?", (route_key,)
+        ).fetchone()
+        if item_row is None:
+            return JSONResponse(
+                {"detail": "Catalog resource not found", "route_key": route_key},
+                status_code=404,
+                headers={"Cache-Control": "public, max-age=30"},
+            )
+        item = dict(item_row)
+        legal = rows(
+            connection,
+            """
+            SELECT evidence_kind, name, expression, path, url, scope,
+                   evidence_type, observed_at
+              FROM legal_evidence
+             WHERE subject_kind = ? AND subject_id = ?
+          ORDER BY scope, evidence_kind, name
+            """,
+            (resource_kind, item["id"]),
+        )
+        parent: dict[str, Any] | None = None
+        legal_source = {"kind": resource_kind, "id": item["id"]}
+        implementation: dict[str, Any] = {}
+        if resource_kind == "package":
+            repositories = rows(
+                connection,
+                """
+                SELECT repo.id, repo.owner, repo.name, repo.url, pr.path
+                  FROM repositories repo JOIN package_repositories pr
+                    ON pr.repository_id = repo.id
+                 WHERE pr.package_id = ? ORDER BY repo.owner, repo.name
+                """,
+                (item["id"],),
+            )
+            releases = rows(
+                connection,
+                """
+                SELECT release_kind, version, route_key, url, published_at, downloads,
+                       prerelease, draft, observed_at
+                  FROM releases WHERE package_id = ?
+              ORDER BY COALESCE(published_at, observed_at) DESC LIMIT 100
+                """,
+                (item["id"],),
+            )
+            dependencies = rows(
+                connection,
+                """
+                SELECT target_kind, target_id, requirement, scope, evidence_type,
+                       source_url, completeness, observed_at
+                  FROM dependencies WHERE source_kind = 'package' AND source_id = ?
+              ORDER BY scope, target_id LIMIT 300
+                """,
+                (item["id"],),
+            )
+            natural_key = f"{item['ecosystem']}:{item['name'].lower().replace('_', '-')}"
+            dependents = rows(
+                connection,
+                """
+                SELECT source_kind, source_id, requirement, scope, evidence_type,
+                       source_url, completeness, observed_at
+                  FROM dependencies WHERE target_id = ?
+              ORDER BY source_kind, source_id LIMIT 300
+                """,
+                (natural_key,),
+            )
+            downloads = analytics_rows(
+                connection,
+                """
+                SELECT value, observed_at FROM metric_observations
+                 WHERE subject_kind = 'package' AND subject_id = ? AND metric = 'downloads'
+              ORDER BY observed_at DESC LIMIT 1
+                """,
+                (item["id"],),
+            )
+            implementation = {
+                "repositories": repositories,
+                "releases": releases,
+                "dependencies": dependencies,
+                "dependents": dependents,
+                "downloads": downloads[0] if downloads else None,
+            }
+        elif resource_kind == "release":
+            if item.get("package_id"):
+                parent_row = connection.execute(
+                    "SELECT id, ecosystem, name, route_key, registry_url "
+                    "FROM packages WHERE id = ?",
+                    (item["package_id"],),
+                ).fetchone()
+                parent = dict(parent_row) if parent_row else None
+            elif item.get("repository_id"):
+                parent_row = connection.execute(
+                    "SELECT id, owner, name, url FROM repositories WHERE id = ?",
+                    (item["repository_id"],),
+                ).fetchone()
+                parent = dict(parent_row) if parent_row else None
+            if not legal and parent:
+                parent_kind = "package" if item.get("package_id") else "repository"
+                legal = rows(
+                    connection,
+                    """
+                    SELECT evidence_kind, name, expression, path, url, scope,
+                           evidence_type, observed_at
+                      FROM legal_evidence
+                     WHERE subject_kind = ? AND subject_id = ?
+                  ORDER BY scope, evidence_kind, name
+                    """,
+                    (parent_kind, parent["id"]),
+                )
+                legal_source = {"kind": parent_kind, "id": parent["id"]}
+        else:
+            if item.get("repository_id"):
+                parent_row = connection.execute(
+                    "SELECT id, owner, name, url, description FROM repositories WHERE id = ?",
+                    (item["repository_id"],),
+                ).fetchone()
+                parent = dict(parent_row) if parent_row else None
+            if not legal and parent:
+                legal = rows(
+                    connection,
+                    """
+                    SELECT evidence_kind, name, expression, path, url, scope,
+                           evidence_type, observed_at
+                      FROM legal_evidence
+                     WHERE subject_kind = 'repository' AND subject_id = ?
+                  ORDER BY scope, evidence_kind, name
+                    """,
+                    (parent["id"],),
+                )
+                legal_source = {"kind": "repository", "id": parent["id"]}
+    return cacheable_json(
+        request,
+        {
+            "kind": f"catalog_{resource_kind}_record",
+            "resource_type": (
+                item.get("resource_type")
+                or item.get("release_kind")
+                or item.get("ecosystem")
+            ),
+            "item": item,
+            "parent": parent,
+            "implementation": implementation,
+            "legal": {
+                "license_expression": item.get("license_expression"),
+                "status": item.get("license_status") or ("observed" if legal else "not-observed"),
+                "evidence": legal,
+                "inherited_from": legal_source if legal_source["kind"] != resource_kind else None,
+                "notice": (
+                    "License and notice data reports observed metadata and files; "
+                    "it is not legal advice."
+                ),
+            },
+        },
+    )
+
+
 def record_detail(
     database_path: Path,
     request: Request,
@@ -429,29 +607,12 @@ def record_detail(
         for repository in repositories:
             repository["is_archived"] = bool(repository["is_archived"])
             repository["is_fork"] = bool(repository["is_fork"])
-            repository["metrics"] = {
-                item["metric"]: item["value"]
-                for item in rows(
-                    connection,
-                    """
-                    SELECT mo.metric, mo.value FROM metric_observations mo
-                    JOIN (
-                        SELECT metric, MAX(observed_at) AS observed_at
-                        FROM metric_observations
-                        WHERE subject_kind = 'repository' AND subject_id = ?
-                        GROUP BY metric
-                    ) latest ON latest.metric = mo.metric AND latest.observed_at = mo.observed_at
-                    WHERE mo.subject_kind = 'repository' AND mo.subject_id = ?
-                    """,
-                    (repository["id"], repository["id"]),
-                )
-            }
             repository.update(repository_signals(connection, repository["id"]))
         packages = rows(
             connection,
             """
             SELECT p.id, p.ecosystem, p.name, p.registry_url, p.description,
-                   p.source_url, p.manifest_path, p.latest_version, p.published,
+                   p.route_key, p.source_url, p.manifest_path, p.latest_version, p.published,
                    p.publication_status, p.published_at, p.observed_at, rp.role,
                    (SELECT COUNT(*) FROM releases rel WHERE rel.package_id = p.id)
                        AS release_count,
@@ -460,11 +621,7 @@ def record_detail(
                        AS dependency_count,
                    (SELECT COUNT(*) FROM dependencies dep
                      WHERE dep.target_id = p.ecosystem || ':' || REPLACE(LOWER(p.name), '_', '-'))
-                       AS dependent_count,
-                   (SELECT mo.value FROM metric_observations mo
-                     WHERE mo.subject_kind = 'package' AND mo.subject_id = p.id
-                       AND mo.metric = 'downloads'
-                     ORDER BY mo.observed_at DESC LIMIT 1) AS downloads
+                       AS dependent_count
               FROM packages p JOIN record_packages rp ON rp.package_id = p.id
              WHERE rp.record_id = ? ORDER BY p.ecosystem, p.name COLLATE NOCASE
             """,
@@ -474,10 +631,22 @@ def record_detail(
             package["published"] = (
                 bool(package["published"]) if package["published"] is not None else None
             )
+            download_rows = analytics_rows(
+                connection,
+                """
+                SELECT value FROM metric_observations
+                 WHERE subject_kind = 'package' AND subject_id = ? AND metric = 'downloads'
+              ORDER BY observed_at DESC LIMIT 1
+                """,
+                (package["id"],),
+            )
+            package["downloads"] = (
+                metric_number(download_rows[0]["value"]) if download_rows else None
+            )
         resources = rows(
             connection,
             """
-            SELECT rs.id, rs.resource_type, rs.title, rs.url, rs.summary,
+            SELECT rs.id, rs.resource_type, rs.route_key, rs.title, rs.url, rs.summary,
                    rs.observed_at, rr.role
               FROM resources rs JOIN record_resources rr ON rr.resource_id = rs.id
              WHERE rr.record_id = ? ORDER BY rr.role, rr.sort_order, rs.title COLLATE NOCASE
@@ -487,7 +656,7 @@ def record_detail(
         releases = rows(
             connection,
             """
-            SELECT rel.id, rel.release_kind, rel.version, rel.url, rel.published_at,
+            SELECT rel.id, rel.release_kind, rel.route_key, rel.version, rel.url, rel.published_at,
                    rel.downloads, rel.prerelease, rel.draft, rel.observed_at,
                    rel.package_id, rel.repository_id, p.name AS package_name,
                    p.ecosystem, repo.owner AS repository_owner,
@@ -646,6 +815,7 @@ def record_detail(
             """,
             (record["id"],),
         )
+        signals = record_signals(connection, record["id"])
     return cacheable_json(
         request,
         {
@@ -672,7 +842,7 @@ def record_detail(
                         "complete global npm or PyPI dependent count."
                     ),
                 },
-                "signals": record_signals(connection, record["id"]),
+                "signals": signals,
             },
             "relations": relations,
             "governance": {

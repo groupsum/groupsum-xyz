@@ -11,7 +11,7 @@ from .importer import import_catalog
 
 def main() -> None:
     settings = Settings.from_environment()
-    import_catalog(settings.database_path, Path("/app"))
+    import_catalog(settings.database_url, Path("/app"), settings.analytics_path)
     uvicorn.run(app, host="0.0.0.0", port=8000, proxy_headers=True, forwarded_allow_ips="*")
 
 

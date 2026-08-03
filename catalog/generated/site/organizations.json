@@ -8,7 +8,7 @@
     "evidence": [
       {
         "kind": "organization",
-        "observed_at": "2026-08-03T13:56:23Z",
+        "observed_at": "2026-08-03T17:22:36Z",
         "url": "https://github.com/bucketwarden"
       }
     ],
@@ -18,7 +18,7 @@
     "id": "organization:bucketwarden",
     "kind": "organization",
     "login": "bucketwarden",
-    "observed_at": "2026-08-03T13:56:23Z",
+    "observed_at": "2026-08-03T17:22:36Z",
     "package_count": 0,
     "package_releases": 0,
     "relationships": 0,
@@ -30,15 +30,15 @@
     "watchers": 0
   },
   {
-    "commits": 2184,
+    "commits": 2194,
     "contributors": 2,
-    "deployments": 572,
+    "deployments": 584,
     "description": "Public source, packages, and delivery records maintained by Groupsum.",
     "display_name": "Groupsum",
     "evidence": [
       {
         "kind": "organization",
-        "observed_at": "2026-08-03T13:56:23Z",
+        "observed_at": "2026-08-03T17:22:36Z",
         "url": "https://github.com/groupsum"
       }
     ],
@@ -217,10 +217,10 @@
     "id": "organization:groupsum",
     "kind": "organization",
     "login": "groupsum",
-    "observed_at": "2026-08-03T13:56:23Z",
-    "package_count": 151,
+    "observed_at": "2026-08-03T17:22:36Z",
+    "package_count": 152,
     "package_releases": 572,
-    "relationships": 1217,
+    "relationships": 1229,
     "repository_count": 37,
     "role": "primary",
     "route": "/products/groupsum",
@@ -248,7 +248,7 @@
     "evidence": [
       {
         "kind": "organization",
-        "observed_at": "2026-08-03T13:56:23Z",
+        "observed_at": "2026-08-03T17:22:36Z",
         "url": "https://github.com/swarmauri"
       }
     ],
@@ -427,7 +427,7 @@
     "id": "organization:swarmauri",
     "kind": "organization",
     "login": "swarmauri",
-    "observed_at": "2026-08-03T13:56:23Z",
+    "observed_at": "2026-08-03T17:22:36Z",
     "package_count": 389,
     "package_releases": 7372,
     "relationships": 5671,
@@ -465,7 +465,7 @@
     "evidence": [
       {
         "kind": "organization",
-        "observed_at": "2026-08-03T13:56:23Z",
+        "observed_at": "2026-08-03T17:22:36Z",
         "url": "https://github.com/tigrbl"
       }
     ],
@@ -644,10 +644,10 @@
     "id": "organization:tigrbl",
     "kind": "organization",
     "login": "tigrbl",
-    "observed_at": "2026-08-03T13:56:23Z",
+    "observed_at": "2026-08-03T17:22:36Z",
     "package_count": 584,
     "package_releases": 1835,
-    "relationships": 4067,
+    "relationships": 4069,
     "repository_count": 15,
     "role": "ecosystem",
     "route": "/products/tigrbl",

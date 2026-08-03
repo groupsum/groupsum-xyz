@@ -23,14 +23,16 @@ type CatalogRecord = Record<string, unknown> & {
   claim_boundary?: string;
   metrics?: Record<string, number>;
   evidence?: Array<{ kind?: string; url?: string; observed_at?: string }>;
+  legal_evidence?: Array<Record<string, unknown>>;
 };
 
-const datasetOrder = ["repositories", "packages", "technologies"] as const;
+const datasetOrder = ["repositories", "packages", "resources", "technologies"] as const;
 type DatasetName = (typeof datasetOrder)[number];
 
 const labels: Record<DatasetName, string> = {
   repositories: "Repositories",
   packages: "Packages",
+  resources: "APIs, demos & examples",
   technologies: "Technologies",
 };
 
@@ -115,7 +117,15 @@ function RelationshipRows({ values }: { values: unknown }) {
   return <DetailRows rows={Object.entries(relationships).map(([key, value]) => [humanLabel(key), Number(value).toLocaleString()])} />;
 }
 
-function RepositoryDetail({ record }: { record: CatalogRecord }) {
+function LegalSection({ record }: { record: CatalogRecord }) {
+  const legal = valueRecords(record.legal_evidence);
+  return <DetailSection title="License and notices" intro="Observed metadata and repository files are reported as evidence, not legal advice.">
+    <DetailRows rows={[["License expression", String(record.license_expression || record.license || "Not observed")], ["Evidence status", humanLabel(String(record.license_status || (legal.length ? "observed" : "not observed")))]]} />
+    {legal.length > 0 ? <ul className="border-y border-[var(--color-border-soft)] divide-y divide-[var(--color-border-soft)]">{legal.map((item, index) => <li key={`${String(item.url)}-${index}`} className="py-3 sm:flex sm:justify-between gap-4"><div><span className="text-[10px] font-mono uppercase text-accent">{humanLabel(String(item.kind || "legal evidence"))} · {humanLabel(String(item.scope || "direct"))}</span><p className="text-sm text-ink">{String(item.name || item.path || "License or notice")}</p>{item.expression && <p className="text-xs text-ink-muted mt-1">{String(item.expression)}</p>}</div>{item.url && <a href={String(item.url)} target="_blank" rel="noreferrer" className="text-xs font-mono text-accent hover:underline shrink-0">View evidence</a>}</li>)}</ul> : <p className="text-sm text-ink-muted">No license or notice evidence was observed for this resource.</p>}
+  </DetailSection>;
+}
+
+function RepositoryDetail({ record, onNavigate }: { record: CatalogRecord; onNavigate: (path: string) => void }) {
   const commit = valueRecord(record.latest_commit);
   const release = valueRecord(record.latest_release);
   const deployment = valueRecord(record.latest_deployment);
@@ -157,14 +167,15 @@ function RepositoryDetail({ record }: { record: CatalogRecord }) {
       </DetailSection>
       {resources.length > 0 && <DetailSection title="Related resources" intro="Source-backed APIs, demos, documentation, examples, showcases, UIs, and websites attached to this repository.">
         <ul className="border-y border-[var(--color-border-soft)] divide-y divide-[var(--color-border-soft)]">
-          {resources.map((resource) => <li key={String(resource.id)} className="py-3 sm:flex sm:items-baseline sm:justify-between gap-5"><div><span className="text-[10px] font-mono uppercase text-accent">{humanLabel(String(resource.kind || "resource"))}</span><p className="text-sm text-ink break-all">{String(resource.name || "Related resource")}</p></div>{resource.url && <a href={String(resource.url)} target="_blank" rel="noreferrer" className="text-xs font-mono text-accent hover:underline inline-flex items-center gap-1 mt-1 sm:mt-0">Open resource <ExternalLink className="w-3.5 h-3.5" /></a>}</li>)}
+          {resources.map((resource) => <li key={String(resource.id)} className="py-3 sm:flex sm:items-baseline sm:justify-between gap-5"><div><span className="text-[10px] font-mono uppercase text-accent">{humanLabel(String(resource.kind || "resource"))}</span><p className="text-sm text-ink break-all">{String(resource.name || "Related resource")}</p></div><div className="flex gap-3">{resource.route && <button onClick={() => onNavigate(String(resource.route))} className="text-xs font-mono text-accent hover:underline cursor-pointer">View details</button>}{resource.url && <a href={String(resource.url)} target="_blank" rel="noreferrer" className="text-xs font-mono text-accent hover:underline inline-flex items-center gap-1">Source <ExternalLink className="w-3.5 h-3.5" /></a>}</div></li>)}
         </ul>
       </DetailSection>}
+      <LegalSection record={record} />
     </>
   );
 }
 
-function PackageDetail({ record }: { record: CatalogRecord }) {
+function PackageDetail({ record, onNavigate }: { record: CatalogRecord; onNavigate: (path: string) => void }) {
   const registryLink = record.registry_url ? <a href={String(record.registry_url)} target="_blank" rel="noreferrer" className="text-accent hover:underline">{String(record.registry_url)}</a> : "Not confirmed";
   const sourceLink = record.source_url ? <a href={String(record.source_url)} target="_blank" rel="noreferrer" className="text-accent hover:underline">View manifest</a> : "Not recorded";
   return (
@@ -194,8 +205,30 @@ function PackageDetail({ record }: { record: CatalogRecord }) {
       <DetailSection title="Relationships" intro="Dependency and containment relationships are summarized by observed type.">
         <RelationshipRows values={record.relationship_counts} />
       </DetailSection>
+      {valueRecords(record.releases).length > 0 && <DetailSection title="Release history" intro="Each registry or GitHub release has a typed evidence record."><ul className="border-y border-[var(--color-border-soft)] divide-y divide-[var(--color-border-soft)]">{valueRecords(record.releases).slice(0, 100).map((release) => <li key={String(release.id)} className="py-3 flex items-baseline justify-between gap-4"><div><span className="text-[10px] font-mono uppercase text-accent">{humanLabel(String(release.release_kind || "release"))}</span><p className="text-sm text-ink">{String(release.version || "Unversioned release")}</p></div>{release.route && <button onClick={() => onNavigate(String(release.route))} className="text-xs font-mono text-accent hover:underline cursor-pointer">View release</button>}</li>)}</ul></DetailSection>}
+      <LegalSection record={record} />
     </>
   );
+}
+
+function ResourceDetail({ record }: { record: CatalogRecord }) {
+  return <>
+    <DetailSection title={`${humanLabel(String(record.resource_type || "resource"))} overview`} intro="This is a typed implementation-evidence resource attached to its parent repository or product.">
+      <DetailRows rows={[["Resource type", humanLabel(String(record.resource_type || "resource"))], ["Repository", String(record.repository || "Not linked")], ["Repository path", String(record.path || "Not recorded")], ["Evidence type", humanLabel(String(record.evidence_type || "source"))]]} />
+    </DetailSection>
+    <LegalSection record={record} />
+  </>;
+}
+
+function ReleaseDetail({ record, onNavigate }: { record: CatalogRecord; onNavigate: (path: string) => void }) {
+  const parent = valueRecord(record.parent);
+  return <>
+    <DetailSection title="Release evidence" intro="Version, publication, download, and status fields are registry- or GitHub-observed facts.">
+      <DetailRows rows={[["Release kind", humanLabel(String(record.release_kind || record.resource_type || "release"))], ["Version", String(record.version || "Not recorded")], ["Published", formatDate(record.published_at as string | undefined)], ["Downloads", typeof record.downloads === "number" ? record.downloads.toLocaleString() : "Not reported"], ["Prerelease", record.prerelease ? "Yes" : "No"], ["Draft", record.draft ? "Yes" : "No"]]} />
+      {parent.route_key && <button onClick={() => onNavigate(`/catalog/packages/${String(parent.ecosystem)}/${String(parent.route_key)}`)} className="text-xs font-mono text-accent hover:underline cursor-pointer">View parent package</button>}
+    </DetailSection>
+    <LegalSection record={record} />
+  </>;
 }
 
 function TechnologyDetail({ record }: { record: CatalogRecord }) {
@@ -400,13 +433,36 @@ export function PublicCatalogExplorer({ onNavigate, compact = false }: { onNavig
 
 export function PublicCatalogDetail({ path, onNavigate }: { path: string; onNavigate: (path: string) => void }) {
   const segments = path.split(/[?#]/)[0].split("/").filter(Boolean);
-  const dataset = segments[1] as DatasetName;
+  const dataset = segments[1] as DatasetName | "releases";
   const normalizedPath = `/${segments.join("/")}`;
   const [record, setRecord] = useState<CatalogRecord | null>(null);
   const [state, setState] = useState<"loading" | "ready" | "missing" | "error">("loading");
 
   useEffect(() => {
-    if (!datasetOrder.includes(dataset)) {
+    if (dataset === "releases") {
+      const controller = new AbortController();
+      const routeKey = segments.at(-1) || "";
+      fetch(`/api/v1/catalog/releases/${encodeURIComponent(routeKey)}`, { signal: controller.signal })
+        .then((response) => { if (!response.ok) throw new Error(`catalog response ${response.status}`); return response.json(); })
+        .then((model: Record<string, unknown>) => {
+          const item = valueRecord(model.item);
+          const legal = valueRecord(model.legal);
+          setRecord({
+            ...item,
+            id: String(item.id || routeKey),
+            kind: "release",
+            resource_type: model.resource_type,
+            parent: model.parent,
+            legal_evidence: valueRecords(legal.evidence),
+            license_expression: legal.license_expression,
+            license_status: legal.status,
+          } as CatalogRecord);
+          setState("ready");
+        })
+        .catch((error: Error) => { if (error.name !== "AbortError") setState(error.message.includes("404") ? "missing" : "error"); });
+      return () => controller.abort();
+    }
+    if (!datasetOrder.includes(dataset as DatasetName)) {
       setState("missing");
       return;
     }
@@ -423,7 +479,7 @@ export function PublicCatalogDetail({ path, onNavigate }: { path: string; onNavi
       })
       .catch((error: Error) => { if (error.name !== "AbortError") setState("error"); });
     return () => controller.abort();
-  }, [dataset, normalizedPath]);
+  }, [dataset, normalizedPath, path]);
 
   if (state === "loading") return <div className="max-w-3xl mx-auto px-4 py-20 text-sm text-ink-muted" role="status">Loading generated catalog record…</div>;
   if (state !== "ready" || !record) return <div className="max-w-3xl mx-auto px-4 py-20 space-y-4"><h1 className="font-serif text-3xl font-bold text-ink">Catalog record unavailable</h1><p className="text-sm text-ink-muted">{state === "error" ? "The generated catalog could not be loaded. Please try again shortly." : "The route is not present in the current generated public dataset."}</p><button onClick={() => onNavigate("/catalog")} className="text-xs font-mono text-accent hover:underline cursor-pointer">Return to public catalog</button></div>;
@@ -445,8 +501,10 @@ export function PublicCatalogDetail({ path, onNavigate }: { path: string; onNavi
         </div>
       </header>
       {record.claim_boundary && <aside className="border-l-2 border-accent pl-4 py-1 text-sm text-ink-muted leading-relaxed"><strong className="text-ink block mb-1">Evidence boundary</strong>{String(record.claim_boundary)}</aside>}
-      {record.kind === "repository" && <RepositoryDetail record={record} />}
-      {record.kind === "package" && <PackageDetail record={record} />}
+      {record.kind === "repository" && <RepositoryDetail record={record} onNavigate={onNavigate} />}
+      {record.kind === "package" && <PackageDetail record={record} onNavigate={onNavigate} />}
+      {record.kind === "resource" && <ResourceDetail record={record} />}
+      {record.kind === "release" && <ReleaseDetail record={record} onNavigate={onNavigate} />}
       {record.kind === "technology" && <TechnologyDetail record={record} />}
       {record.evidence && record.evidence.length > 0 && <DetailSection title="Evidence"><ul className="divide-y divide-[var(--color-border-soft)] border-y border-[var(--color-border-soft)]">{record.evidence.map((item, index) => <li key={`${item.url || item.kind}-${index}`} className="py-3 text-sm">{item.url ? <a href={item.url} target="_blank" rel="noreferrer" className="text-accent hover:underline inline-flex items-center gap-1">{humanLabel(item.kind || "source")}<ExternalLink className="w-3.5 h-3.5" /></a> : <span className="text-ink-muted">{humanLabel(item.kind || "source")} · observed {formatDate(item.observed_at)}</span>}</li>)}</ul></DetailSection>}
     </article>

@@ -1469,6 +1469,350 @@
         "title": "FeatureGroupByResponse",
         "type": "object"
       },
+      "LegalEvidenceCountResponse": {
+        "description": "Tigrbl v3 LegalEvidence count schema",
+        "properties": {
+          "evidence_kind": {
+            "title": "Evidence Kind",
+            "type": "string"
+          },
+          "evidence_type": {
+            "title": "Evidence Type",
+            "type": "string"
+          },
+          "expression": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Expression"
+          },
+          "id": {
+            "default": null,
+            "title": "Id",
+            "type": "string"
+          },
+          "name": {
+            "title": "Name",
+            "type": "string"
+          },
+          "observed_at": {
+            "anyOf": [
+              {
+                "format": "date-time",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Observed At"
+          },
+          "path": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Path"
+          },
+          "scope": {
+            "default": null,
+            "title": "Scope",
+            "type": "string"
+          },
+          "subject_id": {
+            "title": "Subject Id",
+            "type": "string"
+          },
+          "subject_kind": {
+            "title": "Subject Kind",
+            "type": "string"
+          },
+          "url": {
+            "title": "Url",
+            "type": "string"
+          }
+        },
+        "required": [
+          "subject_kind",
+          "subject_id",
+          "evidence_kind",
+          "name",
+          "url",
+          "evidence_type"
+        ],
+        "title": "LegalEvidenceCountResponse",
+        "type": "object"
+      },
+      "LegalEvidenceExistsResponse": {
+        "description": "Tigrbl v3 LegalEvidence exists schema",
+        "properties": {
+          "evidence_kind": {
+            "title": "Evidence Kind",
+            "type": "string"
+          },
+          "evidence_type": {
+            "title": "Evidence Type",
+            "type": "string"
+          },
+          "expression": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Expression"
+          },
+          "id": {
+            "default": null,
+            "title": "Id",
+            "type": "string"
+          },
+          "name": {
+            "title": "Name",
+            "type": "string"
+          },
+          "observed_at": {
+            "anyOf": [
+              {
+                "format": "date-time",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Observed At"
+          },
+          "path": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Path"
+          },
+          "scope": {
+            "default": null,
+            "title": "Scope",
+            "type": "string"
+          },
+          "subject_id": {
+            "title": "Subject Id",
+            "type": "string"
+          },
+          "subject_kind": {
+            "title": "Subject Kind",
+            "type": "string"
+          },
+          "url": {
+            "title": "Url",
+            "type": "string"
+          }
+        },
+        "required": [
+          "subject_kind",
+          "subject_id",
+          "evidence_kind",
+          "name",
+          "url",
+          "evidence_type"
+        ],
+        "title": "LegalEvidenceExistsResponse",
+        "type": "object"
+      },
+      "LegalEvidenceGroupByRequest": {
+        "description": "Tigrbl v3 LegalEvidence group_by schema",
+        "properties": {
+          "evidence_kind": {
+            "title": "Evidence Kind",
+            "type": "string"
+          },
+          "evidence_type": {
+            "title": "Evidence Type",
+            "type": "string"
+          },
+          "expression": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Expression"
+          },
+          "id": {
+            "default": null,
+            "title": "Id",
+            "type": "string"
+          },
+          "name": {
+            "title": "Name",
+            "type": "string"
+          },
+          "observed_at": {
+            "anyOf": [
+              {
+                "format": "date-time",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Observed At"
+          },
+          "path": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Path"
+          },
+          "scope": {
+            "default": null,
+            "title": "Scope",
+            "type": "string"
+          },
+          "subject_id": {
+            "title": "Subject Id",
+            "type": "string"
+          },
+          "subject_kind": {
+            "title": "Subject Kind",
+            "type": "string"
+          },
+          "url": {
+            "title": "Url",
+            "type": "string"
+          }
+        },
+        "required": [
+          "subject_kind",
+          "subject_id",
+          "evidence_kind",
+          "name",
+          "url",
+          "evidence_type"
+        ],
+        "title": "LegalEvidenceGroupByRequest",
+        "type": "object"
+      },
+      "LegalEvidenceGroupByResponse": {
+        "description": "Tigrbl v3 LegalEvidence group_by schema",
+        "properties": {
+          "evidence_kind": {
+            "title": "Evidence Kind",
+            "type": "string"
+          },
+          "evidence_type": {
+            "title": "Evidence Type",
+            "type": "string"
+          },
+          "expression": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Expression"
+          },
+          "id": {
+            "default": null,
+            "title": "Id",
+            "type": "string"
+          },
+          "name": {
+            "title": "Name",
+            "type": "string"
+          },
+          "observed_at": {
+            "anyOf": [
+              {
+                "format": "date-time",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Observed At"
+          },
+          "path": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Path"
+          },
+          "scope": {
+            "default": null,
+            "title": "Scope",
+            "type": "string"
+          },
+          "subject_id": {
+            "title": "Subject Id",
+            "type": "string"
+          },
+          "subject_kind": {
+            "title": "Subject Kind",
+            "type": "string"
+          },
+          "url": {
+            "title": "Url",
+            "type": "string"
+          }
+        },
+        "required": [
+          "subject_kind",
+          "subject_id",
+          "evidence_kind",
+          "name",
+          "url",
+          "evidence_type"
+        ],
+        "title": "LegalEvidenceGroupByResponse",
+        "type": "object"
+      },
       "LimitationCountResponse": {
         "description": "Tigrbl v3 Limitation count schema",
         "properties": {
@@ -2061,6 +2405,30 @@
             "default": null,
             "title": "Latest Version"
           },
+          "license_expression": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "License Expression"
+          },
+          "license_status": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "License Status"
+          },
           "manifest_path": {
             "anyOf": [
               {
@@ -2130,6 +2498,18 @@
           "registry_url": {
             "title": "Registry Url",
             "type": "string"
+          },
+          "route_key": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Route Key"
           },
           "source_url": {
             "anyOf": [
@@ -2188,6 +2568,30 @@
             "default": null,
             "title": "Latest Version"
           },
+          "license_expression": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "License Expression"
+          },
+          "license_status": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "License Status"
+          },
           "manifest_path": {
             "anyOf": [
               {
@@ -2257,6 +2661,18 @@
           "registry_url": {
             "title": "Registry Url",
             "type": "string"
+          },
+          "route_key": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Route Key"
           },
           "source_url": {
             "anyOf": [
@@ -2315,6 +2731,30 @@
             "default": null,
             "title": "Latest Version"
           },
+          "license_expression": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "License Expression"
+          },
+          "license_status": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "License Status"
+          },
           "manifest_path": {
             "anyOf": [
               {
@@ -2384,6 +2824,18 @@
           "registry_url": {
             "title": "Registry Url",
             "type": "string"
+          },
+          "route_key": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Route Key"
           },
           "source_url": {
             "anyOf": [
@@ -2442,6 +2894,30 @@
             "default": null,
             "title": "Latest Version"
           },
+          "license_expression": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "License Expression"
+          },
+          "license_status": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "License Status"
+          },
           "manifest_path": {
             "anyOf": [
               {
@@ -2511,6 +2987,18 @@
           "registry_url": {
             "title": "Registry Url",
             "type": "string"
+          },
+          "route_key": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Route Key"
           },
           "source_url": {
             "anyOf": [
@@ -4573,6 +5061,18 @@
             "default": null,
             "title": "Repository Id"
           },
+          "route_key": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Route Key"
+          },
           "url": {
             "title": "Url",
             "type": "string"
@@ -4677,6 +5177,18 @@
             ],
             "default": null,
             "title": "Repository Id"
+          },
+          "route_key": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Route Key"
           },
           "url": {
             "title": "Url",
@@ -4783,6 +5295,18 @@
             "default": null,
             "title": "Repository Id"
           },
+          "route_key": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Route Key"
+          },
           "url": {
             "title": "Url",
             "type": "string"
@@ -4887,6 +5411,18 @@
             ],
             "default": null,
             "title": "Repository Id"
+          },
+          "route_key": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Route Key"
           },
           "url": {
             "title": "Url",
@@ -5135,6 +5671,18 @@
             "title": "Is Fork",
             "type": "boolean"
           },
+          "license_expression": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "License Expression"
+          },
           "name": {
             "title": "Name",
             "type": "string"
@@ -5227,6 +5775,18 @@
             "default": null,
             "title": "Is Fork",
             "type": "boolean"
+          },
+          "license_expression": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "License Expression"
           },
           "name": {
             "title": "Name",
@@ -5321,6 +5881,18 @@
             "title": "Is Fork",
             "type": "boolean"
           },
+          "license_expression": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "License Expression"
+          },
           "name": {
             "title": "Name",
             "type": "string"
@@ -5414,6 +5986,18 @@
             "title": "Is Fork",
             "type": "boolean"
           },
+          "license_expression": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "License Expression"
+          },
           "name": {
             "title": "Name",
             "type": "string"
@@ -5486,9 +6070,45 @@
             "default": null,
             "title": "Observed At"
           },
+          "path": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Path"
+          },
+          "repository_id": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Repository Id"
+          },
           "resource_type": {
             "title": "Resource Type",
             "type": "string"
+          },
+          "route_key": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Route Key"
           },
           "source_url": {
             "anyOf": [
@@ -5552,9 +6172,45 @@
             "default": null,
             "title": "Observed At"
           },
+          "path": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Path"
+          },
+          "repository_id": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Repository Id"
+          },
           "resource_type": {
             "title": "Resource Type",
             "type": "string"
+          },
+          "route_key": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Route Key"
           },
           "source_url": {
             "anyOf": [
@@ -5618,9 +6274,45 @@
             "default": null,
             "title": "Observed At"
           },
+          "path": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Path"
+          },
+          "repository_id": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Repository Id"
+          },
           "resource_type": {
             "title": "Resource Type",
             "type": "string"
+          },
+          "route_key": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Route Key"
           },
           "source_url": {
             "anyOf": [
@@ -5684,9 +6376,45 @@
             "default": null,
             "title": "Observed At"
           },
+          "path": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Path"
+          },
+          "repository_id": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Repository Id"
+          },
           "resource_type": {
             "title": "Resource Type",
             "type": "string"
+          },
+          "route_key": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Route Key"
           },
           "source_url": {
             "anyOf": [
@@ -5944,13 +6672,133 @@
     }
   },
   "info": {
-    "description": "Durable normalized implementation evidence and composed website content for groupsum.xyz.",
+    "description": "SQLite test fixture with DuckDB analytical metrics.",
     "title": "Groupsum Catalog API",
-    "version": "0.1.0"
+    "version": "0.2.0"
   },
   "jsonSchemaDialect": "https://json-schema.org/draft/2020-12/schema",
   "openapi": "3.1.0",
   "paths": {
+    "/api/v1/catalog/packages/{route_key}": {
+      "get": {
+        "operationId": "catalog_package",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "route_key",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        },
+        "summary": "Package catalog resource record",
+        "x-tigrbl-auth": {
+          "policy": "public-by-default",
+          "public": true,
+          "security": []
+        },
+        "x-tigrbl-surface": {
+          "binding": {
+            "exchange": "request_response",
+            "family": "request",
+            "framing": "json",
+            "framingSpec": "JsonFramingSpec",
+            "methods": [
+              "GET"
+            ],
+            "path": "/api/v1/catalog/packages/{route_key}",
+            "proto": "http.rest",
+            "rpcMethod": null
+          }
+        }
+      }
+    },
+    "/api/v1/catalog/releases/{route_key}": {
+      "get": {
+        "operationId": "catalog_release",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "route_key",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        },
+        "summary": "Release catalog resource record",
+        "x-tigrbl-auth": {
+          "policy": "public-by-default",
+          "public": true,
+          "security": []
+        },
+        "x-tigrbl-surface": {
+          "binding": {
+            "exchange": "request_response",
+            "family": "request",
+            "framing": "json",
+            "framingSpec": "JsonFramingSpec",
+            "methods": [
+              "GET"
+            ],
+            "path": "/api/v1/catalog/releases/{route_key}",
+            "proto": "http.rest",
+            "rpcMethod": null
+          }
+        }
+      }
+    },
+    "/api/v1/catalog/resources/{route_key}": {
+      "get": {
+        "operationId": "catalog_resource",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "route_key",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        },
+        "summary": "Typed catalog resource record",
+        "x-tigrbl-auth": {
+          "policy": "public-by-default",
+          "public": true,
+          "security": []
+        },
+        "x-tigrbl-surface": {
+          "binding": {
+            "exchange": "request_response",
+            "family": "request",
+            "framing": "json",
+            "framingSpec": "JsonFramingSpec",
+            "methods": [
+              "GET"
+            ],
+            "path": "/api/v1/catalog/resources/{route_key}",
+            "proto": "http.rest",
+            "rpcMethod": null
+          }
+        }
+      }
+    },
     "/api/v1/insights": {
       "get": {
         "operationId": "insights",
@@ -8165,6 +9013,364 @@
         }
       }
     },
+    "/legalevidence": {
+      "get": {
+        "operationId": "LegalEvidence.count",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "id",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "subject_kind",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "subject_id",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "evidence_kind",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "name",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "expression",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "path",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "url",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "scope",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "evidence_type",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "observed_at",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/LegalEvidenceCountResponse"
+                }
+              }
+            },
+            "description": "Successful Response"
+          }
+        },
+        "tags": [
+          "LegalEvidence"
+        ],
+        "x-tigrbl-auth": {
+          "policy": "public-by-default",
+          "public": true,
+          "security": []
+        },
+        "x-tigrbl-surface": {
+          "binding": {
+            "exchange": "request_response",
+            "family": "request",
+            "framing": "json",
+            "framingSpec": "JsonFramingSpec",
+            "methods": [
+              "GET"
+            ],
+            "path": "/legalevidence",
+            "proto": "http.rest",
+            "rpcMethod": null
+          },
+          "bindings": [
+            {
+              "exchange": "request_response",
+              "family": "request",
+              "framing": "json",
+              "framingSpec": "JsonFramingSpec",
+              "methods": [
+                "GET"
+              ],
+              "path": "/legalevidence",
+              "proto": "http.rest",
+              "rpcMethod": null
+            }
+          ],
+          "family": "crud"
+        }
+      },
+      "post": {
+        "operationId": "LegalEvidence.group_by",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/LegalEvidenceGroupByRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/LegalEvidenceGroupByResponse"
+                }
+              }
+            },
+            "description": "Successful Response"
+          }
+        },
+        "tags": [
+          "LegalEvidence"
+        ],
+        "x-tigrbl-auth": {
+          "policy": "public-by-default",
+          "public": true,
+          "security": []
+        },
+        "x-tigrbl-surface": {
+          "binding": {
+            "exchange": "request_response",
+            "family": "request",
+            "framing": "json",
+            "framingSpec": "JsonFramingSpec",
+            "methods": [
+              "POST"
+            ],
+            "path": "/legalevidence",
+            "proto": "http.rest",
+            "rpcMethod": null
+          },
+          "bindings": [
+            {
+              "exchange": "request_response",
+              "family": "request",
+              "framing": "json",
+              "framingSpec": "JsonFramingSpec",
+              "methods": [
+                "POST"
+              ],
+              "path": "/legalevidence",
+              "proto": "http.rest",
+              "rpcMethod": null
+            }
+          ],
+          "family": "crud"
+        }
+      }
+    },
+    "/legalevidence/{item_id}": {
+      "get": {
+        "operationId": "LegalEvidence.exists",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "item_id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "id",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "subject_kind",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "subject_id",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "evidence_kind",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "name",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "expression",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "path",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "url",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "scope",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "evidence_type",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "observed_at",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/LegalEvidenceExistsResponse"
+                }
+              }
+            },
+            "description": "Successful Response"
+          }
+        },
+        "tags": [
+          "LegalEvidence"
+        ],
+        "x-tigrbl-auth": {
+          "policy": "public-by-default",
+          "public": true,
+          "security": []
+        },
+        "x-tigrbl-surface": {
+          "binding": {
+            "exchange": "request_response",
+            "family": "request",
+            "framing": "json",
+            "framingSpec": "JsonFramingSpec",
+            "methods": [
+              "GET"
+            ],
+            "path": "/legalevidence/{item_id}",
+            "proto": "http.rest",
+            "rpcMethod": null
+          },
+          "bindings": [
+            {
+              "exchange": "request_response",
+              "family": "request",
+              "framing": "json",
+              "framingSpec": "JsonFramingSpec",
+              "methods": [
+                "GET"
+              ],
+              "path": "/legalevidence/{item_id}",
+              "proto": "http.rest",
+              "rpcMethod": null
+            }
+          ],
+          "family": "crud"
+        }
+      }
+    },
     "/limitation": {
       "get": {
         "operationId": "Limitation.count",
@@ -8839,6 +10045,30 @@
           },
           {
             "in": "query",
+            "name": "route_key",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "license_expression",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "license_status",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
             "name": "published_at",
             "required": false,
             "schema": {
@@ -9054,6 +10284,30 @@
           {
             "in": "query",
             "name": "publication_status",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "route_key",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "license_expression",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "license_status",
             "required": false,
             "schema": {
               "type": "string"
@@ -12119,6 +13373,14 @@
           },
           {
             "in": "query",
+            "name": "route_key",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
             "name": "url",
             "required": false,
             "schema": {
@@ -12333,6 +13595,14 @@
           },
           {
             "in": "query",
+            "name": "route_key",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
             "name": "url",
             "required": false,
             "schema": {
@@ -12513,6 +13783,14 @@
             "required": false,
             "schema": {
               "type": "boolean"
+            }
+          },
+          {
+            "in": "query",
+            "name": "license_expression",
+            "required": false,
+            "schema": {
+              "type": "string"
             }
           },
           {
@@ -12727,6 +14005,14 @@
             "required": false,
             "schema": {
               "type": "boolean"
+            }
+          },
+          {
+            "in": "query",
+            "name": "license_expression",
+            "required": false,
+            "schema": {
+              "type": "string"
             }
           },
           {
@@ -13089,6 +14375,30 @@
           },
           {
             "in": "query",
+            "name": "route_key",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "repository_id",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "path",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
             "name": "title",
             "required": false,
             "schema": {
@@ -13264,6 +14574,30 @@
           {
             "in": "query",
             "name": "resource_type",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "route_key",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "repository_id",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "path",
             "required": false,
             "schema": {
               "type": "string"

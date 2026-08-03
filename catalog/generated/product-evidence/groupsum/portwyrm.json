@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-03T13:56:23Z",
+  "generated_at": "2026-08-03T17:22:36Z",
   "packages": [
     {
       "claim_boundary": "Publication is reported only when confirmed by the named public registry.",
@@ -126,16 +126,40 @@
       "evidence": [
         {
           "kind": "source",
-          "observed_at": "2026-08-03T13:56:23Z",
+          "observed_at": "2026-08-03T17:22:36Z",
           "url": "https://github.com/groupsum/portwyrm/blob/HEAD/frontend/package.json"
         }
       ],
       "id": "package:npm:portwyrm-uix:groupsum/portwyrm:frontend/package.json",
       "kind": "package",
       "latest_version": "0.1.0",
+      "legal_evidence": [
+        {
+          "evidence_type": "github.repository.license",
+          "expression": "Apache-2.0",
+          "kind": "license-expression",
+          "name": "GitHub detected license",
+          "path": null,
+          "scope": "inherited",
+          "url": "https://github.com/groupsum/portwyrm"
+        },
+        {
+          "evidence_type": "repository.tree",
+          "expression": null,
+          "kind": "license-file",
+          "name": "LICENSE",
+          "path": "LICENSE",
+          "scope": "inherited",
+          "url": "https://github.com/groupsum/portwyrm/blob/master/LICENSE"
+        }
+      ],
+      "legal_repository": "groupsum/portwyrm",
+      "license_classifiers": [],
+      "license_expression": "Apache-2.0",
+      "license_status": "observed",
       "manifest_path": "frontend/package.json",
       "name": "portwyrm-uix",
-      "observed_at": "2026-08-03T13:56:23Z",
+      "observed_at": "2026-08-03T17:22:36Z",
       "owner": "groupsum",
       "private": true,
       "publication_status": "manifest_private",
@@ -306,16 +330,56 @@
       "evidence": [
         {
           "kind": "registry",
-          "observed_at": "2026-08-03T13:56:23Z",
+          "observed_at": "2026-08-03T17:22:36Z",
           "url": "https://pypi.org/project/portwyrm/"
         }
       ],
       "id": "package:pypi:portwyrm:groupsum/portwyrm:pyproject.toml",
       "kind": "package",
       "latest_version": "0.1.0a4",
+      "legal_evidence": [
+        {
+          "evidence_type": "repository.manifest",
+          "expression": "Apache-2.0",
+          "kind": "license-expression",
+          "name": "Package manifest license",
+          "scope": "direct",
+          "url": "https://github.com/groupsum/portwyrm/blob/HEAD/pyproject.toml"
+        },
+        {
+          "evidence_type": "pypi.registry",
+          "expression": "Apache-2.0",
+          "kind": "license-expression",
+          "name": "Registry license metadata",
+          "scope": "direct",
+          "url": "https://pypi.org/project/portwyrm/"
+        },
+        {
+          "evidence_type": "github.repository.license",
+          "expression": "Apache-2.0",
+          "kind": "license-expression",
+          "name": "GitHub detected license",
+          "path": null,
+          "scope": "inherited",
+          "url": "https://github.com/groupsum/portwyrm"
+        },
+        {
+          "evidence_type": "repository.tree",
+          "expression": null,
+          "kind": "license-file",
+          "name": "LICENSE",
+          "path": "LICENSE",
+          "scope": "inherited",
+          "url": "https://github.com/groupsum/portwyrm/blob/master/LICENSE"
+        }
+      ],
+      "legal_repository": "groupsum/portwyrm",
+      "license_classifiers": [],
+      "license_expression": "Apache-2.0",
+      "license_status": "observed",
       "manifest_path": "pyproject.toml",
       "name": "portwyrm",
-      "observed_at": "2026-08-03T13:56:23Z",
+      "observed_at": "2026-08-03T17:22:36Z",
       "owner": "groupsum",
       "private": false,
       "publication_status": "published",
@@ -331,25 +395,43 @@
       "releases": [
         {
           "downloads": null,
-          "observed_at": "2026-08-03T13:56:23Z",
+          "id": "release:6db1e7f6b0320107",
+          "legal_evidence": [],
+          "legal_inherits_from": "package:pypi:portwyrm:groupsum/portwyrm:pyproject.toml",
+          "license_expression": "Apache-2.0",
+          "license_status": "observed",
+          "observed_at": "2026-08-03T17:22:36Z",
           "published_at": "2026-07-25T15:00:22.572323Z",
           "release_kind": "pypi",
+          "route": "/catalog/releases/pypi/portwyrm-c2c6eb0e55",
           "url": "https://pypi.org/project/portwyrm/0.1.0a4/",
           "version": "0.1.0a4"
         },
         {
           "downloads": null,
-          "observed_at": "2026-08-03T13:56:23Z",
+          "id": "release:d3de3c8ba2db7cc0",
+          "legal_evidence": [],
+          "legal_inherits_from": "package:pypi:portwyrm:groupsum/portwyrm:pyproject.toml",
+          "license_expression": "Apache-2.0",
+          "license_status": "observed",
+          "observed_at": "2026-08-03T17:22:36Z",
           "published_at": "2026-07-25T14:43:28.105314Z",
           "release_kind": "pypi",
+          "route": "/catalog/releases/pypi/portwyrm-6ee0f5269e",
           "url": "https://pypi.org/project/portwyrm/0.1.0a3/",
           "version": "0.1.0a3"
         },
         {
           "downloads": null,
-          "observed_at": "2026-08-03T13:56:23Z",
+          "id": "release:c018052e5dcb7635",
+          "legal_evidence": [],
+          "legal_inherits_from": "package:pypi:portwyrm:groupsum/portwyrm:pyproject.toml",
+          "license_expression": "Apache-2.0",
+          "license_status": "observed",
+          "observed_at": "2026-08-03T17:22:36Z",
           "published_at": "2026-07-24T04:54:38.472671Z",
           "release_kind": "pypi",
+          "route": "/catalog/releases/pypi/portwyrm-ca97c7de44",
           "url": "https://pypi.org/project/portwyrm/0.1.0a1/",
           "version": "0.1.0a1"
         }
@@ -501,7 +583,7 @@
     "evidence": [
       {
         "kind": "source",
-        "observed_at": "2026-08-03T13:56:24Z",
+        "observed_at": "2026-08-03T17:22:38Z",
         "url": "https://github.com/groupsum/portwyrm"
       }
     ],
@@ -511,20 +593,32 @@
       {
         "downloads": 0,
         "draft": false,
-        "observed_at": "2026-08-03T13:56:24Z",
+        "id": "release:00ecb3ba1861c697",
+        "legal_evidence": [],
+        "legal_inherits_from": "repository:groupsum/portwyrm",
+        "license_expression": "Apache-2.0",
+        "license_status": "observed",
+        "observed_at": "2026-08-03T17:22:38Z",
         "prerelease": false,
         "published_at": "2026-07-25T14:43:39Z",
         "release_kind": "github",
+        "route": "/catalog/releases/github/portwyrm-f34f4f41e0",
         "url": "https://github.com/groupsum/portwyrm/releases/tag/v0.1.0-a3",
         "version": "v0.1.0-a3"
       },
       {
         "downloads": 0,
         "draft": false,
-        "observed_at": "2026-08-03T13:56:24Z",
+        "id": "release:66033b300b20a79e",
+        "legal_evidence": [],
+        "legal_inherits_from": "repository:groupsum/portwyrm",
+        "license_expression": "Apache-2.0",
+        "license_status": "observed",
+        "observed_at": "2026-08-03T17:22:38Z",
         "prerelease": true,
         "published_at": "2026-07-25T15:00:38Z",
         "release_kind": "github",
+        "route": "/catalog/releases/github/portwyrm-c8d500516a",
         "url": "https://github.com/groupsum/portwyrm/releases/tag/v0.1.0-a4",
         "version": "v0.1.0-a4"
       }
@@ -568,6 +662,26 @@
       "tag": "v0.1.0-a3",
       "url": "https://github.com/groupsum/portwyrm/releases/tag/v0.1.0-a3"
     },
+    "legal_evidence": [
+      {
+        "evidence_type": "github.repository.license",
+        "expression": "Apache-2.0",
+        "kind": "license-expression",
+        "name": "GitHub detected license",
+        "path": null,
+        "scope": "direct",
+        "url": "https://github.com/groupsum/portwyrm"
+      },
+      {
+        "evidence_type": "repository.tree",
+        "expression": null,
+        "kind": "license-file",
+        "name": "LICENSE",
+        "path": "LICENSE",
+        "scope": "direct",
+        "url": "https://github.com/groupsum/portwyrm/blob/master/LICENSE"
+      }
+    ],
     "license": "Apache-2.0",
     "metrics": {
       "commits": 95,
@@ -585,7 +699,7 @@
       "watchers": 0
     },
     "name": "portwyrm",
-    "observed_at": "2026-08-03T13:56:24Z",
+    "observed_at": "2026-08-03T17:22:38Z",
     "owner": "groupsum",
     "package_ids": [
       "package:npm:portwyrm-uix:groupsum/portwyrm:frontend/package.json",
@@ -595,107 +709,212 @@
     "related_resources": [
       {
         "evidence_type": "repository.blob",
-        "id": "resource:99614c6dc294",
+        "id": "resource:d87e05ef7009",
         "kind": "api",
+        "legal_evidence": [],
+        "legal_inherits_from": "repository:groupsum/portwyrm",
         "name": "src/portwyrm/api/__init__.py",
+        "observed_at": "2026-08-03T17:22:38Z",
+        "path": "src/portwyrm/api/__init__.py",
+        "repository": "groupsum/portwyrm",
+        "repository_route": "/catalog/repositories/groupsum/portwyrm",
+        "route": "/catalog/resources/api/d87e05ef7009",
         "url": "https://github.com/groupsum/portwyrm/blob/master/src/portwyrm/api/__init__.py"
       },
       {
         "evidence_type": "repository.blob",
-        "id": "resource:c8496545ed5c",
+        "id": "resource:96da0c883b10",
         "kind": "api",
+        "legal_evidence": [],
+        "legal_inherits_from": "repository:groupsum/portwyrm",
         "name": "src/portwyrm/api/app.py",
+        "observed_at": "2026-08-03T17:22:38Z",
+        "path": "src/portwyrm/api/app.py",
+        "repository": "groupsum/portwyrm",
+        "repository_route": "/catalog/repositories/groupsum/portwyrm",
+        "route": "/catalog/resources/api/96da0c883b10",
         "url": "https://github.com/groupsum/portwyrm/blob/master/src/portwyrm/api/app.py"
       },
       {
         "evidence_type": "repository.tree",
-        "id": "resource:2d337ac504d9",
+        "id": "resource:f416354d4771",
         "kind": "api",
+        "legal_evidence": [],
+        "legal_inherits_from": "repository:groupsum/portwyrm",
         "name": "src/portwyrm/api/compat",
+        "observed_at": "2026-08-03T17:22:38Z",
+        "path": "src/portwyrm/api/compat",
+        "repository": "groupsum/portwyrm",
+        "repository_route": "/catalog/repositories/groupsum/portwyrm",
+        "route": "/catalog/resources/api/f416354d4771",
         "url": "https://github.com/groupsum/portwyrm/tree/master/src/portwyrm/api/compat"
       },
       {
         "evidence_type": "repository.blob",
-        "id": "resource:6b06aaed3059",
+        "id": "resource:bb0bef7a9c22",
         "kind": "api",
+        "legal_evidence": [],
+        "legal_inherits_from": "repository:groupsum/portwyrm",
         "name": "src/portwyrm/api/mfa.py",
+        "observed_at": "2026-08-03T17:22:38Z",
+        "path": "src/portwyrm/api/mfa.py",
+        "repository": "groupsum/portwyrm",
+        "repository_route": "/catalog/repositories/groupsum/portwyrm",
+        "route": "/catalog/resources/api/bb0bef7a9c22",
         "url": "https://github.com/groupsum/portwyrm/blob/master/src/portwyrm/api/mfa.py"
       },
       {
         "evidence_type": "repository.blob",
-        "id": "resource:558554dc8ad5",
+        "id": "resource:32da58c621ea",
         "kind": "api",
+        "legal_evidence": [],
+        "legal_inherits_from": "repository:groupsum/portwyrm",
         "name": "src/portwyrm/api/middleware.py",
+        "observed_at": "2026-08-03T17:22:38Z",
+        "path": "src/portwyrm/api/middleware.py",
+        "repository": "groupsum/portwyrm",
+        "repository_route": "/catalog/repositories/groupsum/portwyrm",
+        "route": "/catalog/resources/api/32da58c621ea",
         "url": "https://github.com/groupsum/portwyrm/blob/master/src/portwyrm/api/middleware.py"
       },
       {
         "evidence_type": "repository.tree",
-        "id": "resource:684d2de7ec24",
+        "id": "resource:96c3e327a556",
         "kind": "api",
+        "legal_evidence": [],
+        "legal_inherits_from": "repository:groupsum/portwyrm",
         "name": "src/portwyrm/api/native",
+        "observed_at": "2026-08-03T17:22:38Z",
+        "path": "src/portwyrm/api/native",
+        "repository": "groupsum/portwyrm",
+        "repository_route": "/catalog/repositories/groupsum/portwyrm",
+        "route": "/catalog/resources/api/96c3e327a556",
         "url": "https://github.com/groupsum/portwyrm/tree/master/src/portwyrm/api/native"
       },
       {
         "evidence_type": "repository.blob",
-        "id": "resource:3ad412361d5f",
+        "id": "resource:e3afd2468aed",
         "kind": "api",
+        "legal_evidence": [],
+        "legal_inherits_from": "repository:groupsum/portwyrm",
         "name": "src/portwyrm/api/portability.py",
+        "observed_at": "2026-08-03T17:22:38Z",
+        "path": "src/portwyrm/api/portability.py",
+        "repository": "groupsum/portwyrm",
+        "repository_route": "/catalog/repositories/groupsum/portwyrm",
+        "route": "/catalog/resources/api/e3afd2468aed",
         "url": "https://github.com/groupsum/portwyrm/blob/master/src/portwyrm/api/portability.py"
       },
       {
         "evidence_type": "repository.blob",
-        "id": "resource:4c59597a70d3",
+        "id": "resource:d0a173b77a39",
         "kind": "api",
+        "legal_evidence": [],
+        "legal_inherits_from": "repository:groupsum/portwyrm",
         "name": "src/portwyrm/api/security.py",
+        "observed_at": "2026-08-03T17:22:38Z",
+        "path": "src/portwyrm/api/security.py",
+        "repository": "groupsum/portwyrm",
+        "repository_route": "/catalog/repositories/groupsum/portwyrm",
+        "route": "/catalog/resources/api/d0a173b77a39",
         "url": "https://github.com/groupsum/portwyrm/blob/master/src/portwyrm/api/security.py"
       },
       {
         "evidence_type": "repository.tree",
-        "id": "resource:ac5c8b425450",
+        "id": "resource:294aa6783dfa",
         "kind": "documentation",
+        "legal_evidence": [],
+        "legal_inherits_from": "repository:groupsum/portwyrm",
         "name": "docs/architecture",
+        "observed_at": "2026-08-03T17:22:38Z",
+        "path": "docs/architecture",
+        "repository": "groupsum/portwyrm",
+        "repository_route": "/catalog/repositories/groupsum/portwyrm",
+        "route": "/catalog/resources/documentation/294aa6783dfa",
         "url": "https://github.com/groupsum/portwyrm/tree/master/docs/architecture"
       },
       {
         "evidence_type": "repository.tree",
-        "id": "resource:65965209fc47",
+        "id": "resource:43e2fd6c8cbb",
         "kind": "documentation",
+        "legal_evidence": [],
+        "legal_inherits_from": "repository:groupsum/portwyrm",
         "name": "docs/compatibility",
+        "observed_at": "2026-08-03T17:22:38Z",
+        "path": "docs/compatibility",
+        "repository": "groupsum/portwyrm",
+        "repository_route": "/catalog/repositories/groupsum/portwyrm",
+        "route": "/catalog/resources/documentation/43e2fd6c8cbb",
         "url": "https://github.com/groupsum/portwyrm/tree/master/docs/compatibility"
       },
       {
         "evidence_type": "repository.tree",
-        "id": "resource:4a9e59ae0e41",
+        "id": "resource:7228ff658b8f",
         "kind": "documentation",
+        "legal_evidence": [],
+        "legal_inherits_from": "repository:groupsum/portwyrm",
         "name": "docs/delivery",
+        "observed_at": "2026-08-03T17:22:38Z",
+        "path": "docs/delivery",
+        "repository": "groupsum/portwyrm",
+        "repository_route": "/catalog/repositories/groupsum/portwyrm",
+        "route": "/catalog/resources/documentation/7228ff658b8f",
         "url": "https://github.com/groupsum/portwyrm/tree/master/docs/delivery"
       },
       {
         "evidence_type": "repository.tree",
-        "id": "resource:4653e8fa0392",
+        "id": "resource:68c451c3757f",
         "kind": "documentation",
+        "legal_evidence": [],
+        "legal_inherits_from": "repository:groupsum/portwyrm",
         "name": "docs/product",
+        "observed_at": "2026-08-03T17:22:38Z",
+        "path": "docs/product",
+        "repository": "groupsum/portwyrm",
+        "repository_route": "/catalog/repositories/groupsum/portwyrm",
+        "route": "/catalog/resources/documentation/68c451c3757f",
         "url": "https://github.com/groupsum/portwyrm/tree/master/docs/product"
       },
       {
         "evidence_type": "repository.tree",
-        "id": "resource:ef85672b6e13",
+        "id": "resource:52347f653f13",
         "kind": "documentation",
+        "legal_evidence": [],
+        "legal_inherits_from": "repository:groupsum/portwyrm",
         "name": "docs/research",
+        "observed_at": "2026-08-03T17:22:38Z",
+        "path": "docs/research",
+        "repository": "groupsum/portwyrm",
+        "repository_route": "/catalog/repositories/groupsum/portwyrm",
+        "route": "/catalog/resources/documentation/52347f653f13",
         "url": "https://github.com/groupsum/portwyrm/tree/master/docs/research"
       },
       {
         "evidence_type": "repository.tree",
-        "id": "resource:2b2e18cdbe6e",
+        "id": "resource:edf32a281e4d",
         "kind": "documentation",
+        "legal_evidence": [],
+        "legal_inherits_from": "repository:groupsum/portwyrm",
         "name": "docs/testing",
+        "observed_at": "2026-08-03T17:22:38Z",
+        "path": "docs/testing",
+        "repository": "groupsum/portwyrm",
+        "repository_route": "/catalog/repositories/groupsum/portwyrm",
+        "route": "/catalog/resources/documentation/edf32a281e4d",
         "url": "https://github.com/groupsum/portwyrm/tree/master/docs/testing"
       },
       {
         "evidence_type": "repository.tree",
-        "id": "resource:c0050382654c",
+        "id": "resource:853dad497612",
         "kind": "documentation",
+        "legal_evidence": [],
+        "legal_inherits_from": "repository:groupsum/portwyrm",
         "name": "docs/ux",
+        "observed_at": "2026-08-03T17:22:38Z",
+        "path": "docs/ux",
+        "repository": "groupsum/portwyrm",
+        "repository_route": "/catalog/repositories/groupsum/portwyrm",
+        "route": "/catalog/resources/documentation/853dad497612",
         "url": "https://github.com/groupsum/portwyrm/tree/master/docs/ux"
       }
     ],

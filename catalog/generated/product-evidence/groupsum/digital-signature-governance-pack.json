@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-03T13:56:23Z",
+  "generated_at": "2026-08-03T17:22:36Z",
   "packages": [
     {
       "claim_boundary": "Publication is reported only when confirmed by the named public registry.",
@@ -54,16 +54,56 @@
       "evidence": [
         {
           "kind": "registry",
-          "observed_at": "2026-08-03T13:56:23Z",
+          "observed_at": "2026-08-03T17:22:36Z",
           "url": "https://pypi.org/project/digital-signature-governance-pack/"
         }
       ],
       "id": "package:pypi:digital-signature-governance-pack:groupsum/digital-signature-governance-pack:pyproject.toml",
       "kind": "package",
       "latest_version": "0.1.3",
+      "legal_evidence": [
+        {
+          "evidence_type": "repository.manifest",
+          "expression": "Apache-2.0",
+          "kind": "license-expression",
+          "name": "Package manifest license",
+          "scope": "direct",
+          "url": "https://github.com/groupsum/digital-signature-governance-pack/blob/HEAD/pyproject.toml"
+        },
+        {
+          "evidence_type": "pypi.registry",
+          "expression": "Apache-2.0",
+          "kind": "license-expression",
+          "name": "Registry license metadata",
+          "scope": "direct",
+          "url": "https://pypi.org/project/digital-signature-governance-pack/"
+        },
+        {
+          "evidence_type": "github.repository.license",
+          "expression": "Apache-2.0",
+          "kind": "license-expression",
+          "name": "GitHub detected license",
+          "path": null,
+          "scope": "inherited",
+          "url": "https://github.com/groupsum/digital-signature-governance-pack"
+        },
+        {
+          "evidence_type": "repository.tree",
+          "expression": null,
+          "kind": "license-file",
+          "name": "LICENSE",
+          "path": "LICENSE",
+          "scope": "inherited",
+          "url": "https://github.com/groupsum/digital-signature-governance-pack/blob/master/LICENSE"
+        }
+      ],
+      "legal_repository": "groupsum/digital-signature-governance-pack",
+      "license_classifiers": [],
+      "license_expression": "Apache-2.0",
+      "license_status": "observed",
       "manifest_path": "pyproject.toml",
       "name": "digital-signature-governance-pack",
-      "observed_at": "2026-08-03T13:56:23Z",
+      "observed_at": "2026-08-03T17:22:36Z",
       "owner": "groupsum",
       "private": false,
       "publication_status": "published",
@@ -79,33 +119,57 @@
       "releases": [
         {
           "downloads": null,
-          "observed_at": "2026-08-03T13:56:23Z",
+          "id": "release:bafb6779a2effccb",
+          "legal_evidence": [],
+          "legal_inherits_from": "package:pypi:digital-signature-governance-pack:groupsum/digital-signature-governance-pack:pyproject.toml",
+          "license_expression": "Apache-2.0",
+          "license_status": "observed",
+          "observed_at": "2026-08-03T17:22:36Z",
           "published_at": "2026-06-02T00:58:28.487637Z",
           "release_kind": "pypi",
+          "route": "/catalog/releases/pypi/digital-signature-governance-pack-6ce46c7b08",
           "url": "https://pypi.org/project/digital-signature-governance-pack/0.1.3/",
           "version": "0.1.3"
         },
         {
           "downloads": null,
-          "observed_at": "2026-08-03T13:56:23Z",
+          "id": "release:1ae1575b9493534a",
+          "legal_evidence": [],
+          "legal_inherits_from": "package:pypi:digital-signature-governance-pack:groupsum/digital-signature-governance-pack:pyproject.toml",
+          "license_expression": "Apache-2.0",
+          "license_status": "observed",
+          "observed_at": "2026-08-03T17:22:36Z",
           "published_at": "2026-05-16T16:54:42.729929Z",
           "release_kind": "pypi",
+          "route": "/catalog/releases/pypi/digital-signature-governance-pack-e18c37b593",
           "url": "https://pypi.org/project/digital-signature-governance-pack/0.1.2/",
           "version": "0.1.2"
         },
         {
           "downloads": null,
-          "observed_at": "2026-08-03T13:56:23Z",
+          "id": "release:d1db66bbb03f13b6",
+          "legal_evidence": [],
+          "legal_inherits_from": "package:pypi:digital-signature-governance-pack:groupsum/digital-signature-governance-pack:pyproject.toml",
+          "license_expression": "Apache-2.0",
+          "license_status": "observed",
+          "observed_at": "2026-08-03T17:22:36Z",
           "published_at": "2026-05-16T16:07:39.923872Z",
           "release_kind": "pypi",
+          "route": "/catalog/releases/pypi/digital-signature-governance-pack-6ba4852795",
           "url": "https://pypi.org/project/digital-signature-governance-pack/0.1.1.dev2/",
           "version": "0.1.1.dev2"
         },
         {
           "downloads": null,
-          "observed_at": "2026-08-03T13:56:23Z",
+          "id": "release:34c695487810d494",
+          "legal_evidence": [],
+          "legal_inherits_from": "package:pypi:digital-signature-governance-pack:groupsum/digital-signature-governance-pack:pyproject.toml",
+          "license_expression": "Apache-2.0",
+          "license_status": "observed",
+          "observed_at": "2026-08-03T17:22:36Z",
           "published_at": "2026-05-13T11:20:34.601009Z",
           "release_kind": "pypi",
+          "route": "/catalog/releases/pypi/digital-signature-governance-pack-9ff40a363b",
           "url": "https://pypi.org/project/digital-signature-governance-pack/0.1.1.dev1/",
           "version": "0.1.1.dev1"
         }
@@ -262,7 +326,7 @@
     "evidence": [
       {
         "kind": "source",
-        "observed_at": "2026-08-03T13:56:23Z",
+        "observed_at": "2026-08-03T17:22:37Z",
         "url": "https://github.com/groupsum/digital-signature-governance-pack"
       }
     ],
@@ -272,40 +336,64 @@
       {
         "downloads": 6,
         "draft": false,
-        "observed_at": "2026-08-03T13:56:23Z",
+        "id": "release:747a92bcca365185",
+        "legal_evidence": [],
+        "legal_inherits_from": "repository:groupsum/digital-signature-governance-pack",
+        "license_expression": "Apache-2.0",
+        "license_status": "observed",
+        "observed_at": "2026-08-03T17:22:37Z",
         "prerelease": false,
         "published_at": "2026-06-02T00:58:22Z",
         "release_kind": "github",
+        "route": "/catalog/releases/github/digital-signature-governance-pack-e82df8e101",
         "url": "https://github.com/groupsum/digital-signature-governance-pack/releases/tag/v0.1.3",
         "version": "v0.1.3"
       },
       {
         "downloads": 2,
         "draft": false,
-        "observed_at": "2026-08-03T13:56:23Z",
+        "id": "release:66a78b0efbe280cb",
+        "legal_evidence": [],
+        "legal_inherits_from": "repository:groupsum/digital-signature-governance-pack",
+        "license_expression": "Apache-2.0",
+        "license_status": "observed",
+        "observed_at": "2026-08-03T17:22:37Z",
         "prerelease": false,
         "published_at": "2026-05-16T16:54:38Z",
         "release_kind": "github",
+        "route": "/catalog/releases/github/digital-signature-governance-pack-672db2910c",
         "url": "https://github.com/groupsum/digital-signature-governance-pack/releases/tag/v0.1.2",
         "version": "v0.1.2"
       },
       {
         "downloads": 0,
         "draft": false,
-        "observed_at": "2026-08-03T13:56:23Z",
+        "id": "release:f29d1b5884e231f6",
+        "legal_evidence": [],
+        "legal_inherits_from": "repository:groupsum/digital-signature-governance-pack",
+        "license_expression": "Apache-2.0",
+        "license_status": "observed",
+        "observed_at": "2026-08-03T17:22:37Z",
         "prerelease": false,
         "published_at": "2026-05-16T16:07:32Z",
         "release_kind": "github",
+        "route": "/catalog/releases/github/digital-signature-governance-pack-2865d96992",
         "url": "https://github.com/groupsum/digital-signature-governance-pack/releases/tag/v0.1.1.dev2",
         "version": "v0.1.1.dev2"
       },
       {
         "downloads": 0,
         "draft": false,
-        "observed_at": "2026-08-03T13:56:23Z",
+        "id": "release:fb6c05ea68d32fac",
+        "legal_evidence": [],
+        "legal_inherits_from": "repository:groupsum/digital-signature-governance-pack",
+        "license_expression": "Apache-2.0",
+        "license_status": "observed",
+        "observed_at": "2026-08-03T17:22:37Z",
         "prerelease": false,
         "published_at": "2026-05-13T11:20:21Z",
         "release_kind": "github",
+        "route": "/catalog/releases/github/digital-signature-governance-pack-01ccf81d3b",
         "url": "https://github.com/groupsum/digital-signature-governance-pack/releases/tag/v0.1.1.dev1",
         "version": "v0.1.1.dev1"
       }
@@ -343,6 +431,26 @@
       "tag": "v0.1.3",
       "url": "https://github.com/groupsum/digital-signature-governance-pack/releases/tag/v0.1.3"
     },
+    "legal_evidence": [
+      {
+        "evidence_type": "github.repository.license",
+        "expression": "Apache-2.0",
+        "kind": "license-expression",
+        "name": "GitHub detected license",
+        "path": null,
+        "scope": "direct",
+        "url": "https://github.com/groupsum/digital-signature-governance-pack"
+      },
+      {
+        "evidence_type": "repository.tree",
+        "expression": null,
+        "kind": "license-file",
+        "name": "LICENSE",
+        "path": "LICENSE",
+        "scope": "direct",
+        "url": "https://github.com/groupsum/digital-signature-governance-pack/blob/master/LICENSE"
+      }
+    ],
     "license": "Apache-2.0",
     "metrics": {
       "commits": 20,
@@ -360,7 +468,7 @@
       "watchers": 0
     },
     "name": "digital-signature-governance-pack",
-    "observed_at": "2026-08-03T13:56:23Z",
+    "observed_at": "2026-08-03T17:22:37Z",
     "owner": "groupsum",
     "package_ids": [
       "package:pypi:digital-signature-governance-pack:groupsum/digital-signature-governance-pack:pyproject.toml"
@@ -369,16 +477,30 @@
     "related_resources": [
       {
         "evidence_type": "repository.tree",
-        "id": "resource:ef4e16a6c1ed",
+        "id": "resource:a29d5e956e6c",
         "kind": "documentation",
+        "legal_evidence": [],
+        "legal_inherits_from": "repository:groupsum/digital-signature-governance-pack",
         "name": "docs/proposals",
+        "observed_at": "2026-08-03T17:22:37Z",
+        "path": "docs/proposals",
+        "repository": "groupsum/digital-signature-governance-pack",
+        "repository_route": "/catalog/repositories/groupsum/digital-signature-governance-pack",
+        "route": "/catalog/resources/documentation/a29d5e956e6c",
         "url": "https://github.com/groupsum/digital-signature-governance-pack/tree/master/docs/proposals"
       },
       {
         "evidence_type": "repository.tree",
-        "id": "resource:34f7176e39ba",
+        "id": "resource:62586b0c0278",
         "kind": "documentation",
+        "legal_evidence": [],
+        "legal_inherits_from": "repository:groupsum/digital-signature-governance-pack",
         "name": "docs/standards",
+        "observed_at": "2026-08-03T17:22:37Z",
+        "path": "docs/standards",
+        "repository": "groupsum/digital-signature-governance-pack",
+        "repository_route": "/catalog/repositories/groupsum/digital-signature-governance-pack",
+        "route": "/catalog/resources/documentation/62586b0c0278",
         "url": "https://github.com/groupsum/digital-signature-governance-pack/tree/master/docs/standards"
       }
     ],

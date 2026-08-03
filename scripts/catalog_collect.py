@@ -241,6 +241,58 @@ def discover_related_resources(
     return sorted(resources.values(), key=lambda item: (item["kind"], item["name"]))[:limit]
 
 
+def normalize_license_expression(value: Any) -> str | None:
+    """Keep concise license identifiers/expressions without copying license text."""
+    if isinstance(value, dict):
+        value = value.get("type") or value.get("name")
+    if isinstance(value, list):
+        values = [normalize_license_expression(item) for item in value]
+        return " OR ".join(item for item in values if item) or None
+    if not isinstance(value, str):
+        return None
+    candidate = value.strip()
+    if not candidate or len(candidate) > 200 or "\n" in candidate or "\r" in candidate:
+        return None
+    return candidate
+
+
+def repository_legal_evidence(
+    repo: dict[str, Any], paths: Iterable[str]
+) -> list[dict[str, Any]]:
+    """Describe public license and notice evidence without embedding legal text."""
+    evidence: list[dict[str, Any]] = []
+    expression = normalize_license_expression((repo.get("license") or {}).get("spdx_id"))
+    if expression and expression != "NOASSERTION":
+        evidence.append(
+            {
+                "kind": "license-expression",
+                "name": "GitHub detected license",
+                "expression": expression,
+                "url": repo.get("html_url"),
+                "evidence": "github.repository.license",
+            }
+        )
+    for path in sorted(paths):
+        filename = Path(path).name.casefold()
+        normalized = re.sub(r"[^a-z0-9]+", "_", filename).strip("_")
+        if normalized == "license" or normalized.startswith("license_") or normalized == "copying" or normalized.startswith("copying_"):
+            kind = "license-file"
+        elif normalized == "notice" or normalized.startswith("notice_") or normalized.startswith("third_party_notice"):
+            kind = "notice-file"
+        else:
+            continue
+        evidence.append(
+            {
+                "kind": kind,
+                "name": Path(path).name,
+                "path": path,
+                "url": f"{repo['html_url']}/blob/{repo['default_branch']}/{path}",
+                "evidence": "repository.tree",
+            }
+        )
+    return evidence[:100]
+
+
 def manifest_package(path: str, text: str, repo: dict[str, Any]) -> tuple[dict[str, Any] | None, list[dict[str, str]]]:
     dependencies: list[dict[str, str]] = []
     package: dict[str, Any] | None = None
@@ -253,7 +305,7 @@ def manifest_package(path: str, text: str, repo: dict[str, Any]) -> tuple[dict[s
             for name in data.get("bundledDependencies") or data.get("bundleDependencies") or []:
                 dependencies.append({"name": str(name), "requirement": "bundled", "scope": "bundledDependencies"})
             if data.get("name"):
-                package = {"ecosystem": "npm", "name": data["name"], "version_declared": data.get("version"), "private": bool(data.get("private", False))}
+                package = {"ecosystem": "npm", "name": data["name"], "version_declared": data.get("version"), "private": bool(data.get("private", False)), "license_expression": normalize_license_expression(data.get("license"))}
         elif path.endswith("pyproject.toml"):
             data = tomllib.loads(text)
             project = data.get("project", {})
@@ -291,7 +343,9 @@ def manifest_package(path: str, text: str, repo: dict[str, Any]) -> tuple[dict[s
                 if match:
                     dependencies.append({"name": match.group(1), "requirement": match.group(2).strip() or "*", "scope": "tool.uv.dev-dependencies"})
             if name:
-                package = {"ecosystem": "pypi", "name": name, "version_declared": project.get("version") or poetry.get("version"), "private": False}
+                project_license = project.get("license")
+                license_file = project_license.get("file") if isinstance(project_license, dict) else None
+                package = {"ecosystem": "pypi", "name": name, "version_declared": project.get("version") or poetry.get("version"), "private": False, "license_expression": normalize_license_expression(project.get("license-expression") or project_license or poetry.get("license")), "license_file": license_file}
         elif path.endswith("Cargo.toml"):
             data = tomllib.loads(text)
             cargo_package = data.get("package", {})
@@ -307,7 +361,7 @@ def manifest_package(path: str, text: str, repo: dict[str, Any]) -> tuple[dict[s
                         collect_cargo_dependencies(nested, scope)
             collect_cargo_dependencies(data)
             if cargo_package.get("name"):
-                package = {"ecosystem": "crates", "name": cargo_package["name"], "version_declared": cargo_package.get("version"), "private": bool(cargo_package.get("publish") is False)}
+                package = {"ecosystem": "crates", "name": cargo_package["name"], "version_declared": cargo_package.get("version"), "private": bool(cargo_package.get("publish") is False), "license_expression": normalize_license_expression(cargo_package.get("license")), "license_file": cargo_package.get("license-file")}
     except (json.JSONDecodeError, tomllib.TOMLDecodeError, TypeError):
         return None, dependencies
     if package:
@@ -336,7 +390,8 @@ def registry_record(client: ApiClient, package: dict[str, Any]) -> tuple[dict[st
         body, _, obs = client.request_json(url, allow_404=True)
         observations.append(obs)
         if body:
-            record.update({"published": True, "registry_url": f"https://pypi.org/project/{name}/", "latest_version": body.get("info", {}).get("version")})
+            info = body.get("info", {})
+            record.update({"published": True, "registry_url": f"https://pypi.org/project/{name}/", "latest_version": info.get("version"), "registry_license_expression": normalize_license_expression(info.get("license_expression") or info.get("license")), "license_classifiers": [item for item in info.get("classifiers", []) if str(item).startswith("License ::")]})
             record["releases"] = [
                 {
                     "version": version,
@@ -360,7 +415,9 @@ def registry_record(client: ApiClient, package: dict[str, Any]) -> tuple[dict[st
         body, _, obs = client.request_json(url, allow_404=True)
         observations.append(obs)
         if body:
-            record.update({"published": True, "registry_url": f"https://www.npmjs.com/package/{name}", "latest_version": (body.get("dist-tags") or {}).get("latest")})
+            latest_version = (body.get("dist-tags") or {}).get("latest")
+            latest_metadata = (body.get("versions") or {}).get(latest_version, {})
+            record.update({"published": True, "registry_url": f"https://www.npmjs.com/package/{name}", "latest_version": latest_version, "registry_license_expression": normalize_license_expression(latest_metadata.get("license") or body.get("license"))})
             published_times = body.get("time") or {}
             record["releases"] = [
                 {
@@ -378,7 +435,9 @@ def registry_record(client: ApiClient, package: dict[str, Any]) -> tuple[dict[st
         observations.append(obs)
         if body:
             crate = body.get("crate", {})
-            record.update({"published": True, "registry_url": f"https://crates.io/crates/{name}", "latest_version": crate.get("newest_version"), "downloads": crate.get("downloads")})
+            newest_version = crate.get("newest_version")
+            newest_metadata = next((item for item in body.get("versions", []) if item.get("num") == newest_version), {})
+            record.update({"published": True, "registry_url": f"https://crates.io/crates/{name}", "latest_version": newest_version, "downloads": crate.get("downloads"), "registry_license_expression": normalize_license_expression(newest_metadata.get("license"))})
             record["releases"] = [
                 {
                     "version": version.get("num"),
@@ -481,6 +540,7 @@ def collect_repository(client: ApiClient, repo: dict[str, Any], config: dict[str
         repo, all_paths, resource_markers,
         int(config.get("max_related_resources_per_repository", 200)),
     )
+    legal_evidence = repository_legal_evidence(repo, all_paths)
     manifests: list[dict[str, Any]] = []
     packages: list[dict[str, Any]] = []
     dependencies: list[dict[str, str]] = []
@@ -540,6 +600,7 @@ def collect_repository(client: ApiClient, repo: dict[str, Any], config: dict[str
         "github_releases": github_releases, "ghcr_images_discovered": sorted(ghcr_images),
         "deployments": deployments, "environments": environments,
         "related_resources": related_resources,
+        "legal_evidence": legal_evidence,
         "tree": {"truncated": bool((tree or {}).get("truncated")) if isinstance(tree, dict) else None, "blob_count": len(all_paths), "manifest_count": len(manifest_paths), "manifest_limit_reached": len([path for path in all_paths if Path(path).name in manifest_names]) > manifest_limit},
         "observations": [item.as_dict() for item in observations],
     }
@@ -706,9 +767,103 @@ def main() -> int:
     parser.add_argument("--typescript", type=Path, default=DEFAULT_TYPESCRIPT)
     parser.add_argument("--cache-dir", type=Path, default=ROOT / ".catalog-cache")
     parser.add_argument("--refresh", action="store_true")
+    parser.add_argument(
+        "--recover-errors",
+        action="store_true",
+        help="retain explicitly failed repositories from the checked-in complete snapshot",
+    )
     parser.add_argument("--owners", help="comma-separated owner override")
     parser.add_argument("--discover-downstream", action="store_true", help="run bounded GitHub public code search for published package dependents")
     args = parser.parse_args()
+
+    previous_catalogs: list[dict[str, Any]] = []
+    if args.output.exists():
+        try:
+            previous_catalogs.append(json.loads(args.output.read_text(encoding="utf-8")))
+        except (OSError, json.JSONDecodeError):
+            pass
+    try:
+        baseline = subprocess.run(
+            ["git", "show", "HEAD:catalog/generated/catalog.json"],
+            cwd=ROOT,
+            capture_output=True,
+            text=True,
+            timeout=30,
+            check=False,
+        )
+        if baseline.returncode == 0:
+            previous_catalogs.append(json.loads(baseline.stdout))
+    except (OSError, subprocess.SubprocessError, json.JSONDecodeError):
+        pass
+    previous_repositories = {
+        repository["full_name"]: repository
+        for catalog in reversed(previous_catalogs)
+        for repository in catalog.get("repositories", [])
+    }
+    previous_packages = [
+        package
+        for catalog in previous_catalogs
+        for package in catalog.get("packages", [])
+    ]
+    if args.recover_errors:
+        if len(previous_catalogs) < 2:
+            raise SystemExit("error recovery requires a current output and checked-in baseline")
+        current = previous_catalogs[0]
+        baseline_catalog = previous_catalogs[-1]
+        failed = {
+            str(observation.get("source", "")).removeprefix("github.repository:")
+            for observation in current.get("observations", [])
+            if observation.get("status") == "error"
+            and str(observation.get("source", "")).startswith("github.repository:")
+        }
+        repositories = {item["full_name"]: item for item in current.get("repositories", [])}
+        baseline_repositories = {
+            item["full_name"]: item for item in baseline_catalog.get("repositories", [])
+        }
+        for full_name in failed:
+            if full_name in repositories or full_name not in baseline_repositories:
+                continue
+            repositories[full_name] = {
+                **baseline_repositories[full_name],
+                "collection_status": "retained-after-error",
+            }
+        packages = {
+            (
+                item.get("ecosystem"),
+                item.get("name"),
+                item.get("repository"),
+                item.get("manifest_path"),
+            ): item
+            for item in current.get("packages", [])
+        }
+        for item in baseline_catalog.get("packages", []):
+            if item.get("repository") not in failed:
+                continue
+            key = (
+                item.get("ecosystem"),
+                item.get("name"),
+                item.get("repository"),
+                item.get("manifest_path"),
+            )
+            packages.setdefault(key, {**item, "collection_status": "retained-after-error"})
+        current["repositories"] = sorted(
+            repositories.values(), key=lambda item: item["full_name"].casefold()
+        )
+        current["packages"] = sorted(
+            packages.values(),
+            key=lambda item: (
+                item.get("ecosystem", ""),
+                item.get("name", ""),
+                item.get("repository", ""),
+            ),
+        )
+        current["relationships"] = relation_rows(current["repositories"], current["packages"])
+        summary = summarize(current)
+        args.output.write_text(json.dumps(current, indent=2, sort_keys=True), encoding="utf-8")
+        args.summary.write_text(json.dumps(summary, indent=2, sort_keys=True), encoding="utf-8")
+        args.typescript.write_text(typescript_summary(summary), encoding="utf-8")
+        print(json.dumps({"recovered_repositories": sorted(failed), **summary}, indent=2))
+        return 0
 
     config = json.loads(args.config.read_text(encoding="utf-8"))
     if args.discover_downstream:
@@ -727,6 +882,7 @@ def main() -> int:
     raw_repos = filter_repositories(raw_repos, config)
 
     repositories: list[dict[str, Any]] = []
+    failed_repositories: set[str] = set()
     workers = int(config.get("request_concurrency", 8))
     with concurrent.futures.ThreadPoolExecutor(max_workers=workers) as executor:
         futures = {executor.submit(collect_repository, client, repo, config): repo["full_name"] for repo in raw_repos}
@@ -736,7 +892,17 @@ def main() -> int:
                 repositories.append(future.result())
                 print(f"[{index}/{len(futures)}] collected {full_name}", file=sys.stderr)
             except Exception as exc:  # keep collection auditable instead of losing the whole snapshot
+                failed_repositories.add(full_name)
                 observations.append(Observation(f"github.repository:{full_name}", "error", ISO_NOW(), str(exc)))
+                previous = previous_repositories.get(full_name)
+                if previous:
+                    repositories.append(
+                        {
+                            **previous,
+                            "collection_status": "retained-after-error",
+                            "collection_error": str(exc),
+                        }
+                    )
                 print(f"[{index}/{len(futures)}] failed {full_name}: {exc}", file=sys.stderr)
     repositories.sort(key=lambda repo: repo["full_name"].lower())
 
@@ -758,7 +924,28 @@ def main() -> int:
                 rows, obs = future.result()
                 github_packages.extend(rows)
                 registry_observations.extend(obs)
-    packages = sorted(registry_packages + github_packages, key=lambda package: (package.get("ecosystem", ""), package.get("name", ""), package.get("repository", "")))
+    retained_packages = [
+        package
+        for package in previous_packages
+        if package.get("repository") in failed_repositories
+    ]
+    packages_by_id = {
+        (
+            package.get("ecosystem"),
+            package.get("name"),
+            package.get("repository"),
+            package.get("manifest_path"),
+        ): package
+        for package in [*retained_packages, *registry_packages, *github_packages]
+    }
+    packages = sorted(
+        packages_by_id.values(),
+        key=lambda package: (
+            package.get("ecosystem", ""),
+            package.get("name", ""),
+            package.get("repository", ""),
+        ),
+    )
 
     relationships = relation_rows(repositories, packages)
     downstream_relationships, downstream_observations = discover_github_downstream(client, packages, config)

@@ -37,7 +37,9 @@ def main() -> None:
         target = output / record_type / "index.json"
         target.parent.mkdir(parents=True, exist_ok=True)
         target.write_text(json.dumps(collection, indent=2, sort_keys=True) + "\n")
-    for slug, record_type in records:
+    for record in records:
+        slug = record["slug"]
+        record_type = record["record_type"]
         if record_type == "insight":
             continue
         model = payload(record_detail(database_path, request, slug, record_type))

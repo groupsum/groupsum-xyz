@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-03T13:56:23Z",
+  "generated_at": "2026-08-03T17:22:36Z",
   "packages": [
     {
       "claim_boundary": "Publication is reported only when confirmed by the named public registry.",
@@ -207,16 +207,21 @@
       "evidence": [
         {
           "kind": "source",
-          "observed_at": "2026-08-03T13:56:23Z",
+          "observed_at": "2026-08-03T17:22:36Z",
           "url": "https://github.com/swarmauri/swarmauri-com/blob/HEAD/package.json"
         }
       ],
       "id": "package:npm:swarmauri-com:swarmauri/swarmauri-com:package.json",
       "kind": "package",
       "latest_version": "0.1.0",
+      "legal_evidence": [],
+      "legal_repository": "swarmauri/swarmauri-com",
+      "license_classifiers": [],
+      "license_expression": null,
+      "license_status": "not-observed",
       "manifest_path": "package.json",
       "name": "swarmauri-com",
-      "observed_at": "2026-08-03T13:56:23Z",
+      "observed_at": "2026-08-03T17:22:36Z",
       "owner": "swarmauri",
       "private": true,
       "publication_status": "manifest_private",
@@ -280,16 +285,21 @@
       "evidence": [
         {
           "kind": "source",
-          "observed_at": "2026-08-03T13:56:23Z",
+          "observed_at": "2026-08-03T17:22:36Z",
           "url": "https://github.com/swarmauri/swarmauri-com/blob/HEAD/pyproject.toml"
         }
       ],
       "id": "package:pypi:swarmauri-com:swarmauri/swarmauri-com:pyproject.toml",
       "kind": "package",
       "latest_version": "0.1.0",
+      "legal_evidence": [],
+      "legal_repository": "swarmauri/swarmauri-com",
+      "license_classifiers": [],
+      "license_expression": null,
+      "license_status": "not-observed",
       "manifest_path": "pyproject.toml",
       "name": "swarmauri-com",
-      "observed_at": "2026-08-03T13:56:23Z",
+      "observed_at": "2026-08-03T17:22:36Z",
       "owner": "swarmauri",
       "private": false,
       "publication_status": "registry_not_found",
@@ -449,7 +459,7 @@
     "evidence": [
       {
         "kind": "source",
-        "observed_at": "2026-08-03T13:56:25Z",
+        "observed_at": "2026-08-03T17:22:39Z",
         "url": "https://github.com/swarmauri/swarmauri-com"
       }
     ],
@@ -476,6 +486,7 @@
       "updated_at": "2026-07-13T19:21:26Z"
     },
     "latest_release": null,
+    "legal_evidence": [],
     "license": null,
     "metrics": {
       "commits": 69,
@@ -493,7 +504,7 @@
       "watchers": 0
     },
     "name": "swarmauri-com",
-    "observed_at": "2026-08-03T13:56:25Z",
+    "observed_at": "2026-08-03T17:22:39Z",
     "owner": "swarmauri",
     "package_ids": [
       "package:npm:swarmauri-com:swarmauri/swarmauri-com:package.json",
@@ -503,9 +514,16 @@
     "related_resources": [
       {
         "evidence_type": "repository.blob",
-        "id": "resource:2f807a28d7c8",
+        "id": "resource:1953363ebfe6",
         "kind": "documentation",
+        "legal_evidence": [],
+        "legal_inherits_from": "repository:swarmauri/swarmauri-com",
         "name": "docs/unified_swarmauri_company_portfolio_brief.md",
+        "observed_at": "2026-08-03T17:22:39Z",
+        "path": "docs/unified_swarmauri_company_portfolio_brief.md",
+        "repository": "swarmauri/swarmauri-com",
+        "repository_route": "/catalog/repositories/swarmauri/swarmauri-com",
+        "route": "/catalog/resources/documentation/1953363ebfe6",
         "url": "https://github.com/swarmauri/swarmauri-com/blob/master/docs/unified_swarmauri_company_portfolio_brief.md"
       }
     ],

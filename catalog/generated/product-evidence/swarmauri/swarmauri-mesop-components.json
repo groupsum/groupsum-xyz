@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-03T13:56:23Z",
+  "generated_at": "2026-08-03T17:22:36Z",
   "packages": [],
   "repository": {
     "archived": false,
@@ -146,7 +146,7 @@
     "evidence": [
       {
         "kind": "source",
-        "observed_at": "2026-08-03T13:56:25Z",
+        "observed_at": "2026-08-03T17:22:39Z",
         "url": "https://github.com/swarmauri/swarmauri-mesop-components"
       }
     ],
@@ -167,6 +167,26 @@
     },
     "latest_deployment": null,
     "latest_release": null,
+    "legal_evidence": [
+      {
+        "evidence_type": "github.repository.license",
+        "expression": "Apache-2.0",
+        "kind": "license-expression",
+        "name": "GitHub detected license",
+        "path": null,
+        "scope": "direct",
+        "url": "https://github.com/swarmauri/swarmauri-mesop-components"
+      },
+      {
+        "evidence_type": "repository.tree",
+        "expression": null,
+        "kind": "license-file",
+        "name": "LICENSE",
+        "path": "LICENSE",
+        "scope": "direct",
+        "url": "https://github.com/swarmauri/swarmauri-mesop-components/blob/master/LICENSE"
+      }
+    ],
     "license": "Apache-2.0",
     "metrics": {
       "commits": 11,
@@ -184,16 +204,23 @@
       "watchers": 0
     },
     "name": "swarmauri-mesop-components",
-    "observed_at": "2026-08-03T13:56:25Z",
+    "observed_at": "2026-08-03T17:22:39Z",
     "owner": "swarmauri",
     "package_ids": [],
     "pushed_at": "2024-09-07T15:34:02Z",
     "related_resources": [
       {
         "evidence_type": "repository.homepage",
-        "id": "resource:b59bf4469af7",
+        "id": "resource:39984854789a",
         "kind": "website",
+        "legal_evidence": [],
+        "legal_inherits_from": "repository:swarmauri/swarmauri-mesop-components",
         "name": "swarmauri-mesop-components",
+        "observed_at": "2026-08-03T17:22:39Z",
+        "path": null,
+        "repository": "swarmauri/swarmauri-mesop-components",
+        "repository_route": "/catalog/repositories/swarmauri/swarmauri-mesop-components",
+        "route": "/catalog/resources/website/39984854789a",
         "url": "https://swarmauri.com"
       }
     ],

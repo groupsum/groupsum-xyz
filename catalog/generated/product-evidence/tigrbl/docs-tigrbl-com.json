@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-03T13:56:23Z",
+  "generated_at": "2026-08-03T17:22:36Z",
   "packages": [
     {
       "claim_boundary": "Publication is reported only when confirmed by the named public registry.",
@@ -17,16 +17,21 @@
       "evidence": [
         {
           "kind": "source",
-          "observed_at": "2026-08-03T13:56:23Z",
+          "observed_at": "2026-08-03T17:22:36Z",
           "url": "https://github.com/tigrbl/docs-tigrbl-com/blob/HEAD/package.json"
         }
       ],
       "id": "package:npm:docs-tigrbl-com:tigrbl/docs-tigrbl-com:package.json",
       "kind": "package",
       "latest_version": "0.1.0",
+      "legal_evidence": [],
+      "legal_repository": "tigrbl/docs-tigrbl-com",
+      "license_classifiers": [],
+      "license_expression": null,
+      "license_status": "not-observed",
       "manifest_path": "package.json",
       "name": "docs-tigrbl-com",
-      "observed_at": "2026-08-03T13:56:23Z",
+      "observed_at": "2026-08-03T17:22:36Z",
       "owner": "tigrbl",
       "private": true,
       "publication_status": "manifest_private",
@@ -160,16 +165,21 @@
       "evidence": [
         {
           "kind": "source",
-          "observed_at": "2026-08-03T13:56:23Z",
+          "observed_at": "2026-08-03T17:22:36Z",
           "url": "https://github.com/tigrbl/docs-tigrbl-com/blob/HEAD/pyproject.toml"
         }
       ],
       "id": "package:pypi:docs-tigrbl-com:tigrbl/docs-tigrbl-com:pyproject.toml",
       "kind": "package",
       "latest_version": "0.1.0",
+      "legal_evidence": [],
+      "legal_repository": "tigrbl/docs-tigrbl-com",
+      "license_classifiers": [],
+      "license_expression": null,
+      "license_status": "not-observed",
       "manifest_path": "pyproject.toml",
       "name": "docs-tigrbl-com",
-      "observed_at": "2026-08-03T13:56:23Z",
+      "observed_at": "2026-08-03T17:22:36Z",
       "owner": "tigrbl",
       "private": false,
       "publication_status": "registry_not_found",
@@ -330,7 +340,7 @@
     "evidence": [
       {
         "kind": "source",
-        "observed_at": "2026-08-03T13:56:24Z",
+        "observed_at": "2026-08-03T17:22:38Z",
         "url": "https://github.com/tigrbl/docs-tigrbl-com"
       }
     ],
@@ -351,6 +361,7 @@
     },
     "latest_deployment": null,
     "latest_release": null,
+    "legal_evidence": [],
     "license": null,
     "metrics": {
       "commits": 35,
@@ -368,7 +379,7 @@
       "watchers": 0
     },
     "name": "docs-tigrbl-com",
-    "observed_at": "2026-08-03T13:56:24Z",
+    "observed_at": "2026-08-03T17:22:38Z",
     "owner": "tigrbl",
     "package_ids": [
       "package:npm:docs-tigrbl-com:tigrbl/docs-tigrbl-com:package.json",
@@ -378,44 +389,86 @@
     "related_resources": [
       {
         "evidence_type": "repository.tree",
-        "id": "resource:4a2fae59f2aa",
+        "id": "resource:646a67188ea8",
         "kind": "documentation",
+        "legal_evidence": [],
+        "legal_inherits_from": "repository:tigrbl/docs-tigrbl-com",
         "name": "docs/assets",
+        "observed_at": "2026-08-03T17:22:38Z",
+        "path": "docs/assets",
+        "repository": "tigrbl/docs-tigrbl-com",
+        "repository_route": "/catalog/repositories/tigrbl/docs-tigrbl-com",
+        "route": "/catalog/resources/documentation/646a67188ea8",
         "url": "https://github.com/tigrbl/docs-tigrbl-com/tree/master/docs/assets"
       },
       {
         "evidence_type": "repository.tree",
-        "id": "resource:2a002ea734f2",
+        "id": "resource:b855ebca907a",
         "kind": "documentation",
+        "legal_evidence": [],
+        "legal_inherits_from": "repository:tigrbl/docs-tigrbl-com",
         "name": "docs/guide",
+        "observed_at": "2026-08-03T17:22:38Z",
+        "path": "docs/guide",
+        "repository": "tigrbl/docs-tigrbl-com",
+        "repository_route": "/catalog/repositories/tigrbl/docs-tigrbl-com",
+        "route": "/catalog/resources/documentation/b855ebca907a",
         "url": "https://github.com/tigrbl/docs-tigrbl-com/tree/master/docs/guide"
       },
       {
         "evidence_type": "repository.tree",
-        "id": "resource:44a0df001643",
+        "id": "resource:6454e31b1229",
         "kind": "documentation",
+        "legal_evidence": [],
+        "legal_inherits_from": "repository:tigrbl/docs-tigrbl-com",
         "name": "docs/home",
+        "observed_at": "2026-08-03T17:22:38Z",
+        "path": "docs/home",
+        "repository": "tigrbl/docs-tigrbl-com",
+        "repository_route": "/catalog/repositories/tigrbl/docs-tigrbl-com",
+        "route": "/catalog/resources/documentation/6454e31b1229",
         "url": "https://github.com/tigrbl/docs-tigrbl-com/tree/master/docs/home"
       },
       {
         "evidence_type": "repository.blob",
-        "id": "resource:f0eb035ad008",
+        "id": "resource:07869802cea1",
         "kind": "documentation",
+        "legal_evidence": [],
+        "legal_inherits_from": "repository:tigrbl/docs-tigrbl-com",
         "name": "docs/index.md",
+        "observed_at": "2026-08-03T17:22:38Z",
+        "path": "docs/index.md",
+        "repository": "tigrbl/docs-tigrbl-com",
+        "repository_route": "/catalog/repositories/tigrbl/docs-tigrbl-com",
+        "route": "/catalog/resources/documentation/07869802cea1",
         "url": "https://github.com/tigrbl/docs-tigrbl-com/blob/master/docs/index.md"
       },
       {
         "evidence_type": "repository.tree",
-        "id": "resource:1c4c476e2dfc",
+        "id": "resource:105a72be76f0",
         "kind": "documentation",
+        "legal_evidence": [],
+        "legal_inherits_from": "repository:tigrbl/docs-tigrbl-com",
         "name": "docs/news",
+        "observed_at": "2026-08-03T17:22:38Z",
+        "path": "docs/news",
+        "repository": "tigrbl/docs-tigrbl-com",
+        "repository_route": "/catalog/repositories/tigrbl/docs-tigrbl-com",
+        "route": "/catalog/resources/documentation/105a72be76f0",
         "url": "https://github.com/tigrbl/docs-tigrbl-com/tree/master/docs/news"
       },
       {
         "evidence_type": "repository.blob",
-        "id": "resource:962ba018fe52",
+        "id": "resource:02718715ac60",
         "kind": "documentation",
+        "legal_evidence": [],
+        "legal_inherits_from": "repository:tigrbl/docs-tigrbl-com",
         "name": "docs/tigrbl_auth_overview.md",
+        "observed_at": "2026-08-03T17:22:38Z",
+        "path": "docs/tigrbl_auth_overview.md",
+        "repository": "tigrbl/docs-tigrbl-com",
+        "repository_route": "/catalog/repositories/tigrbl/docs-tigrbl-com",
+        "route": "/catalog/resources/documentation/02718715ac60",
         "url": "https://github.com/tigrbl/docs-tigrbl-com/blob/master/docs/tigrbl_auth_overview.md"
       }
     ],

@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-03T13:56:23Z",
+  "generated_at": "2026-08-03T17:22:36Z",
   "packages": [
     {
       "claim_boundary": "Publication is reported only when confirmed by the named public registry.",
@@ -17,16 +17,21 @@
       "evidence": [
         {
           "kind": "source",
-          "observed_at": "2026-08-03T13:56:23Z",
+          "observed_at": "2026-08-03T17:22:36Z",
           "url": "https://github.com/swarmauri/docs-swarmauri-com/blob/HEAD/package.json"
         }
       ],
       "id": "package:npm:docs-swarmauri-com:swarmauri/docs-swarmauri-com:package.json",
       "kind": "package",
       "latest_version": "0.1.0",
+      "legal_evidence": [],
+      "legal_repository": "swarmauri/docs-swarmauri-com",
+      "license_classifiers": [],
+      "license_expression": null,
+      "license_status": "not-observed",
       "manifest_path": "package.json",
       "name": "docs-swarmauri-com",
-      "observed_at": "2026-08-03T13:56:23Z",
+      "observed_at": "2026-08-03T17:22:36Z",
       "owner": "swarmauri",
       "private": true,
       "publication_status": "manifest_private",
@@ -160,16 +165,21 @@
       "evidence": [
         {
           "kind": "source",
-          "observed_at": "2026-08-03T13:56:23Z",
+          "observed_at": "2026-08-03T17:22:36Z",
           "url": "https://github.com/swarmauri/docs-swarmauri-com/blob/HEAD/pyproject.toml"
         }
       ],
       "id": "package:pypi:docs-swarmauri-com:swarmauri/docs-swarmauri-com:pyproject.toml",
       "kind": "package",
       "latest_version": "0.1.0",
+      "legal_evidence": [],
+      "legal_repository": "swarmauri/docs-swarmauri-com",
+      "license_classifiers": [],
+      "license_expression": null,
+      "license_status": "not-observed",
       "manifest_path": "pyproject.toml",
       "name": "docs-swarmauri-com",
-      "observed_at": "2026-08-03T13:56:23Z",
+      "observed_at": "2026-08-03T17:22:36Z",
       "owner": "swarmauri",
       "private": false,
       "publication_status": "registry_not_found",
@@ -330,7 +340,7 @@
     "evidence": [
       {
         "kind": "source",
-        "observed_at": "2026-08-03T13:56:25Z",
+        "observed_at": "2026-08-03T17:22:38Z",
         "url": "https://github.com/swarmauri/docs-swarmauri-com"
       }
     ],
@@ -351,6 +361,7 @@
     },
     "latest_deployment": null,
     "latest_release": null,
+    "legal_evidence": [],
     "license": null,
     "metrics": {
       "commits": 36,
@@ -368,7 +379,7 @@
       "watchers": 0
     },
     "name": "docs-swarmauri-com",
-    "observed_at": "2026-08-03T13:56:25Z",
+    "observed_at": "2026-08-03T17:22:38Z",
     "owner": "swarmauri",
     "package_ids": [
       "package:npm:docs-swarmauri-com:swarmauri/docs-swarmauri-com:package.json",
@@ -378,58 +389,114 @@
     "related_resources": [
       {
         "evidence_type": "repository.tree",
-        "id": "resource:1f5c2c0c4088",
+        "id": "resource:2600788c0d39",
         "kind": "documentation",
+        "legal_evidence": [],
+        "legal_inherits_from": "repository:swarmauri/docs-swarmauri-com",
         "name": "docs/api",
+        "observed_at": "2026-08-03T17:22:38Z",
+        "path": "docs/api",
+        "repository": "swarmauri/docs-swarmauri-com",
+        "repository_route": "/catalog/repositories/swarmauri/docs-swarmauri-com",
+        "route": "/catalog/resources/documentation/2600788c0d39",
         "url": "https://github.com/swarmauri/docs-swarmauri-com/tree/master/docs/api"
       },
       {
         "evidence_type": "repository.tree",
-        "id": "resource:1f256f044377",
+        "id": "resource:290b0f35c573",
         "kind": "documentation",
+        "legal_evidence": [],
+        "legal_inherits_from": "repository:swarmauri/docs-swarmauri-com",
         "name": "docs/assets",
+        "observed_at": "2026-08-03T17:22:38Z",
+        "path": "docs/assets",
+        "repository": "swarmauri/docs-swarmauri-com",
+        "repository_route": "/catalog/repositories/swarmauri/docs-swarmauri-com",
+        "route": "/catalog/resources/documentation/290b0f35c573",
         "url": "https://github.com/swarmauri/docs-swarmauri-com/tree/master/docs/assets"
       },
       {
         "evidence_type": "repository.tree",
-        "id": "resource:cc692306a879",
+        "id": "resource:345d732e0416",
         "kind": "documentation",
+        "legal_evidence": [],
+        "legal_inherits_from": "repository:swarmauri/docs-swarmauri-com",
         "name": "docs/blog",
+        "observed_at": "2026-08-03T17:22:38Z",
+        "path": "docs/blog",
+        "repository": "swarmauri/docs-swarmauri-com",
+        "repository_route": "/catalog/repositories/swarmauri/docs-swarmauri-com",
+        "route": "/catalog/resources/documentation/345d732e0416",
         "url": "https://github.com/swarmauri/docs-swarmauri-com/tree/master/docs/blog"
       },
       {
         "evidence_type": "repository.tree",
-        "id": "resource:eb748dfe10ac",
+        "id": "resource:a5fba2e76dca",
         "kind": "documentation",
+        "legal_evidence": [],
+        "legal_inherits_from": "repository:swarmauri/docs-swarmauri-com",
         "name": "docs/guide",
+        "observed_at": "2026-08-03T17:22:38Z",
+        "path": "docs/guide",
+        "repository": "swarmauri/docs-swarmauri-com",
+        "repository_route": "/catalog/repositories/swarmauri/docs-swarmauri-com",
+        "route": "/catalog/resources/documentation/a5fba2e76dca",
         "url": "https://github.com/swarmauri/docs-swarmauri-com/tree/master/docs/guide"
       },
       {
         "evidence_type": "repository.tree",
-        "id": "resource:a73c5b3bfb31",
+        "id": "resource:c123fd5ca468",
         "kind": "documentation",
+        "legal_evidence": [],
+        "legal_inherits_from": "repository:swarmauri/docs-swarmauri-com",
         "name": "docs/home",
+        "observed_at": "2026-08-03T17:22:38Z",
+        "path": "docs/home",
+        "repository": "swarmauri/docs-swarmauri-com",
+        "repository_route": "/catalog/repositories/swarmauri/docs-swarmauri-com",
+        "route": "/catalog/resources/documentation/c123fd5ca468",
         "url": "https://github.com/swarmauri/docs-swarmauri-com/tree/master/docs/home"
       },
       {
         "evidence_type": "repository.blob",
-        "id": "resource:46403f43904a",
+        "id": "resource:fa04a171b8a5",
         "kind": "documentation",
+        "legal_evidence": [],
+        "legal_inherits_from": "repository:swarmauri/docs-swarmauri-com",
         "name": "docs/index.md",
+        "observed_at": "2026-08-03T17:22:38Z",
+        "path": "docs/index.md",
+        "repository": "swarmauri/docs-swarmauri-com",
+        "repository_route": "/catalog/repositories/swarmauri/docs-swarmauri-com",
+        "route": "/catalog/resources/documentation/fa04a171b8a5",
         "url": "https://github.com/swarmauri/docs-swarmauri-com/blob/master/docs/index.md"
       },
       {
         "evidence_type": "repository.tree",
-        "id": "resource:daa79e8e6fab",
+        "id": "resource:7d4a7a1b4e1c",
         "kind": "documentation",
+        "legal_evidence": [],
+        "legal_inherits_from": "repository:swarmauri/docs-swarmauri-com",
         "name": "docs/news",
+        "observed_at": "2026-08-03T17:22:38Z",
+        "path": "docs/news",
+        "repository": "swarmauri/docs-swarmauri-com",
+        "repository_route": "/catalog/repositories/swarmauri/docs-swarmauri-com",
+        "route": "/catalog/resources/documentation/7d4a7a1b4e1c",
         "url": "https://github.com/swarmauri/docs-swarmauri-com/tree/master/docs/news"
       },
       {
         "evidence_type": "repository.tree",
-        "id": "resource:f93e08ee3d75",
+        "id": "resource:b9be0d9bb590",
         "kind": "documentation",
+        "legal_evidence": [],
+        "legal_inherits_from": "repository:swarmauri/docs-swarmauri-com",
         "name": "docs/people",
+        "observed_at": "2026-08-03T17:22:38Z",
+        "path": "docs/people",
+        "repository": "swarmauri/docs-swarmauri-com",
+        "repository_route": "/catalog/repositories/swarmauri/docs-swarmauri-com",
+        "route": "/catalog/resources/documentation/b9be0d9bb590",
         "url": "https://github.com/swarmauri/docs-swarmauri-com/tree/master/docs/people"
       }
     ],

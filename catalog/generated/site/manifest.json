@@ -13,8 +13,9 @@
   },
   "counts": {
     "organizations": 4,
-    "packages": 1124,
+    "packages": 1125,
     "repositories": 68,
+    "resources": 700,
     "technologies": 18
   },
   "files": [
@@ -23,31 +24,38 @@
       "dataset": "organizations",
       "path": "organizations.json",
       "records": 4,
-      "sha256": "d8220c7c0f5ad929cedac14f876fac4a85e4ad1430a7b389134be9a0e2c6e92c"
+      "sha256": "abb0f927d3a76c16a4d3e9dbdc4c83024182845b845be0fcaaf517d556364cbe"
     },
     {
-      "bytes": 8540983,
+      "bytes": 13647064,
       "dataset": "packages",
       "path": "packages.json",
-      "records": 1124,
-      "sha256": "fb4859fe52fcf3b458f92478c54143d59948a46d89c891712b1da76ccf038f50"
+      "records": 1125,
+      "sha256": "5a6a683b893501b66c519535357024fb617943ee13b2cb4b3ee4a886f4ec7298"
     },
     {
-      "bytes": 3705594,
+      "bytes": 6289151,
       "dataset": "repositories",
       "path": "repositories.json",
       "records": 68,
-      "sha256": "f089557e333312274a8f0955d4066d58822abde14f883e44417f8f94a6a63090"
+      "sha256": "00ba2903894ddef2dfc840f6173054abd6e59e85cddb4e5ebeb244605cf89dd0"
+    },
+    {
+      "bytes": 872177,
+      "dataset": "resources",
+      "path": "resources.json",
+      "records": 700,
+      "sha256": "3d77f174a6f8c07f5c6584c68224475bd678bdb19a72c32974341017dd438109"
     },
     {
       "bytes": 13753,
       "dataset": "technologies",
       "path": "technologies.json",
       "records": 18,
-      "sha256": "28081484c530ef4ca5f29f02898b97c6c6864e908ce412b720db10122b3a3f2a"
+      "sha256": "32e44fdfa884a4be13fb173e84613bf611c7b49fd9bbb90243f587add7d99986"
     }
   ],
-  "generated_at": "2026-08-03T13:56:23Z",
+  "generated_at": "2026-08-03T17:22:36Z",
   "product_evidence": {
     "path": "/catalog/product-evidence/",
     "records": 69
@@ -55,8 +63,8 @@
   "schema_version": "1.0.0",
   "source": "/catalog/catalog.json",
   "source_counts": {
-    "deployments": 3955,
-    "relationships": 10845,
+    "deployments": 3967,
+    "relationships": 10857,
     "releases": 17313
   }
 }

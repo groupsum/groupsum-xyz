@@ -23,6 +23,7 @@ type RelatedResource = {
   kind?: string;
   name?: string;
   url?: string;
+  route?: string;
   evidence_type?: string;
 };
 
@@ -110,7 +111,10 @@ function evidenceBundle(model: ProductPageModel): ProductEvidenceBundle {
         id: resource.id,
         kind: resource.resource_type,
         name: resource.title,
-        url: resource.url,
+        url: resource.route_key
+          ? `/catalog/resources/${resource.resource_type}/${resource.route_key}`
+          : resource.url,
+        route: resource.route_key ? `/catalog/resources/${resource.resource_type}/${resource.route_key}` : undefined,
       })),
     },
     packages: model.implementation.packages,
@@ -161,6 +165,7 @@ function evidenceSignals(repository: RepositoryEvidence): RepositorySignals {
     metrics: {
       stars: Number(repository.metrics.stars || 0),
       forks: Number(repository.metrics.forks || 0),
+      watchers: Number(repository.metrics.watchers || 0),
       contributors: Number(repository.metrics.contributors || 0),
       commits: Number(repository.metrics.commits || 0),
     },

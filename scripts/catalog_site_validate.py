@@ -10,7 +10,7 @@ from pathlib import Path
 from typing import Any
 
 ROOT = Path(__file__).resolve().parents[1]
-REQUIRED_DATASETS = {"organizations", "repositories", "packages", "technologies"}
+REQUIRED_DATASETS = {"organizations", "repositories", "packages", "resources", "technologies"}
 DISALLOWED_DATASETS = {"releases", "deployments", "surfaces", "relationships"}
 
 
@@ -70,7 +70,7 @@ def validate_site(site_dir: Path, typescript: Path) -> list[str]:
                 if route in all_routes:
                     errors.append(f"duplicate generated route: {route}")
                 all_routes.add(route)
-            if name in {"organizations", "repositories", "packages", "technologies"} and not record.get("evidence"):
+            if name in {"organizations", "repositories", "packages", "resources", "technologies"} and not record.get("evidence"):
                 errors.append(f"{name} record missing evidence: {identity}")
             if name == "repositories" and record.get("visibility") != "public":
                 errors.append(f"non-public repository rendered: {identity}")

@@ -1,5 +1,5 @@
 import React from "react";
-import { GitCommitHorizontal, GitFork, Star, Users } from "lucide-react";
+import { Eye, GitCommitHorizontal, GitFork, Star, Users } from "lucide-react";
 import type { CommitActivityPoint, MetricPoint, RepositorySignals } from "../api/catalog.generated";
 
 function compactNumber(value: number): string {
@@ -64,13 +64,14 @@ function CommitBars({ points }: { points: CommitActivityPoint[] }) {
 const metricDefinitions = [
   { key: "stars", label: "Stars", Icon: Star },
   { key: "forks", label: "Forks", Icon: GitFork },
+  { key: "watchers", label: "Watchers", Icon: Eye },
   { key: "contributors", label: "Contributors", Icon: Users },
 ] as const;
 
 export function RepositorySignalStrip({ signals, compact = false }: { signals?: RepositorySignals | null; compact?: boolean }) {
   if (!signals || signals.repository_count === 0) return null;
   return (
-    <div className={`grid grid-cols-2 ${compact ? "" : "sm:grid-cols-4"} gap-x-4 gap-y-3 border-y border-[var(--color-border-soft)] py-3`}>
+    <div className={`grid grid-cols-2 ${compact ? "" : "sm:grid-cols-5"} gap-x-4 gap-y-3 border-y border-[var(--color-border-soft)] py-3`}>
       {metricDefinitions.map(({ key, label, Icon }) => (
         <div key={key} className="min-w-0">
           <div className="flex items-center justify-between gap-2">

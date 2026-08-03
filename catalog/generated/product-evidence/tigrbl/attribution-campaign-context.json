@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-03T13:56:23Z",
+  "generated_at": "2026-08-03T17:22:36Z",
   "packages": [
     {
       "claim_boundary": "Publication is reported only when confirmed by the named public registry.",
@@ -81,16 +81,30 @@
       "evidence": [
         {
           "kind": "registry",
-          "observed_at": "2026-08-03T13:56:23Z",
+          "observed_at": "2026-08-03T17:22:36Z",
           "url": "https://pypi.org/project/attribution-campaign-context/"
         }
       ],
       "id": "package:pypi:attribution-campaign-context:tigrbl/attribution-campaign-context:pyproject.toml",
       "kind": "package",
       "latest_version": "0.1.0",
+      "legal_evidence": [
+        {
+          "evidence_type": "pypi.registry",
+          "expression": "Apache-2.0",
+          "kind": "license-expression",
+          "name": "Registry license metadata",
+          "scope": "direct",
+          "url": "https://pypi.org/project/attribution-campaign-context/"
+        }
+      ],
+      "legal_repository": "tigrbl/attribution-campaign-context",
+      "license_classifiers": [],
+      "license_expression": "Apache-2.0",
+      "license_status": "observed",
       "manifest_path": "pyproject.toml",
       "name": "attribution-campaign-context",
-      "observed_at": "2026-08-03T13:56:23Z",
+      "observed_at": "2026-08-03T17:22:36Z",
       "owner": "tigrbl",
       "private": false,
       "publication_status": "published",
@@ -106,9 +120,15 @@
       "releases": [
         {
           "downloads": null,
-          "observed_at": "2026-08-03T13:56:23Z",
+          "id": "release:2c57e0425a9b5608",
+          "legal_evidence": [],
+          "legal_inherits_from": "package:pypi:attribution-campaign-context:tigrbl/attribution-campaign-context:pyproject.toml",
+          "license_expression": "Apache-2.0",
+          "license_status": "observed",
+          "observed_at": "2026-08-03T17:22:36Z",
           "published_at": "2026-06-14T10:49:53.870015Z",
           "release_kind": "pypi",
+          "route": "/catalog/releases/pypi/attribution-campaign-context-53f9747af0",
           "url": "https://pypi.org/project/attribution-campaign-context/0.1.0/",
           "version": "0.1.0"
         }
@@ -260,7 +280,7 @@
     "evidence": [
       {
         "kind": "source",
-        "observed_at": "2026-08-03T13:56:24Z",
+        "observed_at": "2026-08-03T17:22:38Z",
         "url": "https://github.com/tigrbl/attribution-campaign-context"
       }
     ],
@@ -287,6 +307,7 @@
       "updated_at": "2026-06-14T10:49:58Z"
     },
     "latest_release": null,
+    "legal_evidence": [],
     "license": null,
     "metrics": {
       "commits": 18,
@@ -304,7 +325,7 @@
       "watchers": 0
     },
     "name": "attribution-campaign-context",
-    "observed_at": "2026-08-03T13:56:24Z",
+    "observed_at": "2026-08-03T17:22:38Z",
     "owner": "tigrbl",
     "package_ids": [
       "package:pypi:attribution-campaign-context:tigrbl/attribution-campaign-context:pyproject.toml"
@@ -313,23 +334,44 @@
     "related_resources": [
       {
         "evidence_type": "repository.blob",
-        "id": "resource:0d8b2d78bbde",
+        "id": "resource:5c104bcb63f2",
         "kind": "documentation",
+        "legal_evidence": [],
+        "legal_inherits_from": "repository:tigrbl/attribution-campaign-context",
         "name": "docs/attribution-keys.md",
+        "observed_at": "2026-08-03T17:22:38Z",
+        "path": "docs/attribution-keys.md",
+        "repository": "tigrbl/attribution-campaign-context",
+        "repository_route": "/catalog/repositories/tigrbl/attribution-campaign-context",
+        "route": "/catalog/resources/documentation/5c104bcb63f2",
         "url": "https://github.com/tigrbl/attribution-campaign-context/blob/master/docs/attribution-keys.md"
       },
       {
         "evidence_type": "repository.blob",
-        "id": "resource:ffd6080c61cc",
+        "id": "resource:8fcff256fb60",
         "kind": "documentation",
+        "legal_evidence": [],
+        "legal_inherits_from": "repository:tigrbl/attribution-campaign-context",
         "name": "docs/public-operator-surfaces.md",
+        "observed_at": "2026-08-03T17:22:38Z",
+        "path": "docs/public-operator-surfaces.md",
+        "repository": "tigrbl/attribution-campaign-context",
+        "repository_route": "/catalog/repositories/tigrbl/attribution-campaign-context",
+        "route": "/catalog/resources/documentation/8fcff256fb60",
         "url": "https://github.com/tigrbl/attribution-campaign-context/blob/master/docs/public-operator-surfaces.md"
       },
       {
         "evidence_type": "repository.blob",
-        "id": "resource:569f81016037",
+        "id": "resource:c27a8b88d5b7",
         "kind": "documentation",
+        "legal_evidence": [],
+        "legal_inherits_from": "repository:tigrbl/attribution-campaign-context",
         "name": "docs/ssot-governance-packs.md",
+        "observed_at": "2026-08-03T17:22:38Z",
+        "path": "docs/ssot-governance-packs.md",
+        "repository": "tigrbl/attribution-campaign-context",
+        "repository_route": "/catalog/repositories/tigrbl/attribution-campaign-context",
+        "route": "/catalog/resources/documentation/c27a8b88d5b7",
         "url": "https://github.com/tigrbl/attribution-campaign-context/blob/master/docs/ssot-governance-packs.md"
       }
     ],

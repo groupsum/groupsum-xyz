@@ -11,8 +11,8 @@ export type TaxonomyItem = { slug: string; label: string; category: string | nul
 export type MetricPoint = { observed_at: string; value: number };
 export type CommitActivityPoint = { date: string; count: number };
 export type RepositorySignals = {
-  repository_count?: number; metrics: Record<"stars" | "forks" | "contributors" | "commits", number>;
-  history: Record<"stars" | "forks" | "contributors", MetricPoint[]>;
+  repository_count?: number; metrics: Record<"stars" | "forks" | "watchers" | "contributors" | "commits", number>;
+  history: Record<"stars" | "forks" | "watchers" | "contributors", MetricPoint[]>;
   commit_activity: CommitActivityPoint[]; observed_at?: string | null;
 };
 export type RepositoryEvidence = {
@@ -33,16 +33,19 @@ export type PackageEvidence = {
   id: string; ecosystem: string; name: string; registry_url: string;
   source_url?: string | null; manifest_path?: string | null; description?: string | null;
   latest_version?: string | null; published?: boolean | null; publication_status?: string | null;
+  route_key?: string | null;
   published_at?: string | null; observed_at?: string | null; role: string;
   release_count: number; dependency_count: number; dependent_count: number;
   downloads?: number | null;
 };
 export type ResourceEvidence = {
   id: string; resource_type: string; title: string; url: string;
+  route_key?: string | null;
   summary?: string | null; observed_at?: string | null; role: string;
 };
 export type ReleaseEvidence = {
   id: string; release_kind: string; version: string; url: string;
+  route_key?: string | null;
   published_at?: string | null; downloads?: number | null; prerelease: boolean; draft: boolean;
   observed_at?: string | null; package_id?: string | null; repository_id?: string | null;
   package_name?: string | null; ecosystem?: string | null;

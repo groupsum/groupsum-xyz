@@ -17,7 +17,7 @@ jobs:
           fetch-depth: 0
       - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7
         with:
-          node-version: 24
+          node-version: 22
           cache: npm
       - uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7
         with:
@@ -45,11 +45,12 @@ jobs:
       - name: Build site and catalog API images
         run: |
           docker-compose -f docker-compose.yaml build groupsum-catalog-api
+          docker-compose -f docker-compose.yaml build groupsum-duckdb
           docker-compose -f docker-compose.yaml build groupsum-xyz
       - name: Replace site and catalog API containers
         run: |
           docker-compose -f docker-compose.yaml down --remove-orphans
-          docker-compose -f docker-compose.yaml up -d --no-build groupsum-catalog-api groupsum-xyz
+          docker-compose -f docker-compose.yaml up -d --no-build groupsum-postgres groupsum-catalog-api groupsum-duckdb groupsum-xyz
       - name: Verify public catalog and rendered page markers
         env:
           DEPLOY_VERIFY_URL: https://groupsum.xyz

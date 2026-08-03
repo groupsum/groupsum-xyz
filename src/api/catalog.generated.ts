@@ -1,12 +1,12 @@
 // Generated from backend/openapi.json. Do not edit manually.
-export const OPENAPI_SHA256 = "37ef06d952595660de8a79ab76f4f619edfdf354eee920c25e09d91b2a1007b2" as const;
+export const OPENAPI_SHA256 = "8b83ccb5ed63527b857f17f54edf1423a94e378605a12a43f2ec39836dfc4aa2" as const;
 
 export type TaxonomyItem = { slug: string; label: string; category: string | null };
 export type MetricPoint = { observed_at: string; value: number };
 export type CommitActivityPoint = { date: string; count: number };
 export type RepositorySignals = {
-  repository_count?: number; metrics: Record<"stars" | "forks" | "contributors" | "commits", number>;
-  history: Record<"stars" | "forks" | "contributors", MetricPoint[]>;
+  repository_count?: number; metrics: Record<"stars" | "forks" | "watchers" | "contributors" | "commits", number>;
+  history: Record<"stars" | "forks" | "watchers" | "contributors", MetricPoint[]>;
   commit_activity: CommitActivityPoint[]; observed_at?: string | null;
 };
 export type RepositoryEvidence = {
@@ -27,16 +27,19 @@ export type PackageEvidence = {
   id: string; ecosystem: string; name: string; registry_url: string;
   source_url?: string | null; manifest_path?: string | null; description?: string | null;
   latest_version?: string | null; published?: boolean | null; publication_status?: string | null;
+  route_key?: string | null;
   published_at?: string | null; observed_at?: string | null; role: string;
   release_count: number; dependency_count: number; dependent_count: number;
   downloads?: number | null;
 };
 export type ResourceEvidence = {
   id: string; resource_type: string; title: string; url: string;
+  route_key?: string | null;
   summary?: string | null; observed_at?: string | null; role: string;
 };
 export type ReleaseEvidence = {
   id: string; release_kind: string; version: string; url: string;
+  route_key?: string | null;
   published_at?: string | null; downloads?: number | null; prerelease: boolean; draft: boolean;
   observed_at?: string | null; package_id?: string | null; repository_id?: string | null;
   package_name?: string | null; ecosystem?: string | null;

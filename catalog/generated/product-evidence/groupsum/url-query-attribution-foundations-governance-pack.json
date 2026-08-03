@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-03T13:56:23Z",
+  "generated_at": "2026-08-03T17:22:36Z",
   "packages": [
     {
       "claim_boundary": "Publication is reported only when confirmed by the named public registry.",
@@ -73,16 +73,56 @@
       "evidence": [
         {
           "kind": "registry",
-          "observed_at": "2026-08-03T13:56:23Z",
+          "observed_at": "2026-08-03T17:22:36Z",
           "url": "https://pypi.org/project/url-query-attribution-foundations-governance-pack/"
         }
       ],
       "id": "package:pypi:url-query-attribution-foundations-governance-pack:groupsum/url-query-attribution-foundations-governance-pack:pyproject.toml",
       "kind": "package",
       "latest_version": "0.1.1",
+      "legal_evidence": [
+        {
+          "evidence_type": "repository.manifest",
+          "expression": "Apache-2.0",
+          "kind": "license-expression",
+          "name": "Package manifest license",
+          "scope": "direct",
+          "url": "https://github.com/groupsum/url-query-attribution-foundations-governance-pack/blob/HEAD/pyproject.toml"
+        },
+        {
+          "evidence_type": "pypi.registry",
+          "expression": "Apache-2.0",
+          "kind": "license-expression",
+          "name": "Registry license metadata",
+          "scope": "direct",
+          "url": "https://pypi.org/project/url-query-attribution-foundations-governance-pack/"
+        },
+        {
+          "evidence_type": "github.repository.license",
+          "expression": "Apache-2.0",
+          "kind": "license-expression",
+          "name": "GitHub detected license",
+          "path": null,
+          "scope": "inherited",
+          "url": "https://github.com/groupsum/url-query-attribution-foundations-governance-pack"
+        },
+        {
+          "evidence_type": "repository.tree",
+          "expression": null,
+          "kind": "license-file",
+          "name": "LICENSE",
+          "path": "LICENSE",
+          "scope": "inherited",
+          "url": "https://github.com/groupsum/url-query-attribution-foundations-governance-pack/blob/master/LICENSE"
+        }
+      ],
+      "legal_repository": "groupsum/url-query-attribution-foundations-governance-pack",
+      "license_classifiers": [],
+      "license_expression": "Apache-2.0",
+      "license_status": "observed",
       "manifest_path": "pyproject.toml",
       "name": "url-query-attribution-foundations-governance-pack",
-      "observed_at": "2026-08-03T13:56:23Z",
+      "observed_at": "2026-08-03T17:22:36Z",
       "owner": "groupsum",
       "private": false,
       "publication_status": "published",
@@ -98,17 +138,29 @@
       "releases": [
         {
           "downloads": null,
-          "observed_at": "2026-08-03T13:56:23Z",
+          "id": "release:a0bf3a039a77082c",
+          "legal_evidence": [],
+          "legal_inherits_from": "package:pypi:url-query-attribution-foundations-governance-pack:groupsum/url-query-attribution-foundations-governance-pack:pyproject.toml",
+          "license_expression": "Apache-2.0",
+          "license_status": "observed",
+          "observed_at": "2026-08-03T17:22:36Z",
           "published_at": "2026-06-02T00:57:28.740304Z",
           "release_kind": "pypi",
+          "route": "/catalog/releases/pypi/url-query-attribution-foundations-governance-pack-677c758c8f",
           "url": "https://pypi.org/project/url-query-attribution-foundations-governance-pack/0.1.1/",
           "version": "0.1.1"
         },
         {
           "downloads": null,
-          "observed_at": "2026-08-03T13:56:23Z",
+          "id": "release:28f46f2ab5e989cd",
+          "legal_evidence": [],
+          "legal_inherits_from": "package:pypi:url-query-attribution-foundations-governance-pack:groupsum/url-query-attribution-foundations-governance-pack:pyproject.toml",
+          "license_expression": "Apache-2.0",
+          "license_status": "observed",
+          "observed_at": "2026-08-03T17:22:36Z",
           "published_at": "2026-05-18T09:30:01.214836Z",
           "release_kind": "pypi",
+          "route": "/catalog/releases/pypi/url-query-attribution-foundations-governance-pack-dc63d7c0d9",
           "url": "https://pypi.org/project/url-query-attribution-foundations-governance-pack/0.1.1.dev1/",
           "version": "0.1.1.dev1"
         }
@@ -265,7 +317,7 @@
     "evidence": [
       {
         "kind": "source",
-        "observed_at": "2026-08-03T13:56:24Z",
+        "observed_at": "2026-08-03T17:22:38Z",
         "url": "https://github.com/groupsum/url-query-attribution-foundations-governance-pack"
       }
     ],
@@ -275,20 +327,32 @@
       {
         "downloads": 0,
         "draft": false,
-        "observed_at": "2026-08-03T13:56:24Z",
+        "id": "release:4300e22e3969077e",
+        "legal_evidence": [],
+        "legal_inherits_from": "repository:groupsum/url-query-attribution-foundations-governance-pack",
+        "license_expression": "Apache-2.0",
+        "license_status": "observed",
+        "observed_at": "2026-08-03T17:22:38Z",
         "prerelease": false,
         "published_at": "2026-06-02T00:57:17Z",
         "release_kind": "github",
+        "route": "/catalog/releases/github/url-query-attribution-foundations-governance-pack-8ff25517e5",
         "url": "https://github.com/groupsum/url-query-attribution-foundations-governance-pack/releases/tag/v0.1.1",
         "version": "v0.1.1"
       },
       {
         "downloads": 0,
         "draft": false,
-        "observed_at": "2026-08-03T13:56:24Z",
+        "id": "release:48167fd4d5666615",
+        "legal_evidence": [],
+        "legal_inherits_from": "repository:groupsum/url-query-attribution-foundations-governance-pack",
+        "license_expression": "Apache-2.0",
+        "license_status": "observed",
+        "observed_at": "2026-08-03T17:22:38Z",
         "prerelease": false,
         "published_at": "2026-05-18T09:29:25Z",
         "release_kind": "github",
+        "route": "/catalog/releases/github/url-query-attribution-foundations-governance-pack-df95182dde",
         "url": "https://github.com/groupsum/url-query-attribution-foundations-governance-pack/releases/tag/v0.1.1.dev1",
         "version": "v0.1.1.dev1"
       }
@@ -332,6 +396,26 @@
       "tag": "v0.1.1",
       "url": "https://github.com/groupsum/url-query-attribution-foundations-governance-pack/releases/tag/v0.1.1"
     },
+    "legal_evidence": [
+      {
+        "evidence_type": "github.repository.license",
+        "expression": "Apache-2.0",
+        "kind": "license-expression",
+        "name": "GitHub detected license",
+        "path": null,
+        "scope": "direct",
+        "url": "https://github.com/groupsum/url-query-attribution-foundations-governance-pack"
+      },
+      {
+        "evidence_type": "repository.tree",
+        "expression": null,
+        "kind": "license-file",
+        "name": "LICENSE",
+        "path": "LICENSE",
+        "scope": "direct",
+        "url": "https://github.com/groupsum/url-query-attribution-foundations-governance-pack/blob/master/LICENSE"
+      }
+    ],
     "license": "Apache-2.0",
     "metrics": {
       "commits": 25,
@@ -349,7 +433,7 @@
       "watchers": 0
     },
     "name": "url-query-attribution-foundations-governance-pack",
-    "observed_at": "2026-08-03T13:56:24Z",
+    "observed_at": "2026-08-03T17:22:38Z",
     "owner": "groupsum",
     "package_ids": [
       "package:pypi:url-query-attribution-foundations-governance-pack:groupsum/url-query-attribution-foundations-governance-pack:pyproject.toml"
@@ -358,9 +442,16 @@
     "related_resources": [
       {
         "evidence_type": "repository.tree",
-        "id": "resource:db24720ae8c3",
+        "id": "resource:8741a81f742b",
         "kind": "documentation",
+        "legal_evidence": [],
+        "legal_inherits_from": "repository:groupsum/url-query-attribution-foundations-governance-pack",
         "name": "docs/governance",
+        "observed_at": "2026-08-03T17:22:38Z",
+        "path": "docs/governance",
+        "repository": "groupsum/url-query-attribution-foundations-governance-pack",
+        "repository_route": "/catalog/repositories/groupsum/url-query-attribution-foundations-governance-pack",
+        "route": "/catalog/resources/documentation/8741a81f742b",
         "url": "https://github.com/groupsum/url-query-attribution-foundations-governance-pack/tree/master/docs/governance"
       }
     ],

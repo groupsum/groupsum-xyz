@@ -1,10 +1,12 @@
 from __future__ import annotations
 
+import json
 from pathlib import Path
 
 import httpx
 import pytest
 
+from groupsum_catalog_api.analytics import connect_analytics, default_analytics_path
 from groupsum_catalog_api.app import build_app
 from groupsum_catalog_api.importer import connect, import_catalog
 
@@ -16,7 +18,12 @@ async def test_health_and_openapi(tmp_path: Path) -> None:
     async with httpx.AsyncClient(transport=transport, base_url="http://test") as client:
         health = await client.get("/healthz")
         assert health.status_code == 200
-        assert health.json() == {"status": "ok", "database": "sqlite", "schema_tables": 28}
+        assert health.json() == {
+            "status": "ok",
+            "database": "sqlite-test",
+            "analytics": "duckdb",
+            "schema_tables": 28,
+        }
         assert health.headers["cache-control"] == "no-store"
 
         openapi = await client.get("/openapi.json")
@@ -48,7 +55,7 @@ async def test_peagen_page_model_has_explicit_attachments(tmp_path: Path) -> Non
     counts = import_catalog(database_path, repo_root)
     assert counts["records"] >= 32
     assert counts["repositories"] == 68
-    assert counts["packages"] == 1_124
+    assert counts["packages"] == 1_125
     assert counts["releases"] > 17_000
     assert counts["dependencies"] > 8_000
     assert import_catalog(database_path, repo_root) == counts
@@ -60,14 +67,16 @@ async def test_peagen_page_model_has_explicit_attachments(tmp_path: Path) -> Non
         assert connection.execute(
             "SELECT COUNT(*) FROM repository_contributors"
         ).fetchone()[0] >= 40
-        assert connection.execute(
+    with connect_analytics(default_analytics_path(database_path), read_only=True) as analytics:
+        assert analytics.execute(
             "SELECT COUNT(*) FROM metric_observations WHERE metric = 'commits_daily'"
         ).fetchone()[0] == counts["repositories"] * 30
+        assert analytics.execute("SELECT COUNT(*) FROM record_aggregates").fetchone()[0] > 40
 
     transport = httpx.ASGITransport(app=app)
     async with httpx.AsyncClient(transport=transport, base_url="http://test") as client:
         response = await client.get("/api/v1/products/peagen")
-        assert response.status_code == 200
+        assert response.status_code == 200, response.text
         model = response.json()
         assert model["record"]["title"] == "Peagen"
         assert len(model["implementation"]["repositories"]) == 3
@@ -155,3 +164,16 @@ async def test_peagen_page_model_has_explicit_attachments(tmp_path: Path) -> Non
         generated_model = generated.json()
         assert generated_model["record"]["content"]["generated_from"] == "public-catalog"
         assert generated_model["implementation"]["repositories"][0]["name"] == "groupsum-xyz"
+
+        package_row = next(
+            item
+            for item in json.loads(
+                (repo_root / "catalog/generated/site/packages.json").read_text()
+            )
+            if item.get("route") and item.get("legal_evidence")
+        )
+        package_key = package_row["route"].rstrip("/").split("/")[-1]
+        package_detail = await client.get(f"/api/v1/catalog/packages/{package_key}")
+        assert package_detail.status_code == 200
+        assert package_detail.json()["legal"]["evidence"]
+        assert "dependencies" in package_detail.json()["implementation"]

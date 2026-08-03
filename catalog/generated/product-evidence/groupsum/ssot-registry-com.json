@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-03T13:56:23Z",
+  "generated_at": "2026-08-03T17:22:36Z",
   "packages": [
     {
       "claim_boundary": "Publication is reported only when confirmed by the named public registry.",
@@ -189,16 +189,21 @@
       "evidence": [
         {
           "kind": "source",
-          "observed_at": "2026-08-03T13:56:23Z",
+          "observed_at": "2026-08-03T17:22:36Z",
           "url": "https://github.com/groupsum/ssot-registry-com/blob/HEAD/package.json"
         }
       ],
       "id": "package:npm:ssot-registry-com:groupsum/ssot-registry-com:package.json",
       "kind": "package",
       "latest_version": "0.1.1",
+      "legal_evidence": [],
+      "legal_repository": "groupsum/ssot-registry-com",
+      "license_classifiers": [],
+      "license_expression": null,
+      "license_status": "not-observed",
       "manifest_path": "package.json",
       "name": "ssot-registry-com",
-      "observed_at": "2026-08-03T13:56:23Z",
+      "observed_at": "2026-08-03T17:22:36Z",
       "owner": "groupsum",
       "private": true,
       "publication_status": "manifest_private",
@@ -262,16 +267,21 @@
       "evidence": [
         {
           "kind": "source",
-          "observed_at": "2026-08-03T13:56:23Z",
+          "observed_at": "2026-08-03T17:22:36Z",
           "url": "https://github.com/groupsum/ssot-registry-com/blob/HEAD/pyproject.toml"
         }
       ],
       "id": "package:pypi:ssot-registry-com:groupsum/ssot-registry-com:pyproject.toml",
       "kind": "package",
       "latest_version": "0.1.0",
+      "legal_evidence": [],
+      "legal_repository": "groupsum/ssot-registry-com",
+      "license_classifiers": [],
+      "license_expression": null,
+      "license_status": "not-observed",
       "manifest_path": "pyproject.toml",
       "name": "ssot-registry-com",
-      "observed_at": "2026-08-03T13:56:23Z",
+      "observed_at": "2026-08-03T17:22:36Z",
       "owner": "groupsum",
       "private": false,
       "publication_status": "registry_not_found",
@@ -431,7 +441,7 @@
     "evidence": [
       {
         "kind": "source",
-        "observed_at": "2026-08-03T13:56:24Z",
+        "observed_at": "2026-08-03T17:22:38Z",
         "url": "https://github.com/groupsum/ssot-registry-com"
       }
     ],
@@ -458,6 +468,7 @@
       "updated_at": "2026-07-13T21:04:40Z"
     },
     "latest_release": null,
+    "legal_evidence": [],
     "license": null,
     "metrics": {
       "commits": 38,
@@ -475,7 +486,7 @@
       "watchers": 0
     },
     "name": "ssot-registry-com",
-    "observed_at": "2026-08-03T13:56:24Z",
+    "observed_at": "2026-08-03T17:22:38Z",
     "owner": "groupsum",
     "package_ids": [
       "package:npm:ssot-registry-com:groupsum/ssot-registry-com:package.json",
