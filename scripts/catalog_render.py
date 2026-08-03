@@ -64,12 +64,13 @@ def compile_catalog(catalog: dict[str, Any], editorial: dict[str, Any]) -> dict[
     packages_by_repo: dict[str, list[str]] = defaultdict(list)
     repository_records: list[dict[str, Any]] = []
     package_records: list[dict[str, Any]] = []
-    release_records: list[dict[str, Any]] = []
-    deployment_records: list[dict[str, Any]] = []
-    surface_records: list[dict[str, Any]] = []
-    relationship_records: list[dict[str, Any]] = []
     technology_repositories: dict[str, set[str]] = defaultdict(set)
     technology_bytes: Counter[str] = Counter()
+    relationship_counts: dict[str, Counter[str]] = defaultdict(Counter)
+    for relationship in catalog.get("relationships") or []:
+        kind = str(relationship.get("kind") or "related")
+        for identity in {str(relationship.get("source") or ""), str(relationship.get("target") or "")} - {""}:
+            relationship_counts[identity][kind] += 1
 
     for package in catalog.get("packages", []):
         ecosystem = str(package.get("ecosystem") or "unknown")
@@ -92,6 +93,7 @@ def compile_catalog(catalog: dict[str, Any], editorial: dict[str, Any]) -> dict[
             "description_source": "reviewed-editorial" if override.get("description") else "generated-factual",
             "reviewed": bool(override),
             "ecosystem": ecosystem,
+            "owner": package.get("owner") or (str(repository).split("/", 1)[0] if repository else None),
             "repository": repository,
             "manifest_path": package.get("manifest_path"),
             "private": bool(package.get("private")),
@@ -102,6 +104,8 @@ def compile_catalog(catalog: dict[str, Any], editorial: dict[str, Any]) -> dict[
             "release_count": len(package.get("releases") or package.get("versions") or []),
             "dependency_count": len(package.get("dependencies") or []),
             "downstream_count": len(package.get("downstream") or []),
+            "relationship_count": sum(relationship_counts[f"{ecosystem}:{name}"].values()),
+            "relationship_counts": dict(sorted(relationship_counts[f"{ecosystem}:{name}"].items())),
             "downstream_completeness": package.get("downstream_completeness") or "not-observed",
             "downloads": package.get("downloads"),
             "registry_url": registry_url,
@@ -113,30 +117,6 @@ def compile_catalog(catalog: dict[str, Any], editorial: dict[str, Any]) -> dict[
         package_records.append(record)
         if repository:
             packages_by_repo[repository].append(package_id)
-        for version in package.get("releases") or []:
-            release_records.append({
-                "id": f"release:{package_id}:{version}",
-                "kind": "registry-release",
-                "name": str(version),
-                "package_id": package_id,
-                "repository": repository,
-                "ecosystem": ecosystem,
-                "url": registry_url,
-                "observed_at": checked_at,
-            })
-        for version in package.get("versions") or []:
-            version_name = version.get("name") or version.get("id")
-            release_records.append({
-                "id": f"release:{package_id}:{version.get('id') or version_name}",
-                "kind": "github-package-release",
-                "name": str(version_name),
-                "package_id": package_id,
-                "repository": repository,
-                "ecosystem": ecosystem,
-                "published_at": version.get("created_at"),
-                "url": version.get("url") or registry_url,
-                "observed_at": checked_at,
-            })
 
     for repo in catalog.get("repositories", []):
         full_name = str(repo["full_name"])
@@ -146,7 +126,6 @@ def compile_catalog(catalog: dict[str, Any], editorial: dict[str, Any]) -> dict[
         activity = repo.get("activity") or {}
         metrics = repo.get("metrics") or {}
         languages = (repo.get("technologies") or {}).get("languages_bytes") or {}
-        surface_counts = Counter(item.get("kind", "unknown") for item in repo.get("surfaces") or [])
         latest_release = next(iter(repo.get("github_releases") or []), None)
         latest_deployment = next(iter(repo.get("deployments") or []), None)
         latest_status = next(iter((latest_deployment or {}).get("statuses") or []), None)
@@ -186,11 +165,11 @@ def compile_catalog(catalog: dict[str, Any], editorial: dict[str, Any]) -> dict[
                 "github_releases": len(repo.get("github_releases") or []),
                 "deployments": len(repo.get("deployments") or []),
                 "environments": len(repo.get("environments") or []),
-                "surfaces": len(repo.get("surfaces") or []),
                 "packages": len(packages_by_repo.get(full_name, [])),
+                "relationships": sum(relationship_counts[full_name].values()),
             },
             "technologies": sorted(languages),
-            "surface_counts": dict(sorted(surface_counts.items())),
+            "relationship_counts": dict(sorted(relationship_counts[full_name].items())),
             "package_ids": sorted(packages_by_repo.get(full_name, [])),
             "latest_commit": activity.get("latest_commit"),
             "latest_release": latest_release,
@@ -208,60 +187,6 @@ def compile_catalog(catalog: dict[str, Any], editorial: dict[str, Any]) -> dict[
         for language, byte_count in languages.items():
             technology_repositories[language].add(full_name)
             technology_bytes[language] += int(byte_count or 0)
-        for item in repo.get("github_releases") or []:
-            release_records.append({
-                "id": f"release:github:{full_name}:{item.get('tag')}",
-                "kind": "github-release",
-                "name": item.get("name") or item.get("tag"),
-                "tag": item.get("tag"),
-                "repository": full_name,
-                "published_at": item.get("published_at"),
-                "prerelease": bool(item.get("prerelease")),
-                "draft": bool(item.get("draft")),
-                "asset_count": len(item.get("assets") or []),
-                "url": item.get("url"),
-                "observed_at": checked_at,
-            })
-        for item in repo.get("deployments") or []:
-            status = next(iter(item.get("statuses") or []), None)
-            deployment_records.append({
-                "id": f"deployment:{full_name}:{item.get('id')}",
-                "kind": "github-deployment",
-                "repository": full_name,
-                "environment": item.get("environment"),
-                "ref": item.get("ref"),
-                "sha": item.get("sha"),
-                "state": (status or {}).get("state"),
-                "environment_url": (status or {}).get("environment_url"),
-                "log_url": (status or {}).get("log_url"),
-                "created_at": item.get("created_at"),
-                "updated_at": (status or {}).get("updated_at") or item.get("updated_at"),
-                "observed_at": checked_at,
-                "claim_boundary": "A deployment record is not proof that a public service is currently reachable.",
-            })
-        for item in repo.get("surfaces") or []:
-            identity = f"{full_name}:{item.get('kind')}:{item.get('name')}"
-            surface_records.append({
-                "id": f"surface:{stable_hash(identity)}",
-                "kind": item.get("kind"),
-                "name": item.get("name"),
-                "repository": full_name,
-                "url": item.get("url"),
-                "evidence_type": item.get("evidence"),
-                "observed_at": checked_at,
-            })
-
-    for item in catalog.get("relationships") or []:
-        identity = f"{item.get('kind')}:{item.get('source')}:{item.get('target')}"
-        relationship_records.append({
-            "id": f"relationship:{stable_hash(identity)}",
-            "kind": item.get("kind"),
-            "source": item.get("source"),
-            "target": item.get("target"),
-            "requirement": item.get("requirement"),
-            "evidence": item.get("evidence"),
-            "observed_at": generated_at,
-        })
 
     technology_records = [{
         "id": f"technology:{slug(name)}:{stable_hash(name, 8)}",
@@ -286,7 +211,21 @@ def compile_catalog(catalog: dict[str, Any], editorial: dict[str, Any]) -> dict[
     for definition in owner_definitions:
         login = definition["login"]
         repos = repo_by_owner.get(login, [])
-        package_count = sum(item["metrics"]["packages"] for item in repos)
+        repository_names = {item["full_name"] for item in repos}
+        organization_packages = [
+            item for item in package_records
+            if item.get("owner") == login or item.get("repository") in repository_names
+        ]
+        package_count = len(organization_packages)
+        package_names = {
+            f"{item.get('ecosystem')}:{item.get('name')}"
+            for item in catalog.get("packages", [])
+            if item.get("repository") in repository_names
+        }
+        organization_relationships = sum(
+            1 for item in catalog.get("relationships", [])
+            if item.get("source") in repository_names | package_names or item.get("target") in repository_names | package_names
+        )
         selected = sorted(repos, key=lambda item: (-item["metrics"]["stars"], -item["metrics"]["commits"], item["full_name"]))[:8]
         override = org_overrides.get(login, {})
         organization_records.append({
@@ -304,22 +243,21 @@ def compile_catalog(catalog: dict[str, Any], editorial: dict[str, Any]) -> dict[
             "forks": sum(item["metrics"]["forks"] for item in repos),
             "commits": sum(item["metrics"]["commits"] for item in repos),
             "contributors": len({contributor.get("login") for repo in catalog.get("repositories", []) if repo.get("owner") == login for contributor in (repo.get("activity") or {}).get("contributors", []) if contributor.get("login")}),
+            "github_releases": sum(item["metrics"]["github_releases"] for item in repos),
+            "package_releases": sum(int(item.get("release_count") or 0) for item in organization_packages),
+            "deployments": sum(item["metrics"]["deployments"] for item in repos),
+            "relationships": organization_relationships,
             "technologies": sorted({technology for item in repos for technology in item["technologies"]}),
             "featured_repositories": [{"id": item["id"], "name": item["display_name"], "route": item["route"], "description": item["description"], "metrics": item["metrics"]} for item in selected],
             "observed_at": generated_at,
             "evidence": evidence("organization", f"https://github.com/{login}", generated_at),
         })
 
-    deduplicated_surfaces = {item["id"]: item for item in surface_records}
     result = {
         "organizations": organization_records,
         "repositories": repository_records,
         "packages": package_records,
-        "releases": release_records,
-        "deployments": deployment_records,
         "technologies": technology_records,
-        "surfaces": list(deduplicated_surfaces.values()),
-        "relationships": relationship_records,
     }
     for records in result.values():
         records.sort(key=lambda item: (str(item.get("name") or item.get("display_name") or "").lower(), item["id"]))
@@ -361,6 +299,8 @@ def main() -> int:
     args.summary.parent.mkdir(parents=True, exist_ok=True)
     args.typescript.parent.mkdir(parents=True, exist_ok=True)
     args.site_dir.mkdir(parents=True, exist_ok=True)
+    for stale_name in ("releases", "deployments", "relationships", "surfaces"):
+        (args.site_dir / f"{stale_name}.json").unlink(missing_ok=True)
     write_json(args.summary, summary)
     files = []
     for name, records in datasets.items():
@@ -371,6 +311,11 @@ def main() -> int:
         "source": "/catalog/catalog.json",
         "files": sorted(files, key=lambda item: item["dataset"]),
         "counts": {name: len(records) for name, records in sorted(datasets.items())},
+        "source_counts": {
+            "releases": summary["github_releases"] + summary["registry_release_versions"] + summary["github_package_versions"],
+            "deployments": summary["deployments"],
+            "relationships": summary["relationships"],
+        },
         "completeness": catalog.get("completeness", {}),
     }
     write_json(args.site_dir / "manifest.json", manifest)

@@ -793,7 +793,7 @@ function PortfolioPage({ onNavigate }: RouteProps) {
       </div>
     </section>
     <PublicCatalogExplorer onNavigate={onNavigate} compact />
-    <DenseCatalog entities={portfolioEntities.filter((entity) => entity.approved)} onNavigate={onNavigate} title="Reviewed product layer" description="These editorial records provide product grouping and reviewed descriptions. The generated evidence catalog above remains the source for current public repositories, packages, releases, deployments, technologies, surfaces, and relationships." />
+    <DenseCatalog entities={portfolioEntities.filter((entity) => entity.approved)} onNavigate={onNavigate} title="Reviewed product layer" description="These editorial records provide product grouping and reviewed descriptions. The generated evidence catalog above remains the source for current public repositories, packages, and technologies, with child evidence summarized on its parent records." />
   </>;
 
   /* Legacy featured-card layout retained below for reference. */

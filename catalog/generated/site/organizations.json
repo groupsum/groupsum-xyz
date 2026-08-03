@@ -2,22 +2,26 @@
   {
     "commits": 0,
     "contributors": 0,
+    "deployments": 0,
     "description": "Public ecosystem inventory for the bucketwarden GitHub organization.",
     "display_name": "Bucketwarden",
     "evidence": [
       {
         "kind": "organization",
-        "observed_at": "2026-08-03T05:24:35Z",
+        "observed_at": "2026-08-03T09:11:48Z",
         "url": "https://github.com/bucketwarden"
       }
     ],
     "featured_repositories": [],
     "forks": 0,
+    "github_releases": 0,
     "id": "organization:bucketwarden",
     "kind": "organization",
     "login": "bucketwarden",
-    "observed_at": "2026-08-03T05:24:35Z",
+    "observed_at": "2026-08-03T09:11:48Z",
     "package_count": 0,
+    "package_releases": 0,
+    "relationships": 0,
     "repository_count": 0,
     "role": "product",
     "route": "/catalog",
@@ -26,14 +30,15 @@
     "watchers": 0
   },
   {
-    "commits": 2188,
+    "commits": 2180,
     "contributors": 2,
+    "deployments": 568,
     "description": "Public source, packages, and delivery records maintained by Groupsum.",
     "display_name": "Groupsum",
     "evidence": [
       {
         "kind": "organization",
-        "observed_at": "2026-08-03T05:24:35Z",
+        "observed_at": "2026-08-03T09:11:48Z",
         "url": "https://github.com/groupsum"
       }
     ],
@@ -50,9 +55,9 @@
           "github_releases": 447,
           "open_issues": 0,
           "packages": 14,
+          "relationships": 14,
           "size_kb": 77018,
           "stars": 5,
-          "surfaces": 37,
           "watchers": 0
         },
         "name": "ssot-registry",
@@ -70,9 +75,9 @@
           "github_releases": 6,
           "open_issues": 0,
           "packages": 45,
+          "relationships": 38,
           "size_kb": 1133214,
           "stars": 3,
-          "surfaces": 20,
           "watchers": 0
         },
         "name": "markdown_workspace",
@@ -90,9 +95,9 @@
           "github_releases": 7,
           "open_issues": 0,
           "packages": 1,
+          "relationships": 1,
           "size_kb": 131,
           "stars": 2,
-          "surfaces": 0,
           "watchers": 0
         },
         "name": "seo-aeo-aieo-governance-pack",
@@ -110,9 +115,9 @@
           "github_releases": 9,
           "open_issues": 0,
           "packages": 7,
+          "relationships": 7,
           "size_kb": 11109,
           "stars": 1,
-          "surfaces": 41,
           "watchers": 0
         },
         "name": "npmctl",
@@ -130,9 +135,9 @@
           "github_releases": 6,
           "open_issues": 0,
           "packages": 1,
+          "relationships": 1,
           "size_kb": 75,
           "stars": 1,
-          "surfaces": 1,
           "watchers": 0
         },
         "name": "cache-freshness-governance-pack",
@@ -150,9 +155,9 @@
           "github_releases": 4,
           "open_issues": 0,
           "packages": 1,
+          "relationships": 1,
           "size_kb": 81,
           "stars": 1,
-          "surfaces": 2,
           "watchers": 0
         },
         "name": "digital-signature-governance-pack",
@@ -170,9 +175,9 @@
           "github_releases": 2,
           "open_issues": 0,
           "packages": 2,
+          "relationships": 2,
           "size_kb": 1958,
           "stars": 0,
-          "surfaces": 19,
           "watchers": 0
         },
         "name": "portwyrm",
@@ -190,9 +195,9 @@
           "github_releases": 0,
           "open_issues": 0,
           "packages": 22,
+          "relationships": 22,
           "size_kb": 15064,
           "stars": 0,
-          "surfaces": 12,
           "watchers": 0
         },
         "name": "mdwrk-pages",
@@ -200,12 +205,15 @@
       }
     ],
     "forks": 1,
+    "github_releases": 505,
     "id": "organization:groupsum",
     "kind": "organization",
     "login": "groupsum",
-    "observed_at": "2026-08-03T05:24:35Z",
-    "package_count": 150,
-    "repository_count": 38,
+    "observed_at": "2026-08-03T09:11:48Z",
+    "package_count": 151,
+    "package_releases": 572,
+    "relationships": 967,
+    "repository_count": 37,
     "role": "primary",
     "route": "/products/groupsum",
     "stars": 13,
@@ -224,14 +232,15 @@
     "watchers": 0
   },
   {
-    "commits": 19266,
+    "commits": 19262,
     "contributors": 40,
+    "deployments": 831,
     "description": "Public SDK, package, application, and developer-tooling records maintained by Swarmauri.",
     "display_name": "Swarmauri",
     "evidence": [
       {
         "kind": "organization",
-        "observed_at": "2026-08-03T05:24:35Z",
+        "observed_at": "2026-08-03T09:11:48Z",
         "url": "https://github.com/swarmauri"
       }
     ],
@@ -248,9 +257,9 @@
           "github_releases": 5742,
           "open_issues": 176,
           "packages": 366,
+          "relationships": 366,
           "size_kb": 77235,
           "stars": 104,
-          "surfaces": 80,
           "watchers": 5
         },
         "name": "swarmauri-sdk",
@@ -268,9 +277,9 @@
           "github_releases": 3,
           "open_issues": 9,
           "packages": 5,
+          "relationships": 5,
           "size_kb": 3968,
           "stars": 25,
-          "surfaces": 1,
           "watchers": 0
         },
         "name": "swarmakit",
@@ -288,9 +297,9 @@
           "github_releases": 1,
           "open_issues": 25,
           "packages": 0,
+          "relationships": 0,
           "size_kb": 32789,
           "stars": 18,
-          "surfaces": 1,
           "watchers": 4
         },
         "name": "swarmauri-notebooks",
@@ -308,9 +317,9 @@
           "github_releases": 0,
           "open_issues": 8,
           "packages": 2,
+          "relationships": 2,
           "size_kb": 237,
           "stars": 10,
-          "surfaces": 2,
           "watchers": 0
         },
         "name": "crouton",
@@ -328,9 +337,9 @@
           "github_releases": 1,
           "open_issues": 2,
           "packages": 1,
+          "relationships": 1,
           "size_kb": 254,
           "stars": 7,
-          "surfaces": 1,
           "watchers": 0
         },
         "name": "rag_assistant",
@@ -348,9 +357,9 @@
           "github_releases": 0,
           "open_issues": 9,
           "packages": 0,
+          "relationships": 0,
           "size_kb": 34,
           "stars": 5,
-          "surfaces": 1,
           "watchers": 1
         },
         "name": "swarmauri-playground",
@@ -368,9 +377,9 @@
           "github_releases": 0,
           "open_issues": 0,
           "packages": 0,
+          "relationships": 0,
           "size_kb": 17,
           "stars": 3,
-          "surfaces": 2,
           "watchers": 0
         },
         "name": "swarmauri-mesop-components",
@@ -388,9 +397,9 @@
           "github_releases": 0,
           "open_issues": 3,
           "packages": 1,
+          "relationships": 1,
           "size_kb": 149,
           "stars": 2,
-          "surfaces": 1,
           "watchers": 0
         },
         "name": "soliloquy",
@@ -398,12 +407,15 @@
       }
     ],
     "forks": 105,
+    "github_releases": 5747,
     "id": "organization:swarmauri",
     "kind": "organization",
     "login": "swarmauri",
-    "observed_at": "2026-08-03T05:24:35Z",
+    "observed_at": "2026-08-03T09:11:48Z",
     "package_count": 389,
-    "repository_count": 17,
+    "package_releases": 7372,
+    "relationships": 5390,
+    "repository_count": 16,
     "role": "ecosystem",
     "route": "/products/swarmauri",
     "stars": 176,
@@ -429,14 +441,15 @@
     "watchers": 10
   },
   {
-    "commits": 2203,
+    "commits": 2199,
     "contributors": 5,
+    "deployments": 2551,
     "description": "Public API, ASGI, identity, transport, package, and example records maintained by Tigrbl.",
     "display_name": "Tigrbl",
     "evidence": [
       {
         "kind": "organization",
-        "observed_at": "2026-08-03T05:24:35Z",
+        "observed_at": "2026-08-03T09:11:48Z",
         "url": "https://github.com/tigrbl"
       }
     ],
@@ -453,9 +466,9 @@
           "github_releases": 1202,
           "open_issues": 2,
           "packages": 54,
+          "relationships": 51,
           "size_kb": 81451,
           "stars": 3,
-          "surfaces": 11,
           "watchers": 0
         },
         "name": "tigrbl",
@@ -473,9 +486,9 @@
           "github_releases": 40,
           "open_issues": 15,
           "packages": 16,
+          "relationships": 16,
           "size_kb": 18565,
           "stars": 3,
-          "surfaces": 17,
           "watchers": 1
         },
         "name": "tigrcorn",
@@ -493,9 +506,9 @@
           "github_releases": 12,
           "open_issues": 13,
           "packages": 489,
+          "relationships": 457,
           "size_kb": 25828,
           "stars": 2,
-          "surfaces": 47,
           "watchers": 0
         },
         "name": "tigrbl_auth",
@@ -513,9 +526,9 @@
           "github_releases": 28,
           "open_issues": 0,
           "packages": 8,
+          "relationships": 8,
           "size_kb": 4214,
           "stars": 1,
-          "surfaces": 16,
           "watchers": 0
         },
         "name": "tigr-asgi-contract",
@@ -533,9 +546,9 @@
           "github_releases": 0,
           "open_issues": 0,
           "packages": 3,
+          "relationships": 3,
           "size_kb": 1816,
           "stars": 0,
-          "surfaces": 2,
           "watchers": 0
         },
         "name": "tigrcorn-com",
@@ -553,9 +566,9 @@
           "github_releases": 0,
           "open_issues": 0,
           "packages": 3,
+          "relationships": 3,
           "size_kb": 2968,
           "stars": 0,
-          "surfaces": 1,
           "watchers": 0
         },
         "name": "tigrbl-com",
@@ -573,9 +586,9 @@
           "github_releases": 0,
           "open_issues": 0,
           "packages": 2,
+          "relationships": 2,
           "size_kb": 141,
           "stars": 0,
-          "surfaces": 7,
           "watchers": 0
         },
         "name": "docs-tigrbl-com",
@@ -593,9 +606,9 @@
           "github_releases": 0,
           "open_issues": 0,
           "packages": 2,
+          "relationships": 2,
           "size_kb": 130,
           "stars": 0,
-          "surfaces": 5,
           "watchers": 0
         },
         "name": "docs-tigrcorn-com",
@@ -603,12 +616,15 @@
       }
     ],
     "forks": 2,
+    "github_releases": 1282,
     "id": "organization:tigrbl",
     "kind": "organization",
     "login": "tigrbl",
-    "observed_at": "2026-08-03T05:24:35Z",
+    "observed_at": "2026-08-03T09:11:48Z",
     "package_count": 584,
-    "repository_count": 16,
+    "package_releases": 1835,
+    "relationships": 3690,
+    "repository_count": 15,
     "role": "ecosystem",
     "route": "/products/tigrbl",
     "stars": 9,

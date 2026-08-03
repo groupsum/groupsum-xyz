@@ -185,46 +185,15 @@ def last_page_count(headers: dict[str, str], current_items: int) -> int | None:
     return current_items if current_items < 100 else None
 
 
-def classify_surfaces(repo: dict[str, Any], paths: Iterable[str], markers: set[str]) -> list[dict[str, Any]]:
-    surfaces: dict[tuple[str, str], dict[str, Any]] = {}
-    repo_name = repo["name"].lower()
-    homepage = (repo.get("homepage") or "").strip()
-    if homepage:
-        surfaces[("website", homepage)] = {"kind": "website", "name": repo["name"], "url": homepage, "evidence": "repository.homepage"}
-    name_rules = {
-        "website": ("-com", "-xyz", "-io", "-dev", "-site", "website"),
-        "demo": ("demo", "showcase", "example"),
-        "ui": ("ui", "frontend", "web"),
-        "service": ("service", "api", "server", "platform"),
-    }
-    for kind, needles in name_rules.items():
-        if any(needle in repo_name for needle in needles):
-            surfaces[(kind, repo["html_url"])] = {"kind": kind, "name": repo["name"], "url": repo["html_url"], "evidence": "repository.name"}
-    for path in paths:
-        parts = [part.lower() for part in Path(path).parts]
-        filename = Path(path).name.lower()
-        if any(token in filename for token in ("openapi", "openrpc", "asyncapi")) or Path(path).suffix.lower() == ".proto":
-            root = "/".join(Path(path).parts)
-            surfaces[("api", root)] = {
-                "kind": "api", "name": root,
-                "url": f"{repo['html_url']}/blob/{repo['default_branch']}/{root}",
-                "evidence": "repository.contract_file",
-            }
-        matching = [part for part in parts if part in markers]
-        if not matching:
-            continue
-        marker = matching[-1]
-        kind = {
-            "apps": "app", "api": "api", "apis": "api", "demo": "demo", "demos": "demo",
-            "deploy": "deployment", "deployments": "deployment", "docs": "docs", "examples": "example",
-            "services": "service", "showcase": "showcase", "showcases": "showcase", "sites": "website",
-            "ui": "ui", "uis": "ui", "web": "ui", "website": "website", "websites": "website",
-        }.get(marker, marker)
-        root_index = parts.index(marker)
-        root = "/".join(Path(path).parts[: min(root_index + 2, len(parts))])
-        url = f"{repo['html_url']}/tree/{repo['default_branch']}/{root}"
-        surfaces[(kind, root)] = {"kind": kind, "name": root, "url": url, "evidence": "repository.tree"}
-    return sorted(surfaces.values(), key=lambda item: (item["kind"], item["name"]))
+def filter_repositories(repositories: Iterable[dict[str, Any]], config: dict[str, Any]) -> list[dict[str, Any]]:
+    """Apply configured repository scope before any expensive collection work."""
+    excluded_names = {str(name).casefold() for name in config.get("excluded_repository_names", [])}
+    result = [repo for repo in repositories if str(repo.get("name") or "").casefold() not in excluded_names]
+    if not config.get("include_archived_repositories", True):
+        result = [repo for repo in result if not repo.get("archived")]
+    if not config.get("include_forks", True):
+        result = [repo for repo in result if not repo.get("fork")]
+    return result
 
 
 def manifest_package(path: str, text: str, repo: dict[str, Any]) -> tuple[dict[str, Any] | None, list[dict[str, str]]]:
@@ -431,14 +400,6 @@ def collect_repository(client: ApiClient, repo: dict[str, Any], config: dict[str
     manifest_paths = [path for path in all_paths if Path(path).name in manifest_names]
     manifest_limit = int(config.get("max_manifests_per_repository", 500))
     manifest_paths = manifest_paths[:manifest_limit]
-    surface_markers = set(config.get("surface_path_markers", []))
-    surface_paths = [
-        path for path in all_paths
-        if any(part.lower() in surface_markers for part in Path(path).parts)
-        or any(token in Path(path).name.lower() for token in ("openapi", "openrpc", "asyncapi"))
-        or Path(path).suffix.lower() == ".proto"
-    ]
-    surface_paths = surface_paths[: int(config.get("max_surface_paths_per_repository", 250))]
     manifests: list[dict[str, Any]] = []
     packages: list[dict[str, Any]] = []
     dependencies: list[dict[str, str]] = []
@@ -497,7 +458,6 @@ def collect_repository(client: ApiClient, repo: dict[str, Any], config: dict[str
         "manifests": manifests, "packages_discovered": packages, "dependencies_discovered": dependencies,
         "github_releases": github_releases, "ghcr_images_discovered": sorted(ghcr_images),
         "deployments": deployments, "environments": environments,
-        "surfaces": classify_surfaces(repo, surface_paths, surface_markers),
         "tree": {"truncated": bool((tree or {}).get("truncated")) if isinstance(tree, dict) else None, "blob_count": len(all_paths), "manifest_count": len(manifest_paths), "manifest_limit_reached": len([path for path in all_paths if Path(path).name in manifest_names]) > manifest_limit},
         "observations": [item.as_dict() for item in observations],
     }
@@ -601,17 +561,12 @@ def relation_rows(repositories: list[dict[str, Any]], packages: list[dict[str, A
             else:
                 key = ("package_depends_on_external", source, dependency["name"])
                 relations[key] = {"kind": key[0], "source": source, "target": dependency["name"], "requirement": dependency.get("requirement"), "evidence": "repository.manifest"}
-    for repo in repositories:
-        for surface in repo.get("surfaces", []):
-            key = ("repository_exposes_surface", repo["full_name"], f"{surface['kind']}:{surface['name']}")
-            relations[key] = {"kind": key[0], "source": key[1], "target": key[2], "url": surface.get("url"), "evidence": surface.get("evidence")}
     return sorted(relations.values(), key=lambda row: (row["kind"], row["source"], row["target"]))
 
 
 def summarize(catalog: dict[str, Any]) -> dict[str, Any]:
     repos = catalog["repositories"]
     packages = catalog["packages"]
-    surfaces = [surface for repo in repos for surface in repo.get("surfaces", [])]
     observations = catalog["observations"] + [item for repo in repos for item in repo.get("observations", [])]
     observation_statuses = {status: sum(1 for item in observations if item["status"] == status) for status in sorted({item["status"] for item in observations})}
     return {
@@ -630,7 +585,6 @@ def summarize(catalog: dict[str, Any]) -> dict[str, Any]:
         "packages": len(packages), "published_packages": sum(1 for package in packages if package.get("published") is True),
         "package_ecosystems": {ecosystem: sum(1 for package in packages if package.get("ecosystem") == ecosystem) for ecosystem in sorted({package.get("ecosystem") for package in packages if package.get("ecosystem")})},
         "verified_languages": sorted({language for repo in repos for language in repo.get("technologies", {}).get("languages_bytes", {})}),
-        "surfaces": len(surfaces), "surface_kinds": {kind: sum(1 for surface in surfaces if surface["kind"] == kind) for kind in sorted({surface["kind"] for surface in surfaces})},
         "relationships": len(catalog["relationships"]),
         "observations_by_status": observation_statuses,
         "observations_with_errors": observation_statuses.get("error", 0),
@@ -668,10 +622,7 @@ def main() -> int:
         rows, obs = client.github_pages(f"orgs/{owner}/repos?type=public&per_page=100&sort=full_name")
         observations.extend(obs)
         raw_repos.extend(rows)
-    if not config.get("include_archived_repositories", True):
-        raw_repos = [repo for repo in raw_repos if not repo.get("archived")]
-    if not config.get("include_forks", True):
-        raw_repos = [repo for repo in raw_repos if not repo.get("fork")]
+    raw_repos = filter_repositories(raw_repos, config)
 
     repositories: list[dict[str, Any]] = []
     workers = int(config.get("request_concurrency", 8))
@@ -714,16 +665,16 @@ def main() -> int:
     registry_observations.extend(downstream_observations)
     catalog = {
         "schema_version": config["schema_version"], "generated_at": observed_at,
-        "scope": {"owners": owners, "owner_definitions": [item for item in config["owners"] if item["login"] in owners], "visibility": "public", "include_archived_repositories": config.get("include_archived_repositories"), "include_forks": config.get("include_forks")},
+        "scope": {"owners": owners, "owner_definitions": [item for item in config["owners"] if item["login"] in owners], "visibility": "public", "include_archived_repositories": config.get("include_archived_repositories"), "include_forks": config.get("include_forks"), "excluded_repository_names": sorted(config.get("excluded_repository_names", []))},
         "completeness": {
-            "repositories": "all public repositories returned by configured GitHub organization APIs",
+            "repositories": "all public repositories returned by configured GitHub organization APIs after configured name, archive, and fork exclusions",
             "commits": "all default-branch commits returned by GitHub REST pagination" if config.get("include_commit_history") else "count and latest only",
             "contributors": "all contributors returned by GitHub REST, including anonymous rows",
             "github_releases": "all releases returned by GitHub REST",
             "packages": "manifest-discovered packages plus public GitHub packages returned by API",
             "registries": "direct PyPI, npm, crates.io, GitHub Releases, and GitHub Packages observations",
             "technologies": "GitHub language byte counts; no technology is inferred from marketing copy",
-            "deployments": "repository paths, homepages, and package metadata; live health is not implied",
+            "deployments": "GitHub deployment records attached to repositories; live health is not implied",
             "downstream": "crates.io reverse dependencies where available; GitHub code search disabled by default; npm and PyPI have no complete authoritative public dependents API",
         },
         "repositories": repositories, "packages": packages,

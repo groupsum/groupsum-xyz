@@ -10,10 +10,8 @@ from pathlib import Path
 from typing import Any
 
 ROOT = Path(__file__).resolve().parents[1]
-REQUIRED_DATASETS = {
-    "organizations", "repositories", "packages", "releases",
-    "deployments", "technologies", "surfaces", "relationships",
-}
+REQUIRED_DATASETS = {"organizations", "repositories", "packages", "technologies"}
+DISALLOWED_DATASETS = {"releases", "deployments", "surfaces", "relationships"}
 
 
 def load_json(path: Path) -> Any:
@@ -30,6 +28,15 @@ def validate_site(site_dir: Path, typescript: Path) -> list[str]:
     missing = REQUIRED_DATASETS - datasets.keys()
     if missing:
         errors.append(f"manifest missing datasets: {', '.join(sorted(missing))}")
+    unexpected = DISALLOWED_DATASETS & datasets.keys()
+    if unexpected:
+        errors.append(f"manifest exposes child datasets: {', '.join(sorted(unexpected))}")
+    for name in DISALLOWED_DATASETS:
+        if (site_dir / f"{name}.json").exists():
+            errors.append(f"standalone child dataset still exists: {name}")
+    for name in {"releases", "deployments", "relationships"}:
+        if name not in manifest.get("source_counts", {}):
+            errors.append(f"manifest missing aggregated source count: {name}")
     all_routes: set[str] = set()
     for name, metadata in datasets.items():
         path = site_dir / metadata.get("path", "")
@@ -63,10 +70,18 @@ def validate_site(site_dir: Path, typescript: Path) -> list[str]:
                 errors.append(f"{name} record missing evidence: {identity}")
             if name == "repositories" and record.get("visibility") != "public":
                 errors.append(f"non-public repository rendered: {identity}")
+            if name == "repositories" and str(record.get("name") or "").casefold() == ".github":
+                errors.append(f"excluded .github repository rendered: {identity}")
+            if name == "repositories" and not {"github_releases", "deployments"} <= set((record.get("metrics") or {}).keys()):
+                errors.append(f"repository missing release/deployment aggregates: {identity}")
+            if name == "repositories" and "relationship_counts" not in record:
+                errors.append(f"repository missing relationship aggregates: {identity}")
             if name == "packages" and record.get("published") is True and not record.get("registry_url") and record.get("ecosystem") not in {"ghcr", "github-npm"}:
                 errors.append(f"published package missing registry URL: {identity}")
-            if name == "deployments" and "live" in str(record.get("claim_boundary", "")).lower() and "not proof" not in str(record.get("claim_boundary", "")).lower():
-                errors.append(f"deployment overstates live availability: {identity}")
+            if name == "packages" and not {"release_count", "dependency_count", "downstream_count", "relationship_count", "relationship_counts"} <= record.keys():
+                errors.append(f"package missing child aggregates: {identity}")
+            if name == "organizations" and not {"github_releases", "package_releases", "deployments", "relationships"} <= record.keys():
+                errors.append(f"organization missing child aggregates: {identity}")
     if not typescript.exists():
         errors.append("missing generated TypeScript summary")
     elif typescript.stat().st_size > 262_144:

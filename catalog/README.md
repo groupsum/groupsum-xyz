@@ -8,8 +8,8 @@ organizations from primary APIs and repository manifests.
 
 - `npm run catalog:collect` refreshes every configured public organization,
   repository, default-branch commit, contributor, GitHub release, deployment,
-  environment, manifest, registry package, technology, surface, and observed
-  relationship.
+  environment, manifest, registry package, technology, and observed
+  relationship. Configured `.github` repositories are excluded before collection.
 - `npm run catalog:validate` checks freshness, uniqueness, visibility,
   itemized commit counts, evidence labels, publication links, and relationship
   integrity.
@@ -30,8 +30,9 @@ are not committed.
 
 - `generated/catalog.json` is the detailed normalized catalog.
 - `generated/summary.json` contains display-safe aggregate counts.
-- `generated/site/*.json` contains lazy-loaded repositories, packages, releases,
-  deployments, technologies, surfaces, relationships, and a hashed manifest.
+- `generated/site/*.json` contains lazy-loaded repositories, packages,
+  technologies, and a hashed manifest. Releases, deployments, dependencies,
+  downstream observations, and relationships are aggregated on parent records.
 - `../src/data/catalog.generated.ts` contains bounded summary, organization,
   featured-repository, technology, and dataset-manifest records for initial rendering.
 
@@ -51,7 +52,6 @@ search remains disabled by default because it is bounded and rate-limited.
 GitHub’s `watchers_count` is an alias for stars. This catalog records stars
 from `stargazers_count` and actual watchers from `subscribers_count`.
 
-Repository paths are classified as apps, APIs, services, UIs, deployments,
-websites, demos, examples, showcases, and docs. These are source-level
-surfaces; they are not treated as proof of a reachable deployment. GitHub
-deployment records and environment URLs are stored separately.
+Source-surface classification is intentionally excluded. GitHub deployment
+records and environment URLs remain source evidence attached to repositories;
+they are not treated as proof of a reachable deployment.

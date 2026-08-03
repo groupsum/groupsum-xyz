@@ -7,7 +7,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ROOT / "scripts"))
 
-from catalog_collect import classify_surfaces, manifest_package, parse_next_link  # noqa: E402
+from catalog_collect import filter_repositories, manifest_package, parse_next_link  # noqa: E402
 from catalog_render import compile_catalog  # noqa: E402
 from catalog_validate import validate  # noqa: E402
 
@@ -44,11 +44,10 @@ class CatalogCollectorTests(unittest.TestCase):
         self.assertEqual(package["name"], "example")
         self.assertEqual(dependencies[0]["name"], "httpx")
 
-    def test_surface_classification(self):
-        surfaces = classify_surfaces(self.repo, ["apps/admin-ui/src/main.tsx", "examples/quickstart.py"], {"apps", "examples", "ui"})
-        self.assertIn("website", {surface["kind"] for surface in surfaces})
-        self.assertIn("app", {surface["kind"] for surface in surfaces})
-        self.assertIn("example", {surface["kind"] for surface in surfaces})
+    def test_repository_exclusions_are_applied_before_collection(self):
+        repositories = [self.repo, {**self.repo, "name": ".github", "full_name": "groupsum/.github"}]
+        filtered = filter_repositories(repositories, {"excluded_repository_names": [".github"]})
+        self.assertEqual([item["full_name"] for item in filtered], ["groupsum/example-com"])
 
     def test_minimal_catalog_validation(self):
         now = dt.datetime.now(dt.timezone.utc).replace(microsecond=0).isoformat().replace("+00:00", "Z")
@@ -74,7 +73,7 @@ class CatalogCollectorTests(unittest.TestCase):
                 "full_name": "groupsum/example", "name": "example", "owner": "groupsum", "url": "https://github.com/groupsum/example",
                 "description": "Example repository", "visibility": "public", "metrics": {"stars": 2},
                 "activity": {"commit_count": 3, "contributor_count": 1, "contributors": [{"login": "dev"}]},
-                "technologies": {"languages_bytes": {"Python": 100}}, "surfaces": [], "github_releases": [], "deployments": [], "environments": [],
+                "technologies": {"languages_bytes": {"Python": 100}}, "github_releases": [], "deployments": [], "environments": [],
                 "observations": [{"observed_at": now}],
             }],
             "packages": [{
@@ -85,6 +84,9 @@ class CatalogCollectorTests(unittest.TestCase):
         }
         datasets = compile_catalog(catalog, {"entities": {}, "organizations": {}})
         self.assertEqual(datasets["repositories"][0]["metrics"]["packages"], 1)
+        self.assertEqual(set(datasets), {"organizations", "repositories", "packages", "technologies"})
+        self.assertIn("relationship_counts", datasets["repositories"][0])
+        self.assertEqual(datasets["organizations"][0]["package_releases"], 1)
         self.assertTrue(datasets["packages"][0]["route"].startswith("/catalog/packages/pypi/example-"))
         self.assertEqual(datasets["technologies"][0]["repository_count"], 1)
 

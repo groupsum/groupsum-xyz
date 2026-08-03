@@ -24,17 +24,13 @@ type CatalogRecord = Record<string, unknown> & {
   evidence?: Array<{ kind?: string; url?: string; observed_at?: string }>;
 };
 
-const datasetOrder = ["repositories", "packages", "releases", "deployments", "technologies", "surfaces", "relationships"] as const;
+const datasetOrder = ["repositories", "packages", "technologies"] as const;
 type DatasetName = (typeof datasetOrder)[number];
 
 const labels: Record<DatasetName, string> = {
   repositories: "Repositories",
   packages: "Packages",
-  releases: "Releases",
-  deployments: "Deployments",
   technologies: "Technologies",
-  surfaces: "Surfaces",
-  relationships: "Relationships",
 };
 
 function recordTitle(record: CatalogRecord): string {
@@ -43,10 +39,6 @@ function recordTitle(record: CatalogRecord): string {
 
 function recordDescription(record: CatalogRecord): string {
   if (record.description) return String(record.description);
-  if (record.kind === "github-deployment") {
-    return `${String(record.repository || "Repository")} · ${String(record.environment || "environment not named")} · ${String(record.state || "state not observed")}`;
-  }
-  if (record.source && record.target) return `${String(record.source)} → ${String(record.target)}`;
   if (record.repository) return `Observed in ${String(record.repository)}.`;
   return "Public catalog record derived from the linked source evidence.";
 }
@@ -55,6 +47,18 @@ function formatDate(value?: string): string {
   if (!value) return "not recorded";
   const date = new Date(value);
   return Number.isNaN(date.valueOf()) ? value : date.toLocaleString();
+}
+
+function recordMetrics(record: CatalogRecord): Array<[string, number]> {
+  if (record.metrics) return Object.entries(record.metrics).slice(0, 8);
+  if (record.kind === "package") return [
+    ["releases", Number(record.release_count || 0)],
+    ["dependencies", Number(record.dependency_count || 0)],
+    ["downstream", Number(record.downstream_count || 0)],
+    ["relationships", Number(record.relationship_count || 0)],
+  ];
+  if (record.kind === "technology") return [["repositories", Number(record.repository_count || 0)]];
+  return [];
 }
 
 export function CatalogSnapshotBand({
@@ -80,8 +84,8 @@ export function CatalogSnapshotBand({
     : [
         ["Repositories", catalogSummary.repositories],
         ["Package records", catalogSummary.packages],
-        ["Release records", catalogDatasetManifest.counts.releases],
-        ["Relationships", catalogSummary.relationships],
+        ["Release records", catalogDatasetManifest.source_counts.releases],
+        ["Relationships", catalogDatasetManifest.source_counts.relationships],
       ];
 
   return (
@@ -92,7 +96,7 @@ export function CatalogSnapshotBand({
             <span className="text-[10px] font-mono uppercase tracking-[0.2em] text-accent font-bold">Observed data · {formatDate(catalogSummary.generated_at)}</span>
             <h2 className="font-serif text-2xl md:text-3xl font-bold tracking-tight text-ink">{title}</h2>
             <p className="text-sm text-ink-muted leading-relaxed">
-              {organization?.description || "Public records compiled from GitHub, repository manifests, PyPI, npm, crates.io, and GitHub Packages. Source, release, deployment, and live availability remain separate evidence states."}
+              {organization?.description || "Public records compiled from GitHub, repository manifests, PyPI, npm, crates.io, and GitHub Packages. Releases, deployments, and relationships are summarized on their repository or package records; live availability remains a separate evidence state."}
             </p>
           </div>
           <button onClick={() => onNavigate("/catalog")} className="text-xs font-mono text-accent font-semibold inline-flex items-center gap-1 hover:underline cursor-pointer">
@@ -192,7 +196,7 @@ export function PublicCatalogExplorer({ onNavigate, compact = false }: { onNavig
                   <h2 className="font-serif text-lg font-bold text-ink break-words">{recordTitle(record)}</h2>
                   <p className="text-xs text-ink-muted leading-relaxed mt-1 break-words">{recordDescription(record)}</p>
                 </div>
-                {record.metrics && <div className="flex flex-wrap gap-2">{Object.entries(record.metrics).slice(0, 6).map(([key, value]) => <span key={key} className="text-[9px] font-mono bg-canvas border border-[var(--color-border-soft)] px-1.5 py-0.5 rounded text-ink-muted">{key}: {Number(value).toLocaleString()}</span>)}</div>}
+                {recordMetrics(record).length > 0 && <div className="flex flex-wrap gap-2">{recordMetrics(record).map(([key, value]) => <span key={key} className="text-[9px] font-mono bg-canvas border border-[var(--color-border-soft)] px-1.5 py-0.5 rounded text-ink-muted">{key}: {value.toLocaleString()}</span>)}</div>}
                 <div className="flex flex-wrap items-center gap-3 text-[10px] font-mono">
                   <span className="text-ink-muted">Observed {formatDate(record.observed_at)}</span>
                   {record.route && <button onClick={() => onNavigate(record.route!)} className="text-accent hover:underline cursor-pointer">View record</button>}

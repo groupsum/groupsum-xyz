@@ -2,189 +2,6 @@
   {
     "archived": false,
     "claim_boundary": "Repository, release, deployment, and live-service states are reported separately.",
-    "created_at": "2026-04-02T03:57:20Z",
-    "default_branch": "master",
-    "description": "Public source repository groupsum/.github.",
-    "description_source": "generated-factual",
-    "display_name": ".github",
-    "evidence": [
-      {
-        "kind": "source",
-        "observed_at": "2026-08-03T05:24:35Z",
-        "url": "https://github.com/groupsum/.github"
-      }
-    ],
-    "fork": false,
-    "full_name": "groupsum/.github",
-    "homepage": null,
-    "id": "repository:groupsum/.github",
-    "kind": "repository",
-    "latest_commit": {
-      "author": "cobycloud",
-      "authored_at": "2026-06-02T10:58:35Z",
-      "committed_at": "2026-06-02T10:58:35Z",
-      "committer": "cobycloud",
-      "message": "Add split auth governance packs to profile",
-      "sha": "0794014e1ebe62f53229ad7dc37a4931eeb5f9b3",
-      "url": "https://github.com/groupsum/.github/commit/0794014e1ebe62f53229ad7dc37a4931eeb5f9b3"
-    },
-    "latest_deployment": null,
-    "latest_release": null,
-    "license": null,
-    "metrics": {
-      "commits": 8,
-      "contributors": 1,
-      "deployments": 0,
-      "environments": 0,
-      "forks": 0,
-      "github_releases": 0,
-      "open_issues": 0,
-      "packages": 0,
-      "size_kb": 14,
-      "stars": 0,
-      "surfaces": 0,
-      "watchers": 0
-    },
-    "name": ".github",
-    "observed_at": "2026-08-03T05:24:35Z",
-    "owner": "groupsum",
-    "package_ids": [],
-    "pushed_at": "2026-07-10T12:21:44Z",
-    "reviewed": false,
-    "route": "/catalog/repositories/groupsum/.github",
-    "surface_counts": {},
-    "technologies": [],
-    "template": false,
-    "topics": [],
-    "updated_at": "2026-06-02T10:58:55Z",
-    "url": "https://github.com/groupsum/.github",
-    "visibility": "public"
-  },
-  {
-    "archived": false,
-    "claim_boundary": "Repository, release, deployment, and live-service states are reported separately.",
-    "created_at": "2024-06-10T05:13:46Z",
-    "default_branch": "master",
-    "description": "Public source repository swarmauri/.github.",
-    "description_source": "generated-factual",
-    "display_name": ".github",
-    "evidence": [
-      {
-        "kind": "source",
-        "observed_at": "2026-08-03T05:24:36Z",
-        "url": "https://github.com/swarmauri/.github"
-      }
-    ],
-    "fork": false,
-    "full_name": "swarmauri/.github",
-    "homepage": null,
-    "id": "repository:swarmauri/.github",
-    "kind": "repository",
-    "latest_commit": {
-      "author": "cobycloud",
-      "authored_at": "2026-05-05T06:38:24Z",
-      "committed_at": "2026-05-05T06:38:24Z",
-      "committer": "cobycloud",
-      "message": "Update Swarmauri organization profile",
-      "sha": "525df904b1fd6057f91b4baf26133f23408d30b5",
-      "url": "https://github.com/swarmauri/.github/commit/525df904b1fd6057f91b4baf26133f23408d30b5"
-    },
-    "latest_deployment": null,
-    "latest_release": null,
-    "license": null,
-    "metrics": {
-      "commits": 4,
-      "contributors": 1,
-      "deployments": 0,
-      "environments": 0,
-      "forks": 0,
-      "github_releases": 0,
-      "open_issues": 0,
-      "packages": 0,
-      "size_kb": 6,
-      "stars": 0,
-      "surfaces": 0,
-      "watchers": 0
-    },
-    "name": ".github",
-    "observed_at": "2026-08-03T05:24:36Z",
-    "owner": "swarmauri",
-    "package_ids": [],
-    "pushed_at": "2026-07-10T12:18:23Z",
-    "reviewed": false,
-    "route": "/catalog/repositories/swarmauri/.github",
-    "surface_counts": {},
-    "technologies": [],
-    "template": false,
-    "topics": [],
-    "updated_at": "2026-05-05T06:39:45Z",
-    "url": "https://github.com/swarmauri/.github",
-    "visibility": "public"
-  },
-  {
-    "archived": false,
-    "claim_boundary": "Repository, release, deployment, and live-service states are reported separately.",
-    "created_at": "2026-03-30T09:31:23Z",
-    "default_branch": "master",
-    "description": "Public source repository tigrbl/.github.",
-    "description_source": "generated-factual",
-    "display_name": ".github",
-    "evidence": [
-      {
-        "kind": "source",
-        "observed_at": "2026-08-03T05:24:36Z",
-        "url": "https://github.com/tigrbl/.github"
-      }
-    ],
-    "fork": false,
-    "full_name": "tigrbl/.github",
-    "homepage": null,
-    "id": "repository:tigrbl/.github",
-    "kind": "repository",
-    "latest_commit": {
-      "author": "cobycloud",
-      "authored_at": "2026-05-05T06:39:38Z",
-      "committed_at": "2026-05-05T06:39:38Z",
-      "committer": "cobycloud",
-      "message": "Refresh Tigrbl organization profile content",
-      "sha": "717882dcc0070ff3b078de930b0db1a691659f33",
-      "url": "https://github.com/tigrbl/.github/commit/717882dcc0070ff3b078de930b0db1a691659f33"
-    },
-    "latest_deployment": null,
-    "latest_release": null,
-    "license": "Apache-2.0",
-    "metrics": {
-      "commits": 4,
-      "contributors": 1,
-      "deployments": 0,
-      "environments": 0,
-      "forks": 0,
-      "github_releases": 0,
-      "open_issues": 0,
-      "packages": 0,
-      "size_kb": 9,
-      "stars": 0,
-      "surfaces": 0,
-      "watchers": 0
-    },
-    "name": ".github",
-    "observed_at": "2026-08-03T05:24:36Z",
-    "owner": "tigrbl",
-    "package_ids": [],
-    "pushed_at": "2026-07-10T12:10:19Z",
-    "reviewed": false,
-    "route": "/catalog/repositories/tigrbl/.github",
-    "surface_counts": {},
-    "technologies": [],
-    "template": false,
-    "topics": [],
-    "updated_at": "2026-05-05T06:39:41Z",
-    "url": "https://github.com/tigrbl/.github",
-    "visibility": "public"
-  },
-  {
-    "archived": false,
-    "claim_boundary": "Repository, release, deployment, and live-service states are reported separately.",
     "created_at": "2026-05-16T20:02:23Z",
     "default_branch": "master",
     "description": "Installable SSOT governance pack for ad and media measurement, video ads, viewability, invalid traffic, podcast measurement, and MRC/IAB quality controls.",
@@ -193,7 +10,7 @@
     "evidence": [
       {
         "kind": "source",
-        "observed_at": "2026-08-03T05:24:35Z",
+        "observed_at": "2026-08-03T09:11:48Z",
         "url": "https://github.com/groupsum/ad-measurement-media-governance-pack"
       }
     ],
@@ -248,23 +65,23 @@
       "github_releases": 2,
       "open_issues": 0,
       "packages": 1,
+      "relationships": 1,
       "size_kb": 106,
       "stars": 0,
-      "surfaces": 1,
       "watchers": 0
     },
     "name": "ad-measurement-media-governance-pack",
-    "observed_at": "2026-08-03T05:24:35Z",
+    "observed_at": "2026-08-03T09:11:48Z",
     "owner": "groupsum",
     "package_ids": [
       "package:pypi:ad-measurement-media-governance-pack:groupsum/ad-measurement-media-governance-pack:pyproject.toml"
     ],
     "pushed_at": "2026-05-18T09:39:25Z",
+    "relationship_counts": {
+      "repository_contains_package": 1
+    },
     "reviewed": false,
     "route": "/catalog/repositories/groupsum/ad-measurement-media-governance-pack",
-    "surface_counts": {
-      "docs": 1
-    },
     "technologies": [
       "Python"
     ],
@@ -285,7 +102,7 @@
     "evidence": [
       {
         "kind": "source",
-        "observed_at": "2026-08-03T05:24:35Z",
+        "observed_at": "2026-08-03T09:11:48Z",
         "url": "https://github.com/groupsum/ad-supply-chain-transparency-governance-pack"
       }
     ],
@@ -340,23 +157,23 @@
       "github_releases": 1,
       "open_issues": 0,
       "packages": 1,
+      "relationships": 1,
       "size_kb": 101,
       "stars": 0,
-      "surfaces": 1,
       "watchers": 0
     },
     "name": "ad-supply-chain-transparency-governance-pack",
-    "observed_at": "2026-08-03T05:24:35Z",
+    "observed_at": "2026-08-03T09:11:48Z",
     "owner": "groupsum",
     "package_ids": [
       "package:pypi:ad-supply-chain-transparency-governance-pack:groupsum/ad-supply-chain-transparency-governance-pack:pyproject.toml"
     ],
     "pushed_at": "2026-05-18T09:39:26Z",
+    "relationship_counts": {
+      "repository_contains_package": 1
+    },
     "reviewed": false,
     "route": "/catalog/repositories/groupsum/ad-supply-chain-transparency-governance-pack",
-    "surface_counts": {
-      "docs": 1
-    },
     "technologies": [
       "Python"
     ],
@@ -377,7 +194,7 @@
     "evidence": [
       {
         "kind": "source",
-        "observed_at": "2026-08-03T05:24:36Z",
+        "observed_at": "2026-08-03T09:11:48Z",
         "url": "https://github.com/tigrbl/attribution-campaign-context"
       }
     ],
@@ -413,23 +230,23 @@
       "github_releases": 0,
       "open_issues": 0,
       "packages": 1,
+      "relationships": 1,
       "size_kb": 506,
       "stars": 0,
-      "surfaces": 3,
       "watchers": 0
     },
     "name": "attribution-campaign-context",
-    "observed_at": "2026-08-03T05:24:36Z",
+    "observed_at": "2026-08-03T09:11:48Z",
     "owner": "tigrbl",
     "package_ids": [
       "package:pypi:attribution-campaign-context:tigrbl/attribution-campaign-context:pyproject.toml"
     ],
     "pushed_at": "2026-06-14T10:49:16Z",
+    "relationship_counts": {
+      "repository_contains_package": 1
+    },
     "reviewed": false,
     "route": "/catalog/repositories/tigrbl/attribution-campaign-context",
-    "surface_counts": {
-      "docs": 3
-    },
     "technologies": [
       "Python"
     ],
@@ -450,7 +267,7 @@
     "evidence": [
       {
         "kind": "source",
-        "observed_at": "2026-08-03T05:24:35Z",
+        "observed_at": "2026-08-03T09:11:48Z",
         "url": "https://github.com/groupsum/audience-data-transparency-governance-pack"
       }
     ],
@@ -505,23 +322,23 @@
       "github_releases": 1,
       "open_issues": 0,
       "packages": 1,
+      "relationships": 1,
       "size_kb": 102,
       "stars": 0,
-      "surfaces": 1,
       "watchers": 0
     },
     "name": "audience-data-transparency-governance-pack",
-    "observed_at": "2026-08-03T05:24:35Z",
+    "observed_at": "2026-08-03T09:11:48Z",
     "owner": "groupsum",
     "package_ids": [
       "package:pypi:audience-data-transparency-governance-pack:groupsum/audience-data-transparency-governance-pack:pyproject.toml"
     ],
     "pushed_at": "2026-05-18T09:39:27Z",
+    "relationship_counts": {
+      "repository_contains_package": 1
+    },
     "reviewed": false,
     "route": "/catalog/repositories/groupsum/audience-data-transparency-governance-pack",
-    "surface_counts": {
-      "docs": 1
-    },
     "technologies": [
       "Python"
     ],
@@ -542,7 +359,7 @@
     "evidence": [
       {
         "kind": "source",
-        "observed_at": "2026-08-03T05:24:35Z",
+        "observed_at": "2026-08-03T09:11:48Z",
         "url": "https://github.com/groupsum/authentication-governance-pack"
       }
     ],
@@ -572,23 +389,23 @@
       "github_releases": 0,
       "open_issues": 0,
       "packages": 1,
+      "relationships": 1,
       "size_kb": 36,
       "stars": 0,
-      "surfaces": 1,
       "watchers": 0
     },
     "name": "authentication-governance-pack",
-    "observed_at": "2026-08-03T05:24:35Z",
+    "observed_at": "2026-08-03T09:11:48Z",
     "owner": "groupsum",
     "package_ids": [
       "package:pypi:authentication-governance-pack:groupsum/authentication-governance-pack:pyproject.toml"
     ],
     "pushed_at": "2026-06-02T10:57:17Z",
+    "relationship_counts": {
+      "repository_contains_package": 1
+    },
     "reviewed": false,
     "route": "/catalog/repositories/groupsum/authentication-governance-pack",
-    "surface_counts": {
-      "docs": 1
-    },
     "technologies": [
       "Python"
     ],
@@ -609,7 +426,7 @@
     "evidence": [
       {
         "kind": "source",
-        "observed_at": "2026-08-03T05:24:35Z",
+        "observed_at": "2026-08-03T09:11:48Z",
         "url": "https://github.com/groupsum/authnz-policy-governance-pack"
       }
     ],
@@ -639,23 +456,23 @@
       "github_releases": 0,
       "open_issues": 0,
       "packages": 1,
+      "relationships": 1,
       "size_kb": 45,
       "stars": 0,
-      "surfaces": 1,
       "watchers": 0
     },
     "name": "authnz-policy-governance-pack",
-    "observed_at": "2026-08-03T05:24:35Z",
+    "observed_at": "2026-08-03T09:11:48Z",
     "owner": "groupsum",
     "package_ids": [
       "package:pypi:authnz-policy-governance-pack:groupsum/authnz-policy-governance-pack:pyproject.toml"
     ],
     "pushed_at": "2026-06-02T10:15:56Z",
+    "relationship_counts": {
+      "repository_contains_package": 1
+    },
     "reviewed": false,
     "route": "/catalog/repositories/groupsum/authnz-policy-governance-pack",
-    "surface_counts": {
-      "docs": 1
-    },
     "technologies": [
       "Python"
     ],
@@ -676,7 +493,7 @@
     "evidence": [
       {
         "kind": "source",
-        "observed_at": "2026-08-03T05:24:35Z",
+        "observed_at": "2026-08-03T09:11:48Z",
         "url": "https://github.com/groupsum/authorization-policy-governance-pack"
       }
     ],
@@ -706,23 +523,23 @@
       "github_releases": 0,
       "open_issues": 0,
       "packages": 1,
+      "relationships": 1,
       "size_kb": 41,
       "stars": 0,
-      "surfaces": 1,
       "watchers": 0
     },
     "name": "authorization-policy-governance-pack",
-    "observed_at": "2026-08-03T05:24:35Z",
+    "observed_at": "2026-08-03T09:11:48Z",
     "owner": "groupsum",
     "package_ids": [
       "package:pypi:authorization-policy-governance-pack:groupsum/authorization-policy-governance-pack:pyproject.toml"
     ],
     "pushed_at": "2026-06-02T10:57:14Z",
+    "relationship_counts": {
+      "repository_contains_package": 1
+    },
     "reviewed": false,
     "route": "/catalog/repositories/groupsum/authorization-policy-governance-pack",
-    "surface_counts": {
-      "docs": 1
-    },
     "technologies": [
       "Python"
     ],
@@ -743,7 +560,7 @@
     "evidence": [
       {
         "kind": "source",
-        "observed_at": "2026-08-03T05:24:35Z",
+        "observed_at": "2026-08-03T09:11:48Z",
         "url": "https://github.com/groupsum/cache-freshness-governance-pack"
       }
     ],
@@ -792,23 +609,23 @@
       "github_releases": 6,
       "open_issues": 0,
       "packages": 1,
+      "relationships": 1,
       "size_kb": 75,
       "stars": 1,
-      "surfaces": 1,
       "watchers": 0
     },
     "name": "cache-freshness-governance-pack",
-    "observed_at": "2026-08-03T05:24:35Z",
+    "observed_at": "2026-08-03T09:11:48Z",
     "owner": "groupsum",
     "package_ids": [
       "package:pypi:cache-freshness-governance-pack:groupsum/cache-freshness-governance-pack:pyproject.toml"
     ],
     "pushed_at": "2026-06-02T00:58:14Z",
+    "relationship_counts": {
+      "repository_contains_package": 1
+    },
     "reviewed": false,
     "route": "/catalog/repositories/groupsum/cache-freshness-governance-pack",
-    "surface_counts": {
-      "docs": 1
-    },
     "technologies": [
       "Python"
     ],
@@ -829,7 +646,7 @@
     "evidence": [
       {
         "kind": "source",
-        "observed_at": "2026-08-03T05:24:35Z",
+        "observed_at": "2026-08-03T09:11:48Z",
         "url": "https://github.com/groupsum/consent-privacy-signals-governance-pack"
       }
     ],
@@ -884,23 +701,23 @@
       "github_releases": 1,
       "open_issues": 0,
       "packages": 1,
+      "relationships": 1,
       "size_kb": 104,
       "stars": 0,
-      "surfaces": 1,
       "watchers": 0
     },
     "name": "consent-privacy-signals-governance-pack",
-    "observed_at": "2026-08-03T05:24:35Z",
+    "observed_at": "2026-08-03T09:11:48Z",
     "owner": "groupsum",
     "package_ids": [
       "package:pypi:consent-privacy-signals-governance-pack:groupsum/consent-privacy-signals-governance-pack:pyproject.toml"
     ],
     "pushed_at": "2026-05-18T09:39:28Z",
+    "relationship_counts": {
+      "repository_contains_package": 1
+    },
     "reviewed": false,
     "route": "/catalog/repositories/groupsum/consent-privacy-signals-governance-pack",
-    "surface_counts": {
-      "docs": 1
-    },
     "technologies": [
       "Python"
     ],
@@ -921,7 +738,7 @@
     "evidence": [
       {
         "kind": "source",
-        "observed_at": "2026-08-03T05:24:36Z",
+        "observed_at": "2026-08-03T09:11:48Z",
         "url": "https://github.com/swarmauri/crouton"
       }
     ],
@@ -951,25 +768,24 @@
       "github_releases": 0,
       "open_issues": 8,
       "packages": 2,
+      "relationships": 2,
       "size_kb": 237,
       "stars": 10,
-      "surfaces": 2,
       "watchers": 0
     },
     "name": "crouton",
-    "observed_at": "2026-08-03T05:24:36Z",
+    "observed_at": "2026-08-03T09:11:48Z",
     "owner": "swarmauri",
     "package_ids": [
       "package:pypi:crouton:swarmauri/crouton:pkgs/crouton/pyproject.toml",
       "package:pypi:crouton_client:swarmauri/crouton:pkgs/crouton_client/pyproject.toml"
     ],
     "pushed_at": "2025-07-01T10:14:48Z",
+    "relationship_counts": {
+      "repository_contains_package": 2
+    },
     "reviewed": false,
     "route": "/catalog/repositories/swarmauri/crouton",
-    "surface_counts": {
-      "api": 1,
-      "website": 1
-    },
     "technologies": [
       "Python"
     ],
@@ -997,7 +813,7 @@
     "evidence": [
       {
         "kind": "source",
-        "observed_at": "2026-08-03T05:24:36Z",
+        "observed_at": "2026-08-03T09:11:48Z",
         "url": "https://github.com/swarmauri/crouton-boilerplate"
       }
     ],
@@ -1027,21 +843,19 @@
       "github_releases": 0,
       "open_issues": 0,
       "packages": 0,
+      "relationships": 0,
       "size_kb": 10,
       "stars": 1,
-      "surfaces": 1,
       "watchers": 0
     },
     "name": "crouton-boilerplate",
-    "observed_at": "2026-08-03T05:24:36Z",
+    "observed_at": "2026-08-03T09:11:48Z",
     "owner": "swarmauri",
     "package_ids": [],
     "pushed_at": "2024-12-17T08:00:37Z",
+    "relationship_counts": {},
     "reviewed": false,
     "route": "/catalog/repositories/swarmauri/crouton-boilerplate",
-    "surface_counts": {
-      "website": 1
-    },
     "technologies": [
       "Python"
     ],
@@ -1075,7 +889,7 @@
     "evidence": [
       {
         "kind": "source",
-        "observed_at": "2026-08-03T05:24:35Z",
+        "observed_at": "2026-08-03T09:11:48Z",
         "url": "https://github.com/groupsum/customer-commerce-semantics-governance-pack"
       }
     ],
@@ -1130,24 +944,23 @@
       "github_releases": 1,
       "open_issues": 0,
       "packages": 1,
+      "relationships": 1,
       "size_kb": 104,
       "stars": 0,
-      "surfaces": 2,
       "watchers": 0
     },
     "name": "customer-commerce-semantics-governance-pack",
-    "observed_at": "2026-08-03T05:24:35Z",
+    "observed_at": "2026-08-03T09:11:48Z",
     "owner": "groupsum",
     "package_ids": [
       "package:pypi:customer-commerce-semantics-governance-pack:groupsum/customer-commerce-semantics-governance-pack:pyproject.toml"
     ],
     "pushed_at": "2026-05-18T09:39:30Z",
+    "relationship_counts": {
+      "repository_contains_package": 1
+    },
     "reviewed": false,
     "route": "/catalog/repositories/groupsum/customer-commerce-semantics-governance-pack",
-    "surface_counts": {
-      "docs": 1,
-      "website": 1
-    },
     "technologies": [
       "Python"
     ],
@@ -1168,7 +981,7 @@
     "evidence": [
       {
         "kind": "source",
-        "observed_at": "2026-08-03T05:24:35Z",
+        "observed_at": "2026-08-03T09:11:48Z",
         "url": "https://github.com/groupsum/customer-identity-profile-governance-pack"
       }
     ],
@@ -1223,23 +1036,23 @@
       "github_releases": 1,
       "open_issues": 0,
       "packages": 1,
+      "relationships": 1,
       "size_kb": 108,
       "stars": 0,
-      "surfaces": 1,
       "watchers": 0
     },
     "name": "customer-identity-profile-governance-pack",
-    "observed_at": "2026-08-03T05:24:35Z",
+    "observed_at": "2026-08-03T09:11:48Z",
     "owner": "groupsum",
     "package_ids": [
       "package:pypi:customer-identity-profile-governance-pack:groupsum/customer-identity-profile-governance-pack:pyproject.toml"
     ],
     "pushed_at": "2026-05-18T09:39:31Z",
+    "relationship_counts": {
+      "repository_contains_package": 1
+    },
     "reviewed": false,
     "route": "/catalog/repositories/groupsum/customer-identity-profile-governance-pack",
-    "surface_counts": {
-      "docs": 1
-    },
     "technologies": [
       "Python"
     ],
@@ -1260,7 +1073,7 @@
     "evidence": [
       {
         "kind": "source",
-        "observed_at": "2026-08-03T05:24:35Z",
+        "observed_at": "2026-08-03T09:11:48Z",
         "url": "https://github.com/groupsum/data-catalog-lineage-contracts-governance-pack"
       }
     ],
@@ -1315,23 +1128,23 @@
       "github_releases": 1,
       "open_issues": 0,
       "packages": 1,
+      "relationships": 1,
       "size_kb": 104,
       "stars": 0,
-      "surfaces": 1,
       "watchers": 0
     },
     "name": "data-catalog-lineage-contracts-governance-pack",
-    "observed_at": "2026-08-03T05:24:35Z",
+    "observed_at": "2026-08-03T09:11:48Z",
     "owner": "groupsum",
     "package_ids": [
       "package:pypi:data-catalog-lineage-contracts-governance-pack:groupsum/data-catalog-lineage-contracts-governance-pack:pyproject.toml"
     ],
     "pushed_at": "2026-05-18T09:39:32Z",
+    "relationship_counts": {
+      "repository_contains_package": 1
+    },
     "reviewed": false,
     "route": "/catalog/repositories/groupsum/data-catalog-lineage-contracts-governance-pack",
-    "surface_counts": {
-      "docs": 1
-    },
     "technologies": [
       "Python"
     ],
@@ -1352,7 +1165,7 @@
     "evidence": [
       {
         "kind": "source",
-        "observed_at": "2026-08-03T05:24:35Z",
+        "observed_at": "2026-08-03T09:11:48Z",
         "url": "https://github.com/groupsum/decentralized-identifiers-governance-pack"
       }
     ],
@@ -1382,23 +1195,23 @@
       "github_releases": 0,
       "open_issues": 0,
       "packages": 1,
+      "relationships": 1,
       "size_kb": 41,
       "stars": 0,
-      "surfaces": 1,
       "watchers": 0
     },
     "name": "decentralized-identifiers-governance-pack",
-    "observed_at": "2026-08-03T05:24:35Z",
+    "observed_at": "2026-08-03T09:11:48Z",
     "owner": "groupsum",
     "package_ids": [
       "package:pypi:decentralized-identifiers-governance-pack:groupsum/decentralized-identifiers-governance-pack:pyproject.toml"
     ],
     "pushed_at": "2026-06-01T23:57:44Z",
+    "relationship_counts": {
+      "repository_contains_package": 1
+    },
     "reviewed": false,
     "route": "/catalog/repositories/groupsum/decentralized-identifiers-governance-pack",
-    "surface_counts": {
-      "docs": 1
-    },
     "technologies": [
       "Python"
     ],
@@ -1419,7 +1232,7 @@
     "evidence": [
       {
         "kind": "source",
-        "observed_at": "2026-08-03T05:24:35Z",
+        "observed_at": "2026-08-03T09:11:48Z",
         "url": "https://github.com/groupsum/digital-signature-governance-pack"
       }
     ],
@@ -1468,23 +1281,23 @@
       "github_releases": 4,
       "open_issues": 0,
       "packages": 1,
+      "relationships": 1,
       "size_kb": 81,
       "stars": 1,
-      "surfaces": 2,
       "watchers": 0
     },
     "name": "digital-signature-governance-pack",
-    "observed_at": "2026-08-03T05:24:35Z",
+    "observed_at": "2026-08-03T09:11:48Z",
     "owner": "groupsum",
     "package_ids": [
       "package:pypi:digital-signature-governance-pack:groupsum/digital-signature-governance-pack:pyproject.toml"
     ],
     "pushed_at": "2026-06-02T00:58:11Z",
+    "relationship_counts": {
+      "repository_contains_package": 1
+    },
     "reviewed": false,
     "route": "/catalog/repositories/groupsum/digital-signature-governance-pack",
-    "surface_counts": {
-      "docs": 2
-    },
     "technologies": [
       "Python"
     ],
@@ -1505,7 +1318,7 @@
     "evidence": [
       {
         "kind": "source",
-        "observed_at": "2026-08-03T05:24:36Z",
+        "observed_at": "2026-08-03T09:11:48Z",
         "url": "https://github.com/swarmauri/docs-peagen-com"
       }
     ],
@@ -1535,25 +1348,24 @@
       "github_releases": 0,
       "open_issues": 0,
       "packages": 2,
+      "relationships": 2,
       "size_kb": 2205,
       "stars": 0,
-      "surfaces": 6,
       "watchers": 0
     },
     "name": "docs-peagen-com",
-    "observed_at": "2026-08-03T05:24:36Z",
+    "observed_at": "2026-08-03T09:11:48Z",
     "owner": "swarmauri",
     "package_ids": [
       "package:npm:docs-peagen-com:swarmauri/docs-peagen-com:package.json",
       "package:pypi:docs-peagen-com:swarmauri/docs-peagen-com:pyproject.toml"
     ],
     "pushed_at": "2026-07-13T22:28:54Z",
+    "relationship_counts": {
+      "repository_contains_package": 2
+    },
     "reviewed": false,
     "route": "/catalog/repositories/swarmauri/docs-peagen-com",
-    "surface_counts": {
-      "docs": 5,
-      "website": 1
-    },
     "technologies": [
       "Dockerfile",
       "JavaScript",
@@ -1588,7 +1400,7 @@
     "evidence": [
       {
         "kind": "source",
-        "observed_at": "2026-08-03T05:24:36Z",
+        "observed_at": "2026-08-03T09:11:48Z",
         "url": "https://github.com/swarmauri/docs-swarmauri-com"
       }
     ],
@@ -1618,26 +1430,24 @@
       "github_releases": 0,
       "open_issues": 0,
       "packages": 2,
+      "relationships": 2,
       "size_kb": 252,
       "stars": 0,
-      "surfaces": 11,
       "watchers": 0
     },
     "name": "docs-swarmauri-com",
-    "observed_at": "2026-08-03T05:24:36Z",
+    "observed_at": "2026-08-03T09:11:48Z",
     "owner": "swarmauri",
     "package_ids": [
       "package:npm:docs-swarmauri-com:swarmauri/docs-swarmauri-com:package.json",
       "package:pypi:docs-swarmauri-com:swarmauri/docs-swarmauri-com:pyproject.toml"
     ],
     "pushed_at": "2026-07-13T22:28:56Z",
+    "relationship_counts": {
+      "repository_contains_package": 2
+    },
     "reviewed": false,
     "route": "/catalog/repositories/swarmauri/docs-swarmauri-com",
-    "surface_counts": {
-      "api": 3,
-      "docs": 7,
-      "website": 1
-    },
     "technologies": [
       "Dockerfile",
       "JavaScript",
@@ -1672,7 +1482,7 @@
     "evidence": [
       {
         "kind": "source",
-        "observed_at": "2026-08-03T05:24:36Z",
+        "observed_at": "2026-08-03T09:11:48Z",
         "url": "https://github.com/tigrbl/docs-tigrbl-com"
       }
     ],
@@ -1702,25 +1512,24 @@
       "github_releases": 0,
       "open_issues": 0,
       "packages": 2,
+      "relationships": 2,
       "size_kb": 141,
       "stars": 0,
-      "surfaces": 7,
       "watchers": 0
     },
     "name": "docs-tigrbl-com",
-    "observed_at": "2026-08-03T05:24:36Z",
+    "observed_at": "2026-08-03T09:11:48Z",
     "owner": "tigrbl",
     "package_ids": [
       "package:npm:docs-tigrbl-com:tigrbl/docs-tigrbl-com:package.json",
       "package:pypi:docs-tigrbl-com:tigrbl/docs-tigrbl-com:pyproject.toml"
     ],
     "pushed_at": "2026-07-13T22:29:01Z",
+    "relationship_counts": {
+      "repository_contains_package": 2
+    },
     "reviewed": false,
     "route": "/catalog/repositories/tigrbl/docs-tigrbl-com",
-    "surface_counts": {
-      "docs": 6,
-      "website": 1
-    },
     "technologies": [
       "Dockerfile",
       "JavaScript",
@@ -1755,7 +1564,7 @@
     "evidence": [
       {
         "kind": "source",
-        "observed_at": "2026-08-03T05:24:36Z",
+        "observed_at": "2026-08-03T09:11:48Z",
         "url": "https://github.com/tigrbl/docs-tigrcorn-com"
       }
     ],
@@ -1785,25 +1594,24 @@
       "github_releases": 0,
       "open_issues": 0,
       "packages": 2,
+      "relationships": 2,
       "size_kb": 130,
       "stars": 0,
-      "surfaces": 5,
       "watchers": 0
     },
     "name": "docs-tigrcorn-com",
-    "observed_at": "2026-08-03T05:24:36Z",
+    "observed_at": "2026-08-03T09:11:48Z",
     "owner": "tigrbl",
     "package_ids": [
       "package:npm:docs-tigrcorn-com:tigrbl/docs-tigrcorn-com:package.json",
       "package:pypi:docs-tigrcorn-com:tigrbl/docs-tigrcorn-com:pyproject.toml"
     ],
     "pushed_at": "2026-07-13T22:29:03Z",
+    "relationship_counts": {
+      "repository_contains_package": 2
+    },
     "reviewed": false,
     "route": "/catalog/repositories/tigrbl/docs-tigrcorn-com",
-    "surface_counts": {
-      "docs": 4,
-      "website": 1
-    },
     "technologies": [
       "Dockerfile",
       "JavaScript",
@@ -1838,7 +1646,7 @@
     "evidence": [
       {
         "kind": "source",
-        "observed_at": "2026-08-03T05:24:35Z",
+        "observed_at": "2026-08-03T09:11:48Z",
         "url": "https://github.com/groupsum/document-studio"
       }
     ],
@@ -1876,13 +1684,13 @@
       "github_releases": 1,
       "open_issues": 0,
       "packages": 3,
+      "relationships": 3,
       "size_kb": 150,
       "stars": 0,
-      "surfaces": 0,
       "watchers": 0
     },
     "name": "document-studio",
-    "observed_at": "2026-08-03T05:24:35Z",
+    "observed_at": "2026-08-03T09:11:48Z",
     "owner": "groupsum",
     "package_ids": [
       "package:npm:@groupsum/document-studio:groupsum/document-studio:packages/document-studio/package.json",
@@ -1890,9 +1698,11 @@
       "package:pypi:document-studio-workspace:groupsum/document-studio:pyproject.toml"
     ],
     "pushed_at": "2026-06-16T20:49:38Z",
+    "relationship_counts": {
+      "repository_contains_package": 3
+    },
     "reviewed": false,
     "route": "/catalog/repositories/groupsum/document-studio",
-    "surface_counts": {},
     "technologies": [
       "CSS",
       "HTML",
@@ -1915,7 +1725,7 @@
     "evidence": [
       {
         "kind": "source",
-        "observed_at": "2026-08-03T05:24:35Z",
+        "observed_at": "2026-08-03T09:11:48Z",
         "url": "https://github.com/groupsum/document-viewer"
       }
     ],
@@ -1953,13 +1763,13 @@
       "github_releases": 1,
       "open_issues": 0,
       "packages": 3,
+      "relationships": 3,
       "size_kb": 141,
       "stars": 0,
-      "surfaces": 0,
       "watchers": 0
     },
     "name": "document-viewer",
-    "observed_at": "2026-08-03T05:24:35Z",
+    "observed_at": "2026-08-03T09:11:48Z",
     "owner": "groupsum",
     "package_ids": [
       "package:npm:@groupsum/document-viewer:groupsum/document-viewer:packages/document-viewer/package.json",
@@ -1967,9 +1777,11 @@
       "package:pypi:document-viewer-workspace:groupsum/document-viewer:pyproject.toml"
     ],
     "pushed_at": "2026-06-15T10:49:01Z",
+    "relationship_counts": {
+      "repository_contains_package": 3
+    },
     "reviewed": false,
     "route": "/catalog/repositories/groupsum/document-viewer",
-    "surface_counts": {},
     "technologies": [
       "CSS",
       "HTML",
@@ -1992,7 +1804,7 @@
     "evidence": [
       {
         "kind": "source",
-        "observed_at": "2026-08-03T05:24:35Z",
+        "observed_at": "2026-08-03T09:11:48Z",
         "url": "https://github.com/groupsum/event-behavioral-telemetry-governance-pack"
       }
     ],
@@ -2047,23 +1859,23 @@
       "github_releases": 1,
       "open_issues": 0,
       "packages": 1,
+      "relationships": 1,
       "size_kb": 112,
       "stars": 0,
-      "surfaces": 1,
       "watchers": 0
     },
     "name": "event-behavioral-telemetry-governance-pack",
-    "observed_at": "2026-08-03T05:24:35Z",
+    "observed_at": "2026-08-03T09:11:48Z",
     "owner": "groupsum",
     "package_ids": [
       "package:pypi:event-behavioral-telemetry-governance-pack:groupsum/event-behavioral-telemetry-governance-pack:pyproject.toml"
     ],
     "pushed_at": "2026-05-18T09:39:34Z",
+    "relationship_counts": {
+      "repository_contains_package": 1
+    },
     "reviewed": false,
     "route": "/catalog/repositories/groupsum/event-behavioral-telemetry-governance-pack",
-    "surface_counts": {
-      "docs": 1
-    },
     "technologies": [
       "Python"
     ],
@@ -2084,7 +1896,7 @@
     "evidence": [
       {
         "kind": "source",
-        "observed_at": "2026-08-03T05:24:35Z",
+        "observed_at": "2026-08-03T09:11:48Z",
         "url": "https://github.com/groupsum/file-browser"
       }
     ],
@@ -2122,13 +1934,13 @@
       "github_releases": 1,
       "open_issues": 0,
       "packages": 3,
+      "relationships": 3,
       "size_kb": 132,
       "stars": 0,
-      "surfaces": 0,
       "watchers": 0
     },
     "name": "file-browser",
-    "observed_at": "2026-08-03T05:24:35Z",
+    "observed_at": "2026-08-03T09:11:48Z",
     "owner": "groupsum",
     "package_ids": [
       "package:npm:@groupsum/file-browser:groupsum/file-browser:packages/file-browser/package.json",
@@ -2136,9 +1948,11 @@
       "package:pypi:file-browser-workspace:groupsum/file-browser:pyproject.toml"
     ],
     "pushed_at": "2026-06-15T10:48:57Z",
+    "relationship_counts": {
+      "repository_contains_package": 3
+    },
     "reviewed": false,
     "route": "/catalog/repositories/groupsum/file-browser",
-    "surface_counts": {},
     "technologies": [
       "CSS",
       "HTML",
@@ -2161,7 +1975,7 @@
     "evidence": [
       {
         "kind": "source",
-        "observed_at": "2026-08-03T05:24:35Z",
+        "observed_at": "2026-08-03T09:11:48Z",
         "url": "https://github.com/groupsum/ga4-google-tagging-governance-pack"
       }
     ],
@@ -2216,23 +2030,23 @@
       "github_releases": 1,
       "open_issues": 0,
       "packages": 1,
+      "relationships": 1,
       "size_kb": 105,
       "stars": 0,
-      "surfaces": 1,
       "watchers": 0
     },
     "name": "ga4-google-tagging-governance-pack",
-    "observed_at": "2026-08-03T05:24:35Z",
+    "observed_at": "2026-08-03T09:11:48Z",
     "owner": "groupsum",
     "package_ids": [
       "package:pypi:ga4-google-tagging-governance-pack:groupsum/ga4-google-tagging-governance-pack:pyproject.toml"
     ],
     "pushed_at": "2026-05-18T09:39:35Z",
+    "relationship_counts": {
+      "repository_contains_package": 1
+    },
     "reviewed": false,
     "route": "/catalog/repositories/groupsum/ga4-google-tagging-governance-pack",
-    "surface_counts": {
-      "docs": 1
-    },
     "technologies": [
       "Python"
     ],
@@ -2253,7 +2067,7 @@
     "evidence": [
       {
         "kind": "source",
-        "observed_at": "2026-08-03T05:24:35Z",
+        "observed_at": "2026-08-03T09:11:48Z",
         "url": "https://github.com/groupsum/groupsum-xyz"
       }
     ],
@@ -2289,24 +2103,24 @@
       "github_releases": 0,
       "open_issues": 0,
       "packages": 2,
+      "relationships": 2,
       "size_kb": 4728,
       "stars": 0,
-      "surfaces": 1,
       "watchers": 0
     },
     "name": "groupsum-xyz",
-    "observed_at": "2026-08-03T05:24:35Z",
+    "observed_at": "2026-08-03T09:11:48Z",
     "owner": "groupsum",
     "package_ids": [
       "package:npm:@groupsum/groupsum-xyz-content-pack:groupsum/groupsum-xyz:packages/site-content-pack/package.json",
       "package:npm:groupsum-xyz:groupsum/groupsum-xyz:package.json"
     ],
     "pushed_at": "2026-08-03T03:30:43Z",
+    "relationship_counts": {
+      "repository_contains_package": 2
+    },
     "reviewed": false,
     "route": "/catalog/repositories/groupsum/groupsum-xyz",
-    "surface_counts": {
-      "website": 1
-    },
     "technologies": [
       "CSS",
       "Dockerfile",
@@ -2342,7 +2156,7 @@
     "evidence": [
       {
         "kind": "source",
-        "observed_at": "2026-08-03T05:24:35Z",
+        "observed_at": "2026-08-03T09:11:48Z",
         "url": "https://github.com/groupsum/gs1-product-link-event-data-governance-pack"
       }
     ],
@@ -2397,23 +2211,23 @@
       "github_releases": 1,
       "open_issues": 0,
       "packages": 1,
+      "relationships": 1,
       "size_kb": 98,
       "stars": 0,
-      "surfaces": 1,
       "watchers": 0
     },
     "name": "gs1-product-link-event-data-governance-pack",
-    "observed_at": "2026-08-03T05:24:35Z",
+    "observed_at": "2026-08-03T09:11:48Z",
     "owner": "groupsum",
     "package_ids": [
       "package:pypi:gs1-product-link-event-data-governance-pack:groupsum/gs1-product-link-event-data-governance-pack:pyproject.toml"
     ],
     "pushed_at": "2026-05-18T09:39:36Z",
+    "relationship_counts": {
+      "repository_contains_package": 1
+    },
     "reviewed": false,
     "route": "/catalog/repositories/groupsum/gs1-product-link-event-data-governance-pack",
-    "surface_counts": {
-      "docs": 1
-    },
     "technologies": [
       "Python"
     ],
@@ -2434,7 +2248,7 @@
     "evidence": [
       {
         "kind": "source",
-        "observed_at": "2026-08-03T05:24:35Z",
+        "observed_at": "2026-08-03T09:11:48Z",
         "url": "https://github.com/groupsum/markdown_workspace"
       }
     ],
@@ -3038,13 +2852,13 @@
       "github_releases": 6,
       "open_issues": 0,
       "packages": 45,
+      "relationships": 38,
       "size_kb": 1133214,
       "stars": 3,
-      "surfaces": 20,
       "watchers": 0
     },
     "name": "markdown_workspace",
-    "observed_at": "2026-08-03T05:24:35Z",
+    "observed_at": "2026-08-03T09:11:48Z",
     "owner": "groupsum",
     "package_ids": [
       "package:npm:@mdwrk/desktop:groupsum/markdown_workspace:apps/desktop/package.json",
@@ -3094,15 +2908,11 @@
       "package:pypi:markdown-workspace:groupsum/markdown_workspace:pyproject.toml"
     ],
     "pushed_at": "2026-06-09T05:49:44Z",
+    "relationship_counts": {
+      "repository_contains_package": 38
+    },
     "reviewed": false,
     "route": "/catalog/repositories/groupsum/markdown_workspace",
-    "surface_counts": {
-      "app": 1,
-      "demo": 1,
-      "service": 14,
-      "ui": 3,
-      "website": 1
-    },
     "technologies": [
       "CSS",
       "Dockerfile",
@@ -3141,7 +2951,7 @@
     "evidence": [
       {
         "kind": "source",
-        "observed_at": "2026-08-03T05:24:35Z",
+        "observed_at": "2026-08-03T09:11:48Z",
         "url": "https://github.com/groupsum/marketing-attribution-conversion-governance-pack"
       }
     ],
@@ -3196,23 +3006,23 @@
       "github_releases": 1,
       "open_issues": 0,
       "packages": 1,
+      "relationships": 1,
       "size_kb": 143,
       "stars": 0,
-      "surfaces": 1,
       "watchers": 0
     },
     "name": "marketing-attribution-conversion-governance-pack",
-    "observed_at": "2026-08-03T05:24:35Z",
+    "observed_at": "2026-08-03T09:11:48Z",
     "owner": "groupsum",
     "package_ids": [
       "package:pypi:marketing-attribution-conversion-governance-pack:groupsum/marketing-attribution-conversion-governance-pack:pyproject.toml"
     ],
     "pushed_at": "2026-06-02T10:11:01Z",
+    "relationship_counts": {
+      "repository_contains_package": 1
+    },
     "reviewed": false,
     "route": "/catalog/repositories/groupsum/marketing-attribution-conversion-governance-pack",
-    "surface_counts": {
-      "docs": 1
-    },
     "technologies": [
       "Python"
     ],
@@ -3233,7 +3043,7 @@
     "evidence": [
       {
         "kind": "source",
-        "observed_at": "2026-08-03T05:24:35Z",
+        "observed_at": "2026-08-03T09:11:48Z",
         "url": "https://github.com/groupsum/mdwrk"
       }
     ],
@@ -3277,13 +3087,13 @@
       "github_releases": 3,
       "open_issues": 0,
       "packages": 18,
+      "relationships": 18,
       "size_kb": 6632,
       "stars": 0,
-      "surfaces": 24,
       "watchers": 0
     },
     "name": "mdwrk",
-    "observed_at": "2026-08-03T05:24:35Z",
+    "observed_at": "2026-08-03T09:11:48Z",
     "owner": "groupsum",
     "package_ids": [
       "package:npm:@mdwrk/core-demo-react:groupsum/mdwrk:packages/shared/core-demo-react/package.json",
@@ -3306,12 +3116,11 @@
       "package:pypi:mdwrk:groupsum/mdwrk:pyproject.toml"
     ],
     "pushed_at": "2026-07-12T21:41:31Z",
+    "relationship_counts": {
+      "repository_contains_package": 18
+    },
     "reviewed": false,
     "route": "/catalog/repositories/groupsum/mdwrk",
-    "surface_counts": {
-      "docs": 14,
-      "example": 10
-    },
     "technologies": [
       "CSS",
       "HTML",
@@ -3337,7 +3146,7 @@
     "evidence": [
       {
         "kind": "source",
-        "observed_at": "2026-08-03T05:24:35Z",
+        "observed_at": "2026-08-03T09:11:48Z",
         "url": "https://github.com/groupsum/mdwrk-pages"
       }
     ],
@@ -3367,13 +3176,13 @@
       "github_releases": 0,
       "open_issues": 0,
       "packages": 22,
+      "relationships": 22,
       "size_kb": 15064,
       "stars": 0,
-      "surfaces": 12,
       "watchers": 0
     },
     "name": "mdwrk-pages",
-    "observed_at": "2026-08-03T05:24:35Z",
+    "observed_at": "2026-08-03T09:11:48Z",
     "owner": "groupsum",
     "package_ids": [
       "package:npm:@mdwrk/example-learning-path-demo:groupsum/mdwrk-pages:packages/70-demos/learning-path-demo/package.json",
@@ -3400,12 +3209,11 @@
       "package:pypi:mdwrk-pages:groupsum/mdwrk-pages:pyproject.toml"
     ],
     "pushed_at": "2026-07-13T21:06:00Z",
+    "relationship_counts": {
+      "repository_contains_package": 22
+    },
     "reviewed": false,
     "route": "/catalog/repositories/groupsum/mdwrk-pages",
-    "surface_counts": {
-      "docs": 8,
-      "example": 4
-    },
     "technologies": [
       "CSS",
       "Dockerfile",
@@ -3431,7 +3239,7 @@
     "evidence": [
       {
         "kind": "source",
-        "observed_at": "2026-08-03T05:24:35Z",
+        "observed_at": "2026-08-03T09:11:48Z",
         "url": "https://github.com/groupsum/mdwrkcom-content-pack"
       }
     ],
@@ -3461,25 +3269,24 @@
       "github_releases": 0,
       "open_issues": 0,
       "packages": 2,
+      "relationships": 2,
       "size_kb": 7493,
       "stars": 0,
-      "surfaces": 12,
       "watchers": 0
     },
     "name": "mdwrkcom-content-pack",
-    "observed_at": "2026-08-03T05:24:35Z",
+    "observed_at": "2026-08-03T09:11:48Z",
     "owner": "groupsum",
     "package_ids": [
       "package:npm:@mdwrk/mdwrkcom-content-pack:groupsum/mdwrkcom-content-pack:packages/content/mdwrkcom-content-pack/package.json",
       "package:npm:mdwrkcom-content-pack:groupsum/mdwrkcom-content-pack:package.json"
     ],
     "pushed_at": "2026-06-16T02:39:56Z",
+    "relationship_counts": {
+      "repository_contains_package": 2
+    },
     "reviewed": false,
     "route": "/catalog/repositories/groupsum/mdwrkcom-content-pack",
-    "surface_counts": {
-      "docs": 11,
-      "website": 1
-    },
     "technologies": [
       "JavaScript",
       "TypeScript",
@@ -3502,7 +3309,7 @@
     "evidence": [
       {
         "kind": "source",
-        "observed_at": "2026-08-03T05:24:35Z",
+        "observed_at": "2026-08-03T09:11:48Z",
         "url": "https://github.com/groupsum/mobile-install-attribution-governance-pack"
       }
     ],
@@ -3557,23 +3364,23 @@
       "github_releases": 1,
       "open_issues": 0,
       "packages": 1,
+      "relationships": 1,
       "size_kb": 104,
       "stars": 0,
-      "surfaces": 1,
       "watchers": 0
     },
     "name": "mobile-install-attribution-governance-pack",
-    "observed_at": "2026-08-03T05:24:35Z",
+    "observed_at": "2026-08-03T09:11:48Z",
     "owner": "groupsum",
     "package_ids": [
       "package:pypi:mobile-install-attribution-governance-pack:groupsum/mobile-install-attribution-governance-pack:pyproject.toml"
     ],
     "pushed_at": "2026-05-18T09:39:39Z",
+    "relationship_counts": {
+      "repository_contains_package": 1
+    },
     "reviewed": false,
     "route": "/catalog/repositories/groupsum/mobile-install-attribution-governance-pack",
-    "surface_counts": {
-      "docs": 1
-    },
     "technologies": [
       "Python"
     ],
@@ -3594,7 +3401,7 @@
     "evidence": [
       {
         "kind": "source",
-        "observed_at": "2026-08-03T05:24:35Z",
+        "observed_at": "2026-08-03T09:11:48Z",
         "url": "https://github.com/groupsum/npmctl"
       }
     ],
@@ -3759,13 +3566,13 @@
       "github_releases": 9,
       "open_issues": 0,
       "packages": 7,
+      "relationships": 7,
       "size_kb": 11109,
       "stars": 1,
-      "surfaces": 41,
       "watchers": 0
     },
     "name": "npmctl",
-    "observed_at": "2026-08-03T05:24:35Z",
+    "observed_at": "2026-08-03T09:11:48Z",
     "owner": "groupsum",
     "package_ids": [
       "package:pypi:npmctl-cloudflare:groupsum/npmctl:packages/npmctl-cloudflare/pyproject.toml",
@@ -3777,14 +3584,11 @@
       "package:pypi:npmctl:groupsum/npmctl:packages/npmctl/pyproject.toml"
     ],
     "pushed_at": "2026-07-24T03:43:40Z",
+    "relationship_counts": {
+      "repository_contains_package": 7
+    },
     "reviewed": false,
     "route": "/catalog/repositories/groupsum/npmctl",
-    "surface_counts": {
-      "api": 2,
-      "deployment": 1,
-      "docs": 35,
-      "example": 3
-    },
     "technologies": [
       "Dockerfile",
       "Python",
@@ -3807,7 +3611,7 @@
     "evidence": [
       {
         "kind": "source",
-        "observed_at": "2026-08-03T05:24:35Z",
+        "observed_at": "2026-08-03T09:11:48Z",
         "url": "https://github.com/groupsum/npmctl-com"
       }
     ],
@@ -3843,13 +3647,13 @@
       "github_releases": 0,
       "open_issues": 0,
       "packages": 3,
+      "relationships": 3,
       "size_kb": 207,
       "stars": 0,
-      "surfaces": 1,
       "watchers": 0
     },
     "name": "npmctl-com",
-    "observed_at": "2026-08-03T05:24:35Z",
+    "observed_at": "2026-08-03T09:11:48Z",
     "owner": "groupsum",
     "package_ids": [
       "package:npm:@groupsum/npmctl-com-content-pack:groupsum/npmctl-com:packages/site-content-pack/package.json",
@@ -3857,11 +3661,11 @@
       "package:pypi:npmctl-com:groupsum/npmctl-com:pyproject.toml"
     ],
     "pushed_at": "2026-07-25T19:02:53Z",
+    "relationship_counts": {
+      "repository_contains_package": 3
+    },
     "reviewed": false,
     "route": "/catalog/repositories/groupsum/npmctl-com",
-    "surface_counts": {
-      "website": 1
-    },
     "technologies": [
       "CSS",
       "Dockerfile",
@@ -3896,7 +3700,7 @@
     "evidence": [
       {
         "kind": "source",
-        "observed_at": "2026-08-03T05:24:36Z",
+        "observed_at": "2026-08-03T09:11:48Z",
         "url": "https://github.com/swarmauri/peagen-com"
       }
     ],
@@ -3926,13 +3730,13 @@
       "github_releases": 0,
       "open_issues": 0,
       "packages": 3,
+      "relationships": 3,
       "size_kb": 2188,
       "stars": 0,
-      "surfaces": 1,
       "watchers": 0
     },
     "name": "peagen-com",
-    "observed_at": "2026-08-03T05:24:36Z",
+    "observed_at": "2026-08-03T09:11:48Z",
     "owner": "swarmauri",
     "package_ids": [
       "package:npm:@swarmauri/peagen-com-content-pack:swarmauri/peagen-com:packages/site-content-pack/package.json",
@@ -3940,11 +3744,11 @@
       "package:pypi:peagen-com:swarmauri/peagen-com:pyproject.toml"
     ],
     "pushed_at": "2026-07-13T22:28:58Z",
+    "relationship_counts": {
+      "repository_contains_package": 3
+    },
     "reviewed": false,
     "route": "/catalog/repositories/swarmauri/peagen-com",
-    "surface_counts": {
-      "website": 1
-    },
     "technologies": [
       "CSS",
       "Dockerfile",
@@ -3980,7 +3784,7 @@
     "evidence": [
       {
         "kind": "source",
-        "observed_at": "2026-08-03T05:24:35Z",
+        "observed_at": "2026-08-03T09:11:48Z",
         "url": "https://github.com/groupsum/portwyrm"
       }
     ],
@@ -4035,26 +3839,24 @@
       "github_releases": 2,
       "open_issues": 0,
       "packages": 2,
+      "relationships": 2,
       "size_kb": 1958,
       "stars": 0,
-      "surfaces": 19,
       "watchers": 0
     },
     "name": "portwyrm",
-    "observed_at": "2026-08-03T05:24:35Z",
+    "observed_at": "2026-08-03T09:11:48Z",
     "owner": "groupsum",
     "package_ids": [
       "package:npm:portwyrm-uix:groupsum/portwyrm:frontend/package.json",
       "package:pypi:portwyrm:groupsum/portwyrm:pyproject.toml"
     ],
     "pushed_at": "2026-07-25T14:58:56Z",
+    "relationship_counts": {
+      "repository_contains_package": 2
+    },
     "reviewed": false,
     "route": "/catalog/repositories/groupsum/portwyrm",
-    "surface_counts": {
-      "api": 8,
-      "deployment": 4,
-      "docs": 7
-    },
     "technologies": [
       "CSS",
       "Dockerfile",
@@ -4080,7 +3882,7 @@
     "evidence": [
       {
         "kind": "source",
-        "observed_at": "2026-08-03T05:24:36Z",
+        "observed_at": "2026-08-03T09:11:48Z",
         "url": "https://github.com/groupsum/privacy-governance-records-governance-pack"
       }
     ],
@@ -4135,23 +3937,23 @@
       "github_releases": 1,
       "open_issues": 0,
       "packages": 1,
+      "relationships": 1,
       "size_kb": 106,
       "stars": 0,
-      "surfaces": 1,
       "watchers": 0
     },
     "name": "privacy-governance-records-governance-pack",
-    "observed_at": "2026-08-03T05:24:36Z",
+    "observed_at": "2026-08-03T09:11:48Z",
     "owner": "groupsum",
     "package_ids": [
       "package:pypi:privacy-governance-records-governance-pack:groupsum/privacy-governance-records-governance-pack:pyproject.toml"
     ],
     "pushed_at": "2026-05-18T09:39:40Z",
+    "relationship_counts": {
+      "repository_contains_package": 1
+    },
     "reviewed": false,
     "route": "/catalog/repositories/groupsum/privacy-governance-records-governance-pack",
-    "surface_counts": {
-      "docs": 1
-    },
     "technologies": [
       "Python"
     ],
@@ -4172,7 +3974,7 @@
     "evidence": [
       {
         "kind": "source",
-        "observed_at": "2026-08-03T05:24:36Z",
+        "observed_at": "2026-08-03T09:11:48Z",
         "url": "https://github.com/swarmauri/rag_assistant"
       }
     ],
@@ -4210,23 +4012,23 @@
       "github_releases": 1,
       "open_issues": 2,
       "packages": 1,
+      "relationships": 1,
       "size_kb": 254,
       "stars": 7,
-      "surfaces": 1,
       "watchers": 0
     },
     "name": "rag_assistant",
-    "observed_at": "2026-08-03T05:24:36Z",
+    "observed_at": "2026-08-03T09:11:48Z",
     "owner": "swarmauri",
     "package_ids": [
       "package:pypi:rag_assistant:swarmauri/rag_assistant:pyproject.toml"
     ],
     "pushed_at": "2024-10-30T00:50:28Z",
+    "relationship_counts": {
+      "repository_contains_package": 1
+    },
     "reviewed": false,
     "route": "/catalog/repositories/swarmauri/rag_assistant",
-    "surface_counts": {
-      "website": 1
-    },
     "technologies": [
       "Python"
     ],
@@ -4247,7 +4049,7 @@
     "evidence": [
       {
         "kind": "source",
-        "observed_at": "2026-08-03T05:24:36Z",
+        "observed_at": "2026-08-03T09:11:48Z",
         "url": "https://github.com/groupsum/seo-aeo-aieo-governance-pack"
       }
     ],
@@ -4296,21 +4098,23 @@
       "github_releases": 7,
       "open_issues": 0,
       "packages": 1,
+      "relationships": 1,
       "size_kb": 131,
       "stars": 2,
-      "surfaces": 0,
       "watchers": 0
     },
     "name": "seo-aeo-aieo-governance-pack",
-    "observed_at": "2026-08-03T05:24:36Z",
+    "observed_at": "2026-08-03T09:11:48Z",
     "owner": "groupsum",
     "package_ids": [
       "package:pypi:seo-aeo-aieo-governance-pack:groupsum/seo-aeo-aieo-governance-pack:pyproject.toml"
     ],
     "pushed_at": "2026-06-02T00:59:19Z",
+    "relationship_counts": {
+      "repository_contains_package": 1
+    },
     "reviewed": false,
     "route": "/catalog/repositories/groupsum/seo-aeo-aieo-governance-pack",
-    "surface_counts": {},
     "technologies": [
       "Python"
     ],
@@ -4331,7 +4135,7 @@
     "evidence": [
       {
         "kind": "source",
-        "observed_at": "2026-08-03T05:24:36Z",
+        "observed_at": "2026-08-03T09:11:48Z",
         "url": "https://github.com/swarmauri/soliloquy"
       }
     ],
@@ -4361,23 +4165,23 @@
       "github_releases": 0,
       "open_issues": 3,
       "packages": 1,
+      "relationships": 1,
       "size_kb": 149,
       "stars": 2,
-      "surfaces": 1,
       "watchers": 0
     },
     "name": "soliloquy",
-    "observed_at": "2026-08-03T05:24:36Z",
+    "observed_at": "2026-08-03T09:11:48Z",
     "owner": "swarmauri",
     "package_ids": [
       "package:pypi:soliloquy:swarmauri/soliloquy:pyproject.toml"
     ],
     "pushed_at": "2025-03-03T04:15:53Z",
+    "relationship_counts": {
+      "repository_contains_package": 1
+    },
     "reviewed": false,
     "route": "/catalog/repositories/swarmauri/soliloquy",
-    "surface_counts": {
-      "website": 1
-    },
     "technologies": [
       "Python"
     ],
@@ -4411,7 +4215,7 @@
     "evidence": [
       {
         "kind": "source",
-        "observed_at": "2026-08-03T05:24:36Z",
+        "observed_at": "2026-08-03T09:11:48Z",
         "url": "https://github.com/groupsum/ssot-registry"
       }
     ],
@@ -4461,13 +4265,13 @@
       "github_releases": 447,
       "open_issues": 0,
       "packages": 14,
+      "relationships": 14,
       "size_kb": 77018,
       "stars": 5,
-      "surfaces": 37,
       "watchers": 0
     },
     "name": "ssot-registry",
-    "observed_at": "2026-08-03T05:24:36Z",
+    "observed_at": "2026-08-03T09:11:48Z",
     "owner": "groupsum",
     "package_ids": [
       "package:crates:registry_bench_rs:groupsum/ssot-registry:scripts/registry_bench_rs/Cargo.toml",
@@ -4486,14 +4290,11 @@
       "package:pypi:ssot-views:groupsum/ssot-registry:pkgs/ssot-views/pyproject.toml"
     ],
     "pushed_at": "2026-08-01T02:42:14Z",
+    "relationship_counts": {
+      "repository_contains_package": 14
+    },
     "reviewed": false,
     "route": "/catalog/repositories/groupsum/ssot-registry",
-    "surface_counts": {
-      "api": 25,
-      "docs": 5,
-      "example": 5,
-      "service": 2
-    },
     "technologies": [
       "CSS",
       "HTML",
@@ -4536,7 +4337,7 @@
     "evidence": [
       {
         "kind": "source",
-        "observed_at": "2026-08-03T05:24:36Z",
+        "observed_at": "2026-08-03T09:11:48Z",
         "url": "https://github.com/groupsum/ssot-registry-com"
       }
     ],
@@ -4572,24 +4373,24 @@
       "github_releases": 0,
       "open_issues": 0,
       "packages": 2,
+      "relationships": 2,
       "size_kb": 1800,
       "stars": 0,
-      "surfaces": 1,
       "watchers": 0
     },
     "name": "ssot-registry-com",
-    "observed_at": "2026-08-03T05:24:36Z",
+    "observed_at": "2026-08-03T09:11:48Z",
     "owner": "groupsum",
     "package_ids": [
       "package:npm:ssot-registry-com:groupsum/ssot-registry-com:package.json",
       "package:pypi:ssot-registry-com:groupsum/ssot-registry-com:pyproject.toml"
     ],
     "pushed_at": "2026-07-13T22:28:44Z",
+    "relationship_counts": {
+      "repository_contains_package": 2
+    },
     "reviewed": false,
     "route": "/catalog/repositories/groupsum/ssot-registry-com",
-    "surface_counts": {
-      "website": 1
-    },
     "technologies": [
       "CSS",
       "Dockerfile",
@@ -4626,7 +4427,7 @@
     "evidence": [
       {
         "kind": "source",
-        "observed_at": "2026-08-03T05:24:36Z",
+        "observed_at": "2026-08-03T09:11:48Z",
         "url": "https://github.com/swarmauri/swarmakit"
       }
     ],
@@ -4670,13 +4471,13 @@
       "github_releases": 3,
       "open_issues": 9,
       "packages": 5,
+      "relationships": 5,
       "size_kb": 3968,
       "stars": 25,
-      "surfaces": 1,
       "watchers": 0
     },
     "name": "swarmakit",
-    "observed_at": "2026-08-03T05:24:36Z",
+    "observed_at": "2026-08-03T09:11:48Z",
     "owner": "swarmauri",
     "package_ids": [
       "package:npm:@swarmakit/react:swarmauri/swarmakit:libs/react/package.json",
@@ -4686,11 +4487,11 @@
       "package:npm:swarmakit:swarmauri/swarmakit:package.json"
     ],
     "pushed_at": "2025-01-17T19:28:28Z",
+    "relationship_counts": {
+      "repository_contains_package": 5
+    },
     "reviewed": false,
     "route": "/catalog/repositories/swarmauri/swarmakit",
-    "surface_counts": {
-      "website": 1
-    },
     "technologies": [
       "CSS",
       "HTML",
@@ -4726,7 +4527,7 @@
     "evidence": [
       {
         "kind": "source",
-        "observed_at": "2026-08-03T05:24:36Z",
+        "observed_at": "2026-08-03T09:11:48Z",
         "url": "https://github.com/swarmauri/swarmauri-aucplot"
       }
     ],
@@ -4756,24 +4557,24 @@
       "github_releases": 0,
       "open_issues": 1,
       "packages": 2,
+      "relationships": 2,
       "size_kb": 50,
       "stars": 0,
-      "surfaces": 3,
       "watchers": 0
     },
     "name": "swarmauri-aucplot",
-    "observed_at": "2026-08-03T05:24:36Z",
+    "observed_at": "2026-08-03T09:11:48Z",
     "owner": "swarmauri",
     "package_ids": [
       "package:npm:gradio_aucplot:swarmauri/swarmauri-aucplot:aucplot/frontend/package.json",
       "package:pypi:gradio_aucplot:swarmauri/swarmauri-aucplot:aucplot/pyproject.toml"
     ],
     "pushed_at": "2024-09-03T07:06:13Z",
+    "relationship_counts": {
+      "repository_contains_package": 2
+    },
     "reviewed": false,
     "route": "/catalog/repositories/swarmauri/swarmauri-aucplot",
-    "surface_counts": {
-      "demo": 3
-    },
     "technologies": [
       "JavaScript",
       "Python",
@@ -4796,7 +4597,7 @@
     "evidence": [
       {
         "kind": "source",
-        "observed_at": "2026-08-03T05:24:36Z",
+        "observed_at": "2026-08-03T09:11:48Z",
         "url": "https://github.com/swarmauri/swarmauri-com"
       }
     ],
@@ -4832,25 +4633,24 @@
       "github_releases": 0,
       "open_issues": 0,
       "packages": 2,
+      "relationships": 2,
       "size_kb": 1729,
       "stars": 0,
-      "surfaces": 2,
       "watchers": 0
     },
     "name": "swarmauri-com",
-    "observed_at": "2026-08-03T05:24:36Z",
+    "observed_at": "2026-08-03T09:11:48Z",
     "owner": "swarmauri",
     "package_ids": [
       "package:npm:swarmauri-com:swarmauri/swarmauri-com:package.json",
       "package:pypi:swarmauri-com:swarmauri/swarmauri-com:pyproject.toml"
     ],
     "pushed_at": "2026-07-13T22:28:59Z",
+    "relationship_counts": {
+      "repository_contains_package": 2
+    },
     "reviewed": false,
     "route": "/catalog/repositories/swarmauri/swarmauri-com",
-    "surface_counts": {
-      "docs": 1,
-      "website": 1
-    },
     "technologies": [
       "CSS",
       "Dockerfile",
@@ -4887,7 +4687,7 @@
     "evidence": [
       {
         "kind": "source",
-        "observed_at": "2026-08-03T05:24:36Z",
+        "observed_at": "2026-08-03T09:11:48Z",
         "url": "https://github.com/swarmauri/swarmauri-flipcard"
       }
     ],
@@ -4917,21 +4717,23 @@
       "github_releases": 0,
       "open_issues": 0,
       "packages": 1,
+      "relationships": 1,
       "size_kb": 21,
       "stars": 0,
-      "surfaces": 0,
       "watchers": 0
     },
     "name": "swarmauri-flipcard",
-    "observed_at": "2026-08-03T05:24:36Z",
+    "observed_at": "2026-08-03T09:11:48Z",
     "owner": "swarmauri",
     "package_ids": [
       "package:npm:svelte:swarmauri/swarmauri-flipcard:svelte/package.json"
     ],
     "pushed_at": "2024-09-05T00:30:47Z",
+    "relationship_counts": {
+      "repository_contains_package": 1
+    },
     "reviewed": false,
     "route": "/catalog/repositories/swarmauri/swarmauri-flipcard",
-    "surface_counts": {},
     "technologies": [
       "CSS",
       "HTML",
@@ -4955,7 +4757,7 @@
     "evidence": [
       {
         "kind": "source",
-        "observed_at": "2026-08-03T05:24:36Z",
+        "observed_at": "2026-08-03T09:11:48Z",
         "url": "https://github.com/swarmauri/swarmauri-mesop-components"
       }
     ],
@@ -4985,21 +4787,19 @@
       "github_releases": 0,
       "open_issues": 0,
       "packages": 0,
+      "relationships": 0,
       "size_kb": 17,
       "stars": 3,
-      "surfaces": 2,
       "watchers": 0
     },
     "name": "swarmauri-mesop-components",
-    "observed_at": "2026-08-03T05:24:36Z",
+    "observed_at": "2026-08-03T09:11:48Z",
     "owner": "swarmauri",
     "package_ids": [],
     "pushed_at": "2024-09-07T15:34:02Z",
+    "relationship_counts": {},
     "reviewed": false,
     "route": "/catalog/repositories/swarmauri/swarmauri-mesop-components",
-    "surface_counts": {
-      "website": 2
-    },
     "technologies": [
       "JavaScript",
       "Python"
@@ -5021,7 +4821,7 @@
     "evidence": [
       {
         "kind": "source",
-        "observed_at": "2026-08-03T05:24:36Z",
+        "observed_at": "2026-08-03T09:11:48Z",
         "url": "https://github.com/swarmauri/swarmauri-notebooks"
       }
     ],
@@ -5059,21 +4859,19 @@
       "github_releases": 1,
       "open_issues": 25,
       "packages": 0,
+      "relationships": 0,
       "size_kb": 32789,
       "stars": 18,
-      "surfaces": 1,
       "watchers": 4
     },
     "name": "swarmauri-notebooks",
-    "observed_at": "2026-08-03T05:24:36Z",
+    "observed_at": "2026-08-03T09:11:48Z",
     "owner": "swarmauri",
     "package_ids": [],
     "pushed_at": "2025-01-12T05:17:11Z",
+    "relationship_counts": {},
     "reviewed": false,
     "route": "/catalog/repositories/swarmauri/swarmauri-notebooks",
-    "surface_counts": {
-      "website": 1
-    },
     "technologies": [
       "Jupyter Notebook"
     ],
@@ -5094,7 +4892,7 @@
     "evidence": [
       {
         "kind": "source",
-        "observed_at": "2026-08-03T05:24:36Z",
+        "observed_at": "2026-08-03T09:11:48Z",
         "url": "https://github.com/swarmauri/swarmauri-piechart"
       }
     ],
@@ -5124,24 +4922,24 @@
       "github_releases": 0,
       "open_issues": 1,
       "packages": 2,
+      "relationships": 2,
       "size_kb": 123,
       "stars": 1,
-      "surfaces": 3,
       "watchers": 0
     },
     "name": "swarmauri-piechart",
-    "observed_at": "2026-08-03T05:24:36Z",
+    "observed_at": "2026-08-03T09:11:48Z",
     "owner": "swarmauri",
     "package_ids": [
       "package:npm:gradio_mycomponent:swarmauri/swarmauri-piechart:mycomponent/frontend/package.json",
       "package:pypi:gradio_mycomponent:swarmauri/swarmauri-piechart:mycomponent/pyproject.toml"
     ],
     "pushed_at": "2024-09-04T08:20:30Z",
+    "relationship_counts": {
+      "repository_contains_package": 2
+    },
     "reviewed": false,
     "route": "/catalog/repositories/swarmauri/swarmauri-piechart",
-    "surface_counts": {
-      "demo": 3
-    },
     "technologies": [
       "JavaScript",
       "Python",
@@ -5164,7 +4962,7 @@
     "evidence": [
       {
         "kind": "source",
-        "observed_at": "2026-08-03T05:24:36Z",
+        "observed_at": "2026-08-03T09:11:49Z",
         "url": "https://github.com/swarmauri/swarmauri-playground"
       }
     ],
@@ -5194,21 +4992,19 @@
       "github_releases": 0,
       "open_issues": 9,
       "packages": 0,
+      "relationships": 0,
       "size_kb": 34,
       "stars": 5,
-      "surfaces": 1,
       "watchers": 1
     },
     "name": "swarmauri-playground",
-    "observed_at": "2026-08-03T05:24:36Z",
+    "observed_at": "2026-08-03T09:11:49Z",
     "owner": "swarmauri",
     "package_ids": [],
     "pushed_at": "2024-10-22T10:15:54Z",
+    "relationship_counts": {},
     "reviewed": false,
     "route": "/catalog/repositories/swarmauri/swarmauri-playground",
-    "surface_counts": {
-      "website": 1
-    },
     "technologies": [
       "Jupyter Notebook",
       "Python"
@@ -5230,7 +5026,7 @@
     "evidence": [
       {
         "kind": "source",
-        "observed_at": "2026-08-03T05:24:36Z",
+        "observed_at": "2026-08-03T09:11:49Z",
         "url": "https://github.com/swarmauri/swarmauri-sdk"
       }
     ],
@@ -5280,13 +5076,13 @@
       "github_releases": 5742,
       "open_issues": 176,
       "packages": 366,
+      "relationships": 366,
       "size_kb": 77235,
       "stars": 104,
-      "surfaces": 80,
       "watchers": 5
     },
     "name": "swarmauri-sdk",
-    "observed_at": "2026-08-03T05:24:36Z",
+    "observed_at": "2026-08-03T09:11:49Z",
     "owner": "swarmauri",
     "package_ids": [
       "package:crates:fasttokenizer:swarmauri/swarmauri-sdk:pkgs/experimental/FastTokenizer/Cargo.toml",
@@ -5657,14 +5453,11 @@
       "package:pypi:zr0:swarmauri/swarmauri-sdk:pkgs/experimental/zr0/pyproject.toml"
     ],
     "pushed_at": "2026-07-27T15:54:12Z",
+    "relationship_counts": {
+      "repository_contains_package": 366
+    },
     "reviewed": false,
     "route": "/catalog/repositories/swarmauri/swarmauri-sdk",
-    "surface_counts": {
-      "api": 4,
-      "docs": 49,
-      "example": 26,
-      "website": 1
-    },
     "technologies": [
       "C",
       "C++",
@@ -5715,7 +5508,7 @@
     "evidence": [
       {
         "kind": "source",
-        "observed_at": "2026-08-03T05:24:36Z",
+        "observed_at": "2026-08-03T09:11:48Z",
         "url": "https://github.com/tigrbl/tigr-asgi-contract"
       }
     ],
@@ -5814,13 +5607,13 @@
       "github_releases": 28,
       "open_issues": 0,
       "packages": 8,
+      "relationships": 8,
       "size_kb": 4214,
       "stars": 1,
-      "surfaces": 16,
       "watchers": 0
     },
     "name": "tigr-asgi-contract",
-    "observed_at": "2026-08-03T05:24:36Z",
+    "observed_at": "2026-08-03T09:11:48Z",
     "owner": "tigrbl",
     "package_ids": [
       "package:crates:tigr_asgi_contract_artifacts_rs:tigrbl/tigr-asgi-contract:packages/artifacts-rs/Cargo.toml",
@@ -5833,11 +5626,11 @@
       "package:pypi:tigr-contract-workspace:tigrbl/tigr-asgi-contract:pyproject.toml"
     ],
     "pushed_at": "2026-07-26T04:25:05Z",
+    "relationship_counts": {
+      "repository_contains_package": 8
+    },
     "reviewed": false,
     "route": "/catalog/repositories/tigrbl/tigr-asgi-contract",
-    "surface_counts": {
-      "docs": 16
-    },
     "technologies": [
       "JavaScript",
       "Python",
@@ -5861,7 +5654,7 @@
     "evidence": [
       {
         "kind": "source",
-        "observed_at": "2026-08-03T05:24:36Z",
+        "observed_at": "2026-08-03T09:11:48Z",
         "url": "https://github.com/tigrbl/tigrbl"
       }
     ],
@@ -5899,13 +5692,13 @@
       "github_releases": 1202,
       "open_issues": 2,
       "packages": 54,
+      "relationships": 51,
       "size_kb": 81451,
       "stars": 3,
-      "surfaces": 11,
       "watchers": 0
     },
     "name": "tigrbl",
-    "observed_at": "2026-08-03T05:24:36Z",
+    "observed_at": "2026-08-03T09:11:48Z",
     "owner": "tigrbl",
     "package_ids": [
       "package:pypi:tigrbl-atoms:tigrbl/tigrbl:pkgs/40_atoms/tigrbl_atoms/pyproject.toml",
@@ -5964,13 +5757,11 @@
       "package:pypi:tigrbl_tests:tigrbl/tigrbl:pkgs/97_tests/tigrbl_tests/pyproject.toml"
     ],
     "pushed_at": "2026-07-27T08:35:18Z",
+    "relationship_counts": {
+      "repository_contains_package": 51
+    },
     "reviewed": false,
     "route": "/catalog/repositories/tigrbl/tigrbl",
-    "surface_counts": {
-      "api": 5,
-      "docs": 5,
-      "website": 1
-    },
     "technologies": [
       "Jupyter Notebook",
       "Python"
@@ -6003,7 +5794,7 @@
     "evidence": [
       {
         "kind": "source",
-        "observed_at": "2026-08-03T05:24:36Z",
+        "observed_at": "2026-08-03T09:11:48Z",
         "url": "https://github.com/tigrbl/tigrbl-com"
       }
     ],
@@ -6039,13 +5830,13 @@
       "github_releases": 0,
       "open_issues": 0,
       "packages": 3,
+      "relationships": 3,
       "size_kb": 2968,
       "stars": 0,
-      "surfaces": 1,
       "watchers": 0
     },
     "name": "tigrbl-com",
-    "observed_at": "2026-08-03T05:24:36Z",
+    "observed_at": "2026-08-03T09:11:48Z",
     "owner": "tigrbl",
     "package_ids": [
       "package:npm:@tigrbl/tigrbl-com-content-pack:tigrbl/tigrbl-com:packages/site-content-pack/package.json",
@@ -6053,11 +5844,11 @@
       "package:pypi:tigrbl-com:tigrbl/tigrbl-com:pyproject.toml"
     ],
     "pushed_at": "2026-07-25T17:59:36Z",
+    "relationship_counts": {
+      "repository_contains_package": 3
+    },
     "reviewed": false,
     "route": "/catalog/repositories/tigrbl/tigrbl-com",
-    "surface_counts": {
-      "website": 1
-    },
     "technologies": [
       "CSS",
       "Dockerfile",
@@ -6093,7 +5884,7 @@
     "evidence": [
       {
         "kind": "source",
-        "observed_at": "2026-08-03T05:24:36Z",
+        "observed_at": "2026-08-03T09:11:48Z",
         "url": "https://github.com/tigrbl/tigrbl_acme_ca"
       }
     ],
@@ -6123,23 +5914,23 @@
       "github_releases": 0,
       "open_issues": 0,
       "packages": 1,
+      "relationships": 1,
       "size_kb": 43,
       "stars": 0,
-      "surfaces": 7,
       "watchers": 0
     },
     "name": "tigrbl_acme_ca",
-    "observed_at": "2026-08-03T05:24:36Z",
+    "observed_at": "2026-08-03T09:11:48Z",
     "owner": "tigrbl",
     "package_ids": [
       "package:pypi:tigrbl_acme_ca:tigrbl/tigrbl_acme_ca:pyproject.toml"
     ],
     "pushed_at": "2026-05-20T02:22:02Z",
+    "relationship_counts": {
+      "repository_contains_package": 1
+    },
     "reviewed": false,
     "route": "/catalog/repositories/tigrbl/tigrbl_acme_ca",
-    "surface_counts": {
-      "service": 7
-    },
     "technologies": [
       "Python"
     ],
@@ -6160,7 +5951,7 @@
     "evidence": [
       {
         "kind": "source",
-        "observed_at": "2026-08-03T05:24:36Z",
+        "observed_at": "2026-08-03T09:11:48Z",
         "url": "https://github.com/tigrbl/tigrbl_api_cron"
       }
     ],
@@ -6190,23 +5981,23 @@
       "github_releases": 0,
       "open_issues": 0,
       "packages": 1,
+      "relationships": 1,
       "size_kb": 25,
       "stars": 0,
-      "surfaces": 1,
       "watchers": 0
     },
     "name": "tigrbl_api_cron",
-    "observed_at": "2026-08-03T05:24:36Z",
+    "observed_at": "2026-08-03T09:11:48Z",
     "owner": "tigrbl",
     "package_ids": [
       "package:pypi:tigrbl-cron:tigrbl/tigrbl_api_cron:pyproject.toml"
     ],
     "pushed_at": "2026-07-27T06:14:09Z",
+    "relationship_counts": {
+      "repository_contains_package": 1
+    },
     "reviewed": false,
     "route": "/catalog/repositories/tigrbl/tigrbl_api_cron",
-    "surface_counts": {
-      "service": 1
-    },
     "technologies": [
       "Python"
     ],
@@ -6227,7 +6018,7 @@
     "evidence": [
       {
         "kind": "source",
-        "observed_at": "2026-08-03T05:24:36Z",
+        "observed_at": "2026-08-03T09:11:48Z",
         "url": "https://github.com/tigrbl/tigrbl_api_hpks"
       }
     ],
@@ -6257,23 +6048,23 @@
       "github_releases": 0,
       "open_issues": 0,
       "packages": 1,
+      "relationships": 1,
       "size_kb": 21,
       "stars": 0,
-      "surfaces": 1,
       "watchers": 0
     },
     "name": "tigrbl_api_hpks",
-    "observed_at": "2026-08-03T05:24:36Z",
+    "observed_at": "2026-08-03T09:11:48Z",
     "owner": "tigrbl",
     "package_ids": [
       "package:pypi:tigrbl_api_hpks:tigrbl/tigrbl_api_hpks:pyproject.toml"
     ],
     "pushed_at": "2026-05-20T02:22:00Z",
+    "relationship_counts": {
+      "repository_contains_package": 1
+    },
     "reviewed": false,
     "route": "/catalog/repositories/tigrbl/tigrbl_api_hpks",
-    "surface_counts": {
-      "service": 1
-    },
     "technologies": [
       "Python"
     ],
@@ -6294,7 +6085,7 @@
     "evidence": [
       {
         "kind": "source",
-        "observed_at": "2026-08-03T05:24:36Z",
+        "observed_at": "2026-08-03T09:11:48Z",
         "url": "https://github.com/tigrbl/tigrbl_auth"
       }
     ],
@@ -6338,13 +6129,13 @@
       "github_releases": 12,
       "open_issues": 13,
       "packages": 489,
+      "relationships": 457,
       "size_kb": 25828,
       "stars": 2,
-      "surfaces": 47,
       "watchers": 0
     },
     "name": "tigrbl_auth",
-    "observed_at": "2026-08-03T05:24:36Z",
+    "observed_at": "2026-08-03T09:11:48Z",
     "owner": "tigrbl",
     "package_ids": [
       "package:npm:@tigrbl-auth/admin-uix:tigrbl/tigrbl_auth:pkgs/105-ui/admin-uix/package.json",
@@ -6838,12 +6629,11 @@
       "package:pypi:workload-credential-profiles-example:tigrbl/tigrbl_auth:pkgs/110-examples/workload-credential-profiles-example/pyproject.toml"
     ],
     "pushed_at": "2026-07-24T16:19:16Z",
+    "relationship_counts": {
+      "repository_contains_package": 457
+    },
     "reviewed": false,
     "route": "/catalog/repositories/tigrbl/tigrbl_auth",
-    "surface_counts": {
-      "api": 39,
-      "docs": 8
-    },
     "technologies": [
       "CSS",
       "Dockerfile",
@@ -6870,7 +6660,7 @@
     "evidence": [
       {
         "kind": "source",
-        "observed_at": "2026-08-03T05:24:36Z",
+        "observed_at": "2026-08-03T09:11:48Z",
         "url": "https://github.com/tigrbl/tigrbl_billing"
       }
     ],
@@ -6900,24 +6690,23 @@
       "github_releases": 0,
       "open_issues": 0,
       "packages": 1,
+      "relationships": 1,
       "size_kb": 85,
       "stars": 0,
-      "surfaces": 43,
       "watchers": 0
     },
     "name": "tigrbl_billing",
-    "observed_at": "2026-08-03T05:24:36Z",
+    "observed_at": "2026-08-03T09:11:48Z",
     "owner": "tigrbl",
     "package_ids": [
       "package:pypi:tigrbl_billing:tigrbl/tigrbl_billing:pyproject.toml"
     ],
     "pushed_at": "2026-05-20T03:06:58Z",
+    "relationship_counts": {
+      "repository_contains_package": 1
+    },
     "reviewed": false,
     "route": "/catalog/repositories/tigrbl/tigrbl_billing",
-    "surface_counts": {
-      "api": 37,
-      "example": 6
-    },
     "technologies": [
       "Python"
     ],
@@ -6938,7 +6727,7 @@
     "evidence": [
       {
         "kind": "source",
-        "observed_at": "2026-08-03T05:24:36Z",
+        "observed_at": "2026-08-03T09:11:48Z",
         "url": "https://github.com/tigrbl/tigrbl_kms"
       }
     ],
@@ -6968,23 +6757,23 @@
       "github_releases": 0,
       "open_issues": 0,
       "packages": 1,
+      "relationships": 1,
       "size_kb": 37,
       "stars": 0,
-      "surfaces": 2,
       "watchers": 0
     },
     "name": "tigrbl_kms",
-    "observed_at": "2026-08-03T05:24:36Z",
+    "observed_at": "2026-08-03T09:11:48Z",
     "owner": "tigrbl",
     "package_ids": [
       "package:pypi:tigrbl_kms:tigrbl/tigrbl_kms:pyproject.toml"
     ],
     "pushed_at": "2026-05-21T03:23:42Z",
+    "relationship_counts": {
+      "repository_contains_package": 1
+    },
     "reviewed": false,
     "route": "/catalog/repositories/tigrbl/tigrbl_kms",
-    "surface_counts": {
-      "api": 2
-    },
     "technologies": [
       "Dockerfile",
       "Python"
@@ -7006,7 +6795,7 @@
     "evidence": [
       {
         "kind": "source",
-        "observed_at": "2026-08-03T05:24:36Z",
+        "observed_at": "2026-08-03T09:11:48Z",
         "url": "https://github.com/tigrbl/tigrbl_spiffe"
       }
     ],
@@ -7036,23 +6825,23 @@
       "github_releases": 0,
       "open_issues": 0,
       "packages": 1,
+      "relationships": 1,
       "size_kb": 29,
       "stars": 0,
-      "surfaces": 10,
       "watchers": 0
     },
     "name": "tigrbl_spiffe",
-    "observed_at": "2026-08-03T05:24:36Z",
+    "observed_at": "2026-08-03T09:11:48Z",
     "owner": "tigrbl",
     "package_ids": [
       "package:pypi:tigrbl_spiffe:tigrbl/tigrbl_spiffe:pyproject.toml"
     ],
     "pushed_at": "2026-05-20T02:22:04Z",
+    "relationship_counts": {
+      "repository_contains_package": 1
+    },
     "reviewed": false,
     "route": "/catalog/repositories/tigrbl/tigrbl_spiffe",
-    "surface_counts": {
-      "example": 10
-    },
     "technologies": [
       "Python"
     ],
@@ -7073,7 +6862,7 @@
     "evidence": [
       {
         "kind": "source",
-        "observed_at": "2026-08-03T05:24:36Z",
+        "observed_at": "2026-08-03T09:11:48Z",
         "url": "https://github.com/tigrbl/tigrcorn"
       }
     ],
@@ -7358,13 +7147,13 @@
       "github_releases": 40,
       "open_issues": 15,
       "packages": 16,
+      "relationships": 16,
       "size_kb": 18565,
       "stars": 3,
-      "surfaces": 17,
       "watchers": 1
     },
     "name": "tigrcorn",
-    "observed_at": "2026-08-03T05:24:36Z",
+    "observed_at": "2026-08-03T09:11:48Z",
     "owner": "tigrbl",
     "package_ids": [
       "package:npm:@tigrcorn/wt-peer-probes:tigrbl/tigrcorn:packages/wt-peer-probes/package.json",
@@ -7385,12 +7174,11 @@
       "package:pypi:tigrcorn:tigrbl/tigrcorn:pyproject.toml"
     ],
     "pushed_at": "2026-07-27T08:35:25Z",
+    "relationship_counts": {
+      "repository_contains_package": 16
+    },
     "reviewed": false,
     "route": "/catalog/repositories/tigrbl/tigrcorn",
-    "surface_counts": {
-      "docs": 16,
-      "website": 1
-    },
     "technologies": [
       "HTML",
       "Makefile",
@@ -7424,7 +7212,7 @@
     "evidence": [
       {
         "kind": "source",
-        "observed_at": "2026-08-03T05:24:36Z",
+        "observed_at": "2026-08-03T09:11:48Z",
         "url": "https://github.com/tigrbl/tigrcorn-com"
       }
     ],
@@ -7460,13 +7248,13 @@
       "github_releases": 0,
       "open_issues": 0,
       "packages": 3,
+      "relationships": 3,
       "size_kb": 1816,
       "stars": 0,
-      "surfaces": 2,
       "watchers": 0
     },
     "name": "tigrcorn-com",
-    "observed_at": "2026-08-03T05:24:36Z",
+    "observed_at": "2026-08-03T09:11:48Z",
     "owner": "tigrbl",
     "package_ids": [
       "package:npm:@tigrbl/tigrcorn-com-content-pack:tigrbl/tigrcorn-com:packages/site-content-pack/package.json",
@@ -7474,12 +7262,11 @@
       "package:pypi:tigrcorn-com:tigrbl/tigrcorn-com:pyproject.toml"
     ],
     "pushed_at": "2026-07-13T22:29:06Z",
+    "relationship_counts": {
+      "repository_contains_package": 3
+    },
     "reviewed": false,
     "route": "/catalog/repositories/tigrbl/tigrcorn-com",
-    "surface_counts": {
-      "docs": 1,
-      "website": 1
-    },
     "technologies": [
       "CSS",
       "Dockerfile",
@@ -7515,7 +7302,7 @@
     "evidence": [
       {
         "kind": "source",
-        "observed_at": "2026-08-03T05:24:36Z",
+        "observed_at": "2026-08-03T09:11:48Z",
         "url": "https://github.com/groupsum/url-query-attribution-foundations-governance-pack"
       }
     ],
@@ -7570,23 +7357,23 @@
       "github_releases": 2,
       "open_issues": 0,
       "packages": 1,
+      "relationships": 1,
       "size_kb": 151,
       "stars": 0,
-      "surfaces": 1,
       "watchers": 0
     },
     "name": "url-query-attribution-foundations-governance-pack",
-    "observed_at": "2026-08-03T05:24:36Z",
+    "observed_at": "2026-08-03T09:11:48Z",
     "owner": "groupsum",
     "package_ids": [
       "package:pypi:url-query-attribution-foundations-governance-pack:groupsum/url-query-attribution-foundations-governance-pack:pyproject.toml"
     ],
     "pushed_at": "2026-06-02T00:57:06Z",
+    "relationship_counts": {
+      "repository_contains_package": 1
+    },
     "reviewed": false,
     "route": "/catalog/repositories/groupsum/url-query-attribution-foundations-governance-pack",
-    "surface_counts": {
-      "docs": 1
-    },
     "technologies": [
       "Python"
     ],
@@ -7607,7 +7394,7 @@
     "evidence": [
       {
         "kind": "source",
-        "observed_at": "2026-08-03T05:24:36Z",
+        "observed_at": "2026-08-03T09:11:48Z",
         "url": "https://github.com/groupsum/verifiable-credentials-governance-pack"
       }
     ],
@@ -7637,23 +7424,23 @@
       "github_releases": 0,
       "open_issues": 0,
       "packages": 1,
+      "relationships": 1,
       "size_kb": 43,
       "stars": 0,
-      "surfaces": 1,
       "watchers": 0
     },
     "name": "verifiable-credentials-governance-pack",
-    "observed_at": "2026-08-03T05:24:36Z",
+    "observed_at": "2026-08-03T09:11:48Z",
     "owner": "groupsum",
     "package_ids": [
       "package:pypi:verifiable-credentials-governance-pack:groupsum/verifiable-credentials-governance-pack:pyproject.toml"
     ],
     "pushed_at": "2026-06-01T23:57:43Z",
+    "relationship_counts": {
+      "repository_contains_package": 1
+    },
     "reviewed": false,
     "route": "/catalog/repositories/groupsum/verifiable-credentials-governance-pack",
-    "surface_counts": {
-      "docs": 1
-    },
     "technologies": [
       "Python"
     ],
@@ -7674,7 +7461,7 @@
     "evidence": [
       {
         "kind": "source",
-        "observed_at": "2026-08-03T05:24:36Z",
+        "observed_at": "2026-08-03T09:11:48Z",
         "url": "https://github.com/groupsum/web-app-analytics-governance-pack"
       }
     ],
@@ -7729,24 +7516,23 @@
       "github_releases": 1,
       "open_issues": 0,
       "packages": 1,
+      "relationships": 1,
       "size_kb": 113,
       "stars": 0,
-      "surfaces": 2,
       "watchers": 0
     },
     "name": "web-app-analytics-governance-pack",
-    "observed_at": "2026-08-03T05:24:36Z",
+    "observed_at": "2026-08-03T09:11:48Z",
     "owner": "groupsum",
     "package_ids": [
       "package:pypi:web-app-analytics-governance-pack:groupsum/web-app-analytics-governance-pack:pyproject.toml"
     ],
     "pushed_at": "2026-05-18T09:39:43Z",
+    "relationship_counts": {
+      "repository_contains_package": 1
+    },
     "reviewed": false,
     "route": "/catalog/repositories/groupsum/web-app-analytics-governance-pack",
-    "surface_counts": {
-      "docs": 1,
-      "ui": 1
-    },
     "technologies": [
       "Python"
     ],
@@ -7767,7 +7553,7 @@
     "evidence": [
       {
         "kind": "source",
-        "observed_at": "2026-08-03T05:24:36Z",
+        "observed_at": "2026-08-03T09:11:48Z",
         "url": "https://github.com/groupsum/web-performance-rum-governance-pack"
       }
     ],
@@ -7822,24 +7608,23 @@
       "github_releases": 1,
       "open_issues": 0,
       "packages": 1,
+      "relationships": 1,
       "size_kb": 98,
       "stars": 0,
-      "surfaces": 2,
       "watchers": 0
     },
     "name": "web-performance-rum-governance-pack",
-    "observed_at": "2026-08-03T05:24:36Z",
+    "observed_at": "2026-08-03T09:11:48Z",
     "owner": "groupsum",
     "package_ids": [
       "package:pypi:web-performance-rum-governance-pack:groupsum/web-performance-rum-governance-pack:pyproject.toml"
     ],
     "pushed_at": "2026-05-18T09:39:44Z",
+    "relationship_counts": {
+      "repository_contains_package": 1
+    },
     "reviewed": false,
     "route": "/catalog/repositories/groupsum/web-performance-rum-governance-pack",
-    "surface_counts": {
-      "docs": 1,
-      "ui": 1
-    },
     "technologies": [
       "Python"
     ],
