@@ -35,3 +35,7 @@ jobs:
           docker-compose -f docker-compose.yaml rm -f groupsum-xyz || true
           docker rm -f groupsum-xyz || true
           docker-compose -f docker-compose.yaml up -d --no-build --force-recreate --no-deps groupsum-xyz
+      - name: Verify public catalog and rendered page markers
+        env:
+          DEPLOY_VERIFY_URL: https://groupsum.xyz
+        run: npm run verify:deployment

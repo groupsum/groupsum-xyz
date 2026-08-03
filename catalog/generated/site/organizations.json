@@ -1,0 +1,629 @@
+[
+  {
+    "commits": 0,
+    "contributors": 0,
+    "description": "Public ecosystem inventory for the bucketwarden GitHub organization.",
+    "display_name": "Bucketwarden",
+    "evidence": [
+      {
+        "kind": "organization",
+        "observed_at": "2026-08-03T05:24:35Z",
+        "url": "https://github.com/bucketwarden"
+      }
+    ],
+    "featured_repositories": [],
+    "forks": 0,
+    "id": "organization:bucketwarden",
+    "kind": "organization",
+    "login": "bucketwarden",
+    "observed_at": "2026-08-03T05:24:35Z",
+    "package_count": 0,
+    "repository_count": 0,
+    "role": "product",
+    "route": "/catalog",
+    "stars": 0,
+    "technologies": [],
+    "watchers": 0
+  },
+  {
+    "commits": 2188,
+    "contributors": 2,
+    "description": "Public source, packages, and delivery records maintained by Groupsum.",
+    "display_name": "Groupsum",
+    "evidence": [
+      {
+        "kind": "organization",
+        "observed_at": "2026-08-03T05:24:35Z",
+        "url": "https://github.com/groupsum"
+      }
+    ],
+    "featured_repositories": [
+      {
+        "description": "Repository-agnostic Python CLI for single-source-of-truth traceability from features to evidence-backed releases.",
+        "id": "repository:groupsum/ssot-registry",
+        "metrics": {
+          "commits": 484,
+          "contributors": 2,
+          "deployments": 528,
+          "environments": 1,
+          "forks": 0,
+          "github_releases": 447,
+          "open_issues": 0,
+          "packages": 14,
+          "size_kb": 77018,
+          "stars": 5,
+          "surfaces": 37,
+          "watchers": 0
+        },
+        "name": "ssot-registry",
+        "route": "/catalog/repositories/groupsum/ssot-registry"
+      },
+      {
+        "description": "MdWrk is a local-first Markdown workspace, preview editor, package platform, and extension host for portable Markdown authoring.",
+        "id": "repository:groupsum/markdown_workspace",
+        "metrics": {
+          "commits": 837,
+          "contributors": 2,
+          "deployments": 0,
+          "environments": 0,
+          "forks": 1,
+          "github_releases": 6,
+          "open_issues": 0,
+          "packages": 45,
+          "size_kb": 1133214,
+          "stars": 3,
+          "surfaces": 20,
+          "watchers": 0
+        },
+        "name": "markdown_workspace",
+        "route": "/catalog/repositories/groupsum/markdown_workspace"
+      },
+      {
+        "description": "Installable ADR/SPEC extension pack for SEO, AEO, and AiEO governance, designed for downstream ssot-registry sync.",
+        "id": "repository:groupsum/seo-aeo-aieo-governance-pack",
+        "metrics": {
+          "commits": 30,
+          "contributors": 2,
+          "deployments": 0,
+          "environments": 0,
+          "forks": 0,
+          "github_releases": 7,
+          "open_issues": 0,
+          "packages": 1,
+          "size_kb": 131,
+          "stars": 2,
+          "surfaces": 0,
+          "watchers": 0
+        },
+        "name": "seo-aeo-aieo-governance-pack",
+        "route": "/catalog/repositories/groupsum/seo-aeo-aieo-governance-pack"
+      },
+      {
+        "description": "Owner-scoped GitOps controller for Nginx Proxy Manager proxy hosts, SSL certificates, and access lists.",
+        "id": "repository:groupsum/npmctl",
+        "metrics": {
+          "commits": 92,
+          "contributors": 2,
+          "deployments": 6,
+          "environments": 1,
+          "forks": 0,
+          "github_releases": 9,
+          "open_issues": 0,
+          "packages": 7,
+          "size_kb": 11109,
+          "stars": 1,
+          "surfaces": 41,
+          "watchers": 0
+        },
+        "name": "npmctl",
+        "route": "/catalog/repositories/groupsum/npmctl"
+      },
+      {
+        "description": "Installable SSOT ADR/SPEC extension pack for HTTP caching, freshness, validators, stale controls, Cache-Control, ETag, and CDN cache governance.",
+        "id": "repository:groupsum/cache-freshness-governance-pack",
+        "metrics": {
+          "commits": 21,
+          "contributors": 2,
+          "deployments": 0,
+          "environments": 0,
+          "forks": 0,
+          "github_releases": 6,
+          "open_issues": 0,
+          "packages": 1,
+          "size_kb": 75,
+          "stars": 1,
+          "surfaces": 1,
+          "watchers": 0
+        },
+        "name": "cache-freshness-governance-pack",
+        "route": "/catalog/repositories/groupsum/cache-freshness-governance-pack"
+      },
+      {
+        "description": "Installable SSOT ADR/SPEC extension pack for digital-signature, advanced electronic signature, container, timestamping, validation, archival, and assurance governance.",
+        "id": "repository:groupsum/digital-signature-governance-pack",
+        "metrics": {
+          "commits": 20,
+          "contributors": 2,
+          "deployments": 0,
+          "environments": 0,
+          "forks": 0,
+          "github_releases": 4,
+          "open_issues": 0,
+          "packages": 1,
+          "size_kb": 81,
+          "stars": 1,
+          "surfaces": 2,
+          "watchers": 0
+        },
+        "name": "digital-signature-governance-pack",
+        "route": "/catalog/repositories/groupsum/digital-signature-governance-pack"
+      },
+      {
+        "description": "A self-hosted, API-compatible reverse proxy control plane and UI for npmctl.",
+        "id": "repository:groupsum/portwyrm",
+        "metrics": {
+          "commits": 95,
+          "contributors": 1,
+          "deployments": 5,
+          "environments": 1,
+          "forks": 0,
+          "github_releases": 2,
+          "open_issues": 0,
+          "packages": 2,
+          "size_kb": 1958,
+          "stars": 0,
+          "surfaces": 19,
+          "watchers": 0
+        },
+        "name": "portwyrm",
+        "route": "/catalog/repositories/groupsum/portwyrm"
+      },
+      {
+        "description": "MdWrk Pages package suite for typed content, page templates, static-site compilation, SEO/discovery artifacts, and React rendering.",
+        "id": "repository:groupsum/mdwrk-pages",
+        "metrics": {
+          "commits": 82,
+          "contributors": 1,
+          "deployments": 0,
+          "environments": 0,
+          "forks": 0,
+          "github_releases": 0,
+          "open_issues": 0,
+          "packages": 22,
+          "size_kb": 15064,
+          "stars": 0,
+          "surfaces": 12,
+          "watchers": 0
+        },
+        "name": "mdwrk-pages",
+        "route": "/catalog/repositories/groupsum/mdwrk-pages"
+      }
+    ],
+    "forks": 1,
+    "id": "organization:groupsum",
+    "kind": "organization",
+    "login": "groupsum",
+    "observed_at": "2026-08-03T05:24:35Z",
+    "package_count": 150,
+    "repository_count": 38,
+    "role": "primary",
+    "route": "/products/groupsum",
+    "stars": 13,
+    "technologies": [
+      "CSS",
+      "Dockerfile",
+      "HTML",
+      "JavaScript",
+      "Makefile",
+      "Python",
+      "Rust",
+      "Shell",
+      "TypeScript",
+      "XSLT"
+    ],
+    "watchers": 0
+  },
+  {
+    "commits": 19266,
+    "contributors": 40,
+    "description": "Public SDK, package, application, and developer-tooling records maintained by Swarmauri.",
+    "display_name": "Swarmauri",
+    "evidence": [
+      {
+        "kind": "organization",
+        "observed_at": "2026-08-03T05:24:35Z",
+        "url": "https://github.com/swarmauri"
+      }
+    ],
+    "featured_repositories": [
+      {
+        "description": "Modular Python SDK and monorepo for AI agents, LLM integrations, tools, parsers, embeddings, vector stores, and extensible application workflows.",
+        "id": "repository:swarmauri/swarmauri-sdk",
+        "metrics": {
+          "commits": 17469,
+          "contributors": 20,
+          "deployments": 802,
+          "environments": 91,
+          "forks": 51,
+          "github_releases": 5742,
+          "open_issues": 176,
+          "packages": 366,
+          "size_kb": 77235,
+          "stars": 104,
+          "surfaces": 80,
+          "watchers": 5
+        },
+        "name": "swarmauri-sdk",
+        "route": "/catalog/repositories/swarmauri/swarmauri-sdk"
+      },
+      {
+        "description": "A UI Component Library by Swarmauri",
+        "id": "repository:swarmauri/swarmakit",
+        "metrics": {
+          "commits": 736,
+          "contributors": 6,
+          "deployments": 2,
+          "environments": 1,
+          "forks": 10,
+          "github_releases": 3,
+          "open_issues": 9,
+          "packages": 5,
+          "size_kb": 3968,
+          "stars": 25,
+          "surfaces": 1,
+          "watchers": 0
+        },
+        "name": "swarmakit",
+        "route": "/catalog/repositories/swarmauri/swarmakit"
+      },
+      {
+        "description": "Public source repository swarmauri/swarmauri-notebooks.",
+        "id": "repository:swarmauri/swarmauri-notebooks",
+        "metrics": {
+          "commits": 378,
+          "contributors": 20,
+          "deployments": 0,
+          "environments": 0,
+          "forks": 31,
+          "github_releases": 1,
+          "open_issues": 25,
+          "packages": 0,
+          "size_kb": 32789,
+          "stars": 18,
+          "surfaces": 1,
+          "watchers": 4
+        },
+        "name": "swarmauri-notebooks",
+        "route": "/catalog/repositories/swarmauri/swarmauri-notebooks"
+      },
+      {
+        "description": "A CRUD Router for Fast-Creation of CRUD Routes",
+        "id": "repository:swarmauri/crouton",
+        "metrics": {
+          "commits": 208,
+          "contributors": 6,
+          "deployments": 0,
+          "environments": 0,
+          "forks": 6,
+          "github_releases": 0,
+          "open_issues": 8,
+          "packages": 2,
+          "size_kb": 237,
+          "stars": 10,
+          "surfaces": 2,
+          "watchers": 0
+        },
+        "name": "crouton",
+        "route": "/catalog/repositories/swarmauri/crouton"
+      },
+      {
+        "description": "A multi-provider, multi-model retrieval augmentation chatbot.",
+        "id": "repository:swarmauri/rag_assistant",
+        "metrics": {
+          "commits": 133,
+          "contributors": 2,
+          "deployments": 0,
+          "environments": 0,
+          "forks": 2,
+          "github_releases": 1,
+          "open_issues": 2,
+          "packages": 1,
+          "size_kb": 254,
+          "stars": 7,
+          "surfaces": 1,
+          "watchers": 0
+        },
+        "name": "rag_assistant",
+        "route": "/catalog/repositories/swarmauri/rag_assistant"
+      },
+      {
+        "description": "An LLM playground by Swarmauri",
+        "id": "repository:swarmauri/swarmauri-playground",
+        "metrics": {
+          "commits": 37,
+          "contributors": 4,
+          "deployments": 0,
+          "environments": 0,
+          "forks": 4,
+          "github_releases": 0,
+          "open_issues": 9,
+          "packages": 0,
+          "size_kb": 34,
+          "stars": 5,
+          "surfaces": 1,
+          "watchers": 1
+        },
+        "name": "swarmauri-playground",
+        "route": "/catalog/repositories/swarmauri/swarmauri-playground"
+      },
+      {
+        "description": "Swarmauri custom mesop components",
+        "id": "repository:swarmauri/swarmauri-mesop-components",
+        "metrics": {
+          "commits": 11,
+          "contributors": 2,
+          "deployments": 0,
+          "environments": 0,
+          "forks": 1,
+          "github_releases": 0,
+          "open_issues": 0,
+          "packages": 0,
+          "size_kb": 17,
+          "stars": 3,
+          "surfaces": 2,
+          "watchers": 0
+        },
+        "name": "swarmauri-mesop-components",
+        "route": "/catalog/repositories/swarmauri/swarmauri-mesop-components"
+      },
+      {
+        "description": "Soliloquy is a unified command-line tool for managing a Python monorepo that contains multiple standalone packages—each with its own pyproject.toml. It consolidates common tasks such as dependency management, version bumping, remote dependency resolution, test execution and analysis, and project configuration updates into one robust CLI.",
+        "id": "repository:swarmauri/soliloquy",
+        "metrics": {
+          "commits": 89,
+          "contributors": 1,
+          "deployments": 0,
+          "environments": 0,
+          "forks": 0,
+          "github_releases": 0,
+          "open_issues": 3,
+          "packages": 1,
+          "size_kb": 149,
+          "stars": 2,
+          "surfaces": 1,
+          "watchers": 0
+        },
+        "name": "soliloquy",
+        "route": "/catalog/repositories/swarmauri/soliloquy"
+      }
+    ],
+    "forks": 105,
+    "id": "organization:swarmauri",
+    "kind": "organization",
+    "login": "swarmauri",
+    "observed_at": "2026-08-03T05:24:35Z",
+    "package_count": 389,
+    "repository_count": 17,
+    "role": "ecosystem",
+    "route": "/products/swarmauri",
+    "stars": 176,
+    "technologies": [
+      "C",
+      "C++",
+      "CSS",
+      "Dockerfile",
+      "HTML",
+      "JavaScript",
+      "Jinja",
+      "Jupyter Notebook",
+      "MDX",
+      "Meson",
+      "Python",
+      "Rust",
+      "Shell",
+      "Svelte",
+      "TypeScript",
+      "Vue",
+      "XSLT"
+    ],
+    "watchers": 10
+  },
+  {
+    "commits": 2203,
+    "contributors": 5,
+    "description": "Public API, ASGI, identity, transport, package, and example records maintained by Tigrbl.",
+    "display_name": "Tigrbl",
+    "evidence": [
+      {
+        "kind": "organization",
+        "observed_at": "2026-08-03T05:24:35Z",
+        "url": "https://github.com/tigrbl"
+      }
+    ],
+    "featured_repositories": [
+      {
+        "description": "Schema-first Python and Rust workspace for REST and JSON-RPC APIs with typed validation, SQLAlchemy models, and engine-backed execution.",
+        "id": "repository:tigrbl/tigrbl",
+        "metrics": {
+          "commits": 635,
+          "contributors": 2,
+          "deployments": 0,
+          "environments": 0,
+          "forks": 0,
+          "github_releases": 1202,
+          "open_issues": 2,
+          "packages": 54,
+          "size_kb": 81451,
+          "stars": 3,
+          "surfaces": 11,
+          "watchers": 0
+        },
+        "name": "tigrbl",
+        "route": "/catalog/repositories/tigrbl/tigrbl"
+      },
+      {
+        "description": "ASGI3 server with built-in HTTP/1.1, HTTP/2, HTTP/3, QUIC, WebSocket, TLS, static delivery, and release validation.",
+        "id": "repository:tigrbl/tigrcorn",
+        "metrics": {
+          "commits": 272,
+          "contributors": 4,
+          "deployments": 2415,
+          "environments": 6,
+          "forks": 2,
+          "github_releases": 40,
+          "open_issues": 15,
+          "packages": 16,
+          "size_kb": 18565,
+          "stars": 3,
+          "surfaces": 17,
+          "watchers": 1
+        },
+        "name": "tigrcorn",
+        "route": "/catalog/repositories/tigrbl/tigrcorn"
+      },
+      {
+        "description": "Tigrbl-native multi-tenant OpenID Connect / OAuth 2.0 identity provider with ASGI runtime profiles, JWKS/JWT support, operator controls, and SSOT-backed compliance evidence.",
+        "id": "repository:tigrbl/tigrbl_auth",
+        "metrics": {
+          "commits": 916,
+          "contributors": 2,
+          "deployments": 121,
+          "environments": 1,
+          "forks": 0,
+          "github_releases": 12,
+          "open_issues": 13,
+          "packages": 489,
+          "size_kb": 25828,
+          "stars": 2,
+          "surfaces": 47,
+          "watchers": 0
+        },
+        "name": "tigrbl_auth",
+        "route": "/catalog/repositories/tigrbl/tigrbl_auth"
+      },
+      {
+        "description": "A formal ASGI event contract that normalizes HTTP, WebSocket, QUIC, and WebTransport into a typed, capability-safe application IR.",
+        "id": "repository:tigrbl/tigr-asgi-contract",
+        "metrics": {
+          "commits": 183,
+          "contributors": 2,
+          "deployments": 0,
+          "environments": 0,
+          "forks": 0,
+          "github_releases": 28,
+          "open_issues": 0,
+          "packages": 8,
+          "size_kb": 4214,
+          "stars": 1,
+          "surfaces": 16,
+          "watchers": 0
+        },
+        "name": "tigr-asgi-contract",
+        "route": "/catalog/repositories/tigrbl/tigr-asgi-contract"
+      },
+      {
+        "description": "MdWrk lander website for tigrcorn.com.",
+        "id": "repository:tigrbl/tigrcorn-com",
+        "metrics": {
+          "commits": 50,
+          "contributors": 1,
+          "deployments": 8,
+          "environments": 1,
+          "forks": 0,
+          "github_releases": 0,
+          "open_issues": 0,
+          "packages": 3,
+          "size_kb": 1816,
+          "stars": 0,
+          "surfaces": 2,
+          "watchers": 0
+        },
+        "name": "tigrcorn-com",
+        "route": "/catalog/repositories/tigrbl/tigrcorn-com"
+      },
+      {
+        "description": "MdWrk lander website for tigrbl.com.",
+        "id": "repository:tigrbl/tigrbl-com",
+        "metrics": {
+          "commits": 47,
+          "contributors": 1,
+          "deployments": 6,
+          "environments": 1,
+          "forks": 0,
+          "github_releases": 0,
+          "open_issues": 0,
+          "packages": 3,
+          "size_kb": 2968,
+          "stars": 0,
+          "surfaces": 1,
+          "watchers": 0
+        },
+        "name": "tigrbl-com",
+        "route": "/catalog/repositories/tigrbl/tigrbl-com"
+      },
+      {
+        "description": "ZDX and MkDocs Material documentation website for docs.tigrbl.com.",
+        "id": "repository:tigrbl/docs-tigrbl-com",
+        "metrics": {
+          "commits": 35,
+          "contributors": 1,
+          "deployments": 0,
+          "environments": 1,
+          "forks": 0,
+          "github_releases": 0,
+          "open_issues": 0,
+          "packages": 2,
+          "size_kb": 141,
+          "stars": 0,
+          "surfaces": 7,
+          "watchers": 0
+        },
+        "name": "docs-tigrbl-com",
+        "route": "/catalog/repositories/tigrbl/docs-tigrbl-com"
+      },
+      {
+        "description": "ZDX and MkDocs Material documentation website for docs.tigrcorn.com.",
+        "id": "repository:tigrbl/docs-tigrcorn-com",
+        "metrics": {
+          "commits": 34,
+          "contributors": 1,
+          "deployments": 0,
+          "environments": 1,
+          "forks": 0,
+          "github_releases": 0,
+          "open_issues": 0,
+          "packages": 2,
+          "size_kb": 130,
+          "stars": 0,
+          "surfaces": 5,
+          "watchers": 0
+        },
+        "name": "docs-tigrcorn-com",
+        "route": "/catalog/repositories/tigrbl/docs-tigrcorn-com"
+      }
+    ],
+    "forks": 2,
+    "id": "organization:tigrbl",
+    "kind": "organization",
+    "login": "tigrbl",
+    "observed_at": "2026-08-03T05:24:35Z",
+    "package_count": 584,
+    "repository_count": 16,
+    "role": "ecosystem",
+    "route": "/products/tigrbl",
+    "stars": 9,
+    "technologies": [
+      "CSS",
+      "Dockerfile",
+      "HTML",
+      "JavaScript",
+      "Jupyter Notebook",
+      "Makefile",
+      "Python",
+      "Rust",
+      "Shell",
+      "TypeScript"
+    ],
+    "watchers": 1
+  }
+]

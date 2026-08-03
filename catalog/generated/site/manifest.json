@@ -1,0 +1,84 @@
+{
+  "completeness": {
+    "commits": "all default-branch commits returned by GitHub REST pagination",
+    "contributors": "all contributors returned by GitHub REST, including anonymous rows",
+    "deployments": "repository paths, homepages, and package metadata; live health is not implied",
+    "downstream": "crates.io reverse dependencies where available; GitHub code search disabled by default; npm and PyPI have no complete authoritative public dependents API",
+    "github_releases": "all releases returned by GitHub REST",
+    "packages": "manifest-discovered packages plus public GitHub packages returned by API",
+    "registries": "direct PyPI, npm, crates.io, GitHub Releases, and GitHub Packages observations",
+    "repositories": "all public repositories returned by configured GitHub organization APIs",
+    "technologies": "GitHub language byte counts; no technology is inferred from marketing copy"
+  },
+  "counts": {
+    "deployments": 3950,
+    "organizations": 4,
+    "packages": 1124,
+    "relationships": 10423,
+    "releases": 17313,
+    "repositories": 71,
+    "surfaces": 483,
+    "technologies": 18
+  },
+  "files": [
+    {
+      "bytes": 2474045,
+      "dataset": "deployments",
+      "path": "deployments.json",
+      "records": 3950,
+      "sha256": "3c22f44733113de6a376d6cf4e4fdee2faef2f8752a0a43a91fa6ae40f7cf72f"
+    },
+    {
+      "bytes": 19088,
+      "dataset": "organizations",
+      "path": "organizations.json",
+      "records": 4,
+      "sha256": "dc76fce4d1fb616a32d8879d9927a03ad786c7a5fa4c5dab4e1e3400be17b7d2"
+    },
+    {
+      "bytes": 1657212,
+      "dataset": "packages",
+      "path": "packages.json",
+      "records": 1124,
+      "sha256": "5eee85ccaab93a9e964ea22f2b2deb821684c208a5c4f3fdf545799d46214848"
+    },
+    {
+      "bytes": 2976724,
+      "dataset": "relationships",
+      "path": "relationships.json",
+      "records": 10423,
+      "sha256": "d18a22df2c14d8ca578c382b2193e50da549cfd6bbf574ab1e3f56d5ef820d5c"
+    },
+    {
+      "bytes": 9045904,
+      "dataset": "releases",
+      "path": "releases.json",
+      "records": 17313,
+      "sha256": "5e1cac4e6cc926e51cdf5b53181c473a3dac0fb6e4fc3a64beef8658a55d4ab0"
+    },
+    {
+      "bytes": 373235,
+      "dataset": "repositories",
+      "path": "repositories.json",
+      "records": 71,
+      "sha256": "159edcbd928ff8c686995c807a7444c079bf2ee63b3c83133e5d9ab658fe35b9"
+    },
+    {
+      "bytes": 169324,
+      "dataset": "surfaces",
+      "path": "surfaces.json",
+      "records": 483,
+      "sha256": "7c79f9b1bd829214be5671693434fe76a540b5c93ef5897a9a7557f251c31aea"
+    },
+    {
+      "bytes": 13753,
+      "dataset": "technologies",
+      "path": "technologies.json",
+      "records": 18,
+      "sha256": "ec71361fe202ce6110fb63c26a254a0f6544abb70439fe51ac390f8090009db7"
+    }
+  ],
+  "generated_at": "2026-08-03T05:24:35Z",
+  "schema_version": "1.0.0",
+  "source": "/catalog/catalog.json"
+}

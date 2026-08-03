@@ -1,0 +1,499 @@
+[
+  {
+    "bytes": 4211,
+    "evidence": [
+      {
+        "kind": "github-languages",
+        "observed_at": "2026-08-03T05:24:35Z"
+      }
+    ],
+    "id": "technology:c:6b23c0d5",
+    "kind": "technology",
+    "name": "C",
+    "observed_at": "2026-08-03T05:24:35Z",
+    "repositories": [
+      "swarmauri/swarmauri-sdk"
+    ],
+    "repository_count": 1,
+    "route": "/catalog/technologies/c-6b23c0d5"
+  },
+  {
+    "bytes": 32243,
+    "evidence": [
+      {
+        "kind": "github-languages",
+        "observed_at": "2026-08-03T05:24:35Z"
+      }
+    ],
+    "id": "technology:c:f1deb75f",
+    "kind": "technology",
+    "name": "C++",
+    "observed_at": "2026-08-03T05:24:35Z",
+    "repositories": [
+      "swarmauri/swarmauri-sdk"
+    ],
+    "repository_count": 1,
+    "route": "/catalog/technologies/c-f1deb75f"
+  },
+  {
+    "bytes": 10359651,
+    "evidence": [
+      {
+        "kind": "github-languages",
+        "observed_at": "2026-08-03T05:24:35Z"
+      }
+    ],
+    "id": "technology:css:b581e460",
+    "kind": "technology",
+    "name": "CSS",
+    "observed_at": "2026-08-03T05:24:35Z",
+    "repositories": [
+      "groupsum/document-studio",
+      "groupsum/document-viewer",
+      "groupsum/file-browser",
+      "groupsum/groupsum-xyz",
+      "groupsum/markdown_workspace",
+      "groupsum/mdwrk",
+      "groupsum/mdwrk-pages",
+      "groupsum/npmctl-com",
+      "groupsum/portwyrm",
+      "groupsum/ssot-registry",
+      "groupsum/ssot-registry-com",
+      "swarmauri/peagen-com",
+      "swarmauri/swarmakit",
+      "swarmauri/swarmauri-com",
+      "swarmauri/swarmauri-flipcard",
+      "tigrbl/tigrbl-com",
+      "tigrbl/tigrbl_auth",
+      "tigrbl/tigrcorn-com"
+    ],
+    "repository_count": 18,
+    "route": "/catalog/technologies/css-b581e460"
+  },
+  {
+    "bytes": 11409,
+    "evidence": [
+      {
+        "kind": "github-languages",
+        "observed_at": "2026-08-03T05:24:35Z"
+      }
+    ],
+    "id": "technology:dockerfile:dd2c0eb6",
+    "kind": "technology",
+    "name": "Dockerfile",
+    "observed_at": "2026-08-03T05:24:35Z",
+    "repositories": [
+      "groupsum/groupsum-xyz",
+      "groupsum/markdown_workspace",
+      "groupsum/mdwrk-pages",
+      "groupsum/npmctl",
+      "groupsum/npmctl-com",
+      "groupsum/portwyrm",
+      "groupsum/ssot-registry-com",
+      "swarmauri/docs-peagen-com",
+      "swarmauri/docs-swarmauri-com",
+      "swarmauri/peagen-com",
+      "swarmauri/swarmauri-com",
+      "swarmauri/swarmauri-sdk",
+      "tigrbl/docs-tigrbl-com",
+      "tigrbl/docs-tigrcorn-com",
+      "tigrbl/tigrbl-com",
+      "tigrbl/tigrbl_auth",
+      "tigrbl/tigrbl_kms",
+      "tigrbl/tigrcorn-com"
+    ],
+    "repository_count": 18,
+    "route": "/catalog/technologies/dockerfile-dd2c0eb6"
+  },
+  {
+    "bytes": 21207871,
+    "evidence": [
+      {
+        "kind": "github-languages",
+        "observed_at": "2026-08-03T05:24:35Z"
+      }
+    ],
+    "id": "technology:html:07239dbd",
+    "kind": "technology",
+    "name": "HTML",
+    "observed_at": "2026-08-03T05:24:35Z",
+    "repositories": [
+      "groupsum/document-studio",
+      "groupsum/document-viewer",
+      "groupsum/file-browser",
+      "groupsum/groupsum-xyz",
+      "groupsum/markdown_workspace",
+      "groupsum/mdwrk",
+      "groupsum/mdwrk-pages",
+      "groupsum/npmctl-com",
+      "groupsum/portwyrm",
+      "groupsum/ssot-registry",
+      "groupsum/ssot-registry-com",
+      "swarmauri/peagen-com",
+      "swarmauri/swarmakit",
+      "swarmauri/swarmauri-com",
+      "swarmauri/swarmauri-flipcard",
+      "swarmauri/swarmauri-sdk",
+      "tigrbl/tigrbl-com",
+      "tigrbl/tigrbl_auth",
+      "tigrbl/tigrcorn",
+      "tigrbl/tigrcorn-com"
+    ],
+    "repository_count": 20,
+    "route": "/catalog/technologies/html-07239dbd"
+  },
+  {
+    "bytes": 4155758,
+    "evidence": [
+      {
+        "kind": "github-languages",
+        "observed_at": "2026-08-03T05:24:35Z"
+      }
+    ],
+    "id": "technology:javascript:b27ad06d",
+    "kind": "technology",
+    "name": "JavaScript",
+    "observed_at": "2026-08-03T05:24:35Z",
+    "repositories": [
+      "groupsum/groupsum-xyz",
+      "groupsum/markdown_workspace",
+      "groupsum/mdwrk",
+      "groupsum/mdwrk-pages",
+      "groupsum/mdwrkcom-content-pack",
+      "groupsum/npmctl-com",
+      "groupsum/portwyrm",
+      "groupsum/ssot-registry",
+      "groupsum/ssot-registry-com",
+      "swarmauri/docs-peagen-com",
+      "swarmauri/docs-swarmauri-com",
+      "swarmauri/peagen-com",
+      "swarmauri/swarmakit",
+      "swarmauri/swarmauri-aucplot",
+      "swarmauri/swarmauri-com",
+      "swarmauri/swarmauri-flipcard",
+      "swarmauri/swarmauri-mesop-components",
+      "swarmauri/swarmauri-piechart",
+      "swarmauri/swarmauri-sdk",
+      "tigrbl/docs-tigrbl-com",
+      "tigrbl/docs-tigrcorn-com",
+      "tigrbl/tigr-asgi-contract",
+      "tigrbl/tigrbl-com",
+      "tigrbl/tigrbl_auth",
+      "tigrbl/tigrcorn-com"
+    ],
+    "repository_count": 25,
+    "route": "/catalog/technologies/javascript-b27ad06d"
+  },
+  {
+    "bytes": 18019,
+    "evidence": [
+      {
+        "kind": "github-languages",
+        "observed_at": "2026-08-03T05:24:35Z"
+      }
+    ],
+    "id": "technology:jinja:7c43eabf",
+    "kind": "technology",
+    "name": "Jinja",
+    "observed_at": "2026-08-03T05:24:35Z",
+    "repositories": [
+      "swarmauri/swarmauri-sdk"
+    ],
+    "repository_count": 1,
+    "route": "/catalog/technologies/jinja-7c43eabf"
+  },
+  {
+    "bytes": 40169540,
+    "evidence": [
+      {
+        "kind": "github-languages",
+        "observed_at": "2026-08-03T05:24:35Z"
+      }
+    ],
+    "id": "technology:jupyter-notebook:c98b6019",
+    "kind": "technology",
+    "name": "Jupyter Notebook",
+    "observed_at": "2026-08-03T05:24:35Z",
+    "repositories": [
+      "swarmauri/swarmauri-notebooks",
+      "swarmauri/swarmauri-playground",
+      "tigrbl/tigrbl"
+    ],
+    "repository_count": 3,
+    "route": "/catalog/technologies/jupyter-notebook-c98b6019"
+  },
+  {
+    "bytes": 181157,
+    "evidence": [
+      {
+        "kind": "github-languages",
+        "observed_at": "2026-08-03T05:24:35Z"
+      }
+    ],
+    "id": "technology:makefile:76ed074a",
+    "kind": "technology",
+    "name": "Makefile",
+    "observed_at": "2026-08-03T05:24:35Z",
+    "repositories": [
+      "groupsum/ssot-registry",
+      "tigrbl/tigrcorn"
+    ],
+    "repository_count": 2,
+    "route": "/catalog/technologies/makefile-76ed074a"
+  },
+  {
+    "bytes": 11360,
+    "evidence": [
+      {
+        "kind": "github-languages",
+        "observed_at": "2026-08-03T05:24:35Z"
+      }
+    ],
+    "id": "technology:mdx:d434e4eb",
+    "kind": "technology",
+    "name": "MDX",
+    "observed_at": "2026-08-03T05:24:35Z",
+    "repositories": [
+      "swarmauri/swarmakit"
+    ],
+    "repository_count": 1,
+    "route": "/catalog/technologies/mdx-d434e4eb"
+  },
+  {
+    "bytes": 4296,
+    "evidence": [
+      {
+        "kind": "github-languages",
+        "observed_at": "2026-08-03T05:24:35Z"
+      }
+    ],
+    "id": "technology:meson:33742f46",
+    "kind": "technology",
+    "name": "Meson",
+    "observed_at": "2026-08-03T05:24:35Z",
+    "repositories": [
+      "swarmauri/swarmauri-sdk"
+    ],
+    "repository_count": 1,
+    "route": "/catalog/technologies/meson-33742f46"
+  },
+  {
+    "bytes": 32349609,
+    "evidence": [
+      {
+        "kind": "github-languages",
+        "observed_at": "2026-08-03T05:24:35Z"
+      }
+    ],
+    "id": "technology:python:18885f27",
+    "kind": "technology",
+    "name": "Python",
+    "observed_at": "2026-08-03T05:24:35Z",
+    "repositories": [
+      "groupsum/ad-measurement-media-governance-pack",
+      "groupsum/ad-supply-chain-transparency-governance-pack",
+      "groupsum/audience-data-transparency-governance-pack",
+      "groupsum/authentication-governance-pack",
+      "groupsum/authnz-policy-governance-pack",
+      "groupsum/authorization-policy-governance-pack",
+      "groupsum/cache-freshness-governance-pack",
+      "groupsum/consent-privacy-signals-governance-pack",
+      "groupsum/customer-commerce-semantics-governance-pack",
+      "groupsum/customer-identity-profile-governance-pack",
+      "groupsum/data-catalog-lineage-contracts-governance-pack",
+      "groupsum/decentralized-identifiers-governance-pack",
+      "groupsum/digital-signature-governance-pack",
+      "groupsum/event-behavioral-telemetry-governance-pack",
+      "groupsum/ga4-google-tagging-governance-pack",
+      "groupsum/groupsum-xyz",
+      "groupsum/gs1-product-link-event-data-governance-pack",
+      "groupsum/markdown_workspace",
+      "groupsum/marketing-attribution-conversion-governance-pack",
+      "groupsum/mdwrk",
+      "groupsum/mdwrk-pages",
+      "groupsum/mobile-install-attribution-governance-pack",
+      "groupsum/npmctl",
+      "groupsum/npmctl-com",
+      "groupsum/portwyrm",
+      "groupsum/privacy-governance-records-governance-pack",
+      "groupsum/seo-aeo-aieo-governance-pack",
+      "groupsum/ssot-registry",
+      "groupsum/ssot-registry-com",
+      "groupsum/url-query-attribution-foundations-governance-pack",
+      "groupsum/verifiable-credentials-governance-pack",
+      "groupsum/web-app-analytics-governance-pack",
+      "groupsum/web-performance-rum-governance-pack",
+      "swarmauri/crouton",
+      "swarmauri/crouton-boilerplate",
+      "swarmauri/docs-peagen-com",
+      "swarmauri/docs-swarmauri-com",
+      "swarmauri/peagen-com",
+      "swarmauri/rag_assistant",
+      "swarmauri/soliloquy",
+      "swarmauri/swarmauri-aucplot",
+      "swarmauri/swarmauri-com",
+      "swarmauri/swarmauri-mesop-components",
+      "swarmauri/swarmauri-piechart",
+      "swarmauri/swarmauri-playground",
+      "swarmauri/swarmauri-sdk",
+      "tigrbl/attribution-campaign-context",
+      "tigrbl/docs-tigrbl-com",
+      "tigrbl/docs-tigrcorn-com",
+      "tigrbl/tigr-asgi-contract",
+      "tigrbl/tigrbl",
+      "tigrbl/tigrbl-com",
+      "tigrbl/tigrbl_acme_ca",
+      "tigrbl/tigrbl_api_cron",
+      "tigrbl/tigrbl_api_hpks",
+      "tigrbl/tigrbl_auth",
+      "tigrbl/tigrbl_billing",
+      "tigrbl/tigrbl_kms",
+      "tigrbl/tigrbl_spiffe",
+      "tigrbl/tigrcorn",
+      "tigrbl/tigrcorn-com"
+    ],
+    "repository_count": 61,
+    "route": "/catalog/technologies/python-18885f27"
+  },
+  {
+    "bytes": 61338,
+    "evidence": [
+      {
+        "kind": "github-languages",
+        "observed_at": "2026-08-03T05:24:35Z"
+      }
+    ],
+    "id": "technology:rust:d9aa89fd",
+    "kind": "technology",
+    "name": "Rust",
+    "observed_at": "2026-08-03T05:24:35Z",
+    "repositories": [
+      "groupsum/ssot-registry",
+      "swarmauri/swarmauri-sdk",
+      "tigrbl/tigr-asgi-contract"
+    ],
+    "repository_count": 3,
+    "route": "/catalog/technologies/rust-d9aa89fd"
+  },
+  {
+    "bytes": 13817,
+    "evidence": [
+      {
+        "kind": "github-languages",
+        "observed_at": "2026-08-03T05:24:35Z"
+      }
+    ],
+    "id": "technology:shell:a7332854",
+    "kind": "technology",
+    "name": "Shell",
+    "observed_at": "2026-08-03T05:24:35Z",
+    "repositories": [
+      "groupsum/markdown_workspace",
+      "groupsum/mdwrk",
+      "groupsum/npmctl",
+      "groupsum/ssot-registry",
+      "swarmauri/swarmauri-sdk",
+      "tigrbl/tigrbl_auth",
+      "tigrbl/tigrcorn"
+    ],
+    "repository_count": 7,
+    "route": "/catalog/technologies/shell-a7332854"
+  },
+  {
+    "bytes": 147053,
+    "evidence": [
+      {
+        "kind": "github-languages",
+        "observed_at": "2026-08-03T05:24:35Z"
+      }
+    ],
+    "id": "technology:svelte:0073bfca",
+    "kind": "technology",
+    "name": "Svelte",
+    "observed_at": "2026-08-03T05:24:35Z",
+    "repositories": [
+      "swarmauri/swarmakit",
+      "swarmauri/swarmauri-aucplot",
+      "swarmauri/swarmauri-flipcard",
+      "swarmauri/swarmauri-piechart"
+    ],
+    "repository_count": 4,
+    "route": "/catalog/technologies/svelte-0073bfca"
+  },
+  {
+    "bytes": 49343939,
+    "evidence": [
+      {
+        "kind": "github-languages",
+        "observed_at": "2026-08-03T05:24:35Z"
+      }
+    ],
+    "id": "technology:typescript:ed0504f7",
+    "kind": "technology",
+    "name": "TypeScript",
+    "observed_at": "2026-08-03T05:24:35Z",
+    "repositories": [
+      "groupsum/document-studio",
+      "groupsum/document-viewer",
+      "groupsum/file-browser",
+      "groupsum/groupsum-xyz",
+      "groupsum/markdown_workspace",
+      "groupsum/mdwrk",
+      "groupsum/mdwrk-pages",
+      "groupsum/mdwrkcom-content-pack",
+      "groupsum/npmctl-com",
+      "groupsum/portwyrm",
+      "groupsum/ssot-registry",
+      "groupsum/ssot-registry-com",
+      "swarmauri/peagen-com",
+      "swarmauri/swarmakit",
+      "swarmauri/swarmauri-com",
+      "tigrbl/tigr-asgi-contract",
+      "tigrbl/tigrbl-com",
+      "tigrbl/tigrbl_auth",
+      "tigrbl/tigrcorn",
+      "tigrbl/tigrcorn-com"
+    ],
+    "repository_count": 20,
+    "route": "/catalog/technologies/typescript-ed0504f7"
+  },
+  {
+    "bytes": 298691,
+    "evidence": [
+      {
+        "kind": "github-languages",
+        "observed_at": "2026-08-03T05:24:35Z"
+      }
+    ],
+    "id": "technology:vue:b111a2a2",
+    "kind": "technology",
+    "name": "Vue",
+    "observed_at": "2026-08-03T05:24:35Z",
+    "repositories": [
+      "swarmauri/swarmakit"
+    ],
+    "repository_count": 1,
+    "route": "/catalog/technologies/vue-b111a2a2"
+  },
+  {
+    "bytes": 25381,
+    "evidence": [
+      {
+        "kind": "github-languages",
+        "observed_at": "2026-08-03T05:24:35Z"
+      }
+    ],
+    "id": "technology:xslt:1370c71d",
+    "kind": "technology",
+    "name": "XSLT",
+    "observed_at": "2026-08-03T05:24:35Z",
+    "repositories": [
+      "groupsum/markdown_workspace",
+      "groupsum/mdwrkcom-content-pack",
+      "groupsum/ssot-registry-com",
+      "swarmauri/swarmauri-com"
+    ],
+    "repository_count": 4,
+    "route": "/catalog/technologies/xslt-1370c71d"
+  }
+]

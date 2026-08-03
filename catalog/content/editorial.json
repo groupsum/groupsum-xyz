@@ -1,0 +1,19 @@
+{
+  "entities": {},
+  "featured_ids": [],
+  "organizations": {
+    "groupsum": {
+      "description": "Public source, packages, and delivery records maintained by Groupsum.",
+      "display_name": "Groupsum"
+    },
+    "swarmauri": {
+      "description": "Public SDK, package, application, and developer-tooling records maintained by Swarmauri.",
+      "display_name": "Swarmauri"
+    },
+    "tigrbl": {
+      "description": "Public API, ASGI, identity, transport, package, and example records maintained by Tigrbl.",
+      "display_name": "Tigrbl"
+    }
+  },
+  "schema_version": "1.0.0"
+}

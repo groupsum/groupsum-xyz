@@ -33,6 +33,8 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ github.token }}
         run: npm run catalog:collect
+      - name: Compile display-safe catalog datasets
+        run: npm run catalog:render
       - run: npm run check
       - run: npm run build
       - name: Create or update catalog refresh pull request

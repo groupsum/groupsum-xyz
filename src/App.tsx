@@ -17,6 +17,7 @@ import { blogPosts, loadBlogPost } from "./data/posts";
 import { BlogPost, PortfolioItem, PortfolioEntity, SolutionItem, ServiceItem } from "./types";
 import { MarkdownRenderer } from "mdwrk/renderer-core";
 import { CapabilityBand } from "./components/CapabilityBand";
+import { CatalogSnapshotBand, PublicCatalogDetail, PublicCatalogExplorer } from "./components/PublicCatalog";
 import { groupSumVision, horizontalCapabilities } from "./data/vision";
 import { catalogSummary } from "./data/catalog.generated";
 import { useCatalogFilters } from "./hooks/useCatalogFilters";
@@ -134,6 +135,13 @@ function RouteSwitcher({ path, onNavigate }: { path: string; onNavigate: (path: 
     }
     // Fallback for direct previous routes
     return <PortfolioDetailPage slug={sub} onNavigate={onNavigate} />;
+  }
+
+  if (primary === "catalog") {
+    if (segments.length === 1) {
+      return <PublicCatalogExplorer onNavigate={onNavigate} />;
+    }
+    return <PublicCatalogDetail path={cleanPath} onNavigate={onNavigate} />;
   }
 
   if (primary === "solutions") {
@@ -286,6 +294,8 @@ function HomePage({ onNavigate }: RouteProps) {
           </div>
         </div>
       </section>
+
+      <CatalogSnapshotBand onNavigate={onNavigate} title="Current public ecosystem evidence" />
 
       {/* HORIZONTAL CAPABILITIES */}
       <section className="max-w-[var(--content-max)] mx-auto px-4 sm:px-6 lg:px-8 space-y-6">
@@ -782,7 +792,8 @@ function PortfolioPage({ onNavigate }: RouteProps) {
         {catalogMetrics.map(([label, value]) => <div key={label} className="p-4 bg-[var(--color-surface)] border border-[var(--color-border-soft)] rounded-[var(--radius-sm)]"><strong className="font-serif text-xl text-ink block">{value.toLocaleString()}</strong><span className="text-[10px] font-mono uppercase tracking-wide text-ink-muted">{label}</span></div>)}
       </div>
     </section>
-    <DenseCatalog entities={portfolioEntities.filter((entity) => entity.approved)} onNavigate={onNavigate} title="Curated product catalog" description="Browse the claim-reviewed product layer by capability, organization, entity type, maturity, and evidence. The generated inventory above is broader and includes every discovered public record." />
+    <PublicCatalogExplorer onNavigate={onNavigate} compact />
+    <DenseCatalog entities={portfolioEntities.filter((entity) => entity.approved)} onNavigate={onNavigate} title="Reviewed product layer" description="These editorial records provide product grouping and reviewed descriptions. The generated evidence catalog above remains the source for current public repositories, packages, releases, deployments, technologies, surfaces, and relationships." />
   </>;
 
   /* Legacy featured-card layout retained below for reference. */
@@ -973,7 +984,8 @@ _Evidence reviewed: August 2, 2026 · Document ref: CATALOG-${item.slug.toUpperC
    SOLUTIONS PAGE
    ========================================================================== */
 function SolutionsPage({ onNavigate }: RouteProps) {
-  return (
+  return (<>
+    <CatalogSnapshotBand onNavigate={onNavigate} title="Current evidence behind solution delivery" />
     <div className="max-w-[var(--content-max)] mx-auto px-4 sm:px-6 lg:px-8 py-12 space-y-12">
       <div className="max-w-2xl space-y-3">
         <span className="text-xs font-mono uppercase tracking-wider text-accent font-bold block">
@@ -1061,14 +1073,15 @@ function SolutionsPage({ onNavigate }: RouteProps) {
         <StructuredData type="solutions" />
       </div>
     </div>
-  );
+  </>);
 }
 
 /* ==========================================================================
    SERVICES PAGE
    ========================================================================== */
 function ServicesPage({ onNavigate }: RouteProps) {
-  return (
+  return (<>
+    <CatalogSnapshotBand onNavigate={onNavigate} title="Current evidence behind service delivery" />
     <div className="max-w-[var(--content-max)] mx-auto px-4 sm:px-6 lg:px-8 py-12 space-y-12">
       <div className="max-w-2xl space-y-3">
         <span className="text-xs font-mono uppercase tracking-wider text-accent font-bold block">
@@ -1154,7 +1167,7 @@ function ServicesPage({ onNavigate }: RouteProps) {
         ))}
       </div>
     </div>
-  );
+  </>);
 }
 
 /* ==========================================================================
@@ -1359,7 +1372,8 @@ function ProductsIndexPage({ onNavigate }: RouteProps) {
     }
   ];
 
-  return (
+  return (<>
+    <CatalogSnapshotBand onNavigate={onNavigate} title="Observed records by public organization" />
     <div className="max-w-[var(--content-max)] mx-auto px-4 sm:px-6 lg:px-8 py-12 space-y-12">
       <div className="max-w-3xl space-y-3">
         <span className="text-xs font-mono uppercase tracking-wider text-accent font-bold block">
@@ -1436,7 +1450,7 @@ function ProductsIndexPage({ onNavigate }: RouteProps) {
         })}
       </div>
     </div>
-  );
+  </>);
 }
 
 /* ==========================================================================
@@ -1490,7 +1504,10 @@ function ProductsOrgPage({ org, onNavigate }: { org: string; onNavigate: (path: 
   const subPackages = filteredEntities.filter((e) => e.kind === "package");
   const specsAndPacks = filteredEntities.filter((e) => e.kind === "specification-pack");
 
-  return <DenseCatalog entities={orgEntities} onNavigate={onNavigate} title={`${meta.name} ecosystem catalog`} description={`${meta.domain} Browse suites, products, projects, packages, and specifications in one filterable catalog.`} />;
+  return <>
+    <CatalogSnapshotBand onNavigate={onNavigate} owner={org} title={`${meta.name} public ecosystem evidence`} />
+    <DenseCatalog entities={orgEntities} onNavigate={onNavigate} title={`${meta.name} reviewed product catalog`} description={`${meta.domain} These reviewed product records are presented alongside the current generated repository and package evidence above.`} />
+  </>;
 
   return (
     <div className="max-w-[var(--content-max)] mx-auto px-4 sm:px-6 lg:px-8 py-12 space-y-12">

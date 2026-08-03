@@ -1,0 +1,4349 @@
+[
+  {
+    "evidence_type": "repository.contract_file",
+    "id": "surface:fc10135ed650",
+    "kind": "api",
+    "name": ".ssot/adr/ADR-1039-openrpc-backed-admin-uix-contract.yaml",
+    "observed_at": "2026-08-03T05:24:36Z",
+    "repository": "tigrbl/tigrbl_auth",
+    "url": "https://github.com/tigrbl/tigrbl_auth/blob/master/.ssot/adr/ADR-1039-openrpc-backed-admin-uix-contract.yaml"
+  },
+  {
+    "evidence_type": "repository.contract_file",
+    "id": "surface:6cabcd56e0f8",
+    "kind": "api",
+    "name": ".ssot/evidence/planned/docs-projection-openapi-openrpc-selection-tests.json",
+    "observed_at": "2026-08-03T05:24:36Z",
+    "repository": "tigrbl/tigrbl",
+    "url": "https://github.com/tigrbl/tigrbl/blob/master/.ssot/evidence/planned/docs-projection-openapi-openrpc-selection-tests.json"
+  },
+  {
+    "evidence_type": "repository.contract_file",
+    "id": "surface:123b4bd380df",
+    "kind": "api",
+    "name": ".ssot/specs/SPEC-1024-jsonschema-openrpc-envelope-schema-json.yaml",
+    "observed_at": "2026-08-03T05:24:36Z",
+    "repository": "tigrbl/tigrbl_auth",
+    "url": "https://github.com/tigrbl/tigrbl_auth/blob/master/.ssot/specs/SPEC-1024-jsonschema-openrpc-envelope-schema-json.yaml"
+  },
+  {
+    "evidence_type": "repository.contract_file",
+    "id": "surface:e025415aee26",
+    "kind": "api",
+    "name": ".ssot/specs/SPEC-1026-openapi-baseline-public-compact-json.yaml",
+    "observed_at": "2026-08-03T05:24:36Z",
+    "repository": "tigrbl/tigrbl_auth",
+    "url": "https://github.com/tigrbl/tigrbl_auth/blob/master/.ssot/specs/SPEC-1026-openapi-baseline-public-compact-json.yaml"
+  },
+  {
+    "evidence_type": "repository.contract_file",
+    "id": "surface:b389530aa668",
+    "kind": "api",
+    "name": ".ssot/specs/SPEC-1027-openapi-baseline-public-full-json.yaml",
+    "observed_at": "2026-08-03T05:24:36Z",
+    "repository": "tigrbl/tigrbl_auth",
+    "url": "https://github.com/tigrbl/tigrbl_auth/blob/master/.ssot/specs/SPEC-1027-openapi-baseline-public-full-json.yaml"
+  },
+  {
+    "evidence_type": "repository.contract_file",
+    "id": "surface:9407c1719763",
+    "kind": "api",
+    "name": ".ssot/specs/SPEC-1028-openapi-baseline-public-full-yaml.yaml",
+    "observed_at": "2026-08-03T05:24:36Z",
+    "repository": "tigrbl/tigrbl_auth",
+    "url": "https://github.com/tigrbl/tigrbl_auth/blob/master/.ssot/specs/SPEC-1028-openapi-baseline-public-full-yaml.yaml"
+  },
+  {
+    "evidence_type": "repository.contract_file",
+    "id": "surface:b73771a3df95",
+    "kind": "api",
+    "name": ".ssot/specs/SPEC-1029-openapi-baseline-public-compact-yaml.yaml",
+    "observed_at": "2026-08-03T05:24:36Z",
+    "repository": "tigrbl/tigrbl_auth",
+    "url": "https://github.com/tigrbl/tigrbl_auth/blob/master/.ssot/specs/SPEC-1029-openapi-baseline-public-compact-yaml.yaml"
+  },
+  {
+    "evidence_type": "repository.contract_file",
+    "id": "surface:222f31c2d04f",
+    "kind": "api",
+    "name": ".ssot/specs/SPEC-1030-openapi-fapi2-security-public-full-json.yaml",
+    "observed_at": "2026-08-03T05:24:36Z",
+    "repository": "tigrbl/tigrbl_auth",
+    "url": "https://github.com/tigrbl/tigrbl_auth/blob/master/.ssot/specs/SPEC-1030-openapi-fapi2-security-public-full-json.yaml"
+  },
+  {
+    "evidence_type": "repository.contract_file",
+    "id": "surface:6124ee02b4c9",
+    "kind": "api",
+    "name": ".ssot/specs/SPEC-1031-openapi-fapi2-security-public-full-yaml.yaml",
+    "observed_at": "2026-08-03T05:24:36Z",
+    "repository": "tigrbl/tigrbl_auth",
+    "url": "https://github.com/tigrbl/tigrbl_auth/blob/master/.ssot/specs/SPEC-1031-openapi-fapi2-security-public-full-yaml.yaml"
+  },
+  {
+    "evidence_type": "repository.contract_file",
+    "id": "surface:bfd45de8940d",
+    "kind": "api",
+    "name": ".ssot/specs/SPEC-1032-openapi-hardening-public-compact-json.yaml",
+    "observed_at": "2026-08-03T05:24:36Z",
+    "repository": "tigrbl/tigrbl_auth",
+    "url": "https://github.com/tigrbl/tigrbl_auth/blob/master/.ssot/specs/SPEC-1032-openapi-hardening-public-compact-json.yaml"
+  },
+  {
+    "evidence_type": "repository.contract_file",
+    "id": "surface:9a0f858c5a8a",
+    "kind": "api",
+    "name": ".ssot/specs/SPEC-1033-openapi-hardening-public-full-json.yaml",
+    "observed_at": "2026-08-03T05:24:36Z",
+    "repository": "tigrbl/tigrbl_auth",
+    "url": "https://github.com/tigrbl/tigrbl_auth/blob/master/.ssot/specs/SPEC-1033-openapi-hardening-public-full-json.yaml"
+  },
+  {
+    "evidence_type": "repository.contract_file",
+    "id": "surface:2c6141c074e7",
+    "kind": "api",
+    "name": ".ssot/specs/SPEC-1034-openapi-hardening-public-full-yaml.yaml",
+    "observed_at": "2026-08-03T05:24:36Z",
+    "repository": "tigrbl/tigrbl_auth",
+    "url": "https://github.com/tigrbl/tigrbl_auth/blob/master/.ssot/specs/SPEC-1034-openapi-hardening-public-full-yaml.yaml"
+  },
+  {
+    "evidence_type": "repository.contract_file",
+    "id": "surface:e4fcb618cc0c",
+    "kind": "api",
+    "name": ".ssot/specs/SPEC-1035-openapi-hardening-public-compact-yaml.yaml",
+    "observed_at": "2026-08-03T05:24:36Z",
+    "repository": "tigrbl/tigrbl_auth",
+    "url": "https://github.com/tigrbl/tigrbl_auth/blob/master/.ssot/specs/SPEC-1035-openapi-hardening-public-compact-yaml.yaml"
+  },
+  {
+    "evidence_type": "repository.contract_file",
+    "id": "surface:8f608c02ffae",
+    "kind": "api",
+    "name": ".ssot/specs/SPEC-1036-openapi-peer-claim-public-full-json.yaml",
+    "observed_at": "2026-08-03T05:24:36Z",
+    "repository": "tigrbl/tigrbl_auth",
+    "url": "https://github.com/tigrbl/tigrbl_auth/blob/master/.ssot/specs/SPEC-1036-openapi-peer-claim-public-full-json.yaml"
+  },
+  {
+    "evidence_type": "repository.contract_file",
+    "id": "surface:ff3da9cbf13f",
+    "kind": "api",
+    "name": ".ssot/specs/SPEC-1037-openapi-peer-claim-public-full-yaml.yaml",
+    "observed_at": "2026-08-03T05:24:36Z",
+    "repository": "tigrbl/tigrbl_auth",
+    "url": "https://github.com/tigrbl/tigrbl_auth/blob/master/.ssot/specs/SPEC-1037-openapi-peer-claim-public-full-yaml.yaml"
+  },
+  {
+    "evidence_type": "repository.contract_file",
+    "id": "surface:85ced1c68089",
+    "kind": "api",
+    "name": ".ssot/specs/SPEC-1038-openapi-production-public-compact-json.yaml",
+    "observed_at": "2026-08-03T05:24:36Z",
+    "repository": "tigrbl/tigrbl_auth",
+    "url": "https://github.com/tigrbl/tigrbl_auth/blob/master/.ssot/specs/SPEC-1038-openapi-production-public-compact-json.yaml"
+  },
+  {
+    "evidence_type": "repository.contract_file",
+    "id": "surface:b8e2efb2ed3a",
+    "kind": "api",
+    "name": ".ssot/specs/SPEC-1039-openapi-production-public-full-json.yaml",
+    "observed_at": "2026-08-03T05:24:36Z",
+    "repository": "tigrbl/tigrbl_auth",
+    "url": "https://github.com/tigrbl/tigrbl_auth/blob/master/.ssot/specs/SPEC-1039-openapi-production-public-full-json.yaml"
+  },
+  {
+    "evidence_type": "repository.contract_file",
+    "id": "surface:5bc66c86b106",
+    "kind": "api",
+    "name": ".ssot/specs/SPEC-1040-openapi-production-public-full-yaml.yaml",
+    "observed_at": "2026-08-03T05:24:36Z",
+    "repository": "tigrbl/tigrbl_auth",
+    "url": "https://github.com/tigrbl/tigrbl_auth/blob/master/.ssot/specs/SPEC-1040-openapi-production-public-full-yaml.yaml"
+  },
+  {
+    "evidence_type": "repository.contract_file",
+    "id": "surface:00269612279c",
+    "kind": "api",
+    "name": ".ssot/specs/SPEC-1041-openapi-production-public-compact-yaml.yaml",
+    "observed_at": "2026-08-03T05:24:36Z",
+    "repository": "tigrbl/tigrbl_auth",
+    "url": "https://github.com/tigrbl/tigrbl_auth/blob/master/.ssot/specs/SPEC-1041-openapi-production-public-compact-yaml.yaml"
+  },
+  {
+    "evidence_type": "repository.contract_file",
+    "id": "surface:49afb581b5ad",
+    "kind": "api",
+    "name": ".ssot/specs/SPEC-1042-openapi-public-full-json.yaml",
+    "observed_at": "2026-08-03T05:24:36Z",
+    "repository": "tigrbl/tigrbl_auth",
+    "url": "https://github.com/tigrbl/tigrbl_auth/blob/master/.ssot/specs/SPEC-1042-openapi-public-full-json.yaml"
+  },
+  {
+    "evidence_type": "repository.contract_file",
+    "id": "surface:5824a428c7d4",
+    "kind": "api",
+    "name": ".ssot/specs/SPEC-1043-openapi-public-full-yaml.yaml",
+    "observed_at": "2026-08-03T05:24:36Z",
+    "repository": "tigrbl/tigrbl_auth",
+    "url": "https://github.com/tigrbl/tigrbl_auth/blob/master/.ssot/specs/SPEC-1043-openapi-public-full-yaml.yaml"
+  },
+  {
+    "evidence_type": "repository.contract_file",
+    "id": "surface:cfbc1011c09c",
+    "kind": "api",
+    "name": ".ssot/specs/SPEC-1044-openrpc-baseline-admin-json.yaml",
+    "observed_at": "2026-08-03T05:24:36Z",
+    "repository": "tigrbl/tigrbl_auth",
+    "url": "https://github.com/tigrbl/tigrbl_auth/blob/master/.ssot/specs/SPEC-1044-openrpc-baseline-admin-json.yaml"
+  },
+  {
+    "evidence_type": "repository.contract_file",
+    "id": "surface:7836db929add",
+    "kind": "api",
+    "name": ".ssot/specs/SPEC-1045-openrpc-fapi2-security-admin-json.yaml",
+    "observed_at": "2026-08-03T05:24:36Z",
+    "repository": "tigrbl/tigrbl_auth",
+    "url": "https://github.com/tigrbl/tigrbl_auth/blob/master/.ssot/specs/SPEC-1045-openrpc-fapi2-security-admin-json.yaml"
+  },
+  {
+    "evidence_type": "repository.contract_file",
+    "id": "surface:92848e8bdf53",
+    "kind": "api",
+    "name": ".ssot/specs/SPEC-1046-openrpc-hardening-admin-json.yaml",
+    "observed_at": "2026-08-03T05:24:36Z",
+    "repository": "tigrbl/tigrbl_auth",
+    "url": "https://github.com/tigrbl/tigrbl_auth/blob/master/.ssot/specs/SPEC-1046-openrpc-hardening-admin-json.yaml"
+  },
+  {
+    "evidence_type": "repository.contract_file",
+    "id": "surface:d0f2cb4fddb0",
+    "kind": "api",
+    "name": ".ssot/specs/SPEC-1047-openrpc-peer-claim-admin-json.yaml",
+    "observed_at": "2026-08-03T05:24:36Z",
+    "repository": "tigrbl/tigrbl_auth",
+    "url": "https://github.com/tigrbl/tigrbl_auth/blob/master/.ssot/specs/SPEC-1047-openrpc-peer-claim-admin-json.yaml"
+  },
+  {
+    "evidence_type": "repository.contract_file",
+    "id": "surface:c0b78f67a3cd",
+    "kind": "api",
+    "name": ".ssot/specs/SPEC-1048-openrpc-production-admin-json.yaml",
+    "observed_at": "2026-08-03T05:24:36Z",
+    "repository": "tigrbl/tigrbl_auth",
+    "url": "https://github.com/tigrbl/tigrbl_auth/blob/master/.ssot/specs/SPEC-1048-openrpc-production-admin-json.yaml"
+  },
+  {
+    "evidence_type": "repository.contract_file",
+    "id": "surface:93745bd5d50f",
+    "kind": "api",
+    "name": ".ssot/specs/SPEC-1049-openrpc-admin-json.yaml",
+    "observed_at": "2026-08-03T05:24:36Z",
+    "repository": "tigrbl/tigrbl_auth",
+    "url": "https://github.com/tigrbl/tigrbl_auth/blob/master/.ssot/specs/SPEC-1049-openrpc-admin-json.yaml"
+  },
+  {
+    "evidence_type": "repository.contract_file",
+    "id": "surface:a724a421369d",
+    "kind": "api",
+    "name": ".ssot/specs/SPEC-1063-openapi-contract-validity.yaml",
+    "observed_at": "2026-08-03T05:24:36Z",
+    "repository": "tigrbl/tigrbl_auth",
+    "url": "https://github.com/tigrbl/tigrbl_auth/blob/master/.ssot/specs/SPEC-1063-openapi-contract-validity.yaml"
+  },
+  {
+    "evidence_type": "repository.contract_file",
+    "id": "surface:c00fa1a8ecbe",
+    "kind": "api",
+    "name": ".ssot/specs/SPEC-1064-openrpc-contract-validity.yaml",
+    "observed_at": "2026-08-03T05:24:36Z",
+    "repository": "tigrbl/tigrbl_auth",
+    "url": "https://github.com/tigrbl/tigrbl_auth/blob/master/.ssot/specs/SPEC-1064-openrpc-contract-validity.yaml"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:94d5b39b8e05",
+    "kind": "app",
+    "name": "apps/client",
+    "observed_at": "2026-08-03T05:24:35Z",
+    "repository": "groupsum/markdown_workspace",
+    "url": "https://github.com/groupsum/markdown_workspace/tree/master/apps/client"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:b515ec88d8bf",
+    "kind": "ui",
+    "name": "apps/client/components/UI/StatusLed.tsx",
+    "observed_at": "2026-08-03T05:24:35Z",
+    "repository": "groupsum/markdown_workspace",
+    "url": "https://github.com/groupsum/markdown_workspace/tree/master/apps/client/components/UI/StatusLed.tsx"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:d2ecc449a0be",
+    "kind": "ui",
+    "name": "apps/client/components/UI/Toast.tsx",
+    "observed_at": "2026-08-03T05:24:35Z",
+    "repository": "groupsum/markdown_workspace",
+    "url": "https://github.com/groupsum/markdown_workspace/tree/master/apps/client/components/UI/Toast.tsx"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:d9b799c93ece",
+    "kind": "ui",
+    "name": "apps/client/components/UI/ZoomControl.tsx",
+    "observed_at": "2026-08-03T05:24:35Z",
+    "repository": "groupsum/markdown_workspace",
+    "url": "https://github.com/groupsum/markdown_workspace/tree/master/apps/client/components/UI/ZoomControl.tsx"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:7dc24ddac5c9",
+    "kind": "service",
+    "name": "apps/client/services/gitAdapter.ts",
+    "observed_at": "2026-08-03T05:24:35Z",
+    "repository": "groupsum/markdown_workspace",
+    "url": "https://github.com/groupsum/markdown_workspace/tree/master/apps/client/services/gitAdapter.ts"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:d0bda4201536",
+    "kind": "service",
+    "name": "apps/client/services/gitConfig.ts",
+    "observed_at": "2026-08-03T05:24:35Z",
+    "repository": "groupsum/markdown_workspace",
+    "url": "https://github.com/groupsum/markdown_workspace/tree/master/apps/client/services/gitConfig.ts"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:7ff6e082126d",
+    "kind": "service",
+    "name": "apps/client/services/gitea.ts",
+    "observed_at": "2026-08-03T05:24:35Z",
+    "repository": "groupsum/markdown_workspace",
+    "url": "https://github.com/groupsum/markdown_workspace/tree/master/apps/client/services/gitea.ts"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:fc8622d28e17",
+    "kind": "service",
+    "name": "apps/client/services/github.ts",
+    "observed_at": "2026-08-03T05:24:35Z",
+    "repository": "groupsum/markdown_workspace",
+    "url": "https://github.com/groupsum/markdown_workspace/tree/master/apps/client/services/github.ts"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:ad4b695fac35",
+    "kind": "service",
+    "name": "apps/client/services/gitlab.ts",
+    "observed_at": "2026-08-03T05:24:35Z",
+    "repository": "groupsum/markdown_workspace",
+    "url": "https://github.com/groupsum/markdown_workspace/tree/master/apps/client/services/gitlab.ts"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:b07c91b3c801",
+    "kind": "service",
+    "name": "apps/client/services/htmlExport.test.ts",
+    "observed_at": "2026-08-03T05:24:35Z",
+    "repository": "groupsum/markdown_workspace",
+    "url": "https://github.com/groupsum/markdown_workspace/tree/master/apps/client/services/htmlExport.test.ts"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:033d06fa6194",
+    "kind": "service",
+    "name": "apps/client/services/htmlExport.tsx",
+    "observed_at": "2026-08-03T05:24:35Z",
+    "repository": "groupsum/markdown_workspace",
+    "url": "https://github.com/groupsum/markdown_workspace/tree/master/apps/client/services/htmlExport.tsx"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:db46a01b7d44",
+    "kind": "service",
+    "name": "apps/client/services/markdownPreviewPolicy.js",
+    "observed_at": "2026-08-03T05:24:35Z",
+    "repository": "groupsum/markdown_workspace",
+    "url": "https://github.com/groupsum/markdown_workspace/tree/master/apps/client/services/markdownPreviewPolicy.js"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:7c8bd584e1f2",
+    "kind": "service",
+    "name": "apps/client/services/oidc.test.ts",
+    "observed_at": "2026-08-03T05:24:35Z",
+    "repository": "groupsum/markdown_workspace",
+    "url": "https://github.com/groupsum/markdown_workspace/tree/master/apps/client/services/oidc.test.ts"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:e3aac9a6fdc0",
+    "kind": "service",
+    "name": "apps/client/services/oidc.ts",
+    "observed_at": "2026-08-03T05:24:35Z",
+    "repository": "groupsum/markdown_workspace",
+    "url": "https://github.com/groupsum/markdown_workspace/tree/master/apps/client/services/oidc.ts"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:a27ddec09076",
+    "kind": "service",
+    "name": "apps/client/services/persistence.test.ts",
+    "observed_at": "2026-08-03T05:24:35Z",
+    "repository": "groupsum/markdown_workspace",
+    "url": "https://github.com/groupsum/markdown_workspace/tree/master/apps/client/services/persistence.test.ts"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:5f624b11d467",
+    "kind": "service",
+    "name": "apps/client/services/persistence.ts",
+    "observed_at": "2026-08-03T05:24:35Z",
+    "repository": "groupsum/markdown_workspace",
+    "url": "https://github.com/groupsum/markdown_workspace/tree/master/apps/client/services/persistence.ts"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:89d98ef944ac",
+    "kind": "service",
+    "name": "apps/client/services/storage.ts",
+    "observed_at": "2026-08-03T05:24:35Z",
+    "repository": "groupsum/markdown_workspace",
+    "url": "https://github.com/groupsum/markdown_workspace/tree/master/apps/client/services/storage.ts"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:8ec6d3a8e994",
+    "kind": "service",
+    "name": "apps/client/services/themeService.ts",
+    "observed_at": "2026-08-03T05:24:35Z",
+    "repository": "groupsum/markdown_workspace",
+    "url": "https://github.com/groupsum/markdown_workspace/tree/master/apps/client/services/themeService.ts"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:c260fb0d1502",
+    "kind": "demo",
+    "name": "apps/client/src/demos/EditInRendererPackageDemo.tsx",
+    "observed_at": "2026-08-03T05:24:35Z",
+    "repository": "groupsum/markdown_workspace",
+    "url": "https://github.com/groupsum/markdown_workspace/tree/master/apps/client/src/demos/EditInRendererPackageDemo.tsx"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:24ca3ebbc0c2",
+    "kind": "demo",
+    "name": "aucplot/demo/__init__.py",
+    "observed_at": "2026-08-03T05:24:36Z",
+    "repository": "swarmauri/swarmauri-aucplot",
+    "url": "https://github.com/swarmauri/swarmauri-aucplot/tree/master/aucplot/demo/__init__.py"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:b0a1bce10479",
+    "kind": "demo",
+    "name": "aucplot/demo/app.py",
+    "observed_at": "2026-08-03T05:24:36Z",
+    "repository": "swarmauri/swarmauri-aucplot",
+    "url": "https://github.com/swarmauri/swarmauri-aucplot/tree/master/aucplot/demo/app.py"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:fe14527473fc",
+    "kind": "demo",
+    "name": "aucplot/demo/requirements.txt",
+    "observed_at": "2026-08-03T05:24:36Z",
+    "repository": "swarmauri/swarmauri-aucplot",
+    "url": "https://github.com/swarmauri/swarmauri-aucplot/tree/master/aucplot/demo/requirements.txt"
+  },
+  {
+    "evidence_type": "repository.contract_file",
+    "id": "surface:835b901e87c2",
+    "kind": "api",
+    "name": "compliance/evidence/tier3/asgi-application/contracts/tigrbl_auth.admin.openrpc.json",
+    "observed_at": "2026-08-03T05:24:36Z",
+    "repository": "tigrbl/tigrbl_auth",
+    "url": "https://github.com/tigrbl/tigrbl_auth/blob/master/compliance/evidence/tier3/asgi-application/contracts/tigrbl_auth.admin.openrpc.json"
+  },
+  {
+    "evidence_type": "repository.contract_file",
+    "id": "surface:94d30d9fb042",
+    "kind": "api",
+    "name": "compliance/evidence/tier3/asgi-application/contracts/tigrbl_auth.public.openapi.json",
+    "observed_at": "2026-08-03T05:24:36Z",
+    "repository": "tigrbl/tigrbl_auth",
+    "url": "https://github.com/tigrbl/tigrbl_auth/blob/master/compliance/evidence/tier3/asgi-application/contracts/tigrbl_auth.public.openapi.json"
+  },
+  {
+    "evidence_type": "repository.contract_file",
+    "id": "surface:7c0a5e3d3e63",
+    "kind": "api",
+    "name": "compliance/evidence/tier3/bearer/contracts/tigrbl_auth.public.openapi.json",
+    "observed_at": "2026-08-03T05:24:36Z",
+    "repository": "tigrbl/tigrbl_auth",
+    "url": "https://github.com/tigrbl/tigrbl_auth/blob/master/compliance/evidence/tier3/bearer/contracts/tigrbl_auth.public.openapi.json"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:6f89c75bc458",
+    "kind": "docs",
+    "name": "compliance/evidence/tier3/bearer/docs/compliance",
+    "observed_at": "2026-08-03T05:24:36Z",
+    "repository": "tigrbl/tigrbl_auth",
+    "url": "https://github.com/tigrbl/tigrbl_auth/tree/master/compliance/evidence/tier3/bearer/docs/compliance"
+  },
+  {
+    "evidence_type": "repository.contract_file",
+    "id": "surface:1cc164ace696",
+    "kind": "api",
+    "name": "compliance/evidence/tier3/cli-operator-surface/contracts/tigrbl_auth.admin.openrpc.json",
+    "observed_at": "2026-08-03T05:24:36Z",
+    "repository": "tigrbl/tigrbl_auth",
+    "url": "https://github.com/tigrbl/tigrbl_auth/blob/master/compliance/evidence/tier3/cli-operator-surface/contracts/tigrbl_auth.admin.openrpc.json"
+  },
+  {
+    "evidence_type": "repository.contract_file",
+    "id": "surface:9dc6cec8e12a",
+    "kind": "api",
+    "name": "compliance/evidence/tier3/client-registration-management/contracts/register-management-openapi-path.json",
+    "observed_at": "2026-08-03T05:24:36Z",
+    "repository": "tigrbl/tigrbl_auth",
+    "url": "https://github.com/tigrbl/tigrbl_auth/blob/master/compliance/evidence/tier3/client-registration-management/contracts/register-management-openapi-path.json"
+  },
+  {
+    "evidence_type": "repository.contract_file",
+    "id": "surface:20e770647c18",
+    "kind": "api",
+    "name": "compliance/evidence/tier3/client-registration/contracts/tigrbl_auth.public.openapi.json",
+    "observed_at": "2026-08-03T05:24:36Z",
+    "repository": "tigrbl/tigrbl_auth",
+    "url": "https://github.com/tigrbl/tigrbl_auth/blob/master/compliance/evidence/tier3/client-registration/contracts/tigrbl_auth.public.openapi.json"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:5ca28b5a9738",
+    "kind": "docs",
+    "name": "compliance/evidence/tier3/client-registration/docs/compliance",
+    "observed_at": "2026-08-03T05:24:36Z",
+    "repository": "tigrbl/tigrbl_auth",
+    "url": "https://github.com/tigrbl/tigrbl_auth/tree/master/compliance/evidence/tier3/client-registration/docs/compliance"
+  },
+  {
+    "evidence_type": "repository.contract_file",
+    "id": "surface:add53280ee01",
+    "kind": "api",
+    "name": "compliance/evidence/tier3/contracts/openapi/contracts/tigrbl_auth.public.openapi.json",
+    "observed_at": "2026-08-03T05:24:36Z",
+    "repository": "tigrbl/tigrbl_auth",
+    "url": "https://github.com/tigrbl/tigrbl_auth/blob/master/compliance/evidence/tier3/contracts/openapi/contracts/tigrbl_auth.public.openapi.json"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:ff90387017a1",
+    "kind": "docs",
+    "name": "compliance/evidence/tier3/contracts/openapi/docs/compliance",
+    "observed_at": "2026-08-03T05:24:36Z",
+    "repository": "tigrbl/tigrbl_auth",
+    "url": "https://github.com/tigrbl/tigrbl_auth/tree/master/compliance/evidence/tier3/contracts/openapi/docs/compliance"
+  },
+  {
+    "evidence_type": "repository.contract_file",
+    "id": "surface:f609ab12b9af",
+    "kind": "api",
+    "name": "compliance/evidence/tier3/contracts/openrpc/contracts/tigrbl_auth.admin.openrpc.json",
+    "observed_at": "2026-08-03T05:24:36Z",
+    "repository": "tigrbl/tigrbl_auth",
+    "url": "https://github.com/tigrbl/tigrbl_auth/blob/master/compliance/evidence/tier3/contracts/openrpc/contracts/tigrbl_auth.admin.openrpc.json"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:f8855a978fc2",
+    "kind": "docs",
+    "name": "compliance/evidence/tier3/contracts/openrpc/docs/compliance",
+    "observed_at": "2026-08-03T05:24:36Z",
+    "repository": "tigrbl/tigrbl_auth",
+    "url": "https://github.com/tigrbl/tigrbl_auth/tree/master/compliance/evidence/tier3/contracts/openrpc/docs/compliance"
+  },
+  {
+    "evidence_type": "repository.contract_file",
+    "id": "surface:29c4ec478f72",
+    "kind": "api",
+    "name": "compliance/evidence/tier3/cookies/contracts/tigrbl_auth.public.openapi.json",
+    "observed_at": "2026-08-03T05:24:36Z",
+    "repository": "tigrbl/tigrbl_auth",
+    "url": "https://github.com/tigrbl/tigrbl_auth/blob/master/compliance/evidence/tier3/cookies/contracts/tigrbl_auth.public.openapi.json"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:e40910591c2f",
+    "kind": "docs",
+    "name": "compliance/evidence/tier3/cookies/docs/compliance",
+    "observed_at": "2026-08-03T05:24:36Z",
+    "repository": "tigrbl/tigrbl_auth",
+    "url": "https://github.com/tigrbl/tigrbl_auth/tree/master/compliance/evidence/tier3/cookies/docs/compliance"
+  },
+  {
+    "evidence_type": "repository.contract_file",
+    "id": "surface:229fe43e9377",
+    "kind": "api",
+    "name": "compliance/evidence/tier3/device-flow/contracts/device-authorization-openapi-path.json",
+    "observed_at": "2026-08-03T05:24:36Z",
+    "repository": "tigrbl/tigrbl_auth",
+    "url": "https://github.com/tigrbl/tigrbl_auth/blob/master/compliance/evidence/tier3/device-flow/contracts/device-authorization-openapi-path.json"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:30af3ee0923f",
+    "kind": "docs",
+    "name": "compliance/evidence/tier3/discovery/docs/compliance",
+    "observed_at": "2026-08-03T05:24:36Z",
+    "repository": "tigrbl/tigrbl_auth",
+    "url": "https://github.com/tigrbl/tigrbl_auth/tree/master/compliance/evidence/tier3/discovery/docs/compliance"
+  },
+  {
+    "evidence_type": "repository.contract_file",
+    "id": "surface:028fa62aeec4",
+    "kind": "api",
+    "name": "compliance/evidence/tier3/introspection/contracts/tigrbl_auth.public.openapi.json",
+    "observed_at": "2026-08-03T05:24:36Z",
+    "repository": "tigrbl/tigrbl_auth",
+    "url": "https://github.com/tigrbl/tigrbl_auth/blob/master/compliance/evidence/tier3/introspection/contracts/tigrbl_auth.public.openapi.json"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:8ffe5fa6747a",
+    "kind": "docs",
+    "name": "compliance/evidence/tier3/introspection/docs/compliance",
+    "observed_at": "2026-08-03T05:24:36Z",
+    "repository": "tigrbl/tigrbl_auth",
+    "url": "https://github.com/tigrbl/tigrbl_auth/tree/master/compliance/evidence/tier3/introspection/docs/compliance"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:b4a938bf3b76",
+    "kind": "docs",
+    "name": "compliance/evidence/tier3/jose/docs/compliance",
+    "observed_at": "2026-08-03T05:24:36Z",
+    "repository": "tigrbl/tigrbl_auth",
+    "url": "https://github.com/tigrbl/tigrbl_auth/tree/master/compliance/evidence/tier3/jose/docs/compliance"
+  },
+  {
+    "evidence_type": "repository.homepage",
+    "id": "surface:73961f21e0c0",
+    "kind": "website",
+    "name": "crouton",
+    "observed_at": "2026-08-03T05:24:36Z",
+    "repository": "swarmauri/crouton",
+    "url": "https://swarmauri.com"
+  },
+  {
+    "evidence_type": "repository.homepage",
+    "id": "surface:dd0075363b57",
+    "kind": "website",
+    "name": "crouton-boilerplate",
+    "observed_at": "2026-08-03T05:24:36Z",
+    "repository": "swarmauri/crouton-boilerplate",
+    "url": "https://swarmauri.com"
+  },
+  {
+    "evidence_type": "repository.name",
+    "id": "surface:93cf33ac2d39",
+    "kind": "website",
+    "name": "customer-commerce-semantics-governance-pack",
+    "observed_at": "2026-08-03T05:24:35Z",
+    "repository": "groupsum/customer-commerce-semantics-governance-pack",
+    "url": "https://github.com/groupsum/customer-commerce-semantics-governance-pack"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:30e72d60e4a1",
+    "kind": "deployment",
+    "name": "deploy/compose.mysql.yaml",
+    "observed_at": "2026-08-03T05:24:35Z",
+    "repository": "groupsum/portwyrm",
+    "url": "https://github.com/groupsum/portwyrm/tree/master/deploy/compose.mysql.yaml"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:004055b49467",
+    "kind": "deployment",
+    "name": "deploy/compose.postgresql.yaml",
+    "observed_at": "2026-08-03T05:24:35Z",
+    "repository": "groupsum/portwyrm",
+    "url": "https://github.com/groupsum/portwyrm/tree/master/deploy/compose.postgresql.yaml"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:9b0712611bfb",
+    "kind": "deployment",
+    "name": "deploy/entrypoint.py",
+    "observed_at": "2026-08-03T05:24:35Z",
+    "repository": "groupsum/portwyrm",
+    "url": "https://github.com/groupsum/portwyrm/tree/master/deploy/entrypoint.py"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:aee977c21bb4",
+    "kind": "deployment",
+    "name": "deploy/nginx.conf",
+    "observed_at": "2026-08-03T05:24:35Z",
+    "repository": "groupsum/portwyrm",
+    "url": "https://github.com/groupsum/portwyrm/tree/master/deploy/nginx.conf"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:ff2445dd6d01",
+    "kind": "deployment",
+    "name": "deploy/npm",
+    "observed_at": "2026-08-03T05:24:35Z",
+    "repository": "groupsum/npmctl",
+    "url": "https://github.com/groupsum/npmctl/tree/master/deploy/npm"
+  },
+  {
+    "evidence_type": "repository.name",
+    "id": "surface:91615d8f2844",
+    "kind": "website",
+    "name": "docs-peagen-com",
+    "observed_at": "2026-08-03T05:24:36Z",
+    "repository": "swarmauri/docs-peagen-com",
+    "url": "https://github.com/swarmauri/docs-peagen-com"
+  },
+  {
+    "evidence_type": "repository.name",
+    "id": "surface:4e4550f7ea14",
+    "kind": "website",
+    "name": "docs-swarmauri-com",
+    "observed_at": "2026-08-03T05:24:36Z",
+    "repository": "swarmauri/docs-swarmauri-com",
+    "url": "https://github.com/swarmauri/docs-swarmauri-com"
+  },
+  {
+    "evidence_type": "repository.name",
+    "id": "surface:b3e165e653e9",
+    "kind": "website",
+    "name": "docs-tigrbl-com",
+    "observed_at": "2026-08-03T05:24:36Z",
+    "repository": "tigrbl/docs-tigrbl-com",
+    "url": "https://github.com/tigrbl/docs-tigrbl-com"
+  },
+  {
+    "evidence_type": "repository.name",
+    "id": "surface:6d5ebf9dc773",
+    "kind": "website",
+    "name": "docs-tigrcorn-com",
+    "observed_at": "2026-08-03T05:24:36Z",
+    "repository": "tigrbl/docs-tigrcorn-com",
+    "url": "https://github.com/tigrbl/docs-tigrcorn-com"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:736a710d89c9",
+    "kind": "docs",
+    "name": "docs/access-lists.md",
+    "observed_at": "2026-08-03T05:24:35Z",
+    "repository": "groupsum/npmctl",
+    "url": "https://github.com/groupsum/npmctl/tree/master/docs/access-lists.md"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:76dcc988302b",
+    "kind": "docs",
+    "name": "docs/adoption.md",
+    "observed_at": "2026-08-03T05:24:35Z",
+    "repository": "groupsum/npmctl",
+    "url": "https://github.com/groupsum/npmctl/tree/master/docs/adoption.md"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:1119cc187df1",
+    "kind": "docs",
+    "name": "docs/adr",
+    "observed_at": "2026-08-03T05:24:36Z",
+    "repository": "tigrbl/tigrcorn",
+    "url": "https://github.com/tigrbl/tigrcorn/tree/master/docs/adr"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:58bc0ad73cf3",
+    "kind": "docs",
+    "name": "docs/adr",
+    "observed_at": "2026-08-03T05:24:35Z",
+    "repository": "groupsum/mdwrk",
+    "url": "https://github.com/groupsum/mdwrk/tree/master/docs/adr"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:b31ee02340a9",
+    "kind": "docs",
+    "name": "docs/adrs",
+    "observed_at": "2026-08-03T05:24:35Z",
+    "repository": "groupsum/npmctl",
+    "url": "https://github.com/groupsum/npmctl/tree/master/docs/adrs"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:0b7e8373906c",
+    "kind": "docs",
+    "name": "docs/AGENTS.md",
+    "observed_at": "2026-08-03T05:24:35Z",
+    "repository": "groupsum/npmctl",
+    "url": "https://github.com/groupsum/npmctl/tree/master/docs/AGENTS.md"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:72ad26fbf6dc",
+    "kind": "docs",
+    "name": "docs/AGENTS.md",
+    "observed_at": "2026-08-03T05:24:35Z",
+    "repository": "groupsum/mdwrk",
+    "url": "https://github.com/groupsum/mdwrk/tree/master/docs/AGENTS.md"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:a17381769af8",
+    "kind": "docs",
+    "name": "docs/AGENTS.md",
+    "observed_at": "2026-08-03T05:24:35Z",
+    "repository": "groupsum/mdwrk-pages",
+    "url": "https://github.com/groupsum/mdwrk-pages/tree/master/docs/AGENTS.md"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:cd5291832fb8",
+    "kind": "api",
+    "name": "docs/api/base",
+    "observed_at": "2026-08-03T05:24:36Z",
+    "repository": "swarmauri/docs-swarmauri-com",
+    "url": "https://github.com/swarmauri/docs-swarmauri-com/tree/master/docs/api/base"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:e6658af19c71",
+    "kind": "api",
+    "name": "docs/api/concepts.md",
+    "observed_at": "2026-08-03T05:24:36Z",
+    "repository": "swarmauri/docs-swarmauri-com",
+    "url": "https://github.com/swarmauri/docs-swarmauri-com/tree/master/docs/api/concepts.md"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:d1cf6bf7602d",
+    "kind": "api",
+    "name": "docs/api/core",
+    "observed_at": "2026-08-03T05:24:36Z",
+    "repository": "swarmauri/docs-swarmauri-com",
+    "url": "https://github.com/swarmauri/docs-swarmauri-com/tree/master/docs/api/core"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:13488b751f78",
+    "kind": "docs",
+    "name": "docs/appspec-internal-spec-matrix.md",
+    "observed_at": "2026-08-03T05:24:36Z",
+    "repository": "tigrbl/tigrbl",
+    "url": "https://github.com/tigrbl/tigrbl/tree/master/docs/appspec-internal-spec-matrix.md"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:23e7e53ad6db",
+    "kind": "docs",
+    "name": "docs/architecture",
+    "observed_at": "2026-08-03T05:24:36Z",
+    "repository": "tigrbl/tigrcorn",
+    "url": "https://github.com/tigrbl/tigrcorn/tree/master/docs/architecture"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:48f16336e4cf",
+    "kind": "docs",
+    "name": "docs/architecture",
+    "observed_at": "2026-08-03T05:24:35Z",
+    "repository": "groupsum/portwyrm",
+    "url": "https://github.com/groupsum/portwyrm/tree/master/docs/architecture"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:c7a2950f56bb",
+    "kind": "docs",
+    "name": "docs/architecture",
+    "observed_at": "2026-08-03T05:24:35Z",
+    "repository": "groupsum/mdwrk",
+    "url": "https://github.com/groupsum/mdwrk/tree/master/docs/architecture"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:f9917b18fedf",
+    "kind": "docs",
+    "name": "docs/architecture",
+    "observed_at": "2026-08-03T05:24:36Z",
+    "repository": "tigrbl/tigrbl",
+    "url": "https://github.com/tigrbl/tigrbl/tree/master/docs/architecture"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:882e11d60cee",
+    "kind": "docs",
+    "name": "docs/artifact-trust.md",
+    "observed_at": "2026-08-03T05:24:35Z",
+    "repository": "groupsum/npmctl",
+    "url": "https://github.com/groupsum/npmctl/tree/master/docs/artifact-trust.md"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:291ae88deae1",
+    "kind": "docs",
+    "name": "docs/assets",
+    "observed_at": "2026-08-03T05:24:36Z",
+    "repository": "swarmauri/docs-peagen-com",
+    "url": "https://github.com/swarmauri/docs-peagen-com/tree/master/docs/assets"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:2ff156b1a76e",
+    "kind": "docs",
+    "name": "docs/assets",
+    "observed_at": "2026-08-03T05:24:35Z",
+    "repository": "groupsum/mdwrk-pages",
+    "url": "https://github.com/groupsum/mdwrk-pages/tree/master/docs/assets"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:74e6d795fc9d",
+    "kind": "docs",
+    "name": "docs/assets",
+    "observed_at": "2026-08-03T05:24:36Z",
+    "repository": "tigrbl/tigrbl",
+    "url": "https://github.com/tigrbl/tigrbl/tree/master/docs/assets"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:7d7dee2c20ab",
+    "kind": "docs",
+    "name": "docs/assets",
+    "observed_at": "2026-08-03T05:24:35Z",
+    "repository": "groupsum/mdwrk",
+    "url": "https://github.com/groupsum/mdwrk/tree/master/docs/assets"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:a28b6a05cb02",
+    "kind": "docs",
+    "name": "docs/assets",
+    "observed_at": "2026-08-03T05:24:36Z",
+    "repository": "tigrbl/docs-tigrbl-com",
+    "url": "https://github.com/tigrbl/docs-tigrbl-com/tree/master/docs/assets"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:c5fb798546ed",
+    "kind": "docs",
+    "name": "docs/assets",
+    "observed_at": "2026-08-03T05:24:36Z",
+    "repository": "swarmauri/docs-swarmauri-com",
+    "url": "https://github.com/swarmauri/docs-swarmauri-com/tree/master/docs/assets"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:523305875ac4",
+    "kind": "docs",
+    "name": "docs/attribution-keys.md",
+    "observed_at": "2026-08-03T05:24:36Z",
+    "repository": "tigrbl/attribution-campaign-context",
+    "url": "https://github.com/tigrbl/attribution-campaign-context/tree/master/docs/attribution-keys.md"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:aad5f55d68c8",
+    "kind": "docs",
+    "name": "docs/authoring",
+    "observed_at": "2026-08-03T05:24:35Z",
+    "repository": "groupsum/mdwrk",
+    "url": "https://github.com/groupsum/mdwrk/tree/master/docs/authoring"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:80d1b4188f77",
+    "kind": "docs",
+    "name": "docs/blog",
+    "observed_at": "2026-08-03T05:24:36Z",
+    "repository": "swarmauri/docs-swarmauri-com",
+    "url": "https://github.com/swarmauri/docs-swarmauri-com/tree/master/docs/blog"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:ac6456a46680",
+    "kind": "docs",
+    "name": "docs/brand",
+    "observed_at": "2026-08-03T05:24:35Z",
+    "repository": "groupsum/npmctl",
+    "url": "https://github.com/groupsum/npmctl/tree/master/docs/brand"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:2e4bb6dd3c1e",
+    "kind": "docs",
+    "name": "docs/cli.md",
+    "observed_at": "2026-08-03T05:24:35Z",
+    "repository": "groupsum/npmctl",
+    "url": "https://github.com/groupsum/npmctl/tree/master/docs/cli.md"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:28325f0a7e49",
+    "kind": "docs",
+    "name": "docs/cli_test_gap_report.md",
+    "observed_at": "2026-08-03T05:24:36Z",
+    "repository": "groupsum/ssot-registry",
+    "url": "https://github.com/groupsum/ssot-registry/tree/master/docs/cli_test_gap_report.md"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:c0a367517e7e",
+    "kind": "docs",
+    "name": "docs/comp",
+    "observed_at": "2026-08-03T05:24:36Z",
+    "repository": "tigrbl/tigrcorn",
+    "url": "https://github.com/tigrbl/tigrcorn/tree/master/docs/comp"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:df341a8b7667",
+    "kind": "docs",
+    "name": "docs/compatibility",
+    "observed_at": "2026-08-03T05:24:35Z",
+    "repository": "groupsum/portwyrm",
+    "url": "https://github.com/groupsum/portwyrm/tree/master/docs/compatibility"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:3c9ad86a71ac",
+    "kind": "docs",
+    "name": "docs/compliance.md",
+    "observed_at": "2026-08-03T05:24:35Z",
+    "repository": "groupsum/npmctl",
+    "url": "https://github.com/groupsum/npmctl/tree/master/docs/compliance.md"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:36756c91a2f0",
+    "kind": "docs",
+    "name": "docs/conformance",
+    "observed_at": "2026-08-03T05:24:36Z",
+    "repository": "tigrbl/tigrbl",
+    "url": "https://github.com/tigrbl/tigrbl/tree/master/docs/conformance"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:5fb33d1550c9",
+    "kind": "docs",
+    "name": "docs/conformance",
+    "observed_at": "2026-08-03T05:24:35Z",
+    "repository": "groupsum/mdwrk",
+    "url": "https://github.com/groupsum/mdwrk/tree/master/docs/conformance"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:ee8d67b4f250",
+    "kind": "docs",
+    "name": "docs/conformance",
+    "observed_at": "2026-08-03T05:24:36Z",
+    "repository": "tigrbl/tigrcorn",
+    "url": "https://github.com/tigrbl/tigrcorn/tree/master/docs/conformance"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:31b13137d339",
+    "kind": "docs",
+    "name": "docs/conformance.md",
+    "observed_at": "2026-08-03T05:24:36Z",
+    "repository": "tigrbl/tigr-asgi-contract",
+    "url": "https://github.com/tigrbl/tigr-asgi-contract/tree/master/docs/conformance.md"
+  },
+  {
+    "evidence_type": "repository.contract_file",
+    "id": "surface:03f9120dde32",
+    "kind": "api",
+    "name": "docs/conformance/audit/2026/docs-spec-snapshot-closure/snapshots/openapi_snapshot.json",
+    "observed_at": "2026-08-03T05:24:36Z",
+    "repository": "tigrbl/tigrbl",
+    "url": "https://github.com/tigrbl/tigrbl/blob/master/docs/conformance/audit/2026/docs-spec-snapshot-closure/snapshots/openapi_snapshot.json"
+  },
+  {
+    "evidence_type": "repository.contract_file",
+    "id": "surface:9a867fe966bc",
+    "kind": "api",
+    "name": "docs/conformance/audit/2026/docs-spec-snapshot-closure/snapshots/openrpc_snapshot.json",
+    "observed_at": "2026-08-03T05:24:36Z",
+    "repository": "tigrbl/tigrbl",
+    "url": "https://github.com/tigrbl/tigrbl/blob/master/docs/conformance/audit/2026/docs-spec-snapshot-closure/snapshots/openrpc_snapshot.json"
+  },
+  {
+    "evidence_type": "repository.contract_file",
+    "id": "surface:4ba767cd0533",
+    "kind": "api",
+    "name": "docs/conformance/audit/2026/phase5-oas-jsonschema-jsonrpc-openrpc-closure/snapshots/openapi_snapshot.json",
+    "observed_at": "2026-08-03T05:24:36Z",
+    "repository": "tigrbl/tigrbl",
+    "url": "https://github.com/tigrbl/tigrbl/blob/master/docs/conformance/audit/2026/phase5-oas-jsonschema-jsonrpc-openrpc-closure/snapshots/openapi_snapshot.json"
+  },
+  {
+    "evidence_type": "repository.contract_file",
+    "id": "surface:934021e97b33",
+    "kind": "api",
+    "name": "docs/conformance/audit/2026/phase5-oas-jsonschema-jsonrpc-openrpc-closure/snapshots/openrpc_snapshot.json",
+    "observed_at": "2026-08-03T05:24:36Z",
+    "repository": "tigrbl/tigrbl",
+    "url": "https://github.com/tigrbl/tigrbl/blob/master/docs/conformance/audit/2026/phase5-oas-jsonschema-jsonrpc-openrpc-closure/snapshots/openrpc_snapshot.json"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:928e501e99d3",
+    "kind": "docs",
+    "name": "docs/content-addressed-evidence-registry-truth-matrices.md",
+    "observed_at": "2026-08-03T05:24:36Z",
+    "repository": "groupsum/ssot-registry",
+    "url": "https://github.com/groupsum/ssot-registry/tree/master/docs/content-addressed-evidence-registry-truth-matrices.md"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:4ebd9628cdce",
+    "kind": "docs",
+    "name": "docs/contract-governance.md",
+    "observed_at": "2026-08-03T05:24:36Z",
+    "repository": "tigrbl/tigr-asgi-contract",
+    "url": "https://github.com/tigrbl/tigr-asgi-contract/tree/master/docs/contract-governance.md"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:c0e95574a9f7",
+    "kind": "docs",
+    "name": "docs/contracts.md",
+    "observed_at": "2026-08-03T05:24:35Z",
+    "repository": "groupsum/npmctl",
+    "url": "https://github.com/groupsum/npmctl/tree/master/docs/contracts.md"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:b9bd960aaee6",
+    "kind": "docs",
+    "name": "docs/coordination",
+    "observed_at": "2026-08-03T05:24:36Z",
+    "repository": "groupsum/ssot-registry",
+    "url": "https://github.com/groupsum/ssot-registry/tree/master/docs/coordination"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:ffd4b26fd46e",
+    "kind": "docs",
+    "name": "docs/current-state",
+    "observed_at": "2026-08-03T05:24:35Z",
+    "repository": "groupsum/mdwrk",
+    "url": "https://github.com/groupsum/mdwrk/tree/master/docs/current-state"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:bec9e88bdb1d",
+    "kind": "docs",
+    "name": "docs/delivery",
+    "observed_at": "2026-08-03T05:24:35Z",
+    "repository": "groupsum/portwyrm",
+    "url": "https://github.com/groupsum/portwyrm/tree/master/docs/delivery"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:1b89a16b49b4",
+    "kind": "docs",
+    "name": "docs/desired-state.md",
+    "observed_at": "2026-08-03T05:24:35Z",
+    "repository": "groupsum/npmctl",
+    "url": "https://github.com/groupsum/npmctl/tree/master/docs/desired-state.md"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:3da7ef2b6b1d",
+    "kind": "docs",
+    "name": "docs/dns-providers.md",
+    "observed_at": "2026-08-03T05:24:35Z",
+    "repository": "groupsum/npmctl",
+    "url": "https://github.com/groupsum/npmctl/tree/master/docs/dns-providers.md"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:54e7acfe2b58",
+    "kind": "docs",
+    "name": "docs/dns.md",
+    "observed_at": "2026-08-03T05:24:35Z",
+    "repository": "groupsum/npmctl",
+    "url": "https://github.com/groupsum/npmctl/tree/master/docs/dns.md"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:e9805d8aa436",
+    "kind": "docs",
+    "name": "docs/enhanced-lineage-graph-react-component-brief.md",
+    "observed_at": "2026-08-03T05:24:36Z",
+    "repository": "groupsum/ssot-registry",
+    "url": "https://github.com/groupsum/ssot-registry/tree/master/docs/enhanced-lineage-graph-react-component-brief.md"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:0e65ac1ceef9",
+    "kind": "docs",
+    "name": "docs/evidence",
+    "observed_at": "2026-08-03T05:24:35Z",
+    "repository": "groupsum/npmctl",
+    "url": "https://github.com/groupsum/npmctl/tree/master/docs/evidence"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:91cf2ec95154",
+    "kind": "docs",
+    "name": "docs/evidence",
+    "observed_at": "2026-08-03T05:24:35Z",
+    "repository": "groupsum/mdwrk",
+    "url": "https://github.com/groupsum/mdwrk/tree/master/docs/evidence"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:c6627d69c196",
+    "kind": "example",
+    "name": "docs/examples/desired-state.yaml",
+    "observed_at": "2026-08-03T05:24:35Z",
+    "repository": "groupsum/npmctl",
+    "url": "https://github.com/groupsum/npmctl/tree/master/docs/examples/desired-state.yaml"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:789f5e88b679",
+    "kind": "example",
+    "name": "docs/examples/editor-basic-example.md",
+    "observed_at": "2026-08-03T05:24:35Z",
+    "repository": "groupsum/mdwrk",
+    "url": "https://github.com/groupsum/mdwrk/tree/master/docs/examples/editor-basic-example.md"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:8c560e7ee140",
+    "kind": "example",
+    "name": "docs/examples/http_transport_ip_trust_demo.py",
+    "observed_at": "2026-08-03T05:24:36Z",
+    "repository": "swarmauri/swarmauri-sdk",
+    "url": "https://github.com/swarmauri/swarmauri-sdk/tree/master/docs/examples/http_transport_ip_trust_demo.py"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:9fc67f4d7633",
+    "kind": "example",
+    "name": "docs/examples/renderer-basic-example.md",
+    "observed_at": "2026-08-03T05:24:35Z",
+    "repository": "groupsum/mdwrk",
+    "url": "https://github.com/groupsum/mdwrk/tree/master/docs/examples/renderer-basic-example.md"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:84e77d1fc832",
+    "kind": "docs",
+    "name": "docs/extensions.md",
+    "observed_at": "2026-08-03T05:24:35Z",
+    "repository": "groupsum/npmctl",
+    "url": "https://github.com/groupsum/npmctl/tree/master/docs/extensions.md"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:6e19a3cbee0c",
+    "kind": "docs",
+    "name": "docs/fragments",
+    "observed_at": "2026-08-03T05:24:35Z",
+    "repository": "groupsum/npmctl",
+    "url": "https://github.com/groupsum/npmctl/tree/master/docs/fragments"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:3a05a7772623",
+    "kind": "docs",
+    "name": "docs/FRONTEND_APP_BRIEF.md",
+    "observed_at": "2026-08-03T05:24:36Z",
+    "repository": "tigrbl/tigrcorn-com",
+    "url": "https://github.com/tigrbl/tigrcorn-com/tree/master/docs/FRONTEND_APP_BRIEF.md"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:9abacd69bd69",
+    "kind": "docs",
+    "name": "docs/generated-schemaorg-page-family-presence.csv",
+    "observed_at": "2026-08-03T05:24:35Z",
+    "repository": "groupsum/mdwrk-pages",
+    "url": "https://github.com/groupsum/mdwrk-pages/tree/master/docs/generated-schemaorg-page-family-presence.csv"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:85b5bd97b743",
+    "kind": "docs",
+    "name": "docs/getting-started.md",
+    "observed_at": "2026-08-03T05:24:36Z",
+    "repository": "tigrbl/docs-tigrcorn-com",
+    "url": "https://github.com/tigrbl/docs-tigrcorn-com/tree/master/docs/getting-started.md"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:e90fbbb5d4ee",
+    "kind": "docs",
+    "name": "docs/github-actions.md",
+    "observed_at": "2026-08-03T05:24:35Z",
+    "repository": "groupsum/npmctl",
+    "url": "https://github.com/groupsum/npmctl/tree/master/docs/github-actions.md"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:33e512051d9b",
+    "kind": "docs",
+    "name": "docs/gov",
+    "observed_at": "2026-08-03T05:24:36Z",
+    "repository": "tigrbl/tigrcorn",
+    "url": "https://github.com/tigrbl/tigrcorn/tree/master/docs/gov"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:228ac99ab3c9",
+    "kind": "docs",
+    "name": "docs/governance",
+    "observed_at": "2026-08-03T05:24:36Z",
+    "repository": "tigrbl/tigrcorn",
+    "url": "https://github.com/tigrbl/tigrcorn/tree/master/docs/governance"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:2b33a3ac64a6",
+    "kind": "docs",
+    "name": "docs/governance",
+    "observed_at": "2026-08-03T05:24:36Z",
+    "repository": "groupsum/verifiable-credentials-governance-pack",
+    "url": "https://github.com/groupsum/verifiable-credentials-governance-pack/tree/master/docs/governance"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:2eb116482308",
+    "kind": "docs",
+    "name": "docs/governance",
+    "observed_at": "2026-08-03T05:24:36Z",
+    "repository": "groupsum/web-app-analytics-governance-pack",
+    "url": "https://github.com/groupsum/web-app-analytics-governance-pack/tree/master/docs/governance"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:31001e2e26b8",
+    "kind": "docs",
+    "name": "docs/governance",
+    "observed_at": "2026-08-03T05:24:35Z",
+    "repository": "groupsum/authorization-policy-governance-pack",
+    "url": "https://github.com/groupsum/authorization-policy-governance-pack/tree/master/docs/governance"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:36d3366a23e4",
+    "kind": "docs",
+    "name": "docs/governance",
+    "observed_at": "2026-08-03T05:24:36Z",
+    "repository": "groupsum/privacy-governance-records-governance-pack",
+    "url": "https://github.com/groupsum/privacy-governance-records-governance-pack/tree/master/docs/governance"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:3765c6d9d359",
+    "kind": "docs",
+    "name": "docs/governance",
+    "observed_at": "2026-08-03T05:24:35Z",
+    "repository": "groupsum/data-catalog-lineage-contracts-governance-pack",
+    "url": "https://github.com/groupsum/data-catalog-lineage-contracts-governance-pack/tree/master/docs/governance"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:5744a6eea290",
+    "kind": "docs",
+    "name": "docs/governance",
+    "observed_at": "2026-08-03T05:24:35Z",
+    "repository": "groupsum/mobile-install-attribution-governance-pack",
+    "url": "https://github.com/groupsum/mobile-install-attribution-governance-pack/tree/master/docs/governance"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:59709cb1a84d",
+    "kind": "docs",
+    "name": "docs/governance",
+    "observed_at": "2026-08-03T05:24:35Z",
+    "repository": "groupsum/ad-measurement-media-governance-pack",
+    "url": "https://github.com/groupsum/ad-measurement-media-governance-pack/tree/master/docs/governance"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:6f730fca729f",
+    "kind": "docs",
+    "name": "docs/governance",
+    "observed_at": "2026-08-03T05:24:35Z",
+    "repository": "groupsum/decentralized-identifiers-governance-pack",
+    "url": "https://github.com/groupsum/decentralized-identifiers-governance-pack/tree/master/docs/governance"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:72704640bbb1",
+    "kind": "docs",
+    "name": "docs/governance",
+    "observed_at": "2026-08-03T05:24:35Z",
+    "repository": "groupsum/authnz-policy-governance-pack",
+    "url": "https://github.com/groupsum/authnz-policy-governance-pack/tree/master/docs/governance"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:92b5f880f92a",
+    "kind": "docs",
+    "name": "docs/governance",
+    "observed_at": "2026-08-03T05:24:35Z",
+    "repository": "groupsum/ga4-google-tagging-governance-pack",
+    "url": "https://github.com/groupsum/ga4-google-tagging-governance-pack/tree/master/docs/governance"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:99370ba862df",
+    "kind": "docs",
+    "name": "docs/governance",
+    "observed_at": "2026-08-03T05:24:35Z",
+    "repository": "groupsum/consent-privacy-signals-governance-pack",
+    "url": "https://github.com/groupsum/consent-privacy-signals-governance-pack/tree/master/docs/governance"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:a36cea65c49e",
+    "kind": "docs",
+    "name": "docs/governance",
+    "observed_at": "2026-08-03T05:24:35Z",
+    "repository": "groupsum/audience-data-transparency-governance-pack",
+    "url": "https://github.com/groupsum/audience-data-transparency-governance-pack/tree/master/docs/governance"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:b2db1c60dbe9",
+    "kind": "docs",
+    "name": "docs/governance",
+    "observed_at": "2026-08-03T05:24:35Z",
+    "repository": "groupsum/event-behavioral-telemetry-governance-pack",
+    "url": "https://github.com/groupsum/event-behavioral-telemetry-governance-pack/tree/master/docs/governance"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:d99ae4d9d7aa",
+    "kind": "docs",
+    "name": "docs/governance",
+    "observed_at": "2026-08-03T05:24:35Z",
+    "repository": "groupsum/marketing-attribution-conversion-governance-pack",
+    "url": "https://github.com/groupsum/marketing-attribution-conversion-governance-pack/tree/master/docs/governance"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:e2848600749d",
+    "kind": "docs",
+    "name": "docs/governance",
+    "observed_at": "2026-08-03T05:24:36Z",
+    "repository": "groupsum/web-performance-rum-governance-pack",
+    "url": "https://github.com/groupsum/web-performance-rum-governance-pack/tree/master/docs/governance"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:e2de61a53337",
+    "kind": "docs",
+    "name": "docs/governance",
+    "observed_at": "2026-08-03T05:24:35Z",
+    "repository": "groupsum/authentication-governance-pack",
+    "url": "https://github.com/groupsum/authentication-governance-pack/tree/master/docs/governance"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:e6aebb5c36ba",
+    "kind": "docs",
+    "name": "docs/governance",
+    "observed_at": "2026-08-03T05:24:35Z",
+    "repository": "groupsum/ad-supply-chain-transparency-governance-pack",
+    "url": "https://github.com/groupsum/ad-supply-chain-transparency-governance-pack/tree/master/docs/governance"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:ecb36d081500",
+    "kind": "docs",
+    "name": "docs/governance",
+    "observed_at": "2026-08-03T05:24:35Z",
+    "repository": "groupsum/customer-identity-profile-governance-pack",
+    "url": "https://github.com/groupsum/customer-identity-profile-governance-pack/tree/master/docs/governance"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:f310e345f02c",
+    "kind": "docs",
+    "name": "docs/governance",
+    "observed_at": "2026-08-03T05:24:35Z",
+    "repository": "groupsum/gs1-product-link-event-data-governance-pack",
+    "url": "https://github.com/groupsum/gs1-product-link-event-data-governance-pack/tree/master/docs/governance"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:f9e4ea1c77d5",
+    "kind": "docs",
+    "name": "docs/governance",
+    "observed_at": "2026-08-03T05:24:36Z",
+    "repository": "groupsum/url-query-attribution-foundations-governance-pack",
+    "url": "https://github.com/groupsum/url-query-attribution-foundations-governance-pack/tree/master/docs/governance"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:fe1f49abaa65",
+    "kind": "docs",
+    "name": "docs/governance",
+    "observed_at": "2026-08-03T05:24:35Z",
+    "repository": "groupsum/customer-commerce-semantics-governance-pack",
+    "url": "https://github.com/groupsum/customer-commerce-semantics-governance-pack/tree/master/docs/governance"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:6db74189c650",
+    "kind": "docs",
+    "name": "docs/guide",
+    "observed_at": "2026-08-03T05:24:36Z",
+    "repository": "swarmauri/docs-swarmauri-com",
+    "url": "https://github.com/swarmauri/docs-swarmauri-com/tree/master/docs/guide"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:83c7ce8891bf",
+    "kind": "docs",
+    "name": "docs/guide",
+    "observed_at": "2026-08-03T05:24:36Z",
+    "repository": "swarmauri/docs-peagen-com",
+    "url": "https://github.com/swarmauri/docs-peagen-com/tree/master/docs/guide"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:d883cdf025f0",
+    "kind": "docs",
+    "name": "docs/guide",
+    "observed_at": "2026-08-03T05:24:36Z",
+    "repository": "tigrbl/docs-tigrbl-com",
+    "url": "https://github.com/tigrbl/docs-tigrbl-com/tree/master/docs/guide"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:1043d01f3e82",
+    "kind": "docs",
+    "name": "docs/guides",
+    "observed_at": "2026-08-03T05:24:36Z",
+    "repository": "tigrbl/docs-tigrcorn-com",
+    "url": "https://github.com/tigrbl/docs-tigrcorn-com/tree/master/docs/guides"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:52b55d6ccfcf",
+    "kind": "docs",
+    "name": "docs/history",
+    "observed_at": "2026-08-03T05:24:35Z",
+    "repository": "groupsum/mdwrk",
+    "url": "https://github.com/groupsum/mdwrk/tree/master/docs/history"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:845727cb94d7",
+    "kind": "docs",
+    "name": "docs/home",
+    "observed_at": "2026-08-03T05:24:36Z",
+    "repository": "swarmauri/docs-swarmauri-com",
+    "url": "https://github.com/swarmauri/docs-swarmauri-com/tree/master/docs/home"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:d35988731371",
+    "kind": "docs",
+    "name": "docs/home",
+    "observed_at": "2026-08-03T05:24:36Z",
+    "repository": "swarmauri/docs-peagen-com",
+    "url": "https://github.com/swarmauri/docs-peagen-com/tree/master/docs/home"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:e9c0a60d8601",
+    "kind": "docs",
+    "name": "docs/home",
+    "observed_at": "2026-08-03T05:24:36Z",
+    "repository": "tigrbl/docs-tigrbl-com",
+    "url": "https://github.com/tigrbl/docs-tigrbl-com/tree/master/docs/home"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:cf366dbc87a9",
+    "kind": "docs",
+    "name": "docs/images",
+    "observed_at": "2026-08-03T05:24:35Z",
+    "repository": "groupsum/npmctl",
+    "url": "https://github.com/groupsum/npmctl/tree/master/docs/images"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:62b5fcfd39a7",
+    "kind": "docs",
+    "name": "docs/index.md",
+    "observed_at": "2026-08-03T05:24:36Z",
+    "repository": "tigrbl/docs-tigrbl-com",
+    "url": "https://github.com/tigrbl/docs-tigrbl-com/tree/master/docs/index.md"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:a336a3d23a93",
+    "kind": "docs",
+    "name": "docs/index.md",
+    "observed_at": "2026-08-03T05:24:36Z",
+    "repository": "tigrbl/docs-tigrcorn-com",
+    "url": "https://github.com/tigrbl/docs-tigrcorn-com/tree/master/docs/index.md"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:cad7b9f13932",
+    "kind": "docs",
+    "name": "docs/index.md",
+    "observed_at": "2026-08-03T05:24:35Z",
+    "repository": "groupsum/npmctl",
+    "url": "https://github.com/groupsum/npmctl/tree/master/docs/index.md"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:d35a7a7b8d2b",
+    "kind": "docs",
+    "name": "docs/index.md",
+    "observed_at": "2026-08-03T05:24:36Z",
+    "repository": "swarmauri/docs-swarmauri-com",
+    "url": "https://github.com/swarmauri/docs-swarmauri-com/tree/master/docs/index.md"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:fd5abf3449ff",
+    "kind": "docs",
+    "name": "docs/index.md",
+    "observed_at": "2026-08-03T05:24:36Z",
+    "repository": "swarmauri/docs-peagen-com",
+    "url": "https://github.com/swarmauri/docs-peagen-com/tree/master/docs/index.md"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:c5bf7727a139",
+    "kind": "docs",
+    "name": "docs/LIFECYCLE_AND_EMBEDDED_SERVER.md",
+    "observed_at": "2026-08-03T05:24:36Z",
+    "repository": "tigrbl/tigrcorn",
+    "url": "https://github.com/tigrbl/tigrcorn/tree/master/docs/LIFECYCLE_AND_EMBEDDED_SERVER.md"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:58b4cc6c8e4a",
+    "kind": "docs",
+    "name": "docs/lifespan_subevent_matrix.csv",
+    "observed_at": "2026-08-03T05:24:36Z",
+    "repository": "tigrbl/tigr-asgi-contract",
+    "url": "https://github.com/tigrbl/tigr-asgi-contract/tree/master/docs/lifespan_subevent_matrix.csv"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:707155dfc165",
+    "kind": "docs",
+    "name": "docs/lifespan_subevent_matrix.md",
+    "observed_at": "2026-08-03T05:24:36Z",
+    "repository": "tigrbl/tigr-asgi-contract",
+    "url": "https://github.com/tigrbl/tigr-asgi-contract/tree/master/docs/lifespan_subevent_matrix.md"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:8bcc87d47016",
+    "kind": "docs",
+    "name": "docs/LLM_PROVIDER_MODEL_PRICING_LINKS.md",
+    "observed_at": "2026-08-03T05:24:36Z",
+    "repository": "swarmauri/swarmauri-sdk",
+    "url": "https://github.com/swarmauri/swarmauri-sdk/tree/master/docs/LLM_PROVIDER_MODEL_PRICING_LINKS.md"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:65fc927d0e57",
+    "kind": "docs",
+    "name": "docs/migration-manifests.md",
+    "observed_at": "2026-08-03T05:24:35Z",
+    "repository": "groupsum/npmctl",
+    "url": "https://github.com/groupsum/npmctl/tree/master/docs/migration-manifests.md"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:8c682b23556c",
+    "kind": "docs",
+    "name": "docs/migration-recovery.md",
+    "observed_at": "2026-08-03T05:24:35Z",
+    "repository": "groupsum/npmctl",
+    "url": "https://github.com/groupsum/npmctl/tree/master/docs/migration-recovery.md"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:12b31e1cb486",
+    "kind": "docs",
+    "name": "docs/MUT.json",
+    "observed_at": "2026-08-03T05:24:36Z",
+    "repository": "tigrbl/tigrcorn",
+    "url": "https://github.com/tigrbl/tigrcorn/tree/master/docs/MUT.json"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:add3db6d851c",
+    "kind": "docs",
+    "name": "docs/namecheap.md",
+    "observed_at": "2026-08-03T05:24:35Z",
+    "repository": "groupsum/npmctl",
+    "url": "https://github.com/groupsum/npmctl/tree/master/docs/namecheap.md"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:2c217fc4acf2",
+    "kind": "docs",
+    "name": "docs/news",
+    "observed_at": "2026-08-03T05:24:36Z",
+    "repository": "tigrbl/docs-tigrbl-com",
+    "url": "https://github.com/tigrbl/docs-tigrbl-com/tree/master/docs/news"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:763b20214208",
+    "kind": "docs",
+    "name": "docs/news",
+    "observed_at": "2026-08-03T05:24:36Z",
+    "repository": "swarmauri/docs-swarmauri-com",
+    "url": "https://github.com/swarmauri/docs-swarmauri-com/tree/master/docs/news"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:a3178ebcbe6a",
+    "kind": "docs",
+    "name": "docs/news",
+    "observed_at": "2026-08-03T05:24:36Z",
+    "repository": "swarmauri/docs-peagen-com",
+    "url": "https://github.com/swarmauri/docs-peagen-com/tree/master/docs/news"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:7a1d35472a2d",
+    "kind": "docs",
+    "name": "docs/notes",
+    "observed_at": "2026-08-03T05:24:36Z",
+    "repository": "tigrbl/tigrcorn",
+    "url": "https://github.com/tigrbl/tigrcorn/tree/master/docs/notes"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:307fa1ed6497",
+    "kind": "docs",
+    "name": "docs/npm-api-compatibility.md",
+    "observed_at": "2026-08-03T05:24:35Z",
+    "repository": "groupsum/npmctl",
+    "url": "https://github.com/groupsum/npmctl/tree/master/docs/npm-api-compatibility.md"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:212c77ee2f3a",
+    "kind": "docs",
+    "name": "docs/operational-hardening.md",
+    "observed_at": "2026-08-03T05:24:35Z",
+    "repository": "groupsum/npmctl",
+    "url": "https://github.com/groupsum/npmctl/tree/master/docs/operational-hardening.md"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:fd8ef23ed739",
+    "kind": "docs",
+    "name": "docs/operations",
+    "observed_at": "2026-08-03T05:24:35Z",
+    "repository": "groupsum/mdwrk",
+    "url": "https://github.com/groupsum/mdwrk/tree/master/docs/operations"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:9992ba97e748",
+    "kind": "docs",
+    "name": "docs/ops",
+    "observed_at": "2026-08-03T05:24:36Z",
+    "repository": "tigrbl/tigrcorn",
+    "url": "https://github.com/tigrbl/tigrcorn/tree/master/docs/ops"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:bf203ca5bbc0",
+    "kind": "docs",
+    "name": "docs/owner-scoped-reconcile.md",
+    "observed_at": "2026-08-03T05:24:35Z",
+    "repository": "groupsum/npmctl",
+    "url": "https://github.com/groupsum/npmctl/tree/master/docs/owner-scoped-reconcile.md"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:f67f6f538be1",
+    "kind": "docs",
+    "name": "docs/people",
+    "observed_at": "2026-08-03T05:24:36Z",
+    "repository": "swarmauri/docs-swarmauri-com",
+    "url": "https://github.com/swarmauri/docs-swarmauri-com/tree/master/docs/people"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:f5dcfe2a06a0",
+    "kind": "docs",
+    "name": "docs/plan-artifacts.md",
+    "observed_at": "2026-08-03T05:24:35Z",
+    "repository": "groupsum/npmctl",
+    "url": "https://github.com/groupsum/npmctl/tree/master/docs/plan-artifacts.md"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:733bc3784ea3",
+    "kind": "docs",
+    "name": "docs/plans",
+    "observed_at": "2026-08-03T05:24:35Z",
+    "repository": "groupsum/npmctl",
+    "url": "https://github.com/groupsum/npmctl/tree/master/docs/plans"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:5f269647a350",
+    "kind": "docs",
+    "name": "docs/product",
+    "observed_at": "2026-08-03T05:24:35Z",
+    "repository": "groupsum/mdwrk",
+    "url": "https://github.com/groupsum/mdwrk/tree/master/docs/product"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:7af0a5273ccf",
+    "kind": "docs",
+    "name": "docs/product",
+    "observed_at": "2026-08-03T05:24:35Z",
+    "repository": "groupsum/portwyrm",
+    "url": "https://github.com/groupsum/portwyrm/tree/master/docs/product"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:240e54b30c87",
+    "kind": "docs",
+    "name": "docs/proposals",
+    "observed_at": "2026-08-03T05:24:36Z",
+    "repository": "tigrbl/tigrcorn",
+    "url": "https://github.com/tigrbl/tigrcorn/tree/master/docs/proposals"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:c485acf97df7",
+    "kind": "docs",
+    "name": "docs/proposals",
+    "observed_at": "2026-08-03T05:24:35Z",
+    "repository": "groupsum/digital-signature-governance-pack",
+    "url": "https://github.com/groupsum/digital-signature-governance-pack/tree/master/docs/proposals"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:9c83ec8b8fb0",
+    "kind": "docs",
+    "name": "docs/protocols",
+    "observed_at": "2026-08-03T05:24:36Z",
+    "repository": "tigrbl/tigrcorn",
+    "url": "https://github.com/tigrbl/tigrcorn/tree/master/docs/protocols"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:77c0208e122b",
+    "kind": "docs",
+    "name": "docs/provider-capabilities.md",
+    "observed_at": "2026-08-03T05:24:35Z",
+    "repository": "groupsum/npmctl",
+    "url": "https://github.com/groupsum/npmctl/tree/master/docs/provider-capabilities.md"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:17933cf613ba",
+    "kind": "docs",
+    "name": "docs/public-operator-surfaces.md",
+    "observed_at": "2026-08-03T05:24:36Z",
+    "repository": "tigrbl/attribution-campaign-context",
+    "url": "https://github.com/tigrbl/attribution-campaign-context/tree/master/docs/public-operator-surfaces.md"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:76bc0dadd335",
+    "kind": "docs",
+    "name": "docs/publishing.md",
+    "observed_at": "2026-08-03T05:24:36Z",
+    "repository": "tigrbl/tigr-asgi-contract",
+    "url": "https://github.com/tigrbl/tigr-asgi-contract/tree/master/docs/publishing.md"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:beadfe9bfeae",
+    "kind": "docs",
+    "name": "docs/README.md",
+    "observed_at": "2026-08-03T05:24:35Z",
+    "repository": "groupsum/mdwrk-pages",
+    "url": "https://github.com/groupsum/mdwrk-pages/tree/master/docs/README.md"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:c1036f48b650",
+    "kind": "docs",
+    "name": "docs/README.md",
+    "observed_at": "2026-08-03T05:24:36Z",
+    "repository": "tigrbl/tigrbl",
+    "url": "https://github.com/tigrbl/tigrbl/tree/master/docs/README.md"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:fc08a917f290",
+    "kind": "docs",
+    "name": "docs/README.md",
+    "observed_at": "2026-08-03T05:24:35Z",
+    "repository": "groupsum/mdwrk",
+    "url": "https://github.com/groupsum/mdwrk/tree/master/docs/README.md"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:ff420063422d",
+    "kind": "docs",
+    "name": "docs/README.md",
+    "observed_at": "2026-08-03T05:24:36Z",
+    "repository": "tigrbl/tigrcorn",
+    "url": "https://github.com/tigrbl/tigrcorn/tree/master/docs/README.md"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:9f4bf16ef5b0",
+    "kind": "docs",
+    "name": "docs/receive-event-outline.md",
+    "observed_at": "2026-08-03T05:24:36Z",
+    "repository": "tigrbl/tigr-asgi-contract",
+    "url": "https://github.com/tigrbl/tigr-asgi-contract/tree/master/docs/receive-event-outline.md"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:5ac8fcf80cfe",
+    "kind": "docs",
+    "name": "docs/reference",
+    "observed_at": "2026-08-03T05:24:36Z",
+    "repository": "tigrbl/docs-tigrcorn-com",
+    "url": "https://github.com/tigrbl/docs-tigrcorn-com/tree/master/docs/reference"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:5ff40482c41f",
+    "kind": "docs",
+    "name": "docs/reference",
+    "observed_at": "2026-08-03T05:24:35Z",
+    "repository": "groupsum/mdwrk",
+    "url": "https://github.com/groupsum/mdwrk/tree/master/docs/reference"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:d47f40f4ceb9",
+    "kind": "docs",
+    "name": "docs/reference",
+    "observed_at": "2026-08-03T05:24:36Z",
+    "repository": "tigrbl/tigrcorn",
+    "url": "https://github.com/tigrbl/tigrcorn/tree/master/docs/reference"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:b9cf7e59034d",
+    "kind": "example",
+    "name": "docs/reference/examples/mdwrk-example-editor-basic.md",
+    "observed_at": "2026-08-03T05:24:35Z",
+    "repository": "groupsum/mdwrk",
+    "url": "https://github.com/groupsum/mdwrk/tree/master/docs/reference/examples/mdwrk-example-editor-basic.md"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:70cd45908bba",
+    "kind": "example",
+    "name": "docs/reference/examples/mdwrk-example-renderer-basic.md",
+    "observed_at": "2026-08-03T05:24:35Z",
+    "repository": "groupsum/mdwrk",
+    "url": "https://github.com/groupsum/mdwrk/tree/master/docs/reference/examples/mdwrk-example-renderer-basic.md"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:75797c872067",
+    "kind": "docs",
+    "name": "docs/release-notes",
+    "observed_at": "2026-08-03T05:24:36Z",
+    "repository": "tigrbl/tigrcorn",
+    "url": "https://github.com/tigrbl/tigrcorn/tree/master/docs/release-notes"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:adf1ea37e791",
+    "kind": "docs",
+    "name": "docs/repository-manifest.md",
+    "observed_at": "2026-08-03T05:24:35Z",
+    "repository": "groupsum/npmctl",
+    "url": "https://github.com/groupsum/npmctl/tree/master/docs/repository-manifest.md"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:bd83814c093f",
+    "kind": "docs",
+    "name": "docs/research",
+    "observed_at": "2026-08-03T05:24:35Z",
+    "repository": "groupsum/portwyrm",
+    "url": "https://github.com/groupsum/portwyrm/tree/master/docs/research"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:eeac34731f80",
+    "kind": "docs",
+    "name": "docs/review",
+    "observed_at": "2026-08-03T05:24:36Z",
+    "repository": "tigrbl/tigrcorn",
+    "url": "https://github.com/tigrbl/tigrcorn/tree/master/docs/review"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:c262804e6024",
+    "kind": "docs",
+    "name": "docs/schema-migrations.md",
+    "observed_at": "2026-08-03T05:24:35Z",
+    "repository": "groupsum/npmctl",
+    "url": "https://github.com/groupsum/npmctl/tree/master/docs/schema-migrations.md"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:8c8b3f16ee6c",
+    "kind": "docs",
+    "name": "docs/scope-taxonomy-outline.md",
+    "observed_at": "2026-08-03T05:24:36Z",
+    "repository": "tigrbl/tigr-asgi-contract",
+    "url": "https://github.com/tigrbl/tigr-asgi-contract/tree/master/docs/scope-taxonomy-outline.md"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:1beca0c1d49f",
+    "kind": "docs",
+    "name": "docs/scope_family_subevent_matrix.csv",
+    "observed_at": "2026-08-03T05:24:36Z",
+    "repository": "tigrbl/tigr-asgi-contract",
+    "url": "https://github.com/tigrbl/tigr-asgi-contract/tree/master/docs/scope_family_subevent_matrix.csv"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:d220a5bb6163",
+    "kind": "docs",
+    "name": "docs/scope_family_subevent_matrix.md",
+    "observed_at": "2026-08-03T05:24:36Z",
+    "repository": "tigrbl/tigr-asgi-contract",
+    "url": "https://github.com/tigrbl/tigr-asgi-contract/tree/master/docs/scope_family_subevent_matrix.md"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:3e1f9fd88395",
+    "kind": "docs",
+    "name": "docs/scope_family_subevent_transport_event_matrix.csv",
+    "observed_at": "2026-08-03T05:24:36Z",
+    "repository": "tigrbl/tigr-asgi-contract",
+    "url": "https://github.com/tigrbl/tigr-asgi-contract/tree/master/docs/scope_family_subevent_transport_event_matrix.csv"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:597467d5f868",
+    "kind": "docs",
+    "name": "docs/scope_family_subevent_transport_event_matrix.md",
+    "observed_at": "2026-08-03T05:24:36Z",
+    "repository": "tigrbl/tigr-asgi-contract",
+    "url": "https://github.com/tigrbl/tigr-asgi-contract/tree/master/docs/scope_family_subevent_transport_event_matrix.md"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:b350c6f0c040",
+    "kind": "docs",
+    "name": "docs/scope_family_subevent_transport_event_permutation_matrix.csv",
+    "observed_at": "2026-08-03T05:24:36Z",
+    "repository": "tigrbl/tigr-asgi-contract",
+    "url": "https://github.com/tigrbl/tigr-asgi-contract/tree/master/docs/scope_family_subevent_transport_event_permutation_matrix.csv"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:76b92aefcdd1",
+    "kind": "docs",
+    "name": "docs/security.md",
+    "observed_at": "2026-08-03T05:24:35Z",
+    "repository": "groupsum/npmctl",
+    "url": "https://github.com/groupsum/npmctl/tree/master/docs/security.md"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:3f40b4b42758",
+    "kind": "docs",
+    "name": "docs/send-event-outline.md",
+    "observed_at": "2026-08-03T05:24:36Z",
+    "repository": "tigrbl/tigr-asgi-contract",
+    "url": "https://github.com/tigrbl/tigr-asgi-contract/tree/master/docs/send-event-outline.md"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:c62f2f7a06d7",
+    "kind": "docs",
+    "name": "docs/seo",
+    "observed_at": "2026-08-03T05:24:35Z",
+    "repository": "groupsum/npmctl",
+    "url": "https://github.com/groupsum/npmctl/tree/master/docs/seo"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:2a06bff88ea8",
+    "kind": "docs",
+    "name": "docs/seo-aeo-aieo.md",
+    "observed_at": "2026-08-03T05:24:35Z",
+    "repository": "groupsum/npmctl",
+    "url": "https://github.com/groupsum/npmctl/tree/master/docs/seo-aeo-aieo.md"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:ffaffb0d3236",
+    "kind": "docs",
+    "name": "docs/specs",
+    "observed_at": "2026-08-03T05:24:35Z",
+    "repository": "groupsum/npmctl",
+    "url": "https://github.com/groupsum/npmctl/tree/master/docs/specs"
+  },
+  {
+    "evidence_type": "repository.contract_file",
+    "id": "surface:d670cf4bb0e2",
+    "kind": "api",
+    "name": "docs/specs/npmctl-openapi-subset.md",
+    "observed_at": "2026-08-03T05:24:35Z",
+    "repository": "groupsum/npmctl",
+    "url": "https://github.com/groupsum/npmctl/blob/master/docs/specs/npmctl-openapi-subset.md"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:0bd06f495dea",
+    "kind": "docs",
+    "name": "docs/ssl-certificates.md",
+    "observed_at": "2026-08-03T05:24:35Z",
+    "repository": "groupsum/npmctl",
+    "url": "https://github.com/groupsum/npmctl/tree/master/docs/ssl-certificates.md"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:2472f04b88f1",
+    "kind": "docs",
+    "name": "docs/ssot",
+    "observed_at": "2026-08-03T05:24:35Z",
+    "repository": "groupsum/npmctl",
+    "url": "https://github.com/groupsum/npmctl/tree/master/docs/ssot"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:9e50787322e6",
+    "kind": "docs",
+    "name": "docs/ssot-governance-packs.md",
+    "observed_at": "2026-08-03T05:24:36Z",
+    "repository": "tigrbl/attribution-campaign-context",
+    "url": "https://github.com/tigrbl/attribution-campaign-context/tree/master/docs/ssot-governance-packs.md"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:13e642af440b",
+    "kind": "docs",
+    "name": "docs/ssot-registry-product-portfolio-website-brief.md",
+    "observed_at": "2026-08-03T05:24:36Z",
+    "repository": "groupsum/ssot-registry",
+    "url": "https://github.com/groupsum/ssot-registry/tree/master/docs/ssot-registry-product-portfolio-website-brief.md"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:21961a25c565",
+    "kind": "docs",
+    "name": "docs/standards",
+    "observed_at": "2026-08-03T05:24:35Z",
+    "repository": "groupsum/digital-signature-governance-pack",
+    "url": "https://github.com/groupsum/digital-signature-governance-pack/tree/master/docs/standards"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:a3d1545907ac",
+    "kind": "docs",
+    "name": "docs/standards",
+    "observed_at": "2026-08-03T05:24:35Z",
+    "repository": "groupsum/cache-freshness-governance-pack",
+    "url": "https://github.com/groupsum/cache-freshness-governance-pack/tree/master/docs/standards"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:f4708967400b",
+    "kind": "docs",
+    "name": "docs/structured-data-presence.csv",
+    "observed_at": "2026-08-03T05:24:35Z",
+    "repository": "groupsum/mdwrk-pages",
+    "url": "https://github.com/groupsum/mdwrk-pages/tree/master/docs/structured-data-presence.csv"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:5068417a12f3",
+    "kind": "docs",
+    "name": "docs/structured-data-semantic-component-matrix.md",
+    "observed_at": "2026-08-03T05:24:35Z",
+    "repository": "groupsum/mdwrk-pages",
+    "url": "https://github.com/groupsum/mdwrk-pages/tree/master/docs/structured-data-semantic-component-matrix.md"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:e84c94005190",
+    "kind": "docs",
+    "name": "docs/structured-data-type-support-matrix.md",
+    "observed_at": "2026-08-03T05:24:35Z",
+    "repository": "groupsum/mdwrk-pages",
+    "url": "https://github.com/groupsum/mdwrk-pages/tree/master/docs/structured-data-type-support-matrix.md"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:d809c09f48c3",
+    "kind": "docs",
+    "name": "docs/subevent_scope_matrix.csv",
+    "observed_at": "2026-08-03T05:24:36Z",
+    "repository": "tigrbl/tigr-asgi-contract",
+    "url": "https://github.com/tigrbl/tigr-asgi-contract/tree/master/docs/subevent_scope_matrix.csv"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:f645af6847fb",
+    "kind": "docs",
+    "name": "docs/subevent_scope_matrix.md",
+    "observed_at": "2026-08-03T05:24:36Z",
+    "repository": "tigrbl/tigr-asgi-contract",
+    "url": "https://github.com/tigrbl/tigr-asgi-contract/tree/master/docs/subevent_scope_matrix.md"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:e52024795d32",
+    "kind": "docs",
+    "name": "docs/swarmauri_product_portfolio_website_brief.md",
+    "observed_at": "2026-08-03T05:24:36Z",
+    "repository": "swarmauri/swarmauri-sdk",
+    "url": "https://github.com/swarmauri/swarmauri-sdk/tree/master/docs/swarmauri_product_portfolio_website_brief.md"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:c09d06c0477c",
+    "kind": "docs",
+    "name": "docs/testing",
+    "observed_at": "2026-08-03T05:24:35Z",
+    "repository": "groupsum/portwyrm",
+    "url": "https://github.com/groupsum/portwyrm/tree/master/docs/testing"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:5622283b3a8e",
+    "kind": "docs",
+    "name": "docs/tigrbl_auth_overview.md",
+    "observed_at": "2026-08-03T05:24:36Z",
+    "repository": "tigrbl/docs-tigrbl-com",
+    "url": "https://github.com/tigrbl/docs-tigrbl-com/tree/master/docs/tigrbl_auth_overview.md"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:157c6088e1df",
+    "kind": "docs",
+    "name": "docs/typography-overflow-text-fit-matrix.md",
+    "observed_at": "2026-08-03T05:24:35Z",
+    "repository": "groupsum/mdwrk-pages",
+    "url": "https://github.com/groupsum/mdwrk-pages/tree/master/docs/typography-overflow-text-fit-matrix.md"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:2c8572eb9b73",
+    "kind": "docs",
+    "name": "docs/unified_swarmauri_company_portfolio_brief.md",
+    "observed_at": "2026-08-03T05:24:36Z",
+    "repository": "swarmauri/swarmauri-com",
+    "url": "https://github.com/swarmauri/swarmauri-com/tree/master/docs/unified_swarmauri_company_portfolio_brief.md"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:7608e43ecaef",
+    "kind": "docs",
+    "name": "docs/usage",
+    "observed_at": "2026-08-03T05:24:35Z",
+    "repository": "groupsum/mdwrk",
+    "url": "https://github.com/groupsum/mdwrk/tree/master/docs/usage"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:2db9682d8e11",
+    "kind": "docs",
+    "name": "docs/ux",
+    "observed_at": "2026-08-03T05:24:35Z",
+    "repository": "groupsum/portwyrm",
+    "url": "https://github.com/groupsum/portwyrm/tree/master/docs/ux"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:d73541ad9c45",
+    "kind": "docs",
+    "name": "docs/versioning.md",
+    "observed_at": "2026-08-03T05:24:36Z",
+    "repository": "tigrbl/tigr-asgi-contract",
+    "url": "https://github.com/tigrbl/tigr-asgi-contract/tree/master/docs/versioning.md"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:38bc43b3b42b",
+    "kind": "example",
+    "name": "examples/_e2e_shared.py",
+    "observed_at": "2026-08-03T05:24:36Z",
+    "repository": "tigrbl/tigrbl_spiffe",
+    "url": "https://github.com/tigrbl/tigrbl_spiffe/tree/master/examples/_e2e_shared.py"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:d320e0779e4a",
+    "kind": "example",
+    "name": "examples/advanced-repo",
+    "observed_at": "2026-08-03T05:24:36Z",
+    "repository": "groupsum/ssot-registry",
+    "url": "https://github.com/groupsum/ssot-registry/tree/master/examples/advanced-repo"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:712c8cff0b52",
+    "kind": "example",
+    "name": "examples/desired-state",
+    "observed_at": "2026-08-03T05:24:35Z",
+    "repository": "groupsum/npmctl",
+    "url": "https://github.com/groupsum/npmctl/tree/master/examples/desired-state"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:9da851b28ede",
+    "kind": "example",
+    "name": "examples/e2e-three-releases.md",
+    "observed_at": "2026-08-03T05:24:36Z",
+    "repository": "groupsum/ssot-registry",
+    "url": "https://github.com/groupsum/ssot-registry/tree/master/examples/e2e-three-releases.md"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:3b586e8b6395",
+    "kind": "example",
+    "name": "examples/e2e_uds_multi_client.py",
+    "observed_at": "2026-08-03T05:24:36Z",
+    "repository": "tigrbl/tigrbl_spiffe",
+    "url": "https://github.com/tigrbl/tigrbl_spiffe/tree/master/examples/e2e_uds_multi_client.py"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:3063ebf79a6b",
+    "kind": "example",
+    "name": "examples/e2e_uds_one_client.py",
+    "observed_at": "2026-08-03T05:24:36Z",
+    "repository": "tigrbl/tigrbl_spiffe",
+    "url": "https://github.com/tigrbl/tigrbl_spiffe/tree/master/examples/e2e_uds_one_client.py"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:fbcb69be8a95",
+    "kind": "example",
+    "name": "examples/edit-in-renderer-demo",
+    "observed_at": "2026-08-03T05:24:35Z",
+    "repository": "groupsum/mdwrk",
+    "url": "https://github.com/groupsum/mdwrk/tree/master/examples/edit-in-renderer-demo"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:042ddedf841d",
+    "kind": "example",
+    "name": "examples/editor-basic",
+    "observed_at": "2026-08-03T05:24:35Z",
+    "repository": "groupsum/mdwrk",
+    "url": "https://github.com/groupsum/mdwrk/tree/master/examples/editor-basic"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:3915a80407a0",
+    "kind": "example",
+    "name": "examples/editor-demo",
+    "observed_at": "2026-08-03T05:24:35Z",
+    "repository": "groupsum/mdwrk",
+    "url": "https://github.com/groupsum/mdwrk/tree/master/examples/editor-demo"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:66edefcb7a38",
+    "kind": "example",
+    "name": "examples/exchange_jwt_bearer.py",
+    "observed_at": "2026-08-03T05:24:36Z",
+    "repository": "tigrbl/tigrbl_spiffe",
+    "url": "https://github.com/tigrbl/tigrbl_spiffe/tree/master/examples/exchange_jwt_bearer.py"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:08343c4fb38a",
+    "kind": "example",
+    "name": "examples/exchange_mtls.py",
+    "observed_at": "2026-08-03T05:24:36Z",
+    "repository": "tigrbl/tigrbl_spiffe",
+    "url": "https://github.com/tigrbl/tigrbl_spiffe/tree/master/examples/exchange_mtls.py"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:1af6d14854fe",
+    "kind": "example",
+    "name": "examples/formats-and-exports.md",
+    "observed_at": "2026-08-03T05:24:36Z",
+    "repository": "groupsum/ssot-registry",
+    "url": "https://github.com/groupsum/ssot-registry/tree/master/examples/formats-and-exports.md"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:67fe0af50cb1",
+    "kind": "example",
+    "name": "examples/github-actions",
+    "observed_at": "2026-08-03T05:24:35Z",
+    "repository": "groupsum/npmctl",
+    "url": "https://github.com/groupsum/npmctl/tree/master/examples/github-actions"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:535ed8040ca3",
+    "kind": "example",
+    "name": "examples/minimal-repo",
+    "observed_at": "2026-08-03T05:24:36Z",
+    "repository": "groupsum/ssot-registry",
+    "url": "https://github.com/groupsum/ssot-registry/tree/master/examples/minimal-repo"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:8adea15a587c",
+    "kind": "example",
+    "name": "examples/previewer-demo",
+    "observed_at": "2026-08-03T05:24:35Z",
+    "repository": "groupsum/mdwrk",
+    "url": "https://github.com/groupsum/mdwrk/tree/master/examples/previewer-demo"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:bf1899d0e86a",
+    "kind": "example",
+    "name": "examples/quickstart_agent.py",
+    "observed_at": "2026-08-03T05:24:36Z",
+    "repository": "tigrbl/tigrbl_spiffe",
+    "url": "https://github.com/tigrbl/tigrbl_spiffe/tree/master/examples/quickstart_agent.py"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:109adb10a11d",
+    "kind": "example",
+    "name": "examples/README.md",
+    "observed_at": "2026-08-03T05:24:36Z",
+    "repository": "groupsum/ssot-registry",
+    "url": "https://github.com/groupsum/ssot-registry/tree/master/examples/README.md"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:0f6677fc362e",
+    "kind": "example",
+    "name": "examples/registrar_merge.py",
+    "observed_at": "2026-08-03T05:24:36Z",
+    "repository": "tigrbl/tigrbl_spiffe",
+    "url": "https://github.com/tigrbl/tigrbl_spiffe/tree/master/examples/registrar_merge.py"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:dec3e09f693a",
+    "kind": "example",
+    "name": "examples/renderer-basic",
+    "observed_at": "2026-08-03T05:24:35Z",
+    "repository": "groupsum/mdwrk",
+    "url": "https://github.com/groupsum/mdwrk/tree/master/examples/renderer-basic"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:e992f3f68a7a",
+    "kind": "example",
+    "name": "examples/server_side_bundle_sync.py",
+    "observed_at": "2026-08-03T05:24:36Z",
+    "repository": "tigrbl/tigrbl_spiffe",
+    "url": "https://github.com/tigrbl/tigrbl_spiffe/tree/master/examples/server_side_bundle_sync.py"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:de5a15fcd7da",
+    "kind": "example",
+    "name": "examples/server_side_registrar_admin.py",
+    "observed_at": "2026-08-03T05:24:36Z",
+    "repository": "tigrbl/tigrbl_spiffe",
+    "url": "https://github.com/tigrbl/tigrbl_spiffe/tree/master/examples/server_side_registrar_admin.py"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:8287f4eb4371",
+    "kind": "example",
+    "name": "examples/tls_client.py",
+    "observed_at": "2026-08-03T05:24:36Z",
+    "repository": "tigrbl/tigrbl_spiffe",
+    "url": "https://github.com/tigrbl/tigrbl_spiffe/tree/master/examples/tls_client.py"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:40892bf8bd34",
+    "kind": "example",
+    "name": "examples/ui-tokens-demo",
+    "observed_at": "2026-08-03T05:24:35Z",
+    "repository": "groupsum/mdwrk",
+    "url": "https://github.com/groupsum/mdwrk/tree/master/examples/ui-tokens-demo"
+  },
+  {
+    "evidence_type": "repository.name",
+    "id": "surface:0f0062b54144",
+    "kind": "website",
+    "name": "groupsum-xyz",
+    "observed_at": "2026-08-03T05:24:35Z",
+    "repository": "groupsum/groupsum-xyz",
+    "url": "https://github.com/groupsum/groupsum-xyz"
+  },
+  {
+    "evidence_type": "repository.homepage",
+    "id": "surface:74ceea422416",
+    "kind": "website",
+    "name": "markdown_workspace",
+    "observed_at": "2026-08-03T05:24:35Z",
+    "repository": "groupsum/markdown_workspace",
+    "url": "https://mdwrk.com"
+  },
+  {
+    "evidence_type": "repository.homepage",
+    "id": "surface:38408ba47407",
+    "kind": "website",
+    "name": "mdwrkcom-content-pack",
+    "observed_at": "2026-08-03T05:24:35Z",
+    "repository": "groupsum/mdwrkcom-content-pack",
+    "url": "https://mdwrk.com"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:0573842bb9b3",
+    "kind": "demo",
+    "name": "mycomponent/demo/__init__.py",
+    "observed_at": "2026-08-03T05:24:36Z",
+    "repository": "swarmauri/swarmauri-piechart",
+    "url": "https://github.com/swarmauri/swarmauri-piechart/tree/master/mycomponent/demo/__init__.py"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:5ebc117351e9",
+    "kind": "demo",
+    "name": "mycomponent/demo/app.py",
+    "observed_at": "2026-08-03T05:24:36Z",
+    "repository": "swarmauri/swarmauri-piechart",
+    "url": "https://github.com/swarmauri/swarmauri-piechart/tree/master/mycomponent/demo/app.py"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:20a1e422215c",
+    "kind": "demo",
+    "name": "mycomponent/demo/requirements.txt",
+    "observed_at": "2026-08-03T05:24:36Z",
+    "repository": "swarmauri/swarmauri-piechart",
+    "url": "https://github.com/swarmauri/swarmauri-piechart/tree/master/mycomponent/demo/requirements.txt"
+  },
+  {
+    "evidence_type": "repository.name",
+    "id": "surface:9024f96d43a2",
+    "kind": "website",
+    "name": "npmctl-com",
+    "observed_at": "2026-08-03T05:24:35Z",
+    "repository": "groupsum/npmctl-com",
+    "url": "https://github.com/groupsum/npmctl-com"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:8d1194a81bef",
+    "kind": "example",
+    "name": "packages/20-page-systems/lander-page-templates/src/examples/education.ts",
+    "observed_at": "2026-08-03T05:24:35Z",
+    "repository": "groupsum/mdwrk-pages",
+    "url": "https://github.com/groupsum/mdwrk-pages/tree/master/packages/20-page-systems/lander-page-templates/src/examples/education.ts"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:c1a67f041704",
+    "kind": "example",
+    "name": "packages/20-page-systems/lander-page-templates/src/examples/generic.ts",
+    "observed_at": "2026-08-03T05:24:35Z",
+    "repository": "groupsum/mdwrk-pages",
+    "url": "https://github.com/groupsum/mdwrk-pages/tree/master/packages/20-page-systems/lander-page-templates/src/examples/generic.ts"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:3d00e664f442",
+    "kind": "example",
+    "name": "packages/20-page-systems/lander-page-templates/src/examples/product.ts",
+    "observed_at": "2026-08-03T05:24:35Z",
+    "repository": "groupsum/mdwrk-pages",
+    "url": "https://github.com/groupsum/mdwrk-pages/tree/master/packages/20-page-systems/lander-page-templates/src/examples/product.ts"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:6e5cc86749b4",
+    "kind": "example",
+    "name": "packages/20-page-systems/lander-page-templates/src/examples/support.ts",
+    "observed_at": "2026-08-03T05:24:35Z",
+    "repository": "groupsum/mdwrk-pages",
+    "url": "https://github.com/groupsum/mdwrk-pages/tree/master/packages/20-page-systems/lander-page-templates/src/examples/support.ts"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:f12652f0f5f5",
+    "kind": "docs",
+    "name": "packages/content/mdwrkcom-content-pack/content/pages/docs/extensions.md",
+    "observed_at": "2026-08-03T05:24:35Z",
+    "repository": "groupsum/mdwrkcom-content-pack",
+    "url": "https://github.com/groupsum/mdwrkcom-content-pack/tree/master/packages/content/mdwrkcom-content-pack/content/pages/docs/extensions.md"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:7dbe570a2873",
+    "kind": "docs",
+    "name": "packages/content/mdwrkcom-content-pack/content/pages/docs/quickstart.md",
+    "observed_at": "2026-08-03T05:24:35Z",
+    "repository": "groupsum/mdwrkcom-content-pack",
+    "url": "https://github.com/groupsum/mdwrkcom-content-pack/tree/master/packages/content/mdwrkcom-content-pack/content/pages/docs/quickstart.md"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:fd6c978841b6",
+    "kind": "docs",
+    "name": "packages/content/mdwrkcom-content-pack/content/pages/docs/theme-packs.md",
+    "observed_at": "2026-08-03T05:24:35Z",
+    "repository": "groupsum/mdwrkcom-content-pack",
+    "url": "https://github.com/groupsum/mdwrkcom-content-pack/tree/master/packages/content/mdwrkcom-content-pack/content/pages/docs/theme-packs.md"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:9032b4b5bcbe",
+    "kind": "docs",
+    "name": "packages/content/mdwrkcom-content-pack/content/pages/es/docs/quickstart.md",
+    "observed_at": "2026-08-03T05:24:35Z",
+    "repository": "groupsum/mdwrkcom-content-pack",
+    "url": "https://github.com/groupsum/mdwrkcom-content-pack/tree/master/packages/content/mdwrkcom-content-pack/content/pages/es/docs/quickstart.md"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:5e250d422d80",
+    "kind": "docs",
+    "name": "packages/content/mdwrkcom-content-pack/data/markdown/docs/authoring",
+    "observed_at": "2026-08-03T05:24:35Z",
+    "repository": "groupsum/mdwrkcom-content-pack",
+    "url": "https://github.com/groupsum/mdwrkcom-content-pack/tree/master/packages/content/mdwrkcom-content-pack/data/markdown/docs/authoring"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:c50702c1219d",
+    "kind": "docs",
+    "name": "packages/content/mdwrkcom-content-pack/data/markdown/docs/comparisons",
+    "observed_at": "2026-08-03T05:24:35Z",
+    "repository": "groupsum/mdwrkcom-content-pack",
+    "url": "https://github.com/groupsum/mdwrkcom-content-pack/tree/master/packages/content/mdwrkcom-content-pack/data/markdown/docs/comparisons"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:fbb94449776a",
+    "kind": "docs",
+    "name": "packages/content/mdwrkcom-content-pack/data/markdown/docs/extensions",
+    "observed_at": "2026-08-03T05:24:35Z",
+    "repository": "groupsum/mdwrkcom-content-pack",
+    "url": "https://github.com/groupsum/mdwrkcom-content-pack/tree/master/packages/content/mdwrkcom-content-pack/data/markdown/docs/extensions"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:0fa68ec37a7c",
+    "kind": "docs",
+    "name": "packages/content/mdwrkcom-content-pack/data/markdown/docs/getting-started",
+    "observed_at": "2026-08-03T05:24:35Z",
+    "repository": "groupsum/mdwrkcom-content-pack",
+    "url": "https://github.com/groupsum/mdwrkcom-content-pack/tree/master/packages/content/mdwrkcom-content-pack/data/markdown/docs/getting-started"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:3a33b10ee93c",
+    "kind": "docs",
+    "name": "packages/content/mdwrkcom-content-pack/data/markdown/docs/github-sync.md",
+    "observed_at": "2026-08-03T05:24:35Z",
+    "repository": "groupsum/mdwrkcom-content-pack",
+    "url": "https://github.com/groupsum/mdwrkcom-content-pack/tree/master/packages/content/mdwrkcom-content-pack/data/markdown/docs/github-sync.md"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:9a34546a1422",
+    "kind": "docs",
+    "name": "packages/content/mdwrkcom-content-pack/data/markdown/docs/product",
+    "observed_at": "2026-08-03T05:24:35Z",
+    "repository": "groupsum/mdwrkcom-content-pack",
+    "url": "https://github.com/groupsum/mdwrkcom-content-pack/tree/master/packages/content/mdwrkcom-content-pack/data/markdown/docs/product"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:f0f05bc04f3c",
+    "kind": "docs",
+    "name": "packages/content/mdwrkcom-content-pack/data/markdown/docs/usage",
+    "observed_at": "2026-08-03T05:24:35Z",
+    "repository": "groupsum/mdwrkcom-content-pack",
+    "url": "https://github.com/groupsum/mdwrkcom-content-pack/tree/master/packages/content/mdwrkcom-content-pack/data/markdown/docs/usage"
+  },
+  {
+    "evidence_type": "repository.name",
+    "id": "surface:02d44ecfb42e",
+    "kind": "website",
+    "name": "peagen-com",
+    "observed_at": "2026-08-03T05:24:36Z",
+    "repository": "swarmauri/peagen-com",
+    "url": "https://github.com/swarmauri/peagen-com"
+  },
+  {
+    "evidence_type": "repository.contract_file",
+    "id": "surface:c57a294d8729",
+    "kind": "api",
+    "name": "pkgs/crouton/tests/test_openapi_schema.py",
+    "observed_at": "2026-08-03T05:24:36Z",
+    "repository": "swarmauri/crouton",
+    "url": "https://github.com/swarmauri/crouton/blob/master/pkgs/crouton/tests/test_openapi_schema.py"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:b37bd43e5726",
+    "kind": "api",
+    "name": "pkgs/deprecated/swarmauri_experimental/swarmauri_experimental/apis/CeleryAgentCommands.py",
+    "observed_at": "2026-08-03T05:24:36Z",
+    "repository": "swarmauri/swarmauri-sdk",
+    "url": "https://github.com/swarmauri/swarmauri-sdk/tree/master/pkgs/deprecated/swarmauri_experimental/swarmauri_experimental/apis/CeleryAgentCommands.py"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:13eed5c6795b",
+    "kind": "api",
+    "name": "pkgs/deprecated/swarmauri_experimental/swarmauri_experimental/apis/README.md",
+    "observed_at": "2026-08-03T05:24:36Z",
+    "repository": "swarmauri/swarmauri-sdk",
+    "url": "https://github.com/swarmauri/swarmauri-sdk/tree/master/pkgs/deprecated/swarmauri_experimental/swarmauri_experimental/apis/README.md"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:fd7cd0119868",
+    "kind": "docs",
+    "name": "pkgs/deprecated/swarmauri_experimental/swarmauri_experimental/docs/replay.md",
+    "observed_at": "2026-08-03T05:24:36Z",
+    "repository": "swarmauri/swarmauri-sdk",
+    "url": "https://github.com/swarmauri/swarmauri-sdk/tree/master/pkgs/deprecated/swarmauri_experimental/swarmauri_experimental/docs/replay.md"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:ca40feeea622",
+    "kind": "docs",
+    "name": "pkgs/experimental/jaml/docs/MEP-0000 [A New Markup Language).md",
+    "observed_at": "2026-08-03T05:24:36Z",
+    "repository": "swarmauri/swarmauri-sdk",
+    "url": "https://github.com/swarmauri/swarmauri-sdk/tree/master/pkgs/experimental/jaml/docs/MEP-0000 [A New Markup Language).md"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:ba7394f42505",
+    "kind": "docs",
+    "name": "pkgs/experimental/jaml/docs/MEP-0001 [Keywords, Operators, Patterns].md",
+    "observed_at": "2026-08-03T05:24:36Z",
+    "repository": "swarmauri/swarmauri-sdk",
+    "url": "https://github.com/swarmauri/swarmauri-sdk/tree/master/pkgs/experimental/jaml/docs/MEP-0001 [Keywords, Operators, Patterns].md"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:cfa77c4354f7",
+    "kind": "docs",
+    "name": "pkgs/experimental/jaml/docs/MEP-0002 [Precedence].md",
+    "observed_at": "2026-08-03T05:24:36Z",
+    "repository": "swarmauri/swarmauri-sdk",
+    "url": "https://github.com/swarmauri/swarmauri-sdk/tree/master/pkgs/experimental/jaml/docs/MEP-0002 [Precedence].md"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:fd9eabbb4e1c",
+    "kind": "docs",
+    "name": "pkgs/experimental/jaml/docs/MEP-0003 [Supported Data Types].md",
+    "observed_at": "2026-08-03T05:24:36Z",
+    "repository": "swarmauri/swarmauri-sdk",
+    "url": "https://github.com/swarmauri/swarmauri-sdk/tree/master/pkgs/experimental/jaml/docs/MEP-0003 [Supported Data Types].md"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:c953c1e29ba6",
+    "kind": "docs",
+    "name": "pkgs/experimental/jaml/docs/MEP-0004 [Type Inference].md",
+    "observed_at": "2026-08-03T05:24:36Z",
+    "repository": "swarmauri/swarmauri-sdk",
+    "url": "https://github.com/swarmauri/swarmauri-sdk/tree/master/pkgs/experimental/jaml/docs/MEP-0004 [Type Inference].md"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:0753500cddbc",
+    "kind": "docs",
+    "name": "pkgs/experimental/jaml/docs/MEP-0005 [Namespaces].md",
+    "observed_at": "2026-08-03T05:24:36Z",
+    "repository": "swarmauri/swarmauri-sdk",
+    "url": "https://github.com/swarmauri/swarmauri-sdk/tree/master/pkgs/experimental/jaml/docs/MEP-0005 [Namespaces].md"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:2481d63cbd6c",
+    "kind": "docs",
+    "name": "pkgs/experimental/jaml/docs/MEP-0006 [Whitespace].md",
+    "observed_at": "2026-08-03T05:24:36Z",
+    "repository": "swarmauri/swarmauri-sdk",
+    "url": "https://github.com/swarmauri/swarmauri-sdk/tree/master/pkgs/experimental/jaml/docs/MEP-0006 [Whitespace].md"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:9d7b90de7618",
+    "kind": "docs",
+    "name": "pkgs/experimental/jaml/docs/MEP-0007 [Multilines].md",
+    "observed_at": "2026-08-03T05:24:36Z",
+    "repository": "swarmauri/swarmauri-sdk",
+    "url": "https://github.com/swarmauri/swarmauri-sdk/tree/master/pkgs/experimental/jaml/docs/MEP-0007 [Multilines].md"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:5fa329710715",
+    "kind": "docs",
+    "name": "pkgs/experimental/jaml/docs/MEP-0008 [Comments].md",
+    "observed_at": "2026-08-03T05:24:36Z",
+    "repository": "swarmauri/swarmauri-sdk",
+    "url": "https://github.com/swarmauri/swarmauri-sdk/tree/master/pkgs/experimental/jaml/docs/MEP-0008 [Comments].md"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:df949326f619",
+    "kind": "docs",
+    "name": "pkgs/experimental/jaml/docs/MEP-0009 [Type Annotations].md",
+    "observed_at": "2026-08-03T05:24:36Z",
+    "repository": "swarmauri/swarmauri-sdk",
+    "url": "https://github.com/swarmauri/swarmauri-sdk/tree/master/pkgs/experimental/jaml/docs/MEP-0009 [Type Annotations].md"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:bcdeb082e991",
+    "kind": "docs",
+    "name": "pkgs/experimental/jaml/docs/MEP-0010 [Hyphenated Key Names].md",
+    "observed_at": "2026-08-03T05:24:36Z",
+    "repository": "swarmauri/swarmauri-sdk",
+    "url": "https://github.com/swarmauri/swarmauri-sdk/tree/master/pkgs/experimental/jaml/docs/MEP-0010 [Hyphenated Key Names].md"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:c1847ff3a135",
+    "kind": "docs",
+    "name": "pkgs/experimental/jaml/docs/MEP-0011 [Scoped Variables, Comprehensions, and Expressions].md",
+    "observed_at": "2026-08-03T05:24:36Z",
+    "repository": "swarmauri/swarmauri-sdk",
+    "url": "https://github.com/swarmauri/swarmauri-sdk/tree/master/pkgs/experimental/jaml/docs/MEP-0011 [Scoped Variables, Comprehensions, and Expressions].md"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:e28900061742",
+    "kind": "docs",
+    "name": "pkgs/experimental/jaml/docs/MEP-0011b [Three Phases Eval].md",
+    "observed_at": "2026-08-03T05:24:36Z",
+    "repository": "swarmauri/swarmauri-sdk",
+    "url": "https://github.com/swarmauri/swarmauri-sdk/tree/master/pkgs/experimental/jaml/docs/MEP-0011b [Three Phases Eval].md"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:601a14aa38dc",
+    "kind": "docs",
+    "name": "pkgs/experimental/jaml/docs/MEP-0011c [Resolution Rules].md",
+    "observed_at": "2026-08-03T05:24:36Z",
+    "repository": "swarmauri/swarmauri-sdk",
+    "url": "https://github.com/swarmauri/swarmauri-sdk/tree/master/pkgs/experimental/jaml/docs/MEP-0011c [Resolution Rules].md"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:9f6b7e6b4d45",
+    "kind": "docs",
+    "name": "pkgs/experimental/jaml/docs/MEP-0012 [Scoped Variables].md",
+    "observed_at": "2026-08-03T05:24:36Z",
+    "repository": "swarmauri/swarmauri-sdk",
+    "url": "https://github.com/swarmauri/swarmauri-sdk/tree/master/pkgs/experimental/jaml/docs/MEP-0012 [Scoped Variables].md"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:a62b49670e1d",
+    "kind": "docs",
+    "name": "pkgs/experimental/jaml/docs/MEP-0015 [Merge Operator].md",
+    "observed_at": "2026-08-03T05:24:36Z",
+    "repository": "swarmauri/swarmauri-sdk",
+    "url": "https://github.com/swarmauri/swarmauri-sdk/tree/master/pkgs/experimental/jaml/docs/MEP-0015 [Merge Operator].md"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:a1becd5a4767",
+    "kind": "docs",
+    "name": "pkgs/experimental/jaml/docs/MEP-0020 F-String Interpolation.md",
+    "observed_at": "2026-08-03T05:24:36Z",
+    "repository": "swarmauri/swarmauri-sdk",
+    "url": "https://github.com/swarmauri/swarmauri-sdk/tree/master/pkgs/experimental/jaml/docs/MEP-0020 F-String Interpolation.md"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:09572b8c8e5a",
+    "kind": "docs",
+    "name": "pkgs/experimental/jaml/docs/MEP-0021 [List & Dict Comprehensions].md",
+    "observed_at": "2026-08-03T05:24:36Z",
+    "repository": "swarmauri/swarmauri-sdk",
+    "url": "https://github.com/swarmauri/swarmauri-sdk/tree/master/pkgs/experimental/jaml/docs/MEP-0021 [List & Dict Comprehensions].md"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:f110d104c2a6",
+    "kind": "docs",
+    "name": "pkgs/experimental/jaml/docs/MEP-0022 [Expressions].md",
+    "observed_at": "2026-08-03T05:24:36Z",
+    "repository": "swarmauri/swarmauri-sdk",
+    "url": "https://github.com/swarmauri/swarmauri-sdk/tree/master/pkgs/experimental/jaml/docs/MEP-0022 [Expressions].md"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:ebeb344d072b",
+    "kind": "docs",
+    "name": "pkgs/experimental/jaml/docs/MEP-0023 [Load-Time Expressions].md",
+    "observed_at": "2026-08-03T05:24:36Z",
+    "repository": "swarmauri/swarmauri-sdk",
+    "url": "https://github.com/swarmauri/swarmauri-sdk/tree/master/pkgs/experimental/jaml/docs/MEP-0023 [Load-Time Expressions].md"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:46cee9048959",
+    "kind": "docs",
+    "name": "pkgs/experimental/jaml/docs/MEP-0024 [Render-Time Expressions].md",
+    "observed_at": "2026-08-03T05:24:36Z",
+    "repository": "swarmauri/swarmauri-sdk",
+    "url": "https://github.com/swarmauri/swarmauri-sdk/tree/master/pkgs/experimental/jaml/docs/MEP-0024 [Render-Time Expressions].md"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:25ba5643d6a8",
+    "kind": "docs",
+    "name": "pkgs/experimental/jaml/docs/MEP-0025 [Expression Folding].md",
+    "observed_at": "2026-08-03T05:24:36Z",
+    "repository": "swarmauri/swarmauri-sdk",
+    "url": "https://github.com/swarmauri/swarmauri-sdk/tree/master/pkgs/experimental/jaml/docs/MEP-0025 [Expression Folding].md"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:67a220842002",
+    "kind": "docs",
+    "name": "pkgs/experimental/jaml/docs/MEP-0028 [Conditional Table Sections].md",
+    "observed_at": "2026-08-03T05:24:36Z",
+    "repository": "swarmauri/swarmauri-sdk",
+    "url": "https://github.com/swarmauri/swarmauri-sdk/tree/master/pkgs/experimental/jaml/docs/MEP-0028 [Conditional Table Sections].md"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:ce3993672679",
+    "kind": "docs",
+    "name": "pkgs/experimental/jaml/docs/MEP-0030[File Referencing and Embedding].md",
+    "observed_at": "2026-08-03T05:24:36Z",
+    "repository": "swarmauri/swarmauri-sdk",
+    "url": "https://github.com/swarmauri/swarmauri-sdk/tree/master/pkgs/experimental/jaml/docs/MEP-0030[File Referencing and Embedding].md"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:6d90a195d35f",
+    "kind": "docs",
+    "name": "pkgs/experimental/jaml/docs/MEP-0032 [Git Referencing and Embedding].md",
+    "observed_at": "2026-08-03T05:24:36Z",
+    "repository": "swarmauri/swarmauri-sdk",
+    "url": "https://github.com/swarmauri/swarmauri-sdk/tree/master/pkgs/experimental/jaml/docs/MEP-0032 [Git Referencing and Embedding].md"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:a6bf7e6a757a",
+    "kind": "docs",
+    "name": "pkgs/experimental/jaml/docs/MEP-0033 [URL Referencing and Embedding].md",
+    "observed_at": "2026-08-03T05:24:36Z",
+    "repository": "swarmauri/swarmauri-sdk",
+    "url": "https://github.com/swarmauri/swarmauri-sdk/tree/master/pkgs/experimental/jaml/docs/MEP-0033 [URL Referencing and Embedding].md"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:c30134d9a3a5",
+    "kind": "docs",
+    "name": "pkgs/experimental/jaml/docs/MEP-0034 [Modular File Inclusion].md",
+    "observed_at": "2026-08-03T05:24:36Z",
+    "repository": "swarmauri/swarmauri-sdk",
+    "url": "https://github.com/swarmauri/swarmauri-sdk/tree/master/pkgs/experimental/jaml/docs/MEP-0034 [Modular File Inclusion].md"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:dadb93a337dd",
+    "kind": "docs",
+    "name": "pkgs/experimental/jaml/docs/MEP-0042 [Typed Arrays].md",
+    "observed_at": "2026-08-03T05:24:36Z",
+    "repository": "swarmauri/swarmauri-sdk",
+    "url": "https://github.com/swarmauri/swarmauri-sdk/tree/master/pkgs/experimental/jaml/docs/MEP-0042 [Typed Arrays].md"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:1ee8ed738df7",
+    "kind": "docs",
+    "name": "pkgs/experimental/jaml/docs/MEP-0049 [Type Validation Checks].md",
+    "observed_at": "2026-08-03T05:24:36Z",
+    "repository": "swarmauri/swarmauri-sdk",
+    "url": "https://github.com/swarmauri/swarmauri-sdk/tree/master/pkgs/experimental/jaml/docs/MEP-0049 [Type Validation Checks].md"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:dc53f5b72f4a",
+    "kind": "docs",
+    "name": "pkgs/experimental/jaml/docs/MEP-0050 [Default Values and Fallbacks].md",
+    "observed_at": "2026-08-03T05:24:36Z",
+    "repository": "swarmauri/swarmauri-sdk",
+    "url": "https://github.com/swarmauri/swarmauri-sdk/tree/master/pkgs/experimental/jaml/docs/MEP-0050 [Default Values and Fallbacks].md"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:a3e2c333658c",
+    "kind": "docs",
+    "name": "pkgs/experimental/jaml/docs/MEP-0060 [Union Types].md",
+    "observed_at": "2026-08-03T05:24:36Z",
+    "repository": "swarmauri/swarmauri-sdk",
+    "url": "https://github.com/swarmauri/swarmauri-sdk/tree/master/pkgs/experimental/jaml/docs/MEP-0060 [Union Types].md"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:592d16df5167",
+    "kind": "docs",
+    "name": "pkgs/experimental/jaml/docs/MEP-0061 [Datetime Data Types].md",
+    "observed_at": "2026-08-03T05:24:36Z",
+    "repository": "swarmauri/swarmauri-sdk",
+    "url": "https://github.com/swarmauri/swarmauri-sdk/tree/master/pkgs/experimental/jaml/docs/MEP-0061 [Datetime Data Types].md"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:393600cbfdec",
+    "kind": "docs",
+    "name": "pkgs/experimental/jaml/docs/MEP-0070 [Filter Pipeline Operations].md",
+    "observed_at": "2026-08-03T05:24:36Z",
+    "repository": "swarmauri/swarmauri-sdk",
+    "url": "https://github.com/swarmauri/swarmauri-sdk/tree/master/pkgs/experimental/jaml/docs/MEP-0070 [Filter Pipeline Operations].md"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:7e837ff56ac5",
+    "kind": "docs",
+    "name": "pkgs/experimental/jaml/docs/MEP-0100 [Circular Dependencies].py",
+    "observed_at": "2026-08-03T05:24:36Z",
+    "repository": "swarmauri/swarmauri-sdk",
+    "url": "https://github.com/swarmauri/swarmauri-sdk/tree/master/pkgs/experimental/jaml/docs/MEP-0100 [Circular Dependencies].py"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:1d2a538038ba",
+    "kind": "docs",
+    "name": "pkgs/experimental/jaml/docs/MEP-0200 [JSON].md",
+    "observed_at": "2026-08-03T05:24:36Z",
+    "repository": "swarmauri/swarmauri-sdk",
+    "url": "https://github.com/swarmauri/swarmauri-sdk/tree/master/pkgs/experimental/jaml/docs/MEP-0200 [JSON].md"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:624cdce60344",
+    "kind": "docs",
+    "name": "pkgs/experimental/jaml/docs/MEP-0201 [TOML].md",
+    "observed_at": "2026-08-03T05:24:36Z",
+    "repository": "swarmauri/swarmauri-sdk",
+    "url": "https://github.com/swarmauri/swarmauri-sdk/tree/master/pkgs/experimental/jaml/docs/MEP-0201 [TOML].md"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:bf9afefc339d",
+    "kind": "docs",
+    "name": "pkgs/experimental/jaml/docs/MEP-0202 [YAML].md",
+    "observed_at": "2026-08-03T05:24:36Z",
+    "repository": "swarmauri/swarmauri-sdk",
+    "url": "https://github.com/swarmauri/swarmauri-sdk/tree/master/pkgs/experimental/jaml/docs/MEP-0202 [YAML].md"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:b0dcede0a76a",
+    "kind": "example",
+    "name": "pkgs/experimental/layout_engine/examples/basic_usage.py",
+    "observed_at": "2026-08-03T05:24:36Z",
+    "repository": "swarmauri/swarmauri-sdk",
+    "url": "https://github.com/swarmauri/swarmauri-sdk/tree/master/pkgs/experimental/layout_engine/examples/basic_usage.py"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:15e608aaebf8",
+    "kind": "example",
+    "name": "pkgs/experimental/layout_engine/examples/dashboard.py",
+    "observed_at": "2026-08-03T05:24:36Z",
+    "repository": "swarmauri/swarmauri-sdk",
+    "url": "https://github.com/swarmauri/swarmauri-sdk/tree/master/pkgs/experimental/layout_engine/examples/dashboard.py"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:cb2ddff72f47",
+    "kind": "example",
+    "name": "pkgs/experimental/layout_engine_atoms/examples/__init__.py",
+    "observed_at": "2026-08-03T05:24:36Z",
+    "repository": "swarmauri/swarmauri-sdk",
+    "url": "https://github.com/swarmauri/swarmauri-sdk/tree/master/pkgs/experimental/layout_engine_atoms/examples/__init__.py"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:6d94f8fb6e5e",
+    "kind": "example",
+    "name": "pkgs/experimental/layout_engine_atoms/examples/crud_dashboard",
+    "observed_at": "2026-08-03T05:24:36Z",
+    "repository": "swarmauri/swarmauri-sdk",
+    "url": "https://github.com/swarmauri/swarmauri-sdk/tree/master/pkgs/experimental/layout_engine_atoms/examples/crud_dashboard"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:56ea1a5f0903",
+    "kind": "example",
+    "name": "pkgs/experimental/layout_engine_atoms/examples/events_demo",
+    "observed_at": "2026-08-03T05:24:36Z",
+    "repository": "swarmauri/swarmauri-sdk",
+    "url": "https://github.com/swarmauri/swarmauri-sdk/tree/master/pkgs/experimental/layout_engine_atoms/examples/events_demo"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:c28443d5980f",
+    "kind": "example",
+    "name": "pkgs/experimental/layout_engine_atoms/examples/mpa_dashboard",
+    "observed_at": "2026-08-03T05:24:36Z",
+    "repository": "swarmauri/swarmauri-sdk",
+    "url": "https://github.com/swarmauri/swarmauri-sdk/tree/master/pkgs/experimental/layout_engine_atoms/examples/mpa_dashboard"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:fd483c1b14e5",
+    "kind": "example",
+    "name": "pkgs/experimental/layout_engine_atoms/examples/simple_demo",
+    "observed_at": "2026-08-03T05:24:36Z",
+    "repository": "swarmauri/swarmauri-sdk",
+    "url": "https://github.com/swarmauri/swarmauri-sdk/tree/master/pkgs/experimental/layout_engine_atoms/examples/simple_demo"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:37ae85b9fc75",
+    "kind": "example",
+    "name": "pkgs/experimental/layout_engine_atoms/src/layout_engine_atoms/examples/__init__.py",
+    "observed_at": "2026-08-03T05:24:36Z",
+    "repository": "swarmauri/swarmauri-sdk",
+    "url": "https://github.com/swarmauri/swarmauri-sdk/tree/master/pkgs/experimental/layout_engine_atoms/src/layout_engine_atoms/examples/__init__.py"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:e4f83f9b2e77",
+    "kind": "docs",
+    "name": "pkgs/experimental/monotone_ops/docs/research_catalog.md",
+    "observed_at": "2026-08-03T05:24:36Z",
+    "repository": "swarmauri/swarmauri-sdk",
+    "url": "https://github.com/swarmauri/swarmauri-sdk/tree/master/pkgs/experimental/monotone_ops/docs/research_catalog.md"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:49df5be40d57",
+    "kind": "example",
+    "name": "pkgs/experimental/monotone_ops/examples/evidence_rollup.py",
+    "observed_at": "2026-08-03T05:24:36Z",
+    "repository": "swarmauri/swarmauri-sdk",
+    "url": "https://github.com/swarmauri/swarmauri-sdk/tree/master/pkgs/experimental/monotone_ops/examples/evidence_rollup.py"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:6900b128576f",
+    "kind": "example",
+    "name": "pkgs/experimental/monotone_ops/examples/path_semiring.py",
+    "observed_at": "2026-08-03T05:24:36Z",
+    "repository": "swarmauri/swarmauri-sdk",
+    "url": "https://github.com/swarmauri/swarmauri-sdk/tree/master/pkgs/experimental/monotone_ops/examples/path_semiring.py"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:975b175c92fe",
+    "kind": "example",
+    "name": "pkgs/experimental/swarmauri_parser_asn1/examples/data",
+    "observed_at": "2026-08-03T05:24:36Z",
+    "repository": "swarmauri/swarmauri-sdk",
+    "url": "https://github.com/swarmauri/swarmauri-sdk/tree/master/pkgs/experimental/swarmauri_parser_asn1/examples/data"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:57c501176787",
+    "kind": "example",
+    "name": "pkgs/experimental/swarmauri_parser_asn1/examples/standalone_decode.py",
+    "observed_at": "2026-08-03T05:24:36Z",
+    "repository": "swarmauri/swarmauri-sdk",
+    "url": "https://github.com/swarmauri/swarmauri-sdk/tree/master/pkgs/experimental/swarmauri_parser_asn1/examples/standalone_decode.py"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:cb85191a3e61",
+    "kind": "docs",
+    "name": "pkgs/experimental/swarmauri_workflow_statedriven/docs/Conditions, JoinStrategies, MergeStrategies.md",
+    "observed_at": "2026-08-03T05:24:36Z",
+    "repository": "swarmauri/swarmauri-sdk",
+    "url": "https://github.com/swarmauri/swarmauri-sdk/tree/master/pkgs/experimental/swarmauri_workflow_statedriven/docs/Conditions, JoinStrategies, MergeStrategies.md"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:bd869d8a1774",
+    "kind": "docs",
+    "name": "pkgs/experimental/swarmauri_workflow_statedriven/docs/InputMode vs MergeStrategy.md",
+    "observed_at": "2026-08-03T05:24:36Z",
+    "repository": "swarmauri/swarmauri-sdk",
+    "url": "https://github.com/swarmauri/swarmauri-sdk/tree/master/pkgs/experimental/swarmauri_workflow_statedriven/docs/InputMode vs MergeStrategy.md"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:f1825845858a",
+    "kind": "docs",
+    "name": "pkgs/experimental/swarmauri_workflow_statedriven/docs/ptree_draft.md",
+    "observed_at": "2026-08-03T05:24:36Z",
+    "repository": "swarmauri/swarmauri-sdk",
+    "url": "https://github.com/swarmauri/swarmauri-sdk/tree/master/pkgs/experimental/swarmauri_workflow_statedriven/docs/ptree_draft.md"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:2268940df664",
+    "kind": "docs",
+    "name": "pkgs/experimental/swarmauri_workflow_statedriven/docs/type-shapes.md",
+    "observed_at": "2026-08-03T05:24:36Z",
+    "repository": "swarmauri/swarmauri-sdk",
+    "url": "https://github.com/swarmauri/swarmauri-sdk/tree/master/pkgs/experimental/swarmauri_workflow_statedriven/docs/type-shapes.md"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:17122e85db7e",
+    "kind": "docs",
+    "name": "pkgs/plugins/zdx/docs/.gitkeep",
+    "observed_at": "2026-08-03T05:24:36Z",
+    "repository": "swarmauri/swarmauri-sdk",
+    "url": "https://github.com/swarmauri/swarmauri-sdk/tree/master/pkgs/plugins/zdx/docs/.gitkeep"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:7b2365eeee37",
+    "kind": "api",
+    "name": "pkgs/ssot-core/src/ssot_registry/api/__init__.py",
+    "observed_at": "2026-08-03T05:24:36Z",
+    "repository": "groupsum/ssot-registry",
+    "url": "https://github.com/groupsum/ssot-registry/tree/master/pkgs/ssot-core/src/ssot_registry/api/__init__.py"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:704c5ea3ba36",
+    "kind": "api",
+    "name": "pkgs/ssot-core/src/ssot_registry/api/boundary.py",
+    "observed_at": "2026-08-03T05:24:36Z",
+    "repository": "groupsum/ssot-registry",
+    "url": "https://github.com/groupsum/ssot-registry/tree/master/pkgs/ssot-core/src/ssot_registry/api/boundary.py"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:cfc1b2a818ba",
+    "kind": "api",
+    "name": "pkgs/ssot-core/src/ssot_registry/api/claims.py",
+    "observed_at": "2026-08-03T05:24:36Z",
+    "repository": "groupsum/ssot-registry",
+    "url": "https://github.com/groupsum/ssot-registry/tree/master/pkgs/ssot-core/src/ssot_registry/api/claims.py"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:24b4d059366e",
+    "kind": "api",
+    "name": "pkgs/ssot-core/src/ssot_registry/api/config.py",
+    "observed_at": "2026-08-03T05:24:36Z",
+    "repository": "groupsum/ssot-registry",
+    "url": "https://github.com/groupsum/ssot-registry/tree/master/pkgs/ssot-core/src/ssot_registry/api/config.py"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:33d5aa310cbd",
+    "kind": "api",
+    "name": "pkgs/ssot-core/src/ssot_registry/api/documents.py",
+    "observed_at": "2026-08-03T05:24:36Z",
+    "repository": "groupsum/ssot-registry",
+    "url": "https://github.com/groupsum/ssot-registry/tree/master/pkgs/ssot-core/src/ssot_registry/api/documents.py"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:0a2faf1edcad",
+    "kind": "api",
+    "name": "pkgs/ssot-core/src/ssot_registry/api/entity_ops.py",
+    "observed_at": "2026-08-03T05:24:36Z",
+    "repository": "groupsum/ssot-registry",
+    "url": "https://github.com/groupsum/ssot-registry/tree/master/pkgs/ssot-core/src/ssot_registry/api/entity_ops.py"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:0b25bcab99f1",
+    "kind": "api",
+    "name": "pkgs/ssot-core/src/ssot_registry/api/evidence.py",
+    "observed_at": "2026-08-03T05:24:36Z",
+    "repository": "groupsum/ssot-registry",
+    "url": "https://github.com/groupsum/ssot-registry/tree/master/pkgs/ssot-core/src/ssot_registry/api/evidence.py"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:9a8a51673e58",
+    "kind": "api",
+    "name": "pkgs/ssot-core/src/ssot_registry/api/graph.py",
+    "observed_at": "2026-08-03T05:24:36Z",
+    "repository": "groupsum/ssot-registry",
+    "url": "https://github.com/groupsum/ssot-registry/tree/master/pkgs/ssot-core/src/ssot_registry/api/graph.py"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:64ded7cfb60b",
+    "kind": "api",
+    "name": "pkgs/ssot-core/src/ssot_registry/api/init.py",
+    "observed_at": "2026-08-03T05:24:36Z",
+    "repository": "groupsum/ssot-registry",
+    "url": "https://github.com/groupsum/ssot-registry/tree/master/pkgs/ssot-core/src/ssot_registry/api/init.py"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:d9cb242c8b5d",
+    "kind": "api",
+    "name": "pkgs/ssot-core/src/ssot_registry/api/lifecycle.py",
+    "observed_at": "2026-08-03T05:24:36Z",
+    "repository": "groupsum/ssot-registry",
+    "url": "https://github.com/groupsum/ssot-registry/tree/master/pkgs/ssot-core/src/ssot_registry/api/lifecycle.py"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:59e5cb04f2d4",
+    "kind": "api",
+    "name": "pkgs/ssot-core/src/ssot_registry/api/load.py",
+    "observed_at": "2026-08-03T05:24:36Z",
+    "repository": "groupsum/ssot-registry",
+    "url": "https://github.com/groupsum/ssot-registry/tree/master/pkgs/ssot-core/src/ssot_registry/api/load.py"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:6820f6f124f3",
+    "kind": "api",
+    "name": "pkgs/ssot-core/src/ssot_registry/api/local_assurance.py",
+    "observed_at": "2026-08-03T05:24:36Z",
+    "repository": "groupsum/ssot-registry",
+    "url": "https://github.com/groupsum/ssot-registry/tree/master/pkgs/ssot-core/src/ssot_registry/api/local_assurance.py"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:f39e36234b01",
+    "kind": "api",
+    "name": "pkgs/ssot-core/src/ssot_registry/api/origin.py",
+    "observed_at": "2026-08-03T05:24:36Z",
+    "repository": "groupsum/ssot-registry",
+    "url": "https://github.com/groupsum/ssot-registry/tree/master/pkgs/ssot-core/src/ssot_registry/api/origin.py"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:d5ab7e4268bb",
+    "kind": "api",
+    "name": "pkgs/ssot-core/src/ssot_registry/api/packs.py",
+    "observed_at": "2026-08-03T05:24:36Z",
+    "repository": "groupsum/ssot-registry",
+    "url": "https://github.com/groupsum/ssot-registry/tree/master/pkgs/ssot-core/src/ssot_registry/api/packs.py"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:e86c173a5a48",
+    "kind": "api",
+    "name": "pkgs/ssot-core/src/ssot_registry/api/plan.py",
+    "observed_at": "2026-08-03T05:24:36Z",
+    "repository": "groupsum/ssot-registry",
+    "url": "https://github.com/groupsum/ssot-registry/tree/master/pkgs/ssot-core/src/ssot_registry/api/plan.py"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:e91ae2bf007f",
+    "kind": "api",
+    "name": "pkgs/ssot-core/src/ssot_registry/api/profile_eval.py",
+    "observed_at": "2026-08-03T05:24:36Z",
+    "repository": "groupsum/ssot-registry",
+    "url": "https://github.com/groupsum/ssot-registry/tree/master/pkgs/ssot-core/src/ssot_registry/api/profile_eval.py"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:23f66c050531",
+    "kind": "api",
+    "name": "pkgs/ssot-core/src/ssot_registry/api/profile_resolution.py",
+    "observed_at": "2026-08-03T05:24:36Z",
+    "repository": "groupsum/ssot-registry",
+    "url": "https://github.com/groupsum/ssot-registry/tree/master/pkgs/ssot-core/src/ssot_registry/api/profile_resolution.py"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:0d7e2ab3917f",
+    "kind": "api",
+    "name": "pkgs/ssot-core/src/ssot_registry/api/proof_graph.py",
+    "observed_at": "2026-08-03T05:24:36Z",
+    "repository": "groupsum/ssot-registry",
+    "url": "https://github.com/groupsum/ssot-registry/tree/master/pkgs/ssot-core/src/ssot_registry/api/proof_graph.py"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:23213f9ce057",
+    "kind": "api",
+    "name": "pkgs/ssot-core/src/ssot_registry/api/registry.py",
+    "observed_at": "2026-08-03T05:24:36Z",
+    "repository": "groupsum/ssot-registry",
+    "url": "https://github.com/groupsum/ssot-registry/tree/master/pkgs/ssot-core/src/ssot_registry/api/registry.py"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:6a7226079b51",
+    "kind": "api",
+    "name": "pkgs/ssot-core/src/ssot_registry/api/release.py",
+    "observed_at": "2026-08-03T05:24:36Z",
+    "repository": "groupsum/ssot-registry",
+    "url": "https://github.com/groupsum/ssot-registry/tree/master/pkgs/ssot-core/src/ssot_registry/api/release.py"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:a4d3c3a66f4c",
+    "kind": "api",
+    "name": "pkgs/ssot-core/src/ssot_registry/api/save.py",
+    "observed_at": "2026-08-03T05:24:36Z",
+    "repository": "groupsum/ssot-registry",
+    "url": "https://github.com/groupsum/ssot-registry/tree/master/pkgs/ssot-core/src/ssot_registry/api/save.py"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:a6857fb32159",
+    "kind": "api",
+    "name": "pkgs/ssot-core/src/ssot_registry/api/status_sync.py",
+    "observed_at": "2026-08-03T05:24:36Z",
+    "repository": "groupsum/ssot-registry",
+    "url": "https://github.com/groupsum/ssot-registry/tree/master/pkgs/ssot-core/src/ssot_registry/api/status_sync.py"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:f1af0671d5a0",
+    "kind": "api",
+    "name": "pkgs/ssot-core/src/ssot_registry/api/test_execution.py",
+    "observed_at": "2026-08-03T05:24:36Z",
+    "repository": "groupsum/ssot-registry",
+    "url": "https://github.com/groupsum/ssot-registry/tree/master/pkgs/ssot-core/src/ssot_registry/api/test_execution.py"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:bcb029ab4a45",
+    "kind": "api",
+    "name": "pkgs/ssot-core/src/ssot_registry/api/upgrade.py",
+    "observed_at": "2026-08-03T05:24:36Z",
+    "repository": "groupsum/ssot-registry",
+    "url": "https://github.com/groupsum/ssot-registry/tree/master/pkgs/ssot-core/src/ssot_registry/api/upgrade.py"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:561033719698",
+    "kind": "api",
+    "name": "pkgs/ssot-core/src/ssot_registry/api/validate.py",
+    "observed_at": "2026-08-03T05:24:36Z",
+    "repository": "groupsum/ssot-registry",
+    "url": "https://github.com/groupsum/ssot-registry/tree/master/pkgs/ssot-core/src/ssot_registry/api/validate.py"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:6229eb383033",
+    "kind": "service",
+    "name": "pkgs/ssot-tui/src/ssot_tui/services/__init__.py",
+    "observed_at": "2026-08-03T05:24:36Z",
+    "repository": "groupsum/ssot-registry",
+    "url": "https://github.com/groupsum/ssot-registry/tree/master/pkgs/ssot-tui/src/ssot_tui/services/__init__.py"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:d0a2c90e75ba",
+    "kind": "service",
+    "name": "pkgs/ssot-tui/src/ssot_tui/services/registry_service.py",
+    "observed_at": "2026-08-03T05:24:36Z",
+    "repository": "groupsum/ssot-registry",
+    "url": "https://github.com/groupsum/ssot-registry/tree/master/pkgs/ssot-tui/src/ssot_tui/services/registry_service.py"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:ce6914786ad4",
+    "kind": "example",
+    "name": "pkgs/standards/swarmauri_agent_skill/examples/groq_skill_agent.py",
+    "observed_at": "2026-08-03T05:24:36Z",
+    "repository": "swarmauri/swarmauri-sdk",
+    "url": "https://github.com/swarmauri/swarmauri-sdk/tree/master/pkgs/standards/swarmauri_agent_skill/examples/groq_skill_agent.py"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:0c38cc213b2d",
+    "kind": "example",
+    "name": "pkgs/standards/swarmauri_keyprovider_file/swarmauri_keyprovider_file/examples/__init__.py",
+    "observed_at": "2026-08-03T05:24:36Z",
+    "repository": "swarmauri/swarmauri-sdk",
+    "url": "https://github.com/swarmauri/swarmauri-sdk/tree/master/pkgs/standards/swarmauri_keyprovider_file/swarmauri_keyprovider_file/examples/__init__.py"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:e212922c17dd",
+    "kind": "example",
+    "name": "pkgs/standards/swarmauri_keyprovider_file/swarmauri_keyprovider_file/examples/basic_usage.py",
+    "observed_at": "2026-08-03T05:24:36Z",
+    "repository": "swarmauri/swarmauri-sdk",
+    "url": "https://github.com/swarmauri/swarmauri-sdk/tree/master/pkgs/standards/swarmauri_keyprovider_file/swarmauri_keyprovider_file/examples/basic_usage.py"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:af9c3ec703e5",
+    "kind": "example",
+    "name": "pkgs/standards/swarmauri_keyprovider_file/swarmauri_keyprovider_file/examples/README.md",
+    "observed_at": "2026-08-03T05:24:36Z",
+    "repository": "swarmauri/swarmauri-sdk",
+    "url": "https://github.com/swarmauri/swarmauri-sdk/tree/master/pkgs/standards/swarmauri_keyprovider_file/swarmauri_keyprovider_file/examples/README.md"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:749a6872d1ab",
+    "kind": "example",
+    "name": "pkgs/standards/swarmauri_keyprovider_file/tests/examples/test_basic_usage.py",
+    "observed_at": "2026-08-03T05:24:36Z",
+    "repository": "swarmauri/swarmauri-sdk",
+    "url": "https://github.com/swarmauri/swarmauri-sdk/tree/master/pkgs/standards/swarmauri_keyprovider_file/tests/examples/test_basic_usage.py"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:374c6a8d6e6b",
+    "kind": "example",
+    "name": "pkgs/standards/swarmauri_keyprovider_local/swarmauri_keyprovider_local/examples/__init__.py",
+    "observed_at": "2026-08-03T05:24:36Z",
+    "repository": "swarmauri/swarmauri-sdk",
+    "url": "https://github.com/swarmauri/swarmauri-sdk/tree/master/pkgs/standards/swarmauri_keyprovider_local/swarmauri_keyprovider_local/examples/__init__.py"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:3ad60338c6a2",
+    "kind": "example",
+    "name": "pkgs/standards/swarmauri_keyprovider_local/swarmauri_keyprovider_local/examples/basic_usage.py",
+    "observed_at": "2026-08-03T05:24:36Z",
+    "repository": "swarmauri/swarmauri-sdk",
+    "url": "https://github.com/swarmauri/swarmauri-sdk/tree/master/pkgs/standards/swarmauri_keyprovider_local/swarmauri_keyprovider_local/examples/basic_usage.py"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:71d7072d1ea8",
+    "kind": "example",
+    "name": "pkgs/standards/swarmauri_keyprovider_local/swarmauri_keyprovider_local/examples/README.md",
+    "observed_at": "2026-08-03T05:24:36Z",
+    "repository": "swarmauri/swarmauri-sdk",
+    "url": "https://github.com/swarmauri/swarmauri-sdk/tree/master/pkgs/standards/swarmauri_keyprovider_local/swarmauri_keyprovider_local/examples/README.md"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:f961226add1f",
+    "kind": "example",
+    "name": "pkgs/standards/swarmauri_keyprovider_local/tests/examples/test_basic_usage.py",
+    "observed_at": "2026-08-03T05:24:36Z",
+    "repository": "swarmauri/swarmauri-sdk",
+    "url": "https://github.com/swarmauri/swarmauri-sdk/tree/master/pkgs/standards/swarmauri_keyprovider_local/tests/examples/test_basic_usage.py"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:ffddc25f1f7e",
+    "kind": "example",
+    "name": "pkgs/standards/swarmauri_keyprovider_local/tests/examples/test_readme_example.py",
+    "observed_at": "2026-08-03T05:24:36Z",
+    "repository": "swarmauri/swarmauri-sdk",
+    "url": "https://github.com/swarmauri/swarmauri-sdk/tree/master/pkgs/standards/swarmauri_keyprovider_local/tests/examples/test_readme_example.py"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:c9252c3209e7",
+    "kind": "example",
+    "name": "pkgs/standards/swarmauri_middleware_cors/tests/examples/test_readme_example.py",
+    "observed_at": "2026-08-03T05:24:36Z",
+    "repository": "swarmauri/swarmauri-sdk",
+    "url": "https://github.com/swarmauri/swarmauri-sdk/tree/master/pkgs/standards/swarmauri_middleware_cors/tests/examples/test_readme_example.py"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:76739915b14a",
+    "kind": "example",
+    "name": "pkgs/standards/swarmauri_signing_cms/swarmauri_signing_cms/examples/__init__.py",
+    "observed_at": "2026-08-03T05:24:36Z",
+    "repository": "swarmauri/swarmauri-sdk",
+    "url": "https://github.com/swarmauri/swarmauri-sdk/tree/master/pkgs/standards/swarmauri_signing_cms/swarmauri_signing_cms/examples/__init__.py"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:27eb1ef05a14",
+    "kind": "example",
+    "name": "pkgs/standards/swarmauri_signing_cms/swarmauri_signing_cms/examples/cms_and_smime_examples.py",
+    "observed_at": "2026-08-03T05:24:36Z",
+    "repository": "swarmauri/swarmauri-sdk",
+    "url": "https://github.com/swarmauri/swarmauri-sdk/tree/master/pkgs/standards/swarmauri_signing_cms/swarmauri_signing_cms/examples/cms_and_smime_examples.py"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:c7e5abaeda92",
+    "kind": "docs",
+    "name": "pkgs/swarmauri/docs/callflow.md",
+    "observed_at": "2026-08-03T05:24:36Z",
+    "repository": "swarmauri/swarmauri-sdk",
+    "url": "https://github.com/swarmauri/swarmauri-sdk/tree/master/pkgs/swarmauri/docs/callflow.md"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:f269cab311d7",
+    "kind": "docs",
+    "name": "pkgs/swarmauri/docs/citizenship.md",
+    "observed_at": "2026-08-03T05:24:36Z",
+    "repository": "swarmauri/swarmauri-sdk",
+    "url": "https://github.com/swarmauri/swarmauri-sdk/tree/master/pkgs/swarmauri/docs/citizenship.md"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:42ffa8a15fa5",
+    "kind": "docs",
+    "name": "pkgs/swarmauri/docs/outcomes.md",
+    "observed_at": "2026-08-03T05:24:36Z",
+    "repository": "swarmauri/swarmauri-sdk",
+    "url": "https://github.com/swarmauri/swarmauri-sdk/tree/master/pkgs/swarmauri/docs/outcomes.md"
+  },
+  {
+    "evidence_type": "repository.contract_file",
+    "id": "surface:303a9107330c",
+    "kind": "api",
+    "name": "pkgs/swarmauri_standard/swarmauri_standard/parsers/OpenAPISpecParser.py",
+    "observed_at": "2026-08-03T05:24:36Z",
+    "repository": "swarmauri/swarmauri-sdk",
+    "url": "https://github.com/swarmauri/swarmauri-sdk/blob/master/pkgs/swarmauri_standard/swarmauri_standard/parsers/OpenAPISpecParser.py"
+  },
+  {
+    "evidence_type": "repository.contract_file",
+    "id": "surface:a3b526ee03bf",
+    "kind": "api",
+    "name": "pkgs/swarmauri_standard/tests/unit/parsers/OpenAPISpecParser_unit_test.py",
+    "observed_at": "2026-08-03T05:24:36Z",
+    "repository": "swarmauri/swarmauri-sdk",
+    "url": "https://github.com/swarmauri/swarmauri-sdk/blob/master/pkgs/swarmauri_standard/tests/unit/parsers/OpenAPISpecParser_unit_test.py"
+  },
+  {
+    "evidence_type": "repository.homepage",
+    "id": "surface:e3bc59678f0b",
+    "kind": "website",
+    "name": "rag_assistant",
+    "observed_at": "2026-08-03T05:24:36Z",
+    "repository": "swarmauri/rag_assistant",
+    "url": "https://swarmauri.com"
+  },
+  {
+    "evidence_type": "repository.contract_file",
+    "id": "surface:cb6add7e78dc",
+    "kind": "api",
+    "name": "schemas/npm/2.10.4/openapi.json",
+    "observed_at": "2026-08-03T05:24:35Z",
+    "repository": "groupsum/npmctl",
+    "url": "https://github.com/groupsum/npmctl/blob/master/schemas/npm/2.10.4/openapi.json"
+  },
+  {
+    "evidence_type": "repository.homepage",
+    "id": "surface:1f3c429a1619",
+    "kind": "website",
+    "name": "soliloquy",
+    "observed_at": "2026-08-03T05:24:36Z",
+    "repository": "swarmauri/soliloquy",
+    "url": "https://swarmauri.com"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:99614c6dc294",
+    "kind": "api",
+    "name": "src/portwyrm/api/__init__.py",
+    "observed_at": "2026-08-03T05:24:35Z",
+    "repository": "groupsum/portwyrm",
+    "url": "https://github.com/groupsum/portwyrm/tree/master/src/portwyrm/api/__init__.py"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:c8496545ed5c",
+    "kind": "api",
+    "name": "src/portwyrm/api/app.py",
+    "observed_at": "2026-08-03T05:24:35Z",
+    "repository": "groupsum/portwyrm",
+    "url": "https://github.com/groupsum/portwyrm/tree/master/src/portwyrm/api/app.py"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:2d337ac504d9",
+    "kind": "api",
+    "name": "src/portwyrm/api/compat",
+    "observed_at": "2026-08-03T05:24:35Z",
+    "repository": "groupsum/portwyrm",
+    "url": "https://github.com/groupsum/portwyrm/tree/master/src/portwyrm/api/compat"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:6b06aaed3059",
+    "kind": "api",
+    "name": "src/portwyrm/api/mfa.py",
+    "observed_at": "2026-08-03T05:24:35Z",
+    "repository": "groupsum/portwyrm",
+    "url": "https://github.com/groupsum/portwyrm/tree/master/src/portwyrm/api/mfa.py"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:558554dc8ad5",
+    "kind": "api",
+    "name": "src/portwyrm/api/middleware.py",
+    "observed_at": "2026-08-03T05:24:35Z",
+    "repository": "groupsum/portwyrm",
+    "url": "https://github.com/groupsum/portwyrm/tree/master/src/portwyrm/api/middleware.py"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:684d2de7ec24",
+    "kind": "api",
+    "name": "src/portwyrm/api/native",
+    "observed_at": "2026-08-03T05:24:35Z",
+    "repository": "groupsum/portwyrm",
+    "url": "https://github.com/groupsum/portwyrm/tree/master/src/portwyrm/api/native"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:3ad412361d5f",
+    "kind": "api",
+    "name": "src/portwyrm/api/portability.py",
+    "observed_at": "2026-08-03T05:24:35Z",
+    "repository": "groupsum/portwyrm",
+    "url": "https://github.com/groupsum/portwyrm/tree/master/src/portwyrm/api/portability.py"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:4c59597a70d3",
+    "kind": "api",
+    "name": "src/portwyrm/api/security.py",
+    "observed_at": "2026-08-03T05:24:35Z",
+    "repository": "groupsum/portwyrm",
+    "url": "https://github.com/groupsum/portwyrm/tree/master/src/portwyrm/api/security.py"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:96b7b3f560c1",
+    "kind": "api",
+    "name": "src/tigrbl_billing/api/__init__.py",
+    "observed_at": "2026-08-03T05:24:36Z",
+    "repository": "tigrbl/tigrbl_billing",
+    "url": "https://github.com/tigrbl/tigrbl_billing/tree/master/src/tigrbl_billing/api/__init__.py"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:dae3008f4bf9",
+    "kind": "api",
+    "name": "src/tigrbl_billing/api/api_balance_top_off.py",
+    "observed_at": "2026-08-03T05:24:36Z",
+    "repository": "tigrbl/tigrbl_billing",
+    "url": "https://github.com/tigrbl/tigrbl_billing/tree/master/src/tigrbl_billing/api/api_balance_top_off.py"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:d24363122597",
+    "kind": "api",
+    "name": "src/tigrbl_billing/api/api_banded_pricing.py",
+    "observed_at": "2026-08-03T05:24:36Z",
+    "repository": "tigrbl/tigrbl_billing",
+    "url": "https://github.com/tigrbl/tigrbl_billing/tree/master/src/tigrbl_billing/api/api_banded_pricing.py"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:98a01d0ccf63",
+    "kind": "api",
+    "name": "src/tigrbl_billing/api/api_basic_subscriptions.py",
+    "observed_at": "2026-08-03T05:24:36Z",
+    "repository": "tigrbl/tigrbl_billing",
+    "url": "https://github.com/tigrbl/tigrbl_billing/tree/master/src/tigrbl_billing/api/api_basic_subscriptions.py"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:a32f71f1d1c9",
+    "kind": "api",
+    "name": "src/tigrbl_billing/api/api_checkout.py",
+    "observed_at": "2026-08-03T05:24:36Z",
+    "repository": "tigrbl/tigrbl_billing",
+    "url": "https://github.com/tigrbl/tigrbl_billing/tree/master/src/tigrbl_billing/api/api_checkout.py"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:8c89563118d2",
+    "kind": "api",
+    "name": "src/tigrbl_billing/api/api_complex_tiers.py",
+    "observed_at": "2026-08-03T05:24:36Z",
+    "repository": "tigrbl/tigrbl_billing",
+    "url": "https://github.com/tigrbl/tigrbl_billing/tree/master/src/tigrbl_billing/api/api_complex_tiers.py"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:d45bd5a15dfb",
+    "kind": "api",
+    "name": "src/tigrbl_billing/api/api_credit_usage.py",
+    "observed_at": "2026-08-03T05:24:36Z",
+    "repository": "tigrbl/tigrbl_billing",
+    "url": "https://github.com/tigrbl/tigrbl_billing/tree/master/src/tigrbl_billing/api/api_credit_usage.py"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:3bfd3d43559a",
+    "kind": "api",
+    "name": "src/tigrbl_billing/api/api_customer_to_customer.py",
+    "observed_at": "2026-08-03T05:24:36Z",
+    "repository": "tigrbl/tigrbl_billing",
+    "url": "https://github.com/tigrbl/tigrbl_billing/tree/master/src/tigrbl_billing/api/api_customer_to_customer.py"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:1bd34615471c",
+    "kind": "api",
+    "name": "src/tigrbl_billing/api/api_grants.py",
+    "observed_at": "2026-08-03T05:24:36Z",
+    "repository": "tigrbl/tigrbl_billing",
+    "url": "https://github.com/tigrbl/tigrbl_billing/tree/master/src/tigrbl_billing/api/api_grants.py"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:b1d2f28d9196",
+    "kind": "api",
+    "name": "src/tigrbl_billing/api/api_invoice_payment.py",
+    "observed_at": "2026-08-03T05:24:36Z",
+    "repository": "tigrbl/tigrbl_billing",
+    "url": "https://github.com/tigrbl/tigrbl_billing/tree/master/src/tigrbl_billing/api/api_invoice_payment.py"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:546e1c7b9c51",
+    "kind": "api",
+    "name": "src/tigrbl_billing/api/api_metered.py",
+    "observed_at": "2026-08-03T05:24:36Z",
+    "repository": "tigrbl/tigrbl_billing",
+    "url": "https://github.com/tigrbl/tigrbl_billing/tree/master/src/tigrbl_billing/api/api_metered.py"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:40518f1a3d66",
+    "kind": "api",
+    "name": "src/tigrbl_billing/api/api_payment_splitting.py",
+    "observed_at": "2026-08-03T05:24:36Z",
+    "repository": "tigrbl/tigrbl_billing",
+    "url": "https://github.com/tigrbl/tigrbl_billing/tree/master/src/tigrbl_billing/api/api_payment_splitting.py"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:b684e3376bf4",
+    "kind": "api",
+    "name": "src/tigrbl_billing/api/api_product_price.py",
+    "observed_at": "2026-08-03T05:24:36Z",
+    "repository": "tigrbl/tigrbl_billing",
+    "url": "https://github.com/tigrbl/tigrbl_billing/tree/master/src/tigrbl_billing/api/api_product_price.py"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:a87548e68593",
+    "kind": "api",
+    "name": "src/tigrbl_billing/api/api_seats.py",
+    "observed_at": "2026-08-03T05:24:36Z",
+    "repository": "tigrbl/tigrbl_billing",
+    "url": "https://github.com/tigrbl/tigrbl_billing/tree/master/src/tigrbl_billing/api/api_seats.py"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:41ae9d6f81fa",
+    "kind": "api",
+    "name": "src/tigrbl_billing/api/api_stripe_connected_accounts.py",
+    "observed_at": "2026-08-03T05:24:36Z",
+    "repository": "tigrbl/tigrbl_billing",
+    "url": "https://github.com/tigrbl/tigrbl_billing/tree/master/src/tigrbl_billing/api/api_stripe_connected_accounts.py"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:f28783d06ee7",
+    "kind": "api",
+    "name": "src/tigrbl_billing/api/api_stripe_customer_accounts.py",
+    "observed_at": "2026-08-03T05:24:36Z",
+    "repository": "tigrbl/tigrbl_billing",
+    "url": "https://github.com/tigrbl/tigrbl_billing/tree/master/src/tigrbl_billing/api/api_stripe_customer_accounts.py"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:68fcee0aa680",
+    "kind": "api",
+    "name": "src/tigrbl_billing/api/api_subscriptions_trials.py",
+    "observed_at": "2026-08-03T05:24:36Z",
+    "repository": "tigrbl/tigrbl_billing",
+    "url": "https://github.com/tigrbl/tigrbl_billing/tree/master/src/tigrbl_billing/api/api_subscriptions_trials.py"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:8fe942a8947f",
+    "kind": "api",
+    "name": "src/tigrbl_billing/api/api_tiered.py",
+    "observed_at": "2026-08-03T05:24:36Z",
+    "repository": "tigrbl/tigrbl_billing",
+    "url": "https://github.com/tigrbl/tigrbl_billing/tree/master/src/tigrbl_billing/api/api_tiered.py"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:e6f4ee2b88e2",
+    "kind": "api",
+    "name": "src/tigrbl_billing/api/api_usage_based.py",
+    "observed_at": "2026-08-03T05:24:36Z",
+    "repository": "tigrbl/tigrbl_billing",
+    "url": "https://github.com/tigrbl/tigrbl_billing/tree/master/src/tigrbl_billing/api/api_usage_based.py"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:733c8208a840",
+    "kind": "example",
+    "name": "src/tigrbl_billing/examples/product_billing_app.py",
+    "observed_at": "2026-08-03T05:24:36Z",
+    "repository": "tigrbl/tigrbl_billing",
+    "url": "https://github.com/tigrbl/tigrbl_billing/tree/master/src/tigrbl_billing/examples/product_billing_app.py"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:bd295ef51dd9",
+    "kind": "example",
+    "name": "src/tigrbl_billing/examples/subscription_billing_app.py",
+    "observed_at": "2026-08-03T05:24:36Z",
+    "repository": "tigrbl/tigrbl_billing",
+    "url": "https://github.com/tigrbl/tigrbl_billing/tree/master/src/tigrbl_billing/examples/subscription_billing_app.py"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:981b10f10d02",
+    "kind": "example",
+    "name": "src/tigrbl_billing/examples/subscription_tiers_app.py",
+    "observed_at": "2026-08-03T05:24:36Z",
+    "repository": "tigrbl/tigrbl_billing",
+    "url": "https://github.com/tigrbl/tigrbl_billing/tree/master/src/tigrbl_billing/examples/subscription_tiers_app.py"
+  },
+  {
+    "evidence_type": "repository.name",
+    "id": "surface:07c616515da2",
+    "kind": "website",
+    "name": "ssot-registry-com",
+    "observed_at": "2026-08-03T05:24:36Z",
+    "repository": "groupsum/ssot-registry-com",
+    "url": "https://github.com/groupsum/ssot-registry-com"
+  },
+  {
+    "evidence_type": "repository.homepage",
+    "id": "surface:29177519b24a",
+    "kind": "website",
+    "name": "swarmakit",
+    "observed_at": "2026-08-03T05:24:36Z",
+    "repository": "swarmauri/swarmakit",
+    "url": "https://swarmauri.com"
+  },
+  {
+    "evidence_type": "repository.name",
+    "id": "surface:a59f5d290ace",
+    "kind": "website",
+    "name": "swarmauri-com",
+    "observed_at": "2026-08-03T05:24:36Z",
+    "repository": "swarmauri/swarmauri-com",
+    "url": "https://github.com/swarmauri/swarmauri-com"
+  },
+  {
+    "evidence_type": "repository.name",
+    "id": "surface:b59bf4469af7",
+    "kind": "website",
+    "name": "swarmauri-mesop-components",
+    "observed_at": "2026-08-03T05:24:36Z",
+    "repository": "swarmauri/swarmauri-mesop-components",
+    "url": "https://github.com/swarmauri/swarmauri-mesop-components"
+  },
+  {
+    "evidence_type": "repository.homepage",
+    "id": "surface:32579cfddf5d",
+    "kind": "website",
+    "name": "swarmauri-notebooks",
+    "observed_at": "2026-08-03T05:24:36Z",
+    "repository": "swarmauri/swarmauri-notebooks",
+    "url": "https://swarmauri.com"
+  },
+  {
+    "evidence_type": "repository.homepage",
+    "id": "surface:e603f162f929",
+    "kind": "website",
+    "name": "swarmauri-playground",
+    "observed_at": "2026-08-03T05:24:36Z",
+    "repository": "swarmauri/swarmauri-playground",
+    "url": "https://swarmauri.com"
+  },
+  {
+    "evidence_type": "repository.homepage",
+    "id": "surface:5e836e27faa0",
+    "kind": "website",
+    "name": "swarmauri-sdk",
+    "observed_at": "2026-08-03T05:24:36Z",
+    "repository": "swarmauri/swarmauri-sdk",
+    "url": "https://swarmauri.com"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:75a621dd8368",
+    "kind": "api",
+    "name": "tests/api/test_api_balance_top_off.py",
+    "observed_at": "2026-08-03T05:24:36Z",
+    "repository": "tigrbl/tigrbl_billing",
+    "url": "https://github.com/tigrbl/tigrbl_billing/tree/master/tests/api/test_api_balance_top_off.py"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:5ac80bc4ad1f",
+    "kind": "api",
+    "name": "tests/api/test_api_banded_pricing.py",
+    "observed_at": "2026-08-03T05:24:36Z",
+    "repository": "tigrbl/tigrbl_billing",
+    "url": "https://github.com/tigrbl/tigrbl_billing/tree/master/tests/api/test_api_banded_pricing.py"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:a6017403cb5c",
+    "kind": "api",
+    "name": "tests/api/test_api_basic_subscriptions.py",
+    "observed_at": "2026-08-03T05:24:36Z",
+    "repository": "tigrbl/tigrbl_billing",
+    "url": "https://github.com/tigrbl/tigrbl_billing/tree/master/tests/api/test_api_basic_subscriptions.py"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:db76f3ea453b",
+    "kind": "api",
+    "name": "tests/api/test_api_checkout.py",
+    "observed_at": "2026-08-03T05:24:36Z",
+    "repository": "tigrbl/tigrbl_billing",
+    "url": "https://github.com/tigrbl/tigrbl_billing/tree/master/tests/api/test_api_checkout.py"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:74362dd8a0d2",
+    "kind": "api",
+    "name": "tests/api/test_api_complex_tiers.py",
+    "observed_at": "2026-08-03T05:24:36Z",
+    "repository": "tigrbl/tigrbl_billing",
+    "url": "https://github.com/tigrbl/tigrbl_billing/tree/master/tests/api/test_api_complex_tiers.py"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:0e5c39aea4fb",
+    "kind": "api",
+    "name": "tests/api/test_api_credit_usage.py",
+    "observed_at": "2026-08-03T05:24:36Z",
+    "repository": "tigrbl/tigrbl_billing",
+    "url": "https://github.com/tigrbl/tigrbl_billing/tree/master/tests/api/test_api_credit_usage.py"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:4ed124a46c20",
+    "kind": "api",
+    "name": "tests/api/test_api_customer_to_customer.py",
+    "observed_at": "2026-08-03T05:24:36Z",
+    "repository": "tigrbl/tigrbl_billing",
+    "url": "https://github.com/tigrbl/tigrbl_billing/tree/master/tests/api/test_api_customer_to_customer.py"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:70fad2ac127f",
+    "kind": "api",
+    "name": "tests/api/test_api_grants.py",
+    "observed_at": "2026-08-03T05:24:36Z",
+    "repository": "tigrbl/tigrbl_billing",
+    "url": "https://github.com/tigrbl/tigrbl_billing/tree/master/tests/api/test_api_grants.py"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:f1aaafbb2733",
+    "kind": "api",
+    "name": "tests/api/test_api_invoice_payment.py",
+    "observed_at": "2026-08-03T05:24:36Z",
+    "repository": "tigrbl/tigrbl_billing",
+    "url": "https://github.com/tigrbl/tigrbl_billing/tree/master/tests/api/test_api_invoice_payment.py"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:c92f59c0179e",
+    "kind": "api",
+    "name": "tests/api/test_api_metered.py",
+    "observed_at": "2026-08-03T05:24:36Z",
+    "repository": "tigrbl/tigrbl_billing",
+    "url": "https://github.com/tigrbl/tigrbl_billing/tree/master/tests/api/test_api_metered.py"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:ee13ab5a1523",
+    "kind": "api",
+    "name": "tests/api/test_api_payment_splitting.py",
+    "observed_at": "2026-08-03T05:24:36Z",
+    "repository": "tigrbl/tigrbl_billing",
+    "url": "https://github.com/tigrbl/tigrbl_billing/tree/master/tests/api/test_api_payment_splitting.py"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:d818463c7cbb",
+    "kind": "api",
+    "name": "tests/api/test_api_product_price.py",
+    "observed_at": "2026-08-03T05:24:36Z",
+    "repository": "tigrbl/tigrbl_billing",
+    "url": "https://github.com/tigrbl/tigrbl_billing/tree/master/tests/api/test_api_product_price.py"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:e0ac517828e0",
+    "kind": "api",
+    "name": "tests/api/test_api_seats.py",
+    "observed_at": "2026-08-03T05:24:36Z",
+    "repository": "tigrbl/tigrbl_billing",
+    "url": "https://github.com/tigrbl/tigrbl_billing/tree/master/tests/api/test_api_seats.py"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:62fc71993f02",
+    "kind": "api",
+    "name": "tests/api/test_api_stripe_connected_accounts.py",
+    "observed_at": "2026-08-03T05:24:36Z",
+    "repository": "tigrbl/tigrbl_billing",
+    "url": "https://github.com/tigrbl/tigrbl_billing/tree/master/tests/api/test_api_stripe_connected_accounts.py"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:8bcf487a514a",
+    "kind": "api",
+    "name": "tests/api/test_api_stripe_customer_accounts.py",
+    "observed_at": "2026-08-03T05:24:36Z",
+    "repository": "tigrbl/tigrbl_billing",
+    "url": "https://github.com/tigrbl/tigrbl_billing/tree/master/tests/api/test_api_stripe_customer_accounts.py"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:f6544cf24c79",
+    "kind": "api",
+    "name": "tests/api/test_api_subscriptions_trials.py",
+    "observed_at": "2026-08-03T05:24:36Z",
+    "repository": "tigrbl/tigrbl_billing",
+    "url": "https://github.com/tigrbl/tigrbl_billing/tree/master/tests/api/test_api_subscriptions_trials.py"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:a16512930c5b",
+    "kind": "api",
+    "name": "tests/api/test_api_tiered.py",
+    "observed_at": "2026-08-03T05:24:36Z",
+    "repository": "tigrbl/tigrbl_billing",
+    "url": "https://github.com/tigrbl/tigrbl_billing/tree/master/tests/api/test_api_tiered.py"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:69e066a93cfa",
+    "kind": "api",
+    "name": "tests/api/test_api_usage_based.py",
+    "observed_at": "2026-08-03T05:24:36Z",
+    "repository": "tigrbl/tigrbl_billing",
+    "url": "https://github.com/tigrbl/tigrbl_billing/tree/master/tests/api/test_api_usage_based.py"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:5aca62269b9f",
+    "kind": "example",
+    "name": "tests/examples/test_product_billing_example.py",
+    "observed_at": "2026-08-03T05:24:36Z",
+    "repository": "tigrbl/tigrbl_billing",
+    "url": "https://github.com/tigrbl/tigrbl_billing/tree/master/tests/examples/test_product_billing_example.py"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:1bfa1201e374",
+    "kind": "example",
+    "name": "tests/examples/test_subscription_billing_example.py",
+    "observed_at": "2026-08-03T05:24:36Z",
+    "repository": "tigrbl/tigrbl_billing",
+    "url": "https://github.com/tigrbl/tigrbl_billing/tree/master/tests/examples/test_subscription_billing_example.py"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:9b131c4dcf98",
+    "kind": "example",
+    "name": "tests/examples/test_subscription_tiers_example.py",
+    "observed_at": "2026-08-03T05:24:36Z",
+    "repository": "tigrbl/tigrbl_billing",
+    "url": "https://github.com/tigrbl/tigrbl_billing/tree/master/tests/examples/test_subscription_tiers_example.py"
+  },
+  {
+    "evidence_type": "repository.contract_file",
+    "id": "surface:7b223bdc4075",
+    "kind": "api",
+    "name": "tests/unit/test_openapi_schema_examples_presence.py",
+    "observed_at": "2026-08-03T05:24:36Z",
+    "repository": "tigrbl/tigrbl_kms",
+    "url": "https://github.com/tigrbl/tigrbl_kms/blob/master/tests/unit/test_openapi_schema_examples_presence.py"
+  },
+  {
+    "evidence_type": "repository.contract_file",
+    "id": "surface:0655420e8a97",
+    "kind": "api",
+    "name": "tests/unit/test_openapi_unique_operation_ids.py",
+    "observed_at": "2026-08-03T05:24:36Z",
+    "repository": "tigrbl/tigrbl_kms",
+    "url": "https://github.com/tigrbl/tigrbl_kms/blob/master/tests/unit/test_openapi_unique_operation_ids.py"
+  },
+  {
+    "evidence_type": "repository.homepage",
+    "id": "surface:66c0d156f16e",
+    "kind": "website",
+    "name": "tigrbl",
+    "observed_at": "2026-08-03T05:24:36Z",
+    "repository": "tigrbl/tigrbl",
+    "url": "https://tigrbl.com"
+  },
+  {
+    "evidence_type": "repository.name",
+    "id": "surface:bb5abb1a2d7d",
+    "kind": "website",
+    "name": "tigrbl-com",
+    "observed_at": "2026-08-03T05:24:36Z",
+    "repository": "tigrbl/tigrbl-com",
+    "url": "https://github.com/tigrbl/tigrbl-com"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:27e3e0619818",
+    "kind": "service",
+    "name": "tigrbl_acme_ca/services/audit",
+    "observed_at": "2026-08-03T05:24:36Z",
+    "repository": "tigrbl/tigrbl_acme_ca",
+    "url": "https://github.com/tigrbl/tigrbl_acme_ca/tree/master/tigrbl_acme_ca/services/audit"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:6a5b0224774e",
+    "kind": "service",
+    "name": "tigrbl_acme_ca/services/ca",
+    "observed_at": "2026-08-03T05:24:36Z",
+    "repository": "tigrbl/tigrbl_acme_ca",
+    "url": "https://github.com/tigrbl/tigrbl_acme_ca/tree/master/tigrbl_acme_ca/services/ca"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:b4036f89447f",
+    "kind": "service",
+    "name": "tigrbl_acme_ca/services/compliance",
+    "observed_at": "2026-08-03T05:24:36Z",
+    "repository": "tigrbl/tigrbl_acme_ca",
+    "url": "https://github.com/tigrbl/tigrbl_acme_ca/tree/master/tigrbl_acme_ca/services/compliance"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:5dc4b62e16fb",
+    "kind": "service",
+    "name": "tigrbl_acme_ca/services/integration",
+    "observed_at": "2026-08-03T05:24:36Z",
+    "repository": "tigrbl/tigrbl_acme_ca",
+    "url": "https://github.com/tigrbl/tigrbl_acme_ca/tree/master/tigrbl_acme_ca/services/integration"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:304cbe84415a",
+    "kind": "service",
+    "name": "tigrbl_acme_ca/services/ra",
+    "observed_at": "2026-08-03T05:24:36Z",
+    "repository": "tigrbl/tigrbl_acme_ca",
+    "url": "https://github.com/tigrbl/tigrbl_acme_ca/tree/master/tigrbl_acme_ca/services/ra"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:b81aa247084a",
+    "kind": "service",
+    "name": "tigrbl_acme_ca/services/revocation",
+    "observed_at": "2026-08-03T05:24:36Z",
+    "repository": "tigrbl/tigrbl_acme_ca",
+    "url": "https://github.com/tigrbl/tigrbl_acme_ca/tree/master/tigrbl_acme_ca/services/revocation"
+  },
+  {
+    "evidence_type": "repository.tree",
+    "id": "surface:55c4282ef47b",
+    "kind": "service",
+    "name": "tigrbl_acme_ca/services/va",
+    "observed_at": "2026-08-03T05:24:36Z",
+    "repository": "tigrbl/tigrbl_acme_ca",
+    "url": "https://github.com/tigrbl/tigrbl_acme_ca/tree/master/tigrbl_acme_ca/services/va"
+  },
+  {
+    "evidence_type": "repository.name",
+    "id": "surface:38405c923f07",
+    "kind": "service",
+    "name": "tigrbl_api_cron",
+    "observed_at": "2026-08-03T05:24:36Z",
+    "repository": "tigrbl/tigrbl_api_cron",
+    "url": "https://github.com/tigrbl/tigrbl_api_cron"
+  },
+  {
+    "evidence_type": "repository.name",
+    "id": "surface:897168642162",
+    "kind": "service",
+    "name": "tigrbl_api_hpks",
+    "observed_at": "2026-08-03T05:24:36Z",
+    "repository": "tigrbl/tigrbl_api_hpks",
+    "url": "https://github.com/tigrbl/tigrbl_api_hpks"
+  },
+  {
+    "evidence_type": "repository.homepage",
+    "id": "surface:2fceb06e6029",
+    "kind": "website",
+    "name": "tigrcorn",
+    "observed_at": "2026-08-03T05:24:36Z",
+    "repository": "tigrbl/tigrcorn",
+    "url": "https://tigrcorn.com"
+  },
+  {
+    "evidence_type": "repository.name",
+    "id": "surface:9a930399d6b8",
+    "kind": "website",
+    "name": "tigrcorn-com",
+    "observed_at": "2026-08-03T05:24:36Z",
+    "repository": "tigrbl/tigrcorn-com",
+    "url": "https://github.com/tigrbl/tigrcorn-com"
+  },
+  {
+    "evidence_type": "repository.name",
+    "id": "surface:dd67daac6ee7",
+    "kind": "ui",
+    "name": "web-app-analytics-governance-pack",
+    "observed_at": "2026-08-03T05:24:36Z",
+    "repository": "groupsum/web-app-analytics-governance-pack",
+    "url": "https://github.com/groupsum/web-app-analytics-governance-pack"
+  },
+  {
+    "evidence_type": "repository.name",
+    "id": "surface:466895b57eef",
+    "kind": "ui",
+    "name": "web-performance-rum-governance-pack",
+    "observed_at": "2026-08-03T05:24:36Z",
+    "repository": "groupsum/web-performance-rum-governance-pack",
+    "url": "https://github.com/groupsum/web-performance-rum-governance-pack"
+  }
+]

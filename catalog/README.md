@@ -14,6 +14,8 @@ organizations from primary APIs and repository manifests.
   itemized commit counts, evidence labels, publication links, and relationship
   integrity.
 - `npm run catalog:test` runs the parser and validation unit tests.
+- `npm run catalog:render` compiles display-safe datasets and bounded frontend summaries.
+- `npm run catalog:refresh` runs collection, rendering, and validation as one explicit pipeline.
 - `python scripts/catalog_collect.py --discover-downstream` additionally runs
   bounded, rate-limited GitHub public code searches for package-manifest
   references. Results are labeled as observed matches, not a complete census.
@@ -28,7 +30,16 @@ are not committed.
 
 - `generated/catalog.json` is the detailed normalized catalog.
 - `generated/summary.json` contains display-safe aggregate counts.
-- `../src/data/catalog.generated.ts` exposes the same summary to the site.
+- `generated/site/*.json` contains lazy-loaded repositories, packages, releases,
+  deployments, technologies, surfaces, relationships, and a hashed manifest.
+- `../src/data/catalog.generated.ts` contains bounded summary, organization,
+  featured-repository, technology, and dataset-manifest records for initial rendering.
+
+Reviewed names, descriptions, grouping, and claim boundaries may be supplied in
+`content/editorial.json`. Source-derived descriptions remain labeled as such,
+and missing editorial review never becomes an inferred maturity or availability
+claim. The scheduled workflow collects, renders, validates, builds, and opens or
+updates a refresh pull request.
 
 Every snapshot includes a `completeness` object. “All” means every record
 returned by the named primary API within the configured public scope. It does

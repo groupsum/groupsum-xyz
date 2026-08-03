@@ -21,6 +21,7 @@
     "proxy:plan": "npmctl plan .npmctl/desired-state/production/proxy.yaml --owner groupsum-xyz",
     "proxy:apply": "node -e \"throw Error('Use .github/workflows/npmctl.yml')\"",
     "proxy:target-check": "node scripts/validate-proxy-target.mjs",
+    "verify:deployment": "node scripts/verify-deployment.mjs",
     "build:insights": "node scripts/generate-insights-index.mjs",
     "validate:discovery": "node scripts/validate-discovery.mjs",
     "validate:portfolio": "node scripts/validate-portfolio-content.mjs",
@@ -28,7 +29,8 @@
     "validate:claims": "node scripts/validate-claims.mjs",
     "catalog:collect": "python scripts/catalog_collect.py --refresh",
     "catalog:render": "python scripts/catalog_render.py",
-    "catalog:validate": "python scripts/catalog_validate.py",
+    "catalog:refresh": "npm run catalog:collect && npm run catalog:render && npm run catalog:validate",
+    "catalog:validate": "python scripts/catalog_validate.py && python scripts/catalog_site_validate.py",
     "catalog:test": "python -m unittest discover -s scripts/tests -p test_catalog.py"
   },
   "dependencies": {

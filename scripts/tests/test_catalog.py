@@ -8,6 +8,7 @@ ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ROOT / "scripts"))
 
 from catalog_collect import classify_surfaces, manifest_package, parse_next_link  # noqa: E402
+from catalog_render import compile_catalog  # noqa: E402
 from catalog_validate import validate  # noqa: E402
 
 
@@ -63,6 +64,29 @@ class CatalogCollectorTests(unittest.TestCase):
             "packages": [], "relationships": [], "observations": [],
         }
         self.assertEqual(validate(catalog), [])
+
+    def test_display_catalog_compilation(self):
+        now = "2026-08-03T00:00:00Z"
+        catalog = {
+            "generated_at": now,
+            "scope": {"owners": ["groupsum"], "owner_definitions": [{"login": "groupsum", "role": "primary"}]},
+            "repositories": [{
+                "full_name": "groupsum/example", "name": "example", "owner": "groupsum", "url": "https://github.com/groupsum/example",
+                "description": "Example repository", "visibility": "public", "metrics": {"stars": 2},
+                "activity": {"commit_count": 3, "contributor_count": 1, "contributors": [{"login": "dev"}]},
+                "technologies": {"languages_bytes": {"Python": 100}}, "surfaces": [], "github_releases": [], "deployments": [], "environments": [],
+                "observations": [{"observed_at": now}],
+            }],
+            "packages": [{
+                "ecosystem": "pypi", "name": "example", "repository": "groupsum/example", "manifest_path": "pyproject.toml",
+                "published": True, "registry_url": "https://pypi.org/project/example/", "releases": ["1.0.0"], "dependencies": [],
+            }],
+            "relationships": [],
+        }
+        datasets = compile_catalog(catalog, {"entities": {}, "organizations": {}})
+        self.assertEqual(datasets["repositories"][0]["metrics"]["packages"], 1)
+        self.assertTrue(datasets["packages"][0]["route"].startswith("/catalog/packages/pypi/example-"))
+        self.assertEqual(datasets["technologies"][0]["repository_count"], 1)
 
 
 if __name__ == "__main__":

@@ -10,6 +10,8 @@ Standalone MdWrk lander repository for [groupsum.xyz](https://groupsum.xyz).
 - `npm run check`
 - `npm run build`
 - `npm run catalog:collect` (refresh the public ecosystem inventory)
+- `npm run catalog:render` (compile display-safe website datasets)
+- `npm run catalog:refresh` (collect, render, and validate)
 - `npm run catalog:validate`
 - `npm run catalog:test`
 - `npm run docker:build`
