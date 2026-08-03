@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-03T10:05:58Z",
+  "generated_at": "2026-08-03T10:51:11Z",
   "packages": [
     {
       "claim_boundary": "Publication is reported only when confirmed by the named public registry.",
@@ -14,7 +14,7 @@
       "evidence": [
         {
           "kind": "registry",
-          "observed_at": "2026-08-03T10:05:58Z",
+          "observed_at": "2026-08-03T10:51:11Z",
           "url": "https://pypi.org/project/attribution-campaign-context/"
         }
       ],
@@ -23,7 +23,7 @@
       "latest_version": "0.1.0",
       "manifest_path": "pyproject.toml",
       "name": "attribution-campaign-context",
-      "observed_at": "2026-08-03T10:05:58Z",
+      "observed_at": "2026-08-03T10:51:11Z",
       "owner": "tigrbl",
       "private": false,
       "publication_status": "published",
@@ -54,7 +54,7 @@
     "evidence": [
       {
         "kind": "source",
-        "observed_at": "2026-08-03T10:05:58Z",
+        "observed_at": "2026-08-03T10:51:28Z",
         "url": "https://github.com/tigrbl/attribution-campaign-context"
       }
     ],
@@ -97,7 +97,7 @@
       "watchers": 0
     },
     "name": "attribution-campaign-context",
-    "observed_at": "2026-08-03T10:05:58Z",
+    "observed_at": "2026-08-03T10:51:28Z",
     "owner": "tigrbl",
     "package_ids": [
       "package:pypi:attribution-campaign-context:tigrbl/attribution-campaign-context:pyproject.toml"
@@ -105,21 +105,21 @@
     "pushed_at": "2026-06-14T10:49:16Z",
     "related_resources": [
       {
-        "evidence_type": "repository.tree",
+        "evidence_type": "repository.blob",
         "id": "resource:0d8b2d78bbde",
         "kind": "documentation",
         "name": "docs/attribution-keys.md",
         "url": "https://github.com/tigrbl/attribution-campaign-context/blob/master/docs/attribution-keys.md"
       },
       {
-        "evidence_type": "repository.tree",
+        "evidence_type": "repository.blob",
         "id": "resource:ffd6080c61cc",
         "kind": "documentation",
         "name": "docs/public-operator-surfaces.md",
         "url": "https://github.com/tigrbl/attribution-campaign-context/blob/master/docs/public-operator-surfaces.md"
       },
       {
-        "evidence_type": "repository.tree",
+        "evidence_type": "repository.blob",
         "id": "resource:569f81016037",
         "kind": "documentation",
         "name": "docs/ssot-governance-packs.md",

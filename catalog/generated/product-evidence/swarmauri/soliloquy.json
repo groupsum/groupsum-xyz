@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-03T10:05:58Z",
+  "generated_at": "2026-08-03T10:51:11Z",
   "packages": [
     {
       "claim_boundary": "Publication is reported only when confirmed by the named public registry.",
@@ -14,7 +14,7 @@
       "evidence": [
         {
           "kind": "registry",
-          "observed_at": "2026-08-03T10:05:58Z",
+          "observed_at": "2026-08-03T10:51:11Z",
           "url": "https://pypi.org/project/soliloquy/"
         }
       ],
@@ -23,7 +23,7 @@
       "latest_version": "0.1.4",
       "manifest_path": "pyproject.toml",
       "name": "soliloquy",
-      "observed_at": "2026-08-03T10:05:58Z",
+      "observed_at": "2026-08-03T10:51:11Z",
       "owner": "swarmauri",
       "private": false,
       "publication_status": "published",
@@ -53,7 +53,7 @@
     "evidence": [
       {
         "kind": "source",
-        "observed_at": "2026-08-03T10:05:58Z",
+        "observed_at": "2026-08-03T10:51:40Z",
         "url": "https://github.com/swarmauri/soliloquy"
       }
     ],
@@ -90,7 +90,7 @@
       "watchers": 0
     },
     "name": "soliloquy",
-    "observed_at": "2026-08-03T10:05:58Z",
+    "observed_at": "2026-08-03T10:51:40Z",
     "owner": "swarmauri",
     "package_ids": [
       "package:pypi:soliloquy:swarmauri/soliloquy:pyproject.toml"

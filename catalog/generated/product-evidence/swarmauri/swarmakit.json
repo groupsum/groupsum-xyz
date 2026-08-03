@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-03T10:05:58Z",
+  "generated_at": "2026-08-03T10:51:11Z",
   "packages": [
     {
       "claim_boundary": "Publication is reported only when confirmed by the named public registry.",
@@ -14,7 +14,7 @@
       "evidence": [
         {
           "kind": "registry",
-          "observed_at": "2026-08-03T10:05:58Z",
+          "observed_at": "2026-08-03T10:51:11Z",
           "url": "https://www.npmjs.com/package/@swarmakit/react"
         }
       ],
@@ -23,7 +23,7 @@
       "latest_version": "0.0.22",
       "manifest_path": "libs/react/package.json",
       "name": "@swarmakit/react",
-      "observed_at": "2026-08-03T10:05:58Z",
+      "observed_at": "2026-08-03T10:51:11Z",
       "owner": "swarmauri",
       "private": false,
       "publication_status": "published",
@@ -55,7 +55,7 @@
       "evidence": [
         {
           "kind": "registry",
-          "observed_at": "2026-08-03T10:05:58Z",
+          "observed_at": "2026-08-03T10:51:11Z",
           "url": "https://www.npmjs.com/package/@swarmakit/svelte"
         }
       ],
@@ -64,7 +64,7 @@
       "latest_version": "0.0.22",
       "manifest_path": "libs/svelte/package.json",
       "name": "@swarmakit/svelte",
-      "observed_at": "2026-08-03T10:05:58Z",
+      "observed_at": "2026-08-03T10:51:11Z",
       "owner": "swarmauri",
       "private": false,
       "publication_status": "published",
@@ -96,7 +96,7 @@
       "evidence": [
         {
           "kind": "registry",
-          "observed_at": "2026-08-03T10:05:58Z",
+          "observed_at": "2026-08-03T10:51:11Z",
           "url": "https://www.npmjs.com/package/@swarmakit/sveltekit"
         }
       ],
@@ -105,7 +105,7 @@
       "latest_version": "0.0.8",
       "manifest_path": "libs/sveltekit/package.json",
       "name": "@swarmakit/sveltekit",
-      "observed_at": "2026-08-03T10:05:58Z",
+      "observed_at": "2026-08-03T10:51:11Z",
       "owner": "swarmauri",
       "private": false,
       "publication_status": "published",
@@ -137,7 +137,7 @@
       "evidence": [
         {
           "kind": "registry",
-          "observed_at": "2026-08-03T10:05:58Z",
+          "observed_at": "2026-08-03T10:51:11Z",
           "url": "https://www.npmjs.com/package/@swarmakit/vue"
         }
       ],
@@ -146,7 +146,7 @@
       "latest_version": "0.0.22",
       "manifest_path": "libs/vue/package.json",
       "name": "@swarmakit/vue",
-      "observed_at": "2026-08-03T10:05:58Z",
+      "observed_at": "2026-08-03T10:51:11Z",
       "owner": "swarmauri",
       "private": false,
       "publication_status": "published",
@@ -178,7 +178,7 @@
       "evidence": [
         {
           "kind": "registry",
-          "observed_at": "2026-08-03T10:05:58Z",
+          "observed_at": "2026-08-03T10:51:11Z",
           "url": "https://www.npmjs.com/package/swarmakit"
         }
       ],
@@ -187,7 +187,7 @@
       "latest_version": "0.0.22",
       "manifest_path": "package.json",
       "name": "swarmakit",
-      "observed_at": "2026-08-03T10:05:58Z",
+      "observed_at": "2026-08-03T10:51:11Z",
       "owner": "swarmauri",
       "private": false,
       "publication_status": "published",
@@ -218,7 +218,7 @@
     "evidence": [
       {
         "kind": "source",
-        "observed_at": "2026-08-03T10:05:58Z",
+        "observed_at": "2026-08-03T10:51:41Z",
         "url": "https://github.com/swarmauri/swarmakit"
       }
     ],
@@ -269,7 +269,7 @@
       "watchers": 0
     },
     "name": "swarmakit",
-    "observed_at": "2026-08-03T10:05:58Z",
+    "observed_at": "2026-08-03T10:51:41Z",
     "owner": "swarmauri",
     "package_ids": [
       "package:npm:@swarmakit/react:swarmauri/swarmakit:libs/react/package.json",

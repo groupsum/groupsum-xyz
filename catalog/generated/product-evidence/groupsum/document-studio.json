@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-03T10:05:58Z",
+  "generated_at": "2026-08-03T10:51:11Z",
   "packages": [
     {
       "claim_boundary": "Publication is reported only when confirmed by the named public registry.",
@@ -14,7 +14,7 @@
       "evidence": [
         {
           "kind": "registry",
-          "observed_at": "2026-08-03T10:05:58Z",
+          "observed_at": "2026-08-03T10:51:11Z",
           "url": "https://www.npmjs.com/package/@groupsum/document-studio"
         }
       ],
@@ -23,7 +23,7 @@
       "latest_version": "0.1.0",
       "manifest_path": "packages/document-studio/package.json",
       "name": "@groupsum/document-studio",
-      "observed_at": "2026-08-03T10:05:58Z",
+      "observed_at": "2026-08-03T10:51:11Z",
       "owner": "groupsum",
       "private": false,
       "publication_status": "published",
@@ -54,7 +54,7 @@
       "evidence": [
         {
           "kind": "source",
-          "observed_at": "2026-08-03T10:05:58Z",
+          "observed_at": "2026-08-03T10:51:11Z",
           "url": "https://github.com/groupsum/document-studio/blob/HEAD/package.json"
         }
       ],
@@ -63,7 +63,7 @@
       "latest_version": "0.1.0",
       "manifest_path": "package.json",
       "name": "document-studio-workspace",
-      "observed_at": "2026-08-03T10:05:58Z",
+      "observed_at": "2026-08-03T10:51:11Z",
       "owner": "groupsum",
       "private": true,
       "publication_status": "manifest_private",
@@ -93,7 +93,7 @@
       "evidence": [
         {
           "kind": "source",
-          "observed_at": "2026-08-03T10:05:58Z",
+          "observed_at": "2026-08-03T10:51:11Z",
           "url": "https://github.com/groupsum/document-studio/blob/HEAD/pyproject.toml"
         }
       ],
@@ -102,10 +102,10 @@
       "latest_version": "0.1.0",
       "manifest_path": "pyproject.toml",
       "name": "document-studio-workspace",
-      "observed_at": "2026-08-03T10:05:58Z",
+      "observed_at": "2026-08-03T10:51:11Z",
       "owner": "groupsum",
       "private": false,
-      "publication_status": "not-confirmed",
+      "publication_status": "registry_not_found",
       "published": false,
       "registry_url": null,
       "relationship_count": 2,
@@ -132,7 +132,7 @@
     "evidence": [
       {
         "kind": "source",
-        "observed_at": "2026-08-03T10:05:58Z",
+        "observed_at": "2026-08-03T10:51:16Z",
         "url": "https://github.com/groupsum/document-studio"
       }
     ],
@@ -177,7 +177,7 @@
       "watchers": 0
     },
     "name": "document-studio",
-    "observed_at": "2026-08-03T10:05:58Z",
+    "observed_at": "2026-08-03T10:51:16Z",
     "owner": "groupsum",
     "package_ids": [
       "package:npm:@groupsum/document-studio:groupsum/document-studio:packages/document-studio/package.json",

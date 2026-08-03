@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-03T10:05:58Z",
+  "generated_at": "2026-08-03T10:51:11Z",
   "packages": [
     {
       "claim_boundary": "Publication is reported only when confirmed by the named public registry.",
@@ -14,7 +14,7 @@
       "evidence": [
         {
           "kind": "source",
-          "observed_at": "2026-08-03T10:05:58Z",
+          "observed_at": "2026-08-03T10:51:11Z",
           "url": "https://github.com/tigrbl/docs-tigrbl-com/blob/HEAD/package.json"
         }
       ],
@@ -23,7 +23,7 @@
       "latest_version": "0.1.0",
       "manifest_path": "package.json",
       "name": "docs-tigrbl-com",
-      "observed_at": "2026-08-03T10:05:58Z",
+      "observed_at": "2026-08-03T10:51:11Z",
       "owner": "tigrbl",
       "private": true,
       "publication_status": "manifest_private",
@@ -53,7 +53,7 @@
       "evidence": [
         {
           "kind": "source",
-          "observed_at": "2026-08-03T10:05:58Z",
+          "observed_at": "2026-08-03T10:51:11Z",
           "url": "https://github.com/tigrbl/docs-tigrbl-com/blob/HEAD/pyproject.toml"
         }
       ],
@@ -62,10 +62,10 @@
       "latest_version": "0.1.0",
       "manifest_path": "pyproject.toml",
       "name": "docs-tigrbl-com",
-      "observed_at": "2026-08-03T10:05:58Z",
+      "observed_at": "2026-08-03T10:51:11Z",
       "owner": "tigrbl",
       "private": false,
-      "publication_status": "not-confirmed",
+      "publication_status": "registry_not_found",
       "published": false,
       "registry_url": null,
       "relationship_count": 12,
@@ -93,7 +93,7 @@
     "evidence": [
       {
         "kind": "source",
-        "observed_at": "2026-08-03T10:05:58Z",
+        "observed_at": "2026-08-03T10:51:29Z",
         "url": "https://github.com/tigrbl/docs-tigrbl-com"
       }
     ],
@@ -130,7 +130,7 @@
       "watchers": 0
     },
     "name": "docs-tigrbl-com",
-    "observed_at": "2026-08-03T10:05:58Z",
+    "observed_at": "2026-08-03T10:51:29Z",
     "owner": "tigrbl",
     "package_ids": [
       "package:npm:docs-tigrbl-com:tigrbl/docs-tigrbl-com:package.json",
@@ -160,7 +160,7 @@
         "url": "https://github.com/tigrbl/docs-tigrbl-com/tree/master/docs/home"
       },
       {
-        "evidence_type": "repository.tree",
+        "evidence_type": "repository.blob",
         "id": "resource:f0eb035ad008",
         "kind": "documentation",
         "name": "docs/index.md",
@@ -174,7 +174,7 @@
         "url": "https://github.com/tigrbl/docs-tigrbl-com/tree/master/docs/news"
       },
       {
-        "evidence_type": "repository.tree",
+        "evidence_type": "repository.blob",
         "id": "resource:962ba018fe52",
         "kind": "documentation",
         "name": "docs/tigrbl_auth_overview.md",

@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-03T10:05:58Z",
+  "generated_at": "2026-08-03T10:51:11Z",
   "packages": [
     {
       "claim_boundary": "Publication is reported only when confirmed by the named public registry.",
@@ -14,7 +14,7 @@
       "evidence": [
         {
           "kind": "registry",
-          "observed_at": "2026-08-03T10:05:58Z",
+          "observed_at": "2026-08-03T10:51:11Z",
           "url": "https://www.npmjs.com/package/@mdwrk/mdwrkcom-content-pack"
         }
       ],
@@ -23,7 +23,7 @@
       "latest_version": "0.1.6",
       "manifest_path": "packages/content/mdwrkcom-content-pack/package.json",
       "name": "@mdwrk/mdwrkcom-content-pack",
-      "observed_at": "2026-08-03T10:05:58Z",
+      "observed_at": "2026-08-03T10:51:11Z",
       "owner": "groupsum",
       "private": false,
       "publication_status": "published",
@@ -54,7 +54,7 @@
       "evidence": [
         {
           "kind": "source",
-          "observed_at": "2026-08-03T10:05:58Z",
+          "observed_at": "2026-08-03T10:51:11Z",
           "url": "https://github.com/groupsum/mdwrkcom-content-pack/blob/HEAD/package.json"
         }
       ],
@@ -63,7 +63,7 @@
       "latest_version": "0.1.0",
       "manifest_path": "package.json",
       "name": "mdwrkcom-content-pack",
-      "observed_at": "2026-08-03T10:05:58Z",
+      "observed_at": "2026-08-03T10:51:11Z",
       "owner": "groupsum",
       "private": true,
       "publication_status": "manifest_private",
@@ -94,7 +94,7 @@
     "evidence": [
       {
         "kind": "source",
-        "observed_at": "2026-08-03T10:05:58Z",
+        "observed_at": "2026-08-03T10:51:21Z",
         "url": "https://github.com/groupsum/mdwrkcom-content-pack"
       }
     ],
@@ -131,7 +131,7 @@
       "watchers": 0
     },
     "name": "mdwrkcom-content-pack",
-    "observed_at": "2026-08-03T10:05:58Z",
+    "observed_at": "2026-08-03T10:51:21Z",
     "owner": "groupsum",
     "package_ids": [
       "package:npm:@mdwrk/mdwrkcom-content-pack:groupsum/mdwrkcom-content-pack:packages/content/mdwrkcom-content-pack/package.json",
@@ -140,28 +140,28 @@
     "pushed_at": "2026-06-16T02:39:56Z",
     "related_resources": [
       {
-        "evidence_type": "repository.tree",
+        "evidence_type": "repository.blob",
         "id": "resource:6ad7a8201916",
         "kind": "documentation",
         "name": "packages/content/mdwrkcom-content-pack/content/pages/docs/extensions.md",
         "url": "https://github.com/groupsum/mdwrkcom-content-pack/blob/master/packages/content/mdwrkcom-content-pack/content/pages/docs/extensions.md"
       },
       {
-        "evidence_type": "repository.tree",
+        "evidence_type": "repository.blob",
         "id": "resource:eebe76dc1154",
         "kind": "documentation",
         "name": "packages/content/mdwrkcom-content-pack/content/pages/docs/quickstart.md",
         "url": "https://github.com/groupsum/mdwrkcom-content-pack/blob/master/packages/content/mdwrkcom-content-pack/content/pages/docs/quickstart.md"
       },
       {
-        "evidence_type": "repository.tree",
+        "evidence_type": "repository.blob",
         "id": "resource:39e66566b00c",
         "kind": "documentation",
         "name": "packages/content/mdwrkcom-content-pack/content/pages/docs/theme-packs.md",
         "url": "https://github.com/groupsum/mdwrkcom-content-pack/blob/master/packages/content/mdwrkcom-content-pack/content/pages/docs/theme-packs.md"
       },
       {
-        "evidence_type": "repository.tree",
+        "evidence_type": "repository.blob",
         "id": "resource:42e198a4d1bc",
         "kind": "documentation",
         "name": "packages/content/mdwrkcom-content-pack/content/pages/es/docs/quickstart.md",
@@ -196,7 +196,7 @@
         "url": "https://github.com/groupsum/mdwrkcom-content-pack/tree/master/packages/content/mdwrkcom-content-pack/data/markdown/docs/getting-started"
       },
       {
-        "evidence_type": "repository.tree",
+        "evidence_type": "repository.blob",
         "id": "resource:fc05b574500e",
         "kind": "documentation",
         "name": "packages/content/mdwrkcom-content-pack/data/markdown/docs/github-sync.md",

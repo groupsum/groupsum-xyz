@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-03T10:05:58Z",
+  "generated_at": "2026-08-03T10:51:11Z",
   "packages": [
     {
       "claim_boundary": "Publication is reported only when confirmed by the named public registry.",
@@ -14,7 +14,7 @@
       "evidence": [
         {
           "kind": "registry",
-          "observed_at": "2026-08-03T10:05:58Z",
+          "observed_at": "2026-08-03T10:51:11Z",
           "url": "https://pypi.org/project/seo-aeo-aieo-governance-pack/"
         }
       ],
@@ -23,7 +23,7 @@
       "latest_version": "0.1.6",
       "manifest_path": "pyproject.toml",
       "name": "seo-aeo-aieo-governance-pack",
-      "observed_at": "2026-08-03T10:05:58Z",
+      "observed_at": "2026-08-03T10:51:11Z",
       "owner": "groupsum",
       "private": false,
       "publication_status": "published",
@@ -54,7 +54,7 @@
     "evidence": [
       {
         "kind": "source",
-        "observed_at": "2026-08-03T10:05:58Z",
+        "observed_at": "2026-08-03T10:51:24Z",
         "url": "https://github.com/groupsum/seo-aeo-aieo-governance-pack"
       }
     ],
@@ -110,7 +110,7 @@
       "watchers": 0
     },
     "name": "seo-aeo-aieo-governance-pack",
-    "observed_at": "2026-08-03T10:05:58Z",
+    "observed_at": "2026-08-03T10:51:24Z",
     "owner": "groupsum",
     "package_ids": [
       "package:pypi:seo-aeo-aieo-governance-pack:groupsum/seo-aeo-aieo-governance-pack:pyproject.toml"

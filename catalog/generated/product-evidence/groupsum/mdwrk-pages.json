@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-03T10:05:58Z",
+  "generated_at": "2026-08-03T10:51:11Z",
   "packages": [
     {
       "claim_boundary": "Publication is reported only when confirmed by the named public registry.",
@@ -14,7 +14,7 @@
       "evidence": [
         {
           "kind": "source",
-          "observed_at": "2026-08-03T10:05:58Z",
+          "observed_at": "2026-08-03T10:51:11Z",
           "url": "https://github.com/groupsum/mdwrk-pages/blob/HEAD/packages/70-demos/learning-path-demo/package.json"
         }
       ],
@@ -23,7 +23,7 @@
       "latest_version": "0.1.0",
       "manifest_path": "packages/70-demos/learning-path-demo/package.json",
       "name": "@mdwrk/example-learning-path-demo",
-      "observed_at": "2026-08-03T10:05:58Z",
+      "observed_at": "2026-08-03T10:51:11Z",
       "owner": "groupsum",
       "private": true,
       "publication_status": "manifest_private",
@@ -55,7 +55,7 @@
       "evidence": [
         {
           "kind": "source",
-          "observed_at": "2026-08-03T10:05:58Z",
+          "observed_at": "2026-08-03T10:51:11Z",
           "url": "https://github.com/groupsum/mdwrk-pages/blob/HEAD/packages/70-demos/page-template-demo/package.json"
         }
       ],
@@ -64,7 +64,7 @@
       "latest_version": "0.1.1",
       "manifest_path": "packages/70-demos/page-template-demo/package.json",
       "name": "@mdwrk/example-page-template-demo",
-      "observed_at": "2026-08-03T10:05:58Z",
+      "observed_at": "2026-08-03T10:51:11Z",
       "owner": "groupsum",
       "private": true,
       "publication_status": "manifest_private",
@@ -96,7 +96,7 @@
       "evidence": [
         {
           "kind": "source",
-          "observed_at": "2026-08-03T10:05:58Z",
+          "observed_at": "2026-08-03T10:51:11Z",
           "url": "https://github.com/groupsum/mdwrk-pages/blob/HEAD/packages/70-demos/semantic-components-demo/package.json"
         }
       ],
@@ -105,7 +105,7 @@
       "latest_version": "0.1.7",
       "manifest_path": "packages/70-demos/semantic-components-demo/package.json",
       "name": "@mdwrk/example-semantic-components-demo",
-      "observed_at": "2026-08-03T10:05:58Z",
+      "observed_at": "2026-08-03T10:51:11Z",
       "owner": "groupsum",
       "private": true,
       "publication_status": "manifest_private",
@@ -137,7 +137,7 @@
       "evidence": [
         {
           "kind": "source",
-          "observed_at": "2026-08-03T10:05:58Z",
+          "observed_at": "2026-08-03T10:51:11Z",
           "url": "https://github.com/groupsum/mdwrk-pages/blob/HEAD/packages/70-demos/subscription-store-demo/package.json"
         }
       ],
@@ -146,7 +146,7 @@
       "latest_version": "0.1.0",
       "manifest_path": "packages/70-demos/subscription-store-demo/package.json",
       "name": "@mdwrk/example-subscription-store-demo",
-      "observed_at": "2026-08-03T10:05:58Z",
+      "observed_at": "2026-08-03T10:51:11Z",
       "owner": "groupsum",
       "private": true,
       "publication_status": "manifest_private",
@@ -178,7 +178,7 @@
       "evidence": [
         {
           "kind": "registry",
-          "observed_at": "2026-08-03T10:05:58Z",
+          "observed_at": "2026-08-03T10:51:11Z",
           "url": "https://www.npmjs.com/package/@mdwrk/lander-commerce-contract"
         }
       ],
@@ -187,7 +187,7 @@
       "latest_version": "0.1.0",
       "manifest_path": "packages/00-contracts/lander-commerce-contract/package.json",
       "name": "@mdwrk/lander-commerce-contract",
-      "observed_at": "2026-08-03T10:05:58Z",
+      "observed_at": "2026-08-03T10:51:11Z",
       "owner": "groupsum",
       "private": false,
       "publication_status": "published",
@@ -218,7 +218,7 @@
       "evidence": [
         {
           "kind": "registry",
-          "observed_at": "2026-08-03T10:05:58Z",
+          "observed_at": "2026-08-03T10:51:11Z",
           "url": "https://www.npmjs.com/package/@mdwrk/lander-content-contract"
         }
       ],
@@ -227,7 +227,7 @@
       "latest_version": "0.1.10",
       "manifest_path": "packages/00-contracts/lander-content-contract/package.json",
       "name": "@mdwrk/lander-content-contract",
-      "observed_at": "2026-08-03T10:05:58Z",
+      "observed_at": "2026-08-03T10:51:11Z",
       "owner": "groupsum",
       "private": false,
       "publication_status": "published",
@@ -258,7 +258,7 @@
       "evidence": [
         {
           "kind": "registry",
-          "observed_at": "2026-08-03T10:05:58Z",
+          "observed_at": "2026-08-03T10:51:11Z",
           "url": "https://www.npmjs.com/package/@mdwrk/lander-core"
         }
       ],
@@ -267,7 +267,7 @@
       "latest_version": "0.1.5",
       "manifest_path": "packages/10-core/lander-core/package.json",
       "name": "@mdwrk/lander-core",
-      "observed_at": "2026-08-03T10:05:58Z",
+      "observed_at": "2026-08-03T10:51:11Z",
       "owner": "groupsum",
       "private": false,
       "publication_status": "published",
@@ -298,7 +298,7 @@
       "evidence": [
         {
           "kind": "registry",
-          "observed_at": "2026-08-03T10:05:58Z",
+          "observed_at": "2026-08-03T10:51:11Z",
           "url": "https://www.npmjs.com/package/@mdwrk/lander-markdown-content-adapter"
         }
       ],
@@ -307,7 +307,7 @@
       "latest_version": "0.1.5",
       "manifest_path": "packages/10-core/lander-markdown-content-adapter/package.json",
       "name": "@mdwrk/lander-markdown-content-adapter",
-      "observed_at": "2026-08-03T10:05:58Z",
+      "observed_at": "2026-08-03T10:51:11Z",
       "owner": "groupsum",
       "private": false,
       "publication_status": "published",
@@ -338,7 +338,7 @@
       "evidence": [
         {
           "kind": "registry",
-          "observed_at": "2026-08-03T10:05:58Z",
+          "observed_at": "2026-08-03T10:51:11Z",
           "url": "https://www.npmjs.com/package/@mdwrk/lander-page-template-presets"
         }
       ],
@@ -347,7 +347,7 @@
       "latest_version": "0.1.2",
       "manifest_path": "packages/20-page-systems/lander-page-template-presets/package.json",
       "name": "@mdwrk/lander-page-template-presets",
-      "observed_at": "2026-08-03T10:05:58Z",
+      "observed_at": "2026-08-03T10:51:11Z",
       "owner": "groupsum",
       "private": false,
       "publication_status": "published",
@@ -378,7 +378,7 @@
       "evidence": [
         {
           "kind": "registry",
-          "observed_at": "2026-08-03T10:05:58Z",
+          "observed_at": "2026-08-03T10:51:11Z",
           "url": "https://www.npmjs.com/package/@mdwrk/lander-page-templates"
         }
       ],
@@ -387,7 +387,7 @@
       "latest_version": "0.1.3",
       "manifest_path": "packages/20-page-systems/lander-page-templates/package.json",
       "name": "@mdwrk/lander-page-templates",
-      "observed_at": "2026-08-03T10:05:58Z",
+      "observed_at": "2026-08-03T10:51:11Z",
       "owner": "groupsum",
       "private": false,
       "publication_status": "published",
@@ -418,7 +418,7 @@
       "evidence": [
         {
           "kind": "registry",
-          "observed_at": "2026-08-03T10:05:58Z",
+          "observed_at": "2026-08-03T10:51:11Z",
           "url": "https://www.npmjs.com/package/@mdwrk/lander-primitives"
         }
       ],
@@ -427,7 +427,7 @@
       "latest_version": "0.1.2",
       "manifest_path": "packages/30-ui-foundation/lander-primitives/package.json",
       "name": "@mdwrk/lander-primitives",
-      "observed_at": "2026-08-03T10:05:58Z",
+      "observed_at": "2026-08-03T10:51:11Z",
       "owner": "groupsum",
       "private": false,
       "publication_status": "published",
@@ -459,7 +459,7 @@
       "evidence": [
         {
           "kind": "registry",
-          "observed_at": "2026-08-03T10:05:58Z",
+          "observed_at": "2026-08-03T10:51:11Z",
           "url": "https://www.npmjs.com/package/@mdwrk/lander-react"
         }
       ],
@@ -468,7 +468,7 @@
       "latest_version": "0.1.23",
       "manifest_path": "packages/40-react-renderers/lander-react/package.json",
       "name": "@mdwrk/lander-react",
-      "observed_at": "2026-08-03T10:05:58Z",
+      "observed_at": "2026-08-03T10:51:11Z",
       "owner": "groupsum",
       "private": false,
       "publication_status": "published",
@@ -500,7 +500,7 @@
       "evidence": [
         {
           "kind": "registry",
-          "observed_at": "2026-08-03T10:05:58Z",
+          "observed_at": "2026-08-03T10:51:11Z",
           "url": "https://www.npmjs.com/package/@mdwrk/lander-react-commerce"
         }
       ],
@@ -509,7 +509,7 @@
       "latest_version": "0.1.0",
       "manifest_path": "packages/40-react-renderers/lander-react-commerce/package.json",
       "name": "@mdwrk/lander-react-commerce",
-      "observed_at": "2026-08-03T10:05:58Z",
+      "observed_at": "2026-08-03T10:51:11Z",
       "owner": "groupsum",
       "private": false,
       "publication_status": "published",
@@ -541,7 +541,7 @@
       "evidence": [
         {
           "kind": "registry",
-          "observed_at": "2026-08-03T10:05:58Z",
+          "observed_at": "2026-08-03T10:51:11Z",
           "url": "https://www.npmjs.com/package/@mdwrk/lander-react-structured-data"
         }
       ],
@@ -550,7 +550,7 @@
       "latest_version": "0.1.4",
       "manifest_path": "packages/50-machine-output/lander-react-structured-data/package.json",
       "name": "@mdwrk/lander-react-structured-data",
-      "observed_at": "2026-08-03T10:05:58Z",
+      "observed_at": "2026-08-03T10:51:11Z",
       "owner": "groupsum",
       "private": false,
       "publication_status": "published",
@@ -582,7 +582,7 @@
       "evidence": [
         {
           "kind": "registry",
-          "observed_at": "2026-08-03T10:05:58Z",
+          "observed_at": "2026-08-03T10:51:11Z",
           "url": "https://www.npmjs.com/package/@mdwrk/lander-seo"
         }
       ],
@@ -591,7 +591,7 @@
       "latest_version": "0.1.5",
       "manifest_path": "packages/50-machine-output/lander-seo/package.json",
       "name": "@mdwrk/lander-seo",
-      "observed_at": "2026-08-03T10:05:58Z",
+      "observed_at": "2026-08-03T10:51:11Z",
       "owner": "groupsum",
       "private": false,
       "publication_status": "published",
@@ -622,7 +622,7 @@
       "evidence": [
         {
           "kind": "registry",
-          "observed_at": "2026-08-03T10:05:58Z",
+          "observed_at": "2026-08-03T10:51:11Z",
           "url": "https://www.npmjs.com/package/@mdwrk/lander-theme"
         }
       ],
@@ -631,7 +631,7 @@
       "latest_version": "0.1.6",
       "manifest_path": "packages/30-ui-foundation/lander-theme/package.json",
       "name": "@mdwrk/lander-theme",
-      "observed_at": "2026-08-03T10:05:58Z",
+      "observed_at": "2026-08-03T10:51:11Z",
       "owner": "groupsum",
       "private": false,
       "publication_status": "published",
@@ -662,7 +662,7 @@
       "evidence": [
         {
           "kind": "registry",
-          "observed_at": "2026-08-03T10:05:58Z",
+          "observed_at": "2026-08-03T10:51:11Z",
           "url": "https://www.npmjs.com/package/@mdwrk/page-template-demo-content-pack"
         }
       ],
@@ -671,7 +671,7 @@
       "latest_version": "0.1.2",
       "manifest_path": "packages/60-content-packs/page-template-demo-content-pack/package.json",
       "name": "@mdwrk/page-template-demo-content-pack",
-      "observed_at": "2026-08-03T10:05:58Z",
+      "observed_at": "2026-08-03T10:51:11Z",
       "owner": "groupsum",
       "private": false,
       "publication_status": "published",
@@ -702,7 +702,7 @@
       "evidence": [
         {
           "kind": "registry",
-          "observed_at": "2026-08-03T10:05:58Z",
+          "observed_at": "2026-08-03T10:51:11Z",
           "url": "https://www.npmjs.com/package/@mdwrk/pages-ui-tokens"
         }
       ],
@@ -711,7 +711,7 @@
       "latest_version": "0.1.13",
       "manifest_path": "packages/30-ui-foundation/pages-ui-tokens/package.json",
       "name": "@mdwrk/pages-ui-tokens",
-      "observed_at": "2026-08-03T10:05:58Z",
+      "observed_at": "2026-08-03T10:51:11Z",
       "owner": "groupsum",
       "private": false,
       "publication_status": "published",
@@ -742,7 +742,7 @@
       "evidence": [
         {
           "kind": "registry",
-          "observed_at": "2026-08-03T10:05:58Z",
+          "observed_at": "2026-08-03T10:51:11Z",
           "url": "https://www.npmjs.com/package/@mdwrk/structured-data"
         }
       ],
@@ -751,7 +751,7 @@
       "latest_version": "0.2.0",
       "manifest_path": "packages/00-contracts/structured-data/package.json",
       "name": "@mdwrk/structured-data",
-      "observed_at": "2026-08-03T10:05:58Z",
+      "observed_at": "2026-08-03T10:51:11Z",
       "owner": "groupsum",
       "private": false,
       "publication_status": "published",
@@ -782,7 +782,7 @@
       "evidence": [
         {
           "kind": "registry",
-          "observed_at": "2026-08-03T10:05:58Z",
+          "observed_at": "2026-08-03T10:51:11Z",
           "url": "https://www.npmjs.com/package/@mdwrk/subscription-store-content-pack"
         }
       ],
@@ -791,7 +791,7 @@
       "latest_version": "0.1.0",
       "manifest_path": "packages/60-content-packs/subscription-store-content-pack/package.json",
       "name": "@mdwrk/subscription-store-content-pack",
-      "observed_at": "2026-08-03T10:05:58Z",
+      "observed_at": "2026-08-03T10:51:11Z",
       "owner": "groupsum",
       "private": false,
       "publication_status": "published",
@@ -822,7 +822,7 @@
       "evidence": [
         {
           "kind": "source",
-          "observed_at": "2026-08-03T10:05:58Z",
+          "observed_at": "2026-08-03T10:51:11Z",
           "url": "https://github.com/groupsum/mdwrk-pages/blob/HEAD/package.json"
         }
       ],
@@ -831,7 +831,7 @@
       "latest_version": "0.1.31",
       "manifest_path": "package.json",
       "name": "mdwrk-pages",
-      "observed_at": "2026-08-03T10:05:58Z",
+      "observed_at": "2026-08-03T10:51:11Z",
       "owner": "groupsum",
       "private": true,
       "publication_status": "manifest_private",
@@ -862,7 +862,7 @@
       "evidence": [
         {
           "kind": "source",
-          "observed_at": "2026-08-03T10:05:58Z",
+          "observed_at": "2026-08-03T10:51:11Z",
           "url": "https://github.com/groupsum/mdwrk-pages/blob/HEAD/pyproject.toml"
         }
       ],
@@ -871,10 +871,10 @@
       "latest_version": "0.1.0",
       "manifest_path": "pyproject.toml",
       "name": "mdwrk-pages",
-      "observed_at": "2026-08-03T10:05:58Z",
+      "observed_at": "2026-08-03T10:51:11Z",
       "owner": "groupsum",
       "private": false,
-      "publication_status": "not-confirmed",
+      "publication_status": "registry_not_found",
       "published": false,
       "registry_url": null,
       "relationship_count": 2,
@@ -901,7 +901,7 @@
     "evidence": [
       {
         "kind": "source",
-        "observed_at": "2026-08-03T10:05:58Z",
+        "observed_at": "2026-08-03T10:51:19Z",
         "url": "https://github.com/groupsum/mdwrk-pages"
       }
     ],
@@ -938,7 +938,7 @@
       "watchers": 0
     },
     "name": "mdwrk-pages",
-    "observed_at": "2026-08-03T10:05:58Z",
+    "observed_at": "2026-08-03T10:51:19Z",
     "owner": "groupsum",
     "package_ids": [
       "package:npm:@mdwrk/example-learning-path-demo:groupsum/mdwrk-pages:packages/70-demos/learning-path-demo/package.json",
@@ -967,14 +967,14 @@
     "pushed_at": "2026-07-13T21:06:00Z",
     "related_resources": [
       {
-        "evidence_type": "repository.tree",
+        "evidence_type": "repository.blob",
         "id": "resource:5bb4c933b147",
         "kind": "documentation",
         "name": "docs/AGENTS.md",
         "url": "https://github.com/groupsum/mdwrk-pages/blob/master/docs/AGENTS.md"
       },
       {
-        "evidence_type": "repository.tree",
+        "evidence_type": "repository.blob",
         "id": "resource:27e5213f294f",
         "kind": "documentation",
         "name": "docs/README.md",
@@ -988,63 +988,63 @@
         "url": "https://github.com/groupsum/mdwrk-pages/tree/master/docs/assets"
       },
       {
-        "evidence_type": "repository.tree",
+        "evidence_type": "repository.blob",
         "id": "resource:566b2ad10ec3",
         "kind": "documentation",
         "name": "docs/generated-schemaorg-page-family-presence.csv",
         "url": "https://github.com/groupsum/mdwrk-pages/blob/master/docs/generated-schemaorg-page-family-presence.csv"
       },
       {
-        "evidence_type": "repository.tree",
+        "evidence_type": "repository.blob",
         "id": "resource:f9d44da48687",
         "kind": "documentation",
         "name": "docs/structured-data-presence.csv",
         "url": "https://github.com/groupsum/mdwrk-pages/blob/master/docs/structured-data-presence.csv"
       },
       {
-        "evidence_type": "repository.tree",
+        "evidence_type": "repository.blob",
         "id": "resource:e10366737c3d",
         "kind": "documentation",
         "name": "docs/structured-data-semantic-component-matrix.md",
         "url": "https://github.com/groupsum/mdwrk-pages/blob/master/docs/structured-data-semantic-component-matrix.md"
       },
       {
-        "evidence_type": "repository.tree",
+        "evidence_type": "repository.blob",
         "id": "resource:5b1549c82855",
         "kind": "documentation",
         "name": "docs/structured-data-type-support-matrix.md",
         "url": "https://github.com/groupsum/mdwrk-pages/blob/master/docs/structured-data-type-support-matrix.md"
       },
       {
-        "evidence_type": "repository.tree",
+        "evidence_type": "repository.blob",
         "id": "resource:4fe687407df0",
         "kind": "documentation",
         "name": "docs/typography-overflow-text-fit-matrix.md",
         "url": "https://github.com/groupsum/mdwrk-pages/blob/master/docs/typography-overflow-text-fit-matrix.md"
       },
       {
-        "evidence_type": "repository.tree",
+        "evidence_type": "repository.blob",
         "id": "resource:8d1194a81bef",
         "kind": "example",
         "name": "packages/20-page-systems/lander-page-templates/src/examples/education.ts",
         "url": "https://github.com/groupsum/mdwrk-pages/blob/master/packages/20-page-systems/lander-page-templates/src/examples/education.ts"
       },
       {
-        "evidence_type": "repository.tree",
+        "evidence_type": "repository.blob",
         "id": "resource:c1a67f041704",
         "kind": "example",
         "name": "packages/20-page-systems/lander-page-templates/src/examples/generic.ts",
         "url": "https://github.com/groupsum/mdwrk-pages/blob/master/packages/20-page-systems/lander-page-templates/src/examples/generic.ts"
       },
       {
-        "evidence_type": "repository.tree",
+        "evidence_type": "repository.blob",
         "id": "resource:3d00e664f442",
         "kind": "example",
         "name": "packages/20-page-systems/lander-page-templates/src/examples/product.ts",
         "url": "https://github.com/groupsum/mdwrk-pages/blob/master/packages/20-page-systems/lander-page-templates/src/examples/product.ts"
       },
       {
-        "evidence_type": "repository.tree",
+        "evidence_type": "repository.blob",
         "id": "resource:6e5cc86749b4",
         "kind": "example",
         "name": "packages/20-page-systems/lander-page-templates/src/examples/support.ts",

@@ -8,7 +8,7 @@
     "evidence": [
       {
         "kind": "organization",
-        "observed_at": "2026-08-03T10:05:58Z",
+        "observed_at": "2026-08-03T10:51:11Z",
         "url": "https://github.com/bucketwarden"
       }
     ],
@@ -18,7 +18,7 @@
     "id": "organization:bucketwarden",
     "kind": "organization",
     "login": "bucketwarden",
-    "observed_at": "2026-08-03T10:05:58Z",
+    "observed_at": "2026-08-03T10:51:11Z",
     "package_count": 0,
     "package_releases": 0,
     "relationships": 0,
@@ -30,15 +30,15 @@
     "watchers": 0
   },
   {
-    "commits": 2180,
+    "commits": 2185,
     "contributors": 2,
-    "deployments": 568,
+    "deployments": 574,
     "description": "Public source, packages, and delivery records maintained by Groupsum.",
     "display_name": "Groupsum",
     "evidence": [
       {
         "kind": "organization",
-        "observed_at": "2026-08-03T10:05:58Z",
+        "observed_at": "2026-08-03T10:51:11Z",
         "url": "https://github.com/groupsum"
       }
     ],
@@ -73,7 +73,7 @@
           "deployments": 0,
           "environments": 0,
           "forks": 1,
-          "github_releases": 6,
+          "github_releases": 5,
           "open_issues": 0,
           "packages": 45,
           "related_resources": 76,
@@ -213,13 +213,13 @@
       }
     ],
     "forks": 1,
-    "github_releases": 505,
+    "github_releases": 504,
     "id": "organization:groupsum",
     "kind": "organization",
     "login": "groupsum",
-    "observed_at": "2026-08-03T10:05:58Z",
-    "package_count": 151,
-    "package_releases": 572,
+    "observed_at": "2026-08-03T10:51:11Z",
+    "package_count": 150,
+    "package_releases": 545,
     "relationships": 1204,
     "repository_count": 37,
     "role": "primary",
@@ -248,7 +248,7 @@
     "evidence": [
       {
         "kind": "organization",
-        "observed_at": "2026-08-03T10:05:58Z",
+        "observed_at": "2026-08-03T10:51:11Z",
         "url": "https://github.com/swarmauri"
       }
     ],
@@ -427,7 +427,7 @@
     "id": "organization:swarmauri",
     "kind": "organization",
     "login": "swarmauri",
-    "observed_at": "2026-08-03T10:05:58Z",
+    "observed_at": "2026-08-03T10:51:11Z",
     "package_count": 389,
     "package_releases": 7372,
     "relationships": 5532,
@@ -459,13 +459,13 @@
   {
     "commits": 2199,
     "contributors": 5,
-    "deployments": 2551,
+    "deployments": 2552,
     "description": "Public API, ASGI, identity, transport, package, and example records maintained by Tigrbl.",
     "display_name": "Tigrbl",
     "evidence": [
       {
         "kind": "organization",
-        "observed_at": "2026-08-03T10:05:58Z",
+        "observed_at": "2026-08-03T10:51:11Z",
         "url": "https://github.com/tigrbl"
       }
     ],
@@ -497,10 +497,10 @@
         "metrics": {
           "commits": 272,
           "contributors": 4,
-          "deployments": 2415,
+          "deployments": 2416,
           "environments": 6,
           "forks": 2,
-          "github_releases": 40,
+          "github_releases": 9,
           "open_issues": 15,
           "packages": 16,
           "related_resources": 37,
@@ -640,11 +640,11 @@
       }
     ],
     "forks": 2,
-    "github_releases": 1282,
+    "github_releases": 1251,
     "id": "organization:tigrbl",
     "kind": "organization",
     "login": "tigrbl",
-    "observed_at": "2026-08-03T10:05:58Z",
+    "observed_at": "2026-08-03T10:51:11Z",
     "package_count": 584,
     "package_releases": 1835,
     "relationships": 4019,

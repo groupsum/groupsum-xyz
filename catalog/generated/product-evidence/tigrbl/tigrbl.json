@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-03T10:05:58Z",
+  "generated_at": "2026-08-03T10:51:11Z",
   "packages": [
     {
       "claim_boundary": "Publication is reported only when confirmed by the named public registry.",
@@ -14,7 +14,7 @@
       "evidence": [
         {
           "kind": "registry",
-          "observed_at": "2026-08-03T10:05:58Z",
+          "observed_at": "2026-08-03T10:51:11Z",
           "url": "https://pypi.org/project/tigrbl/"
         }
       ],
@@ -23,7 +23,7 @@
       "latest_version": "0.4.4",
       "manifest_path": "pkgs/80_facade/tigrbl/pyproject.toml",
       "name": "tigrbl",
-      "observed_at": "2026-08-03T10:05:58Z",
+      "observed_at": "2026-08-03T10:51:11Z",
       "owner": "tigrbl",
       "private": false,
       "publication_status": "published",
@@ -55,7 +55,7 @@
       "evidence": [
         {
           "kind": "registry",
-          "observed_at": "2026-08-03T10:05:58Z",
+          "observed_at": "2026-08-03T10:51:11Z",
           "url": "https://pypi.org/project/tigrbl-atoms/"
         }
       ],
@@ -64,7 +64,7 @@
       "latest_version": "0.4.4",
       "manifest_path": "pkgs/40_atoms/tigrbl_atoms/pyproject.toml",
       "name": "tigrbl-atoms",
-      "observed_at": "2026-08-03T10:05:58Z",
+      "observed_at": "2026-08-03T10:51:11Z",
       "owner": "tigrbl",
       "private": false,
       "publication_status": "published",
@@ -96,7 +96,7 @@
       "evidence": [
         {
           "kind": "registry",
-          "observed_at": "2026-08-03T10:05:58Z",
+          "observed_at": "2026-08-03T10:51:11Z",
           "url": "https://pypi.org/project/tigrbl-base/"
         }
       ],
@@ -105,7 +105,7 @@
       "latest_version": "0.4.4",
       "manifest_path": "pkgs/20_base/tigrbl_base/pyproject.toml",
       "name": "tigrbl-base",
-      "observed_at": "2026-08-03T10:05:58Z",
+      "observed_at": "2026-08-03T10:51:11Z",
       "owner": "tigrbl",
       "private": false,
       "publication_status": "published",
@@ -137,7 +137,7 @@
       "evidence": [
         {
           "kind": "registry",
-          "observed_at": "2026-08-03T10:05:58Z",
+          "observed_at": "2026-08-03T10:51:11Z",
           "url": "https://pypi.org/project/tigrbl-canon/"
         }
       ],
@@ -146,7 +146,7 @@
       "latest_version": "0.4.4",
       "manifest_path": "pkgs/99_deprecated/tigrbl_canon/pyproject.toml",
       "name": "tigrbl-canon",
-      "observed_at": "2026-08-03T10:05:58Z",
+      "observed_at": "2026-08-03T10:51:11Z",
       "owner": "tigrbl",
       "private": false,
       "publication_status": "published",
@@ -178,7 +178,7 @@
       "evidence": [
         {
           "kind": "registry",
-          "observed_at": "2026-08-03T10:05:58Z",
+          "observed_at": "2026-08-03T10:51:11Z",
           "url": "https://pypi.org/project/tigrbl-concrete/"
         }
       ],
@@ -187,7 +187,7 @@
       "latest_version": "0.4.4",
       "manifest_path": "pkgs/70_concrete/tigrbl_concrete/pyproject.toml",
       "name": "tigrbl-concrete",
-      "observed_at": "2026-08-03T10:05:58Z",
+      "observed_at": "2026-08-03T10:51:11Z",
       "owner": "tigrbl",
       "private": false,
       "publication_status": "published",
@@ -219,7 +219,7 @@
       "evidence": [
         {
           "kind": "registry",
-          "observed_at": "2026-08-03T10:05:58Z",
+          "observed_at": "2026-08-03T10:51:11Z",
           "url": "https://pypi.org/project/tigrbl-core/"
         }
       ],
@@ -228,7 +228,7 @@
       "latest_version": "0.4.4",
       "manifest_path": "pkgs/10_core/tigrbl_core/pyproject.toml",
       "name": "tigrbl-core",
-      "observed_at": "2026-08-03T10:05:58Z",
+      "observed_at": "2026-08-03T10:51:11Z",
       "owner": "tigrbl",
       "private": false,
       "publication_status": "published",
@@ -260,7 +260,7 @@
       "evidence": [
         {
           "kind": "source",
-          "observed_at": "2026-08-03T10:05:58Z",
+          "observed_at": "2026-08-03T10:51:11Z",
           "url": "https://github.com/tigrbl/tigrbl/blob/HEAD/pkgs/96_examples/equivalence_contracts/pyproject.toml"
         }
       ],
@@ -269,10 +269,10 @@
       "latest_version": "0.0.0+local",
       "manifest_path": "pkgs/96_examples/equivalence_contracts/pyproject.toml",
       "name": "tigrbl-equivalence-contracts",
-      "observed_at": "2026-08-03T10:05:58Z",
+      "observed_at": "2026-08-03T10:51:11Z",
       "owner": "tigrbl",
       "private": false,
-      "publication_status": "not-confirmed",
+      "publication_status": "registry_not_found",
       "published": false,
       "registry_url": null,
       "relationship_count": 35,
@@ -301,7 +301,7 @@
       "evidence": [
         {
           "kind": "source",
-          "observed_at": "2026-08-03T10:05:58Z",
+          "observed_at": "2026-08-03T10:51:11Z",
           "url": "https://github.com/tigrbl/tigrbl/blob/HEAD/pkgs/96_examples/tigrbl_examples/pyproject.toml"
         }
       ],
@@ -310,10 +310,10 @@
       "latest_version": "0.4.5.dev4",
       "manifest_path": "pkgs/96_examples/tigrbl_examples/pyproject.toml",
       "name": "tigrbl-examples",
-      "observed_at": "2026-08-03T10:05:58Z",
+      "observed_at": "2026-08-03T10:51:11Z",
       "owner": "tigrbl",
       "private": false,
-      "publication_status": "not-confirmed",
+      "publication_status": "registry_not_found",
       "published": false,
       "registry_url": null,
       "relationship_count": 10,
@@ -342,7 +342,7 @@
       "evidence": [
         {
           "kind": "registry",
-          "observed_at": "2026-08-03T10:05:58Z",
+          "observed_at": "2026-08-03T10:51:11Z",
           "url": "https://pypi.org/project/tigrbl-kernel/"
         }
       ],
@@ -351,7 +351,7 @@
       "latest_version": "0.4.4",
       "manifest_path": "pkgs/45_kernel/tigrbl_kernel/pyproject.toml",
       "name": "tigrbl-kernel",
-      "observed_at": "2026-08-03T10:05:58Z",
+      "observed_at": "2026-08-03T10:51:11Z",
       "owner": "tigrbl",
       "private": false,
       "publication_status": "published",
@@ -383,7 +383,7 @@
       "evidence": [
         {
           "kind": "source",
-          "observed_at": "2026-08-03T10:05:58Z",
+          "observed_at": "2026-08-03T10:51:11Z",
           "url": "https://github.com/tigrbl/tigrbl/blob/HEAD/pkgs/98_experimental/tigrbl_mcp/pyproject.toml"
         }
       ],
@@ -392,10 +392,10 @@
       "latest_version": "0.1.0",
       "manifest_path": "pkgs/98_experimental/tigrbl_mcp/pyproject.toml",
       "name": "tigrbl-mcp",
-      "observed_at": "2026-08-03T10:05:58Z",
+      "observed_at": "2026-08-03T10:51:11Z",
       "owner": "tigrbl",
       "private": false,
-      "publication_status": "not-confirmed",
+      "publication_status": "registry_not_found",
       "published": false,
       "registry_url": null,
       "relationship_count": 7,
@@ -424,7 +424,7 @@
       "evidence": [
         {
           "kind": "registry",
-          "observed_at": "2026-08-03T10:05:58Z",
+          "observed_at": "2026-08-03T10:51:11Z",
           "url": "https://pypi.org/project/tigrbl-ops-olap/"
         }
       ],
@@ -433,7 +433,7 @@
       "latest_version": "0.4.4",
       "manifest_path": "pkgs/60_ops/tigrbl_ops_olap/pyproject.toml",
       "name": "tigrbl-ops-olap",
-      "observed_at": "2026-08-03T10:05:58Z",
+      "observed_at": "2026-08-03T10:51:11Z",
       "owner": "tigrbl",
       "private": false,
       "publication_status": "published",
@@ -465,7 +465,7 @@
       "evidence": [
         {
           "kind": "registry",
-          "observed_at": "2026-08-03T10:05:58Z",
+          "observed_at": "2026-08-03T10:51:11Z",
           "url": "https://pypi.org/project/tigrbl-ops-oltp/"
         }
       ],
@@ -474,7 +474,7 @@
       "latest_version": "0.4.4",
       "manifest_path": "pkgs/60_ops/tigrbl_ops_oltp/pyproject.toml",
       "name": "tigrbl-ops-oltp",
-      "observed_at": "2026-08-03T10:05:58Z",
+      "observed_at": "2026-08-03T10:51:11Z",
       "owner": "tigrbl",
       "private": false,
       "publication_status": "published",
@@ -506,7 +506,7 @@
       "evidence": [
         {
           "kind": "registry",
-          "observed_at": "2026-08-03T10:05:58Z",
+          "observed_at": "2026-08-03T10:51:11Z",
           "url": "https://pypi.org/project/tigrbl-ops-realtime/"
         }
       ],
@@ -515,7 +515,7 @@
       "latest_version": "0.4.4",
       "manifest_path": "pkgs/60_ops/tigrbl_ops_realtime/pyproject.toml",
       "name": "tigrbl-ops-realtime",
-      "observed_at": "2026-08-03T10:05:58Z",
+      "observed_at": "2026-08-03T10:51:11Z",
       "owner": "tigrbl",
       "private": false,
       "publication_status": "published",
@@ -547,7 +547,7 @@
       "evidence": [
         {
           "kind": "registry",
-          "observed_at": "2026-08-03T10:05:58Z",
+          "observed_at": "2026-08-03T10:51:11Z",
           "url": "https://pypi.org/project/tigrbl-ops-webtransport/"
         }
       ],
@@ -556,7 +556,7 @@
       "latest_version": "0.4.5.dev5",
       "manifest_path": "pkgs/60_ops/tigrbl_ops_webtransport/pyproject.toml",
       "name": "tigrbl-ops-webtransport",
-      "observed_at": "2026-08-03T10:05:58Z",
+      "observed_at": "2026-08-03T10:51:11Z",
       "owner": "tigrbl",
       "private": false,
       "publication_status": "published",
@@ -588,7 +588,7 @@
       "evidence": [
         {
           "kind": "registry",
-          "observed_at": "2026-08-03T10:05:58Z",
+          "observed_at": "2026-08-03T10:51:11Z",
           "url": "https://pypi.org/project/tigrbl-orm/"
         }
       ],
@@ -597,7 +597,7 @@
       "latest_version": "0.4.4",
       "manifest_path": "pkgs/30_orm/tigrbl_orm/pyproject.toml",
       "name": "tigrbl-orm",
-      "observed_at": "2026-08-03T10:05:58Z",
+      "observed_at": "2026-08-03T10:51:11Z",
       "owner": "tigrbl",
       "private": false,
       "publication_status": "published",
@@ -629,7 +629,7 @@
       "evidence": [
         {
           "kind": "registry",
-          "observed_at": "2026-08-03T10:05:58Z",
+          "observed_at": "2026-08-03T10:51:11Z",
           "url": "https://pypi.org/project/tigrbl-runtime/"
         }
       ],
@@ -638,7 +638,7 @@
       "latest_version": "0.4.4",
       "manifest_path": "pkgs/50_runtime/tigrbl_runtime/pyproject.toml",
       "name": "tigrbl-runtime",
-      "observed_at": "2026-08-03T10:05:58Z",
+      "observed_at": "2026-08-03T10:51:11Z",
       "owner": "tigrbl",
       "private": false,
       "publication_status": "published",
@@ -670,7 +670,7 @@
       "evidence": [
         {
           "kind": "source",
-          "observed_at": "2026-08-03T10:05:58Z",
+          "observed_at": "2026-08-03T10:51:11Z",
           "url": "https://github.com/tigrbl/tigrbl/blob/HEAD/pkgs/96_examples/transport_surface_matrix_demo/pyproject.toml"
         }
       ],
@@ -679,10 +679,10 @@
       "latest_version": "0.1.0",
       "manifest_path": "pkgs/96_examples/transport_surface_matrix_demo/pyproject.toml",
       "name": "tigrbl-transport-surface-matrix-demo",
-      "observed_at": "2026-08-03T10:05:58Z",
+      "observed_at": "2026-08-03T10:51:11Z",
       "owner": "tigrbl",
       "private": false,
-      "publication_status": "not-confirmed",
+      "publication_status": "registry_not_found",
       "published": false,
       "registry_url": null,
       "relationship_count": 15,
@@ -711,7 +711,7 @@
       "evidence": [
         {
           "kind": "registry",
-          "observed_at": "2026-08-03T10:05:58Z",
+          "observed_at": "2026-08-03T10:51:11Z",
           "url": "https://pypi.org/project/tigrbl-typing/"
         }
       ],
@@ -720,7 +720,7 @@
       "latest_version": "0.4.4",
       "manifest_path": "pkgs/00_typing/tigrbl_typing/pyproject.toml",
       "name": "tigrbl-typing",
-      "observed_at": "2026-08-03T10:05:58Z",
+      "observed_at": "2026-08-03T10:51:11Z",
       "owner": "tigrbl",
       "private": false,
       "publication_status": "published",
@@ -752,7 +752,7 @@
       "evidence": [
         {
           "kind": "source",
-          "observed_at": "2026-08-03T10:05:58Z",
+          "observed_at": "2026-08-03T10:51:11Z",
           "url": "https://github.com/tigrbl/tigrbl/blob/HEAD/pkgs/96_examples/websocket_realtime_ops/pyproject.toml"
         }
       ],
@@ -761,10 +761,10 @@
       "latest_version": "0.1.0",
       "manifest_path": "pkgs/96_examples/websocket_realtime_ops/pyproject.toml",
       "name": "tigrbl-websocket-realtime-ops-demo",
-      "observed_at": "2026-08-03T10:05:58Z",
+      "observed_at": "2026-08-03T10:51:11Z",
       "owner": "tigrbl",
       "private": false,
-      "publication_status": "not-confirmed",
+      "publication_status": "registry_not_found",
       "published": false,
       "registry_url": null,
       "relationship_count": 5,
@@ -793,7 +793,7 @@
       "evidence": [
         {
           "kind": "registry",
-          "observed_at": "2026-08-03T10:05:58Z",
+          "observed_at": "2026-08-03T10:51:11Z",
           "url": "https://pypi.org/project/tigrbl_client/"
         }
       ],
@@ -802,7 +802,7 @@
       "latest_version": "0.4.4",
       "manifest_path": "pkgs/95_client/tigrbl_client/pyproject.toml",
       "name": "tigrbl_client",
-      "observed_at": "2026-08-03T10:05:58Z",
+      "observed_at": "2026-08-03T10:51:11Z",
       "owner": "tigrbl",
       "private": false,
       "publication_status": "published",
@@ -834,7 +834,7 @@
       "evidence": [
         {
           "kind": "registry",
-          "observed_at": "2026-08-03T10:05:58Z",
+          "observed_at": "2026-08-03T10:51:11Z",
           "url": "https://pypi.org/project/tigrbl_engine_bigquery/"
         }
       ],
@@ -843,7 +843,7 @@
       "latest_version": "0.4.4",
       "manifest_path": "pkgs/90_engines/tigrbl_engine_bigquery/pyproject.toml",
       "name": "tigrbl_engine_bigquery",
-      "observed_at": "2026-08-03T10:05:58Z",
+      "observed_at": "2026-08-03T10:51:11Z",
       "owner": "tigrbl",
       "private": false,
       "publication_status": "published",
@@ -875,7 +875,7 @@
       "evidence": [
         {
           "kind": "registry",
-          "observed_at": "2026-08-03T10:05:58Z",
+          "observed_at": "2026-08-03T10:51:11Z",
           "url": "https://pypi.org/project/tigrbl_engine_clickhouse/"
         }
       ],
@@ -884,7 +884,7 @@
       "latest_version": "0.4.4",
       "manifest_path": "pkgs/90_engines/tigrbl_engine_clickhouse/pyproject.toml",
       "name": "tigrbl_engine_clickhouse",
-      "observed_at": "2026-08-03T10:05:58Z",
+      "observed_at": "2026-08-03T10:51:11Z",
       "owner": "tigrbl",
       "private": false,
       "publication_status": "published",
@@ -916,7 +916,7 @@
       "evidence": [
         {
           "kind": "registry",
-          "observed_at": "2026-08-03T10:05:58Z",
+          "observed_at": "2026-08-03T10:51:11Z",
           "url": "https://pypi.org/project/tigrbl_engine_csv/"
         }
       ],
@@ -925,7 +925,7 @@
       "latest_version": "0.4.4",
       "manifest_path": "pkgs/90_engines/tigrbl_engine_csv/pyproject.toml",
       "name": "tigrbl_engine_csv",
-      "observed_at": "2026-08-03T10:05:58Z",
+      "observed_at": "2026-08-03T10:51:11Z",
       "owner": "tigrbl",
       "private": false,
       "publication_status": "published",
@@ -957,7 +957,7 @@
       "evidence": [
         {
           "kind": "registry",
-          "observed_at": "2026-08-03T10:05:58Z",
+          "observed_at": "2026-08-03T10:51:11Z",
           "url": "https://pypi.org/project/tigrbl_engine_dataframe/"
         }
       ],
@@ -966,7 +966,7 @@
       "latest_version": "0.4.4",
       "manifest_path": "pkgs/90_engines/tigrbl_engine_dataframe/pyproject.toml",
       "name": "tigrbl_engine_dataframe",
-      "observed_at": "2026-08-03T10:05:58Z",
+      "observed_at": "2026-08-03T10:51:11Z",
       "owner": "tigrbl",
       "private": false,
       "publication_status": "published",
@@ -998,7 +998,7 @@
       "evidence": [
         {
           "kind": "registry",
-          "observed_at": "2026-08-03T10:05:58Z",
+          "observed_at": "2026-08-03T10:51:11Z",
           "url": "https://pypi.org/project/tigrbl_engine_duckdb/"
         }
       ],
@@ -1007,7 +1007,7 @@
       "latest_version": "0.4.4",
       "manifest_path": "pkgs/90_engines/tigrbl_engine_duckdb/pyproject.toml",
       "name": "tigrbl_engine_duckdb",
-      "observed_at": "2026-08-03T10:05:58Z",
+      "observed_at": "2026-08-03T10:51:11Z",
       "owner": "tigrbl",
       "private": false,
       "publication_status": "published",
@@ -1039,7 +1039,7 @@
       "evidence": [
         {
           "kind": "registry",
-          "observed_at": "2026-08-03T10:05:58Z",
+          "observed_at": "2026-08-03T10:51:11Z",
           "url": "https://pypi.org/project/tigrbl_engine_inmemcache/"
         }
       ],
@@ -1048,7 +1048,7 @@
       "latest_version": "0.4.4",
       "manifest_path": "pkgs/90_engines/tigrbl_engine_inmemcache/pyproject.toml",
       "name": "tigrbl_engine_inmemcache",
-      "observed_at": "2026-08-03T10:05:58Z",
+      "observed_at": "2026-08-03T10:51:11Z",
       "owner": "tigrbl",
       "private": false,
       "publication_status": "published",
@@ -1080,7 +1080,7 @@
       "evidence": [
         {
           "kind": "registry",
-          "observed_at": "2026-08-03T10:05:58Z",
+          "observed_at": "2026-08-03T10:51:11Z",
           "url": "https://pypi.org/project/tigrbl_engine_inmemory/"
         }
       ],
@@ -1089,7 +1089,7 @@
       "latest_version": "0.4.4",
       "manifest_path": "pkgs/90_engines/tigrbl_engine_inmemory/pyproject.toml",
       "name": "tigrbl_engine_inmemory",
-      "observed_at": "2026-08-03T10:05:58Z",
+      "observed_at": "2026-08-03T10:51:11Z",
       "owner": "tigrbl",
       "private": false,
       "publication_status": "published",
@@ -1121,7 +1121,7 @@
       "evidence": [
         {
           "kind": "source",
-          "observed_at": "2026-08-03T10:05:58Z",
+          "observed_at": "2026-08-03T10:51:11Z",
           "url": "https://github.com/tigrbl/tigrbl/blob/HEAD/pkgs/90_engines/tigrbl_engine_mariadb/pyproject.toml"
         }
       ],
@@ -1130,10 +1130,10 @@
       "latest_version": "0.4.5.dev4",
       "manifest_path": "pkgs/90_engines/tigrbl_engine_mariadb/pyproject.toml",
       "name": "tigrbl_engine_mariadb",
-      "observed_at": "2026-08-03T10:05:58Z",
+      "observed_at": "2026-08-03T10:51:11Z",
       "owner": "tigrbl",
       "private": false,
-      "publication_status": "not-confirmed",
+      "publication_status": "registry_not_found",
       "published": false,
       "registry_url": null,
       "relationship_count": 8,
@@ -1162,7 +1162,7 @@
       "evidence": [
         {
           "kind": "registry",
-          "observed_at": "2026-08-03T10:05:58Z",
+          "observed_at": "2026-08-03T10:51:11Z",
           "url": "https://pypi.org/project/tigrbl_engine_membloom/"
         }
       ],
@@ -1171,7 +1171,7 @@
       "latest_version": "0.4.4",
       "manifest_path": "pkgs/90_engines/tigrbl_engine_membloom/pyproject.toml",
       "name": "tigrbl_engine_membloom",
-      "observed_at": "2026-08-03T10:05:58Z",
+      "observed_at": "2026-08-03T10:51:11Z",
       "owner": "tigrbl",
       "private": false,
       "publication_status": "published",
@@ -1203,7 +1203,7 @@
       "evidence": [
         {
           "kind": "registry",
-          "observed_at": "2026-08-03T10:05:58Z",
+          "observed_at": "2026-08-03T10:51:11Z",
           "url": "https://pypi.org/project/tigrbl_engine_memdedupe/"
         }
       ],
@@ -1212,7 +1212,7 @@
       "latest_version": "0.4.4",
       "manifest_path": "pkgs/90_engines/tigrbl_engine_memdedupe/pyproject.toml",
       "name": "tigrbl_engine_memdedupe",
-      "observed_at": "2026-08-03T10:05:58Z",
+      "observed_at": "2026-08-03T10:51:11Z",
       "owner": "tigrbl",
       "private": false,
       "publication_status": "published",
@@ -1244,7 +1244,7 @@
       "evidence": [
         {
           "kind": "registry",
-          "observed_at": "2026-08-03T10:05:58Z",
+          "observed_at": "2026-08-03T10:51:11Z",
           "url": "https://pypi.org/project/tigrbl_engine_memkv/"
         }
       ],
@@ -1253,7 +1253,7 @@
       "latest_version": "0.4.4",
       "manifest_path": "pkgs/90_engines/tigrbl_engine_memkv/pyproject.toml",
       "name": "tigrbl_engine_memkv",
-      "observed_at": "2026-08-03T10:05:58Z",
+      "observed_at": "2026-08-03T10:51:11Z",
       "owner": "tigrbl",
       "private": false,
       "publication_status": "published",
@@ -1285,7 +1285,7 @@
       "evidence": [
         {
           "kind": "registry",
-          "observed_at": "2026-08-03T10:05:58Z",
+          "observed_at": "2026-08-03T10:51:11Z",
           "url": "https://pypi.org/project/tigrbl_engine_memlru/"
         }
       ],
@@ -1294,7 +1294,7 @@
       "latest_version": "0.4.4",
       "manifest_path": "pkgs/90_engines/tigrbl_engine_memlru/pyproject.toml",
       "name": "tigrbl_engine_memlru",
-      "observed_at": "2026-08-03T10:05:58Z",
+      "observed_at": "2026-08-03T10:51:11Z",
       "owner": "tigrbl",
       "private": false,
       "publication_status": "published",
@@ -1326,7 +1326,7 @@
       "evidence": [
         {
           "kind": "registry",
-          "observed_at": "2026-08-03T10:05:58Z",
+          "observed_at": "2026-08-03T10:51:11Z",
           "url": "https://pypi.org/project/tigrbl_engine_mempubsub/"
         }
       ],
@@ -1335,7 +1335,7 @@
       "latest_version": "0.4.4",
       "manifest_path": "pkgs/90_engines/tigrbl_engine_mempubsub/pyproject.toml",
       "name": "tigrbl_engine_mempubsub",
-      "observed_at": "2026-08-03T10:05:58Z",
+      "observed_at": "2026-08-03T10:51:11Z",
       "owner": "tigrbl",
       "private": false,
       "publication_status": "published",
@@ -1367,7 +1367,7 @@
       "evidence": [
         {
           "kind": "registry",
-          "observed_at": "2026-08-03T10:05:58Z",
+          "observed_at": "2026-08-03T10:51:11Z",
           "url": "https://pypi.org/project/tigrbl_engine_memqueue/"
         }
       ],
@@ -1376,7 +1376,7 @@
       "latest_version": "0.4.4",
       "manifest_path": "pkgs/90_engines/tigrbl_engine_memqueue/pyproject.toml",
       "name": "tigrbl_engine_memqueue",
-      "observed_at": "2026-08-03T10:05:58Z",
+      "observed_at": "2026-08-03T10:51:11Z",
       "owner": "tigrbl",
       "private": false,
       "publication_status": "published",
@@ -1408,7 +1408,7 @@
       "evidence": [
         {
           "kind": "registry",
-          "observed_at": "2026-08-03T10:05:58Z",
+          "observed_at": "2026-08-03T10:51:11Z",
           "url": "https://pypi.org/project/tigrbl_engine_memrate/"
         }
       ],
@@ -1417,7 +1417,7 @@
       "latest_version": "0.4.4",
       "manifest_path": "pkgs/90_engines/tigrbl_engine_memrate/pyproject.toml",
       "name": "tigrbl_engine_memrate",
-      "observed_at": "2026-08-03T10:05:58Z",
+      "observed_at": "2026-08-03T10:51:11Z",
       "owner": "tigrbl",
       "private": false,
       "publication_status": "published",
@@ -1449,7 +1449,7 @@
       "evidence": [
         {
           "kind": "registry",
-          "observed_at": "2026-08-03T10:05:58Z",
+          "observed_at": "2026-08-03T10:51:11Z",
           "url": "https://pypi.org/project/tigrbl_engine_numpy/"
         }
       ],
@@ -1458,7 +1458,7 @@
       "latest_version": "0.4.4",
       "manifest_path": "pkgs/90_engines/tigrbl_engine_numpy/pyproject.toml",
       "name": "tigrbl_engine_numpy",
-      "observed_at": "2026-08-03T10:05:58Z",
+      "observed_at": "2026-08-03T10:51:11Z",
       "owner": "tigrbl",
       "private": false,
       "publication_status": "published",
@@ -1490,7 +1490,7 @@
       "evidence": [
         {
           "kind": "registry",
-          "observed_at": "2026-08-03T10:05:58Z",
+          "observed_at": "2026-08-03T10:51:11Z",
           "url": "https://pypi.org/project/tigrbl_engine_pandas/"
         }
       ],
@@ -1499,7 +1499,7 @@
       "latest_version": "0.4.4",
       "manifest_path": "docs/notes/archive/2026/p2-struct-norm/dupe-pkg-roots/pkgs/engines/tigrbl_engine_pandas/tigrbl_engine_pandas/pyproject.toml",
       "name": "tigrbl_engine_pandas",
-      "observed_at": "2026-08-03T10:05:58Z",
+      "observed_at": "2026-08-03T10:51:11Z",
       "owner": "tigrbl",
       "private": false,
       "publication_status": "published",
@@ -1531,7 +1531,7 @@
       "evidence": [
         {
           "kind": "registry",
-          "observed_at": "2026-08-03T10:05:58Z",
+          "observed_at": "2026-08-03T10:51:11Z",
           "url": "https://pypi.org/project/tigrbl_engine_pandas/"
         }
       ],
@@ -1540,7 +1540,7 @@
       "latest_version": "0.4.4",
       "manifest_path": "pkgs/90_engines/tigrbl_engine_pandas/pyproject.toml",
       "name": "tigrbl_engine_pandas",
-      "observed_at": "2026-08-03T10:05:58Z",
+      "observed_at": "2026-08-03T10:51:11Z",
       "owner": "tigrbl",
       "private": false,
       "publication_status": "published",
@@ -1572,7 +1572,7 @@
       "evidence": [
         {
           "kind": "registry",
-          "observed_at": "2026-08-03T10:05:58Z",
+          "observed_at": "2026-08-03T10:51:11Z",
           "url": "https://pypi.org/project/tigrbl_engine_pgsqli_wal/"
         }
       ],
@@ -1581,7 +1581,7 @@
       "latest_version": "0.4.4",
       "manifest_path": "pkgs/90_engines/tigrbl_engine_pgsqli_wal/pyproject.toml",
       "name": "tigrbl_engine_pgsqli_wal",
-      "observed_at": "2026-08-03T10:05:58Z",
+      "observed_at": "2026-08-03T10:51:11Z",
       "owner": "tigrbl",
       "private": false,
       "publication_status": "published",
@@ -1612,7 +1612,7 @@
       "evidence": [
         {
           "kind": "registry",
-          "observed_at": "2026-08-03T10:05:58Z",
+          "observed_at": "2026-08-03T10:51:11Z",
           "url": "https://pypi.org/project/tigrbl_engine_postgres/"
         }
       ],
@@ -1621,7 +1621,7 @@
       "latest_version": "0.4.4",
       "manifest_path": "pkgs/90_engines/tigrbl_engine_postgres/pyproject.toml",
       "name": "tigrbl_engine_postgres",
-      "observed_at": "2026-08-03T10:05:58Z",
+      "observed_at": "2026-08-03T10:51:11Z",
       "owner": "tigrbl",
       "private": false,
       "publication_status": "published",
@@ -1653,7 +1653,7 @@
       "evidence": [
         {
           "kind": "registry",
-          "observed_at": "2026-08-03T10:05:58Z",
+          "observed_at": "2026-08-03T10:51:11Z",
           "url": "https://pypi.org/project/tigrbl_engine_pyspark/"
         }
       ],
@@ -1662,7 +1662,7 @@
       "latest_version": "0.4.4",
       "manifest_path": "pkgs/90_engines/tigrbl_engine_pyspark/pyproject.toml",
       "name": "tigrbl_engine_pyspark",
-      "observed_at": "2026-08-03T10:05:58Z",
+      "observed_at": "2026-08-03T10:51:11Z",
       "owner": "tigrbl",
       "private": false,
       "publication_status": "published",
@@ -1694,7 +1694,7 @@
       "evidence": [
         {
           "kind": "registry",
-          "observed_at": "2026-08-03T10:05:58Z",
+          "observed_at": "2026-08-03T10:51:11Z",
           "url": "https://pypi.org/project/tigrbl_engine_redis/"
         }
       ],
@@ -1703,7 +1703,7 @@
       "latest_version": "0.4.4",
       "manifest_path": "docs/notes/archive/2026/p2-struct-norm/dupe-pkg-roots/pkgs/engines/tigrbl_engine_redis/tigrbl_engine_redis/pyproject.toml",
       "name": "tigrbl_engine_redis",
-      "observed_at": "2026-08-03T10:05:58Z",
+      "observed_at": "2026-08-03T10:51:11Z",
       "owner": "tigrbl",
       "private": false,
       "publication_status": "published",
@@ -1735,7 +1735,7 @@
       "evidence": [
         {
           "kind": "registry",
-          "observed_at": "2026-08-03T10:05:58Z",
+          "observed_at": "2026-08-03T10:51:11Z",
           "url": "https://pypi.org/project/tigrbl_engine_redis/"
         }
       ],
@@ -1744,7 +1744,7 @@
       "latest_version": "0.4.4",
       "manifest_path": "pkgs/90_engines/tigrbl_engine_redis/pyproject.toml",
       "name": "tigrbl_engine_redis",
-      "observed_at": "2026-08-03T10:05:58Z",
+      "observed_at": "2026-08-03T10:51:11Z",
       "owner": "tigrbl",
       "private": false,
       "publication_status": "published",
@@ -1776,7 +1776,7 @@
       "evidence": [
         {
           "kind": "registry",
-          "observed_at": "2026-08-03T10:05:58Z",
+          "observed_at": "2026-08-03T10:51:11Z",
           "url": "https://pypi.org/project/tigrbl_engine_rediscachethrough/"
         }
       ],
@@ -1785,7 +1785,7 @@
       "latest_version": "0.4.4",
       "manifest_path": "pkgs/90_engines/tigrbl_engine_rediscachethrough/pyproject.toml",
       "name": "tigrbl_engine_rediscachethrough",
-      "observed_at": "2026-08-03T10:05:58Z",
+      "observed_at": "2026-08-03T10:51:11Z",
       "owner": "tigrbl",
       "private": false,
       "publication_status": "published",
@@ -1817,7 +1817,7 @@
       "evidence": [
         {
           "kind": "source",
-          "observed_at": "2026-08-03T10:05:58Z",
+          "observed_at": "2026-08-03T10:51:11Z",
           "url": "https://github.com/tigrbl/tigrbl/blob/HEAD/pkgs/90_engines/tigrbl_engine_rom/pyproject.toml"
         }
       ],
@@ -1826,10 +1826,10 @@
       "latest_version": "0.4.5.dev4",
       "manifest_path": "pkgs/90_engines/tigrbl_engine_rom/pyproject.toml",
       "name": "tigrbl_engine_rom",
-      "observed_at": "2026-08-03T10:05:58Z",
+      "observed_at": "2026-08-03T10:51:11Z",
       "owner": "tigrbl",
       "private": false,
-      "publication_status": "not-confirmed",
+      "publication_status": "registry_not_found",
       "published": false,
       "registry_url": null,
       "relationship_count": 7,
@@ -1858,7 +1858,7 @@
       "evidence": [
         {
           "kind": "source",
-          "observed_at": "2026-08-03T10:05:58Z",
+          "observed_at": "2026-08-03T10:51:11Z",
           "url": "https://github.com/tigrbl/tigrbl/blob/HEAD/pkgs/90_engines/tigrbl_engine_s3/pyproject.toml"
         }
       ],
@@ -1867,10 +1867,10 @@
       "latest_version": "0.4.5.dev4",
       "manifest_path": "pkgs/90_engines/tigrbl_engine_s3/pyproject.toml",
       "name": "tigrbl_engine_s3",
-      "observed_at": "2026-08-03T10:05:58Z",
+      "observed_at": "2026-08-03T10:51:11Z",
       "owner": "tigrbl",
       "private": false,
-      "publication_status": "not-confirmed",
+      "publication_status": "registry_not_found",
       "published": false,
       "registry_url": null,
       "relationship_count": 7,
@@ -1899,7 +1899,7 @@
       "evidence": [
         {
           "kind": "source",
-          "observed_at": "2026-08-03T10:05:58Z",
+          "observed_at": "2026-08-03T10:51:11Z",
           "url": "https://github.com/tigrbl/tigrbl/blob/HEAD/pkgs/90_engines/tigrbl_engine_s3fs/pyproject.toml"
         }
       ],
@@ -1908,10 +1908,10 @@
       "latest_version": "0.4.5.dev4",
       "manifest_path": "pkgs/90_engines/tigrbl_engine_s3fs/pyproject.toml",
       "name": "tigrbl_engine_s3fs",
-      "observed_at": "2026-08-03T10:05:58Z",
+      "observed_at": "2026-08-03T10:51:11Z",
       "owner": "tigrbl",
       "private": false,
-      "publication_status": "not-confirmed",
+      "publication_status": "registry_not_found",
       "published": false,
       "registry_url": null,
       "relationship_count": 7,
@@ -1940,7 +1940,7 @@
       "evidence": [
         {
           "kind": "registry",
-          "observed_at": "2026-08-03T10:05:58Z",
+          "observed_at": "2026-08-03T10:51:11Z",
           "url": "https://pypi.org/project/tigrbl_engine_snowflake/"
         }
       ],
@@ -1949,7 +1949,7 @@
       "latest_version": "0.4.4",
       "manifest_path": "docs/notes/archive/2026/p2-struct-norm/dupe-pkg-roots/pkgs/engines/tigrbl_engine_snowflake/tigrbl_engine_snowflake/pyproject.toml",
       "name": "tigrbl_engine_snowflake",
-      "observed_at": "2026-08-03T10:05:58Z",
+      "observed_at": "2026-08-03T10:51:11Z",
       "owner": "tigrbl",
       "private": false,
       "publication_status": "published",
@@ -1980,7 +1980,7 @@
       "evidence": [
         {
           "kind": "registry",
-          "observed_at": "2026-08-03T10:05:58Z",
+          "observed_at": "2026-08-03T10:51:11Z",
           "url": "https://pypi.org/project/tigrbl_engine_snowflake/"
         }
       ],
@@ -1989,7 +1989,7 @@
       "latest_version": "0.4.4",
       "manifest_path": "pkgs/90_engines/tigrbl_engine_snowflake/pyproject.toml",
       "name": "tigrbl_engine_snowflake",
-      "observed_at": "2026-08-03T10:05:58Z",
+      "observed_at": "2026-08-03T10:51:11Z",
       "owner": "tigrbl",
       "private": false,
       "publication_status": "published",
@@ -2020,7 +2020,7 @@
       "evidence": [
         {
           "kind": "registry",
-          "observed_at": "2026-08-03T10:05:58Z",
+          "observed_at": "2026-08-03T10:51:11Z",
           "url": "https://pypi.org/project/tigrbl_engine_sqlite/"
         }
       ],
@@ -2029,7 +2029,7 @@
       "latest_version": "0.4.4",
       "manifest_path": "pkgs/90_engines/tigrbl_engine_sqlite/pyproject.toml",
       "name": "tigrbl_engine_sqlite",
-      "observed_at": "2026-08-03T10:05:58Z",
+      "observed_at": "2026-08-03T10:51:11Z",
       "owner": "tigrbl",
       "private": false,
       "publication_status": "published",
@@ -2061,7 +2061,7 @@
       "evidence": [
         {
           "kind": "registry",
-          "observed_at": "2026-08-03T10:05:58Z",
+          "observed_at": "2026-08-03T10:51:11Z",
           "url": "https://pypi.org/project/tigrbl_engine_xlsx/"
         }
       ],
@@ -2070,7 +2070,7 @@
       "latest_version": "0.4.4",
       "manifest_path": "pkgs/90_engines/tigrbl_engine_xlsx/pyproject.toml",
       "name": "tigrbl_engine_xlsx",
-      "observed_at": "2026-08-03T10:05:58Z",
+      "observed_at": "2026-08-03T10:51:11Z",
       "owner": "tigrbl",
       "private": false,
       "publication_status": "published",
@@ -2102,7 +2102,7 @@
       "evidence": [
         {
           "kind": "source",
-          "observed_at": "2026-08-03T10:05:58Z",
+          "observed_at": "2026-08-03T10:51:11Z",
           "url": "https://github.com/tigrbl/tigrbl/blob/HEAD/pkgs/02_model/tigrbl_model/pyproject.toml"
         }
       ],
@@ -2111,10 +2111,10 @@
       "latest_version": "0.4.5.dev4",
       "manifest_path": "pkgs/02_model/tigrbl_model/pyproject.toml",
       "name": "tigrbl_model",
-      "observed_at": "2026-08-03T10:05:58Z",
+      "observed_at": "2026-08-03T10:51:11Z",
       "owner": "tigrbl",
       "private": false,
-      "publication_status": "not-confirmed",
+      "publication_status": "registry_not_found",
       "published": false,
       "registry_url": null,
       "relationship_count": 9,
@@ -2142,7 +2142,7 @@
       "evidence": [
         {
           "kind": "registry",
-          "observed_at": "2026-08-03T10:05:58Z",
+          "observed_at": "2026-08-03T10:51:11Z",
           "url": "https://pypi.org/project/tigrbl_spec/"
         }
       ],
@@ -2151,7 +2151,7 @@
       "latest_version": "0.4.4",
       "manifest_path": "pkgs/01_spec/tigrbl_spec/pyproject.toml",
       "name": "tigrbl_spec",
-      "observed_at": "2026-08-03T10:05:58Z",
+      "observed_at": "2026-08-03T10:51:11Z",
       "owner": "tigrbl",
       "private": false,
       "publication_status": "published",
@@ -2183,7 +2183,7 @@
       "evidence": [
         {
           "kind": "registry",
-          "observed_at": "2026-08-03T10:05:58Z",
+          "observed_at": "2026-08-03T10:51:11Z",
           "url": "https://pypi.org/project/tigrbl_tests/"
         }
       ],
@@ -2192,7 +2192,7 @@
       "latest_version": "0.4.4",
       "manifest_path": "pkgs/97_tests/tigrbl_tests/pyproject.toml",
       "name": "tigrbl_tests",
-      "observed_at": "2026-08-03T10:05:58Z",
+      "observed_at": "2026-08-03T10:51:11Z",
       "owner": "tigrbl",
       "private": false,
       "publication_status": "published",
@@ -2223,7 +2223,7 @@
     "evidence": [
       {
         "kind": "source",
-        "observed_at": "2026-08-03T10:05:58Z",
+        "observed_at": "2026-08-03T10:51:30Z",
         "url": "https://github.com/tigrbl/tigrbl"
       }
     ],
@@ -2268,7 +2268,7 @@
       "watchers": 0
     },
     "name": "tigrbl",
-    "observed_at": "2026-08-03T10:05:58Z",
+    "observed_at": "2026-08-03T10:51:30Z",
     "owner": "tigrbl",
     "package_ids": [
       "package:pypi:tigrbl-atoms:tigrbl/tigrbl:pkgs/40_atoms/tigrbl_atoms/pyproject.toml",
@@ -2518,14 +2518,14 @@
         "url": "https://github.com/tigrbl/tigrbl/blob/master/tests/planned/test_docs_projection_openapi_openrpc_selection.py"
       },
       {
-        "evidence_type": "repository.tree",
+        "evidence_type": "repository.blob",
         "id": "resource:3292c0e91652",
         "kind": "documentation",
         "name": "docs/README.md",
         "url": "https://github.com/tigrbl/tigrbl/blob/master/docs/README.md"
       },
       {
-        "evidence_type": "repository.tree",
+        "evidence_type": "repository.blob",
         "id": "resource:b3bb0d86240c",
         "kind": "documentation",
         "name": "docs/appspec-internal-spec-matrix.md",
@@ -2567,7 +2567,7 @@
         "url": "https://github.com/tigrbl/tigrbl/tree/master/docs/governance"
       },
       {
-        "evidence_type": "repository.tree",
+        "evidence_type": "repository.blob",
         "id": "resource:560fb25fa044",
         "kind": "documentation",
         "name": "docs/monitoring-and-transport-support-matrix.md",
@@ -2595,35 +2595,35 @@
         "url": "https://github.com/tigrbl/tigrbl/tree/master/docs/release-notes"
       },
       {
-        "evidence_type": "repository.tree",
+        "evidence_type": "repository.blob",
         "id": "resource:1580b834149e",
         "kind": "documentation",
         "name": "docs/spec-surface-matrix.md",
         "url": "https://github.com/tigrbl/tigrbl/blob/master/docs/spec-surface-matrix.md"
       },
       {
-        "evidence_type": "repository.tree",
+        "evidence_type": "repository.blob",
         "id": "resource:04541bccd641",
         "kind": "documentation",
         "name": "docs/spec-surface-matrix.xlsx",
         "url": "https://github.com/tigrbl/tigrbl/blob/master/docs/spec-surface-matrix.xlsx"
       },
       {
-        "evidence_type": "repository.tree",
+        "evidence_type": "repository.blob",
         "id": "resource:50c83c7938e3",
         "kind": "documentation",
         "name": "pkgs/70_concrete/tigrbl_concrete/tigrbl_concrete/system/docs/__init__.py",
         "url": "https://github.com/tigrbl/tigrbl/blob/master/pkgs/70_concrete/tigrbl_concrete/tigrbl_concrete/system/docs/__init__.py"
       },
       {
-        "evidence_type": "repository.tree",
+        "evidence_type": "repository.blob",
         "id": "resource:a20ab5c96711",
         "kind": "documentation",
         "name": "pkgs/70_concrete/tigrbl_concrete/tigrbl_concrete/system/docs/json_schema.py",
         "url": "https://github.com/tigrbl/tigrbl/blob/master/pkgs/70_concrete/tigrbl_concrete/tigrbl_concrete/system/docs/json_schema.py"
       },
       {
-        "evidence_type": "repository.tree",
+        "evidence_type": "repository.blob",
         "id": "resource:721a28547518",
         "kind": "documentation",
         "name": "pkgs/70_concrete/tigrbl_concrete/tigrbl_concrete/system/docs/lens.py",
@@ -2637,42 +2637,42 @@
         "url": "https://github.com/tigrbl/tigrbl/tree/master/pkgs/70_concrete/tigrbl_concrete/tigrbl_concrete/system/docs/openapi"
       },
       {
-        "evidence_type": "repository.tree",
+        "evidence_type": "repository.blob",
         "id": "resource:2bce949c230c",
         "kind": "documentation",
         "name": "pkgs/70_concrete/tigrbl_concrete/tigrbl_concrete/system/docs/openrpc.py",
         "url": "https://github.com/tigrbl/tigrbl/blob/master/pkgs/70_concrete/tigrbl_concrete/tigrbl_concrete/system/docs/openrpc.py"
       },
       {
-        "evidence_type": "repository.tree",
+        "evidence_type": "repository.blob",
         "id": "resource:aa3c4252354f",
         "kind": "documentation",
         "name": "pkgs/70_concrete/tigrbl_concrete/tigrbl_concrete/system/docs/runtime_ops.py",
         "url": "https://github.com/tigrbl/tigrbl/blob/master/pkgs/70_concrete/tigrbl_concrete/tigrbl_concrete/system/docs/runtime_ops.py"
       },
       {
-        "evidence_type": "repository.tree",
+        "evidence_type": "repository.blob",
         "id": "resource:262b4432eaf8",
         "kind": "documentation",
         "name": "pkgs/70_concrete/tigrbl_concrete/tigrbl_concrete/system/docs/surface.py",
         "url": "https://github.com/tigrbl/tigrbl/blob/master/pkgs/70_concrete/tigrbl_concrete/tigrbl_concrete/system/docs/surface.py"
       },
       {
-        "evidence_type": "repository.tree",
+        "evidence_type": "repository.blob",
         "id": "resource:852b777852f2",
         "kind": "documentation",
         "name": "pkgs/70_concrete/tigrbl_concrete/tigrbl_concrete/system/docs/swagger.py",
         "url": "https://github.com/tigrbl/tigrbl/blob/master/pkgs/70_concrete/tigrbl_concrete/tigrbl_concrete/system/docs/swagger.py"
       },
       {
-        "evidence_type": "repository.tree",
+        "evidence_type": "repository.blob",
         "id": "resource:ded9eb009f27",
         "kind": "documentation",
         "name": "pkgs/80_facade/tigrbl/tigrbl/system/docs/__init__.py",
         "url": "https://github.com/tigrbl/tigrbl/blob/master/pkgs/80_facade/tigrbl/tigrbl/system/docs/__init__.py"
       },
       {
-        "evidence_type": "repository.tree",
+        "evidence_type": "repository.blob",
         "id": "resource:b3e1de3c862f",
         "kind": "documentation",
         "name": "pkgs/80_facade/tigrbl/tigrbl/system/docs/lens.py",
@@ -2686,42 +2686,42 @@
         "url": "https://github.com/tigrbl/tigrbl/tree/master/pkgs/80_facade/tigrbl/tigrbl/system/docs/openapi"
       },
       {
-        "evidence_type": "repository.tree",
+        "evidence_type": "repository.blob",
         "id": "resource:f50a4801d9f3",
         "kind": "documentation",
         "name": "pkgs/80_facade/tigrbl/tigrbl/system/docs/openrpc.py",
         "url": "https://github.com/tigrbl/tigrbl/blob/master/pkgs/80_facade/tigrbl/tigrbl/system/docs/openrpc.py"
       },
       {
-        "evidence_type": "repository.tree",
+        "evidence_type": "repository.blob",
         "id": "resource:558912797114",
         "kind": "documentation",
         "name": "pkgs/80_facade/tigrbl/tigrbl/system/docs/swagger.py",
         "url": "https://github.com/tigrbl/tigrbl/blob/master/pkgs/80_facade/tigrbl/tigrbl/system/docs/swagger.py"
       },
       {
-        "evidence_type": "repository.tree",
+        "evidence_type": "repository.blob",
         "id": "resource:ce0e8fa28fff",
         "kind": "documentation",
         "name": "tools/docs/update_equivalence_docs.py",
         "url": "https://github.com/tigrbl/tigrbl/blob/master/tools/docs/update_equivalence_docs.py"
       },
       {
-        "evidence_type": "repository.tree",
+        "evidence_type": "repository.blob",
         "id": "resource:5b625e7572b3",
         "kind": "example",
         "name": "pkgs/80_facade/tigrbl/examples/book_api.ipynb",
         "url": "https://github.com/tigrbl/tigrbl/blob/master/pkgs/80_facade/tigrbl/examples/book_api.ipynb"
       },
       {
-        "evidence_type": "repository.tree",
+        "evidence_type": "repository.blob",
         "id": "resource:d77cca8c40d9",
         "kind": "example",
         "name": "pkgs/80_facade/tigrbl/examples/swarmauri_tigrbl_bridge.py",
         "url": "https://github.com/tigrbl/tigrbl/blob/master/pkgs/80_facade/tigrbl/examples/swarmauri_tigrbl_bridge.py"
       },
       {
-        "evidence_type": "repository.tree",
+        "evidence_type": "repository.blob",
         "id": "resource:bdd77c3572fb",
         "kind": "example",
         "name": "pkgs/80_facade/tigrbl/examples/swarmauri_tigrbl_bridge_smooth.py",

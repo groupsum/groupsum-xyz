@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-03T10:05:58Z",
+  "generated_at": "2026-08-03T10:51:11Z",
   "packages": [
     {
       "claim_boundary": "Publication is reported only when confirmed by the named public registry.",
@@ -14,7 +14,7 @@
       "evidence": [
         {
           "kind": "registry",
-          "observed_at": "2026-08-03T10:05:58Z",
+          "observed_at": "2026-08-03T10:51:11Z",
           "url": "https://pypi.org/project/url-query-attribution-foundations-governance-pack/"
         }
       ],
@@ -23,7 +23,7 @@
       "latest_version": "0.1.1",
       "manifest_path": "pyproject.toml",
       "name": "url-query-attribution-foundations-governance-pack",
-      "observed_at": "2026-08-03T10:05:58Z",
+      "observed_at": "2026-08-03T10:51:11Z",
       "owner": "groupsum",
       "private": false,
       "publication_status": "published",
@@ -54,7 +54,7 @@
     "evidence": [
       {
         "kind": "source",
-        "observed_at": "2026-08-03T10:05:58Z",
+        "observed_at": "2026-08-03T10:51:27Z",
         "url": "https://github.com/groupsum/url-query-attribution-foundations-governance-pack"
       }
     ],
@@ -116,7 +116,7 @@
       "watchers": 0
     },
     "name": "url-query-attribution-foundations-governance-pack",
-    "observed_at": "2026-08-03T10:05:58Z",
+    "observed_at": "2026-08-03T10:51:27Z",
     "owner": "groupsum",
     "package_ids": [
       "package:pypi:url-query-attribution-foundations-governance-pack:groupsum/url-query-attribution-foundations-governance-pack:pyproject.toml"

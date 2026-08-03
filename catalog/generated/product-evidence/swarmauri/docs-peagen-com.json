@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-03T10:05:58Z",
+  "generated_at": "2026-08-03T10:51:11Z",
   "packages": [
     {
       "claim_boundary": "Publication is reported only when confirmed by the named public registry.",
@@ -14,7 +14,7 @@
       "evidence": [
         {
           "kind": "source",
-          "observed_at": "2026-08-03T10:05:58Z",
+          "observed_at": "2026-08-03T10:51:11Z",
           "url": "https://github.com/swarmauri/docs-peagen-com/blob/HEAD/package.json"
         }
       ],
@@ -23,7 +23,7 @@
       "latest_version": "0.1.0",
       "manifest_path": "package.json",
       "name": "docs-peagen-com",
-      "observed_at": "2026-08-03T10:05:58Z",
+      "observed_at": "2026-08-03T10:51:11Z",
       "owner": "swarmauri",
       "private": true,
       "publication_status": "manifest_private",
@@ -53,7 +53,7 @@
       "evidence": [
         {
           "kind": "source",
-          "observed_at": "2026-08-03T10:05:58Z",
+          "observed_at": "2026-08-03T10:51:11Z",
           "url": "https://github.com/swarmauri/docs-peagen-com/blob/HEAD/pyproject.toml"
         }
       ],
@@ -62,10 +62,10 @@
       "latest_version": "0.1.0",
       "manifest_path": "pyproject.toml",
       "name": "docs-peagen-com",
-      "observed_at": "2026-08-03T10:05:58Z",
+      "observed_at": "2026-08-03T10:51:11Z",
       "owner": "swarmauri",
       "private": false,
-      "publication_status": "not-confirmed",
+      "publication_status": "registry_not_found",
       "published": false,
       "registry_url": null,
       "relationship_count": 12,
@@ -93,7 +93,7 @@
     "evidence": [
       {
         "kind": "source",
-        "observed_at": "2026-08-03T10:05:58Z",
+        "observed_at": "2026-08-03T10:51:37Z",
         "url": "https://github.com/swarmauri/docs-peagen-com"
       }
     ],
@@ -130,7 +130,7 @@
       "watchers": 0
     },
     "name": "docs-peagen-com",
-    "observed_at": "2026-08-03T10:05:58Z",
+    "observed_at": "2026-08-03T10:51:37Z",
     "owner": "swarmauri",
     "package_ids": [
       "package:npm:docs-peagen-com:swarmauri/docs-peagen-com:package.json",
@@ -160,7 +160,7 @@
         "url": "https://github.com/swarmauri/docs-peagen-com/tree/master/docs/home"
       },
       {
-        "evidence_type": "repository.tree",
+        "evidence_type": "repository.blob",
         "id": "resource:0e93f6f7c31f",
         "kind": "documentation",
         "name": "docs/index.md",

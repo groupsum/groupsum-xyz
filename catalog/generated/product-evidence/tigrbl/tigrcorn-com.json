@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-03T10:05:58Z",
+  "generated_at": "2026-08-03T10:51:11Z",
   "packages": [
     {
       "claim_boundary": "Publication is reported only when confirmed by the named public registry.",
@@ -14,7 +14,7 @@
       "evidence": [
         {
           "kind": "source",
-          "observed_at": "2026-08-03T10:05:58Z",
+          "observed_at": "2026-08-03T10:51:11Z",
           "url": "https://github.com/tigrbl/tigrcorn-com/blob/HEAD/packages/site-content-pack/package.json"
         }
       ],
@@ -23,7 +23,7 @@
       "latest_version": "0.1.0",
       "manifest_path": "packages/site-content-pack/package.json",
       "name": "@tigrbl/tigrcorn-com-content-pack",
-      "observed_at": "2026-08-03T10:05:58Z",
+      "observed_at": "2026-08-03T10:51:11Z",
       "owner": "tigrbl",
       "private": true,
       "publication_status": "manifest_private",
@@ -55,7 +55,7 @@
       "evidence": [
         {
           "kind": "source",
-          "observed_at": "2026-08-03T10:05:58Z",
+          "observed_at": "2026-08-03T10:51:11Z",
           "url": "https://github.com/tigrbl/tigrcorn-com/blob/HEAD/package.json"
         }
       ],
@@ -64,7 +64,7 @@
       "latest_version": "0.0.0",
       "manifest_path": "package.json",
       "name": "react-example",
-      "observed_at": "2026-08-03T10:05:58Z",
+      "observed_at": "2026-08-03T10:51:11Z",
       "owner": "tigrbl",
       "private": true,
       "publication_status": "manifest_private",
@@ -95,7 +95,7 @@
       "evidence": [
         {
           "kind": "source",
-          "observed_at": "2026-08-03T10:05:58Z",
+          "observed_at": "2026-08-03T10:51:11Z",
           "url": "https://github.com/tigrbl/tigrcorn-com/blob/HEAD/pyproject.toml"
         }
       ],
@@ -104,10 +104,10 @@
       "latest_version": "0.1.0",
       "manifest_path": "pyproject.toml",
       "name": "tigrcorn-com",
-      "observed_at": "2026-08-03T10:05:58Z",
+      "observed_at": "2026-08-03T10:51:11Z",
       "owner": "tigrbl",
       "private": false,
-      "publication_status": "not-confirmed",
+      "publication_status": "registry_not_found",
       "published": false,
       "registry_url": null,
       "relationship_count": 4,
@@ -134,7 +134,7 @@
     "evidence": [
       {
         "kind": "source",
-        "observed_at": "2026-08-03T10:05:58Z",
+        "observed_at": "2026-08-03T10:51:35Z",
         "url": "https://github.com/tigrbl/tigrcorn-com"
       }
     ],
@@ -177,7 +177,7 @@
       "watchers": 0
     },
     "name": "tigrcorn-com",
-    "observed_at": "2026-08-03T10:05:58Z",
+    "observed_at": "2026-08-03T10:51:35Z",
     "owner": "tigrbl",
     "package_ids": [
       "package:npm:@tigrbl/tigrcorn-com-content-pack:tigrbl/tigrcorn-com:packages/site-content-pack/package.json",
@@ -187,7 +187,7 @@
     "pushed_at": "2026-07-13T22:29:06Z",
     "related_resources": [
       {
-        "evidence_type": "repository.tree",
+        "evidence_type": "repository.blob",
         "id": "resource:f37bf4cbe292",
         "kind": "documentation",
         "name": "docs/FRONTEND_APP_BRIEF.md",

@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-03T10:05:58Z",
+  "generated_at": "2026-08-03T10:51:11Z",
   "packages": [
     {
       "claim_boundary": "Publication is reported only when confirmed by the named public registry.",
@@ -14,7 +14,7 @@
       "evidence": [
         {
           "kind": "source",
-          "observed_at": "2026-08-03T10:05:58Z",
+          "observed_at": "2026-08-03T10:51:11Z",
           "url": "https://github.com/groupsum/ssot-registry-com/blob/HEAD/package.json"
         }
       ],
@@ -23,7 +23,7 @@
       "latest_version": "0.1.1",
       "manifest_path": "package.json",
       "name": "ssot-registry-com",
-      "observed_at": "2026-08-03T10:05:58Z",
+      "observed_at": "2026-08-03T10:51:11Z",
       "owner": "groupsum",
       "private": true,
       "publication_status": "manifest_private",
@@ -55,7 +55,7 @@
       "evidence": [
         {
           "kind": "source",
-          "observed_at": "2026-08-03T10:05:58Z",
+          "observed_at": "2026-08-03T10:51:11Z",
           "url": "https://github.com/groupsum/ssot-registry-com/blob/HEAD/pyproject.toml"
         }
       ],
@@ -64,10 +64,10 @@
       "latest_version": "0.1.0",
       "manifest_path": "pyproject.toml",
       "name": "ssot-registry-com",
-      "observed_at": "2026-08-03T10:05:58Z",
+      "observed_at": "2026-08-03T10:51:11Z",
       "owner": "groupsum",
       "private": false,
-      "publication_status": "not-confirmed",
+      "publication_status": "registry_not_found",
       "published": false,
       "registry_url": null,
       "relationship_count": 4,
@@ -94,7 +94,7 @@
     "evidence": [
       {
         "kind": "source",
-        "observed_at": "2026-08-03T10:05:58Z",
+        "observed_at": "2026-08-03T10:51:26Z",
         "url": "https://github.com/groupsum/ssot-registry-com"
       }
     ],
@@ -137,7 +137,7 @@
       "watchers": 0
     },
     "name": "ssot-registry-com",
-    "observed_at": "2026-08-03T10:05:58Z",
+    "observed_at": "2026-08-03T10:51:26Z",
     "owner": "groupsum",
     "package_ids": [
       "package:npm:ssot-registry-com:groupsum/ssot-registry-com:package.json",

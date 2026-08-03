@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-03T10:05:58Z",
+  "generated_at": "2026-08-03T10:51:11Z",
   "packages": [
     {
       "claim_boundary": "Publication is reported only when confirmed by the named public registry.",
@@ -14,7 +14,7 @@
       "evidence": [
         {
           "kind": "source",
-          "observed_at": "2026-08-03T10:05:58Z",
+          "observed_at": "2026-08-03T10:51:11Z",
           "url": "https://github.com/groupsum/portwyrm/blob/HEAD/frontend/package.json"
         }
       ],
@@ -23,7 +23,7 @@
       "latest_version": "0.1.0",
       "manifest_path": "frontend/package.json",
       "name": "portwyrm-uix",
-      "observed_at": "2026-08-03T10:05:58Z",
+      "observed_at": "2026-08-03T10:51:11Z",
       "owner": "groupsum",
       "private": true,
       "publication_status": "manifest_private",
@@ -54,7 +54,7 @@
       "evidence": [
         {
           "kind": "registry",
-          "observed_at": "2026-08-03T10:05:58Z",
+          "observed_at": "2026-08-03T10:51:11Z",
           "url": "https://pypi.org/project/portwyrm/"
         }
       ],
@@ -63,7 +63,7 @@
       "latest_version": "0.1.0a4",
       "manifest_path": "pyproject.toml",
       "name": "portwyrm",
-      "observed_at": "2026-08-03T10:05:58Z",
+      "observed_at": "2026-08-03T10:51:11Z",
       "owner": "groupsum",
       "private": false,
       "publication_status": "published",
@@ -94,7 +94,7 @@
     "evidence": [
       {
         "kind": "source",
-        "observed_at": "2026-08-03T10:05:58Z",
+        "observed_at": "2026-08-03T10:51:24Z",
         "url": "https://github.com/groupsum/portwyrm"
       }
     ],
@@ -156,7 +156,7 @@
       "watchers": 0
     },
     "name": "portwyrm",
-    "observed_at": "2026-08-03T10:05:58Z",
+    "observed_at": "2026-08-03T10:51:24Z",
     "owner": "groupsum",
     "package_ids": [
       "package:npm:portwyrm-uix:groupsum/portwyrm:frontend/package.json",
@@ -165,14 +165,14 @@
     "pushed_at": "2026-07-25T14:58:56Z",
     "related_resources": [
       {
-        "evidence_type": "repository.tree",
+        "evidence_type": "repository.blob",
         "id": "resource:99614c6dc294",
         "kind": "api",
         "name": "src/portwyrm/api/__init__.py",
         "url": "https://github.com/groupsum/portwyrm/blob/master/src/portwyrm/api/__init__.py"
       },
       {
-        "evidence_type": "repository.tree",
+        "evidence_type": "repository.blob",
         "id": "resource:c8496545ed5c",
         "kind": "api",
         "name": "src/portwyrm/api/app.py",
@@ -186,14 +186,14 @@
         "url": "https://github.com/groupsum/portwyrm/tree/master/src/portwyrm/api/compat"
       },
       {
-        "evidence_type": "repository.tree",
+        "evidence_type": "repository.blob",
         "id": "resource:6b06aaed3059",
         "kind": "api",
         "name": "src/portwyrm/api/mfa.py",
         "url": "https://github.com/groupsum/portwyrm/blob/master/src/portwyrm/api/mfa.py"
       },
       {
-        "evidence_type": "repository.tree",
+        "evidence_type": "repository.blob",
         "id": "resource:558554dc8ad5",
         "kind": "api",
         "name": "src/portwyrm/api/middleware.py",
@@ -207,14 +207,14 @@
         "url": "https://github.com/groupsum/portwyrm/tree/master/src/portwyrm/api/native"
       },
       {
-        "evidence_type": "repository.tree",
+        "evidence_type": "repository.blob",
         "id": "resource:3ad412361d5f",
         "kind": "api",
         "name": "src/portwyrm/api/portability.py",
         "url": "https://github.com/groupsum/portwyrm/blob/master/src/portwyrm/api/portability.py"
       },
       {
-        "evidence_type": "repository.tree",
+        "evidence_type": "repository.blob",
         "id": "resource:4c59597a70d3",
         "kind": "api",
         "name": "src/portwyrm/api/security.py",

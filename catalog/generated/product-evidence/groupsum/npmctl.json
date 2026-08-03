@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-03T10:05:58Z",
+  "generated_at": "2026-08-03T10:51:11Z",
   "packages": [
     {
       "claim_boundary": "Publication is reported only when confirmed by the named public registry.",
@@ -14,7 +14,7 @@
       "evidence": [
         {
           "kind": "registry",
-          "observed_at": "2026-08-03T10:05:58Z",
+          "observed_at": "2026-08-03T10:51:11Z",
           "url": "https://pypi.org/project/npmctl/"
         }
       ],
@@ -23,7 +23,7 @@
       "latest_version": "0.3.10",
       "manifest_path": "packages/npmctl/pyproject.toml",
       "name": "npmctl",
-      "observed_at": "2026-08-03T10:05:58Z",
+      "observed_at": "2026-08-03T10:51:11Z",
       "owner": "groupsum",
       "private": false,
       "publication_status": "published",
@@ -55,7 +55,7 @@
       "evidence": [
         {
           "kind": "registry",
-          "observed_at": "2026-08-03T10:05:58Z",
+          "observed_at": "2026-08-03T10:51:11Z",
           "url": "https://pypi.org/project/npmctl-cloudflare/"
         }
       ],
@@ -64,7 +64,7 @@
       "latest_version": "0.3.10",
       "manifest_path": "packages/npmctl-cloudflare/pyproject.toml",
       "name": "npmctl-cloudflare",
-      "observed_at": "2026-08-03T10:05:58Z",
+      "observed_at": "2026-08-03T10:51:11Z",
       "owner": "groupsum",
       "private": false,
       "publication_status": "published",
@@ -96,7 +96,7 @@
       "evidence": [
         {
           "kind": "registry",
-          "observed_at": "2026-08-03T10:05:58Z",
+          "observed_at": "2026-08-03T10:51:11Z",
           "url": "https://pypi.org/project/npmctl-digitalocean/"
         }
       ],
@@ -105,7 +105,7 @@
       "latest_version": "0.3.10",
       "manifest_path": "packages/npmctl-digitalocean/pyproject.toml",
       "name": "npmctl-digitalocean",
-      "observed_at": "2026-08-03T10:05:58Z",
+      "observed_at": "2026-08-03T10:51:11Z",
       "owner": "groupsum",
       "private": false,
       "publication_status": "published",
@@ -137,7 +137,7 @@
       "evidence": [
         {
           "kind": "registry",
-          "observed_at": "2026-08-03T10:05:58Z",
+          "observed_at": "2026-08-03T10:51:11Z",
           "url": "https://pypi.org/project/npmctl-godaddy/"
         }
       ],
@@ -146,7 +146,7 @@
       "latest_version": "0.3.10",
       "manifest_path": "packages/npmctl-godaddy/pyproject.toml",
       "name": "npmctl-godaddy",
-      "observed_at": "2026-08-03T10:05:58Z",
+      "observed_at": "2026-08-03T10:51:11Z",
       "owner": "groupsum",
       "private": false,
       "publication_status": "published",
@@ -178,7 +178,7 @@
       "evidence": [
         {
           "kind": "registry",
-          "observed_at": "2026-08-03T10:05:58Z",
+          "observed_at": "2026-08-03T10:51:11Z",
           "url": "https://pypi.org/project/npmctl-namecheap/"
         }
       ],
@@ -187,7 +187,7 @@
       "latest_version": "0.3.10",
       "manifest_path": "packages/npmctl-namecheap/pyproject.toml",
       "name": "npmctl-namecheap",
-      "observed_at": "2026-08-03T10:05:58Z",
+      "observed_at": "2026-08-03T10:51:11Z",
       "owner": "groupsum",
       "private": false,
       "publication_status": "published",
@@ -219,7 +219,7 @@
       "evidence": [
         {
           "kind": "registry",
-          "observed_at": "2026-08-03T10:05:58Z",
+          "observed_at": "2026-08-03T10:51:11Z",
           "url": "https://pypi.org/project/npmctl-route53/"
         }
       ],
@@ -228,7 +228,7 @@
       "latest_version": "0.3.10",
       "manifest_path": "packages/npmctl-route53/pyproject.toml",
       "name": "npmctl-route53",
-      "observed_at": "2026-08-03T10:05:58Z",
+      "observed_at": "2026-08-03T10:51:11Z",
       "owner": "groupsum",
       "private": false,
       "publication_status": "published",
@@ -260,7 +260,7 @@
       "evidence": [
         {
           "kind": "source",
-          "observed_at": "2026-08-03T10:05:58Z",
+          "observed_at": "2026-08-03T10:51:11Z",
           "url": "https://github.com/groupsum/npmctl/blob/HEAD/pyproject.toml"
         }
       ],
@@ -269,10 +269,10 @@
       "latest_version": "0.4.0",
       "manifest_path": "pyproject.toml",
       "name": "npmctl-workspace",
-      "observed_at": "2026-08-03T10:05:58Z",
+      "observed_at": "2026-08-03T10:51:11Z",
       "owner": "groupsum",
       "private": false,
-      "publication_status": "not-confirmed",
+      "publication_status": "registry_not_found",
       "published": false,
       "registry_url": null,
       "relationship_count": 12,
@@ -300,7 +300,7 @@
     "evidence": [
       {
         "kind": "source",
-        "observed_at": "2026-08-03T10:05:58Z",
+        "observed_at": "2026-08-03T10:51:22Z",
         "url": "https://github.com/groupsum/npmctl"
       }
     ],
@@ -472,7 +472,7 @@
       "watchers": 0
     },
     "name": "npmctl",
-    "observed_at": "2026-08-03T10:05:58Z",
+    "observed_at": "2026-08-03T10:51:22Z",
     "owner": "groupsum",
     "package_ids": [
       "package:pypi:npmctl-cloudflare:groupsum/npmctl:packages/npmctl-cloudflare/pyproject.toml",
@@ -500,21 +500,21 @@
         "url": "https://github.com/groupsum/npmctl/blob/master/schemas/npm/2.10.4/openapi.json"
       },
       {
-        "evidence_type": "repository.tree",
+        "evidence_type": "repository.blob",
         "id": "resource:87cb605c2a5a",
         "kind": "documentation",
         "name": "docs/AGENTS.md",
         "url": "https://github.com/groupsum/npmctl/blob/master/docs/AGENTS.md"
       },
       {
-        "evidence_type": "repository.tree",
+        "evidence_type": "repository.blob",
         "id": "resource:daf481b53d59",
         "kind": "documentation",
         "name": "docs/access-lists.md",
         "url": "https://github.com/groupsum/npmctl/blob/master/docs/access-lists.md"
       },
       {
-        "evidence_type": "repository.tree",
+        "evidence_type": "repository.blob",
         "id": "resource:adc8bf8a9870",
         "kind": "documentation",
         "name": "docs/adoption.md",
@@ -528,7 +528,7 @@
         "url": "https://github.com/groupsum/npmctl/tree/master/docs/adrs"
       },
       {
-        "evidence_type": "repository.tree",
+        "evidence_type": "repository.blob",
         "id": "resource:afd926df6aa0",
         "kind": "documentation",
         "name": "docs/artifact-trust.md",
@@ -542,42 +542,42 @@
         "url": "https://github.com/groupsum/npmctl/tree/master/docs/brand"
       },
       {
-        "evidence_type": "repository.tree",
+        "evidence_type": "repository.blob",
         "id": "resource:1d877159a3f8",
         "kind": "documentation",
         "name": "docs/cli.md",
         "url": "https://github.com/groupsum/npmctl/blob/master/docs/cli.md"
       },
       {
-        "evidence_type": "repository.tree",
+        "evidence_type": "repository.blob",
         "id": "resource:19710332d476",
         "kind": "documentation",
         "name": "docs/compliance.md",
         "url": "https://github.com/groupsum/npmctl/blob/master/docs/compliance.md"
       },
       {
-        "evidence_type": "repository.tree",
+        "evidence_type": "repository.blob",
         "id": "resource:4888a7affd20",
         "kind": "documentation",
         "name": "docs/contracts.md",
         "url": "https://github.com/groupsum/npmctl/blob/master/docs/contracts.md"
       },
       {
-        "evidence_type": "repository.tree",
+        "evidence_type": "repository.blob",
         "id": "resource:746ed28fe4ee",
         "kind": "documentation",
         "name": "docs/desired-state.md",
         "url": "https://github.com/groupsum/npmctl/blob/master/docs/desired-state.md"
       },
       {
-        "evidence_type": "repository.tree",
+        "evidence_type": "repository.blob",
         "id": "resource:cc126f526d19",
         "kind": "documentation",
         "name": "docs/dns-providers.md",
         "url": "https://github.com/groupsum/npmctl/blob/master/docs/dns-providers.md"
       },
       {
-        "evidence_type": "repository.tree",
+        "evidence_type": "repository.blob",
         "id": "resource:828772d57366",
         "kind": "documentation",
         "name": "docs/dns.md",
@@ -598,7 +598,7 @@
         "url": "https://github.com/groupsum/npmctl/tree/master/docs/examples"
       },
       {
-        "evidence_type": "repository.tree",
+        "evidence_type": "repository.blob",
         "id": "resource:15f302fee19e",
         "kind": "documentation",
         "name": "docs/extensions.md",
@@ -612,7 +612,7 @@
         "url": "https://github.com/groupsum/npmctl/tree/master/docs/fragments"
       },
       {
-        "evidence_type": "repository.tree",
+        "evidence_type": "repository.blob",
         "id": "resource:0b249343bcf5",
         "kind": "documentation",
         "name": "docs/github-actions.md",
@@ -626,56 +626,56 @@
         "url": "https://github.com/groupsum/npmctl/tree/master/docs/images"
       },
       {
-        "evidence_type": "repository.tree",
+        "evidence_type": "repository.blob",
         "id": "resource:f1a6a743c25a",
         "kind": "documentation",
         "name": "docs/index.md",
         "url": "https://github.com/groupsum/npmctl/blob/master/docs/index.md"
       },
       {
-        "evidence_type": "repository.tree",
+        "evidence_type": "repository.blob",
         "id": "resource:1dea2fb47f60",
         "kind": "documentation",
         "name": "docs/migration-manifests.md",
         "url": "https://github.com/groupsum/npmctl/blob/master/docs/migration-manifests.md"
       },
       {
-        "evidence_type": "repository.tree",
+        "evidence_type": "repository.blob",
         "id": "resource:d185254919f1",
         "kind": "documentation",
         "name": "docs/migration-recovery.md",
         "url": "https://github.com/groupsum/npmctl/blob/master/docs/migration-recovery.md"
       },
       {
-        "evidence_type": "repository.tree",
+        "evidence_type": "repository.blob",
         "id": "resource:640f5b32d3ef",
         "kind": "documentation",
         "name": "docs/namecheap.md",
         "url": "https://github.com/groupsum/npmctl/blob/master/docs/namecheap.md"
       },
       {
-        "evidence_type": "repository.tree",
+        "evidence_type": "repository.blob",
         "id": "resource:bb65f0a4c55d",
         "kind": "documentation",
         "name": "docs/npm-api-compatibility.md",
         "url": "https://github.com/groupsum/npmctl/blob/master/docs/npm-api-compatibility.md"
       },
       {
-        "evidence_type": "repository.tree",
+        "evidence_type": "repository.blob",
         "id": "resource:53550074928c",
         "kind": "documentation",
         "name": "docs/operational-hardening.md",
         "url": "https://github.com/groupsum/npmctl/blob/master/docs/operational-hardening.md"
       },
       {
-        "evidence_type": "repository.tree",
+        "evidence_type": "repository.blob",
         "id": "resource:18ea9f797a36",
         "kind": "documentation",
         "name": "docs/owner-scoped-reconcile.md",
         "url": "https://github.com/groupsum/npmctl/blob/master/docs/owner-scoped-reconcile.md"
       },
       {
-        "evidence_type": "repository.tree",
+        "evidence_type": "repository.blob",
         "id": "resource:e380ed649940",
         "kind": "documentation",
         "name": "docs/plan-artifacts.md",
@@ -689,28 +689,28 @@
         "url": "https://github.com/groupsum/npmctl/tree/master/docs/plans"
       },
       {
-        "evidence_type": "repository.tree",
+        "evidence_type": "repository.blob",
         "id": "resource:496014100327",
         "kind": "documentation",
         "name": "docs/provider-capabilities.md",
         "url": "https://github.com/groupsum/npmctl/blob/master/docs/provider-capabilities.md"
       },
       {
-        "evidence_type": "repository.tree",
+        "evidence_type": "repository.blob",
         "id": "resource:f8050e01be85",
         "kind": "documentation",
         "name": "docs/repository-manifest.md",
         "url": "https://github.com/groupsum/npmctl/blob/master/docs/repository-manifest.md"
       },
       {
-        "evidence_type": "repository.tree",
+        "evidence_type": "repository.blob",
         "id": "resource:9ea4d1056a78",
         "kind": "documentation",
         "name": "docs/schema-migrations.md",
         "url": "https://github.com/groupsum/npmctl/blob/master/docs/schema-migrations.md"
       },
       {
-        "evidence_type": "repository.tree",
+        "evidence_type": "repository.blob",
         "id": "resource:5e086eb4f674",
         "kind": "documentation",
         "name": "docs/security.md",
@@ -724,7 +724,7 @@
         "url": "https://github.com/groupsum/npmctl/tree/master/docs/seo"
       },
       {
-        "evidence_type": "repository.tree",
+        "evidence_type": "repository.blob",
         "id": "resource:97214b96a5c7",
         "kind": "documentation",
         "name": "docs/seo-aeo-aieo.md",
@@ -738,7 +738,7 @@
         "url": "https://github.com/groupsum/npmctl/tree/master/docs/specs"
       },
       {
-        "evidence_type": "repository.tree",
+        "evidence_type": "repository.blob",
         "id": "resource:3b48727fe46d",
         "kind": "documentation",
         "name": "docs/ssl-certificates.md",

@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-03T10:05:58Z",
+  "generated_at": "2026-08-03T10:51:11Z",
   "packages": [
     {
       "claim_boundary": "Publication is reported only when confirmed by the named public registry.",
@@ -14,7 +14,7 @@
       "evidence": [
         {
           "kind": "registry",
-          "observed_at": "2026-08-03T10:05:58Z",
+          "observed_at": "2026-08-03T10:51:11Z",
           "url": "https://pypi.org/project/tigrbl_spiffe/"
         }
       ],
@@ -23,7 +23,7 @@
       "latest_version": "0.4.1",
       "manifest_path": "pyproject.toml",
       "name": "tigrbl_spiffe",
-      "observed_at": "2026-08-03T10:05:58Z",
+      "observed_at": "2026-08-03T10:51:11Z",
       "owner": "tigrbl",
       "private": false,
       "publication_status": "published",
@@ -54,7 +54,7 @@
     "evidence": [
       {
         "kind": "source",
-        "observed_at": "2026-08-03T10:05:58Z",
+        "observed_at": "2026-08-03T10:51:34Z",
         "url": "https://github.com/tigrbl/tigrbl_spiffe"
       }
     ],
@@ -91,7 +91,7 @@
       "watchers": 0
     },
     "name": "tigrbl_spiffe",
-    "observed_at": "2026-08-03T10:05:58Z",
+    "observed_at": "2026-08-03T10:51:34Z",
     "owner": "tigrbl",
     "package_ids": [
       "package:pypi:tigrbl_spiffe:tigrbl/tigrbl_spiffe:pyproject.toml"
@@ -99,70 +99,70 @@
     "pushed_at": "2026-05-20T02:22:04Z",
     "related_resources": [
       {
-        "evidence_type": "repository.tree",
+        "evidence_type": "repository.blob",
         "id": "resource:38bc43b3b42b",
         "kind": "example",
         "name": "examples/_e2e_shared.py",
         "url": "https://github.com/tigrbl/tigrbl_spiffe/blob/master/examples/_e2e_shared.py"
       },
       {
-        "evidence_type": "repository.tree",
+        "evidence_type": "repository.blob",
         "id": "resource:3b586e8b6395",
         "kind": "example",
         "name": "examples/e2e_uds_multi_client.py",
         "url": "https://github.com/tigrbl/tigrbl_spiffe/blob/master/examples/e2e_uds_multi_client.py"
       },
       {
-        "evidence_type": "repository.tree",
+        "evidence_type": "repository.blob",
         "id": "resource:3063ebf79a6b",
         "kind": "example",
         "name": "examples/e2e_uds_one_client.py",
         "url": "https://github.com/tigrbl/tigrbl_spiffe/blob/master/examples/e2e_uds_one_client.py"
       },
       {
-        "evidence_type": "repository.tree",
+        "evidence_type": "repository.blob",
         "id": "resource:66edefcb7a38",
         "kind": "example",
         "name": "examples/exchange_jwt_bearer.py",
         "url": "https://github.com/tigrbl/tigrbl_spiffe/blob/master/examples/exchange_jwt_bearer.py"
       },
       {
-        "evidence_type": "repository.tree",
+        "evidence_type": "repository.blob",
         "id": "resource:08343c4fb38a",
         "kind": "example",
         "name": "examples/exchange_mtls.py",
         "url": "https://github.com/tigrbl/tigrbl_spiffe/blob/master/examples/exchange_mtls.py"
       },
       {
-        "evidence_type": "repository.tree",
+        "evidence_type": "repository.blob",
         "id": "resource:bf1899d0e86a",
         "kind": "example",
         "name": "examples/quickstart_agent.py",
         "url": "https://github.com/tigrbl/tigrbl_spiffe/blob/master/examples/quickstart_agent.py"
       },
       {
-        "evidence_type": "repository.tree",
+        "evidence_type": "repository.blob",
         "id": "resource:0f6677fc362e",
         "kind": "example",
         "name": "examples/registrar_merge.py",
         "url": "https://github.com/tigrbl/tigrbl_spiffe/blob/master/examples/registrar_merge.py"
       },
       {
-        "evidence_type": "repository.tree",
+        "evidence_type": "repository.blob",
         "id": "resource:e992f3f68a7a",
         "kind": "example",
         "name": "examples/server_side_bundle_sync.py",
         "url": "https://github.com/tigrbl/tigrbl_spiffe/blob/master/examples/server_side_bundle_sync.py"
       },
       {
-        "evidence_type": "repository.tree",
+        "evidence_type": "repository.blob",
         "id": "resource:de5a15fcd7da",
         "kind": "example",
         "name": "examples/server_side_registrar_admin.py",
         "url": "https://github.com/tigrbl/tigrbl_spiffe/blob/master/examples/server_side_registrar_admin.py"
       },
       {
-        "evidence_type": "repository.tree",
+        "evidence_type": "repository.blob",
         "id": "resource:8287f4eb4371",
         "kind": "example",
         "name": "examples/tls_client.py",

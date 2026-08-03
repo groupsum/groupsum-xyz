@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-03T10:05:58Z",
+  "generated_at": "2026-08-03T10:51:11Z",
   "packages": [
     {
       "claim_boundary": "Publication is reported only when confirmed by the named public registry.",
@@ -14,7 +14,7 @@
       "evidence": [
         {
           "kind": "registry",
-          "observed_at": "2026-08-03T10:05:58Z",
+          "observed_at": "2026-08-03T10:51:11Z",
           "url": "https://crates.io/crates/tigr_asgi_contract_artifacts_rs"
         }
       ],
@@ -23,7 +23,7 @@
       "latest_version": "0.3.5-dev8",
       "manifest_path": "packages/artifacts-rs/Cargo.toml",
       "name": "tigr_asgi_contract_artifacts_rs",
-      "observed_at": "2026-08-03T10:05:58Z",
+      "observed_at": "2026-08-03T10:51:11Z",
       "owner": "tigrbl",
       "private": false,
       "publication_status": "published",
@@ -54,7 +54,7 @@
       "evidence": [
         {
           "kind": "registry",
-          "observed_at": "2026-08-03T10:05:58Z",
+          "observed_at": "2026-08-03T10:51:11Z",
           "url": "https://crates.io/crates/tigr_asgi_contract_rs"
         }
       ],
@@ -63,7 +63,7 @@
       "latest_version": "0.3.5-dev6",
       "manifest_path": "packages/contract-rs/Cargo.toml",
       "name": "tigr_asgi_contract_rs",
-      "observed_at": "2026-08-03T10:05:58Z",
+      "observed_at": "2026-08-03T10:51:11Z",
       "owner": "tigrbl",
       "private": false,
       "publication_status": "published",
@@ -94,7 +94,7 @@
       "evidence": [
         {
           "kind": "registry",
-          "observed_at": "2026-08-03T10:05:58Z",
+          "observed_at": "2026-08-03T10:51:11Z",
           "url": "https://www.npmjs.com/package/@tigrbljs/tigr-asgi-contract"
         }
       ],
@@ -103,7 +103,7 @@
       "latest_version": "0.3.5-dev8",
       "manifest_path": "packages/contract-npm/package.json",
       "name": "@tigrbljs/tigr-asgi-contract",
-      "observed_at": "2026-08-03T10:05:58Z",
+      "observed_at": "2026-08-03T10:51:11Z",
       "owner": "tigrbl",
       "private": false,
       "publication_status": "published",
@@ -134,7 +134,7 @@
       "evidence": [
         {
           "kind": "registry",
-          "observed_at": "2026-08-03T10:05:58Z",
+          "observed_at": "2026-08-03T10:51:11Z",
           "url": "https://www.npmjs.com/package/@tigrbljs/tigr-asgi-contract-artifacts"
         }
       ],
@@ -143,7 +143,7 @@
       "latest_version": "0.3.5-dev8",
       "manifest_path": "packages/artifacts-npm/package.json",
       "name": "@tigrbljs/tigr-asgi-contract-artifacts",
-      "observed_at": "2026-08-03T10:05:58Z",
+      "observed_at": "2026-08-03T10:51:11Z",
       "owner": "tigrbl",
       "private": false,
       "publication_status": "published",
@@ -173,7 +173,7 @@
       "evidence": [
         {
           "kind": "source",
-          "observed_at": "2026-08-03T10:05:58Z",
+          "observed_at": "2026-08-03T10:51:11Z",
           "url": "https://github.com/tigrbl/tigr-asgi-contract/blob/HEAD/package.json"
         }
       ],
@@ -182,7 +182,7 @@
       "latest_version": "0.3.0",
       "manifest_path": "package.json",
       "name": "tigr-contract-workspace",
-      "observed_at": "2026-08-03T10:05:58Z",
+      "observed_at": "2026-08-03T10:51:11Z",
       "owner": "tigrbl",
       "private": true,
       "publication_status": "manifest_private",
@@ -212,7 +212,7 @@
       "evidence": [
         {
           "kind": "registry",
-          "observed_at": "2026-08-03T10:05:58Z",
+          "observed_at": "2026-08-03T10:51:11Z",
           "url": "https://pypi.org/project/tigr-asgi-contract/"
         }
       ],
@@ -221,7 +221,7 @@
       "latest_version": "0.3.4",
       "manifest_path": "packages/contract-py/pyproject.toml",
       "name": "tigr-asgi-contract",
-      "observed_at": "2026-08-03T10:05:58Z",
+      "observed_at": "2026-08-03T10:51:11Z",
       "owner": "tigrbl",
       "private": false,
       "publication_status": "published",
@@ -253,7 +253,7 @@
       "evidence": [
         {
           "kind": "registry",
-          "observed_at": "2026-08-03T10:05:58Z",
+          "observed_at": "2026-08-03T10:51:11Z",
           "url": "https://pypi.org/project/tigr-asgi-contract-artifacts/"
         }
       ],
@@ -262,7 +262,7 @@
       "latest_version": "0.3.4",
       "manifest_path": "packages/artifacts-py/pyproject.toml",
       "name": "tigr-asgi-contract-artifacts",
-      "observed_at": "2026-08-03T10:05:58Z",
+      "observed_at": "2026-08-03T10:51:11Z",
       "owner": "tigrbl",
       "private": false,
       "publication_status": "published",
@@ -293,7 +293,7 @@
       "evidence": [
         {
           "kind": "source",
-          "observed_at": "2026-08-03T10:05:58Z",
+          "observed_at": "2026-08-03T10:51:11Z",
           "url": "https://github.com/tigrbl/tigr-asgi-contract/blob/HEAD/pyproject.toml"
         }
       ],
@@ -302,10 +302,10 @@
       "latest_version": "0.3.0",
       "manifest_path": "pyproject.toml",
       "name": "tigr-contract-workspace",
-      "observed_at": "2026-08-03T10:05:58Z",
+      "observed_at": "2026-08-03T10:51:11Z",
       "owner": "tigrbl",
       "private": false,
-      "publication_status": "not-confirmed",
+      "publication_status": "registry_not_found",
       "published": false,
       "registry_url": null,
       "relationship_count": 8,
@@ -333,7 +333,7 @@
     "evidence": [
       {
         "kind": "source",
-        "observed_at": "2026-08-03T10:05:58Z",
+        "observed_at": "2026-08-03T10:51:30Z",
         "url": "https://github.com/tigrbl/tigr-asgi-contract"
       }
     ],
@@ -439,7 +439,7 @@
       "watchers": 0
     },
     "name": "tigr-asgi-contract",
-    "observed_at": "2026-08-03T10:05:58Z",
+    "observed_at": "2026-08-03T10:51:30Z",
     "owner": "tigrbl",
     "package_ids": [
       "package:crates:tigr_asgi_contract_artifacts_rs:tigrbl/tigr-asgi-contract:packages/artifacts-rs/Cargo.toml",
@@ -454,112 +454,112 @@
     "pushed_at": "2026-07-26T04:25:05Z",
     "related_resources": [
       {
-        "evidence_type": "repository.tree",
+        "evidence_type": "repository.blob",
         "id": "resource:75041804b88f",
         "kind": "documentation",
         "name": "docs/conformance.md",
         "url": "https://github.com/tigrbl/tigr-asgi-contract/blob/master/docs/conformance.md"
       },
       {
-        "evidence_type": "repository.tree",
+        "evidence_type": "repository.blob",
         "id": "resource:d3f96d3e76a6",
         "kind": "documentation",
         "name": "docs/contract-governance.md",
         "url": "https://github.com/tigrbl/tigr-asgi-contract/blob/master/docs/contract-governance.md"
       },
       {
-        "evidence_type": "repository.tree",
+        "evidence_type": "repository.blob",
         "id": "resource:d8c7b9ec10cd",
         "kind": "documentation",
         "name": "docs/lifespan_subevent_matrix.csv",
         "url": "https://github.com/tigrbl/tigr-asgi-contract/blob/master/docs/lifespan_subevent_matrix.csv"
       },
       {
-        "evidence_type": "repository.tree",
+        "evidence_type": "repository.blob",
         "id": "resource:0345acf2c45d",
         "kind": "documentation",
         "name": "docs/lifespan_subevent_matrix.md",
         "url": "https://github.com/tigrbl/tigr-asgi-contract/blob/master/docs/lifespan_subevent_matrix.md"
       },
       {
-        "evidence_type": "repository.tree",
+        "evidence_type": "repository.blob",
         "id": "resource:ce3d69bf2e1c",
         "kind": "documentation",
         "name": "docs/publishing.md",
         "url": "https://github.com/tigrbl/tigr-asgi-contract/blob/master/docs/publishing.md"
       },
       {
-        "evidence_type": "repository.tree",
+        "evidence_type": "repository.blob",
         "id": "resource:76ce02dd1442",
         "kind": "documentation",
         "name": "docs/receive-event-outline.md",
         "url": "https://github.com/tigrbl/tigr-asgi-contract/blob/master/docs/receive-event-outline.md"
       },
       {
-        "evidence_type": "repository.tree",
+        "evidence_type": "repository.blob",
         "id": "resource:c6ca005870c7",
         "kind": "documentation",
         "name": "docs/scope-taxonomy-outline.md",
         "url": "https://github.com/tigrbl/tigr-asgi-contract/blob/master/docs/scope-taxonomy-outline.md"
       },
       {
-        "evidence_type": "repository.tree",
+        "evidence_type": "repository.blob",
         "id": "resource:597300c4f348",
         "kind": "documentation",
         "name": "docs/scope_family_subevent_matrix.csv",
         "url": "https://github.com/tigrbl/tigr-asgi-contract/blob/master/docs/scope_family_subevent_matrix.csv"
       },
       {
-        "evidence_type": "repository.tree",
+        "evidence_type": "repository.blob",
         "id": "resource:743a977070f9",
         "kind": "documentation",
         "name": "docs/scope_family_subevent_matrix.md",
         "url": "https://github.com/tigrbl/tigr-asgi-contract/blob/master/docs/scope_family_subevent_matrix.md"
       },
       {
-        "evidence_type": "repository.tree",
+        "evidence_type": "repository.blob",
         "id": "resource:b0cb4226e922",
         "kind": "documentation",
         "name": "docs/scope_family_subevent_transport_event_matrix.csv",
         "url": "https://github.com/tigrbl/tigr-asgi-contract/blob/master/docs/scope_family_subevent_transport_event_matrix.csv"
       },
       {
-        "evidence_type": "repository.tree",
+        "evidence_type": "repository.blob",
         "id": "resource:c8138fa7df99",
         "kind": "documentation",
         "name": "docs/scope_family_subevent_transport_event_matrix.md",
         "url": "https://github.com/tigrbl/tigr-asgi-contract/blob/master/docs/scope_family_subevent_transport_event_matrix.md"
       },
       {
-        "evidence_type": "repository.tree",
+        "evidence_type": "repository.blob",
         "id": "resource:9db9feb898cb",
         "kind": "documentation",
         "name": "docs/scope_family_subevent_transport_event_permutation_matrix.csv",
         "url": "https://github.com/tigrbl/tigr-asgi-contract/blob/master/docs/scope_family_subevent_transport_event_permutation_matrix.csv"
       },
       {
-        "evidence_type": "repository.tree",
+        "evidence_type": "repository.blob",
         "id": "resource:90a0a5b08d43",
         "kind": "documentation",
         "name": "docs/send-event-outline.md",
         "url": "https://github.com/tigrbl/tigr-asgi-contract/blob/master/docs/send-event-outline.md"
       },
       {
-        "evidence_type": "repository.tree",
+        "evidence_type": "repository.blob",
         "id": "resource:2e15d8de3694",
         "kind": "documentation",
         "name": "docs/subevent_scope_matrix.csv",
         "url": "https://github.com/tigrbl/tigr-asgi-contract/blob/master/docs/subevent_scope_matrix.csv"
       },
       {
-        "evidence_type": "repository.tree",
+        "evidence_type": "repository.blob",
         "id": "resource:cf5fb5f08dc1",
         "kind": "documentation",
         "name": "docs/subevent_scope_matrix.md",
         "url": "https://github.com/tigrbl/tigr-asgi-contract/blob/master/docs/subevent_scope_matrix.md"
       },
       {
-        "evidence_type": "repository.tree",
+        "evidence_type": "repository.blob",
         "id": "resource:f92d8da6e51c",
         "kind": "documentation",
         "name": "docs/versioning.md",

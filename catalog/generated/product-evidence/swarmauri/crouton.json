@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-03T10:05:58Z",
+  "generated_at": "2026-08-03T10:51:11Z",
   "packages": [
     {
       "claim_boundary": "Publication is reported only when confirmed by the named public registry.",
@@ -14,7 +14,7 @@
       "evidence": [
         {
           "kind": "registry",
-          "observed_at": "2026-08-03T10:05:58Z",
+          "observed_at": "2026-08-03T10:51:11Z",
           "url": "https://pypi.org/project/crouton/"
         }
       ],
@@ -23,7 +23,7 @@
       "latest_version": "0.1.6",
       "manifest_path": "pkgs/crouton/pyproject.toml",
       "name": "crouton",
-      "observed_at": "2026-08-03T10:05:58Z",
+      "observed_at": "2026-08-03T10:51:11Z",
       "owner": "swarmauri",
       "private": false,
       "publication_status": "published",
@@ -54,7 +54,7 @@
       "evidence": [
         {
           "kind": "registry",
-          "observed_at": "2026-08-03T10:05:58Z",
+          "observed_at": "2026-08-03T10:51:11Z",
           "url": "https://pypi.org/project/crouton_client/"
         }
       ],
@@ -63,7 +63,7 @@
       "latest_version": "0.1.6",
       "manifest_path": "pkgs/crouton_client/pyproject.toml",
       "name": "crouton_client",
-      "observed_at": "2026-08-03T10:05:58Z",
+      "observed_at": "2026-08-03T10:51:11Z",
       "owner": "swarmauri",
       "private": false,
       "publication_status": "published",
@@ -93,7 +93,7 @@
     "evidence": [
       {
         "kind": "source",
-        "observed_at": "2026-08-03T10:05:58Z",
+        "observed_at": "2026-08-03T10:51:36Z",
         "url": "https://github.com/swarmauri/crouton"
       }
     ],
@@ -130,7 +130,7 @@
       "watchers": 0
     },
     "name": "crouton",
-    "observed_at": "2026-08-03T10:05:58Z",
+    "observed_at": "2026-08-03T10:51:36Z",
     "owner": "swarmauri",
     "package_ids": [
       "package:pypi:crouton:swarmauri/crouton:pkgs/crouton/pyproject.toml",

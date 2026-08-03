@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-03T10:05:58Z",
+  "generated_at": "2026-08-03T10:51:11Z",
   "packages": [
     {
       "claim_boundary": "Publication is reported only when confirmed by the named public registry.",
@@ -14,7 +14,7 @@
       "evidence": [
         {
           "kind": "registry",
-          "observed_at": "2026-08-03T10:05:58Z",
+          "observed_at": "2026-08-03T10:51:11Z",
           "url": "https://pypi.org/project/rag_assistant/"
         }
       ],
@@ -23,7 +23,7 @@
       "latest_version": "0.2.4",
       "manifest_path": "pyproject.toml",
       "name": "rag_assistant",
-      "observed_at": "2026-08-03T10:05:58Z",
+      "observed_at": "2026-08-03T10:51:11Z",
       "owner": "swarmauri",
       "private": false,
       "publication_status": "published",
@@ -54,7 +54,7 @@
     "evidence": [
       {
         "kind": "source",
-        "observed_at": "2026-08-03T10:05:58Z",
+        "observed_at": "2026-08-03T10:51:40Z",
         "url": "https://github.com/swarmauri/rag_assistant"
       }
     ],
@@ -99,7 +99,7 @@
       "watchers": 0
     },
     "name": "rag_assistant",
-    "observed_at": "2026-08-03T10:05:58Z",
+    "observed_at": "2026-08-03T10:51:40Z",
     "owner": "swarmauri",
     "package_ids": [
       "package:pypi:rag_assistant:swarmauri/rag_assistant:pyproject.toml"

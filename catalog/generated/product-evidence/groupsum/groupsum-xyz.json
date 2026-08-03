@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-03T10:05:58Z",
+  "generated_at": "2026-08-03T10:51:11Z",
   "packages": [
     {
       "claim_boundary": "Publication is reported only when confirmed by the named public registry.",
@@ -14,7 +14,7 @@
       "evidence": [
         {
           "kind": "source",
-          "observed_at": "2026-08-03T10:05:58Z",
+          "observed_at": "2026-08-03T10:51:11Z",
           "url": "https://github.com/groupsum/groupsum-xyz/blob/HEAD/packages/site-content-pack/package.json"
         }
       ],
@@ -23,7 +23,7 @@
       "latest_version": "0.1.0",
       "manifest_path": "packages/site-content-pack/package.json",
       "name": "@groupsum/groupsum-xyz-content-pack",
-      "observed_at": "2026-08-03T10:05:58Z",
+      "observed_at": "2026-08-03T10:51:11Z",
       "owner": "groupsum",
       "private": true,
       "publication_status": "manifest_private",
@@ -55,7 +55,7 @@
       "evidence": [
         {
           "kind": "source",
-          "observed_at": "2026-08-03T10:05:58Z",
+          "observed_at": "2026-08-03T10:51:11Z",
           "url": "https://github.com/groupsum/groupsum-xyz/blob/HEAD/package.json"
         }
       ],
@@ -64,7 +64,7 @@
       "latest_version": "0.1.0",
       "manifest_path": "package.json",
       "name": "groupsum-xyz",
-      "observed_at": "2026-08-03T10:05:58Z",
+      "observed_at": "2026-08-03T10:51:11Z",
       "owner": "groupsum",
       "private": true,
       "publication_status": "manifest_private",
@@ -95,7 +95,7 @@
     "evidence": [
       {
         "kind": "source",
-        "observed_at": "2026-08-03T10:05:58Z",
+        "observed_at": "2026-08-03T10:51:19Z",
         "url": "https://github.com/groupsum/groupsum-xyz"
       }
     ],
@@ -106,26 +106,26 @@
     "kind": "repository",
     "latest_commit": {
       "author": "cobycloud",
-      "authored_at": "2026-08-03T03:30:30Z",
-      "committed_at": "2026-08-03T03:30:30Z",
+      "authored_at": "2026-08-03T10:35:17Z",
+      "committed_at": "2026-08-03T10:35:17Z",
       "committer": "cobycloud",
-      "message": "Replace website claims with verified content",
-      "sha": "0ef006fba7abed76b50c76c2d25a530b8916bec2",
-      "url": "https://github.com/groupsum/groupsum-xyz/commit/0ef006fba7abed76b50c76c2d25a530b8916bec2"
+      "message": "Build product-centered portfolio records",
+      "sha": "0080791bcd4af3150fe1d0b59317c35709a282bb",
+      "url": "https://github.com/groupsum/groupsum-xyz/commit/0080791bcd4af3150fe1d0b59317c35709a282bb"
     },
     "latest_deployment": {
       "environment": "deployment",
       "environment_url": "",
-      "log_url": "https://github.com/groupsum/groupsum-xyz/actions/runs/30782003991/job/91588397725",
+      "log_url": "https://github.com/groupsum/groupsum-xyz/actions/runs/30806354270/job/91662528948",
       "state": "success",
-      "updated_at": "2026-08-03T03:32:08Z"
+      "updated_at": "2026-08-03T10:38:52Z"
     },
     "latest_release": null,
     "license": null,
     "metrics": {
-      "commits": 46,
+      "commits": 51,
       "contributors": 1,
-      "deployments": 3,
+      "deployments": 9,
       "environments": 1,
       "forks": 0,
       "github_releases": 0,
@@ -133,18 +133,18 @@
       "packages": 2,
       "related_resources": 0,
       "relationships": 2,
-      "size_kb": 4728,
+      "size_kb": 8419,
       "stars": 0,
       "watchers": 0
     },
     "name": "groupsum-xyz",
-    "observed_at": "2026-08-03T10:05:58Z",
+    "observed_at": "2026-08-03T10:51:19Z",
     "owner": "groupsum",
     "package_ids": [
       "package:npm:@groupsum/groupsum-xyz-content-pack:groupsum/groupsum-xyz:packages/site-content-pack/package.json",
       "package:npm:groupsum-xyz:groupsum/groupsum-xyz:package.json"
     ],
-    "pushed_at": "2026-08-03T03:30:43Z",
+    "pushed_at": "2026-08-03T10:35:33Z",
     "related_resources": [],
     "relationship_counts": {
       "repository_contains_package": 2
@@ -171,7 +171,7 @@
       "npmctl",
       "static-site"
     ],
-    "updated_at": "2026-08-03T03:30:47Z",
+    "updated_at": "2026-08-03T10:35:41Z",
     "url": "https://github.com/groupsum/groupsum-xyz",
     "visibility": "public"
   },

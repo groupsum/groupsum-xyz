@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-03T10:05:58Z",
+  "generated_at": "2026-08-03T10:51:11Z",
   "packages": [
     {
       "claim_boundary": "Publication is reported only when confirmed by the named public registry.",
@@ -14,7 +14,7 @@
       "evidence": [
         {
           "kind": "source",
-          "observed_at": "2026-08-03T10:05:58Z",
+          "observed_at": "2026-08-03T10:51:11Z",
           "url": "https://github.com/groupsum/ssot-registry/blob/HEAD/scripts/registry_bench_rs/Cargo.toml"
         }
       ],
@@ -23,10 +23,10 @@
       "latest_version": "0.1.0",
       "manifest_path": "scripts/registry_bench_rs/Cargo.toml",
       "name": "registry_bench_rs",
-      "observed_at": "2026-08-03T10:05:58Z",
+      "observed_at": "2026-08-03T10:51:11Z",
       "owner": "groupsum",
       "private": false,
-      "publication_status": "not-confirmed",
+      "publication_status": "registry_not_found",
       "published": false,
       "registry_url": null,
       "relationship_count": 4,
@@ -54,7 +54,7 @@
       "evidence": [
         {
           "kind": "registry",
-          "observed_at": "2026-08-03T10:05:58Z",
+          "observed_at": "2026-08-03T10:51:11Z",
           "url": "https://www.npmjs.com/package/@ssot-registry/lineage-graph"
         }
       ],
@@ -63,7 +63,7 @@
       "latest_version": "0.2.26",
       "manifest_path": "packages/ssot-lineage-graph/package.json",
       "name": "@ssot-registry/lineage-graph",
-      "observed_at": "2026-08-03T10:05:58Z",
+      "observed_at": "2026-08-03T10:51:11Z",
       "owner": "groupsum",
       "private": false,
       "publication_status": "published",
@@ -94,7 +94,7 @@
       "evidence": [
         {
           "kind": "source",
-          "observed_at": "2026-08-03T10:05:58Z",
+          "observed_at": "2026-08-03T10:51:11Z",
           "url": "https://github.com/groupsum/ssot-registry/blob/HEAD/package.json"
         }
       ],
@@ -103,7 +103,7 @@
       "latest_version": null,
       "manifest_path": "package.json",
       "name": "ssot-registry-workspace",
-      "observed_at": "2026-08-03T10:05:58Z",
+      "observed_at": "2026-08-03T10:51:11Z",
       "owner": "groupsum",
       "private": true,
       "publication_status": "manifest_private",
@@ -133,7 +133,7 @@
       "evidence": [
         {
           "kind": "source",
-          "observed_at": "2026-08-03T10:05:58Z",
+          "observed_at": "2026-08-03T10:51:11Z",
           "url": "https://github.com/groupsum/ssot-registry/blob/HEAD/scripts/registry_bench_rs/pyproject.toml"
         }
       ],
@@ -142,10 +142,10 @@
       "latest_version": "0.1.0",
       "manifest_path": "scripts/registry_bench_rs/pyproject.toml",
       "name": "registry-bench-rs",
-      "observed_at": "2026-08-03T10:05:58Z",
+      "observed_at": "2026-08-03T10:51:11Z",
       "owner": "groupsum",
       "private": false,
-      "publication_status": "not-confirmed",
+      "publication_status": "registry_not_found",
       "published": false,
       "registry_url": null,
       "relationship_count": 2,
@@ -173,7 +173,7 @@
       "evidence": [
         {
           "kind": "registry",
-          "observed_at": "2026-08-03T10:05:58Z",
+          "observed_at": "2026-08-03T10:51:11Z",
           "url": "https://pypi.org/project/ssot-cli/"
         }
       ],
@@ -182,7 +182,7 @@
       "latest_version": "0.1.20",
       "manifest_path": "pkgs/ssot-cli/pyproject.toml",
       "name": "ssot-cli",
-      "observed_at": "2026-08-03T10:05:58Z",
+      "observed_at": "2026-08-03T10:51:11Z",
       "owner": "groupsum",
       "private": false,
       "publication_status": "published",
@@ -214,7 +214,7 @@
       "evidence": [
         {
           "kind": "registry",
-          "observed_at": "2026-08-03T10:05:58Z",
+          "observed_at": "2026-08-03T10:51:11Z",
           "url": "https://pypi.org/project/ssot-codegen/"
         }
       ],
@@ -223,7 +223,7 @@
       "latest_version": "0.2.26",
       "manifest_path": "pkgs/ssot-codegen/pyproject.toml",
       "name": "ssot-codegen",
-      "observed_at": "2026-08-03T10:05:58Z",
+      "observed_at": "2026-08-03T10:51:11Z",
       "owner": "groupsum",
       "private": false,
       "publication_status": "published",
@@ -255,7 +255,7 @@
       "evidence": [
         {
           "kind": "registry",
-          "observed_at": "2026-08-03T10:05:58Z",
+          "observed_at": "2026-08-03T10:51:11Z",
           "url": "https://pypi.org/project/ssot-conformance/"
         }
       ],
@@ -264,7 +264,7 @@
       "latest_version": "0.2.26",
       "manifest_path": "pkgs/ssot-conformance/pyproject.toml",
       "name": "ssot-conformance",
-      "observed_at": "2026-08-03T10:05:58Z",
+      "observed_at": "2026-08-03T10:51:11Z",
       "owner": "groupsum",
       "private": false,
       "publication_status": "published",
@@ -296,7 +296,7 @@
       "evidence": [
         {
           "kind": "registry",
-          "observed_at": "2026-08-03T10:05:58Z",
+          "observed_at": "2026-08-03T10:51:11Z",
           "url": "https://pypi.org/project/ssot-contracts/"
         }
       ],
@@ -305,7 +305,7 @@
       "latest_version": "0.2.26",
       "manifest_path": "pkgs/ssot-contracts/pyproject.toml",
       "name": "ssot-contracts",
-      "observed_at": "2026-08-03T10:05:58Z",
+      "observed_at": "2026-08-03T10:51:11Z",
       "owner": "groupsum",
       "private": false,
       "publication_status": "published",
@@ -337,7 +337,7 @@
       "evidence": [
         {
           "kind": "registry",
-          "observed_at": "2026-08-03T10:05:58Z",
+          "observed_at": "2026-08-03T10:51:11Z",
           "url": "https://pypi.org/project/ssot-core/"
         }
       ],
@@ -346,7 +346,7 @@
       "latest_version": "0.2.26",
       "manifest_path": "pkgs/ssot-core/pyproject.toml",
       "name": "ssot-core",
-      "observed_at": "2026-08-03T10:05:58Z",
+      "observed_at": "2026-08-03T10:51:11Z",
       "owner": "groupsum",
       "private": false,
       "publication_status": "published",
@@ -378,7 +378,7 @@
       "evidence": [
         {
           "kind": "registry",
-          "observed_at": "2026-08-03T10:05:58Z",
+          "observed_at": "2026-08-03T10:51:11Z",
           "url": "https://pypi.org/project/ssot-mcp/"
         }
       ],
@@ -387,7 +387,7 @@
       "latest_version": "0.1.8",
       "manifest_path": "pkgs/ssot-mcp/pyproject.toml",
       "name": "ssot-mcp",
-      "observed_at": "2026-08-03T10:05:58Z",
+      "observed_at": "2026-08-03T10:51:11Z",
       "owner": "groupsum",
       "private": false,
       "publication_status": "published",
@@ -419,7 +419,7 @@
       "evidence": [
         {
           "kind": "registry",
-          "observed_at": "2026-08-03T10:05:58Z",
+          "observed_at": "2026-08-03T10:51:11Z",
           "url": "https://pypi.org/project/ssot-pack-contracts/"
         }
       ],
@@ -428,7 +428,7 @@
       "latest_version": "0.2.23",
       "manifest_path": "pkgs/ssot-pack-contracts/pyproject.toml",
       "name": "ssot-pack-contracts",
-      "observed_at": "2026-08-03T10:05:58Z",
+      "observed_at": "2026-08-03T10:51:11Z",
       "owner": "groupsum",
       "private": false,
       "publication_status": "published",
@@ -460,7 +460,7 @@
       "evidence": [
         {
           "kind": "registry",
-          "observed_at": "2026-08-03T10:05:58Z",
+          "observed_at": "2026-08-03T10:51:11Z",
           "url": "https://pypi.org/project/ssot-registry/"
         }
       ],
@@ -469,7 +469,7 @@
       "latest_version": "0.2.26",
       "manifest_path": "pkgs/ssot-registry/pyproject.toml",
       "name": "ssot-registry",
-      "observed_at": "2026-08-03T10:05:58Z",
+      "observed_at": "2026-08-03T10:51:11Z",
       "owner": "groupsum",
       "private": false,
       "publication_status": "published",
@@ -501,7 +501,7 @@
       "evidence": [
         {
           "kind": "registry",
-          "observed_at": "2026-08-03T10:05:58Z",
+          "observed_at": "2026-08-03T10:51:11Z",
           "url": "https://pypi.org/project/ssot-tui/"
         }
       ],
@@ -510,7 +510,7 @@
       "latest_version": "0.1.20",
       "manifest_path": "pkgs/ssot-tui/pyproject.toml",
       "name": "ssot-tui",
-      "observed_at": "2026-08-03T10:05:58Z",
+      "observed_at": "2026-08-03T10:51:11Z",
       "owner": "groupsum",
       "private": false,
       "publication_status": "published",
@@ -542,7 +542,7 @@
       "evidence": [
         {
           "kind": "registry",
-          "observed_at": "2026-08-03T10:05:58Z",
+          "observed_at": "2026-08-03T10:51:11Z",
           "url": "https://pypi.org/project/ssot-views/"
         }
       ],
@@ -551,7 +551,7 @@
       "latest_version": "0.2.26",
       "manifest_path": "pkgs/ssot-views/pyproject.toml",
       "name": "ssot-views",
-      "observed_at": "2026-08-03T10:05:58Z",
+      "observed_at": "2026-08-03T10:51:11Z",
       "owner": "groupsum",
       "private": false,
       "publication_status": "published",
@@ -582,7 +582,7 @@
     "evidence": [
       {
         "kind": "source",
-        "observed_at": "2026-08-03T10:05:58Z",
+        "observed_at": "2026-08-03T10:51:26Z",
         "url": "https://github.com/groupsum/ssot-registry"
       }
     ],
@@ -639,7 +639,7 @@
       "watchers": 0
     },
     "name": "ssot-registry",
-    "observed_at": "2026-08-03T10:05:58Z",
+    "observed_at": "2026-08-03T10:51:26Z",
     "owner": "groupsum",
     "package_ids": [
       "package:crates:registry_bench_rs:groupsum/ssot-registry:scripts/registry_bench_rs/Cargo.toml",
@@ -660,189 +660,189 @@
     "pushed_at": "2026-08-01T02:42:14Z",
     "related_resources": [
       {
-        "evidence_type": "repository.tree",
+        "evidence_type": "repository.blob",
         "id": "resource:7b2365eeee37",
         "kind": "api",
         "name": "pkgs/ssot-core/src/ssot_registry/api/__init__.py",
         "url": "https://github.com/groupsum/ssot-registry/blob/master/pkgs/ssot-core/src/ssot_registry/api/__init__.py"
       },
       {
-        "evidence_type": "repository.tree",
+        "evidence_type": "repository.blob",
         "id": "resource:704c5ea3ba36",
         "kind": "api",
         "name": "pkgs/ssot-core/src/ssot_registry/api/boundary.py",
         "url": "https://github.com/groupsum/ssot-registry/blob/master/pkgs/ssot-core/src/ssot_registry/api/boundary.py"
       },
       {
-        "evidence_type": "repository.tree",
+        "evidence_type": "repository.blob",
         "id": "resource:cfc1b2a818ba",
         "kind": "api",
         "name": "pkgs/ssot-core/src/ssot_registry/api/claims.py",
         "url": "https://github.com/groupsum/ssot-registry/blob/master/pkgs/ssot-core/src/ssot_registry/api/claims.py"
       },
       {
-        "evidence_type": "repository.tree",
+        "evidence_type": "repository.blob",
         "id": "resource:24b4d059366e",
         "kind": "api",
         "name": "pkgs/ssot-core/src/ssot_registry/api/config.py",
         "url": "https://github.com/groupsum/ssot-registry/blob/master/pkgs/ssot-core/src/ssot_registry/api/config.py"
       },
       {
-        "evidence_type": "repository.tree",
+        "evidence_type": "repository.blob",
         "id": "resource:33d5aa310cbd",
         "kind": "api",
         "name": "pkgs/ssot-core/src/ssot_registry/api/documents.py",
         "url": "https://github.com/groupsum/ssot-registry/blob/master/pkgs/ssot-core/src/ssot_registry/api/documents.py"
       },
       {
-        "evidence_type": "repository.tree",
+        "evidence_type": "repository.blob",
         "id": "resource:0a2faf1edcad",
         "kind": "api",
         "name": "pkgs/ssot-core/src/ssot_registry/api/entity_ops.py",
         "url": "https://github.com/groupsum/ssot-registry/blob/master/pkgs/ssot-core/src/ssot_registry/api/entity_ops.py"
       },
       {
-        "evidence_type": "repository.tree",
+        "evidence_type": "repository.blob",
         "id": "resource:0b25bcab99f1",
         "kind": "api",
         "name": "pkgs/ssot-core/src/ssot_registry/api/evidence.py",
         "url": "https://github.com/groupsum/ssot-registry/blob/master/pkgs/ssot-core/src/ssot_registry/api/evidence.py"
       },
       {
-        "evidence_type": "repository.tree",
+        "evidence_type": "repository.blob",
         "id": "resource:9a8a51673e58",
         "kind": "api",
         "name": "pkgs/ssot-core/src/ssot_registry/api/graph.py",
         "url": "https://github.com/groupsum/ssot-registry/blob/master/pkgs/ssot-core/src/ssot_registry/api/graph.py"
       },
       {
-        "evidence_type": "repository.tree",
+        "evidence_type": "repository.blob",
         "id": "resource:64ded7cfb60b",
         "kind": "api",
         "name": "pkgs/ssot-core/src/ssot_registry/api/init.py",
         "url": "https://github.com/groupsum/ssot-registry/blob/master/pkgs/ssot-core/src/ssot_registry/api/init.py"
       },
       {
-        "evidence_type": "repository.tree",
+        "evidence_type": "repository.blob",
         "id": "resource:d9cb242c8b5d",
         "kind": "api",
         "name": "pkgs/ssot-core/src/ssot_registry/api/lifecycle.py",
         "url": "https://github.com/groupsum/ssot-registry/blob/master/pkgs/ssot-core/src/ssot_registry/api/lifecycle.py"
       },
       {
-        "evidence_type": "repository.tree",
+        "evidence_type": "repository.blob",
         "id": "resource:59e5cb04f2d4",
         "kind": "api",
         "name": "pkgs/ssot-core/src/ssot_registry/api/load.py",
         "url": "https://github.com/groupsum/ssot-registry/blob/master/pkgs/ssot-core/src/ssot_registry/api/load.py"
       },
       {
-        "evidence_type": "repository.tree",
+        "evidence_type": "repository.blob",
         "id": "resource:6820f6f124f3",
         "kind": "api",
         "name": "pkgs/ssot-core/src/ssot_registry/api/local_assurance.py",
         "url": "https://github.com/groupsum/ssot-registry/blob/master/pkgs/ssot-core/src/ssot_registry/api/local_assurance.py"
       },
       {
-        "evidence_type": "repository.tree",
+        "evidence_type": "repository.blob",
         "id": "resource:f39e36234b01",
         "kind": "api",
         "name": "pkgs/ssot-core/src/ssot_registry/api/origin.py",
         "url": "https://github.com/groupsum/ssot-registry/blob/master/pkgs/ssot-core/src/ssot_registry/api/origin.py"
       },
       {
-        "evidence_type": "repository.tree",
+        "evidence_type": "repository.blob",
         "id": "resource:d5ab7e4268bb",
         "kind": "api",
         "name": "pkgs/ssot-core/src/ssot_registry/api/packs.py",
         "url": "https://github.com/groupsum/ssot-registry/blob/master/pkgs/ssot-core/src/ssot_registry/api/packs.py"
       },
       {
-        "evidence_type": "repository.tree",
+        "evidence_type": "repository.blob",
         "id": "resource:e86c173a5a48",
         "kind": "api",
         "name": "pkgs/ssot-core/src/ssot_registry/api/plan.py",
         "url": "https://github.com/groupsum/ssot-registry/blob/master/pkgs/ssot-core/src/ssot_registry/api/plan.py"
       },
       {
-        "evidence_type": "repository.tree",
+        "evidence_type": "repository.blob",
         "id": "resource:e91ae2bf007f",
         "kind": "api",
         "name": "pkgs/ssot-core/src/ssot_registry/api/profile_eval.py",
         "url": "https://github.com/groupsum/ssot-registry/blob/master/pkgs/ssot-core/src/ssot_registry/api/profile_eval.py"
       },
       {
-        "evidence_type": "repository.tree",
+        "evidence_type": "repository.blob",
         "id": "resource:23f66c050531",
         "kind": "api",
         "name": "pkgs/ssot-core/src/ssot_registry/api/profile_resolution.py",
         "url": "https://github.com/groupsum/ssot-registry/blob/master/pkgs/ssot-core/src/ssot_registry/api/profile_resolution.py"
       },
       {
-        "evidence_type": "repository.tree",
+        "evidence_type": "repository.blob",
         "id": "resource:0d7e2ab3917f",
         "kind": "api",
         "name": "pkgs/ssot-core/src/ssot_registry/api/proof_graph.py",
         "url": "https://github.com/groupsum/ssot-registry/blob/master/pkgs/ssot-core/src/ssot_registry/api/proof_graph.py"
       },
       {
-        "evidence_type": "repository.tree",
+        "evidence_type": "repository.blob",
         "id": "resource:23213f9ce057",
         "kind": "api",
         "name": "pkgs/ssot-core/src/ssot_registry/api/registry.py",
         "url": "https://github.com/groupsum/ssot-registry/blob/master/pkgs/ssot-core/src/ssot_registry/api/registry.py"
       },
       {
-        "evidence_type": "repository.tree",
+        "evidence_type": "repository.blob",
         "id": "resource:6a7226079b51",
         "kind": "api",
         "name": "pkgs/ssot-core/src/ssot_registry/api/release.py",
         "url": "https://github.com/groupsum/ssot-registry/blob/master/pkgs/ssot-core/src/ssot_registry/api/release.py"
       },
       {
-        "evidence_type": "repository.tree",
+        "evidence_type": "repository.blob",
         "id": "resource:a4d3c3a66f4c",
         "kind": "api",
         "name": "pkgs/ssot-core/src/ssot_registry/api/save.py",
         "url": "https://github.com/groupsum/ssot-registry/blob/master/pkgs/ssot-core/src/ssot_registry/api/save.py"
       },
       {
-        "evidence_type": "repository.tree",
+        "evidence_type": "repository.blob",
         "id": "resource:a6857fb32159",
         "kind": "api",
         "name": "pkgs/ssot-core/src/ssot_registry/api/status_sync.py",
         "url": "https://github.com/groupsum/ssot-registry/blob/master/pkgs/ssot-core/src/ssot_registry/api/status_sync.py"
       },
       {
-        "evidence_type": "repository.tree",
+        "evidence_type": "repository.blob",
         "id": "resource:f1af0671d5a0",
         "kind": "api",
         "name": "pkgs/ssot-core/src/ssot_registry/api/test_execution.py",
         "url": "https://github.com/groupsum/ssot-registry/blob/master/pkgs/ssot-core/src/ssot_registry/api/test_execution.py"
       },
       {
-        "evidence_type": "repository.tree",
+        "evidence_type": "repository.blob",
         "id": "resource:bcb029ab4a45",
         "kind": "api",
         "name": "pkgs/ssot-core/src/ssot_registry/api/upgrade.py",
         "url": "https://github.com/groupsum/ssot-registry/blob/master/pkgs/ssot-core/src/ssot_registry/api/upgrade.py"
       },
       {
-        "evidence_type": "repository.tree",
+        "evidence_type": "repository.blob",
         "id": "resource:561033719698",
         "kind": "api",
         "name": "pkgs/ssot-core/src/ssot_registry/api/validate.py",
         "url": "https://github.com/groupsum/ssot-registry/blob/master/pkgs/ssot-core/src/ssot_registry/api/validate.py"
       },
       {
-        "evidence_type": "repository.tree",
+        "evidence_type": "repository.blob",
         "id": "resource:48df2cc2673c",
         "kind": "documentation",
         "name": "docs/cli_test_gap_report.md",
         "url": "https://github.com/groupsum/ssot-registry/blob/master/docs/cli_test_gap_report.md"
       },
       {
-        "evidence_type": "repository.tree",
+        "evidence_type": "repository.blob",
         "id": "resource:82bfe21415b5",
         "kind": "documentation",
         "name": "docs/content-addressed-evidence-registry-truth-matrices.md",
@@ -856,21 +856,21 @@
         "url": "https://github.com/groupsum/ssot-registry/tree/master/docs/coordination"
       },
       {
-        "evidence_type": "repository.tree",
+        "evidence_type": "repository.blob",
         "id": "resource:793bff1e332c",
         "kind": "documentation",
         "name": "docs/enhanced-lineage-graph-react-component-brief.md",
         "url": "https://github.com/groupsum/ssot-registry/blob/master/docs/enhanced-lineage-graph-react-component-brief.md"
       },
       {
-        "evidence_type": "repository.tree",
+        "evidence_type": "repository.blob",
         "id": "resource:6ed82740ebc6",
         "kind": "documentation",
         "name": "docs/ssot-registry-product-portfolio-website-brief.md",
         "url": "https://github.com/groupsum/ssot-registry/blob/master/docs/ssot-registry-product-portfolio-website-brief.md"
       },
       {
-        "evidence_type": "repository.tree",
+        "evidence_type": "repository.blob",
         "id": "resource:109adb10a11d",
         "kind": "example",
         "name": "examples/README.md",
@@ -884,14 +884,14 @@
         "url": "https://github.com/groupsum/ssot-registry/tree/master/examples/advanced-repo"
       },
       {
-        "evidence_type": "repository.tree",
+        "evidence_type": "repository.blob",
         "id": "resource:9da851b28ede",
         "kind": "example",
         "name": "examples/e2e-three-releases.md",
         "url": "https://github.com/groupsum/ssot-registry/blob/master/examples/e2e-three-releases.md"
       },
       {
-        "evidence_type": "repository.tree",
+        "evidence_type": "repository.blob",
         "id": "resource:1af6d14854fe",
         "kind": "example",
         "name": "examples/formats-and-exports.md",

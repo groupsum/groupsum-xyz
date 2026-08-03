@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-03T10:05:58Z",
+  "generated_at": "2026-08-03T10:51:11Z",
   "packages": [
     {
       "claim_boundary": "Publication is reported only when confirmed by the named public registry.",
@@ -14,7 +14,7 @@
       "evidence": [
         {
           "kind": "source",
-          "observed_at": "2026-08-03T10:05:58Z",
+          "observed_at": "2026-08-03T10:51:11Z",
           "url": "https://github.com/tigrbl/tigrbl_api_cron/blob/HEAD/pyproject.toml"
         }
       ],
@@ -23,10 +23,10 @@
       "latest_version": "0.2.0",
       "manifest_path": "pyproject.toml",
       "name": "tigrbl-cron",
-      "observed_at": "2026-08-03T10:05:58Z",
+      "observed_at": "2026-08-03T10:51:11Z",
       "owner": "tigrbl",
       "private": false,
-      "publication_status": "not-confirmed",
+      "publication_status": "registry_not_found",
       "published": false,
       "registry_url": null,
       "relationship_count": 13,
@@ -54,7 +54,7 @@
     "evidence": [
       {
         "kind": "source",
-        "observed_at": "2026-08-03T10:05:58Z",
+        "observed_at": "2026-08-03T10:51:32Z",
         "url": "https://github.com/tigrbl/tigrbl_api_cron"
       }
     ],
@@ -91,7 +91,7 @@
       "watchers": 0
     },
     "name": "tigrbl_api_cron",
-    "observed_at": "2026-08-03T10:05:58Z",
+    "observed_at": "2026-08-03T10:51:32Z",
     "owner": "tigrbl",
     "package_ids": [
       "package:pypi:tigrbl-cron:tigrbl/tigrbl_api_cron:pyproject.toml"

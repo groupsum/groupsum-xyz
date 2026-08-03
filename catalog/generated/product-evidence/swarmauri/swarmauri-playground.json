@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-03T10:05:58Z",
+  "generated_at": "2026-08-03T10:51:11Z",
   "packages": [],
   "repository": {
     "archived": false,
@@ -12,7 +12,7 @@
     "evidence": [
       {
         "kind": "source",
-        "observed_at": "2026-08-03T10:05:58Z",
+        "observed_at": "2026-08-03T10:51:49Z",
         "url": "https://github.com/swarmauri/swarmauri-playground"
       }
     ],
@@ -49,7 +49,7 @@
       "watchers": 1
     },
     "name": "swarmauri-playground",
-    "observed_at": "2026-08-03T10:05:58Z",
+    "observed_at": "2026-08-03T10:51:49Z",
     "owner": "swarmauri",
     "package_ids": [],
     "pushed_at": "2024-10-22T10:15:54Z",
