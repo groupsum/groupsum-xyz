@@ -67,7 +67,6 @@ export const SiteHeader: React.FC<SiteHeaderProps> = ({ currentPath, onNavigate 
           href="/"
           onClick={(e) => handleLinkClick("/", e)}
           className="flex items-center gap-2 shrink-0 focus-visible:outline-3 focus-visible:outline-[var(--focus-ring)] focus-visible:outline-offset-4 rounded"
-          aria-label="Groupsum Home"
         >
           <Logo />
         </a>
@@ -82,7 +81,7 @@ export const SiteHeader: React.FC<SiteHeaderProps> = ({ currentPath, onNavigate 
               className={`text-xs font-semibold tracking-widest uppercase transition-colors duration-150 focus-visible:outline-3 focus-visible:outline-[var(--focus-ring)] focus-visible:outline-offset-2 rounded px-1.5 py-0.5 ${
                 isActive(item.path)
                   ? "text-accent font-bold opacity-100"
-                  : "text-ink opacity-60 hover:opacity-100"
+                  : "text-ink opacity-75 hover:opacity-100"
               }`}
               aria-current={isActive(item.path) ? "page" : undefined}
             >

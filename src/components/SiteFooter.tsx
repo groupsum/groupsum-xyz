@@ -98,9 +98,9 @@ export const SiteFooter: React.FC<SiteFooterProps> = ({ onNavigate }) => {
           <div className="md:col-span-7 grid grid-cols-2 sm:grid-cols-3 gap-6">
             {footerGroups.map((group) => (
               <div key={group.title}>
-                <h4 className="text-xs font-mono uppercase tracking-wider font-semibold text-ink mb-4">
+                <h2 className="text-xs font-mono uppercase tracking-wider font-semibold text-ink mb-4">
                   {group.title}
-                </h4>
+                </h2>
                 <ul className="space-y-2.5">
                   {group.links.map((link) => {
                     const isExternal = link.href.startsWith("http");
@@ -130,7 +130,7 @@ export const SiteFooter: React.FC<SiteFooterProps> = ({ onNavigate }) => {
         </div>
 
         {/* Footer legal & boundary marker */}
-        <div className="pt-8 border-t border-[var(--color-border-soft)] flex flex-col sm:flex-row justify-between items-center gap-4 text-[10px] font-bold uppercase tracking-[0.2em] opacity-40">
+        <div className="pt-8 border-t border-[var(--color-border-soft)] flex flex-col sm:flex-row justify-between items-center gap-4 text-[10px] text-ink font-bold uppercase tracking-[0.2em]">
           <div>
             © {new Date().getFullYear()} Groupsum LLC. All rights reserved.
           </div>

@@ -17,6 +17,11 @@ const escapeXml = (value) => escapeHtml(value).replace(/'/g, "&apos;");
 const stripHtml = (value) => String(value || "").replace(/<[^>]*>/g, " ").replace(/&amp;/g, "&").replace(/&hellip;/g, "...").replace(/&#8217;/g, "'").replace(/&#8211;/g, "-").replace(/\s+/g, " ").trim();
 const trim = (value, size = 180) => { const text = stripHtml(value); return text.length > size ? `${text.slice(0, size - 1).trimEnd()}ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã¢â‚¬Â¦Ãƒâ€šÃ‚Â¡ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã‚Â¡ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¦` : text; };
 const safeFile = (value) => String(value).replace(/[^a-z0-9_-]+/gi, "-").replace(/^-|-$/g, "").toLowerCase();
+// Keep published discovery text Unicode-clean even when legacy imported copy is malformed.
+const cleanTrim = (value, size = 180) => {
+  const text = stripHtml(value);
+  return text.length > size ? `${text.slice(0, size - 1).trimEnd()}…` : text;
+};
 const defaultImage = { url: `${root}/social/groupsum-default.svg`, type: "image/svg+xml", width: "1200", height: "630", alt: "GroupSum structured software and clear decisions" };
 const readCatalogDataset = (name) => JSON.parse(fs.readFileSync(`catalog/generated/site/${name}.json`, "utf8"));
 const catalogRepositories = readCatalogDataset("repositories");
@@ -53,15 +58,15 @@ const detailRecords = [
   ...slugsFrom("src/data/portfolio.ts").flatMap((slug) => ["", "projects/", "packages/", "specifications/"].map((prefix) => ({ route: `/portfolio/${prefix}${slug}/`, url: absolute(`/portfolio/${prefix}${slug}/`), title: `${slug.replace(/[-_]/g, " ")} | GroupSum portfolio`, description: `Portfolio record for ${slug.replace(/[-_]/g, " ")}.`, type: "website" }))),
   ...slugsFrom("src/data/solutions.ts").map((slug) => ({ route: `/solutions/${slug}/`, url: absolute(`/solutions/${slug}/`), title: `${slug.replace(/[-_]/g, " ")} solution | GroupSum`, description: `Solution path for ${slug.replace(/[-_]/g, " ")}.`, type: "website" })),
   ...slugsFrom("src/data/services.ts").map((slug) => ({ route: `/services/${slug}/`, url: absolute(`/services/${slug}/`), title: `${slug.replace(/[-_]/g, " ")} service | GroupSum`, description: `Service detail for ${slug.replace(/[-_]/g, " ")}.`, type: "website" })),
-  ...productMetadataRecords.map((item) => ({ route: `/products/records/${item.slug}/`, url: absolute(`/products/records/${item.slug}/`), title: `${item.name} | GroupSum products`, description: trim(item.summary), type: "website", schemaFamily: "product-detail" }))
+  ...productMetadataRecords.map((item) => ({ route: `/products/records/${item.slug}/`, url: absolute(`/products/records/${item.slug}/`), title: `${item.name} | GroupSum products`, description: cleanTrim(item.summary), type: "website", schemaFamily: "product-detail" }))
 ];
 const catalogDetailRecords = [
-  ...catalogRepositories.map((item) => ({ route: normalizePath(item.route), url: absolute(item.route), title: `${item.display_name} repository | GroupSum catalog`, description: trim(item.description), type: "website", modified: item.observed_at, schemaFamily: "catalog-repository", sourceUrl: item.url })),
-  ...catalogPackages.map((item) => ({ route: normalizePath(item.route), url: absolute(item.route), title: `${item.display_name} package | GroupSum catalog`, description: trim(item.description), type: "website", modified: item.observed_at, schemaFamily: "catalog-package", sourceUrl: item.registry_url || item.source_url })),
+  ...catalogRepositories.map((item) => ({ route: normalizePath(item.route), url: absolute(item.route), title: `${item.display_name} repository | GroupSum catalog`, description: cleanTrim(item.description), type: "website", modified: item.observed_at, schemaFamily: "catalog-repository", sourceUrl: item.url })),
+  ...catalogPackages.map((item) => ({ route: normalizePath(item.route), url: absolute(item.route), title: `${item.display_name} package | GroupSum catalog`, description: cleanTrim(item.description), type: "website", modified: item.observed_at, schemaFamily: "catalog-package", sourceUrl: item.registry_url || item.source_url })),
   ...catalogTechnologies.map((item) => ({ route: normalizePath(item.route), url: absolute(item.route), title: `${item.name} technology evidence | GroupSum catalog`, description: `${item.name} was observed through GitHub language data in ${item.repository_count} public repositories.`, type: "website", modified: item.observed_at, schemaFamily: "catalog-technology" }))
 ];
 detailRecords.push(...catalogDetailRecords);
-const articleRecords = articles.map((article) => { const route = normalizePath(article.legacyPath); return { route, url: article.canonicalUrl || absolute(route), title: trim(article.title, 160), description: trim(article.excerptHtml || article.contentHtml, 180) || "Legacy GroupSum article.", type: "article", image: article.featuredImage ? { ...defaultImage, url: article.featuredImage } : defaultImage, published: article.date, modified: article.modified, author: article.authorName, section: article.categories?.[0], tags: article.tags || [] }; });
+const articleRecords = articles.map((article) => { const route = normalizePath(article.legacyPath); return { route, url: article.canonicalUrl || absolute(route), title: cleanTrim(article.title, 160), description: cleanTrim(article.excerptHtml || article.contentHtml, 180) || "Legacy GroupSum article.", type: "article", image: article.featuredImage ? { ...defaultImage, url: article.featuredImage } : defaultImage, published: article.date, modified: article.modified, author: article.authorName, section: article.categories?.[0], tags: article.tags || [] }; });
 const inventory = [...pages, ...detailRecords, ...articleRecords];
 const sitemapGroups = new Map();
 for (const record of [...pages, ...detailRecords]) { const key = record.route === "/" ? "pages" : record.route.split("/")[1]; sitemapGroups.set(key, [...(sitemapGroups.get(key) || []), record]); }
@@ -94,10 +99,39 @@ function writeDiscovery() {
   fs.writeFileSync(path.join(OUT, "site-content.json"), JSON.stringify({ generatedAt: new Date().toISOString(), routes: inventory.map(({ route, url, title, description, type }) => ({ route, url, title, description, type })) }, null, 2));
 }
 
+function writeCleanFullManifest() {
+  const fullDir = path.join(OUT, "llms-full");
+  fs.mkdirSync(fullDir, { recursive: true });
+  const sections = [];
+  for (const [key, records] of [...sitemapGroups.entries()].sort(([a], [b]) => a.localeCompare(b))) {
+    const filename = `${safeFile(key)}.md`;
+    const lines = [`# ${key.replace(/-/g, " ")}`, ""];
+    for (const record of records) {
+      const date = record.modified || record.published;
+      lines.push(`- [${record.title}](${record.url})${date ? ` — ${date}` : ""}`);
+      if (record.description) lines.push(`  ${record.description}`);
+    }
+    lines.push("");
+    fs.writeFileSync(path.join(fullDir, filename), lines.join("\n"));
+    sections.push(`- [${key}](${root}/llms-full/${filename})`);
+  }
+  const full = `# GroupSum full content manifest\n\nThis generated index covers public pages and legacy articles. Canonical URLs remain the source of truth for full HTML content.\n\n${sections.join("\n")}\n`;
+  fs.writeFileSync(path.join(OUT, "llms-full.txt"), full);
+  fs.writeFileSync(path.join(OUT, "full-llms.txt"), full);
+}
+
 fs.mkdirSync(OUT, { recursive: true }); const shellHtml = fs.readFileSync(path.join(OUT, "index.html"), "utf8");
 for (const record of inventory) { if (record.route === "/") continue; const outputDir = path.join(OUT, record.route); fs.mkdirSync(outputDir, { recursive: true }); fs.writeFileSync(path.join(outputDir, "index.html"), injectRenderedApp(injectHeadMeta(shellHtml, record), record)); }
 fs.writeFileSync(path.join(OUT, "index.html"), injectRenderedApp(injectHeadMeta(shellHtml, pages[0]), pages[0]));
+for (const item of productMetadataRecords) {
+  const model = getPageModel(`/products/records/${item.slug}/`);
+  if (!model) continue;
+  const apiTarget = path.join(OUT, "api", "v1", "products", item.slug);
+  fs.mkdirSync(path.dirname(apiTarget), { recursive: true });
+  fs.writeFileSync(apiTarget, JSON.stringify(model));
+}
 writeDiscovery();
+writeCleanFullManifest();
 const catalogOut = path.join(OUT, "catalog");
 fs.mkdirSync(catalogOut, { recursive: true });
 fs.copyFileSync("catalog/generated/catalog.json", path.join(catalogOut, "catalog.json"));

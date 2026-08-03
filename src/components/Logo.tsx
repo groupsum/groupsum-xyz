@@ -80,7 +80,7 @@ export const LogoWordmark: React.FC<{ className?: string }> = ({
       className={`font-serif text-xl font-bold tracking-tight text-ink ${className}`}
       style={{ letterSpacing: "-0.03em" }}
     >
-      Groupsum<span className="text-accent font-sans text-xs align-super ml-0.5 opacity-80">LLC</span>
+      Groupsum<span className="text-accent font-sans text-xs align-super ml-0.5">LLC</span>
     </span>
   );
 };

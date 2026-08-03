@@ -285,7 +285,7 @@ function HomePage({ onNavigate }: RouteProps) {
                   </div>
                   <div className="p-3 bg-[var(--color-surface)] border border-[var(--color-border-soft)] rounded-[var(--radius-sm)] flex items-center justify-between">
                     <span className="text-xs font-mono font-medium text-ink">Tigrbl ASGI Handshake</span>
-                    <span className="text-[10px] font-mono text-green-600 font-bold">Typed</span>
+                    <span className="text-[10px] font-mono text-green-800 font-bold">Typed</span>
                   </div>
                   <div className="p-3 bg-[var(--color-surface)] border border-[var(--color-border-soft)] rounded-[var(--radius-sm)] flex items-center justify-between">
                     <span className="text-xs font-mono font-medium text-ink">Swarmauri Agent Loop</span>
@@ -487,7 +487,7 @@ function HomePage({ onNavigate }: RouteProps) {
 
               <div className="space-y-2 pt-2 border-t border-[var(--color-border-soft)]">
                 <div className="flex justify-between text-[9px] font-mono">
-                  <span className="opacity-60">Maturity:</span>
+                  <span className="text-ink-muted">Maturity:</span>
                   <span className="font-semibold uppercase text-accent">{entity.maturity}</span>
                 </div>
                 <button
@@ -1022,17 +1022,17 @@ function SolutionsPage({ onNavigate }: RouteProps) {
             <div className="md:col-span-8 space-y-6">
               <div className="space-y-4">
                 <div>
-                  <h4 className="text-xs font-mono uppercase tracking-wider text-ink font-semibold mb-1">
+                  <h3 className="text-xs font-mono uppercase tracking-wider text-ink font-semibold mb-1">
                     The Problem & Operational Friction
-                  </h4>
+                  </h3>
                   <p className="text-sm text-ink-muted leading-relaxed">
                     {sol.problem}
                   </p>
                 </div>
                 <div>
-                  <h4 className="text-xs font-mono uppercase tracking-wider text-accent font-semibold mb-1">
+                  <h3 className="text-xs font-mono uppercase tracking-wider text-accent font-semibold mb-1">
                     Our Solution Capability
-                  </h4>
+                  </h3>
                   <p className="text-sm text-ink font-medium leading-relaxed">
                     {sol.capability}
                   </p>
@@ -1041,7 +1041,7 @@ function SolutionsPage({ onNavigate }: RouteProps) {
 
               {/* Representative Work Tags */}
               <div>
-                <h4 className="text-xs font-mono uppercase text-ink-muted mb-2">Representative Evidence & Artifacts:</h4>
+                <h3 className="text-xs font-mono uppercase text-ink-muted mb-2">Representative Evidence & Artifacts:</h3>
                 <div className="flex flex-wrap gap-2">
                   {sol.suites.map((slug) => {
                     const matchedItem = portfolioItems.find(p => p.slug === slug);
