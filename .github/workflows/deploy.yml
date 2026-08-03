@@ -46,8 +46,10 @@ jobs:
         run: |
           docker-compose -f docker-compose.yaml build groupsum-catalog-api
           docker-compose -f docker-compose.yaml build groupsum-xyz
-      - name: Restart site and catalog API containers
-        run: docker-compose -f docker-compose.yaml up -d --no-build --force-recreate groupsum-catalog-api groupsum-xyz
+      - name: Replace site and catalog API containers
+        run: |
+          docker-compose -f docker-compose.yaml down --remove-orphans
+          docker-compose -f docker-compose.yaml up -d --no-build groupsum-catalog-api groupsum-xyz
       - name: Verify public catalog and rendered page markers
         env:
           DEPLOY_VERIFY_URL: https://groupsum.xyz
