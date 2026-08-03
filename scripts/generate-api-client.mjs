@@ -2,7 +2,8 @@ import crypto from "node:crypto";
 import fs from "node:fs";
 
 const openapi = fs.readFileSync("backend/openapi.json", "utf8");
-const digest = crypto.createHash("sha256").update(openapi).digest("hex");
+const canonicalOpenapi = JSON.stringify(JSON.parse(openapi));
+const digest = crypto.createHash("sha256").update(canonicalOpenapi).digest("hex");
 const source = `// Generated from backend/openapi.json. Do not edit manually.
 export const OPENAPI_SHA256 = "${digest}" as const;
 

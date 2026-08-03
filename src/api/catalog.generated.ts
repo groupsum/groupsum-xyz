@@ -1,5 +1,5 @@
 // Generated from backend/openapi.json. Do not edit manually.
-export const OPENAPI_SHA256 = "49039e97ebe6f006dcdb6099f23c09d70242fbb4ea800fa74052a83f0b9c5261" as const;
+export const OPENAPI_SHA256 = "1039409c029e6764b429e71798b24abfb618be025b8cee089a8f5eec43dae3d8" as const;
 
 export type TaxonomyItem = { slug: string; label: string; category: string | null };
 export type RepositoryEvidence = {
