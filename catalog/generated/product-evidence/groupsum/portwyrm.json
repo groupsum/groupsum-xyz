@@ -1,0 +1,294 @@
+{
+  "generated_at": "2026-08-03T10:05:58Z",
+  "packages": [
+    {
+      "claim_boundary": "Publication is reported only when confirmed by the named public registry.",
+      "dependency_count": 12,
+      "description": "Observed npm package record for portwyrm-uix.",
+      "description_source": "generated-factual",
+      "display_name": "portwyrm-uix",
+      "downloads": null,
+      "downstream_completeness": "not-observed",
+      "downstream_count": 0,
+      "ecosystem": "npm",
+      "evidence": [
+        {
+          "kind": "source",
+          "observed_at": "2026-08-03T10:05:58Z",
+          "url": "https://github.com/groupsum/portwyrm/blob/HEAD/frontend/package.json"
+        }
+      ],
+      "id": "package:npm:portwyrm-uix:groupsum/portwyrm:frontend/package.json",
+      "kind": "package",
+      "latest_version": "0.1.0",
+      "manifest_path": "frontend/package.json",
+      "name": "portwyrm-uix",
+      "observed_at": "2026-08-03T10:05:58Z",
+      "owner": "groupsum",
+      "private": true,
+      "publication_status": "manifest_private",
+      "published": false,
+      "registry_url": null,
+      "relationship_count": 13,
+      "relationship_counts": {
+        "package_depends_on_external": 12,
+        "repository_contains_package": 1
+      },
+      "release_count": 0,
+      "repository": "groupsum/portwyrm",
+      "reviewed": false,
+      "route": "/catalog/packages/npm/portwyrm-uix-c303fb0f",
+      "source_url": "https://github.com/groupsum/portwyrm/blob/HEAD/frontend/package.json",
+      "version_declared": "0.1.0"
+    },
+    {
+      "claim_boundary": "Publication is reported only when confirmed by the named public registry.",
+      "dependency_count": 15,
+      "description": "Observed pypi package record for portwyrm.",
+      "description_source": "generated-factual",
+      "display_name": "portwyrm",
+      "downloads": null,
+      "downstream_completeness": "not-observed",
+      "downstream_count": 0,
+      "ecosystem": "pypi",
+      "evidence": [
+        {
+          "kind": "registry",
+          "observed_at": "2026-08-03T10:05:58Z",
+          "url": "https://pypi.org/project/portwyrm/"
+        }
+      ],
+      "id": "package:pypi:portwyrm:groupsum/portwyrm:pyproject.toml",
+      "kind": "package",
+      "latest_version": "0.1.0a4",
+      "manifest_path": "pyproject.toml",
+      "name": "portwyrm",
+      "observed_at": "2026-08-03T10:05:58Z",
+      "owner": "groupsum",
+      "private": false,
+      "publication_status": "published",
+      "published": true,
+      "registry_url": "https://pypi.org/project/portwyrm/",
+      "relationship_count": 16,
+      "relationship_counts": {
+        "package_depends_on_external": 13,
+        "package_depends_on_package": 2,
+        "repository_contains_package": 1
+      },
+      "release_count": 3,
+      "repository": "groupsum/portwyrm",
+      "reviewed": false,
+      "route": "/catalog/packages/pypi/portwyrm-3f693826",
+      "source_url": "https://github.com/groupsum/portwyrm/blob/HEAD/pyproject.toml",
+      "version_declared": "0.1.0a4"
+    }
+  ],
+  "repository": {
+    "archived": false,
+    "claim_boundary": "Repository, release, deployment, and live-service states are reported separately.",
+    "created_at": "2026-07-13T22:24:00Z",
+    "default_branch": "master",
+    "description": "A self-hosted, API-compatible reverse proxy control plane and UI for npmctl.",
+    "description_source": "github-repository",
+    "display_name": "portwyrm",
+    "evidence": [
+      {
+        "kind": "source",
+        "observed_at": "2026-08-03T10:05:58Z",
+        "url": "https://github.com/groupsum/portwyrm"
+      }
+    ],
+    "fork": false,
+    "full_name": "groupsum/portwyrm",
+    "homepage": null,
+    "id": "repository:groupsum/portwyrm",
+    "kind": "repository",
+    "latest_commit": {
+      "author": "cobycloud",
+      "authored_at": "2026-07-25T14:56:54Z",
+      "committed_at": "2026-07-25T14:56:54Z",
+      "committer": "cobycloud",
+      "message": "release: prepare Portwyrm 0.1.0a4",
+      "sha": "31d0b7e0e5fe1c6af8f335555ac4ad997215bf6f",
+      "url": "https://github.com/groupsum/portwyrm/commit/31d0b7e0e5fe1c6af8f335555ac4ad997215bf6f"
+    },
+    "latest_deployment": {
+      "environment": "pypi",
+      "environment_url": "",
+      "log_url": "https://github.com/groupsum/portwyrm/actions/runs/30162709107/job/89690625551",
+      "state": "success",
+      "updated_at": "2026-07-25T15:00:27Z"
+    },
+    "latest_release": {
+      "assets": [
+        {
+          "downloads": 0,
+          "name": "portwyrm-0.1.0a3-py3-none-any.whl",
+          "url": "https://github.com/groupsum/portwyrm/releases/download/v0.1.0-a3/portwyrm-0.1.0a3-py3-none-any.whl"
+        },
+        {
+          "downloads": 0,
+          "name": "portwyrm-0.1.0a3.tar.gz",
+          "url": "https://github.com/groupsum/portwyrm/releases/download/v0.1.0-a3/portwyrm-0.1.0a3.tar.gz"
+        }
+      ],
+      "draft": false,
+      "name": "v0.1.0-a3",
+      "prerelease": false,
+      "published_at": "2026-07-25T14:43:39Z",
+      "tag": "v0.1.0-a3",
+      "url": "https://github.com/groupsum/portwyrm/releases/tag/v0.1.0-a3"
+    },
+    "license": "Apache-2.0",
+    "metrics": {
+      "commits": 95,
+      "contributors": 1,
+      "deployments": 5,
+      "environments": 1,
+      "forks": 0,
+      "github_releases": 2,
+      "open_issues": 0,
+      "packages": 2,
+      "related_resources": 15,
+      "relationships": 17,
+      "size_kb": 1958,
+      "stars": 0,
+      "watchers": 0
+    },
+    "name": "portwyrm",
+    "observed_at": "2026-08-03T10:05:58Z",
+    "owner": "groupsum",
+    "package_ids": [
+      "package:npm:portwyrm-uix:groupsum/portwyrm:frontend/package.json",
+      "package:pypi:portwyrm:groupsum/portwyrm:pyproject.toml"
+    ],
+    "pushed_at": "2026-07-25T14:58:56Z",
+    "related_resources": [
+      {
+        "evidence_type": "repository.tree",
+        "id": "resource:99614c6dc294",
+        "kind": "api",
+        "name": "src/portwyrm/api/__init__.py",
+        "url": "https://github.com/groupsum/portwyrm/blob/master/src/portwyrm/api/__init__.py"
+      },
+      {
+        "evidence_type": "repository.tree",
+        "id": "resource:c8496545ed5c",
+        "kind": "api",
+        "name": "src/portwyrm/api/app.py",
+        "url": "https://github.com/groupsum/portwyrm/blob/master/src/portwyrm/api/app.py"
+      },
+      {
+        "evidence_type": "repository.tree",
+        "id": "resource:2d337ac504d9",
+        "kind": "api",
+        "name": "src/portwyrm/api/compat",
+        "url": "https://github.com/groupsum/portwyrm/tree/master/src/portwyrm/api/compat"
+      },
+      {
+        "evidence_type": "repository.tree",
+        "id": "resource:6b06aaed3059",
+        "kind": "api",
+        "name": "src/portwyrm/api/mfa.py",
+        "url": "https://github.com/groupsum/portwyrm/blob/master/src/portwyrm/api/mfa.py"
+      },
+      {
+        "evidence_type": "repository.tree",
+        "id": "resource:558554dc8ad5",
+        "kind": "api",
+        "name": "src/portwyrm/api/middleware.py",
+        "url": "https://github.com/groupsum/portwyrm/blob/master/src/portwyrm/api/middleware.py"
+      },
+      {
+        "evidence_type": "repository.tree",
+        "id": "resource:684d2de7ec24",
+        "kind": "api",
+        "name": "src/portwyrm/api/native",
+        "url": "https://github.com/groupsum/portwyrm/tree/master/src/portwyrm/api/native"
+      },
+      {
+        "evidence_type": "repository.tree",
+        "id": "resource:3ad412361d5f",
+        "kind": "api",
+        "name": "src/portwyrm/api/portability.py",
+        "url": "https://github.com/groupsum/portwyrm/blob/master/src/portwyrm/api/portability.py"
+      },
+      {
+        "evidence_type": "repository.tree",
+        "id": "resource:4c59597a70d3",
+        "kind": "api",
+        "name": "src/portwyrm/api/security.py",
+        "url": "https://github.com/groupsum/portwyrm/blob/master/src/portwyrm/api/security.py"
+      },
+      {
+        "evidence_type": "repository.tree",
+        "id": "resource:ac5c8b425450",
+        "kind": "documentation",
+        "name": "docs/architecture",
+        "url": "https://github.com/groupsum/portwyrm/tree/master/docs/architecture"
+      },
+      {
+        "evidence_type": "repository.tree",
+        "id": "resource:65965209fc47",
+        "kind": "documentation",
+        "name": "docs/compatibility",
+        "url": "https://github.com/groupsum/portwyrm/tree/master/docs/compatibility"
+      },
+      {
+        "evidence_type": "repository.tree",
+        "id": "resource:4a9e59ae0e41",
+        "kind": "documentation",
+        "name": "docs/delivery",
+        "url": "https://github.com/groupsum/portwyrm/tree/master/docs/delivery"
+      },
+      {
+        "evidence_type": "repository.tree",
+        "id": "resource:4653e8fa0392",
+        "kind": "documentation",
+        "name": "docs/product",
+        "url": "https://github.com/groupsum/portwyrm/tree/master/docs/product"
+      },
+      {
+        "evidence_type": "repository.tree",
+        "id": "resource:ef85672b6e13",
+        "kind": "documentation",
+        "name": "docs/research",
+        "url": "https://github.com/groupsum/portwyrm/tree/master/docs/research"
+      },
+      {
+        "evidence_type": "repository.tree",
+        "id": "resource:2b2e18cdbe6e",
+        "kind": "documentation",
+        "name": "docs/testing",
+        "url": "https://github.com/groupsum/portwyrm/tree/master/docs/testing"
+      },
+      {
+        "evidence_type": "repository.tree",
+        "id": "resource:c0050382654c",
+        "kind": "documentation",
+        "name": "docs/ux",
+        "url": "https://github.com/groupsum/portwyrm/tree/master/docs/ux"
+      }
+    ],
+    "relationship_counts": {
+      "repository_contains_package": 2,
+      "repository_contains_related_resource": 15
+    },
+    "reviewed": false,
+    "route": "/catalog/repositories/groupsum/portwyrm",
+    "technologies": [
+      "CSS",
+      "Dockerfile",
+      "HTML",
+      "JavaScript",
+      "Python",
+      "TypeScript"
+    ],
+    "template": false,
+    "topics": [],
+    "updated_at": "2026-07-25T14:57:02Z",
+    "url": "https://github.com/groupsum/portwyrm",
+    "visibility": "public"
+  },
+  "schema_version": "1.0.0"
+}

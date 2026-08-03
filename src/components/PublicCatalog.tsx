@@ -69,6 +69,10 @@ function valueStrings(value: unknown): string[] {
   return Array.isArray(value) ? value.filter((item): item is string => typeof item === "string") : [];
 }
 
+function valueRecords(value: unknown): Array<Record<string, unknown>> {
+  return Array.isArray(value) ? value.filter((item): item is Record<string, unknown> => Boolean(item) && typeof item === "object" && !Array.isArray(item)) : [];
+}
+
 function humanLabel(value: string): string {
   return value.replace(/_/g, " ").replace(/\b\w/g, (letter) => letter.toUpperCase());
 }
@@ -115,6 +119,7 @@ function RepositoryDetail({ record }: { record: CatalogRecord }) {
   const release = valueRecord(record.latest_release);
   const deployment = valueRecord(record.latest_deployment);
   const technologies = valueStrings(record.technologies);
+  const resources = valueRecords(record.related_resources);
   return (
     <>
       <DetailSection title="Repository overview">
@@ -149,6 +154,11 @@ function RepositoryDetail({ record }: { record: CatalogRecord }) {
       <DetailSection title="Relationships" intro="Relationship types are aggregated from repository manifests and catalog links.">
         <RelationshipRows values={record.relationship_counts} />
       </DetailSection>
+      {resources.length > 0 && <DetailSection title="Related resources" intro="Source-backed APIs, demos, documentation, examples, showcases, UIs, and websites attached to this repository.">
+        <ul className="border-y border-[var(--color-border-soft)] divide-y divide-[var(--color-border-soft)]">
+          {resources.map((resource) => <li key={String(resource.id)} className="py-3 sm:flex sm:items-baseline sm:justify-between gap-5"><div><span className="text-[10px] font-mono uppercase text-accent">{humanLabel(String(resource.kind || "resource"))}</span><p className="text-sm text-ink break-all">{String(resource.name || "Related resource")}</p></div>{resource.url && <a href={String(resource.url)} target="_blank" rel="noreferrer" className="text-xs font-mono text-accent hover:underline inline-flex items-center gap-1 mt-1 sm:mt-0">Open resource <ExternalLink className="w-3.5 h-3.5" /></a>}</li>)}
+        </ul>
+      </DetailSection>}
     </>
   );
 }
@@ -308,13 +318,16 @@ export function PublicCatalogExplorer({ onNavigate, compact = false }: { onNavig
   const visible = filtered.slice((page - 1) * pageSize, page * pageSize);
 
   return (
-    <section className="max-w-[var(--content-max)] mx-auto px-4 sm:px-6 lg:px-8 py-12 space-y-6">
+    <section className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-14 space-y-8">
       {!compact && (
-        <div className="max-w-3xl space-y-3">
-          <span className="text-xs font-mono uppercase tracking-wider text-accent font-bold">Automated evidence catalog</span>
-          <h1 className="font-serif text-4xl font-bold tracking-tight text-ink">Public ecosystem records</h1>
-          <p className="text-ink-muted leading-relaxed">Browse display-safe records generated from the complete normalized catalog. Missing registry observations and bounded downstream coverage are retained as limitations, not converted into negative claims.</p>
-        </div>
+        <header className="max-w-4xl space-y-5">
+          <button onClick={() => onNavigate("/products")} className="text-xs font-mono text-accent hover:underline inline-flex items-center gap-1 cursor-pointer"><ArrowLeft className="w-3.5 h-3.5" /> Product collection</button>
+          <div className="space-y-3">
+            <span className="text-xs font-mono uppercase tracking-wider text-accent font-bold">Supporting evidence index</span>
+            <h1 className="font-serif text-4xl sm:text-5xl font-bold tracking-tight text-ink">Public catalog</h1>
+            <p className="text-ink-muted text-base sm:text-lg leading-relaxed">Use the product and portfolio pages for cohesive product evaluation. This secondary index exposes the repository, package, and technology evidence used to strengthen those records.</p>
+          </div>
+        </header>
       )}
       <div className="flex flex-wrap gap-2" aria-label="Catalog datasets">
         {datasetOrder.map((name) => (
@@ -333,16 +346,16 @@ export function PublicCatalogExplorer({ onNavigate, compact = false }: { onNavig
       {state === "ready" && (
         <>
           <div className="text-xs font-mono text-ink-muted">{filtered.length.toLocaleString()} matching records · page {page.toLocaleString()} of {pages.toLocaleString()}</div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+          <div className="border-y border-[var(--color-border-soft)] divide-y divide-[var(--color-border-soft)]">
             {visible.map((record) => (
-              <article key={record.id} className="p-5 bg-[var(--color-surface)] border border-[var(--color-border-soft)] rounded-[var(--radius-md)] space-y-3">
-                <div>
+              <article key={record.id} className="py-5 sm:grid sm:grid-cols-[minmax(0,1fr)_auto] sm:gap-6 sm:items-start">
+                <div className="min-w-0">
                   <span className="text-[10px] font-mono uppercase text-accent">{String(record.kind || dataset.slice(0, -1))}</span>
                   <h2 className="font-serif text-lg font-bold text-ink break-words">{recordTitle(record)}</h2>
                   <p className="text-xs text-ink-muted leading-relaxed mt-1 break-words">{recordDescription(record)}</p>
+                  {recordMetrics(record).length > 0 && <div className="flex flex-wrap gap-x-4 gap-y-1 mt-3">{recordMetrics(record).map(([key, value]) => <span key={key} className="text-[9px] font-mono text-ink-muted">{key}: {value.toLocaleString()}</span>)}</div>}
                 </div>
-                {recordMetrics(record).length > 0 && <div className="flex flex-wrap gap-2">{recordMetrics(record).map(([key, value]) => <span key={key} className="text-[9px] font-mono bg-canvas border border-[var(--color-border-soft)] px-1.5 py-0.5 rounded text-ink-muted">{key}: {value.toLocaleString()}</span>)}</div>}
-                <div className="flex flex-wrap items-center gap-3 text-[10px] font-mono">
+                <div className="flex sm:flex-col sm:items-end flex-wrap items-center gap-3 text-[10px] font-mono mt-4 sm:mt-0">
                   <span className="text-ink-muted">Observed {formatDate(record.observed_at)}</span>
                   {record.route && <button onClick={() => onNavigate(record.route!)} className="text-accent hover:underline cursor-pointer">View record</button>}
                   {(record.url || record.registry_url) && <a href={String(record.url || record.registry_url)} target="_blank" rel="noreferrer" className="text-accent hover:underline inline-flex items-center gap-1">Source <ExternalLink className="w-3 h-3" /></a>}

@@ -1,0 +1,145 @@
+{
+  "generated_at": "2026-08-03T10:05:58Z",
+  "packages": [
+    {
+      "claim_boundary": "Publication is reported only when confirmed by the named public registry.",
+      "dependency_count": 7,
+      "description": "Observed pypi package record for attribution-campaign-context.",
+      "description_source": "generated-factual",
+      "display_name": "attribution-campaign-context",
+      "downloads": null,
+      "downstream_completeness": "not-observed",
+      "downstream_count": 0,
+      "ecosystem": "pypi",
+      "evidence": [
+        {
+          "kind": "registry",
+          "observed_at": "2026-08-03T10:05:58Z",
+          "url": "https://pypi.org/project/attribution-campaign-context/"
+        }
+      ],
+      "id": "package:pypi:attribution-campaign-context:tigrbl/attribution-campaign-context:pyproject.toml",
+      "kind": "package",
+      "latest_version": "0.1.0",
+      "manifest_path": "pyproject.toml",
+      "name": "attribution-campaign-context",
+      "observed_at": "2026-08-03T10:05:58Z",
+      "owner": "tigrbl",
+      "private": false,
+      "publication_status": "published",
+      "published": true,
+      "registry_url": "https://pypi.org/project/attribution-campaign-context/",
+      "relationship_count": 8,
+      "relationship_counts": {
+        "package_depends_on_external": 3,
+        "package_depends_on_package": 4,
+        "repository_contains_package": 1
+      },
+      "release_count": 1,
+      "repository": "tigrbl/attribution-campaign-context",
+      "reviewed": false,
+      "route": "/catalog/packages/pypi/attribution-campaign-context-d7634189",
+      "source_url": "https://github.com/tigrbl/attribution-campaign-context/blob/HEAD/pyproject.toml",
+      "version_declared": "0.1.0"
+    }
+  ],
+  "repository": {
+    "archived": false,
+    "claim_boundary": "Repository, release, deployment, and live-service states are reported separately.",
+    "created_at": "2026-06-01T11:36:39Z",
+    "default_branch": "master",
+    "description": "Public source repository tigrbl/attribution-campaign-context.",
+    "description_source": "generated-factual",
+    "display_name": "attribution-campaign-context",
+    "evidence": [
+      {
+        "kind": "source",
+        "observed_at": "2026-08-03T10:05:58Z",
+        "url": "https://github.com/tigrbl/attribution-campaign-context"
+      }
+    ],
+    "fork": false,
+    "full_name": "tigrbl/attribution-campaign-context",
+    "homepage": null,
+    "id": "repository:tigrbl/attribution-campaign-context",
+    "kind": "repository",
+    "latest_commit": {
+      "author": "cobycloud",
+      "authored_at": "2026-06-14T10:49:11Z",
+      "committed_at": "2026-06-14T10:49:11Z",
+      "committer": "cobycloud",
+      "message": "Add PyPI trusted publishing workflow",
+      "sha": "84007e657fba0d8e7700277ef5c0be465f932c1a",
+      "url": "https://github.com/tigrbl/attribution-campaign-context/commit/84007e657fba0d8e7700277ef5c0be465f932c1a"
+    },
+    "latest_deployment": {
+      "environment": "pypi",
+      "environment_url": "",
+      "log_url": "https://github.com/tigrbl/attribution-campaign-context/actions/runs/27496464224/job/81271338778",
+      "state": "success",
+      "updated_at": "2026-06-14T10:49:58Z"
+    },
+    "latest_release": null,
+    "license": null,
+    "metrics": {
+      "commits": 18,
+      "contributors": 1,
+      "deployments": 1,
+      "environments": 1,
+      "forks": 0,
+      "github_releases": 0,
+      "open_issues": 0,
+      "packages": 1,
+      "related_resources": 3,
+      "relationships": 4,
+      "size_kb": 506,
+      "stars": 0,
+      "watchers": 0
+    },
+    "name": "attribution-campaign-context",
+    "observed_at": "2026-08-03T10:05:58Z",
+    "owner": "tigrbl",
+    "package_ids": [
+      "package:pypi:attribution-campaign-context:tigrbl/attribution-campaign-context:pyproject.toml"
+    ],
+    "pushed_at": "2026-06-14T10:49:16Z",
+    "related_resources": [
+      {
+        "evidence_type": "repository.tree",
+        "id": "resource:0d8b2d78bbde",
+        "kind": "documentation",
+        "name": "docs/attribution-keys.md",
+        "url": "https://github.com/tigrbl/attribution-campaign-context/blob/master/docs/attribution-keys.md"
+      },
+      {
+        "evidence_type": "repository.tree",
+        "id": "resource:ffd6080c61cc",
+        "kind": "documentation",
+        "name": "docs/public-operator-surfaces.md",
+        "url": "https://github.com/tigrbl/attribution-campaign-context/blob/master/docs/public-operator-surfaces.md"
+      },
+      {
+        "evidence_type": "repository.tree",
+        "id": "resource:569f81016037",
+        "kind": "documentation",
+        "name": "docs/ssot-governance-packs.md",
+        "url": "https://github.com/tigrbl/attribution-campaign-context/blob/master/docs/ssot-governance-packs.md"
+      }
+    ],
+    "relationship_counts": {
+      "repository_contains_package": 1,
+      "repository_contains_related_resource": 3
+    },
+    "reviewed": false,
+    "route": "/catalog/repositories/tigrbl/attribution-campaign-context",
+    "technologies": [
+      "Python"
+    ],
+    "template": false,
+    "topics": [],
+    "updated_at": "2026-06-14T10:52:26Z",
+    "url": "https://github.com/tigrbl/attribution-campaign-context",
+    "visibility": "public"
+  },
+  "schema_version": "1.0.0"
+}

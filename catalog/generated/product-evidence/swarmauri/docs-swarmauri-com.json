@@ -1,0 +1,228 @@
+{
+  "generated_at": "2026-08-03T10:05:58Z",
+  "packages": [
+    {
+      "claim_boundary": "Publication is reported only when confirmed by the named public registry.",
+      "dependency_count": 0,
+      "description": "Observed npm package record for docs-swarmauri-com.",
+      "description_source": "generated-factual",
+      "display_name": "docs-swarmauri-com",
+      "downloads": null,
+      "downstream_completeness": "not-observed",
+      "downstream_count": 0,
+      "ecosystem": "npm",
+      "evidence": [
+        {
+          "kind": "source",
+          "observed_at": "2026-08-03T10:05:58Z",
+          "url": "https://github.com/swarmauri/docs-swarmauri-com/blob/HEAD/package.json"
+        }
+      ],
+      "id": "package:npm:docs-swarmauri-com:swarmauri/docs-swarmauri-com:package.json",
+      "kind": "package",
+      "latest_version": "0.1.0",
+      "manifest_path": "package.json",
+      "name": "docs-swarmauri-com",
+      "observed_at": "2026-08-03T10:05:58Z",
+      "owner": "swarmauri",
+      "private": true,
+      "publication_status": "manifest_private",
+      "published": false,
+      "registry_url": null,
+      "relationship_count": 1,
+      "relationship_counts": {
+        "repository_contains_package": 1
+      },
+      "release_count": 0,
+      "repository": "swarmauri/docs-swarmauri-com",
+      "reviewed": false,
+      "route": "/catalog/packages/npm/docs-swarmauri-com-778e0725",
+      "source_url": "https://github.com/swarmauri/docs-swarmauri-com/blob/HEAD/package.json",
+      "version_declared": "0.1.0"
+    },
+    {
+      "claim_boundary": "Publication is reported only when confirmed by the named public registry.",
+      "dependency_count": 11,
+      "description": "Observed pypi package record for docs-swarmauri-com.",
+      "description_source": "generated-factual",
+      "display_name": "docs-swarmauri-com",
+      "downloads": null,
+      "downstream_completeness": "not-observed",
+      "downstream_count": 0,
+      "ecosystem": "pypi",
+      "evidence": [
+        {
+          "kind": "source",
+          "observed_at": "2026-08-03T10:05:58Z",
+          "url": "https://github.com/swarmauri/docs-swarmauri-com/blob/HEAD/pyproject.toml"
+        }
+      ],
+      "id": "package:pypi:docs-swarmauri-com:swarmauri/docs-swarmauri-com:pyproject.toml",
+      "kind": "package",
+      "latest_version": "0.1.0",
+      "manifest_path": "pyproject.toml",
+      "name": "docs-swarmauri-com",
+      "observed_at": "2026-08-03T10:05:58Z",
+      "owner": "swarmauri",
+      "private": false,
+      "publication_status": "not-confirmed",
+      "published": false,
+      "registry_url": null,
+      "relationship_count": 12,
+      "relationship_counts": {
+        "package_depends_on_external": 7,
+        "package_depends_on_package": 4,
+        "repository_contains_package": 1
+      },
+      "release_count": 0,
+      "repository": "swarmauri/docs-swarmauri-com",
+      "reviewed": false,
+      "route": "/catalog/packages/pypi/docs-swarmauri-com-c28487c9",
+      "source_url": "https://github.com/swarmauri/docs-swarmauri-com/blob/HEAD/pyproject.toml",
+      "version_declared": "0.1.0"
+    }
+  ],
+  "repository": {
+    "archived": false,
+    "claim_boundary": "Repository, release, deployment, and live-service states are reported separately.",
+    "created_at": "2026-05-18T17:39:02Z",
+    "default_branch": "master",
+    "description": "ZDX and MkDocs Material documentation website for docs.swarmauri.com.",
+    "description_source": "github-repository",
+    "display_name": "docs-swarmauri-com",
+    "evidence": [
+      {
+        "kind": "source",
+        "observed_at": "2026-08-03T10:05:58Z",
+        "url": "https://github.com/swarmauri/docs-swarmauri-com"
+      }
+    ],
+    "fork": false,
+    "full_name": "swarmauri/docs-swarmauri-com",
+    "homepage": null,
+    "id": "repository:swarmauri/docs-swarmauri-com",
+    "kind": "repository",
+    "latest_commit": {
+      "author": "cobycloud",
+      "authored_at": "2026-07-13T22:27:52Z",
+      "committed_at": "2026-07-13T22:27:52Z",
+      "committer": "cobycloud",
+      "message": "docs: add npmctl badge",
+      "sha": "f2fe86a4d428345311166e11f2bbeec2185af4b2",
+      "url": "https://github.com/swarmauri/docs-swarmauri-com/commit/f2fe86a4d428345311166e11f2bbeec2185af4b2"
+    },
+    "latest_deployment": null,
+    "latest_release": null,
+    "license": null,
+    "metrics": {
+      "commits": 36,
+      "contributors": 1,
+      "deployments": 0,
+      "environments": 1,
+      "forks": 0,
+      "github_releases": 0,
+      "open_issues": 0,
+      "packages": 2,
+      "related_resources": 8,
+      "relationships": 10,
+      "size_kb": 252,
+      "stars": 0,
+      "watchers": 0
+    },
+    "name": "docs-swarmauri-com",
+    "observed_at": "2026-08-03T10:05:58Z",
+    "owner": "swarmauri",
+    "package_ids": [
+      "package:npm:docs-swarmauri-com:swarmauri/docs-swarmauri-com:package.json",
+      "package:pypi:docs-swarmauri-com:swarmauri/docs-swarmauri-com:pyproject.toml"
+    ],
+    "pushed_at": "2026-07-13T22:28:56Z",
+    "related_resources": [
+      {
+        "evidence_type": "repository.tree",
+        "id": "resource:1f5c2c0c4088",
+        "kind": "documentation",
+        "name": "docs/api",
+        "url": "https://github.com/swarmauri/docs-swarmauri-com/tree/master/docs/api"
+      },
+      {
+        "evidence_type": "repository.tree",
+        "id": "resource:1f256f044377",
+        "kind": "documentation",
+        "name": "docs/assets",
+        "url": "https://github.com/swarmauri/docs-swarmauri-com/tree/master/docs/assets"
+      },
+      {
+        "evidence_type": "repository.tree",
+        "id": "resource:cc692306a879",
+        "kind": "documentation",
+        "name": "docs/blog",
+        "url": "https://github.com/swarmauri/docs-swarmauri-com/tree/master/docs/blog"
+      },
+      {
+        "evidence_type": "repository.tree",
+        "id": "resource:eb748dfe10ac",
+        "kind": "documentation",
+        "name": "docs/guide",
+        "url": "https://github.com/swarmauri/docs-swarmauri-com/tree/master/docs/guide"
+      },
+      {
+        "evidence_type": "repository.tree",
+        "id": "resource:a73c5b3bfb31",
+        "kind": "documentation",
+        "name": "docs/home",
+        "url": "https://github.com/swarmauri/docs-swarmauri-com/tree/master/docs/home"
+      },
+      {
+        "evidence_type": "repository.tree",
+        "id": "resource:46403f43904a",
+        "kind": "documentation",
+        "name": "docs/index.md",
+        "url": "https://github.com/swarmauri/docs-swarmauri-com/blob/master/docs/index.md"
+      },
+      {
+        "evidence_type": "repository.tree",
+        "id": "resource:daa79e8e6fab",
+        "kind": "documentation",
+        "name": "docs/news",
+        "url": "https://github.com/swarmauri/docs-swarmauri-com/tree/master/docs/news"
+      },
+      {
+        "evidence_type": "repository.tree",
+        "id": "resource:f93e08ee3d75",
+        "kind": "documentation",
+        "name": "docs/people",
+        "url": "https://github.com/swarmauri/docs-swarmauri-com/tree/master/docs/people"
+      }
+    ],
+    "relationship_counts": {
+      "repository_contains_package": 2,
+      "repository_contains_related_resource": 8
+    },
+    "reviewed": false,
+    "route": "/catalog/repositories/swarmauri/docs-swarmauri-com",
+    "technologies": [
+      "Dockerfile",
+      "JavaScript",
+      "Python"
+    ],
+    "template": false,
+    "topics": [
+      "docker",
+      "documentation",
+      "github-actions",
+      "mkdocs",
+      "mkdocs-material",
+      "namecheap",
+      "nginx-proxy-manager",
+      "npmctl",
+      "static-site",
+      "swarmauri",
+      "zdx"
+    ],
+    "updated_at": "2026-07-13T22:29:00Z",
+    "url": "https://github.com/swarmauri/docs-swarmauri-com",
+    "visibility": "public"
+  },
+  "schema_version": "1.0.0"
+}

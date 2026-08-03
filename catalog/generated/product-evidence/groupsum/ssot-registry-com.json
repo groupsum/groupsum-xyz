@@ -1,0 +1,179 @@
+{
+  "generated_at": "2026-08-03T10:05:58Z",
+  "packages": [
+    {
+      "claim_boundary": "Publication is reported only when confirmed by the named public registry.",
+      "dependency_count": 19,
+      "description": "Observed npm package record for ssot-registry-com.",
+      "description_source": "generated-factual",
+      "display_name": "ssot-registry-com",
+      "downloads": null,
+      "downstream_completeness": "not-observed",
+      "downstream_count": 0,
+      "ecosystem": "npm",
+      "evidence": [
+        {
+          "kind": "source",
+          "observed_at": "2026-08-03T10:05:58Z",
+          "url": "https://github.com/groupsum/ssot-registry-com/blob/HEAD/package.json"
+        }
+      ],
+      "id": "package:npm:ssot-registry-com:groupsum/ssot-registry-com:package.json",
+      "kind": "package",
+      "latest_version": "0.1.1",
+      "manifest_path": "package.json",
+      "name": "ssot-registry-com",
+      "observed_at": "2026-08-03T10:05:58Z",
+      "owner": "groupsum",
+      "private": true,
+      "publication_status": "manifest_private",
+      "published": false,
+      "registry_url": null,
+      "relationship_count": 20,
+      "relationship_counts": {
+        "package_depends_on_external": 17,
+        "package_depends_on_package": 2,
+        "repository_contains_package": 1
+      },
+      "release_count": 0,
+      "repository": "groupsum/ssot-registry-com",
+      "reviewed": false,
+      "route": "/catalog/packages/npm/ssot-registry-com-a3c205db",
+      "source_url": "https://github.com/groupsum/ssot-registry-com/blob/HEAD/package.json",
+      "version_declared": "0.1.1"
+    },
+    {
+      "claim_boundary": "Publication is reported only when confirmed by the named public registry.",
+      "dependency_count": 3,
+      "description": "Observed pypi package record for ssot-registry-com.",
+      "description_source": "generated-factual",
+      "display_name": "ssot-registry-com",
+      "downloads": null,
+      "downstream_completeness": "not-observed",
+      "downstream_count": 0,
+      "ecosystem": "pypi",
+      "evidence": [
+        {
+          "kind": "source",
+          "observed_at": "2026-08-03T10:05:58Z",
+          "url": "https://github.com/groupsum/ssot-registry-com/blob/HEAD/pyproject.toml"
+        }
+      ],
+      "id": "package:pypi:ssot-registry-com:groupsum/ssot-registry-com:pyproject.toml",
+      "kind": "package",
+      "latest_version": "0.1.0",
+      "manifest_path": "pyproject.toml",
+      "name": "ssot-registry-com",
+      "observed_at": "2026-08-03T10:05:58Z",
+      "owner": "groupsum",
+      "private": false,
+      "publication_status": "not-confirmed",
+      "published": false,
+      "registry_url": null,
+      "relationship_count": 4,
+      "relationship_counts": {
+        "package_depends_on_package": 3,
+        "repository_contains_package": 1
+      },
+      "release_count": 0,
+      "repository": "groupsum/ssot-registry-com",
+      "reviewed": false,
+      "route": "/catalog/packages/pypi/ssot-registry-com-038168e0",
+      "source_url": "https://github.com/groupsum/ssot-registry-com/blob/HEAD/pyproject.toml",
+      "version_declared": "0.1.0"
+    }
+  ],
+  "repository": {
+    "archived": false,
+    "claim_boundary": "Repository, release, deployment, and live-service states are reported separately.",
+    "created_at": "2026-05-18T18:05:28Z",
+    "default_branch": "master",
+    "description": "MdWrk lander website for ssot-registry.com.",
+    "description_source": "github-repository",
+    "display_name": "ssot-registry-com",
+    "evidence": [
+      {
+        "kind": "source",
+        "observed_at": "2026-08-03T10:05:58Z",
+        "url": "https://github.com/groupsum/ssot-registry-com"
+      }
+    ],
+    "fork": false,
+    "full_name": "groupsum/ssot-registry-com",
+    "homepage": null,
+    "id": "repository:groupsum/ssot-registry-com",
+    "kind": "repository",
+    "latest_commit": {
+      "author": "cobycloud",
+      "authored_at": "2026-07-13T22:27:50Z",
+      "committed_at": "2026-07-13T22:27:50Z",
+      "committer": "cobycloud",
+      "message": "docs: add npmctl badge",
+      "sha": "b2c5cfc6240a96697d0a5d5d892d670bfd255ec1",
+      "url": "https://github.com/groupsum/ssot-registry-com/commit/b2c5cfc6240a96697d0a5d5d892d670bfd255ec1"
+    },
+    "latest_deployment": {
+      "environment": "deployment",
+      "environment_url": "",
+      "log_url": "https://github.com/groupsum/ssot-registry-com/actions/runs/29284867411/job/86934853898",
+      "state": "success",
+      "updated_at": "2026-07-13T21:04:40Z"
+    },
+    "latest_release": null,
+    "license": null,
+    "metrics": {
+      "commits": 38,
+      "contributors": 1,
+      "deployments": 5,
+      "environments": 1,
+      "forks": 0,
+      "github_releases": 0,
+      "open_issues": 0,
+      "packages": 2,
+      "related_resources": 0,
+      "relationships": 2,
+      "size_kb": 1800,
+      "stars": 0,
+      "watchers": 0
+    },
+    "name": "ssot-registry-com",
+    "observed_at": "2026-08-03T10:05:58Z",
+    "owner": "groupsum",
+    "package_ids": [
+      "package:npm:ssot-registry-com:groupsum/ssot-registry-com:package.json",
+      "package:pypi:ssot-registry-com:groupsum/ssot-registry-com:pyproject.toml"
+    ],
+    "pushed_at": "2026-07-13T22:28:44Z",
+    "related_resources": [],
+    "relationship_counts": {
+      "repository_contains_package": 2
+    },
+    "reviewed": false,
+    "route": "/catalog/repositories/groupsum/ssot-registry-com",
+    "technologies": [
+      "CSS",
+      "Dockerfile",
+      "HTML",
+      "JavaScript",
+      "Python",
+      "TypeScript",
+      "XSLT"
+    ],
+    "template": false,
+    "topics": [
+      "docker",
+      "github-actions",
+      "lander",
+      "mdwrk",
+      "namecheap",
+      "nginx-proxy-manager",
+      "npmctl",
+      "ssot-registry",
+      "static-site"
+    ],
+    "updated_at": "2026-07-13T22:28:47Z",
+    "url": "https://github.com/groupsum/ssot-registry-com",
+    "visibility": "public"
+  },
+  "schema_version": "1.0.0"
+}

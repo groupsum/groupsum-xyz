@@ -8,7 +8,7 @@ export const catalogSummary = {
   "environments": 130,
   "fork_repositories": 0,
   "forks": 108,
-  "generated_at": "2026-08-03T09:11:48Z",
+  "generated_at": "2026-08-03T10:05:58Z",
   "github_package_versions": 27,
   "github_releases": 7534,
   "observations_by_status": {
@@ -26,7 +26,7 @@ export const catalogSummary = {
   "packages": 1124,
   "published_packages": 490,
   "registry_release_versions": 9752,
-  "relationships": 9940,
+  "relationships": 10648,
   "repositories": 68,
   "schema_version": "1.0.0",
   "stars": 198,
@@ -63,7 +63,7 @@ export const catalogOrganizations = [
     "evidence": [
       {
         "kind": "organization",
-        "observed_at": "2026-08-03T09:11:48Z",
+        "observed_at": "2026-08-03T10:05:58Z",
         "url": "https://github.com/bucketwarden"
       }
     ],
@@ -73,7 +73,7 @@ export const catalogOrganizations = [
     "id": "organization:bucketwarden",
     "kind": "organization",
     "login": "bucketwarden",
-    "observed_at": "2026-08-03T09:11:48Z",
+    "observed_at": "2026-08-03T10:05:58Z",
     "package_count": 0,
     "package_releases": 0,
     "relationships": 0,
@@ -93,7 +93,7 @@ export const catalogOrganizations = [
     "evidence": [
       {
         "kind": "organization",
-        "observed_at": "2026-08-03T09:11:48Z",
+        "observed_at": "2026-08-03T10:05:58Z",
         "url": "https://github.com/groupsum"
       }
     ],
@@ -110,7 +110,8 @@ export const catalogOrganizations = [
           "github_releases": 447,
           "open_issues": 0,
           "packages": 14,
-          "relationships": 14,
+          "related_resources": 35,
+          "relationships": 49,
           "size_kb": 77018,
           "stars": 5,
           "watchers": 0
@@ -130,7 +131,8 @@ export const catalogOrganizations = [
           "github_releases": 6,
           "open_issues": 0,
           "packages": 45,
-          "relationships": 38,
+          "related_resources": 76,
+          "relationships": 114,
           "size_kb": 1133214,
           "stars": 3,
           "watchers": 0
@@ -150,6 +152,7 @@ export const catalogOrganizations = [
           "github_releases": 7,
           "open_issues": 0,
           "packages": 1,
+          "related_resources": 0,
           "relationships": 1,
           "size_kb": 131,
           "stars": 2,
@@ -170,7 +173,8 @@ export const catalogOrganizations = [
           "github_releases": 9,
           "open_issues": 0,
           "packages": 7,
-          "relationships": 7,
+          "related_resources": 40,
+          "relationships": 47,
           "size_kb": 11109,
           "stars": 1,
           "watchers": 0
@@ -190,7 +194,8 @@ export const catalogOrganizations = [
           "github_releases": 6,
           "open_issues": 0,
           "packages": 1,
-          "relationships": 1,
+          "related_resources": 1,
+          "relationships": 2,
           "size_kb": 75,
           "stars": 1,
           "watchers": 0
@@ -210,7 +215,8 @@ export const catalogOrganizations = [
           "github_releases": 4,
           "open_issues": 0,
           "packages": 1,
-          "relationships": 1,
+          "related_resources": 2,
+          "relationships": 3,
           "size_kb": 81,
           "stars": 1,
           "watchers": 0
@@ -230,7 +236,8 @@ export const catalogOrganizations = [
           "github_releases": 2,
           "open_issues": 0,
           "packages": 2,
-          "relationships": 2,
+          "related_resources": 15,
+          "relationships": 17,
           "size_kb": 1958,
           "stars": 0,
           "watchers": 0
@@ -250,7 +257,8 @@ export const catalogOrganizations = [
           "github_releases": 0,
           "open_issues": 0,
           "packages": 22,
-          "relationships": 22,
+          "related_resources": 12,
+          "relationships": 34,
           "size_kb": 15064,
           "stars": 0,
           "watchers": 0
@@ -264,10 +272,10 @@ export const catalogOrganizations = [
     "id": "organization:groupsum",
     "kind": "organization",
     "login": "groupsum",
-    "observed_at": "2026-08-03T09:11:48Z",
+    "observed_at": "2026-08-03T10:05:58Z",
     "package_count": 151,
     "package_releases": 572,
-    "relationships": 967,
+    "relationships": 1204,
     "repository_count": 37,
     "role": "primary",
     "route": "/products/groupsum",
@@ -295,7 +303,7 @@ export const catalogOrganizations = [
     "evidence": [
       {
         "kind": "organization",
-        "observed_at": "2026-08-03T09:11:48Z",
+        "observed_at": "2026-08-03T10:05:58Z",
         "url": "https://github.com/swarmauri"
       }
     ],
@@ -312,7 +320,8 @@ export const catalogOrganizations = [
           "github_releases": 5742,
           "open_issues": 176,
           "packages": 366,
-          "relationships": 366,
+          "related_resources": 113,
+          "relationships": 479,
           "size_kb": 77235,
           "stars": 104,
           "watchers": 5
@@ -332,7 +341,8 @@ export const catalogOrganizations = [
           "github_releases": 3,
           "open_issues": 9,
           "packages": 5,
-          "relationships": 5,
+          "related_resources": 1,
+          "relationships": 6,
           "size_kb": 3968,
           "stars": 25,
           "watchers": 0
@@ -352,7 +362,8 @@ export const catalogOrganizations = [
           "github_releases": 1,
           "open_issues": 25,
           "packages": 0,
-          "relationships": 0,
+          "related_resources": 1,
+          "relationships": 1,
           "size_kb": 32789,
           "stars": 18,
           "watchers": 4
@@ -372,7 +383,8 @@ export const catalogOrganizations = [
           "github_releases": 0,
           "open_issues": 8,
           "packages": 2,
-          "relationships": 2,
+          "related_resources": 2,
+          "relationships": 4,
           "size_kb": 237,
           "stars": 10,
           "watchers": 0
@@ -392,7 +404,8 @@ export const catalogOrganizations = [
           "github_releases": 1,
           "open_issues": 2,
           "packages": 1,
-          "relationships": 1,
+          "related_resources": 1,
+          "relationships": 2,
           "size_kb": 254,
           "stars": 7,
           "watchers": 0
@@ -412,7 +425,8 @@ export const catalogOrganizations = [
           "github_releases": 0,
           "open_issues": 9,
           "packages": 0,
-          "relationships": 0,
+          "related_resources": 1,
+          "relationships": 1,
           "size_kb": 34,
           "stars": 5,
           "watchers": 1
@@ -432,7 +446,8 @@ export const catalogOrganizations = [
           "github_releases": 0,
           "open_issues": 0,
           "packages": 0,
-          "relationships": 0,
+          "related_resources": 1,
+          "relationships": 1,
           "size_kb": 17,
           "stars": 3,
           "watchers": 0
@@ -452,7 +467,8 @@ export const catalogOrganizations = [
           "github_releases": 0,
           "open_issues": 3,
           "packages": 1,
-          "relationships": 1,
+          "related_resources": 1,
+          "relationships": 2,
           "size_kb": 149,
           "stars": 2,
           "watchers": 0
@@ -466,10 +482,10 @@ export const catalogOrganizations = [
     "id": "organization:swarmauri",
     "kind": "organization",
     "login": "swarmauri",
-    "observed_at": "2026-08-03T09:11:48Z",
+    "observed_at": "2026-08-03T10:05:58Z",
     "package_count": 389,
     "package_releases": 7372,
-    "relationships": 5390,
+    "relationships": 5532,
     "repository_count": 16,
     "role": "ecosystem",
     "route": "/products/swarmauri",
@@ -504,7 +520,7 @@ export const catalogOrganizations = [
     "evidence": [
       {
         "kind": "organization",
-        "observed_at": "2026-08-03T09:11:48Z",
+        "observed_at": "2026-08-03T10:05:58Z",
         "url": "https://github.com/tigrbl"
       }
     ],
@@ -521,7 +537,8 @@ export const catalogOrganizations = [
           "github_releases": 1202,
           "open_issues": 2,
           "packages": 54,
-          "relationships": 51,
+          "related_resources": 58,
+          "relationships": 109,
           "size_kb": 81451,
           "stars": 3,
           "watchers": 0
@@ -541,7 +558,8 @@ export const catalogOrganizations = [
           "github_releases": 40,
           "open_issues": 15,
           "packages": 16,
-          "relationships": 16,
+          "related_resources": 37,
+          "relationships": 53,
           "size_kb": 18565,
           "stars": 3,
           "watchers": 1
@@ -561,7 +579,8 @@ export const catalogOrganizations = [
           "github_releases": 12,
           "open_issues": 13,
           "packages": 489,
-          "relationships": 457,
+          "related_resources": 149,
+          "relationships": 606,
           "size_kb": 25828,
           "stars": 2,
           "watchers": 0
@@ -581,7 +600,8 @@ export const catalogOrganizations = [
           "github_releases": 28,
           "open_issues": 0,
           "packages": 8,
-          "relationships": 8,
+          "related_resources": 16,
+          "relationships": 24,
           "size_kb": 4214,
           "stars": 1,
           "watchers": 0
@@ -601,7 +621,8 @@ export const catalogOrganizations = [
           "github_releases": 0,
           "open_issues": 0,
           "packages": 3,
-          "relationships": 3,
+          "related_resources": 1,
+          "relationships": 4,
           "size_kb": 1816,
           "stars": 0,
           "watchers": 0
@@ -621,6 +642,7 @@ export const catalogOrganizations = [
           "github_releases": 0,
           "open_issues": 0,
           "packages": 3,
+          "related_resources": 0,
           "relationships": 3,
           "size_kb": 2968,
           "stars": 0,
@@ -641,7 +663,8 @@ export const catalogOrganizations = [
           "github_releases": 0,
           "open_issues": 0,
           "packages": 2,
-          "relationships": 2,
+          "related_resources": 6,
+          "relationships": 8,
           "size_kb": 141,
           "stars": 0,
           "watchers": 0
@@ -661,7 +684,8 @@ export const catalogOrganizations = [
           "github_releases": 0,
           "open_issues": 0,
           "packages": 2,
-          "relationships": 2,
+          "related_resources": 4,
+          "relationships": 6,
           "size_kb": 130,
           "stars": 0,
           "watchers": 0
@@ -675,10 +699,10 @@ export const catalogOrganizations = [
     "id": "organization:tigrbl",
     "kind": "organization",
     "login": "tigrbl",
-    "observed_at": "2026-08-03T09:11:48Z",
+    "observed_at": "2026-08-03T10:05:58Z",
     "package_count": 584,
     "package_releases": 1835,
-    "relationships": 3690,
+    "relationships": 4019,
     "repository_count": 15,
     "role": "ecosystem",
     "route": "/products/tigrbl",
@@ -713,12 +737,13 @@ export const catalogFeaturedRepositories = [
       "github_releases": 5742,
       "open_issues": 176,
       "packages": 366,
-      "relationships": 366,
+      "related_resources": 113,
+      "relationships": 479,
       "size_kb": 77235,
       "stars": 104,
       "watchers": 5
     },
-    "observed_at": "2026-08-03T09:11:49Z",
+    "observed_at": "2026-08-03T10:05:58Z",
     "owner": "swarmauri",
     "route": "/catalog/repositories/swarmauri/swarmauri-sdk",
     "technologies": [
@@ -747,12 +772,13 @@ export const catalogFeaturedRepositories = [
       "github_releases": 3,
       "open_issues": 9,
       "packages": 5,
-      "relationships": 5,
+      "related_resources": 1,
+      "relationships": 6,
       "size_kb": 3968,
       "stars": 25,
       "watchers": 0
     },
-    "observed_at": "2026-08-03T09:11:48Z",
+    "observed_at": "2026-08-03T10:05:58Z",
     "owner": "swarmauri",
     "route": "/catalog/repositories/swarmauri/swarmakit",
     "technologies": [
@@ -778,12 +804,13 @@ export const catalogFeaturedRepositories = [
       "github_releases": 1,
       "open_issues": 25,
       "packages": 0,
-      "relationships": 0,
+      "related_resources": 1,
+      "relationships": 1,
       "size_kb": 32789,
       "stars": 18,
       "watchers": 4
     },
-    "observed_at": "2026-08-03T09:11:48Z",
+    "observed_at": "2026-08-03T10:05:58Z",
     "owner": "swarmauri",
     "route": "/catalog/repositories/swarmauri/swarmauri-notebooks",
     "technologies": [
@@ -803,12 +830,13 @@ export const catalogFeaturedRepositories = [
       "github_releases": 0,
       "open_issues": 8,
       "packages": 2,
-      "relationships": 2,
+      "related_resources": 2,
+      "relationships": 4,
       "size_kb": 237,
       "stars": 10,
       "watchers": 0
     },
-    "observed_at": "2026-08-03T09:11:48Z",
+    "observed_at": "2026-08-03T10:05:58Z",
     "owner": "swarmauri",
     "route": "/catalog/repositories/swarmauri/crouton",
     "technologies": [
@@ -828,12 +856,13 @@ export const catalogFeaturedRepositories = [
       "github_releases": 1,
       "open_issues": 2,
       "packages": 1,
-      "relationships": 1,
+      "related_resources": 1,
+      "relationships": 2,
       "size_kb": 254,
       "stars": 7,
       "watchers": 0
     },
-    "observed_at": "2026-08-03T09:11:48Z",
+    "observed_at": "2026-08-03T10:05:58Z",
     "owner": "swarmauri",
     "route": "/catalog/repositories/swarmauri/rag_assistant",
     "technologies": [
@@ -853,12 +882,13 @@ export const catalogFeaturedRepositories = [
       "github_releases": 447,
       "open_issues": 0,
       "packages": 14,
-      "relationships": 14,
+      "related_resources": 35,
+      "relationships": 49,
       "size_kb": 77018,
       "stars": 5,
       "watchers": 0
     },
-    "observed_at": "2026-08-03T09:11:48Z",
+    "observed_at": "2026-08-03T10:05:58Z",
     "owner": "groupsum",
     "route": "/catalog/repositories/groupsum/ssot-registry",
     "technologies": [
@@ -885,12 +915,13 @@ export const catalogFeaturedRepositories = [
       "github_releases": 0,
       "open_issues": 9,
       "packages": 0,
-      "relationships": 0,
+      "related_resources": 1,
+      "relationships": 1,
       "size_kb": 34,
       "stars": 5,
       "watchers": 1
     },
-    "observed_at": "2026-08-03T09:11:49Z",
+    "observed_at": "2026-08-03T10:05:58Z",
     "owner": "swarmauri",
     "route": "/catalog/repositories/swarmauri/swarmauri-playground",
     "technologies": [
@@ -911,12 +942,13 @@ export const catalogFeaturedRepositories = [
       "github_releases": 6,
       "open_issues": 0,
       "packages": 45,
-      "relationships": 38,
+      "related_resources": 76,
+      "relationships": 114,
       "size_kb": 1133214,
       "stars": 3,
       "watchers": 0
     },
-    "observed_at": "2026-08-03T09:11:48Z",
+    "observed_at": "2026-08-03T10:05:58Z",
     "owner": "groupsum",
     "route": "/catalog/repositories/groupsum/markdown_workspace",
     "technologies": [
@@ -943,12 +975,13 @@ export const catalogFeaturedRepositories = [
       "github_releases": 1202,
       "open_issues": 2,
       "packages": 54,
-      "relationships": 51,
+      "related_resources": 58,
+      "relationships": 109,
       "size_kb": 81451,
       "stars": 3,
       "watchers": 0
     },
-    "observed_at": "2026-08-03T09:11:48Z",
+    "observed_at": "2026-08-03T10:05:58Z",
     "owner": "tigrbl",
     "route": "/catalog/repositories/tigrbl/tigrbl",
     "technologies": [
@@ -969,12 +1002,13 @@ export const catalogFeaturedRepositories = [
       "github_releases": 40,
       "open_issues": 15,
       "packages": 16,
-      "relationships": 16,
+      "related_resources": 37,
+      "relationships": 53,
       "size_kb": 18565,
       "stars": 3,
       "watchers": 1
     },
-    "observed_at": "2026-08-03T09:11:48Z",
+    "observed_at": "2026-08-03T10:05:58Z",
     "owner": "tigrbl",
     "route": "/catalog/repositories/tigrbl/tigrcorn",
     "technologies": [
@@ -998,12 +1032,13 @@ export const catalogFeaturedRepositories = [
       "github_releases": 0,
       "open_issues": 0,
       "packages": 0,
-      "relationships": 0,
+      "related_resources": 1,
+      "relationships": 1,
       "size_kb": 17,
       "stars": 3,
       "watchers": 0
     },
-    "observed_at": "2026-08-03T09:11:48Z",
+    "observed_at": "2026-08-03T10:05:58Z",
     "owner": "swarmauri",
     "route": "/catalog/repositories/swarmauri/swarmauri-mesop-components",
     "technologies": [
@@ -1024,12 +1059,13 @@ export const catalogFeaturedRepositories = [
       "github_releases": 12,
       "open_issues": 13,
       "packages": 489,
-      "relationships": 457,
+      "related_resources": 149,
+      "relationships": 606,
       "size_kb": 25828,
       "stars": 2,
       "watchers": 0
     },
-    "observed_at": "2026-08-03T09:11:48Z",
+    "observed_at": "2026-08-03T10:05:58Z",
     "owner": "tigrbl",
     "route": "/catalog/repositories/tigrbl/tigrbl_auth",
     "technologies": [
@@ -1050,13 +1086,13 @@ export const catalogTechnologies = [
     "evidence": [
       {
         "kind": "github-languages",
-        "observed_at": "2026-08-03T09:11:48Z"
+        "observed_at": "2026-08-03T10:05:58Z"
       }
     ],
     "id": "technology:python:18885f27",
     "kind": "technology",
     "name": "Python",
-    "observed_at": "2026-08-03T09:11:48Z",
+    "observed_at": "2026-08-03T10:05:58Z",
     "repositories": [
       "groupsum/ad-measurement-media-governance-pack",
       "groupsum/ad-supply-chain-transparency-governance-pack",
@@ -1128,13 +1164,13 @@ export const catalogTechnologies = [
     "evidence": [
       {
         "kind": "github-languages",
-        "observed_at": "2026-08-03T09:11:48Z"
+        "observed_at": "2026-08-03T10:05:58Z"
       }
     ],
     "id": "technology:javascript:b27ad06d",
     "kind": "technology",
     "name": "JavaScript",
-    "observed_at": "2026-08-03T09:11:48Z",
+    "observed_at": "2026-08-03T10:05:58Z",
     "repositories": [
       "groupsum/groupsum-xyz",
       "groupsum/markdown_workspace",
@@ -1170,13 +1206,13 @@ export const catalogTechnologies = [
     "evidence": [
       {
         "kind": "github-languages",
-        "observed_at": "2026-08-03T09:11:48Z"
+        "observed_at": "2026-08-03T10:05:58Z"
       }
     ],
     "id": "technology:typescript:ed0504f7",
     "kind": "technology",
     "name": "TypeScript",
-    "observed_at": "2026-08-03T09:11:48Z",
+    "observed_at": "2026-08-03T10:05:58Z",
     "repositories": [
       "groupsum/document-studio",
       "groupsum/document-viewer",
@@ -1207,13 +1243,13 @@ export const catalogTechnologies = [
     "evidence": [
       {
         "kind": "github-languages",
-        "observed_at": "2026-08-03T09:11:48Z"
+        "observed_at": "2026-08-03T10:05:58Z"
       }
     ],
     "id": "technology:html:07239dbd",
     "kind": "technology",
     "name": "HTML",
-    "observed_at": "2026-08-03T09:11:48Z",
+    "observed_at": "2026-08-03T10:05:58Z",
     "repositories": [
       "groupsum/document-studio",
       "groupsum/document-viewer",
@@ -1244,13 +1280,13 @@ export const catalogTechnologies = [
     "evidence": [
       {
         "kind": "github-languages",
-        "observed_at": "2026-08-03T09:11:48Z"
+        "observed_at": "2026-08-03T10:05:58Z"
       }
     ],
     "id": "technology:css:b581e460",
     "kind": "technology",
     "name": "CSS",
-    "observed_at": "2026-08-03T09:11:48Z",
+    "observed_at": "2026-08-03T10:05:58Z",
     "repositories": [
       "groupsum/document-studio",
       "groupsum/document-viewer",
@@ -1279,13 +1315,13 @@ export const catalogTechnologies = [
     "evidence": [
       {
         "kind": "github-languages",
-        "observed_at": "2026-08-03T09:11:48Z"
+        "observed_at": "2026-08-03T10:05:58Z"
       }
     ],
     "id": "technology:dockerfile:dd2c0eb6",
     "kind": "technology",
     "name": "Dockerfile",
-    "observed_at": "2026-08-03T09:11:48Z",
+    "observed_at": "2026-08-03T10:05:58Z",
     "repositories": [
       "groupsum/groupsum-xyz",
       "groupsum/markdown_workspace",
@@ -1314,13 +1350,13 @@ export const catalogTechnologies = [
     "evidence": [
       {
         "kind": "github-languages",
-        "observed_at": "2026-08-03T09:11:48Z"
+        "observed_at": "2026-08-03T10:05:58Z"
       }
     ],
     "id": "technology:shell:a7332854",
     "kind": "technology",
     "name": "Shell",
-    "observed_at": "2026-08-03T09:11:48Z",
+    "observed_at": "2026-08-03T10:05:58Z",
     "repositories": [
       "groupsum/markdown_workspace",
       "groupsum/mdwrk",
@@ -1338,13 +1374,13 @@ export const catalogTechnologies = [
     "evidence": [
       {
         "kind": "github-languages",
-        "observed_at": "2026-08-03T09:11:48Z"
+        "observed_at": "2026-08-03T10:05:58Z"
       }
     ],
     "id": "technology:svelte:0073bfca",
     "kind": "technology",
     "name": "Svelte",
-    "observed_at": "2026-08-03T09:11:48Z",
+    "observed_at": "2026-08-03T10:05:58Z",
     "repositories": [
       "swarmauri/swarmakit",
       "swarmauri/swarmauri-aucplot",
@@ -1359,13 +1395,13 @@ export const catalogTechnologies = [
     "evidence": [
       {
         "kind": "github-languages",
-        "observed_at": "2026-08-03T09:11:48Z"
+        "observed_at": "2026-08-03T10:05:58Z"
       }
     ],
     "id": "technology:xslt:1370c71d",
     "kind": "technology",
     "name": "XSLT",
-    "observed_at": "2026-08-03T09:11:48Z",
+    "observed_at": "2026-08-03T10:05:58Z",
     "repositories": [
       "groupsum/markdown_workspace",
       "groupsum/mdwrkcom-content-pack",
@@ -1380,13 +1416,13 @@ export const catalogTechnologies = [
     "evidence": [
       {
         "kind": "github-languages",
-        "observed_at": "2026-08-03T09:11:48Z"
+        "observed_at": "2026-08-03T10:05:58Z"
       }
     ],
     "id": "technology:jupyter-notebook:c98b6019",
     "kind": "technology",
     "name": "Jupyter Notebook",
-    "observed_at": "2026-08-03T09:11:48Z",
+    "observed_at": "2026-08-03T10:05:58Z",
     "repositories": [
       "swarmauri/swarmauri-notebooks",
       "swarmauri/swarmauri-playground",
@@ -1400,13 +1436,13 @@ export const catalogTechnologies = [
     "evidence": [
       {
         "kind": "github-languages",
-        "observed_at": "2026-08-03T09:11:48Z"
+        "observed_at": "2026-08-03T10:05:58Z"
       }
     ],
     "id": "technology:rust:d9aa89fd",
     "kind": "technology",
     "name": "Rust",
-    "observed_at": "2026-08-03T09:11:48Z",
+    "observed_at": "2026-08-03T10:05:58Z",
     "repositories": [
       "groupsum/ssot-registry",
       "swarmauri/swarmauri-sdk",
@@ -1420,13 +1456,13 @@ export const catalogTechnologies = [
     "evidence": [
       {
         "kind": "github-languages",
-        "observed_at": "2026-08-03T09:11:48Z"
+        "observed_at": "2026-08-03T10:05:58Z"
       }
     ],
     "id": "technology:makefile:76ed074a",
     "kind": "technology",
     "name": "Makefile",
-    "observed_at": "2026-08-03T09:11:48Z",
+    "observed_at": "2026-08-03T10:05:58Z",
     "repositories": [
       "groupsum/ssot-registry",
       "tigrbl/tigrcorn"
@@ -1439,13 +1475,13 @@ export const catalogTechnologies = [
     "evidence": [
       {
         "kind": "github-languages",
-        "observed_at": "2026-08-03T09:11:48Z"
+        "observed_at": "2026-08-03T10:05:58Z"
       }
     ],
     "id": "technology:vue:b111a2a2",
     "kind": "technology",
     "name": "Vue",
-    "observed_at": "2026-08-03T09:11:48Z",
+    "observed_at": "2026-08-03T10:05:58Z",
     "repositories": [
       "swarmauri/swarmakit"
     ],
@@ -1457,13 +1493,13 @@ export const catalogTechnologies = [
     "evidence": [
       {
         "kind": "github-languages",
-        "observed_at": "2026-08-03T09:11:48Z"
+        "observed_at": "2026-08-03T10:05:58Z"
       }
     ],
     "id": "technology:c:f1deb75f",
     "kind": "technology",
     "name": "C++",
-    "observed_at": "2026-08-03T09:11:48Z",
+    "observed_at": "2026-08-03T10:05:58Z",
     "repositories": [
       "swarmauri/swarmauri-sdk"
     ],
@@ -1475,13 +1511,13 @@ export const catalogTechnologies = [
     "evidence": [
       {
         "kind": "github-languages",
-        "observed_at": "2026-08-03T09:11:48Z"
+        "observed_at": "2026-08-03T10:05:58Z"
       }
     ],
     "id": "technology:jinja:7c43eabf",
     "kind": "technology",
     "name": "Jinja",
-    "observed_at": "2026-08-03T09:11:48Z",
+    "observed_at": "2026-08-03T10:05:58Z",
     "repositories": [
       "swarmauri/swarmauri-sdk"
     ],
@@ -1493,13 +1529,13 @@ export const catalogTechnologies = [
     "evidence": [
       {
         "kind": "github-languages",
-        "observed_at": "2026-08-03T09:11:48Z"
+        "observed_at": "2026-08-03T10:05:58Z"
       }
     ],
     "id": "technology:mdx:d434e4eb",
     "kind": "technology",
     "name": "MDX",
-    "observed_at": "2026-08-03T09:11:48Z",
+    "observed_at": "2026-08-03T10:05:58Z",
     "repositories": [
       "swarmauri/swarmakit"
     ],
@@ -1511,13 +1547,13 @@ export const catalogTechnologies = [
     "evidence": [
       {
         "kind": "github-languages",
-        "observed_at": "2026-08-03T09:11:48Z"
+        "observed_at": "2026-08-03T10:05:58Z"
       }
     ],
     "id": "technology:meson:33742f46",
     "kind": "technology",
     "name": "Meson",
-    "observed_at": "2026-08-03T09:11:48Z",
+    "observed_at": "2026-08-03T10:05:58Z",
     "repositories": [
       "swarmauri/swarmauri-sdk"
     ],
@@ -1529,13 +1565,13 @@ export const catalogTechnologies = [
     "evidence": [
       {
         "kind": "github-languages",
-        "observed_at": "2026-08-03T09:11:48Z"
+        "observed_at": "2026-08-03T10:05:58Z"
       }
     ],
     "id": "technology:c:6b23c0d5",
     "kind": "technology",
     "name": "C",
-    "observed_at": "2026-08-03T09:11:48Z",
+    "observed_at": "2026-08-03T10:05:58Z",
     "repositories": [
       "swarmauri/swarmauri-sdk"
     ],
@@ -1553,6 +1589,7 @@ export const catalogDatasetManifest = {
     "github_releases": "all releases returned by GitHub REST",
     "packages": "manifest-discovered packages plus public GitHub packages returned by API",
     "registries": "direct PyPI, npm, crates.io, GitHub Releases, and GitHub Packages observations",
+    "related_resources": "repository homepages and source paths for APIs, demos, documentation, examples, showcases, UIs, and websites; reachability is not implied",
     "repositories": "all public repositories returned by configured GitHub organization APIs after configured name, archive, and fork exclusions",
     "technologies": "GitHub language byte counts; no technology is inferred from marketing copy"
   },
@@ -1564,40 +1601,44 @@ export const catalogDatasetManifest = {
   },
   "files": [
     {
-      "bytes": 19634,
+      "bytes": 20468,
       "dataset": "organizations",
       "path": "organizations.json",
       "records": 4,
-      "sha256": "b4d5b1a800d60b97fe124d954615433847e7b3a013f37851a1d58c15062ef756"
+      "sha256": "4be854913e59e9e0e19227be3331b5e8021a3c1056ac1debb3b5b7ebdc11ac37"
     },
     {
       "bytes": 1881997,
       "dataset": "packages",
       "path": "packages.json",
       "records": 1124,
-      "sha256": "65b7f36f404fa6c24e9b327452507e0965d37ada61f895548b71df89a8c715af"
+      "sha256": "3dba91438ac9d3b0bf0c8d3968cd58c40ed42130264a24bc986cfc40ed9bd558"
     },
     {
-      "bytes": 369079,
+      "bytes": 596289,
       "dataset": "repositories",
       "path": "repositories.json",
       "records": 68,
-      "sha256": "109a5084e5d4ed07f7475c2c285fb77946de077936a54e88c005fccca01cf20e"
+      "sha256": "4e03c28992740a1afa7eff3c040660489f5cea19b754cff5493ee54f48c8e02b"
     },
     {
       "bytes": 13753,
       "dataset": "technologies",
       "path": "technologies.json",
       "records": 18,
-      "sha256": "4524c96c6c0f73189e33dd8f06a4fa5e706cc9a6d1e8c42db992eee319fb17d0"
+      "sha256": "4124f2f0eb20ee500bb6720bade6ca0bb9e5b0a46467a84cdde5f1cdce48d4f6"
     }
   ],
-  "generated_at": "2026-08-03T09:11:48Z",
+  "generated_at": "2026-08-03T10:05:58Z",
+  "product_evidence": {
+    "path": "/catalog/product-evidence/",
+    "records": 68
+  },
   "schema_version": "1.0.0",
   "source": "/catalog/catalog.json",
   "source_counts": {
     "deployments": 3950,
-    "relationships": 9940,
+    "relationships": 10648,
     "releases": 17313
   }
 } as const;

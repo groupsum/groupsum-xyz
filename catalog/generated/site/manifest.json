@@ -7,6 +7,7 @@
     "github_releases": "all releases returned by GitHub REST",
     "packages": "manifest-discovered packages plus public GitHub packages returned by API",
     "registries": "direct PyPI, npm, crates.io, GitHub Releases, and GitHub Packages observations",
+    "related_resources": "repository homepages and source paths for APIs, demos, documentation, examples, showcases, UIs, and websites; reachability is not implied",
     "repositories": "all public repositories returned by configured GitHub organization APIs after configured name, archive, and fork exclusions",
     "technologies": "GitHub language byte counts; no technology is inferred from marketing copy"
   },
@@ -18,40 +19,44 @@
   },
   "files": [
     {
-      "bytes": 19634,
+      "bytes": 20468,
       "dataset": "organizations",
       "path": "organizations.json",
       "records": 4,
-      "sha256": "b4d5b1a800d60b97fe124d954615433847e7b3a013f37851a1d58c15062ef756"
+      "sha256": "4be854913e59e9e0e19227be3331b5e8021a3c1056ac1debb3b5b7ebdc11ac37"
     },
     {
       "bytes": 1881997,
       "dataset": "packages",
       "path": "packages.json",
       "records": 1124,
-      "sha256": "65b7f36f404fa6c24e9b327452507e0965d37ada61f895548b71df89a8c715af"
+      "sha256": "3dba91438ac9d3b0bf0c8d3968cd58c40ed42130264a24bc986cfc40ed9bd558"
     },
     {
-      "bytes": 369079,
+      "bytes": 596289,
       "dataset": "repositories",
       "path": "repositories.json",
       "records": 68,
-      "sha256": "109a5084e5d4ed07f7475c2c285fb77946de077936a54e88c005fccca01cf20e"
+      "sha256": "4e03c28992740a1afa7eff3c040660489f5cea19b754cff5493ee54f48c8e02b"
     },
     {
       "bytes": 13753,
       "dataset": "technologies",
       "path": "technologies.json",
       "records": 18,
-      "sha256": "4524c96c6c0f73189e33dd8f06a4fa5e706cc9a6d1e8c42db992eee319fb17d0"
+      "sha256": "4124f2f0eb20ee500bb6720bade6ca0bb9e5b0a46467a84cdde5f1cdce48d4f6"
     }
   ],
-  "generated_at": "2026-08-03T09:11:48Z",
+  "generated_at": "2026-08-03T10:05:58Z",
+  "product_evidence": {
+    "path": "/catalog/product-evidence/",
+    "records": 68
+  },
   "schema_version": "1.0.0",
   "source": "/catalog/catalog.json",
   "source_counts": {
     "deployments": 3950,
-    "relationships": 9940,
+    "relationships": 10648,
     "releases": 17313
   }
 }

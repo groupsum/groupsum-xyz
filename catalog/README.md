@@ -33,6 +33,8 @@ are not committed.
 - `generated/site/*.json` contains lazy-loaded repositories, packages,
   technologies, and a hashed manifest. Releases, deployments, dependencies,
   downstream observations, and relationships are aggregated on parent records.
+- `generated/product-evidence/<owner>/<repository>.json` contains repository-scoped
+  joins used to enhance product and portfolio records without loading the full catalog.
 - `../src/data/catalog.generated.ts` contains bounded summary, organization,
   featured-repository, technology, and dataset-manifest records for initial rendering.
 

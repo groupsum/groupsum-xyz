@@ -1,0 +1,133 @@
+{
+  "generated_at": "2026-08-03T10:05:58Z",
+  "packages": [
+    {
+      "claim_boundary": "Publication is reported only when confirmed by the named public registry.",
+      "dependency_count": 22,
+      "description": "Observed pypi package record for tigrbl_kms.",
+      "description_source": "generated-factual",
+      "display_name": "tigrbl_kms",
+      "downloads": null,
+      "downstream_completeness": "not-observed",
+      "downstream_count": 0,
+      "ecosystem": "pypi",
+      "evidence": [
+        {
+          "kind": "registry",
+          "observed_at": "2026-08-03T10:05:58Z",
+          "url": "https://pypi.org/project/tigrbl_kms/"
+        }
+      ],
+      "id": "package:pypi:tigrbl_kms:tigrbl/tigrbl_kms:pyproject.toml",
+      "kind": "package",
+      "latest_version": "0.3.2",
+      "manifest_path": "pyproject.toml",
+      "name": "tigrbl_kms",
+      "observed_at": "2026-08-03T10:05:58Z",
+      "owner": "tigrbl",
+      "private": false,
+      "publication_status": "published",
+      "published": true,
+      "registry_url": "https://pypi.org/project/tigrbl_kms/",
+      "relationship_count": 23,
+      "relationship_counts": {
+        "package_depends_on_external": 17,
+        "package_depends_on_package": 5,
+        "repository_contains_package": 1
+      },
+      "release_count": 21,
+      "repository": "tigrbl/tigrbl_kms",
+      "reviewed": false,
+      "route": "/catalog/packages/pypi/tigrbl-kms-27fb04bd",
+      "source_url": "https://github.com/tigrbl/tigrbl_kms/blob/HEAD/pyproject.toml",
+      "version_declared": "0.3.2"
+    }
+  ],
+  "repository": {
+    "archived": false,
+    "claim_boundary": "Repository, release, deployment, and live-service states are reported separately.",
+    "created_at": "2026-05-21T03:18:57Z",
+    "default_branch": "master",
+    "description": "Standalone key management service package for Tigrbl.",
+    "description_source": "github-repository",
+    "display_name": "tigrbl_kms",
+    "evidence": [
+      {
+        "kind": "source",
+        "observed_at": "2026-08-03T10:05:58Z",
+        "url": "https://github.com/tigrbl/tigrbl_kms"
+      }
+    ],
+    "fork": false,
+    "full_name": "tigrbl/tigrbl_kms",
+    "homepage": null,
+    "id": "repository:tigrbl/tigrbl_kms",
+    "kind": "repository",
+    "latest_commit": {
+      "author": "cobycloud",
+      "authored_at": "2026-05-21T03:23:41Z",
+      "committed_at": "2026-05-21T03:23:41Z",
+      "committer": "cobycloud",
+      "message": "Normalize migrated repo paths",
+      "sha": "0c9b901105b67463ca80432a9406e2dc8677dc84",
+      "url": "https://github.com/tigrbl/tigrbl_kms/commit/0c9b901105b67463ca80432a9406e2dc8677dc84"
+    },
+    "latest_deployment": null,
+    "latest_release": null,
+    "license": "Apache-2.0",
+    "metrics": {
+      "commits": 3,
+      "contributors": 1,
+      "deployments": 0,
+      "environments": 0,
+      "forks": 0,
+      "github_releases": 0,
+      "open_issues": 0,
+      "packages": 1,
+      "related_resources": 2,
+      "relationships": 3,
+      "size_kb": 37,
+      "stars": 0,
+      "watchers": 0
+    },
+    "name": "tigrbl_kms",
+    "observed_at": "2026-08-03T10:05:58Z",
+    "owner": "tigrbl",
+    "package_ids": [
+      "package:pypi:tigrbl_kms:tigrbl/tigrbl_kms:pyproject.toml"
+    ],
+    "pushed_at": "2026-05-21T03:23:42Z",
+    "related_resources": [
+      {
+        "evidence_type": "repository.contract_file",
+        "id": "resource:7b223bdc4075",
+        "kind": "api",
+        "name": "tests/unit/test_openapi_schema_examples_presence.py",
+        "url": "https://github.com/tigrbl/tigrbl_kms/blob/master/tests/unit/test_openapi_schema_examples_presence.py"
+      },
+      {
+        "evidence_type": "repository.contract_file",
+        "id": "resource:0655420e8a97",
+        "kind": "api",
+        "name": "tests/unit/test_openapi_unique_operation_ids.py",
+        "url": "https://github.com/tigrbl/tigrbl_kms/blob/master/tests/unit/test_openapi_unique_operation_ids.py"
+      }
+    ],
+    "relationship_counts": {
+      "repository_contains_package": 1,
+      "repository_contains_related_resource": 2
+    },
+    "reviewed": false,
+    "route": "/catalog/repositories/tigrbl/tigrbl_kms",
+    "technologies": [
+      "Dockerfile",
+      "Python"
+    ],
+    "template": false,
+    "topics": [],
+    "updated_at": "2026-05-21T03:23:45Z",
+    "url": "https://github.com/tigrbl/tigrbl_kms",
+    "visibility": "public"
+  },
+  "schema_version": "1.0.0"
+}

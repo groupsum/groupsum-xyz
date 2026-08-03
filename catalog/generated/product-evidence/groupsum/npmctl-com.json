@@ -1,0 +1,218 @@
+{
+  "generated_at": "2026-08-03T10:05:58Z",
+  "packages": [
+    {
+      "claim_boundary": "Publication is reported only when confirmed by the named public registry.",
+      "dependency_count": 3,
+      "description": "Observed npm package record for @groupsum/npmctl-com-content-pack.",
+      "description_source": "generated-factual",
+      "display_name": "@groupsum/npmctl-com-content-pack",
+      "downloads": null,
+      "downstream_completeness": "not-observed",
+      "downstream_count": 0,
+      "ecosystem": "npm",
+      "evidence": [
+        {
+          "kind": "source",
+          "observed_at": "2026-08-03T10:05:58Z",
+          "url": "https://github.com/groupsum/npmctl-com/blob/HEAD/packages/site-content-pack/package.json"
+        }
+      ],
+      "id": "package:npm:@groupsum/npmctl-com-content-pack:groupsum/npmctl-com:packages/site-content-pack/package.json",
+      "kind": "package",
+      "latest_version": "0.1.0",
+      "manifest_path": "packages/site-content-pack/package.json",
+      "name": "@groupsum/npmctl-com-content-pack",
+      "observed_at": "2026-08-03T10:05:58Z",
+      "owner": "groupsum",
+      "private": true,
+      "publication_status": "manifest_private",
+      "published": false,
+      "registry_url": null,
+      "relationship_count": 4,
+      "relationship_counts": {
+        "package_depends_on_external": 1,
+        "package_depends_on_package": 2,
+        "repository_contains_package": 1
+      },
+      "release_count": 0,
+      "repository": "groupsum/npmctl-com",
+      "reviewed": false,
+      "route": "/catalog/packages/npm/groupsum-npmctl-com-content-pack-a07019fe",
+      "source_url": "https://github.com/groupsum/npmctl-com/blob/HEAD/packages/site-content-pack/package.json",
+      "version_declared": "0.1.0"
+    },
+    {
+      "claim_boundary": "Publication is reported only when confirmed by the named public registry.",
+      "dependency_count": 18,
+      "description": "Observed npm package record for react-example.",
+      "description_source": "generated-factual",
+      "display_name": "react-example",
+      "downloads": null,
+      "downstream_completeness": "not-observed",
+      "downstream_count": 0,
+      "ecosystem": "npm",
+      "evidence": [
+        {
+          "kind": "source",
+          "observed_at": "2026-08-03T10:05:58Z",
+          "url": "https://github.com/groupsum/npmctl-com/blob/HEAD/package.json"
+        }
+      ],
+      "id": "package:npm:react-example:groupsum/npmctl-com:package.json",
+      "kind": "package",
+      "latest_version": "0.0.0",
+      "manifest_path": "package.json",
+      "name": "react-example",
+      "observed_at": "2026-08-03T10:05:58Z",
+      "owner": "groupsum",
+      "private": true,
+      "publication_status": "manifest_private",
+      "published": false,
+      "registry_url": null,
+      "relationship_count": 26,
+      "relationship_counts": {
+        "package_depends_on_external": 23,
+        "repository_contains_package": 3
+      },
+      "release_count": 0,
+      "repository": "groupsum/npmctl-com",
+      "reviewed": false,
+      "route": "/catalog/packages/npm/react-example-457df34e",
+      "source_url": "https://github.com/groupsum/npmctl-com/blob/HEAD/package.json",
+      "version_declared": "0.0.0"
+    },
+    {
+      "claim_boundary": "Publication is reported only when confirmed by the named public registry.",
+      "dependency_count": 3,
+      "description": "Observed pypi package record for npmctl-com.",
+      "description_source": "generated-factual",
+      "display_name": "npmctl-com",
+      "downloads": null,
+      "downstream_completeness": "not-observed",
+      "downstream_count": 0,
+      "ecosystem": "pypi",
+      "evidence": [
+        {
+          "kind": "source",
+          "observed_at": "2026-08-03T10:05:58Z",
+          "url": "https://github.com/groupsum/npmctl-com/blob/HEAD/pyproject.toml"
+        }
+      ],
+      "id": "package:pypi:npmctl-com:groupsum/npmctl-com:pyproject.toml",
+      "kind": "package",
+      "latest_version": "0.1.0",
+      "manifest_path": "pyproject.toml",
+      "name": "npmctl-com",
+      "observed_at": "2026-08-03T10:05:58Z",
+      "owner": "groupsum",
+      "private": false,
+      "publication_status": "not-confirmed",
+      "published": false,
+      "registry_url": null,
+      "relationship_count": 4,
+      "relationship_counts": {
+        "package_depends_on_package": 3,
+        "repository_contains_package": 1
+      },
+      "release_count": 0,
+      "repository": "groupsum/npmctl-com",
+      "reviewed": false,
+      "route": "/catalog/packages/pypi/npmctl-com-f70a8ac1",
+      "source_url": "https://github.com/groupsum/npmctl-com/blob/HEAD/pyproject.toml",
+      "version_declared": "0.1.0"
+    }
+  ],
+  "repository": {
+    "archived": false,
+    "claim_boundary": "Repository, release, deployment, and live-service states are reported separately.",
+    "created_at": "2026-05-18T17:44:32Z",
+    "default_branch": "master",
+    "description": "MdWrk lander website for npmctl.com.",
+    "description_source": "github-repository",
+    "display_name": "npmctl-com",
+    "evidence": [
+      {
+        "kind": "source",
+        "observed_at": "2026-08-03T10:05:58Z",
+        "url": "https://github.com/groupsum/npmctl-com"
+      }
+    ],
+    "fork": false,
+    "full_name": "groupsum/npmctl-com",
+    "homepage": null,
+    "id": "repository:groupsum/npmctl-com",
+    "kind": "repository",
+    "latest_commit": {
+      "author": "cobycloud",
+      "authored_at": "2026-07-25T19:02:53Z",
+      "committed_at": "2026-07-25T19:02:53Z",
+      "committer": "cobycloud",
+      "message": "chore: remove one-time encrypted npmctl password transfer",
+      "sha": "9c92c18ac54136abbb8b884eeb9f3bf922a936fb",
+      "url": "https://github.com/groupsum/npmctl-com/commit/9c92c18ac54136abbb8b884eeb9f3bf922a936fb"
+    },
+    "latest_deployment": {
+      "environment": "deployment",
+      "environment_url": "",
+      "log_url": "https://github.com/groupsum/npmctl-com/actions/runs/29158990779/job/86560726539",
+      "state": "success",
+      "updated_at": "2026-07-11T16:01:29Z"
+    },
+    "latest_release": null,
+    "license": null,
+    "metrics": {
+      "commits": 43,
+      "contributors": 1,
+      "deployments": 3,
+      "environments": 1,
+      "forks": 0,
+      "github_releases": 0,
+      "open_issues": 0,
+      "packages": 3,
+      "related_resources": 0,
+      "relationships": 3,
+      "size_kb": 207,
+      "stars": 0,
+      "watchers": 0
+    },
+    "name": "npmctl-com",
+    "observed_at": "2026-08-03T10:05:58Z",
+    "owner": "groupsum",
+    "package_ids": [
+      "package:npm:@groupsum/npmctl-com-content-pack:groupsum/npmctl-com:packages/site-content-pack/package.json",
+      "package:npm:react-example:groupsum/npmctl-com:package.json",
+      "package:pypi:npmctl-com:groupsum/npmctl-com:pyproject.toml"
+    ],
+    "pushed_at": "2026-07-25T19:02:53Z",
+    "related_resources": [],
+    "relationship_counts": {
+      "repository_contains_package": 3
+    },
+    "reviewed": false,
+    "route": "/catalog/repositories/groupsum/npmctl-com",
+    "technologies": [
+      "CSS",
+      "Dockerfile",
+      "HTML",
+      "JavaScript",
+      "Python",
+      "TypeScript"
+    ],
+    "template": false,
+    "topics": [
+      "docker",
+      "github-actions",
+      "lander",
+      "mdwrk",
+      "namecheap",
+      "nginx-proxy-manager",
+      "npmctl",
+      "static-site"
+    ],
+    "updated_at": "2026-07-25T19:02:57Z",
+    "url": "https://github.com/groupsum/npmctl-com",
+    "visibility": "public"
+  },
+  "schema_version": "1.0.0"
+}

@@ -8,7 +8,7 @@
     "evidence": [
       {
         "kind": "organization",
-        "observed_at": "2026-08-03T09:11:48Z",
+        "observed_at": "2026-08-03T10:05:58Z",
         "url": "https://github.com/bucketwarden"
       }
     ],
@@ -18,7 +18,7 @@
     "id": "organization:bucketwarden",
     "kind": "organization",
     "login": "bucketwarden",
-    "observed_at": "2026-08-03T09:11:48Z",
+    "observed_at": "2026-08-03T10:05:58Z",
     "package_count": 0,
     "package_releases": 0,
     "relationships": 0,
@@ -38,7 +38,7 @@
     "evidence": [
       {
         "kind": "organization",
-        "observed_at": "2026-08-03T09:11:48Z",
+        "observed_at": "2026-08-03T10:05:58Z",
         "url": "https://github.com/groupsum"
       }
     ],
@@ -55,7 +55,8 @@
           "github_releases": 447,
           "open_issues": 0,
           "packages": 14,
-          "relationships": 14,
+          "related_resources": 35,
+          "relationships": 49,
           "size_kb": 77018,
           "stars": 5,
           "watchers": 0
@@ -75,7 +76,8 @@
           "github_releases": 6,
           "open_issues": 0,
           "packages": 45,
-          "relationships": 38,
+          "related_resources": 76,
+          "relationships": 114,
           "size_kb": 1133214,
           "stars": 3,
           "watchers": 0
@@ -95,6 +97,7 @@
           "github_releases": 7,
           "open_issues": 0,
           "packages": 1,
+          "related_resources": 0,
           "relationships": 1,
           "size_kb": 131,
           "stars": 2,
@@ -115,7 +118,8 @@
           "github_releases": 9,
           "open_issues": 0,
           "packages": 7,
-          "relationships": 7,
+          "related_resources": 40,
+          "relationships": 47,
           "size_kb": 11109,
           "stars": 1,
           "watchers": 0
@@ -135,7 +139,8 @@
           "github_releases": 6,
           "open_issues": 0,
           "packages": 1,
-          "relationships": 1,
+          "related_resources": 1,
+          "relationships": 2,
           "size_kb": 75,
           "stars": 1,
           "watchers": 0
@@ -155,7 +160,8 @@
           "github_releases": 4,
           "open_issues": 0,
           "packages": 1,
-          "relationships": 1,
+          "related_resources": 2,
+          "relationships": 3,
           "size_kb": 81,
           "stars": 1,
           "watchers": 0
@@ -175,7 +181,8 @@
           "github_releases": 2,
           "open_issues": 0,
           "packages": 2,
-          "relationships": 2,
+          "related_resources": 15,
+          "relationships": 17,
           "size_kb": 1958,
           "stars": 0,
           "watchers": 0
@@ -195,7 +202,8 @@
           "github_releases": 0,
           "open_issues": 0,
           "packages": 22,
-          "relationships": 22,
+          "related_resources": 12,
+          "relationships": 34,
           "size_kb": 15064,
           "stars": 0,
           "watchers": 0
@@ -209,10 +217,10 @@
     "id": "organization:groupsum",
     "kind": "organization",
     "login": "groupsum",
-    "observed_at": "2026-08-03T09:11:48Z",
+    "observed_at": "2026-08-03T10:05:58Z",
     "package_count": 151,
     "package_releases": 572,
-    "relationships": 967,
+    "relationships": 1204,
     "repository_count": 37,
     "role": "primary",
     "route": "/products/groupsum",
@@ -240,7 +248,7 @@
     "evidence": [
       {
         "kind": "organization",
-        "observed_at": "2026-08-03T09:11:48Z",
+        "observed_at": "2026-08-03T10:05:58Z",
         "url": "https://github.com/swarmauri"
       }
     ],
@@ -257,7 +265,8 @@
           "github_releases": 5742,
           "open_issues": 176,
           "packages": 366,
-          "relationships": 366,
+          "related_resources": 113,
+          "relationships": 479,
           "size_kb": 77235,
           "stars": 104,
           "watchers": 5
@@ -277,7 +286,8 @@
           "github_releases": 3,
           "open_issues": 9,
           "packages": 5,
-          "relationships": 5,
+          "related_resources": 1,
+          "relationships": 6,
           "size_kb": 3968,
           "stars": 25,
           "watchers": 0
@@ -297,7 +307,8 @@
           "github_releases": 1,
           "open_issues": 25,
           "packages": 0,
-          "relationships": 0,
+          "related_resources": 1,
+          "relationships": 1,
           "size_kb": 32789,
           "stars": 18,
           "watchers": 4
@@ -317,7 +328,8 @@
           "github_releases": 0,
           "open_issues": 8,
           "packages": 2,
-          "relationships": 2,
+          "related_resources": 2,
+          "relationships": 4,
           "size_kb": 237,
           "stars": 10,
           "watchers": 0
@@ -337,7 +349,8 @@
           "github_releases": 1,
           "open_issues": 2,
           "packages": 1,
-          "relationships": 1,
+          "related_resources": 1,
+          "relationships": 2,
           "size_kb": 254,
           "stars": 7,
           "watchers": 0
@@ -357,7 +370,8 @@
           "github_releases": 0,
           "open_issues": 9,
           "packages": 0,
-          "relationships": 0,
+          "related_resources": 1,
+          "relationships": 1,
           "size_kb": 34,
           "stars": 5,
           "watchers": 1
@@ -377,7 +391,8 @@
           "github_releases": 0,
           "open_issues": 0,
           "packages": 0,
-          "relationships": 0,
+          "related_resources": 1,
+          "relationships": 1,
           "size_kb": 17,
           "stars": 3,
           "watchers": 0
@@ -397,7 +412,8 @@
           "github_releases": 0,
           "open_issues": 3,
           "packages": 1,
-          "relationships": 1,
+          "related_resources": 1,
+          "relationships": 2,
           "size_kb": 149,
           "stars": 2,
           "watchers": 0
@@ -411,10 +427,10 @@
     "id": "organization:swarmauri",
     "kind": "organization",
     "login": "swarmauri",
-    "observed_at": "2026-08-03T09:11:48Z",
+    "observed_at": "2026-08-03T10:05:58Z",
     "package_count": 389,
     "package_releases": 7372,
-    "relationships": 5390,
+    "relationships": 5532,
     "repository_count": 16,
     "role": "ecosystem",
     "route": "/products/swarmauri",
@@ -449,7 +465,7 @@
     "evidence": [
       {
         "kind": "organization",
-        "observed_at": "2026-08-03T09:11:48Z",
+        "observed_at": "2026-08-03T10:05:58Z",
         "url": "https://github.com/tigrbl"
       }
     ],
@@ -466,7 +482,8 @@
           "github_releases": 1202,
           "open_issues": 2,
           "packages": 54,
-          "relationships": 51,
+          "related_resources": 58,
+          "relationships": 109,
           "size_kb": 81451,
           "stars": 3,
           "watchers": 0
@@ -486,7 +503,8 @@
           "github_releases": 40,
           "open_issues": 15,
           "packages": 16,
-          "relationships": 16,
+          "related_resources": 37,
+          "relationships": 53,
           "size_kb": 18565,
           "stars": 3,
           "watchers": 1
@@ -506,7 +524,8 @@
           "github_releases": 12,
           "open_issues": 13,
           "packages": 489,
-          "relationships": 457,
+          "related_resources": 149,
+          "relationships": 606,
           "size_kb": 25828,
           "stars": 2,
           "watchers": 0
@@ -526,7 +545,8 @@
           "github_releases": 28,
           "open_issues": 0,
           "packages": 8,
-          "relationships": 8,
+          "related_resources": 16,
+          "relationships": 24,
           "size_kb": 4214,
           "stars": 1,
           "watchers": 0
@@ -546,7 +566,8 @@
           "github_releases": 0,
           "open_issues": 0,
           "packages": 3,
-          "relationships": 3,
+          "related_resources": 1,
+          "relationships": 4,
           "size_kb": 1816,
           "stars": 0,
           "watchers": 0
@@ -566,6 +587,7 @@
           "github_releases": 0,
           "open_issues": 0,
           "packages": 3,
+          "related_resources": 0,
           "relationships": 3,
           "size_kb": 2968,
           "stars": 0,
@@ -586,7 +608,8 @@
           "github_releases": 0,
           "open_issues": 0,
           "packages": 2,
-          "relationships": 2,
+          "related_resources": 6,
+          "relationships": 8,
           "size_kb": 141,
           "stars": 0,
           "watchers": 0
@@ -606,7 +629,8 @@
           "github_releases": 0,
           "open_issues": 0,
           "packages": 2,
-          "relationships": 2,
+          "related_resources": 4,
+          "relationships": 6,
           "size_kb": 130,
           "stars": 0,
           "watchers": 0
@@ -620,10 +644,10 @@
     "id": "organization:tigrbl",
     "kind": "organization",
     "login": "tigrbl",
-    "observed_at": "2026-08-03T09:11:48Z",
+    "observed_at": "2026-08-03T10:05:58Z",
     "package_count": 584,
     "package_releases": 1835,
-    "relationships": 3690,
+    "relationships": 4019,
     "repository_count": 15,
     "role": "ecosystem",
     "route": "/products/tigrbl",

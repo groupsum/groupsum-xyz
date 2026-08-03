@@ -1,0 +1,119 @@
+{
+  "generated_at": "2026-08-03T10:05:58Z",
+  "packages": [
+    {
+      "claim_boundary": "Publication is reported only when confirmed by the named public registry.",
+      "dependency_count": 3,
+      "description": "Observed npm package record for svelte.",
+      "description_source": "generated-factual",
+      "display_name": "svelte",
+      "downloads": null,
+      "downstream_completeness": "not-observed",
+      "downstream_count": 0,
+      "ecosystem": "npm",
+      "evidence": [
+        {
+          "kind": "source",
+          "observed_at": "2026-08-03T10:05:58Z",
+          "url": "https://github.com/swarmauri/swarmauri-flipcard/blob/HEAD/svelte/package.json"
+        }
+      ],
+      "id": "package:npm:svelte:swarmauri/swarmauri-flipcard:svelte/package.json",
+      "kind": "package",
+      "latest_version": "0.0.0",
+      "manifest_path": "svelte/package.json",
+      "name": "svelte",
+      "observed_at": "2026-08-03T10:05:58Z",
+      "owner": "swarmauri",
+      "private": true,
+      "publication_status": "manifest_private",
+      "published": false,
+      "registry_url": null,
+      "relationship_count": 6,
+      "relationship_counts": {
+        "package_depends_on_external": 2,
+        "package_depends_on_package": 3,
+        "repository_contains_package": 1
+      },
+      "release_count": 0,
+      "repository": "swarmauri/swarmauri-flipcard",
+      "reviewed": false,
+      "route": "/catalog/packages/npm/svelte-b9c27ccb",
+      "source_url": "https://github.com/swarmauri/swarmauri-flipcard/blob/HEAD/svelte/package.json",
+      "version_declared": "0.0.0"
+    }
+  ],
+  "repository": {
+    "archived": false,
+    "claim_boundary": "Repository, release, deployment, and live-service states are reported separately.",
+    "created_at": "2024-09-03T08:06:39Z",
+    "default_branch": "master",
+    "description": "A Sveltejs based Swarmauri Flipcard Component for Gradio applications",
+    "description_source": "github-repository",
+    "display_name": "swarmauri-flipcard",
+    "evidence": [
+      {
+        "kind": "source",
+        "observed_at": "2026-08-03T10:05:58Z",
+        "url": "https://github.com/swarmauri/swarmauri-flipcard"
+      }
+    ],
+    "fork": false,
+    "full_name": "swarmauri/swarmauri-flipcard",
+    "homepage": null,
+    "id": "repository:swarmauri/swarmauri-flipcard",
+    "kind": "repository",
+    "latest_commit": {
+      "author": "cobycloud",
+      "authored_at": "2024-09-05T00:30:47Z",
+      "committed_at": "2024-09-05T00:30:47Z",
+      "committer": "web-flow",
+      "message": "Merge pull request #1 from oreoluwa212/master",
+      "sha": "34dd9abb843804023ee426a66d1f4ba31be42275",
+      "url": "https://github.com/swarmauri/swarmauri-flipcard/commit/34dd9abb843804023ee426a66d1f4ba31be42275"
+    },
+    "latest_deployment": null,
+    "latest_release": null,
+    "license": "Apache-2.0",
+    "metrics": {
+      "commits": 3,
+      "contributors": 2,
+      "deployments": 0,
+      "environments": 0,
+      "forks": 0,
+      "github_releases": 0,
+      "open_issues": 0,
+      "packages": 1,
+      "related_resources": 0,
+      "relationships": 1,
+      "size_kb": 21,
+      "stars": 0,
+      "watchers": 0
+    },
+    "name": "swarmauri-flipcard",
+    "observed_at": "2026-08-03T10:05:58Z",
+    "owner": "swarmauri",
+    "package_ids": [
+      "package:npm:svelte:swarmauri/swarmauri-flipcard:svelte/package.json"
+    ],
+    "pushed_at": "2024-09-05T00:30:47Z",
+    "related_resources": [],
+    "relationship_counts": {
+      "repository_contains_package": 1
+    },
+    "reviewed": false,
+    "route": "/catalog/repositories/swarmauri/swarmauri-flipcard",
+    "technologies": [
+      "CSS",
+      "HTML",
+      "JavaScript",
+      "Svelte"
+    ],
+    "template": false,
+    "topics": [],
+    "updated_at": "2024-09-05T08:47:39Z",
+    "url": "https://github.com/swarmauri/swarmauri-flipcard",
+    "visibility": "public"
+  },
+  "schema_version": "1.0.0"
+}

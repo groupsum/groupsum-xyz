@@ -1,0 +1,179 @@
+{
+  "generated_at": "2026-08-03T10:05:58Z",
+  "packages": [
+    {
+      "claim_boundary": "Publication is reported only when confirmed by the named public registry.",
+      "dependency_count": 3,
+      "description": "Observed npm package record for @groupsum/groupsum-xyz-content-pack.",
+      "description_source": "generated-factual",
+      "display_name": "@groupsum/groupsum-xyz-content-pack",
+      "downloads": null,
+      "downstream_completeness": "not-observed",
+      "downstream_count": 0,
+      "ecosystem": "npm",
+      "evidence": [
+        {
+          "kind": "source",
+          "observed_at": "2026-08-03T10:05:58Z",
+          "url": "https://github.com/groupsum/groupsum-xyz/blob/HEAD/packages/site-content-pack/package.json"
+        }
+      ],
+      "id": "package:npm:@groupsum/groupsum-xyz-content-pack:groupsum/groupsum-xyz:packages/site-content-pack/package.json",
+      "kind": "package",
+      "latest_version": "0.1.0",
+      "manifest_path": "packages/site-content-pack/package.json",
+      "name": "@groupsum/groupsum-xyz-content-pack",
+      "observed_at": "2026-08-03T10:05:58Z",
+      "owner": "groupsum",
+      "private": true,
+      "publication_status": "manifest_private",
+      "published": false,
+      "registry_url": null,
+      "relationship_count": 4,
+      "relationship_counts": {
+        "package_depends_on_external": 1,
+        "package_depends_on_package": 2,
+        "repository_contains_package": 1
+      },
+      "release_count": 0,
+      "repository": "groupsum/groupsum-xyz",
+      "reviewed": false,
+      "route": "/catalog/packages/npm/groupsum-groupsum-xyz-content-pack-f0edd9b4",
+      "source_url": "https://github.com/groupsum/groupsum-xyz/blob/HEAD/packages/site-content-pack/package.json",
+      "version_declared": "0.1.0"
+    },
+    {
+      "claim_boundary": "Publication is reported only when confirmed by the named public registry.",
+      "dependency_count": 15,
+      "description": "Observed npm package record for groupsum-xyz.",
+      "description_source": "generated-factual",
+      "display_name": "groupsum-xyz",
+      "downloads": null,
+      "downstream_completeness": "not-observed",
+      "downstream_count": 0,
+      "ecosystem": "npm",
+      "evidence": [
+        {
+          "kind": "source",
+          "observed_at": "2026-08-03T10:05:58Z",
+          "url": "https://github.com/groupsum/groupsum-xyz/blob/HEAD/package.json"
+        }
+      ],
+      "id": "package:npm:groupsum-xyz:groupsum/groupsum-xyz:package.json",
+      "kind": "package",
+      "latest_version": "0.1.0",
+      "manifest_path": "package.json",
+      "name": "groupsum-xyz",
+      "observed_at": "2026-08-03T10:05:58Z",
+      "owner": "groupsum",
+      "private": true,
+      "publication_status": "manifest_private",
+      "published": false,
+      "registry_url": null,
+      "relationship_count": 16,
+      "relationship_counts": {
+        "package_depends_on_external": 12,
+        "package_depends_on_package": 3,
+        "repository_contains_package": 1
+      },
+      "release_count": 0,
+      "repository": "groupsum/groupsum-xyz",
+      "reviewed": false,
+      "route": "/catalog/packages/npm/groupsum-xyz-e18f6ace",
+      "source_url": "https://github.com/groupsum/groupsum-xyz/blob/HEAD/package.json",
+      "version_declared": "0.1.0"
+    }
+  ],
+  "repository": {
+    "archived": false,
+    "claim_boundary": "Repository, release, deployment, and live-service states are reported separately.",
+    "created_at": "2026-05-18T17:38:36Z",
+    "default_branch": "master",
+    "description": "MdWrk lander website for groupsum.xyz.",
+    "description_source": "github-repository",
+    "display_name": "groupsum-xyz",
+    "evidence": [
+      {
+        "kind": "source",
+        "observed_at": "2026-08-03T10:05:58Z",
+        "url": "https://github.com/groupsum/groupsum-xyz"
+      }
+    ],
+    "fork": false,
+    "full_name": "groupsum/groupsum-xyz",
+    "homepage": null,
+    "id": "repository:groupsum/groupsum-xyz",
+    "kind": "repository",
+    "latest_commit": {
+      "author": "cobycloud",
+      "authored_at": "2026-08-03T03:30:30Z",
+      "committed_at": "2026-08-03T03:30:30Z",
+      "committer": "cobycloud",
+      "message": "Replace website claims with verified content",
+      "sha": "0ef006fba7abed76b50c76c2d25a530b8916bec2",
+      "url": "https://github.com/groupsum/groupsum-xyz/commit/0ef006fba7abed76b50c76c2d25a530b8916bec2"
+    },
+    "latest_deployment": {
+      "environment": "deployment",
+      "environment_url": "",
+      "log_url": "https://github.com/groupsum/groupsum-xyz/actions/runs/30782003991/job/91588397725",
+      "state": "success",
+      "updated_at": "2026-08-03T03:32:08Z"
+    },
+    "latest_release": null,
+    "license": null,
+    "metrics": {
+      "commits": 46,
+      "contributors": 1,
+      "deployments": 3,
+      "environments": 1,
+      "forks": 0,
+      "github_releases": 0,
+      "open_issues": 0,
+      "packages": 2,
+      "related_resources": 0,
+      "relationships": 2,
+      "size_kb": 4728,
+      "stars": 0,
+      "watchers": 0
+    },
+    "name": "groupsum-xyz",
+    "observed_at": "2026-08-03T10:05:58Z",
+    "owner": "groupsum",
+    "package_ids": [
+      "package:npm:@groupsum/groupsum-xyz-content-pack:groupsum/groupsum-xyz:packages/site-content-pack/package.json",
+      "package:npm:groupsum-xyz:groupsum/groupsum-xyz:package.json"
+    ],
+    "pushed_at": "2026-08-03T03:30:43Z",
+    "related_resources": [],
+    "relationship_counts": {
+      "repository_contains_package": 2
+    },
+    "reviewed": false,
+    "route": "/catalog/repositories/groupsum/groupsum-xyz",
+    "technologies": [
+      "CSS",
+      "Dockerfile",
+      "HTML",
+      "JavaScript",
+      "Python",
+      "TypeScript"
+    ],
+    "template": false,
+    "topics": [
+      "docker",
+      "github-actions",
+      "groupsum",
+      "lander",
+      "mdwrk",
+      "namecheap",
+      "nginx-proxy-manager",
+      "npmctl",
+      "static-site"
+    ],
+    "updated_at": "2026-08-03T03:30:47Z",
+    "url": "https://github.com/groupsum/groupsum-xyz",
+    "visibility": "public"
+  },
+  "schema_version": "1.0.0"
+}

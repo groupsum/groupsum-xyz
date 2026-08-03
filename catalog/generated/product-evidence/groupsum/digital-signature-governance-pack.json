@@ -1,0 +1,151 @@
+{
+  "generated_at": "2026-08-03T10:05:58Z",
+  "packages": [
+    {
+      "claim_boundary": "Publication is reported only when confirmed by the named public registry.",
+      "dependency_count": 4,
+      "description": "Observed pypi package record for digital-signature-governance-pack.",
+      "description_source": "generated-factual",
+      "display_name": "digital-signature-governance-pack",
+      "downloads": null,
+      "downstream_completeness": "not-observed",
+      "downstream_count": 0,
+      "ecosystem": "pypi",
+      "evidence": [
+        {
+          "kind": "registry",
+          "observed_at": "2026-08-03T10:05:58Z",
+          "url": "https://pypi.org/project/digital-signature-governance-pack/"
+        }
+      ],
+      "id": "package:pypi:digital-signature-governance-pack:groupsum/digital-signature-governance-pack:pyproject.toml",
+      "kind": "package",
+      "latest_version": "0.1.3",
+      "manifest_path": "pyproject.toml",
+      "name": "digital-signature-governance-pack",
+      "observed_at": "2026-08-03T10:05:58Z",
+      "owner": "groupsum",
+      "private": false,
+      "publication_status": "published",
+      "published": true,
+      "registry_url": "https://pypi.org/project/digital-signature-governance-pack/",
+      "relationship_count": 5,
+      "relationship_counts": {
+        "package_depends_on_external": 3,
+        "package_depends_on_package": 1,
+        "repository_contains_package": 1
+      },
+      "release_count": 4,
+      "repository": "groupsum/digital-signature-governance-pack",
+      "reviewed": false,
+      "route": "/catalog/packages/pypi/digital-signature-governance-pack-9b83d7ea",
+      "source_url": "https://github.com/groupsum/digital-signature-governance-pack/blob/HEAD/pyproject.toml",
+      "version_declared": "0.1.3"
+    }
+  ],
+  "repository": {
+    "archived": false,
+    "claim_boundary": "Repository, release, deployment, and live-service states are reported separately.",
+    "created_at": "2026-05-10T15:13:29Z",
+    "default_branch": "master",
+    "description": "Installable SSOT ADR/SPEC extension pack for digital-signature, advanced electronic signature, container, timestamping, validation, archival, and assurance governance.",
+    "description_source": "github-repository",
+    "display_name": "digital-signature-governance-pack",
+    "evidence": [
+      {
+        "kind": "source",
+        "observed_at": "2026-08-03T10:05:58Z",
+        "url": "https://github.com/groupsum/digital-signature-governance-pack"
+      }
+    ],
+    "fork": false,
+    "full_name": "groupsum/digital-signature-governance-pack",
+    "homepage": null,
+    "id": "repository:groupsum/digital-signature-governance-pack",
+    "kind": "repository",
+    "latest_commit": {
+      "author": "github-actions[bot]",
+      "authored_at": "2026-06-02T00:57:35Z",
+      "committed_at": "2026-06-02T00:57:35Z",
+      "committer": "github-actions[bot]",
+      "message": "chore(release): bump version to 0.1.3",
+      "sha": "db0fc62a5f8ebb44e7b0614fb6d051fc1bb73c36",
+      "url": "https://github.com/groupsum/digital-signature-governance-pack/commit/db0fc62a5f8ebb44e7b0614fb6d051fc1bb73c36"
+    },
+    "latest_deployment": null,
+    "latest_release": {
+      "assets": [
+        {
+          "downloads": 3,
+          "name": "digital_signature_governance_pack-0.1.3-py3-none-any.whl",
+          "url": "https://github.com/groupsum/digital-signature-governance-pack/releases/download/v0.1.3/digital_signature_governance_pack-0.1.3-py3-none-any.whl"
+        },
+        {
+          "downloads": 3,
+          "name": "digital_signature_governance_pack-0.1.3.tar.gz",
+          "url": "https://github.com/groupsum/digital-signature-governance-pack/releases/download/v0.1.3/digital_signature_governance_pack-0.1.3.tar.gz"
+        }
+      ],
+      "draft": false,
+      "name": "v0.1.3",
+      "prerelease": false,
+      "published_at": "2026-06-02T00:58:22Z",
+      "tag": "v0.1.3",
+      "url": "https://github.com/groupsum/digital-signature-governance-pack/releases/tag/v0.1.3"
+    },
+    "license": "Apache-2.0",
+    "metrics": {
+      "commits": 20,
+      "contributors": 2,
+      "deployments": 0,
+      "environments": 0,
+      "forks": 0,
+      "github_releases": 4,
+      "open_issues": 0,
+      "packages": 1,
+      "related_resources": 2,
+      "relationships": 3,
+      "size_kb": 81,
+      "stars": 1,
+      "watchers": 0
+    },
+    "name": "digital-signature-governance-pack",
+    "observed_at": "2026-08-03T10:05:58Z",
+    "owner": "groupsum",
+    "package_ids": [
+      "package:pypi:digital-signature-governance-pack:groupsum/digital-signature-governance-pack:pyproject.toml"
+    ],
+    "pushed_at": "2026-06-02T00:58:11Z",
+    "related_resources": [
+      {
+        "evidence_type": "repository.tree",
+        "id": "resource:ef4e16a6c1ed",
+        "kind": "documentation",
+        "name": "docs/proposals",
+        "url": "https://github.com/groupsum/digital-signature-governance-pack/tree/master/docs/proposals"
+      },
+      {
+        "evidence_type": "repository.tree",
+        "id": "resource:34f7176e39ba",
+        "kind": "documentation",
+        "name": "docs/standards",
+        "url": "https://github.com/groupsum/digital-signature-governance-pack/tree/master/docs/standards"
+      }
+    ],
+    "relationship_counts": {
+      "repository_contains_package": 1,
+      "repository_contains_related_resource": 2
+    },
+    "reviewed": false,
+    "route": "/catalog/repositories/groupsum/digital-signature-governance-pack",
+    "technologies": [
+      "Python"
+    ],
+    "template": false,
+    "topics": [],
+    "updated_at": "2026-06-02T00:58:07Z",
+    "url": "https://github.com/groupsum/digital-signature-governance-pack",
+    "visibility": "public"
+  },
+  "schema_version": "1.0.0"
+}

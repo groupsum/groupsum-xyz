@@ -1,0 +1,188 @@
+{
+  "generated_at": "2026-08-03T10:05:58Z",
+  "packages": [
+    {
+      "claim_boundary": "Publication is reported only when confirmed by the named public registry.",
+      "dependency_count": 21,
+      "description": "Observed npm package record for swarmauri-com.",
+      "description_source": "generated-factual",
+      "display_name": "swarmauri-com",
+      "downloads": null,
+      "downstream_completeness": "not-observed",
+      "downstream_count": 0,
+      "ecosystem": "npm",
+      "evidence": [
+        {
+          "kind": "source",
+          "observed_at": "2026-08-03T10:05:58Z",
+          "url": "https://github.com/swarmauri/swarmauri-com/blob/HEAD/package.json"
+        }
+      ],
+      "id": "package:npm:swarmauri-com:swarmauri/swarmauri-com:package.json",
+      "kind": "package",
+      "latest_version": "0.1.0",
+      "manifest_path": "package.json",
+      "name": "swarmauri-com",
+      "observed_at": "2026-08-03T10:05:58Z",
+      "owner": "swarmauri",
+      "private": true,
+      "publication_status": "manifest_private",
+      "published": false,
+      "registry_url": null,
+      "relationship_count": 21,
+      "relationship_counts": {
+        "package_depends_on_external": 17,
+        "package_depends_on_package": 3,
+        "repository_contains_package": 1
+      },
+      "release_count": 0,
+      "repository": "swarmauri/swarmauri-com",
+      "reviewed": false,
+      "route": "/catalog/packages/npm/swarmauri-com-f1b7d107",
+      "source_url": "https://github.com/swarmauri/swarmauri-com/blob/HEAD/package.json",
+      "version_declared": "0.1.0"
+    },
+    {
+      "claim_boundary": "Publication is reported only when confirmed by the named public registry.",
+      "dependency_count": 3,
+      "description": "Observed pypi package record for swarmauri-com.",
+      "description_source": "generated-factual",
+      "display_name": "swarmauri-com",
+      "downloads": null,
+      "downstream_completeness": "not-observed",
+      "downstream_count": 0,
+      "ecosystem": "pypi",
+      "evidence": [
+        {
+          "kind": "source",
+          "observed_at": "2026-08-03T10:05:58Z",
+          "url": "https://github.com/swarmauri/swarmauri-com/blob/HEAD/pyproject.toml"
+        }
+      ],
+      "id": "package:pypi:swarmauri-com:swarmauri/swarmauri-com:pyproject.toml",
+      "kind": "package",
+      "latest_version": "0.1.0",
+      "manifest_path": "pyproject.toml",
+      "name": "swarmauri-com",
+      "observed_at": "2026-08-03T10:05:58Z",
+      "owner": "swarmauri",
+      "private": false,
+      "publication_status": "not-confirmed",
+      "published": false,
+      "registry_url": null,
+      "relationship_count": 4,
+      "relationship_counts": {
+        "package_depends_on_package": 3,
+        "repository_contains_package": 1
+      },
+      "release_count": 0,
+      "repository": "swarmauri/swarmauri-com",
+      "reviewed": false,
+      "route": "/catalog/packages/pypi/swarmauri-com-0c0ecf8a",
+      "source_url": "https://github.com/swarmauri/swarmauri-com/blob/HEAD/pyproject.toml",
+      "version_declared": "0.1.0"
+    }
+  ],
+  "repository": {
+    "archived": false,
+    "claim_boundary": "Repository, release, deployment, and live-service states are reported separately.",
+    "created_at": "2026-05-18T17:38:47Z",
+    "default_branch": "master",
+    "description": "MdWrk lander website for swarmauri.com.",
+    "description_source": "github-repository",
+    "display_name": "swarmauri-com",
+    "evidence": [
+      {
+        "kind": "source",
+        "observed_at": "2026-08-03T10:05:58Z",
+        "url": "https://github.com/swarmauri/swarmauri-com"
+      }
+    ],
+    "fork": false,
+    "full_name": "swarmauri/swarmauri-com",
+    "homepage": null,
+    "id": "repository:swarmauri/swarmauri-com",
+    "kind": "repository",
+    "latest_commit": {
+      "author": "cobycloud",
+      "authored_at": "2026-07-13T22:27:52Z",
+      "committed_at": "2026-07-13T22:27:52Z",
+      "committer": "cobycloud",
+      "message": "docs: add npmctl badge",
+      "sha": "d05940ee7ced6a160f9c13b9af1a9a148e2f37fe",
+      "url": "https://github.com/swarmauri/swarmauri-com/commit/d05940ee7ced6a160f9c13b9af1a9a148e2f37fe"
+    },
+    "latest_deployment": {
+      "environment": "deployment",
+      "environment_url": "",
+      "log_url": "https://github.com/swarmauri/swarmauri-com/actions/runs/29278088115/job/86912140671",
+      "state": "success",
+      "updated_at": "2026-07-13T19:21:26Z"
+    },
+    "latest_release": null,
+    "license": null,
+    "metrics": {
+      "commits": 69,
+      "contributors": 1,
+      "deployments": 27,
+      "environments": 1,
+      "forks": 0,
+      "github_releases": 0,
+      "open_issues": 0,
+      "packages": 2,
+      "related_resources": 1,
+      "relationships": 3,
+      "size_kb": 1729,
+      "stars": 0,
+      "watchers": 0
+    },
+    "name": "swarmauri-com",
+    "observed_at": "2026-08-03T10:05:58Z",
+    "owner": "swarmauri",
+    "package_ids": [
+      "package:npm:swarmauri-com:swarmauri/swarmauri-com:package.json",
+      "package:pypi:swarmauri-com:swarmauri/swarmauri-com:pyproject.toml"
+    ],
+    "pushed_at": "2026-07-13T22:28:59Z",
+    "related_resources": [
+      {
+        "evidence_type": "repository.tree",
+        "id": "resource:2f807a28d7c8",
+        "kind": "documentation",
+        "name": "docs/unified_swarmauri_company_portfolio_brief.md",
+        "url": "https://github.com/swarmauri/swarmauri-com/blob/master/docs/unified_swarmauri_company_portfolio_brief.md"
+      }
+    ],
+    "relationship_counts": {
+      "repository_contains_package": 2,
+      "repository_contains_related_resource": 1
+    },
+    "reviewed": false,
+    "route": "/catalog/repositories/swarmauri/swarmauri-com",
+    "technologies": [
+      "CSS",
+      "Dockerfile",
+      "HTML",
+      "JavaScript",
+      "Python",
+      "TypeScript",
+      "XSLT"
+    ],
+    "template": false,
+    "topics": [
+      "docker",
+      "github-actions",
+      "lander",
+      "mdwrk",
+      "namecheap",
+      "nginx-proxy-manager",
+      "npmctl",
+      "static-site",
+      "swarmauri"
+    ],
+    "updated_at": "2026-07-13T22:29:04Z",
+    "url": "https://github.com/swarmauri/swarmauri-com",
+    "visibility": "public"
+  },
+  "schema_version": "1.0.0"
+}

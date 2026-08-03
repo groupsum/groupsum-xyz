@@ -1,0 +1,3068 @@
+{
+  "generated_at": "2026-08-03T10:05:58Z",
+  "packages": [
+    {
+      "claim_boundary": "Publication is reported only when confirmed by the named public registry.",
+      "dependency_count": 8,
+      "description": "Observed npm package record for @mdwrk/desktop.",
+      "description_source": "generated-factual",
+      "display_name": "@mdwrk/desktop",
+      "downloads": null,
+      "downstream_completeness": "not-observed",
+      "downstream_count": 0,
+      "ecosystem": "npm",
+      "evidence": [
+        {
+          "kind": "source",
+          "observed_at": "2026-08-03T10:05:58Z",
+          "url": "https://github.com/groupsum/markdown_workspace/blob/HEAD/apps/desktop/package.json"
+        }
+      ],
+      "id": "package:npm:@mdwrk/desktop:groupsum/markdown_workspace:apps/desktop/package.json",
+      "kind": "package",
+      "latest_version": "0.2.36",
+      "manifest_path": "apps/desktop/package.json",
+      "name": "@mdwrk/desktop",
+      "observed_at": "2026-08-03T10:05:58Z",
+      "owner": "groupsum",
+      "private": true,
+      "publication_status": "manifest_private",
+      "published": false,
+      "registry_url": null,
+      "relationship_count": 9,
+      "relationship_counts": {
+        "package_depends_on_external": 8,
+        "repository_contains_package": 1
+      },
+      "release_count": 0,
+      "repository": "groupsum/markdown_workspace",
+      "reviewed": false,
+      "route": "/catalog/packages/npm/mdwrk-desktop-248d3c74",
+      "source_url": "https://github.com/groupsum/markdown_workspace/blob/HEAD/apps/desktop/package.json",
+      "version_declared": "0.2.36"
+    },
+    {
+      "claim_boundary": "Publication is reported only when confirmed by the named public registry.",
+      "dependency_count": 10,
+      "description": "Observed npm package record for @mdwrk/example-editor-basic.",
+      "description_source": "generated-factual",
+      "display_name": "@mdwrk/example-editor-basic",
+      "downloads": null,
+      "downstream_completeness": "not-observed",
+      "downstream_count": 0,
+      "ecosystem": "npm",
+      "evidence": [
+        {
+          "kind": "source",
+          "observed_at": "2026-08-03T10:05:58Z",
+          "url": "https://github.com/groupsum/markdown_workspace/blob/HEAD/examples/editor-basic/package.json"
+        }
+      ],
+      "id": "package:npm:@mdwrk/example-editor-basic:groupsum/markdown_workspace:examples/editor-basic/package.json",
+      "kind": "package",
+      "latest_version": "0.1.3",
+      "manifest_path": "examples/editor-basic/package.json",
+      "name": "@mdwrk/example-editor-basic",
+      "observed_at": "2026-08-03T10:05:58Z",
+      "owner": "groupsum",
+      "private": true,
+      "publication_status": "manifest_private",
+      "published": false,
+      "registry_url": null,
+      "relationship_count": 14,
+      "relationship_counts": {
+        "package_depends_on_external": 7,
+        "package_depends_on_package": 5,
+        "repository_contains_package": 2
+      },
+      "release_count": 0,
+      "repository": "groupsum/markdown_workspace",
+      "reviewed": false,
+      "route": "/catalog/packages/npm/mdwrk-example-editor-basic-8e46b996",
+      "source_url": "https://github.com/groupsum/markdown_workspace/blob/HEAD/examples/editor-basic/package.json",
+      "version_declared": "0.1.3"
+    },
+    {
+      "claim_boundary": "Publication is reported only when confirmed by the named public registry.",
+      "dependency_count": 10,
+      "description": "Observed npm package record for @mdwrk/example-page-template-demo.",
+      "description_source": "generated-factual",
+      "display_name": "@mdwrk/example-page-template-demo",
+      "downloads": null,
+      "downstream_completeness": "not-observed",
+      "downstream_count": 0,
+      "ecosystem": "npm",
+      "evidence": [
+        {
+          "kind": "source",
+          "observed_at": "2026-08-03T10:05:58Z",
+          "url": "https://github.com/groupsum/markdown_workspace/blob/HEAD/examples/page-template-demo/package.json"
+        }
+      ],
+      "id": "package:npm:@mdwrk/example-page-template-demo:groupsum/markdown_workspace:examples/page-template-demo/package.json",
+      "kind": "package",
+      "latest_version": "0.1.0",
+      "manifest_path": "examples/page-template-demo/package.json",
+      "name": "@mdwrk/example-page-template-demo",
+      "observed_at": "2026-08-03T10:05:58Z",
+      "owner": "groupsum",
+      "private": true,
+      "publication_status": "manifest_private",
+      "published": false,
+      "registry_url": null,
+      "relationship_count": 14,
+      "relationship_counts": {
+        "package_depends_on_external": 7,
+        "package_depends_on_package": 5,
+        "repository_contains_package": 2
+      },
+      "release_count": 0,
+      "repository": "groupsum/markdown_workspace",
+      "reviewed": false,
+      "route": "/catalog/packages/npm/mdwrk-example-page-template-demo-45564204",
+      "source_url": "https://github.com/groupsum/markdown_workspace/blob/HEAD/examples/page-template-demo/package.json",
+      "version_declared": "0.1.0"
+    },
+    {
+      "claim_boundary": "Publication is reported only when confirmed by the named public registry.",
+      "dependency_count": 9,
+      "description": "Observed npm package record for @mdwrk/example-renderer-basic.",
+      "description_source": "generated-factual",
+      "display_name": "@mdwrk/example-renderer-basic",
+      "downloads": null,
+      "downstream_completeness": "not-observed",
+      "downstream_count": 0,
+      "ecosystem": "npm",
+      "evidence": [
+        {
+          "kind": "source",
+          "observed_at": "2026-08-03T10:05:58Z",
+          "url": "https://github.com/groupsum/markdown_workspace/blob/HEAD/examples/renderer-basic/package.json"
+        }
+      ],
+      "id": "package:npm:@mdwrk/example-renderer-basic:groupsum/markdown_workspace:examples/renderer-basic/package.json",
+      "kind": "package",
+      "latest_version": "0.1.3",
+      "manifest_path": "examples/renderer-basic/package.json",
+      "name": "@mdwrk/example-renderer-basic",
+      "observed_at": "2026-08-03T10:05:58Z",
+      "owner": "groupsum",
+      "private": true,
+      "publication_status": "manifest_private",
+      "published": false,
+      "registry_url": null,
+      "relationship_count": 18,
+      "relationship_counts": {
+        "package_depends_on_external": 11,
+        "package_depends_on_package": 5,
+        "repository_contains_package": 2
+      },
+      "release_count": 0,
+      "repository": "groupsum/markdown_workspace",
+      "reviewed": false,
+      "route": "/catalog/packages/npm/mdwrk-example-renderer-basic-08d294f7",
+      "source_url": "https://github.com/groupsum/markdown_workspace/blob/HEAD/examples/renderer-basic/package.json",
+      "version_declared": "0.1.3"
+    },
+    {
+      "claim_boundary": "Publication is reported only when confirmed by the named public registry.",
+      "dependency_count": 2,
+      "description": "Observed npm package record for @mdwrk/extension-catalog-hello.",
+      "description_source": "generated-factual",
+      "display_name": "@mdwrk/extension-catalog-hello",
+      "downloads": null,
+      "downstream_completeness": "not-observed",
+      "downstream_count": 0,
+      "ecosystem": "npm",
+      "evidence": [
+        {
+          "kind": "registry",
+          "observed_at": "2026-08-03T10:05:58Z",
+          "url": "https://www.npmjs.com/package/@mdwrk/extension-catalog-hello"
+        }
+      ],
+      "id": "package:npm:@mdwrk/extension-catalog-hello:groupsum/markdown_workspace:artifacts/extensions/external.catalog-hello/1.1.2/package.json",
+      "kind": "package",
+      "latest_version": "1.2.2",
+      "manifest_path": "artifacts/extensions/external.catalog-hello/1.1.2/package.json",
+      "name": "@mdwrk/extension-catalog-hello",
+      "observed_at": "2026-08-03T10:05:58Z",
+      "owner": "groupsum",
+      "private": false,
+      "publication_status": "published",
+      "published": true,
+      "registry_url": "https://www.npmjs.com/package/@mdwrk/extension-catalog-hello",
+      "relationship_count": 3,
+      "relationship_counts": {
+        "package_depends_on_package": 2,
+        "repository_contains_package": 1
+      },
+      "release_count": 5,
+      "repository": "groupsum/markdown_workspace",
+      "reviewed": false,
+      "route": "/catalog/packages/npm/mdwrk-extension-catalog-hello-a5e82047",
+      "source_url": "https://github.com/groupsum/markdown_workspace/blob/HEAD/artifacts/extensions/external.catalog-hello/1.1.2/package.json",
+      "version_declared": "1.1.2"
+    },
+    {
+      "claim_boundary": "Publication is reported only when confirmed by the named public registry.",
+      "dependency_count": 2,
+      "description": "Observed npm package record for @mdwrk/extension-catalog-hello.",
+      "description_source": "generated-factual",
+      "display_name": "@mdwrk/extension-catalog-hello",
+      "downloads": null,
+      "downstream_completeness": "not-observed",
+      "downstream_count": 0,
+      "ecosystem": "npm",
+      "evidence": [
+        {
+          "kind": "source",
+          "observed_at": "2026-08-03T10:05:58Z",
+          "url": "https://github.com/groupsum/markdown_workspace/blob/HEAD/packages/extensions/extension-catalog-hello/package.json"
+        }
+      ],
+      "id": "package:npm:@mdwrk/extension-catalog-hello:groupsum/markdown_workspace:packages/extensions/extension-catalog-hello/package.json",
+      "kind": "package",
+      "latest_version": "1.2.4",
+      "manifest_path": "packages/extensions/extension-catalog-hello/package.json",
+      "name": "@mdwrk/extension-catalog-hello",
+      "observed_at": "2026-08-03T10:05:58Z",
+      "owner": "groupsum",
+      "private": true,
+      "publication_status": "manifest_private",
+      "published": false,
+      "registry_url": null,
+      "relationship_count": 3,
+      "relationship_counts": {
+        "package_depends_on_package": 2,
+        "repository_contains_package": 1
+      },
+      "release_count": 0,
+      "repository": "groupsum/markdown_workspace",
+      "reviewed": false,
+      "route": "/catalog/packages/npm/mdwrk-extension-catalog-hello-3cfebccc",
+      "source_url": "https://github.com/groupsum/markdown_workspace/blob/HEAD/packages/extensions/extension-catalog-hello/package.json",
+      "version_declared": "1.2.4"
+    },
+    {
+      "claim_boundary": "Publication is reported only when confirmed by the named public registry.",
+      "dependency_count": 6,
+      "description": "Observed npm package record for @mdwrk/extension-gemini-agent.",
+      "description_source": "generated-factual",
+      "display_name": "@mdwrk/extension-gemini-agent",
+      "downloads": null,
+      "downstream_completeness": "not-observed",
+      "downstream_count": 0,
+      "ecosystem": "npm",
+      "evidence": [
+        {
+          "kind": "registry",
+          "observed_at": "2026-08-03T10:05:58Z",
+          "url": "https://www.npmjs.com/package/@mdwrk/extension-gemini-agent"
+        }
+      ],
+      "id": "package:npm:@mdwrk/extension-gemini-agent:groupsum/markdown_workspace:artifacts/extensions/core.gemini-agent/1.2.1/package.json",
+      "kind": "package",
+      "latest_version": "1.2.2",
+      "manifest_path": "artifacts/extensions/core.gemini-agent/1.2.1/package.json",
+      "name": "@mdwrk/extension-gemini-agent",
+      "observed_at": "2026-08-03T10:05:58Z",
+      "owner": "groupsum",
+      "private": false,
+      "publication_status": "published",
+      "published": true,
+      "registry_url": "https://www.npmjs.com/package/@mdwrk/extension-gemini-agent",
+      "relationship_count": 8,
+      "relationship_counts": {
+        "package_depends_on_external": 2,
+        "package_depends_on_package": 5,
+        "repository_contains_package": 1
+      },
+      "release_count": 6,
+      "repository": "groupsum/markdown_workspace",
+      "reviewed": false,
+      "route": "/catalog/packages/npm/mdwrk-extension-gemini-agent-ed94be59",
+      "source_url": "https://github.com/groupsum/markdown_workspace/blob/HEAD/artifacts/extensions/core.gemini-agent/1.2.1/package.json",
+      "version_declared": "1.2.1"
+    },
+    {
+      "claim_boundary": "Publication is reported only when confirmed by the named public registry.",
+      "dependency_count": 6,
+      "description": "Observed npm package record for @mdwrk/extension-gemini-agent.",
+      "description_source": "generated-factual",
+      "display_name": "@mdwrk/extension-gemini-agent",
+      "downloads": null,
+      "downstream_completeness": "not-observed",
+      "downstream_count": 0,
+      "ecosystem": "npm",
+      "evidence": [
+        {
+          "kind": "source",
+          "observed_at": "2026-08-03T10:05:58Z",
+          "url": "https://github.com/groupsum/markdown_workspace/blob/HEAD/packages/extensions/extension-gemini-agent/package.json"
+        }
+      ],
+      "id": "package:npm:@mdwrk/extension-gemini-agent:groupsum/markdown_workspace:packages/extensions/extension-gemini-agent/package.json",
+      "kind": "package",
+      "latest_version": "1.2.4",
+      "manifest_path": "packages/extensions/extension-gemini-agent/package.json",
+      "name": "@mdwrk/extension-gemini-agent",
+      "observed_at": "2026-08-03T10:05:58Z",
+      "owner": "groupsum",
+      "private": true,
+      "publication_status": "manifest_private",
+      "published": false,
+      "registry_url": null,
+      "relationship_count": 8,
+      "relationship_counts": {
+        "package_depends_on_external": 2,
+        "package_depends_on_package": 5,
+        "repository_contains_package": 1
+      },
+      "release_count": 0,
+      "repository": "groupsum/markdown_workspace",
+      "reviewed": false,
+      "route": "/catalog/packages/npm/mdwrk-extension-gemini-agent-eb5ca491",
+      "source_url": "https://github.com/groupsum/markdown_workspace/blob/HEAD/packages/extensions/extension-gemini-agent/package.json",
+      "version_declared": "1.2.4"
+    },
+    {
+      "claim_boundary": "Publication is reported only when confirmed by the named public registry.",
+      "dependency_count": 6,
+      "description": "Observed npm package record for @mdwrk/extension-git-ops.",
+      "description_source": "generated-factual",
+      "display_name": "@mdwrk/extension-git-ops",
+      "downloads": null,
+      "downstream_completeness": "not-observed",
+      "downstream_count": 0,
+      "ecosystem": "npm",
+      "evidence": [
+        {
+          "kind": "registry",
+          "observed_at": "2026-08-03T10:05:58Z",
+          "url": "https://www.npmjs.com/package/@mdwrk/extension-git-ops"
+        }
+      ],
+      "id": "package:npm:@mdwrk/extension-git-ops:groupsum/markdown_workspace:artifacts/extensions/core.git-ops/1.0.1/package.json",
+      "kind": "package",
+      "latest_version": "1.2.3",
+      "manifest_path": "artifacts/extensions/core.git-ops/1.0.1/package.json",
+      "name": "@mdwrk/extension-git-ops",
+      "observed_at": "2026-08-03T10:05:58Z",
+      "owner": "groupsum",
+      "private": false,
+      "publication_status": "published",
+      "published": true,
+      "registry_url": "https://www.npmjs.com/package/@mdwrk/extension-git-ops",
+      "relationship_count": 8,
+      "relationship_counts": {
+        "package_depends_on_external": 3,
+        "package_depends_on_package": 4,
+        "repository_contains_package": 1
+      },
+      "release_count": 2,
+      "repository": "groupsum/markdown_workspace",
+      "reviewed": false,
+      "route": "/catalog/packages/npm/mdwrk-extension-git-ops-f561f7b8",
+      "source_url": "https://github.com/groupsum/markdown_workspace/blob/HEAD/artifacts/extensions/core.git-ops/1.0.1/package.json",
+      "version_declared": "1.0.1"
+    },
+    {
+      "claim_boundary": "Publication is reported only when confirmed by the named public registry.",
+      "dependency_count": 6,
+      "description": "Observed npm package record for @mdwrk/extension-git-ops.",
+      "description_source": "generated-factual",
+      "display_name": "@mdwrk/extension-git-ops",
+      "downloads": null,
+      "downstream_completeness": "not-observed",
+      "downstream_count": 0,
+      "ecosystem": "npm",
+      "evidence": [
+        {
+          "kind": "source",
+          "observed_at": "2026-08-03T10:05:58Z",
+          "url": "https://github.com/groupsum/markdown_workspace/blob/HEAD/packages/extensions/extension-git-ops/package.json"
+        }
+      ],
+      "id": "package:npm:@mdwrk/extension-git-ops:groupsum/markdown_workspace:packages/extensions/extension-git-ops/package.json",
+      "kind": "package",
+      "latest_version": "1.2.4",
+      "manifest_path": "packages/extensions/extension-git-ops/package.json",
+      "name": "@mdwrk/extension-git-ops",
+      "observed_at": "2026-08-03T10:05:58Z",
+      "owner": "groupsum",
+      "private": true,
+      "publication_status": "manifest_private",
+      "published": false,
+      "registry_url": null,
+      "relationship_count": 8,
+      "relationship_counts": {
+        "package_depends_on_external": 3,
+        "package_depends_on_package": 4,
+        "repository_contains_package": 1
+      },
+      "release_count": 0,
+      "repository": "groupsum/markdown_workspace",
+      "reviewed": false,
+      "route": "/catalog/packages/npm/mdwrk-extension-git-ops-08a06e92",
+      "source_url": "https://github.com/groupsum/markdown_workspace/blob/HEAD/packages/extensions/extension-git-ops/package.json",
+      "version_declared": "1.2.4"
+    },
+    {
+      "claim_boundary": "Publication is reported only when confirmed by the named public registry.",
+      "dependency_count": 2,
+      "description": "Observed npm package record for @mdwrk/extension-host.",
+      "description_source": "generated-factual",
+      "display_name": "@mdwrk/extension-host",
+      "downloads": null,
+      "downstream_completeness": "not-observed",
+      "downstream_count": 0,
+      "ecosystem": "npm",
+      "evidence": [
+        {
+          "kind": "source",
+          "observed_at": "2026-08-03T10:05:58Z",
+          "url": "https://github.com/groupsum/markdown_workspace/blob/HEAD/packages/contracts/extension-host/package.json"
+        }
+      ],
+      "id": "package:npm:@mdwrk/extension-host:groupsum/markdown_workspace:packages/contracts/extension-host/package.json",
+      "kind": "package",
+      "latest_version": "1.0.7",
+      "manifest_path": "packages/contracts/extension-host/package.json",
+      "name": "@mdwrk/extension-host",
+      "observed_at": "2026-08-03T10:05:58Z",
+      "owner": "groupsum",
+      "private": true,
+      "publication_status": "manifest_private",
+      "published": false,
+      "registry_url": null,
+      "relationship_count": 12,
+      "relationship_counts": {
+        "package_depends_on_package": 11,
+        "repository_contains_package": 1
+      },
+      "release_count": 0,
+      "repository": "groupsum/markdown_workspace",
+      "reviewed": false,
+      "route": "/catalog/packages/npm/mdwrk-extension-host-f643205d",
+      "source_url": "https://github.com/groupsum/markdown_workspace/blob/HEAD/packages/contracts/extension-host/package.json",
+      "version_declared": "1.0.7"
+    },
+    {
+      "claim_boundary": "Publication is reported only when confirmed by the named public registry.",
+      "dependency_count": 12,
+      "description": "Observed npm package record for @mdwrk/extension-language-pack-studio.",
+      "description_source": "generated-factual",
+      "display_name": "@mdwrk/extension-language-pack-studio",
+      "downloads": null,
+      "downstream_completeness": "not-observed",
+      "downstream_count": 0,
+      "ecosystem": "npm",
+      "evidence": [
+        {
+          "kind": "registry",
+          "observed_at": "2026-08-03T10:05:58Z",
+          "url": "https://www.npmjs.com/package/@mdwrk/extension-language-pack-studio"
+        }
+      ],
+      "id": "package:npm:@mdwrk/extension-language-pack-studio:groupsum/markdown_workspace:artifacts/extensions/core.language-pack-studio/1.0.5/package.json",
+      "kind": "package",
+      "latest_version": "1.0.8",
+      "manifest_path": "artifacts/extensions/core.language-pack-studio/1.0.5/package.json",
+      "name": "@mdwrk/extension-language-pack-studio",
+      "observed_at": "2026-08-03T10:05:58Z",
+      "owner": "groupsum",
+      "private": false,
+      "publication_status": "published",
+      "published": true,
+      "registry_url": "https://www.npmjs.com/package/@mdwrk/extension-language-pack-studio",
+      "relationship_count": 15,
+      "relationship_counts": {
+        "package_depends_on_external": 9,
+        "package_depends_on_package": 5,
+        "repository_contains_package": 1
+      },
+      "release_count": 5,
+      "repository": "groupsum/markdown_workspace",
+      "reviewed": false,
+      "route": "/catalog/packages/npm/mdwrk-extension-language-pack-studio-bd3f90fa",
+      "source_url": "https://github.com/groupsum/markdown_workspace/blob/HEAD/artifacts/extensions/core.language-pack-studio/1.0.5/package.json",
+      "version_declared": "1.0.5"
+    },
+    {
+      "claim_boundary": "Publication is reported only when confirmed by the named public registry.",
+      "dependency_count": 13,
+      "description": "Observed npm package record for @mdwrk/extension-language-pack-studio.",
+      "description_source": "generated-factual",
+      "display_name": "@mdwrk/extension-language-pack-studio",
+      "downloads": null,
+      "downstream_completeness": "not-observed",
+      "downstream_count": 0,
+      "ecosystem": "npm",
+      "evidence": [
+        {
+          "kind": "source",
+          "observed_at": "2026-08-03T10:05:58Z",
+          "url": "https://github.com/groupsum/markdown_workspace/blob/HEAD/packages/extensions/extension-language-pack-studio/package.json"
+        }
+      ],
+      "id": "package:npm:@mdwrk/extension-language-pack-studio:groupsum/markdown_workspace:packages/extensions/extension-language-pack-studio/package.json",
+      "kind": "package",
+      "latest_version": "1.0.9",
+      "manifest_path": "packages/extensions/extension-language-pack-studio/package.json",
+      "name": "@mdwrk/extension-language-pack-studio",
+      "observed_at": "2026-08-03T10:05:58Z",
+      "owner": "groupsum",
+      "private": true,
+      "publication_status": "manifest_private",
+      "published": false,
+      "registry_url": null,
+      "relationship_count": 15,
+      "relationship_counts": {
+        "package_depends_on_external": 9,
+        "package_depends_on_package": 5,
+        "repository_contains_package": 1
+      },
+      "release_count": 0,
+      "repository": "groupsum/markdown_workspace",
+      "reviewed": false,
+      "route": "/catalog/packages/npm/mdwrk-extension-language-pack-studio-309c5b94",
+      "source_url": "https://github.com/groupsum/markdown_workspace/blob/HEAD/packages/extensions/extension-language-pack-studio/package.json",
+      "version_declared": "1.0.9"
+    },
+    {
+      "claim_boundary": "Publication is reported only when confirmed by the named public registry.",
+      "dependency_count": 13,
+      "description": "Observed npm package record for @mdwrk/extension-manager.",
+      "description_source": "generated-factual",
+      "display_name": "@mdwrk/extension-manager",
+      "downloads": null,
+      "downstream_completeness": "not-observed",
+      "downstream_count": 0,
+      "ecosystem": "npm",
+      "evidence": [
+        {
+          "kind": "registry",
+          "observed_at": "2026-08-03T10:05:58Z",
+          "url": "https://www.npmjs.com/package/@mdwrk/extension-manager"
+        }
+      ],
+      "id": "package:npm:@mdwrk/extension-manager:groupsum/markdown_workspace:artifacts/extensions/core.extension-manager/1.1.8/package.json",
+      "kind": "package",
+      "latest_version": "1.2.2",
+      "manifest_path": "artifacts/extensions/core.extension-manager/1.1.8/package.json",
+      "name": "@mdwrk/extension-manager",
+      "observed_at": "2026-08-03T10:05:58Z",
+      "owner": "groupsum",
+      "private": false,
+      "publication_status": "published",
+      "published": true,
+      "registry_url": "https://www.npmjs.com/package/@mdwrk/extension-manager",
+      "relationship_count": 15,
+      "relationship_counts": {
+        "package_depends_on_external": 9,
+        "package_depends_on_package": 5,
+        "repository_contains_package": 1
+      },
+      "release_count": 7,
+      "repository": "groupsum/markdown_workspace",
+      "reviewed": false,
+      "route": "/catalog/packages/npm/mdwrk-extension-manager-c4f1d350",
+      "source_url": "https://github.com/groupsum/markdown_workspace/blob/HEAD/artifacts/extensions/core.extension-manager/1.1.8/package.json",
+      "version_declared": "1.1.8"
+    },
+    {
+      "claim_boundary": "Publication is reported only when confirmed by the named public registry.",
+      "dependency_count": 13,
+      "description": "Observed npm package record for @mdwrk/extension-manager.",
+      "description_source": "generated-factual",
+      "display_name": "@mdwrk/extension-manager",
+      "downloads": null,
+      "downstream_completeness": "not-observed",
+      "downstream_count": 0,
+      "ecosystem": "npm",
+      "evidence": [
+        {
+          "kind": "source",
+          "observed_at": "2026-08-03T10:05:58Z",
+          "url": "https://github.com/groupsum/markdown_workspace/blob/HEAD/packages/extensions/extension-manager/package.json"
+        }
+      ],
+      "id": "package:npm:@mdwrk/extension-manager:groupsum/markdown_workspace:packages/extensions/extension-manager/package.json",
+      "kind": "package",
+      "latest_version": "1.2.4",
+      "manifest_path": "packages/extensions/extension-manager/package.json",
+      "name": "@mdwrk/extension-manager",
+      "observed_at": "2026-08-03T10:05:58Z",
+      "owner": "groupsum",
+      "private": true,
+      "publication_status": "manifest_private",
+      "published": false,
+      "registry_url": null,
+      "relationship_count": 15,
+      "relationship_counts": {
+        "package_depends_on_external": 9,
+        "package_depends_on_package": 5,
+        "repository_contains_package": 1
+      },
+      "release_count": 0,
+      "repository": "groupsum/markdown_workspace",
+      "reviewed": false,
+      "route": "/catalog/packages/npm/mdwrk-extension-manager-b4945489",
+      "source_url": "https://github.com/groupsum/markdown_workspace/blob/HEAD/packages/extensions/extension-manager/package.json",
+      "version_declared": "1.2.4"
+    },
+    {
+      "claim_boundary": "Publication is reported only when confirmed by the named public registry.",
+      "dependency_count": 0,
+      "description": "Observed npm package record for @mdwrk/extension-manifest.",
+      "description_source": "generated-factual",
+      "display_name": "@mdwrk/extension-manifest",
+      "downloads": null,
+      "downstream_completeness": "not-observed",
+      "downstream_count": 0,
+      "ecosystem": "npm",
+      "evidence": [
+        {
+          "kind": "source",
+          "observed_at": "2026-08-03T10:05:58Z",
+          "url": "https://github.com/groupsum/markdown_workspace/blob/HEAD/packages/contracts/extension-manifest/package.json"
+        }
+      ],
+      "id": "package:npm:@mdwrk/extension-manifest:groupsum/markdown_workspace:packages/contracts/extension-manifest/package.json",
+      "kind": "package",
+      "latest_version": "1.0.5",
+      "manifest_path": "packages/contracts/extension-manifest/package.json",
+      "name": "@mdwrk/extension-manifest",
+      "observed_at": "2026-08-03T10:05:58Z",
+      "owner": "groupsum",
+      "private": true,
+      "publication_status": "manifest_private",
+      "published": false,
+      "registry_url": null,
+      "relationship_count": 11,
+      "relationship_counts": {
+        "package_depends_on_package": 10,
+        "repository_contains_package": 1
+      },
+      "release_count": 0,
+      "repository": "groupsum/markdown_workspace",
+      "reviewed": false,
+      "route": "/catalog/packages/npm/mdwrk-extension-manifest-8835c019",
+      "source_url": "https://github.com/groupsum/markdown_workspace/blob/HEAD/packages/contracts/extension-manifest/package.json",
+      "version_declared": "1.0.5"
+    },
+    {
+      "claim_boundary": "Publication is reported only when confirmed by the named public registry.",
+      "dependency_count": 3,
+      "description": "Observed npm package record for @mdwrk/extension-runtime.",
+      "description_source": "generated-factual",
+      "display_name": "@mdwrk/extension-runtime",
+      "downloads": null,
+      "downstream_completeness": "not-observed",
+      "downstream_count": 0,
+      "ecosystem": "npm",
+      "evidence": [
+        {
+          "kind": "source",
+          "observed_at": "2026-08-03T10:05:58Z",
+          "url": "https://github.com/groupsum/markdown_workspace/blob/HEAD/packages/extensions/extension-runtime/package.json"
+        }
+      ],
+      "id": "package:npm:@mdwrk/extension-runtime:groupsum/markdown_workspace:packages/extensions/extension-runtime/package.json",
+      "kind": "package",
+      "latest_version": "1.2.4",
+      "manifest_path": "packages/extensions/extension-runtime/package.json",
+      "name": "@mdwrk/extension-runtime",
+      "observed_at": "2026-08-03T10:05:58Z",
+      "owner": "groupsum",
+      "private": true,
+      "publication_status": "manifest_private",
+      "published": false,
+      "registry_url": null,
+      "relationship_count": 11,
+      "relationship_counts": {
+        "package_depends_on_package": 10,
+        "repository_contains_package": 1
+      },
+      "release_count": 0,
+      "repository": "groupsum/markdown_workspace",
+      "reviewed": false,
+      "route": "/catalog/packages/npm/mdwrk-extension-runtime-13afd17f",
+      "source_url": "https://github.com/groupsum/markdown_workspace/blob/HEAD/packages/extensions/extension-runtime/package.json",
+      "version_declared": "1.2.4"
+    },
+    {
+      "claim_boundary": "Publication is reported only when confirmed by the named public registry.",
+      "dependency_count": 17,
+      "description": "Observed npm package record for @mdwrk/extension-theme-studio.",
+      "description_source": "generated-factual",
+      "display_name": "@mdwrk/extension-theme-studio",
+      "downloads": null,
+      "downstream_completeness": "not-observed",
+      "downstream_count": 0,
+      "ecosystem": "npm",
+      "evidence": [
+        {
+          "kind": "registry",
+          "observed_at": "2026-08-03T10:05:58Z",
+          "url": "https://www.npmjs.com/package/@mdwrk/extension-theme-studio"
+        }
+      ],
+      "id": "package:npm:@mdwrk/extension-theme-studio:groupsum/markdown_workspace:artifacts/extensions/core.theme-studio/1.1.6/package.json",
+      "kind": "package",
+      "latest_version": "1.2.2",
+      "manifest_path": "artifacts/extensions/core.theme-studio/1.1.6/package.json",
+      "name": "@mdwrk/extension-theme-studio",
+      "observed_at": "2026-08-03T10:05:58Z",
+      "owner": "groupsum",
+      "private": false,
+      "publication_status": "published",
+      "published": true,
+      "registry_url": "https://www.npmjs.com/package/@mdwrk/extension-theme-studio",
+      "relationship_count": 20,
+      "relationship_counts": {
+        "package_depends_on_external": 9,
+        "package_depends_on_package": 10,
+        "repository_contains_package": 1
+      },
+      "release_count": 6,
+      "repository": "groupsum/markdown_workspace",
+      "reviewed": false,
+      "route": "/catalog/packages/npm/mdwrk-extension-theme-studio-124194d4",
+      "source_url": "https://github.com/groupsum/markdown_workspace/blob/HEAD/artifacts/extensions/core.theme-studio/1.1.6/package.json",
+      "version_declared": "1.1.6"
+    },
+    {
+      "claim_boundary": "Publication is reported only when confirmed by the named public registry.",
+      "dependency_count": 17,
+      "description": "Observed npm package record for @mdwrk/extension-theme-studio.",
+      "description_source": "generated-factual",
+      "display_name": "@mdwrk/extension-theme-studio",
+      "downloads": null,
+      "downstream_completeness": "not-observed",
+      "downstream_count": 0,
+      "ecosystem": "npm",
+      "evidence": [
+        {
+          "kind": "source",
+          "observed_at": "2026-08-03T10:05:58Z",
+          "url": "https://github.com/groupsum/markdown_workspace/blob/HEAD/packages/extensions/extension-theme-studio/package.json"
+        }
+      ],
+      "id": "package:npm:@mdwrk/extension-theme-studio:groupsum/markdown_workspace:packages/extensions/extension-theme-studio/package.json",
+      "kind": "package",
+      "latest_version": "1.2.4",
+      "manifest_path": "packages/extensions/extension-theme-studio/package.json",
+      "name": "@mdwrk/extension-theme-studio",
+      "observed_at": "2026-08-03T10:05:58Z",
+      "owner": "groupsum",
+      "private": true,
+      "publication_status": "manifest_private",
+      "published": false,
+      "registry_url": null,
+      "relationship_count": 20,
+      "relationship_counts": {
+        "package_depends_on_external": 9,
+        "package_depends_on_package": 10,
+        "repository_contains_package": 1
+      },
+      "release_count": 0,
+      "repository": "groupsum/markdown_workspace",
+      "reviewed": false,
+      "route": "/catalog/packages/npm/mdwrk-extension-theme-studio-c9292224",
+      "source_url": "https://github.com/groupsum/markdown_workspace/blob/HEAD/packages/extensions/extension-theme-studio/package.json",
+      "version_declared": "1.2.4"
+    },
+    {
+      "claim_boundary": "Publication is reported only when confirmed by the named public registry.",
+      "dependency_count": 6,
+      "description": "Observed npm package record for @mdwrk/extension-workspace-files.",
+      "description_source": "generated-factual",
+      "display_name": "@mdwrk/extension-workspace-files",
+      "downloads": null,
+      "downstream_completeness": "not-observed",
+      "downstream_count": 0,
+      "ecosystem": "npm",
+      "evidence": [
+        {
+          "kind": "registry",
+          "observed_at": "2026-08-03T10:05:58Z",
+          "url": "https://www.npmjs.com/package/@mdwrk/extension-workspace-files"
+        }
+      ],
+      "id": "package:npm:@mdwrk/extension-workspace-files:groupsum/markdown_workspace:artifacts/extensions/core.workspace-files/1.0.1/package.json",
+      "kind": "package",
+      "latest_version": "1.2.3",
+      "manifest_path": "artifacts/extensions/core.workspace-files/1.0.1/package.json",
+      "name": "@mdwrk/extension-workspace-files",
+      "observed_at": "2026-08-03T10:05:58Z",
+      "owner": "groupsum",
+      "private": false,
+      "publication_status": "published",
+      "published": true,
+      "registry_url": "https://www.npmjs.com/package/@mdwrk/extension-workspace-files",
+      "relationship_count": 8,
+      "relationship_counts": {
+        "package_depends_on_external": 3,
+        "package_depends_on_package": 4,
+        "repository_contains_package": 1
+      },
+      "release_count": 2,
+      "repository": "groupsum/markdown_workspace",
+      "reviewed": false,
+      "route": "/catalog/packages/npm/mdwrk-extension-workspace-files-58bd01d3",
+      "source_url": "https://github.com/groupsum/markdown_workspace/blob/HEAD/artifacts/extensions/core.workspace-files/1.0.1/package.json",
+      "version_declared": "1.0.1"
+    },
+    {
+      "claim_boundary": "Publication is reported only when confirmed by the named public registry.",
+      "dependency_count": 6,
+      "description": "Observed npm package record for @mdwrk/extension-workspace-files.",
+      "description_source": "generated-factual",
+      "display_name": "@mdwrk/extension-workspace-files",
+      "downloads": null,
+      "downstream_completeness": "not-observed",
+      "downstream_count": 0,
+      "ecosystem": "npm",
+      "evidence": [
+        {
+          "kind": "source",
+          "observed_at": "2026-08-03T10:05:58Z",
+          "url": "https://github.com/groupsum/markdown_workspace/blob/HEAD/packages/extensions/extension-workspace-files/package.json"
+        }
+      ],
+      "id": "package:npm:@mdwrk/extension-workspace-files:groupsum/markdown_workspace:packages/extensions/extension-workspace-files/package.json",
+      "kind": "package",
+      "latest_version": "1.2.4",
+      "manifest_path": "packages/extensions/extension-workspace-files/package.json",
+      "name": "@mdwrk/extension-workspace-files",
+      "observed_at": "2026-08-03T10:05:58Z",
+      "owner": "groupsum",
+      "private": true,
+      "publication_status": "manifest_private",
+      "published": false,
+      "registry_url": null,
+      "relationship_count": 8,
+      "relationship_counts": {
+        "package_depends_on_external": 3,
+        "package_depends_on_package": 4,
+        "repository_contains_package": 1
+      },
+      "release_count": 0,
+      "repository": "groupsum/markdown_workspace",
+      "reviewed": false,
+      "route": "/catalog/packages/npm/mdwrk-extension-workspace-files-c68d22e0",
+      "source_url": "https://github.com/groupsum/markdown_workspace/blob/HEAD/packages/extensions/extension-workspace-files/package.json",
+      "version_declared": "1.2.4"
+    },
+    {
+      "claim_boundary": "Publication is reported only when confirmed by the named public registry.",
+      "dependency_count": 0,
+      "description": "Observed npm package record for @mdwrk/i18n.",
+      "description_source": "generated-factual",
+      "display_name": "@mdwrk/i18n",
+      "downloads": null,
+      "downstream_completeness": "not-observed",
+      "downstream_count": 0,
+      "ecosystem": "npm",
+      "evidence": [
+        {
+          "kind": "source",
+          "observed_at": "2026-08-03T10:05:58Z",
+          "url": "https://github.com/groupsum/markdown_workspace/blob/HEAD/packages/shared/i18n/package.json"
+        }
+      ],
+      "id": "package:npm:@mdwrk/i18n:groupsum/markdown_workspace:packages/shared/i18n/package.json",
+      "kind": "package",
+      "latest_version": "1.2.6",
+      "manifest_path": "packages/shared/i18n/package.json",
+      "name": "@mdwrk/i18n",
+      "observed_at": "2026-08-03T10:05:58Z",
+      "owner": "groupsum",
+      "private": true,
+      "publication_status": "manifest_private",
+      "published": false,
+      "registry_url": null,
+      "relationship_count": 2,
+      "relationship_counts": {
+        "package_depends_on_package": 1,
+        "repository_contains_package": 1
+      },
+      "release_count": 0,
+      "repository": "groupsum/markdown_workspace",
+      "reviewed": false,
+      "route": "/catalog/packages/npm/mdwrk-i18n-610eab41",
+      "source_url": "https://github.com/groupsum/markdown_workspace/blob/HEAD/packages/shared/i18n/package.json",
+      "version_declared": "1.2.6"
+    },
+    {
+      "claim_boundary": "Publication is reported only when confirmed by the named public registry.",
+      "dependency_count": 0,
+      "description": "Observed npm package record for @mdwrk/icons.",
+      "description_source": "generated-factual",
+      "display_name": "@mdwrk/icons",
+      "downloads": null,
+      "downstream_completeness": "not-observed",
+      "downstream_count": 0,
+      "ecosystem": "npm",
+      "evidence": [
+        {
+          "kind": "source",
+          "observed_at": "2026-08-03T10:05:58Z",
+          "url": "https://github.com/groupsum/markdown_workspace/blob/HEAD/packages/shared/icons/package.json"
+        }
+      ],
+      "id": "package:npm:@mdwrk/icons:groupsum/markdown_workspace:packages/shared/icons/package.json",
+      "kind": "package",
+      "latest_version": "1.0.5",
+      "manifest_path": "packages/shared/icons/package.json",
+      "name": "@mdwrk/icons",
+      "observed_at": "2026-08-03T10:05:58Z",
+      "owner": "groupsum",
+      "private": true,
+      "publication_status": "manifest_private",
+      "published": false,
+      "registry_url": null,
+      "relationship_count": 3,
+      "relationship_counts": {
+        "package_depends_on_package": 1,
+        "repository_contains_package": 2
+      },
+      "release_count": 0,
+      "repository": "groupsum/markdown_workspace",
+      "reviewed": false,
+      "route": "/catalog/packages/npm/mdwrk-icons-a03804ce",
+      "source_url": "https://github.com/groupsum/markdown_workspace/blob/HEAD/packages/shared/icons/package.json",
+      "version_declared": "1.0.5"
+    },
+    {
+      "claim_boundary": "Publication is reported only when confirmed by the named public registry.",
+      "dependency_count": 0,
+      "description": "Observed npm package record for @mdwrk/lander-content-contract.",
+      "description_source": "generated-factual",
+      "display_name": "@mdwrk/lander-content-contract",
+      "downloads": null,
+      "downstream_completeness": "not-observed",
+      "downstream_count": 0,
+      "ecosystem": "npm",
+      "evidence": [
+        {
+          "kind": "source",
+          "observed_at": "2026-08-03T10:05:58Z",
+          "url": "https://github.com/groupsum/markdown_workspace/blob/HEAD/packages/lander/lander-content-contract/package.json"
+        }
+      ],
+      "id": "package:npm:@mdwrk/lander-content-contract:groupsum/markdown_workspace:packages/lander/lander-content-contract/package.json",
+      "kind": "package",
+      "latest_version": "0.1.3",
+      "manifest_path": "packages/lander/lander-content-contract/package.json",
+      "name": "@mdwrk/lander-content-contract",
+      "observed_at": "2026-08-03T10:05:58Z",
+      "owner": "groupsum",
+      "private": true,
+      "publication_status": "manifest_private",
+      "published": false,
+      "registry_url": null,
+      "relationship_count": 20,
+      "relationship_counts": {
+        "package_depends_on_package": 18,
+        "repository_contains_package": 2
+      },
+      "release_count": 0,
+      "repository": "groupsum/markdown_workspace",
+      "reviewed": false,
+      "route": "/catalog/packages/npm/mdwrk-lander-content-contract-0a33f62f",
+      "source_url": "https://github.com/groupsum/markdown_workspace/blob/HEAD/packages/lander/lander-content-contract/package.json",
+      "version_declared": "0.1.3"
+    },
+    {
+      "claim_boundary": "Publication is reported only when confirmed by the named public registry.",
+      "dependency_count": 1,
+      "description": "Observed npm package record for @mdwrk/lander-core.",
+      "description_source": "generated-factual",
+      "display_name": "@mdwrk/lander-core",
+      "downloads": null,
+      "downstream_completeness": "not-observed",
+      "downstream_count": 0,
+      "ecosystem": "npm",
+      "evidence": [
+        {
+          "kind": "source",
+          "observed_at": "2026-08-03T10:05:58Z",
+          "url": "https://github.com/groupsum/markdown_workspace/blob/HEAD/packages/lander/lander-core/package.json"
+        }
+      ],
+      "id": "package:npm:@mdwrk/lander-core:groupsum/markdown_workspace:packages/lander/lander-core/package.json",
+      "kind": "package",
+      "latest_version": "0.1.5",
+      "manifest_path": "packages/lander/lander-core/package.json",
+      "name": "@mdwrk/lander-core",
+      "observed_at": "2026-08-03T10:05:58Z",
+      "owner": "groupsum",
+      "private": true,
+      "publication_status": "manifest_private",
+      "published": false,
+      "registry_url": null,
+      "relationship_count": 20,
+      "relationship_counts": {
+        "package_depends_on_package": 18,
+        "repository_contains_package": 2
+      },
+      "release_count": 0,
+      "repository": "groupsum/markdown_workspace",
+      "reviewed": false,
+      "route": "/catalog/packages/npm/mdwrk-lander-core-7051a880",
+      "source_url": "https://github.com/groupsum/markdown_workspace/blob/HEAD/packages/lander/lander-core/package.json",
+      "version_declared": "0.1.5"
+    },
+    {
+      "claim_boundary": "Publication is reported only when confirmed by the named public registry.",
+      "dependency_count": 2,
+      "description": "Observed npm package record for @mdwrk/lander-markdown-content-adapter.",
+      "description_source": "generated-factual",
+      "display_name": "@mdwrk/lander-markdown-content-adapter",
+      "downloads": null,
+      "downstream_completeness": "not-observed",
+      "downstream_count": 0,
+      "ecosystem": "npm",
+      "evidence": [
+        {
+          "kind": "source",
+          "observed_at": "2026-08-03T10:05:58Z",
+          "url": "https://github.com/groupsum/markdown_workspace/blob/HEAD/packages/lander/lander-markdown-content-adapter/package.json"
+        }
+      ],
+      "id": "package:npm:@mdwrk/lander-markdown-content-adapter:groupsum/markdown_workspace:packages/lander/lander-markdown-content-adapter/package.json",
+      "kind": "package",
+      "latest_version": "0.1.2",
+      "manifest_path": "packages/lander/lander-markdown-content-adapter/package.json",
+      "name": "@mdwrk/lander-markdown-content-adapter",
+      "observed_at": "2026-08-03T10:05:58Z",
+      "owner": "groupsum",
+      "private": true,
+      "publication_status": "manifest_private",
+      "published": false,
+      "registry_url": null,
+      "relationship_count": 4,
+      "relationship_counts": {
+        "package_depends_on_package": 2,
+        "repository_contains_package": 2
+      },
+      "release_count": 0,
+      "repository": "groupsum/markdown_workspace",
+      "reviewed": false,
+      "route": "/catalog/packages/npm/mdwrk-lander-markdown-content-adapter-283934bf",
+      "source_url": "https://github.com/groupsum/markdown_workspace/blob/HEAD/packages/lander/lander-markdown-content-adapter/package.json",
+      "version_declared": "0.1.2"
+    },
+    {
+      "claim_boundary": "Publication is reported only when confirmed by the named public registry.",
+      "dependency_count": 2,
+      "description": "Observed npm package record for @mdwrk/lander-page-template-presets.",
+      "description_source": "generated-factual",
+      "display_name": "@mdwrk/lander-page-template-presets",
+      "downloads": null,
+      "downstream_completeness": "not-observed",
+      "downstream_count": 0,
+      "ecosystem": "npm",
+      "evidence": [
+        {
+          "kind": "source",
+          "observed_at": "2026-08-03T10:05:58Z",
+          "url": "https://github.com/groupsum/markdown_workspace/blob/HEAD/packages/lander/lander-page-template-presets/package.json"
+        }
+      ],
+      "id": "package:npm:@mdwrk/lander-page-template-presets:groupsum/markdown_workspace:packages/lander/lander-page-template-presets/package.json",
+      "kind": "package",
+      "latest_version": "0.1.1",
+      "manifest_path": "packages/lander/lander-page-template-presets/package.json",
+      "name": "@mdwrk/lander-page-template-presets",
+      "observed_at": "2026-08-03T10:05:58Z",
+      "owner": "groupsum",
+      "private": true,
+      "publication_status": "manifest_private",
+      "published": false,
+      "registry_url": null,
+      "relationship_count": 7,
+      "relationship_counts": {
+        "package_depends_on_package": 5,
+        "repository_contains_package": 2
+      },
+      "release_count": 0,
+      "repository": "groupsum/markdown_workspace",
+      "reviewed": false,
+      "route": "/catalog/packages/npm/mdwrk-lander-page-template-presets-2392b935",
+      "source_url": "https://github.com/groupsum/markdown_workspace/blob/HEAD/packages/lander/lander-page-template-presets/package.json",
+      "version_declared": "0.1.1"
+    },
+    {
+      "claim_boundary": "Publication is reported only when confirmed by the named public registry.",
+      "dependency_count": 1,
+      "description": "Observed npm package record for @mdwrk/lander-page-templates.",
+      "description_source": "generated-factual",
+      "display_name": "@mdwrk/lander-page-templates",
+      "downloads": null,
+      "downstream_completeness": "not-observed",
+      "downstream_count": 0,
+      "ecosystem": "npm",
+      "evidence": [
+        {
+          "kind": "source",
+          "observed_at": "2026-08-03T10:05:58Z",
+          "url": "https://github.com/groupsum/markdown_workspace/blob/HEAD/packages/lander/lander-page-templates/package.json"
+        }
+      ],
+      "id": "package:npm:@mdwrk/lander-page-templates:groupsum/markdown_workspace:packages/lander/lander-page-templates/package.json",
+      "kind": "package",
+      "latest_version": "0.1.2",
+      "manifest_path": "packages/lander/lander-page-templates/package.json",
+      "name": "@mdwrk/lander-page-templates",
+      "observed_at": "2026-08-03T10:05:58Z",
+      "owner": "groupsum",
+      "private": true,
+      "publication_status": "manifest_private",
+      "published": false,
+      "registry_url": null,
+      "relationship_count": 8,
+      "relationship_counts": {
+        "package_depends_on_package": 6,
+        "repository_contains_package": 2
+      },
+      "release_count": 0,
+      "repository": "groupsum/markdown_workspace",
+      "reviewed": false,
+      "route": "/catalog/packages/npm/mdwrk-lander-page-templates-1ad9e8d0",
+      "source_url": "https://github.com/groupsum/markdown_workspace/blob/HEAD/packages/lander/lander-page-templates/package.json",
+      "version_declared": "0.1.2"
+    },
+    {
+      "claim_boundary": "Publication is reported only when confirmed by the named public registry.",
+      "dependency_count": 7,
+      "description": "Observed npm package record for @mdwrk/lander-react.",
+      "description_source": "generated-factual",
+      "display_name": "@mdwrk/lander-react",
+      "downloads": null,
+      "downstream_completeness": "not-observed",
+      "downstream_count": 0,
+      "ecosystem": "npm",
+      "evidence": [
+        {
+          "kind": "source",
+          "observed_at": "2026-08-03T10:05:58Z",
+          "url": "https://github.com/groupsum/markdown_workspace/blob/HEAD/packages/lander/lander-react/package.json"
+        }
+      ],
+      "id": "package:npm:@mdwrk/lander-react:groupsum/markdown_workspace:packages/lander/lander-react/package.json",
+      "kind": "package",
+      "latest_version": "0.1.3",
+      "manifest_path": "packages/lander/lander-react/package.json",
+      "name": "@mdwrk/lander-react",
+      "observed_at": "2026-08-03T10:05:58Z",
+      "owner": "groupsum",
+      "private": true,
+      "publication_status": "manifest_private",
+      "published": false,
+      "registry_url": null,
+      "relationship_count": 19,
+      "relationship_counts": {
+        "package_depends_on_external": 4,
+        "package_depends_on_package": 13,
+        "repository_contains_package": 2
+      },
+      "release_count": 0,
+      "repository": "groupsum/markdown_workspace",
+      "reviewed": false,
+      "route": "/catalog/packages/npm/mdwrk-lander-react-b556f2f1",
+      "source_url": "https://github.com/groupsum/markdown_workspace/blob/HEAD/packages/lander/lander-react/package.json",
+      "version_declared": "0.1.3"
+    },
+    {
+      "claim_boundary": "Publication is reported only when confirmed by the named public registry.",
+      "dependency_count": 1,
+      "description": "Observed npm package record for @mdwrk/lander-seo.",
+      "description_source": "generated-factual",
+      "display_name": "@mdwrk/lander-seo",
+      "downloads": null,
+      "downstream_completeness": "not-observed",
+      "downstream_count": 0,
+      "ecosystem": "npm",
+      "evidence": [
+        {
+          "kind": "source",
+          "observed_at": "2026-08-03T10:05:58Z",
+          "url": "https://github.com/groupsum/markdown_workspace/blob/HEAD/packages/lander/lander-seo/package.json"
+        }
+      ],
+      "id": "package:npm:@mdwrk/lander-seo:groupsum/markdown_workspace:packages/lander/lander-seo/package.json",
+      "kind": "package",
+      "latest_version": "0.1.4",
+      "manifest_path": "packages/lander/lander-seo/package.json",
+      "name": "@mdwrk/lander-seo",
+      "observed_at": "2026-08-03T10:05:58Z",
+      "owner": "groupsum",
+      "private": true,
+      "publication_status": "manifest_private",
+      "published": false,
+      "registry_url": null,
+      "relationship_count": 4,
+      "relationship_counts": {
+        "package_depends_on_package": 2,
+        "repository_contains_package": 2
+      },
+      "release_count": 0,
+      "repository": "groupsum/markdown_workspace",
+      "reviewed": false,
+      "route": "/catalog/packages/npm/mdwrk-lander-seo-6aef4b77",
+      "source_url": "https://github.com/groupsum/markdown_workspace/blob/HEAD/packages/lander/lander-seo/package.json",
+      "version_declared": "0.1.4"
+    },
+    {
+      "claim_boundary": "Publication is reported only when confirmed by the named public registry.",
+      "dependency_count": 0,
+      "description": "Observed npm package record for @mdwrk/lander-theme.",
+      "description_source": "generated-factual",
+      "display_name": "@mdwrk/lander-theme",
+      "downloads": null,
+      "downstream_completeness": "not-observed",
+      "downstream_count": 0,
+      "ecosystem": "npm",
+      "evidence": [
+        {
+          "kind": "source",
+          "observed_at": "2026-08-03T10:05:58Z",
+          "url": "https://github.com/groupsum/markdown_workspace/blob/HEAD/packages/lander/lander-theme/package.json"
+        }
+      ],
+      "id": "package:npm:@mdwrk/lander-theme:groupsum/markdown_workspace:packages/lander/lander-theme/package.json",
+      "kind": "package",
+      "latest_version": "0.1.5",
+      "manifest_path": "packages/lander/lander-theme/package.json",
+      "name": "@mdwrk/lander-theme",
+      "observed_at": "2026-08-03T10:05:58Z",
+      "owner": "groupsum",
+      "private": true,
+      "publication_status": "manifest_private",
+      "published": false,
+      "registry_url": null,
+      "relationship_count": 7,
+      "relationship_counts": {
+        "package_depends_on_package": 5,
+        "repository_contains_package": 2
+      },
+      "release_count": 0,
+      "repository": "groupsum/markdown_workspace",
+      "reviewed": false,
+      "route": "/catalog/packages/npm/mdwrk-lander-theme-d469bc48",
+      "source_url": "https://github.com/groupsum/markdown_workspace/blob/HEAD/packages/lander/lander-theme/package.json",
+      "version_declared": "0.1.5"
+    },
+    {
+      "claim_boundary": "Publication is reported only when confirmed by the named public registry.",
+      "dependency_count": 14,
+      "description": "Observed npm package record for @mdwrk/markdown-edit-in-renderer-react.",
+      "description_source": "generated-factual",
+      "display_name": "@mdwrk/markdown-edit-in-renderer-react",
+      "downloads": null,
+      "downstream_completeness": "not-observed",
+      "downstream_count": 0,
+      "ecosystem": "npm",
+      "evidence": [
+        {
+          "kind": "source",
+          "observed_at": "2026-08-03T10:05:58Z",
+          "url": "https://github.com/groupsum/markdown_workspace/blob/HEAD/packages/editor/markdown-edit-in-renderer-react/package.json"
+        }
+      ],
+      "id": "package:npm:@mdwrk/markdown-edit-in-renderer-react:groupsum/markdown_workspace:packages/editor/markdown-edit-in-renderer-react/package.json",
+      "kind": "package",
+      "latest_version": "1.0.13",
+      "manifest_path": "packages/editor/markdown-edit-in-renderer-react/package.json",
+      "name": "@mdwrk/markdown-edit-in-renderer-react",
+      "observed_at": "2026-08-03T10:05:58Z",
+      "owner": "groupsum",
+      "private": true,
+      "publication_status": "manifest_private",
+      "published": false,
+      "registry_url": null,
+      "relationship_count": 18,
+      "relationship_counts": {
+        "package_depends_on_external": 8,
+        "package_depends_on_package": 8,
+        "repository_contains_package": 2
+      },
+      "release_count": 0,
+      "repository": "groupsum/markdown_workspace",
+      "reviewed": false,
+      "route": "/catalog/packages/npm/mdwrk-markdown-edit-in-renderer-react-d6d9fc86",
+      "source_url": "https://github.com/groupsum/markdown_workspace/blob/HEAD/packages/editor/markdown-edit-in-renderer-react/package.json",
+      "version_declared": "1.0.13"
+    },
+    {
+      "claim_boundary": "Publication is reported only when confirmed by the named public registry.",
+      "dependency_count": 2,
+      "description": "Observed npm package record for @mdwrk/markdown-editor-core.",
+      "description_source": "generated-factual",
+      "display_name": "@mdwrk/markdown-editor-core",
+      "downloads": null,
+      "downstream_completeness": "not-observed",
+      "downstream_count": 0,
+      "ecosystem": "npm",
+      "evidence": [
+        {
+          "kind": "source",
+          "observed_at": "2026-08-03T10:05:58Z",
+          "url": "https://github.com/groupsum/markdown_workspace/blob/HEAD/packages/editor/markdown-editor-core/package.json"
+        }
+      ],
+      "id": "package:npm:@mdwrk/markdown-editor-core:groupsum/markdown_workspace:packages/editor/markdown-editor-core/package.json",
+      "kind": "package",
+      "latest_version": "1.1.8",
+      "manifest_path": "packages/editor/markdown-editor-core/package.json",
+      "name": "@mdwrk/markdown-editor-core",
+      "observed_at": "2026-08-03T10:05:58Z",
+      "owner": "groupsum",
+      "private": true,
+      "publication_status": "manifest_private",
+      "published": false,
+      "registry_url": null,
+      "relationship_count": 7,
+      "relationship_counts": {
+        "package_depends_on_external": 1,
+        "package_depends_on_package": 4,
+        "repository_contains_package": 2
+      },
+      "release_count": 0,
+      "repository": "groupsum/markdown_workspace",
+      "reviewed": false,
+      "route": "/catalog/packages/npm/mdwrk-markdown-editor-core-22e74371",
+      "source_url": "https://github.com/groupsum/markdown_workspace/blob/HEAD/packages/editor/markdown-editor-core/package.json",
+      "version_declared": "1.1.8"
+    },
+    {
+      "claim_boundary": "Publication is reported only when confirmed by the named public registry.",
+      "dependency_count": 12,
+      "description": "Observed npm package record for @mdwrk/markdown-editor-react.",
+      "description_source": "generated-factual",
+      "display_name": "@mdwrk/markdown-editor-react",
+      "downloads": null,
+      "downstream_completeness": "not-observed",
+      "downstream_count": 0,
+      "ecosystem": "npm",
+      "evidence": [
+        {
+          "kind": "source",
+          "observed_at": "2026-08-03T10:05:58Z",
+          "url": "https://github.com/groupsum/markdown_workspace/blob/HEAD/packages/editor/markdown-editor-react/package.json"
+        }
+      ],
+      "id": "package:npm:@mdwrk/markdown-editor-react:groupsum/markdown_workspace:packages/editor/markdown-editor-react/package.json",
+      "kind": "package",
+      "latest_version": "1.1.8",
+      "manifest_path": "packages/editor/markdown-editor-react/package.json",
+      "name": "@mdwrk/markdown-editor-react",
+      "observed_at": "2026-08-03T10:05:58Z",
+      "owner": "groupsum",
+      "private": true,
+      "publication_status": "manifest_private",
+      "published": false,
+      "registry_url": null,
+      "relationship_count": 22,
+      "relationship_counts": {
+        "package_depends_on_external": 9,
+        "package_depends_on_package": 11,
+        "repository_contains_package": 2
+      },
+      "release_count": 0,
+      "repository": "groupsum/markdown_workspace",
+      "reviewed": false,
+      "route": "/catalog/packages/npm/mdwrk-markdown-editor-react-38210047",
+      "source_url": "https://github.com/groupsum/markdown_workspace/blob/HEAD/packages/editor/markdown-editor-react/package.json",
+      "version_declared": "1.1.8"
+    },
+    {
+      "claim_boundary": "Publication is reported only when confirmed by the named public registry.",
+      "dependency_count": 0,
+      "description": "Observed npm package record for @mdwrk/markdown-renderer-core.",
+      "description_source": "generated-factual",
+      "display_name": "@mdwrk/markdown-renderer-core",
+      "downloads": null,
+      "downstream_completeness": "not-observed",
+      "downstream_count": 0,
+      "ecosystem": "npm",
+      "evidence": [
+        {
+          "kind": "source",
+          "observed_at": "2026-08-03T10:05:58Z",
+          "url": "https://github.com/groupsum/markdown_workspace/blob/HEAD/packages/renderer/markdown-renderer-core/package.json"
+        }
+      ],
+      "id": "package:npm:@mdwrk/markdown-renderer-core:groupsum/markdown_workspace:packages/renderer/markdown-renderer-core/package.json",
+      "kind": "package",
+      "latest_version": "1.1.7",
+      "manifest_path": "packages/renderer/markdown-renderer-core/package.json",
+      "name": "@mdwrk/markdown-renderer-core",
+      "observed_at": "2026-08-03T10:05:58Z",
+      "owner": "groupsum",
+      "private": true,
+      "publication_status": "manifest_private",
+      "published": false,
+      "registry_url": null,
+      "relationship_count": 8,
+      "relationship_counts": {
+        "package_depends_on_package": 6,
+        "repository_contains_package": 2
+      },
+      "release_count": 0,
+      "repository": "groupsum/markdown_workspace",
+      "reviewed": false,
+      "route": "/catalog/packages/npm/mdwrk-markdown-renderer-core-425c3187",
+      "source_url": "https://github.com/groupsum/markdown_workspace/blob/HEAD/packages/renderer/markdown-renderer-core/package.json",
+      "version_declared": "1.1.7"
+    },
+    {
+      "claim_boundary": "Publication is reported only when confirmed by the named public registry.",
+      "dependency_count": 11,
+      "description": "Observed npm package record for @mdwrk/markdown-renderer-react.",
+      "description_source": "generated-factual",
+      "display_name": "@mdwrk/markdown-renderer-react",
+      "downloads": null,
+      "downstream_completeness": "not-observed",
+      "downstream_count": 0,
+      "ecosystem": "npm",
+      "evidence": [
+        {
+          "kind": "source",
+          "observed_at": "2026-08-03T10:05:58Z",
+          "url": "https://github.com/groupsum/markdown_workspace/blob/HEAD/packages/renderer/markdown-renderer-react/package.json"
+        }
+      ],
+      "id": "package:npm:@mdwrk/markdown-renderer-react:groupsum/markdown_workspace:packages/renderer/markdown-renderer-react/package.json",
+      "kind": "package",
+      "latest_version": "1.1.7",
+      "manifest_path": "packages/renderer/markdown-renderer-react/package.json",
+      "name": "@mdwrk/markdown-renderer-react",
+      "observed_at": "2026-08-03T10:05:58Z",
+      "owner": "groupsum",
+      "private": true,
+      "publication_status": "manifest_private",
+      "published": false,
+      "registry_url": null,
+      "relationship_count": 25,
+      "relationship_counts": {
+        "package_depends_on_external": 8,
+        "package_depends_on_package": 15,
+        "repository_contains_package": 2
+      },
+      "release_count": 0,
+      "repository": "groupsum/markdown_workspace",
+      "reviewed": false,
+      "route": "/catalog/packages/npm/mdwrk-markdown-renderer-react-3bf37178",
+      "source_url": "https://github.com/groupsum/markdown_workspace/blob/HEAD/packages/renderer/markdown-renderer-react/package.json",
+      "version_declared": "1.1.7"
+    },
+    {
+      "claim_boundary": "Publication is reported only when confirmed by the named public registry.",
+      "dependency_count": 23,
+      "description": "Observed npm package record for @mdwrk/mdwrkcom.",
+      "description_source": "generated-factual",
+      "display_name": "@mdwrk/mdwrkcom",
+      "downloads": null,
+      "downstream_completeness": "not-observed",
+      "downstream_count": 0,
+      "ecosystem": "npm",
+      "evidence": [
+        {
+          "kind": "source",
+          "observed_at": "2026-08-03T10:05:58Z",
+          "url": "https://github.com/groupsum/markdown_workspace/blob/HEAD/apps/mdwrkcom/package.json"
+        }
+      ],
+      "id": "package:npm:@mdwrk/mdwrkcom:groupsum/markdown_workspace:apps/mdwrkcom/package.json",
+      "kind": "package",
+      "latest_version": "0.0.60",
+      "manifest_path": "apps/mdwrkcom/package.json",
+      "name": "@mdwrk/mdwrkcom",
+      "observed_at": "2026-08-03T10:05:58Z",
+      "owner": "groupsum",
+      "private": true,
+      "publication_status": "manifest_private",
+      "published": false,
+      "registry_url": null,
+      "relationship_count": 24,
+      "relationship_counts": {
+        "package_depends_on_external": 12,
+        "package_depends_on_package": 11,
+        "repository_contains_package": 1
+      },
+      "release_count": 0,
+      "repository": "groupsum/markdown_workspace",
+      "reviewed": false,
+      "route": "/catalog/packages/npm/mdwrk-mdwrkcom-fddf1669",
+      "source_url": "https://github.com/groupsum/markdown_workspace/blob/HEAD/apps/mdwrkcom/package.json",
+      "version_declared": "0.0.60"
+    },
+    {
+      "claim_boundary": "Publication is reported only when confirmed by the named public registry.",
+      "dependency_count": 38,
+      "description": "Observed npm package record for @mdwrk/mdwrkspace.",
+      "description_source": "generated-factual",
+      "display_name": "@mdwrk/mdwrkspace",
+      "downloads": null,
+      "downstream_completeness": "not-observed",
+      "downstream_count": 0,
+      "ecosystem": "npm",
+      "evidence": [
+        {
+          "kind": "source",
+          "observed_at": "2026-08-03T10:05:58Z",
+          "url": "https://github.com/groupsum/markdown_workspace/blob/HEAD/apps/client/package.json"
+        }
+      ],
+      "id": "package:npm:@mdwrk/mdwrkspace:groupsum/markdown_workspace:apps/client/package.json",
+      "kind": "package",
+      "latest_version": "1.4.31",
+      "manifest_path": "apps/client/package.json",
+      "name": "@mdwrk/mdwrkspace",
+      "observed_at": "2026-08-03T10:05:58Z",
+      "owner": "groupsum",
+      "private": true,
+      "publication_status": "manifest_private",
+      "published": false,
+      "registry_url": null,
+      "relationship_count": 39,
+      "relationship_counts": {
+        "package_depends_on_external": 20,
+        "package_depends_on_package": 18,
+        "repository_contains_package": 1
+      },
+      "release_count": 0,
+      "repository": "groupsum/markdown_workspace",
+      "reviewed": false,
+      "route": "/catalog/packages/npm/mdwrk-mdwrkspace-a174d6cb",
+      "source_url": "https://github.com/groupsum/markdown_workspace/blob/HEAD/apps/client/package.json",
+      "version_declared": "1.4.31"
+    },
+    {
+      "claim_boundary": "Publication is reported only when confirmed by the named public registry.",
+      "dependency_count": 3,
+      "description": "Observed npm package record for @mdwrk/page-template-demo-content-pack.",
+      "description_source": "generated-factual",
+      "display_name": "@mdwrk/page-template-demo-content-pack",
+      "downloads": null,
+      "downstream_completeness": "not-observed",
+      "downstream_count": 0,
+      "ecosystem": "npm",
+      "evidence": [
+        {
+          "kind": "source",
+          "observed_at": "2026-08-03T10:05:58Z",
+          "url": "https://github.com/groupsum/markdown_workspace/blob/HEAD/packages/content/page-template-demo-content-pack/package.json"
+        }
+      ],
+      "id": "package:npm:@mdwrk/page-template-demo-content-pack:groupsum/markdown_workspace:packages/content/page-template-demo-content-pack/package.json",
+      "kind": "package",
+      "latest_version": "0.1.2",
+      "manifest_path": "packages/content/page-template-demo-content-pack/package.json",
+      "name": "@mdwrk/page-template-demo-content-pack",
+      "observed_at": "2026-08-03T10:05:58Z",
+      "owner": "groupsum",
+      "private": true,
+      "publication_status": "manifest_private",
+      "published": false,
+      "registry_url": null,
+      "relationship_count": 6,
+      "relationship_counts": {
+        "package_depends_on_package": 4,
+        "repository_contains_package": 2
+      },
+      "release_count": 0,
+      "repository": "groupsum/markdown_workspace",
+      "reviewed": false,
+      "route": "/catalog/packages/npm/mdwrk-page-template-demo-content-pack-501df8a7",
+      "source_url": "https://github.com/groupsum/markdown_workspace/blob/HEAD/packages/content/page-template-demo-content-pack/package.json",
+      "version_declared": "0.1.2"
+    },
+    {
+      "claim_boundary": "Publication is reported only when confirmed by the named public registry.",
+      "dependency_count": 0,
+      "description": "Observed npm package record for @mdwrk/structured-data.",
+      "description_source": "generated-factual",
+      "display_name": "@mdwrk/structured-data",
+      "downloads": null,
+      "downstream_completeness": "not-observed",
+      "downstream_count": 0,
+      "ecosystem": "npm",
+      "evidence": [
+        {
+          "kind": "source",
+          "observed_at": "2026-08-03T10:05:58Z",
+          "url": "https://github.com/groupsum/markdown_workspace/blob/HEAD/packages/shared/structured-data/package.json"
+        }
+      ],
+      "id": "package:npm:@mdwrk/structured-data:groupsum/markdown_workspace:packages/shared/structured-data/package.json",
+      "kind": "package",
+      "latest_version": "0.1.5",
+      "manifest_path": "packages/shared/structured-data/package.json",
+      "name": "@mdwrk/structured-data",
+      "observed_at": "2026-08-03T10:05:58Z",
+      "owner": "groupsum",
+      "private": true,
+      "publication_status": "manifest_private",
+      "published": false,
+      "registry_url": null,
+      "relationship_count": 8,
+      "relationship_counts": {
+        "package_depends_on_package": 6,
+        "repository_contains_package": 2
+      },
+      "release_count": 0,
+      "repository": "groupsum/markdown_workspace",
+      "reviewed": false,
+      "route": "/catalog/packages/npm/mdwrk-structured-data-b638f76e",
+      "source_url": "https://github.com/groupsum/markdown_workspace/blob/HEAD/packages/shared/structured-data/package.json",
+      "version_declared": "0.1.5"
+    },
+    {
+      "claim_boundary": "Publication is reported only when confirmed by the named public registry.",
+      "dependency_count": 0,
+      "description": "Observed npm package record for @mdwrk/testing.",
+      "description_source": "generated-factual",
+      "display_name": "@mdwrk/testing",
+      "downloads": null,
+      "downstream_completeness": "not-observed",
+      "downstream_count": 0,
+      "ecosystem": "npm",
+      "evidence": [
+        {
+          "kind": "source",
+          "observed_at": "2026-08-03T10:05:58Z",
+          "url": "https://github.com/groupsum/markdown_workspace/blob/HEAD/packages/shared/testing/package.json"
+        }
+      ],
+      "id": "package:npm:@mdwrk/testing:groupsum/markdown_workspace:packages/shared/testing/package.json",
+      "kind": "package",
+      "latest_version": "1.0.4",
+      "manifest_path": "packages/shared/testing/package.json",
+      "name": "@mdwrk/testing",
+      "observed_at": "2026-08-03T10:05:58Z",
+      "owner": "groupsum",
+      "private": true,
+      "publication_status": "manifest_private",
+      "published": false,
+      "registry_url": null,
+      "relationship_count": 13,
+      "relationship_counts": {
+        "package_depends_on_package": 11,
+        "repository_contains_package": 2
+      },
+      "release_count": 0,
+      "repository": "groupsum/markdown_workspace",
+      "reviewed": false,
+      "route": "/catalog/packages/npm/mdwrk-testing-d281036c",
+      "source_url": "https://github.com/groupsum/markdown_workspace/blob/HEAD/packages/shared/testing/package.json",
+      "version_declared": "1.0.4"
+    },
+    {
+      "claim_boundary": "Publication is reported only when confirmed by the named public registry.",
+      "dependency_count": 0,
+      "description": "Observed npm package record for @mdwrk/theme-contract.",
+      "description_source": "generated-factual",
+      "display_name": "@mdwrk/theme-contract",
+      "downloads": null,
+      "downstream_completeness": "not-observed",
+      "downstream_count": 0,
+      "ecosystem": "npm",
+      "evidence": [
+        {
+          "kind": "source",
+          "observed_at": "2026-08-03T10:05:58Z",
+          "url": "https://github.com/groupsum/markdown_workspace/blob/HEAD/packages/contracts/theme-contract/package.json"
+        }
+      ],
+      "id": "package:npm:@mdwrk/theme-contract:groupsum/markdown_workspace:packages/contracts/theme-contract/package.json",
+      "kind": "package",
+      "latest_version": "1.1.5",
+      "manifest_path": "packages/contracts/theme-contract/package.json",
+      "name": "@mdwrk/theme-contract",
+      "observed_at": "2026-08-03T10:05:58Z",
+      "owner": "groupsum",
+      "private": true,
+      "publication_status": "manifest_private",
+      "published": false,
+      "registry_url": null,
+      "relationship_count": 6,
+      "relationship_counts": {
+        "package_depends_on_package": 5,
+        "repository_contains_package": 1
+      },
+      "release_count": 0,
+      "repository": "groupsum/markdown_workspace",
+      "reviewed": false,
+      "route": "/catalog/packages/npm/mdwrk-theme-contract-e8c64b77",
+      "source_url": "https://github.com/groupsum/markdown_workspace/blob/HEAD/packages/contracts/theme-contract/package.json",
+      "version_declared": "1.1.5"
+    },
+    {
+      "claim_boundary": "Publication is reported only when confirmed by the named public registry.",
+      "dependency_count": 1,
+      "description": "Observed npm package record for @mdwrk/ui-tokens.",
+      "description_source": "generated-factual",
+      "display_name": "@mdwrk/ui-tokens",
+      "downloads": null,
+      "downstream_completeness": "not-observed",
+      "downstream_count": 0,
+      "ecosystem": "npm",
+      "evidence": [
+        {
+          "kind": "source",
+          "observed_at": "2026-08-03T10:05:58Z",
+          "url": "https://github.com/groupsum/markdown_workspace/blob/HEAD/packages/shared/ui-tokens/package.json"
+        }
+      ],
+      "id": "package:npm:@mdwrk/ui-tokens:groupsum/markdown_workspace:packages/shared/ui-tokens/package.json",
+      "kind": "package",
+      "latest_version": "1.2.6",
+      "manifest_path": "packages/shared/ui-tokens/package.json",
+      "name": "@mdwrk/ui-tokens",
+      "observed_at": "2026-08-03T10:05:58Z",
+      "owner": "groupsum",
+      "private": true,
+      "publication_status": "manifest_private",
+      "published": false,
+      "registry_url": null,
+      "relationship_count": 16,
+      "relationship_counts": {
+        "package_depends_on_package": 14,
+        "repository_contains_package": 2
+      },
+      "release_count": 0,
+      "repository": "groupsum/markdown_workspace",
+      "reviewed": false,
+      "route": "/catalog/packages/npm/mdwrk-ui-tokens-408c7e5d",
+      "source_url": "https://github.com/groupsum/markdown_workspace/blob/HEAD/packages/shared/ui-tokens/package.json",
+      "version_declared": "1.2.6"
+    },
+    {
+      "claim_boundary": "Publication is reported only when confirmed by the named public registry.",
+      "dependency_count": 5,
+      "description": "Observed npm package record for markdown_workspace.",
+      "description_source": "generated-factual",
+      "display_name": "markdown_workspace",
+      "downloads": null,
+      "downstream_completeness": "not-observed",
+      "downstream_count": 0,
+      "ecosystem": "npm",
+      "evidence": [
+        {
+          "kind": "source",
+          "observed_at": "2026-08-03T10:05:58Z",
+          "url": "https://github.com/groupsum/markdown_workspace/blob/HEAD/package.json"
+        }
+      ],
+      "id": "package:npm:markdown_workspace:groupsum/markdown_workspace:package.json",
+      "kind": "package",
+      "latest_version": "0.2.144",
+      "manifest_path": "package.json",
+      "name": "markdown_workspace",
+      "observed_at": "2026-08-03T10:05:58Z",
+      "owner": "groupsum",
+      "private": true,
+      "publication_status": "manifest_private",
+      "published": false,
+      "registry_url": null,
+      "relationship_count": 6,
+      "relationship_counts": {
+        "package_depends_on_external": 5,
+        "repository_contains_package": 1
+      },
+      "release_count": 0,
+      "repository": "groupsum/markdown_workspace",
+      "reviewed": false,
+      "route": "/catalog/packages/npm/markdown-workspace-24ef4a04",
+      "source_url": "https://github.com/groupsum/markdown_workspace/blob/HEAD/package.json",
+      "version_declared": "0.2.144"
+    },
+    {
+      "claim_boundary": "Publication is reported only when confirmed by the named public registry.",
+      "dependency_count": 2,
+      "description": "Observed pypi package record for markdown-workspace.",
+      "description_source": "generated-factual",
+      "display_name": "markdown-workspace",
+      "downloads": null,
+      "downstream_completeness": "not-observed",
+      "downstream_count": 0,
+      "ecosystem": "pypi",
+      "evidence": [
+        {
+          "kind": "source",
+          "observed_at": "2026-08-03T10:05:58Z",
+          "url": "https://github.com/groupsum/markdown_workspace/blob/HEAD/pyproject.toml"
+        }
+      ],
+      "id": "package:pypi:markdown-workspace:groupsum/markdown_workspace:pyproject.toml",
+      "kind": "package",
+      "latest_version": "0.0.0",
+      "manifest_path": "pyproject.toml",
+      "name": "markdown-workspace",
+      "observed_at": "2026-08-03T10:05:58Z",
+      "owner": "groupsum",
+      "private": false,
+      "publication_status": "not-confirmed",
+      "published": false,
+      "registry_url": null,
+      "relationship_count": 3,
+      "relationship_counts": {
+        "package_depends_on_external": 1,
+        "package_depends_on_package": 1,
+        "repository_contains_package": 1
+      },
+      "release_count": 0,
+      "repository": "groupsum/markdown_workspace",
+      "reviewed": false,
+      "route": "/catalog/packages/pypi/markdown-workspace-b8077b3d",
+      "source_url": "https://github.com/groupsum/markdown_workspace/blob/HEAD/pyproject.toml",
+      "version_declared": "0.0.0"
+    }
+  ],
+  "repository": {
+    "archived": false,
+    "claim_boundary": "Repository, release, deployment, and live-service states are reported separately.",
+    "created_at": "2026-01-21T04:48:42Z",
+    "default_branch": "master",
+    "description": "MdWrk is a local-first Markdown workspace, preview editor, package platform, and extension host for portable Markdown authoring.",
+    "description_source": "github-repository",
+    "display_name": "markdown_workspace",
+    "evidence": [
+      {
+        "kind": "source",
+        "observed_at": "2026-08-03T10:05:58Z",
+        "url": "https://github.com/groupsum/markdown_workspace"
+      }
+    ],
+    "fork": false,
+    "full_name": "groupsum/markdown_workspace",
+    "homepage": "https://mdwrk.com",
+    "id": "repository:groupsum/markdown_workspace",
+    "kind": "repository",
+    "latest_commit": {
+      "author": "cobycloud",
+      "authored_at": "2026-06-09T05:49:09Z",
+      "committed_at": "2026-06-09T05:49:09Z",
+      "committer": "cobycloud",
+      "message": "Stop tracking generated cache artifacts",
+      "sha": "894796b5d3059dc86034eebfb6c7ffd2d5c5f2d8",
+      "url": "https://github.com/groupsum/markdown_workspace/commit/894796b5d3059dc86034eebfb6c7ffd2d5c5f2d8"
+    },
+    "latest_deployment": null,
+    "latest_release": {
+      "assets": [
+        {
+          "downloads": 0,
+          "name": "@mdwrkdesktop",
+          "url": "https://github.com/groupsum/markdown_workspace/releases/download/untagged-62baccfc847b2db66dd0/%40mdwrkdesktop"
+        },
+        {
+          "downloads": 0,
+          "name": "af.pak",
+          "url": "https://github.com/groupsum/markdown_workspace/releases/download/untagged-62baccfc847b2db66dd0/af.pak"
+        },
+        {
+          "downloads": 0,
+          "name": "am.pak",
+          "url": "https://github.com/groupsum/markdown_workspace/releases/download/untagged-62baccfc847b2db66dd0/am.pak"
+        },
+        {
+          "downloads": 0,
+          "name": "app-release.aab",
+          "url": "https://github.com/groupsum/markdown_workspace/releases/download/untagged-62baccfc847b2db66dd0/app-release.aab"
+        },
+        {
+          "downloads": 0,
+          "name": "app-update.yml",
+          "url": "https://github.com/groupsum/markdown_workspace/releases/download/untagged-62baccfc847b2db66dd0/app-update.yml"
+        },
+        {
+          "downloads": 0,
+          "name": "app.asar",
+          "url": "https://github.com/groupsum/markdown_workspace/releases/download/untagged-62baccfc847b2db66dd0/app.asar"
+        },
+        {
+          "downloads": 0,
+          "name": "ar.pak",
+          "url": "https://github.com/groupsum/markdown_workspace/releases/download/untagged-62baccfc847b2db66dd0/ar.pak"
+        },
+        {
+          "downloads": 0,
+          "name": "bg.pak",
+          "url": "https://github.com/groupsum/markdown_workspace/releases/download/untagged-62baccfc847b2db66dd0/bg.pak"
+        },
+        {
+          "downloads": 0,
+          "name": "bn.pak",
+          "url": "https://github.com/groupsum/markdown_workspace/releases/download/untagged-62baccfc847b2db66dd0/bn.pak"
+        },
+        {
+          "downloads": 0,
+          "name": "builder-debug.yml",
+          "url": "https://github.com/groupsum/markdown_workspace/releases/download/untagged-62baccfc847b2db66dd0/builder-debug.yml"
+        },
+        {
+          "downloads": 0,
+          "name": "ca.pak",
+          "url": "https://github.com/groupsum/markdown_workspace/releases/download/untagged-62baccfc847b2db66dd0/ca.pak"
+        },
+        {
+          "downloads": 0,
+          "name": "chrome-sandbox",
+          "url": "https://github.com/groupsum/markdown_workspace/releases/download/untagged-62baccfc847b2db66dd0/chrome-sandbox"
+        },
+        {
+          "downloads": 0,
+          "name": "chrome_100_percent.pak",
+          "url": "https://github.com/groupsum/markdown_workspace/releases/download/untagged-62baccfc847b2db66dd0/chrome_100_percent.pak"
+        },
+        {
+          "downloads": 0,
+          "name": "chrome_200_percent.pak",
+          "url": "https://github.com/groupsum/markdown_workspace/releases/download/untagged-62baccfc847b2db66dd0/chrome_200_percent.pak"
+        },
+        {
+          "downloads": 0,
+          "name": "chrome_crashpad_handler",
+          "url": "https://github.com/groupsum/markdown_workspace/releases/download/untagged-62baccfc847b2db66dd0/chrome_crashpad_handler"
+        },
+        {
+          "downloads": 0,
+          "name": "cs.pak",
+          "url": "https://github.com/groupsum/markdown_workspace/releases/download/untagged-62baccfc847b2db66dd0/cs.pak"
+        },
+        {
+          "downloads": 0,
+          "name": "d3dcompiler_47.dll",
+          "url": "https://github.com/groupsum/markdown_workspace/releases/download/untagged-62baccfc847b2db66dd0/d3dcompiler_47.dll"
+        },
+        {
+          "downloads": 0,
+          "name": "da.pak",
+          "url": "https://github.com/groupsum/markdown_workspace/releases/download/untagged-62baccfc847b2db66dd0/da.pak"
+        },
+        {
+          "downloads": 0,
+          "name": "de.pak",
+          "url": "https://github.com/groupsum/markdown_workspace/releases/download/untagged-62baccfc847b2db66dd0/de.pak"
+        },
+        {
+          "downloads": 0,
+          "name": "el.pak",
+          "url": "https://github.com/groupsum/markdown_workspace/releases/download/untagged-62baccfc847b2db66dd0/el.pak"
+        },
+        {
+          "downloads": 0,
+          "name": "Electron.Framework",
+          "url": "https://github.com/groupsum/markdown_workspace/releases/download/untagged-62baccfc847b2db66dd0/Electron.Framework"
+        },
+        {
+          "downloads": 0,
+          "name": "electron.icns",
+          "url": "https://github.com/groupsum/markdown_workspace/releases/download/untagged-62baccfc847b2db66dd0/electron.icns"
+        },
+        {
+          "downloads": 0,
+          "name": "elevate.exe",
+          "url": "https://github.com/groupsum/markdown_workspace/releases/download/untagged-62baccfc847b2db66dd0/elevate.exe"
+        },
+        {
+          "downloads": 0,
+          "name": "en-GB.pak",
+          "url": "https://github.com/groupsum/markdown_workspace/releases/download/untagged-62baccfc847b2db66dd0/en-GB.pak"
+        },
+        {
+          "downloads": 0,
+          "name": "en-US.pak",
+          "url": "https://github.com/groupsum/markdown_workspace/releases/download/untagged-62baccfc847b2db66dd0/en-US.pak"
+        },
+        {
+          "downloads": 0,
+          "name": "es-419.pak",
+          "url": "https://github.com/groupsum/markdown_workspace/releases/download/untagged-62baccfc847b2db66dd0/es-419.pak"
+        },
+        {
+          "downloads": 0,
+          "name": "es.pak",
+          "url": "https://github.com/groupsum/markdown_workspace/releases/download/untagged-62baccfc847b2db66dd0/es.pak"
+        },
+        {
+          "downloads": 0,
+          "name": "et.pak",
+          "url": "https://github.com/groupsum/markdown_workspace/releases/download/untagged-62baccfc847b2db66dd0/et.pak"
+        },
+        {
+          "downloads": 0,
+          "name": "fa.pak",
+          "url": "https://github.com/groupsum/markdown_workspace/releases/download/untagged-62baccfc847b2db66dd0/fa.pak"
+        },
+        {
+          "downloads": 0,
+          "name": "ffmpeg.dll",
+          "url": "https://github.com/groupsum/markdown_workspace/releases/download/untagged-62baccfc847b2db66dd0/ffmpeg.dll"
+        },
+        {
+          "downloads": 0,
+          "name": "fi.pak",
+          "url": "https://github.com/groupsum/markdown_workspace/releases/download/untagged-62baccfc847b2db66dd0/fi.pak"
+        },
+        {
+          "downloads": 0,
+          "name": "fil.pak",
+          "url": "https://github.com/groupsum/markdown_workspace/releases/download/untagged-62baccfc847b2db66dd0/fil.pak"
+        },
+        {
+          "downloads": 0,
+          "name": "fr.pak",
+          "url": "https://github.com/groupsum/markdown_workspace/releases/download/untagged-62baccfc847b2db66dd0/fr.pak"
+        },
+        {
+          "downloads": 0,
+          "name": "gu.pak",
+          "url": "https://github.com/groupsum/markdown_workspace/releases/download/untagged-62baccfc847b2db66dd0/gu.pak"
+        },
+        {
+          "downloads": 0,
+          "name": "he.pak",
+          "url": "https://github.com/groupsum/markdown_workspace/releases/download/untagged-62baccfc847b2db66dd0/he.pak"
+        },
+        {
+          "downloads": 0,
+          "name": "hi.pak",
+          "url": "https://github.com/groupsum/markdown_workspace/releases/download/untagged-62baccfc847b2db66dd0/hi.pak"
+        },
+        {
+          "downloads": 0,
+          "name": "hr.pak",
+          "url": "https://github.com/groupsum/markdown_workspace/releases/download/untagged-62baccfc847b2db66dd0/hr.pak"
+        },
+        {
+          "downloads": 0,
+          "name": "hu.pak",
+          "url": "https://github.com/groupsum/markdown_workspace/releases/download/untagged-62baccfc847b2db66dd0/hu.pak"
+        },
+        {
+          "downloads": 0,
+          "name": "icudtl.dat",
+          "url": "https://github.com/groupsum/markdown_workspace/releases/download/untagged-62baccfc847b2db66dd0/icudtl.dat"
+        },
+        {
+          "downloads": 0,
+          "name": "id.pak",
+          "url": "https://github.com/groupsum/markdown_workspace/releases/download/untagged-62baccfc847b2db66dd0/id.pak"
+        },
+        {
+          "downloads": 0,
+          "name": "Info.plist",
+          "url": "https://github.com/groupsum/markdown_workspace/releases/download/untagged-62baccfc847b2db66dd0/Info.plist"
+        },
+        {
+          "downloads": 0,
+          "name": "it.pak",
+          "url": "https://github.com/groupsum/markdown_workspace/releases/download/untagged-62baccfc847b2db66dd0/it.pak"
+        },
+        {
+          "downloads": 0,
+          "name": "ja.pak",
+          "url": "https://github.com/groupsum/markdown_workspace/releases/download/untagged-62baccfc847b2db66dd0/ja.pak"
+        },
+        {
+          "downloads": 0,
+          "name": "kn.pak",
+          "url": "https://github.com/groupsum/markdown_workspace/releases/download/untagged-62baccfc847b2db66dd0/kn.pak"
+        },
+        {
+          "downloads": 0,
+          "name": "ko.pak",
+          "url": "https://github.com/groupsum/markdown_workspace/releases/download/untagged-62baccfc847b2db66dd0/ko.pak"
+        },
+        {
+          "downloads": 0,
+          "name": "latest-linux.yml",
+          "url": "https://github.com/groupsum/markdown_workspace/releases/download/untagged-62baccfc847b2db66dd0/latest-linux.yml"
+        },
+        {
+          "downloads": 0,
+          "name": "latest-mac.yml",
+          "url": "https://github.com/groupsum/markdown_workspace/releases/download/untagged-62baccfc847b2db66dd0/latest-mac.yml"
+        },
+        {
+          "downloads": 0,
+          "name": "latest.yml",
+          "url": "https://github.com/groupsum/markdown_workspace/releases/download/untagged-62baccfc847b2db66dd0/latest.yml"
+        },
+        {
+          "downloads": 0,
+          "name": "libEGL.dll",
+          "url": "https://github.com/groupsum/markdown_workspace/releases/download/untagged-62baccfc847b2db66dd0/libEGL.dll"
+        },
+        {
+          "downloads": 0,
+          "name": "libEGL.dylib",
+          "url": "https://github.com/groupsum/markdown_workspace/releases/download/untagged-62baccfc847b2db66dd0/libEGL.dylib"
+        },
+        {
+          "downloads": 0,
+          "name": "libEGL.so",
+          "url": "https://github.com/groupsum/markdown_workspace/releases/download/untagged-62baccfc847b2db66dd0/libEGL.so"
+        },
+        {
+          "downloads": 0,
+          "name": "libffmpeg.dylib",
+          "url": "https://github.com/groupsum/markdown_workspace/releases/download/untagged-62baccfc847b2db66dd0/libffmpeg.dylib"
+        },
+        {
+          "downloads": 0,
+          "name": "libffmpeg.so",
+          "url": "https://github.com/groupsum/markdown_workspace/releases/download/untagged-62baccfc847b2db66dd0/libffmpeg.so"
+        },
+        {
+          "downloads": 0,
+          "name": "libGLESv2.dll",
+          "url": "https://github.com/groupsum/markdown_workspace/releases/download/untagged-62baccfc847b2db66dd0/libGLESv2.dll"
+        },
+        {
+          "downloads": 0,
+          "name": "libGLESv2.dylib",
+          "url": "https://github.com/groupsum/markdown_workspace/releases/download/untagged-62baccfc847b2db66dd0/libGLESv2.dylib"
+        },
+        {
+          "downloads": 0,
+          "name": "libGLESv2.so",
+          "url": "https://github.com/groupsum/markdown_workspace/releases/download/untagged-62baccfc847b2db66dd0/libGLESv2.so"
+        },
+        {
+          "downloads": 0,
+          "name": "libvk_swiftshader.dylib",
+          "url": "https://github.com/groupsum/markdown_workspace/releases/download/untagged-62baccfc847b2db66dd0/libvk_swiftshader.dylib"
+        },
+        {
+          "downloads": 0,
+          "name": "libvk_swiftshader.so",
+          "url": "https://github.com/groupsum/markdown_workspace/releases/download/untagged-62baccfc847b2db66dd0/libvk_swiftshader.so"
+        },
+        {
+          "downloads": 0,
+          "name": "libvulkan.so.1",
+          "url": "https://github.com/groupsum/markdown_workspace/releases/download/untagged-62baccfc847b2db66dd0/libvulkan.so.1"
+        },
+        {
+          "downloads": 0,
+          "name": "LICENSE.electron.txt",
+          "url": "https://github.com/groupsum/markdown_workspace/releases/download/untagged-62baccfc847b2db66dd0/LICENSE.electron.txt"
+        },
+        {
+          "downloads": 0,
+          "name": "LICENSES.chromium.html",
+          "url": "https://github.com/groupsum/markdown_workspace/releases/download/untagged-62baccfc847b2db66dd0/LICENSES.chromium.html"
+        },
+        {
+          "downloads": 0,
+          "name": "locale.pak",
+          "url": "https://github.com/groupsum/markdown_workspace/releases/download/untagged-62baccfc847b2db66dd0/locale.pak"
+        },
+        {
+          "downloads": 0,
+          "name": "lt.pak",
+          "url": "https://github.com/groupsum/markdown_workspace/releases/download/untagged-62baccfc847b2db66dd0/lt.pak"
+        },
+        {
+          "downloads": 0,
+          "name": "lv.pak",
+          "url": "https://github.com/groupsum/markdown_workspace/releases/download/untagged-62baccfc847b2db66dd0/lv.pak"
+        },
+        {
+          "downloads": 0,
+          "name": "MainMenu.nib",
+          "url": "https://github.com/groupsum/markdown_workspace/releases/download/untagged-62baccfc847b2db66dd0/MainMenu.nib"
+        },
+        {
+          "downloads": 0,
+          "name": "Mantle",
+          "url": "https://github.com/groupsum/markdown_workspace/releases/download/untagged-62baccfc847b2db66dd0/Mantle"
+        },
+        {
+          "downloads": 0,
+          "name": "MdWork.Desktop",
+          "url": "https://github.com/groupsum/markdown_workspace/releases/download/untagged-62baccfc847b2db66dd0/MdWork.Desktop"
+        },
+        {
+          "downloads": 0,
+          "name": "MdWork.Desktop-0.0.6-linux-x86_64.AppImage",
+          "url": "https://github.com/groupsum/markdown_workspace/releases/download/untagged-62baccfc847b2db66dd0/MdWork.Desktop-0.0.6-linux-x86_64.AppImage"
+        },
+        {
+          "downloads": 0,
+          "name": "MdWork.Desktop-0.0.6-mac-arm64.dmg",
+          "url": "https://github.com/groupsum/markdown_workspace/releases/download/untagged-62baccfc847b2db66dd0/MdWork.Desktop-0.0.6-mac-arm64.dmg"
+        },
+        {
+          "downloads": 0,
+          "name": "MdWork.Desktop-0.0.6-mac-arm64.dmg.blockmap",
+          "url": "https://github.com/groupsum/markdown_workspace/releases/download/untagged-62baccfc847b2db66dd0/MdWork.Desktop-0.0.6-mac-arm64.dmg.blockmap"
+        },
+        {
+          "downloads": 0,
+          "name": "MdWork.Desktop-0.0.6-mac-arm64.zip",
+          "url": "https://github.com/groupsum/markdown_workspace/releases/download/untagged-62baccfc847b2db66dd0/MdWork.Desktop-0.0.6-mac-arm64.zip"
+        },
+        {
+          "downloads": 0,
+          "name": "MdWork.Desktop-0.0.6-mac-arm64.zip.blockmap",
+          "url": "https://github.com/groupsum/markdown_workspace/releases/download/untagged-62baccfc847b2db66dd0/MdWork.Desktop-0.0.6-mac-arm64.zip.blockmap"
+        },
+        {
+          "downloads": 0,
+          "name": "MdWork.Desktop-0.0.6-win-x64.exe",
+          "url": "https://github.com/groupsum/markdown_workspace/releases/download/untagged-62baccfc847b2db66dd0/MdWork.Desktop-0.0.6-win-x64.exe"
+        },
+        {
+          "downloads": 0,
+          "name": "MdWork.Desktop-0.0.6-win-x64.exe.blockmap",
+          "url": "https://github.com/groupsum/markdown_workspace/releases/download/untagged-62baccfc847b2db66dd0/MdWork.Desktop-0.0.6-win-x64.exe.blockmap"
+        },
+        {
+          "downloads": 0,
+          "name": "MdWork.Desktop.exe",
+          "url": "https://github.com/groupsum/markdown_workspace/releases/download/untagged-62baccfc847b2db66dd0/MdWork.Desktop.exe"
+        },
+        {
+          "downloads": 0,
+          "name": "MdWork.Desktop.Helper",
+          "url": "https://github.com/groupsum/markdown_workspace/releases/download/untagged-62baccfc847b2db66dd0/MdWork.Desktop.Helper"
+        },
+        {
+          "downloads": 0,
+          "name": "MdWork.Desktop.Helper.GPU",
+          "url": "https://github.com/groupsum/markdown_workspace/releases/download/untagged-62baccfc847b2db66dd0/MdWork.Desktop.Helper.GPU"
+        },
+        {
+          "downloads": 0,
+          "name": "MdWork.Desktop.Helper.Plugin",
+          "url": "https://github.com/groupsum/markdown_workspace/releases/download/untagged-62baccfc847b2db66dd0/MdWork.Desktop.Helper.Plugin"
+        },
+        {
+          "downloads": 0,
+          "name": "MdWork.Desktop.Helper.Renderer",
+          "url": "https://github.com/groupsum/markdown_workspace/releases/download/untagged-62baccfc847b2db66dd0/MdWork.Desktop.Helper.Renderer"
+        },
+        {
+          "downloads": 0,
+          "name": "ml.pak",
+          "url": "https://github.com/groupsum/markdown_workspace/releases/download/untagged-62baccfc847b2db66dd0/ml.pak"
+        },
+        {
+          "downloads": 0,
+          "name": "mr.pak",
+          "url": "https://github.com/groupsum/markdown_workspace/releases/download/untagged-62baccfc847b2db66dd0/mr.pak"
+        },
+        {
+          "downloads": 0,
+          "name": "ms.pak",
+          "url": "https://github.com/groupsum/markdown_workspace/releases/download/untagged-62baccfc847b2db66dd0/ms.pak"
+        },
+        {
+          "downloads": 0,
+          "name": "nb.pak",
+          "url": "https://github.com/groupsum/markdown_workspace/releases/download/untagged-62baccfc847b2db66dd0/nb.pak"
+        },
+        {
+          "downloads": 0,
+          "name": "nl.pak",
+          "url": "https://github.com/groupsum/markdown_workspace/releases/download/untagged-62baccfc847b2db66dd0/nl.pak"
+        },
+        {
+          "downloads": 0,
+          "name": "pl.pak",
+          "url": "https://github.com/groupsum/markdown_workspace/releases/download/untagged-62baccfc847b2db66dd0/pl.pak"
+        },
+        {
+          "downloads": 0,
+          "name": "pt-BR.pak",
+          "url": "https://github.com/groupsum/markdown_workspace/releases/download/untagged-62baccfc847b2db66dd0/pt-BR.pak"
+        },
+        {
+          "downloads": 0,
+          "name": "pt-PT.pak",
+          "url": "https://github.com/groupsum/markdown_workspace/releases/download/untagged-62baccfc847b2db66dd0/pt-PT.pak"
+        },
+        {
+          "downloads": 0,
+          "name": "ReactiveObjC",
+          "url": "https://github.com/groupsum/markdown_workspace/releases/download/untagged-62baccfc847b2db66dd0/ReactiveObjC"
+        },
+        {
+          "downloads": 0,
+          "name": "resources.pak",
+          "url": "https://github.com/groupsum/markdown_workspace/releases/download/untagged-62baccfc847b2db66dd0/resources.pak"
+        },
+        {
+          "downloads": 0,
+          "name": "ro.pak",
+          "url": "https://github.com/groupsum/markdown_workspace/releases/download/untagged-62baccfc847b2db66dd0/ro.pak"
+        },
+        {
+          "downloads": 0,
+          "name": "ru.pak",
+          "url": "https://github.com/groupsum/markdown_workspace/releases/download/untagged-62baccfc847b2db66dd0/ru.pak"
+        },
+        {
+          "downloads": 0,
+          "name": "ShipIt",
+          "url": "https://github.com/groupsum/markdown_workspace/releases/download/untagged-62baccfc847b2db66dd0/ShipIt"
+        },
+        {
+          "downloads": 0,
+          "name": "sk.pak",
+          "url": "https://github.com/groupsum/markdown_workspace/releases/download/untagged-62baccfc847b2db66dd0/sk.pak"
+        },
+        {
+          "downloads": 0,
+          "name": "sl.pak",
+          "url": "https://github.com/groupsum/markdown_workspace/releases/download/untagged-62baccfc847b2db66dd0/sl.pak"
+        },
+        {
+          "downloads": 0,
+          "name": "snapshot_blob.bin",
+          "url": "https://github.com/groupsum/markdown_workspace/releases/download/untagged-62baccfc847b2db66dd0/snapshot_blob.bin"
+        },
+        {
+          "downloads": 0,
+          "name": "Squirrel",
+          "url": "https://github.com/groupsum/markdown_workspace/releases/download/untagged-62baccfc847b2db66dd0/Squirrel"
+        },
+        {
+          "downloads": 0,
+          "name": "sr.pak",
+          "url": "https://github.com/groupsum/markdown_workspace/releases/download/untagged-62baccfc847b2db66dd0/sr.pak"
+        },
+        {
+          "downloads": 0,
+          "name": "sv.pak",
+          "url": "https://github.com/groupsum/markdown_workspace/releases/download/untagged-62baccfc847b2db66dd0/sv.pak"
+        },
+        {
+          "downloads": 0,
+          "name": "sw.pak",
+          "url": "https://github.com/groupsum/markdown_workspace/releases/download/untagged-62baccfc847b2db66dd0/sw.pak"
+        },
+        {
+          "downloads": 0,
+          "name": "ta.pak",
+          "url": "https://github.com/groupsum/markdown_workspace/releases/download/untagged-62baccfc847b2db66dd0/ta.pak"
+        },
+        {
+          "downloads": 0,
+          "name": "te.pak",
+          "url": "https://github.com/groupsum/markdown_workspace/releases/download/untagged-62baccfc847b2db66dd0/te.pak"
+        },
+        {
+          "downloads": 0,
+          "name": "th.pak",
+          "url": "https://github.com/groupsum/markdown_workspace/releases/download/untagged-62baccfc847b2db66dd0/th.pak"
+        },
+        {
+          "downloads": 0,
+          "name": "tr.pak",
+          "url": "https://github.com/groupsum/markdown_workspace/releases/download/untagged-62baccfc847b2db66dd0/tr.pak"
+        },
+        {
+          "downloads": 0,
+          "name": "uk.pak",
+          "url": "https://github.com/groupsum/markdown_workspace/releases/download/untagged-62baccfc847b2db66dd0/uk.pak"
+        },
+        {
+          "downloads": 0,
+          "name": "ur.pak",
+          "url": "https://github.com/groupsum/markdown_workspace/releases/download/untagged-62baccfc847b2db66dd0/ur.pak"
+        },
+        {
+          "downloads": 0,
+          "name": "v8_context_snapshot.arm64.bin",
+          "url": "https://github.com/groupsum/markdown_workspace/releases/download/untagged-62baccfc847b2db66dd0/v8_context_snapshot.arm64.bin"
+        },
+        {
+          "downloads": 0,
+          "name": "v8_context_snapshot.bin",
+          "url": "https://github.com/groupsum/markdown_workspace/releases/download/untagged-62baccfc847b2db66dd0/v8_context_snapshot.bin"
+        },
+        {
+          "downloads": 0,
+          "name": "vi.pak",
+          "url": "https://github.com/groupsum/markdown_workspace/releases/download/untagged-62baccfc847b2db66dd0/vi.pak"
+        },
+        {
+          "downloads": 0,
+          "name": "vk_swiftshader.dll",
+          "url": "https://github.com/groupsum/markdown_workspace/releases/download/untagged-62baccfc847b2db66dd0/vk_swiftshader.dll"
+        },
+        {
+          "downloads": 0,
+          "name": "vk_swiftshader_icd.json",
+          "url": "https://github.com/groupsum/markdown_workspace/releases/download/untagged-62baccfc847b2db66dd0/vk_swiftshader_icd.json"
+        },
+        {
+          "downloads": 0,
+          "name": "vulkan-1.dll",
+          "url": "https://github.com/groupsum/markdown_workspace/releases/download/untagged-62baccfc847b2db66dd0/vulkan-1.dll"
+        },
+        {
+          "downloads": 0,
+          "name": "zh-CN.pak",
+          "url": "https://github.com/groupsum/markdown_workspace/releases/download/untagged-62baccfc847b2db66dd0/zh-CN.pak"
+        },
+        {
+          "downloads": 0,
+          "name": "zh-TW.pak",
+          "url": "https://github.com/groupsum/markdown_workspace/releases/download/untagged-62baccfc847b2db66dd0/zh-TW.pak"
+        }
+      ],
+      "draft": true,
+      "name": "MD workspace desktop 0.2.33",
+      "prerelease": false,
+      "published_at": null,
+      "tag": "v0.2.33",
+      "url": "https://github.com/groupsum/markdown_workspace/releases/tag/untagged-62baccfc847b2db66dd0"
+    },
+    "license": "Apache-2.0",
+    "metrics": {
+      "commits": 837,
+      "contributors": 2,
+      "deployments": 0,
+      "environments": 0,
+      "forks": 1,
+      "github_releases": 6,
+      "open_issues": 0,
+      "packages": 45,
+      "related_resources": 76,
+      "relationships": 114,
+      "size_kb": 1133214,
+      "stars": 3,
+      "watchers": 0
+    },
+    "name": "markdown_workspace",
+    "observed_at": "2026-08-03T10:05:58Z",
+    "owner": "groupsum",
+    "package_ids": [
+      "package:npm:@mdwrk/desktop:groupsum/markdown_workspace:apps/desktop/package.json",
+      "package:npm:@mdwrk/example-editor-basic:groupsum/markdown_workspace:examples/editor-basic/package.json",
+      "package:npm:@mdwrk/example-page-template-demo:groupsum/markdown_workspace:examples/page-template-demo/package.json",
+      "package:npm:@mdwrk/example-renderer-basic:groupsum/markdown_workspace:examples/renderer-basic/package.json",
+      "package:npm:@mdwrk/extension-catalog-hello:groupsum/markdown_workspace:artifacts/extensions/external.catalog-hello/1.1.2/package.json",
+      "package:npm:@mdwrk/extension-catalog-hello:groupsum/markdown_workspace:packages/extensions/extension-catalog-hello/package.json",
+      "package:npm:@mdwrk/extension-gemini-agent:groupsum/markdown_workspace:artifacts/extensions/core.gemini-agent/1.2.1/package.json",
+      "package:npm:@mdwrk/extension-gemini-agent:groupsum/markdown_workspace:packages/extensions/extension-gemini-agent/package.json",
+      "package:npm:@mdwrk/extension-git-ops:groupsum/markdown_workspace:artifacts/extensions/core.git-ops/1.0.1/package.json",
+      "package:npm:@mdwrk/extension-git-ops:groupsum/markdown_workspace:packages/extensions/extension-git-ops/package.json",
+      "package:npm:@mdwrk/extension-host:groupsum/markdown_workspace:packages/contracts/extension-host/package.json",
+      "package:npm:@mdwrk/extension-language-pack-studio:groupsum/markdown_workspace:artifacts/extensions/core.language-pack-studio/1.0.5/package.json",
+      "package:npm:@mdwrk/extension-language-pack-studio:groupsum/markdown_workspace:packages/extensions/extension-language-pack-studio/package.json",
+      "package:npm:@mdwrk/extension-manager:groupsum/markdown_workspace:artifacts/extensions/core.extension-manager/1.1.8/package.json",
+      "package:npm:@mdwrk/extension-manager:groupsum/markdown_workspace:packages/extensions/extension-manager/package.json",
+      "package:npm:@mdwrk/extension-manifest:groupsum/markdown_workspace:packages/contracts/extension-manifest/package.json",
+      "package:npm:@mdwrk/extension-runtime:groupsum/markdown_workspace:packages/extensions/extension-runtime/package.json",
+      "package:npm:@mdwrk/extension-theme-studio:groupsum/markdown_workspace:artifacts/extensions/core.theme-studio/1.1.6/package.json",
+      "package:npm:@mdwrk/extension-theme-studio:groupsum/markdown_workspace:packages/extensions/extension-theme-studio/package.json",
+      "package:npm:@mdwrk/extension-workspace-files:groupsum/markdown_workspace:artifacts/extensions/core.workspace-files/1.0.1/package.json",
+      "package:npm:@mdwrk/extension-workspace-files:groupsum/markdown_workspace:packages/extensions/extension-workspace-files/package.json",
+      "package:npm:@mdwrk/i18n:groupsum/markdown_workspace:packages/shared/i18n/package.json",
+      "package:npm:@mdwrk/icons:groupsum/markdown_workspace:packages/shared/icons/package.json",
+      "package:npm:@mdwrk/lander-content-contract:groupsum/markdown_workspace:packages/lander/lander-content-contract/package.json",
+      "package:npm:@mdwrk/lander-core:groupsum/markdown_workspace:packages/lander/lander-core/package.json",
+      "package:npm:@mdwrk/lander-markdown-content-adapter:groupsum/markdown_workspace:packages/lander/lander-markdown-content-adapter/package.json",
+      "package:npm:@mdwrk/lander-page-template-presets:groupsum/markdown_workspace:packages/lander/lander-page-template-presets/package.json",
+      "package:npm:@mdwrk/lander-page-templates:groupsum/markdown_workspace:packages/lander/lander-page-templates/package.json",
+      "package:npm:@mdwrk/lander-react:groupsum/markdown_workspace:packages/lander/lander-react/package.json",
+      "package:npm:@mdwrk/lander-seo:groupsum/markdown_workspace:packages/lander/lander-seo/package.json",
+      "package:npm:@mdwrk/lander-theme:groupsum/markdown_workspace:packages/lander/lander-theme/package.json",
+      "package:npm:@mdwrk/markdown-edit-in-renderer-react:groupsum/markdown_workspace:packages/editor/markdown-edit-in-renderer-react/package.json",
+      "package:npm:@mdwrk/markdown-editor-core:groupsum/markdown_workspace:packages/editor/markdown-editor-core/package.json",
+      "package:npm:@mdwrk/markdown-editor-react:groupsum/markdown_workspace:packages/editor/markdown-editor-react/package.json",
+      "package:npm:@mdwrk/markdown-renderer-core:groupsum/markdown_workspace:packages/renderer/markdown-renderer-core/package.json",
+      "package:npm:@mdwrk/markdown-renderer-react:groupsum/markdown_workspace:packages/renderer/markdown-renderer-react/package.json",
+      "package:npm:@mdwrk/mdwrkcom:groupsum/markdown_workspace:apps/mdwrkcom/package.json",
+      "package:npm:@mdwrk/mdwrkspace:groupsum/markdown_workspace:apps/client/package.json",
+      "package:npm:@mdwrk/page-template-demo-content-pack:groupsum/markdown_workspace:packages/content/page-template-demo-content-pack/package.json",
+      "package:npm:@mdwrk/structured-data:groupsum/markdown_workspace:packages/shared/structured-data/package.json",
+      "package:npm:@mdwrk/testing:groupsum/markdown_workspace:packages/shared/testing/package.json",
+      "package:npm:@mdwrk/theme-contract:groupsum/markdown_workspace:packages/contracts/theme-contract/package.json",
+      "package:npm:@mdwrk/ui-tokens:groupsum/markdown_workspace:packages/shared/ui-tokens/package.json",
+      "package:npm:markdown_workspace:groupsum/markdown_workspace:package.json",
+      "package:pypi:markdown-workspace:groupsum/markdown_workspace:pyproject.toml"
+    ],
+    "pushed_at": "2026-06-09T05:49:44Z",
+    "related_resources": [
+      {
+        "evidence_type": "repository.tree",
+        "id": "resource:c260fb0d1502",
+        "kind": "demo",
+        "name": "apps/client/src/demos/EditInRendererPackageDemo.tsx",
+        "url": "https://github.com/groupsum/markdown_workspace/blob/master/apps/client/src/demos/EditInRendererPackageDemo.tsx"
+      },
+      {
+        "evidence_type": "repository.tree",
+        "id": "resource:5d07c28eacf2",
+        "kind": "documentation",
+        "name": "apps/mdwrkcom/content/pages/docs/extensions.md",
+        "url": "https://github.com/groupsum/markdown_workspace/blob/master/apps/mdwrkcom/content/pages/docs/extensions.md"
+      },
+      {
+        "evidence_type": "repository.tree",
+        "id": "resource:075cf004b76c",
+        "kind": "documentation",
+        "name": "apps/mdwrkcom/content/pages/docs/quickstart.md",
+        "url": "https://github.com/groupsum/markdown_workspace/blob/master/apps/mdwrkcom/content/pages/docs/quickstart.md"
+      },
+      {
+        "evidence_type": "repository.tree",
+        "id": "resource:a10f57f53c1b",
+        "kind": "documentation",
+        "name": "apps/mdwrkcom/content/pages/docs/theme-packs.md",
+        "url": "https://github.com/groupsum/markdown_workspace/blob/master/apps/mdwrkcom/content/pages/docs/theme-packs.md"
+      },
+      {
+        "evidence_type": "repository.tree",
+        "id": "resource:99a35ead4e24",
+        "kind": "documentation",
+        "name": "apps/mdwrkcom/content/pages/es/docs/quickstart.md",
+        "url": "https://github.com/groupsum/markdown_workspace/blob/master/apps/mdwrkcom/content/pages/es/docs/quickstart.md"
+      },
+      {
+        "evidence_type": "repository.tree",
+        "id": "resource:3d233b7afe7b",
+        "kind": "documentation",
+        "name": "apps/mdwrkcom/data/markdown/docs/authoring",
+        "url": "https://github.com/groupsum/markdown_workspace/tree/master/apps/mdwrkcom/data/markdown/docs/authoring"
+      },
+      {
+        "evidence_type": "repository.tree",
+        "id": "resource:97035d9c1860",
+        "kind": "documentation",
+        "name": "apps/mdwrkcom/data/markdown/docs/comparisons",
+        "url": "https://github.com/groupsum/markdown_workspace/tree/master/apps/mdwrkcom/data/markdown/docs/comparisons"
+      },
+      {
+        "evidence_type": "repository.tree",
+        "id": "resource:1af492b3c6cb",
+        "kind": "documentation",
+        "name": "apps/mdwrkcom/data/markdown/docs/extensions",
+        "url": "https://github.com/groupsum/markdown_workspace/tree/master/apps/mdwrkcom/data/markdown/docs/extensions"
+      },
+      {
+        "evidence_type": "repository.tree",
+        "id": "resource:1323d18af845",
+        "kind": "documentation",
+        "name": "apps/mdwrkcom/data/markdown/docs/getting-started",
+        "url": "https://github.com/groupsum/markdown_workspace/tree/master/apps/mdwrkcom/data/markdown/docs/getting-started"
+      },
+      {
+        "evidence_type": "repository.tree",
+        "id": "resource:c9828e98762d",
+        "kind": "documentation",
+        "name": "apps/mdwrkcom/data/markdown/docs/github-sync.md",
+        "url": "https://github.com/groupsum/markdown_workspace/blob/master/apps/mdwrkcom/data/markdown/docs/github-sync.md"
+      },
+      {
+        "evidence_type": "repository.tree",
+        "id": "resource:3ea496c6400b",
+        "kind": "documentation",
+        "name": "apps/mdwrkcom/data/markdown/docs/product",
+        "url": "https://github.com/groupsum/markdown_workspace/tree/master/apps/mdwrkcom/data/markdown/docs/product"
+      },
+      {
+        "evidence_type": "repository.tree",
+        "id": "resource:f006a0d40651",
+        "kind": "documentation",
+        "name": "apps/mdwrkcom/data/markdown/docs/usage",
+        "url": "https://github.com/groupsum/markdown_workspace/tree/master/apps/mdwrkcom/data/markdown/docs/usage"
+      },
+      {
+        "evidence_type": "repository.tree",
+        "id": "resource:e9721061bd7d",
+        "kind": "documentation",
+        "name": "apps/mdwrkcom/dist-static/docs/archive",
+        "url": "https://github.com/groupsum/markdown_workspace/tree/master/apps/mdwrkcom/dist-static/docs/archive"
+      },
+      {
+        "evidence_type": "repository.tree",
+        "id": "resource:ff692a664cec",
+        "kind": "documentation",
+        "name": "apps/mdwrkcom/dist-static/docs/authoring",
+        "url": "https://github.com/groupsum/markdown_workspace/tree/master/apps/mdwrkcom/dist-static/docs/authoring"
+      },
+      {
+        "evidence_type": "repository.tree",
+        "id": "resource:b8ec426fc40a",
+        "kind": "documentation",
+        "name": "apps/mdwrkcom/dist-static/docs/extensions",
+        "url": "https://github.com/groupsum/markdown_workspace/tree/master/apps/mdwrkcom/dist-static/docs/extensions"
+      },
+      {
+        "evidence_type": "repository.tree",
+        "id": "resource:45615a7aa59c",
+        "kind": "documentation",
+        "name": "apps/mdwrkcom/dist-static/docs/getting-started",
+        "url": "https://github.com/groupsum/markdown_workspace/tree/master/apps/mdwrkcom/dist-static/docs/getting-started"
+      },
+      {
+        "evidence_type": "repository.tree",
+        "id": "resource:bac4e9faa9e9",
+        "kind": "documentation",
+        "name": "apps/mdwrkcom/dist-static/docs/github-sync",
+        "url": "https://github.com/groupsum/markdown_workspace/tree/master/apps/mdwrkcom/dist-static/docs/github-sync"
+      },
+      {
+        "evidence_type": "repository.tree",
+        "id": "resource:dd12feca80ae",
+        "kind": "documentation",
+        "name": "apps/mdwrkcom/dist-static/docs/index.html",
+        "url": "https://github.com/groupsum/markdown_workspace/blob/master/apps/mdwrkcom/dist-static/docs/index.html"
+      },
+      {
+        "evidence_type": "repository.tree",
+        "id": "resource:95dcd07babee",
+        "kind": "documentation",
+        "name": "apps/mdwrkcom/dist-static/docs/index.md",
+        "url": "https://github.com/groupsum/markdown_workspace/blob/master/apps/mdwrkcom/dist-static/docs/index.md"
+      },
+      {
+        "evidence_type": "repository.tree",
+        "id": "resource:0bcd64c946aa",
+        "kind": "documentation",
+        "name": "apps/mdwrkcom/dist-static/docs/quickstart",
+        "url": "https://github.com/groupsum/markdown_workspace/tree/master/apps/mdwrkcom/dist-static/docs/quickstart"
+      },
+      {
+        "evidence_type": "repository.tree",
+        "id": "resource:5a167ed6ea33",
+        "kind": "documentation",
+        "name": "apps/mdwrkcom/dist-static/docs/theme-packs",
+        "url": "https://github.com/groupsum/markdown_workspace/tree/master/apps/mdwrkcom/dist-static/docs/theme-packs"
+      },
+      {
+        "evidence_type": "repository.tree",
+        "id": "resource:f07011b04668",
+        "kind": "documentation",
+        "name": "apps/mdwrkcom/dist-static/es/docs/quickstart",
+        "url": "https://github.com/groupsum/markdown_workspace/tree/master/apps/mdwrkcom/dist-static/es/docs/quickstart"
+      },
+      {
+        "evidence_type": "repository.tree",
+        "id": "resource:ee548cba0a42",
+        "kind": "documentation",
+        "name": "docs/AGENTS.md",
+        "url": "https://github.com/groupsum/markdown_workspace/blob/master/docs/AGENTS.md"
+      },
+      {
+        "evidence_type": "repository.tree",
+        "id": "resource:cf01c41d7306",
+        "kind": "documentation",
+        "name": "docs/README.md",
+        "url": "https://github.com/groupsum/markdown_workspace/blob/master/docs/README.md"
+      },
+      {
+        "evidence_type": "repository.tree",
+        "id": "resource:cb2209d3e453",
+        "kind": "documentation",
+        "name": "docs/adr",
+        "url": "https://github.com/groupsum/markdown_workspace/tree/master/docs/adr"
+      },
+      {
+        "evidence_type": "repository.tree",
+        "id": "resource:181ac764965e",
+        "kind": "documentation",
+        "name": "docs/apps",
+        "url": "https://github.com/groupsum/markdown_workspace/tree/master/docs/apps"
+      },
+      {
+        "evidence_type": "repository.tree",
+        "id": "resource:4d77c04254b9",
+        "kind": "documentation",
+        "name": "docs/architecture",
+        "url": "https://github.com/groupsum/markdown_workspace/tree/master/docs/architecture"
+      },
+      {
+        "evidence_type": "repository.tree",
+        "id": "resource:2407f31e4f7b",
+        "kind": "documentation",
+        "name": "docs/client-version-delivery.md",
+        "url": "https://github.com/groupsum/markdown_workspace/blob/master/docs/client-version-delivery.md"
+      },
+      {
+        "evidence_type": "repository.tree",
+        "id": "resource:cfc7479a9819",
+        "kind": "documentation",
+        "name": "docs/conformance",
+        "url": "https://github.com/groupsum/markdown_workspace/tree/master/docs/conformance"
+      },
+      {
+        "evidence_type": "repository.tree",
+        "id": "resource:efc70e8500dd",
+        "kind": "documentation",
+        "name": "docs/current-state",
+        "url": "https://github.com/groupsum/markdown_workspace/tree/master/docs/current-state"
+      },
+      {
+        "evidence_type": "repository.tree",
+        "id": "resource:49a0da968e63",
+        "kind": "documentation",
+        "name": "docs/examples",
+        "url": "https://github.com/groupsum/markdown_workspace/tree/master/docs/examples"
+      },
+      {
+        "evidence_type": "repository.tree",
+        "id": "resource:b2d3da4a0e22",
+        "kind": "documentation",
+        "name": "docs/operations",
+        "url": "https://github.com/groupsum/markdown_workspace/tree/master/docs/operations"
+      },
+      {
+        "evidence_type": "repository.tree",
+        "id": "resource:d272d779c913",
+        "kind": "documentation",
+        "name": "docs/reference",
+        "url": "https://github.com/groupsum/markdown_workspace/tree/master/docs/reference"
+      },
+      {
+        "evidence_type": "repository.tree",
+        "id": "resource:dc407c4caa83",
+        "kind": "documentation",
+        "name": "tools/docs/generate-readmes.mjs",
+        "url": "https://github.com/groupsum/markdown_workspace/blob/master/tools/docs/generate-readmes.mjs"
+      },
+      {
+        "evidence_type": "repository.tree",
+        "id": "resource:8bc2edde3853",
+        "kind": "example",
+        "name": "apps/mdwrkcom/dist-static/markdown/local-first-markdown-workspace/examples/index.html",
+        "url": "https://github.com/groupsum/markdown_workspace/blob/master/apps/mdwrkcom/dist-static/markdown/local-first-markdown-workspace/examples/index.html"
+      },
+      {
+        "evidence_type": "repository.tree",
+        "id": "resource:efe3ecb39684",
+        "kind": "example",
+        "name": "apps/mdwrkcom/dist-static/markdown/local-first-markdown-workspace/examples/index.md",
+        "url": "https://github.com/groupsum/markdown_workspace/blob/master/apps/mdwrkcom/dist-static/markdown/local-first-markdown-workspace/examples/index.md"
+      },
+      {
+        "evidence_type": "repository.tree",
+        "id": "resource:e2618ebd6fef",
+        "kind": "example",
+        "name": "apps/mdwrkcom/dist-static/markdown/markdown-blogging/examples/index.html",
+        "url": "https://github.com/groupsum/markdown_workspace/blob/master/apps/mdwrkcom/dist-static/markdown/markdown-blogging/examples/index.html"
+      },
+      {
+        "evidence_type": "repository.tree",
+        "id": "resource:e763041626c4",
+        "kind": "example",
+        "name": "apps/mdwrkcom/dist-static/markdown/markdown-blogging/examples/index.md",
+        "url": "https://github.com/groupsum/markdown_workspace/blob/master/apps/mdwrkcom/dist-static/markdown/markdown-blogging/examples/index.md"
+      },
+      {
+        "evidence_type": "repository.tree",
+        "id": "resource:da9f64b52c8d",
+        "kind": "example",
+        "name": "apps/mdwrkcom/dist-static/markdown/markdown-documentation/examples/index.html",
+        "url": "https://github.com/groupsum/markdown_workspace/blob/master/apps/mdwrkcom/dist-static/markdown/markdown-documentation/examples/index.html"
+      },
+      {
+        "evidence_type": "repository.tree",
+        "id": "resource:cb1f0098a67a",
+        "kind": "example",
+        "name": "apps/mdwrkcom/dist-static/markdown/markdown-documentation/examples/index.md",
+        "url": "https://github.com/groupsum/markdown_workspace/blob/master/apps/mdwrkcom/dist-static/markdown/markdown-documentation/examples/index.md"
+      },
+      {
+        "evidence_type": "repository.tree",
+        "id": "resource:5ac6d6122a1d",
+        "kind": "example",
+        "name": "apps/mdwrkcom/dist-static/markdown/markdown-editor/examples/index.html",
+        "url": "https://github.com/groupsum/markdown_workspace/blob/master/apps/mdwrkcom/dist-static/markdown/markdown-editor/examples/index.html"
+      },
+      {
+        "evidence_type": "repository.tree",
+        "id": "resource:d6e47c41cb42",
+        "kind": "example",
+        "name": "apps/mdwrkcom/dist-static/markdown/markdown-editor/examples/index.md",
+        "url": "https://github.com/groupsum/markdown_workspace/blob/master/apps/mdwrkcom/dist-static/markdown/markdown-editor/examples/index.md"
+      },
+      {
+        "evidence_type": "repository.tree",
+        "id": "resource:30585aa363d4",
+        "kind": "example",
+        "name": "apps/mdwrkcom/dist-static/markdown/markdown-extension-workflows/examples/index.html",
+        "url": "https://github.com/groupsum/markdown_workspace/blob/master/apps/mdwrkcom/dist-static/markdown/markdown-extension-workflows/examples/index.html"
+      },
+      {
+        "evidence_type": "repository.tree",
+        "id": "resource:7f0e43d241a7",
+        "kind": "example",
+        "name": "apps/mdwrkcom/dist-static/markdown/markdown-extension-workflows/examples/index.md",
+        "url": "https://github.com/groupsum/markdown_workspace/blob/master/apps/mdwrkcom/dist-static/markdown/markdown-extension-workflows/examples/index.md"
+      },
+      {
+        "evidence_type": "repository.tree",
+        "id": "resource:d5c727f7a26b",
+        "kind": "example",
+        "name": "apps/mdwrkcom/dist-static/markdown/markdown-for-developers/examples/index.html",
+        "url": "https://github.com/groupsum/markdown_workspace/blob/master/apps/mdwrkcom/dist-static/markdown/markdown-for-developers/examples/index.html"
+      },
+      {
+        "evidence_type": "repository.tree",
+        "id": "resource:61feeba442b6",
+        "kind": "example",
+        "name": "apps/mdwrkcom/dist-static/markdown/markdown-for-developers/examples/index.md",
+        "url": "https://github.com/groupsum/markdown_workspace/blob/master/apps/mdwrkcom/dist-static/markdown/markdown-for-developers/examples/index.md"
+      },
+      {
+        "evidence_type": "repository.tree",
+        "id": "resource:6812a38ff072",
+        "kind": "example",
+        "name": "apps/mdwrkcom/dist-static/markdown/markdown-for-teams/examples/index.html",
+        "url": "https://github.com/groupsum/markdown_workspace/blob/master/apps/mdwrkcom/dist-static/markdown/markdown-for-teams/examples/index.html"
+      },
+      {
+        "evidence_type": "repository.tree",
+        "id": "resource:802df952e938",
+        "kind": "example",
+        "name": "apps/mdwrkcom/dist-static/markdown/markdown-for-teams/examples/index.md",
+        "url": "https://github.com/groupsum/markdown_workspace/blob/master/apps/mdwrkcom/dist-static/markdown/markdown-for-teams/examples/index.md"
+      },
+      {
+        "evidence_type": "repository.tree",
+        "id": "resource:3463010b82ed",
+        "kind": "example",
+        "name": "apps/mdwrkcom/dist-static/markdown/markdown-knowledge-base/examples/index.html",
+        "url": "https://github.com/groupsum/markdown_workspace/blob/master/apps/mdwrkcom/dist-static/markdown/markdown-knowledge-base/examples/index.html"
+      },
+      {
+        "evidence_type": "repository.tree",
+        "id": "resource:494ceecf05fe",
+        "kind": "example",
+        "name": "apps/mdwrkcom/dist-static/markdown/markdown-knowledge-base/examples/index.md",
+        "url": "https://github.com/groupsum/markdown_workspace/blob/master/apps/mdwrkcom/dist-static/markdown/markdown-knowledge-base/examples/index.md"
+      },
+      {
+        "evidence_type": "repository.tree",
+        "id": "resource:bfbc60d73ee8",
+        "kind": "example",
+        "name": "apps/mdwrkcom/dist-static/markdown/markdown-notes/examples/index.html",
+        "url": "https://github.com/groupsum/markdown_workspace/blob/master/apps/mdwrkcom/dist-static/markdown/markdown-notes/examples/index.html"
+      },
+      {
+        "evidence_type": "repository.tree",
+        "id": "resource:3f4115f7bf6f",
+        "kind": "example",
+        "name": "apps/mdwrkcom/dist-static/markdown/markdown-notes/examples/index.md",
+        "url": "https://github.com/groupsum/markdown_workspace/blob/master/apps/mdwrkcom/dist-static/markdown/markdown-notes/examples/index.md"
+      },
+      {
+        "evidence_type": "repository.tree",
+        "id": "resource:6f5b918cd6f7",
+        "kind": "example",
+        "name": "apps/mdwrkcom/dist-static/markdown/markdown-preview/examples/index.html",
+        "url": "https://github.com/groupsum/markdown_workspace/blob/master/apps/mdwrkcom/dist-static/markdown/markdown-preview/examples/index.html"
+      },
+      {
+        "evidence_type": "repository.tree",
+        "id": "resource:0c20cd255cbc",
+        "kind": "example",
+        "name": "apps/mdwrkcom/dist-static/markdown/markdown-preview/examples/index.md",
+        "url": "https://github.com/groupsum/markdown_workspace/blob/master/apps/mdwrkcom/dist-static/markdown/markdown-preview/examples/index.md"
+      },
+      {
+        "evidence_type": "repository.tree",
+        "id": "resource:ac1f168b980e",
+        "kind": "example",
+        "name": "apps/mdwrkcom/dist-static/markdown/markdown-project-docs/examples/index.html",
+        "url": "https://github.com/groupsum/markdown_workspace/blob/master/apps/mdwrkcom/dist-static/markdown/markdown-project-docs/examples/index.html"
+      },
+      {
+        "evidence_type": "repository.tree",
+        "id": "resource:07c1ee94153e",
+        "kind": "example",
+        "name": "apps/mdwrkcom/dist-static/markdown/markdown-project-docs/examples/index.md",
+        "url": "https://github.com/groupsum/markdown_workspace/blob/master/apps/mdwrkcom/dist-static/markdown/markdown-project-docs/examples/index.md"
+      },
+      {
+        "evidence_type": "repository.tree",
+        "id": "resource:95e3b8e6f31e",
+        "kind": "example",
+        "name": "apps/mdwrkcom/dist-static/markdown/markdown-readme/examples/index.html",
+        "url": "https://github.com/groupsum/markdown_workspace/blob/master/apps/mdwrkcom/dist-static/markdown/markdown-readme/examples/index.html"
+      },
+      {
+        "evidence_type": "repository.tree",
+        "id": "resource:07c009572613",
+        "kind": "example",
+        "name": "apps/mdwrkcom/dist-static/markdown/markdown-readme/examples/index.md",
+        "url": "https://github.com/groupsum/markdown_workspace/blob/master/apps/mdwrkcom/dist-static/markdown/markdown-readme/examples/index.md"
+      },
+      {
+        "evidence_type": "repository.tree",
+        "id": "resource:6d9f0b22c3f3",
+        "kind": "example",
+        "name": "apps/mdwrkcom/dist-static/markdown/markdown-theme-packs/examples/index.html",
+        "url": "https://github.com/groupsum/markdown_workspace/blob/master/apps/mdwrkcom/dist-static/markdown/markdown-theme-packs/examples/index.html"
+      },
+      {
+        "evidence_type": "repository.tree",
+        "id": "resource:f66fda42a2ad",
+        "kind": "example",
+        "name": "apps/mdwrkcom/dist-static/markdown/markdown-theme-packs/examples/index.md",
+        "url": "https://github.com/groupsum/markdown_workspace/blob/master/apps/mdwrkcom/dist-static/markdown/markdown-theme-packs/examples/index.md"
+      },
+      {
+        "evidence_type": "repository.tree",
+        "id": "resource:4e58b80d49e9",
+        "kind": "example",
+        "name": "apps/mdwrkcom/dist-static/markdown/markdown-writing-workflow/examples/index.html",
+        "url": "https://github.com/groupsum/markdown_workspace/blob/master/apps/mdwrkcom/dist-static/markdown/markdown-writing-workflow/examples/index.html"
+      },
+      {
+        "evidence_type": "repository.tree",
+        "id": "resource:8565745ab1c4",
+        "kind": "example",
+        "name": "apps/mdwrkcom/dist-static/markdown/markdown-writing-workflow/examples/index.md",
+        "url": "https://github.com/groupsum/markdown_workspace/blob/master/apps/mdwrkcom/dist-static/markdown/markdown-writing-workflow/examples/index.md"
+      },
+      {
+        "evidence_type": "repository.tree",
+        "id": "resource:4b9f2a4a7341",
+        "kind": "example",
+        "name": "apps/mdwrkcom/dist-static/markdown/offline-markdown-editor/examples/index.html",
+        "url": "https://github.com/groupsum/markdown_workspace/blob/master/apps/mdwrkcom/dist-static/markdown/offline-markdown-editor/examples/index.html"
+      },
+      {
+        "evidence_type": "repository.tree",
+        "id": "resource:743794e15801",
+        "kind": "example",
+        "name": "apps/mdwrkcom/dist-static/markdown/offline-markdown-editor/examples/index.md",
+        "url": "https://github.com/groupsum/markdown_workspace/blob/master/apps/mdwrkcom/dist-static/markdown/offline-markdown-editor/examples/index.md"
+      },
+      {
+        "evidence_type": "repository.tree",
+        "id": "resource:9ff6eee78293",
+        "kind": "example",
+        "name": "examples/README.md",
+        "url": "https://github.com/groupsum/markdown_workspace/blob/master/examples/README.md"
+      },
+      {
+        "evidence_type": "repository.tree",
+        "id": "resource:e956643c4a8b",
+        "kind": "example",
+        "name": "examples/editor-basic",
+        "url": "https://github.com/groupsum/markdown_workspace/tree/master/examples/editor-basic"
+      },
+      {
+        "evidence_type": "repository.tree",
+        "id": "resource:22131b2efd12",
+        "kind": "example",
+        "name": "examples/page-template-demo",
+        "url": "https://github.com/groupsum/markdown_workspace/tree/master/examples/page-template-demo"
+      },
+      {
+        "evidence_type": "repository.tree",
+        "id": "resource:3520e6d380c0",
+        "kind": "example",
+        "name": "examples/renderer-basic",
+        "url": "https://github.com/groupsum/markdown_workspace/tree/master/examples/renderer-basic"
+      },
+      {
+        "evidence_type": "repository.tree",
+        "id": "resource:fd7bca261eb2",
+        "kind": "example",
+        "name": "packages/lander/lander-page-templates/src/examples/education.ts",
+        "url": "https://github.com/groupsum/markdown_workspace/blob/master/packages/lander/lander-page-templates/src/examples/education.ts"
+      },
+      {
+        "evidence_type": "repository.tree",
+        "id": "resource:32a0f12201f3",
+        "kind": "example",
+        "name": "packages/lander/lander-page-templates/src/examples/generic.ts",
+        "url": "https://github.com/groupsum/markdown_workspace/blob/master/packages/lander/lander-page-templates/src/examples/generic.ts"
+      },
+      {
+        "evidence_type": "repository.tree",
+        "id": "resource:4e39076eef93",
+        "kind": "example",
+        "name": "packages/lander/lander-page-templates/src/examples/product.ts",
+        "url": "https://github.com/groupsum/markdown_workspace/blob/master/packages/lander/lander-page-templates/src/examples/product.ts"
+      },
+      {
+        "evidence_type": "repository.tree",
+        "id": "resource:78773cf114df",
+        "kind": "example",
+        "name": "packages/lander/lander-page-templates/src/examples/support.ts",
+        "url": "https://github.com/groupsum/markdown_workspace/blob/master/packages/lander/lander-page-templates/src/examples/support.ts"
+      },
+      {
+        "evidence_type": "repository.tree",
+        "id": "resource:b515ec88d8bf",
+        "kind": "ui",
+        "name": "apps/client/components/UI/StatusLed.tsx",
+        "url": "https://github.com/groupsum/markdown_workspace/blob/master/apps/client/components/UI/StatusLed.tsx"
+      },
+      {
+        "evidence_type": "repository.tree",
+        "id": "resource:d2ecc449a0be",
+        "kind": "ui",
+        "name": "apps/client/components/UI/Toast.tsx",
+        "url": "https://github.com/groupsum/markdown_workspace/blob/master/apps/client/components/UI/Toast.tsx"
+      },
+      {
+        "evidence_type": "repository.tree",
+        "id": "resource:d9b799c93ece",
+        "kind": "ui",
+        "name": "apps/client/components/UI/ZoomControl.tsx",
+        "url": "https://github.com/groupsum/markdown_workspace/blob/master/apps/client/components/UI/ZoomControl.tsx"
+      },
+      {
+        "evidence_type": "repository.homepage",
+        "id": "resource:74ceea422416",
+        "kind": "website",
+        "name": "markdown_workspace",
+        "url": "https://mdwrk.com"
+      }
+    ],
+    "relationship_counts": {
+      "repository_contains_package": 38,
+      "repository_contains_related_resource": 76
+    },
+    "reviewed": false,
+    "route": "/catalog/repositories/groupsum/markdown_workspace",
+    "technologies": [
+      "CSS",
+      "Dockerfile",
+      "HTML",
+      "JavaScript",
+      "Python",
+      "Shell",
+      "TypeScript",
+      "XSLT"
+    ],
+    "template": false,
+    "topics": [
+      "developer-tools",
+      "documentation",
+      "electron",
+      "extensions",
+      "local-first",
+      "markdown",
+      "markdown-editor",
+      "mdwrk",
+      "pwa",
+      "workspace"
+    ],
+    "updated_at": "2026-06-09T05:49:47Z",
+    "url": "https://github.com/groupsum/markdown_workspace",
+    "visibility": "public"
+  },
+  "schema_version": "1.0.0"
+}

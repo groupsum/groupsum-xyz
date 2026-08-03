@@ -7,6 +7,7 @@ import argparse
 import hashlib
 import json
 import re
+import shutil
 from collections import Counter, defaultdict
 from pathlib import Path
 from typing import Any
@@ -28,6 +29,15 @@ def slug(value: str) -> str:
 def observed_at(record: dict[str, Any], fallback: str) -> str:
     observations = record.get("observations") or []
     return next((item.get("observed_at") for item in observations if item.get("observed_at")), fallback)
+
+
+def related_resource_url(item: dict[str, Any]) -> str | None:
+    """Normalize legacy tree links for file-backed resources in cached observations."""
+    url = item.get("url")
+    resource_path = str(item.get("path") or "")
+    if url and resource_path and Path(resource_path).suffix and "/tree/" in url:
+        return str(url).replace("/tree/", "/blob/", 1)
+    return url
 
 
 def write_json(path: Path, value: Any) -> dict[str, Any]:
@@ -129,6 +139,14 @@ def compile_catalog(catalog: dict[str, Any], editorial: dict[str, Any]) -> dict[
         latest_release = next(iter(repo.get("github_releases") or []), None)
         latest_deployment = next(iter(repo.get("deployments") or []), None)
         latest_status = next(iter((latest_deployment or {}).get("statuses") or []), None)
+        related_resources = [
+            {
+                "id": f"resource:{stable_hash(f'{full_name}:{item.get("kind")}:{item.get("name")}')}",
+                "kind": item.get("kind"), "name": item.get("name"),
+                "url": related_resource_url(item), "evidence_type": item.get("evidence"),
+            }
+            for item in repo.get("related_resources") or []
+        ]
         description = override.get("description") or repo.get("description") or f"Public source repository {full_name}."
         record = {
             "id": repo_id,
@@ -167,9 +185,11 @@ def compile_catalog(catalog: dict[str, Any], editorial: dict[str, Any]) -> dict[
                 "environments": len(repo.get("environments") or []),
                 "packages": len(packages_by_repo.get(full_name, [])),
                 "relationships": sum(relationship_counts[full_name].values()),
+                "related_resources": len(related_resources),
             },
             "technologies": sorted(languages),
             "relationship_counts": dict(sorted(relationship_counts[full_name].items())),
+            "related_resources": related_resources,
             "package_ids": sorted(packages_by_repo.get(full_name, [])),
             "latest_commit": activity.get("latest_commit"),
             "latest_release": latest_release,
@@ -284,11 +304,33 @@ def typescript_summary(summary: dict[str, Any], datasets: dict[str, list[dict[st
     return "\n\n".join(lines) + "\n"
 
 
+def write_product_evidence(directory: Path, catalog: dict[str, Any], datasets: dict[str, list[dict[str, Any]]]) -> int:
+    """Emit small repository-scoped joins for product pages without loading the full package catalog."""
+    if directory.exists():
+        shutil.rmtree(directory)
+    repositories = {record["full_name"]: record for record in datasets["repositories"]}
+    packages_by_repository: dict[str, list[dict[str, Any]]] = defaultdict(list)
+    for package in datasets["packages"]:
+        if package.get("repository"):
+            packages_by_repository[str(package["repository"])].append(package)
+    for full_name, repository in repositories.items():
+        owner, name = full_name.split("/", 1)
+        bundle = {
+            "schema_version": "1.0.0",
+            "generated_at": catalog["generated_at"],
+            "repository": repository,
+            "packages": sorted(packages_by_repository.get(full_name, []), key=lambda item: (item.get("ecosystem", ""), item.get("name", ""))),
+        }
+        write_json(directory / owner / f"{name}.json", bundle)
+    return len(repositories)
+
+
 def main() -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("--catalog", type=Path, default=ROOT / "catalog" / "generated" / "catalog.json")
     parser.add_argument("--summary", type=Path, default=ROOT / "catalog" / "generated" / "summary.json")
     parser.add_argument("--site-dir", type=Path, default=ROOT / "catalog" / "generated" / "site")
+    parser.add_argument("--product-evidence-dir", type=Path, default=ROOT / "catalog" / "generated" / "product-evidence")
     parser.add_argument("--editorial", type=Path, default=ROOT / "catalog" / "content" / "editorial.json")
     parser.add_argument("--typescript", type=Path, default=ROOT / "src" / "data" / "catalog.generated.ts")
     args = parser.parse_args()
@@ -305,6 +347,7 @@ def main() -> int:
     files = []
     for name, records in datasets.items():
         files.append({"dataset": name, **write_json(args.site_dir / f"{name}.json", records)})
+    product_evidence_count = write_product_evidence(args.product_evidence_dir, catalog, datasets)
     manifest = {
         "schema_version": "1.0.0",
         "generated_at": catalog["generated_at"],
@@ -316,6 +359,7 @@ def main() -> int:
             "deployments": summary["deployments"],
             "relationships": summary["relationships"],
         },
+        "product_evidence": {"path": "/catalog/product-evidence/", "records": product_evidence_count},
         "completeness": catalog.get("completeness", {}),
     }
     write_json(args.site_dir / "manifest.json", manifest)

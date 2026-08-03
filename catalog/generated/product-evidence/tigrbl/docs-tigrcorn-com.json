@@ -1,0 +1,200 @@
+{
+  "generated_at": "2026-08-03T10:05:58Z",
+  "packages": [
+    {
+      "claim_boundary": "Publication is reported only when confirmed by the named public registry.",
+      "dependency_count": 0,
+      "description": "Observed npm package record for docs-tigrcorn-com.",
+      "description_source": "generated-factual",
+      "display_name": "docs-tigrcorn-com",
+      "downloads": null,
+      "downstream_completeness": "not-observed",
+      "downstream_count": 0,
+      "ecosystem": "npm",
+      "evidence": [
+        {
+          "kind": "source",
+          "observed_at": "2026-08-03T10:05:58Z",
+          "url": "https://github.com/tigrbl/docs-tigrcorn-com/blob/HEAD/package.json"
+        }
+      ],
+      "id": "package:npm:docs-tigrcorn-com:tigrbl/docs-tigrcorn-com:package.json",
+      "kind": "package",
+      "latest_version": "0.1.0",
+      "manifest_path": "package.json",
+      "name": "docs-tigrcorn-com",
+      "observed_at": "2026-08-03T10:05:58Z",
+      "owner": "tigrbl",
+      "private": true,
+      "publication_status": "manifest_private",
+      "published": false,
+      "registry_url": null,
+      "relationship_count": 1,
+      "relationship_counts": {
+        "repository_contains_package": 1
+      },
+      "release_count": 0,
+      "repository": "tigrbl/docs-tigrcorn-com",
+      "reviewed": false,
+      "route": "/catalog/packages/npm/docs-tigrcorn-com-f523de38",
+      "source_url": "https://github.com/tigrbl/docs-tigrcorn-com/blob/HEAD/package.json",
+      "version_declared": "0.1.0"
+    },
+    {
+      "claim_boundary": "Publication is reported only when confirmed by the named public registry.",
+      "dependency_count": 11,
+      "description": "Observed pypi package record for docs-tigrcorn-com.",
+      "description_source": "generated-factual",
+      "display_name": "docs-tigrcorn-com",
+      "downloads": null,
+      "downstream_completeness": "not-observed",
+      "downstream_count": 0,
+      "ecosystem": "pypi",
+      "evidence": [
+        {
+          "kind": "source",
+          "observed_at": "2026-08-03T10:05:58Z",
+          "url": "https://github.com/tigrbl/docs-tigrcorn-com/blob/HEAD/pyproject.toml"
+        }
+      ],
+      "id": "package:pypi:docs-tigrcorn-com:tigrbl/docs-tigrcorn-com:pyproject.toml",
+      "kind": "package",
+      "latest_version": "0.1.0",
+      "manifest_path": "pyproject.toml",
+      "name": "docs-tigrcorn-com",
+      "observed_at": "2026-08-03T10:05:58Z",
+      "owner": "tigrbl",
+      "private": false,
+      "publication_status": "not-confirmed",
+      "published": false,
+      "registry_url": null,
+      "relationship_count": 12,
+      "relationship_counts": {
+        "package_depends_on_external": 7,
+        "package_depends_on_package": 4,
+        "repository_contains_package": 1
+      },
+      "release_count": 0,
+      "repository": "tigrbl/docs-tigrcorn-com",
+      "reviewed": false,
+      "route": "/catalog/packages/pypi/docs-tigrcorn-com-4dd54142",
+      "source_url": "https://github.com/tigrbl/docs-tigrcorn-com/blob/HEAD/pyproject.toml",
+      "version_declared": "0.1.0"
+    }
+  ],
+  "repository": {
+    "archived": false,
+    "claim_boundary": "Repository, release, deployment, and live-service states are reported separately.",
+    "created_at": "2026-05-18T17:38:54Z",
+    "default_branch": "master",
+    "description": "ZDX and MkDocs Material documentation website for docs.tigrcorn.com.",
+    "description_source": "github-repository",
+    "display_name": "docs-tigrcorn-com",
+    "evidence": [
+      {
+        "kind": "source",
+        "observed_at": "2026-08-03T10:05:58Z",
+        "url": "https://github.com/tigrbl/docs-tigrcorn-com"
+      }
+    ],
+    "fork": false,
+    "full_name": "tigrbl/docs-tigrcorn-com",
+    "homepage": null,
+    "id": "repository:tigrbl/docs-tigrcorn-com",
+    "kind": "repository",
+    "latest_commit": {
+      "author": "cobycloud",
+      "authored_at": "2026-07-13T22:27:53Z",
+      "committed_at": "2026-07-13T22:27:53Z",
+      "committer": "cobycloud",
+      "message": "docs: add npmctl badge",
+      "sha": "08aecf63ee15236df9e02505eb047ddd8f144d35",
+      "url": "https://github.com/tigrbl/docs-tigrcorn-com/commit/08aecf63ee15236df9e02505eb047ddd8f144d35"
+    },
+    "latest_deployment": null,
+    "latest_release": null,
+    "license": null,
+    "metrics": {
+      "commits": 34,
+      "contributors": 1,
+      "deployments": 0,
+      "environments": 1,
+      "forks": 0,
+      "github_releases": 0,
+      "open_issues": 0,
+      "packages": 2,
+      "related_resources": 4,
+      "relationships": 6,
+      "size_kb": 130,
+      "stars": 0,
+      "watchers": 0
+    },
+    "name": "docs-tigrcorn-com",
+    "observed_at": "2026-08-03T10:05:58Z",
+    "owner": "tigrbl",
+    "package_ids": [
+      "package:npm:docs-tigrcorn-com:tigrbl/docs-tigrcorn-com:package.json",
+      "package:pypi:docs-tigrcorn-com:tigrbl/docs-tigrcorn-com:pyproject.toml"
+    ],
+    "pushed_at": "2026-07-13T22:29:03Z",
+    "related_resources": [
+      {
+        "evidence_type": "repository.tree",
+        "id": "resource:1e093bd21bbf",
+        "kind": "documentation",
+        "name": "docs/getting-started.md",
+        "url": "https://github.com/tigrbl/docs-tigrcorn-com/blob/master/docs/getting-started.md"
+      },
+      {
+        "evidence_type": "repository.tree",
+        "id": "resource:0ee0d56af56f",
+        "kind": "documentation",
+        "name": "docs/guides",
+        "url": "https://github.com/tigrbl/docs-tigrcorn-com/tree/master/docs/guides"
+      },
+      {
+        "evidence_type": "repository.tree",
+        "id": "resource:f7fc888ad5b2",
+        "kind": "documentation",
+        "name": "docs/index.md",
+        "url": "https://github.com/tigrbl/docs-tigrcorn-com/blob/master/docs/index.md"
+      },
+      {
+        "evidence_type": "repository.tree",
+        "id": "resource:6e233b851cdc",
+        "kind": "documentation",
+        "name": "docs/reference",
+        "url": "https://github.com/tigrbl/docs-tigrcorn-com/tree/master/docs/reference"
+      }
+    ],
+    "relationship_counts": {
+      "repository_contains_package": 2,
+      "repository_contains_related_resource": 4
+    },
+    "reviewed": false,
+    "route": "/catalog/repositories/tigrbl/docs-tigrcorn-com",
+    "technologies": [
+      "Dockerfile",
+      "JavaScript",
+      "Python"
+    ],
+    "template": false,
+    "topics": [
+      "docker",
+      "documentation",
+      "github-actions",
+      "mkdocs",
+      "mkdocs-material",
+      "namecheap",
+      "nginx-proxy-manager",
+      "npmctl",
+      "static-site",
+      "tigrcorn",
+      "zdx"
+    ],
+    "updated_at": "2026-07-13T22:29:07Z",
+    "url": "https://github.com/tigrbl/docs-tigrcorn-com",
+    "visibility": "public"
+  },
+  "schema_version": "1.0.0"
+}

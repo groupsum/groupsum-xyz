@@ -1,0 +1,116 @@
+{
+  "generated_at": "2026-08-03T10:05:58Z",
+  "packages": [
+    {
+      "claim_boundary": "Publication is reported only when confirmed by the named public registry.",
+      "dependency_count": 13,
+      "description": "Observed pypi package record for tigrbl_acme_ca.",
+      "description_source": "generated-factual",
+      "display_name": "tigrbl_acme_ca",
+      "downloads": null,
+      "downstream_completeness": "not-observed",
+      "downstream_count": 0,
+      "ecosystem": "pypi",
+      "evidence": [
+        {
+          "kind": "registry",
+          "observed_at": "2026-08-03T10:05:58Z",
+          "url": "https://pypi.org/project/tigrbl_acme_ca/"
+        }
+      ],
+      "id": "package:pypi:tigrbl_acme_ca:tigrbl/tigrbl_acme_ca:pyproject.toml",
+      "kind": "package",
+      "latest_version": "0.4.1",
+      "manifest_path": "pyproject.toml",
+      "name": "tigrbl_acme_ca",
+      "observed_at": "2026-08-03T10:05:58Z",
+      "owner": "tigrbl",
+      "private": false,
+      "publication_status": "published",
+      "published": true,
+      "registry_url": "https://pypi.org/project/tigrbl_acme_ca/",
+      "relationship_count": 14,
+      "relationship_counts": {
+        "package_depends_on_external": 12,
+        "package_depends_on_package": 1,
+        "repository_contains_package": 1
+      },
+      "release_count": 27,
+      "repository": "tigrbl/tigrbl_acme_ca",
+      "reviewed": false,
+      "route": "/catalog/packages/pypi/tigrbl-acme-ca-8e98a4fb",
+      "source_url": "https://github.com/tigrbl/tigrbl_acme_ca/blob/HEAD/pyproject.toml",
+      "version_declared": "0.1.1"
+    }
+  ],
+  "repository": {
+    "archived": false,
+    "claim_boundary": "Repository, release, deployment, and live-service states are reported separately.",
+    "created_at": "2026-05-20T02:21:26Z",
+    "default_branch": "master",
+    "description": "Standalone tigrbl_acme_ca package repository.",
+    "description_source": "github-repository",
+    "display_name": "tigrbl_acme_ca",
+    "evidence": [
+      {
+        "kind": "source",
+        "observed_at": "2026-08-03T10:05:58Z",
+        "url": "https://github.com/tigrbl/tigrbl_acme_ca"
+      }
+    ],
+    "fork": false,
+    "full_name": "tigrbl/tigrbl_acme_ca",
+    "homepage": null,
+    "id": "repository:tigrbl/tigrbl_acme_ca",
+    "kind": "repository",
+    "latest_commit": {
+      "author": "cobycloud",
+      "authored_at": "2026-05-20T02:21:00Z",
+      "committed_at": "2026-05-20T02:21:00Z",
+      "committer": "cobycloud",
+      "message": "Initial split package import",
+      "sha": "a288200375e9c18a60dae55903ef8d6ca0e56617",
+      "url": "https://github.com/tigrbl/tigrbl_acme_ca/commit/a288200375e9c18a60dae55903ef8d6ca0e56617"
+    },
+    "latest_deployment": null,
+    "latest_release": null,
+    "license": "Apache-2.0",
+    "metrics": {
+      "commits": 1,
+      "contributors": 1,
+      "deployments": 0,
+      "environments": 0,
+      "forks": 0,
+      "github_releases": 0,
+      "open_issues": 0,
+      "packages": 1,
+      "related_resources": 0,
+      "relationships": 1,
+      "size_kb": 43,
+      "stars": 0,
+      "watchers": 0
+    },
+    "name": "tigrbl_acme_ca",
+    "observed_at": "2026-08-03T10:05:58Z",
+    "owner": "tigrbl",
+    "package_ids": [
+      "package:pypi:tigrbl_acme_ca:tigrbl/tigrbl_acme_ca:pyproject.toml"
+    ],
+    "pushed_at": "2026-05-20T02:22:02Z",
+    "related_resources": [],
+    "relationship_counts": {
+      "repository_contains_package": 1
+    },
+    "reviewed": false,
+    "route": "/catalog/repositories/tigrbl/tigrbl_acme_ca",
+    "technologies": [
+      "Python"
+    ],
+    "template": false,
+    "topics": [],
+    "updated_at": "2026-06-06T01:01:14Z",
+    "url": "https://github.com/tigrbl/tigrbl_acme_ca",
+    "visibility": "public"
+  },
+  "schema_version": "1.0.0"
+}

@@ -7,8 +7,8 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ROOT / "scripts"))
 
-from catalog_collect import filter_repositories, manifest_package, parse_next_link  # noqa: E402
-from catalog_render import compile_catalog  # noqa: E402
+from catalog_collect import discover_related_resources, filter_repositories, manifest_package, parse_next_link  # noqa: E402
+from catalog_render import compile_catalog, related_resource_url  # noqa: E402
 from catalog_validate import validate  # noqa: E402
 
 
@@ -49,6 +49,24 @@ class CatalogCollectorTests(unittest.TestCase):
         filtered = filter_repositories(repositories, {"excluded_repository_names": [".github"]})
         self.assertEqual([item["full_name"] for item in filtered], ["groupsum/example-com"])
 
+    def test_related_resources_are_attached_to_the_repository(self):
+        resources = discover_related_resources(
+            self.repo,
+            ["examples/quickstart.py", "docs/openapi.yaml", "showcases/admin/index.tsx"],
+            {"examples", "docs", "showcases"},
+        )
+        self.assertEqual({item["kind"] for item in resources}, {"api", "documentation", "example", "showcase", "website"})
+
+    def test_cached_file_resource_links_are_normalized(self):
+        item = {
+            "path": "examples/quickstart.py",
+            "url": "https://github.com/groupsum/example-com/tree/master/examples/quickstart.py",
+        }
+        self.assertEqual(
+            related_resource_url(item),
+            "https://github.com/groupsum/example-com/blob/master/examples/quickstart.py",
+        )
+
     def test_minimal_catalog_validation(self):
         now = dt.datetime.now(dt.timezone.utc).replace(microsecond=0).isoformat().replace("+00:00", "Z")
         catalog = {
@@ -73,7 +91,7 @@ class CatalogCollectorTests(unittest.TestCase):
                 "full_name": "groupsum/example", "name": "example", "owner": "groupsum", "url": "https://github.com/groupsum/example",
                 "description": "Example repository", "visibility": "public", "metrics": {"stars": 2},
                 "activity": {"commit_count": 3, "contributor_count": 1, "contributors": [{"login": "dev"}]},
-                "technologies": {"languages_bytes": {"Python": 100}}, "github_releases": [], "deployments": [], "environments": [],
+                "technologies": {"languages_bytes": {"Python": 100}}, "github_releases": [], "deployments": [], "environments": [], "related_resources": [],
                 "observations": [{"observed_at": now}],
             }],
             "packages": [{

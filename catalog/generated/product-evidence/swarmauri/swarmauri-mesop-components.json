@@ -1,0 +1,81 @@
+{
+  "generated_at": "2026-08-03T10:05:58Z",
+  "packages": [],
+  "repository": {
+    "archived": false,
+    "claim_boundary": "Repository, release, deployment, and live-service states are reported separately.",
+    "created_at": "2024-09-05T04:32:25Z",
+    "default_branch": "master",
+    "description": "Swarmauri custom mesop components",
+    "description_source": "github-repository",
+    "display_name": "swarmauri-mesop-components",
+    "evidence": [
+      {
+        "kind": "source",
+        "observed_at": "2026-08-03T10:05:58Z",
+        "url": "https://github.com/swarmauri/swarmauri-mesop-components"
+      }
+    ],
+    "fork": false,
+    "full_name": "swarmauri/swarmauri-mesop-components",
+    "homepage": "https://swarmauri.com",
+    "id": "repository:swarmauri/swarmauri-mesop-components",
+    "kind": "repository",
+    "latest_commit": {
+      "author": "cobycloud",
+      "authored_at": "2024-09-07T15:34:02Z",
+      "committed_at": "2024-09-07T15:34:02Z",
+      "committer": "web-flow",
+      "message": "Merge pull request #3 from sanidhyy/master",
+      "sha": "ec8103955113c4e945fbdbcfa46923f6e7f2bd01",
+      "url": "https://github.com/swarmauri/swarmauri-mesop-components/commit/ec8103955113c4e945fbdbcfa46923f6e7f2bd01"
+    },
+    "latest_deployment": null,
+    "latest_release": null,
+    "license": "Apache-2.0",
+    "metrics": {
+      "commits": 11,
+      "contributors": 2,
+      "deployments": 0,
+      "environments": 0,
+      "forks": 1,
+      "github_releases": 0,
+      "open_issues": 0,
+      "packages": 0,
+      "related_resources": 1,
+      "relationships": 1,
+      "size_kb": 17,
+      "stars": 3,
+      "watchers": 0
+    },
+    "name": "swarmauri-mesop-components",
+    "observed_at": "2026-08-03T10:05:58Z",
+    "owner": "swarmauri",
+    "package_ids": [],
+    "pushed_at": "2024-09-07T15:34:02Z",
+    "related_resources": [
+      {
+        "evidence_type": "repository.homepage",
+        "id": "resource:b59bf4469af7",
+        "kind": "website",
+        "name": "swarmauri-mesop-components",
+        "url": "https://swarmauri.com"
+      }
+    ],
+    "relationship_counts": {
+      "repository_contains_related_resource": 1
+    },
+    "reviewed": false,
+    "route": "/catalog/repositories/swarmauri/swarmauri-mesop-components",
+    "technologies": [
+      "JavaScript",
+      "Python"
+    ],
+    "template": false,
+    "topics": [],
+    "updated_at": "2024-11-18T13:40:38Z",
+    "url": "https://github.com/swarmauri/swarmauri-mesop-components",
+    "visibility": "public"
+  },
+  "schema_version": "1.0.0"
+}

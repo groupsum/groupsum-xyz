@@ -196,6 +196,51 @@ def filter_repositories(repositories: Iterable[dict[str, Any]], config: dict[str
     return result
 
 
+def discover_related_resources(
+    repo: dict[str, Any], paths: Iterable[str], markers: set[str], limit: int = 200
+) -> list[dict[str, Any]]:
+    """Find source-backed child resources without promoting them to standalone catalog entities."""
+    resources: dict[tuple[str, str], dict[str, Any]] = {}
+    homepage = str(repo.get("homepage") or "").strip()
+    if homepage:
+        resources[("website", homepage)] = {
+            "kind": "website", "name": repo["name"], "url": homepage,
+            "evidence": "repository.homepage",
+        }
+    kind_by_marker = {
+        "api": "api", "apis": "api", "demo": "demo", "demos": "demo",
+        "docs": "documentation", "example": "example", "examples": "example",
+        "showcase": "showcase", "showcases": "showcase", "ui": "ui", "uis": "ui",
+        "website": "website", "websites": "website",
+    }
+    for path in sorted(paths):
+        path_parts = list(Path(path).parts)
+        lower_parts = [part.lower() for part in path_parts]
+        filename = Path(path).name.lower()
+        if any(token in filename for token in ("openapi", "openrpc", "asyncapi")) or Path(path).suffix.lower() == ".proto":
+            resources[("api", path)] = {
+                "kind": "api", "name": path, "path": path,
+                "url": f"{repo['html_url']}/blob/{repo['default_branch']}/{path}",
+                "evidence": "repository.contract_file",
+            }
+        matching_indexes = [index for index, part in enumerate(lower_parts) if part in markers]
+        if not matching_indexes:
+            continue
+        index = matching_indexes[0]
+        marker = lower_parts[index]
+        root = "/".join(path_parts[: min(index + 2, len(path_parts))])
+        kind = kind_by_marker.get(marker, marker)
+        route_kind = "blob" if Path(root).suffix else "tree"
+        resources[(kind, root)] = {
+            "kind": kind, "name": root, "path": root,
+            "url": f"{repo['html_url']}/{route_kind}/{repo['default_branch']}/{root}",
+            "evidence": f"repository.{route_kind}",
+        }
+        if len(resources) >= limit:
+            break
+    return sorted(resources.values(), key=lambda item: (item["kind"], item["name"]))[:limit]
+
+
 def manifest_package(path: str, text: str, repo: dict[str, Any]) -> tuple[dict[str, Any] | None, list[dict[str, str]]]:
     dependencies: list[dict[str, str]] = []
     package: dict[str, Any] | None = None
@@ -400,6 +445,11 @@ def collect_repository(client: ApiClient, repo: dict[str, Any], config: dict[str
     manifest_paths = [path for path in all_paths if Path(path).name in manifest_names]
     manifest_limit = int(config.get("max_manifests_per_repository", 500))
     manifest_paths = manifest_paths[:manifest_limit]
+    resource_markers = {str(item).lower() for item in config.get("related_resource_path_markers", [])}
+    related_resources = discover_related_resources(
+        repo, all_paths, resource_markers,
+        int(config.get("max_related_resources_per_repository", 200)),
+    )
     manifests: list[dict[str, Any]] = []
     packages: list[dict[str, Any]] = []
     dependencies: list[dict[str, str]] = []
@@ -458,6 +508,7 @@ def collect_repository(client: ApiClient, repo: dict[str, Any], config: dict[str
         "manifests": manifests, "packages_discovered": packages, "dependencies_discovered": dependencies,
         "github_releases": github_releases, "ghcr_images_discovered": sorted(ghcr_images),
         "deployments": deployments, "environments": environments,
+        "related_resources": related_resources,
         "tree": {"truncated": bool((tree or {}).get("truncated")) if isinstance(tree, dict) else None, "blob_count": len(all_paths), "manifest_count": len(manifest_paths), "manifest_limit_reached": len([path for path in all_paths if Path(path).name in manifest_names]) > manifest_limit},
         "observations": [item.as_dict() for item in observations],
     }
@@ -561,6 +612,14 @@ def relation_rows(repositories: list[dict[str, Any]], packages: list[dict[str, A
             else:
                 key = ("package_depends_on_external", source, dependency["name"])
                 relations[key] = {"kind": key[0], "source": source, "target": dependency["name"], "requirement": dependency.get("requirement"), "evidence": "repository.manifest"}
+    for repo in repositories:
+        for resource in repo.get("related_resources", []):
+            target = f"{resource.get('kind')}:{resource.get('name')}"
+            key = ("repository_contains_related_resource", repo["full_name"], target)
+            relations[key] = {
+                "kind": key[0], "source": key[1], "target": key[2],
+                "url": resource.get("url"), "evidence": resource.get("evidence"),
+            }
     return sorted(relations.values(), key=lambda row: (row["kind"], row["source"], row["target"]))
 
 
@@ -674,6 +733,7 @@ def main() -> int:
             "packages": "manifest-discovered packages plus public GitHub packages returned by API",
             "registries": "direct PyPI, npm, crates.io, GitHub Releases, and GitHub Packages observations",
             "technologies": "GitHub language byte counts; no technology is inferred from marketing copy",
+            "related_resources": "repository homepages and source paths for APIs, demos, documentation, examples, showcases, UIs, and websites; reachability is not implied",
             "deployments": "GitHub deployment records attached to repositories; live health is not implied",
             "downstream": "crates.io reverse dependencies where available; GitHub code search disabled by default; npm and PyPI have no complete authoritative public dependents API",
         },

@@ -1,0 +1,181 @@
+{
+  "generated_at": "2026-08-03T10:05:58Z",
+  "packages": [
+    {
+      "claim_boundary": "Publication is reported only when confirmed by the named public registry.",
+      "dependency_count": 5,
+      "description": "Observed npm package record for gradio_aucplot.",
+      "description_source": "generated-factual",
+      "display_name": "gradio_aucplot",
+      "downloads": null,
+      "downstream_completeness": "not-observed",
+      "downstream_count": 0,
+      "ecosystem": "npm",
+      "evidence": [
+        {
+          "kind": "source",
+          "observed_at": "2026-08-03T10:05:58Z",
+          "url": "https://github.com/swarmauri/swarmauri-aucplot/blob/HEAD/aucplot/frontend/package.json"
+        }
+      ],
+      "id": "package:npm:gradio_aucplot:swarmauri/swarmauri-aucplot:aucplot/frontend/package.json",
+      "kind": "package",
+      "latest_version": "0.2.12",
+      "manifest_path": "aucplot/frontend/package.json",
+      "name": "gradio_aucplot",
+      "observed_at": "2026-08-03T10:05:58Z",
+      "owner": "swarmauri",
+      "private": false,
+      "publication_status": "not-confirmed",
+      "published": false,
+      "registry_url": null,
+      "relationship_count": 6,
+      "relationship_counts": {
+        "package_depends_on_external": 5,
+        "repository_contains_package": 1
+      },
+      "release_count": 0,
+      "repository": "swarmauri/swarmauri-aucplot",
+      "reviewed": false,
+      "route": "/catalog/packages/npm/gradio-aucplot-391bdaf6",
+      "source_url": "https://github.com/swarmauri/swarmauri-aucplot/blob/HEAD/aucplot/frontend/package.json",
+      "version_declared": "0.2.12"
+    },
+    {
+      "claim_boundary": "Publication is reported only when confirmed by the named public registry.",
+      "dependency_count": 6,
+      "description": "Observed pypi package record for gradio_aucplot.",
+      "description_source": "generated-factual",
+      "display_name": "gradio_aucplot",
+      "downloads": null,
+      "downstream_completeness": "not-observed",
+      "downstream_count": 0,
+      "ecosystem": "pypi",
+      "evidence": [
+        {
+          "kind": "source",
+          "observed_at": "2026-08-03T10:05:58Z",
+          "url": "https://github.com/swarmauri/swarmauri-aucplot/blob/HEAD/aucplot/pyproject.toml"
+        }
+      ],
+      "id": "package:pypi:gradio_aucplot:swarmauri/swarmauri-aucplot:aucplot/pyproject.toml",
+      "kind": "package",
+      "latest_version": "0.0.1",
+      "manifest_path": "aucplot/pyproject.toml",
+      "name": "gradio_aucplot",
+      "observed_at": "2026-08-03T10:05:58Z",
+      "owner": "swarmauri",
+      "private": false,
+      "publication_status": "not-confirmed",
+      "published": false,
+      "registry_url": null,
+      "relationship_count": 7,
+      "relationship_counts": {
+        "package_depends_on_external": 6,
+        "repository_contains_package": 1
+      },
+      "release_count": 0,
+      "repository": "swarmauri/swarmauri-aucplot",
+      "reviewed": false,
+      "route": "/catalog/packages/pypi/gradio-aucplot-1125be63",
+      "source_url": "https://github.com/swarmauri/swarmauri-aucplot/blob/HEAD/aucplot/pyproject.toml",
+      "version_declared": "0.0.1"
+    }
+  ],
+  "repository": {
+    "archived": false,
+    "claim_boundary": "Repository, release, deployment, and live-service states are reported separately.",
+    "created_at": "2024-09-01T19:04:32Z",
+    "default_branch": "master",
+    "description": "A Sveltejs based Swarmauri AUC (Area Under the Curve) Plot Component for Gradio applications.",
+    "description_source": "github-repository",
+    "display_name": "swarmauri-aucplot",
+    "evidence": [
+      {
+        "kind": "source",
+        "observed_at": "2026-08-03T10:05:58Z",
+        "url": "https://github.com/swarmauri/swarmauri-aucplot"
+      }
+    ],
+    "fork": false,
+    "full_name": "swarmauri/swarmauri-aucplot",
+    "homepage": null,
+    "id": "repository:swarmauri/swarmauri-aucplot",
+    "kind": "repository",
+    "latest_commit": {
+      "author": "cobycloud",
+      "authored_at": "2024-09-03T07:06:13Z",
+      "committed_at": "2024-09-03T07:06:13Z",
+      "committer": "web-flow",
+      "message": "Merge pull request #1 from sanidhyy/master",
+      "sha": "567e40ec4a0378b06c170b3493777089425193b1",
+      "url": "https://github.com/swarmauri/swarmauri-aucplot/commit/567e40ec4a0378b06c170b3493777089425193b1"
+    },
+    "latest_deployment": null,
+    "latest_release": null,
+    "license": "Apache-2.0",
+    "metrics": {
+      "commits": 4,
+      "contributors": 2,
+      "deployments": 0,
+      "environments": 0,
+      "forks": 0,
+      "github_releases": 0,
+      "open_issues": 1,
+      "packages": 2,
+      "related_resources": 3,
+      "relationships": 5,
+      "size_kb": 50,
+      "stars": 0,
+      "watchers": 0
+    },
+    "name": "swarmauri-aucplot",
+    "observed_at": "2026-08-03T10:05:58Z",
+    "owner": "swarmauri",
+    "package_ids": [
+      "package:npm:gradio_aucplot:swarmauri/swarmauri-aucplot:aucplot/frontend/package.json",
+      "package:pypi:gradio_aucplot:swarmauri/swarmauri-aucplot:aucplot/pyproject.toml"
+    ],
+    "pushed_at": "2024-09-03T07:06:13Z",
+    "related_resources": [
+      {
+        "evidence_type": "repository.tree",
+        "id": "resource:24ca3ebbc0c2",
+        "kind": "demo",
+        "name": "aucplot/demo/__init__.py",
+        "url": "https://github.com/swarmauri/swarmauri-aucplot/blob/master/aucplot/demo/__init__.py"
+      },
+      {
+        "evidence_type": "repository.tree",
+        "id": "resource:b0a1bce10479",
+        "kind": "demo",
+        "name": "aucplot/demo/app.py",
+        "url": "https://github.com/swarmauri/swarmauri-aucplot/blob/master/aucplot/demo/app.py"
+      },
+      {
+        "evidence_type": "repository.tree",
+        "id": "resource:fe14527473fc",
+        "kind": "demo",
+        "name": "aucplot/demo/requirements.txt",
+        "url": "https://github.com/swarmauri/swarmauri-aucplot/blob/master/aucplot/demo/requirements.txt"
+      }
+    ],
+    "relationship_counts": {
+      "repository_contains_package": 2,
+      "repository_contains_related_resource": 3
+    },
+    "reviewed": false,
+    "route": "/catalog/repositories/swarmauri/swarmauri-aucplot",
+    "technologies": [
+      "JavaScript",
+      "Python",
+      "Svelte"
+    ],
+    "template": false,
+    "topics": [],
+    "updated_at": "2024-09-03T07:06:17Z",
+    "url": "https://github.com/swarmauri/swarmauri-aucplot",
+    "visibility": "public"
+  },
+  "schema_version": "1.0.0"
+}

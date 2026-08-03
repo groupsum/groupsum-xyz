@@ -1,0 +1,220 @@
+{
+  "generated_at": "2026-08-03T10:05:58Z",
+  "packages": [
+    {
+      "claim_boundary": "Publication is reported only when confirmed by the named public registry.",
+      "dependency_count": 3,
+      "description": "Observed npm package record for @tigrbl/tigrbl-com-content-pack.",
+      "description_source": "generated-factual",
+      "display_name": "@tigrbl/tigrbl-com-content-pack",
+      "downloads": null,
+      "downstream_completeness": "not-observed",
+      "downstream_count": 0,
+      "ecosystem": "npm",
+      "evidence": [
+        {
+          "kind": "source",
+          "observed_at": "2026-08-03T10:05:58Z",
+          "url": "https://github.com/tigrbl/tigrbl-com/blob/HEAD/packages/site-content-pack/package.json"
+        }
+      ],
+      "id": "package:npm:@tigrbl/tigrbl-com-content-pack:tigrbl/tigrbl-com:packages/site-content-pack/package.json",
+      "kind": "package",
+      "latest_version": "0.1.0",
+      "manifest_path": "packages/site-content-pack/package.json",
+      "name": "@tigrbl/tigrbl-com-content-pack",
+      "observed_at": "2026-08-03T10:05:58Z",
+      "owner": "tigrbl",
+      "private": true,
+      "publication_status": "manifest_private",
+      "published": false,
+      "registry_url": null,
+      "relationship_count": 4,
+      "relationship_counts": {
+        "package_depends_on_external": 1,
+        "package_depends_on_package": 2,
+        "repository_contains_package": 1
+      },
+      "release_count": 0,
+      "repository": "tigrbl/tigrbl-com",
+      "reviewed": false,
+      "route": "/catalog/packages/npm/tigrbl-tigrbl-com-content-pack-fc859df9",
+      "source_url": "https://github.com/tigrbl/tigrbl-com/blob/HEAD/packages/site-content-pack/package.json",
+      "version_declared": "0.1.0"
+    },
+    {
+      "claim_boundary": "Publication is reported only when confirmed by the named public registry.",
+      "dependency_count": 10,
+      "description": "Observed npm package record for tigrbl-com.",
+      "description_source": "generated-factual",
+      "display_name": "tigrbl-com",
+      "downloads": null,
+      "downstream_completeness": "not-observed",
+      "downstream_count": 0,
+      "ecosystem": "npm",
+      "evidence": [
+        {
+          "kind": "source",
+          "observed_at": "2026-08-03T10:05:58Z",
+          "url": "https://github.com/tigrbl/tigrbl-com/blob/HEAD/package.json"
+        }
+      ],
+      "id": "package:npm:tigrbl-com:tigrbl/tigrbl-com:package.json",
+      "kind": "package",
+      "latest_version": "0.1.0",
+      "manifest_path": "package.json",
+      "name": "tigrbl-com",
+      "observed_at": "2026-08-03T10:05:58Z",
+      "owner": "tigrbl",
+      "private": true,
+      "publication_status": "manifest_private",
+      "published": false,
+      "registry_url": null,
+      "relationship_count": 11,
+      "relationship_counts": {
+        "package_depends_on_external": 7,
+        "package_depends_on_package": 3,
+        "repository_contains_package": 1
+      },
+      "release_count": 0,
+      "repository": "tigrbl/tigrbl-com",
+      "reviewed": false,
+      "route": "/catalog/packages/npm/tigrbl-com-be4b2a34",
+      "source_url": "https://github.com/tigrbl/tigrbl-com/blob/HEAD/package.json",
+      "version_declared": "0.1.0"
+    },
+    {
+      "claim_boundary": "Publication is reported only when confirmed by the named public registry.",
+      "dependency_count": 3,
+      "description": "Observed pypi package record for tigrbl-com.",
+      "description_source": "generated-factual",
+      "display_name": "tigrbl-com",
+      "downloads": null,
+      "downstream_completeness": "not-observed",
+      "downstream_count": 0,
+      "ecosystem": "pypi",
+      "evidence": [
+        {
+          "kind": "source",
+          "observed_at": "2026-08-03T10:05:58Z",
+          "url": "https://github.com/tigrbl/tigrbl-com/blob/HEAD/pyproject.toml"
+        }
+      ],
+      "id": "package:pypi:tigrbl-com:tigrbl/tigrbl-com:pyproject.toml",
+      "kind": "package",
+      "latest_version": "0.1.0",
+      "manifest_path": "pyproject.toml",
+      "name": "tigrbl-com",
+      "observed_at": "2026-08-03T10:05:58Z",
+      "owner": "tigrbl",
+      "private": false,
+      "publication_status": "not-confirmed",
+      "published": false,
+      "registry_url": null,
+      "relationship_count": 4,
+      "relationship_counts": {
+        "package_depends_on_package": 3,
+        "repository_contains_package": 1
+      },
+      "release_count": 0,
+      "repository": "tigrbl/tigrbl-com",
+      "reviewed": false,
+      "route": "/catalog/packages/pypi/tigrbl-com-ada06730",
+      "source_url": "https://github.com/tigrbl/tigrbl-com/blob/HEAD/pyproject.toml",
+      "version_declared": "0.1.0"
+    }
+  ],
+  "repository": {
+    "archived": false,
+    "claim_boundary": "Repository, release, deployment, and live-service states are reported separately.",
+    "created_at": "2026-05-18T17:38:43Z",
+    "default_branch": "master",
+    "description": "MdWrk lander website for tigrbl.com.",
+    "description_source": "github-repository",
+    "display_name": "tigrbl-com",
+    "evidence": [
+      {
+        "kind": "source",
+        "observed_at": "2026-08-03T10:05:58Z",
+        "url": "https://github.com/tigrbl/tigrbl-com"
+      }
+    ],
+    "fork": false,
+    "full_name": "tigrbl/tigrbl-com",
+    "homepage": null,
+    "id": "repository:tigrbl/tigrbl-com",
+    "kind": "repository",
+    "latest_commit": {
+      "author": "cobycloud",
+      "authored_at": "2026-07-25T17:59:37Z",
+      "committed_at": "2026-07-25T17:59:37Z",
+      "committer": "cobycloud",
+      "message": "Remove sealed Actions secret bridge",
+      "sha": "166dcf7359ca26ae21c46b6f92aa647459b5d7b4",
+      "url": "https://github.com/tigrbl/tigrbl-com/commit/166dcf7359ca26ae21c46b6f92aa647459b5d7b4"
+    },
+    "latest_deployment": {
+      "environment": "deployment",
+      "environment_url": "",
+      "log_url": "https://github.com/tigrbl/tigrbl-com/actions/runs/30168706423/job/89705990380",
+      "state": "success",
+      "updated_at": "2026-07-25T17:59:00Z"
+    },
+    "latest_release": null,
+    "license": null,
+    "metrics": {
+      "commits": 47,
+      "contributors": 1,
+      "deployments": 6,
+      "environments": 1,
+      "forks": 0,
+      "github_releases": 0,
+      "open_issues": 0,
+      "packages": 3,
+      "related_resources": 0,
+      "relationships": 3,
+      "size_kb": 2968,
+      "stars": 0,
+      "watchers": 0
+    },
+    "name": "tigrbl-com",
+    "observed_at": "2026-08-03T10:05:58Z",
+    "owner": "tigrbl",
+    "package_ids": [
+      "package:npm:@tigrbl/tigrbl-com-content-pack:tigrbl/tigrbl-com:packages/site-content-pack/package.json",
+      "package:npm:tigrbl-com:tigrbl/tigrbl-com:package.json",
+      "package:pypi:tigrbl-com:tigrbl/tigrbl-com:pyproject.toml"
+    ],
+    "pushed_at": "2026-07-25T17:59:36Z",
+    "related_resources": [],
+    "relationship_counts": {
+      "repository_contains_package": 3
+    },
+    "reviewed": false,
+    "route": "/catalog/repositories/tigrbl/tigrbl-com",
+    "technologies": [
+      "CSS",
+      "Dockerfile",
+      "HTML",
+      "JavaScript",
+      "Python",
+      "TypeScript"
+    ],
+    "template": false,
+    "topics": [
+      "docker",
+      "github-actions",
+      "lander",
+      "mdwrk",
+      "namecheap",
+      "nginx-proxy-manager",
+      "npmctl",
+      "static-site",
+      "tigrbl"
+    ],
+    "updated_at": "2026-07-25T17:59:42Z",
+    "url": "https://github.com/tigrbl/tigrbl-com",
+    "visibility": "public"
+  },
+  "schema_version": "1.0.0"
+}

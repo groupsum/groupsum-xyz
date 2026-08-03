@@ -1,0 +1,93 @@
+{
+  "generated_at": "2026-08-03T10:05:58Z",
+  "packages": [],
+  "repository": {
+    "archived": false,
+    "claim_boundary": "Repository, release, deployment, and live-service states are reported separately.",
+    "created_at": "2024-12-17T07:46:22Z",
+    "default_branch": "master",
+    "description": "A template repository for Swarmauri's Crouton.",
+    "description_source": "github-repository",
+    "display_name": "crouton-boilerplate",
+    "evidence": [
+      {
+        "kind": "source",
+        "observed_at": "2026-08-03T10:05:58Z",
+        "url": "https://github.com/swarmauri/crouton-boilerplate"
+      }
+    ],
+    "fork": false,
+    "full_name": "swarmauri/crouton-boilerplate",
+    "homepage": "https://swarmauri.com",
+    "id": "repository:swarmauri/crouton-boilerplate",
+    "kind": "repository",
+    "latest_commit": {
+      "author": "cobycloud",
+      "authored_at": "2024-12-17T08:00:37Z",
+      "committed_at": "2024-12-17T08:00:37Z",
+      "committer": "web-flow",
+      "message": "Update README.md",
+      "sha": "4c75982bfdf0ba9d477cc8f8d6a591b5e4393e9a",
+      "url": "https://github.com/swarmauri/crouton-boilerplate/commit/4c75982bfdf0ba9d477cc8f8d6a591b5e4393e9a"
+    },
+    "latest_deployment": null,
+    "latest_release": null,
+    "license": "MIT",
+    "metrics": {
+      "commits": 8,
+      "contributors": 1,
+      "deployments": 0,
+      "environments": 0,
+      "forks": 0,
+      "github_releases": 0,
+      "open_issues": 0,
+      "packages": 0,
+      "related_resources": 1,
+      "relationships": 1,
+      "size_kb": 10,
+      "stars": 1,
+      "watchers": 0
+    },
+    "name": "crouton-boilerplate",
+    "observed_at": "2026-08-03T10:05:58Z",
+    "owner": "swarmauri",
+    "package_ids": [],
+    "pushed_at": "2024-12-17T08:00:37Z",
+    "related_resources": [
+      {
+        "evidence_type": "repository.homepage",
+        "id": "resource:dd0075363b57",
+        "kind": "website",
+        "name": "crouton-boilerplate",
+        "url": "https://swarmauri.com"
+      }
+    ],
+    "relationship_counts": {
+      "repository_contains_related_resource": 1
+    },
+    "reviewed": false,
+    "route": "/catalog/repositories/swarmauri/crouton-boilerplate",
+    "technologies": [
+      "Python"
+    ],
+    "template": true,
+    "topics": [
+      "backend-api",
+      "crud",
+      "crud-application",
+      "crud-framework",
+      "fastapi-crud",
+      "pydantic",
+      "pydantic-v2",
+      "python",
+      "serivces",
+      "service-framework",
+      "swarmauri",
+      "uvicorn"
+    ],
+    "updated_at": "2024-12-17T08:07:04Z",
+    "url": "https://github.com/swarmauri/crouton-boilerplate",
+    "visibility": "public"
+  },
+  "schema_version": "1.0.0"
+}

@@ -24,6 +24,7 @@ def validate_site(site_dir: Path, typescript: Path) -> list[str]:
     if not manifest_path.exists():
         return ["missing display manifest.json"]
     manifest = load_json(manifest_path)
+    product_evidence_dir = site_dir.parent / "product-evidence"
     datasets = {item.get("dataset"): item for item in manifest.get("files", [])}
     missing = REQUIRED_DATASETS - datasets.keys()
     if missing:
@@ -37,6 +38,9 @@ def validate_site(site_dir: Path, typescript: Path) -> list[str]:
     for name in {"releases", "deployments", "relationships"}:
         if name not in manifest.get("source_counts", {}):
             errors.append(f"manifest missing aggregated source count: {name}")
+    evidence_files = list(product_evidence_dir.glob("*/*.json")) if product_evidence_dir.exists() else []
+    if len(evidence_files) != manifest.get("product_evidence", {}).get("records"):
+        errors.append("product evidence bundle count does not match manifest")
     all_routes: set[str] = set()
     for name, metadata in datasets.items():
         path = site_dir / metadata.get("path", "")
@@ -76,6 +80,13 @@ def validate_site(site_dir: Path, typescript: Path) -> list[str]:
                 errors.append(f"repository missing release/deployment aggregates: {identity}")
             if name == "repositories" and "relationship_counts" not in record:
                 errors.append(f"repository missing relationship aggregates: {identity}")
+            if name == "repositories" and "related_resources" not in record:
+                errors.append(f"repository missing related resources: {identity}")
+            if name == "repositories":
+                owner, repository_name = str(record.get("full_name") or "/").split("/", 1)
+                evidence_path = product_evidence_dir / owner / f"{repository_name}.json"
+                if not evidence_path.exists():
+                    errors.append(f"repository missing product evidence bundle: {identity}")
             if name == "packages" and record.get("published") is True and not record.get("registry_url") and record.get("ecosystem") not in {"ghcr", "github-npm"}:
                 errors.append(f"published package missing registry URL: {identity}")
             if name == "packages" and not {"release_count", "dependency_count", "downstream_count", "relationship_count", "relationship_counts"} <= record.keys():

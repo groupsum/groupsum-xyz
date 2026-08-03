@@ -1,0 +1,150 @@
+{
+  "generated_at": "2026-08-03T10:05:58Z",
+  "packages": [
+    {
+      "claim_boundary": "Publication is reported only when confirmed by the named public registry.",
+      "dependency_count": 5,
+      "description": "Observed pypi package record for web-app-analytics-governance-pack.",
+      "description_source": "generated-factual",
+      "display_name": "web-app-analytics-governance-pack",
+      "downloads": null,
+      "downstream_completeness": "not-observed",
+      "downstream_count": 0,
+      "ecosystem": "pypi",
+      "evidence": [
+        {
+          "kind": "registry",
+          "observed_at": "2026-08-03T10:05:58Z",
+          "url": "https://pypi.org/project/web-app-analytics-governance-pack/"
+        }
+      ],
+      "id": "package:pypi:web-app-analytics-governance-pack:groupsum/web-app-analytics-governance-pack:pyproject.toml",
+      "kind": "package",
+      "latest_version": "0.1.1.dev1",
+      "manifest_path": "pyproject.toml",
+      "name": "web-app-analytics-governance-pack",
+      "observed_at": "2026-08-03T10:05:58Z",
+      "owner": "groupsum",
+      "private": false,
+      "publication_status": "published",
+      "published": true,
+      "registry_url": "https://pypi.org/project/web-app-analytics-governance-pack/",
+      "relationship_count": 6,
+      "relationship_counts": {
+        "package_depends_on_external": 4,
+        "package_depends_on_package": 1,
+        "repository_contains_package": 1
+      },
+      "release_count": 1,
+      "repository": "groupsum/web-app-analytics-governance-pack",
+      "reviewed": false,
+      "route": "/catalog/packages/pypi/web-app-analytics-governance-pack-c80eb9a4",
+      "source_url": "https://github.com/groupsum/web-app-analytics-governance-pack/blob/HEAD/pyproject.toml",
+      "version_declared": "0.1.1.dev1"
+    }
+  ],
+  "repository": {
+    "archived": false,
+    "claim_boundary": "Repository, release, deployment, and live-service states are reported separately.",
+    "created_at": "2026-05-16T20:01:32Z",
+    "default_branch": "master",
+    "description": "Installable SSOT governance pack for web analytics, app analytics, product analytics, CDP event specs, and browser lifecycle collection.",
+    "description_source": "github-repository",
+    "display_name": "web-app-analytics-governance-pack",
+    "evidence": [
+      {
+        "kind": "source",
+        "observed_at": "2026-08-03T10:05:58Z",
+        "url": "https://github.com/groupsum/web-app-analytics-governance-pack"
+      }
+    ],
+    "fork": false,
+    "full_name": "groupsum/web-app-analytics-governance-pack",
+    "homepage": null,
+    "id": "repository:groupsum/web-app-analytics-governance-pack",
+    "kind": "repository",
+    "latest_commit": {
+      "author": "cobycloud",
+      "authored_at": "2026-05-18T09:39:09Z",
+      "committed_at": "2026-05-18T09:39:09Z",
+      "committer": "cobycloud",
+      "message": "Link README pack metadata repository",
+      "sha": "05fba28eb9f38e3c693f0f7c80ad1df5c236b34b",
+      "url": "https://github.com/groupsum/web-app-analytics-governance-pack/commit/05fba28eb9f38e3c693f0f7c80ad1df5c236b34b"
+    },
+    "latest_deployment": {
+      "environment": "pypi",
+      "environment_url": "",
+      "log_url": "https://github.com/groupsum/web-app-analytics-governance-pack/actions/runs/26024860140/job/76495564408",
+      "state": "success",
+      "updated_at": "2026-05-18T09:25:05Z"
+    },
+    "latest_release": {
+      "assets": [
+        {
+          "downloads": 0,
+          "name": "web_app_analytics_governance_pack-0.1.1.dev1-py3-none-any.whl",
+          "url": "https://github.com/groupsum/web-app-analytics-governance-pack/releases/download/v0.1.1.dev1/web_app_analytics_governance_pack-0.1.1.dev1-py3-none-any.whl"
+        },
+        {
+          "downloads": 0,
+          "name": "web_app_analytics_governance_pack-0.1.1.dev1.tar.gz",
+          "url": "https://github.com/groupsum/web-app-analytics-governance-pack/releases/download/v0.1.1.dev1/web_app_analytics_governance_pack-0.1.1.dev1.tar.gz"
+        }
+      ],
+      "draft": false,
+      "name": "v0.1.1.dev1",
+      "prerelease": false,
+      "published_at": "2026-05-18T09:24:59Z",
+      "tag": "v0.1.1.dev1",
+      "url": "https://github.com/groupsum/web-app-analytics-governance-pack/releases/tag/v0.1.1.dev1"
+    },
+    "license": "Apache-2.0",
+    "metrics": {
+      "commits": 19,
+      "contributors": 2,
+      "deployments": 1,
+      "environments": 1,
+      "forks": 0,
+      "github_releases": 1,
+      "open_issues": 0,
+      "packages": 1,
+      "related_resources": 1,
+      "relationships": 2,
+      "size_kb": 113,
+      "stars": 0,
+      "watchers": 0
+    },
+    "name": "web-app-analytics-governance-pack",
+    "observed_at": "2026-08-03T10:05:58Z",
+    "owner": "groupsum",
+    "package_ids": [
+      "package:pypi:web-app-analytics-governance-pack:groupsum/web-app-analytics-governance-pack:pyproject.toml"
+    ],
+    "pushed_at": "2026-05-18T09:39:43Z",
+    "related_resources": [
+      {
+        "evidence_type": "repository.tree",
+        "id": "resource:9c5e1e17ba04",
+        "kind": "documentation",
+        "name": "docs/governance",
+        "url": "https://github.com/groupsum/web-app-analytics-governance-pack/tree/master/docs/governance"
+      }
+    ],
+    "relationship_counts": {
+      "repository_contains_package": 1,
+      "repository_contains_related_resource": 1
+    },
+    "reviewed": false,
+    "route": "/catalog/repositories/groupsum/web-app-analytics-governance-pack",
+    "technologies": [
+      "Python"
+    ],
+    "template": false,
+    "topics": [],
+    "updated_at": "2026-05-18T10:27:22Z",
+    "url": "https://github.com/groupsum/web-app-analytics-governance-pack",
+    "visibility": "public"
+  },
+  "schema_version": "1.0.0"
+}

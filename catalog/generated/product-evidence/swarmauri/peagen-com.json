@@ -1,0 +1,214 @@
+{
+  "generated_at": "2026-08-03T10:05:58Z",
+  "packages": [
+    {
+      "claim_boundary": "Publication is reported only when confirmed by the named public registry.",
+      "dependency_count": 3,
+      "description": "Observed npm package record for @swarmauri/peagen-com-content-pack.",
+      "description_source": "generated-factual",
+      "display_name": "@swarmauri/peagen-com-content-pack",
+      "downloads": null,
+      "downstream_completeness": "not-observed",
+      "downstream_count": 0,
+      "ecosystem": "npm",
+      "evidence": [
+        {
+          "kind": "source",
+          "observed_at": "2026-08-03T10:05:58Z",
+          "url": "https://github.com/swarmauri/peagen-com/blob/HEAD/packages/site-content-pack/package.json"
+        }
+      ],
+      "id": "package:npm:@swarmauri/peagen-com-content-pack:swarmauri/peagen-com:packages/site-content-pack/package.json",
+      "kind": "package",
+      "latest_version": "0.1.0",
+      "manifest_path": "packages/site-content-pack/package.json",
+      "name": "@swarmauri/peagen-com-content-pack",
+      "observed_at": "2026-08-03T10:05:58Z",
+      "owner": "swarmauri",
+      "private": true,
+      "publication_status": "manifest_private",
+      "published": false,
+      "registry_url": null,
+      "relationship_count": 4,
+      "relationship_counts": {
+        "package_depends_on_external": 1,
+        "package_depends_on_package": 2,
+        "repository_contains_package": 1
+      },
+      "release_count": 0,
+      "repository": "swarmauri/peagen-com",
+      "reviewed": false,
+      "route": "/catalog/packages/npm/swarmauri-peagen-com-content-pack-e0cfe8c4",
+      "source_url": "https://github.com/swarmauri/peagen-com/blob/HEAD/packages/site-content-pack/package.json",
+      "version_declared": "0.1.0"
+    },
+    {
+      "claim_boundary": "Publication is reported only when confirmed by the named public registry.",
+      "dependency_count": 10,
+      "description": "Observed npm package record for peagen-com.",
+      "description_source": "generated-factual",
+      "display_name": "peagen-com",
+      "downloads": null,
+      "downstream_completeness": "not-observed",
+      "downstream_count": 0,
+      "ecosystem": "npm",
+      "evidence": [
+        {
+          "kind": "source",
+          "observed_at": "2026-08-03T10:05:58Z",
+          "url": "https://github.com/swarmauri/peagen-com/blob/HEAD/package.json"
+        }
+      ],
+      "id": "package:npm:peagen-com:swarmauri/peagen-com:package.json",
+      "kind": "package",
+      "latest_version": "0.1.0",
+      "manifest_path": "package.json",
+      "name": "peagen-com",
+      "observed_at": "2026-08-03T10:05:58Z",
+      "owner": "swarmauri",
+      "private": true,
+      "publication_status": "manifest_private",
+      "published": false,
+      "registry_url": null,
+      "relationship_count": 11,
+      "relationship_counts": {
+        "package_depends_on_external": 7,
+        "package_depends_on_package": 3,
+        "repository_contains_package": 1
+      },
+      "release_count": 0,
+      "repository": "swarmauri/peagen-com",
+      "reviewed": false,
+      "route": "/catalog/packages/npm/peagen-com-2786d449",
+      "source_url": "https://github.com/swarmauri/peagen-com/blob/HEAD/package.json",
+      "version_declared": "0.1.0"
+    },
+    {
+      "claim_boundary": "Publication is reported only when confirmed by the named public registry.",
+      "dependency_count": 3,
+      "description": "Observed pypi package record for peagen-com.",
+      "description_source": "generated-factual",
+      "display_name": "peagen-com",
+      "downloads": null,
+      "downstream_completeness": "not-observed",
+      "downstream_count": 0,
+      "ecosystem": "pypi",
+      "evidence": [
+        {
+          "kind": "source",
+          "observed_at": "2026-08-03T10:05:58Z",
+          "url": "https://github.com/swarmauri/peagen-com/blob/HEAD/pyproject.toml"
+        }
+      ],
+      "id": "package:pypi:peagen-com:swarmauri/peagen-com:pyproject.toml",
+      "kind": "package",
+      "latest_version": "0.1.0",
+      "manifest_path": "pyproject.toml",
+      "name": "peagen-com",
+      "observed_at": "2026-08-03T10:05:58Z",
+      "owner": "swarmauri",
+      "private": false,
+      "publication_status": "not-confirmed",
+      "published": false,
+      "registry_url": null,
+      "relationship_count": 4,
+      "relationship_counts": {
+        "package_depends_on_package": 3,
+        "repository_contains_package": 1
+      },
+      "release_count": 0,
+      "repository": "swarmauri/peagen-com",
+      "reviewed": false,
+      "route": "/catalog/packages/pypi/peagen-com-ea371003",
+      "source_url": "https://github.com/swarmauri/peagen-com/blob/HEAD/pyproject.toml",
+      "version_declared": "0.1.0"
+    }
+  ],
+  "repository": {
+    "archived": false,
+    "claim_boundary": "Repository, release, deployment, and live-service states are reported separately.",
+    "created_at": "2026-05-18T17:38:50Z",
+    "default_branch": "master",
+    "description": "MdWrk lander website for peagen.com.",
+    "description_source": "github-repository",
+    "display_name": "peagen-com",
+    "evidence": [
+      {
+        "kind": "source",
+        "observed_at": "2026-08-03T10:05:58Z",
+        "url": "https://github.com/swarmauri/peagen-com"
+      }
+    ],
+    "fork": false,
+    "full_name": "swarmauri/peagen-com",
+    "homepage": null,
+    "id": "repository:swarmauri/peagen-com",
+    "kind": "repository",
+    "latest_commit": {
+      "author": "cobycloud",
+      "authored_at": "2026-07-13T22:27:52Z",
+      "committed_at": "2026-07-13T22:27:52Z",
+      "committer": "cobycloud",
+      "message": "docs: add npmctl badge",
+      "sha": "2a7381c39da3ec7059d18e72d89aa2c2f8931845",
+      "url": "https://github.com/swarmauri/peagen-com/commit/2a7381c39da3ec7059d18e72d89aa2c2f8931845"
+    },
+    "latest_deployment": null,
+    "latest_release": null,
+    "license": null,
+    "metrics": {
+      "commits": 41,
+      "contributors": 1,
+      "deployments": 0,
+      "environments": 1,
+      "forks": 0,
+      "github_releases": 0,
+      "open_issues": 0,
+      "packages": 3,
+      "related_resources": 0,
+      "relationships": 3,
+      "size_kb": 2188,
+      "stars": 0,
+      "watchers": 0
+    },
+    "name": "peagen-com",
+    "observed_at": "2026-08-03T10:05:58Z",
+    "owner": "swarmauri",
+    "package_ids": [
+      "package:npm:@swarmauri/peagen-com-content-pack:swarmauri/peagen-com:packages/site-content-pack/package.json",
+      "package:npm:peagen-com:swarmauri/peagen-com:package.json",
+      "package:pypi:peagen-com:swarmauri/peagen-com:pyproject.toml"
+    ],
+    "pushed_at": "2026-07-13T22:28:58Z",
+    "related_resources": [],
+    "relationship_counts": {
+      "repository_contains_package": 3
+    },
+    "reviewed": false,
+    "route": "/catalog/repositories/swarmauri/peagen-com",
+    "technologies": [
+      "CSS",
+      "Dockerfile",
+      "HTML",
+      "JavaScript",
+      "Python",
+      "TypeScript"
+    ],
+    "template": false,
+    "topics": [
+      "docker",
+      "github-actions",
+      "lander",
+      "mdwrk",
+      "namecheap",
+      "nginx-proxy-manager",
+      "npmctl",
+      "peagen",
+      "static-site"
+    ],
+    "updated_at": "2026-07-13T22:29:03Z",
+    "url": "https://github.com/swarmauri/peagen-com",
+    "visibility": "public"
+  },
+  "schema_version": "1.0.0"
+}

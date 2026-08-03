@@ -42,11 +42,17 @@ const slugsFrom = (file) => {
   const source = fs.readFileSync(file, "utf8");
   return [...source.matchAll(/slug:\s*["']([^"']+)["']/g)].map((match) => match[1]);
 };
+const productRecordsFrom = (file) => {
+  const source = fs.readFileSync(file, "utf8");
+  return [...source.matchAll(/\{\s*id:\s*["'][^"']+["'],\s*slug:\s*["']([^"']+)["'][\s\S]*?displayName:\s*["']([^"']+)["'][\s\S]*?summary:\s*["']([^"']+)["']/g)]
+    .map((match) => ({ slug: match[1], name: match[2], summary: match[3] }));
+};
+const productMetadataRecords = productRecordsFrom("src/data/entities.ts");
 const detailRecords = [
   ...slugsFrom("src/data/portfolio.ts").flatMap((slug) => ["", "projects/", "packages/", "specifications/"].map((prefix) => ({ route: `/portfolio/${prefix}${slug}/`, url: absolute(`/portfolio/${prefix}${slug}/`), title: `${slug.replace(/[-_]/g, " ")} | GroupSum portfolio`, description: `Portfolio record for ${slug.replace(/[-_]/g, " ")}.`, type: "website" }))),
   ...slugsFrom("src/data/solutions.ts").map((slug) => ({ route: `/solutions/${slug}/`, url: absolute(`/solutions/${slug}/`), title: `${slug.replace(/[-_]/g, " ")} solution | GroupSum`, description: `Solution path for ${slug.replace(/[-_]/g, " ")}.`, type: "website" })),
   ...slugsFrom("src/data/services.ts").map((slug) => ({ route: `/services/${slug}/`, url: absolute(`/services/${slug}/`), title: `${slug.replace(/[-_]/g, " ")} service | GroupSum`, description: `Service detail for ${slug.replace(/[-_]/g, " ")}.`, type: "website" })),
-  ...slugsFrom("src/data/entities.ts").filter((slug) => !["groupsum", "tigrbl", "swarmauri"].includes(slug)).map((slug) => ({ route: `/products/${slug}/`, url: absolute(`/products/${slug}/`), title: `${slug.replace(/[-_]/g, " ")} | GroupSum products`, description: `Product and package record for ${slug.replace(/[-_]/g, " ")}.`, type: "website" }))
+  ...productMetadataRecords.map((item) => ({ route: `/products/records/${item.slug}/`, url: absolute(`/products/records/${item.slug}/`), title: `${item.name} | GroupSum products`, description: trim(item.summary), type: "website", schemaFamily: "product-detail" }))
 ];
 const catalogDetailRecords = [
   ...catalogRepositories.map((item) => ({ route: normalizePath(item.route), url: absolute(item.route), title: `${item.display_name} repository | GroupSum catalog`, description: trim(item.description), type: "website", modified: item.observed_at, schemaFamily: "catalog-repository", sourceUrl: item.url })),
@@ -92,4 +98,5 @@ fs.copyFileSync("catalog/generated/catalog.json", path.join(catalogOut, "catalog
 fs.copyFileSync("catalog/generated/summary.json", path.join(catalogOut, "summary.json"));
 fs.copyFileSync("catalog/schema/catalog.schema.json", path.join(catalogOut, "schema.json"));
 fs.cpSync("catalog/generated/site", path.join(catalogOut, "site"), { recursive: true });
+fs.cpSync("catalog/generated/product-evidence", path.join(catalogOut, "product-evidence"), { recursive: true });
 fs.copyFileSync("catalog/schema/site-catalog.schema.json", path.join(catalogOut, "site", "schema.json"));

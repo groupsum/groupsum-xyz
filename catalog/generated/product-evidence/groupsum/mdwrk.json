@@ -1,0 +1,1006 @@
+{
+  "generated_at": "2026-08-03T10:05:58Z",
+  "packages": [
+    {
+      "claim_boundary": "Publication is reported only when confirmed by the named public registry.",
+      "dependency_count": 2,
+      "description": "Observed npm package record for @mdwrk/core-demo-react.",
+      "description_source": "generated-factual",
+      "display_name": "@mdwrk/core-demo-react",
+      "downloads": null,
+      "downstream_completeness": "not-observed",
+      "downstream_count": 0,
+      "ecosystem": "npm",
+      "evidence": [
+        {
+          "kind": "registry",
+          "observed_at": "2026-08-03T10:05:58Z",
+          "url": "https://www.npmjs.com/package/@mdwrk/core-demo-react"
+        }
+      ],
+      "id": "package:npm:@mdwrk/core-demo-react:groupsum/mdwrk:packages/shared/core-demo-react/package.json",
+      "kind": "package",
+      "latest_version": "1.0.2",
+      "manifest_path": "packages/shared/core-demo-react/package.json",
+      "name": "@mdwrk/core-demo-react",
+      "observed_at": "2026-08-03T10:05:58Z",
+      "owner": "groupsum",
+      "private": false,
+      "publication_status": "published",
+      "published": true,
+      "registry_url": "https://www.npmjs.com/package/@mdwrk/core-demo-react",
+      "relationship_count": 9,
+      "relationship_counts": {
+        "package_depends_on_external": 2,
+        "package_depends_on_package": 6,
+        "repository_contains_package": 1
+      },
+      "release_count": 1,
+      "repository": "groupsum/mdwrk",
+      "reviewed": false,
+      "route": "/catalog/packages/npm/mdwrk-core-demo-react-f03825ed",
+      "source_url": "https://github.com/groupsum/mdwrk/blob/HEAD/packages/shared/core-demo-react/package.json",
+      "version_declared": "1.0.2"
+    },
+    {
+      "claim_boundary": "Publication is reported only when confirmed by the named public registry.",
+      "dependency_count": 4,
+      "description": "Observed npm package record for @mdwrk/core-demo-themes.",
+      "description_source": "generated-factual",
+      "display_name": "@mdwrk/core-demo-themes",
+      "downloads": null,
+      "downstream_completeness": "not-observed",
+      "downstream_count": 0,
+      "ecosystem": "npm",
+      "evidence": [
+        {
+          "kind": "registry",
+          "observed_at": "2026-08-03T10:05:58Z",
+          "url": "https://www.npmjs.com/package/@mdwrk/core-demo-themes"
+        }
+      ],
+      "id": "package:npm:@mdwrk/core-demo-themes:groupsum/mdwrk:packages/shared/core-demo-themes/package.json",
+      "kind": "package",
+      "latest_version": "1.0.1",
+      "manifest_path": "packages/shared/core-demo-themes/package.json",
+      "name": "@mdwrk/core-demo-themes",
+      "observed_at": "2026-08-03T10:05:58Z",
+      "owner": "groupsum",
+      "private": false,
+      "publication_status": "published",
+      "published": true,
+      "registry_url": "https://www.npmjs.com/package/@mdwrk/core-demo-themes",
+      "relationship_count": 11,
+      "relationship_counts": {
+        "package_depends_on_external": 1,
+        "package_depends_on_package": 9,
+        "repository_contains_package": 1
+      },
+      "release_count": 1,
+      "repository": "groupsum/mdwrk",
+      "reviewed": false,
+      "route": "/catalog/packages/npm/mdwrk-core-demo-themes-1652bb36",
+      "source_url": "https://github.com/groupsum/mdwrk/blob/HEAD/packages/shared/core-demo-themes/package.json",
+      "version_declared": "1.0.1"
+    },
+    {
+      "claim_boundary": "Publication is reported only when confirmed by the named public registry.",
+      "dependency_count": 18,
+      "description": "Observed npm package record for @mdwrk/example-edit-in-renderer-demo.",
+      "description_source": "generated-factual",
+      "display_name": "@mdwrk/example-edit-in-renderer-demo",
+      "downloads": null,
+      "downstream_completeness": "not-observed",
+      "downstream_count": 0,
+      "ecosystem": "npm",
+      "evidence": [
+        {
+          "kind": "source",
+          "observed_at": "2026-08-03T10:05:58Z",
+          "url": "https://github.com/groupsum/mdwrk/blob/HEAD/examples/edit-in-renderer-demo/package.json"
+        }
+      ],
+      "id": "package:npm:@mdwrk/example-edit-in-renderer-demo:groupsum/mdwrk:examples/edit-in-renderer-demo/package.json",
+      "kind": "package",
+      "latest_version": "0.1.3",
+      "manifest_path": "examples/edit-in-renderer-demo/package.json",
+      "name": "@mdwrk/example-edit-in-renderer-demo",
+      "observed_at": "2026-08-03T10:05:58Z",
+      "owner": "groupsum",
+      "private": true,
+      "publication_status": "manifest_private",
+      "published": false,
+      "registry_url": null,
+      "relationship_count": 19,
+      "relationship_counts": {
+        "package_depends_on_external": 13,
+        "package_depends_on_package": 5,
+        "repository_contains_package": 1
+      },
+      "release_count": 0,
+      "repository": "groupsum/mdwrk",
+      "reviewed": false,
+      "route": "/catalog/packages/npm/mdwrk-example-edit-in-renderer-demo-33fafc2a",
+      "source_url": "https://github.com/groupsum/mdwrk/blob/HEAD/examples/edit-in-renderer-demo/package.json",
+      "version_declared": "0.1.3"
+    },
+    {
+      "claim_boundary": "Publication is reported only when confirmed by the named public registry.",
+      "dependency_count": 12,
+      "description": "Observed npm package record for @mdwrk/example-editor-basic.",
+      "description_source": "generated-factual",
+      "display_name": "@mdwrk/example-editor-basic",
+      "downloads": null,
+      "downstream_completeness": "not-observed",
+      "downstream_count": 0,
+      "ecosystem": "npm",
+      "evidence": [
+        {
+          "kind": "source",
+          "observed_at": "2026-08-03T10:05:58Z",
+          "url": "https://github.com/groupsum/mdwrk/blob/HEAD/examples/editor-basic/package.json"
+        }
+      ],
+      "id": "package:npm:@mdwrk/example-editor-basic:groupsum/mdwrk:examples/editor-basic/package.json",
+      "kind": "package",
+      "latest_version": "0.1.4",
+      "manifest_path": "examples/editor-basic/package.json",
+      "name": "@mdwrk/example-editor-basic",
+      "observed_at": "2026-08-03T10:05:58Z",
+      "owner": "groupsum",
+      "private": true,
+      "publication_status": "manifest_private",
+      "published": false,
+      "registry_url": null,
+      "relationship_count": 14,
+      "relationship_counts": {
+        "package_depends_on_external": 7,
+        "package_depends_on_package": 5,
+        "repository_contains_package": 2
+      },
+      "release_count": 0,
+      "repository": "groupsum/mdwrk",
+      "reviewed": false,
+      "route": "/catalog/packages/npm/mdwrk-example-editor-basic-811c2486",
+      "source_url": "https://github.com/groupsum/mdwrk/blob/HEAD/examples/editor-basic/package.json",
+      "version_declared": "0.1.4"
+    },
+    {
+      "claim_boundary": "Publication is reported only when confirmed by the named public registry.",
+      "dependency_count": 19,
+      "description": "Observed npm package record for @mdwrk/example-editor-demo.",
+      "description_source": "generated-factual",
+      "display_name": "@mdwrk/example-editor-demo",
+      "downloads": null,
+      "downstream_completeness": "not-observed",
+      "downstream_count": 0,
+      "ecosystem": "npm",
+      "evidence": [
+        {
+          "kind": "source",
+          "observed_at": "2026-08-03T10:05:58Z",
+          "url": "https://github.com/groupsum/mdwrk/blob/HEAD/examples/editor-demo/package.json"
+        }
+      ],
+      "id": "package:npm:@mdwrk/example-editor-demo:groupsum/mdwrk:examples/editor-demo/package.json",
+      "kind": "package",
+      "latest_version": "0.1.4",
+      "manifest_path": "examples/editor-demo/package.json",
+      "name": "@mdwrk/example-editor-demo",
+      "observed_at": "2026-08-03T10:05:58Z",
+      "owner": "groupsum",
+      "private": true,
+      "publication_status": "manifest_private",
+      "published": false,
+      "registry_url": null,
+      "relationship_count": 20,
+      "relationship_counts": {
+        "package_depends_on_external": 13,
+        "package_depends_on_package": 6,
+        "repository_contains_package": 1
+      },
+      "release_count": 0,
+      "repository": "groupsum/mdwrk",
+      "reviewed": false,
+      "route": "/catalog/packages/npm/mdwrk-example-editor-demo-9bbd370c",
+      "source_url": "https://github.com/groupsum/mdwrk/blob/HEAD/examples/editor-demo/package.json",
+      "version_declared": "0.1.4"
+    },
+    {
+      "claim_boundary": "Publication is reported only when confirmed by the named public registry.",
+      "dependency_count": 16,
+      "description": "Observed npm package record for @mdwrk/example-previewer-demo.",
+      "description_source": "generated-factual",
+      "display_name": "@mdwrk/example-previewer-demo",
+      "downloads": null,
+      "downstream_completeness": "not-observed",
+      "downstream_count": 0,
+      "ecosystem": "npm",
+      "evidence": [
+        {
+          "kind": "source",
+          "observed_at": "2026-08-03T10:05:58Z",
+          "url": "https://github.com/groupsum/mdwrk/blob/HEAD/examples/previewer-demo/package.json"
+        }
+      ],
+      "id": "package:npm:@mdwrk/example-previewer-demo:groupsum/mdwrk:examples/previewer-demo/package.json",
+      "kind": "package",
+      "latest_version": "0.1.3",
+      "manifest_path": "examples/previewer-demo/package.json",
+      "name": "@mdwrk/example-previewer-demo",
+      "observed_at": "2026-08-03T10:05:58Z",
+      "owner": "groupsum",
+      "private": true,
+      "publication_status": "manifest_private",
+      "published": false,
+      "registry_url": null,
+      "relationship_count": 17,
+      "relationship_counts": {
+        "package_depends_on_external": 11,
+        "package_depends_on_package": 5,
+        "repository_contains_package": 1
+      },
+      "release_count": 0,
+      "repository": "groupsum/mdwrk",
+      "reviewed": false,
+      "route": "/catalog/packages/npm/mdwrk-example-previewer-demo-77c1286f",
+      "source_url": "https://github.com/groupsum/mdwrk/blob/HEAD/examples/previewer-demo/package.json",
+      "version_declared": "0.1.3"
+    },
+    {
+      "claim_boundary": "Publication is reported only when confirmed by the named public registry.",
+      "dependency_count": 16,
+      "description": "Observed npm package record for @mdwrk/example-renderer-basic.",
+      "description_source": "generated-factual",
+      "display_name": "@mdwrk/example-renderer-basic",
+      "downloads": null,
+      "downstream_completeness": "not-observed",
+      "downstream_count": 0,
+      "ecosystem": "npm",
+      "evidence": [
+        {
+          "kind": "source",
+          "observed_at": "2026-08-03T10:05:58Z",
+          "url": "https://github.com/groupsum/mdwrk/blob/HEAD/examples/renderer-basic/package.json"
+        }
+      ],
+      "id": "package:npm:@mdwrk/example-renderer-basic:groupsum/mdwrk:examples/renderer-basic/package.json",
+      "kind": "package",
+      "latest_version": "0.1.5",
+      "manifest_path": "examples/renderer-basic/package.json",
+      "name": "@mdwrk/example-renderer-basic",
+      "observed_at": "2026-08-03T10:05:58Z",
+      "owner": "groupsum",
+      "private": true,
+      "publication_status": "manifest_private",
+      "published": false,
+      "registry_url": null,
+      "relationship_count": 18,
+      "relationship_counts": {
+        "package_depends_on_external": 11,
+        "package_depends_on_package": 5,
+        "repository_contains_package": 2
+      },
+      "release_count": 0,
+      "repository": "groupsum/mdwrk",
+      "reviewed": false,
+      "route": "/catalog/packages/npm/mdwrk-example-renderer-basic-7aec7c43",
+      "source_url": "https://github.com/groupsum/mdwrk/blob/HEAD/examples/renderer-basic/package.json",
+      "version_declared": "0.1.5"
+    },
+    {
+      "claim_boundary": "Publication is reported only when confirmed by the named public registry.",
+      "dependency_count": 17,
+      "description": "Observed npm package record for @mdwrk/example-ui-tokens-demo.",
+      "description_source": "generated-factual",
+      "display_name": "@mdwrk/example-ui-tokens-demo",
+      "downloads": null,
+      "downstream_completeness": "not-observed",
+      "downstream_count": 0,
+      "ecosystem": "npm",
+      "evidence": [
+        {
+          "kind": "source",
+          "observed_at": "2026-08-03T10:05:58Z",
+          "url": "https://github.com/groupsum/mdwrk/blob/HEAD/examples/ui-tokens-demo/package.json"
+        }
+      ],
+      "id": "package:npm:@mdwrk/example-ui-tokens-demo:groupsum/mdwrk:examples/ui-tokens-demo/package.json",
+      "kind": "package",
+      "latest_version": "0.1.2",
+      "manifest_path": "examples/ui-tokens-demo/package.json",
+      "name": "@mdwrk/example-ui-tokens-demo",
+      "observed_at": "2026-08-03T10:05:58Z",
+      "owner": "groupsum",
+      "private": true,
+      "publication_status": "manifest_private",
+      "published": false,
+      "registry_url": null,
+      "relationship_count": 18,
+      "relationship_counts": {
+        "package_depends_on_external": 11,
+        "package_depends_on_package": 6,
+        "repository_contains_package": 1
+      },
+      "release_count": 0,
+      "repository": "groupsum/mdwrk",
+      "reviewed": false,
+      "route": "/catalog/packages/npm/mdwrk-example-ui-tokens-demo-ed1f3a36",
+      "source_url": "https://github.com/groupsum/mdwrk/blob/HEAD/examples/ui-tokens-demo/package.json",
+      "version_declared": "0.1.2"
+    },
+    {
+      "claim_boundary": "Publication is reported only when confirmed by the named public registry.",
+      "dependency_count": 0,
+      "description": "Observed npm package record for @mdwrk/icons.",
+      "description_source": "generated-factual",
+      "display_name": "@mdwrk/icons",
+      "downloads": null,
+      "downstream_completeness": "not-observed",
+      "downstream_count": 0,
+      "ecosystem": "npm",
+      "evidence": [
+        {
+          "kind": "registry",
+          "observed_at": "2026-08-03T10:05:58Z",
+          "url": "https://www.npmjs.com/package/@mdwrk/icons"
+        }
+      ],
+      "id": "package:npm:@mdwrk/icons:groupsum/mdwrk:packages/shared/icons/package.json",
+      "kind": "package",
+      "latest_version": "1.0.5",
+      "manifest_path": "packages/shared/icons/package.json",
+      "name": "@mdwrk/icons",
+      "observed_at": "2026-08-03T10:05:58Z",
+      "owner": "groupsum",
+      "private": false,
+      "publication_status": "published",
+      "published": true,
+      "registry_url": "https://www.npmjs.com/package/@mdwrk/icons",
+      "relationship_count": 3,
+      "relationship_counts": {
+        "package_depends_on_package": 1,
+        "repository_contains_package": 2
+      },
+      "release_count": 5,
+      "repository": "groupsum/mdwrk",
+      "reviewed": false,
+      "route": "/catalog/packages/npm/mdwrk-icons-45e9dc5a",
+      "source_url": "https://github.com/groupsum/mdwrk/blob/HEAD/packages/shared/icons/package.json",
+      "version_declared": "1.0.5"
+    },
+    {
+      "claim_boundary": "Publication is reported only when confirmed by the named public registry.",
+      "dependency_count": 14,
+      "description": "Observed npm package record for @mdwrk/markdown-edit-in-renderer-react.",
+      "description_source": "generated-factual",
+      "display_name": "@mdwrk/markdown-edit-in-renderer-react",
+      "downloads": null,
+      "downstream_completeness": "not-observed",
+      "downstream_count": 0,
+      "ecosystem": "npm",
+      "evidence": [
+        {
+          "kind": "registry",
+          "observed_at": "2026-08-03T10:05:58Z",
+          "url": "https://www.npmjs.com/package/@mdwrk/markdown-edit-in-renderer-react"
+        }
+      ],
+      "id": "package:npm:@mdwrk/markdown-edit-in-renderer-react:groupsum/mdwrk:packages/editor/markdown-edit-in-renderer-react/package.json",
+      "kind": "package",
+      "latest_version": "1.1.4",
+      "manifest_path": "packages/editor/markdown-edit-in-renderer-react/package.json",
+      "name": "@mdwrk/markdown-edit-in-renderer-react",
+      "observed_at": "2026-08-03T10:05:58Z",
+      "owner": "groupsum",
+      "private": false,
+      "publication_status": "published",
+      "published": true,
+      "registry_url": "https://www.npmjs.com/package/@mdwrk/markdown-edit-in-renderer-react",
+      "relationship_count": 18,
+      "relationship_counts": {
+        "package_depends_on_external": 8,
+        "package_depends_on_package": 8,
+        "repository_contains_package": 2
+      },
+      "release_count": 2,
+      "repository": "groupsum/mdwrk",
+      "reviewed": false,
+      "route": "/catalog/packages/npm/mdwrk-markdown-edit-in-renderer-react-6b6db4bb",
+      "source_url": "https://github.com/groupsum/mdwrk/blob/HEAD/packages/editor/markdown-edit-in-renderer-react/package.json",
+      "version_declared": "1.1.4"
+    },
+    {
+      "claim_boundary": "Publication is reported only when confirmed by the named public registry.",
+      "dependency_count": 2,
+      "description": "Observed npm package record for @mdwrk/markdown-editor-core.",
+      "description_source": "generated-factual",
+      "display_name": "@mdwrk/markdown-editor-core",
+      "downloads": null,
+      "downstream_completeness": "not-observed",
+      "downstream_count": 0,
+      "ecosystem": "npm",
+      "evidence": [
+        {
+          "kind": "registry",
+          "observed_at": "2026-08-03T10:05:58Z",
+          "url": "https://www.npmjs.com/package/@mdwrk/markdown-editor-core"
+        }
+      ],
+      "id": "package:npm:@mdwrk/markdown-editor-core:groupsum/mdwrk:packages/editor/markdown-editor-core/package.json",
+      "kind": "package",
+      "latest_version": "1.2.1",
+      "manifest_path": "packages/editor/markdown-editor-core/package.json",
+      "name": "@mdwrk/markdown-editor-core",
+      "observed_at": "2026-08-03T10:05:58Z",
+      "owner": "groupsum",
+      "private": false,
+      "publication_status": "published",
+      "published": true,
+      "registry_url": "https://www.npmjs.com/package/@mdwrk/markdown-editor-core",
+      "relationship_count": 7,
+      "relationship_counts": {
+        "package_depends_on_external": 1,
+        "package_depends_on_package": 4,
+        "repository_contains_package": 2
+      },
+      "release_count": 6,
+      "repository": "groupsum/mdwrk",
+      "reviewed": false,
+      "route": "/catalog/packages/npm/mdwrk-markdown-editor-core-9874ca3e",
+      "source_url": "https://github.com/groupsum/mdwrk/blob/HEAD/packages/editor/markdown-editor-core/package.json",
+      "version_declared": "1.2.1"
+    },
+    {
+      "claim_boundary": "Publication is reported only when confirmed by the named public registry.",
+      "dependency_count": 12,
+      "description": "Observed npm package record for @mdwrk/markdown-editor-react.",
+      "description_source": "generated-factual",
+      "display_name": "@mdwrk/markdown-editor-react",
+      "downloads": null,
+      "downstream_completeness": "not-observed",
+      "downstream_count": 0,
+      "ecosystem": "npm",
+      "evidence": [
+        {
+          "kind": "registry",
+          "observed_at": "2026-08-03T10:05:58Z",
+          "url": "https://www.npmjs.com/package/@mdwrk/markdown-editor-react"
+        }
+      ],
+      "id": "package:npm:@mdwrk/markdown-editor-react:groupsum/mdwrk:packages/editor/markdown-editor-react/package.json",
+      "kind": "package",
+      "latest_version": "1.2.1",
+      "manifest_path": "packages/editor/markdown-editor-react/package.json",
+      "name": "@mdwrk/markdown-editor-react",
+      "observed_at": "2026-08-03T10:05:58Z",
+      "owner": "groupsum",
+      "private": false,
+      "publication_status": "published",
+      "published": true,
+      "registry_url": "https://www.npmjs.com/package/@mdwrk/markdown-editor-react",
+      "relationship_count": 22,
+      "relationship_counts": {
+        "package_depends_on_external": 9,
+        "package_depends_on_package": 11,
+        "repository_contains_package": 2
+      },
+      "release_count": 7,
+      "repository": "groupsum/mdwrk",
+      "reviewed": false,
+      "route": "/catalog/packages/npm/mdwrk-markdown-editor-react-27f2dfa9",
+      "source_url": "https://github.com/groupsum/mdwrk/blob/HEAD/packages/editor/markdown-editor-react/package.json",
+      "version_declared": "1.2.1"
+    },
+    {
+      "claim_boundary": "Publication is reported only when confirmed by the named public registry.",
+      "dependency_count": 0,
+      "description": "Observed npm package record for @mdwrk/markdown-renderer-core.",
+      "description_source": "generated-factual",
+      "display_name": "@mdwrk/markdown-renderer-core",
+      "downloads": null,
+      "downstream_completeness": "not-observed",
+      "downstream_count": 0,
+      "ecosystem": "npm",
+      "evidence": [
+        {
+          "kind": "registry",
+          "observed_at": "2026-08-03T10:05:58Z",
+          "url": "https://www.npmjs.com/package/@mdwrk/markdown-renderer-core"
+        }
+      ],
+      "id": "package:npm:@mdwrk/markdown-renderer-core:groupsum/mdwrk:packages/renderer/markdown-renderer-core/package.json",
+      "kind": "package",
+      "latest_version": "1.2.1",
+      "manifest_path": "packages/renderer/markdown-renderer-core/package.json",
+      "name": "@mdwrk/markdown-renderer-core",
+      "observed_at": "2026-08-03T10:05:58Z",
+      "owner": "groupsum",
+      "private": false,
+      "publication_status": "published",
+      "published": true,
+      "registry_url": "https://www.npmjs.com/package/@mdwrk/markdown-renderer-core",
+      "relationship_count": 8,
+      "relationship_counts": {
+        "package_depends_on_package": 6,
+        "repository_contains_package": 2
+      },
+      "release_count": 7,
+      "repository": "groupsum/mdwrk",
+      "reviewed": false,
+      "route": "/catalog/packages/npm/mdwrk-markdown-renderer-core-189613f5",
+      "source_url": "https://github.com/groupsum/mdwrk/blob/HEAD/packages/renderer/markdown-renderer-core/package.json",
+      "version_declared": "1.2.2"
+    },
+    {
+      "claim_boundary": "Publication is reported only when confirmed by the named public registry.",
+      "dependency_count": 11,
+      "description": "Observed npm package record for @mdwrk/markdown-renderer-react.",
+      "description_source": "generated-factual",
+      "display_name": "@mdwrk/markdown-renderer-react",
+      "downloads": null,
+      "downstream_completeness": "not-observed",
+      "downstream_count": 0,
+      "ecosystem": "npm",
+      "evidence": [
+        {
+          "kind": "registry",
+          "observed_at": "2026-08-03T10:05:58Z",
+          "url": "https://www.npmjs.com/package/@mdwrk/markdown-renderer-react"
+        }
+      ],
+      "id": "package:npm:@mdwrk/markdown-renderer-react:groupsum/mdwrk:packages/renderer/markdown-renderer-react/package.json",
+      "kind": "package",
+      "latest_version": "1.2.1",
+      "manifest_path": "packages/renderer/markdown-renderer-react/package.json",
+      "name": "@mdwrk/markdown-renderer-react",
+      "observed_at": "2026-08-03T10:05:58Z",
+      "owner": "groupsum",
+      "private": false,
+      "publication_status": "published",
+      "published": true,
+      "registry_url": "https://www.npmjs.com/package/@mdwrk/markdown-renderer-react",
+      "relationship_count": 25,
+      "relationship_counts": {
+        "package_depends_on_external": 8,
+        "package_depends_on_package": 15,
+        "repository_contains_package": 2
+      },
+      "release_count": 7,
+      "repository": "groupsum/mdwrk",
+      "reviewed": false,
+      "route": "/catalog/packages/npm/mdwrk-markdown-renderer-react-b4d40396",
+      "source_url": "https://github.com/groupsum/mdwrk/blob/HEAD/packages/renderer/markdown-renderer-react/package.json",
+      "version_declared": "1.2.2"
+    },
+    {
+      "claim_boundary": "Publication is reported only when confirmed by the named public registry.",
+      "dependency_count": 0,
+      "description": "Observed npm package record for @mdwrk/testing.",
+      "description_source": "generated-factual",
+      "display_name": "@mdwrk/testing",
+      "downloads": null,
+      "downstream_completeness": "not-observed",
+      "downstream_count": 0,
+      "ecosystem": "npm",
+      "evidence": [
+        {
+          "kind": "registry",
+          "observed_at": "2026-08-03T10:05:58Z",
+          "url": "https://www.npmjs.com/package/@mdwrk/testing"
+        }
+      ],
+      "id": "package:npm:@mdwrk/testing:groupsum/mdwrk:packages/shared/testing/package.json",
+      "kind": "package",
+      "latest_version": "1.0.4",
+      "manifest_path": "packages/shared/testing/package.json",
+      "name": "@mdwrk/testing",
+      "observed_at": "2026-08-03T10:05:58Z",
+      "owner": "groupsum",
+      "private": false,
+      "publication_status": "published",
+      "published": true,
+      "registry_url": "https://www.npmjs.com/package/@mdwrk/testing",
+      "relationship_count": 13,
+      "relationship_counts": {
+        "package_depends_on_package": 11,
+        "repository_contains_package": 2
+      },
+      "release_count": 5,
+      "repository": "groupsum/mdwrk",
+      "reviewed": false,
+      "route": "/catalog/packages/npm/mdwrk-testing-6ece4ffc",
+      "source_url": "https://github.com/groupsum/mdwrk/blob/HEAD/packages/shared/testing/package.json",
+      "version_declared": "1.0.4"
+    },
+    {
+      "claim_boundary": "Publication is reported only when confirmed by the named public registry.",
+      "dependency_count": 0,
+      "description": "Observed npm package record for @mdwrk/ui-tokens.",
+      "description_source": "generated-factual",
+      "display_name": "@mdwrk/ui-tokens",
+      "downloads": null,
+      "downstream_completeness": "not-observed",
+      "downstream_count": 0,
+      "ecosystem": "npm",
+      "evidence": [
+        {
+          "kind": "registry",
+          "observed_at": "2026-08-03T10:05:58Z",
+          "url": "https://www.npmjs.com/package/@mdwrk/ui-tokens"
+        }
+      ],
+      "id": "package:npm:@mdwrk/ui-tokens:groupsum/mdwrk:packages/shared/ui-tokens/package.json",
+      "kind": "package",
+      "latest_version": "1.3.1",
+      "manifest_path": "packages/shared/ui-tokens/package.json",
+      "name": "@mdwrk/ui-tokens",
+      "observed_at": "2026-08-03T10:05:58Z",
+      "owner": "groupsum",
+      "private": false,
+      "publication_status": "published",
+      "published": true,
+      "registry_url": "https://www.npmjs.com/package/@mdwrk/ui-tokens",
+      "relationship_count": 16,
+      "relationship_counts": {
+        "package_depends_on_package": 14,
+        "repository_contains_package": 2
+      },
+      "release_count": 6,
+      "repository": "groupsum/mdwrk",
+      "reviewed": false,
+      "route": "/catalog/packages/npm/mdwrk-ui-tokens-2ddfc9ab",
+      "source_url": "https://github.com/groupsum/mdwrk/blob/HEAD/packages/shared/ui-tokens/package.json",
+      "version_declared": "1.3.1"
+    },
+    {
+      "claim_boundary": "Publication is reported only when confirmed by the named public registry.",
+      "dependency_count": 1,
+      "description": "Observed npm package record for mdwrk.",
+      "description_source": "generated-factual",
+      "display_name": "mdwrk",
+      "downloads": null,
+      "downstream_completeness": "not-observed",
+      "downstream_count": 0,
+      "ecosystem": "npm",
+      "evidence": [
+        {
+          "kind": "source",
+          "observed_at": "2026-08-03T10:05:58Z",
+          "url": "https://github.com/groupsum/mdwrk/blob/HEAD/package.json"
+        }
+      ],
+      "id": "package:npm:mdwrk:groupsum/mdwrk:package.json",
+      "kind": "package",
+      "latest_version": "0.1.20",
+      "manifest_path": "package.json",
+      "name": "mdwrk",
+      "observed_at": "2026-08-03T10:05:58Z",
+      "owner": "groupsum",
+      "private": true,
+      "publication_status": "manifest_private",
+      "published": false,
+      "registry_url": null,
+      "relationship_count": 2,
+      "relationship_counts": {
+        "package_depends_on_external": 1,
+        "repository_contains_package": 1
+      },
+      "release_count": 0,
+      "repository": "groupsum/mdwrk",
+      "reviewed": false,
+      "route": "/catalog/packages/npm/mdwrk-888d53e5",
+      "source_url": "https://github.com/groupsum/mdwrk/blob/HEAD/package.json",
+      "version_declared": "0.1.20"
+    },
+    {
+      "claim_boundary": "Publication is reported only when confirmed by the named public registry.",
+      "dependency_count": 1,
+      "description": "Observed pypi package record for mdwrk.",
+      "description_source": "generated-factual",
+      "display_name": "mdwrk",
+      "downloads": null,
+      "downstream_completeness": "not-observed",
+      "downstream_count": 0,
+      "ecosystem": "pypi",
+      "evidence": [
+        {
+          "kind": "source",
+          "observed_at": "2026-08-03T10:05:58Z",
+          "url": "https://github.com/groupsum/mdwrk/blob/HEAD/pyproject.toml"
+        }
+      ],
+      "id": "package:pypi:mdwrk:groupsum/mdwrk:pyproject.toml",
+      "kind": "package",
+      "latest_version": "0.1.0",
+      "manifest_path": "pyproject.toml",
+      "name": "mdwrk",
+      "observed_at": "2026-08-03T10:05:58Z",
+      "owner": "groupsum",
+      "private": false,
+      "publication_status": "not-confirmed",
+      "published": false,
+      "registry_url": null,
+      "relationship_count": 2,
+      "relationship_counts": {
+        "package_depends_on_package": 1,
+        "repository_contains_package": 1
+      },
+      "release_count": 0,
+      "repository": "groupsum/mdwrk",
+      "reviewed": false,
+      "route": "/catalog/packages/pypi/mdwrk-6f8742d7",
+      "source_url": "https://github.com/groupsum/mdwrk/blob/HEAD/pyproject.toml",
+      "version_declared": "0.1.0"
+    }
+  ],
+  "repository": {
+    "archived": false,
+    "claim_boundary": "Repository, release, deployment, and live-service states are reported separately.",
+    "created_at": "2026-05-18T23:52:50Z",
+    "default_branch": "master",
+    "description": "Core MdWrk package platform for markdown rendering, editing, extension contracts, extension runtime packages, and shared primitives.",
+    "description_source": "github-repository",
+    "display_name": "mdwrk",
+    "evidence": [
+      {
+        "kind": "source",
+        "observed_at": "2026-08-03T10:05:58Z",
+        "url": "https://github.com/groupsum/mdwrk"
+      }
+    ],
+    "fork": false,
+    "full_name": "groupsum/mdwrk",
+    "homepage": null,
+    "id": "repository:groupsum/mdwrk",
+    "kind": "repository",
+    "latest_commit": {
+      "author": "cobycloud",
+      "authored_at": "2026-07-12T21:41:17Z",
+      "committed_at": "2026-07-12T21:41:17Z",
+      "committer": "cobycloud",
+      "message": "feat(markdown): support safe base64 images",
+      "sha": "4b0c69e00335b57e7ab842c2bf6fb1ce4c41f807",
+      "url": "https://github.com/groupsum/mdwrk/commit/4b0c69e00335b57e7ab842c2bf6fb1ce4c41f807"
+    },
+    "latest_deployment": null,
+    "latest_release": {
+      "assets": [
+        {
+          "downloads": 0,
+          "name": "release-evidence.tgz",
+          "url": "https://github.com/groupsum/mdwrk/releases/download/v0.1.19/release-evidence.tgz"
+        }
+      ],
+      "draft": false,
+      "name": "v0.1.19",
+      "prerelease": false,
+      "published_at": "2026-06-06T02:00:07Z",
+      "tag": "v0.1.19",
+      "url": "https://github.com/groupsum/mdwrk/releases/tag/v0.1.19"
+    },
+    "license": "Apache-2.0",
+    "metrics": {
+      "commits": 46,
+      "contributors": 1,
+      "deployments": 0,
+      "environments": 0,
+      "forks": 0,
+      "github_releases": 3,
+      "open_issues": 0,
+      "packages": 18,
+      "related_resources": 23,
+      "relationships": 41,
+      "size_kb": 6632,
+      "stars": 0,
+      "watchers": 0
+    },
+    "name": "mdwrk",
+    "observed_at": "2026-08-03T10:05:58Z",
+    "owner": "groupsum",
+    "package_ids": [
+      "package:npm:@mdwrk/core-demo-react:groupsum/mdwrk:packages/shared/core-demo-react/package.json",
+      "package:npm:@mdwrk/core-demo-themes:groupsum/mdwrk:packages/shared/core-demo-themes/package.json",
+      "package:npm:@mdwrk/example-edit-in-renderer-demo:groupsum/mdwrk:examples/edit-in-renderer-demo/package.json",
+      "package:npm:@mdwrk/example-editor-basic:groupsum/mdwrk:examples/editor-basic/package.json",
+      "package:npm:@mdwrk/example-editor-demo:groupsum/mdwrk:examples/editor-demo/package.json",
+      "package:npm:@mdwrk/example-previewer-demo:groupsum/mdwrk:examples/previewer-demo/package.json",
+      "package:npm:@mdwrk/example-renderer-basic:groupsum/mdwrk:examples/renderer-basic/package.json",
+      "package:npm:@mdwrk/example-ui-tokens-demo:groupsum/mdwrk:examples/ui-tokens-demo/package.json",
+      "package:npm:@mdwrk/icons:groupsum/mdwrk:packages/shared/icons/package.json",
+      "package:npm:@mdwrk/markdown-edit-in-renderer-react:groupsum/mdwrk:packages/editor/markdown-edit-in-renderer-react/package.json",
+      "package:npm:@mdwrk/markdown-editor-core:groupsum/mdwrk:packages/editor/markdown-editor-core/package.json",
+      "package:npm:@mdwrk/markdown-editor-react:groupsum/mdwrk:packages/editor/markdown-editor-react/package.json",
+      "package:npm:@mdwrk/markdown-renderer-core:groupsum/mdwrk:packages/renderer/markdown-renderer-core/package.json",
+      "package:npm:@mdwrk/markdown-renderer-react:groupsum/mdwrk:packages/renderer/markdown-renderer-react/package.json",
+      "package:npm:@mdwrk/testing:groupsum/mdwrk:packages/shared/testing/package.json",
+      "package:npm:@mdwrk/ui-tokens:groupsum/mdwrk:packages/shared/ui-tokens/package.json",
+      "package:npm:mdwrk:groupsum/mdwrk:package.json",
+      "package:pypi:mdwrk:groupsum/mdwrk:pyproject.toml"
+    ],
+    "pushed_at": "2026-07-12T21:41:31Z",
+    "related_resources": [
+      {
+        "evidence_type": "repository.tree",
+        "id": "resource:6d6dfa384b88",
+        "kind": "documentation",
+        "name": "docs/AGENTS.md",
+        "url": "https://github.com/groupsum/mdwrk/blob/master/docs/AGENTS.md"
+      },
+      {
+        "evidence_type": "repository.tree",
+        "id": "resource:94880a4a0f1d",
+        "kind": "documentation",
+        "name": "docs/README.md",
+        "url": "https://github.com/groupsum/mdwrk/blob/master/docs/README.md"
+      },
+      {
+        "evidence_type": "repository.tree",
+        "id": "resource:268f637c6eac",
+        "kind": "documentation",
+        "name": "docs/adr",
+        "url": "https://github.com/groupsum/mdwrk/tree/master/docs/adr"
+      },
+      {
+        "evidence_type": "repository.tree",
+        "id": "resource:6ac41f552eaf",
+        "kind": "documentation",
+        "name": "docs/architecture",
+        "url": "https://github.com/groupsum/mdwrk/tree/master/docs/architecture"
+      },
+      {
+        "evidence_type": "repository.tree",
+        "id": "resource:4b3628aa353e",
+        "kind": "documentation",
+        "name": "docs/assets",
+        "url": "https://github.com/groupsum/mdwrk/tree/master/docs/assets"
+      },
+      {
+        "evidence_type": "repository.tree",
+        "id": "resource:c6ca46324c99",
+        "kind": "documentation",
+        "name": "docs/authoring",
+        "url": "https://github.com/groupsum/mdwrk/tree/master/docs/authoring"
+      },
+      {
+        "evidence_type": "repository.tree",
+        "id": "resource:b162be34fd0e",
+        "kind": "documentation",
+        "name": "docs/conformance",
+        "url": "https://github.com/groupsum/mdwrk/tree/master/docs/conformance"
+      },
+      {
+        "evidence_type": "repository.tree",
+        "id": "resource:a4dadd65e027",
+        "kind": "documentation",
+        "name": "docs/current-state",
+        "url": "https://github.com/groupsum/mdwrk/tree/master/docs/current-state"
+      },
+      {
+        "evidence_type": "repository.tree",
+        "id": "resource:88811c0a4924",
+        "kind": "documentation",
+        "name": "docs/evidence",
+        "url": "https://github.com/groupsum/mdwrk/tree/master/docs/evidence"
+      },
+      {
+        "evidence_type": "repository.tree",
+        "id": "resource:e9dac02feaae",
+        "kind": "documentation",
+        "name": "docs/examples",
+        "url": "https://github.com/groupsum/mdwrk/tree/master/docs/examples"
+      },
+      {
+        "evidence_type": "repository.tree",
+        "id": "resource:82be5ef81cfc",
+        "kind": "documentation",
+        "name": "docs/history",
+        "url": "https://github.com/groupsum/mdwrk/tree/master/docs/history"
+      },
+      {
+        "evidence_type": "repository.tree",
+        "id": "resource:54f3a5af8df5",
+        "kind": "documentation",
+        "name": "docs/operations",
+        "url": "https://github.com/groupsum/mdwrk/tree/master/docs/operations"
+      },
+      {
+        "evidence_type": "repository.tree",
+        "id": "resource:f3925f468171",
+        "kind": "documentation",
+        "name": "docs/product",
+        "url": "https://github.com/groupsum/mdwrk/tree/master/docs/product"
+      },
+      {
+        "evidence_type": "repository.tree",
+        "id": "resource:2cf98a924233",
+        "kind": "documentation",
+        "name": "docs/reference",
+        "url": "https://github.com/groupsum/mdwrk/tree/master/docs/reference"
+      },
+      {
+        "evidence_type": "repository.tree",
+        "id": "resource:0818d116a930",
+        "kind": "documentation",
+        "name": "docs/usage",
+        "url": "https://github.com/groupsum/mdwrk/tree/master/docs/usage"
+      },
+      {
+        "evidence_type": "repository.tree",
+        "id": "resource:609d916dc850",
+        "kind": "documentation",
+        "name": "tools/docs/generate-readmes.mjs",
+        "url": "https://github.com/groupsum/mdwrk/blob/master/tools/docs/generate-readmes.mjs"
+      },
+      {
+        "evidence_type": "repository.tree",
+        "id": "resource:fbcb69be8a95",
+        "kind": "example",
+        "name": "examples/edit-in-renderer-demo",
+        "url": "https://github.com/groupsum/mdwrk/tree/master/examples/edit-in-renderer-demo"
+      },
+      {
+        "evidence_type": "repository.tree",
+        "id": "resource:042ddedf841d",
+        "kind": "example",
+        "name": "examples/editor-basic",
+        "url": "https://github.com/groupsum/mdwrk/tree/master/examples/editor-basic"
+      },
+      {
+        "evidence_type": "repository.tree",
+        "id": "resource:3915a80407a0",
+        "kind": "example",
+        "name": "examples/editor-demo",
+        "url": "https://github.com/groupsum/mdwrk/tree/master/examples/editor-demo"
+      },
+      {
+        "evidence_type": "repository.tree",
+        "id": "resource:8adea15a587c",
+        "kind": "example",
+        "name": "examples/previewer-demo",
+        "url": "https://github.com/groupsum/mdwrk/tree/master/examples/previewer-demo"
+      },
+      {
+        "evidence_type": "repository.tree",
+        "id": "resource:dec3e09f693a",
+        "kind": "example",
+        "name": "examples/renderer-basic",
+        "url": "https://github.com/groupsum/mdwrk/tree/master/examples/renderer-basic"
+      },
+      {
+        "evidence_type": "repository.tree",
+        "id": "resource:40892bf8bd34",
+        "kind": "example",
+        "name": "examples/ui-tokens-demo",
+        "url": "https://github.com/groupsum/mdwrk/tree/master/examples/ui-tokens-demo"
+      },
+      {
+        "evidence_type": "repository.tree",
+        "id": "resource:f5f6d83bddc8",
+        "kind": "example",
+        "name": "examples/useApplyDocumentTheme.ts",
+        "url": "https://github.com/groupsum/mdwrk/blob/master/examples/useApplyDocumentTheme.ts"
+      }
+    ],
+    "relationship_counts": {
+      "repository_contains_package": 18,
+      "repository_contains_related_resource": 23
+    },
+    "reviewed": false,
+    "route": "/catalog/repositories/groupsum/mdwrk",
+    "technologies": [
+      "CSS",
+      "HTML",
+      "JavaScript",
+      "Python",
+      "Shell",
+      "TypeScript"
+    ],
+    "template": false,
+    "topics": [],
+    "updated_at": "2026-07-12T21:41:35Z",
+    "url": "https://github.com/groupsum/mdwrk",
+    "visibility": "public"
+  },
+  "schema_version": "1.0.0"
+}

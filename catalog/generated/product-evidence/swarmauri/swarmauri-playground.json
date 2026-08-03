@@ -1,0 +1,81 @@
+{
+  "generated_at": "2026-08-03T10:05:58Z",
+  "packages": [],
+  "repository": {
+    "archived": false,
+    "claim_boundary": "Repository, release, deployment, and live-service states are reported separately.",
+    "created_at": "2024-08-22T10:05:28Z",
+    "default_branch": "master",
+    "description": "An LLM playground by Swarmauri",
+    "description_source": "github-repository",
+    "display_name": "swarmauri-playground",
+    "evidence": [
+      {
+        "kind": "source",
+        "observed_at": "2026-08-03T10:05:58Z",
+        "url": "https://github.com/swarmauri/swarmauri-playground"
+      }
+    ],
+    "fork": false,
+    "full_name": "swarmauri/swarmauri-playground",
+    "homepage": "https://swarmauri.com",
+    "id": "repository:swarmauri/swarmauri-playground",
+    "kind": "repository",
+    "latest_commit": {
+      "author": "cobycloud",
+      "authored_at": "2024-10-22T10:15:54Z",
+      "committed_at": "2024-10-22T10:15:54Z",
+      "committer": "web-flow",
+      "message": "Update README.md",
+      "sha": "b97b43c0abbe5ddbc96b7394e19293ce9cb8f5be",
+      "url": "https://github.com/swarmauri/swarmauri-playground/commit/b97b43c0abbe5ddbc96b7394e19293ce9cb8f5be"
+    },
+    "latest_deployment": null,
+    "latest_release": null,
+    "license": "Apache-2.0",
+    "metrics": {
+      "commits": 37,
+      "contributors": 4,
+      "deployments": 0,
+      "environments": 0,
+      "forks": 4,
+      "github_releases": 0,
+      "open_issues": 9,
+      "packages": 0,
+      "related_resources": 1,
+      "relationships": 1,
+      "size_kb": 34,
+      "stars": 5,
+      "watchers": 1
+    },
+    "name": "swarmauri-playground",
+    "observed_at": "2026-08-03T10:05:58Z",
+    "owner": "swarmauri",
+    "package_ids": [],
+    "pushed_at": "2024-10-22T10:15:54Z",
+    "related_resources": [
+      {
+        "evidence_type": "repository.homepage",
+        "id": "resource:e603f162f929",
+        "kind": "website",
+        "name": "swarmauri-playground",
+        "url": "https://swarmauri.com"
+      }
+    ],
+    "relationship_counts": {
+      "repository_contains_related_resource": 1
+    },
+    "reviewed": false,
+    "route": "/catalog/repositories/swarmauri/swarmauri-playground",
+    "technologies": [
+      "Jupyter Notebook",
+      "Python"
+    ],
+    "template": false,
+    "topics": [],
+    "updated_at": "2025-08-25T17:21:29Z",
+    "url": "https://github.com/swarmauri/swarmauri-playground",
+    "visibility": "public"
+  },
+  "schema_version": "1.0.0"
+}

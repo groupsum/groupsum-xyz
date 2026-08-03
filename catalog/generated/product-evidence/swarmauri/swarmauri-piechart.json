@@ -1,0 +1,181 @@
+{
+  "generated_at": "2026-08-03T10:05:58Z",
+  "packages": [
+    {
+      "claim_boundary": "Publication is reported only when confirmed by the named public registry.",
+      "dependency_count": 5,
+      "description": "Observed npm package record for gradio_mycomponent.",
+      "description_source": "generated-factual",
+      "display_name": "gradio_mycomponent",
+      "downloads": null,
+      "downstream_completeness": "not-observed",
+      "downstream_count": 0,
+      "ecosystem": "npm",
+      "evidence": [
+        {
+          "kind": "source",
+          "observed_at": "2026-08-03T10:05:58Z",
+          "url": "https://github.com/swarmauri/swarmauri-piechart/blob/HEAD/mycomponent/frontend/package.json"
+        }
+      ],
+      "id": "package:npm:gradio_mycomponent:swarmauri/swarmauri-piechart:mycomponent/frontend/package.json",
+      "kind": "package",
+      "latest_version": "0.2.12",
+      "manifest_path": "mycomponent/frontend/package.json",
+      "name": "gradio_mycomponent",
+      "observed_at": "2026-08-03T10:05:58Z",
+      "owner": "swarmauri",
+      "private": false,
+      "publication_status": "not-confirmed",
+      "published": false,
+      "registry_url": null,
+      "relationship_count": 6,
+      "relationship_counts": {
+        "package_depends_on_external": 5,
+        "repository_contains_package": 1
+      },
+      "release_count": 0,
+      "repository": "swarmauri/swarmauri-piechart",
+      "reviewed": false,
+      "route": "/catalog/packages/npm/gradio-mycomponent-a1c0d108",
+      "source_url": "https://github.com/swarmauri/swarmauri-piechart/blob/HEAD/mycomponent/frontend/package.json",
+      "version_declared": "0.2.12"
+    },
+    {
+      "claim_boundary": "Publication is reported only when confirmed by the named public registry.",
+      "dependency_count": 6,
+      "description": "Observed pypi package record for gradio_mycomponent.",
+      "description_source": "generated-factual",
+      "display_name": "gradio_mycomponent",
+      "downloads": null,
+      "downstream_completeness": "not-observed",
+      "downstream_count": 0,
+      "ecosystem": "pypi",
+      "evidence": [
+        {
+          "kind": "registry",
+          "observed_at": "2026-08-03T10:05:58Z",
+          "url": "https://pypi.org/project/gradio_mycomponent/"
+        }
+      ],
+      "id": "package:pypi:gradio_mycomponent:swarmauri/swarmauri-piechart:mycomponent/pyproject.toml",
+      "kind": "package",
+      "latest_version": "0.0.1",
+      "manifest_path": "mycomponent/pyproject.toml",
+      "name": "gradio_mycomponent",
+      "observed_at": "2026-08-03T10:05:58Z",
+      "owner": "swarmauri",
+      "private": false,
+      "publication_status": "published",
+      "published": true,
+      "registry_url": "https://pypi.org/project/gradio_mycomponent/",
+      "relationship_count": 7,
+      "relationship_counts": {
+        "package_depends_on_external": 6,
+        "repository_contains_package": 1
+      },
+      "release_count": 1,
+      "repository": "swarmauri/swarmauri-piechart",
+      "reviewed": false,
+      "route": "/catalog/packages/pypi/gradio-mycomponent-6ec563b6",
+      "source_url": "https://github.com/swarmauri/swarmauri-piechart/blob/HEAD/mycomponent/pyproject.toml",
+      "version_declared": "0.0.1"
+    }
+  ],
+  "repository": {
+    "archived": false,
+    "claim_boundary": "Repository, release, deployment, and live-service states are reported separately.",
+    "created_at": "2024-09-01T19:01:14Z",
+    "default_branch": "master",
+    "description": "A Sveltejs based Swarmauri Piechart Component for Gradio applications;",
+    "description_source": "github-repository",
+    "display_name": "swarmauri-piechart",
+    "evidence": [
+      {
+        "kind": "source",
+        "observed_at": "2026-08-03T10:05:58Z",
+        "url": "https://github.com/swarmauri/swarmauri-piechart"
+      }
+    ],
+    "fork": false,
+    "full_name": "swarmauri/swarmauri-piechart",
+    "homepage": null,
+    "id": "repository:swarmauri/swarmauri-piechart",
+    "kind": "repository",
+    "latest_commit": {
+      "author": "cobycloud",
+      "authored_at": "2024-09-04T08:20:30Z",
+      "committed_at": "2024-09-04T08:20:30Z",
+      "committer": "web-flow",
+      "message": "Merge pull request #2 from oreoluwa212/develop",
+      "sha": "b873f9db0fd615df8c10b346e3b43d5a427aa979",
+      "url": "https://github.com/swarmauri/swarmauri-piechart/commit/b873f9db0fd615df8c10b346e3b43d5a427aa979"
+    },
+    "latest_deployment": null,
+    "latest_release": null,
+    "license": "Apache-2.0",
+    "metrics": {
+      "commits": 5,
+      "contributors": 2,
+      "deployments": 0,
+      "environments": 0,
+      "forks": 0,
+      "github_releases": 0,
+      "open_issues": 1,
+      "packages": 2,
+      "related_resources": 3,
+      "relationships": 5,
+      "size_kb": 123,
+      "stars": 1,
+      "watchers": 0
+    },
+    "name": "swarmauri-piechart",
+    "observed_at": "2026-08-03T10:05:58Z",
+    "owner": "swarmauri",
+    "package_ids": [
+      "package:npm:gradio_mycomponent:swarmauri/swarmauri-piechart:mycomponent/frontend/package.json",
+      "package:pypi:gradio_mycomponent:swarmauri/swarmauri-piechart:mycomponent/pyproject.toml"
+    ],
+    "pushed_at": "2024-09-04T08:20:30Z",
+    "related_resources": [
+      {
+        "evidence_type": "repository.tree",
+        "id": "resource:0573842bb9b3",
+        "kind": "demo",
+        "name": "mycomponent/demo/__init__.py",
+        "url": "https://github.com/swarmauri/swarmauri-piechart/blob/master/mycomponent/demo/__init__.py"
+      },
+      {
+        "evidence_type": "repository.tree",
+        "id": "resource:5ebc117351e9",
+        "kind": "demo",
+        "name": "mycomponent/demo/app.py",
+        "url": "https://github.com/swarmauri/swarmauri-piechart/blob/master/mycomponent/demo/app.py"
+      },
+      {
+        "evidence_type": "repository.tree",
+        "id": "resource:20a1e422215c",
+        "kind": "demo",
+        "name": "mycomponent/demo/requirements.txt",
+        "url": "https://github.com/swarmauri/swarmauri-piechart/blob/master/mycomponent/demo/requirements.txt"
+      }
+    ],
+    "relationship_counts": {
+      "repository_contains_package": 2,
+      "repository_contains_related_resource": 3
+    },
+    "reviewed": false,
+    "route": "/catalog/repositories/swarmauri/swarmauri-piechart",
+    "technologies": [
+      "JavaScript",
+      "Python",
+      "Svelte"
+    ],
+    "template": false,
+    "topics": [],
+    "updated_at": "2025-01-18T15:20:29Z",
+    "url": "https://github.com/swarmauri/swarmauri-piechart",
+    "visibility": "public"
+  },
+  "schema_version": "1.0.0"
+}

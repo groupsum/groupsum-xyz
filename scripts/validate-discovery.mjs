@@ -32,12 +32,14 @@ if (article) {
     }
   }
 }
-const jsonLdSamples = ["dist/index.html", "dist/products/ssot-registry/index.html"];
+const jsonLdSamples = ["dist/index.html", "dist/products/records/ssot-registry/index.html"];
 for (const file of jsonLdSamples) { const html = fs.readFileSync(file, "utf8"); const match = html.match(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/); if (!match) fail(`${file} missing JSON-LD`); else { try { const graph = JSON.parse(match[1]); if (graph["@context"] !== "https://schema.org" || !Array.isArray(graph["@graph"])) fail(`${file} has invalid JSON-LD graph`); } catch { fail(`${file} has unparsable JSON-LD`); } } }
 const manifest = JSON.parse(fs.readFileSync("dist/catalog/site/manifest.json", "utf8"));
 for (const dataset of ["repositories", "packages", "technologies"]) if (!manifest.counts[dataset]) fail(`catalog manifest missing ${dataset} count`);
 for (const dataset of ["releases", "deployments", "relationships"]) if (manifest.source_counts?.[dataset] === undefined) fail(`catalog manifest missing ${dataset} source count`);
 for (const dataset of ["releases", "deployments", "surfaces", "relationships"]) if (fs.existsSync(path.join("dist/catalog/site", `${dataset}.json`))) fail(`catalog publishes standalone ${dataset} dataset`);
+const productEvidenceFiles = fs.readdirSync("dist/catalog/product-evidence", { recursive: true }).filter((file) => String(file).endsWith(".json"));
+if (productEvidenceFiles.length !== manifest.product_evidence?.records) fail("product evidence bundle count does not match manifest");
 const catalogHtml = fs.readFileSync("dist/catalog/index.html", "utf8");
 for (const marker of ["Public ecosystem catalog", "DataCatalog", "og:url\" content=\"https://groupsum.xyz/catalog/"]) if (!catalogHtml.includes(marker)) fail(`catalog metadata missing ${marker}`);
 if (!process.exitCode) console.log(`discovery ok: ${childFiles.length} child sitemaps, ${fs.readFileSync("dist/llms-full.txt", "utf8").split("\n").length} full-index lines`);

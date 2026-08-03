@@ -18,6 +18,7 @@ import { BlogPost, PortfolioItem, PortfolioEntity, SolutionItem, ServiceItem } f
 import { MarkdownRenderer } from "mdwrk/renderer-core";
 import { CapabilityBand } from "./components/CapabilityBand";
 import { CatalogSnapshotBand, PublicCatalogDetail, PublicCatalogExplorer } from "./components/PublicCatalog";
+import { ProductCollectionPage, ProductRecordPage, productRecordPath } from "./components/ProductPortfolio";
 import { groupSumVision, horizontalCapabilities } from "./data/vision";
 import { catalogSummary } from "./data/catalog.generated";
 import { useCatalogFilters } from "./hooks/useCatalogFilters";
@@ -110,20 +111,27 @@ function RouteSwitcher({ path, onNavigate }: { path: string; onNavigate: (path: 
 
   if (primary === "products") {
     if (segments.length === 1) {
-      return <ProductsIndexPage onNavigate={onNavigate} />;
+      return <ProductCollectionPage mode="products" onNavigate={onNavigate} />;
     }
     const sub = segments[1];
-    if (sub === "groupsum" || sub === "tigrbl" || sub === "swarmauri") {
-      return <ProductsOrgPage org={sub} onNavigate={onNavigate} />;
+    if (sub === "records" && segments[2]) {
+      return <ProductRecordPage slug={segments[2]} onNavigate={onNavigate} />;
     }
-    return <SuiteDetailPage suiteSlug={sub} onNavigate={onNavigate} />;
+    if (sub === "groupsum" || sub === "tigrbl" || sub === "swarmauri") {
+      return <ProductCollectionPage mode="portfolio" organization={sub} onNavigate={onNavigate} />;
+    }
+    return <ProductRecordPage slug={sub} onNavigate={onNavigate} />;
   }
 
   if (primary === "portfolio") {
     if (segments.length === 1) {
-      return <PortfolioPage onNavigate={onNavigate} />;
+      return <ProductCollectionPage mode="portfolio" onNavigate={onNavigate} />;
     }
     const sub = segments[1];
+    const recordSlug = ["projects", "packages", "specifications"].includes(sub) ? segments[2] : sub;
+    if (recordSlug && portfolioEntities.some((entity) => entity.slug === recordSlug && entity.approved)) {
+      return <ProductRecordPage slug={recordSlug} onNavigate={onNavigate} />;
+    }
     if (sub === "projects") {
       return <ProjectDetailPage slug={segments[2]} onNavigate={onNavigate} />;
     }
@@ -423,7 +431,7 @@ function HomePage({ onNavigate }: RouteProps) {
                     </span>
                   </div>
                   <button
-                    onClick={() => onNavigate(`/products/${suite.slug}`)}
+                    onClick={() => onNavigate(productRecordPath(suite.slug))}
                     className="text-xs font-mono text-accent hover:text-accent-hover font-semibold inline-flex items-center gap-1 group"
                   >
                     Examine Suite Specs &rarr;
@@ -1339,7 +1347,7 @@ function DenseCatalog({ entities, onNavigate, title, description }: { entities: 
     ["Packages & modules", catalog.filtered.filter((entity) => entity.kind === "package" || entity.kind === "package-family")],
     ["Specifications & packs", catalog.filtered.filter((entity) => entity.kind === "specification-pack" || entity.kind === "site-docs")],
   ] as const;
-  return <div className="max-w-[var(--content-max)] mx-auto px-4 sm:px-6 lg:px-8 py-12 space-y-8"><div className="max-w-3xl space-y-3"><span className="text-xs font-mono uppercase tracking-wider text-accent font-bold block">Dense portfolio catalog</span><h1 className="font-serif text-4xl font-bold tracking-tight text-ink">{title}</h1><p className="text-ink-muted text-base leading-relaxed">{description}</p></div><CatalogToolbar {...catalog} entities={entities} mobileFiltersOpen={mobileFiltersOpen} setMobileFiltersOpen={setMobileFiltersOpen} />{catalog.view === "cards" ? <div className="grid grid-cols-1 md:grid-cols-2 gap-4">{catalog.filtered.map((entity) => <button key={entity.id} type="button" onClick={() => onNavigate(`/products/${entity.slug}`)} className="text-left p-5 bg-surface border border-[var(--color-border-soft)] rounded-[var(--radius-md)] hover:border-accent"><span className="text-[10px] font-mono uppercase text-accent">{entity.kind} · {entity.maturity}</span><h2 className="font-serif text-lg font-bold text-ink mt-2">{entity.displayName}</h2><p className="text-xs text-ink-muted mt-1 leading-relaxed">{entity.summary}</p></button>)}</div> : <div className="space-y-8">{groups.map(([group, items]) => <CatalogGroup key={group} title={group} entities={items} onNavigate={onNavigate} />)}</div>}{catalog.filtered.length === 0 && <div className="p-10 text-center bg-surface border border-[var(--color-border-soft)] rounded-[var(--radius-md)] text-sm text-ink-muted">No catalog records match these filters.</div>}</div>;
+  return <div className="max-w-[var(--content-max)] mx-auto px-4 sm:px-6 lg:px-8 py-12 space-y-8"><div className="max-w-3xl space-y-3"><span className="text-xs font-mono uppercase tracking-wider text-accent font-bold block">Dense portfolio catalog</span><h1 className="font-serif text-4xl font-bold tracking-tight text-ink">{title}</h1><p className="text-ink-muted text-base leading-relaxed">{description}</p></div><CatalogToolbar {...catalog} entities={entities} mobileFiltersOpen={mobileFiltersOpen} setMobileFiltersOpen={setMobileFiltersOpen} />{catalog.view === "cards" ? <div className="grid grid-cols-1 md:grid-cols-2 gap-4">{catalog.filtered.map((entity) => <button key={entity.id} type="button" onClick={() => onNavigate(productRecordPath(entity.slug))} className="text-left p-5 bg-surface border border-[var(--color-border-soft)] rounded-[var(--radius-md)] hover:border-accent"><span className="text-[10px] font-mono uppercase text-accent">{entity.kind} · {entity.maturity}</span><h2 className="font-serif text-lg font-bold text-ink mt-2">{entity.displayName}</h2><p className="text-xs text-ink-muted mt-1 leading-relaxed">{entity.summary}</p></button>)}</div> : <div className="space-y-8">{groups.map(([group, items]) => <CatalogGroup key={group} title={group} entities={items} onNavigate={onNavigate} />)}</div>}{catalog.filtered.length === 0 && <div className="p-10 text-center bg-surface border border-[var(--color-border-soft)] rounded-[var(--radius-md)] text-sm text-ink-muted">No catalog records match these filters.</div>}</div>;
 }
 /* ========================================================================== 
    PRODUCTS INDEX PAGE
@@ -1419,7 +1427,7 @@ function ProductsIndexPage({ onNavigate }: RouteProps) {
                     {matchingSuites.map((s) => (
                       <div
                         key={s.id}
-                        onClick={() => onNavigate(`/products/${s.slug}`)}
+                        onClick={() => onNavigate(productRecordPath(s.slug))}
                         className="p-3 bg-canvas border border-[var(--color-border-soft)] hover:border-accent rounded-[var(--radius-sm)] cursor-pointer transition-all flex items-center justify-between group"
                       >
                         <div>
@@ -1597,7 +1605,7 @@ function ProductsOrgPage({ org, onNavigate }: { org: string; onNavigate: (path: 
                   </div>
                   <div className="pt-4 mt-4 border-t border-[var(--color-border-soft)]">
                     <button
-                      onClick={() => onNavigate(`/products/${e.slug}`)}
+                      onClick={() => onNavigate(productRecordPath(e.slug))}
                       className="text-xs font-mono text-accent hover:text-accent-hover font-semibold inline-flex items-center gap-1"
                     >
                       Examine Suite Blueprint &rarr;
@@ -1860,7 +1868,7 @@ function SuiteDetailPage({ suiteSlug, onNavigate }: { suiteSlug: string; onNavig
                   {childProducts.map((p) => (
                     <div
                       key={p.id}
-                      onClick={() => onNavigate(`/products/${p.slug}`)}
+                      onClick={() => onNavigate(productRecordPath(p.slug))}
                       className="p-4 bg-[var(--color-surface)] border border-[var(--color-border-soft)] hover:border-accent rounded-[var(--radius-md)] cursor-pointer transition-all flex items-start justify-between"
                     >
                       <div>
@@ -1956,7 +1964,7 @@ function PackageDetailPage({ slug, onNavigate }: { slug: string; onNavigate: (pa
         <button
           onClick={() => {
             if (parentSuite) {
-              onNavigate(`/products/${parentSuite.slug}`);
+              onNavigate(productRecordPath(parentSuite.slug));
             } else {
               onNavigate(`/products/${pkg.organization}`);
             }
@@ -1988,7 +1996,7 @@ function PackageDetailPage({ slug, onNavigate }: { slug: string; onNavigate: (pa
 
           {parentSuite && (
             <blockquote>
-              This package represents an integrated, modular submodule of the flagship <a href={`/products/${parentSuite.slug}`} onClick={(e) => { e.preventDefault(); onNavigate(`/products/${parentSuite.slug}`); }}>{parentSuite.displayName}</a> suite.
+              This package represents an integrated, modular submodule of the flagship <a href={productRecordPath(parentSuite.slug)} onClick={(e) => { e.preventDefault(); onNavigate(productRecordPath(parentSuite.slug)); }}>{parentSuite.displayName}</a> suite.
             </blockquote>
           )}
 
@@ -2207,7 +2215,7 @@ function SolutionDetailPage({ slug, onNavigate }: { slug: string; onNavigate: (p
                     return (
                       <button
                         key={suiteSlug}
-                        onClick={() => onNavigate(`/products/${suiteSlug}`)}
+                        onClick={() => onNavigate(productRecordPath(suiteSlug))}
                         className="text-xs font-mono bg-canvas border border-[var(--color-border-soft)] hover:border-accent text-ink-muted hover:text-accent px-3 py-1.5 rounded transition-all cursor-pointer inline-flex items-center gap-1.5"
                       >
                         {match ? match.displayName : suiteSlug}

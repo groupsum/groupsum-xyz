@@ -1,0 +1,206 @@
+{
+  "generated_at": "2026-08-03T10:05:58Z",
+  "packages": [
+    {
+      "claim_boundary": "Publication is reported only when confirmed by the named public registry.",
+      "dependency_count": 16,
+      "description": "Observed npm package record for @groupsum/file-browser.",
+      "description_source": "generated-factual",
+      "display_name": "@groupsum/file-browser",
+      "downloads": null,
+      "downstream_completeness": "not-observed",
+      "downstream_count": 0,
+      "ecosystem": "npm",
+      "evidence": [
+        {
+          "kind": "registry",
+          "observed_at": "2026-08-03T10:05:58Z",
+          "url": "https://www.npmjs.com/package/@groupsum/file-browser"
+        }
+      ],
+      "id": "package:npm:@groupsum/file-browser:groupsum/file-browser:packages/file-browser/package.json",
+      "kind": "package",
+      "latest_version": "0.1.0",
+      "manifest_path": "packages/file-browser/package.json",
+      "name": "@groupsum/file-browser",
+      "observed_at": "2026-08-03T10:05:58Z",
+      "owner": "groupsum",
+      "private": false,
+      "publication_status": "published",
+      "published": true,
+      "registry_url": "https://www.npmjs.com/package/@groupsum/file-browser",
+      "relationship_count": 15,
+      "relationship_counts": {
+        "package_depends_on_external": 14,
+        "repository_contains_package": 1
+      },
+      "release_count": 1,
+      "repository": "groupsum/file-browser",
+      "reviewed": false,
+      "route": "/catalog/packages/npm/groupsum-file-browser-d2f97a3a",
+      "source_url": "https://github.com/groupsum/file-browser/blob/HEAD/packages/file-browser/package.json",
+      "version_declared": "0.1.0"
+    },
+    {
+      "claim_boundary": "Publication is reported only when confirmed by the named public registry.",
+      "dependency_count": 0,
+      "description": "Observed npm package record for file-browser-workspace.",
+      "description_source": "generated-factual",
+      "display_name": "file-browser-workspace",
+      "downloads": null,
+      "downstream_completeness": "not-observed",
+      "downstream_count": 0,
+      "ecosystem": "npm",
+      "evidence": [
+        {
+          "kind": "source",
+          "observed_at": "2026-08-03T10:05:58Z",
+          "url": "https://github.com/groupsum/file-browser/blob/HEAD/package.json"
+        }
+      ],
+      "id": "package:npm:file-browser-workspace:groupsum/file-browser:package.json",
+      "kind": "package",
+      "latest_version": "0.1.0",
+      "manifest_path": "package.json",
+      "name": "file-browser-workspace",
+      "observed_at": "2026-08-03T10:05:58Z",
+      "owner": "groupsum",
+      "private": true,
+      "publication_status": "manifest_private",
+      "published": false,
+      "registry_url": null,
+      "relationship_count": 1,
+      "relationship_counts": {
+        "repository_contains_package": 1
+      },
+      "release_count": 0,
+      "repository": "groupsum/file-browser",
+      "reviewed": false,
+      "route": "/catalog/packages/npm/file-browser-workspace-d3fdf784",
+      "source_url": "https://github.com/groupsum/file-browser/blob/HEAD/package.json",
+      "version_declared": "0.1.0"
+    },
+    {
+      "claim_boundary": "Publication is reported only when confirmed by the named public registry.",
+      "dependency_count": 1,
+      "description": "Observed pypi package record for file-browser-workspace.",
+      "description_source": "generated-factual",
+      "display_name": "file-browser-workspace",
+      "downloads": null,
+      "downstream_completeness": "not-observed",
+      "downstream_count": 0,
+      "ecosystem": "pypi",
+      "evidence": [
+        {
+          "kind": "source",
+          "observed_at": "2026-08-03T10:05:58Z",
+          "url": "https://github.com/groupsum/file-browser/blob/HEAD/pyproject.toml"
+        }
+      ],
+      "id": "package:pypi:file-browser-workspace:groupsum/file-browser:pyproject.toml",
+      "kind": "package",
+      "latest_version": "0.1.0",
+      "manifest_path": "pyproject.toml",
+      "name": "file-browser-workspace",
+      "observed_at": "2026-08-03T10:05:58Z",
+      "owner": "groupsum",
+      "private": false,
+      "publication_status": "not-confirmed",
+      "published": false,
+      "registry_url": null,
+      "relationship_count": 2,
+      "relationship_counts": {
+        "package_depends_on_package": 1,
+        "repository_contains_package": 1
+      },
+      "release_count": 0,
+      "repository": "groupsum/file-browser",
+      "reviewed": false,
+      "route": "/catalog/packages/pypi/file-browser-workspace-d907dc0b",
+      "source_url": "https://github.com/groupsum/file-browser/blob/HEAD/pyproject.toml",
+      "version_declared": "0.1.0"
+    }
+  ],
+  "repository": {
+    "archived": false,
+    "claim_boundary": "Repository, release, deployment, and live-service states are reported separately.",
+    "created_at": "2026-06-15T10:41:45Z",
+    "default_branch": "master",
+    "description": "Public source repository groupsum/file-browser.",
+    "description_source": "generated-factual",
+    "display_name": "file-browser",
+    "evidence": [
+      {
+        "kind": "source",
+        "observed_at": "2026-08-03T10:05:58Z",
+        "url": "https://github.com/groupsum/file-browser"
+      }
+    ],
+    "fork": false,
+    "full_name": "groupsum/file-browser",
+    "homepage": null,
+    "id": "repository:groupsum/file-browser",
+    "kind": "repository",
+    "latest_commit": {
+      "author": "cobycloud",
+      "authored_at": "2026-06-15T10:48:36Z",
+      "committed_at": "2026-06-15T10:48:36Z",
+      "committer": "cobycloud",
+      "message": "Add package repository metadata",
+      "sha": "0bb4d193e2aec5e5d2ebfd8050d2b7d09e809ebb",
+      "url": "https://github.com/groupsum/file-browser/commit/0bb4d193e2aec5e5d2ebfd8050d2b7d09e809ebb"
+    },
+    "latest_deployment": null,
+    "latest_release": {
+      "assets": [],
+      "draft": false,
+      "name": "v0.1.0",
+      "prerelease": false,
+      "published_at": "2026-06-15T10:49:40Z",
+      "tag": "v0.1.0",
+      "url": "https://github.com/groupsum/file-browser/releases/tag/v0.1.0"
+    },
+    "license": "NOASSERTION",
+    "metrics": {
+      "commits": 7,
+      "contributors": 1,
+      "deployments": 0,
+      "environments": 0,
+      "forks": 0,
+      "github_releases": 1,
+      "open_issues": 0,
+      "packages": 3,
+      "related_resources": 0,
+      "relationships": 3,
+      "size_kb": 132,
+      "stars": 0,
+      "watchers": 0
+    },
+    "name": "file-browser",
+    "observed_at": "2026-08-03T10:05:58Z",
+    "owner": "groupsum",
+    "package_ids": [
+      "package:npm:@groupsum/file-browser:groupsum/file-browser:packages/file-browser/package.json",
+      "package:npm:file-browser-workspace:groupsum/file-browser:package.json",
+      "package:pypi:file-browser-workspace:groupsum/file-browser:pyproject.toml"
+    ],
+    "pushed_at": "2026-06-15T10:48:57Z",
+    "related_resources": [],
+    "relationship_counts": {
+      "repository_contains_package": 3
+    },
+    "reviewed": false,
+    "route": "/catalog/repositories/groupsum/file-browser",
+    "technologies": [
+      "CSS",
+      "HTML",
+      "TypeScript"
+    ],
+    "template": false,
+    "topics": [],
+    "updated_at": "2026-06-15T10:48:59Z",
+    "url": "https://github.com/groupsum/file-browser",
+    "visibility": "public"
+  },
+  "schema_version": "1.0.0"
+}

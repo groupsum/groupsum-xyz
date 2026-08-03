@@ -1,0 +1,206 @@
+{
+  "generated_at": "2026-08-03T10:05:58Z",
+  "packages": [
+    {
+      "claim_boundary": "Publication is reported only when confirmed by the named public registry.",
+      "dependency_count": 29,
+      "description": "Observed npm package record for @groupsum/document-studio.",
+      "description_source": "generated-factual",
+      "display_name": "@groupsum/document-studio",
+      "downloads": null,
+      "downstream_completeness": "not-observed",
+      "downstream_count": 0,
+      "ecosystem": "npm",
+      "evidence": [
+        {
+          "kind": "registry",
+          "observed_at": "2026-08-03T10:05:58Z",
+          "url": "https://www.npmjs.com/package/@groupsum/document-studio"
+        }
+      ],
+      "id": "package:npm:@groupsum/document-studio:groupsum/document-studio:packages/document-studio/package.json",
+      "kind": "package",
+      "latest_version": "0.1.0",
+      "manifest_path": "packages/document-studio/package.json",
+      "name": "@groupsum/document-studio",
+      "observed_at": "2026-08-03T10:05:58Z",
+      "owner": "groupsum",
+      "private": false,
+      "publication_status": "published",
+      "published": true,
+      "registry_url": "https://www.npmjs.com/package/@groupsum/document-studio",
+      "relationship_count": 28,
+      "relationship_counts": {
+        "package_depends_on_external": 27,
+        "repository_contains_package": 1
+      },
+      "release_count": 1,
+      "repository": "groupsum/document-studio",
+      "reviewed": false,
+      "route": "/catalog/packages/npm/groupsum-document-studio-a7e8823b",
+      "source_url": "https://github.com/groupsum/document-studio/blob/HEAD/packages/document-studio/package.json",
+      "version_declared": "0.1.0"
+    },
+    {
+      "claim_boundary": "Publication is reported only when confirmed by the named public registry.",
+      "dependency_count": 0,
+      "description": "Observed npm package record for document-studio-workspace.",
+      "description_source": "generated-factual",
+      "display_name": "document-studio-workspace",
+      "downloads": null,
+      "downstream_completeness": "not-observed",
+      "downstream_count": 0,
+      "ecosystem": "npm",
+      "evidence": [
+        {
+          "kind": "source",
+          "observed_at": "2026-08-03T10:05:58Z",
+          "url": "https://github.com/groupsum/document-studio/blob/HEAD/package.json"
+        }
+      ],
+      "id": "package:npm:document-studio-workspace:groupsum/document-studio:package.json",
+      "kind": "package",
+      "latest_version": "0.1.0",
+      "manifest_path": "package.json",
+      "name": "document-studio-workspace",
+      "observed_at": "2026-08-03T10:05:58Z",
+      "owner": "groupsum",
+      "private": true,
+      "publication_status": "manifest_private",
+      "published": false,
+      "registry_url": null,
+      "relationship_count": 1,
+      "relationship_counts": {
+        "repository_contains_package": 1
+      },
+      "release_count": 0,
+      "repository": "groupsum/document-studio",
+      "reviewed": false,
+      "route": "/catalog/packages/npm/document-studio-workspace-cab8ce10",
+      "source_url": "https://github.com/groupsum/document-studio/blob/HEAD/package.json",
+      "version_declared": "0.1.0"
+    },
+    {
+      "claim_boundary": "Publication is reported only when confirmed by the named public registry.",
+      "dependency_count": 1,
+      "description": "Observed pypi package record for document-studio-workspace.",
+      "description_source": "generated-factual",
+      "display_name": "document-studio-workspace",
+      "downloads": null,
+      "downstream_completeness": "not-observed",
+      "downstream_count": 0,
+      "ecosystem": "pypi",
+      "evidence": [
+        {
+          "kind": "source",
+          "observed_at": "2026-08-03T10:05:58Z",
+          "url": "https://github.com/groupsum/document-studio/blob/HEAD/pyproject.toml"
+        }
+      ],
+      "id": "package:pypi:document-studio-workspace:groupsum/document-studio:pyproject.toml",
+      "kind": "package",
+      "latest_version": "0.1.0",
+      "manifest_path": "pyproject.toml",
+      "name": "document-studio-workspace",
+      "observed_at": "2026-08-03T10:05:58Z",
+      "owner": "groupsum",
+      "private": false,
+      "publication_status": "not-confirmed",
+      "published": false,
+      "registry_url": null,
+      "relationship_count": 2,
+      "relationship_counts": {
+        "package_depends_on_package": 1,
+        "repository_contains_package": 1
+      },
+      "release_count": 0,
+      "repository": "groupsum/document-studio",
+      "reviewed": false,
+      "route": "/catalog/packages/pypi/document-studio-workspace-084b7d3e",
+      "source_url": "https://github.com/groupsum/document-studio/blob/HEAD/pyproject.toml",
+      "version_declared": "0.1.0"
+    }
+  ],
+  "repository": {
+    "archived": false,
+    "claim_boundary": "Repository, release, deployment, and live-service states are reported separately.",
+    "created_at": "2026-06-16T20:49:14Z",
+    "default_branch": "master",
+    "description": "Public source repository groupsum/document-studio.",
+    "description_source": "generated-factual",
+    "display_name": "document-studio",
+    "evidence": [
+      {
+        "kind": "source",
+        "observed_at": "2026-08-03T10:05:58Z",
+        "url": "https://github.com/groupsum/document-studio"
+      }
+    ],
+    "fork": false,
+    "full_name": "groupsum/document-studio",
+    "homepage": null,
+    "id": "repository:groupsum/document-studio",
+    "kind": "repository",
+    "latest_commit": {
+      "author": "cobycloud",
+      "authored_at": "2026-06-15T10:48:36Z",
+      "committed_at": "2026-06-15T10:48:36Z",
+      "committer": "cobycloud",
+      "message": "Add package repository metadata",
+      "sha": "0c1a9caeeefa5809cf59ea7cbd5026342a95d702",
+      "url": "https://github.com/groupsum/document-studio/commit/0c1a9caeeefa5809cf59ea7cbd5026342a95d702"
+    },
+    "latest_deployment": null,
+    "latest_release": {
+      "assets": [],
+      "draft": false,
+      "name": "v0.1.0",
+      "prerelease": false,
+      "published_at": "2026-06-16T20:50:39Z",
+      "tag": "v0.1.0",
+      "url": "https://github.com/groupsum/document-studio/releases/tag/v0.1.0"
+    },
+    "license": "NOASSERTION",
+    "metrics": {
+      "commits": 6,
+      "contributors": 1,
+      "deployments": 0,
+      "environments": 0,
+      "forks": 0,
+      "github_releases": 1,
+      "open_issues": 0,
+      "packages": 3,
+      "related_resources": 0,
+      "relationships": 3,
+      "size_kb": 150,
+      "stars": 0,
+      "watchers": 0
+    },
+    "name": "document-studio",
+    "observed_at": "2026-08-03T10:05:58Z",
+    "owner": "groupsum",
+    "package_ids": [
+      "package:npm:@groupsum/document-studio:groupsum/document-studio:packages/document-studio/package.json",
+      "package:npm:document-studio-workspace:groupsum/document-studio:package.json",
+      "package:pypi:document-studio-workspace:groupsum/document-studio:pyproject.toml"
+    ],
+    "pushed_at": "2026-06-16T20:49:38Z",
+    "related_resources": [],
+    "relationship_counts": {
+      "repository_contains_package": 3
+    },
+    "reviewed": false,
+    "route": "/catalog/repositories/groupsum/document-studio",
+    "technologies": [
+      "CSS",
+      "HTML",
+      "TypeScript"
+    ],
+    "template": false,
+    "topics": [],
+    "updated_at": "2026-06-16T20:49:49Z",
+    "url": "https://github.com/groupsum/document-studio",
+    "visibility": "public"
+  },
+  "schema_version": "1.0.0"
+}
