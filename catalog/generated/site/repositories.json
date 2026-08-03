@@ -2,6 +2,140 @@
   {
     "archived": false,
     "claim_boundary": "Repository, release, deployment, and live-service states are reported separately.",
+    "commit_activity": [
+      {
+        "count": 0,
+        "date": "2026-07-05"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-06"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-07"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-08"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-09"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-10"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-11"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-12"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-13"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-14"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-15"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-16"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-17"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-18"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-19"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-20"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-21"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-22"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-23"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-24"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-25"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-26"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-27"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-28"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-29"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-30"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-31"
+      },
+      {
+        "count": 0,
+        "date": "2026-08-01"
+      },
+      {
+        "count": 0,
+        "date": "2026-08-02"
+      },
+      {
+        "count": 0,
+        "date": "2026-08-03"
+      }
+    ],
+    "contributors": [
+      {
+        "contributions": 18,
+        "login": "cobycloud",
+        "url": "https://github.com/cobycloud"
+      },
+      {
+        "contributions": 2,
+        "login": "github-actions[bot]",
+        "url": "https://github.com/apps/github-actions"
+      }
+    ],
     "created_at": "2026-05-16T20:02:23Z",
     "default_branch": "master",
     "description": "Installable SSOT governance pack for ad and media measurement, video ads, viewability, invalid traffic, podcast measurement, and MRC/IAB quality controls.",
@@ -127,6 +261,140 @@
   {
     "archived": false,
     "claim_boundary": "Repository, release, deployment, and live-service states are reported separately.",
+    "commit_activity": [
+      {
+        "count": 0,
+        "date": "2026-07-05"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-06"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-07"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-08"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-09"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-10"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-11"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-12"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-13"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-14"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-15"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-16"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-17"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-18"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-19"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-20"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-21"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-22"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-23"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-24"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-25"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-26"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-27"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-28"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-29"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-30"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-31"
+      },
+      {
+        "count": 0,
+        "date": "2026-08-01"
+      },
+      {
+        "count": 0,
+        "date": "2026-08-02"
+      },
+      {
+        "count": 0,
+        "date": "2026-08-03"
+      }
+    ],
+    "contributors": [
+      {
+        "contributions": 18,
+        "login": "cobycloud",
+        "url": "https://github.com/cobycloud"
+      },
+      {
+        "contributions": 1,
+        "login": "github-actions[bot]",
+        "url": "https://github.com/apps/github-actions"
+      }
+    ],
     "created_at": "2026-05-16T20:02:32Z",
     "default_branch": "master",
     "description": "Installable SSOT governance pack for ads.txt, app-ads.txt, sellers.json, SupplyChain Object, buyers.json, DemandChain Object, and ads.cert.",
@@ -242,6 +510,135 @@
   {
     "archived": false,
     "claim_boundary": "Repository, release, deployment, and live-service states are reported separately.",
+    "commit_activity": [
+      {
+        "count": 0,
+        "date": "2026-07-05"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-06"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-07"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-08"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-09"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-10"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-11"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-12"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-13"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-14"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-15"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-16"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-17"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-18"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-19"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-20"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-21"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-22"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-23"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-24"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-25"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-26"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-27"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-28"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-29"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-30"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-31"
+      },
+      {
+        "count": 0,
+        "date": "2026-08-01"
+      },
+      {
+        "count": 0,
+        "date": "2026-08-02"
+      },
+      {
+        "count": 0,
+        "date": "2026-08-03"
+      }
+    ],
+    "contributors": [
+      {
+        "contributions": 18,
+        "login": "cobycloud",
+        "url": "https://github.com/cobycloud"
+      }
+    ],
     "created_at": "2026-06-01T11:36:39Z",
     "default_branch": "master",
     "description": "Public source repository tigrbl/attribution-campaign-context.",
@@ -341,6 +738,140 @@
   {
     "archived": false,
     "claim_boundary": "Repository, release, deployment, and live-service states are reported separately.",
+    "commit_activity": [
+      {
+        "count": 0,
+        "date": "2026-07-05"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-06"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-07"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-08"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-09"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-10"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-11"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-12"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-13"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-14"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-15"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-16"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-17"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-18"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-19"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-20"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-21"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-22"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-23"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-24"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-25"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-26"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-27"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-28"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-29"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-30"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-31"
+      },
+      {
+        "count": 0,
+        "date": "2026-08-01"
+      },
+      {
+        "count": 0,
+        "date": "2026-08-02"
+      },
+      {
+        "count": 0,
+        "date": "2026-08-03"
+      }
+    ],
+    "contributors": [
+      {
+        "contributions": 18,
+        "login": "cobycloud",
+        "url": "https://github.com/cobycloud"
+      },
+      {
+        "contributions": 1,
+        "login": "github-actions[bot]",
+        "url": "https://github.com/apps/github-actions"
+      }
+    ],
     "created_at": "2026-05-16T20:02:41Z",
     "default_branch": "master",
     "description": "Installable SSOT governance pack for audience-data transparency, audience taxonomy, content taxonomy, segment provenance, and recency disclosures.",
@@ -456,6 +987,135 @@
   {
     "archived": false,
     "claim_boundary": "Repository, release, deployment, and live-service states are reported separately.",
+    "commit_activity": [
+      {
+        "count": 0,
+        "date": "2026-07-05"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-06"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-07"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-08"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-09"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-10"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-11"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-12"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-13"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-14"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-15"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-16"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-17"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-18"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-19"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-20"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-21"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-22"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-23"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-24"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-25"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-26"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-27"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-28"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-29"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-30"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-31"
+      },
+      {
+        "count": 0,
+        "date": "2026-08-01"
+      },
+      {
+        "count": 0,
+        "date": "2026-08-02"
+      },
+      {
+        "count": 0,
+        "date": "2026-08-03"
+      }
+    ],
+    "contributors": [
+      {
+        "contributions": 1,
+        "login": "cobycloud",
+        "url": "https://github.com/cobycloud"
+      }
+    ],
     "created_at": "2026-06-02T10:57:14Z",
     "default_branch": "master",
     "description": "Installable SSOT governance pack for digital identity assurance, IAL/AAL/FAL, WebAuthn/FIDO, OIDC authentication claims, sessions, and recovery.",
@@ -535,6 +1195,135 @@
   {
     "archived": false,
     "claim_boundary": "Repository, release, deployment, and live-service states are reported separately.",
+    "commit_activity": [
+      {
+        "count": 0,
+        "date": "2026-07-05"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-06"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-07"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-08"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-09"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-10"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-11"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-12"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-13"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-14"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-15"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-16"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-17"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-18"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-19"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-20"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-21"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-22"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-23"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-24"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-25"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-26"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-27"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-28"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-29"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-30"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-31"
+      },
+      {
+        "count": 0,
+        "date": "2026-08-01"
+      },
+      {
+        "count": 0,
+        "date": "2026-08-02"
+      },
+      {
+        "count": 0,
+        "date": "2026-08-03"
+      }
+    ],
+    "contributors": [
+      {
+        "contributions": 1,
+        "login": "cobycloud",
+        "url": "https://github.com/cobycloud"
+      }
+    ],
     "created_at": "2026-06-02T10:15:53Z",
     "default_branch": "master",
     "description": "Installable SSOT governance pack for AuthNZ policy, OIDC claims, OAuth scopes, permissions, entitlements, PDP/PEP architecture, and policy-as-code.",
@@ -614,6 +1403,135 @@
   {
     "archived": false,
     "claim_boundary": "Repository, release, deployment, and live-service states are reported separately.",
+    "commit_activity": [
+      {
+        "count": 0,
+        "date": "2026-07-05"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-06"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-07"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-08"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-09"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-10"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-11"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-12"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-13"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-14"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-15"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-16"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-17"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-18"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-19"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-20"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-21"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-22"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-23"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-24"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-25"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-26"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-27"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-28"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-29"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-30"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-31"
+      },
+      {
+        "count": 0,
+        "date": "2026-08-01"
+      },
+      {
+        "count": 0,
+        "date": "2026-08-02"
+      },
+      {
+        "count": 0,
+        "date": "2026-08-03"
+      }
+    ],
+    "contributors": [
+      {
+        "contributions": 1,
+        "login": "cobycloud",
+        "url": "https://github.com/cobycloud"
+      }
+    ],
     "created_at": "2026-06-02T10:57:11Z",
     "default_branch": "master",
     "description": "Installable SSOT governance pack for authorization policy, OAuth scopes, permissions, entitlements, PDP/PEP architecture, and policy-as-code.",
@@ -693,6 +1611,140 @@
   {
     "archived": false,
     "claim_boundary": "Repository, release, deployment, and live-service states are reported separately.",
+    "commit_activity": [
+      {
+        "count": 0,
+        "date": "2026-07-05"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-06"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-07"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-08"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-09"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-10"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-11"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-12"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-13"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-14"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-15"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-16"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-17"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-18"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-19"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-20"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-21"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-22"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-23"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-24"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-25"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-26"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-27"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-28"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-29"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-30"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-31"
+      },
+      {
+        "count": 0,
+        "date": "2026-08-01"
+      },
+      {
+        "count": 0,
+        "date": "2026-08-02"
+      },
+      {
+        "count": 0,
+        "date": "2026-08-03"
+      }
+    ],
+    "contributors": [
+      {
+        "contributions": 14,
+        "login": "cobycloud",
+        "url": "https://github.com/cobycloud"
+      },
+      {
+        "contributions": 7,
+        "login": "github-actions[bot]",
+        "url": "https://github.com/apps/github-actions"
+      }
+    ],
     "created_at": "2026-05-08T02:33:03Z",
     "default_branch": "master",
     "description": "Installable SSOT ADR/SPEC extension pack for HTTP caching, freshness, validators, stale controls, Cache-Control, ETag, and CDN cache governance.",
@@ -852,6 +1904,140 @@
   {
     "archived": false,
     "claim_boundary": "Repository, release, deployment, and live-service states are reported separately.",
+    "commit_activity": [
+      {
+        "count": 0,
+        "date": "2026-07-05"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-06"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-07"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-08"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-09"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-10"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-11"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-12"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-13"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-14"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-15"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-16"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-17"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-18"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-19"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-20"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-21"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-22"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-23"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-24"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-25"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-26"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-27"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-28"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-29"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-30"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-31"
+      },
+      {
+        "count": 0,
+        "date": "2026-08-01"
+      },
+      {
+        "count": 0,
+        "date": "2026-08-02"
+      },
+      {
+        "count": 0,
+        "date": "2026-08-03"
+      }
+    ],
+    "contributors": [
+      {
+        "contributions": 18,
+        "login": "cobycloud",
+        "url": "https://github.com/cobycloud"
+      },
+      {
+        "contributions": 1,
+        "login": "github-actions[bot]",
+        "url": "https://github.com/apps/github-actions"
+      }
+    ],
     "created_at": "2026-05-16T20:00:21Z",
     "default_branch": "master",
     "description": "Installable SSOT governance pack for GPC, GPP, TCF, Consent Mode, DNT, and consent-signal precedence.",
@@ -967,6 +2153,160 @@
   {
     "archived": false,
     "claim_boundary": "Repository, release, deployment, and live-service states are reported separately.",
+    "commit_activity": [
+      {
+        "count": 0,
+        "date": "2026-07-05"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-06"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-07"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-08"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-09"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-10"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-11"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-12"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-13"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-14"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-15"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-16"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-17"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-18"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-19"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-20"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-21"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-22"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-23"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-24"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-25"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-26"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-27"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-28"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-29"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-30"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-31"
+      },
+      {
+        "count": 0,
+        "date": "2026-08-01"
+      },
+      {
+        "count": 0,
+        "date": "2026-08-02"
+      },
+      {
+        "count": 0,
+        "date": "2026-08-03"
+      }
+    ],
+    "contributors": [
+      {
+        "contributions": 183,
+        "login": "cobycloud",
+        "url": "https://github.com/cobycloud"
+      },
+      {
+        "contributions": 6,
+        "login": "Samra Solomon Barnabas",
+        "url": null
+      },
+      {
+        "contributions": 6,
+        "login": "samie-ya",
+        "url": "https://github.com/samie-ya"
+      },
+      {
+        "contributions": 6,
+        "login": "Samir433",
+        "url": "https://github.com/Samir433"
+      },
+      {
+        "contributions": 4,
+        "login": "solianadaniel1",
+        "url": "https://github.com/solianadaniel1"
+      },
+      {
+        "contributions": 3,
+        "login": "mandy2666",
+        "url": "https://github.com/mandy2666"
+      }
+    ],
     "created_at": "2024-10-09T08:07:24Z",
     "default_branch": "master",
     "description": "A CRUD Router for Fast-Creation of CRUD Routes",
@@ -1061,6 +2401,135 @@
   {
     "archived": false,
     "claim_boundary": "Repository, release, deployment, and live-service states are reported separately.",
+    "commit_activity": [
+      {
+        "count": 0,
+        "date": "2026-07-05"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-06"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-07"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-08"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-09"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-10"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-11"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-12"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-13"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-14"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-15"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-16"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-17"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-18"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-19"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-20"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-21"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-22"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-23"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-24"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-25"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-26"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-27"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-28"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-29"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-30"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-31"
+      },
+      {
+        "count": 0,
+        "date": "2026-08-01"
+      },
+      {
+        "count": 0,
+        "date": "2026-08-02"
+      },
+      {
+        "count": 0,
+        "date": "2026-08-03"
+      }
+    ],
+    "contributors": [
+      {
+        "contributions": 8,
+        "login": "cobycloud",
+        "url": "https://github.com/cobycloud"
+      }
+    ],
     "created_at": "2024-12-17T07:46:22Z",
     "default_branch": "master",
     "description": "A template repository for Swarmauri's Crouton.",
@@ -1150,6 +2619,140 @@
   {
     "archived": false,
     "claim_boundary": "Repository, release, deployment, and live-service states are reported separately.",
+    "commit_activity": [
+      {
+        "count": 0,
+        "date": "2026-07-05"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-06"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-07"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-08"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-09"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-10"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-11"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-12"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-13"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-14"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-15"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-16"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-17"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-18"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-19"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-20"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-21"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-22"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-23"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-24"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-25"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-26"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-27"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-28"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-29"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-30"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-31"
+      },
+      {
+        "count": 0,
+        "date": "2026-08-01"
+      },
+      {
+        "count": 0,
+        "date": "2026-08-02"
+      },
+      {
+        "count": 0,
+        "date": "2026-08-03"
+      }
+    ],
+    "contributors": [
+      {
+        "contributions": 18,
+        "login": "cobycloud",
+        "url": "https://github.com/cobycloud"
+      },
+      {
+        "contributions": 1,
+        "login": "github-actions[bot]",
+        "url": "https://github.com/apps/github-actions"
+      }
+    ],
     "created_at": "2026-05-16T20:02:06Z",
     "default_branch": "master",
     "description": "Installable SSOT governance pack for customer commerce semantics, products, offers, orders, invoices, reviews, ratings, and conversion actions.",
@@ -1265,6 +2868,140 @@
   {
     "archived": false,
     "claim_boundary": "Repository, release, deployment, and live-service states are reported separately.",
+    "commit_activity": [
+      {
+        "count": 0,
+        "date": "2026-07-05"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-06"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-07"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-08"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-09"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-10"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-11"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-12"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-13"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-14"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-15"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-16"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-17"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-18"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-19"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-20"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-21"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-22"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-23"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-24"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-25"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-26"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-27"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-28"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-29"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-30"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-31"
+      },
+      {
+        "count": 0,
+        "date": "2026-08-01"
+      },
+      {
+        "count": 0,
+        "date": "2026-08-02"
+      },
+      {
+        "count": 0,
+        "date": "2026-08-03"
+      }
+    ],
+    "contributors": [
+      {
+        "contributions": 18,
+        "login": "cobycloud",
+        "url": "https://github.com/cobycloud"
+      },
+      {
+        "contributions": 1,
+        "login": "github-actions[bot]",
+        "url": "https://github.com/apps/github-actions"
+      }
+    ],
     "created_at": "2026-05-16T20:01:57Z",
     "default_branch": "master",
     "description": "Installable SSOT governance pack for customer identity, profile claims, SCIM, OpenID Connect, verified credentials, and CDP profile concepts.",
@@ -1380,6 +3117,140 @@
   {
     "archived": false,
     "claim_boundary": "Repository, release, deployment, and live-service states are reported separately.",
+    "commit_activity": [
+      {
+        "count": 0,
+        "date": "2026-07-05"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-06"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-07"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-08"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-09"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-10"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-11"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-12"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-13"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-14"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-15"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-16"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-17"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-18"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-19"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-20"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-21"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-22"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-23"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-24"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-25"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-26"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-27"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-28"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-29"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-30"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-31"
+      },
+      {
+        "count": 0,
+        "date": "2026-08-01"
+      },
+      {
+        "count": 0,
+        "date": "2026-08-02"
+      },
+      {
+        "count": 0,
+        "date": "2026-08-03"
+      }
+    ],
+    "contributors": [
+      {
+        "contributions": 18,
+        "login": "cobycloud",
+        "url": "https://github.com/cobycloud"
+      },
+      {
+        "contributions": 1,
+        "login": "github-actions[bot]",
+        "url": "https://github.com/apps/github-actions"
+      }
+    ],
     "created_at": "2026-05-16T20:02:15Z",
     "default_branch": "master",
     "description": "Installable SSOT governance pack for data catalogs, analytics schemas, dataset metadata, lineage, export schemas, and evidence traceability.",
@@ -1495,6 +3366,135 @@
   {
     "archived": false,
     "claim_boundary": "Repository, release, deployment, and live-service states are reported separately.",
+    "commit_activity": [
+      {
+        "count": 0,
+        "date": "2026-07-05"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-06"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-07"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-08"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-09"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-10"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-11"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-12"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-13"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-14"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-15"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-16"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-17"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-18"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-19"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-20"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-21"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-22"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-23"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-24"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-25"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-26"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-27"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-28"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-29"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-30"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-31"
+      },
+      {
+        "count": 0,
+        "date": "2026-08-01"
+      },
+      {
+        "count": 0,
+        "date": "2026-08-02"
+      },
+      {
+        "count": 0,
+        "date": "2026-08-03"
+      }
+    ],
+    "contributors": [
+      {
+        "contributions": 1,
+        "login": "cobycloud",
+        "url": "https://github.com/cobycloud"
+      }
+    ],
     "created_at": "2026-06-01T23:57:41Z",
     "default_branch": "master",
     "description": "Installable SSOT governance pack for DID Core, DID documents, DID URLs, DID resolution, DID methods, domain linkage, DIDComm adjacency, and VC/OpenID4VC integration.",
@@ -1574,6 +3574,140 @@
   {
     "archived": false,
     "claim_boundary": "Repository, release, deployment, and live-service states are reported separately.",
+    "commit_activity": [
+      {
+        "count": 0,
+        "date": "2026-07-05"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-06"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-07"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-08"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-09"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-10"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-11"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-12"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-13"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-14"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-15"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-16"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-17"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-18"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-19"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-20"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-21"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-22"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-23"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-24"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-25"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-26"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-27"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-28"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-29"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-30"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-31"
+      },
+      {
+        "count": 0,
+        "date": "2026-08-01"
+      },
+      {
+        "count": 0,
+        "date": "2026-08-02"
+      },
+      {
+        "count": 0,
+        "date": "2026-08-03"
+      }
+    ],
+    "contributors": [
+      {
+        "contributions": 15,
+        "login": "cobycloud",
+        "url": "https://github.com/cobycloud"
+      },
+      {
+        "contributions": 5,
+        "login": "github-actions[bot]",
+        "url": "https://github.com/apps/github-actions"
+      }
+    ],
     "created_at": "2026-05-10T15:13:29Z",
     "default_branch": "master",
     "description": "Installable SSOT ADR/SPEC extension pack for digital-signature, advanced electronic signature, container, timestamping, validation, archival, and assurance governance.",
@@ -1720,6 +3854,135 @@
   {
     "archived": false,
     "claim_boundary": "Repository, release, deployment, and live-service states are reported separately.",
+    "commit_activity": [
+      {
+        "count": 0,
+        "date": "2026-07-05"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-06"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-07"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-08"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-09"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-10"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-11"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-12"
+      },
+      {
+        "count": 1,
+        "date": "2026-07-13"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-14"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-15"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-16"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-17"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-18"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-19"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-20"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-21"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-22"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-23"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-24"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-25"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-26"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-27"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-28"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-29"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-30"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-31"
+      },
+      {
+        "count": 0,
+        "date": "2026-08-01"
+      },
+      {
+        "count": 0,
+        "date": "2026-08-02"
+      },
+      {
+        "count": 0,
+        "date": "2026-08-03"
+      }
+    ],
+    "contributors": [
+      {
+        "contributions": 35,
+        "login": "cobycloud",
+        "url": "https://github.com/cobycloud"
+      }
+    ],
     "created_at": "2026-05-18T17:39:05Z",
     "default_branch": "master",
     "description": "ZDX and MkDocs Material documentation website for docs.peagen.com.",
@@ -1842,6 +4105,135 @@
   {
     "archived": false,
     "claim_boundary": "Repository, release, deployment, and live-service states are reported separately.",
+    "commit_activity": [
+      {
+        "count": 0,
+        "date": "2026-07-05"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-06"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-07"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-08"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-09"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-10"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-11"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-12"
+      },
+      {
+        "count": 1,
+        "date": "2026-07-13"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-14"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-15"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-16"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-17"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-18"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-19"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-20"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-21"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-22"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-23"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-24"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-25"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-26"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-27"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-28"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-29"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-30"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-31"
+      },
+      {
+        "count": 0,
+        "date": "2026-08-01"
+      },
+      {
+        "count": 0,
+        "date": "2026-08-02"
+      },
+      {
+        "count": 0,
+        "date": "2026-08-03"
+      }
+    ],
+    "contributors": [
+      {
+        "contributions": 36,
+        "login": "cobycloud",
+        "url": "https://github.com/cobycloud"
+      }
+    ],
     "created_at": "2026-05-18T17:39:02Z",
     "default_branch": "master",
     "description": "ZDX and MkDocs Material documentation website for docs.swarmauri.com.",
@@ -1985,6 +4377,135 @@
   {
     "archived": false,
     "claim_boundary": "Repository, release, deployment, and live-service states are reported separately.",
+    "commit_activity": [
+      {
+        "count": 0,
+        "date": "2026-07-05"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-06"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-07"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-08"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-09"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-10"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-11"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-12"
+      },
+      {
+        "count": 1,
+        "date": "2026-07-13"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-14"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-15"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-16"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-17"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-18"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-19"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-20"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-21"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-22"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-23"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-24"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-25"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-26"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-27"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-28"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-29"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-30"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-31"
+      },
+      {
+        "count": 0,
+        "date": "2026-08-01"
+      },
+      {
+        "count": 0,
+        "date": "2026-08-02"
+      },
+      {
+        "count": 0,
+        "date": "2026-08-03"
+      }
+    ],
+    "contributors": [
+      {
+        "contributions": 35,
+        "login": "cobycloud",
+        "url": "https://github.com/cobycloud"
+      }
+    ],
     "created_at": "2026-05-18T17:38:58Z",
     "default_branch": "master",
     "description": "ZDX and MkDocs Material documentation website for docs.tigrbl.com.",
@@ -2114,6 +4635,135 @@
   {
     "archived": false,
     "claim_boundary": "Repository, release, deployment, and live-service states are reported separately.",
+    "commit_activity": [
+      {
+        "count": 0,
+        "date": "2026-07-05"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-06"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-07"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-08"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-09"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-10"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-11"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-12"
+      },
+      {
+        "count": 1,
+        "date": "2026-07-13"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-14"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-15"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-16"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-17"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-18"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-19"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-20"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-21"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-22"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-23"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-24"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-25"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-26"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-27"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-28"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-29"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-30"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-31"
+      },
+      {
+        "count": 0,
+        "date": "2026-08-01"
+      },
+      {
+        "count": 0,
+        "date": "2026-08-02"
+      },
+      {
+        "count": 0,
+        "date": "2026-08-03"
+      }
+    ],
+    "contributors": [
+      {
+        "contributions": 34,
+        "login": "cobycloud",
+        "url": "https://github.com/cobycloud"
+      }
+    ],
     "created_at": "2026-05-18T17:38:54Z",
     "default_branch": "master",
     "description": "ZDX and MkDocs Material documentation website for docs.tigrcorn.com.",
@@ -2229,6 +4879,135 @@
   {
     "archived": false,
     "claim_boundary": "Repository, release, deployment, and live-service states are reported separately.",
+    "commit_activity": [
+      {
+        "count": 0,
+        "date": "2026-07-05"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-06"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-07"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-08"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-09"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-10"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-11"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-12"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-13"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-14"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-15"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-16"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-17"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-18"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-19"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-20"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-21"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-22"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-23"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-24"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-25"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-26"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-27"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-28"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-29"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-30"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-31"
+      },
+      {
+        "count": 0,
+        "date": "2026-08-01"
+      },
+      {
+        "count": 0,
+        "date": "2026-08-02"
+      },
+      {
+        "count": 0,
+        "date": "2026-08-03"
+      }
+    ],
+    "contributors": [
+      {
+        "contributions": 6,
+        "login": "cobycloud",
+        "url": "https://github.com/cobycloud"
+      }
+    ],
     "created_at": "2026-06-16T20:49:14Z",
     "default_branch": "master",
     "description": "Public source repository groupsum/document-studio.",
@@ -2322,6 +5101,135 @@
   {
     "archived": false,
     "claim_boundary": "Repository, release, deployment, and live-service states are reported separately.",
+    "commit_activity": [
+      {
+        "count": 0,
+        "date": "2026-07-05"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-06"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-07"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-08"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-09"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-10"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-11"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-12"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-13"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-14"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-15"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-16"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-17"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-18"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-19"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-20"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-21"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-22"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-23"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-24"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-25"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-26"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-27"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-28"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-29"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-30"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-31"
+      },
+      {
+        "count": 0,
+        "date": "2026-08-01"
+      },
+      {
+        "count": 0,
+        "date": "2026-08-02"
+      },
+      {
+        "count": 0,
+        "date": "2026-08-03"
+      }
+    ],
+    "contributors": [
+      {
+        "contributions": 7,
+        "login": "cobycloud",
+        "url": "https://github.com/cobycloud"
+      }
+    ],
     "created_at": "2026-06-15T10:41:49Z",
     "default_branch": "master",
     "description": "Public source repository groupsum/document-viewer.",
@@ -2415,6 +5323,140 @@
   {
     "archived": false,
     "claim_boundary": "Repository, release, deployment, and live-service states are reported separately.",
+    "commit_activity": [
+      {
+        "count": 0,
+        "date": "2026-07-05"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-06"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-07"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-08"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-09"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-10"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-11"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-12"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-13"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-14"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-15"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-16"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-17"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-18"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-19"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-20"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-21"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-22"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-23"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-24"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-25"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-26"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-27"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-28"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-29"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-30"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-31"
+      },
+      {
+        "count": 0,
+        "date": "2026-08-01"
+      },
+      {
+        "count": 0,
+        "date": "2026-08-02"
+      },
+      {
+        "count": 0,
+        "date": "2026-08-03"
+      }
+    ],
+    "contributors": [
+      {
+        "contributions": 18,
+        "login": "cobycloud",
+        "url": "https://github.com/cobycloud"
+      },
+      {
+        "contributions": 1,
+        "login": "github-actions[bot]",
+        "url": "https://github.com/apps/github-actions"
+      }
+    ],
     "created_at": "2026-05-16T20:01:15Z",
     "default_branch": "master",
     "description": "Installable SSOT governance pack for event envelopes, behavioral telemetry vocabularies, interaction events, and normalized event schemas.",
@@ -2530,6 +5572,135 @@
   {
     "archived": false,
     "claim_boundary": "Repository, release, deployment, and live-service states are reported separately.",
+    "commit_activity": [
+      {
+        "count": 0,
+        "date": "2026-07-05"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-06"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-07"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-08"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-09"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-10"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-11"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-12"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-13"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-14"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-15"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-16"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-17"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-18"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-19"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-20"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-21"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-22"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-23"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-24"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-25"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-26"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-27"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-28"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-29"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-30"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-31"
+      },
+      {
+        "count": 0,
+        "date": "2026-08-01"
+      },
+      {
+        "count": 0,
+        "date": "2026-08-02"
+      },
+      {
+        "count": 0,
+        "date": "2026-08-03"
+      }
+    ],
+    "contributors": [
+      {
+        "contributions": 7,
+        "login": "cobycloud",
+        "url": "https://github.com/cobycloud"
+      }
+    ],
     "created_at": "2026-06-15T10:41:45Z",
     "default_branch": "master",
     "description": "Public source repository groupsum/file-browser.",
@@ -2623,6 +5794,140 @@
   {
     "archived": false,
     "claim_boundary": "Repository, release, deployment, and live-service states are reported separately.",
+    "commit_activity": [
+      {
+        "count": 0,
+        "date": "2026-07-05"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-06"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-07"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-08"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-09"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-10"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-11"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-12"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-13"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-14"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-15"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-16"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-17"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-18"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-19"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-20"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-21"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-22"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-23"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-24"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-25"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-26"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-27"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-28"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-29"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-30"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-31"
+      },
+      {
+        "count": 0,
+        "date": "2026-08-01"
+      },
+      {
+        "count": 0,
+        "date": "2026-08-02"
+      },
+      {
+        "count": 0,
+        "date": "2026-08-03"
+      }
+    ],
+    "contributors": [
+      {
+        "contributions": 18,
+        "login": "cobycloud",
+        "url": "https://github.com/cobycloud"
+      },
+      {
+        "contributions": 1,
+        "login": "github-actions[bot]",
+        "url": "https://github.com/apps/github-actions"
+      }
+    ],
     "created_at": "2026-05-16T20:01:23Z",
     "default_branch": "master",
     "description": "Installable SSOT governance pack for GA4 Measurement Protocol, Google tag, Google Tag Manager, GA4 event parameters, and BigQuery exports.",
@@ -2738,6 +6043,135 @@
   {
     "archived": false,
     "claim_boundary": "Repository, release, deployment, and live-service states are reported separately.",
+    "commit_activity": [
+      {
+        "count": 0,
+        "date": "2026-07-05"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-06"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-07"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-08"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-09"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-10"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-11"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-12"
+      },
+      {
+        "count": 1,
+        "date": "2026-07-13"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-14"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-15"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-16"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-17"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-18"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-19"
+      },
+      {
+        "count": 3,
+        "date": "2026-07-20"
+      },
+      {
+        "count": 5,
+        "date": "2026-07-21"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-22"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-23"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-24"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-25"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-26"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-27"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-28"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-29"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-30"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-31"
+      },
+      {
+        "count": 0,
+        "date": "2026-08-01"
+      },
+      {
+        "count": 0,
+        "date": "2026-08-02"
+      },
+      {
+        "count": 5,
+        "date": "2026-08-03"
+      }
+    ],
+    "contributors": [
+      {
+        "contributions": 50,
+        "login": "cobycloud",
+        "url": "https://github.com/cobycloud"
+      }
+    ],
     "created_at": "2026-05-18T17:38:36Z",
     "default_branch": "master",
     "description": "MdWrk lander website for groupsum.xyz.",
@@ -2830,6 +6264,140 @@
   {
     "archived": false,
     "claim_boundary": "Repository, release, deployment, and live-service states are reported separately.",
+    "commit_activity": [
+      {
+        "count": 0,
+        "date": "2026-07-05"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-06"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-07"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-08"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-09"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-10"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-11"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-12"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-13"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-14"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-15"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-16"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-17"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-18"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-19"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-20"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-21"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-22"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-23"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-24"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-25"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-26"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-27"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-28"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-29"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-30"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-31"
+      },
+      {
+        "count": 0,
+        "date": "2026-08-01"
+      },
+      {
+        "count": 0,
+        "date": "2026-08-02"
+      },
+      {
+        "count": 0,
+        "date": "2026-08-03"
+      }
+    ],
+    "contributors": [
+      {
+        "contributions": 18,
+        "login": "cobycloud",
+        "url": "https://github.com/cobycloud"
+      },
+      {
+        "contributions": 1,
+        "login": "github-actions[bot]",
+        "url": "https://github.com/apps/github-actions"
+      }
+    ],
     "created_at": "2026-05-16T20:02:57Z",
     "default_branch": "master",
     "description": "Installable SSOT governance pack for GS1 Digital Link, GS1 resolver behavior, EPCIS/CBV visibility events, product identifiers, and product master data.",
@@ -2945,6 +6513,140 @@
   {
     "archived": false,
     "claim_boundary": "Repository, release, deployment, and live-service states are reported separately.",
+    "commit_activity": [
+      {
+        "count": 0,
+        "date": "2026-07-05"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-06"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-07"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-08"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-09"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-10"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-11"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-12"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-13"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-14"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-15"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-16"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-17"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-18"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-19"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-20"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-21"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-22"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-23"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-24"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-25"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-26"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-27"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-28"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-29"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-30"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-31"
+      },
+      {
+        "count": 0,
+        "date": "2026-08-01"
+      },
+      {
+        "count": 0,
+        "date": "2026-08-02"
+      },
+      {
+        "count": 0,
+        "date": "2026-08-03"
+      }
+    ],
+    "contributors": [
+      {
+        "contributions": 826,
+        "login": "cobycloud",
+        "url": "https://github.com/cobycloud"
+      },
+      {
+        "contributions": 11,
+        "login": "github-actions[bot]",
+        "url": "https://github.com/apps/github-actions"
+      }
+    ],
     "created_at": "2026-01-21T04:48:42Z",
     "default_branch": "master",
     "description": "MdWrk is a local-first Markdown workspace, preview editor, package platform, and extension host for portable Markdown authoring.",
@@ -4246,6 +7948,140 @@
   {
     "archived": false,
     "claim_boundary": "Repository, release, deployment, and live-service states are reported separately.",
+    "commit_activity": [
+      {
+        "count": 0,
+        "date": "2026-07-05"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-06"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-07"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-08"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-09"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-10"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-11"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-12"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-13"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-14"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-15"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-16"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-17"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-18"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-19"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-20"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-21"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-22"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-23"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-24"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-25"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-26"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-27"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-28"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-29"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-30"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-31"
+      },
+      {
+        "count": 0,
+        "date": "2026-08-01"
+      },
+      {
+        "count": 0,
+        "date": "2026-08-02"
+      },
+      {
+        "count": 0,
+        "date": "2026-08-03"
+      }
+    ],
+    "contributors": [
+      {
+        "contributions": 20,
+        "login": "cobycloud",
+        "url": "https://github.com/cobycloud"
+      },
+      {
+        "contributions": 1,
+        "login": "github-actions[bot]",
+        "url": "https://github.com/apps/github-actions"
+      }
+    ],
     "created_at": "2026-05-16T20:01:40Z",
     "default_branch": "master",
     "description": "Installable SSOT governance pack for attribution reporting, click IDs, tracking templates, offline conversions, conversion APIs, ECAPI, and ADMaP.",
@@ -4361,6 +8197,135 @@
   {
     "archived": false,
     "claim_boundary": "Repository, release, deployment, and live-service states are reported separately.",
+    "commit_activity": [
+      {
+        "count": 0,
+        "date": "2026-07-05"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-06"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-07"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-08"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-09"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-10"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-11"
+      },
+      {
+        "count": 1,
+        "date": "2026-07-12"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-13"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-14"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-15"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-16"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-17"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-18"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-19"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-20"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-21"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-22"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-23"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-24"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-25"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-26"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-27"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-28"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-29"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-30"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-31"
+      },
+      {
+        "count": 0,
+        "date": "2026-08-01"
+      },
+      {
+        "count": 0,
+        "date": "2026-08-02"
+      },
+      {
+        "count": 0,
+        "date": "2026-08-03"
+      }
+    ],
+    "contributors": [
+      {
+        "contributions": 46,
+        "login": "cobycloud",
+        "url": "https://github.com/cobycloud"
+      }
+    ],
     "created_at": "2026-05-18T23:52:50Z",
     "default_branch": "master",
     "description": "Core MdWrk package platform for markdown rendering, editing, extension contracts, extension runtime packages, and shared primitives.",
@@ -4661,6 +8626,135 @@
   {
     "archived": false,
     "claim_boundary": "Repository, release, deployment, and live-service states are reported separately.",
+    "commit_activity": [
+      {
+        "count": 0,
+        "date": "2026-07-05"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-06"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-07"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-08"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-09"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-10"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-11"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-12"
+      },
+      {
+        "count": 3,
+        "date": "2026-07-13"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-14"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-15"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-16"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-17"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-18"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-19"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-20"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-21"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-22"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-23"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-24"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-25"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-26"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-27"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-28"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-29"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-30"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-31"
+      },
+      {
+        "count": 0,
+        "date": "2026-08-01"
+      },
+      {
+        "count": 0,
+        "date": "2026-08-02"
+      },
+      {
+        "count": 0,
+        "date": "2026-08-03"
+      }
+    ],
+    "contributors": [
+      {
+        "contributions": 82,
+        "login": "cobycloud",
+        "url": "https://github.com/cobycloud"
+      }
+    ],
     "created_at": "2026-05-19T01:17:05Z",
     "default_branch": "master",
     "description": "MdWrk Pages package suite for typed content, page templates, static-site compilation, SEO/discovery artifacts, and React rendering.",
@@ -4843,6 +8937,135 @@
   {
     "archived": false,
     "claim_boundary": "Repository, release, deployment, and live-service states are reported separately.",
+    "commit_activity": [
+      {
+        "count": 0,
+        "date": "2026-07-05"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-06"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-07"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-08"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-09"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-10"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-11"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-12"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-13"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-14"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-15"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-16"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-17"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-18"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-19"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-20"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-21"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-22"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-23"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-24"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-25"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-26"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-27"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-28"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-29"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-30"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-31"
+      },
+      {
+        "count": 0,
+        "date": "2026-08-01"
+      },
+      {
+        "count": 0,
+        "date": "2026-08-02"
+      },
+      {
+        "count": 0,
+        "date": "2026-08-03"
+      }
+    ],
+    "contributors": [
+      {
+        "contributions": 8,
+        "login": "cobycloud",
+        "url": "https://github.com/cobycloud"
+      }
+    ],
     "created_at": "2026-05-21T22:34:50Z",
     "default_branch": "master",
     "description": "mdwrk.com first-party content pack built with MdWrk Pages.",
@@ -5002,6 +9225,140 @@
   {
     "archived": false,
     "claim_boundary": "Repository, release, deployment, and live-service states are reported separately.",
+    "commit_activity": [
+      {
+        "count": 0,
+        "date": "2026-07-05"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-06"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-07"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-08"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-09"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-10"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-11"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-12"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-13"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-14"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-15"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-16"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-17"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-18"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-19"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-20"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-21"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-22"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-23"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-24"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-25"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-26"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-27"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-28"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-29"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-30"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-31"
+      },
+      {
+        "count": 0,
+        "date": "2026-08-01"
+      },
+      {
+        "count": 0,
+        "date": "2026-08-02"
+      },
+      {
+        "count": 0,
+        "date": "2026-08-03"
+      }
+    ],
+    "contributors": [
+      {
+        "contributions": 18,
+        "login": "cobycloud",
+        "url": "https://github.com/cobycloud"
+      },
+      {
+        "contributions": 1,
+        "login": "github-actions[bot]",
+        "url": "https://github.com/apps/github-actions"
+      }
+    ],
     "created_at": "2026-05-16T20:01:49Z",
     "default_branch": "master",
     "description": "Installable SSOT governance pack for Apple and Android mobile install attribution, app campaign attribution, and privacy-preserving app measurement.",
@@ -5117,6 +9474,140 @@
   {
     "archived": false,
     "claim_boundary": "Repository, release, deployment, and live-service states are reported separately.",
+    "commit_activity": [
+      {
+        "count": 0,
+        "date": "2026-07-05"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-06"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-07"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-08"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-09"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-10"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-11"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-12"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-13"
+      },
+      {
+        "count": 1,
+        "date": "2026-07-14"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-15"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-16"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-17"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-18"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-19"
+      },
+      {
+        "count": 1,
+        "date": "2026-07-20"
+      },
+      {
+        "count": 6,
+        "date": "2026-07-21"
+      },
+      {
+        "count": 1,
+        "date": "2026-07-22"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-23"
+      },
+      {
+        "count": 1,
+        "date": "2026-07-24"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-25"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-26"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-27"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-28"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-29"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-30"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-31"
+      },
+      {
+        "count": 0,
+        "date": "2026-08-01"
+      },
+      {
+        "count": 0,
+        "date": "2026-08-02"
+      },
+      {
+        "count": 0,
+        "date": "2026-08-03"
+      }
+    ],
+    "contributors": [
+      {
+        "contributions": 83,
+        "login": "cobycloud",
+        "url": "https://github.com/cobycloud"
+      },
+      {
+        "contributions": 9,
+        "login": "github-actions[bot]",
+        "url": "https://github.com/apps/github-actions"
+      }
+    ],
     "created_at": "2026-05-05T04:47:35Z",
     "default_branch": "master",
     "description": "Owner-scoped GitOps controller for Nginx Proxy Manager proxy hosts, SSL certificates, and access lists.",
@@ -5703,6 +10194,135 @@
   {
     "archived": false,
     "claim_boundary": "Repository, release, deployment, and live-service states are reported separately.",
+    "commit_activity": [
+      {
+        "count": 0,
+        "date": "2026-07-05"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-06"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-07"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-08"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-09"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-10"
+      },
+      {
+        "count": 3,
+        "date": "2026-07-11"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-12"
+      },
+      {
+        "count": 1,
+        "date": "2026-07-13"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-14"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-15"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-16"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-17"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-18"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-19"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-20"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-21"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-22"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-23"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-24"
+      },
+      {
+        "count": 4,
+        "date": "2026-07-25"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-26"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-27"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-28"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-29"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-30"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-31"
+      },
+      {
+        "count": 0,
+        "date": "2026-08-01"
+      },
+      {
+        "count": 0,
+        "date": "2026-08-02"
+      },
+      {
+        "count": 0,
+        "date": "2026-08-03"
+      }
+    ],
+    "contributors": [
+      {
+        "contributions": 43,
+        "login": "cobycloud",
+        "url": "https://github.com/cobycloud"
+      }
+    ],
     "created_at": "2026-05-18T17:44:32Z",
     "default_branch": "master",
     "description": "MdWrk lander website for npmctl.com.",
@@ -5795,6 +10415,135 @@
   {
     "archived": false,
     "claim_boundary": "Repository, release, deployment, and live-service states are reported separately.",
+    "commit_activity": [
+      {
+        "count": 0,
+        "date": "2026-07-05"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-06"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-07"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-08"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-09"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-10"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-11"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-12"
+      },
+      {
+        "count": 1,
+        "date": "2026-07-13"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-14"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-15"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-16"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-17"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-18"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-19"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-20"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-21"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-22"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-23"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-24"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-25"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-26"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-27"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-28"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-29"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-30"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-31"
+      },
+      {
+        "count": 0,
+        "date": "2026-08-01"
+      },
+      {
+        "count": 0,
+        "date": "2026-08-02"
+      },
+      {
+        "count": 0,
+        "date": "2026-08-03"
+      }
+    ],
+    "contributors": [
+      {
+        "contributions": 41,
+        "login": "cobycloud",
+        "url": "https://github.com/cobycloud"
+      }
+    ],
     "created_at": "2026-05-18T17:38:50Z",
     "default_branch": "master",
     "description": "MdWrk lander website for peagen.com.",
@@ -5882,6 +10631,135 @@
   {
     "archived": false,
     "claim_boundary": "Repository, release, deployment, and live-service states are reported separately.",
+    "commit_activity": [
+      {
+        "count": 0,
+        "date": "2026-07-05"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-06"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-07"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-08"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-09"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-10"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-11"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-12"
+      },
+      {
+        "count": 3,
+        "date": "2026-07-13"
+      },
+      {
+        "count": 24,
+        "date": "2026-07-14"
+      },
+      {
+        "count": 11,
+        "date": "2026-07-15"
+      },
+      {
+        "count": 34,
+        "date": "2026-07-16"
+      },
+      {
+        "count": 1,
+        "date": "2026-07-17"
+      },
+      {
+        "count": 1,
+        "date": "2026-07-18"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-19"
+      },
+      {
+        "count": 5,
+        "date": "2026-07-20"
+      },
+      {
+        "count": 1,
+        "date": "2026-07-21"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-22"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-23"
+      },
+      {
+        "count": 10,
+        "date": "2026-07-24"
+      },
+      {
+        "count": 5,
+        "date": "2026-07-25"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-26"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-27"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-28"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-29"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-30"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-31"
+      },
+      {
+        "count": 0,
+        "date": "2026-08-01"
+      },
+      {
+        "count": 0,
+        "date": "2026-08-02"
+      },
+      {
+        "count": 0,
+        "date": "2026-08-03"
+      }
+    ],
+    "contributors": [
+      {
+        "contributions": 95,
+        "login": "cobycloud",
+        "url": "https://github.com/cobycloud"
+      }
+    ],
     "created_at": "2026-07-13T22:24:00Z",
     "default_branch": "master",
     "description": "A self-hosted, API-compatible reverse proxy control plane and UI for npmctl.",
@@ -6111,6 +10989,140 @@
   {
     "archived": false,
     "claim_boundary": "Repository, release, deployment, and live-service states are reported separately.",
+    "commit_activity": [
+      {
+        "count": 0,
+        "date": "2026-07-05"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-06"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-07"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-08"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-09"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-10"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-11"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-12"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-13"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-14"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-15"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-16"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-17"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-18"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-19"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-20"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-21"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-22"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-23"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-24"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-25"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-26"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-27"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-28"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-29"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-30"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-31"
+      },
+      {
+        "count": 0,
+        "date": "2026-08-01"
+      },
+      {
+        "count": 0,
+        "date": "2026-08-02"
+      },
+      {
+        "count": 0,
+        "date": "2026-08-03"
+      }
+    ],
+    "contributors": [
+      {
+        "contributions": 18,
+        "login": "cobycloud",
+        "url": "https://github.com/cobycloud"
+      },
+      {
+        "contributions": 1,
+        "login": "github-actions[bot]",
+        "url": "https://github.com/apps/github-actions"
+      }
+    ],
     "created_at": "2026-05-16T20:01:06Z",
     "default_branch": "master",
     "description": "Installable SSOT governance pack for privacy records, consent receipts, notices, DPV processing records, and audit evidence.",
@@ -6226,6 +11238,140 @@
   {
     "archived": false,
     "claim_boundary": "Repository, release, deployment, and live-service states are reported separately.",
+    "commit_activity": [
+      {
+        "count": 0,
+        "date": "2026-07-05"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-06"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-07"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-08"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-09"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-10"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-11"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-12"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-13"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-14"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-15"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-16"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-17"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-18"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-19"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-20"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-21"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-22"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-23"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-24"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-25"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-26"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-27"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-28"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-29"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-30"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-31"
+      },
+      {
+        "count": 0,
+        "date": "2026-08-01"
+      },
+      {
+        "count": 0,
+        "date": "2026-08-02"
+      },
+      {
+        "count": 0,
+        "date": "2026-08-03"
+      }
+    ],
+    "contributors": [
+      {
+        "contributions": 95,
+        "login": "cobycloud",
+        "url": "https://github.com/cobycloud"
+      },
+      {
+        "contributions": 38,
+        "login": "RafaelJohn9",
+        "url": "https://github.com/RafaelJohn9"
+      }
+    ],
     "created_at": "2024-04-29T05:08:09Z",
     "default_branch": "master",
     "description": "A multi-provider, multi-model retrieval augmentation chatbot.",
@@ -6324,6 +11470,140 @@
   {
     "archived": false,
     "claim_boundary": "Repository, release, deployment, and live-service states are reported separately.",
+    "commit_activity": [
+      {
+        "count": 0,
+        "date": "2026-07-05"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-06"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-07"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-08"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-09"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-10"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-11"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-12"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-13"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-14"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-15"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-16"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-17"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-18"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-19"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-20"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-21"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-22"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-23"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-24"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-25"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-26"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-27"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-28"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-29"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-30"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-31"
+      },
+      {
+        "count": 0,
+        "date": "2026-08-01"
+      },
+      {
+        "count": 0,
+        "date": "2026-08-02"
+      },
+      {
+        "count": 0,
+        "date": "2026-08-03"
+      }
+    ],
+    "contributors": [
+      {
+        "contributions": 22,
+        "login": "cobycloud",
+        "url": "https://github.com/cobycloud"
+      },
+      {
+        "contributions": 8,
+        "login": "github-actions[bot]",
+        "url": "https://github.com/apps/github-actions"
+      }
+    ],
     "created_at": "2026-05-06T16:57:01Z",
     "default_branch": "master",
     "description": "Installable ADR/SPEC extension pack for SEO, AEO, and AiEO governance, designed for downstream ssot-registry sync.",
@@ -6484,6 +11764,135 @@
   {
     "archived": false,
     "claim_boundary": "Repository, release, deployment, and live-service states are reported separately.",
+    "commit_activity": [
+      {
+        "count": 0,
+        "date": "2026-07-05"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-06"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-07"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-08"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-09"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-10"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-11"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-12"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-13"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-14"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-15"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-16"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-17"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-18"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-19"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-20"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-21"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-22"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-23"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-24"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-25"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-26"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-27"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-28"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-29"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-30"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-31"
+      },
+      {
+        "count": 0,
+        "date": "2026-08-01"
+      },
+      {
+        "count": 0,
+        "date": "2026-08-02"
+      },
+      {
+        "count": 0,
+        "date": "2026-08-03"
+      }
+    ],
+    "contributors": [
+      {
+        "contributions": 89,
+        "login": "cobycloud",
+        "url": "https://github.com/cobycloud"
+      }
+    ],
     "created_at": "2025-01-23T09:21:28Z",
     "default_branch": "master",
     "description": "Soliloquy is a unified command-line tool for managing a Python monorepo that contains multiple standalone packages—each with its own pyproject.toml. It consolidates common tasks such as dependency management, version bumping, remote dependency resolution, test execution and analysis, and project configuration updates into one robust CLI.",
@@ -6576,6 +11985,140 @@
   {
     "archived": false,
     "claim_boundary": "Repository, release, deployment, and live-service states are reported separately.",
+    "commit_activity": [
+      {
+        "count": 0,
+        "date": "2026-07-05"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-06"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-07"
+      },
+      {
+        "count": 1,
+        "date": "2026-07-08"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-09"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-10"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-11"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-12"
+      },
+      {
+        "count": 2,
+        "date": "2026-07-13"
+      },
+      {
+        "count": 2,
+        "date": "2026-07-14"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-15"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-16"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-17"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-18"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-19"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-20"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-21"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-22"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-23"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-24"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-25"
+      },
+      {
+        "count": 1,
+        "date": "2026-07-26"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-27"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-28"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-29"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-30"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-31"
+      },
+      {
+        "count": 1,
+        "date": "2026-08-01"
+      },
+      {
+        "count": 0,
+        "date": "2026-08-02"
+      },
+      {
+        "count": 0,
+        "date": "2026-08-03"
+      }
+    ],
+    "contributors": [
+      {
+        "contributions": 418,
+        "login": "cobycloud",
+        "url": "https://github.com/cobycloud"
+      },
+      {
+        "contributions": 66,
+        "login": "github-actions[bot]",
+        "url": "https://github.com/apps/github-actions"
+      }
+    ],
     "created_at": "2026-04-13T08:40:02Z",
     "default_branch": "master",
     "description": "Repository-agnostic Python CLI for single-source-of-truth traceability from features to evidence-backed releases.",
@@ -11419,6 +16962,135 @@
   {
     "archived": false,
     "claim_boundary": "Repository, release, deployment, and live-service states are reported separately.",
+    "commit_activity": [
+      {
+        "count": 0,
+        "date": "2026-07-05"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-06"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-07"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-08"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-09"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-10"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-11"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-12"
+      },
+      {
+        "count": 2,
+        "date": "2026-07-13"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-14"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-15"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-16"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-17"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-18"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-19"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-20"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-21"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-22"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-23"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-24"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-25"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-26"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-27"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-28"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-29"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-30"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-31"
+      },
+      {
+        "count": 0,
+        "date": "2026-08-01"
+      },
+      {
+        "count": 0,
+        "date": "2026-08-02"
+      },
+      {
+        "count": 0,
+        "date": "2026-08-03"
+      }
+    ],
+    "contributors": [
+      {
+        "contributions": 38,
+        "login": "cobycloud",
+        "url": "https://github.com/cobycloud"
+      }
+    ],
     "created_at": "2026-05-18T18:05:28Z",
     "default_branch": "master",
     "description": "MdWrk lander website for ssot-registry.com.",
@@ -11512,6 +17184,160 @@
   {
     "archived": false,
     "claim_boundary": "Repository, release, deployment, and live-service states are reported separately.",
+    "commit_activity": [
+      {
+        "count": 0,
+        "date": "2026-07-05"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-06"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-07"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-08"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-09"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-10"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-11"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-12"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-13"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-14"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-15"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-16"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-17"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-18"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-19"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-20"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-21"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-22"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-23"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-24"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-25"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-26"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-27"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-28"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-29"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-30"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-31"
+      },
+      {
+        "count": 0,
+        "date": "2026-08-01"
+      },
+      {
+        "count": 0,
+        "date": "2026-08-02"
+      },
+      {
+        "count": 0,
+        "date": "2026-08-03"
+      }
+    ],
+    "contributors": [
+      {
+        "contributions": 441,
+        "login": "cobycloud",
+        "url": "https://github.com/cobycloud"
+      },
+      {
+        "contributions": 286,
+        "login": "OctoPie559",
+        "url": "https://github.com/OctoPie559"
+      },
+      {
+        "contributions": 2,
+        "login": "quyumkehinde",
+        "url": "https://github.com/quyumkehinde"
+      },
+      {
+        "contributions": 1,
+        "login": "Ferinco",
+        "url": "https://github.com/Ferinco"
+      },
+      {
+        "contributions": 1,
+        "login": "Ibinola",
+        "url": "https://github.com/Ibinola"
+      },
+      {
+        "contributions": 1,
+        "login": "vernu",
+        "url": "https://github.com/vernu"
+      }
+    ],
     "created_at": "2024-10-09T09:53:08Z",
     "default_branch": "master",
     "description": "A UI Component Library by Swarmauri",
@@ -11655,6 +17481,140 @@
   {
     "archived": false,
     "claim_boundary": "Repository, release, deployment, and live-service states are reported separately.",
+    "commit_activity": [
+      {
+        "count": 0,
+        "date": "2026-07-05"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-06"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-07"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-08"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-09"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-10"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-11"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-12"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-13"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-14"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-15"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-16"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-17"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-18"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-19"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-20"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-21"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-22"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-23"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-24"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-25"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-26"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-27"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-28"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-29"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-30"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-31"
+      },
+      {
+        "count": 0,
+        "date": "2026-08-01"
+      },
+      {
+        "count": 0,
+        "date": "2026-08-02"
+      },
+      {
+        "count": 0,
+        "date": "2026-08-03"
+      }
+    ],
+    "contributors": [
+      {
+        "contributions": 3,
+        "login": "cobycloud",
+        "url": "https://github.com/cobycloud"
+      },
+      {
+        "contributions": 1,
+        "login": "Sanidhya Kumar Verma",
+        "url": null
+      }
+    ],
     "created_at": "2024-09-01T19:04:32Z",
     "default_branch": "master",
     "description": "A Sveltejs based Swarmauri AUC (Area Under the Curve) Plot Component for Gradio applications.",
@@ -11751,6 +17711,135 @@
   {
     "archived": false,
     "claim_boundary": "Repository, release, deployment, and live-service states are reported separately.",
+    "commit_activity": [
+      {
+        "count": 0,
+        "date": "2026-07-05"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-06"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-07"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-08"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-09"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-10"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-11"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-12"
+      },
+      {
+        "count": 2,
+        "date": "2026-07-13"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-14"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-15"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-16"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-17"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-18"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-19"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-20"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-21"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-22"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-23"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-24"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-25"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-26"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-27"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-28"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-29"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-30"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-31"
+      },
+      {
+        "count": 0,
+        "date": "2026-08-01"
+      },
+      {
+        "count": 0,
+        "date": "2026-08-02"
+      },
+      {
+        "count": 0,
+        "date": "2026-08-03"
+      }
+    ],
+    "contributors": [
+      {
+        "contributions": 69,
+        "login": "cobycloud",
+        "url": "https://github.com/cobycloud"
+      }
+    ],
     "created_at": "2026-05-18T17:38:47Z",
     "default_branch": "master",
     "description": "MdWrk lander website for swarmauri.com.",
@@ -11853,6 +17942,140 @@
   {
     "archived": false,
     "claim_boundary": "Repository, release, deployment, and live-service states are reported separately.",
+    "commit_activity": [
+      {
+        "count": 0,
+        "date": "2026-07-05"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-06"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-07"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-08"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-09"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-10"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-11"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-12"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-13"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-14"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-15"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-16"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-17"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-18"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-19"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-20"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-21"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-22"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-23"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-24"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-25"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-26"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-27"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-28"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-29"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-30"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-31"
+      },
+      {
+        "count": 0,
+        "date": "2026-08-01"
+      },
+      {
+        "count": 0,
+        "date": "2026-08-02"
+      },
+      {
+        "count": 0,
+        "date": "2026-08-03"
+      }
+    ],
+    "contributors": [
+      {
+        "contributions": 2,
+        "login": "cobycloud",
+        "url": "https://github.com/cobycloud"
+      },
+      {
+        "contributions": 1,
+        "login": "oreoluwa212",
+        "url": "https://github.com/oreoluwa212"
+      }
+    ],
     "created_at": "2024-09-03T08:06:39Z",
     "default_branch": "master",
     "description": "A Sveltejs based Swarmauri Flipcard Component for Gradio applications",
@@ -11926,6 +18149,140 @@
   {
     "archived": false,
     "claim_boundary": "Repository, release, deployment, and live-service states are reported separately.",
+    "commit_activity": [
+      {
+        "count": 0,
+        "date": "2026-07-05"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-06"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-07"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-08"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-09"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-10"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-11"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-12"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-13"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-14"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-15"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-16"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-17"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-18"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-19"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-20"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-21"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-22"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-23"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-24"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-25"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-26"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-27"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-28"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-29"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-30"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-31"
+      },
+      {
+        "count": 0,
+        "date": "2026-08-01"
+      },
+      {
+        "count": 0,
+        "date": "2026-08-02"
+      },
+      {
+        "count": 0,
+        "date": "2026-08-03"
+      }
+    ],
+    "contributors": [
+      {
+        "contributions": 7,
+        "login": "Sanidhya Kumar Verma",
+        "url": null
+      },
+      {
+        "contributions": 4,
+        "login": "cobycloud",
+        "url": "https://github.com/cobycloud"
+      }
+    ],
     "created_at": "2024-09-05T04:32:25Z",
     "default_branch": "master",
     "description": "Swarmauri custom mesop components",
@@ -12003,6 +18360,230 @@
   {
     "archived": false,
     "claim_boundary": "Repository, release, deployment, and live-service states are reported separately.",
+    "commit_activity": [
+      {
+        "count": 0,
+        "date": "2026-07-05"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-06"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-07"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-08"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-09"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-10"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-11"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-12"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-13"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-14"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-15"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-16"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-17"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-18"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-19"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-20"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-21"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-22"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-23"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-24"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-25"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-26"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-27"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-28"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-29"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-30"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-31"
+      },
+      {
+        "count": 0,
+        "date": "2026-08-01"
+      },
+      {
+        "count": 0,
+        "date": "2026-08-02"
+      },
+      {
+        "count": 0,
+        "date": "2026-08-03"
+      }
+    ],
+    "contributors": [
+      {
+        "contributions": 170,
+        "login": "cobycloud",
+        "url": "https://github.com/cobycloud"
+      },
+      {
+        "contributions": 60,
+        "login": "DOMINION-JOHN1",
+        "url": "https://github.com/DOMINION-JOHN1"
+      },
+      {
+        "contributions": 39,
+        "login": "3rdsonx",
+        "url": "https://github.com/3rdsonx"
+      },
+      {
+        "contributions": 32,
+        "login": "irshadhuzaifa",
+        "url": null
+      },
+      {
+        "contributions": 21,
+        "login": "MichaelDecent",
+        "url": "https://github.com/MichaelDecent"
+      },
+      {
+        "contributions": 15,
+        "login": "faizan2700",
+        "url": "https://github.com/faizan2700"
+      },
+      {
+        "contributions": 7,
+        "login": "Jugrajsinghbali",
+        "url": "https://github.com/Jugrajsinghbali"
+      },
+      {
+        "contributions": 6,
+        "login": "RafaelJohn9",
+        "url": "https://github.com/RafaelJohn9"
+      },
+      {
+        "contributions": 4,
+        "login": "abdulsamodazeez",
+        "url": "https://github.com/abdulsamodazeez"
+      },
+      {
+        "contributions": 3,
+        "login": "JustusOmbok",
+        "url": "https://github.com/JustusOmbok"
+      },
+      {
+        "contributions": 3,
+        "login": "Techie-John",
+        "url": "https://github.com/Techie-John"
+      },
+      {
+        "contributions": 2,
+        "login": "admin",
+        "url": null
+      },
+      {
+        "contributions": 2,
+        "login": "Sanidhya Kumar Verma",
+        "url": null
+      },
+      {
+        "contributions": 2,
+        "login": "irshadhuzaifa",
+        "url": "https://github.com/irshadhuzaifa"
+      },
+      {
+        "contributions": 2,
+        "login": "AbdulrahmanElshafie",
+        "url": "https://github.com/AbdulrahmanElshafie"
+      },
+      {
+        "contributions": 1,
+        "login": "Mallick",
+        "url": null
+      },
+      {
+        "contributions": 1,
+        "login": "Niraj12chaudhary",
+        "url": "https://github.com/Niraj12chaudhary"
+      },
+      {
+        "contributions": 1,
+        "login": "RominGujarati",
+        "url": "https://github.com/RominGujarati"
+      },
+      {
+        "contributions": 1,
+        "login": "ashiksherbin",
+        "url": "https://github.com/ashiksherbin"
+      },
+      {
+        "contributions": 1,
+        "login": "oreoluwa212",
+        "url": "https://github.com/oreoluwa212"
+      }
+    ],
     "created_at": "2024-04-07T00:58:20Z",
     "default_branch": "master",
     "description": "Public source repository swarmauri/swarmauri-notebooks.",
@@ -12098,6 +18679,140 @@
   {
     "archived": false,
     "claim_boundary": "Repository, release, deployment, and live-service states are reported separately.",
+    "commit_activity": [
+      {
+        "count": 0,
+        "date": "2026-07-05"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-06"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-07"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-08"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-09"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-10"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-11"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-12"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-13"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-14"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-15"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-16"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-17"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-18"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-19"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-20"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-21"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-22"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-23"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-24"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-25"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-26"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-27"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-28"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-29"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-30"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-31"
+      },
+      {
+        "count": 0,
+        "date": "2026-08-01"
+      },
+      {
+        "count": 0,
+        "date": "2026-08-02"
+      },
+      {
+        "count": 0,
+        "date": "2026-08-03"
+      }
+    ],
+    "contributors": [
+      {
+        "contributions": 3,
+        "login": "cobycloud",
+        "url": "https://github.com/cobycloud"
+      },
+      {
+        "contributions": 2,
+        "login": "oreoluwa212",
+        "url": "https://github.com/oreoluwa212"
+      }
+    ],
     "created_at": "2024-09-01T19:01:14Z",
     "default_branch": "master",
     "description": "A Sveltejs based Swarmauri Piechart Component for Gradio applications;",
@@ -12194,6 +18909,150 @@
   {
     "archived": false,
     "claim_boundary": "Repository, release, deployment, and live-service states are reported separately.",
+    "commit_activity": [
+      {
+        "count": 0,
+        "date": "2026-07-05"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-06"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-07"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-08"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-09"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-10"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-11"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-12"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-13"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-14"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-15"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-16"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-17"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-18"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-19"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-20"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-21"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-22"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-23"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-24"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-25"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-26"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-27"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-28"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-29"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-30"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-31"
+      },
+      {
+        "count": 0,
+        "date": "2026-08-01"
+      },
+      {
+        "count": 0,
+        "date": "2026-08-02"
+      },
+      {
+        "count": 0,
+        "date": "2026-08-03"
+      }
+    ],
+    "contributors": [
+      {
+        "contributions": 19,
+        "login": "cobycloud",
+        "url": "https://github.com/cobycloud"
+      },
+      {
+        "contributions": 12,
+        "login": "JustusOmbok",
+        "url": "https://github.com/JustusOmbok"
+      },
+      {
+        "contributions": 5,
+        "login": "RafaelJohn9",
+        "url": "https://github.com/RafaelJohn9"
+      },
+      {
+        "contributions": 1,
+        "login": "Techie-John",
+        "url": "https://github.com/Techie-John"
+      }
+    ],
     "created_at": "2024-08-22T10:05:28Z",
     "default_branch": "master",
     "description": "An LLM playground by Swarmauri",
@@ -12271,6 +19130,230 @@
   {
     "archived": false,
     "claim_boundary": "Repository, release, deployment, and live-service states are reported separately.",
+    "commit_activity": [
+      {
+        "count": 0,
+        "date": "2026-07-05"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-06"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-07"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-08"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-09"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-10"
+      },
+      {
+        "count": 1,
+        "date": "2026-07-11"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-12"
+      },
+      {
+        "count": 16,
+        "date": "2026-07-13"
+      },
+      {
+        "count": 1,
+        "date": "2026-07-14"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-15"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-16"
+      },
+      {
+        "count": 2,
+        "date": "2026-07-17"
+      },
+      {
+        "count": 13,
+        "date": "2026-07-18"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-19"
+      },
+      {
+        "count": 2,
+        "date": "2026-07-20"
+      },
+      {
+        "count": 10,
+        "date": "2026-07-21"
+      },
+      {
+        "count": 3,
+        "date": "2026-07-22"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-23"
+      },
+      {
+        "count": 4,
+        "date": "2026-07-24"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-25"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-26"
+      },
+      {
+        "count": 34,
+        "date": "2026-07-27"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-28"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-29"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-30"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-31"
+      },
+      {
+        "count": 0,
+        "date": "2026-08-01"
+      },
+      {
+        "count": 0,
+        "date": "2026-08-02"
+      },
+      {
+        "count": 0,
+        "date": "2026-08-03"
+      }
+    ],
+    "contributors": [
+      {
+        "contributions": 14555,
+        "login": "cobycloud",
+        "url": "https://github.com/cobycloud"
+      },
+      {
+        "contributions": 1431,
+        "login": "MichaelDecent",
+        "url": "https://github.com/MichaelDecent"
+      },
+      {
+        "contributions": 962,
+        "login": "github-actions[bot]",
+        "url": "https://github.com/apps/github-actions"
+      },
+      {
+        "contributions": 171,
+        "login": "3rdsonx",
+        "url": "https://github.com/3rdsonx"
+      },
+      {
+        "contributions": 160,
+        "login": "RafaelJohn9",
+        "url": "https://github.com/RafaelJohn9"
+      },
+      {
+        "contributions": 73,
+        "login": "JustusOmbok",
+        "url": "https://github.com/JustusOmbok"
+      },
+      {
+        "contributions": 27,
+        "login": "faizan2700",
+        "url": "https://github.com/faizan2700"
+      },
+      {
+        "contributions": 27,
+        "login": "ishaan1234",
+        "url": "https://github.com/ishaan1234"
+      },
+      {
+        "contributions": 14,
+        "login": "VijayVignesh1",
+        "url": "https://github.com/VijayVignesh1"
+      },
+      {
+        "contributions": 13,
+        "login": "Ishaan Gupta",
+        "url": null
+      },
+      {
+        "contributions": 11,
+        "login": "abdulsamodazeez",
+        "url": "https://github.com/abdulsamodazeez"
+      },
+      {
+        "contributions": 9,
+        "login": "keetrap",
+        "url": "https://github.com/keetrap"
+      },
+      {
+        "contributions": 4,
+        "login": "Jugrajsinghbali",
+        "url": "https://github.com/Jugrajsinghbali"
+      },
+      {
+        "contributions": 2,
+        "login": "Techie-John",
+        "url": "https://github.com/Techie-John"
+      },
+      {
+        "contributions": 2,
+        "login": "Lavesh-Akhadkar",
+        "url": "https://github.com/Lavesh-Akhadkar"
+      },
+      {
+        "contributions": 2,
+        "login": "paritoshwankhade",
+        "url": "https://github.com/paritoshwankhade"
+      },
+      {
+        "contributions": 2,
+        "login": "wpn10",
+        "url": "https://github.com/wpn10"
+      },
+      {
+        "contributions": 1,
+        "login": "harshs-debugger",
+        "url": "https://github.com/harshs-debugger"
+      },
+      {
+        "contributions": 1,
+        "login": "pravincoder",
+        "url": "https://github.com/pravincoder"
+      },
+      {
+        "contributions": 1,
+        "login": "01luyicheng",
+        "url": "https://github.com/01luyicheng"
+      }
+    ],
     "created_at": "2024-04-08T03:39:16Z",
     "default_branch": "master",
     "description": "Modular Python SDK and monorepo for AI agents, LLM integrations, tools, parsers, embeddings, vector stores, and extensible application workflows.",
@@ -70970,6 +78053,140 @@
   {
     "archived": false,
     "claim_boundary": "Repository, release, deployment, and live-service states are reported separately.",
+    "commit_activity": [
+      {
+        "count": 0,
+        "date": "2026-07-05"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-06"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-07"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-08"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-09"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-10"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-11"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-12"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-13"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-14"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-15"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-16"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-17"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-18"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-19"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-20"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-21"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-22"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-23"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-24"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-25"
+      },
+      {
+        "count": 1,
+        "date": "2026-07-26"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-27"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-28"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-29"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-30"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-31"
+      },
+      {
+        "count": 0,
+        "date": "2026-08-01"
+      },
+      {
+        "count": 0,
+        "date": "2026-08-02"
+      },
+      {
+        "count": 0,
+        "date": "2026-08-03"
+      }
+    ],
+    "contributors": [
+      {
+        "contributions": 143,
+        "login": "cobycloud",
+        "url": "https://github.com/cobycloud"
+      },
+      {
+        "contributions": 40,
+        "login": "github-actions[bot]",
+        "url": "https://github.com/apps/github-actions"
+      }
+    ],
     "created_at": "2026-04-13T08:34:45Z",
     "default_branch": "master",
     "description": "A formal ASGI event contract that normalizes HTTP, WebSocket, QUIC, and WebTransport into a typed, capability-safe application IR.",
@@ -71514,6 +78731,140 @@
   {
     "archived": false,
     "claim_boundary": "Repository, release, deployment, and live-service states are reported separately.",
+    "commit_activity": [
+      {
+        "count": 0,
+        "date": "2026-07-05"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-06"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-07"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-08"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-09"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-10"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-11"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-12"
+      },
+      {
+        "count": 3,
+        "date": "2026-07-13"
+      },
+      {
+        "count": 1,
+        "date": "2026-07-14"
+      },
+      {
+        "count": 1,
+        "date": "2026-07-15"
+      },
+      {
+        "count": 3,
+        "date": "2026-07-16"
+      },
+      {
+        "count": 4,
+        "date": "2026-07-17"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-18"
+      },
+      {
+        "count": 1,
+        "date": "2026-07-19"
+      },
+      {
+        "count": 1,
+        "date": "2026-07-20"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-21"
+      },
+      {
+        "count": 1,
+        "date": "2026-07-22"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-23"
+      },
+      {
+        "count": 7,
+        "date": "2026-07-24"
+      },
+      {
+        "count": 6,
+        "date": "2026-07-25"
+      },
+      {
+        "count": 3,
+        "date": "2026-07-26"
+      },
+      {
+        "count": 1,
+        "date": "2026-07-27"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-28"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-29"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-30"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-31"
+      },
+      {
+        "count": 0,
+        "date": "2026-08-01"
+      },
+      {
+        "count": 0,
+        "date": "2026-08-02"
+      },
+      {
+        "count": 0,
+        "date": "2026-08-03"
+      }
+    ],
+    "contributors": [
+      {
+        "contributions": 579,
+        "login": "cobycloud",
+        "url": "https://github.com/cobycloud"
+      },
+      {
+        "contributions": 56,
+        "login": "github-actions[bot]",
+        "url": "https://github.com/apps/github-actions"
+      }
+    ],
     "created_at": "2026-03-20T06:09:17Z",
     "default_branch": "master",
     "description": "Schema-first Python and Rust workspace for REST and JSON-RPC APIs with typed validation, SQLAlchemy models, and engine-backed execution.",
@@ -84086,6 +91437,135 @@
   {
     "archived": false,
     "claim_boundary": "Repository, release, deployment, and live-service states are reported separately.",
+    "commit_activity": [
+      {
+        "count": 0,
+        "date": "2026-07-05"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-06"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-07"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-08"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-09"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-10"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-11"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-12"
+      },
+      {
+        "count": 1,
+        "date": "2026-07-13"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-14"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-15"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-16"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-17"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-18"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-19"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-20"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-21"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-22"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-23"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-24"
+      },
+      {
+        "count": 6,
+        "date": "2026-07-25"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-26"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-27"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-28"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-29"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-30"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-31"
+      },
+      {
+        "count": 0,
+        "date": "2026-08-01"
+      },
+      {
+        "count": 0,
+        "date": "2026-08-02"
+      },
+      {
+        "count": 0,
+        "date": "2026-08-03"
+      }
+    ],
+    "contributors": [
+      {
+        "contributions": 47,
+        "login": "cobycloud",
+        "url": "https://github.com/cobycloud"
+      }
+    ],
     "created_at": "2026-05-18T17:38:43Z",
     "default_branch": "master",
     "description": "MdWrk lander website for tigrbl.com.",
@@ -84179,6 +91659,135 @@
   {
     "archived": false,
     "claim_boundary": "Repository, release, deployment, and live-service states are reported separately.",
+    "commit_activity": [
+      {
+        "count": 0,
+        "date": "2026-07-05"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-06"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-07"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-08"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-09"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-10"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-11"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-12"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-13"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-14"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-15"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-16"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-17"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-18"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-19"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-20"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-21"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-22"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-23"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-24"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-25"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-26"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-27"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-28"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-29"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-30"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-31"
+      },
+      {
+        "count": 0,
+        "date": "2026-08-01"
+      },
+      {
+        "count": 0,
+        "date": "2026-08-02"
+      },
+      {
+        "count": 0,
+        "date": "2026-08-03"
+      }
+    ],
+    "contributors": [
+      {
+        "contributions": 1,
+        "login": "cobycloud",
+        "url": "https://github.com/cobycloud"
+      }
+    ],
     "created_at": "2026-05-20T02:21:26Z",
     "default_branch": "master",
     "description": "Standalone tigrbl_acme_ca package repository.",
@@ -84249,6 +91858,135 @@
   {
     "archived": false,
     "claim_boundary": "Repository, release, deployment, and live-service states are reported separately.",
+    "commit_activity": [
+      {
+        "count": 0,
+        "date": "2026-07-05"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-06"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-07"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-08"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-09"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-10"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-11"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-12"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-13"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-14"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-15"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-16"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-17"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-18"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-19"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-20"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-21"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-22"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-23"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-24"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-25"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-26"
+      },
+      {
+        "count": 1,
+        "date": "2026-07-27"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-28"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-29"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-30"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-31"
+      },
+      {
+        "count": 0,
+        "date": "2026-08-01"
+      },
+      {
+        "count": 0,
+        "date": "2026-08-02"
+      },
+      {
+        "count": 0,
+        "date": "2026-08-03"
+      }
+    ],
+    "contributors": [
+      {
+        "contributions": 2,
+        "login": "cobycloud",
+        "url": "https://github.com/cobycloud"
+      }
+    ],
     "created_at": "2026-05-20T02:21:21Z",
     "default_branch": "master",
     "description": "Standalone tigrbl_api_cron package repository.",
@@ -84319,6 +92057,135 @@
   {
     "archived": false,
     "claim_boundary": "Repository, release, deployment, and live-service states are reported separately.",
+    "commit_activity": [
+      {
+        "count": 0,
+        "date": "2026-07-05"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-06"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-07"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-08"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-09"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-10"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-11"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-12"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-13"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-14"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-15"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-16"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-17"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-18"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-19"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-20"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-21"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-22"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-23"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-24"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-25"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-26"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-27"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-28"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-29"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-30"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-31"
+      },
+      {
+        "count": 0,
+        "date": "2026-08-01"
+      },
+      {
+        "count": 0,
+        "date": "2026-08-02"
+      },
+      {
+        "count": 0,
+        "date": "2026-08-03"
+      }
+    ],
+    "contributors": [
+      {
+        "contributions": 1,
+        "login": "cobycloud",
+        "url": "https://github.com/cobycloud"
+      }
+    ],
     "created_at": "2026-05-20T02:21:23Z",
     "default_branch": "master",
     "description": "Standalone tigrbl_api_hpks package repository.",
@@ -84389,6 +92256,140 @@
   {
     "archived": false,
     "claim_boundary": "Repository, release, deployment, and live-service states are reported separately.",
+    "commit_activity": [
+      {
+        "count": 0,
+        "date": "2026-07-05"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-06"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-07"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-08"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-09"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-10"
+      },
+      {
+        "count": 12,
+        "date": "2026-07-11"
+      },
+      {
+        "count": 27,
+        "date": "2026-07-12"
+      },
+      {
+        "count": 77,
+        "date": "2026-07-13"
+      },
+      {
+        "count": 67,
+        "date": "2026-07-14"
+      },
+      {
+        "count": 67,
+        "date": "2026-07-15"
+      },
+      {
+        "count": 11,
+        "date": "2026-07-16"
+      },
+      {
+        "count": 27,
+        "date": "2026-07-17"
+      },
+      {
+        "count": 4,
+        "date": "2026-07-18"
+      },
+      {
+        "count": 29,
+        "date": "2026-07-19"
+      },
+      {
+        "count": 2,
+        "date": "2026-07-20"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-21"
+      },
+      {
+        "count": 1,
+        "date": "2026-07-22"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-23"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-24"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-25"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-26"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-27"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-28"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-29"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-30"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-31"
+      },
+      {
+        "count": 0,
+        "date": "2026-08-01"
+      },
+      {
+        "count": 0,
+        "date": "2026-08-02"
+      },
+      {
+        "count": 0,
+        "date": "2026-08-03"
+      }
+    ],
+    "contributors": [
+      {
+        "contributions": 900,
+        "login": "cobycloud",
+        "url": "https://github.com/cobycloud"
+      },
+      {
+        "contributions": 16,
+        "login": "dependabot[bot]",
+        "url": "https://github.com/apps/dependabot"
+      }
+    ],
     "created_at": "2026-03-28T05:24:03Z",
     "default_branch": "master",
     "description": "Tigrbl-native multi-tenant OpenID Connect / OAuth 2.0 identity provider with ASGI runtime profiles, JWKS/JWT support, operator controls, and SSOT-backed compliance evidence.",
@@ -86133,6 +94134,135 @@
   {
     "archived": false,
     "claim_boundary": "Repository, release, deployment, and live-service states are reported separately.",
+    "commit_activity": [
+      {
+        "count": 0,
+        "date": "2026-07-05"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-06"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-07"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-08"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-09"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-10"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-11"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-12"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-13"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-14"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-15"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-16"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-17"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-18"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-19"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-20"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-21"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-22"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-23"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-24"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-25"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-26"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-27"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-28"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-29"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-30"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-31"
+      },
+      {
+        "count": 0,
+        "date": "2026-08-01"
+      },
+      {
+        "count": 0,
+        "date": "2026-08-02"
+      },
+      {
+        "count": 0,
+        "date": "2026-08-03"
+      }
+    ],
+    "contributors": [
+      {
+        "contributions": 1,
+        "login": "cobycloud",
+        "url": "https://github.com/cobycloud"
+      }
+    ],
     "created_at": "2026-05-20T03:06:55Z",
     "default_branch": "master",
     "description": "Standalone tigrbl_billing package repository.",
@@ -86506,6 +94636,135 @@
   {
     "archived": false,
     "claim_boundary": "Repository, release, deployment, and live-service states are reported separately.",
+    "commit_activity": [
+      {
+        "count": 0,
+        "date": "2026-07-05"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-06"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-07"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-08"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-09"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-10"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-11"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-12"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-13"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-14"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-15"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-16"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-17"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-18"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-19"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-20"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-21"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-22"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-23"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-24"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-25"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-26"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-27"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-28"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-29"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-30"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-31"
+      },
+      {
+        "count": 0,
+        "date": "2026-08-01"
+      },
+      {
+        "count": 0,
+        "date": "2026-08-02"
+      },
+      {
+        "count": 0,
+        "date": "2026-08-03"
+      }
+    ],
+    "contributors": [
+      {
+        "contributions": 3,
+        "login": "cobycloud",
+        "url": "https://github.com/cobycloud"
+      }
+    ],
     "created_at": "2026-05-21T03:18:57Z",
     "default_branch": "master",
     "description": "Standalone key management service package for Tigrbl.",
@@ -86593,6 +94852,135 @@
   {
     "archived": false,
     "claim_boundary": "Repository, release, deployment, and live-service states are reported separately.",
+    "commit_activity": [
+      {
+        "count": 0,
+        "date": "2026-07-05"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-06"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-07"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-08"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-09"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-10"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-11"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-12"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-13"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-14"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-15"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-16"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-17"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-18"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-19"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-20"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-21"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-22"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-23"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-24"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-25"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-26"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-27"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-28"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-29"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-30"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-31"
+      },
+      {
+        "count": 0,
+        "date": "2026-08-01"
+      },
+      {
+        "count": 0,
+        "date": "2026-08-02"
+      },
+      {
+        "count": 0,
+        "date": "2026-08-03"
+      }
+    ],
+    "contributors": [
+      {
+        "contributions": 1,
+        "login": "cobycloud",
+        "url": "https://github.com/cobycloud"
+      }
+    ],
     "created_at": "2026-05-20T02:21:28Z",
     "default_branch": "master",
     "description": "Standalone tigrbl_spiffe package repository.",
@@ -86735,6 +95123,150 @@
   {
     "archived": false,
     "claim_boundary": "Repository, release, deployment, and live-service states are reported separately.",
+    "commit_activity": [
+      {
+        "count": 0,
+        "date": "2026-07-05"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-06"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-07"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-08"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-09"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-10"
+      },
+      {
+        "count": 6,
+        "date": "2026-07-11"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-12"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-13"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-14"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-15"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-16"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-17"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-18"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-19"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-20"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-21"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-22"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-23"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-24"
+      },
+      {
+        "count": 13,
+        "date": "2026-07-25"
+      },
+      {
+        "count": 8,
+        "date": "2026-07-26"
+      },
+      {
+        "count": 1,
+        "date": "2026-07-27"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-28"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-29"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-30"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-31"
+      },
+      {
+        "count": 0,
+        "date": "2026-08-01"
+      },
+      {
+        "count": 0,
+        "date": "2026-08-02"
+      },
+      {
+        "count": 0,
+        "date": "2026-08-03"
+      }
+    ],
+    "contributors": [
+      {
+        "contributions": 249,
+        "login": "cobycloud",
+        "url": "https://github.com/cobycloud"
+      },
+      {
+        "contributions": 21,
+        "login": "github-actions[bot]",
+        "url": "https://github.com/apps/github-actions"
+      },
+      {
+        "contributions": 1,
+        "login": "MichaelDecent",
+        "url": "https://github.com/MichaelDecent"
+      },
+      {
+        "contributions": 1,
+        "login": "axtant",
+        "url": "https://github.com/axtant"
+      }
+    ],
     "created_at": "2026-03-19T01:25:35Z",
     "default_branch": "master",
     "description": "ASGI3 server with built-in HTTP/1.1, HTTP/2, HTTP/3, QUIC, WebSocket, TLS, static delivery, and release validation.",
@@ -87750,6 +96282,135 @@
   {
     "archived": false,
     "claim_boundary": "Repository, release, deployment, and live-service states are reported separately.",
+    "commit_activity": [
+      {
+        "count": 0,
+        "date": "2026-07-05"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-06"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-07"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-08"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-09"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-10"
+      },
+      {
+        "count": 6,
+        "date": "2026-07-11"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-12"
+      },
+      {
+        "count": 1,
+        "date": "2026-07-13"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-14"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-15"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-16"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-17"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-18"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-19"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-20"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-21"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-22"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-23"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-24"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-25"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-26"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-27"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-28"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-29"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-30"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-31"
+      },
+      {
+        "count": 0,
+        "date": "2026-08-01"
+      },
+      {
+        "count": 0,
+        "date": "2026-08-02"
+      },
+      {
+        "count": 0,
+        "date": "2026-08-03"
+      }
+    ],
+    "contributors": [
+      {
+        "contributions": 50,
+        "login": "cobycloud",
+        "url": "https://github.com/cobycloud"
+      }
+    ],
     "created_at": "2026-05-18T17:38:40Z",
     "default_branch": "master",
     "description": "MdWrk lander website for tigrcorn.com.",
@@ -87852,6 +96513,140 @@
   {
     "archived": false,
     "claim_boundary": "Repository, release, deployment, and live-service states are reported separately.",
+    "commit_activity": [
+      {
+        "count": 0,
+        "date": "2026-07-05"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-06"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-07"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-08"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-09"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-10"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-11"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-12"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-13"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-14"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-15"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-16"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-17"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-18"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-19"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-20"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-21"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-22"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-23"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-24"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-25"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-26"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-27"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-28"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-29"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-30"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-31"
+      },
+      {
+        "count": 0,
+        "date": "2026-08-01"
+      },
+      {
+        "count": 0,
+        "date": "2026-08-02"
+      },
+      {
+        "count": 0,
+        "date": "2026-08-03"
+      }
+    ],
+    "contributors": [
+      {
+        "contributions": 23,
+        "login": "cobycloud",
+        "url": "https://github.com/cobycloud"
+      },
+      {
+        "contributions": 2,
+        "login": "github-actions[bot]",
+        "url": "https://github.com/apps/github-actions"
+      }
+    ],
     "created_at": "2026-05-16T19:59:29Z",
     "default_branch": "master",
     "description": "Installable SSOT governance pack for URL query parameters, referrer context, UTM conventions, and campaign attribution capture.",
@@ -87977,6 +96772,135 @@
   {
     "archived": false,
     "claim_boundary": "Repository, release, deployment, and live-service states are reported separately.",
+    "commit_activity": [
+      {
+        "count": 0,
+        "date": "2026-07-05"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-06"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-07"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-08"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-09"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-10"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-11"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-12"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-13"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-14"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-15"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-16"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-17"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-18"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-19"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-20"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-21"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-22"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-23"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-24"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-25"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-26"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-27"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-28"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-29"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-30"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-31"
+      },
+      {
+        "count": 0,
+        "date": "2026-08-01"
+      },
+      {
+        "count": 0,
+        "date": "2026-08-02"
+      },
+      {
+        "count": 0,
+        "date": "2026-08-03"
+      }
+    ],
+    "contributors": [
+      {
+        "contributions": 1,
+        "login": "cobycloud",
+        "url": "https://github.com/cobycloud"
+      }
+    ],
     "created_at": "2026-06-01T23:57:40Z",
     "default_branch": "master",
     "description": "Installable SSOT governance pack for W3C Verifiable Credentials, presentations, securing mechanisms, status models, schemas, cryptosuites, and adjacent issuance/presentation protocols.",
@@ -88056,6 +96980,140 @@
   {
     "archived": false,
     "claim_boundary": "Repository, release, deployment, and live-service states are reported separately.",
+    "commit_activity": [
+      {
+        "count": 0,
+        "date": "2026-07-05"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-06"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-07"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-08"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-09"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-10"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-11"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-12"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-13"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-14"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-15"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-16"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-17"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-18"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-19"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-20"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-21"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-22"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-23"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-24"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-25"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-26"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-27"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-28"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-29"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-30"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-31"
+      },
+      {
+        "count": 0,
+        "date": "2026-08-01"
+      },
+      {
+        "count": 0,
+        "date": "2026-08-02"
+      },
+      {
+        "count": 0,
+        "date": "2026-08-03"
+      }
+    ],
+    "contributors": [
+      {
+        "contributions": 18,
+        "login": "cobycloud",
+        "url": "https://github.com/cobycloud"
+      },
+      {
+        "contributions": 1,
+        "login": "github-actions[bot]",
+        "url": "https://github.com/apps/github-actions"
+      }
+    ],
     "created_at": "2026-05-16T20:01:32Z",
     "default_branch": "master",
     "description": "Installable SSOT governance pack for web analytics, app analytics, product analytics, CDP event specs, and browser lifecycle collection.",
@@ -88171,6 +97229,140 @@
   {
     "archived": false,
     "claim_boundary": "Repository, release, deployment, and live-service states are reported separately.",
+    "commit_activity": [
+      {
+        "count": 0,
+        "date": "2026-07-05"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-06"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-07"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-08"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-09"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-10"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-11"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-12"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-13"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-14"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-15"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-16"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-17"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-18"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-19"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-20"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-21"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-22"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-23"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-24"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-25"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-26"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-27"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-28"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-29"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-30"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-31"
+      },
+      {
+        "count": 0,
+        "date": "2026-08-01"
+      },
+      {
+        "count": 0,
+        "date": "2026-08-02"
+      },
+      {
+        "count": 0,
+        "date": "2026-08-03"
+      }
+    ],
+    "contributors": [
+      {
+        "contributions": 18,
+        "login": "cobycloud",
+        "url": "https://github.com/cobycloud"
+      },
+      {
+        "contributions": 1,
+        "login": "github-actions[bot]",
+        "url": "https://github.com/apps/github-actions"
+      }
+    ],
     "created_at": "2026-05-16T20:02:49Z",
     "default_branch": "master",
     "description": "Installable SSOT governance pack for Navigation Timing, Resource Timing, User Timing, Performance Timeline, Reporting API, Beacon, and RUM evidence.",

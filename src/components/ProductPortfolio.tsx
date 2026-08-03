@@ -6,11 +6,14 @@ import {
   RecordCollectionPageModel,
   RecordPageModel,
   RecordSummary,
+  RepositoryEvidence,
+  RepositorySignals,
   ReleaseEvidence,
   getRecordPageModel,
 } from "../api/catalog.generated";
 import { portfolioEntities } from "../data/entities";
 import { PortfolioEntity } from "../types";
+import { RepositorySignalStrip } from "./RepositorySignals";
 
 type Navigate = (path: string) => void;
 type CollectionMode = "products" | "portfolio";
@@ -70,6 +73,7 @@ type CollectionRecord = {
   resourceCount: number;
   dependencyCount: number;
   dependentCount: number;
+  signals?: RepositorySignals;
 };
 
 function initialProductModel(slug: string, recordType: "product" | "portfolio"): ProductPageModel | null {
@@ -151,6 +155,21 @@ function collectionRecordPath(record: CollectionRecord): string {
     : productRecordPath(record.slug);
 }
 
+function evidenceSignals(repository: RepositoryEvidence): RepositorySignals {
+  return {
+    repository_count: 1,
+    metrics: {
+      stars: Number(repository.metrics.stars || 0),
+      forks: Number(repository.metrics.forks || 0),
+      contributors: Number(repository.metrics.contributors || 0),
+      commits: Number(repository.metrics.commits || 0),
+    },
+    history: repository.history,
+    commit_activity: repository.commit_activity,
+    observed_at: repository.observed_at,
+  };
+}
+
 function ProductRow({ record, onNavigate }: { record: CollectionRecord; onNavigate: Navigate }) {
   const path = collectionRecordPath(record);
   return (
@@ -177,6 +196,7 @@ function ProductRow({ record, onNavigate }: { record: CollectionRecord; onNaviga
               {record.dependencyCount > 0 && <span>{record.dependencyCount} dependencies</span>}
               {record.dependentCount > 0 && <span>{record.dependentCount} dependents</span>}
             </div>
+            <RepositorySignalStrip signals={record.signals} compact />
           </div>
           <span className="mt-4 sm:mt-1 inline-flex items-center gap-1 text-xs font-mono font-semibold text-accent">
             View record <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-0.5" />
@@ -206,6 +226,7 @@ function staticCollectionRecord(entity: PortfolioEntity): CollectionRecord {
     resourceCount: 0,
     dependencyCount: 0,
     dependentCount: 0,
+    signals: undefined,
   };
 }
 
@@ -228,6 +249,7 @@ function backendCollectionRecord(record: RecordSummary): CollectionRecord {
     resourceCount: record.resource_count,
     dependencyCount: record.dependency_count,
     dependentCount: record.dependent_count,
+    signals: record.signals,
   };
 }
 
@@ -497,12 +519,13 @@ export function ProductRecordPage({
             {evidenceState === "loading" && <p className="text-sm text-ink-muted" role="status">Loading repository and package evidence…</p>}
             {evidenceState === "error" && <p className="text-sm text-red-700" role="alert">Public evidence could not be loaded.</p>}
             {evidenceState === "unavailable" && <p className="text-sm text-ink-muted">No matching public repository is present in the current catalog scope.</p>}
-            {bundle && <><EvidenceMetrics bundle={bundle} /><DetailRows rows={[
+            {bundle && <><EvidenceMetrics bundle={bundle} /><RepositorySignalStrip signals={pageModel?.implementation.signals} /><DetailRows rows={[
               ["Repository", <a href={bundle.repository.url} target="_blank" rel="noreferrer" className="text-accent hover:underline">{bundle.repository.full_name}</a>],
               ["Observed", new Date(bundle.generated_at).toLocaleString()],
               ["Latest release", String(bundle.repository.latest_release?.name || bundle.repository.latest_release?.tag || "No GitHub release observed")],
               ["Latest deployment", bundle.repository.latest_deployment?.environment ? `${humanize(String(bundle.repository.latest_deployment.environment))} · ${humanize(String(bundle.repository.latest_deployment.state || "state not recorded"))}` : "No deployment observed"],
-            ]} /></>}
+            ]} />
+            {pageModel?.implementation.repositories.length ? <div className="space-y-3 pt-2"><h3 className="text-xs font-mono uppercase text-ink font-semibold">Attached repository activity</h3><ul className="divide-y divide-[var(--color-border-soft)] border-y border-[var(--color-border-soft)]">{pageModel.implementation.repositories.map((repository) => <li key={repository.id} className="py-4 space-y-3"><div className="flex flex-wrap items-baseline justify-between gap-2"><a href={repository.url} target="_blank" rel="noreferrer" className="font-serif text-lg font-bold text-accent hover:underline">{repository.owner}/{repository.name}</a><span className="text-[10px] font-mono uppercase text-ink-muted">{humanize(repository.role)}</span></div><RepositorySignalStrip signals={evidenceSignals(repository)} compact /></li>)}</ul></div> : null}</>}
           </ProductSection>
 
           <ProductSection id="packages" title="Packages" intro="Public packages attached through implementation, website, or documentation repositories. Their role is shown explicitly.">

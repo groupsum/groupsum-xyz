@@ -1,12 +1,13 @@
 import React, { useEffect, useMemo, useState } from "react";
 import {
   catalogDatasetManifest,
-  catalogFeaturedRepositories,
   catalogOrganizations,
   catalogSummary,
   catalogTechnologies,
 } from "../data/catalog.generated";
+import { getRepositoryMetricSnapshot, RepositoryMetricRecord } from "../api/catalog.generated";
 import { ArrowLeft, ArrowRight, ExternalLink, Search } from "lucide-react";
+import { RepositorySignalStrip } from "./RepositorySignals";
 
 type CatalogRecord = Record<string, unknown> & {
   id: string;
@@ -226,9 +227,24 @@ export function CatalogSnapshotBand({
   title?: string;
 }) {
   const organization = catalogOrganizations.find((item) => item.login === owner);
-  const repositories = owner
-    ? organization?.featured_repositories.slice(0, 4) || []
-    : catalogFeaturedRepositories.slice(0, 4);
+  const [repositories, setRepositories] = useState<RepositoryMetricRecord[]>([]);
+  const [metricState, setMetricState] = useState<"loading" | "ready" | "error">("loading");
+  useEffect(() => {
+    const controller = new AbortController();
+    setMetricState("loading");
+    getRepositoryMetricSnapshot("", controller.signal)
+      .then((snapshot) => {
+        const scoped = owner
+          ? snapshot.repositories.filter((repository) => repository.owner === owner)
+          : snapshot.repositories;
+        setRepositories(scoped.slice(0, 4));
+        setMetricState("ready");
+      })
+      .catch((error: Error) => {
+        if (error.name !== "AbortError") setMetricState("error");
+      });
+    return () => controller.abort();
+  }, [owner]);
   const metrics = organization
     ? [
         ["Repositories", organization.repository_count],
@@ -266,13 +282,17 @@ export function CatalogSnapshotBand({
             </div>
           ))}
         </div>
+        {metricState === "loading" && <div className="min-h-44 border-y border-[var(--color-border-soft)] py-8 text-sm text-ink-muted" role="status">Loading persisted repository activity…</div>}
+        {metricState === "error" && <div className="border-y border-[var(--color-border-soft)] py-6 text-sm text-ink-muted" role="alert">Persisted repository activity is temporarily unavailable.</div>}
         {repositories.length > 0 && (
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
             {repositories.map((repository) => (
-              <button key={repository.id} onClick={() => onNavigate(repository.route)} className="text-left p-4 bg-canvas border border-[var(--color-border-soft)] rounded-[var(--radius-sm)] hover:border-accent transition-colors cursor-pointer">
-                <span className="text-[10px] font-mono uppercase text-accent">{owner || repository.owner}</span>
-                <h3 className="text-sm font-semibold text-ink mt-1">{repository.name || repository.display_name}</h3>
+              <button key={repository.id} onClick={() => onNavigate(repository.route)} className="text-left p-4 bg-canvas border border-[var(--color-border-soft)] rounded-[var(--radius-sm)] hover:border-accent transition-colors cursor-pointer space-y-3">
+                <div><span className="text-[10px] font-mono uppercase text-accent">{repository.owner}</span>
+                <h3 className="text-sm font-semibold text-ink mt-1">{repository.name}</h3>
                 <p className="text-[11px] text-ink-muted leading-relaxed line-clamp-2 mt-1">{repository.description}</p>
+                </div>
+                <RepositorySignalStrip signals={{ ...repository, repository_count: 1 }} compact />
               </button>
             ))}
           </div>

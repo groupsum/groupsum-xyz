@@ -12,6 +12,7 @@ from .page_models import (
     organization_detail,
     record_collection,
     record_detail,
+    repository_metric_snapshot,
 )
 from .tables import ALL_TABLES
 
@@ -87,6 +88,14 @@ def build_app(database_path: str | Path | None = None) -> TigrblApp:
     @catalog_app.get("/api/v1/organizations/{slug}", summary="Organization record page model")
     def organization(request: Request, slug: str):
         return organization_detail(path, request, slug)
+
+    @catalog_app.get(
+        "/api/v1/repository-metrics",
+        summary="Persisted repository metric histories",
+    )
+    def repository_metrics(request: Request, owner: str = ""):
+        requested_owner = request.query_params.get("owner", owner)
+        return repository_metric_snapshot(path, request, requested_owner)
 
     return catalog_app
 

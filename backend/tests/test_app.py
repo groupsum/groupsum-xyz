@@ -16,7 +16,7 @@ async def test_health_and_openapi(tmp_path: Path) -> None:
     async with httpx.AsyncClient(transport=transport, base_url="http://test") as client:
         health = await client.get("/healthz")
         assert health.status_code == 200
-        assert health.json() == {"status": "ok", "database": "sqlite", "schema_tables": 27}
+        assert health.json() == {"status": "ok", "database": "sqlite", "schema_tables": 28}
         assert health.headers["cache-control"] == "no-store"
 
         openapi = await client.get("/openapi.json")
@@ -25,7 +25,9 @@ async def test_health_and_openapi(tmp_path: Path) -> None:
         assert "/record" in openapi.json()["paths"]
         assert "/package" in openapi.json()["paths"]
         assert "/recordpackage" in openapi.json()["paths"]
+        assert "/repositorycontributor" in openapi.json()["paths"]
         assert "/api/v1/products/{slug}" in openapi.json()["paths"]
+        assert "/api/v1/repository-metrics" in openapi.json()["paths"]
         operation_ids = {
             operation["operationId"]
             for path in ("/record", "/record/{item_id}")
@@ -55,6 +57,12 @@ async def test_peagen_page_model_has_explicit_attachments(tmp_path: Path) -> Non
         dependency_count = connection.execute("SELECT COUNT(*) FROM dependencies").fetchone()[0]
         assert release_count == counts["releases"]
         assert dependency_count == counts["dependencies"]
+        assert connection.execute(
+            "SELECT COUNT(*) FROM repository_contributors"
+        ).fetchone()[0] >= 40
+        assert connection.execute(
+            "SELECT COUNT(*) FROM metric_observations WHERE metric = 'commits_daily'"
+        ).fetchone()[0] == counts["repositories"] * 30
 
     transport = httpx.ASGITransport(app=app)
     async with httpx.AsyncClient(transport=transport, base_url="http://test") as client:
@@ -117,6 +125,27 @@ async def test_peagen_page_model_has_explicit_attachments(tmp_path: Path) -> Non
         assert tigrbl_model["implementation"]["dependency_summary"]["dependencies"] > 500
         assert tigrbl_model["implementation"]["dependency_summary"]["dependents"] > 100
         assert len(tigrbl_model["implementation"]["releases"]) == 100
+        signals = tigrbl_model["implementation"]["signals"]
+        assert signals["repository_count"] == 4
+        assert signals["metrics"]["stars"] == 4
+        assert signals["metrics"]["contributors"] == 2
+        assert len(signals["history"]["stars"]) >= 1
+        assert len(signals["commit_activity"]) == 30
+        assert all(
+            len(repository["commit_activity"]) == 30
+            for repository in tigrbl_model["implementation"]["repositories"]
+        )
+
+        repository_metrics = await client.get("/api/v1/repository-metrics?owner=tigrbl")
+        assert repository_metrics.status_code == 200
+        repository_metric_model = repository_metrics.json()
+        assert repository_metric_model["owner"] == "tigrbl"
+        assert repository_metric_model["count"] >= 10
+        assert all(
+            len(repository["commit_activity"]) == 30
+            for repository in repository_metric_model["repositories"]
+        )
+        assert repository_metrics.headers["etag"]
 
         portfolio = await client.get("/api/v1/portfolio")
         assert portfolio.status_code == 200

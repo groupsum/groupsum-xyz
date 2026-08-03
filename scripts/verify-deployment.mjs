@@ -56,7 +56,7 @@ async function verify() {
   const unchanged = await fetchResponse("/api/v1/products/peagen", { "if-none-match": etag });
   if (unchanged.status !== 304) throw new Error(`Peagen conditional request returned ${unchanged.status}`);
   const tigrblHtml = await fetchText("/products/records/tigrbl/");
-  for (const marker of ["PyPI", "npm", "crates.io", "Dependencies", "Observed dependents"]) {
+  for (const marker of ["PyPI", "npm", "crates.io", "Dependencies", "Observed dependents", "Stars", "Forks", "Contributors", "Commits"]) {
     if (!tigrblHtml.includes(marker)) throw new Error(`Tigrbl rendered page is missing ${marker}`);
   }
   const tigrblApi = await fetchResponse("/api/v1/products/tigrbl");
@@ -74,6 +74,20 @@ async function verify() {
   if (tigrblModel.implementation?.dependency_summary?.dependents < 100) {
     throw new Error("Tigrbl API dependent projection is incomplete");
   }
+  const signals = tigrblModel.implementation?.signals;
+  if (signals?.repository_count !== 4) throw new Error("Tigrbl aggregate repository signals are incomplete");
+  if (signals?.metrics?.contributors !== 2) throw new Error("Tigrbl contributor aggregation is inaccurate");
+  if (signals?.commit_activity?.length !== 30) throw new Error("Tigrbl commit activity window is incomplete");
+  const metricResponse = await fetchResponse("/api/v1/repository-metrics?owner=tigrbl");
+  if (!metricResponse.ok) throw new Error(`repository metric API returned ${metricResponse.status}`);
+  const metricSnapshot = await metricResponse.json();
+  if (metricSnapshot.owner !== "tigrbl" || metricSnapshot.count < 10) {
+    throw new Error("repository metric API owner projection is incomplete");
+  }
+  if (metricSnapshot.repositories.some((item) => item.commit_activity?.length !== 30)) {
+    throw new Error("repository metric API has an incomplete commit activity window");
+  }
+  if (!metricResponse.headers.get("etag")) throw new Error("repository metric API is missing an ETag");
   const generatedPortfolioHtml = await fetchText(
     "/portfolio/records/catalog-groupsum-groupsum-xyz/",
   );
@@ -84,6 +98,7 @@ async function verify() {
   }
   const openapi = JSON.parse(await fetchText("/openapi.json"));
   if (!openapi.paths?.["/api/v1/products/{slug}"]) throw new Error("deployed OpenAPI lacks product record page model");
+  if (!openapi.paths?.["/api/v1/repository-metrics"]) throw new Error("deployed OpenAPI lacks repository metric histories");
   const homeHtml = await fetchText("/");
   const asset = homeHtml.match(/<script[^>]+src="([^"]+\.js)"/i)?.[1];
   if (!asset) throw new Error("deployed application JavaScript asset was not found");

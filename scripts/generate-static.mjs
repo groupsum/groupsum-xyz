@@ -55,9 +55,14 @@ const productRecordsFrom = (file) => {
 };
 const productMetadataRecords = productRecordsFrom("src/data/entities.ts");
 const readPageModel = (family, name) => JSON.parse(fs.readFileSync(`backend/generated/page-models/${family}/${name}.json`, "utf8"));
+const readOptionalPageModel = (family, name) => {
+  const target = `backend/generated/page-models/${family}/${name}.json`;
+  return fs.existsSync(target) ? JSON.parse(fs.readFileSync(target, "utf8")) : null;
+};
 const generatedPortfolioCollection = readPageModel("portfolio", "index");
 const generatedPortfolioRecords = generatedPortfolioCollection.records.map((item) => {
   const model = readPageModel("portfolio", item.slug);
+  const signals = model.implementation?.signals?.metrics || {};
   return {
     route: `/portfolio/records/${item.slug}/`,
     url: absolute(`/portfolio/records/${item.slug}/`),
@@ -73,13 +78,21 @@ const generatedPortfolioRecords = generatedPortfolioCollection.records.map((item
     resourceCount: item.resource_count,
     dependencyCount: item.dependency_count,
     dependentCount: item.dependent_count,
+    stars: signals.stars,
+    forks: signals.forks,
+    contributors: signals.contributors,
+    commits: signals.commits,
   };
 });
 const detailRecords = [
   ...slugsFrom("src/data/portfolio.ts").flatMap((slug) => ["", "projects/", "packages/", "specifications/"].map((prefix) => ({ route: `/portfolio/${prefix}${slug}/`, url: absolute(`/portfolio/${prefix}${slug}/`), title: `${slug.replace(/[-_]/g, " ")} | GroupSum portfolio`, description: `Portfolio record for ${slug.replace(/[-_]/g, " ")}.`, type: "website" }))),
   ...slugsFrom("src/data/solutions.ts").map((slug) => ({ route: `/solutions/${slug}/`, url: absolute(`/solutions/${slug}/`), title: `${slug.replace(/[-_]/g, " ")} solution | GroupSum`, description: `Solution path for ${slug.replace(/[-_]/g, " ")}.`, type: "website" })),
   ...slugsFrom("src/data/services.ts").map((slug) => ({ route: `/services/${slug}/`, url: absolute(`/services/${slug}/`), title: `${slug.replace(/[-_]/g, " ")} service | GroupSum`, description: `Service detail for ${slug.replace(/[-_]/g, " ")}.`, type: "website" })),
-  ...productMetadataRecords.map((item) => ({ route: `/products/records/${item.slug}/`, url: absolute(`/products/records/${item.slug}/`), title: `${item.name} | GroupSum products`, description: cleanTrim(item.summary), type: "website", schemaFamily: "product-detail" })),
+  ...productMetadataRecords.map((item) => {
+    const model = readOptionalPageModel("product", item.slug);
+    const signals = model?.implementation?.signals?.metrics || {};
+    return { route: `/products/records/${item.slug}/`, url: absolute(`/products/records/${item.slug}/`), title: `${item.name} | GroupSum products`, description: cleanTrim(item.summary), type: "website", schemaFamily: "product-detail", stars: signals.stars, forks: signals.forks, contributors: signals.contributors, commits: signals.commits };
+  }),
   ...generatedPortfolioRecords
 ];
 const catalogDetailRecords = [
@@ -155,6 +168,12 @@ for (const [family, apiFamily] of [["product", "products"], ["portfolio", "portf
     fs.writeFileSync(apiTarget, fs.readFileSync(path.join(modelDir, filename)));
   }
 }
+const repositoryMetricsTarget = path.join(OUT, "api", "v1", "repository-metrics");
+fs.mkdirSync(path.dirname(repositoryMetricsTarget), { recursive: true });
+fs.copyFileSync(
+  path.join("backend", "generated", "page-models", "repository-metrics", "index.json"),
+  repositoryMetricsTarget,
+);
 writeDiscovery();
 writeCleanFullManifest();
 const catalogOut = path.join(OUT, "catalog");

@@ -66209,6 +66209,140 @@
   "repository": {
     "archived": false,
     "claim_boundary": "Repository, release, deployment, and live-service states are reported separately.",
+    "commit_activity": [
+      {
+        "count": 0,
+        "date": "2026-07-05"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-06"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-07"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-08"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-09"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-10"
+      },
+      {
+        "count": 12,
+        "date": "2026-07-11"
+      },
+      {
+        "count": 27,
+        "date": "2026-07-12"
+      },
+      {
+        "count": 77,
+        "date": "2026-07-13"
+      },
+      {
+        "count": 67,
+        "date": "2026-07-14"
+      },
+      {
+        "count": 67,
+        "date": "2026-07-15"
+      },
+      {
+        "count": 11,
+        "date": "2026-07-16"
+      },
+      {
+        "count": 27,
+        "date": "2026-07-17"
+      },
+      {
+        "count": 4,
+        "date": "2026-07-18"
+      },
+      {
+        "count": 29,
+        "date": "2026-07-19"
+      },
+      {
+        "count": 2,
+        "date": "2026-07-20"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-21"
+      },
+      {
+        "count": 1,
+        "date": "2026-07-22"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-23"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-24"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-25"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-26"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-27"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-28"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-29"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-30"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-31"
+      },
+      {
+        "count": 0,
+        "date": "2026-08-01"
+      },
+      {
+        "count": 0,
+        "date": "2026-08-02"
+      },
+      {
+        "count": 0,
+        "date": "2026-08-03"
+      }
+    ],
+    "contributors": [
+      {
+        "contributions": 900,
+        "login": "cobycloud",
+        "url": "https://github.com/cobycloud"
+      },
+      {
+        "contributions": 16,
+        "login": "dependabot[bot]",
+        "url": "https://github.com/apps/dependabot"
+      }
+    ],
     "created_at": "2026-03-28T05:24:03Z",
     "default_branch": "master",
     "description": "Tigrbl-native multi-tenant OpenID Connect / OAuth 2.0 identity provider with ASGI runtime profiles, JWKS/JWT support, operator controls, and SSOT-backed compliance evidence.",

@@ -9,6 +9,7 @@ import json
 import re
 import shutil
 from collections import Counter, defaultdict
+from datetime import datetime, timedelta
 from pathlib import Path
 from typing import Any
 
@@ -29,6 +30,29 @@ def slug(value: str) -> str:
 def observed_at(record: dict[str, Any], fallback: str) -> str:
     observations = record.get("observations") or []
     return next((item.get("observed_at") for item in observations if item.get("observed_at")), fallback)
+
+
+def daily_commit_activity(
+    activity: dict[str, Any], observed: str, days: int = 30
+) -> list[dict[str, Any]]:
+    """Return a truthful, zero-filled daily commit series ending at observation day."""
+    end = datetime.fromisoformat(observed.replace("Z", "+00:00")).date()
+    start = end - timedelta(days=days - 1)
+    counts: Counter[str] = Counter()
+    for commit in activity.get("commit_history") or []:
+        timestamp = commit.get("committed_at") or commit.get("authored_at")
+        if not timestamp:
+            continue
+        try:
+            day = datetime.fromisoformat(str(timestamp).replace("Z", "+00:00")).date()
+        except ValueError:
+            continue
+        if start <= day <= end:
+            counts[day.isoformat()] += 1
+    return [
+        {"date": (start + timedelta(days=offset)).isoformat(), "count": counts[(start + timedelta(days=offset)).isoformat()]}
+        for offset in range(days)
+    ]
 
 
 def related_resource_url(item: dict[str, Any]) -> str | None:
@@ -309,6 +333,16 @@ def compile_catalog(catalog: dict[str, Any], editorial: dict[str, Any]) -> dict[
                 "relationships": sum(relationship_counts[full_name].values()),
                 "related_resources": len(related_resources),
             },
+            "contributors": [
+                {
+                    "login": contributor.get("login"),
+                    "contributions": int(contributor.get("contributions") or 0),
+                    "url": contributor.get("url"),
+                }
+                for contributor in activity.get("contributors") or []
+                if contributor.get("login")
+            ],
+            "commit_activity": daily_commit_activity(activity, checked_at),
             "technologies": sorted(languages),
             "relationship_counts": dict(sorted(relationship_counts[full_name].items())),
             "related_resources": related_resources,

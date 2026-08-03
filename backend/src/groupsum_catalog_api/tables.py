@@ -156,6 +156,24 @@ class RecordRepository(RestTable):
     )
 
 
+class RepositoryContributor(RestTable):
+    __tablename__ = "repository_contributors"
+    __allow_unmapped__ = True
+    id = Column(String(300), primary_key=True)
+    repository_id = Column(
+        String(240), ForeignKey("repositories.id"), nullable=False, index=True
+    )
+    login = Column(String(240), nullable=False, index=True)
+    profile_url = Column(String(2048), nullable=True)
+    contributions = Column(Integer, nullable=False, default=0)
+    observed_at = Column(DateTime, nullable=False, index=True)
+    __table_args__ = (
+        UniqueConstraint(
+            "repository_id", "login", name="uq_repository_contributor"
+        ),
+    )
+
+
 class Package(RestTable):
     __tablename__ = "packages"
     __allow_unmapped__ = True
@@ -395,6 +413,7 @@ ALL_TABLES = (
     RecordTaxonomy,
     Repository,
     RecordRepository,
+    RepositoryContributor,
     Package,
     RecordPackage,
     PackageRepository,

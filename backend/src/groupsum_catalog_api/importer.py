@@ -4,7 +4,7 @@ import hashlib
 import json
 import re
 import sqlite3
-from datetime import UTC, datetime
+from datetime import UTC, datetime, timedelta
 from pathlib import Path
 from typing import Any
 
@@ -94,6 +94,7 @@ def import_catalog(database_path: Path, repo_root: Path) -> dict[str, int]:
         # not append-only observations. Replacing them prevents removed relationships
         # and release IDs from older importer versions from surviving a refresh.
         connection.execute("DELETE FROM package_repositories")
+        connection.execute("DELETE FROM repository_contributors")
         connection.execute("DELETE FROM dependencies")
         connection.execute("DELETE FROM releases")
         for organization in editorial["organizations"]:
@@ -438,6 +439,45 @@ def import_catalog(database_path: Path, repo_root: Path) -> dict[str, int]:
                         "unit": "count",
                         "period_start": None,
                         "period_end": None,
+                        "source_url": repository["url"],
+                        "observed_at": repository.get("observed_at") or generated_at,
+                    },
+                )
+            for contributor in repository.get("contributors", []):
+                login = str(contributor.get("login") or "").strip()
+                if not login:
+                    continue
+                upsert(
+                    connection,
+                    "repository_contributors",
+                    {
+                        "id": stable_id("repository-contributor", repository_id, login),
+                        "repository_id": repository_id,
+                        "login": login,
+                        "profile_url": contributor.get("url"),
+                        "contributions": int(contributor.get("contributions") or 0),
+                        "observed_at": repository.get("observed_at") or generated_at,
+                    },
+                )
+            for activity in repository.get("commit_activity", []):
+                day = str(activity["date"])
+                period_start = f"{day}T00:00:00Z"
+                period_end = (
+                    datetime.fromisoformat(period_start.replace("Z", "+00:00"))
+                    + timedelta(days=1)
+                ).isoformat()
+                upsert(
+                    connection,
+                    "metric_observations",
+                    {
+                        "id": stable_id("metric", repository_id, "commits_daily", day),
+                        "subject_kind": "repository",
+                        "subject_id": repository_id,
+                        "metric": "commits_daily",
+                        "value": int(activity.get("count") or 0),
+                        "unit": "count",
+                        "period_start": period_start,
+                        "period_end": period_end,
                         "source_url": repository["url"],
                         "observed_at": repository.get("observed_at") or generated_at,
                     },
@@ -810,30 +850,6 @@ def import_catalog(database_path: Path, repo_root: Path) -> dict[str, int]:
                         "role": repository.get("attachment_role", "implementation"),
                     },
                 )
-                for metric, value in repository.get("metrics", {}).items():
-                    if not isinstance(value, int | float):
-                        continue
-                    upsert(
-                        connection,
-                        "metric_observations",
-                        {
-                            "id": stable_id(
-                                "metric",
-                                repository_id,
-                                metric,
-                                bundle["generated_at"],
-                            ),
-                            "subject_kind": "repository",
-                            "subject_id": repository_id,
-                            "metric": metric,
-                            "value": value,
-                            "unit": "count",
-                            "period_start": None,
-                            "period_end": None,
-                            "source_url": repository.get("source_url") or repository.get("url"),
-                            "observed_at": bundle["generated_at"],
-                        },
-                    )
                 latest_deployment = repository.get("latest_deployment")
                 if latest_deployment and latest_deployment.get("log_url"):
                     environment = latest_deployment.get("environment") or "unknown"
@@ -912,6 +928,71 @@ def import_catalog(database_path: Path, repo_root: Path) -> dict[str, int]:
                         "sort_order": 0,
                     },
                 )
+        public_records = connection.execute(
+            """
+            SELECT id FROM records
+             WHERE visibility = 'public' AND record_type IN ('product', 'portfolio')
+            """
+        ).fetchall()
+        for (record_id,) in public_records:
+            repository_rows = connection.execute(
+                """
+                SELECT repo.id, repo.observed_at
+                  FROM repositories repo
+                  JOIN record_repositories rr ON rr.repository_id = repo.id
+                 WHERE rr.record_id = ?
+                """,
+                (record_id,),
+            ).fetchall()
+            repository_id_rows = [row[0] for row in repository_rows]
+            if not repository_id_rows:
+                continue
+            placeholders = ",".join("?" for _ in repository_id_rows)
+            observed = max(
+                (str(row[1]) for row in repository_rows if row[1]),
+                default=generated_at,
+            )
+            aggregate_metrics = {
+                metric: connection.execute(
+                    f"""
+                    SELECT COALESCE(SUM(value), 0) FROM metric_observations mo
+                     WHERE mo.subject_kind = 'repository' AND mo.metric = ?
+                       AND mo.subject_id IN ({placeholders})
+                       AND mo.observed_at = (
+                           SELECT MAX(latest.observed_at) FROM metric_observations latest
+                            WHERE latest.subject_kind = 'repository'
+                              AND latest.subject_id = mo.subject_id
+                              AND latest.metric = mo.metric
+                              AND latest.period_start IS NULL
+                       )
+                    """,
+                    (metric, *repository_id_rows),
+                ).fetchone()[0]
+                for metric in ("stars", "forks", "commits")
+            }
+            aggregate_metrics["contributors"] = connection.execute(
+                f"SELECT COUNT(DISTINCT login) FROM repository_contributors "
+                f"WHERE repository_id IN ({placeholders})",
+                repository_id_rows,
+            ).fetchone()[0]
+            for metric, value in aggregate_metrics.items():
+                upsert(
+                    connection,
+                    "metric_observations",
+                    {
+                        "id": stable_id("metric", "record", record_id, metric, observed),
+                        "subject_kind": "record",
+                        "subject_id": record_id,
+                        "metric": metric,
+                        "value": value,
+                        "unit": "count",
+                        "period_start": None,
+                        "period_end": None,
+                        "source_url": "https://groupsum.xyz/catalog/site/manifest.json",
+                        "observed_at": observed,
+                    },
+                )
+
         counts["releases"] = connection.execute(
             "SELECT COUNT(*) FROM releases"
         ).fetchone()[0]

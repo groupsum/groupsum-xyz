@@ -1616,11 +1616,11 @@ export const catalogDatasetManifest = {
       "sha256": "fb4859fe52fcf3b458f92478c54143d59948a46d89c891712b1da76ccf038f50"
     },
     {
-      "bytes": 3547850,
+      "bytes": 3705594,
       "dataset": "repositories",
       "path": "repositories.json",
       "records": 68,
-      "sha256": "b0f58acc0c979a2e82fa3bb26f43a3fd6b543cf775acf9e205e9a4c5a2c3b276"
+      "sha256": "f089557e333312274a8f0955d4066d58822abde14f883e44417f8f94a6a63090"
     },
     {
       "bytes": 13753,

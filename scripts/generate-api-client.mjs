@@ -8,10 +8,26 @@ const source = `// Generated from backend/openapi.json. Do not edit manually.
 export const OPENAPI_SHA256 = "${digest}" as const;
 
 export type TaxonomyItem = { slug: string; label: string; category: string | null };
+export type MetricPoint = { observed_at: string; value: number };
+export type CommitActivityPoint = { date: string; count: number };
+export type RepositorySignals = {
+  repository_count?: number; metrics: Record<"stars" | "forks" | "contributors" | "commits", number>;
+  history: Record<"stars" | "forks" | "contributors", MetricPoint[]>;
+  commit_activity: CommitActivityPoint[]; observed_at?: string | null;
+};
 export type RepositoryEvidence = {
   id: string; owner: string; name: string; url: string; description?: string | null;
   default_branch?: string | null; is_archived: boolean; is_fork: boolean;
   observed_at?: string | null; role: string; metrics: Record<string, number>;
+  history: RepositorySignals["history"]; commit_activity: CommitActivityPoint[];
+};
+export type RepositoryMetricRecord = RepositorySignals & {
+  id: string; owner: string; name: string; url: string; route: string;
+  description?: string | null;
+};
+export type RepositoryMetricSnapshot = {
+  kind: "repository_metric_snapshot"; owner?: string | null; generated_at?: string | null;
+  count: number; repositories: RepositoryMetricRecord[];
 };
 export type PackageEvidence = {
   id: string; ecosystem: string; name: string; registry_url: string;
@@ -52,6 +68,7 @@ export type RecordSummary = {
   organization_id: string; organization_name: string; package_count: number;
   repository_count: number; resource_count: number; release_count: number;
   dependency_count: number; dependent_count: number; technologies: string[];
+  signals: RepositorySignals;
 };
 export type RecordCollectionPageModel = {
   kind: string; generated_at: string | null; count: number; records: RecordSummary[];
@@ -65,6 +82,7 @@ export type RecordPageModel = {
     releases: ReleaseEvidence[]; release_summary: ReleaseSummary[];
     deployments: Array<Record<string, unknown>>; dependencies: DependencyEvidence[];
     dependents: DependencyEvidence[]; dependency_summary: DependencySummary;
+    signals: RepositorySignals;
   };
   relations: Array<Record<string, unknown>>;
   governance: {
@@ -82,6 +100,17 @@ export async function getRecordPageModel(path: string, signal?: AbortSignal): Pr
   });
   if (!response.ok) throw new Error(\`Catalog API response \${response.status}\`);
   return response.json() as Promise<RecordPageModel>;
+}
+
+export async function getRepositoryMetricSnapshot(owner = "", signal?: AbortSignal): Promise<RepositoryMetricSnapshot> {
+  const query = owner ? \`?owner=\${encodeURIComponent(owner)}\` : "";
+  const response = await fetch(\`/api/v1/repository-metrics\${query}\`, {
+    signal,
+    headers: { Accept: "application/json" },
+    cache: "default",
+  });
+  if (!response.ok) throw new Error(\`Repository metric response \${response.status}\`);
+  return response.json() as Promise<RepositoryMetricSnapshot>;
 }
 `;
 fs.mkdirSync("src/api", { recursive: true });

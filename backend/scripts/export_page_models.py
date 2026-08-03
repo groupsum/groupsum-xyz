@@ -7,7 +7,11 @@ from types import SimpleNamespace
 
 from groupsum_catalog_api.app import build_app
 from groupsum_catalog_api.importer import connect, import_catalog
-from groupsum_catalog_api.page_models import record_collection, record_detail
+from groupsum_catalog_api.page_models import (
+    record_collection,
+    record_detail,
+    repository_metric_snapshot,
+)
 
 
 def payload(response) -> dict:
@@ -23,7 +27,7 @@ def main() -> None:
     import_catalog(database_path, repo_root)
     if output.exists():
         shutil.rmtree(output)
-    request = SimpleNamespace(headers={})
+    request = SimpleNamespace(headers={}, query_params={})
     with connect(database_path) as connection:
         records = connection.execute(
             "SELECT slug, record_type FROM records WHERE visibility = 'public'"
@@ -40,6 +44,12 @@ def main() -> None:
         target = output / record_type / f"{slug}.json"
         target.parent.mkdir(parents=True, exist_ok=True)
         target.write_text(json.dumps(model, indent=2, sort_keys=True) + "\n")
+    repository_metrics = payload(repository_metric_snapshot(database_path, request))
+    metrics_target = output / "repository-metrics" / "index.json"
+    metrics_target.parent.mkdir(parents=True, exist_ok=True)
+    metrics_target.write_text(
+        json.dumps(repository_metrics, indent=2, sort_keys=True) + "\n"
+    )
     print(f"wrote page models to {output}")
 
 

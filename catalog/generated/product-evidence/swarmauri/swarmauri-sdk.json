@@ -187007,6 +187007,230 @@
       }
     ],
     "claim_boundary": "Repository, release, deployment, and live-service states are reported separately.",
+    "commit_activity": [
+      {
+        "count": 0,
+        "date": "2026-07-05"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-06"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-07"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-08"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-09"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-10"
+      },
+      {
+        "count": 1,
+        "date": "2026-07-11"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-12"
+      },
+      {
+        "count": 16,
+        "date": "2026-07-13"
+      },
+      {
+        "count": 1,
+        "date": "2026-07-14"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-15"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-16"
+      },
+      {
+        "count": 2,
+        "date": "2026-07-17"
+      },
+      {
+        "count": 13,
+        "date": "2026-07-18"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-19"
+      },
+      {
+        "count": 2,
+        "date": "2026-07-20"
+      },
+      {
+        "count": 10,
+        "date": "2026-07-21"
+      },
+      {
+        "count": 3,
+        "date": "2026-07-22"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-23"
+      },
+      {
+        "count": 4,
+        "date": "2026-07-24"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-25"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-26"
+      },
+      {
+        "count": 34,
+        "date": "2026-07-27"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-28"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-29"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-30"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-31"
+      },
+      {
+        "count": 0,
+        "date": "2026-08-01"
+      },
+      {
+        "count": 0,
+        "date": "2026-08-02"
+      },
+      {
+        "count": 0,
+        "date": "2026-08-03"
+      }
+    ],
+    "contributors": [
+      {
+        "contributions": 14555,
+        "login": "cobycloud",
+        "url": "https://github.com/cobycloud"
+      },
+      {
+        "contributions": 1431,
+        "login": "MichaelDecent",
+        "url": "https://github.com/MichaelDecent"
+      },
+      {
+        "contributions": 962,
+        "login": "github-actions[bot]",
+        "url": "https://github.com/apps/github-actions"
+      },
+      {
+        "contributions": 171,
+        "login": "3rdsonx",
+        "url": "https://github.com/3rdsonx"
+      },
+      {
+        "contributions": 160,
+        "login": "RafaelJohn9",
+        "url": "https://github.com/RafaelJohn9"
+      },
+      {
+        "contributions": 73,
+        "login": "JustusOmbok",
+        "url": "https://github.com/JustusOmbok"
+      },
+      {
+        "contributions": 27,
+        "login": "faizan2700",
+        "url": "https://github.com/faizan2700"
+      },
+      {
+        "contributions": 27,
+        "login": "ishaan1234",
+        "url": "https://github.com/ishaan1234"
+      },
+      {
+        "contributions": 14,
+        "login": "VijayVignesh1",
+        "url": "https://github.com/VijayVignesh1"
+      },
+      {
+        "contributions": 13,
+        "login": "Ishaan Gupta",
+        "url": null
+      },
+      {
+        "contributions": 11,
+        "login": "abdulsamodazeez",
+        "url": "https://github.com/abdulsamodazeez"
+      },
+      {
+        "contributions": 9,
+        "login": "keetrap",
+        "url": "https://github.com/keetrap"
+      },
+      {
+        "contributions": 4,
+        "login": "Jugrajsinghbali",
+        "url": "https://github.com/Jugrajsinghbali"
+      },
+      {
+        "contributions": 2,
+        "login": "Techie-John",
+        "url": "https://github.com/Techie-John"
+      },
+      {
+        "contributions": 2,
+        "login": "Lavesh-Akhadkar",
+        "url": "https://github.com/Lavesh-Akhadkar"
+      },
+      {
+        "contributions": 2,
+        "login": "paritoshwankhade",
+        "url": "https://github.com/paritoshwankhade"
+      },
+      {
+        "contributions": 2,
+        "login": "wpn10",
+        "url": "https://github.com/wpn10"
+      },
+      {
+        "contributions": 1,
+        "login": "harshs-debugger",
+        "url": "https://github.com/harshs-debugger"
+      },
+      {
+        "contributions": 1,
+        "login": "pravincoder",
+        "url": "https://github.com/pravincoder"
+      },
+      {
+        "contributions": 1,
+        "login": "01luyicheng",
+        "url": "https://github.com/01luyicheng"
+      }
+    ],
     "created_at": "2024-04-08T03:39:16Z",
     "default_branch": "master",
     "description": "Modular Python SDK and monorepo for AI agents, LLM integrations, tools, parsers, embeddings, vector stores, and extensible application workflows.",

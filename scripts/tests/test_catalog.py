@@ -7,15 +7,15 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ROOT / "scripts"))
 
-from catalog_collect import (  # noqa: E402
+from catalog_collect import (
     discover_related_resources,
     filter_repositories,
     manifest_package,
     parse_next_link,
     relation_rows,
 )
-from catalog_render import compile_catalog, related_resource_url  # noqa: E402
-from catalog_validate import validate  # noqa: E402
+from catalog_render import compile_catalog, related_resource_url
+from catalog_validate import validate
 
 
 class CatalogCollectorTests(unittest.TestCase):
@@ -123,7 +123,7 @@ class CatalogCollectorTests(unittest.TestCase):
             "repositories": [{
                 "full_name": "groupsum/example", "name": "example", "owner": "groupsum", "url": "https://github.com/groupsum/example",
                 "description": "Example repository", "visibility": "public", "metrics": {"stars": 2},
-                "activity": {"commit_count": 3, "contributor_count": 1, "contributors": [{"login": "dev"}]},
+                "activity": {"commit_count": 3, "commit_history": [{"committed_at": now}], "contributor_count": 1, "contributors": [{"login": "dev", "contributions": 3, "url": "https://github.com/dev"}]},
                 "technologies": {"languages_bytes": {"Python": 100}}, "github_releases": [], "deployments": [], "environments": [], "related_resources": [],
                 "observations": [{"observed_at": now}],
             }],
@@ -135,6 +135,9 @@ class CatalogCollectorTests(unittest.TestCase):
         }
         datasets = compile_catalog(catalog, {"entities": {}, "organizations": {}})
         self.assertEqual(datasets["repositories"][0]["metrics"]["packages"], 1)
+        self.assertEqual(datasets["repositories"][0]["contributors"][0]["login"], "dev")
+        self.assertEqual(len(datasets["repositories"][0]["commit_activity"]), 30)
+        self.assertEqual(datasets["repositories"][0]["commit_activity"][-1]["count"], 1)
         self.assertEqual(set(datasets), {"organizations", "repositories", "packages", "technologies"})
         self.assertIn("relationship_counts", datasets["repositories"][0])
         self.assertEqual(datasets["organizations"][0]["package_releases"], 1)
