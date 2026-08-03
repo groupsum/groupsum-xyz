@@ -282,21 +282,23 @@ export function CatalogSnapshotBand({
             </div>
           ))}
         </div>
-        {metricState === "loading" && <div className="min-h-44 border-y border-[var(--color-border-soft)] py-8 text-sm text-ink-muted" role="status">Loading persisted repository activity…</div>}
-        {metricState === "error" && <div className="border-y border-[var(--color-border-soft)] py-6 text-sm text-ink-muted" role="alert">Persisted repository activity is temporarily unavailable.</div>}
-        {repositories.length > 0 && (
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
-            {repositories.map((repository) => (
-              <button key={repository.id} onClick={() => onNavigate(repository.route)} className="text-left p-4 bg-canvas border border-[var(--color-border-soft)] rounded-[var(--radius-sm)] hover:border-accent transition-colors cursor-pointer space-y-3">
-                <div><span className="text-[10px] font-mono uppercase text-accent">{repository.owner}</span>
-                <h3 className="text-sm font-semibold text-ink mt-1">{repository.name}</h3>
-                <p className="text-[11px] text-ink-muted leading-relaxed line-clamp-2 mt-1">{repository.description}</p>
-                </div>
-                <RepositorySignalStrip signals={{ ...repository, repository_count: 1 }} compact />
-              </button>
-            ))}
-          </div>
-        )}
+        <div className="min-h-[67rem] sm:min-h-[33rem] lg:min-h-[16rem]">
+          {metricState === "loading" && <div className="min-h-[67rem] sm:min-h-[33rem] lg:min-h-[16rem] border-y border-[var(--color-border-soft)] py-8 text-sm text-ink-muted" role="status">Loading persisted repository activity…</div>}
+          {metricState === "error" && <div className="min-h-[67rem] sm:min-h-[33rem] lg:min-h-[16rem] border-y border-[var(--color-border-soft)] py-6 text-sm text-ink-muted" role="alert">Persisted repository activity is temporarily unavailable.</div>}
+          {repositories.length > 0 && (
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
+              {repositories.map((repository) => (
+                <button key={repository.id} onClick={() => onNavigate(repository.route)} className="min-h-[16rem] text-left p-4 bg-canvas border border-[var(--color-border-soft)] rounded-[var(--radius-sm)] hover:border-accent transition-colors cursor-pointer space-y-3">
+                  <div><span className="text-[10px] font-mono uppercase text-accent">{repository.owner}</span>
+                  <h3 className="text-sm font-semibold text-ink mt-1">{repository.name}</h3>
+                  <p className="text-[11px] text-ink-muted leading-relaxed line-clamp-2 mt-1">{repository.description}</p>
+                  </div>
+                  <RepositorySignalStrip signals={{ ...repository, repository_count: 1 }} compact />
+                </button>
+              ))}
+            </div>
+          )}
+        </div>
       </div>
     </section>
   );
