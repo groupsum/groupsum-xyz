@@ -113,7 +113,7 @@ class EntityRelationship(RestTable):
         String(360), ForeignKey("catalog_entities.id"), nullable=False, index=True
     )
     relationship_type = Column(String(80), nullable=False, index=True)
-    role = Column(String(80), nullable=True)
+    role = Column(String(512), nullable=True)
     evidence_type = Column(String(80), nullable=False)
     source_url = Column(String(2048), nullable=True)
     confidence = Column(String(40), nullable=False, default="observed")

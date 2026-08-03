@@ -119,6 +119,12 @@ def catalog_entity_id(source_table: str, source_id: str) -> str:
 
 def rebuild_entity_graph(connection: Connection, generated_at: str) -> dict[str, int]:
     """Project normalized tables into one canonical, evidence-bearing entity graph."""
+    if connection.postgres:
+        # create_all does not widen an existing deployment column. Relationship roles
+        # include manifest paths, so keep the additive schema migration idempotent.
+        connection.execute(
+            "ALTER TABLE entity_relationships ALTER COLUMN role TYPE VARCHAR(512)"
+        )
     for table in ("entity_relationships", "entity_urls", "entity_aliases", "catalog_entities"):
         connection.execute(f"DELETE FROM {table}")
     connection.execute("DELETE FROM entity_types")

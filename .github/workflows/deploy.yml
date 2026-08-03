@@ -50,7 +50,11 @@ jobs:
       - name: Replace site and catalog API containers
         run: |
           docker-compose -f docker-compose.yaml down --remove-orphans
-          docker-compose -f docker-compose.yaml up -d --no-build groupsum-postgres groupsum-catalog-api groupsum-duckdb groupsum-xyz
+          docker-compose -f docker-compose.yaml up -d --no-build groupsum-postgres groupsum-catalog-api groupsum-duckdb groupsum-xyz || {
+            docker-compose -f docker-compose.yaml ps
+            docker-compose -f docker-compose.yaml logs --tail=200 groupsum-postgres groupsum-catalog-api groupsum-duckdb groupsum-xyz
+            exit 1
+          }
       - name: Verify public catalog and rendered page markers
         env:
           DEPLOY_VERIFY_URL: https://groupsum.xyz
