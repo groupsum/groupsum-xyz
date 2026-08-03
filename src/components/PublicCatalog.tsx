@@ -61,6 +61,151 @@ function recordMetrics(record: CatalogRecord): Array<[string, number]> {
   return [];
 }
 
+function valueRecord(value: unknown): Record<string, unknown> {
+  return value && typeof value === "object" && !Array.isArray(value) ? value as Record<string, unknown> : {};
+}
+
+function valueStrings(value: unknown): string[] {
+  return Array.isArray(value) ? value.filter((item): item is string => typeof item === "string") : [];
+}
+
+function humanLabel(value: string): string {
+  return value.replace(/_/g, " ").replace(/\b\w/g, (letter) => letter.toUpperCase());
+}
+
+function DetailRows({ rows }: { rows: Array<[string, React.ReactNode]> }) {
+  const visible = rows.filter(([, value]) => value !== null && value !== undefined && value !== "");
+  if (!visible.length) return null;
+  return (
+    <dl className="border-y border-[var(--color-border-soft)] divide-y divide-[var(--color-border-soft)]">
+      {visible.map(([label, value]) => (
+        <div key={label} className="py-3 sm:py-4 sm:flex sm:items-baseline sm:gap-8">
+          <dt className="text-[10px] font-mono uppercase tracking-wide text-ink-muted sm:w-44 sm:shrink-0">{label}</dt>
+          <dd className="text-sm text-ink mt-1 sm:mt-0 min-w-0 break-words">{value}</dd>
+        </div>
+      ))}
+    </dl>
+  );
+}
+
+function DetailSection({ title, intro, children }: { title: string; intro?: string; children: React.ReactNode }) {
+  return (
+    <section className="border-t border-[var(--color-border-soft)] pt-7 space-y-4">
+      <div className="max-w-2xl space-y-1">
+        <h2 className="font-serif text-xl font-bold text-ink">{title}</h2>
+        {intro && <p className="text-sm text-ink-muted leading-relaxed">{intro}</p>}
+      </div>
+      {children}
+    </section>
+  );
+}
+
+function MetricRows({ values }: { values: Record<string, unknown> }) {
+  return <DetailRows rows={Object.entries(values).filter(([, value]) => typeof value === "number").map(([key, value]) => [humanLabel(key), Number(value).toLocaleString()])} />;
+}
+
+function RelationshipRows({ values }: { values: unknown }) {
+  const relationships = valueRecord(values);
+  if (!Object.keys(relationships).length) return <p className="text-sm text-ink-muted">No catalog relationships were observed for this record.</p>;
+  return <DetailRows rows={Object.entries(relationships).map(([key, value]) => [humanLabel(key), Number(value).toLocaleString()])} />;
+}
+
+function RepositoryDetail({ record }: { record: CatalogRecord }) {
+  const commit = valueRecord(record.latest_commit);
+  const release = valueRecord(record.latest_release);
+  const deployment = valueRecord(record.latest_deployment);
+  const technologies = valueStrings(record.technologies);
+  return (
+    <>
+      <DetailSection title="Repository overview">
+        <DetailRows rows={[
+          ["Owner", String(record.owner || "Not recorded")],
+          ["Visibility", humanLabel(String(record.visibility || "not recorded"))],
+          ["Default branch", String(record.default_branch || "Not recorded")],
+          ["License", String(record.license || "Not declared")],
+          ["Created", formatDate(record.created_at as string | undefined)],
+          ["Last pushed", formatDate(record.pushed_at as string | undefined)],
+        ]} />
+      </DetailSection>
+      <DetailSection title="Observed activity" intro="Counts describe the current public repository snapshot.">
+        <MetricRows values={valueRecord(record.metrics)} />
+      </DetailSection>
+      {technologies.length > 0 && <DetailSection title="Verified technologies" intro="Language labels come from GitHub language byte counts.">
+        <ul className="flex flex-wrap gap-x-4 gap-y-2" aria-label="Verified technologies">
+          {technologies.map((technology) => <li key={technology} className="text-sm text-ink border-b border-[var(--color-border-muted)] pb-1">{technology}</li>)}
+        </ul>
+      </DetailSection>}
+      <DetailSection title="Latest observed events">
+        <DetailRows rows={[
+          ["Commit", commit.message ? <span>{String(commit.message)}{commit.url && <> · <a href={String(commit.url)} target="_blank" rel="noreferrer" className="text-accent hover:underline">View commit</a></>}</span> : "No commit observed"],
+          ["Commit date", formatDate(commit.committed_at as string | undefined)],
+          ["Release", release.tag ? <span>{String(release.name || release.tag)}{release.url && <> · <a href={String(release.url)} target="_blank" rel="noreferrer" className="text-accent hover:underline">View release</a></>}</span> : "No GitHub release observed"],
+          ["Release date", formatDate(release.published_at as string | undefined)],
+          ["Deployment", deployment.environment ? `${String(deployment.environment)} · ${humanLabel(String(deployment.state || "state not recorded"))}` : "No deployment observed"],
+          ["Deployment update", deployment.updated_at ? formatDate(String(deployment.updated_at)) : null],
+          ["Deployment evidence", deployment.log_url ? <a href={String(deployment.log_url)} target="_blank" rel="noreferrer" className="text-accent hover:underline">View deployment log</a> : null],
+        ]} />
+      </DetailSection>
+      <DetailSection title="Relationships" intro="Relationship types are aggregated from repository manifests and catalog links.">
+        <RelationshipRows values={record.relationship_counts} />
+      </DetailSection>
+    </>
+  );
+}
+
+function PackageDetail({ record }: { record: CatalogRecord }) {
+  const registryLink = record.registry_url ? <a href={String(record.registry_url)} target="_blank" rel="noreferrer" className="text-accent hover:underline">{String(record.registry_url)}</a> : "Not confirmed";
+  const sourceLink = record.source_url ? <a href={String(record.source_url)} target="_blank" rel="noreferrer" className="text-accent hover:underline">View manifest</a> : "Not recorded";
+  return (
+    <>
+      <DetailSection title="Package overview">
+        <DetailRows rows={[
+          ["Owner", String(record.owner || "Not recorded")],
+          ["Ecosystem", humanLabel(String(record.ecosystem || "unknown"))],
+          ["Repository", String(record.repository || "Not linked")],
+          ["Publication", humanLabel(String(record.publication_status || "not confirmed"))],
+          ["Latest version", String(record.latest_version || "Not recorded")],
+          ["Declared version", String(record.version_declared || "Not recorded")],
+          ["Registry", registryLink],
+          ["Manifest", sourceLink],
+        ]} />
+      </DetailSection>
+      <DetailSection title="Observed package activity">
+        <DetailRows rows={[
+          ["Release versions", Number(record.release_count || 0).toLocaleString()],
+          ["Dependencies", Number(record.dependency_count || 0).toLocaleString()],
+          ["Downstream records", Number(record.downstream_count || 0).toLocaleString()],
+          ["Downstream coverage", humanLabel(String(record.downstream_completeness || "not observed"))],
+          ["Relationships", Number(record.relationship_count || 0).toLocaleString()],
+          ["Downloads", typeof record.downloads === "number" ? record.downloads.toLocaleString() : "Not reported by this source"],
+        ]} />
+      </DetailSection>
+      <DetailSection title="Relationships" intro="Dependency and containment relationships are summarized by observed type.">
+        <RelationshipRows values={record.relationship_counts} />
+      </DetailSection>
+    </>
+  );
+}
+
+function TechnologyDetail({ record }: { record: CatalogRecord }) {
+  const repositories = valueStrings(record.repositories);
+  return (
+    <>
+      <DetailSection title="Technology usage" intro="Usage is derived from GitHub language observations, not marketing descriptions.">
+        <DetailRows rows={[
+          ["Repositories", Number(record.repository_count || 0).toLocaleString()],
+          ["Observed bytes", Number(record.bytes || 0).toLocaleString()],
+        ]} />
+      </DetailSection>
+      <DetailSection title="Observed repositories">
+        {repositories.length > 0 ? <ul className="divide-y divide-[var(--color-border-soft)] border-y border-[var(--color-border-soft)]">
+          {repositories.map((repository) => <li key={repository} className="py-3"><a href={`https://github.com/${repository}`} target="_blank" rel="noreferrer" className="text-sm text-accent hover:underline inline-flex items-center gap-1">{repository}<ExternalLink className="w-3.5 h-3.5" /></a></li>)}
+        </ul> : <p className="text-sm text-ink-muted">No repositories were observed.</p>}
+      </DetailSection>
+    </>
+  );
+}
+
 export function CatalogSnapshotBand({
   onNavigate,
   owner,
@@ -246,28 +391,29 @@ export function PublicCatalogDetail({ path, onNavigate }: { path: string; onNavi
   }, [dataset, normalizedPath]);
 
   if (state === "loading") return <div className="max-w-3xl mx-auto px-4 py-20 text-sm text-ink-muted" role="status">Loading generated catalog record…</div>;
-  if (state !== "ready" || !record) return <div className="max-w-3xl mx-auto px-4 py-20 space-y-4"><h1 className="font-serif text-3xl font-bold text-ink">Catalog record unavailable</h1><p className="text-sm text-ink-muted">The route is not present in the current generated public dataset.</p><button onClick={() => onNavigate("/catalog")} className="text-xs font-mono text-accent hover:underline cursor-pointer">Return to public catalog</button></div>;
+  if (state !== "ready" || !record) return <div className="max-w-3xl mx-auto px-4 py-20 space-y-4"><h1 className="font-serif text-3xl font-bold text-ink">Catalog record unavailable</h1><p className="text-sm text-ink-muted">{state === "error" ? "The generated catalog could not be loaded. Please try again shortly." : "The route is not present in the current generated public dataset."}</p><button onClick={() => onNavigate("/catalog")} className="text-xs font-mono text-accent hover:underline cursor-pointer">Return to public catalog</button></div>;
 
-  const hidden = new Set(["id", "kind", "name", "display_name", "full_name", "description", "route", "evidence"]);
+  const primaryUrl = record.url || record.registry_url || record.source_url;
   return (
-    <article className="max-w-[var(--content-max)] mx-auto px-4 sm:px-6 lg:px-8 py-12 space-y-8">
+    <article className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-12 space-y-8 sm:space-y-10">
       <button onClick={() => onNavigate("/catalog")} className="text-xs font-mono text-accent hover:underline inline-flex items-center gap-1 cursor-pointer"><ArrowLeft className="w-3.5 h-3.5" /> Public catalog</button>
-      <header className="max-w-4xl space-y-3">
+      <header className="space-y-4">
         <span className="text-xs font-mono uppercase text-accent">Generated {String(record.kind || "catalog record")}</span>
-        <h1 className="font-serif text-4xl font-bold text-ink break-words">{recordTitle(record)}</h1>
-        <p className="text-base text-ink-muted leading-relaxed">{recordDescription(record)}</p>
-        <p className="text-xs font-mono text-ink-muted">Observed {formatDate(record.observed_at)} · {record.description_source === "reviewed-editorial" ? "reviewed description" : "source-derived description"}</p>
+        <div className="space-y-3">
+          <h1 className="font-serif text-4xl sm:text-5xl font-bold text-ink break-words tracking-tight">{recordTitle(record)}</h1>
+          <p className="text-base sm:text-lg text-ink-muted leading-relaxed max-w-3xl">{recordDescription(record)}</p>
+        </div>
+        <div className="flex flex-wrap items-center gap-x-4 gap-y-2 text-xs font-mono text-ink-muted">
+          <span>Observed {formatDate(record.observed_at)}</span>
+          <span>{record.description_source === "reviewed-editorial" ? "Reviewed description" : "Source-derived description"}</span>
+          {primaryUrl && <a href={String(primaryUrl)} target="_blank" rel="noreferrer" className="text-accent hover:underline inline-flex items-center gap-1">Open primary source <ExternalLink className="w-3.5 h-3.5" /></a>}
+        </div>
       </header>
-      {record.claim_boundary && <aside className="p-5 border-l-4 border-accent bg-[var(--color-surface)] text-sm text-ink-muted"><strong className="text-ink block mb-1">Claim boundary</strong>{String(record.claim_boundary)}</aside>}
-      <dl className="grid grid-cols-1 md:grid-cols-2 gap-3">
-        {Object.entries(record).filter(([key, value]) => !hidden.has(key) && value !== null && value !== undefined && value !== "").map(([key, value]) => (
-          <div key={key} className="p-4 bg-[var(--color-surface)] border border-[var(--color-border-soft)] rounded-[var(--radius-sm)] min-w-0">
-            <dt className="text-[10px] font-mono uppercase tracking-wide text-ink-muted">{key.replace(/_/g, " ")}</dt>
-            <dd className="text-xs text-ink mt-1 break-words whitespace-pre-wrap">{typeof value === "object" ? JSON.stringify(value, null, 2) : String(value)}</dd>
-          </div>
-        ))}
-      </dl>
-      {record.evidence && record.evidence.length > 0 && <section className="space-y-3"><h2 className="font-serif text-xl font-bold text-ink">Evidence</h2>{record.evidence.map((item, index) => item.url ? <a key={`${item.url}-${index}`} href={item.url} target="_blank" rel="noreferrer" className="block text-sm text-accent hover:underline">{item.kind || "source"} · {item.url}</a> : <span key={index} className="block text-sm text-ink-muted">{item.kind || "source"} · observed {formatDate(item.observed_at)}</span>)}</section>}
+      {record.claim_boundary && <aside className="border-l-2 border-accent pl-4 py-1 text-sm text-ink-muted leading-relaxed"><strong className="text-ink block mb-1">Evidence boundary</strong>{String(record.claim_boundary)}</aside>}
+      {record.kind === "repository" && <RepositoryDetail record={record} />}
+      {record.kind === "package" && <PackageDetail record={record} />}
+      {record.kind === "technology" && <TechnologyDetail record={record} />}
+      {record.evidence && record.evidence.length > 0 && <DetailSection title="Evidence"><ul className="divide-y divide-[var(--color-border-soft)] border-y border-[var(--color-border-soft)]">{record.evidence.map((item, index) => <li key={`${item.url || item.kind}-${index}`} className="py-3 text-sm">{item.url ? <a href={item.url} target="_blank" rel="noreferrer" className="text-accent hover:underline inline-flex items-center gap-1">{humanLabel(item.kind || "source")}<ExternalLink className="w-3.5 h-3.5" /></a> : <span className="text-ink-muted">{humanLabel(item.kind || "source")} · observed {formatDate(item.observed_at)}</span>}</li>)}</ul></DetailSection>}
     </article>
   );
 }
