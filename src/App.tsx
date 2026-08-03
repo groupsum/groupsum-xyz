@@ -264,21 +264,21 @@ function HomePage({ onNavigate }: RouteProps) {
                 <div className="space-y-2 relative z-10">
                   <div className="p-3 bg-[var(--color-surface)] border border-[var(--color-border-soft)] rounded-[var(--radius-sm)] flex items-center justify-between">
                     <span className="text-xs font-mono font-medium text-ink">SSOT Lineage Graph</span>
-                    <span className="text-[10px] font-mono px-1.5 py-0.5 bg-accent/10 text-accent rounded uppercase font-bold">Stable</span>
+                    <span className="text-[10px] font-mono px-1.5 py-0.5 bg-accent/10 text-accent rounded uppercase font-bold">Source</span>
                   </div>
                   <div className="p-3 bg-[var(--color-surface)] border border-[var(--color-border-soft)] rounded-[var(--radius-sm)] flex items-center justify-between">
                     <span className="text-xs font-mono font-medium text-ink">Tigrbl ASGI Handshake</span>
-                    <span className="text-[10px] font-mono text-green-600 font-bold">2.4ms</span>
+                    <span className="text-[10px] font-mono text-green-600 font-bold">Typed</span>
                   </div>
                   <div className="p-3 bg-[var(--color-surface)] border border-[var(--color-border-soft)] rounded-[var(--radius-sm)] flex items-center justify-between">
                     <span className="text-xs font-mono font-medium text-ink">Swarmauri Agent Loop</span>
-                    <span className="text-[10px] font-mono text-blue-600 font-bold">Verified</span>
+                    <span className="text-[10px] font-mono text-blue-600 font-bold">Source</span>
                   </div>
                 </div>
 
                 <div className="flex justify-between items-end font-mono text-[10px] text-ink-muted/60 relative z-10">
-                  <span>LATENCY TARGET: &lt;10ms</span>
-                  <span>AUDIT SYSTEM: ONLINE</span>
+                  <span>CHECKED: 2026-08-02</span>
+                  <span>CLAIMS: EVIDENCE-BOUND</span>
                 </div>
               </div>
             </div>
@@ -614,7 +614,7 @@ function HomePage({ onNavigate }: RouteProps) {
             Verifiable claims-first architecture
           </h2>
           <p className="text-ink-muted text-base mt-2 leading-relaxed">
-            We operate on a zero-drift claims model. Architectural decisions are bound to source, verified at deployment boundaries, and audited continuously.
+            We keep claims close to their evidence. Source, tests, package publication, deployment health, and public reachability are reported as separate states.
           </p>
         </div>
 
@@ -639,7 +639,7 @@ function HomePage({ onNavigate }: RouteProps) {
               Gate Remediations
             </h3>
             <p className="text-xs text-ink-muted leading-relaxed">
-              We deploy automated validation engines inside pull requests, quarantining unverified code or assets under 200 milliseconds of mutation.
+              We add repository checks that make unsupported changes visible before release. Enforcement and response time depend on the target workflow.
             </p>
           </div>
 
@@ -651,7 +651,7 @@ function HomePage({ onNavigate }: RouteProps) {
               Evidence Closures
             </h3>
             <p className="text-xs text-ink-muted leading-relaxed">
-              We generate immutable cryptographic receipts and verification logs mapping actual production system states to corporate compliance goals.
+              Where a workflow needs durable evidence, we design explicit receipts, verification records, and boundaries between source validation and runtime state.
             </p>
           </div>
         </div>
@@ -666,7 +666,7 @@ function HomePage({ onNavigate }: RouteProps) {
                 Insights
               </span>
               <h2 className="font-serif text-3xl font-bold tracking-tight text-ink">
-                Technical research & archives
+                Historical article archive
               </h2>
             </div>
             <button
@@ -677,6 +677,10 @@ function HomePage({ onNavigate }: RouteProps) {
               <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
             </button>
           </div>
+
+          <p className="max-w-3xl text-sm text-ink-muted leading-relaxed">
+            These imported articles are preserved for historical continuity. They have not been revalidated against current packages or product state and must not be treated as current Groupsum guidance, evidence, or product claims.
+          </p>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {featuredPosts.map((post) => (
@@ -718,7 +722,7 @@ function HomePage({ onNavigate }: RouteProps) {
           Let's verify your systems together.
         </h2>
         <p className="text-ink-muted text-base max-w-lg mx-auto leading-relaxed">
-          Our engineering slots are scheduled by capability fit. Fill out our brief systems inquiry form to consult directly with a Groupsum partner.
+          Describe the system, available evidence, constraints, and outcome you want to review. Groupsum will confirm fit and scope separately.
         </p>
         <div>
           <button
@@ -926,7 +930,7 @@ ${item.summary}
 - **Evidence trail:** Maturity, evidence, and limitations remain visible beside the description.
 - **Next step:** Use the linked source, specification, or product surface to continue evaluation.
 
-_Last updated: July 20, 2026 · Document ref: SPEC-${item.slug.toUpperCase()}-STABLE_`}
+_Evidence reviewed: August 2, 2026 · Document ref: CATALOG-${item.slug.toUpperCase()}_`}
           />
 
           <div className="mt-8 pt-6 border-t border-[var(--color-border-soft)]">
@@ -1182,7 +1186,7 @@ function InsightsPage({ onNavigate }: RouteProps) {
           Insights Archive
         </h1>
         <p className="text-ink-muted text-base leading-relaxed">
-          Our search and browse portal compiles past technical research, event summaries, and system notes. Legacy entries are labeled as archive content and may not reflect current Groupsum priorities.
+          This imported archive preserves historical articles and URLs. Entries have not been revalidated against current packages, APIs, security guidance, or product state. They are not current Groupsum guidance or evidence.
         </p>
       </div>
 
@@ -1314,7 +1318,7 @@ function ProductsIndexPage({ onNavigate }: RouteProps) {
       id: "tigrbl",
       name: "Tigrbl",
       title: "Schema-First API & ASGI Infrastructure",
-      desc: "Ultra-low latency web transport, type-checked frameworks, and high-volume container servers.",
+      desc: "Typed API frameworks and transport work spanning ASGI, WebSocket, HTTP/3, QUIC, and WebTransport.",
       capability: "API Foundations & Real-Time Performance",
       suites: ["tigrbl", "tigrbl-auth", "tigrcorn"]
     },
@@ -1425,7 +1429,7 @@ function ProductsOrgPage({ org, onNavigate }: { org: string; onNavigate: (path: 
       name: "Tigrbl",
       title: "Schema-First API & ASGI Infrastructure",
       mission: "High-Performance ASGI Stack & Protocols",
-      domain: "Ultra-low latency, schema-first Python and Rust ASGI systems, typing-focused API frameworks, secure authorization protocols, and lightning-fast QUIC servers."
+      domain: "Schema-first Python and Rust API systems, typed validation, identity protocols, ASGI, QUIC, and WebTransport implementations."
     },
     swarmauri: {
       name: "Swarmauri",
@@ -1849,7 +1853,7 @@ function SuiteDetailPage({ suiteSlug, onNavigate }: { suiteSlug: string; onNavig
           <div className="p-8 bg-[var(--color-surface)] border border-[var(--color-border-soft)] rounded-[var(--radius-lg)] text-center space-y-4">
             <h3 className="font-serif text-xl font-bold text-ink">Request a blueprint walkthrough or trial</h3>
             <p className="text-xs text-ink-muted max-w-md mx-auto leading-relaxed">
-              We provide formal architecture walkthroughs, compliance validation trials, and sandboxed package access for selected enterprise teams.
+              We can review architecture, source evidence, and validation needs with teams evaluating the work. Access and scope depend on the specific repository and engagement.
             </p>
             <div>
               <button
@@ -2020,7 +2024,7 @@ function SpecificationDetailPage({ slug, onNavigate }: { slug: string; onNavigat
         <div className="markdown-body">
           <h3>Architectural Directives</h3>
           <p>
-            This governance pack establishes formal, version-controlled rules and metadata assertions. It acts as a static contract ensuring regulatory compliance, search discovery engine compliance, or cryptographic authorization parameters.
+            This governance pack records version-controlled rules and metadata assertions. It supports repeatable review, but does not by itself establish regulatory, search-engine, or security compliance.
           </p>
 
           <h3>Target Audience & Application</h3>
@@ -2171,7 +2175,7 @@ function SolutionDetailPage({ slug, onNavigate }: { slug: string; onNavigate: (p
               </div>
             )}
 
-            <h3>Solution Guarantees & Technical Limitations</h3>
+            <h3>Technical limitations and claim boundaries</h3>
             <ul>
               {sol.limitations.map((lim, idx) => (
                 <li key={idx}>{lim}</li>
@@ -2183,7 +2187,7 @@ function SolutionDetailPage({ slug, onNavigate }: { slug: string; onNavigate: (p
           <div className="p-8 bg-[var(--color-surface)] border border-[var(--color-border-soft)] rounded-[var(--radius-lg)] text-center space-y-4">
             <h3 className="font-serif text-xl font-bold text-ink">{sol.cta}</h3>
             <p className="text-xs text-ink-muted max-w-md mx-auto leading-relaxed">
-              Fill out our systems inquiry form to review these outcomes for your enterprise codebase with a Groupsum partner.
+              Use the inquiry form to discuss these outcomes for your codebase with Groupsum.
             </p>
             <div>
               <button
@@ -2278,7 +2282,7 @@ function ServiceDetailPage({ slug, onNavigate }: { slug: string; onNavigate: (pa
               {svc.title}
             </h1>
             <p className="text-ink-muted text-lg leading-relaxed">
-              We deliver tangible, verified architecture, frameworks, and deployment code blocks for your core platform systems.
+              Engagements focus on inspectable architecture, working source, tests, documentation, and deployment evidence appropriate to the agreed scope.
             </p>
           </div>
 
@@ -2345,14 +2349,14 @@ function ServiceDetailPage({ slug, onNavigate }: { slug: string; onNavigate: (pa
           <div className="p-8 bg-[var(--color-surface)] border border-[var(--color-border-soft)] rounded-[var(--radius-lg)] text-center space-y-4">
             <h3 className="font-serif text-xl font-bold text-ink">{svc.cta}</h3>
             <p className="text-xs text-ink-muted max-w-md mx-auto leading-relaxed">
-              Fill out our brief systems inquiry form to schedules an evaluation session or architecture review with a Groupsum partner.
+              Use the inquiry form to request a scoped evaluation or architecture review. Availability and terms are confirmed separately.
             </p>
             <div>
               <button
                 onClick={() => onNavigate("/contact")}
                 className="px-5 py-2.5 bg-accent hover:bg-accent-hover text-white text-xs font-mono font-bold uppercase tracking-wider rounded transition-all inline-flex items-center gap-1.5"
               >
-                Schedule Architecture Consultation
+                Request a scope review
                 <ArrowRight className="w-3.5 h-3.5" />
               </button>
             </div>
@@ -2448,7 +2452,7 @@ function ArticleLayout({ post, onBack, onNavigate }: ArticleLayoutProps) {
           <HelpCircle className="w-4 h-4 text-[var(--color-signal)] shrink-0 mt-0.5" />
           <div>
             <span className="font-semibold block text-ink">Historical Archive Content</span>
-            This publication is part of Groupsum's historic systems log (published {new Date(post.date).toLocaleDateString()}). The frameworks, packages, and methodologies described represent engineering positions at the time of authoring and may differ from current active services.
+            This imported article was published {new Date(post.date).toLocaleDateString()} and has not been revalidated. Package details, links, APIs, security guidance, and conclusions may be inaccurate or obsolete. Do not treat it as current Groupsum guidance or product evidence.
           </div>
         </div>
       )}
@@ -2576,7 +2580,7 @@ function AboutPage({ onNavigate }: RouteProps) {
         <div className="grid grid-cols-1 gap-6">
           {[
             { title: "Source-Controlled Truth", desc: "Decisions, specifications, code schemas, and access controls are treated as version-controlled text files in a repository. There are no hidden spreadsheets or silent UI overrides." },
-            { title: "Traceable Delivery Gates", desc: "Every deployment must have a clear path to its origin. Code cannot move to production without presenting programmatic, machine-readable validation evidence." },
+            { title: "Traceable Delivery Gates", desc: "Delivery decisions should retain a clear path from intent to source, tests, artifacts, deployment evidence, and external verification." },
             { title: "Quiet, Focus-Driven Design", desc: "We build for engineers and operators, meaning we prioritize density, negative space, visual composure, and keyboard efficiency. We reject unneeded visual clutter and hype." }
           ].map((principle, idx) => (
             <div key={idx} className="p-6 bg-[var(--color-surface)] border border-[var(--color-border-soft)] rounded-[var(--radius-md)] space-y-2">
@@ -2597,7 +2601,7 @@ function AboutPage({ onNavigate }: RouteProps) {
           Legal Identity & Authority
         </h3>
         <p className="text-xs text-ink-muted leading-relaxed">
-          <strong>Groupsum LLC</strong> is a registered limited liability company. We operate globally, delivering specialized software architecture and continuous verification systems.
+          <strong>Groupsum LLC</strong> develops software and provides scoped engineering services. Public repositories show what can be inspected; availability and engagement terms are confirmed separately.
         </p>
         <div className="text-xs font-mono text-ink-muted space-y-1">
           <div>Entity Name: Groupsum LLC</div>

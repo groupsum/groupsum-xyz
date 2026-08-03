@@ -8,9 +8,9 @@ export interface HorizontalCapability {
 }
 
 export const groupSumVision = {
-  eyebrow: "GroupSum / system vision",
-  title: "Mature solutions for the horizontal problems behind complex systems.",
-  summary: "GroupSum brings governed delivery, infrastructure planning, evidence, trust, and operator workflows into one coherent product ecosystem. The products are proof points; the operating vision is the center.",
+  eyebrow: "Groupsum / evidence-led software",
+  title: "Build complex systems with claims you can inspect.",
+  summary: "Groupsum develops open-source tools and active product work across traceable delivery, developer infrastructure, documents, identity, and operator workflows. This site distinguishes public source, implementation evidence, package releases, deployments, and live availability.",
 };
 
 export const horizontalCapabilities: HorizontalCapability[] = [

@@ -77,7 +77,7 @@ export function StructuredData({ type, data }: StructuredDataProps) {
           },
           "featureList": item.technologies.join(", "),
           "sameAs": links,
-          "identifier": `SPEC-${item.slug.toUpperCase()}-STABLE`
+          "identifier": `CATALOG-${item.slug.toUpperCase()}`
         };
       }
 
@@ -116,7 +116,7 @@ export function StructuredData({ type, data }: StructuredDataProps) {
           "@context": baseContext,
           "@type": "WebPage",
           "name": "Groupsum Solution Map",
-          "description": "Outcome-led developer system engineering capabilities including Governed product delivery, Trust policy compliance, and Document pipelines.",
+          "description": "Developer-system engineering capabilities spanning traceable delivery, identity and policy boundaries, document workflows, and operator tooling.",
           "publisher": defaultOrg
         };
 

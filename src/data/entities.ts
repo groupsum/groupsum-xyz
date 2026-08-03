@@ -1,642 +1,178 @@
-/**
- * @license
- * SPDX-License-Identifier: Apache-2.0
- */
-
 import { PortfolioEntity } from "../types";
 
+// Catalog claims are intentionally limited to facts that can be checked in a
+// public repository. Source availability does not imply a hosted service,
+// customer adoption, production readiness, certification, or support terms.
+const checkedAt = "2026-08-02";
+
 export const portfolioEntities: PortfolioEntity[] = [
-  // ==========================================
-  // GROUPSUM SUITES & PRODUCTS
-  // ==========================================
   {
-    id: "groupsum-ssot-registry",
-    slug: "ssot-registry",
-    sourceName: "ssot-registry",
-    displayName: "Single Source of Truth (SSOT) Registry",
-    organization: "groupsum",
-    kind: "suite",
-    capabilityIds: ["governed-delivery", "dev-experience"],
-    ecosystem: ["npm", "rust", "specification"],
-    summary: "A version-controlled registry linking schemas, OpenAPI specifications, and communications.",
-    audience: ["Delivery Operations Leads", "Platform Engineers"],
-    maturity: "released",
-    evidence: [
-      { kind: "release", label: "v2.1.0-stable", checkedAt: "2026-07-20" },
-      { kind: "live", label: "Active pipeline gate integration", checkedAt: "2026-07-20" }
-    ],
-    limitations: ["Requires continuous repository verification", "Initial setup needs schema anchoring"],
-    links: [
-      { kind: "source", label: "Public Repository", href: "https://github.com/groupsum/ssot-registry" },
-      { kind: "docs", label: "Registry Documentation", href: "/portfolio/specifications/ssot-registry" }
-    ],
-    featured: true,
-    approved: true,
-    disposition: "public",
-    technologies: ["Rust", "TypeScript", "gRPC", "Protobuf", "PostgreSQL"]
+    id: "groupsum-ssot-registry", slug: "ssot-registry", sourceName: "ssot-registry", displayName: "SSOT Registry",
+    organization: "groupsum", kind: "product", capabilityIds: ["governed-delivery", "dev-experience"], ecosystem: ["python"],
+    summary: "Repository-agnostic Python CLI for tracing features and requirements to implementation, tests, evidence, and release state.",
+    audience: ["Platform engineers", "Release engineers"], maturity: "maintained",
+    evidence: [{ kind: "source", label: "Public repository and CLI documentation reviewed", checkedAt }],
+    limitations: ["Repository evidence does not establish a live hosted service or third-party certification."],
+    links: [{ kind: "source", label: "Public repository", href: "https://github.com/groupsum/ssot-registry" }],
+    featured: true, approved: true, disposition: "public", technologies: ["Python", "CLI", "YAML", "JSON"],
+    claimBoundary: "Source and documentation evidence only."
   },
   {
-    id: "groupsum-mdwrk",
-    slug: "mdwrk",
-    sourceName: "mdwrk",
-    displayName: "MdWrk Markdown Workspace",
-    organization: "groupsum",
-    kind: "suite",
-    capabilityIds: ["documents", "dev-experience"],
-    ecosystem: ["npm", "web"],
-    summary: "A structured, governed text-processing and rendering suite for enterprise documents and sites.",
-    audience: ["Technical Writers", "Content Operators"],
-    maturity: "released",
-    evidence: [
-      { kind: "release", label: "v1.4.2-stable", checkedAt: "2026-07-20" },
-      { kind: "live", label: "Powering Groupsum digital surfaces", checkedAt: "2026-07-20" }
-    ],
-    limitations: ["Strictly layout-bounded", "No inline CSS/JS support in content parsing"],
-    links: [
-      { kind: "source", label: "Source repository", href: "https://github.com/groupsum/mdwrk" },
-      { kind: "package", label: "npm registry", href: "https://npmjs.com/package/mdwrk" }
-    ],
-    featured: true,
-    approved: true,
-    disposition: "public",
-    technologies: ["Node.js", "Vite", "AST Parsing", "React", "Tailwind CSS"]
+    id: "groupsum-mdwrk", slug: "mdwrk", sourceName: "mdwrk", displayName: "MdWrk",
+    organization: "groupsum", kind: "suite", capabilityIds: ["documents", "dev-experience"], ecosystem: ["npm", "web"],
+    summary: "Package platform for Markdown rendering, editing, extension contracts, extension runtimes, and shared primitives.",
+    audience: ["Documentation teams", "Frontend engineers"], maturity: "maintained",
+    evidence: [{ kind: "source", label: "Public core and Pages repositories reviewed", checkedAt }],
+    limitations: ["Capabilities vary by package; no throughput, scale, or customer-use claim is made."],
+    links: [{ kind: "source", label: "Core repository", href: "https://github.com/groupsum/mdwrk" }, { kind: "source", label: "Pages repository", href: "https://github.com/groupsum/mdwrk-pages" }],
+    featured: true, approved: true, disposition: "public-grouped", technologies: ["TypeScript", "React", "Markdown"],
+    claimBoundary: "Public source and repository documentation only."
   },
   {
-    id: "groupsum-bucketwarden",
-    slug: "bucketwarden",
-    sourceName: "bucketwarden",
-    displayName: "BucketWarden",
-    organization: "groupsum",
-    kind: "product",
-    suiteId: "groupsum-ssot-registry",
-    capabilityIds: ["storage", "trust-policy"],
-    ecosystem: ["web", "service"],
-    summary: "Real-time automated storage auditor enforcing policy compliance on distributed cloud buckets.",
-    audience: ["Cloud Architects", "Security Compliance Officers"],
-    maturity: "released",
-    evidence: [
-      { kind: "live", label: "Auditing 4TB of active operational assets", checkedAt: "2026-07-20" },
-      { kind: "release", label: "v3.0.1-certified", checkedAt: "2026-07-20" }
-    ],
-    limitations: ["Limited to AWS S3 and Google Cloud Storage APIs", "Event latency scales with mutation volume"],
-    links: [
-      { kind: "live", label: "Live audit console", href: "https://bucketwarden.groupsum.xyz" }
-    ],
-    featured: true,
-    approved: true,
-    disposition: "public",
-    technologies: ["Go", "Open Policy Agent", "CloudEvents", "S3 API"]
+    id: "groupsum-markdown-workspace", slug: "markdown_workspace", sourceName: "markdown_workspace", displayName: "Markdown Workspace",
+    organization: "groupsum", kind: "application", parentId: "groupsum-mdwrk", capabilityIds: ["documents", "dev-experience"], ecosystem: ["npm", "web"],
+    summary: "Local-first Markdown workspace with preview editing, packages, and an extension host for portable authoring.",
+    audience: ["Writers", "Developers"], maturity: "maintained",
+    evidence: [{ kind: "source", label: "Public repository description and implementation reviewed", checkedAt }],
+    limitations: ["Public source does not establish hosted availability or service-level commitments."],
+    links: [{ kind: "source", label: "Public repository", href: "https://github.com/groupsum/markdown_workspace" }],
+    featured: false, approved: true, disposition: "public", technologies: ["TypeScript", "React", "Markdown"]
   },
   {
-    id: "groupsum-pdfremed",
-    slug: "pdfremed",
-    sourceName: "pdfremed",
-    displayName: "PDFRemed",
-    organization: "groupsum",
-    kind: "product",
-    suiteId: "groupsum-mdwrk",
-    capabilityIds: ["documents", "accessibility"],
-    ecosystem: ["web", "service"],
-    summary: "An accessibility remediation workbench and engine translating legacy documents to WCAG 2.2 AA.",
-    audience: ["Accessibility Compliance Officers", "Librarians"],
-    maturity: "active-development",
-    evidence: [
-      { kind: "live", label: "Active pilot with 500k financial statements", checkedAt: "2026-07-20" }
-    ],
-    limitations: ["Highly complex layouts require manual metadata overrides", "Scanned documents need OCR pre-processing"],
-    links: [
-      { kind: "docs", label: "Remediation specifications", href: "#" }
-    ],
-    featured: true,
-    approved: true,
-    disposition: "public",
-    technologies: ["Python", "PDFlib", "LayoutParser AI", "HTML5"]
+    id: "groupsum-npmctl", slug: "npmctl", sourceName: "npmctl", displayName: "npmctl",
+    organization: "groupsum", kind: "product", capabilityIds: ["governed-delivery", "infrastructure"], ecosystem: ["python", "service"],
+    summary: "Owner-scoped GitOps controller for Nginx Proxy Manager proxy hosts, certificates, and access lists.",
+    audience: ["Platform engineers", "Release operators"], maturity: "maintained",
+    evidence: [{ kind: "source", label: "Public repository, tests, and desired-state examples reviewed", checkedAt }],
+    limitations: ["A repository and test suite do not prove the health of any particular installation."],
+    links: [{ kind: "source", label: "Public repository", href: "https://github.com/groupsum/npmctl" }, { kind: "docs", label: "Product site", href: "https://npmctl.com" }],
+    featured: true, approved: true, disposition: "public", technologies: ["Python", "YAML", "GitOps", "Nginx Proxy Manager"]
   },
   {
-    id: "groupsum-portwyrm",
-    slug: "portwyrm",
-    sourceName: "portwyrm",
-    displayName: "Portwyrm Edge Proxy",
-    organization: "groupsum",
-    kind: "product",
-    capabilityIds: ["storage", "trust-policy"],
-    ecosystem: ["rust", "service"],
-    summary: "Secure edge proxy stripping sensitive metadata and government ingress telemetry uniformly.",
-    audience: ["Core Systems Engineers", "SecOps"],
-    maturity: "released",
-    evidence: [
-      { kind: "live", label: "Production stable at 50M daily requests", checkedAt: "2026-07-20" }
-    ],
-    limitations: ["Proxy rules require WASM module recompilation", "High memory profile under burst traffic"],
-    links: [],
-    featured: false,
-    approved: true,
-    disposition: "public",
-    technologies: ["Rust", "Envoy Proxy", "WebAssembly", "Prometheus"]
+    id: "groupsum-portwyrm", slug: "portwyrm", sourceName: "portwyrm", displayName: "Portwyrm",
+    organization: "groupsum", kind: "product", capabilityIds: ["infrastructure", "operator-boundaries"], ecosystem: ["python", "web", "service"],
+    summary: "Self-hosted reverse-proxy control plane and UI designed around npmctl-compatible operations.",
+    audience: ["Self-hosters", "Platform operators"], maturity: "active-development",
+    evidence: [{ kind: "source", label: "Public repository, API surface, and deployment configuration reviewed", checkedAt }],
+    limitations: ["Active development; public source does not establish a supported hosted service."],
+    links: [{ kind: "source", label: "Public repository", href: "https://github.com/groupsum/portwyrm" }],
+    featured: true, approved: true, disposition: "public", technologies: ["Python", "FastAPI", "React", "Docker"]
   },
   {
-    id: "groupsum-trustsig",
-    slug: "trustsig",
-    sourceName: "trustsig",
-    displayName: "TrustSig Cryptographic Signing",
-    organization: "groupsum",
-    kind: "product",
-    capabilityIds: ["trust-policy", "governed-delivery"],
-    ecosystem: ["web", "specification"],
-    summary: "A cryptographic document signing boundary and verification oracle using decentralized identity.",
-    audience: ["Security Operations Directors", "Notary Officers"],
-    maturity: "released",
-    evidence: [
-      { kind: "live", label: "Securing over 1.2M validation gates", checkedAt: "2026-07-20" }
-    ],
-    limitations: ["Requires hardware security module (HSM) connection for production anchors", "Public key revocation has 1-minute caching latency"],
-    links: [],
-    featured: true,
-    approved: true,
-    disposition: "public",
-    technologies: ["TypeScript", "WebCrypto API", "PKCS#11", "OIDC"]
-  },
-
-  // ==========================================
-  // TIGRBL API INFRASTRUCTURE SUITES
-  // ==========================================
-  {
-    id: "tigrbl-framework",
-    slug: "tigrbl",
-    sourceName: "tigrbl",
-    displayName: "Tigrbl API Framework",
-    organization: "tigrbl",
-    kind: "suite",
-    capabilityIds: ["api-foundations", "dev-experience"],
-    ecosystem: ["python"],
-    summary: "Schema-first ASGI API development suite, from typing facades to pluggable execution engines.",
-    audience: ["API Designers", "Back-end Developers"],
-    maturity: "released",
-    evidence: [
-      { kind: "release", label: "v4.2.0-stable PyPI", checkedAt: "2026-07-20" },
-      { kind: "docs", label: "Full spec and ORM documentation", checkedAt: "2026-07-20" }
-    ],
-    limitations: ["Strictly schema-first; dynamic interfaces require custom kernel hooks", "ASGI event patterns are non-blocking exclusive"],
-    links: [
-      { kind: "source", label: "GitHub Repo", href: "https://github.com/tigrbl/tigrbl" },
-      { kind: "package", label: "PyPI Package", href: "https://pypi.org/project/tigrbl" }
-    ],
-    featured: true,
-    approved: true,
-    disposition: "public",
-    technologies: ["Python", "ASGI", "Typing Model", "Pydantic"]
+    id: "bucketwarden-platform", slug: "bucketwarden", sourceName: "bucketwarden-platform", displayName: "BucketWarden",
+    organization: "groupsum", kind: "product", capabilityIds: ["storage", "trust-policy"], ecosystem: ["rust", "service"],
+    summary: "Storage-governance platform source spanning policy, evidence, deployment profiles, and operator workflows.",
+    audience: ["Cloud platform teams", "Storage operators"], maturity: "active-development",
+    evidence: [{ kind: "implementation", label: "Local platform source, tests, and deployment profiles reviewed", checkedAt }],
+    limitations: ["No storage volume, customer adoption, certification, or live-service claim is made."],
+    links: [{ kind: "docs", label: "Product site", href: "https://bucketwarden.com" }],
+    featured: true, approved: true, disposition: "public-grouped", technologies: ["Rust", "TypeScript", "Policy", "Evidence"]
   },
   {
-    id: "tigrbl-auth",
-    slug: "tigrbl-auth",
-    sourceName: "tigrbl-auth",
-    displayName: "Tigrbl Auth Protocol Suite",
-    organization: "tigrbl",
-    kind: "suite",
-    capabilityIds: ["trust-policy", "api-foundations"],
-    ecosystem: ["python", "web"],
-    summary: "Multi-tenant authentication, cryptographic verification ceremonies, and authorization runtime.",
-    audience: ["Identity Engineers", "Security Administrators"],
-    maturity: "active-development",
-    evidence: [
-      { kind: "release", label: "v0.8.4-beta", checkedAt: "2026-07-20" }
-    ],
-    limitations: ["Not yet fully certified under standard OIDC profiles", "Requires explicit protocol storage implementations"],
-    links: [],
-    featured: true,
-    approved: true,
-    disposition: "public",
-    technologies: ["Python", "OAuth2.0", "WebAuthn", "React", "JWT"]
+    id: "groupsum-pdfremed", slug: "pdfremed", sourceName: "pdfremed", displayName: "PDFRemed",
+    organization: "groupsum", kind: "product", capabilityIds: ["documents", "accessibility"], ecosystem: ["python", "web"],
+    summary: "Workbench and service code for inspecting, planning, and performing PDF accessibility remediation.",
+    audience: ["Document accessibility teams", "Developers"], maturity: "active-development",
+    evidence: [{ kind: "implementation", label: "Local source, schemas, and test plans reviewed", checkedAt }],
+    limitations: ["No automated conformance guarantee, production volume, or active-customer claim is made."],
+    links: [], featured: true, approved: true, disposition: "public-grouped", technologies: ["Python", "PDF", "React", "Accessibility"]
   },
   {
-    id: "tigrbl-tigrcorn",
-    slug: "tigrcorn",
-    sourceName: "tigrcorn",
-    displayName: "Tigrcorn ASGI Server",
-    organization: "tigrbl",
-    kind: "suite",
-    capabilityIds: ["realtime", "api-foundations"],
-    ecosystem: ["python", "rust"],
-    summary: "A ultra-low latency ASGI HTTP/3 & WebTransport container server for high-volume execution.",
-    audience: ["Operations Engineers", "SREs"],
-    maturity: "usable",
-    evidence: [
-      { kind: "release", label: "v1.1.0-usable", checkedAt: "2026-07-20" }
-    ],
-    limitations: ["HTTP/3 transport requires explicit TLS certificate anchoring", "WebTransport features depend on modern browser client support"],
-    links: [
-      { kind: "source", label: "Tigrcorn Repository", href: "https://github.com/tigrbl/tigrcorn" }
-    ],
-    featured: true,
-    approved: true,
-    disposition: "public",
-    technologies: ["Rust", "Python", "QUIC", "Tokio", "WebTransport"]
-  },
-
-  // ==========================================
-  // SWARMAURI INTELLIGENCE & DEVELOPER TOOLING
-  // ==========================================
-  {
-    id: "swarmauri-sdk",
-    slug: "swarmauri-sdk",
-    sourceName: "swarmauri-sdk",
-    displayName: "Swarmauri SDK",
-    organization: "swarmauri",
-    kind: "suite",
-    capabilityIds: ["ai-agents", "dev-experience"],
-    ecosystem: ["python"],
-    summary: "The primary SDK for composable AI models, multi-agent frameworks, conversations, and evaluations.",
-    audience: ["AI Developers", "Software Architects"],
-    maturity: "released",
-    evidence: [
-      { kind: "release", label: "v0.12.5-stable", checkedAt: "2026-07-20" },
-      { kind: "package", label: "Active package with 300+ manifests", checkedAt: "2026-07-20" }
-    ],
-    limitations: ["Component structures are strictly bounded by typed standards", "High-volume loops require custom middleware scheduling"],
-    links: [
-      { kind: "source", label: "Swarmauri Github", href: "https://github.com/swarmauri/swarmauri-sdk" },
-      { kind: "package", label: "PyPI Registry", href: "https://pypi.org/project/swarmauri" }
-    ],
-    featured: true,
-    approved: true,
-    disposition: "public",
-    technologies: ["Python", "LLM APIs", "JSON Schema", "Vector DBs"]
+    id: "tigrbl-framework", slug: "tigrbl", sourceName: "tigrbl", displayName: "Tigrbl",
+    organization: "tigrbl", kind: "suite", capabilityIds: ["api-foundations"], ecosystem: ["python", "rust"],
+    summary: "Schema-first Python and Rust workspace for REST and JSON-RPC APIs with typed validation, SQLAlchemy models, and engine-backed execution.",
+    audience: ["Backend engineers", "Platform engineers"], maturity: "maintained",
+    evidence: [{ kind: "source", label: "Public repository description, packages, tests, and examples reviewed", checkedAt }],
+    limitations: ["No performance benchmark or enterprise-adoption claim is made."],
+    links: [{ kind: "source", label: "Public repository", href: "https://github.com/tigrbl/tigrbl" }],
+    featured: true, approved: true, disposition: "public", technologies: ["Python", "Rust", "ASGI", "SQLAlchemy"]
   },
   {
-    id: "swarmauri-peagen",
-    slug: "peagen",
-    sourceName: "peagen",
-    displayName: "Peagen Code Generator",
-    organization: "swarmauri",
-    kind: "suite",
-    capabilityIds: ["dev-experience", "ai-agents"],
-    ecosystem: ["python", "npm"],
-    summary: "Template and DAG-driven project workspace scaffold generator and service builder.",
-    audience: ["Developer Experience Leads", "Platform engineers"],
-    maturity: "usable",
-    evidence: [
-      { kind: "release", label: "v0.9.1-usable", checkedAt: "2026-07-20" }
-    ],
-    limitations: ["Requires strict package definition layouts", "Vue/React compilation depends on exact template profiles"],
-    links: [],
-    featured: true,
-    approved: true,
-    disposition: "public",
-    technologies: ["Python", "Jinja2", "CLI TUI", "YAML Compiler"]
-  },
-
-  // ==========================================
-  // SUB-PACKAGES (SSOT, MdWrk, Tigrbl, Swarmauri)
-  // ==========================================
-  // SSOT Packages
-  {
-    id: "pkg-ssot-registry",
-    slug: "pkg-ssot-registry",
-    sourceName: "ssot-registry",
-    displayName: "ssot-registry",
-    organization: "groupsum",
-    kind: "package",
-    suiteId: "groupsum-ssot-registry",
-    parentId: "groupsum-ssot-registry",
-    capabilityIds: ["governed-delivery"],
-    ecosystem: ["rust"],
-    summary: "Primary registry core managing schema lifecycles and linear diff graphs.",
-    audience: ["Specialist Developers"],
-    maturity: "released",
-    evidence: [{ kind: "release", label: "Cargo Registry v2.1.0", checkedAt: "2026-07-20" }],
-    limitations: [],
-    links: [],
-    featured: false,
-    approved: true,
-    disposition: "public",
-    technologies: ["Rust"]
+    id: "tigrbl-auth", slug: "tigrbl-auth", sourceName: "tigrbl_auth", displayName: "Tigrbl Auth",
+    organization: "tigrbl", kind: "product", capabilityIds: ["trust-policy", "api-foundations"], ecosystem: ["python", "service"],
+    summary: "Tigrbl-native multi-tenant OpenID Connect and OAuth 2.0 identity-provider workspace with JWKS/JWT and operator controls.",
+    audience: ["Identity engineers", "Platform teams"], maturity: "active-development",
+    evidence: [{ kind: "source", label: "Public repository and protocol implementation reviewed", checkedAt }],
+    limitations: ["Implementation evidence is not a security certification or interoperability certification."],
+    links: [{ kind: "source", label: "Public repository", href: "https://github.com/tigrbl/tigrbl_auth" }],
+    featured: true, approved: true, disposition: "public", technologies: ["Python", "OIDC", "OAuth 2.0", "JWT"]
   },
   {
-    id: "pkg-ssot-core",
-    slug: "pkg-ssot-core",
-    sourceName: "ssot-core",
-    displayName: "ssot-core",
-    organization: "groupsum",
-    kind: "package",
-    suiteId: "groupsum-ssot-registry",
-    parentId: "groupsum-ssot-registry",
-    capabilityIds: ["governed-delivery"],
-    ecosystem: ["rust"],
-    summary: "Base structures, validation traits, and parsing models for SSOT assets.",
-    audience: ["Specialist Developers"],
-    maturity: "released",
-    evidence: [{ kind: "release", label: "Cargo Registry v2.1.0", checkedAt: "2026-07-20" }],
-    limitations: [],
-    links: [],
-    featured: false,
-    approved: true,
-    disposition: "public",
-    technologies: ["Rust"]
+    id: "tigrbl-tigrcorn", slug: "tigrcorn", sourceName: "tigrcorn", displayName: "Tigrcorn",
+    organization: "tigrbl", kind: "product", capabilityIds: ["realtime", "api-foundations"], ecosystem: ["python", "rust", "service"],
+    summary: "ASGI3 server with HTTP/1.1, HTTP/2, HTTP/3, QUIC, WebSocket, TLS, static delivery, and release validation in its public source.",
+    audience: ["ASGI developers", "Platform engineers"], maturity: "active-development",
+    evidence: [{ kind: "source", label: "Public repository, protocol modules, and validation workflow reviewed", checkedAt }],
+    limitations: ["Protocol support does not imply a universal latency or throughput result."],
+    links: [{ kind: "source", label: "Public repository", href: "https://github.com/tigrbl/tigrcorn" }],
+    featured: true, approved: true, disposition: "public", technologies: ["Python", "ASGI", "HTTP/3", "WebTransport"]
   },
   {
-    id: "pkg-ssot-cli",
-    slug: "pkg-ssot-cli",
-    sourceName: "ssot-cli",
-    displayName: "ssot-cli",
-    organization: "groupsum",
-    kind: "package",
-    suiteId: "groupsum-ssot-registry",
-    parentId: "groupsum-ssot-registry",
-    capabilityIds: ["governed-delivery"],
-    ecosystem: ["npm"],
-    summary: "Developer CLI surface for local contract testing, registry query, and schema assertion.",
-    audience: ["Developers"],
-    maturity: "released",
-    evidence: [{ kind: "release", label: "npm v2.1.0", checkedAt: "2026-07-20" }],
-    limitations: [],
-    links: [],
-    featured: false,
-    approved: true,
-    disposition: "public",
-    technologies: ["Node.js"]
+    id: "swarmauri-sdk", slug: "swarmauri-sdk", sourceName: "swarmauri-sdk", displayName: "Swarmauri SDK",
+    organization: "swarmauri", kind: "suite", capabilityIds: ["ai-agents", "dev-experience"], ecosystem: ["python"],
+    summary: "Modular Python SDK and monorepo for agents, model integrations, tools, parsers, embeddings, vector stores, and application workflows.",
+    audience: ["AI application developers", "Python developers"], maturity: "maintained",
+    evidence: [{ kind: "source", label: "Public monorepo, package layout, and tests reviewed", checkedAt }],
+    limitations: ["Model quality, cost, and availability depend on selected providers and application-specific evaluation."],
+    links: [{ kind: "source", label: "Public repository", href: "https://github.com/swarmauri/swarmauri-sdk" }],
+    featured: true, approved: true, disposition: "public", technologies: ["Python", "LLM integrations", "Tools", "Vector stores"]
   },
   {
-    id: "pkg-ssot-contracts",
-    slug: "pkg-ssot-contracts",
-    sourceName: "ssot-contracts",
-    displayName: "ssot-contracts",
-    organization: "groupsum",
-    kind: "package",
-    suiteId: "groupsum-ssot-registry",
-    parentId: "groupsum-ssot-registry",
-    capabilityIds: ["governed-delivery"],
-    ecosystem: ["specification"],
-    summary: "Decoupled JSON schemas and protobuf specifications representing active service agreements.",
-    audience: ["Architects"],
-    maturity: "released",
-    evidence: [{ kind: "release", label: "Artifact Bundle v2.1.0", checkedAt: "2026-07-20" }],
-    limitations: [],
-    links: [],
-    featured: false,
-    approved: true,
-    disposition: "public",
-    technologies: ["JSON Schema", "Protobuf"]
-  },
-
-  // Governance Packs (Groupsum Specifications)
-  {
-    id: "spec-seo-aeo-aieo-pack",
-    slug: "seo-aeo-aieo-governance-pack",
-    sourceName: "seo-aeo-aieo-governance-pack",
-    displayName: "SEO/AEO/AIEO Governance Pack",
-    organization: "groupsum",
-    kind: "specification-pack",
-    capabilityIds: ["trust-policy", "dev-experience"],
-    ecosystem: ["specification"],
-    summary: "A robust set of schemas, structured JSON-LD rules, and markdown structures to maximize LLM crawler confidence.",
-    audience: ["SEO Specialists", "Marketing Engineers"],
-    maturity: "released",
-    evidence: [{ kind: "release", label: "Spec Pack Stable v1.1", checkedAt: "2026-07-20" }],
-    limitations: ["Compliance depends on visual alignment", "Requires strict meta tag uniformity"],
-    links: [],
-    featured: true,
-    approved: true,
-    disposition: "public",
-    technologies: ["JSON-LD", "Schema.org", "XML Sitemap"]
+    id: "swarmauri-peagen", slug: "peagen", sourceName: "peagen", displayName: "Peagen",
+    organization: "swarmauri", kind: "product", capabilityIds: ["dev-experience", "ai-agents"], ecosystem: ["python", "service"],
+    summary: "Template-driven, SSOT-governed code-generation workspace for DAG/Jinja2 rendering, CLI workflows, and gateway/worker services.",
+    audience: ["Developer-experience teams", "Python developers"], maturity: "active-development",
+    evidence: [{ kind: "source", label: "Public repository, templates, CLI, and service layout reviewed", checkedAt }],
+    limitations: ["Generated output still requires project-specific review, testing, and ownership."],
+    links: [{ kind: "source", label: "Public repository", href: "https://github.com/swarmauri/peagen" }],
+    featured: true, approved: true, disposition: "public", technologies: ["Python", "Jinja2", "DAGs", "CLI"]
   },
   {
-    id: "spec-authentication-pack",
-    slug: "authentication-governance-pack",
-    sourceName: "authentication-governance-pack",
-    displayName: "Authentication Governance Pack",
-    organization: "groupsum",
-    kind: "specification-pack",
-    capabilityIds: ["trust-policy"],
-    ecosystem: ["specification"],
-    summary: "Standardized decision trees and compliance policies for multi-factor authenticator setup.",
-    audience: ["Security Officers"],
-    maturity: "released",
-    evidence: [{ kind: "release", label: "Spec Pack v2.4", checkedAt: "2026-07-20" }],
-    limitations: [],
-    links: [],
-    featured: false,
-    approved: true,
-    disposition: "public",
-    technologies: ["OIDC", "FIDO2"]
+    id: "groupsum-voltrack", slug: "voltrack", sourceName: "voltrack", displayName: "Voltrack",
+    organization: "groupsum", kind: "project", capabilityIds: ["infrastructure", "dev-experience"], ecosystem: ["web", "service"],
+    summary: "Operational tracking workspace with local-first and Tigrbl-backed application modes in the inspected source.",
+    audience: ["Operations teams", "Platform engineers"], maturity: "active-development",
+    evidence: [{ kind: "implementation", label: "Local repository architecture and runtime modes reviewed", checkedAt }],
+    limitations: ["No public release or deployment claim is made."], links: [], featured: false, approved: true, disposition: "review-required", technologies: ["React", "Tigrbl", "IndexedDB"]
   },
   {
-    id: "spec-privacy-pack",
-    slug: "privacy-governance-records-governance-pack",
-    sourceName: "privacy-governance-records-governance-pack",
-    displayName: "Privacy Records Governance Pack",
-    organization: "groupsum",
-    kind: "specification-pack",
-    capabilityIds: ["trust-policy"],
-    ecosystem: ["specification"],
-    summary: "Data catalog layouts and retention covenants mapping compliance assertions to live evidence structures.",
-    audience: ["GDPR Officers", "Data Custodians"],
-    maturity: "released",
-    evidence: [{ kind: "release", label: "Spec Pack v1.0", checkedAt: "2026-07-20" }],
-    limitations: [],
-    links: [],
-    featured: false,
-    approved: true,
-    disposition: "public",
-    technologies: ["GDPR Compliance", "Metadata Schema"]
-  },
-
-  // Tigrbl Packages
-  {
-    id: "pkg-tigrbl-typing",
-    slug: "tigrbl-typing",
-    sourceName: "tigrbl-typing",
-    displayName: "tigrbl-typing",
-    organization: "tigrbl",
-    kind: "package",
-    suiteId: "tigrbl-framework",
-    parentId: "tigrbl-framework",
-    capabilityIds: ["api-foundations"],
-    ecosystem: ["python"],
-    summary: "Strict type declarations and stub definitions underpinning the schema core.",
-    audience: ["Library Users"],
-    maturity: "released",
-    evidence: [{ kind: "release", label: "PyPI release v4.2.0", checkedAt: "2026-07-20" }],
-    limitations: [],
-    links: [],
-    featured: false,
-    approved: true,
-    disposition: "public",
-    technologies: ["Python Types"]
+    id: "groupsum-dcim-rack-planner", slug: "dcim-rack-planner", sourceName: "dcim-rack-planner", displayName: "DCIM Rack Planner",
+    organization: "groupsum", kind: "project", capabilityIds: ["infrastructure"], ecosystem: ["web", "service"],
+    summary: "Planning workspace for facilities, racks, devices, cabling, topology, and capacity in the inspected source.",
+    audience: ["Infrastructure planners", "Data-center operators"], maturity: "active-development",
+    evidence: [{ kind: "implementation", label: "Local planning surfaces and schemas reviewed", checkedAt }],
+    limitations: ["No production inventory scale or public availability claim is made."], links: [], featured: false, approved: true, disposition: "review-required", technologies: ["React", "Vite", "Tigrbl"]
   },
   {
-    id: "pkg-tigrbl-spec",
-    slug: "tigrbl-spec",
-    sourceName: "tigrbl_spec",
-    displayName: "tigrbl_spec",
-    organization: "tigrbl",
-    kind: "package",
-    suiteId: "tigrbl-framework",
-    parentId: "tigrbl-framework",
-    capabilityIds: ["api-foundations"],
-    ecosystem: ["python"],
-    summary: "API specification parsing, openapi compiler, and diagnostic tools.",
-    audience: ["Library Users"],
-    maturity: "released",
-    evidence: [{ kind: "release", label: "PyPI release v4.2.0", checkedAt: "2026-07-20" }],
-    limitations: [],
-    links: [],
-    featured: false,
-    approved: true,
-    disposition: "public",
-    technologies: ["Pydantic", "Python"]
+    id: "groupsum-dcim-fiber-planner", slug: "dcim-fiber-planner", sourceName: "dcim-fiber-planner", displayName: "DCIM Fiber Planner",
+    organization: "groupsum", kind: "project", capabilityIds: ["infrastructure", "realtime"], ecosystem: ["web", "service"],
+    summary: "Fiber, optical, cabling, and transport planning workspace in the inspected source.",
+    audience: ["Network planners", "Infrastructure operators"], maturity: "active-development",
+    evidence: [{ kind: "implementation", label: "Local fiber and optical planning surfaces reviewed", checkedAt }],
+    limitations: ["No carrier-grade, commercial-availability, or production claim is made."], links: [], featured: false, approved: true, disposition: "review-required", technologies: ["React", "FastAPI", "Optical planning"]
   },
   {
-    id: "pkg-tigrbl-core",
-    slug: "pkg-tigrbl-core",
-    sourceName: "tigrbl-core",
-    displayName: "tigrbl-core",
-    organization: "tigrbl",
-    kind: "package",
-    suiteId: "tigrbl-framework",
-    parentId: "tigrbl-framework",
-    capabilityIds: ["api-foundations"],
-    ecosystem: ["python"],
-    summary: "Engine interface contracts, ASGI middleware dispatcher, and request lifecycle scheduler.",
-    audience: ["Library Users"],
-    maturity: "released",
-    evidence: [{ kind: "release", label: "PyPI release v4.2.0", checkedAt: "2026-07-20" }],
-    limitations: [],
-    links: [],
-    featured: false,
-    approved: true,
-    disposition: "public",
-    technologies: ["Python", "ASGI"]
+    id: "groupsum-deliverableops", slug: "deliverableops", sourceName: "deliverableops", displayName: "DeliverableOps",
+    organization: "groupsum", kind: "project", capabilityIds: ["governed-delivery", "trust-policy"], ecosystem: ["python", "service"],
+    summary: "Source workspace connecting workflow runs, artifacts, evidence, delivery, and acceptance records.",
+    audience: ["Delivery operations", "Platform teams"], maturity: "active-development",
+    evidence: [{ kind: "implementation", label: "Local runtime, bundle, and validation source reviewed", checkedAt }],
+    limitations: ["Examples and tests are not evidence of customer adoption or a hosted service."], links: [], featured: false, approved: true, disposition: "review-required", technologies: ["Python", "Tigrbl", "GitHub Actions"]
   },
   {
-    id: "pkg-tigrbl-orm",
-    slug: "pkg-tigrbl-orm",
-    sourceName: "tigrbl-orm",
-    displayName: "tigrbl-orm",
-    organization: "tigrbl",
-    kind: "package",
-    suiteId: "tigrbl-framework",
-    parentId: "tigrbl-framework",
-    capabilityIds: ["api-foundations"],
-    ecosystem: ["python"],
-    summary: "Schema-first database model declarations with atomic operation hooks.",
-    audience: ["Library Users"],
-    maturity: "released",
-    evidence: [{ kind: "release", label: "PyPI release v4.2.0", checkedAt: "2026-07-20" }],
-    limitations: [],
-    links: [],
-    featured: false,
-    approved: true,
-    disposition: "public",
-    technologies: ["Python", "SQLAlchemy Engine"]
-  },
-
-  // Swarmauri Packages
-  {
-    id: "pkg-swarmauri-contracts",
-    slug: "swarmauri-contracts",
-    sourceName: "swarmauri-contracts",
-    displayName: "swarmauri-contracts",
-    organization: "swarmauri",
-    kind: "package",
-    suiteId: "swarmauri-sdk",
-    parentId: "swarmauri-sdk",
-    capabilityIds: ["ai-agents"],
-    ecosystem: ["python"],
-    summary: "Base protocols, entity signatures, and evaluation contracts.",
-    audience: ["SDK Integrators"],
-    maturity: "released",
-    evidence: [{ kind: "release", label: "PyPI v0.12.5", checkedAt: "2026-07-20" }],
-    limitations: [],
-    links: [],
-    featured: false,
-    approved: true,
-    disposition: "public",
-    technologies: ["Python Typing"]
+    id: "groupsum-cc-deliverable-ops", slug: "cc-deliverable-ops", sourceName: "confidential-workloads-delivery-ops", displayName: "Confidential Workloads Delivery Ops",
+    organization: "groupsum", kind: "project", capabilityIds: ["governed-delivery", "trust-policy"], ecosystem: ["python", "service"],
+    summary: "Confidential-workload delivery source with attestation, proof-of-possession, encrypted delivery, and signed receipt workflows.",
+    audience: ["Security engineers", "Confidential-computing operators"], maturity: "active-development",
+    evidence: [{ kind: "implementation", label: "Local implementation, tests, and deployment evidence model reviewed", checkedAt }],
+    limitations: ["Repository validation is separate from a currently reachable public service, customer availability, or third-party certification."], links: [], featured: false, approved: true, disposition: "review-required", technologies: ["Python", "GCP Confidential Space", "OIDC", "ECDH"]
   },
   {
-    id: "pkg-swarmauri-standard",
-    slug: "swarmauri-standard",
-    sourceName: "swarmauri-standard",
-    displayName: "swarmauri-standard",
-    organization: "swarmauri",
-    kind: "package",
-    suiteId: "swarmauri-sdk",
-    parentId: "swarmauri-sdk",
-    capabilityIds: ["ai-agents"],
-    ecosystem: ["python"],
-    summary: "Core components including conversational managers, prompt parsers, and distance solvers.",
-    audience: ["SDK Integrators"],
-    maturity: "released",
-    evidence: [{ kind: "release", label: "PyPI v0.12.5", checkedAt: "2026-07-20" }],
-    limitations: [],
-    links: [],
-    featured: false,
-    approved: true,
-    disposition: "public",
-    technologies: ["Python", "Numerical Solvers"]
-  },
-  {
-    id: "pkg-swarmauri-vector-store",
-    slug: "swarmauri-vector-store",
-    sourceName: "swarmauri_vector_store",
-    displayName: "swarmauri_vector_store",
-    organization: "swarmauri",
-    kind: "package",
-    suiteId: "swarmauri-sdk",
-    parentId: "swarmauri-sdk",
-    capabilityIds: ["ai-agents"],
-    ecosystem: ["python"],
-    summary: "Pluggable cosine and euclidean similarity vector store abstractions.",
-    audience: ["AI Developers"],
-    maturity: "released",
-    evidence: [{ kind: "release", label: "PyPI v0.12.5", checkedAt: "2026-07-20" }],
-    limitations: [],
-    links: [],
-    featured: false,
-    approved: true,
-    disposition: "public",
-    technologies: ["Python", "Numpy"]
-  },
-  {
-    id: "pkg-swarmauri-signing-ed25519",
-    slug: "swarmauri-signing-ed25519",
-    sourceName: "swarmauri_signing_ed25519",
-    displayName: "swarmauri_signing_ed25519",
-    organization: "swarmauri",
-    kind: "package",
-    suiteId: "swarmauri-sdk",
-    parentId: "swarmauri-sdk",
-    capabilityIds: ["trust-policy"],
-    ecosystem: ["python"],
-    summary: "Ed25519 cryptographic token generation and proof-of-possession validators.",
-    audience: ["AI Security Engineers"],
-    maturity: "released",
-    evidence: [{ kind: "release", label: "PyPI v0.12.5", checkedAt: "2026-07-20" }],
-    limitations: [],
-    links: [],
-    featured: false,
-    approved: true,
-    disposition: "public",
-    technologies: ["Python", "Cryptography"]
-  },
-  {
-    id: "groupsum-voltrack", slug: "voltrack", sourceName: "voltrack", displayName: "Voltrack", organization: "groupsum", kind: "project", capabilityIds: ["infrastructure", "dev-experience"], ecosystem: ["web", "service"], summary: "A multi-app operational tracking workspace with local-first and remotely synchronized Tigrbl modes.", audience: ["Operations teams", "Platform engineers"], maturity: "active-development", evidence: [{ kind: "source", label: "Repository architecture and runtime modes", checkedAt: "2026-07-20" }], limitations: ["Public release and customer deployment require separate evidence"], links: [{ kind: "source", label: "Source repository", href: "https://github.com/groupsum/voltrack" }], featured: false, approved: true, disposition: "public", technologies: ["React", "Tigrbl", "JSON-RPC", "IndexedDB"]
-  },
-  {
-    id: "groupsum-dcim-rack-planner", slug: "dcim-rack-planner", sourceName: "dcim-rack-planner", displayName: "DCIM Rack Planner", organization: "groupsum", kind: "project", capabilityIds: ["infrastructure"], ecosystem: ["web", "service"], summary: "Planning and visualization workspace for facilities, racks, devices, cabling, topology, and capacity.", audience: ["Infrastructure planners", "Data-center operators"], maturity: "active-development", evidence: [{ kind: "source", label: "Rack, facility, topology, and provisioning surfaces", checkedAt: "2026-07-20" }], limitations: ["Do not imply production inventory scale without deployment evidence"], links: [{ kind: "source", label: "Source repository", href: "https://github.com/groupsum/dcim-rack-planner" }], featured: false, approved: true, disposition: "public", technologies: ["React", "Vite", "Tigrbl", "Topology"]
-  },
-  {
-    id: "groupsum-dcim-fiber-planner", slug: "dcim-fiber-planner", sourceName: "dcim-fiber-planner", displayName: "DCIM Fiber Planner", organization: "groupsum", kind: "project", capabilityIds: ["infrastructure", "realtime"], ecosystem: ["web", "service"], summary: "Fiber, optical, cabling, and transport planning workspace for infrastructure teams.", audience: ["Network planners", "Infrastructure operators"], maturity: "active-development", evidence: [{ kind: "source", label: "Fiber and optical planning client with backend proxy modes", checkedAt: "2026-07-20" }], limitations: ["Carrier-grade and commercial availability claims require approval"], links: [{ kind: "source", label: "Source repository", href: "https://github.com/groupsum/dcim-fiber-planner" }], featured: false, approved: true, disposition: "public", technologies: ["React", "Vite", "FastAPI", "Optical planning"]
-  },
-  {
-    id: "groupsum-deliverableops", slug: "deliverableops", sourceName: "deliverableops", displayName: "DeliverableOps", organization: "groupsum", kind: "product", capabilityIds: ["governed-delivery", "trust-policy"], ecosystem: ["python", "service"], summary: "SKU-to-digital-deliverable fulfillment runtime connecting workflow runs, artifacts, evidence, proof, delivery, and acceptance.", audience: ["Delivery operations", "Platform teams"], maturity: "active-development", evidence: [{ kind: "source", label: "Tigrbl/Tigrcorn runtime and bundle validation", checkedAt: "2026-07-20" }], limitations: ["Example bundles and CI evidence are not customer adoption"], links: [{ kind: "source", label: "Source repository", href: "https://github.com/groupsum/deliverableops" }], featured: false, approved: true, disposition: "public", technologies: ["Python", "Tigrbl", "Tigrcorn", "GitHub Actions"]
-  },
-  {
-    id: "groupsum-cc-deliverable-ops", slug: "cc-deliverable-ops", sourceName: "confidential-workloads-delivery-ops", displayName: "CC Deliverable Ops", organization: "groupsum", kind: "project", capabilityIds: ["governed-delivery", "trust-policy"], ecosystem: ["python", "service"], summary: "Attestation-bound confidential workload release with proof-of-possession, ciphertext-only delivery, and signed receipts.", audience: ["Security engineering", "Confidential-computing operators"], maturity: "active-development", evidence: [{ kind: "source", label: "GCP Confidential Space and receipt verification workflow", checkedAt: "2026-07-20" }], limitations: ["Do not claim certification, capacity, or customer availability without qualifying evidence"], links: [{ kind: "source", label: "Source repository", href: "https://github.com/groupsum/confidential-workloads-delivery-ops" }], featured: false, approved: true, disposition: "public", technologies: ["Python", "GCP Confidential Space", "OIDC", "ECDH"]
-  },
-  {
-    id: "groupsum-evidencevault", slug: "evidencevault", sourceName: "evidencevault", displayName: "EvidenceVault", organization: "groupsum", kind: "product", capabilityIds: ["storage", "trust-policy"], ecosystem: ["python", "web", "service"], summary: "Forensic evidence custody workspace for sealed bundles, audit trails, disclosure policies, and independent verification.", audience: ["Security teams", "Auditors", "Evidence custodians"], maturity: "active-development", evidence: [{ kind: "source", label: "Vault, verifier, storage, crypto, and local object-storage surfaces", checkedAt: "2026-07-20" }], limitations: ["BucketWarden integration is not confirmed by the inspected source"], links: [{ kind: "source", label: "Source repository", href: "https://github.com/groupsum/evidencevault" }], featured: false, approved: true, disposition: "public", technologies: ["React", "FastAPI", "IndexedDB", "MinIO"]
-  },
-  {
-    id: "groupsum-npmctl", slug: "npmctl", sourceName: "npmctl", displayName: "npmctl", organization: "groupsum", kind: "product", capabilityIds: ["governed-delivery", "infrastructure"], ecosystem: ["python", "service"], summary: "Owner-scoped GitOps controller for declarative Nginx Proxy Manager operations.", audience: ["Platform engineers", "Release operators"], maturity: "released", evidence: [{ kind: "docs", label: "Public repository documentation and release history", checkedAt: "2026-07-20" }], limitations: ["Repository capability does not establish live installation health"], links: [{ kind: "source", label: "Source repository", href: "https://github.com/groupsum/npmctl" }], featured: false, approved: true, disposition: "public", technologies: ["Python", "YAML", "GitOps", "Nginx Proxy Manager"]
-  },];
+    id: "groupsum-evidencevault", slug: "evidencevault", sourceName: "evidencevault", displayName: "EvidenceVault",
+    organization: "groupsum", kind: "project", capabilityIds: ["storage", "trust-policy"], ecosystem: ["python", "web", "service"],
+    summary: "Evidence-custody workspace source covering sealed bundles, audit trails, disclosure policy, and verification.",
+    audience: ["Security teams", "Auditors", "Evidence custodians"], maturity: "active-development",
+    evidence: [{ kind: "implementation", label: "Local vault, verifier, storage, and UI source reviewed", checkedAt }],
+    limitations: ["No hosted availability, integration, or independent assurance claim is made."], links: [], featured: false, approved: true, disposition: "review-required", technologies: ["React", "FastAPI", "IndexedDB", "MinIO"]
+  }
+];

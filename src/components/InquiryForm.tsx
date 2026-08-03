@@ -253,7 +253,7 @@ export const InquiryForm: React.FC = () => {
             aria-required="true"
             aria-invalid={!!errors.message}
             aria-describedby={errors.message ? "message-error" : undefined}
-            placeholder="Briefly detail your system requirements, compliance gates, or codebase scaling bottlenecks..."
+            placeholder="Briefly describe the system, current evidence, constraints, and outcome you want to review..."
             disabled={status === "submitting"}
             className="w-full px-4 py-2.5 bg-canvas border border-[var(--color-border-muted)] rounded-[var(--radius-sm)] text-[14px] text-ink focus:outline-none focus:border-accent focus:ring-2 focus:ring-accent/10 transition-all disabled:opacity-50 resize-y"
           />

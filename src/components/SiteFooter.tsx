@@ -134,8 +134,8 @@ export const SiteFooter: React.FC<SiteFooterProps> = ({ onNavigate }) => {
             © {new Date().getFullYear()} Groupsum LLC. All rights reserved.
           </div>
           <div className="flex gap-6">
-            <span>REF: GS-STABLE-2026</span>
-            <span>STATUS: GOVERNED</span>
+            <span>CATALOG CHECK: 2026-08-02</span>
+            <span>STATUS: EVIDENCE-LABELED</span>
           </div>
         </div>
       </div>
