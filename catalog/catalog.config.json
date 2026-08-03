@@ -1,0 +1,25 @@
+{
+  "schema_version": "1.0.0",
+  "owners": [
+    { "login": "groupsum", "role": "primary" },
+    { "login": "tigrbl", "role": "ecosystem" },
+    { "login": "swarmauri", "role": "ecosystem" },
+    { "login": "bucketwarden", "role": "product", "expect_public_repositories": false }
+  ],
+  "include_archived_repositories": true,
+  "include_forks": true,
+  "include_commit_history": true,
+  "include_deployments": true,
+  "include_github_packages": true,
+  "manifest_names": ["package.json", "pyproject.toml", "Cargo.toml"],
+  "surface_path_markers": ["apps", "api", "apis", "demo", "demos", "deploy", "deployments", "docs", "examples", "services", "showcase", "showcases", "sites", "ui", "uis", "web", "website", "websites"],
+  "max_manifests_per_repository": 500,
+  "max_surface_paths_per_repository": 250,
+  "request_concurrency": 8,
+  "request_timeout_seconds": 30,
+  "cache_ttl_hours": 6,
+  "downstream_discovery": {
+    "github_code_search": false,
+    "max_results_per_package": 100
+  }
+}

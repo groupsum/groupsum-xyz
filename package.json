@@ -8,7 +8,7 @@
     "build:content": "npm --prefix packages/site-content-pack run build",
     "import:wordpress": "node scripts/import-wordpress.mjs",
     "build": "npm run build:content && npm run build:insights && npm run validate:claims && npm run validate:portfolio && npm run validate:catalog && tsc --noEmit && vite build && npm run generate:static && npm run validate:discovery",
-    "check": "npm run build:content && npm run build:insights && npm run validate:claims && npm run validate:portfolio && npm run validate:catalog && npm --prefix packages/site-content-pack run test && tsc --noEmit",
+    "check": "npm run catalog:test && npm run catalog:validate && npm run build:content && npm run build:insights && npm run validate:claims && npm run validate:portfolio && npm run validate:catalog && npm --prefix packages/site-content-pack run test && tsc --noEmit",
     "generate:static": "node scripts/generate-static.mjs",
     "preview": "vite preview --host 0.0.0.0",
     "docker:build": "docker compose build groupsum-xyz",
@@ -25,7 +25,11 @@
     "validate:discovery": "node scripts/validate-discovery.mjs",
     "validate:portfolio": "node scripts/validate-portfolio-content.mjs",
     "validate:catalog": "node scripts/validate-catalog-content.mjs",
-    "validate:claims": "node scripts/validate-claims.mjs"
+    "validate:claims": "node scripts/validate-claims.mjs",
+    "catalog:collect": "python scripts/catalog_collect.py --refresh",
+    "catalog:render": "python scripts/catalog_render.py",
+    "catalog:validate": "python scripts/catalog_validate.py",
+    "catalog:test": "python -m unittest discover -s scripts/tests -p test_catalog.py"
   },
   "dependencies": {
     "@mdwrk/lander-core": "^0.1.2",

@@ -2,7 +2,7 @@ import fs from "node:fs";
 import path from "node:path";
 
 const root = "https://groupsum.xyz";
-const required = ["robots.txt", "sitemap.xml", "sitemap.xsl", "llms.txt", "llms-full.txt", "full-llms.txt", "social/groupsum-default.svg"];
+const required = ["robots.txt", "sitemap.xml", "sitemap.xsl", "llms.txt", "llms-full.txt", "full-llms.txt", "social/groupsum-default.svg", "catalog/catalog.json", "catalog/summary.json", "catalog/schema.json"];
 const fail = (message) => { console.error(`discovery validation failed: ${message}`); process.exitCode = 1; };
 for (const file of required) if (!fs.existsSync(path.join("dist", file))) fail(`missing dist/${file}`);
 const robots = fs.readFileSync("dist/robots.txt", "utf8");

@@ -18,6 +18,7 @@ import { BlogPost, PortfolioItem, PortfolioEntity, SolutionItem, ServiceItem } f
 import { MarkdownRenderer } from "mdwrk/renderer-core";
 import { CapabilityBand } from "./components/CapabilityBand";
 import { groupSumVision, horizontalCapabilities } from "./data/vision";
+import { catalogSummary } from "./data/catalog.generated";
 import { useCatalogFilters } from "./hooks/useCatalogFilters";
 import { CatalogToolbar } from "./components/CatalogToolbar";
 import { CatalogGroup } from "./components/CatalogGroup";
@@ -756,7 +757,33 @@ function PortfolioPage({ onNavigate }: RouteProps) {
     return portfolioItems.filter(p => p.approved && p.capabilityFamily === activeFilter);
   }, [activeFilter]);
 
-  return <DenseCatalog entities={portfolioEntities.filter((entity) => entity.approved)} onNavigate={onNavigate} title="GroupSum portfolio catalog" description="Browse the complete cross-ecosystem catalog by capability, organization, entity type, maturity, and evidence." />;
+  const catalogMetrics = [
+    ["Public repositories", catalogSummary.repositories],
+    ["Package records", catalogSummary.packages],
+    ["Default-branch commits", catalogSummary.commits],
+    ["GitHub releases", catalogSummary.github_releases],
+    ["Deployment records", catalogSummary.deployments],
+    ["Relationships", catalogSummary.relationships],
+  ] as const;
+
+  return <>
+    <section className="max-w-[var(--content-max)] mx-auto px-4 sm:px-6 lg:px-8 pt-12 space-y-5">
+      <div className="flex flex-col md:flex-row md:items-end justify-between gap-4">
+        <div className="max-w-3xl space-y-2">
+          <span className="text-xs font-mono uppercase tracking-wider text-accent font-bold block">Generated public inventory</span>
+          <h1 className="font-serif text-3xl font-bold tracking-tight text-ink">Observed ecosystem snapshot</h1>
+          <p className="text-sm text-ink-muted leading-relaxed">
+            Collected {new Date(catalogSummary.generated_at).toLocaleString()} from GitHub, repository manifests, PyPI, npm, and crates.io. Counts describe observed public records, not adoption or live-service health.
+          </p>
+        </div>
+        <a href="/catalog/catalog.json" className="text-xs font-mono font-semibold text-accent hover:underline">Download normalized JSON &rarr;</a>
+      </div>
+      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3">
+        {catalogMetrics.map(([label, value]) => <div key={label} className="p-4 bg-[var(--color-surface)] border border-[var(--color-border-soft)] rounded-[var(--radius-sm)]"><strong className="font-serif text-xl text-ink block">{value.toLocaleString()}</strong><span className="text-[10px] font-mono uppercase tracking-wide text-ink-muted">{label}</span></div>)}
+      </div>
+    </section>
+    <DenseCatalog entities={portfolioEntities.filter((entity) => entity.approved)} onNavigate={onNavigate} title="Curated product catalog" description="Browse the claim-reviewed product layer by capability, organization, entity type, maturity, and evidence. The generated inventory above is broader and includes every discovered public record." />
+  </>;
 
   /* Legacy featured-card layout retained below for reference. */
   return (

@@ -72,4 +72,10 @@ function writeDiscovery() {
 
 fs.mkdirSync(OUT, { recursive: true }); const shellHtml = fs.readFileSync(path.join(OUT, "index.html"), "utf8");
 for (const record of inventory) { if (record.route === "/") continue; const outputDir = path.join(OUT, record.route); fs.mkdirSync(outputDir, { recursive: true }); fs.writeFileSync(path.join(outputDir, "index.html"), injectHeadMeta(shellHtml, record)); }
-fs.writeFileSync(path.join(OUT, "index.html"), injectHeadMeta(shellHtml, pages[0])); writeDiscovery();
+fs.writeFileSync(path.join(OUT, "index.html"), injectHeadMeta(shellHtml, pages[0]));
+writeDiscovery();
+const catalogOut = path.join(OUT, "catalog");
+fs.mkdirSync(catalogOut, { recursive: true });
+fs.copyFileSync("catalog/generated/catalog.json", path.join(catalogOut, "catalog.json"));
+fs.copyFileSync("catalog/generated/summary.json", path.join(catalogOut, "summary.json"));
+fs.copyFileSync("catalog/schema/catalog.schema.json", path.join(catalogOut, "schema.json"));

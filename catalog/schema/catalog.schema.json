@@ -1,0 +1,57 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://groupsum.xyz/schemas/public-catalog-1.0.0.json",
+  "title": "Groupsum public ecosystem catalog",
+  "type": "object",
+  "required": ["schema_version", "generated_at", "scope", "completeness", "repositories", "packages", "relationships", "observations"],
+  "properties": {
+    "schema_version": { "const": "1.0.0" },
+    "generated_at": { "type": "string", "format": "date-time" },
+    "scope": {
+      "type": "object",
+      "required": ["owners", "visibility"],
+      "properties": {
+        "owners": { "type": "array", "items": { "type": "string" }, "minItems": 1, "uniqueItems": true },
+        "visibility": { "const": "public" }
+      }
+    },
+    "completeness": { "type": "object", "additionalProperties": { "type": "string" } },
+    "repositories": { "type": "array", "items": { "$ref": "#/$defs/repository" } },
+    "packages": { "type": "array", "items": { "$ref": "#/$defs/package" } },
+    "relationships": { "type": "array", "items": { "$ref": "#/$defs/relationship" } },
+    "observations": { "type": "array", "items": { "$ref": "#/$defs/observation" } }
+  },
+  "$defs": {
+    "observation": {
+      "type": "object",
+      "required": ["source", "status", "observed_at"],
+      "properties": {
+        "source": { "type": "string" },
+        "status": { "enum": ["observed", "cached", "not_found", "error"] },
+        "observed_at": { "type": "string", "format": "date-time" },
+        "detail": { "type": "string" },
+        "url": { "type": "string" }
+      }
+    },
+    "repository": {
+      "type": "object",
+      "required": ["id", "owner", "name", "full_name", "url", "visibility", "metrics", "activity", "technologies", "observations"],
+      "properties": {
+        "id": { "type": "string" }, "owner": { "type": "string" }, "name": { "type": "string" },
+        "full_name": { "type": "string", "pattern": "^[^/]+/[^/]+$" }, "url": { "type": "string" },
+        "visibility": { "const": "public" }, "metrics": { "type": "object" }, "activity": { "type": "object" },
+        "technologies": { "type": "object" }, "observations": { "type": "array", "items": { "$ref": "#/$defs/observation" } }
+      }
+    },
+    "package": {
+      "type": "object",
+      "required": ["ecosystem", "name"],
+      "properties": { "ecosystem": { "type": "string" }, "name": { "type": "string" }, "published": { "type": ["boolean", "null"] } }
+    },
+    "relationship": {
+      "type": "object",
+      "required": ["kind", "source", "target", "evidence"],
+      "properties": { "kind": { "type": "string" }, "source": { "type": "string" }, "target": { "type": "string" }, "evidence": { "type": "string" } }
+    }
+  }
+}

@@ -6,6 +6,7 @@
 import React from "react";
 import { Logo } from "./Logo";
 import { Mail, Github, BookOpen, ExternalLink } from "lucide-react";
+import { catalogSummary } from "../data/catalog.generated";
 
 interface SiteFooterProps {
   onNavigate: (path: string) => void;
@@ -134,7 +135,7 @@ export const SiteFooter: React.FC<SiteFooterProps> = ({ onNavigate }) => {
             © {new Date().getFullYear()} Groupsum LLC. All rights reserved.
           </div>
           <div className="flex gap-6">
-            <span>CATALOG CHECK: 2026-08-02</span>
+            <span>CATALOG CHECK: {catalogSummary.generated_at.slice(0, 10)}</span>
             <span>STATUS: EVIDENCE-LABELED</span>
           </div>
         </div>
