@@ -3,7 +3,11 @@ import fs from "node:fs";
 const compose = fs.readFileSync("docker-compose.yaml", "utf8");
 const proxy = fs.readFileSync(".npmctl/desired-state/production/proxy.yaml", "utf8");
 
-const containerMatch = compose.match(/^[ \t]*container_name:[ \t]*([^\r\n#]+)/m);
+const siteService = compose.match(/^  groupsum-xyz:\s*\r?\n((?:^[ \t]{4,}.*(?:\r?\n|$))*)/m);
+if (!siteService) {
+  throw new Error("docker-compose.yaml must define the groupsum-xyz site service");
+}
+const containerMatch = siteService[1].match(/^[ \t]*container_name:[ \t]*([^\r\n#]+)/m);
 if (!containerMatch) {
   throw new Error("docker-compose.yaml must define an explicit container_name for the site service");
 }
