@@ -591,7 +591,9 @@ def record_detail(
             connection,
             """
             SELECT repo.id, repo.owner, repo.name, repo.url, repo.description,
-                   repo.default_branch, repo.is_archived, repo.is_fork, repo.observed_at, rr.role
+                   repo.default_branch, repo.is_archived, repo.is_fork, repo.observed_at, rr.role,
+                   repo.ssot_governed, repo.ssot_registry_url, repo.ssot_registry_sha256,
+                   repo.ssot_schema_version, repo.ssot_summary, repo.ssot_observed_at
               FROM repositories repo
               JOIN record_repositories rr ON rr.repository_id = repo.id
              WHERE rr.record_id = ?
@@ -607,6 +609,9 @@ def record_detail(
         for repository in repositories:
             repository["is_archived"] = bool(repository["is_archived"])
             repository["is_fork"] = bool(repository["is_fork"])
+            repository["ssot_governed"] = bool(repository["ssot_governed"])
+            if isinstance(repository.get("ssot_summary"), str):
+                repository["ssot_summary"] = json.loads(repository["ssot_summary"] or "{}")
             repository.update(repository_signals(connection, repository["id"]))
         packages = rows(
             connection,
@@ -791,7 +796,8 @@ def record_detail(
             """
             SELECT e.id, e.evidence_type, e.title, e.source_url, e.locator,
                    e.excerpt, e.observed_at, e.expires_at, c.id AS claim_id,
-                   c.statement AS claim, c.status AS claim_status
+                   c.statement AS claim, c.status AS claim_status,
+                   c.ssot_claim_id
               FROM claims c
               JOIN claim_evidence ce ON ce.claim_id = c.id
               JOIN evidence e ON e.id = ce.evidence_id
@@ -815,6 +821,19 @@ def record_detail(
             """,
             (record["id"],),
         )
+        claims = rows(
+            connection,
+            """
+            SELECT id, statement, status, ssot_claim_id, reviewed_at
+              FROM claims WHERE record_id = ? ORDER BY id
+            """,
+            (record["id"],),
+        )
+        for claim in claims:
+            claim["rooted_in_ssot"] = bool(claim.get("ssot_claim_id"))
+        for item in evidence:
+            item["rooted_in_ssot"] = bool(item.get("ssot_claim_id"))
+        rooted_claims = sum(1 for claim in claims if claim["rooted_in_ssot"])
         signals = record_signals(connection, record["id"])
     return cacheable_json(
         request,
@@ -847,8 +866,34 @@ def record_detail(
             "relations": relations,
             "governance": {
                 "features": features,
+                "claims": claims,
                 "evidence": evidence,
                 "limitations": limitations,
+                "claim_rooting": {
+                    "total": len(claims),
+                    "rooted": rooted_claims,
+                    "unrooted": len(claims) - rooted_claims,
+                    "status": "complete" if len(claims) == rooted_claims else "incomplete",
+                    "limitation": (
+                        None
+                        if len(claims) == rooted_claims
+                        else "Unrooted editorial claims are reported as limitations and are not "
+                        "represented as SSOT-verified claims."
+                    ),
+                },
+                "ssot_registries": [
+                    {
+                        "repository_id": repository["id"],
+                        "repository": f"{repository['owner']}/{repository['name']}",
+                        "governed": repository["ssot_governed"],
+                        "registry_url": repository.get("ssot_registry_url"),
+                        "schema_version": repository.get("ssot_schema_version"),
+                        "observed_at": repository.get("ssot_observed_at"),
+                        "summary": repository.get("ssot_summary") or {},
+                    }
+                    for repository in repositories
+                    if repository.get("ssot_registry_url")
+                ],
             },
         },
     )

@@ -8482,7 +8482,79 @@
           "watchers": 0
         },
         "route": "/catalog/repositories/groupsum/mdwrk",
-        "source_url": "https://github.com/groupsum/mdwrk"
+        "source_url": "https://github.com/groupsum/mdwrk",
+        "ssot_governance": {
+          "counts": {
+            "adrs": 76,
+            "boundaries": 11,
+            "claims": 59,
+            "evidence": 62,
+            "features": 107,
+            "issues": 1,
+            "profiles": 5,
+            "releases": 3,
+            "specs": 88,
+            "tests": 62
+          },
+          "coverage": {
+            "claims_with_evidence": 57,
+            "claims_with_tests": 57,
+            "claims_without_evidence": 2,
+            "evidence_linked_to_claims": 62,
+            "evidence_without_claims": 0
+          },
+          "evidence_type": "ssot.registry",
+          "governed": true,
+          "observed_at": "2026-08-03T19:58:16Z",
+          "present": true,
+          "raw_url": "https://raw.githubusercontent.com/groupsum/mdwrk/master/.ssot/registry.json",
+          "registry_url": "https://github.com/groupsum/mdwrk/blob/master/.ssot/registry.json",
+          "schema_version": "0.6.0",
+          "source_sha256": "28a63b438966940df0056577434232d5cc4bca9f830f7d5b866d9c99983ff005",
+          "status_counts": {
+            "adrs": {
+              "accepted": 29,
+              "draft": 47
+            },
+            "boundaries": {
+              "active": 3,
+              "draft": 1,
+              "frozen": 7
+            },
+            "claims": {
+              "certified": 42,
+              "evidenced": 10,
+              "published": 5,
+              "retired": 2
+            },
+            "evidence": {
+              "passed": 62
+            },
+            "features": {
+              "absent": 9,
+              "implemented": 88,
+              "partial": 10
+            },
+            "issues": {
+              "closed": 1
+            },
+            "profiles": {
+              "active": 5
+            },
+            "releases": {
+              "draft": 1,
+              "published": 2
+            },
+            "specs": {
+              "accepted": 7,
+              "draft": 81
+            },
+            "tests": {
+              "passing": 62
+            }
+          },
+          "valid": true
+        }
       },
       {
         "archived": false,
@@ -8511,7 +8583,83 @@
           "watchers": 0
         },
         "route": "/catalog/repositories/groupsum/mdwrk-pages",
-        "source_url": "https://github.com/groupsum/mdwrk-pages"
+        "source_url": "https://github.com/groupsum/mdwrk-pages",
+        "ssot_governance": {
+          "counts": {
+            "adrs": 82,
+            "boundaries": 24,
+            "claims": 126,
+            "evidence": 83,
+            "features": 576,
+            "issues": 3,
+            "profiles": 1,
+            "releases": 2,
+            "specs": 92,
+            "tests": 188
+          },
+          "coverage": {
+            "claims_with_evidence": 126,
+            "claims_with_tests": 126,
+            "claims_without_evidence": 0,
+            "evidence_linked_to_claims": 83,
+            "evidence_without_claims": 0
+          },
+          "evidence_type": "ssot.registry",
+          "governed": true,
+          "observed_at": "2026-08-03T19:58:17Z",
+          "present": true,
+          "raw_url": "https://raw.githubusercontent.com/groupsum/mdwrk-pages/master/.ssot/registry.json",
+          "registry_url": "https://github.com/groupsum/mdwrk-pages/blob/master/.ssot/registry.json",
+          "schema_version": "0.8.0",
+          "source_sha256": "915708403c278ab50f822284e5ec3027208d36f3d81014dcaf6434d93b110ba8",
+          "status_counts": {
+            "adrs": {
+              "accepted": 18,
+              "draft": 64
+            },
+            "boundaries": {
+              "active": 10,
+              "draft": 4,
+              "frozen": 10
+            },
+            "claims": {
+              "declared": 12,
+              "evidenced": 70,
+              "implemented": 8,
+              "proposed": 18,
+              "published": 18
+            },
+            "evidence": {
+              "passed": 81,
+              "planned": 2
+            },
+            "features": {
+              "absent": 147,
+              "implemented": 426,
+              "partial": 3
+            },
+            "issues": {
+              "closed": 2,
+              "open": 1
+            },
+            "profiles": {
+              "active": 1
+            },
+            "releases": {
+              "draft": 1,
+              "published": 1
+            },
+            "specs": {
+              "accepted": 12,
+              "draft": 80
+            },
+            "tests": {
+              "passing": 165,
+              "planned": 23
+            }
+          },
+          "valid": true
+        }
       },
       {
         "archived": false,
@@ -8540,10 +8688,21 @@
           "watchers": 0
         },
         "route": "/catalog/repositories/groupsum/mdwrkcom-content-pack",
-        "source_url": "https://github.com/groupsum/mdwrkcom-content-pack"
+        "source_url": "https://github.com/groupsum/mdwrkcom-content-pack",
+        "ssot_governance": {
+          "counts": {},
+          "coverage": {},
+          "governed": false,
+          "observation_status": "not_found",
+          "observed_at": "2026-08-03T19:58:16Z",
+          "present": false,
+          "registry_url": null,
+          "status_counts": {},
+          "valid": false
+        }
       }
     ],
-    "claim_boundary": "Repository, release, deployment, and live-service states are reported separately.",
+    "claim_boundary": "SSOT artifact counts and coverage are registry-reported observations; they do not by themselves prove that every public product claim is supported.",
     "commit_activity": [
       {
         "count": 0,
@@ -8679,6 +8838,11 @@
     "description_source": "github-repository",
     "display_name": "mdwrk",
     "evidence": [
+      {
+        "kind": "ssot-registry",
+        "observed_at": "2026-08-03T19:58:16Z",
+        "url": "https://github.com/groupsum/mdwrk/blob/master/.ssot/registry.json"
+      },
       {
         "kind": "source",
         "observed_at": "2026-08-03T17:22:37Z",
@@ -9491,6 +9655,78 @@
     },
     "reviewed": false,
     "route": "/catalog/repositories/groupsum/mdwrk",
+    "ssot_governance": {
+      "counts": {
+        "adrs": 76,
+        "boundaries": 11,
+        "claims": 59,
+        "evidence": 62,
+        "features": 107,
+        "issues": 1,
+        "profiles": 5,
+        "releases": 3,
+        "specs": 88,
+        "tests": 62
+      },
+      "coverage": {
+        "claims_with_evidence": 57,
+        "claims_with_tests": 57,
+        "claims_without_evidence": 2,
+        "evidence_linked_to_claims": 62,
+        "evidence_without_claims": 0
+      },
+      "evidence_type": "ssot.registry",
+      "governed": true,
+      "observed_at": "2026-08-03T19:58:16Z",
+      "present": true,
+      "raw_url": "https://raw.githubusercontent.com/groupsum/mdwrk/master/.ssot/registry.json",
+      "registry_url": "https://github.com/groupsum/mdwrk/blob/master/.ssot/registry.json",
+      "schema_version": "0.6.0",
+      "source_sha256": "28a63b438966940df0056577434232d5cc4bca9f830f7d5b866d9c99983ff005",
+      "status_counts": {
+        "adrs": {
+          "accepted": 29,
+          "draft": 47
+        },
+        "boundaries": {
+          "active": 3,
+          "draft": 1,
+          "frozen": 7
+        },
+        "claims": {
+          "certified": 42,
+          "evidenced": 10,
+          "published": 5,
+          "retired": 2
+        },
+        "evidence": {
+          "passed": 62
+        },
+        "features": {
+          "absent": 9,
+          "implemented": 88,
+          "partial": 10
+        },
+        "issues": {
+          "closed": 1
+        },
+        "profiles": {
+          "active": 5
+        },
+        "releases": {
+          "draft": 1,
+          "published": 2
+        },
+        "specs": {
+          "accepted": 7,
+          "draft": 81
+        },
+        "tests": {
+          "passing": 62
+        }
+      },
+      "valid": true
+    },
     "technologies": [
       "CSS",
       "HTML",

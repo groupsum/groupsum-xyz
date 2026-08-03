@@ -133,7 +133,9 @@ class ApiClient:
                 return None, {}, Observation(url, "error", ISO_NOW(), str(exc), url)
         return None, {}, Observation(url, "error", ISO_NOW(), "retry budget exhausted", url)
 
-    def request_text(self, url: str, *, use_cache: bool = True) -> tuple[str | None, Observation]:
+    def request_text(
+        self, url: str, *, use_cache: bool = True, allow_404: bool = False
+    ) -> tuple[str | None, Observation]:
         cached = self._read_cache(url) if use_cache else None
         if cached and isinstance(cached[0], str):
             return cached[0], Observation(url, "cached", ISO_NOW(), url=url)
@@ -145,6 +147,10 @@ class ApiClient:
                 if use_cache:
                     self._write_cache(url, body, headers)
                 return body, Observation(url, "observed", ISO_NOW(), url=url)
+        except urllib.error.HTTPError as exc:
+            if exc.code == 404 and allow_404:
+                return None, Observation(url, "not_found", ISO_NOW(), url=url)
+            return None, Observation(url, "error", ISO_NOW(), f"HTTP {exc.code}", url)
         except (urllib.error.URLError, TimeoutError, OSError) as exc:
             return None, Observation(url, "error", ISO_NOW(), str(exc), url)
 
@@ -254,6 +260,97 @@ def normalize_license_expression(value: Any) -> str | None:
     if not candidate or len(candidate) > 200 or "\n" in candidate or "\r" in candidate:
         return None
     return candidate
+
+
+SSOT_ENTITY_KEYS = (
+    "adrs",
+    "specs",
+    "features",
+    "tests",
+    "claims",
+    "evidence",
+    "issues",
+    "boundaries",
+    "profiles",
+    "releases",
+)
+
+
+def summarize_ssot_registry(
+    repo: dict[str, Any], registry: Any, observation: Observation, source_text: str
+) -> dict[str, Any]:
+    """Report only registry-authored governance facts with durable provenance."""
+    registry_url = observation.url or ""
+    source_url = (
+        f"{repo.get('html_url') or repo.get('url')}/blob/"
+        f"{repo.get('default_branch') or 'master'}/.ssot/registry.json"
+    )
+    schema_version = registry.get("schema_version") if isinstance(registry, dict) else None
+    valid = isinstance(registry, dict) and isinstance(schema_version, (str, int, float))
+    result: dict[str, Any] = {
+        "present": True,
+        "governed": valid,
+        "valid": valid,
+        "registry_url": source_url,
+        "raw_url": registry_url,
+        "observed_at": observation.observed_at,
+        "source_sha256": hashlib.sha256(source_text.encode()).hexdigest(),
+        "schema_version": str(schema_version) if schema_version is not None else None,
+        "counts": {},
+        "status_counts": {},
+        "coverage": {},
+        "evidence_type": "ssot.registry",
+    }
+    if not valid:
+        result["limitation"] = "Registry file was observed but was not a recognized SSOT registry document."
+        return result
+    for key in SSOT_ENTITY_KEYS:
+        values = registry.get(key)
+        rows = values if isinstance(values, list) else []
+        result["counts"][key] = len(rows)
+        statuses: dict[str, int] = {}
+        for item in rows:
+            if not isinstance(item, dict):
+                continue
+            status = str(item.get("status") or item.get("implementation_status") or "unreported")
+            statuses[status] = statuses.get(status, 0) + 1
+        result["status_counts"][key] = dict(sorted(statuses.items()))
+    claims = [item for item in registry.get("claims", []) if isinstance(item, dict)]
+    evidence = [item for item in registry.get("evidence", []) if isinstance(item, dict)]
+    result["coverage"] = {
+        "claims_with_evidence": sum(bool(item.get("evidence_ids")) for item in claims),
+        "claims_without_evidence": sum(not item.get("evidence_ids") for item in claims),
+        "claims_with_tests": sum(bool(item.get("test_ids")) for item in claims),
+        "evidence_linked_to_claims": sum(bool(item.get("claim_ids")) for item in evidence),
+        "evidence_without_claims": sum(not item.get("claim_ids") for item in evidence),
+    }
+    return result
+
+
+def collect_ssot_governance(
+    client: ApiClient, repo: dict[str, Any]
+) -> tuple[dict[str, Any], Observation]:
+    full_name = str(repo["full_name"])
+    branch = urllib.parse.quote(str(repo.get("default_branch") or "master"), safe="")
+    raw_url = f"https://raw.githubusercontent.com/{full_name}/{branch}/.ssot/registry.json"
+    text, observation = client.request_text(raw_url, allow_404=True)
+    if text is None:
+        return {
+            "present": False,
+            "governed": False,
+            "valid": False,
+            "registry_url": None,
+            "observed_at": observation.observed_at,
+            "observation_status": observation.status,
+            "counts": {},
+            "status_counts": {},
+            "coverage": {},
+        }, observation
+    try:
+        registry = json.loads(text)
+    except json.JSONDecodeError:
+        registry = None
+    return summarize_ssot_registry(repo, registry, observation, text), observation
 
 
 def repository_legal_evidence(
@@ -541,6 +638,8 @@ def collect_repository(client: ApiClient, repo: dict[str, Any], config: dict[str
         int(config.get("max_related_resources_per_repository", 200)),
     )
     legal_evidence = repository_legal_evidence(repo, all_paths)
+    ssot_governance, ssot_observation = collect_ssot_governance(client, repo)
+    observations.append(ssot_observation)
     manifests: list[dict[str, Any]] = []
     packages: list[dict[str, Any]] = []
     dependencies: list[dict[str, str]] = []
@@ -601,6 +700,7 @@ def collect_repository(client: ApiClient, repo: dict[str, Any], config: dict[str
         "deployments": deployments, "environments": environments,
         "related_resources": related_resources,
         "legal_evidence": legal_evidence,
+        "ssot_governance": ssot_governance,
         "tree": {"truncated": bool((tree or {}).get("truncated")) if isinstance(tree, dict) else None, "blob_count": len(all_paths), "manifest_count": len(manifest_paths), "manifest_limit_reached": len([path for path in all_paths if Path(path).name in manifest_names]) > manifest_limit},
         "observations": [item.as_dict() for item in observations],
     }
@@ -768,6 +868,11 @@ def main() -> int:
     parser.add_argument("--cache-dir", type=Path, default=ROOT / ".catalog-cache")
     parser.add_argument("--refresh", action="store_true")
     parser.add_argument(
+        "--ssot-only",
+        action="store_true",
+        help="refresh SSOT registry evidence on the existing catalog without recollecting registries",
+    )
+    parser.add_argument(
         "--recover-errors",
         action="store_true",
         help="retain explicitly failed repositories from the checked-in complete snapshot",
@@ -872,6 +977,44 @@ def main() -> int:
     if args.owners:
         owners = [item.strip() for item in args.owners.split(",") if item.strip()]
     client = ApiClient(config, args.cache_dir, refresh=args.refresh)
+    if args.ssot_only:
+        if not previous_catalogs:
+            raise SystemExit("SSOT-only refresh requires an existing catalog output")
+        current = previous_catalogs[0]
+        repositories = current.get("repositories", [])
+        observations: list[Observation] = []
+        workers = int(config.get("request_concurrency", 8))
+        with concurrent.futures.ThreadPoolExecutor(max_workers=workers) as executor:
+            futures = {
+                executor.submit(collect_ssot_governance, client, repository): repository
+                for repository in repositories
+            }
+            for index, future in enumerate(concurrent.futures.as_completed(futures), 1):
+                repository = futures[future]
+                governance, observation = future.result()
+                repository["ssot_governance"] = governance
+                observations.append(observation)
+                print(
+                    f"[{index}/{len(futures)}] SSOT {repository['full_name']}: "
+                    f"{observation.status}",
+                    file=sys.stderr,
+                )
+        ssot_sources = {item.source for item in observations}
+        current["observations"] = [
+            item for item in current.get("observations", [])
+            if item.get("source") not in ssot_sources
+        ] + [item.as_dict() for item in observations]
+        current["ssot_observed_at"] = ISO_NOW()
+        summary = summarize(current)
+        args.output.write_text(json.dumps(current, indent=2, sort_keys=True) + "\n", encoding="utf-8")
+        args.summary.write_text(json.dumps(summary, indent=2, sort_keys=True) + "\n", encoding="utf-8")
+        args.typescript.write_text(typescript_summary(summary), encoding="utf-8")
+        governed = sum(
+            bool(item.get("ssot_governance", {}).get("governed"))
+            for item in repositories
+        )
+        print(json.dumps({"ssot_governed_repositories": governed, **summary}, indent=2))
+        return 0
     observed_at = ISO_NOW()
     observations: list[Observation] = []
     raw_repos: list[dict[str, Any]] = []

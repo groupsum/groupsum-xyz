@@ -69,6 +69,27 @@ def import_legal_evidence(
         )
 
 
+def ensure_repository_ssot_columns(connection: Connection) -> None:
+    definitions = {
+        "ssot_governed": "BOOLEAN NOT NULL DEFAULT FALSE",
+        "ssot_registry_url": "TEXT",
+        "ssot_registry_sha256": "VARCHAR(64)",
+        "ssot_schema_version": "VARCHAR(40)",
+        "ssot_summary": "JSONB" if connection.postgres else "JSON",
+        "ssot_observed_at": "TIMESTAMP WITH TIME ZONE" if connection.postgres else "TEXT",
+    }
+    if connection.postgres:
+        for name, definition in definitions.items():
+            connection.execute(
+                f"ALTER TABLE repositories ADD COLUMN IF NOT EXISTS {name} {definition}"
+            )
+        return
+    present = {row[1] for row in connection.execute("PRAGMA table_info(repositories)")}
+    for name, definition in definitions.items():
+        if name not in present:
+            connection.execute(f"ALTER TABLE repositories ADD COLUMN {name} {definition}")
+
+
 def import_catalog(
     database_path: str | Path,
     repo_root: Path,
@@ -90,6 +111,7 @@ def import_catalog(
 
     analytics_path = analytics_path or default_analytics_path(database_path)
     with connect(database_path) as connection, connect_analytics(analytics_path) as analytics:
+        ensure_repository_ssot_columns(connection)
         # Release pages inherit legal evidence from their package or repository parent.
         # Remove legacy duplicated rows so refreshes converge to the compact model.
         connection.execute(
@@ -440,6 +462,7 @@ def import_catalog(
             repository_id = repository["id"]
             repository_ids[full_name] = repository_id
             owner, name = full_name.split("/", 1)
+            ssot = repository.get("ssot_governance") or {}
             upsert(
                 connection,
                 "repositories",
@@ -462,6 +485,12 @@ def import_catalog(
                         ),
                         None,
                     ),
+                    "ssot_governed": bool(ssot.get("governed")),
+                    "ssot_registry_url": ssot.get("registry_url"),
+                    "ssot_registry_sha256": ssot.get("source_sha256"),
+                    "ssot_schema_version": ssot.get("schema_version"),
+                    "ssot_summary": json.dumps(ssot, sort_keys=True),
+                    "ssot_observed_at": ssot.get("observed_at"),
                     "observed_at": repository.get("observed_at") or generated_at,
                 },
             )
@@ -891,6 +920,7 @@ def import_catalog(
                 )
                 repository_id = repository.get("id") or stable_id("repository", full_name)
                 owner, name = full_name.split("/", 1)
+                ssot = repository.get("ssot_governance") or {}
                 upsert(
                     connection,
                     "repositories",
@@ -905,6 +935,12 @@ def import_catalog(
                         "default_branch": repository.get("default_branch"),
                         "is_archived": bool(repository.get("archived", False)),
                         "is_fork": bool(repository.get("fork", False)),
+                        "ssot_governed": bool(ssot.get("governed")),
+                        "ssot_registry_url": ssot.get("registry_url"),
+                        "ssot_registry_sha256": ssot.get("source_sha256"),
+                        "ssot_schema_version": ssot.get("schema_version"),
+                        "ssot_summary": json.dumps(ssot, sort_keys=True),
+                        "ssot_observed_at": ssot.get("observed_at"),
                         "observed_at": bundle["generated_at"],
                     },
                 )

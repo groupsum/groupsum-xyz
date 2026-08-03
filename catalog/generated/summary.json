@@ -12,8 +12,8 @@
   "observations_by_status": {
     "cached": 3747,
     "error": 316,
-    "not_found": 527,
-    "observed": 2688
+    "not_found": 565,
+    "observed": 2718
   },
   "observations_with_errors": 316,
   "owners": 4,

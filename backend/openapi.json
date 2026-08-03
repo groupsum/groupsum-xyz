@@ -5720,6 +5720,73 @@
             "title": "Provider",
             "type": "string"
           },
+          "ssot_governed": {
+            "default": null,
+            "title": "Ssot Governed",
+            "type": "boolean"
+          },
+          "ssot_observed_at": {
+            "anyOf": [
+              {
+                "format": "date-time",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Ssot Observed At"
+          },
+          "ssot_registry_sha256": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Ssot Registry Sha256"
+          },
+          "ssot_registry_url": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Ssot Registry Url"
+          },
+          "ssot_schema_version": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Ssot Schema Version"
+          },
+          "ssot_summary": {
+            "anyOf": [
+              {
+                "additionalProperties": true,
+                "type": "object"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Ssot Summary"
+          },
           "url": {
             "title": "Url",
             "type": "string"
@@ -5824,6 +5891,73 @@
           "provider": {
             "title": "Provider",
             "type": "string"
+          },
+          "ssot_governed": {
+            "default": null,
+            "title": "Ssot Governed",
+            "type": "boolean"
+          },
+          "ssot_observed_at": {
+            "anyOf": [
+              {
+                "format": "date-time",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Ssot Observed At"
+          },
+          "ssot_registry_sha256": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Ssot Registry Sha256"
+          },
+          "ssot_registry_url": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Ssot Registry Url"
+          },
+          "ssot_schema_version": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Ssot Schema Version"
+          },
+          "ssot_summary": {
+            "anyOf": [
+              {
+                "additionalProperties": true,
+                "type": "object"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Ssot Summary"
           },
           "url": {
             "title": "Url",
@@ -5930,6 +6064,73 @@
             "title": "Provider",
             "type": "string"
           },
+          "ssot_governed": {
+            "default": null,
+            "title": "Ssot Governed",
+            "type": "boolean"
+          },
+          "ssot_observed_at": {
+            "anyOf": [
+              {
+                "format": "date-time",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Ssot Observed At"
+          },
+          "ssot_registry_sha256": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Ssot Registry Sha256"
+          },
+          "ssot_registry_url": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Ssot Registry Url"
+          },
+          "ssot_schema_version": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Ssot Schema Version"
+          },
+          "ssot_summary": {
+            "anyOf": [
+              {
+                "additionalProperties": true,
+                "type": "object"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Ssot Summary"
+          },
           "url": {
             "title": "Url",
             "type": "string"
@@ -6034,6 +6235,73 @@
           "provider": {
             "title": "Provider",
             "type": "string"
+          },
+          "ssot_governed": {
+            "default": null,
+            "title": "Ssot Governed",
+            "type": "boolean"
+          },
+          "ssot_observed_at": {
+            "anyOf": [
+              {
+                "format": "date-time",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Ssot Observed At"
+          },
+          "ssot_registry_sha256": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Ssot Registry Sha256"
+          },
+          "ssot_registry_url": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Ssot Registry Url"
+          },
+          "ssot_schema_version": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Ssot Schema Version"
+          },
+          "ssot_summary": {
+            "anyOf": [
+              {
+                "additionalProperties": true,
+                "type": "object"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Ssot Summary"
           },
           "url": {
             "title": "Url",
@@ -13795,6 +14063,54 @@
           },
           {
             "in": "query",
+            "name": "ssot_governed",
+            "required": false,
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
+            "in": "query",
+            "name": "ssot_registry_url",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "ssot_registry_sha256",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "ssot_schema_version",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "ssot_summary",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "ssot_observed_at",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
             "name": "observed_at",
             "required": false,
             "schema": {
@@ -14010,6 +14326,54 @@
           {
             "in": "query",
             "name": "license_expression",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "ssot_governed",
+            "required": false,
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
+            "in": "query",
+            "name": "ssot_registry_url",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "ssot_registry_sha256",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "ssot_schema_version",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "ssot_summary",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "ssot_observed_at",
             "required": false,
             "schema": {
               "type": "string"

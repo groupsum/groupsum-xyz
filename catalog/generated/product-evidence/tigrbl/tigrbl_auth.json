@@ -81036,7 +81036,7 @@
   ],
   "repository": {
     "archived": false,
-    "claim_boundary": "Repository, release, deployment, and live-service states are reported separately.",
+    "claim_boundary": "SSOT artifact counts and coverage are registry-reported observations; they do not by themselves prove that every public product claim is supported.",
     "commit_activity": [
       {
         "count": 0,
@@ -81177,6 +81177,11 @@
     "description_source": "github-repository",
     "display_name": "tigrbl_auth",
     "evidence": [
+      {
+        "kind": "ssot-registry",
+        "observed_at": "2026-08-03T19:58:20Z",
+        "url": "https://github.com/tigrbl/tigrbl_auth/blob/master/.ssot/registry.json"
+      },
       {
         "kind": "source",
         "observed_at": "2026-08-03T17:22:38Z",
@@ -84032,6 +84037,84 @@
     },
     "reviewed": false,
     "route": "/catalog/repositories/tigrbl/tigrbl_auth",
+    "ssot_governance": {
+      "counts": {
+        "adrs": 159,
+        "boundaries": 31,
+        "claims": 1789,
+        "evidence": 563,
+        "features": 1169,
+        "issues": 35,
+        "profiles": 6,
+        "releases": 11,
+        "specs": 252,
+        "tests": 760
+      },
+      "coverage": {
+        "claims_with_evidence": 1789,
+        "claims_with_tests": 1789,
+        "claims_without_evidence": 0,
+        "evidence_linked_to_claims": 563,
+        "evidence_without_claims": 0
+      },
+      "evidence_type": "ssot.registry",
+      "governed": true,
+      "observed_at": "2026-08-03T19:58:20Z",
+      "present": true,
+      "raw_url": "https://raw.githubusercontent.com/tigrbl/tigrbl_auth/master/.ssot/registry.json",
+      "registry_url": "https://github.com/tigrbl/tigrbl_auth/blob/master/.ssot/registry.json",
+      "schema_version": "0.4.0",
+      "source_sha256": "a800e6b46746f3c1db9b6a929f364e6a787f10bfcd3768fd3d33a418a1eff916",
+      "status_counts": {
+        "adrs": {
+          "accepted": 112,
+          "draft": 44,
+          "superseded": 3
+        },
+        "boundaries": {
+          "active": 15,
+          "frozen": 16
+        },
+        "claims": {
+          "asserted": 262,
+          "certified": 756,
+          "evidenced": 695,
+          "published": 26,
+          "retired": 50
+        },
+        "evidence": {
+          "collected": 259,
+          "passed": 304
+        },
+        "features": {
+          "absent": 24,
+          "implemented": 831,
+          "partial": 314
+        },
+        "issues": {
+          "closed": 9,
+          "open": 25,
+          "resolved": 1
+        },
+        "profiles": {
+          "active": 6
+        },
+        "releases": {
+          "draft": 1,
+          "published": 10
+        },
+        "specs": {
+          "accepted": 107,
+          "draft": 142,
+          "superseded": 3
+        },
+        "tests": {
+          "passing": 498,
+          "planned": 262
+        }
+      },
+      "valid": true
+    },
     "technologies": [
       "CSS",
       "Dockerfile",

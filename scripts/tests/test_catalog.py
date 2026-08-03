@@ -8,11 +8,13 @@ ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ROOT / "scripts"))
 
 from catalog_collect import (
+    Observation,
     discover_related_resources,
     filter_repositories,
     manifest_package,
     parse_next_link,
     relation_rows,
+    summarize_ssot_registry,
 )
 from catalog_render import compile_catalog, related_resource_url
 from catalog_validate import validate
@@ -54,6 +56,54 @@ class CatalogCollectorTests(unittest.TestCase):
         repositories = [self.repo, {**self.repo, "name": ".github", "full_name": "groupsum/.github"}]
         filtered = filter_repositories(repositories, {"excluded_repository_names": [".github"]})
         self.assertEqual([item["full_name"] for item in filtered], ["groupsum/example-com"])
+
+    def test_ssot_registry_summary_is_source_rooted(self):
+        from catalog_collect import Observation
+
+        registry = {
+            "schema_version": "0.8.0",
+            "adrs": [{"id": "adr:1", "status": "accepted"}],
+            "specs": [],
+            "features": [{"id": "feature:1", "implementation_status": "implemented"}],
+            "tests": [{"id": "test:1", "status": "active"}],
+            "claims": [
+                {"id": "claim:1", "status": "supported", "evidence_ids": ["evidence:1"], "test_ids": ["test:1"]},
+                {"id": "claim:2", "status": "planned", "evidence_ids": [], "test_ids": []},
+            ],
+            "evidence": [{"id": "evidence:1", "status": "current", "claim_ids": ["claim:1"]}],
+            "issues": [], "boundaries": [], "profiles": [], "releases": [],
+        }
+        observation = Observation(
+            "https://raw.githubusercontent.com/groupsum/example-com/master/.ssot/registry.json",
+            "observed",
+            "2026-08-03T00:00:00Z",
+            url="https://raw.githubusercontent.com/groupsum/example-com/master/.ssot/registry.json",
+        )
+        summary = summarize_ssot_registry(self.repo, registry, observation, json.dumps(registry))
+        self.assertTrue(summary["governed"])
+        self.assertEqual(summary["counts"]["claims"], 2)
+        self.assertEqual(summary["coverage"]["claims_without_evidence"], 1)
+        self.assertEqual(summary["status_counts"]["features"], {"implemented": 1})
+        self.assertEqual(
+            summary["registry_url"],
+            "https://github.com/groupsum/example-com/blob/master/.ssot/registry.json",
+        )
+
+    def test_numeric_ssot_schema_version_is_valid(self):
+        observation = Observation(
+            source="ssot.registry",
+            url="https://raw.githubusercontent.com/groupsum/example-com/master/.ssot/registry.json",
+            observed_at="2026-08-03T00:00:00Z",
+            status="observed",
+        )
+        summary = summarize_ssot_registry(
+            self.repo,
+            {"schema_version": 9, "claims": []},
+            observation,
+            '{"schema_version":9,"claims":[]}',
+        )
+        self.assertTrue(summary["governed"])
+        self.assertEqual(summary["schema_version"], "9")
 
     def test_dependency_scope_and_registry_dependents_are_preserved(self):
         relations = relation_rows([], [{

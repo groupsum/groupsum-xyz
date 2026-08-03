@@ -142,7 +142,7 @@
   ],
   "repository": {
     "archived": false,
-    "claim_boundary": "Repository, release, deployment, and live-service states are reported separately.",
+    "claim_boundary": "SSOT artifact counts and coverage are registry-reported observations; they do not by themselves prove that every public product claim is supported.",
     "commit_activity": [
       {
         "count": 0,
@@ -279,6 +279,11 @@
     "display_name": "attribution-campaign-context",
     "evidence": [
       {
+        "kind": "ssot-registry",
+        "observed_at": "2026-08-03T19:58:17Z",
+        "url": "https://github.com/tigrbl/attribution-campaign-context/blob/master/.ssot/registry.json"
+      },
+      {
         "kind": "source",
         "observed_at": "2026-08-03T17:22:38Z",
         "url": "https://github.com/tigrbl/attribution-campaign-context"
@@ -381,6 +386,66 @@
     },
     "reviewed": false,
     "route": "/catalog/repositories/tigrbl/attribution-campaign-context",
+    "ssot_governance": {
+      "counts": {
+        "adrs": 53,
+        "boundaries": 1,
+        "claims": 23,
+        "evidence": 4,
+        "features": 11,
+        "issues": 0,
+        "profiles": 0,
+        "releases": 1,
+        "specs": 71,
+        "tests": 19
+      },
+      "coverage": {
+        "claims_with_evidence": 23,
+        "claims_with_tests": 23,
+        "claims_without_evidence": 0,
+        "evidence_linked_to_claims": 4,
+        "evidence_without_claims": 0
+      },
+      "evidence_type": "ssot.registry",
+      "governed": true,
+      "observed_at": "2026-08-03T19:58:17Z",
+      "present": true,
+      "raw_url": "https://raw.githubusercontent.com/tigrbl/attribution-campaign-context/master/.ssot/registry.json",
+      "registry_url": "https://github.com/tigrbl/attribution-campaign-context/blob/master/.ssot/registry.json",
+      "schema_version": "0.7.0",
+      "source_sha256": "25472f6ea17e5e787569c018cb95457639233edad187a84bd0d9e5cdbd898a5f",
+      "status_counts": {
+        "adrs": {
+          "accepted": 24,
+          "draft": 29
+        },
+        "boundaries": {
+          "frozen": 1
+        },
+        "claims": {
+          "published": 23
+        },
+        "evidence": {
+          "passed": 4
+        },
+        "features": {
+          "implemented": 11
+        },
+        "issues": {},
+        "profiles": {},
+        "releases": {
+          "published": 1
+        },
+        "specs": {
+          "accepted": 37,
+          "draft": 34
+        },
+        "tests": {
+          "passing": 19
+        }
+      },
+      "valid": true
+    },
     "technologies": [
       "Python"
     ],

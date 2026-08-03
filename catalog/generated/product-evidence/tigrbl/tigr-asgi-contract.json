@@ -2065,7 +2065,7 @@
   ],
   "repository": {
     "archived": false,
-    "claim_boundary": "Repository, release, deployment, and live-service states are reported separately.",
+    "claim_boundary": "SSOT artifact counts and coverage are registry-reported observations; they do not by themselves prove that every public product claim is supported.",
     "commit_activity": [
       {
         "count": 0,
@@ -2206,6 +2206,11 @@
     "description_source": "github-repository",
     "display_name": "tigr-asgi-contract",
     "evidence": [
+      {
+        "kind": "ssot-registry",
+        "observed_at": "2026-08-03T19:58:18Z",
+        "url": "https://github.com/tigrbl/tigr-asgi-contract/blob/master/.ssot/registry.json"
+      },
       {
         "kind": "source",
         "observed_at": "2026-08-03T17:22:38Z",
@@ -3083,6 +3088,73 @@
     },
     "reviewed": false,
     "route": "/catalog/repositories/tigrbl/tigr-asgi-contract",
+    "ssot_governance": {
+      "counts": {
+        "adrs": 78,
+        "boundaries": 7,
+        "claims": 255,
+        "evidence": 200,
+        "features": 1113,
+        "issues": 6,
+        "profiles": 0,
+        "releases": 7,
+        "specs": 93,
+        "tests": 221
+      },
+      "coverage": {
+        "claims_with_evidence": 255,
+        "claims_with_tests": 255,
+        "claims_without_evidence": 0,
+        "evidence_linked_to_claims": 200,
+        "evidence_without_claims": 0
+      },
+      "evidence_type": "ssot.registry",
+      "governed": true,
+      "observed_at": "2026-08-03T19:58:18Z",
+      "present": true,
+      "raw_url": "https://raw.githubusercontent.com/tigrbl/tigr-asgi-contract/master/.ssot/registry.json",
+      "registry_url": "https://github.com/tigrbl/tigr-asgi-contract/blob/master/.ssot/registry.json",
+      "schema_version": "0.8.0",
+      "source_sha256": "b3e56d188bf7b849860c2ee36ef520ab03ee016dc6e25f47d224b40bf22f8bdf",
+      "status_counts": {
+        "adrs": {
+          "accepted": 48,
+          "draft": 30
+        },
+        "boundaries": {
+          "frozen": 7
+        },
+        "claims": {
+          "asserted": 99,
+          "certified": 2,
+          "evidenced": 30,
+          "published": 124
+        },
+        "evidence": {
+          "passed": 200
+        },
+        "features": {
+          "implemented": 1025,
+          "partial": 88
+        },
+        "issues": {
+          "closed": 1,
+          "open": 5
+        },
+        "profiles": {},
+        "releases": {
+          "published": 7
+        },
+        "specs": {
+          "accepted": 58,
+          "draft": 35
+        },
+        "tests": {
+          "passing": 221
+        }
+      },
+      "valid": true
+    },
     "technologies": [
       "JavaScript",
       "Python",

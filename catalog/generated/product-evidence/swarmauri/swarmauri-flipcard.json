@@ -129,7 +129,7 @@
   ],
   "repository": {
     "archived": false,
-    "claim_boundary": "Repository, release, deployment, and live-service states are reported separately.",
+    "claim_boundary": "No canonical .ssot/registry.json was observed; repository, release, deployment, and live-service states are reported separately.",
     "commit_activity": [
       {
         "count": 0,
@@ -342,6 +342,17 @@
     },
     "reviewed": false,
     "route": "/catalog/repositories/swarmauri/swarmauri-flipcard",
+    "ssot_governance": {
+      "counts": {},
+      "coverage": {},
+      "governed": false,
+      "observation_status": "not_found",
+      "observed_at": "2026-08-03T19:58:17Z",
+      "present": false,
+      "registry_url": null,
+      "status_counts": {},
+      "valid": false
+    },
     "technologies": [
       "CSS",
       "HTML",

@@ -14,8 +14,8 @@ export const catalogSummary = {
   "observations_by_status": {
     "cached": 3747,
     "error": 316,
-    "not_found": 527,
-    "observed": 2688
+    "not_found": 565,
+    "observed": 2718
   },
   "observations_with_errors": 316,
   "owners": 4,
@@ -1618,11 +1618,11 @@ export const catalogDatasetManifest = {
       "sha256": "5a6a683b893501b66c519535357024fb617943ee13b2cb4b3ee4a886f4ec7298"
     },
     {
-      "bytes": 6289151,
+      "bytes": 6357731,
       "dataset": "repositories",
       "path": "repositories.json",
       "records": 68,
-      "sha256": "00ba2903894ddef2dfc840f6173054abd6e59e85cddb4e5ebeb244605cf89dd0"
+      "sha256": "9cd453e9d6fbb3a5c718912d3b9b639857444f061559b47e9615d5bffed02a45"
     },
     {
       "bytes": 872177,

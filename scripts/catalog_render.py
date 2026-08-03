@@ -376,6 +376,10 @@ def compile_catalog(catalog: dict[str, Any], editorial: dict[str, Any]) -> dict[
         latest_release = next(iter(repo.get("github_releases") or []), None)
         latest_deployment = next(iter(repo.get("deployments") or []), None)
         latest_status = next(iter((latest_deployment or {}).get("statuses") or []), None)
+        ssot_governance = repo.get("ssot_governance") or {
+            "present": False, "governed": False, "valid": False, "counts": {},
+            "status_counts": {}, "coverage": {},
+        }
         related_resources = []
         for item in repo.get("related_resources") or []:
             resource_url = related_resource_url(item)
@@ -448,6 +452,7 @@ def compile_catalog(catalog: dict[str, Any], editorial: dict[str, Any]) -> dict[
             "template": bool(repo.get("template")),
             "default_branch": repo.get("default_branch"),
             "license": repo.get("license"),
+            "ssot_governance": ssot_governance,
             "legal_evidence": [
                 {
                     "kind": item.get("kind"),
@@ -504,8 +509,25 @@ def compile_catalog(catalog: dict[str, Any], editorial: dict[str, Any]) -> dict[
                 "log_url": (latest_status or {}).get("log_url"),
                 "updated_at": (latest_status or {}).get("updated_at"),
             } if latest_deployment else None,
-            "evidence": evidence("source", repo.get("url"), checked_at),
-            "claim_boundary": override.get("claim_boundary") or "Repository, release, deployment, and live-service states are reported separately.",
+            "evidence": [
+                *(
+                    [{
+                        "kind": "ssot-registry",
+                        "url": ssot_governance.get("registry_url"),
+                        "observed_at": ssot_governance.get("observed_at"),
+                    }]
+                    if ssot_governance.get("present")
+                    else []
+                ),
+                *evidence("source", repo.get("url"), checked_at),
+            ],
+            "claim_boundary": override.get("claim_boundary") or (
+                "SSOT artifact counts and coverage are registry-reported observations; "
+                "they do not by themselves prove that every public product claim is supported."
+                if ssot_governance.get("present")
+                else "No canonical .ssot/registry.json was observed; repository, release, "
+                "deployment, and live-service states are reported separately."
+            ),
         }
         repository_records.append(record)
         for language, byte_count in languages.items():
@@ -686,6 +708,7 @@ def write_product_evidence(
                     "latest_release": repository.get("latest_release"),
                     "github_releases": repository.get("github_releases", []),
                     "latest_deployment": repository.get("latest_deployment"),
+                    "ssot_governance": repository.get("ssot_governance", {}),
                     "attachment_role": attachment.get("repository_roles", {}).get(
                         repository["full_name"], "implementation"
                     ),

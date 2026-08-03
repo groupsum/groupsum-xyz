@@ -445,7 +445,7 @@
   ],
   "repository": {
     "archived": false,
-    "claim_boundary": "Repository, release, deployment, and live-service states are reported separately.",
+    "claim_boundary": "SSOT artifact counts and coverage are registry-reported observations; they do not by themselves prove that every public product claim is supported.",
     "commit_activity": [
       {
         "count": 0,
@@ -581,6 +581,11 @@
     "description_source": "github-repository",
     "display_name": "portwyrm",
     "evidence": [
+      {
+        "kind": "ssot-registry",
+        "observed_at": "2026-08-03T19:58:16Z",
+        "url": "https://github.com/groupsum/portwyrm/blob/master/.ssot/registry.json"
+      },
       {
         "kind": "source",
         "observed_at": "2026-08-03T17:22:38Z",
@@ -924,6 +929,75 @@
     },
     "reviewed": false,
     "route": "/catalog/repositories/groupsum/portwyrm",
+    "ssot_governance": {
+      "counts": {
+        "adrs": 55,
+        "boundaries": 9,
+        "claims": 93,
+        "evidence": 91,
+        "features": 35,
+        "issues": 2,
+        "profiles": 1,
+        "releases": 1,
+        "specs": 62,
+        "tests": 98
+      },
+      "coverage": {
+        "claims_with_evidence": 93,
+        "claims_with_tests": 93,
+        "claims_without_evidence": 0,
+        "evidence_linked_to_claims": 91,
+        "evidence_without_claims": 0
+      },
+      "evidence_type": "ssot.registry",
+      "governed": true,
+      "observed_at": "2026-08-03T19:58:16Z",
+      "present": true,
+      "raw_url": "https://raw.githubusercontent.com/groupsum/portwyrm/master/.ssot/registry.json",
+      "registry_url": "https://github.com/groupsum/portwyrm/blob/master/.ssot/registry.json",
+      "schema_version": "0.8.0",
+      "source_sha256": "2f4d39d1efb5fdf6e9e9346a9784c6a02a894a34acbd5bf1b9e662ee5a4042a3",
+      "status_counts": {
+        "adrs": {
+          "accepted": 23,
+          "draft": 32
+        },
+        "boundaries": {
+          "draft": 1,
+          "frozen": 8
+        },
+        "claims": {
+          "certified": 56,
+          "evidenced": 9,
+          "published": 28
+        },
+        "evidence": {
+          "passed": 91
+        },
+        "features": {
+          "absent": 4,
+          "implemented": 28,
+          "partial": 3
+        },
+        "issues": {
+          "open": 2
+        },
+        "profiles": {
+          "active": 1
+        },
+        "releases": {
+          "published": 1
+        },
+        "specs": {
+          "accepted": 25,
+          "draft": 37
+        },
+        "tests": {
+          "passing": 98
+        }
+      },
+      "valid": true
+    },
     "technologies": [
       "CSS",
       "Dockerfile",

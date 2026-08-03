@@ -19,6 +19,9 @@ organizations from primary APIs and repository manifests.
 - `python scripts/catalog_collect.py --discover-downstream` additionally runs
   bounded, rate-limited GitHub public code searches for package-manifest
   references. Results are labeled as observed matches, not a complete census.
+- `python scripts/catalog_collect.py --ssot-only --refresh` refreshes only each
+  repository's canonical `.ssot/registry.json` observation and recompiles its
+  governance provenance without repeating registry/package collection.
 
 Collection requires Python 3.11 or newer. Authenticated GitHub requests use
 `GITHUB_TOKEN`, `GH_TOKEN`, or the token returned by `gh auth token`; token
@@ -43,6 +46,14 @@ Reviewed names, descriptions, grouping, and claim boundaries may be supplied in
 and missing editorial review never becomes an inferred maturity or availability
 claim. The scheduled workflow collects, renders, validates, builds, and opens or
 updates a refresh pull request.
+
+An observed, parseable `.ssot/registry.json` marks a repository as SSOT governed.
+The catalog records the canonical source URL, observation time, source digest,
+schema version, artifact counts, status counts, and declared claim/evidence/test
+linkage. Registry presence proves that the governed artifacts were reported by
+that source; it does not independently validate an unrelated editorial claim.
+Unlinked editorial claims are therefore exposed as limitations rather than
+represented as SSOT verified.
 
 Every snapshot includes a `completeness` object. “All” means every record
 returned by the named primary API within the configured public scope. It does

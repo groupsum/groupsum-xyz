@@ -8660,7 +8660,7 @@
   ],
   "repository": {
     "archived": false,
-    "claim_boundary": "Repository, release, deployment, and live-service states are reported separately.",
+    "claim_boundary": "SSOT artifact counts and coverage are registry-reported observations; they do not by themselves prove that every public product claim is supported.",
     "commit_activity": [
       {
         "count": 0,
@@ -8801,6 +8801,11 @@
     "description_source": "github-repository",
     "display_name": "markdown_workspace",
     "evidence": [
+      {
+        "kind": "ssot-registry",
+        "observed_at": "2026-08-03T19:58:16Z",
+        "url": "https://github.com/groupsum/markdown_workspace/blob/master/.ssot/registry.json"
+      },
       {
         "kind": "source",
         "observed_at": "2026-08-03T17:22:37Z",
@@ -10717,6 +10722,78 @@
     },
     "reviewed": false,
     "route": "/catalog/repositories/groupsum/markdown_workspace",
+    "ssot_governance": {
+      "counts": {
+        "adrs": 99,
+        "boundaries": 34,
+        "claims": 242,
+        "evidence": 115,
+        "features": 549,
+        "issues": 5,
+        "profiles": 6,
+        "releases": 9,
+        "specs": 130,
+        "tests": 177
+      },
+      "coverage": {
+        "claims_with_evidence": 242,
+        "claims_with_tests": 242,
+        "claims_without_evidence": 0,
+        "evidence_linked_to_claims": 115,
+        "evidence_without_claims": 0
+      },
+      "evidence_type": "ssot.registry",
+      "governed": true,
+      "observed_at": "2026-08-03T19:58:16Z",
+      "present": true,
+      "raw_url": "https://raw.githubusercontent.com/groupsum/markdown_workspace/master/.ssot/registry.json",
+      "registry_url": "https://github.com/groupsum/markdown_workspace/blob/master/.ssot/registry.json",
+      "schema_version": "0.4.0",
+      "source_sha256": "cb5c5a9b6cb01186c8cd34adf51132519b0b05c030e6b6d5b80ef161c1fed2b5",
+      "status_counts": {
+        "adrs": {
+          "accepted": 40,
+          "draft": 59
+        },
+        "boundaries": {
+          "active": 10,
+          "draft": 3,
+          "frozen": 21
+        },
+        "claims": {
+          "declared": 8,
+          "evidenced": 142,
+          "implemented": 28,
+          "published": 64
+        },
+        "evidence": {
+          "passed": 115
+        },
+        "features": {
+          "absent": 22,
+          "implemented": 527
+        },
+        "issues": {
+          "closed": 3,
+          "open": 2
+        },
+        "profiles": {
+          "active": 6
+        },
+        "releases": {
+          "candidate": 1,
+          "published": 8
+        },
+        "specs": {
+          "accepted": 4,
+          "draft": 126
+        },
+        "tests": {
+          "passing": 177
+        }
+      },
+      "valid": true
+    },
     "technologies": [
       "CSS",
       "Dockerfile",

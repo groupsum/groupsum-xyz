@@ -9,6 +9,7 @@ import {
   RepositoryEvidence,
   RepositorySignals,
   ReleaseEvidence,
+  SsotGovernanceSummary,
   getRecordPageModel,
 } from "../api/catalog.generated";
 import { portfolioEntities } from "../data/entities";
@@ -46,6 +47,10 @@ type CatalogRepository = {
   deployment_count?: number;
   dependency_count?: number;
   dependent_count?: number;
+  ssot_governed?: boolean;
+  ssot_registry_url?: string | null;
+  ssot_schema_version?: string | null;
+  ssot_summary?: SsotGovernanceSummary;
 };
 
 type ProductEvidenceBundle = {
@@ -116,6 +121,10 @@ function evidenceBundle(model: ProductPageModel): ProductEvidenceBundle {
           : resource.url,
         route: resource.route_key ? `/catalog/resources/${resource.resource_type}/${resource.route_key}` : undefined,
       })),
+      ssot_governed: primary?.ssot_governed,
+      ssot_registry_url: primary?.ssot_registry_url,
+      ssot_schema_version: primary?.ssot_schema_version,
+      ssot_summary: primary?.ssot_summary,
     },
     packages: model.implementation.packages,
   };
@@ -388,6 +397,31 @@ function EvidenceMetrics({ bundle }: { bundle: ProductEvidenceBundle }) {
   return <dl className="flex flex-wrap gap-x-8 gap-y-4 border-y border-[var(--color-border-soft)] py-5">{values.map(([label, value]) => <div key={label}><dt className="text-[10px] font-mono uppercase text-ink-muted">{label}</dt><dd className="font-serif text-2xl font-bold text-ink">{value.toLocaleString()}</dd></div>)}</dl>;
 }
 
+const ssotInventoryOrder = ["adrs", "specs", "features", "tests", "claims", "evidence", "issues", "boundaries", "profiles", "releases"];
+
+function SsotRegistryReport({ registries }: { registries: ProductPageModel["governance"]["ssot_registries"] }) {
+  if (!registries.length) return <p className="text-sm text-ink-muted">No canonical .ssot/registry.json was observed in an attached repository.</p>;
+  return <ul className="border-y border-[var(--color-border-soft)] divide-y divide-[var(--color-border-soft)]">
+    {registries.map((registry) => {
+      const counts = registry.summary.counts || {};
+      const coverage = registry.summary.coverage || {};
+      return <li key={registry.repository_id} className="py-5 space-y-4">
+        <div className="flex flex-wrap items-center justify-between gap-3">
+          <div className="flex flex-wrap items-center gap-2"><span className="font-serif text-lg font-bold text-ink">{registry.repository}</span>{registry.governed && <span className="px-2 py-1 rounded border border-accent text-[10px] font-mono uppercase font-semibold text-accent">SSOT governed</span>}</div>
+          {registry.registry_url && <a href={registry.registry_url} target="_blank" rel="noreferrer" className="text-xs font-mono text-accent hover:underline">Canonical registry</a>}
+        </div>
+        <DetailRows rows={[
+          ["Schema", registry.schema_version || "Not recorded"],
+          ["Observed", registry.observed_at ? new Date(registry.observed_at).toLocaleString() : "Not recorded"],
+          ["Registry inventory", ssotInventoryOrder.map((key) => `${humanize(key)} ${Number(counts[key] || 0).toLocaleString()}`).join(" Â· ")],
+          ["Claim evidence coverage", `${Number(coverage.claims_with_evidence || 0).toLocaleString()} linked Â· ${Number(coverage.claims_without_evidence || 0).toLocaleString()} without evidence Â· ${Number(coverage.claims_with_tests || 0).toLocaleString()} linked to tests`],
+        ]} />
+        <p className="text-xs text-ink-muted border-l-2 border-[var(--color-border-muted)] pl-3">{registry.summary.limitation || "Registry counts report governed artifacts and their declared linkage; they do not independently validate every public product claim."}</p>
+      </li>;
+    })}
+  </ul>;
+}
+
 export function ProductRecordPage({
   slug,
   onNavigate,
@@ -458,6 +492,7 @@ export function ProductRecordPage({
     label: String(item.title || item.evidence_type || "Observed evidence"),
     checkedAt: String(item.observed_at || pageModel.generated_at),
     url: item.source_url ? String(item.source_url) : undefined,
+    rootedInSsot: Boolean(item.rooted_in_ssot),
   })) || entity?.evidence.map((item) => ({ ...item, url: undefined })) || [];
   const limitationRows = pageModel?.governance.limitations.map((item) =>
     String(item.description || item.title || "Limitation not described"),
@@ -479,6 +514,9 @@ export function ProductRecordPage({
   const dependencies = pageModel?.implementation.dependencies || [];
   const dependents = pageModel?.implementation.dependents || [];
   const dependencySummary = pageModel?.implementation.dependency_summary;
+  const ssotRegistries = pageModel?.governance.ssot_registries || [];
+  const claimRooting = pageModel?.governance.claim_rooting;
+  const claims = pageModel?.governance.claims || [];
 
   return (
     <article className="max-w-[var(--content-max)] min-w-0 mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-14 space-y-10 overflow-x-clip">
@@ -491,13 +529,14 @@ export function ProductRecordPage({
         </div>
         <div className="flex flex-wrap items-center gap-3">
           <span className="px-2.5 py-1 border border-[var(--color-border-soft)] rounded text-xs font-mono text-ink">{humanize(maturity)}</span>
+          {ssotRegistries.some((registry) => registry.governed) && <span className="px-2.5 py-1 border border-accent rounded text-xs font-mono font-semibold text-accent">SSOT governed</span>}
           {sourceUrl && <a href={sourceUrl} target="_blank" rel="noreferrer" className="px-4 py-2 bg-accent text-white rounded-[var(--radius-sm)] text-xs font-mono font-semibold inline-flex items-center gap-1">{primaryLink?.label || "Public source"}<ExternalLink className="w-3.5 h-3.5" /></a>}
           <button onClick={() => onNavigate("/contact")} className="px-4 py-2 border border-[var(--color-border-muted)] rounded-[var(--radius-sm)] text-xs font-mono font-semibold text-ink hover:border-accent cursor-pointer">Discuss this product</button>
         </div>
       </header>
 
       <nav aria-label="Product record sections" className="sticky top-16 z-20 bg-canvas/95 backdrop-blur border-y border-[var(--color-border-soft)] py-3 flex flex-wrap gap-x-5 gap-y-2 text-xs font-mono">
-        {[['overview','Overview'],['implementation','Implementation'],['packages','Packages'],['releases','Releases'],['dependencies','Dependencies'],['resources','Related resources'],['evidence','Evidence']].map(([id, label]) => <a key={id} href={`#${id}`} className="text-ink-muted hover:text-accent">{label}</a>)}
+        {[['overview','Overview'],['implementation','Implementation'],['governance','SSOT governance'],['packages','Packages'],['releases','Releases'],['dependencies','Dependencies'],['resources','Related resources'],['evidence','Evidence']].map(([id, label]) => <a key={id} href={`#${id}`} className="text-ink-muted hover:text-accent">{label}</a>)}
       </nav>
 
       <div className="lg:grid lg:grid-cols-[17rem_minmax(0,1fr)] lg:gap-12 items-start">
@@ -530,7 +569,11 @@ export function ProductRecordPage({
               ["Latest release", String(bundle.repository.latest_release?.name || bundle.repository.latest_release?.tag || "No GitHub release observed")],
               ["Latest deployment", bundle.repository.latest_deployment?.environment ? `${humanize(String(bundle.repository.latest_deployment.environment))} · ${humanize(String(bundle.repository.latest_deployment.state || "state not recorded"))}` : "No deployment observed"],
             ]} />
-            {pageModel?.implementation.repositories.length ? <div className="space-y-3 pt-2"><h3 className="text-xs font-mono uppercase text-ink font-semibold">Attached repository activity</h3><ul className="divide-y divide-[var(--color-border-soft)] border-y border-[var(--color-border-soft)]">{pageModel.implementation.repositories.map((repository) => <li key={repository.id} className="py-4 space-y-3"><div className="flex flex-wrap items-baseline justify-between gap-2"><a href={repository.url} target="_blank" rel="noreferrer" className="font-serif text-lg font-bold text-accent hover:underline">{repository.owner}/{repository.name}</a><span className="text-[10px] font-mono uppercase text-ink-muted">{humanize(repository.role)}</span></div><RepositorySignalStrip signals={evidenceSignals(repository)} compact /></li>)}</ul></div> : null}</>}
+            {pageModel?.implementation.repositories.length ? <div className="space-y-3 pt-2"><h3 className="text-xs font-mono uppercase text-ink font-semibold">Attached repository activity</h3><ul className="divide-y divide-[var(--color-border-soft)] border-y border-[var(--color-border-soft)]">{pageModel.implementation.repositories.map((repository) => <li key={repository.id} className="py-4 space-y-3"><div className="flex flex-wrap items-baseline justify-between gap-2"><div className="flex flex-wrap items-center gap-2"><a href={repository.url} target="_blank" rel="noreferrer" className="font-serif text-lg font-bold text-accent hover:underline">{repository.owner}/{repository.name}</a>{repository.ssot_governed && <span className="px-2 py-1 rounded border border-accent text-[10px] font-mono uppercase font-semibold text-accent">SSOT governed</span>}</div><span className="text-[10px] font-mono uppercase text-ink-muted">{humanize(repository.role)}</span></div><RepositorySignalStrip signals={evidenceSignals(repository)} compact /></li>)}</ul></div> : null}</>}
+          </ProductSection>
+
+          <ProductSection id="governance" title="SSOT governance" intro="Canonical registry artifacts and linkage coverage from attached public repositories.">
+            <SsotRegistryReport registries={ssotRegistries} />
           </ProductSection>
 
           <ProductSection id="packages" title="Packages" intro="Public packages attached through implementation, website, or documentation repositories. Their role is shown explicitly.">
@@ -568,7 +611,9 @@ export function ProductRecordPage({
 
           <ProductSection id="evidence" title="Evidence and limitations">
             <div className="space-y-6">
-              <div><h3 className="text-xs font-mono uppercase text-ink font-semibold mb-2">Evidence</h3><ul className="border-y border-[var(--color-border-soft)] divide-y divide-[var(--color-border-soft)]">{evidenceRows.map((item, index) => <li key={`${item.label}-${index}`} className="py-3 text-sm text-ink"><span className="font-medium">{item.url ? <a href={item.url} target="_blank" rel="noreferrer" className="text-accent hover:underline">{item.label}</a> : item.label}</span><span className="text-ink-muted"> · observed {item.checkedAt}</span></li>)}</ul></div>
+              {claimRooting && <div><h3 className="text-xs font-mono uppercase text-ink font-semibold mb-2">Claim rooting</h3><DetailRows rows={[["SSOT-rooted claims", claimRooting.rooted.toLocaleString()], ["Unrooted claims", claimRooting.unrooted.toLocaleString()], ["Status", humanize(claimRooting.status)]]} />{claimRooting.limitation && <p className="text-xs text-ink-muted border-l-2 border-[var(--color-border-muted)] pl-3 mt-3">{claimRooting.limitation}</p>}</div>}
+              {claims.length > 0 && <div><h3 className="text-xs font-mono uppercase text-ink font-semibold mb-2">Claims</h3><ul className="border-y border-[var(--color-border-soft)] divide-y divide-[var(--color-border-soft)]">{claims.map((claim) => <li key={String(claim.id)} className="py-3 sm:flex sm:justify-between gap-4 text-sm"><span className="text-ink">{String(claim.statement)}</span><span className={`text-[10px] font-mono uppercase shrink-0 ${claim.rooted_in_ssot ? "text-accent" : "text-ink-muted"}`}>{claim.rooted_in_ssot ? "SSOT linked" : "Not SSOT linked"}</span></li>)}</ul></div>}
+              <div><h3 className="text-xs font-mono uppercase text-ink font-semibold mb-2">Evidence</h3><ul className="border-y border-[var(--color-border-soft)] divide-y divide-[var(--color-border-soft)]">{evidenceRows.map((item, index) => <li key={`${item.label}-${index}`} className="py-3 sm:flex sm:justify-between gap-4 text-sm text-ink"><span className="font-medium">{item.url ? <a href={item.url} target="_blank" rel="noreferrer" className="text-accent hover:underline">{item.label}</a> : item.label}<span className="text-ink-muted"> · observed {item.checkedAt}</span></span>{"rootedInSsot" in item && <span className={`text-[10px] font-mono uppercase shrink-0 ${item.rootedInSsot ? "text-accent" : "text-ink-muted"}`}>{item.rootedInSsot ? "SSOT linked" : "Not SSOT linked"}</span>}</li>)}</ul></div>
               <div><h3 className="text-xs font-mono uppercase text-ink font-semibold mb-2">Limitations</h3><ul className="list-disc pl-5 space-y-2 text-sm text-ink-muted">{limitationRows.map((limitation) => <li key={limitation}>{limitation}</li>)}</ul></div>
               {relatedLinks.length > 0 && <div className="flex flex-wrap gap-4">{relatedLinks.map((link) => <a key={`${link.kind}-${link.href}`} href={link.href} target="_blank" rel="noreferrer" className="text-sm text-accent hover:underline inline-flex items-center gap-1">{link.label}<ExternalLink className="w-3.5 h-3.5" /></a>)}</div>}
             </div>

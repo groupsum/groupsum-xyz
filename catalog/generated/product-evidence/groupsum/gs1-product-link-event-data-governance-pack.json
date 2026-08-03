@@ -150,7 +150,7 @@
   ],
   "repository": {
     "archived": false,
-    "claim_boundary": "Repository, release, deployment, and live-service states are reported separately.",
+    "claim_boundary": "SSOT artifact counts and coverage are registry-reported observations; they do not by themselves prove that every public product claim is supported.",
     "commit_activity": [
       {
         "count": 0,
@@ -292,6 +292,11 @@
     "display_name": "gs1-product-link-event-data-governance-pack",
     "evidence": [
       {
+        "kind": "ssot-registry",
+        "observed_at": "2026-08-03T19:58:16Z",
+        "url": "https://github.com/groupsum/gs1-product-link-event-data-governance-pack/blob/master/.ssot/registry.json"
+      },
+      {
         "kind": "source",
         "observed_at": "2026-08-03T17:22:37Z",
         "url": "https://github.com/groupsum/gs1-product-link-event-data-governance-pack"
@@ -421,6 +426,58 @@
     },
     "reviewed": false,
     "route": "/catalog/repositories/groupsum/gs1-product-link-event-data-governance-pack",
+    "ssot_governance": {
+      "counts": {
+        "adrs": 17,
+        "boundaries": 1,
+        "claims": 0,
+        "evidence": 0,
+        "features": 0,
+        "issues": 0,
+        "profiles": 0,
+        "releases": 1,
+        "specs": 19,
+        "tests": 0
+      },
+      "coverage": {
+        "claims_with_evidence": 0,
+        "claims_with_tests": 0,
+        "claims_without_evidence": 0,
+        "evidence_linked_to_claims": 0,
+        "evidence_without_claims": 0
+      },
+      "evidence_type": "ssot.registry",
+      "governed": true,
+      "observed_at": "2026-08-03T19:58:16Z",
+      "present": true,
+      "raw_url": "https://raw.githubusercontent.com/groupsum/gs1-product-link-event-data-governance-pack/master/.ssot/registry.json",
+      "registry_url": "https://github.com/groupsum/gs1-product-link-event-data-governance-pack/blob/master/.ssot/registry.json",
+      "schema_version": "9",
+      "source_sha256": "6aed58e34f2947255d0793a6eb429ee563302e55b596c74d467af7adfab67782",
+      "status_counts": {
+        "adrs": {
+          "accepted": 4,
+          "draft": 13
+        },
+        "boundaries": {
+          "draft": 1
+        },
+        "claims": {},
+        "evidence": {},
+        "features": {},
+        "issues": {},
+        "profiles": {},
+        "releases": {
+          "draft": 1
+        },
+        "specs": {
+          "accepted": 4,
+          "draft": 15
+        },
+        "tests": {}
+      },
+      "valid": true
+    },
     "technologies": [
       "Python"
     ],

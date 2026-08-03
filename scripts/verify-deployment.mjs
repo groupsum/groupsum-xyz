@@ -56,7 +56,7 @@ async function verify() {
   const unchanged = await fetchResponse("/api/v1/products/peagen", { "if-none-match": etag });
   if (unchanged.status !== 304) throw new Error(`Peagen conditional request returned ${unchanged.status}`);
   const tigrblHtml = await fetchText("/products/records/tigrbl/");
-  for (const marker of ["PyPI", "npm", "crates.io", "Dependencies", "Observed dependents", "Stars", "Forks", "Contributors", "Commits"]) {
+  for (const marker of ["PyPI", "npm", "crates.io", "Dependencies", "Observed dependents", "Stars", "Forks", "Contributors", "Commits", "SSOT governed", "Canonical registry", "Claim evidence coverage"]) {
     if (!tigrblHtml.includes(marker)) throw new Error(`Tigrbl rendered page is missing ${marker}`);
   }
   const tigrblApi = await fetchResponse("/api/v1/products/tigrbl");
@@ -78,6 +78,11 @@ async function verify() {
   if (signals?.repository_count !== 4) throw new Error("Tigrbl aggregate repository signals are incomplete");
   if (signals?.metrics?.contributors !== 2) throw new Error("Tigrbl contributor aggregation is inaccurate");
   if (signals?.commit_activity?.length !== 30) throw new Error("Tigrbl commit activity window is incomplete");
+  const ssotRegistries = tigrblModel.governance?.ssot_registries || [];
+  const tigrblRegistry = ssotRegistries.find((item) => item.repository === "tigrbl/tigrbl");
+  if (!tigrblRegistry?.governed) throw new Error("Tigrbl API lacks its SSOT-governed registry");
+  if (tigrblRegistry.summary?.counts?.claims < 1) throw new Error("Tigrbl SSOT claim inventory is missing");
+  if (!tigrblRegistry.registry_url || !tigrblRegistry.observed_at) throw new Error("Tigrbl SSOT provenance is incomplete");
   const metricResponse = await fetchResponse("/api/v1/repository-metrics?owner=tigrbl");
   if (!metricResponse.ok) throw new Error(`repository metric API returned ${metricResponse.status}`);
   const metricSnapshot = await metricResponse.json();

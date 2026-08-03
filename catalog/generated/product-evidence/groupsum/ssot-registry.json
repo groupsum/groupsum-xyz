@@ -15086,7 +15086,84 @@
           "watchers": 0
         },
         "route": "/catalog/repositories/groupsum/ssot-registry",
-        "source_url": "https://github.com/groupsum/ssot-registry"
+        "source_url": "https://github.com/groupsum/ssot-registry",
+        "ssot_governance": {
+          "counts": {
+            "adrs": 90,
+            "boundaries": 29,
+            "claims": 1380,
+            "evidence": 645,
+            "features": 408,
+            "issues": 19,
+            "profiles": 3,
+            "releases": 22,
+            "specs": 99,
+            "tests": 359
+          },
+          "coverage": {
+            "claims_with_evidence": 1330,
+            "claims_with_tests": 1380,
+            "claims_without_evidence": 50,
+            "evidence_linked_to_claims": 645,
+            "evidence_without_claims": 0
+          },
+          "evidence_type": "ssot.registry",
+          "governed": true,
+          "observed_at": "2026-08-03T19:58:17Z",
+          "present": true,
+          "raw_url": "https://raw.githubusercontent.com/groupsum/ssot-registry/master/.ssot/registry.json",
+          "registry_url": "https://github.com/groupsum/ssot-registry/blob/master/.ssot/registry.json",
+          "schema_version": "0.8.0",
+          "source_sha256": "37bef2e56ac5df983b3c528e9443e7a6c9e9d5a0357d07c8716772340d23031a",
+          "status_counts": {
+            "adrs": {
+              "accepted": 16,
+              "draft": 74
+            },
+            "boundaries": {
+              "active": 3,
+              "draft": 1,
+              "frozen": 24,
+              "retired": 1
+            },
+            "claims": {
+              "asserted": 606,
+              "certified": 480,
+              "evidenced": 4,
+              "published": 290
+            },
+            "evidence": {
+              "collected": 162,
+              "passed": 483
+            },
+            "features": {
+              "implemented": 220,
+              "partial": 188
+            },
+            "issues": {
+              "closed": 8,
+              "open": 11
+            },
+            "profiles": {
+              "draft": 3
+            },
+            "releases": {
+              "candidate": 1,
+              "certified": 3,
+              "draft": 2,
+              "published": 16
+            },
+            "specs": {
+              "accepted": 13,
+              "draft": 86
+            },
+            "tests": {
+              "passing": 196,
+              "planned": 163
+            }
+          },
+          "valid": true
+        }
       },
       {
         "archived": false,
@@ -15121,10 +15198,21 @@
           "watchers": 0
         },
         "route": "/catalog/repositories/groupsum/ssot-registry-com",
-        "source_url": "https://github.com/groupsum/ssot-registry-com"
+        "source_url": "https://github.com/groupsum/ssot-registry-com",
+        "ssot_governance": {
+          "counts": {},
+          "coverage": {},
+          "governed": false,
+          "observation_status": "not_found",
+          "observed_at": "2026-08-03T19:58:16Z",
+          "present": false,
+          "registry_url": null,
+          "status_counts": {},
+          "valid": false
+        }
       }
     ],
-    "claim_boundary": "Repository, release, deployment, and live-service states are reported separately.",
+    "claim_boundary": "SSOT artifact counts and coverage are registry-reported observations; they do not by themselves prove that every public product claim is supported.",
     "commit_activity": [
       {
         "count": 0,
@@ -15265,6 +15353,11 @@
     "description_source": "github-repository",
     "display_name": "ssot-registry",
     "evidence": [
+      {
+        "kind": "ssot-registry",
+        "observed_at": "2026-08-03T19:58:17Z",
+        "url": "https://github.com/groupsum/ssot-registry/blob/master/.ssot/registry.json"
+      },
       {
         "kind": "source",
         "observed_at": "2026-08-03T17:22:38Z",
@@ -23015,6 +23108,83 @@
     },
     "reviewed": false,
     "route": "/catalog/repositories/groupsum/ssot-registry",
+    "ssot_governance": {
+      "counts": {
+        "adrs": 90,
+        "boundaries": 29,
+        "claims": 1380,
+        "evidence": 645,
+        "features": 408,
+        "issues": 19,
+        "profiles": 3,
+        "releases": 22,
+        "specs": 99,
+        "tests": 359
+      },
+      "coverage": {
+        "claims_with_evidence": 1330,
+        "claims_with_tests": 1380,
+        "claims_without_evidence": 50,
+        "evidence_linked_to_claims": 645,
+        "evidence_without_claims": 0
+      },
+      "evidence_type": "ssot.registry",
+      "governed": true,
+      "observed_at": "2026-08-03T19:58:17Z",
+      "present": true,
+      "raw_url": "https://raw.githubusercontent.com/groupsum/ssot-registry/master/.ssot/registry.json",
+      "registry_url": "https://github.com/groupsum/ssot-registry/blob/master/.ssot/registry.json",
+      "schema_version": "0.8.0",
+      "source_sha256": "37bef2e56ac5df983b3c528e9443e7a6c9e9d5a0357d07c8716772340d23031a",
+      "status_counts": {
+        "adrs": {
+          "accepted": 16,
+          "draft": 74
+        },
+        "boundaries": {
+          "active": 3,
+          "draft": 1,
+          "frozen": 24,
+          "retired": 1
+        },
+        "claims": {
+          "asserted": 606,
+          "certified": 480,
+          "evidenced": 4,
+          "published": 290
+        },
+        "evidence": {
+          "collected": 162,
+          "passed": 483
+        },
+        "features": {
+          "implemented": 220,
+          "partial": 188
+        },
+        "issues": {
+          "closed": 8,
+          "open": 11
+        },
+        "profiles": {
+          "draft": 3
+        },
+        "releases": {
+          "candidate": 1,
+          "certified": 3,
+          "draft": 2,
+          "published": 16
+        },
+        "specs": {
+          "accepted": 13,
+          "draft": 86
+        },
+        "tests": {
+          "passing": 196,
+          "planned": 163
+        }
+      },
+      "valid": true
+    },
     "technologies": [
       "CSS",
       "HTML",

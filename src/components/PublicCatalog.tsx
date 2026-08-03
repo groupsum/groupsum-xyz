@@ -24,6 +24,7 @@ type CatalogRecord = Record<string, unknown> & {
   metrics?: Record<string, number>;
   evidence?: Array<{ kind?: string; url?: string; observed_at?: string }>;
   legal_evidence?: Array<Record<string, unknown>>;
+  ssot_governance?: Record<string, unknown>;
 };
 
 const datasetOrder = ["repositories", "packages", "resources", "technologies"] as const;
@@ -125,6 +126,31 @@ function LegalSection({ record }: { record: CatalogRecord }) {
   </DetailSection>;
 }
 
+const ssotCountOrder = ["adrs", "specs", "features", "tests", "claims", "evidence", "issues", "boundaries", "profiles", "releases"];
+
+function SsotGovernanceSection({ governance }: { governance: Record<string, unknown> }) {
+  const counts = valueRecord(governance.counts);
+  const coverage = valueRecord(governance.coverage);
+  const registryUrl = String(governance.registry_url || "");
+  return <DetailSection title="SSOT governance" intro="Counts and linkage coverage are reported directly from the repository's canonical .ssot/registry.json.">
+    <DetailRows rows={[
+      ["Registry", registryUrl ? <a href={registryUrl} target="_blank" rel="noreferrer" className="text-accent hover:underline">View canonical registry</a> : "Not available"],
+      ["Schema version", String(governance.schema_version || "Not recorded")],
+      ["Observed", formatDate(governance.observed_at as string | undefined)],
+      ["Source digest", governance.source_sha256 ? <code className="font-mono text-xs">{String(governance.source_sha256).slice(0, 16)}â€¦</code> : "Not recorded"],
+    ]} />
+    <div>
+      <h3 className="text-xs font-mono uppercase text-ink font-semibold mb-2">Registry inventory</h3>
+      <DetailRows rows={ssotCountOrder.map((key) => [humanLabel(key), Number(counts[key] || 0).toLocaleString()])} />
+    </div>
+    <div>
+      <h3 className="text-xs font-mono uppercase text-ink font-semibold mb-2">Claim and evidence linkage</h3>
+      <DetailRows rows={Object.entries(coverage).map(([key, value]) => [humanLabel(key), Number(value || 0).toLocaleString()])} />
+    </div>
+    <p className="text-xs text-ink-muted border-l-2 border-[var(--color-border-muted)] pl-3">{String(governance.limitation || "Registry presence and reported linkage do not independently validate every public product claim.")}</p>
+  </DetailSection>;
+}
+
 function RepositoryDetail({ record, onNavigate }: { record: CatalogRecord; onNavigate: (path: string) => void }) {
   const commit = valueRecord(record.latest_commit);
   const release = valueRecord(record.latest_release);
@@ -146,6 +172,7 @@ function RepositoryDetail({ record, onNavigate }: { record: CatalogRecord; onNav
       <DetailSection title="Observed activity" intro="Counts describe the current public repository snapshot.">
         <MetricRows values={valueRecord(record.metrics)} />
       </DetailSection>
+      {record.ssot_governance && Boolean(record.ssot_governance.governed) && <SsotGovernanceSection governance={record.ssot_governance} />}
       {technologies.length > 0 && <DetailSection title="Verified technologies" intro="Language labels come from GitHub language byte counts.">
         <ul className="flex flex-wrap gap-x-4 gap-y-2" aria-label="Verified technologies">
           {technologies.map((technology) => <li key={technology} className="text-sm text-ink border-b border-[var(--color-border-muted)] pb-1">{technology}</li>)}
@@ -489,7 +516,10 @@ export function PublicCatalogDetail({ path, onNavigate }: { path: string; onNavi
     <article className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-12 space-y-8 sm:space-y-10">
       <button onClick={() => onNavigate("/catalog")} className="text-xs font-mono text-accent hover:underline inline-flex items-center gap-1 cursor-pointer"><ArrowLeft className="w-3.5 h-3.5" /> Public catalog</button>
       <header className="space-y-4">
-        <span className="text-xs font-mono uppercase text-accent">Generated {String(record.kind || "catalog record")}</span>
+        <div className="flex flex-wrap items-center gap-2">
+          <span className="text-xs font-mono uppercase text-accent">Generated {String(record.kind || "catalog record")}</span>
+          {record.kind === "repository" && Boolean(record.ssot_governance?.governed) && <span className="px-2 py-1 rounded border border-accent text-[10px] font-mono uppercase font-semibold text-accent">SSOT governed</span>}
+        </div>
         <div className="space-y-3">
           <h1 className="font-serif text-4xl sm:text-5xl font-bold text-ink break-words tracking-tight">{recordTitle(record)}</h1>
           <p className="text-base sm:text-lg text-ink-muted leading-relaxed max-w-3xl">{recordDescription(record)}</p>

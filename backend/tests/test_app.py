@@ -144,6 +144,25 @@ async def test_peagen_page_model_has_explicit_attachments(tmp_path: Path) -> Non
             len(repository["commit_activity"]) == 30
             for repository in tigrbl_model["implementation"]["repositories"]
         )
+        governed_repositories = [
+            repository
+            for repository in tigrbl_model["implementation"]["repositories"]
+            if repository["ssot_governed"]
+        ]
+        assert governed_repositories
+        assert all(repository["ssot_registry_url"] for repository in governed_repositories)
+        assert tigrbl_model["governance"]["ssot_registries"]
+        tigrbl_registry = next(
+            registry
+            for registry in tigrbl_model["governance"]["ssot_registries"]
+            if registry["repository"] == "tigrbl/tigrbl"
+        )
+        assert tigrbl_registry["summary"]["counts"]["adrs"] > 0
+        assert tigrbl_registry["summary"]["counts"]["claims"] > 0
+        assert tigrbl_model["governance"]["claim_rooting"]["status"] in {
+            "complete",
+            "incomplete",
+        }
 
         repository_metrics = await client.get("/api/v1/repository-metrics?owner=tigrbl")
         assert repository_metrics.status_code == 200

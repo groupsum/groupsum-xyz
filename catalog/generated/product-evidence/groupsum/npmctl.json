@@ -2360,7 +2360,79 @@
           "watchers": 0
         },
         "route": "/catalog/repositories/groupsum/npmctl",
-        "source_url": "https://github.com/groupsum/npmctl"
+        "source_url": "https://github.com/groupsum/npmctl",
+        "ssot_governance": {
+          "counts": {
+            "adrs": 31,
+            "boundaries": 5,
+            "claims": 18,
+            "evidence": 20,
+            "features": 214,
+            "issues": 7,
+            "profiles": 1,
+            "releases": 4,
+            "specs": 36,
+            "tests": 160
+          },
+          "coverage": {
+            "claims_with_evidence": 18,
+            "claims_with_tests": 18,
+            "claims_without_evidence": 0,
+            "evidence_linked_to_claims": 20,
+            "evidence_without_claims": 0
+          },
+          "evidence_type": "ssot.registry",
+          "governed": true,
+          "observed_at": "2026-08-03T19:58:16Z",
+          "present": true,
+          "raw_url": "https://raw.githubusercontent.com/groupsum/npmctl/master/.ssot/registry.json",
+          "registry_url": "https://github.com/groupsum/npmctl/blob/master/.ssot/registry.json",
+          "schema_version": "0.2.0",
+          "source_sha256": "6a775841685c79ed127df540a95d1b3df7fe4d9136f709af2a0b1e598f4e6c0e",
+          "status_counts": {
+            "adrs": {
+              "accepted": 15,
+              "draft": 16
+            },
+            "boundaries": {
+              "frozen": 5
+            },
+            "claims": {
+              "certified": 17,
+              "proposed": 1
+            },
+            "evidence": {
+              "collected": 1,
+              "passed": 19
+            },
+            "features": {
+              "absent": 12,
+              "implemented": 194,
+              "partial": 8
+            },
+            "issues": {
+              "closed": 1,
+              "resolved": 6
+            },
+            "profiles": {
+              "active": 1
+            },
+            "releases": {
+              "certified": 3,
+              "published": 1
+            },
+            "specs": {
+              "accepted": 11,
+              "draft": 20,
+              "in_review": 5
+            },
+            "tests": {
+              "passing": 138,
+              "planned": 22
+            }
+          },
+          "valid": true
+        }
       },
       {
         "archived": false,
@@ -2395,10 +2467,21 @@
           "watchers": 0
         },
         "route": "/catalog/repositories/groupsum/npmctl-com",
-        "source_url": "https://github.com/groupsum/npmctl-com"
+        "source_url": "https://github.com/groupsum/npmctl-com",
+        "ssot_governance": {
+          "counts": {},
+          "coverage": {},
+          "governed": false,
+          "observation_status": "not_found",
+          "observed_at": "2026-08-03T19:58:16Z",
+          "present": false,
+          "registry_url": null,
+          "status_counts": {},
+          "valid": false
+        }
       }
     ],
-    "claim_boundary": "Repository, release, deployment, and live-service states are reported separately.",
+    "claim_boundary": "SSOT artifact counts and coverage are registry-reported observations; they do not by themselves prove that every public product claim is supported.",
     "commit_activity": [
       {
         "count": 0,
@@ -2539,6 +2622,11 @@
     "description_source": "github-repository",
     "display_name": "npmctl",
     "evidence": [
+      {
+        "kind": "ssot-registry",
+        "observed_at": "2026-08-03T19:58:16Z",
+        "url": "https://github.com/groupsum/npmctl/blob/master/.ssot/registry.json"
+      },
       {
         "kind": "source",
         "observed_at": "2026-08-03T17:22:37Z",
@@ -3513,6 +3601,78 @@
     },
     "reviewed": false,
     "route": "/catalog/repositories/groupsum/npmctl",
+    "ssot_governance": {
+      "counts": {
+        "adrs": 31,
+        "boundaries": 5,
+        "claims": 18,
+        "evidence": 20,
+        "features": 214,
+        "issues": 7,
+        "profiles": 1,
+        "releases": 4,
+        "specs": 36,
+        "tests": 160
+      },
+      "coverage": {
+        "claims_with_evidence": 18,
+        "claims_with_tests": 18,
+        "claims_without_evidence": 0,
+        "evidence_linked_to_claims": 20,
+        "evidence_without_claims": 0
+      },
+      "evidence_type": "ssot.registry",
+      "governed": true,
+      "observed_at": "2026-08-03T19:58:16Z",
+      "present": true,
+      "raw_url": "https://raw.githubusercontent.com/groupsum/npmctl/master/.ssot/registry.json",
+      "registry_url": "https://github.com/groupsum/npmctl/blob/master/.ssot/registry.json",
+      "schema_version": "0.2.0",
+      "source_sha256": "6a775841685c79ed127df540a95d1b3df7fe4d9136f709af2a0b1e598f4e6c0e",
+      "status_counts": {
+        "adrs": {
+          "accepted": 15,
+          "draft": 16
+        },
+        "boundaries": {
+          "frozen": 5
+        },
+        "claims": {
+          "certified": 17,
+          "proposed": 1
+        },
+        "evidence": {
+          "collected": 1,
+          "passed": 19
+        },
+        "features": {
+          "absent": 12,
+          "implemented": 194,
+          "partial": 8
+        },
+        "issues": {
+          "closed": 1,
+          "resolved": 6
+        },
+        "profiles": {
+          "active": 1
+        },
+        "releases": {
+          "certified": 3,
+          "published": 1
+        },
+        "specs": {
+          "accepted": 11,
+          "draft": 20,
+          "in_review": 5
+        },
+        "tests": {
+          "passing": 138,
+          "planned": 22
+        }
+      },
+      "valid": true
+    },
     "technologies": [
       "Dockerfile",
       "Python",

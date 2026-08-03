@@ -510,7 +510,7 @@
   ],
   "repository": {
     "archived": false,
-    "claim_boundary": "Repository, release, deployment, and live-service states are reported separately.",
+    "claim_boundary": "SSOT artifact counts and coverage are registry-reported observations; they do not by themselves prove that every public product claim is supported.",
     "commit_activity": [
       {
         "count": 0,
@@ -647,6 +647,11 @@
     "display_name": "document-studio",
     "evidence": [
       {
+        "kind": "ssot-registry",
+        "observed_at": "2026-08-03T19:58:16Z",
+        "url": "https://github.com/groupsum/document-studio/blob/master/.ssot/registry.json"
+      },
+      {
         "kind": "source",
         "observed_at": "2026-08-03T17:22:37Z",
         "url": "https://github.com/groupsum/document-studio"
@@ -745,6 +750,58 @@
     },
     "reviewed": false,
     "route": "/catalog/repositories/groupsum/document-studio",
+    "ssot_governance": {
+      "counts": {
+        "adrs": 37,
+        "boundaries": 1,
+        "claims": 0,
+        "evidence": 0,
+        "features": 0,
+        "issues": 0,
+        "profiles": 0,
+        "releases": 1,
+        "specs": 41,
+        "tests": 0
+      },
+      "coverage": {
+        "claims_with_evidence": 0,
+        "claims_with_tests": 0,
+        "claims_without_evidence": 0,
+        "evidence_linked_to_claims": 0,
+        "evidence_without_claims": 0
+      },
+      "evidence_type": "ssot.registry",
+      "governed": true,
+      "observed_at": "2026-08-03T19:58:16Z",
+      "present": true,
+      "raw_url": "https://raw.githubusercontent.com/groupsum/document-studio/master/.ssot/registry.json",
+      "registry_url": "https://github.com/groupsum/document-studio/blob/master/.ssot/registry.json",
+      "schema_version": "0.8.0",
+      "source_sha256": "81452822a8afb4b99d044dbfc9878d70b04e112e29ee6129da6a588ff93db915",
+      "status_counts": {
+        "adrs": {
+          "accepted": 7,
+          "draft": 30
+        },
+        "boundaries": {
+          "draft": 1
+        },
+        "claims": {},
+        "evidence": {},
+        "features": {},
+        "issues": {},
+        "profiles": {},
+        "releases": {
+          "draft": 1
+        },
+        "specs": {
+          "accepted": 6,
+          "draft": 35
+        },
+        "tests": {}
+      },
+      "valid": true
+    },
     "technologies": [
       "CSS",
       "HTML",

@@ -83,6 +83,18 @@ def validate_site(site_dir: Path, typescript: Path) -> list[str]:
             if name == "repositories" and "related_resources" not in record:
                 errors.append(f"repository missing related resources: {identity}")
             if name == "repositories":
+                ssot = record.get("ssot_governance") or {}
+                if ssot.get("governed"):
+                    required_ssot = {"registry_url", "source_sha256", "schema_version", "observed_at", "counts", "coverage"}
+                    missing_ssot = required_ssot - ssot.keys()
+                    if missing_ssot:
+                        errors.append(
+                            f"SSOT-governed repository missing provenance fields: {identity}: "
+                            + ", ".join(sorted(missing_ssot))
+                        )
+                    if not ssot.get("valid"):
+                        errors.append(f"SSOT-governed repository has invalid registry: {identity}")
+            if name == "repositories":
                 owner, repository_name = str(record.get("full_name") or "/").split("/", 1)
                 evidence_path = product_evidence_dir / owner / f"{repository_name}.json"
                 if not evidence_path.exists():

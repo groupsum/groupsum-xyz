@@ -6644,7 +6644,88 @@
           "watchers": 1
         },
         "route": "/catalog/repositories/tigrbl/tigrcorn",
-        "source_url": "https://github.com/tigrbl/tigrcorn"
+        "source_url": "https://github.com/tigrbl/tigrcorn",
+        "ssot_governance": {
+          "counts": {
+            "adrs": 110,
+            "boundaries": 36,
+            "claims": 1415,
+            "evidence": 927,
+            "features": 426,
+            "issues": 12,
+            "profiles": 7,
+            "releases": 16,
+            "specs": 129,
+            "tests": 1178
+          },
+          "coverage": {
+            "claims_with_evidence": 1415,
+            "claims_with_tests": 1415,
+            "claims_without_evidence": 0,
+            "evidence_linked_to_claims": 927,
+            "evidence_without_claims": 0
+          },
+          "evidence_type": "ssot.registry",
+          "governed": true,
+          "observed_at": "2026-08-03T19:58:20Z",
+          "present": true,
+          "raw_url": "https://raw.githubusercontent.com/tigrbl/tigrcorn/master/.ssot/registry.json",
+          "registry_url": "https://github.com/tigrbl/tigrcorn/blob/master/.ssot/registry.json",
+          "schema_version": "0.8.0",
+          "source_sha256": "5c6549c58d0aa74731ddd0501cb61c2dab6e3b7c02acf4004ac4d0cb926a08ea",
+          "status_counts": {
+            "adrs": {
+              "accepted": 58,
+              "draft": 47,
+              "superseded": 5
+            },
+            "boundaries": {
+              "active": 6,
+              "frozen": 30
+            },
+            "claims": {
+              "asserted": 55,
+              "certified": 740,
+              "declared": 18,
+              "evidenced": 47,
+              "promoted": 100,
+              "proposed": 36,
+              "published": 419
+            },
+            "evidence": {
+              "collected": 10,
+              "passed": 899,
+              "planned": 18
+            },
+            "features": {
+              "absent": 1,
+              "implemented": 393,
+              "partial": 32
+            },
+            "issues": {
+              "closed": 10,
+              "open": 2
+            },
+            "profiles": {
+              "active": 6,
+              "draft": 1
+            },
+            "releases": {
+              "promoted": 1,
+              "published": 15
+            },
+            "specs": {
+              "accepted": 25,
+              "draft": 100,
+              "superseded": 4
+            },
+            "tests": {
+              "passing": 1090,
+              "planned": 88
+            }
+          },
+          "valid": true
+        }
       },
       {
         "archived": false,
@@ -6673,7 +6754,18 @@
           "watchers": 0
         },
         "route": "/catalog/repositories/tigrbl/docs-tigrcorn-com",
-        "source_url": "https://github.com/tigrbl/docs-tigrcorn-com"
+        "source_url": "https://github.com/tigrbl/docs-tigrcorn-com",
+        "ssot_governance": {
+          "counts": {},
+          "coverage": {},
+          "governed": false,
+          "observation_status": "not_found",
+          "observed_at": "2026-08-03T19:58:17Z",
+          "present": false,
+          "registry_url": null,
+          "status_counts": {},
+          "valid": false
+        }
       },
       {
         "archived": false,
@@ -6708,10 +6800,21 @@
           "watchers": 0
         },
         "route": "/catalog/repositories/tigrbl/tigrcorn-com",
-        "source_url": "https://github.com/tigrbl/tigrcorn-com"
+        "source_url": "https://github.com/tigrbl/tigrcorn-com",
+        "ssot_governance": {
+          "counts": {},
+          "coverage": {},
+          "governed": false,
+          "observation_status": "not_found",
+          "observed_at": "2026-08-03T19:58:17Z",
+          "present": false,
+          "registry_url": null,
+          "status_counts": {},
+          "valid": false
+        }
       }
     ],
-    "claim_boundary": "Repository, release, deployment, and live-service states are reported separately.",
+    "claim_boundary": "SSOT artifact counts and coverage are registry-reported observations; they do not by themselves prove that every public product claim is supported.",
     "commit_activity": [
       {
         "count": 0,
@@ -6862,6 +6965,11 @@
     "description_source": "github-repository",
     "display_name": "tigrcorn",
     "evidence": [
+      {
+        "kind": "ssot-registry",
+        "observed_at": "2026-08-03T19:58:20Z",
+        "url": "https://github.com/tigrbl/tigrcorn/blob/master/.ssot/registry.json"
+      },
       {
         "kind": "source",
         "observed_at": "2026-08-03T17:22:38Z",
@@ -8552,6 +8660,87 @@
     },
     "reviewed": false,
     "route": "/catalog/repositories/tigrbl/tigrcorn",
+    "ssot_governance": {
+      "counts": {
+        "adrs": 110,
+        "boundaries": 36,
+        "claims": 1415,
+        "evidence": 927,
+        "features": 426,
+        "issues": 12,
+        "profiles": 7,
+        "releases": 16,
+        "specs": 129,
+        "tests": 1178
+      },
+      "coverage": {
+        "claims_with_evidence": 1415,
+        "claims_with_tests": 1415,
+        "claims_without_evidence": 0,
+        "evidence_linked_to_claims": 927,
+        "evidence_without_claims": 0
+      },
+      "evidence_type": "ssot.registry",
+      "governed": true,
+      "observed_at": "2026-08-03T19:58:20Z",
+      "present": true,
+      "raw_url": "https://raw.githubusercontent.com/tigrbl/tigrcorn/master/.ssot/registry.json",
+      "registry_url": "https://github.com/tigrbl/tigrcorn/blob/master/.ssot/registry.json",
+      "schema_version": "0.8.0",
+      "source_sha256": "5c6549c58d0aa74731ddd0501cb61c2dab6e3b7c02acf4004ac4d0cb926a08ea",
+      "status_counts": {
+        "adrs": {
+          "accepted": 58,
+          "draft": 47,
+          "superseded": 5
+        },
+        "boundaries": {
+          "active": 6,
+          "frozen": 30
+        },
+        "claims": {
+          "asserted": 55,
+          "certified": 740,
+          "declared": 18,
+          "evidenced": 47,
+          "promoted": 100,
+          "proposed": 36,
+          "published": 419
+        },
+        "evidence": {
+          "collected": 10,
+          "passed": 899,
+          "planned": 18
+        },
+        "features": {
+          "absent": 1,
+          "implemented": 393,
+          "partial": 32
+        },
+        "issues": {
+          "closed": 10,
+          "open": 2
+        },
+        "profiles": {
+          "active": 6,
+          "draft": 1
+        },
+        "releases": {
+          "promoted": 1,
+          "published": 15
+        },
+        "specs": {
+          "accepted": 25,
+          "draft": 100,
+          "superseded": 4
+        },
+        "tests": {
+          "passing": 1090,
+          "planned": 88
+        }
+      },
+      "valid": true
+    },
     "technologies": [
       "HTML",
       "Makefile",

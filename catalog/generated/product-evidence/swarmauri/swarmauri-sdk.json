@@ -280774,7 +280774,18 @@
           "watchers": 5
         },
         "route": "/catalog/repositories/swarmauri/swarmauri-sdk",
-        "source_url": "https://github.com/swarmauri/swarmauri-sdk"
+        "source_url": "https://github.com/swarmauri/swarmauri-sdk",
+        "ssot_governance": {
+          "counts": {},
+          "coverage": {},
+          "governed": false,
+          "observation_status": "not_found",
+          "observed_at": "2026-08-03T19:58:17Z",
+          "present": false,
+          "registry_url": null,
+          "status_counts": {},
+          "valid": false
+        }
       },
       {
         "archived": false,
@@ -280803,7 +280814,18 @@
           "watchers": 0
         },
         "route": "/catalog/repositories/swarmauri/docs-swarmauri-com",
-        "source_url": "https://github.com/swarmauri/docs-swarmauri-com"
+        "source_url": "https://github.com/swarmauri/docs-swarmauri-com",
+        "ssot_governance": {
+          "counts": {},
+          "coverage": {},
+          "governed": false,
+          "observation_status": "not_found",
+          "observed_at": "2026-08-03T19:58:17Z",
+          "present": false,
+          "registry_url": null,
+          "status_counts": {},
+          "valid": false
+        }
       },
       {
         "archived": false,
@@ -280838,10 +280860,21 @@
           "watchers": 0
         },
         "route": "/catalog/repositories/swarmauri/swarmauri-com",
-        "source_url": "https://github.com/swarmauri/swarmauri-com"
+        "source_url": "https://github.com/swarmauri/swarmauri-com",
+        "ssot_governance": {
+          "counts": {},
+          "coverage": {},
+          "governed": false,
+          "observation_status": "not_found",
+          "observed_at": "2026-08-03T19:58:17Z",
+          "present": false,
+          "registry_url": null,
+          "status_counts": {},
+          "valid": false
+        }
       }
     ],
-    "claim_boundary": "Repository, release, deployment, and live-service states are reported separately.",
+    "claim_boundary": "No canonical .ssot/registry.json was observed; repository, release, deployment, and live-service states are reported separately.",
     "commit_activity": [
       {
         "count": 0,
@@ -375994,6 +376027,17 @@
     },
     "reviewed": false,
     "route": "/catalog/repositories/swarmauri/swarmauri-sdk",
+    "ssot_governance": {
+      "counts": {},
+      "coverage": {},
+      "governed": false,
+      "observation_status": "not_found",
+      "observed_at": "2026-08-03T19:58:17Z",
+      "present": false,
+      "registry_url": null,
+      "status_counts": {},
+      "valid": false
+    },
     "technologies": [
       "C",
       "C++",

@@ -1,7 +1,7 @@
 [
   {
     "archived": false,
-    "claim_boundary": "Repository, release, deployment, and live-service states are reported separately.",
+    "claim_boundary": "SSOT artifact counts and coverage are registry-reported observations; they do not by themselves prove that every public product claim is supported.",
     "commit_activity": [
       {
         "count": 0,
@@ -142,6 +142,11 @@
     "description_source": "github-repository",
     "display_name": "ad-measurement-media-governance-pack",
     "evidence": [
+      {
+        "kind": "ssot-registry",
+        "observed_at": "2026-08-03T19:58:16Z",
+        "url": "https://github.com/groupsum/ad-measurement-media-governance-pack/blob/master/.ssot/registry.json"
+      },
       {
         "kind": "source",
         "observed_at": "2026-08-03T17:22:37Z",
@@ -288,6 +293,58 @@
     },
     "reviewed": false,
     "route": "/catalog/repositories/groupsum/ad-measurement-media-governance-pack",
+    "ssot_governance": {
+      "counts": {
+        "adrs": 19,
+        "boundaries": 1,
+        "claims": 0,
+        "evidence": 0,
+        "features": 0,
+        "issues": 0,
+        "profiles": 0,
+        "releases": 1,
+        "specs": 20,
+        "tests": 0
+      },
+      "coverage": {
+        "claims_with_evidence": 0,
+        "claims_with_tests": 0,
+        "claims_without_evidence": 0,
+        "evidence_linked_to_claims": 0,
+        "evidence_without_claims": 0
+      },
+      "evidence_type": "ssot.registry",
+      "governed": true,
+      "observed_at": "2026-08-03T19:58:16Z",
+      "present": true,
+      "raw_url": "https://raw.githubusercontent.com/groupsum/ad-measurement-media-governance-pack/master/.ssot/registry.json",
+      "registry_url": "https://github.com/groupsum/ad-measurement-media-governance-pack/blob/master/.ssot/registry.json",
+      "schema_version": "9",
+      "source_sha256": "09c728daac22879786217fa78e389a24d2e483a0c2837c63be8df2c381bcb7ea",
+      "status_counts": {
+        "adrs": {
+          "accepted": 6,
+          "draft": 13
+        },
+        "boundaries": {
+          "draft": 1
+        },
+        "claims": {},
+        "evidence": {},
+        "features": {},
+        "issues": {},
+        "profiles": {},
+        "releases": {
+          "draft": 1
+        },
+        "specs": {
+          "accepted": 5,
+          "draft": 15
+        },
+        "tests": {}
+      },
+      "valid": true
+    },
     "technologies": [
       "Python"
     ],
@@ -299,7 +356,7 @@
   },
   {
     "archived": false,
-    "claim_boundary": "Repository, release, deployment, and live-service states are reported separately.",
+    "claim_boundary": "SSOT artifact counts and coverage are registry-reported observations; they do not by themselves prove that every public product claim is supported.",
     "commit_activity": [
       {
         "count": 0,
@@ -441,6 +498,11 @@
     "display_name": "ad-supply-chain-transparency-governance-pack",
     "evidence": [
       {
+        "kind": "ssot-registry",
+        "observed_at": "2026-08-03T19:58:16Z",
+        "url": "https://github.com/groupsum/ad-supply-chain-transparency-governance-pack/blob/master/.ssot/registry.json"
+      },
+      {
         "kind": "source",
         "observed_at": "2026-08-03T17:22:37Z",
         "url": "https://github.com/groupsum/ad-supply-chain-transparency-governance-pack"
@@ -570,6 +632,58 @@
     },
     "reviewed": false,
     "route": "/catalog/repositories/groupsum/ad-supply-chain-transparency-governance-pack",
+    "ssot_governance": {
+      "counts": {
+        "adrs": 19,
+        "boundaries": 1,
+        "claims": 0,
+        "evidence": 0,
+        "features": 0,
+        "issues": 0,
+        "profiles": 0,
+        "releases": 1,
+        "specs": 20,
+        "tests": 0
+      },
+      "coverage": {
+        "claims_with_evidence": 0,
+        "claims_with_tests": 0,
+        "claims_without_evidence": 0,
+        "evidence_linked_to_claims": 0,
+        "evidence_without_claims": 0
+      },
+      "evidence_type": "ssot.registry",
+      "governed": true,
+      "observed_at": "2026-08-03T19:58:16Z",
+      "present": true,
+      "raw_url": "https://raw.githubusercontent.com/groupsum/ad-supply-chain-transparency-governance-pack/master/.ssot/registry.json",
+      "registry_url": "https://github.com/groupsum/ad-supply-chain-transparency-governance-pack/blob/master/.ssot/registry.json",
+      "schema_version": "9",
+      "source_sha256": "d90eb652a748cb2c4d2417b29be89c1aa55815de9246282b9a10272e28a11070",
+      "status_counts": {
+        "adrs": {
+          "accepted": 6,
+          "draft": 13
+        },
+        "boundaries": {
+          "draft": 1
+        },
+        "claims": {},
+        "evidence": {},
+        "features": {},
+        "issues": {},
+        "profiles": {},
+        "releases": {
+          "draft": 1
+        },
+        "specs": {
+          "accepted": 5,
+          "draft": 15
+        },
+        "tests": {}
+      },
+      "valid": true
+    },
     "technologies": [
       "Python"
     ],
@@ -581,7 +695,7 @@
   },
   {
     "archived": false,
-    "claim_boundary": "Repository, release, deployment, and live-service states are reported separately.",
+    "claim_boundary": "SSOT artifact counts and coverage are registry-reported observations; they do not by themselves prove that every public product claim is supported.",
     "commit_activity": [
       {
         "count": 0,
@@ -718,6 +832,11 @@
     "display_name": "attribution-campaign-context",
     "evidence": [
       {
+        "kind": "ssot-registry",
+        "observed_at": "2026-08-03T19:58:17Z",
+        "url": "https://github.com/tigrbl/attribution-campaign-context/blob/master/.ssot/registry.json"
+      },
+      {
         "kind": "source",
         "observed_at": "2026-08-03T17:22:38Z",
         "url": "https://github.com/tigrbl/attribution-campaign-context"
@@ -820,6 +939,66 @@
     },
     "reviewed": false,
     "route": "/catalog/repositories/tigrbl/attribution-campaign-context",
+    "ssot_governance": {
+      "counts": {
+        "adrs": 53,
+        "boundaries": 1,
+        "claims": 23,
+        "evidence": 4,
+        "features": 11,
+        "issues": 0,
+        "profiles": 0,
+        "releases": 1,
+        "specs": 71,
+        "tests": 19
+      },
+      "coverage": {
+        "claims_with_evidence": 23,
+        "claims_with_tests": 23,
+        "claims_without_evidence": 0,
+        "evidence_linked_to_claims": 4,
+        "evidence_without_claims": 0
+      },
+      "evidence_type": "ssot.registry",
+      "governed": true,
+      "observed_at": "2026-08-03T19:58:17Z",
+      "present": true,
+      "raw_url": "https://raw.githubusercontent.com/tigrbl/attribution-campaign-context/master/.ssot/registry.json",
+      "registry_url": "https://github.com/tigrbl/attribution-campaign-context/blob/master/.ssot/registry.json",
+      "schema_version": "0.7.0",
+      "source_sha256": "25472f6ea17e5e787569c018cb95457639233edad187a84bd0d9e5cdbd898a5f",
+      "status_counts": {
+        "adrs": {
+          "accepted": 24,
+          "draft": 29
+        },
+        "boundaries": {
+          "frozen": 1
+        },
+        "claims": {
+          "published": 23
+        },
+        "evidence": {
+          "passed": 4
+        },
+        "features": {
+          "implemented": 11
+        },
+        "issues": {},
+        "profiles": {},
+        "releases": {
+          "published": 1
+        },
+        "specs": {
+          "accepted": 37,
+          "draft": 34
+        },
+        "tests": {
+          "passing": 19
+        }
+      },
+      "valid": true
+    },
     "technologies": [
       "Python"
     ],
@@ -831,7 +1010,7 @@
   },
   {
     "archived": false,
-    "claim_boundary": "Repository, release, deployment, and live-service states are reported separately.",
+    "claim_boundary": "SSOT artifact counts and coverage are registry-reported observations; they do not by themselves prove that every public product claim is supported.",
     "commit_activity": [
       {
         "count": 0,
@@ -973,6 +1152,11 @@
     "display_name": "audience-data-transparency-governance-pack",
     "evidence": [
       {
+        "kind": "ssot-registry",
+        "observed_at": "2026-08-03T19:58:16Z",
+        "url": "https://github.com/groupsum/audience-data-transparency-governance-pack/blob/master/.ssot/registry.json"
+      },
+      {
         "kind": "source",
         "observed_at": "2026-08-03T17:22:37Z",
         "url": "https://github.com/groupsum/audience-data-transparency-governance-pack"
@@ -1102,6 +1286,58 @@
     },
     "reviewed": false,
     "route": "/catalog/repositories/groupsum/audience-data-transparency-governance-pack",
+    "ssot_governance": {
+      "counts": {
+        "adrs": 19,
+        "boundaries": 1,
+        "claims": 0,
+        "evidence": 0,
+        "features": 0,
+        "issues": 0,
+        "profiles": 0,
+        "releases": 1,
+        "specs": 20,
+        "tests": 0
+      },
+      "coverage": {
+        "claims_with_evidence": 0,
+        "claims_with_tests": 0,
+        "claims_without_evidence": 0,
+        "evidence_linked_to_claims": 0,
+        "evidence_without_claims": 0
+      },
+      "evidence_type": "ssot.registry",
+      "governed": true,
+      "observed_at": "2026-08-03T19:58:16Z",
+      "present": true,
+      "raw_url": "https://raw.githubusercontent.com/groupsum/audience-data-transparency-governance-pack/master/.ssot/registry.json",
+      "registry_url": "https://github.com/groupsum/audience-data-transparency-governance-pack/blob/master/.ssot/registry.json",
+      "schema_version": "9",
+      "source_sha256": "b9e0a34dc3a3fce65a38224102a79160a4cad91c234e2adcab7ba167b5e69294",
+      "status_counts": {
+        "adrs": {
+          "accepted": 6,
+          "draft": 13
+        },
+        "boundaries": {
+          "draft": 1
+        },
+        "claims": {},
+        "evidence": {},
+        "features": {},
+        "issues": {},
+        "profiles": {},
+        "releases": {
+          "draft": 1
+        },
+        "specs": {
+          "accepted": 5,
+          "draft": 15
+        },
+        "tests": {}
+      },
+      "valid": true
+    },
     "technologies": [
       "Python"
     ],
@@ -1113,7 +1349,7 @@
   },
   {
     "archived": false,
-    "claim_boundary": "Repository, release, deployment, and live-service states are reported separately.",
+    "claim_boundary": "No canonical .ssot/registry.json was observed; repository, release, deployment, and live-service states are reported separately.",
     "commit_activity": [
       {
         "count": 0,
@@ -1337,6 +1573,17 @@
     },
     "reviewed": false,
     "route": "/catalog/repositories/groupsum/authentication-governance-pack",
+    "ssot_governance": {
+      "counts": {},
+      "coverage": {},
+      "governed": false,
+      "observation_status": "not_found",
+      "observed_at": "2026-08-03T19:58:16Z",
+      "present": false,
+      "registry_url": null,
+      "status_counts": {},
+      "valid": false
+    },
     "technologies": [
       "Python"
     ],
@@ -1348,7 +1595,7 @@
   },
   {
     "archived": false,
-    "claim_boundary": "Repository, release, deployment, and live-service states are reported separately.",
+    "claim_boundary": "No canonical .ssot/registry.json was observed; repository, release, deployment, and live-service states are reported separately.",
     "commit_activity": [
       {
         "count": 0,
@@ -1572,6 +1819,17 @@
     },
     "reviewed": false,
     "route": "/catalog/repositories/groupsum/authnz-policy-governance-pack",
+    "ssot_governance": {
+      "counts": {},
+      "coverage": {},
+      "governed": false,
+      "observation_status": "not_found",
+      "observed_at": "2026-08-03T19:58:16Z",
+      "present": false,
+      "registry_url": null,
+      "status_counts": {},
+      "valid": false
+    },
     "technologies": [
       "Python"
     ],
@@ -1583,7 +1841,7 @@
   },
   {
     "archived": false,
-    "claim_boundary": "Repository, release, deployment, and live-service states are reported separately.",
+    "claim_boundary": "No canonical .ssot/registry.json was observed; repository, release, deployment, and live-service states are reported separately.",
     "commit_activity": [
       {
         "count": 0,
@@ -1807,6 +2065,17 @@
     },
     "reviewed": false,
     "route": "/catalog/repositories/groupsum/authorization-policy-governance-pack",
+    "ssot_governance": {
+      "counts": {},
+      "coverage": {},
+      "governed": false,
+      "observation_status": "not_found",
+      "observed_at": "2026-08-03T19:58:16Z",
+      "present": false,
+      "registry_url": null,
+      "status_counts": {},
+      "valid": false
+    },
     "technologies": [
       "Python"
     ],
@@ -1818,7 +2087,7 @@
   },
   {
     "archived": false,
-    "claim_boundary": "Repository, release, deployment, and live-service states are reported separately.",
+    "claim_boundary": "No canonical .ssot/registry.json was observed; repository, release, deployment, and live-service states are reported separately.",
     "commit_activity": [
       {
         "count": 0,
@@ -2163,6 +2432,17 @@
     },
     "reviewed": false,
     "route": "/catalog/repositories/groupsum/cache-freshness-governance-pack",
+    "ssot_governance": {
+      "counts": {},
+      "coverage": {},
+      "governed": false,
+      "observation_status": "not_found",
+      "observed_at": "2026-08-03T19:58:16Z",
+      "present": false,
+      "registry_url": null,
+      "status_counts": {},
+      "valid": false
+    },
     "technologies": [
       "Python"
     ],
@@ -2174,7 +2454,7 @@
   },
   {
     "archived": false,
-    "claim_boundary": "Repository, release, deployment, and live-service states are reported separately.",
+    "claim_boundary": "SSOT artifact counts and coverage are registry-reported observations; they do not by themselves prove that every public product claim is supported.",
     "commit_activity": [
       {
         "count": 0,
@@ -2316,6 +2596,11 @@
     "display_name": "consent-privacy-signals-governance-pack",
     "evidence": [
       {
+        "kind": "ssot-registry",
+        "observed_at": "2026-08-03T19:58:16Z",
+        "url": "https://github.com/groupsum/consent-privacy-signals-governance-pack/blob/master/.ssot/registry.json"
+      },
+      {
         "kind": "source",
         "observed_at": "2026-08-03T17:22:37Z",
         "url": "https://github.com/groupsum/consent-privacy-signals-governance-pack"
@@ -2445,6 +2730,58 @@
     },
     "reviewed": false,
     "route": "/catalog/repositories/groupsum/consent-privacy-signals-governance-pack",
+    "ssot_governance": {
+      "counts": {
+        "adrs": 19,
+        "boundaries": 1,
+        "claims": 0,
+        "evidence": 0,
+        "features": 0,
+        "issues": 0,
+        "profiles": 0,
+        "releases": 1,
+        "specs": 20,
+        "tests": 0
+      },
+      "coverage": {
+        "claims_with_evidence": 0,
+        "claims_with_tests": 0,
+        "claims_without_evidence": 0,
+        "evidence_linked_to_claims": 0,
+        "evidence_without_claims": 0
+      },
+      "evidence_type": "ssot.registry",
+      "governed": true,
+      "observed_at": "2026-08-03T19:58:16Z",
+      "present": true,
+      "raw_url": "https://raw.githubusercontent.com/groupsum/consent-privacy-signals-governance-pack/master/.ssot/registry.json",
+      "registry_url": "https://github.com/groupsum/consent-privacy-signals-governance-pack/blob/master/.ssot/registry.json",
+      "schema_version": "9",
+      "source_sha256": "0e148130cc0e3f9934adc7c4531d962809b423352c24643417f769686097b391",
+      "status_counts": {
+        "adrs": {
+          "accepted": 6,
+          "draft": 13
+        },
+        "boundaries": {
+          "draft": 1
+        },
+        "claims": {},
+        "evidence": {},
+        "features": {},
+        "issues": {},
+        "profiles": {},
+        "releases": {
+          "draft": 1
+        },
+        "specs": {
+          "accepted": 5,
+          "draft": 15
+        },
+        "tests": {}
+      },
+      "valid": true
+    },
     "technologies": [
       "Python"
     ],
@@ -2456,7 +2793,7 @@
   },
   {
     "archived": false,
-    "claim_boundary": "Repository, release, deployment, and live-service states are reported separately.",
+    "claim_boundary": "No canonical .ssot/registry.json was observed; repository, release, deployment, and live-service states are reported separately.",
     "commit_activity": [
       {
         "count": 0,
@@ -2720,6 +3057,17 @@
     },
     "reviewed": false,
     "route": "/catalog/repositories/swarmauri/crouton",
+    "ssot_governance": {
+      "counts": {},
+      "coverage": {},
+      "governed": false,
+      "observation_status": "not_found",
+      "observed_at": "2026-08-03T19:58:16Z",
+      "present": false,
+      "registry_url": null,
+      "status_counts": {},
+      "valid": false
+    },
     "technologies": [
       "Python"
     ],
@@ -2738,7 +3086,7 @@
   },
   {
     "archived": false,
-    "claim_boundary": "Repository, release, deployment, and live-service states are reported separately.",
+    "claim_boundary": "No canonical .ssot/registry.json was observed; repository, release, deployment, and live-service states are reported separately.",
     "commit_activity": [
       {
         "count": 0,
@@ -2959,6 +3307,17 @@
     },
     "reviewed": false,
     "route": "/catalog/repositories/swarmauri/crouton-boilerplate",
+    "ssot_governance": {
+      "counts": {},
+      "coverage": {},
+      "governed": false,
+      "observation_status": "not_found",
+      "observed_at": "2026-08-03T19:58:16Z",
+      "present": false,
+      "registry_url": null,
+      "status_counts": {},
+      "valid": false
+    },
     "technologies": [
       "Python"
     ],
@@ -2983,7 +3342,7 @@
   },
   {
     "archived": false,
-    "claim_boundary": "Repository, release, deployment, and live-service states are reported separately.",
+    "claim_boundary": "SSOT artifact counts and coverage are registry-reported observations; they do not by themselves prove that every public product claim is supported.",
     "commit_activity": [
       {
         "count": 0,
@@ -3125,6 +3484,11 @@
     "display_name": "customer-commerce-semantics-governance-pack",
     "evidence": [
       {
+        "kind": "ssot-registry",
+        "observed_at": "2026-08-03T19:58:16Z",
+        "url": "https://github.com/groupsum/customer-commerce-semantics-governance-pack/blob/master/.ssot/registry.json"
+      },
+      {
         "kind": "source",
         "observed_at": "2026-08-03T17:22:37Z",
         "url": "https://github.com/groupsum/customer-commerce-semantics-governance-pack"
@@ -3254,6 +3618,58 @@
     },
     "reviewed": false,
     "route": "/catalog/repositories/groupsum/customer-commerce-semantics-governance-pack",
+    "ssot_governance": {
+      "counts": {
+        "adrs": 19,
+        "boundaries": 1,
+        "claims": 0,
+        "evidence": 0,
+        "features": 0,
+        "issues": 0,
+        "profiles": 0,
+        "releases": 1,
+        "specs": 20,
+        "tests": 0
+      },
+      "coverage": {
+        "claims_with_evidence": 0,
+        "claims_with_tests": 0,
+        "claims_without_evidence": 0,
+        "evidence_linked_to_claims": 0,
+        "evidence_without_claims": 0
+      },
+      "evidence_type": "ssot.registry",
+      "governed": true,
+      "observed_at": "2026-08-03T19:58:16Z",
+      "present": true,
+      "raw_url": "https://raw.githubusercontent.com/groupsum/customer-commerce-semantics-governance-pack/master/.ssot/registry.json",
+      "registry_url": "https://github.com/groupsum/customer-commerce-semantics-governance-pack/blob/master/.ssot/registry.json",
+      "schema_version": "9",
+      "source_sha256": "082ac441cfde95adf9db6ac273bb890749a375ddb254ed1a3fd4c248951ab04e",
+      "status_counts": {
+        "adrs": {
+          "accepted": 6,
+          "draft": 13
+        },
+        "boundaries": {
+          "draft": 1
+        },
+        "claims": {},
+        "evidence": {},
+        "features": {},
+        "issues": {},
+        "profiles": {},
+        "releases": {
+          "draft": 1
+        },
+        "specs": {
+          "accepted": 5,
+          "draft": 15
+        },
+        "tests": {}
+      },
+      "valid": true
+    },
     "technologies": [
       "Python"
     ],
@@ -3265,7 +3681,7 @@
   },
   {
     "archived": false,
-    "claim_boundary": "Repository, release, deployment, and live-service states are reported separately.",
+    "claim_boundary": "SSOT artifact counts and coverage are registry-reported observations; they do not by themselves prove that every public product claim is supported.",
     "commit_activity": [
       {
         "count": 0,
@@ -3407,6 +3823,11 @@
     "display_name": "customer-identity-profile-governance-pack",
     "evidence": [
       {
+        "kind": "ssot-registry",
+        "observed_at": "2026-08-03T19:58:16Z",
+        "url": "https://github.com/groupsum/customer-identity-profile-governance-pack/blob/master/.ssot/registry.json"
+      },
+      {
         "kind": "source",
         "observed_at": "2026-08-03T17:22:37Z",
         "url": "https://github.com/groupsum/customer-identity-profile-governance-pack"
@@ -3536,6 +3957,58 @@
     },
     "reviewed": false,
     "route": "/catalog/repositories/groupsum/customer-identity-profile-governance-pack",
+    "ssot_governance": {
+      "counts": {
+        "adrs": 19,
+        "boundaries": 1,
+        "claims": 0,
+        "evidence": 0,
+        "features": 0,
+        "issues": 0,
+        "profiles": 0,
+        "releases": 1,
+        "specs": 20,
+        "tests": 0
+      },
+      "coverage": {
+        "claims_with_evidence": 0,
+        "claims_with_tests": 0,
+        "claims_without_evidence": 0,
+        "evidence_linked_to_claims": 0,
+        "evidence_without_claims": 0
+      },
+      "evidence_type": "ssot.registry",
+      "governed": true,
+      "observed_at": "2026-08-03T19:58:16Z",
+      "present": true,
+      "raw_url": "https://raw.githubusercontent.com/groupsum/customer-identity-profile-governance-pack/master/.ssot/registry.json",
+      "registry_url": "https://github.com/groupsum/customer-identity-profile-governance-pack/blob/master/.ssot/registry.json",
+      "schema_version": "9",
+      "source_sha256": "ea2d753d6428a41ab2801e2319cf2764a4e6dfee6eae1f53c8bf68c632b016f7",
+      "status_counts": {
+        "adrs": {
+          "accepted": 6,
+          "draft": 13
+        },
+        "boundaries": {
+          "draft": 1
+        },
+        "claims": {},
+        "evidence": {},
+        "features": {},
+        "issues": {},
+        "profiles": {},
+        "releases": {
+          "draft": 1
+        },
+        "specs": {
+          "accepted": 5,
+          "draft": 15
+        },
+        "tests": {}
+      },
+      "valid": true
+    },
     "technologies": [
       "Python"
     ],
@@ -3547,7 +4020,7 @@
   },
   {
     "archived": false,
-    "claim_boundary": "Repository, release, deployment, and live-service states are reported separately.",
+    "claim_boundary": "SSOT artifact counts and coverage are registry-reported observations; they do not by themselves prove that every public product claim is supported.",
     "commit_activity": [
       {
         "count": 0,
@@ -3689,6 +4162,11 @@
     "display_name": "data-catalog-lineage-contracts-governance-pack",
     "evidence": [
       {
+        "kind": "ssot-registry",
+        "observed_at": "2026-08-03T19:58:16Z",
+        "url": "https://github.com/groupsum/data-catalog-lineage-contracts-governance-pack/blob/master/.ssot/registry.json"
+      },
+      {
         "kind": "source",
         "observed_at": "2026-08-03T17:22:37Z",
         "url": "https://github.com/groupsum/data-catalog-lineage-contracts-governance-pack"
@@ -3818,6 +4296,58 @@
     },
     "reviewed": false,
     "route": "/catalog/repositories/groupsum/data-catalog-lineage-contracts-governance-pack",
+    "ssot_governance": {
+      "counts": {
+        "adrs": 19,
+        "boundaries": 1,
+        "claims": 0,
+        "evidence": 0,
+        "features": 0,
+        "issues": 0,
+        "profiles": 0,
+        "releases": 1,
+        "specs": 20,
+        "tests": 0
+      },
+      "coverage": {
+        "claims_with_evidence": 0,
+        "claims_with_tests": 0,
+        "claims_without_evidence": 0,
+        "evidence_linked_to_claims": 0,
+        "evidence_without_claims": 0
+      },
+      "evidence_type": "ssot.registry",
+      "governed": true,
+      "observed_at": "2026-08-03T19:58:16Z",
+      "present": true,
+      "raw_url": "https://raw.githubusercontent.com/groupsum/data-catalog-lineage-contracts-governance-pack/master/.ssot/registry.json",
+      "registry_url": "https://github.com/groupsum/data-catalog-lineage-contracts-governance-pack/blob/master/.ssot/registry.json",
+      "schema_version": "9",
+      "source_sha256": "3ea78b99384c1e572032cb4ef1bb897c45109fed54076af9fd2f63113c61150d",
+      "status_counts": {
+        "adrs": {
+          "accepted": 6,
+          "draft": 13
+        },
+        "boundaries": {
+          "draft": 1
+        },
+        "claims": {},
+        "evidence": {},
+        "features": {},
+        "issues": {},
+        "profiles": {},
+        "releases": {
+          "draft": 1
+        },
+        "specs": {
+          "accepted": 5,
+          "draft": 15
+        },
+        "tests": {}
+      },
+      "valid": true
+    },
     "technologies": [
       "Python"
     ],
@@ -3829,7 +4359,7 @@
   },
   {
     "archived": false,
-    "claim_boundary": "Repository, release, deployment, and live-service states are reported separately.",
+    "claim_boundary": "No canonical .ssot/registry.json was observed; repository, release, deployment, and live-service states are reported separately.",
     "commit_activity": [
       {
         "count": 0,
@@ -4053,6 +4583,17 @@
     },
     "reviewed": false,
     "route": "/catalog/repositories/groupsum/decentralized-identifiers-governance-pack",
+    "ssot_governance": {
+      "counts": {},
+      "coverage": {},
+      "governed": false,
+      "observation_status": "not_found",
+      "observed_at": "2026-08-03T19:58:16Z",
+      "present": false,
+      "registry_url": null,
+      "status_counts": {},
+      "valid": false
+    },
     "technologies": [
       "Python"
     ],
@@ -4064,7 +4605,7 @@
   },
   {
     "archived": false,
-    "claim_boundary": "Repository, release, deployment, and live-service states are reported separately.",
+    "claim_boundary": "No canonical .ssot/registry.json was observed; repository, release, deployment, and live-service states are reported separately.",
     "commit_activity": [
       {
         "count": 0,
@@ -4391,6 +4932,17 @@
     },
     "reviewed": false,
     "route": "/catalog/repositories/groupsum/digital-signature-governance-pack",
+    "ssot_governance": {
+      "counts": {},
+      "coverage": {},
+      "governed": false,
+      "observation_status": "not_found",
+      "observed_at": "2026-08-03T19:58:16Z",
+      "present": false,
+      "registry_url": null,
+      "status_counts": {},
+      "valid": false
+    },
     "technologies": [
       "Python"
     ],
@@ -4402,7 +4954,7 @@
   },
   {
     "archived": false,
-    "claim_boundary": "Repository, release, deployment, and live-service states are reported separately.",
+    "claim_boundary": "No canonical .ssot/registry.json was observed; repository, release, deployment, and live-service states are reported separately.",
     "commit_activity": [
       {
         "count": 0,
@@ -4664,6 +5216,17 @@
     },
     "reviewed": false,
     "route": "/catalog/repositories/swarmauri/docs-peagen-com",
+    "ssot_governance": {
+      "counts": {},
+      "coverage": {},
+      "governed": false,
+      "observation_status": "not_found",
+      "observed_at": "2026-08-03T19:58:17Z",
+      "present": false,
+      "registry_url": null,
+      "status_counts": {},
+      "valid": false
+    },
     "technologies": [
       "Dockerfile",
       "JavaScript",
@@ -4689,7 +5252,7 @@
   },
   {
     "archived": false,
-    "claim_boundary": "Repository, release, deployment, and live-service states are reported separately.",
+    "claim_boundary": "No canonical .ssot/registry.json was observed; repository, release, deployment, and live-service states are reported separately.",
     "commit_activity": [
       {
         "count": 0,
@@ -4993,6 +5556,17 @@
     },
     "reviewed": false,
     "route": "/catalog/repositories/swarmauri/docs-swarmauri-com",
+    "ssot_governance": {
+      "counts": {},
+      "coverage": {},
+      "governed": false,
+      "observation_status": "not_found",
+      "observed_at": "2026-08-03T19:58:17Z",
+      "present": false,
+      "registry_url": null,
+      "status_counts": {},
+      "valid": false
+    },
     "technologies": [
       "Dockerfile",
       "JavaScript",
@@ -5018,7 +5592,7 @@
   },
   {
     "archived": false,
-    "claim_boundary": "Repository, release, deployment, and live-service states are reported separately.",
+    "claim_boundary": "No canonical .ssot/registry.json was observed; repository, release, deployment, and live-service states are reported separately.",
     "commit_activity": [
       {
         "count": 0,
@@ -5294,6 +5868,17 @@
     },
     "reviewed": false,
     "route": "/catalog/repositories/tigrbl/docs-tigrbl-com",
+    "ssot_governance": {
+      "counts": {},
+      "coverage": {},
+      "governed": false,
+      "observation_status": "not_found",
+      "observed_at": "2026-08-03T19:58:17Z",
+      "present": false,
+      "registry_url": null,
+      "status_counts": {},
+      "valid": false
+    },
     "technologies": [
       "Dockerfile",
       "JavaScript",
@@ -5319,7 +5904,7 @@
   },
   {
     "archived": false,
-    "claim_boundary": "Repository, release, deployment, and live-service states are reported separately.",
+    "claim_boundary": "No canonical .ssot/registry.json was observed; repository, release, deployment, and live-service states are reported separately.",
     "commit_activity": [
       {
         "count": 0,
@@ -5567,6 +6152,17 @@
     },
     "reviewed": false,
     "route": "/catalog/repositories/tigrbl/docs-tigrcorn-com",
+    "ssot_governance": {
+      "counts": {},
+      "coverage": {},
+      "governed": false,
+      "observation_status": "not_found",
+      "observed_at": "2026-08-03T19:58:17Z",
+      "present": false,
+      "registry_url": null,
+      "status_counts": {},
+      "valid": false
+    },
     "technologies": [
       "Dockerfile",
       "JavaScript",
@@ -5592,7 +6188,7 @@
   },
   {
     "archived": false,
-    "claim_boundary": "Repository, release, deployment, and live-service states are reported separately.",
+    "claim_boundary": "SSOT artifact counts and coverage are registry-reported observations; they do not by themselves prove that every public product claim is supported.",
     "commit_activity": [
       {
         "count": 0,
@@ -5729,6 +6325,11 @@
     "display_name": "document-studio",
     "evidence": [
       {
+        "kind": "ssot-registry",
+        "observed_at": "2026-08-03T19:58:16Z",
+        "url": "https://github.com/groupsum/document-studio/blob/master/.ssot/registry.json"
+      },
+      {
         "kind": "source",
         "observed_at": "2026-08-03T17:22:37Z",
         "url": "https://github.com/groupsum/document-studio"
@@ -5827,6 +6428,58 @@
     },
     "reviewed": false,
     "route": "/catalog/repositories/groupsum/document-studio",
+    "ssot_governance": {
+      "counts": {
+        "adrs": 37,
+        "boundaries": 1,
+        "claims": 0,
+        "evidence": 0,
+        "features": 0,
+        "issues": 0,
+        "profiles": 0,
+        "releases": 1,
+        "specs": 41,
+        "tests": 0
+      },
+      "coverage": {
+        "claims_with_evidence": 0,
+        "claims_with_tests": 0,
+        "claims_without_evidence": 0,
+        "evidence_linked_to_claims": 0,
+        "evidence_without_claims": 0
+      },
+      "evidence_type": "ssot.registry",
+      "governed": true,
+      "observed_at": "2026-08-03T19:58:16Z",
+      "present": true,
+      "raw_url": "https://raw.githubusercontent.com/groupsum/document-studio/master/.ssot/registry.json",
+      "registry_url": "https://github.com/groupsum/document-studio/blob/master/.ssot/registry.json",
+      "schema_version": "0.8.0",
+      "source_sha256": "81452822a8afb4b99d044dbfc9878d70b04e112e29ee6129da6a588ff93db915",
+      "status_counts": {
+        "adrs": {
+          "accepted": 7,
+          "draft": 30
+        },
+        "boundaries": {
+          "draft": 1
+        },
+        "claims": {},
+        "evidence": {},
+        "features": {},
+        "issues": {},
+        "profiles": {},
+        "releases": {
+          "draft": 1
+        },
+        "specs": {
+          "accepted": 6,
+          "draft": 35
+        },
+        "tests": {}
+      },
+      "valid": true
+    },
     "technologies": [
       "CSS",
       "HTML",
@@ -5840,7 +6493,7 @@
   },
   {
     "archived": false,
-    "claim_boundary": "Repository, release, deployment, and live-service states are reported separately.",
+    "claim_boundary": "SSOT artifact counts and coverage are registry-reported observations; they do not by themselves prove that every public product claim is supported.",
     "commit_activity": [
       {
         "count": 0,
@@ -5977,6 +6630,11 @@
     "display_name": "document-viewer",
     "evidence": [
       {
+        "kind": "ssot-registry",
+        "observed_at": "2026-08-03T19:58:16Z",
+        "url": "https://github.com/groupsum/document-viewer/blob/master/.ssot/registry.json"
+      },
+      {
         "kind": "source",
         "observed_at": "2026-08-03T17:22:37Z",
         "url": "https://github.com/groupsum/document-viewer"
@@ -6075,6 +6733,58 @@
     },
     "reviewed": false,
     "route": "/catalog/repositories/groupsum/document-viewer",
+    "ssot_governance": {
+      "counts": {
+        "adrs": 37,
+        "boundaries": 1,
+        "claims": 0,
+        "evidence": 0,
+        "features": 0,
+        "issues": 0,
+        "profiles": 0,
+        "releases": 1,
+        "specs": 41,
+        "tests": 0
+      },
+      "coverage": {
+        "claims_with_evidence": 0,
+        "claims_with_tests": 0,
+        "claims_without_evidence": 0,
+        "evidence_linked_to_claims": 0,
+        "evidence_without_claims": 0
+      },
+      "evidence_type": "ssot.registry",
+      "governed": true,
+      "observed_at": "2026-08-03T19:58:16Z",
+      "present": true,
+      "raw_url": "https://raw.githubusercontent.com/groupsum/document-viewer/master/.ssot/registry.json",
+      "registry_url": "https://github.com/groupsum/document-viewer/blob/master/.ssot/registry.json",
+      "schema_version": "0.8.0",
+      "source_sha256": "7afbe4b04234b68f9cec68b286b12c9c52b81bac681f2cc0e6cfc8162ba89459",
+      "status_counts": {
+        "adrs": {
+          "accepted": 7,
+          "draft": 30
+        },
+        "boundaries": {
+          "draft": 1
+        },
+        "claims": {},
+        "evidence": {},
+        "features": {},
+        "issues": {},
+        "profiles": {},
+        "releases": {
+          "draft": 1
+        },
+        "specs": {
+          "accepted": 6,
+          "draft": 35
+        },
+        "tests": {}
+      },
+      "valid": true
+    },
     "technologies": [
       "CSS",
       "HTML",
@@ -6088,7 +6798,7 @@
   },
   {
     "archived": false,
-    "claim_boundary": "Repository, release, deployment, and live-service states are reported separately.",
+    "claim_boundary": "SSOT artifact counts and coverage are registry-reported observations; they do not by themselves prove that every public product claim is supported.",
     "commit_activity": [
       {
         "count": 0,
@@ -6230,6 +6940,11 @@
     "display_name": "event-behavioral-telemetry-governance-pack",
     "evidence": [
       {
+        "kind": "ssot-registry",
+        "observed_at": "2026-08-03T19:58:16Z",
+        "url": "https://github.com/groupsum/event-behavioral-telemetry-governance-pack/blob/master/.ssot/registry.json"
+      },
+      {
         "kind": "source",
         "observed_at": "2026-08-03T17:22:37Z",
         "url": "https://github.com/groupsum/event-behavioral-telemetry-governance-pack"
@@ -6359,6 +7074,58 @@
     },
     "reviewed": false,
     "route": "/catalog/repositories/groupsum/event-behavioral-telemetry-governance-pack",
+    "ssot_governance": {
+      "counts": {
+        "adrs": 19,
+        "boundaries": 1,
+        "claims": 0,
+        "evidence": 0,
+        "features": 0,
+        "issues": 0,
+        "profiles": 0,
+        "releases": 1,
+        "specs": 20,
+        "tests": 0
+      },
+      "coverage": {
+        "claims_with_evidence": 0,
+        "claims_with_tests": 0,
+        "claims_without_evidence": 0,
+        "evidence_linked_to_claims": 0,
+        "evidence_without_claims": 0
+      },
+      "evidence_type": "ssot.registry",
+      "governed": true,
+      "observed_at": "2026-08-03T19:58:16Z",
+      "present": true,
+      "raw_url": "https://raw.githubusercontent.com/groupsum/event-behavioral-telemetry-governance-pack/master/.ssot/registry.json",
+      "registry_url": "https://github.com/groupsum/event-behavioral-telemetry-governance-pack/blob/master/.ssot/registry.json",
+      "schema_version": "9",
+      "source_sha256": "ae156e551ddfdf1a2305688becc1b1b85a394c48a099c36f5d7205e3c206c2bf",
+      "status_counts": {
+        "adrs": {
+          "accepted": 6,
+          "draft": 13
+        },
+        "boundaries": {
+          "draft": 1
+        },
+        "claims": {},
+        "evidence": {},
+        "features": {},
+        "issues": {},
+        "profiles": {},
+        "releases": {
+          "draft": 1
+        },
+        "specs": {
+          "accepted": 5,
+          "draft": 15
+        },
+        "tests": {}
+      },
+      "valid": true
+    },
     "technologies": [
       "Python"
     ],
@@ -6370,7 +7137,7 @@
   },
   {
     "archived": false,
-    "claim_boundary": "Repository, release, deployment, and live-service states are reported separately.",
+    "claim_boundary": "SSOT artifact counts and coverage are registry-reported observations; they do not by themselves prove that every public product claim is supported.",
     "commit_activity": [
       {
         "count": 0,
@@ -6507,6 +7274,11 @@
     "display_name": "file-browser",
     "evidence": [
       {
+        "kind": "ssot-registry",
+        "observed_at": "2026-08-03T19:58:16Z",
+        "url": "https://github.com/groupsum/file-browser/blob/master/.ssot/registry.json"
+      },
+      {
         "kind": "source",
         "observed_at": "2026-08-03T17:22:37Z",
         "url": "https://github.com/groupsum/file-browser"
@@ -6605,6 +7377,58 @@
     },
     "reviewed": false,
     "route": "/catalog/repositories/groupsum/file-browser",
+    "ssot_governance": {
+      "counts": {
+        "adrs": 37,
+        "boundaries": 1,
+        "claims": 0,
+        "evidence": 0,
+        "features": 0,
+        "issues": 0,
+        "profiles": 0,
+        "releases": 1,
+        "specs": 41,
+        "tests": 0
+      },
+      "coverage": {
+        "claims_with_evidence": 0,
+        "claims_with_tests": 0,
+        "claims_without_evidence": 0,
+        "evidence_linked_to_claims": 0,
+        "evidence_without_claims": 0
+      },
+      "evidence_type": "ssot.registry",
+      "governed": true,
+      "observed_at": "2026-08-03T19:58:16Z",
+      "present": true,
+      "raw_url": "https://raw.githubusercontent.com/groupsum/file-browser/master/.ssot/registry.json",
+      "registry_url": "https://github.com/groupsum/file-browser/blob/master/.ssot/registry.json",
+      "schema_version": "0.8.0",
+      "source_sha256": "5d2b514bb578ff4e4e65bed98bc3694831eecd2096e57e37ee078ed4ffb69ec0",
+      "status_counts": {
+        "adrs": {
+          "accepted": 7,
+          "draft": 30
+        },
+        "boundaries": {
+          "draft": 1
+        },
+        "claims": {},
+        "evidence": {},
+        "features": {},
+        "issues": {},
+        "profiles": {},
+        "releases": {
+          "draft": 1
+        },
+        "specs": {
+          "accepted": 6,
+          "draft": 35
+        },
+        "tests": {}
+      },
+      "valid": true
+    },
     "technologies": [
       "CSS",
       "HTML",
@@ -6618,7 +7442,7 @@
   },
   {
     "archived": false,
-    "claim_boundary": "Repository, release, deployment, and live-service states are reported separately.",
+    "claim_boundary": "SSOT artifact counts and coverage are registry-reported observations; they do not by themselves prove that every public product claim is supported.",
     "commit_activity": [
       {
         "count": 0,
@@ -6760,6 +7584,11 @@
     "display_name": "ga4-google-tagging-governance-pack",
     "evidence": [
       {
+        "kind": "ssot-registry",
+        "observed_at": "2026-08-03T19:58:16Z",
+        "url": "https://github.com/groupsum/ga4-google-tagging-governance-pack/blob/master/.ssot/registry.json"
+      },
+      {
         "kind": "source",
         "observed_at": "2026-08-03T17:22:37Z",
         "url": "https://github.com/groupsum/ga4-google-tagging-governance-pack"
@@ -6889,6 +7718,58 @@
     },
     "reviewed": false,
     "route": "/catalog/repositories/groupsum/ga4-google-tagging-governance-pack",
+    "ssot_governance": {
+      "counts": {
+        "adrs": 18,
+        "boundaries": 1,
+        "claims": 0,
+        "evidence": 0,
+        "features": 0,
+        "issues": 0,
+        "profiles": 0,
+        "releases": 1,
+        "specs": 20,
+        "tests": 0
+      },
+      "coverage": {
+        "claims_with_evidence": 0,
+        "claims_with_tests": 0,
+        "claims_without_evidence": 0,
+        "evidence_linked_to_claims": 0,
+        "evidence_without_claims": 0
+      },
+      "evidence_type": "ssot.registry",
+      "governed": true,
+      "observed_at": "2026-08-03T19:58:16Z",
+      "present": true,
+      "raw_url": "https://raw.githubusercontent.com/groupsum/ga4-google-tagging-governance-pack/master/.ssot/registry.json",
+      "registry_url": "https://github.com/groupsum/ga4-google-tagging-governance-pack/blob/master/.ssot/registry.json",
+      "schema_version": "9",
+      "source_sha256": "0e61e8691f1c4037cad37079a9f9f1f1aa616f0c0463841a01e913aac555c55c",
+      "status_counts": {
+        "adrs": {
+          "accepted": 5,
+          "draft": 13
+        },
+        "boundaries": {
+          "draft": 1
+        },
+        "claims": {},
+        "evidence": {},
+        "features": {},
+        "issues": {},
+        "profiles": {},
+        "releases": {
+          "draft": 1
+        },
+        "specs": {
+          "accepted": 5,
+          "draft": 15
+        },
+        "tests": {}
+      },
+      "valid": true
+    },
     "technologies": [
       "Python"
     ],
@@ -6900,7 +7781,7 @@
   },
   {
     "archived": false,
-    "claim_boundary": "Repository, release, deployment, and live-service states are reported separately.",
+    "claim_boundary": "No canonical .ssot/registry.json was observed; repository, release, deployment, and live-service states are reported separately.",
     "commit_activity": [
       {
         "count": 0,
@@ -7141,6 +8022,17 @@
     },
     "reviewed": false,
     "route": "/catalog/repositories/groupsum/groupsum-xyz",
+    "ssot_governance": {
+      "counts": {},
+      "coverage": {},
+      "governed": false,
+      "observation_status": "not_found",
+      "observed_at": "2026-08-03T19:58:16Z",
+      "present": false,
+      "registry_url": null,
+      "status_counts": {},
+      "valid": false
+    },
     "technologies": [
       "CSS",
       "Dockerfile",
@@ -7167,7 +8059,7 @@
   },
   {
     "archived": false,
-    "claim_boundary": "Repository, release, deployment, and live-service states are reported separately.",
+    "claim_boundary": "SSOT artifact counts and coverage are registry-reported observations; they do not by themselves prove that every public product claim is supported.",
     "commit_activity": [
       {
         "count": 0,
@@ -7309,6 +8201,11 @@
     "display_name": "gs1-product-link-event-data-governance-pack",
     "evidence": [
       {
+        "kind": "ssot-registry",
+        "observed_at": "2026-08-03T19:58:16Z",
+        "url": "https://github.com/groupsum/gs1-product-link-event-data-governance-pack/blob/master/.ssot/registry.json"
+      },
+      {
         "kind": "source",
         "observed_at": "2026-08-03T17:22:37Z",
         "url": "https://github.com/groupsum/gs1-product-link-event-data-governance-pack"
@@ -7438,6 +8335,58 @@
     },
     "reviewed": false,
     "route": "/catalog/repositories/groupsum/gs1-product-link-event-data-governance-pack",
+    "ssot_governance": {
+      "counts": {
+        "adrs": 17,
+        "boundaries": 1,
+        "claims": 0,
+        "evidence": 0,
+        "features": 0,
+        "issues": 0,
+        "profiles": 0,
+        "releases": 1,
+        "specs": 19,
+        "tests": 0
+      },
+      "coverage": {
+        "claims_with_evidence": 0,
+        "claims_with_tests": 0,
+        "claims_without_evidence": 0,
+        "evidence_linked_to_claims": 0,
+        "evidence_without_claims": 0
+      },
+      "evidence_type": "ssot.registry",
+      "governed": true,
+      "observed_at": "2026-08-03T19:58:16Z",
+      "present": true,
+      "raw_url": "https://raw.githubusercontent.com/groupsum/gs1-product-link-event-data-governance-pack/master/.ssot/registry.json",
+      "registry_url": "https://github.com/groupsum/gs1-product-link-event-data-governance-pack/blob/master/.ssot/registry.json",
+      "schema_version": "9",
+      "source_sha256": "6aed58e34f2947255d0793a6eb429ee563302e55b596c74d467af7adfab67782",
+      "status_counts": {
+        "adrs": {
+          "accepted": 4,
+          "draft": 13
+        },
+        "boundaries": {
+          "draft": 1
+        },
+        "claims": {},
+        "evidence": {},
+        "features": {},
+        "issues": {},
+        "profiles": {},
+        "releases": {
+          "draft": 1
+        },
+        "specs": {
+          "accepted": 4,
+          "draft": 15
+        },
+        "tests": {}
+      },
+      "valid": true
+    },
     "technologies": [
       "Python"
     ],
@@ -7449,7 +8398,7 @@
   },
   {
     "archived": false,
-    "claim_boundary": "Repository, release, deployment, and live-service states are reported separately.",
+    "claim_boundary": "SSOT artifact counts and coverage are registry-reported observations; they do not by themselves prove that every public product claim is supported.",
     "commit_activity": [
       {
         "count": 0,
@@ -7590,6 +8539,11 @@
     "description_source": "github-repository",
     "display_name": "markdown_workspace",
     "evidence": [
+      {
+        "kind": "ssot-registry",
+        "observed_at": "2026-08-03T19:58:16Z",
+        "url": "https://github.com/groupsum/markdown_workspace/blob/master/.ssot/registry.json"
+      },
       {
         "kind": "source",
         "observed_at": "2026-08-03T17:22:37Z",
@@ -9506,6 +10460,78 @@
     },
     "reviewed": false,
     "route": "/catalog/repositories/groupsum/markdown_workspace",
+    "ssot_governance": {
+      "counts": {
+        "adrs": 99,
+        "boundaries": 34,
+        "claims": 242,
+        "evidence": 115,
+        "features": 549,
+        "issues": 5,
+        "profiles": 6,
+        "releases": 9,
+        "specs": 130,
+        "tests": 177
+      },
+      "coverage": {
+        "claims_with_evidence": 242,
+        "claims_with_tests": 242,
+        "claims_without_evidence": 0,
+        "evidence_linked_to_claims": 115,
+        "evidence_without_claims": 0
+      },
+      "evidence_type": "ssot.registry",
+      "governed": true,
+      "observed_at": "2026-08-03T19:58:16Z",
+      "present": true,
+      "raw_url": "https://raw.githubusercontent.com/groupsum/markdown_workspace/master/.ssot/registry.json",
+      "registry_url": "https://github.com/groupsum/markdown_workspace/blob/master/.ssot/registry.json",
+      "schema_version": "0.4.0",
+      "source_sha256": "cb5c5a9b6cb01186c8cd34adf51132519b0b05c030e6b6d5b80ef161c1fed2b5",
+      "status_counts": {
+        "adrs": {
+          "accepted": 40,
+          "draft": 59
+        },
+        "boundaries": {
+          "active": 10,
+          "draft": 3,
+          "frozen": 21
+        },
+        "claims": {
+          "declared": 8,
+          "evidenced": 142,
+          "implemented": 28,
+          "published": 64
+        },
+        "evidence": {
+          "passed": 115
+        },
+        "features": {
+          "absent": 22,
+          "implemented": 527
+        },
+        "issues": {
+          "closed": 3,
+          "open": 2
+        },
+        "profiles": {
+          "active": 6
+        },
+        "releases": {
+          "candidate": 1,
+          "published": 8
+        },
+        "specs": {
+          "accepted": 4,
+          "draft": 126
+        },
+        "tests": {
+          "passing": 177
+        }
+      },
+      "valid": true
+    },
     "technologies": [
       "CSS",
       "Dockerfile",
@@ -9535,7 +10561,7 @@
   },
   {
     "archived": false,
-    "claim_boundary": "Repository, release, deployment, and live-service states are reported separately.",
+    "claim_boundary": "SSOT artifact counts and coverage are registry-reported observations; they do not by themselves prove that every public product claim is supported.",
     "commit_activity": [
       {
         "count": 0,
@@ -9677,6 +10703,11 @@
     "display_name": "marketing-attribution-conversion-governance-pack",
     "evidence": [
       {
+        "kind": "ssot-registry",
+        "observed_at": "2026-08-03T19:58:16Z",
+        "url": "https://github.com/groupsum/marketing-attribution-conversion-governance-pack/blob/master/.ssot/registry.json"
+      },
+      {
         "kind": "source",
         "observed_at": "2026-08-03T17:22:37Z",
         "url": "https://github.com/groupsum/marketing-attribution-conversion-governance-pack"
@@ -9806,6 +10837,58 @@
     },
     "reviewed": false,
     "route": "/catalog/repositories/groupsum/marketing-attribution-conversion-governance-pack",
+    "ssot_governance": {
+      "counts": {
+        "adrs": 19,
+        "boundaries": 1,
+        "claims": 0,
+        "evidence": 0,
+        "features": 0,
+        "issues": 0,
+        "profiles": 0,
+        "releases": 1,
+        "specs": 20,
+        "tests": 0
+      },
+      "coverage": {
+        "claims_with_evidence": 0,
+        "claims_with_tests": 0,
+        "claims_without_evidence": 0,
+        "evidence_linked_to_claims": 0,
+        "evidence_without_claims": 0
+      },
+      "evidence_type": "ssot.registry",
+      "governed": true,
+      "observed_at": "2026-08-03T19:58:16Z",
+      "present": true,
+      "raw_url": "https://raw.githubusercontent.com/groupsum/marketing-attribution-conversion-governance-pack/master/.ssot/registry.json",
+      "registry_url": "https://github.com/groupsum/marketing-attribution-conversion-governance-pack/blob/master/.ssot/registry.json",
+      "schema_version": "9",
+      "source_sha256": "8542a79456da1aae3ca9eb7c05a42e20b12d904d74bba9cd244c07a907bfea19",
+      "status_counts": {
+        "adrs": {
+          "accepted": 6,
+          "draft": 13
+        },
+        "boundaries": {
+          "draft": 1
+        },
+        "claims": {},
+        "evidence": {},
+        "features": {},
+        "issues": {},
+        "profiles": {},
+        "releases": {
+          "draft": 1
+        },
+        "specs": {
+          "accepted": 5,
+          "draft": 15
+        },
+        "tests": {}
+      },
+      "valid": true
+    },
     "technologies": [
       "Python"
     ],
@@ -9817,7 +10900,7 @@
   },
   {
     "archived": false,
-    "claim_boundary": "Repository, release, deployment, and live-service states are reported separately.",
+    "claim_boundary": "SSOT artifact counts and coverage are registry-reported observations; they do not by themselves prove that every public product claim is supported.",
     "commit_activity": [
       {
         "count": 0,
@@ -9953,6 +11036,11 @@
     "description_source": "github-repository",
     "display_name": "mdwrk",
     "evidence": [
+      {
+        "kind": "ssot-registry",
+        "observed_at": "2026-08-03T19:58:16Z",
+        "url": "https://github.com/groupsum/mdwrk/blob/master/.ssot/registry.json"
+      },
       {
         "kind": "source",
         "observed_at": "2026-08-03T17:22:37Z",
@@ -10429,6 +11517,78 @@
     },
     "reviewed": false,
     "route": "/catalog/repositories/groupsum/mdwrk",
+    "ssot_governance": {
+      "counts": {
+        "adrs": 76,
+        "boundaries": 11,
+        "claims": 59,
+        "evidence": 62,
+        "features": 107,
+        "issues": 1,
+        "profiles": 5,
+        "releases": 3,
+        "specs": 88,
+        "tests": 62
+      },
+      "coverage": {
+        "claims_with_evidence": 57,
+        "claims_with_tests": 57,
+        "claims_without_evidence": 2,
+        "evidence_linked_to_claims": 62,
+        "evidence_without_claims": 0
+      },
+      "evidence_type": "ssot.registry",
+      "governed": true,
+      "observed_at": "2026-08-03T19:58:16Z",
+      "present": true,
+      "raw_url": "https://raw.githubusercontent.com/groupsum/mdwrk/master/.ssot/registry.json",
+      "registry_url": "https://github.com/groupsum/mdwrk/blob/master/.ssot/registry.json",
+      "schema_version": "0.6.0",
+      "source_sha256": "28a63b438966940df0056577434232d5cc4bca9f830f7d5b866d9c99983ff005",
+      "status_counts": {
+        "adrs": {
+          "accepted": 29,
+          "draft": 47
+        },
+        "boundaries": {
+          "active": 3,
+          "draft": 1,
+          "frozen": 7
+        },
+        "claims": {
+          "certified": 42,
+          "evidenced": 10,
+          "published": 5,
+          "retired": 2
+        },
+        "evidence": {
+          "passed": 62
+        },
+        "features": {
+          "absent": 9,
+          "implemented": 88,
+          "partial": 10
+        },
+        "issues": {
+          "closed": 1
+        },
+        "profiles": {
+          "active": 5
+        },
+        "releases": {
+          "draft": 1,
+          "published": 2
+        },
+        "specs": {
+          "accepted": 7,
+          "draft": 81
+        },
+        "tests": {
+          "passing": 62
+        }
+      },
+      "valid": true
+    },
     "technologies": [
       "CSS",
       "HTML",
@@ -10445,7 +11605,7 @@
   },
   {
     "archived": false,
-    "claim_boundary": "Repository, release, deployment, and live-service states are reported separately.",
+    "claim_boundary": "SSOT artifact counts and coverage are registry-reported observations; they do not by themselves prove that every public product claim is supported.",
     "commit_activity": [
       {
         "count": 0,
@@ -10581,6 +11741,11 @@
     "description_source": "github-repository",
     "display_name": "mdwrk-pages",
     "evidence": [
+      {
+        "kind": "ssot-registry",
+        "observed_at": "2026-08-03T19:58:17Z",
+        "url": "https://github.com/groupsum/mdwrk-pages/blob/master/.ssot/registry.json"
+      },
       {
         "kind": "source",
         "observed_at": "2026-08-03T17:22:37Z",
@@ -10862,6 +12027,82 @@
     },
     "reviewed": false,
     "route": "/catalog/repositories/groupsum/mdwrk-pages",
+    "ssot_governance": {
+      "counts": {
+        "adrs": 82,
+        "boundaries": 24,
+        "claims": 126,
+        "evidence": 83,
+        "features": 576,
+        "issues": 3,
+        "profiles": 1,
+        "releases": 2,
+        "specs": 92,
+        "tests": 188
+      },
+      "coverage": {
+        "claims_with_evidence": 126,
+        "claims_with_tests": 126,
+        "claims_without_evidence": 0,
+        "evidence_linked_to_claims": 83,
+        "evidence_without_claims": 0
+      },
+      "evidence_type": "ssot.registry",
+      "governed": true,
+      "observed_at": "2026-08-03T19:58:17Z",
+      "present": true,
+      "raw_url": "https://raw.githubusercontent.com/groupsum/mdwrk-pages/master/.ssot/registry.json",
+      "registry_url": "https://github.com/groupsum/mdwrk-pages/blob/master/.ssot/registry.json",
+      "schema_version": "0.8.0",
+      "source_sha256": "915708403c278ab50f822284e5ec3027208d36f3d81014dcaf6434d93b110ba8",
+      "status_counts": {
+        "adrs": {
+          "accepted": 18,
+          "draft": 64
+        },
+        "boundaries": {
+          "active": 10,
+          "draft": 4,
+          "frozen": 10
+        },
+        "claims": {
+          "declared": 12,
+          "evidenced": 70,
+          "implemented": 8,
+          "proposed": 18,
+          "published": 18
+        },
+        "evidence": {
+          "passed": 81,
+          "planned": 2
+        },
+        "features": {
+          "absent": 147,
+          "implemented": 426,
+          "partial": 3
+        },
+        "issues": {
+          "closed": 2,
+          "open": 1
+        },
+        "profiles": {
+          "active": 1
+        },
+        "releases": {
+          "draft": 1,
+          "published": 1
+        },
+        "specs": {
+          "accepted": 12,
+          "draft": 80
+        },
+        "tests": {
+          "passing": 165,
+          "planned": 23
+        }
+      },
+      "valid": true
+    },
     "technologies": [
       "CSS",
       "Dockerfile",
@@ -10878,7 +12119,7 @@
   },
   {
     "archived": false,
-    "claim_boundary": "Repository, release, deployment, and live-service states are reported separately.",
+    "claim_boundary": "No canonical .ssot/registry.json was observed; repository, release, deployment, and live-service states are reported separately.",
     "commit_activity": [
       {
         "count": 0,
@@ -11257,6 +12498,17 @@
     },
     "reviewed": false,
     "route": "/catalog/repositories/groupsum/mdwrkcom-content-pack",
+    "ssot_governance": {
+      "counts": {},
+      "coverage": {},
+      "governed": false,
+      "observation_status": "not_found",
+      "observed_at": "2026-08-03T19:58:16Z",
+      "present": false,
+      "registry_url": null,
+      "status_counts": {},
+      "valid": false
+    },
     "technologies": [
       "JavaScript",
       "TypeScript",
@@ -11270,7 +12522,7 @@
   },
   {
     "archived": false,
-    "claim_boundary": "Repository, release, deployment, and live-service states are reported separately.",
+    "claim_boundary": "SSOT artifact counts and coverage are registry-reported observations; they do not by themselves prove that every public product claim is supported.",
     "commit_activity": [
       {
         "count": 0,
@@ -11412,6 +12664,11 @@
     "display_name": "mobile-install-attribution-governance-pack",
     "evidence": [
       {
+        "kind": "ssot-registry",
+        "observed_at": "2026-08-03T19:58:16Z",
+        "url": "https://github.com/groupsum/mobile-install-attribution-governance-pack/blob/master/.ssot/registry.json"
+      },
+      {
         "kind": "source",
         "observed_at": "2026-08-03T17:22:37Z",
         "url": "https://github.com/groupsum/mobile-install-attribution-governance-pack"
@@ -11541,6 +12798,58 @@
     },
     "reviewed": false,
     "route": "/catalog/repositories/groupsum/mobile-install-attribution-governance-pack",
+    "ssot_governance": {
+      "counts": {
+        "adrs": 19,
+        "boundaries": 1,
+        "claims": 0,
+        "evidence": 0,
+        "features": 0,
+        "issues": 0,
+        "profiles": 0,
+        "releases": 1,
+        "specs": 18,
+        "tests": 0
+      },
+      "coverage": {
+        "claims_with_evidence": 0,
+        "claims_with_tests": 0,
+        "claims_without_evidence": 0,
+        "evidence_linked_to_claims": 0,
+        "evidence_without_claims": 0
+      },
+      "evidence_type": "ssot.registry",
+      "governed": true,
+      "observed_at": "2026-08-03T19:58:16Z",
+      "present": true,
+      "raw_url": "https://raw.githubusercontent.com/groupsum/mobile-install-attribution-governance-pack/master/.ssot/registry.json",
+      "registry_url": "https://github.com/groupsum/mobile-install-attribution-governance-pack/blob/master/.ssot/registry.json",
+      "schema_version": "9",
+      "source_sha256": "7db711b1c4817be19966be904bf4e2272a66bf69972bc6661cc272059bd0f535",
+      "status_counts": {
+        "adrs": {
+          "accepted": 6,
+          "draft": 13
+        },
+        "boundaries": {
+          "draft": 1
+        },
+        "claims": {},
+        "evidence": {},
+        "features": {},
+        "issues": {},
+        "profiles": {},
+        "releases": {
+          "draft": 1
+        },
+        "specs": {
+          "accepted": 3,
+          "draft": 15
+        },
+        "tests": {}
+      },
+      "valid": true
+    },
     "technologies": [
       "Python"
     ],
@@ -11552,7 +12861,7 @@
   },
   {
     "archived": false,
-    "claim_boundary": "Repository, release, deployment, and live-service states are reported separately.",
+    "claim_boundary": "SSOT artifact counts and coverage are registry-reported observations; they do not by themselves prove that every public product claim is supported.",
     "commit_activity": [
       {
         "count": 0,
@@ -11693,6 +13002,11 @@
     "description_source": "github-repository",
     "display_name": "npmctl",
     "evidence": [
+      {
+        "kind": "ssot-registry",
+        "observed_at": "2026-08-03T19:58:16Z",
+        "url": "https://github.com/groupsum/npmctl/blob/master/.ssot/registry.json"
+      },
       {
         "kind": "source",
         "observed_at": "2026-08-03T17:22:37Z",
@@ -12667,6 +13981,78 @@
     },
     "reviewed": false,
     "route": "/catalog/repositories/groupsum/npmctl",
+    "ssot_governance": {
+      "counts": {
+        "adrs": 31,
+        "boundaries": 5,
+        "claims": 18,
+        "evidence": 20,
+        "features": 214,
+        "issues": 7,
+        "profiles": 1,
+        "releases": 4,
+        "specs": 36,
+        "tests": 160
+      },
+      "coverage": {
+        "claims_with_evidence": 18,
+        "claims_with_tests": 18,
+        "claims_without_evidence": 0,
+        "evidence_linked_to_claims": 20,
+        "evidence_without_claims": 0
+      },
+      "evidence_type": "ssot.registry",
+      "governed": true,
+      "observed_at": "2026-08-03T19:58:16Z",
+      "present": true,
+      "raw_url": "https://raw.githubusercontent.com/groupsum/npmctl/master/.ssot/registry.json",
+      "registry_url": "https://github.com/groupsum/npmctl/blob/master/.ssot/registry.json",
+      "schema_version": "0.2.0",
+      "source_sha256": "6a775841685c79ed127df540a95d1b3df7fe4d9136f709af2a0b1e598f4e6c0e",
+      "status_counts": {
+        "adrs": {
+          "accepted": 15,
+          "draft": 16
+        },
+        "boundaries": {
+          "frozen": 5
+        },
+        "claims": {
+          "certified": 17,
+          "proposed": 1
+        },
+        "evidence": {
+          "collected": 1,
+          "passed": 19
+        },
+        "features": {
+          "absent": 12,
+          "implemented": 194,
+          "partial": 8
+        },
+        "issues": {
+          "closed": 1,
+          "resolved": 6
+        },
+        "profiles": {
+          "active": 1
+        },
+        "releases": {
+          "certified": 3,
+          "published": 1
+        },
+        "specs": {
+          "accepted": 11,
+          "draft": 20,
+          "in_review": 5
+        },
+        "tests": {
+          "passing": 138,
+          "planned": 22
+        }
+      },
+      "valid": true
+    },
     "technologies": [
       "Dockerfile",
       "Python",
@@ -12680,7 +14066,7 @@
   },
   {
     "archived": false,
-    "claim_boundary": "Repository, release, deployment, and live-service states are reported separately.",
+    "claim_boundary": "No canonical .ssot/registry.json was observed; repository, release, deployment, and live-service states are reported separately.",
     "commit_activity": [
       {
         "count": 0,
@@ -12877,6 +14263,17 @@
     },
     "reviewed": false,
     "route": "/catalog/repositories/groupsum/npmctl-com",
+    "ssot_governance": {
+      "counts": {},
+      "coverage": {},
+      "governed": false,
+      "observation_status": "not_found",
+      "observed_at": "2026-08-03T19:58:16Z",
+      "present": false,
+      "registry_url": null,
+      "status_counts": {},
+      "valid": false
+    },
     "technologies": [
       "CSS",
       "Dockerfile",
@@ -12902,7 +14299,7 @@
   },
   {
     "archived": false,
-    "claim_boundary": "Repository, release, deployment, and live-service states are reported separately.",
+    "claim_boundary": "No canonical .ssot/registry.json was observed; repository, release, deployment, and live-service states are reported separately.",
     "commit_activity": [
       {
         "count": 0,
@@ -13093,6 +14490,17 @@
     },
     "reviewed": false,
     "route": "/catalog/repositories/swarmauri/peagen-com",
+    "ssot_governance": {
+      "counts": {},
+      "coverage": {},
+      "governed": false,
+      "observation_status": "not_found",
+      "observed_at": "2026-08-03T19:58:17Z",
+      "present": false,
+      "registry_url": null,
+      "status_counts": {},
+      "valid": false
+    },
     "technologies": [
       "CSS",
       "Dockerfile",
@@ -13119,7 +14527,7 @@
   },
   {
     "archived": false,
-    "claim_boundary": "Repository, release, deployment, and live-service states are reported separately.",
+    "claim_boundary": "SSOT artifact counts and coverage are registry-reported observations; they do not by themselves prove that every public product claim is supported.",
     "commit_activity": [
       {
         "count": 0,
@@ -13255,6 +14663,11 @@
     "description_source": "github-repository",
     "display_name": "portwyrm",
     "evidence": [
+      {
+        "kind": "ssot-registry",
+        "observed_at": "2026-08-03T19:58:16Z",
+        "url": "https://github.com/groupsum/portwyrm/blob/master/.ssot/registry.json"
+      },
       {
         "kind": "source",
         "observed_at": "2026-08-03T17:22:38Z",
@@ -13598,6 +15011,75 @@
     },
     "reviewed": false,
     "route": "/catalog/repositories/groupsum/portwyrm",
+    "ssot_governance": {
+      "counts": {
+        "adrs": 55,
+        "boundaries": 9,
+        "claims": 93,
+        "evidence": 91,
+        "features": 35,
+        "issues": 2,
+        "profiles": 1,
+        "releases": 1,
+        "specs": 62,
+        "tests": 98
+      },
+      "coverage": {
+        "claims_with_evidence": 93,
+        "claims_with_tests": 93,
+        "claims_without_evidence": 0,
+        "evidence_linked_to_claims": 91,
+        "evidence_without_claims": 0
+      },
+      "evidence_type": "ssot.registry",
+      "governed": true,
+      "observed_at": "2026-08-03T19:58:16Z",
+      "present": true,
+      "raw_url": "https://raw.githubusercontent.com/groupsum/portwyrm/master/.ssot/registry.json",
+      "registry_url": "https://github.com/groupsum/portwyrm/blob/master/.ssot/registry.json",
+      "schema_version": "0.8.0",
+      "source_sha256": "2f4d39d1efb5fdf6e9e9346a9784c6a02a894a34acbd5bf1b9e662ee5a4042a3",
+      "status_counts": {
+        "adrs": {
+          "accepted": 23,
+          "draft": 32
+        },
+        "boundaries": {
+          "draft": 1,
+          "frozen": 8
+        },
+        "claims": {
+          "certified": 56,
+          "evidenced": 9,
+          "published": 28
+        },
+        "evidence": {
+          "passed": 91
+        },
+        "features": {
+          "absent": 4,
+          "implemented": 28,
+          "partial": 3
+        },
+        "issues": {
+          "open": 2
+        },
+        "profiles": {
+          "active": 1
+        },
+        "releases": {
+          "published": 1
+        },
+        "specs": {
+          "accepted": 25,
+          "draft": 37
+        },
+        "tests": {
+          "passing": 98
+        }
+      },
+      "valid": true
+    },
     "technologies": [
       "CSS",
       "Dockerfile",
@@ -13614,7 +15096,7 @@
   },
   {
     "archived": false,
-    "claim_boundary": "Repository, release, deployment, and live-service states are reported separately.",
+    "claim_boundary": "SSOT artifact counts and coverage are registry-reported observations; they do not by themselves prove that every public product claim is supported.",
     "commit_activity": [
       {
         "count": 0,
@@ -13756,6 +15238,11 @@
     "display_name": "privacy-governance-records-governance-pack",
     "evidence": [
       {
+        "kind": "ssot-registry",
+        "observed_at": "2026-08-03T19:58:16Z",
+        "url": "https://github.com/groupsum/privacy-governance-records-governance-pack/blob/master/.ssot/registry.json"
+      },
+      {
         "kind": "source",
         "observed_at": "2026-08-03T17:22:38Z",
         "url": "https://github.com/groupsum/privacy-governance-records-governance-pack"
@@ -13885,6 +15372,58 @@
     },
     "reviewed": false,
     "route": "/catalog/repositories/groupsum/privacy-governance-records-governance-pack",
+    "ssot_governance": {
+      "counts": {
+        "adrs": 19,
+        "boundaries": 1,
+        "claims": 0,
+        "evidence": 0,
+        "features": 0,
+        "issues": 0,
+        "profiles": 0,
+        "releases": 1,
+        "specs": 20,
+        "tests": 0
+      },
+      "coverage": {
+        "claims_with_evidence": 0,
+        "claims_with_tests": 0,
+        "claims_without_evidence": 0,
+        "evidence_linked_to_claims": 0,
+        "evidence_without_claims": 0
+      },
+      "evidence_type": "ssot.registry",
+      "governed": true,
+      "observed_at": "2026-08-03T19:58:16Z",
+      "present": true,
+      "raw_url": "https://raw.githubusercontent.com/groupsum/privacy-governance-records-governance-pack/master/.ssot/registry.json",
+      "registry_url": "https://github.com/groupsum/privacy-governance-records-governance-pack/blob/master/.ssot/registry.json",
+      "schema_version": "9",
+      "source_sha256": "41669c39736af9a53a16a4213853e32d3e423ac45d255daee081e754af00111a",
+      "status_counts": {
+        "adrs": {
+          "accepted": 6,
+          "draft": 13
+        },
+        "boundaries": {
+          "draft": 1
+        },
+        "claims": {},
+        "evidence": {},
+        "features": {},
+        "issues": {},
+        "profiles": {},
+        "releases": {
+          "draft": 1
+        },
+        "specs": {
+          "accepted": 5,
+          "draft": 15
+        },
+        "tests": {}
+      },
+      "valid": true
+    },
     "technologies": [
       "Python"
     ],
@@ -13896,7 +15435,7 @@
   },
   {
     "archived": false,
-    "claim_boundary": "Repository, release, deployment, and live-service states are reported separately.",
+    "claim_boundary": "No canonical .ssot/registry.json was observed; repository, release, deployment, and live-service states are reported separately.",
     "commit_activity": [
       {
         "count": 0,
@@ -14131,6 +15670,17 @@
     },
     "reviewed": false,
     "route": "/catalog/repositories/swarmauri/rag_assistant",
+    "ssot_governance": {
+      "counts": {},
+      "coverage": {},
+      "governed": false,
+      "observation_status": "not_found",
+      "observed_at": "2026-08-03T19:58:17Z",
+      "present": false,
+      "registry_url": null,
+      "status_counts": {},
+      "valid": false
+    },
     "technologies": [
       "Python"
     ],
@@ -14142,7 +15692,7 @@
   },
   {
     "archived": false,
-    "claim_boundary": "Repository, release, deployment, and live-service states are reported separately.",
+    "claim_boundary": "No canonical .ssot/registry.json was observed; repository, release, deployment, and live-service states are reported separately.",
     "commit_activity": [
       {
         "count": 0,
@@ -14487,6 +16037,17 @@
     },
     "reviewed": false,
     "route": "/catalog/repositories/groupsum/seo-aeo-aieo-governance-pack",
+    "ssot_governance": {
+      "counts": {},
+      "coverage": {},
+      "governed": false,
+      "observation_status": "not_found",
+      "observed_at": "2026-08-03T19:58:16Z",
+      "present": false,
+      "registry_url": null,
+      "status_counts": {},
+      "valid": false
+    },
     "technologies": [
       "Python"
     ],
@@ -14498,7 +16059,7 @@
   },
   {
     "archived": false,
-    "claim_boundary": "Repository, release, deployment, and live-service states are reported separately.",
+    "claim_boundary": "No canonical .ssot/registry.json was observed; repository, release, deployment, and live-service states are reported separately.",
     "commit_activity": [
       {
         "count": 0,
@@ -14722,6 +16283,17 @@
     },
     "reviewed": false,
     "route": "/catalog/repositories/swarmauri/soliloquy",
+    "ssot_governance": {
+      "counts": {},
+      "coverage": {},
+      "governed": false,
+      "observation_status": "not_found",
+      "observed_at": "2026-08-03T19:58:17Z",
+      "present": false,
+      "registry_url": null,
+      "status_counts": {},
+      "valid": false
+    },
     "technologies": [
       "Python"
     ],
@@ -14746,7 +16318,7 @@
   },
   {
     "archived": false,
-    "claim_boundary": "Repository, release, deployment, and live-service states are reported separately.",
+    "claim_boundary": "SSOT artifact counts and coverage are registry-reported observations; they do not by themselves prove that every public product claim is supported.",
     "commit_activity": [
       {
         "count": 0,
@@ -14887,6 +16459,11 @@
     "description_source": "github-repository",
     "display_name": "ssot-registry",
     "evidence": [
+      {
+        "kind": "ssot-registry",
+        "observed_at": "2026-08-03T19:58:17Z",
+        "url": "https://github.com/groupsum/ssot-registry/blob/master/.ssot/registry.json"
+      },
       {
         "kind": "source",
         "observed_at": "2026-08-03T17:22:38Z",
@@ -22637,6 +24214,83 @@
     },
     "reviewed": false,
     "route": "/catalog/repositories/groupsum/ssot-registry",
+    "ssot_governance": {
+      "counts": {
+        "adrs": 90,
+        "boundaries": 29,
+        "claims": 1380,
+        "evidence": 645,
+        "features": 408,
+        "issues": 19,
+        "profiles": 3,
+        "releases": 22,
+        "specs": 99,
+        "tests": 359
+      },
+      "coverage": {
+        "claims_with_evidence": 1330,
+        "claims_with_tests": 1380,
+        "claims_without_evidence": 50,
+        "evidence_linked_to_claims": 645,
+        "evidence_without_claims": 0
+      },
+      "evidence_type": "ssot.registry",
+      "governed": true,
+      "observed_at": "2026-08-03T19:58:17Z",
+      "present": true,
+      "raw_url": "https://raw.githubusercontent.com/groupsum/ssot-registry/master/.ssot/registry.json",
+      "registry_url": "https://github.com/groupsum/ssot-registry/blob/master/.ssot/registry.json",
+      "schema_version": "0.8.0",
+      "source_sha256": "37bef2e56ac5df983b3c528e9443e7a6c9e9d5a0357d07c8716772340d23031a",
+      "status_counts": {
+        "adrs": {
+          "accepted": 16,
+          "draft": 74
+        },
+        "boundaries": {
+          "active": 3,
+          "draft": 1,
+          "frozen": 24,
+          "retired": 1
+        },
+        "claims": {
+          "asserted": 606,
+          "certified": 480,
+          "evidenced": 4,
+          "published": 290
+        },
+        "evidence": {
+          "collected": 162,
+          "passed": 483
+        },
+        "features": {
+          "implemented": 220,
+          "partial": 188
+        },
+        "issues": {
+          "closed": 8,
+          "open": 11
+        },
+        "profiles": {
+          "draft": 3
+        },
+        "releases": {
+          "candidate": 1,
+          "certified": 3,
+          "draft": 2,
+          "published": 16
+        },
+        "specs": {
+          "accepted": 13,
+          "draft": 86
+        },
+        "tests": {
+          "passing": 196,
+          "planned": 163
+        }
+      },
+      "valid": true
+    },
     "technologies": [
       "CSS",
       "HTML",
@@ -22670,7 +24324,7 @@
   },
   {
     "archived": false,
-    "claim_boundary": "Repository, release, deployment, and live-service states are reported separately.",
+    "claim_boundary": "No canonical .ssot/registry.json was observed; repository, release, deployment, and live-service states are reported separately.",
     "commit_activity": [
       {
         "count": 0,
@@ -22866,6 +24520,17 @@
     },
     "reviewed": false,
     "route": "/catalog/repositories/groupsum/ssot-registry-com",
+    "ssot_governance": {
+      "counts": {},
+      "coverage": {},
+      "governed": false,
+      "observation_status": "not_found",
+      "observed_at": "2026-08-03T19:58:16Z",
+      "present": false,
+      "registry_url": null,
+      "status_counts": {},
+      "valid": false
+    },
     "technologies": [
       "CSS",
       "Dockerfile",
@@ -22893,7 +24558,7 @@
   },
   {
     "archived": false,
-    "claim_boundary": "Repository, release, deployment, and live-service states are reported separately.",
+    "claim_boundary": "No canonical .ssot/registry.json was observed; repository, release, deployment, and live-service states are reported separately.",
     "commit_activity": [
       {
         "count": 0,
@@ -23209,6 +24874,17 @@
     },
     "reviewed": false,
     "route": "/catalog/repositories/swarmauri/swarmakit",
+    "ssot_governance": {
+      "counts": {},
+      "coverage": {},
+      "governed": false,
+      "observation_status": "not_found",
+      "observed_at": "2026-08-03T19:58:17Z",
+      "present": false,
+      "registry_url": null,
+      "status_counts": {},
+      "valid": false
+    },
     "technologies": [
       "CSS",
       "HTML",
@@ -23235,7 +24911,7 @@
   },
   {
     "archived": false,
-    "claim_boundary": "Repository, release, deployment, and live-service states are reported separately.",
+    "claim_boundary": "No canonical .ssot/registry.json was observed; repository, release, deployment, and live-service states are reported separately.",
     "commit_activity": [
       {
         "count": 0,
@@ -23493,6 +25169,17 @@
     },
     "reviewed": false,
     "route": "/catalog/repositories/swarmauri/swarmauri-aucplot",
+    "ssot_governance": {
+      "counts": {},
+      "coverage": {},
+      "governed": false,
+      "observation_status": "not_found",
+      "observed_at": "2026-08-03T19:58:17Z",
+      "present": false,
+      "registry_url": null,
+      "status_counts": {},
+      "valid": false
+    },
     "technologies": [
       "JavaScript",
       "Python",
@@ -23506,7 +25193,7 @@
   },
   {
     "archived": false,
-    "claim_boundary": "Repository, release, deployment, and live-service states are reported separately.",
+    "claim_boundary": "No canonical .ssot/registry.json was observed; repository, release, deployment, and live-service states are reported separately.",
     "commit_activity": [
       {
         "count": 0,
@@ -23718,6 +25405,17 @@
     },
     "reviewed": false,
     "route": "/catalog/repositories/swarmauri/swarmauri-com",
+    "ssot_governance": {
+      "counts": {},
+      "coverage": {},
+      "governed": false,
+      "observation_status": "not_found",
+      "observed_at": "2026-08-03T19:58:17Z",
+      "present": false,
+      "registry_url": null,
+      "status_counts": {},
+      "valid": false
+    },
     "technologies": [
       "CSS",
       "Dockerfile",
@@ -23745,7 +25443,7 @@
   },
   {
     "archived": false,
-    "claim_boundary": "Repository, release, deployment, and live-service states are reported separately.",
+    "claim_boundary": "No canonical .ssot/registry.json was observed; repository, release, deployment, and live-service states are reported separately.",
     "commit_activity": [
       {
         "count": 0,
@@ -23958,6 +25656,17 @@
     },
     "reviewed": false,
     "route": "/catalog/repositories/swarmauri/swarmauri-flipcard",
+    "ssot_governance": {
+      "counts": {},
+      "coverage": {},
+      "governed": false,
+      "observation_status": "not_found",
+      "observed_at": "2026-08-03T19:58:17Z",
+      "present": false,
+      "registry_url": null,
+      "status_counts": {},
+      "valid": false
+    },
     "technologies": [
       "CSS",
       "HTML",
@@ -23972,7 +25681,7 @@
   },
   {
     "archived": false,
-    "claim_boundary": "Repository, release, deployment, and live-service states are reported separately.",
+    "claim_boundary": "No canonical .ssot/registry.json was observed; repository, release, deployment, and live-service states are reported separately.",
     "commit_activity": [
       {
         "count": 0,
@@ -24198,6 +25907,17 @@
     },
     "reviewed": false,
     "route": "/catalog/repositories/swarmauri/swarmauri-mesop-components",
+    "ssot_governance": {
+      "counts": {},
+      "coverage": {},
+      "governed": false,
+      "observation_status": "not_found",
+      "observed_at": "2026-08-03T19:58:17Z",
+      "present": false,
+      "registry_url": null,
+      "status_counts": {},
+      "valid": false
+    },
     "technologies": [
       "JavaScript",
       "Python"
@@ -24210,7 +25930,7 @@
   },
   {
     "archived": false,
-    "claim_boundary": "Repository, release, deployment, and live-service states are reported separately.",
+    "claim_boundary": "No canonical .ssot/registry.json was observed; repository, release, deployment, and live-service states are reported separately.",
     "commit_activity": [
       {
         "count": 0,
@@ -24551,6 +26271,17 @@
     },
     "reviewed": false,
     "route": "/catalog/repositories/swarmauri/swarmauri-notebooks",
+    "ssot_governance": {
+      "counts": {},
+      "coverage": {},
+      "governed": false,
+      "observation_status": "not_found",
+      "observed_at": "2026-08-03T19:58:17Z",
+      "present": false,
+      "registry_url": null,
+      "status_counts": {},
+      "valid": false
+    },
     "technologies": [
       "Jupyter Notebook"
     ],
@@ -24562,7 +26293,7 @@
   },
   {
     "archived": false,
-    "claim_boundary": "Repository, release, deployment, and live-service states are reported separately.",
+    "claim_boundary": "No canonical .ssot/registry.json was observed; repository, release, deployment, and live-service states are reported separately.",
     "commit_activity": [
       {
         "count": 0,
@@ -24820,6 +26551,17 @@
     },
     "reviewed": false,
     "route": "/catalog/repositories/swarmauri/swarmauri-piechart",
+    "ssot_governance": {
+      "counts": {},
+      "coverage": {},
+      "governed": false,
+      "observation_status": "not_found",
+      "observed_at": "2026-08-03T19:58:17Z",
+      "present": false,
+      "registry_url": null,
+      "status_counts": {},
+      "valid": false
+    },
     "technologies": [
       "JavaScript",
       "Python",
@@ -24833,7 +26575,7 @@
   },
   {
     "archived": false,
-    "claim_boundary": "Repository, release, deployment, and live-service states are reported separately.",
+    "claim_boundary": "No canonical .ssot/registry.json was observed; repository, release, deployment, and live-service states are reported separately.",
     "commit_activity": [
       {
         "count": 0,
@@ -25069,6 +26811,17 @@
     },
     "reviewed": false,
     "route": "/catalog/repositories/swarmauri/swarmauri-playground",
+    "ssot_governance": {
+      "counts": {},
+      "coverage": {},
+      "governed": false,
+      "observation_status": "not_found",
+      "observed_at": "2026-08-03T19:58:17Z",
+      "present": false,
+      "registry_url": null,
+      "status_counts": {},
+      "valid": false
+    },
     "technologies": [
       "Jupyter Notebook",
       "Python"
@@ -25081,7 +26834,7 @@
   },
   {
     "archived": false,
-    "claim_boundary": "Repository, release, deployment, and live-service states are reported separately.",
+    "claim_boundary": "No canonical .ssot/registry.json was observed; repository, release, deployment, and live-service states are reported separately.",
     "commit_activity": [
       {
         "count": 0,
@@ -120108,6 +121861,17 @@
     },
     "reviewed": false,
     "route": "/catalog/repositories/swarmauri/swarmauri-sdk",
+    "ssot_governance": {
+      "counts": {},
+      "coverage": {},
+      "governed": false,
+      "observation_status": "not_found",
+      "observed_at": "2026-08-03T19:58:17Z",
+      "present": false,
+      "registry_url": null,
+      "status_counts": {},
+      "valid": false
+    },
     "technologies": [
       "C",
       "C++",
@@ -120149,7 +121913,7 @@
   },
   {
     "archived": false,
-    "claim_boundary": "Repository, release, deployment, and live-service states are reported separately.",
+    "claim_boundary": "SSOT artifact counts and coverage are registry-reported observations; they do not by themselves prove that every public product claim is supported.",
     "commit_activity": [
       {
         "count": 0,
@@ -120290,6 +122054,11 @@
     "description_source": "github-repository",
     "display_name": "tigr-asgi-contract",
     "evidence": [
+      {
+        "kind": "ssot-registry",
+        "observed_at": "2026-08-03T19:58:18Z",
+        "url": "https://github.com/tigrbl/tigr-asgi-contract/blob/master/.ssot/registry.json"
+      },
       {
         "kind": "source",
         "observed_at": "2026-08-03T17:22:38Z",
@@ -121167,6 +122936,73 @@
     },
     "reviewed": false,
     "route": "/catalog/repositories/tigrbl/tigr-asgi-contract",
+    "ssot_governance": {
+      "counts": {
+        "adrs": 78,
+        "boundaries": 7,
+        "claims": 255,
+        "evidence": 200,
+        "features": 1113,
+        "issues": 6,
+        "profiles": 0,
+        "releases": 7,
+        "specs": 93,
+        "tests": 221
+      },
+      "coverage": {
+        "claims_with_evidence": 255,
+        "claims_with_tests": 255,
+        "claims_without_evidence": 0,
+        "evidence_linked_to_claims": 200,
+        "evidence_without_claims": 0
+      },
+      "evidence_type": "ssot.registry",
+      "governed": true,
+      "observed_at": "2026-08-03T19:58:18Z",
+      "present": true,
+      "raw_url": "https://raw.githubusercontent.com/tigrbl/tigr-asgi-contract/master/.ssot/registry.json",
+      "registry_url": "https://github.com/tigrbl/tigr-asgi-contract/blob/master/.ssot/registry.json",
+      "schema_version": "0.8.0",
+      "source_sha256": "b3e56d188bf7b849860c2ee36ef520ab03ee016dc6e25f47d224b40bf22f8bdf",
+      "status_counts": {
+        "adrs": {
+          "accepted": 48,
+          "draft": 30
+        },
+        "boundaries": {
+          "frozen": 7
+        },
+        "claims": {
+          "asserted": 99,
+          "certified": 2,
+          "evidenced": 30,
+          "published": 124
+        },
+        "evidence": {
+          "passed": 200
+        },
+        "features": {
+          "implemented": 1025,
+          "partial": 88
+        },
+        "issues": {
+          "closed": 1,
+          "open": 5
+        },
+        "profiles": {},
+        "releases": {
+          "published": 7
+        },
+        "specs": {
+          "accepted": 58,
+          "draft": 35
+        },
+        "tests": {
+          "passing": 221
+        }
+      },
+      "valid": true
+    },
     "technologies": [
       "JavaScript",
       "Python",
@@ -121181,7 +123017,7 @@
   },
   {
     "archived": false,
-    "claim_boundary": "Repository, release, deployment, and live-service states are reported separately.",
+    "claim_boundary": "SSOT artifact counts and coverage are registry-reported observations; they do not by themselves prove that every public product claim is supported.",
     "commit_activity": [
       {
         "count": 0,
@@ -121322,6 +123158,11 @@
     "description_source": "github-repository",
     "display_name": "tigrbl",
     "evidence": [
+      {
+        "kind": "ssot-registry",
+        "observed_at": "2026-08-03T19:58:20Z",
+        "url": "https://github.com/tigrbl/tigrbl/blob/master/.ssot/registry.json"
+      },
       {
         "kind": "source",
         "observed_at": "2026-08-03T17:22:38Z",
@@ -142366,6 +144207,88 @@
     },
     "reviewed": false,
     "route": "/catalog/repositories/tigrbl/tigrbl",
+    "ssot_governance": {
+      "counts": {
+        "adrs": 240,
+        "boundaries": 36,
+        "claims": 800,
+        "evidence": 840,
+        "features": 716,
+        "issues": 29,
+        "profiles": 7,
+        "releases": 31,
+        "specs": 364,
+        "tests": 1475
+      },
+      "coverage": {
+        "claims_with_evidence": 800,
+        "claims_with_tests": 800,
+        "claims_without_evidence": 0,
+        "evidence_linked_to_claims": 840,
+        "evidence_without_claims": 0
+      },
+      "evidence_type": "ssot.registry",
+      "governed": true,
+      "observed_at": "2026-08-03T19:58:20Z",
+      "present": true,
+      "raw_url": "https://raw.githubusercontent.com/tigrbl/tigrbl/master/.ssot/registry.json",
+      "registry_url": "https://github.com/tigrbl/tigrbl/blob/master/.ssot/registry.json",
+      "schema_version": "0.8.0",
+      "source_sha256": "40e52f6bbc9839bb9156a292fa219431f04656196d562e685d4586fda12848ca",
+      "status_counts": {
+        "adrs": {
+          "accepted": 71,
+          "draft": 164,
+          "superseded": 5
+        },
+        "boundaries": {
+          "draft": 2,
+          "frozen": 31,
+          "retired": 3
+        },
+        "claims": {
+          "asserted": 290,
+          "certified": 79,
+          "declared": 1,
+          "evidenced": 165,
+          "proposed": 2,
+          "published": 263
+        },
+        "evidence": {
+          "collected": 273,
+          "passed": 566,
+          "planned": 1
+        },
+        "features": {
+          "absent": 21,
+          "implemented": 243,
+          "partial": 452
+        },
+        "issues": {
+          "closed": 12,
+          "open": 17
+        },
+        "profiles": {
+          "active": 1,
+          "draft": 6
+        },
+        "releases": {
+          "certified": 1,
+          "published": 21,
+          "revoked": 9
+        },
+        "specs": {
+          "accepted": 69,
+          "draft": 285,
+          "superseded": 10
+        },
+        "tests": {
+          "passing": 1336,
+          "planned": 139
+        }
+      },
+      "valid": true
+    },
     "technologies": [
       "Jupyter Notebook",
       "Python"
@@ -142389,7 +144312,7 @@
   },
   {
     "archived": false,
-    "claim_boundary": "Repository, release, deployment, and live-service states are reported separately.",
+    "claim_boundary": "No canonical .ssot/registry.json was observed; repository, release, deployment, and live-service states are reported separately.",
     "commit_activity": [
       {
         "count": 0,
@@ -142586,6 +144509,17 @@
     },
     "reviewed": false,
     "route": "/catalog/repositories/tigrbl/tigrbl-com",
+    "ssot_governance": {
+      "counts": {},
+      "coverage": {},
+      "governed": false,
+      "observation_status": "not_found",
+      "observed_at": "2026-08-03T19:58:17Z",
+      "present": false,
+      "registry_url": null,
+      "status_counts": {},
+      "valid": false
+    },
     "technologies": [
       "CSS",
       "Dockerfile",
@@ -142612,7 +144546,7 @@
   },
   {
     "archived": false,
-    "claim_boundary": "Repository, release, deployment, and live-service states are reported separately.",
+    "claim_boundary": "No canonical .ssot/registry.json was observed; repository, release, deployment, and live-service states are reported separately.",
     "commit_activity": [
       {
         "count": 0,
@@ -142820,6 +144754,17 @@
     },
     "reviewed": false,
     "route": "/catalog/repositories/tigrbl/tigrbl_acme_ca",
+    "ssot_governance": {
+      "counts": {},
+      "coverage": {},
+      "governed": false,
+      "observation_status": "not_found",
+      "observed_at": "2026-08-03T19:58:17Z",
+      "present": false,
+      "registry_url": null,
+      "status_counts": {},
+      "valid": false
+    },
     "technologies": [
       "Python"
     ],
@@ -142831,7 +144776,7 @@
   },
   {
     "archived": false,
-    "claim_boundary": "Repository, release, deployment, and live-service states are reported separately.",
+    "claim_boundary": "No canonical .ssot/registry.json was observed; repository, release, deployment, and live-service states are reported separately.",
     "commit_activity": [
       {
         "count": 0,
@@ -143039,6 +144984,17 @@
     },
     "reviewed": false,
     "route": "/catalog/repositories/tigrbl/tigrbl_api_cron",
+    "ssot_governance": {
+      "counts": {},
+      "coverage": {},
+      "governed": false,
+      "observation_status": "not_found",
+      "observed_at": "2026-08-03T19:58:17Z",
+      "present": false,
+      "registry_url": null,
+      "status_counts": {},
+      "valid": false
+    },
     "technologies": [
       "Python"
     ],
@@ -143050,7 +145006,7 @@
   },
   {
     "archived": false,
-    "claim_boundary": "Repository, release, deployment, and live-service states are reported separately.",
+    "claim_boundary": "No canonical .ssot/registry.json was observed; repository, release, deployment, and live-service states are reported separately.",
     "commit_activity": [
       {
         "count": 0,
@@ -143258,6 +145214,17 @@
     },
     "reviewed": false,
     "route": "/catalog/repositories/tigrbl/tigrbl_api_hpks",
+    "ssot_governance": {
+      "counts": {},
+      "coverage": {},
+      "governed": false,
+      "observation_status": "not_found",
+      "observed_at": "2026-08-03T19:58:17Z",
+      "present": false,
+      "registry_url": null,
+      "status_counts": {},
+      "valid": false
+    },
     "technologies": [
       "Python"
     ],
@@ -143269,7 +145236,7 @@
   },
   {
     "archived": false,
-    "claim_boundary": "Repository, release, deployment, and live-service states are reported separately.",
+    "claim_boundary": "SSOT artifact counts and coverage are registry-reported observations; they do not by themselves prove that every public product claim is supported.",
     "commit_activity": [
       {
         "count": 0,
@@ -143410,6 +145377,11 @@
     "description_source": "github-repository",
     "display_name": "tigrbl_auth",
     "evidence": [
+      {
+        "kind": "ssot-registry",
+        "observed_at": "2026-08-03T19:58:20Z",
+        "url": "https://github.com/tigrbl/tigrbl_auth/blob/master/.ssot/registry.json"
+      },
       {
         "kind": "source",
         "observed_at": "2026-08-03T17:22:38Z",
@@ -146265,6 +148237,84 @@
     },
     "reviewed": false,
     "route": "/catalog/repositories/tigrbl/tigrbl_auth",
+    "ssot_governance": {
+      "counts": {
+        "adrs": 159,
+        "boundaries": 31,
+        "claims": 1789,
+        "evidence": 563,
+        "features": 1169,
+        "issues": 35,
+        "profiles": 6,
+        "releases": 11,
+        "specs": 252,
+        "tests": 760
+      },
+      "coverage": {
+        "claims_with_evidence": 1789,
+        "claims_with_tests": 1789,
+        "claims_without_evidence": 0,
+        "evidence_linked_to_claims": 563,
+        "evidence_without_claims": 0
+      },
+      "evidence_type": "ssot.registry",
+      "governed": true,
+      "observed_at": "2026-08-03T19:58:20Z",
+      "present": true,
+      "raw_url": "https://raw.githubusercontent.com/tigrbl/tigrbl_auth/master/.ssot/registry.json",
+      "registry_url": "https://github.com/tigrbl/tigrbl_auth/blob/master/.ssot/registry.json",
+      "schema_version": "0.4.0",
+      "source_sha256": "a800e6b46746f3c1db9b6a929f364e6a787f10bfcd3768fd3d33a418a1eff916",
+      "status_counts": {
+        "adrs": {
+          "accepted": 112,
+          "draft": 44,
+          "superseded": 3
+        },
+        "boundaries": {
+          "active": 15,
+          "frozen": 16
+        },
+        "claims": {
+          "asserted": 262,
+          "certified": 756,
+          "evidenced": 695,
+          "published": 26,
+          "retired": 50
+        },
+        "evidence": {
+          "collected": 259,
+          "passed": 304
+        },
+        "features": {
+          "absent": 24,
+          "implemented": 831,
+          "partial": 314
+        },
+        "issues": {
+          "closed": 9,
+          "open": 25,
+          "resolved": 1
+        },
+        "profiles": {
+          "active": 6
+        },
+        "releases": {
+          "draft": 1,
+          "published": 10
+        },
+        "specs": {
+          "accepted": 107,
+          "draft": 142,
+          "superseded": 3
+        },
+        "tests": {
+          "passing": 498,
+          "planned": 262
+        }
+      },
+      "valid": true
+    },
     "technologies": [
       "CSS",
       "Dockerfile",
@@ -146282,7 +148332,7 @@
   },
   {
     "archived": false,
-    "claim_boundary": "Repository, release, deployment, and live-service states are reported separately.",
+    "claim_boundary": "No canonical .ssot/registry.json was observed; repository, release, deployment, and live-service states are reported separately.",
     "commit_activity": [
       {
         "count": 0,
@@ -147094,6 +149144,17 @@
     },
     "reviewed": false,
     "route": "/catalog/repositories/tigrbl/tigrbl_billing",
+    "ssot_governance": {
+      "counts": {},
+      "coverage": {},
+      "governed": false,
+      "observation_status": "not_found",
+      "observed_at": "2026-08-03T19:58:17Z",
+      "present": false,
+      "registry_url": null,
+      "status_counts": {},
+      "valid": false
+    },
     "technologies": [
       "Python"
     ],
@@ -147105,7 +149166,7 @@
   },
   {
     "archived": false,
-    "claim_boundary": "Repository, release, deployment, and live-service states are reported separately.",
+    "claim_boundary": "No canonical .ssot/registry.json was observed; repository, release, deployment, and live-service states are reported separately.",
     "commit_activity": [
       {
         "count": 0,
@@ -147343,6 +149404,17 @@
     },
     "reviewed": false,
     "route": "/catalog/repositories/tigrbl/tigrbl_kms",
+    "ssot_governance": {
+      "counts": {},
+      "coverage": {},
+      "governed": false,
+      "observation_status": "not_found",
+      "observed_at": "2026-08-03T19:58:17Z",
+      "present": false,
+      "registry_url": null,
+      "status_counts": {},
+      "valid": false
+    },
     "technologies": [
       "Dockerfile",
       "Python"
@@ -147355,7 +149427,7 @@
   },
   {
     "archived": false,
-    "claim_boundary": "Repository, release, deployment, and live-service states are reported separately.",
+    "claim_boundary": "No canonical .ssot/registry.json was observed; repository, release, deployment, and live-service states are reported separately.",
     "commit_activity": [
       {
         "count": 0,
@@ -147705,6 +149777,17 @@
     },
     "reviewed": false,
     "route": "/catalog/repositories/tigrbl/tigrbl_spiffe",
+    "ssot_governance": {
+      "counts": {},
+      "coverage": {},
+      "governed": false,
+      "observation_status": "not_found",
+      "observed_at": "2026-08-03T19:58:17Z",
+      "present": false,
+      "registry_url": null,
+      "status_counts": {},
+      "valid": false
+    },
     "technologies": [
       "Python"
     ],
@@ -147716,7 +149799,7 @@
   },
   {
     "archived": false,
-    "claim_boundary": "Repository, release, deployment, and live-service states are reported separately.",
+    "claim_boundary": "SSOT artifact counts and coverage are registry-reported observations; they do not by themselves prove that every public product claim is supported.",
     "commit_activity": [
       {
         "count": 0,
@@ -147867,6 +149950,11 @@
     "description_source": "github-repository",
     "display_name": "tigrcorn",
     "evidence": [
+      {
+        "kind": "ssot-registry",
+        "observed_at": "2026-08-03T19:58:20Z",
+        "url": "https://github.com/tigrbl/tigrcorn/blob/master/.ssot/registry.json"
+      },
       {
         "kind": "source",
         "observed_at": "2026-08-03T17:22:38Z",
@@ -149487,6 +151575,87 @@
     },
     "reviewed": false,
     "route": "/catalog/repositories/tigrbl/tigrcorn",
+    "ssot_governance": {
+      "counts": {
+        "adrs": 110,
+        "boundaries": 36,
+        "claims": 1415,
+        "evidence": 927,
+        "features": 426,
+        "issues": 12,
+        "profiles": 7,
+        "releases": 16,
+        "specs": 129,
+        "tests": 1178
+      },
+      "coverage": {
+        "claims_with_evidence": 1415,
+        "claims_with_tests": 1415,
+        "claims_without_evidence": 0,
+        "evidence_linked_to_claims": 927,
+        "evidence_without_claims": 0
+      },
+      "evidence_type": "ssot.registry",
+      "governed": true,
+      "observed_at": "2026-08-03T19:58:20Z",
+      "present": true,
+      "raw_url": "https://raw.githubusercontent.com/tigrbl/tigrcorn/master/.ssot/registry.json",
+      "registry_url": "https://github.com/tigrbl/tigrcorn/blob/master/.ssot/registry.json",
+      "schema_version": "0.8.0",
+      "source_sha256": "5c6549c58d0aa74731ddd0501cb61c2dab6e3b7c02acf4004ac4d0cb926a08ea",
+      "status_counts": {
+        "adrs": {
+          "accepted": 58,
+          "draft": 47,
+          "superseded": 5
+        },
+        "boundaries": {
+          "active": 6,
+          "frozen": 30
+        },
+        "claims": {
+          "asserted": 55,
+          "certified": 740,
+          "declared": 18,
+          "evidenced": 47,
+          "promoted": 100,
+          "proposed": 36,
+          "published": 419
+        },
+        "evidence": {
+          "collected": 10,
+          "passed": 899,
+          "planned": 18
+        },
+        "features": {
+          "absent": 1,
+          "implemented": 393,
+          "partial": 32
+        },
+        "issues": {
+          "closed": 10,
+          "open": 2
+        },
+        "profiles": {
+          "active": 6,
+          "draft": 1
+        },
+        "releases": {
+          "promoted": 1,
+          "published": 15
+        },
+        "specs": {
+          "accepted": 25,
+          "draft": 100,
+          "superseded": 4
+        },
+        "tests": {
+          "passing": 1090,
+          "planned": 88
+        }
+      },
+      "valid": true
+    },
     "technologies": [
       "HTML",
       "Makefile",
@@ -149511,7 +151680,7 @@
   },
   {
     "archived": false,
-    "claim_boundary": "Repository, release, deployment, and live-service states are reported separately.",
+    "claim_boundary": "No canonical .ssot/registry.json was observed; repository, release, deployment, and live-service states are reported separately.",
     "commit_activity": [
       {
         "count": 0,
@@ -149724,6 +151893,17 @@
     },
     "reviewed": false,
     "route": "/catalog/repositories/tigrbl/tigrcorn-com",
+    "ssot_governance": {
+      "counts": {},
+      "coverage": {},
+      "governed": false,
+      "observation_status": "not_found",
+      "observed_at": "2026-08-03T19:58:17Z",
+      "present": false,
+      "registry_url": null,
+      "status_counts": {},
+      "valid": false
+    },
     "technologies": [
       "CSS",
       "Dockerfile",
@@ -149750,7 +151930,7 @@
   },
   {
     "archived": false,
-    "claim_boundary": "Repository, release, deployment, and live-service states are reported separately.",
+    "claim_boundary": "SSOT artifact counts and coverage are registry-reported observations; they do not by themselves prove that every public product claim is supported.",
     "commit_activity": [
       {
         "count": 0,
@@ -149891,6 +152071,11 @@
     "description_source": "github-repository",
     "display_name": "url-query-attribution-foundations-governance-pack",
     "evidence": [
+      {
+        "kind": "ssot-registry",
+        "observed_at": "2026-08-03T19:58:16Z",
+        "url": "https://github.com/groupsum/url-query-attribution-foundations-governance-pack/blob/master/.ssot/registry.json"
+      },
       {
         "kind": "source",
         "observed_at": "2026-08-03T17:22:38Z",
@@ -150037,6 +152222,58 @@
     },
     "reviewed": false,
     "route": "/catalog/repositories/groupsum/url-query-attribution-foundations-governance-pack",
+    "ssot_governance": {
+      "counts": {
+        "adrs": 17,
+        "boundaries": 1,
+        "claims": 0,
+        "evidence": 0,
+        "features": 0,
+        "issues": 0,
+        "profiles": 0,
+        "releases": 1,
+        "specs": 19,
+        "tests": 0
+      },
+      "coverage": {
+        "claims_with_evidence": 0,
+        "claims_with_tests": 0,
+        "claims_without_evidence": 0,
+        "evidence_linked_to_claims": 0,
+        "evidence_without_claims": 0
+      },
+      "evidence_type": "ssot.registry",
+      "governed": true,
+      "observed_at": "2026-08-03T19:58:16Z",
+      "present": true,
+      "raw_url": "https://raw.githubusercontent.com/groupsum/url-query-attribution-foundations-governance-pack/master/.ssot/registry.json",
+      "registry_url": "https://github.com/groupsum/url-query-attribution-foundations-governance-pack/blob/master/.ssot/registry.json",
+      "schema_version": "9",
+      "source_sha256": "3ccc629ae08172e71f1e6c10b1ecb1b10ef6a80c7bea8b00aea264840be4d1ad",
+      "status_counts": {
+        "adrs": {
+          "accepted": 4,
+          "draft": 13
+        },
+        "boundaries": {
+          "draft": 1
+        },
+        "claims": {},
+        "evidence": {},
+        "features": {},
+        "issues": {},
+        "profiles": {},
+        "releases": {
+          "draft": 1
+        },
+        "specs": {
+          "accepted": 4,
+          "draft": 15
+        },
+        "tests": {}
+      },
+      "valid": true
+    },
     "technologies": [
       "Python"
     ],
@@ -150048,7 +152285,7 @@
   },
   {
     "archived": false,
-    "claim_boundary": "Repository, release, deployment, and live-service states are reported separately.",
+    "claim_boundary": "No canonical .ssot/registry.json was observed; repository, release, deployment, and live-service states are reported separately.",
     "commit_activity": [
       {
         "count": 0,
@@ -150272,6 +152509,17 @@
     },
     "reviewed": false,
     "route": "/catalog/repositories/groupsum/verifiable-credentials-governance-pack",
+    "ssot_governance": {
+      "counts": {},
+      "coverage": {},
+      "governed": false,
+      "observation_status": "not_found",
+      "observed_at": "2026-08-03T19:58:16Z",
+      "present": false,
+      "registry_url": null,
+      "status_counts": {},
+      "valid": false
+    },
     "technologies": [
       "Python"
     ],
@@ -150283,7 +152531,7 @@
   },
   {
     "archived": false,
-    "claim_boundary": "Repository, release, deployment, and live-service states are reported separately.",
+    "claim_boundary": "SSOT artifact counts and coverage are registry-reported observations; they do not by themselves prove that every public product claim is supported.",
     "commit_activity": [
       {
         "count": 0,
@@ -150425,6 +152673,11 @@
     "display_name": "web-app-analytics-governance-pack",
     "evidence": [
       {
+        "kind": "ssot-registry",
+        "observed_at": "2026-08-03T19:58:16Z",
+        "url": "https://github.com/groupsum/web-app-analytics-governance-pack/blob/master/.ssot/registry.json"
+      },
+      {
         "kind": "source",
         "observed_at": "2026-08-03T17:22:38Z",
         "url": "https://github.com/groupsum/web-app-analytics-governance-pack"
@@ -150554,6 +152807,58 @@
     },
     "reviewed": false,
     "route": "/catalog/repositories/groupsum/web-app-analytics-governance-pack",
+    "ssot_governance": {
+      "counts": {
+        "adrs": 19,
+        "boundaries": 1,
+        "claims": 0,
+        "evidence": 0,
+        "features": 0,
+        "issues": 0,
+        "profiles": 0,
+        "releases": 1,
+        "specs": 20,
+        "tests": 0
+      },
+      "coverage": {
+        "claims_with_evidence": 0,
+        "claims_with_tests": 0,
+        "claims_without_evidence": 0,
+        "evidence_linked_to_claims": 0,
+        "evidence_without_claims": 0
+      },
+      "evidence_type": "ssot.registry",
+      "governed": true,
+      "observed_at": "2026-08-03T19:58:16Z",
+      "present": true,
+      "raw_url": "https://raw.githubusercontent.com/groupsum/web-app-analytics-governance-pack/master/.ssot/registry.json",
+      "registry_url": "https://github.com/groupsum/web-app-analytics-governance-pack/blob/master/.ssot/registry.json",
+      "schema_version": "9",
+      "source_sha256": "62666904a1e82c298b5c818706ca24bbc3651fc977f5835cc22380eeb3ac960b",
+      "status_counts": {
+        "adrs": {
+          "accepted": 6,
+          "draft": 13
+        },
+        "boundaries": {
+          "draft": 1
+        },
+        "claims": {},
+        "evidence": {},
+        "features": {},
+        "issues": {},
+        "profiles": {},
+        "releases": {
+          "draft": 1
+        },
+        "specs": {
+          "accepted": 5,
+          "draft": 15
+        },
+        "tests": {}
+      },
+      "valid": true
+    },
     "technologies": [
       "Python"
     ],
@@ -150565,7 +152870,7 @@
   },
   {
     "archived": false,
-    "claim_boundary": "Repository, release, deployment, and live-service states are reported separately.",
+    "claim_boundary": "SSOT artifact counts and coverage are registry-reported observations; they do not by themselves prove that every public product claim is supported.",
     "commit_activity": [
       {
         "count": 0,
@@ -150707,6 +153012,11 @@
     "display_name": "web-performance-rum-governance-pack",
     "evidence": [
       {
+        "kind": "ssot-registry",
+        "observed_at": "2026-08-03T19:58:16Z",
+        "url": "https://github.com/groupsum/web-performance-rum-governance-pack/blob/master/.ssot/registry.json"
+      },
+      {
         "kind": "source",
         "observed_at": "2026-08-03T17:22:38Z",
         "url": "https://github.com/groupsum/web-performance-rum-governance-pack"
@@ -150836,6 +153146,58 @@
     },
     "reviewed": false,
     "route": "/catalog/repositories/groupsum/web-performance-rum-governance-pack",
+    "ssot_governance": {
+      "counts": {
+        "adrs": 17,
+        "boundaries": 1,
+        "claims": 0,
+        "evidence": 0,
+        "features": 0,
+        "issues": 0,
+        "profiles": 0,
+        "releases": 1,
+        "specs": 19,
+        "tests": 0
+      },
+      "coverage": {
+        "claims_with_evidence": 0,
+        "claims_with_tests": 0,
+        "claims_without_evidence": 0,
+        "evidence_linked_to_claims": 0,
+        "evidence_without_claims": 0
+      },
+      "evidence_type": "ssot.registry",
+      "governed": true,
+      "observed_at": "2026-08-03T19:58:16Z",
+      "present": true,
+      "raw_url": "https://raw.githubusercontent.com/groupsum/web-performance-rum-governance-pack/master/.ssot/registry.json",
+      "registry_url": "https://github.com/groupsum/web-performance-rum-governance-pack/blob/master/.ssot/registry.json",
+      "schema_version": "9",
+      "source_sha256": "3809ee9b758e860f208cf17d82349f767b216dad58fa6cc656cad12ee5f04a40",
+      "status_counts": {
+        "adrs": {
+          "accepted": 4,
+          "draft": 13
+        },
+        "boundaries": {
+          "draft": 1
+        },
+        "claims": {},
+        "evidence": {},
+        "features": {},
+        "issues": {},
+        "profiles": {},
+        "releases": {
+          "draft": 1
+        },
+        "specs": {
+          "accepted": 4,
+          "draft": 15
+        },
+        "tests": {}
+      },
+      "valid": true
+    },
     "technologies": [
       "Python"
     ],
