@@ -55,13 +55,40 @@ async function verify() {
   if (!etag) throw new Error("Peagen API is missing an ETag");
   const unchanged = await fetchResponse("/api/v1/products/peagen", { "if-none-match": etag });
   if (unchanged.status !== 304) throw new Error(`Peagen conditional request returned ${unchanged.status}`);
+  const tigrblHtml = await fetchText("/products/records/tigrbl/");
+  for (const marker of ["PyPI", "npm", "crates.io", "Dependencies", "Observed dependents"]) {
+    if (!tigrblHtml.includes(marker)) throw new Error(`Tigrbl rendered page is missing ${marker}`);
+  }
+  const tigrblApi = await fetchResponse("/api/v1/products/tigrbl");
+  if (!tigrblApi.ok) throw new Error(`Tigrbl API returned ${tigrblApi.status}`);
+  const tigrblModel = await tigrblApi.json();
+  const releaseKinds = new Set(
+    (tigrblModel.implementation?.release_summary || []).map((item) => item.release_kind),
+  );
+  for (const releaseKind of ["pypi", "npm", "crates", "github"]) {
+    if (!releaseKinds.has(releaseKind)) throw new Error(`Tigrbl API is missing ${releaseKind} releases`);
+  }
+  if (tigrblModel.implementation?.dependency_summary?.dependencies < 500) {
+    throw new Error("Tigrbl API dependency projection is incomplete");
+  }
+  if (tigrblModel.implementation?.dependency_summary?.dependents < 100) {
+    throw new Error("Tigrbl API dependent projection is incomplete");
+  }
+  const generatedPortfolioHtml = await fetchText(
+    "/portfolio/records/catalog-groupsum-groupsum-xyz/",
+  );
+  for (const marker of ["groupsum/groupsum-xyz", "Claim boundary", "Dependencies"]) {
+    if (!generatedPortfolioHtml.includes(marker)) {
+      throw new Error(`generated portfolio record is missing ${marker}`);
+    }
+  }
   const openapi = JSON.parse(await fetchText("/openapi.json"));
   if (!openapi.paths?.["/api/v1/products/{slug}"]) throw new Error("deployed OpenAPI lacks product record page model");
   const homeHtml = await fetchText("/");
   const asset = homeHtml.match(/<script[^>]+src="([^"]+\.js)"/i)?.[1];
   if (!asset) throw new Error("deployed application JavaScript asset was not found");
   const bundle = await fetchText(asset);
-  for (const marker of ["Products built as connected systems", "Demos, APIs, examples, and related resources", "/api/v1/products/", "/catalog/site/"]) {
+  for (const marker of ["Products built as connected systems", "Demos, APIs, examples, and related resources", "/catalog/site/"]) {
     if (!bundle.includes(marker)) throw new Error(`deployed bundle missing marker: ${marker}`);
   }
   console.log(`deployment verified: ${baseUrl}, repositories=${manifest.counts.repositories}, packages=${manifest.counts.packages}`);
