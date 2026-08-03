@@ -1,5 +1,6 @@
 import React, { useEffect, useMemo, useState } from "react";
 import { ArrowLeft, ArrowRight, ExternalLink, Package, Search } from "lucide-react";
+import { getRecordPageModel } from "../api/catalog.generated";
 import { portfolioEntities } from "../data/entities";
 import { PortfolioEntity } from "../types";
 
@@ -24,6 +25,7 @@ type CatalogPackage = {
   dependency_count?: number;
   route?: string;
   registry_url?: string;
+  role?: string;
 };
 
 type CatalogRepository = {
@@ -38,6 +40,9 @@ type CatalogRepository = {
   latest_deployment?: Record<string, unknown> | null;
   relationship_counts?: Record<string, number>;
   related_resources?: RelatedResource[];
+  repository_count?: number;
+  release_count?: number;
+  deployment_count?: number;
 };
 
 type ProductEvidenceBundle = {
@@ -45,6 +50,70 @@ type ProductEvidenceBundle = {
   repository: CatalogRepository;
   packages: CatalogPackage[];
 };
+
+type ProductPageModel = {
+  kind: "product_record";
+  generated_at: string;
+  record: { slug: string };
+  taxonomies: Record<string, Array<{ label: string }>>;
+  implementation: {
+    repositories: Array<{
+      id: string;
+      owner: string;
+      name: string;
+      url: string;
+      observed_at?: string;
+      metrics?: Record<string, number>;
+    }>;
+    packages: Array<{
+      id: string;
+      name: string;
+      ecosystem?: string;
+      latest_version?: string;
+      registry_url?: string;
+      role?: string;
+    }>;
+    resources: Array<{
+      id: string;
+      resource_type: string;
+      title: string;
+      url: string;
+    }>;
+    releases: Array<Record<string, unknown>>;
+    deployments: Array<Record<string, unknown>>;
+  };
+};
+
+function initialProductModel(slug: string): ProductPageModel | null {
+  const model = globalThis.__GROUPSUM_PAGE_MODEL__ as ProductPageModel | null | undefined;
+  return model?.kind === "product_record" && model.record.slug === slug ? model : null;
+}
+
+function evidenceBundle(model: ProductPageModel): ProductEvidenceBundle {
+  const repositories = model.implementation.repositories;
+  const primary = repositories[0];
+  return {
+    generated_at: model.generated_at,
+    repository: {
+      id: primary?.id || model.record.slug,
+      name: primary?.name || model.record.slug,
+      full_name: primary ? `${primary.owner}/${primary.name}` : model.record.slug,
+      url: primary?.url,
+      observed_at: primary?.observed_at,
+      metrics: primary?.metrics || {},
+      repository_count: repositories.length,
+      release_count: model.implementation.releases.length,
+      deployment_count: model.implementation.deployments.length,
+      related_resources: model.implementation.resources.map((resource) => ({
+        id: resource.id,
+        kind: resource.resource_type,
+        name: resource.title,
+        url: resource.url,
+      })),
+    },
+    packages: model.implementation.packages,
+  };
+}
 
 const organizationNames: Record<string, string> = {
   groupsum: "GroupSum",
@@ -185,12 +254,11 @@ function ProductSection({ id, title, intro, children }: { id?: string; title: st
 }
 
 function EvidenceMetrics({ bundle }: { bundle: ProductEvidenceBundle }) {
-  const metrics = bundle.repository.metrics || {};
   const values = [
+    ["Implementation repositories", bundle.repository.repository_count || 1],
     ["Packages", bundle.packages.length],
-    ["Releases", metrics.github_releases || 0],
-    ["Deployments", metrics.deployments || 0],
-    ["Relationships", metrics.relationships || 0],
+    ["Observed releases", bundle.repository.release_count || 0],
+    ["Deployment records", bundle.repository.deployment_count || 0],
     ["Related resources", bundle.repository.related_resources?.length || 0],
   ] as const;
   return <dl className="flex flex-wrap gap-x-8 gap-y-4 border-y border-[var(--color-border-soft)] py-5">{values.map(([label, value]) => <div key={label}><dt className="text-[10px] font-mono uppercase text-ink-muted">{label}</dt><dd className="font-serif text-2xl font-bold text-ink">{value.toLocaleString()}</dd></div>)}</dl>;
@@ -198,22 +266,30 @@ function EvidenceMetrics({ bundle }: { bundle: ProductEvidenceBundle }) {
 
 export function ProductRecordPage({ slug, onNavigate }: { slug: string; onNavigate: Navigate }) {
   const entity = portfolioEntities.find((candidate) => candidate.slug === slug && candidate.approved);
-  const [bundle, setBundle] = useState<ProductEvidenceBundle | null>(null);
-  const [evidenceState, setEvidenceState] = useState<"loading" | "ready" | "unavailable" | "error">("loading");
+  const initialModel = initialProductModel(slug);
+  const [pageModel, setPageModel] = useState<ProductPageModel | null>(initialModel);
+  const [bundle, setBundle] = useState<ProductEvidenceBundle | null>(() => initialModel ? evidenceBundle(initialModel) : null);
+  const [evidenceState, setEvidenceState] = useState<"loading" | "ready" | "unavailable" | "error">(initialModel ? "ready" : "loading");
   useEffect(() => {
     if (!entity) return;
     const controller = new AbortController();
-    setEvidenceState("loading");
-    fetch(`/catalog/product-evidence/${entity.organization}/${entity.sourceName}.json`, { signal: controller.signal })
-      .then((response) => {
-        if (response.status === 404) { setEvidenceState("unavailable"); return null; }
-        if (!response.ok) throw new Error(`product evidence response ${response.status}`);
-        return response.json();
+    if (!bundle) setEvidenceState("loading");
+    getRecordPageModel(`/api/v1/products/${entity.slug}`, controller.signal)
+      .then((value) => {
+        const model = value as ProductPageModel;
+        setPageModel(model);
+        setBundle(evidenceBundle(model));
+        setEvidenceState("ready");
       })
-      .then((value: ProductEvidenceBundle | null) => { if (value) { setBundle(value); setEvidenceState("ready"); } })
-      .catch((error: Error) => { if (error.name !== "AbortError") setEvidenceState("error"); });
+      .catch((error: Error) => {
+        if (error.name === "AbortError" || bundle) return;
+        fetch(`/catalog/product-evidence/${entity.organization}/${entity.sourceName}.json`, { signal: controller.signal })
+          .then((response) => response.ok ? response.json() : Promise.reject(new Error("fallback unavailable")))
+          .then((value: ProductEvidenceBundle) => { setBundle(value); setEvidenceState("ready"); })
+          .catch((fallbackError: Error) => { if (fallbackError.name !== "AbortError") setEvidenceState("error"); });
+      });
     return () => controller.abort();
-  }, [entity?.id]);
+  }, [entity?.id, entity?.slug]);
   if (!entity) return <div className="max-w-3xl mx-auto px-4 py-20 space-y-4"><h1 className="font-serif text-3xl font-bold text-ink">Product record unavailable</h1><p className="text-sm text-ink-muted">This reviewed product or portfolio record could not be found.</p><button onClick={() => onNavigate("/products")} className="text-xs font-mono text-accent hover:underline">Return to products</button></div>;
 
   const children = portfolioEntities.filter((candidate) => candidate.approved && (candidate.parentId === entity.id || candidate.suiteId === entity.id));
@@ -225,6 +301,8 @@ export function ProductRecordPage({ slug, onNavigate }: { slug: string; onNaviga
     resourcesByKind.set(kind, [...(resourcesByKind.get(kind) || []), resource]);
   }
   const primaryLink = entity.links.find((link) => link.kind === "source") || entity.links[0];
+  const taxonomyLabels = (taxonomy: string, fallback: string[]) =>
+    pageModel?.taxonomies[taxonomy]?.map((item) => item.label) || fallback;
 
   return (
     <article className="max-w-[var(--content-max)] mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-14 space-y-10">
@@ -254,8 +332,9 @@ export function ProductRecordPage({ slug, onNavigate }: { slug: string; onNaviga
             ["Audience", entity.audience.join(", ")],
             ["Record type", humanize(entity.kind)],
             ["Maturity", humanize(entity.maturity)],
-            ["Ecosystem", entity.ecosystem.map(humanize).join(", ")],
-            ["Technologies", entity.technologies.join(", ")],
+            ["Ecosystem", taxonomyLabels("ecosystem", entity.ecosystem.map(humanize)).join(", ") || "Not classified"],
+            ["Technologies", taxonomyLabels("technology", entity.technologies).join(", ") || "Not classified"],
+            ["Languages", taxonomyLabels("language", []).join(", ") || "Not observed"],
           ]} />
         </aside>
 
@@ -277,8 +356,8 @@ export function ProductRecordPage({ slug, onNavigate }: { slug: string; onNaviga
             ]} /></>}
           </ProductSection>
 
-          <ProductSection id="packages" title="Packages" intro="Published and manifest-discovered packages connected to the product repository.">
-            {bundle?.packages.length ? <ul className="border-y border-[var(--color-border-soft)] divide-y divide-[var(--color-border-soft)]">{bundle.packages.map((pkg) => <li key={pkg.id} className="py-4 sm:flex sm:items-center sm:justify-between gap-5"><div><span className="text-[10px] font-mono uppercase text-accent">{pkg.ecosystem}</span><h3 className="font-serif text-lg font-bold text-ink">{pkg.display_name || pkg.name}</h3><p className="text-xs text-ink-muted mt-1">{pkg.latest_version ? `Latest ${pkg.latest_version}` : "Version not recorded"} · {pkg.release_count || 0} releases · {pkg.dependency_count || 0} dependencies</p></div>{pkg.route && <a href={pkg.route} onClick={(event) => { event.preventDefault(); onNavigate(pkg.route!); }} className="mt-2 sm:mt-0 text-xs font-mono text-accent hover:underline inline-flex items-center gap-1"><Package className="w-3.5 h-3.5" /> Package evidence</a>}</li>)}</ul> : <p className="text-sm text-ink-muted">{evidenceState === "loading" ? "Loading packages…" : "No package records are attached to this product repository."}</p>}
+          <ProductSection id="packages" title="Packages" intro="Public packages attached through implementation, website, or documentation repositories. Their role is shown explicitly.">
+            {bundle?.packages.length ? <ul className="border-y border-[var(--color-border-soft)] divide-y divide-[var(--color-border-soft)]">{bundle.packages.map((pkg) => <li key={pkg.id} className="py-4 sm:flex sm:items-center sm:justify-between gap-5"><div><span className="text-[10px] font-mono uppercase text-accent">{pkg.ecosystem}{pkg.role ? ` · ${humanize(pkg.role)}` : ""}</span><h3 className="font-serif text-lg font-bold text-ink">{pkg.display_name || pkg.name}</h3><p className="text-xs text-ink-muted mt-1">{pkg.latest_version ? `Latest ${pkg.latest_version}` : "Version not recorded"} · {pkg.release_count || 0} releases · {pkg.dependency_count || 0} dependencies</p></div>{pkg.route && <a href={pkg.route} onClick={(event) => { event.preventDefault(); onNavigate(pkg.route!); }} className="mt-2 sm:mt-0 text-xs font-mono text-accent hover:underline inline-flex items-center gap-1"><Package className="w-3.5 h-3.5" /> Package evidence</a>}</li>)}</ul> : <p className="text-sm text-ink-muted">{evidenceState === "loading" ? "Loading packages…" : "No public package records are attached to this product."}</p>}
           </ProductSection>
 
           <ProductSection id="resources" title="Demos, APIs, examples, and related resources" intro="These links are discovered from repository homepages, contracts, and source paths. A source path does not prove a live deployment.">

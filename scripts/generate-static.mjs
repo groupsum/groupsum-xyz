@@ -2,6 +2,7 @@ import fs from "node:fs";
 import path from "node:path";
 import { articles } from "../packages/site-content-pack/dist/index.js";
 import { jsonLdHtml } from "./structured-data.mjs";
+import { getPageModel, render } from "../dist-server/entry-server.js";
 
 const OUT = "dist";
 const root = "https://groupsum.xyz";
@@ -73,6 +74,11 @@ function pageMetaHtml(record) {
   return lines.join("\n    ");
 }
 function injectHeadMeta(html, record) { const replacement = "    " + pageMetaHtml(record) + "\n    " + jsonLdHtml(record) + "\n  </head>"; return html.replace(/<script type="application\/ld\+json">[\s\S]*?<\/script>/gi, "").replace(/\s*<title>.*?<\/title>\s*/gis, "").replace(/\s*<meta (?:name|property)="(?:description|robots|og:[^"]+|twitter:[^"]+|article:[^"]+)"[^>]*>\s*/gi, "").replace(/\s*<link rel="canonical"[^>]*>\s*/gi, "").replace("</head>", replacement); }
+function injectRenderedApp(html, record) {
+  const model = getPageModel(record.route);
+  const serialized = model ? `<script id="groupsum-page-model" type="application/json">${JSON.stringify(model).replace(/</g, "\\u003c")}</script>` : "";
+  return html.replace('<div id="root"></div>', `<div id="root">${render(record.route)}</div>${serialized}`);
+}
 function urlset(records) { return `<?xml version="1.0" encoding="UTF-8"?>\n<?xml-stylesheet type="text/xsl" href="${root}/sitemap.xsl"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${records.map((record) => { const lastmod = record.modified || record.published; return `  <url><loc>${escapeXml(record.url)}</loc>${lastmod ? `<lastmod>${escapeXml(lastmod)}</lastmod>` : ""}</url>`; }).join("\n")}\n</urlset>\n`; }
 
 function writeDiscovery() {
@@ -89,8 +95,8 @@ function writeDiscovery() {
 }
 
 fs.mkdirSync(OUT, { recursive: true }); const shellHtml = fs.readFileSync(path.join(OUT, "index.html"), "utf8");
-for (const record of inventory) { if (record.route === "/") continue; const outputDir = path.join(OUT, record.route); fs.mkdirSync(outputDir, { recursive: true }); fs.writeFileSync(path.join(outputDir, "index.html"), injectHeadMeta(shellHtml, record)); }
-fs.writeFileSync(path.join(OUT, "index.html"), injectHeadMeta(shellHtml, pages[0]));
+for (const record of inventory) { if (record.route === "/") continue; const outputDir = path.join(OUT, record.route); fs.mkdirSync(outputDir, { recursive: true }); fs.writeFileSync(path.join(outputDir, "index.html"), injectRenderedApp(injectHeadMeta(shellHtml, record), record)); }
+fs.writeFileSync(path.join(OUT, "index.html"), injectRenderedApp(injectHeadMeta(shellHtml, pages[0]), pages[0]));
 writeDiscovery();
 const catalogOut = path.join(OUT, "catalog");
 fs.mkdirSync(catalogOut, { recursive: true });

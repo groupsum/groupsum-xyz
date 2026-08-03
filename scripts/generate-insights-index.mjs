@@ -1,7 +1,9 @@
 import fs from "node:fs";
 import { importedArticles } from "../packages/site-content-pack/dist/articles.generated.js";
 
-const outputPath = new URL("../src/data/posts.generated.ts", import.meta.url);
+const featuredOutputPath = new URL("../src/data/posts.featured.generated.ts", import.meta.url);
+const publicIndexPath = new URL("../public/insights-index.json", import.meta.url);
+const publicContentDirectory = new URL("../public/insights-content/", import.meta.url);
 
 const decodeEntities = (value) =>
   value
@@ -39,24 +41,41 @@ const articles = importedArticles.map((article) => ({
   tags: article.tags,
   featuredImage: article.featuredImage,
   authorName: article.authorName,
+  contentPath: `/insights-content/${article.legacyPath.replace(/[^a-z0-9]+/gi, "-").replace(/^-|-$/g, "").toLowerCase()}.json`,
 }));
 
-const source = `export type LegacyPostIndexEntry = {
-  slug: string;
-  legacyPath: string;
-  canonicalUrl: string;
-  title: string;
-  excerpt: string;
-  date: string;
-  modified: string;
-  categories: string[];
-  tags: string[];
-  featuredImage?: string;
-  authorName: string;
-};
-
-export const legacyPostIndex: LegacyPostIndexEntry[] = ${JSON.stringify(articles, null, 2)};
-`;
-
-fs.writeFileSync(outputPath, source, "utf8");
+fs.rmSync(publicContentDirectory, { recursive: true, force: true });
+fs.mkdirSync(publicContentDirectory, { recursive: true });
+for (const [index, article] of articles.entries()) {
+  const imported = importedArticles[index];
+  fs.writeFileSync(
+    new URL(`../public${article.contentPath}`, import.meta.url),
+    JSON.stringify({ ...article, contentHtml: imported.contentHtml }),
+    "utf8",
+  );
+}
+fs.writeFileSync(publicIndexPath, JSON.stringify(articles), "utf8");
+fs.writeFileSync(
+  featuredOutputPath,
+  `import type { BlogPost } from "../types";\n\nexport const featuredBlogPosts: BlogPost[] = ${JSON.stringify(
+    articles.slice(0, 6).map((article) => ({
+      slug: article.slug,
+      legacyPath: article.legacyPath,
+      canonicalUrl: article.canonicalUrl,
+      title: article.title,
+      date: article.date,
+      modified: article.modified,
+      author: article.authorName || "Groupsum",
+      excerpt: article.excerpt,
+      content: "",
+      tags: [...article.categories, ...article.tags],
+      category: article.categories[0] || "Legacy archive",
+      featuredImage: article.featuredImage,
+      isLegacy: true,
+    })),
+    null,
+    2,
+  )};\n`,
+  "utf8",
+);
 console.log(`Generated compact Insights index for ${articles.length} legacy articles.`);

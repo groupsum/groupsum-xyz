@@ -1,0 +1,41 @@
+{
+  "schema_version": "1.0.0",
+  "records": {
+    "swarmauri/peagen": {
+      "primary_repository": "swarmauri/peagen-com",
+      "repositories": [
+        "swarmauri/swarmauri-sdk",
+        "swarmauri/peagen-com",
+        "swarmauri/docs-peagen-com"
+      ],
+      "package_repositories": [
+        "swarmauri/peagen-com",
+        "swarmauri/docs-peagen-com"
+      ],
+      "repository_roles": {
+        "swarmauri/swarmauri-sdk": "public-integration-evidence",
+        "swarmauri/peagen-com": "primary-public-evidence",
+        "swarmauri/docs-peagen-com": "documentation"
+      },
+      "package_roles": {
+        "swarmauri/peagen-com": "website-support",
+        "swarmauri/docs-peagen-com": "documentation-support"
+      },
+      "resources": [
+        {
+          "kind": "website",
+          "name": "Peagen website",
+          "url": "https://peagen.com",
+          "evidence_type": "public-url"
+        },
+        {
+          "kind": "documentation",
+          "name": "Peagen documentation",
+          "url": "https://docs.peagen.com",
+          "evidence_type": "public-url"
+        }
+      ],
+      "resource_contains": ["peagen"]
+    }
+  }
+}

@@ -12,4 +12,17 @@ export default defineConfig({
       "mdwrk/structured-data": path.resolve(__dirname, "./src/mdwrk/structured-data/index.tsx"),
     },
   },
+  build: {
+    chunkSizeWarningLimit: 256,
+    rollupOptions: {
+      output: {
+        manualChunks(id) {
+          if (id.includes("node_modules/react") || id.includes("node_modules/scheduler")) return "react-runtime";
+          if (id.includes("node_modules/lucide-react")) return "icons";
+          if (id.includes("/src/mdwrk/")) return "mdwrk-runtime";
+          return undefined;
+        },
+      },
+    },
+  },
 });

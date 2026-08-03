@@ -1,4 +1,20 @@
 services:
+  groupsum-catalog-api:
+    build:
+      context: .
+      dockerfile: backend/Dockerfile
+    container_name: groupsum-catalog-api
+    restart: unless-stopped
+    environment:
+      GROUPSUM_DATABASE_PATH: /data/groupsum-catalog.sqlite3
+      GROUPSUM_PUBLIC_BASE_URL: https://groupsum.xyz
+    volumes:
+      - groupsum-catalog-data:/data
+    networks:
+      dockerwp:
+        aliases:
+          - groupsum-catalog-api
+
   groupsum-xyz:
     build: .
     container_name: groupsum-xyz
@@ -8,6 +24,8 @@ services:
       site.kind: mdwrk-lander
     ports:
       - "8082:80"
+    depends_on:
+      - groupsum-catalog-api
     networks:
       dockerwp:
         aliases:
@@ -17,3 +35,7 @@ networks:
   dockerwp:
     name: dockerwp
     external: true
+
+volumes:
+  groupsum-catalog-data:
+    name: groupsum-xyz-catalog-data

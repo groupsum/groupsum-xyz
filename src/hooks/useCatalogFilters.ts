@@ -1,5 +1,5 @@
 import { useMemo, useState } from "react";
-import { useSearchParams } from "react-router-dom";
+import { useSearchParams } from "../router";
 import { CatalogView, PortfolioEntity } from "../types";
 
 export function useCatalogFilters(entities: PortfolioEntity[]) {

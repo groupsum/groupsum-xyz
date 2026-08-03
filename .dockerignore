@@ -5,3 +5,9 @@ coverage
 .env
 .env.local
 npm-debug.log*
+backend/.venv
+backend/.pytest_cache
+.pytest_cache
+.uv-cache
+backend/data
+.lighthouseci

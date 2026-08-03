@@ -122,9 +122,12 @@ export const portfolioEntities: PortfolioEntity[] = [
     organization: "swarmauri", kind: "product", capabilityIds: ["dev-experience", "ai-agents"], ecosystem: ["python", "service"],
     summary: "Template-driven, SSOT-governed code-generation workspace for DAG/Jinja2 rendering, CLI workflows, and gateway/worker services.",
     audience: ["Developer-experience teams", "Python developers"], maturity: "active-development",
-    evidence: [{ kind: "source", label: "Public repository, templates, CLI, and service layout reviewed", checkedAt }],
-    limitations: ["Generated output still requires project-specific review, testing, and ownership."],
-    links: [{ kind: "source", label: "Public repository", href: "https://github.com/swarmauri/peagen" }],
+    evidence: [{ kind: "source", label: "Public website source, documentation, and SDK integration marker reviewed", checkedAt }],
+    limitations: [
+      "Generated output still requires project-specific review, testing, and ownership.",
+      "No public core implementation repository, API, demo, example, or showcase is verified in the current catalog."
+    ],
+    links: [{ kind: "source", label: "Public website source", href: "https://github.com/swarmauri/peagen-com" }],
     featured: true, approved: true, disposition: "public", technologies: ["Python", "Jinja2", "DAGs", "CLI"]
   },
   {

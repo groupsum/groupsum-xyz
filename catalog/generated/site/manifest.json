@@ -50,7 +50,7 @@
   "generated_at": "2026-08-03T10:05:58Z",
   "product_evidence": {
     "path": "/catalog/product-evidence/",
-    "records": 68
+    "records": 69
   },
   "schema_version": "1.0.0",
   "source": "/catalog/catalog.json",

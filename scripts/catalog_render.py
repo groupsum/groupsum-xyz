@@ -304,7 +304,12 @@ def typescript_summary(summary: dict[str, Any], datasets: dict[str, list[dict[st
     return "\n\n".join(lines) + "\n"
 
 
-def write_product_evidence(directory: Path, catalog: dict[str, Any], datasets: dict[str, list[dict[str, Any]]]) -> int:
+def write_product_evidence(
+    directory: Path,
+    catalog: dict[str, Any],
+    datasets: dict[str, list[dict[str, Any]]],
+    attachments_path: Path | None = None,
+) -> int:
     """Emit small repository-scoped joins for product pages without loading the full package catalog."""
     if directory.exists():
         shutil.rmtree(directory)
@@ -322,7 +327,90 @@ def write_product_evidence(directory: Path, catalog: dict[str, Any], datasets: d
             "packages": sorted(packages_by_repository.get(full_name, []), key=lambda item: (item.get("ecosystem", ""), item.get("name", ""))),
         }
         write_json(directory / owner / f"{name}.json", bundle)
-    return len(repositories)
+
+    attachment_count = 0
+    if attachments_path and attachments_path.exists():
+        attachments = json.loads(attachments_path.read_text(encoding="utf-8"))
+        for record_key, attachment in attachments.get("records", {}).items():
+            repository_names = attachment.get("repositories", [])
+            attached_repositories = [repositories[name] for name in repository_names if name in repositories]
+            if not attached_repositories:
+                continue
+            primary_name = attachment.get("primary_repository")
+            primary = repositories.get(primary_name, attached_repositories[0])
+            resource_terms = [
+                str(term).lower() for term in attachment.get("resource_contains", []) if str(term)
+            ]
+            merged_repository = dict(primary)
+            merged_repository["attached_repositories"] = [
+                {
+                    "id": repository["id"],
+                    "full_name": repository["full_name"],
+                    "route": repository["route"],
+                    "source_url": repository.get("source_url") or repository.get("url"),
+                    "description": repository["description"],
+                    "default_branch": repository.get("default_branch"),
+                    "archived": repository.get("archived", False),
+                    "fork": repository.get("fork", False),
+                    "metrics": repository.get("metrics", {}),
+                    "latest_release": repository.get("latest_release"),
+                    "latest_deployment": repository.get("latest_deployment"),
+                    "attachment_role": attachment.get("repository_roles", {}).get(
+                        repository["full_name"], "implementation"
+                    ),
+                }
+                for repository in attached_repositories
+            ]
+            merged_repository["related_resources"] = sorted(
+                ({
+                    resource["id"]: resource
+                    for repository in attached_repositories
+                    for resource in repository.get("related_resources", [])
+                    if not resource_terms
+                    or any(
+                        term
+                        in " ".join(
+                            str(resource.get(field, "")).lower()
+                            for field in ("name", "url", "kind")
+                        )
+                        for term in resource_terms
+                    )
+                } | {
+                    resource.get("id")
+                    or f"resource:{stable_hash(str(resource.get('url') or resource.get('name')))}": {
+                        "id": resource.get("id")
+                        or f"resource:{stable_hash(str(resource.get('url') or resource.get('name')))}",
+                        **resource,
+                    }
+                    for resource in attachment.get("resources", [])
+                }).values(),
+                key=lambda item: (item.get("kind", ""), item.get("name", "")),
+            )
+            merged_packages = sorted(
+                {
+                    package["id"]: {
+                        **package,
+                        "attachment_role": attachment.get("package_roles", {}).get(
+                            str(package.get("repository")), "distribution"
+                        ),
+                    }
+                    for repository_name in attachment.get("package_repositories", repository_names)
+                    for package in packages_by_repository.get(repository_name, [])
+                }.values(),
+                key=lambda item: (item.get("ecosystem", ""), item.get("name", "")),
+            )
+            owner, name = record_key.split("/", 1)
+            write_json(
+                directory / owner / f"{name}.json",
+                {
+                    "schema_version": "1.0.0",
+                    "generated_at": catalog["generated_at"],
+                    "repository": merged_repository,
+                    "packages": merged_packages,
+                },
+            )
+            attachment_count += 1
+    return len(repositories) + attachment_count
 
 
 def main() -> int:
@@ -332,6 +420,11 @@ def main() -> int:
     parser.add_argument("--site-dir", type=Path, default=ROOT / "catalog" / "generated" / "site")
     parser.add_argument("--product-evidence-dir", type=Path, default=ROOT / "catalog" / "generated" / "product-evidence")
     parser.add_argument("--editorial", type=Path, default=ROOT / "catalog" / "content" / "editorial.json")
+    parser.add_argument(
+        "--record-attachments",
+        type=Path,
+        default=ROOT / "catalog" / "content" / "record-attachments.json",
+    )
     parser.add_argument("--typescript", type=Path, default=ROOT / "src" / "data" / "catalog.generated.ts")
     args = parser.parse_args()
     catalog = json.loads(args.catalog.read_text(encoding="utf-8"))
@@ -347,7 +440,12 @@ def main() -> int:
     files = []
     for name, records in datasets.items():
         files.append({"dataset": name, **write_json(args.site_dir / f"{name}.json", records)})
-    product_evidence_count = write_product_evidence(args.product_evidence_dir, catalog, datasets)
+    product_evidence_count = write_product_evidence(
+        args.product_evidence_dir,
+        catalog,
+        datasets,
+        args.record_attachments,
+    )
     manifest = {
         "schema_version": "1.0.0",
         "generated_at": catalog["generated_at"],

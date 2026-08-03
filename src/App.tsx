@@ -4,7 +4,7 @@
  */
 
 import React, { useState, useEffect, useMemo } from "react";
-import { useLocation, useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "./router";
 import { SiteHeader } from "./components/SiteHeader";
 import { SiteFooter } from "./components/SiteFooter";
 import { PortfolioCard, EvidenceLabel } from "./components/PortfolioCard";
@@ -13,7 +13,7 @@ import { portfolioItems } from "./data/portfolio";
 import { portfolioEntities } from "./data/entities";
 import { solutionsData } from "./data/solutions";
 import { servicesData } from "./data/services";
-import { blogPosts, loadBlogPost } from "./data/posts";
+import { featuredBlogPosts } from "./data/posts.featured.generated";
 import { BlogPost, PortfolioItem, PortfolioEntity, SolutionItem, ServiceItem } from "./types";
 import { MarkdownRenderer } from "mdwrk/renderer-core";
 import { CapabilityBand } from "./components/CapabilityBand";
@@ -195,7 +195,7 @@ function RouteSwitcher({ path, onNavigate }: { path: string; onNavigate: (path: 
    ========================================================================== */
 function HomePage({ onNavigate }: RouteProps) {
   const featuredPosts = useMemo(() => {
-    return blogPosts.slice(0, 3);
+    return featuredBlogPosts.slice(0, 3);
   }, []);
 
   const flagshipSuites = useMemo(() => {
@@ -1182,13 +1182,23 @@ function ServicesPage({ onNavigate }: RouteProps) {
    INSIGHTS ARCHIVE PAGE
    ========================================================================== */
 function InsightsPage({ onNavigate }: RouteProps) {
+  const location = useLocation();
+  const [blogPosts, setBlogPosts] = useState<BlogPost[]>(featuredBlogPosts);
   const [searchQuery, setSearchQuery] = useState("");
   const [currentPage, setCurrentPage] = useState(1);
   const postsPerPage = 5;
 
   // Read URL query parameter for preselecting/loading specific posts
-  const urlParams = new URLSearchParams(window.location.search);
+  const urlParams = new URLSearchParams(location.search);
   const selectedSlug = urlParams.get("slug");
+
+  useEffect(() => {
+    let active = true;
+    import("./data/posts").then((module) => module.loadBlogPosts()).then((posts) => {
+      if (active) setBlogPosts(posts);
+    });
+    return () => { active = false; };
+  }, []);
 
   // Filter posts based on search query
   const filteredPosts = useMemo(() => {
@@ -2438,7 +2448,7 @@ function AsyncArticleLayout({ post, onBack, onNavigate }: ArticleLayoutProps) {
     setFailed(false);
 
     if (!post.content) {
-      loadBlogPost(post.legacyPath)
+      import("./data/posts").then((module) => module.loadBlogPost(post.legacyPath))
         .then((article) => {
           if (!active) return;
           if (article) setLoadedPost(article);
@@ -2481,6 +2491,14 @@ function AsyncArticleLayout({ post, onBack, onNavigate }: ArticleLayoutProps) {
 }
 
 function ArticleLayout({ post, onBack, onNavigate }: ArticleLayoutProps) {
+  const [blogPosts, setBlogPosts] = useState<BlogPost[]>(featuredBlogPosts);
+  useEffect(() => {
+    let active = true;
+    import("./data/posts").then((module) => module.loadBlogPosts()).then((posts) => {
+      if (active) setBlogPosts(posts);
+    });
+    return () => { active = false; };
+  }, []);
   // Simple related posts matcher based on tags
   const relatedPosts = useMemo(() => {
     return blogPosts
@@ -2588,13 +2606,19 @@ interface LegacyArticlePageProps {
 
 function LegacyArticlePage({ year, month, day, slug, onNavigate }: LegacyArticlePageProps) {
   const requestedPath = `/${year}/${month}/${day}/${slug}/`;
-  const post = useMemo(
-    () => blogPosts.find((candidate) => candidate.legacyPath === requestedPath),
-    [requestedPath],
+  const [post, setPost] = useState<BlogPost | undefined>(() =>
+    featuredBlogPosts.find((candidate) => candidate.legacyPath === requestedPath),
   );
+  useEffect(() => {
+    let active = true;
+    import("./data/posts").then((module) => module.loadBlogPosts()).then((posts) => {
+      if (active) setPost(posts.find((candidate) => candidate.legacyPath === requestedPath));
+    });
+    return () => { active = false; };
+  }, [requestedPath]);
 
   if (!post) {
-    return <NotFoundPage onNavigate={onNavigate} />;
+    return <section className="max-w-[var(--reading-max)] mx-auto px-4 sm:px-6 py-16" aria-busy="true"><p className="text-sm text-ink-muted">Loading archived article…</p></section>;
   }
 
   return (

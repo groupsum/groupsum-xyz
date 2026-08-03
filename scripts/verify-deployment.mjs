@@ -12,6 +12,10 @@ async function fetchText(pathname) {
   return response.text();
 }
 
+async function fetchResponse(pathname, headers = {}) {
+  return fetch(`${baseUrl}${pathname}`, { headers: { "cache-control": "no-cache", ...headers } });
+}
+
 async function verify() {
   const manifest = JSON.parse(await fetchText("/catalog/site/manifest.json"));
   for (const [name, minimum] of Object.entries(expected)) {
@@ -35,11 +39,29 @@ async function verify() {
   for (const marker of ["Portwyrm | GroupSum products", "SoftwareApplication", "https://groupsum.xyz/products/records/portwyrm/"]) {
     if (!portwyrmHtml.includes(marker)) throw new Error(`Portwyrm product metadata is missing ${marker}`);
   }
+  const peagenHtml = await fetchText("/products/records/peagen/");
+  for (const marker of ["Peagen", ">5</dd>", "peagen-com", "docs-peagen-com", "No public core implementation repository", "https://peagen.com"]) {
+    if (!peagenHtml.includes(marker)) throw new Error(`Peagen rendered page is missing ${marker}`);
+  }
+  const peagenApi = await fetchResponse("/api/v1/products/peagen");
+  if (!peagenApi.ok) throw new Error(`Peagen API returned ${peagenApi.status}`);
+  const peagenModel = await peagenApi.json();
+  if (peagenModel.implementation?.repositories?.length !== 3) throw new Error("Peagen API repository attachments are incomplete");
+  if (peagenModel.implementation?.packages?.length !== 5) throw new Error("Peagen API package attachments are incomplete");
+  if (peagenModel.implementation?.resources?.length !== 7) throw new Error("Peagen API related resources are incomplete");
+  if (peagenModel.implementation.repositories[0]?.name !== "peagen-com") throw new Error("Peagen API exposes the wrong primary public repository");
+  if (peagenModel.implementation.packages.some((item) => !["website-support", "documentation-support"].includes(item.role))) throw new Error("Peagen API package roles are inaccurate");
+  const etag = peagenApi.headers.get("etag");
+  if (!etag) throw new Error("Peagen API is missing an ETag");
+  const unchanged = await fetchResponse("/api/v1/products/peagen", { "if-none-match": etag });
+  if (unchanged.status !== 304) throw new Error(`Peagen conditional request returned ${unchanged.status}`);
+  const openapi = JSON.parse(await fetchText("/openapi.json"));
+  if (!openapi.paths?.["/api/v1/products/{slug}"]) throw new Error("deployed OpenAPI lacks product record page model");
   const homeHtml = await fetchText("/");
   const asset = homeHtml.match(/<script[^>]+src="([^"]+\.js)"/i)?.[1];
   if (!asset) throw new Error("deployed application JavaScript asset was not found");
   const bundle = await fetchText(asset);
-  for (const marker of ["Products built as connected systems", "Demos, APIs, examples, and related resources", "/catalog/product-evidence/", "/catalog/site/"]) {
+  for (const marker of ["Products built as connected systems", "Demos, APIs, examples, and related resources", "/api/v1/products/", "/catalog/site/"]) {
     if (!bundle.includes(marker)) throw new Error(`deployed bundle missing marker: ${marker}`);
   }
   console.log(`deployment verified: ${baseUrl}, repositories=${manifest.counts.repositories}, packages=${manifest.counts.packages}`);

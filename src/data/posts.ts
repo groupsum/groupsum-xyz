@@ -1,5 +1,19 @@
-import { legacyPostIndex } from "./posts.generated";
 import type { BlogPost } from "../types";
+
+type LegacyPostIndexEntry = {
+  slug: string;
+  legacyPath: string;
+  canonicalUrl: string;
+  title: string;
+  excerpt: string;
+  date: string;
+  modified: string;
+  categories: string[];
+  tags: string[];
+  featuredImage?: string;
+  authorName: string;
+  contentPath: string;
+};
 
 const decodeEntities = (value: string) =>
   value
@@ -79,7 +93,7 @@ const htmlToMarkdown = (html: string) => {
     .trim();
 };
 
-const metadataPost = (article: (typeof legacyPostIndex)[number]): BlogPost => ({
+const metadataPost = (article: LegacyPostIndexEntry): BlogPost => ({
   slug: article.slug,
   legacyPath: article.legacyPath,
   canonicalUrl: article.canonicalUrl,
@@ -95,14 +109,28 @@ const metadataPost = (article: (typeof legacyPostIndex)[number]): BlogPost => ({
   isLegacy: true,
 });
 
-export const blogPosts: BlogPost[] = legacyPostIndex
-  .map(metadataPost)
-  .sort((left, right) => right.date.localeCompare(left.date));
+let indexPromise: Promise<LegacyPostIndexEntry[]> | undefined;
+
+async function loadIndex(): Promise<LegacyPostIndexEntry[]> {
+  indexPromise ||= fetch("/insights-index.json").then((response) => {
+    if (!response.ok) throw new Error(`Insights index response ${response.status}`);
+    return response.json() as Promise<LegacyPostIndexEntry[]>;
+  });
+  return indexPromise;
+}
+
+export async function loadBlogPosts(): Promise<BlogPost[]> {
+  const index = await loadIndex();
+  return index.map(metadataPost).sort((left, right) => right.date.localeCompare(left.date));
+}
 
 export async function loadBlogPost(legacyPath: string): Promise<BlogPost | null> {
-  const { importedArticles } = await import("../../packages/site-content-pack/src/articles.generated");
-  const article = importedArticles.find((candidate) => candidate.legacyPath === legacyPath);
-  if (!article) return null;
+  const index = await loadIndex();
+  const metadata = index.find((candidate) => candidate.legacyPath === legacyPath);
+  if (!metadata) return null;
+  const response = await fetch(metadata.contentPath);
+  if (!response.ok) throw new Error(`Article response ${response.status}`);
+  const article = await response.json() as LegacyPostIndexEntry & { contentHtml: string };
 
   return {
     slug: article.slug,
@@ -112,7 +140,7 @@ export async function loadBlogPost(legacyPath: string): Promise<BlogPost | null>
     date: article.date,
     modified: article.modified,
     author: article.authorName || "Groupsum",
-    excerpt: stripHtml(article.excerptHtml || article.contentHtml).slice(0, 320),
+    excerpt: article.excerpt || stripHtml(article.contentHtml).slice(0, 320),
     content: htmlToMarkdown(article.contentHtml),
     tags: [...article.categories, ...article.tags],
     category: article.categories[0] || "Legacy archive",

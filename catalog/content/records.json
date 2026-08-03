@@ -1,0 +1,2011 @@
+{
+  "schema_version": "1.0.0",
+  "organizations": [
+    {
+      "id": "groupsum",
+      "slug": "groupsum",
+      "name": "Groupsum"
+    },
+    {
+      "id": "swarmauri",
+      "slug": "swarmauri",
+      "name": "Swarmauri"
+    },
+    {
+      "id": "tigrbl",
+      "slug": "tigrbl",
+      "name": "Tigrbl"
+    }
+  ],
+  "records": [
+    {
+      "id": "groupsum-ssot-registry",
+      "slug": "ssot-registry",
+      "organization_id": "groupsum",
+      "record_type": "product",
+      "artifact_type": "product",
+      "title": "SSOT Registry",
+      "summary": "Repository-agnostic Python CLI for tracing features and requirements to implementation, tests, evidence, and release state.",
+      "maturity": "maintained",
+      "visibility": "public",
+      "featured": true,
+      "canonical_url": "https://groupsum.xyz/products/records/ssot-registry",
+      "source_name": "ssot-registry",
+      "parent_id": null,
+      "audience": [
+        "Platform engineers",
+        "Release engineers"
+      ],
+      "ecosystems": [],
+      "technologies": [
+        "CLI"
+      ],
+      "languages": [
+        "python",
+        "Python",
+        "YAML",
+        "JSON"
+      ],
+      "capabilities": [
+        "governed-delivery",
+        "dev-experience"
+      ],
+      "evidence": [
+        {
+          "kind": "source",
+          "label": "Public repository and CLI documentation reviewed",
+          "checkedAt": "2026-08-02"
+        }
+      ],
+      "limitations": [
+        "Repository evidence does not establish a live hosted service or third-party certification."
+      ],
+      "links": [
+        {
+          "kind": "source",
+          "label": "Public repository",
+          "href": "https://github.com/groupsum/ssot-registry"
+        }
+      ],
+      "claim_boundary": "Source and documentation evidence only.",
+      "content": {},
+      "related_slugs": []
+    },
+    {
+      "id": "groupsum-mdwrk",
+      "slug": "mdwrk",
+      "organization_id": "groupsum",
+      "record_type": "product",
+      "artifact_type": "suite",
+      "title": "MdWrk",
+      "summary": "Package platform for Markdown rendering, editing, extension contracts, extension runtimes, and shared primitives.",
+      "maturity": "maintained",
+      "visibility": "public",
+      "featured": true,
+      "canonical_url": "https://groupsum.xyz/products/records/mdwrk",
+      "source_name": "mdwrk",
+      "parent_id": null,
+      "audience": [
+        "Documentation teams",
+        "Frontend engineers"
+      ],
+      "ecosystems": [
+        "npm",
+        "web"
+      ],
+      "technologies": [
+        "React"
+      ],
+      "languages": [
+        "TypeScript",
+        "Markdown"
+      ],
+      "capabilities": [
+        "documents",
+        "dev-experience"
+      ],
+      "evidence": [
+        {
+          "kind": "source",
+          "label": "Public core and Pages repositories reviewed",
+          "checkedAt": "2026-08-02"
+        }
+      ],
+      "limitations": [
+        "Capabilities vary by package; no throughput, scale, or customer-use claim is made."
+      ],
+      "links": [
+        {
+          "kind": "source",
+          "label": "Core repository",
+          "href": "https://github.com/groupsum/mdwrk"
+        },
+        {
+          "kind": "source",
+          "label": "Pages repository",
+          "href": "https://github.com/groupsum/mdwrk-pages"
+        }
+      ],
+      "claim_boundary": "Public source and repository documentation only.",
+      "content": {},
+      "related_slugs": []
+    },
+    {
+      "id": "groupsum-markdown-workspace",
+      "slug": "markdown_workspace",
+      "organization_id": "groupsum",
+      "record_type": "product",
+      "artifact_type": "application",
+      "title": "Markdown Workspace",
+      "summary": "Local-first Markdown workspace with preview editing, packages, and an extension host for portable authoring.",
+      "maturity": "maintained",
+      "visibility": "public",
+      "featured": false,
+      "canonical_url": "https://groupsum.xyz/products/records/markdown_workspace",
+      "source_name": "markdown_workspace",
+      "parent_id": "groupsum-mdwrk",
+      "audience": [
+        "Writers",
+        "Developers"
+      ],
+      "ecosystems": [
+        "npm",
+        "web"
+      ],
+      "technologies": [
+        "React"
+      ],
+      "languages": [
+        "TypeScript",
+        "Markdown"
+      ],
+      "capabilities": [
+        "documents",
+        "dev-experience"
+      ],
+      "evidence": [
+        {
+          "kind": "source",
+          "label": "Public repository description and implementation reviewed",
+          "checkedAt": "2026-08-02"
+        }
+      ],
+      "limitations": [
+        "Public source does not establish hosted availability or service-level commitments."
+      ],
+      "links": [
+        {
+          "kind": "source",
+          "label": "Public repository",
+          "href": "https://github.com/groupsum/markdown_workspace"
+        }
+      ],
+      "claim_boundary": null,
+      "content": {},
+      "related_slugs": [
+        "mdwrk"
+      ]
+    },
+    {
+      "id": "groupsum-npmctl",
+      "slug": "npmctl",
+      "organization_id": "groupsum",
+      "record_type": "product",
+      "artifact_type": "product",
+      "title": "npmctl",
+      "summary": "Owner-scoped GitOps controller for Nginx Proxy Manager proxy hosts, certificates, and access lists.",
+      "maturity": "maintained",
+      "visibility": "public",
+      "featured": true,
+      "canonical_url": "https://groupsum.xyz/products/records/npmctl",
+      "source_name": "npmctl",
+      "parent_id": null,
+      "audience": [
+        "Platform engineers",
+        "Release operators"
+      ],
+      "ecosystems": [
+        "service"
+      ],
+      "technologies": [
+        "GitOps",
+        "Nginx Proxy Manager"
+      ],
+      "languages": [
+        "python",
+        "Python",
+        "YAML"
+      ],
+      "capabilities": [
+        "governed-delivery",
+        "infrastructure"
+      ],
+      "evidence": [
+        {
+          "kind": "source",
+          "label": "Public repository, tests, and desired-state examples reviewed",
+          "checkedAt": "2026-08-02"
+        }
+      ],
+      "limitations": [
+        "A repository and test suite do not prove the health of any particular installation."
+      ],
+      "links": [
+        {
+          "kind": "source",
+          "label": "Public repository",
+          "href": "https://github.com/groupsum/npmctl"
+        },
+        {
+          "kind": "docs",
+          "label": "Product site",
+          "href": "https://npmctl.com"
+        }
+      ],
+      "claim_boundary": null,
+      "content": {},
+      "related_slugs": []
+    },
+    {
+      "id": "groupsum-portwyrm",
+      "slug": "portwyrm",
+      "organization_id": "groupsum",
+      "record_type": "product",
+      "artifact_type": "product",
+      "title": "Portwyrm",
+      "summary": "Self-hosted reverse-proxy control plane and UI designed around npmctl-compatible operations.",
+      "maturity": "active-development",
+      "visibility": "public",
+      "featured": true,
+      "canonical_url": "https://groupsum.xyz/products/records/portwyrm",
+      "source_name": "portwyrm",
+      "parent_id": null,
+      "audience": [
+        "Self-hosters",
+        "Platform operators"
+      ],
+      "ecosystems": [
+        "web",
+        "service"
+      ],
+      "technologies": [
+        "FastAPI",
+        "React",
+        "Docker"
+      ],
+      "languages": [
+        "python",
+        "Python"
+      ],
+      "capabilities": [
+        "infrastructure",
+        "operator-boundaries"
+      ],
+      "evidence": [
+        {
+          "kind": "source",
+          "label": "Public repository, API surface, and deployment configuration reviewed",
+          "checkedAt": "2026-08-02"
+        }
+      ],
+      "limitations": [
+        "Active development; public source does not establish a supported hosted service."
+      ],
+      "links": [
+        {
+          "kind": "source",
+          "label": "Public repository",
+          "href": "https://github.com/groupsum/portwyrm"
+        }
+      ],
+      "claim_boundary": null,
+      "content": {},
+      "related_slugs": []
+    },
+    {
+      "id": "bucketwarden-platform",
+      "slug": "bucketwarden",
+      "organization_id": "groupsum",
+      "record_type": "product",
+      "artifact_type": "product",
+      "title": "BucketWarden",
+      "summary": "Storage-governance platform source spanning policy, evidence, deployment profiles, and operator workflows.",
+      "maturity": "active-development",
+      "visibility": "public",
+      "featured": true,
+      "canonical_url": "https://groupsum.xyz/products/records/bucketwarden",
+      "source_name": "bucketwarden-platform",
+      "parent_id": null,
+      "audience": [
+        "Cloud platform teams",
+        "Storage operators"
+      ],
+      "ecosystems": [
+        "service"
+      ],
+      "technologies": [
+        "Policy",
+        "Evidence"
+      ],
+      "languages": [
+        "rust",
+        "Rust",
+        "TypeScript"
+      ],
+      "capabilities": [
+        "storage",
+        "trust-policy"
+      ],
+      "evidence": [
+        {
+          "kind": "implementation",
+          "label": "Local platform source, tests, and deployment profiles reviewed",
+          "checkedAt": "2026-08-02"
+        }
+      ],
+      "limitations": [
+        "No storage volume, customer adoption, certification, or live-service claim is made."
+      ],
+      "links": [
+        {
+          "kind": "docs",
+          "label": "Product site",
+          "href": "https://bucketwarden.com"
+        }
+      ],
+      "claim_boundary": null,
+      "content": {},
+      "related_slugs": []
+    },
+    {
+      "id": "groupsum-pdfremed",
+      "slug": "pdfremed",
+      "organization_id": "groupsum",
+      "record_type": "product",
+      "artifact_type": "product",
+      "title": "PDFRemed",
+      "summary": "Workbench and service code for inspecting, planning, and performing PDF accessibility remediation.",
+      "maturity": "active-development",
+      "visibility": "public",
+      "featured": true,
+      "canonical_url": "https://groupsum.xyz/products/records/pdfremed",
+      "source_name": "pdfremed",
+      "parent_id": null,
+      "audience": [
+        "Document accessibility teams",
+        "Developers"
+      ],
+      "ecosystems": [
+        "web"
+      ],
+      "technologies": [
+        "PDF",
+        "React",
+        "Accessibility"
+      ],
+      "languages": [
+        "python",
+        "Python"
+      ],
+      "capabilities": [
+        "documents",
+        "accessibility"
+      ],
+      "evidence": [
+        {
+          "kind": "implementation",
+          "label": "Local source, schemas, and test plans reviewed",
+          "checkedAt": "2026-08-02"
+        }
+      ],
+      "limitations": [
+        "No automated conformance guarantee, production volume, or active-customer claim is made."
+      ],
+      "links": [],
+      "claim_boundary": null,
+      "content": {},
+      "related_slugs": []
+    },
+    {
+      "id": "tigrbl-framework",
+      "slug": "tigrbl",
+      "organization_id": "tigrbl",
+      "record_type": "product",
+      "artifact_type": "suite",
+      "title": "Tigrbl",
+      "summary": "Schema-first Python and Rust workspace for REST and JSON-RPC APIs with typed validation, SQLAlchemy models, and engine-backed execution.",
+      "maturity": "maintained",
+      "visibility": "public",
+      "featured": true,
+      "canonical_url": "https://groupsum.xyz/products/records/tigrbl",
+      "source_name": "tigrbl",
+      "parent_id": null,
+      "audience": [
+        "Backend engineers",
+        "Platform engineers"
+      ],
+      "ecosystems": [],
+      "technologies": [
+        "ASGI",
+        "SQLAlchemy"
+      ],
+      "languages": [
+        "python",
+        "rust",
+        "Python",
+        "Rust"
+      ],
+      "capabilities": [
+        "api-foundations"
+      ],
+      "evidence": [
+        {
+          "kind": "source",
+          "label": "Public repository description, packages, tests, and examples reviewed",
+          "checkedAt": "2026-08-02"
+        }
+      ],
+      "limitations": [
+        "No performance benchmark or enterprise-adoption claim is made."
+      ],
+      "links": [
+        {
+          "kind": "source",
+          "label": "Public repository",
+          "href": "https://github.com/tigrbl/tigrbl"
+        }
+      ],
+      "claim_boundary": null,
+      "content": {},
+      "related_slugs": []
+    },
+    {
+      "id": "tigrbl-auth",
+      "slug": "tigrbl-auth",
+      "organization_id": "tigrbl",
+      "record_type": "product",
+      "artifact_type": "product",
+      "title": "Tigrbl Auth",
+      "summary": "Tigrbl-native multi-tenant OpenID Connect and OAuth 2.0 identity-provider workspace with JWKS/JWT and operator controls.",
+      "maturity": "active-development",
+      "visibility": "public",
+      "featured": true,
+      "canonical_url": "https://groupsum.xyz/products/records/tigrbl-auth",
+      "source_name": "tigrbl_auth",
+      "parent_id": null,
+      "audience": [
+        "Identity engineers",
+        "Platform teams"
+      ],
+      "ecosystems": [
+        "service"
+      ],
+      "technologies": [
+        "OIDC",
+        "OAuth 2.0",
+        "JWT"
+      ],
+      "languages": [
+        "python",
+        "Python"
+      ],
+      "capabilities": [
+        "trust-policy",
+        "api-foundations"
+      ],
+      "evidence": [
+        {
+          "kind": "source",
+          "label": "Public repository and protocol implementation reviewed",
+          "checkedAt": "2026-08-02"
+        }
+      ],
+      "limitations": [
+        "Implementation evidence is not a security certification or interoperability certification."
+      ],
+      "links": [
+        {
+          "kind": "source",
+          "label": "Public repository",
+          "href": "https://github.com/tigrbl/tigrbl_auth"
+        }
+      ],
+      "claim_boundary": null,
+      "content": {},
+      "related_slugs": []
+    },
+    {
+      "id": "tigrbl-tigrcorn",
+      "slug": "tigrcorn",
+      "organization_id": "tigrbl",
+      "record_type": "product",
+      "artifact_type": "product",
+      "title": "Tigrcorn",
+      "summary": "ASGI3 server with HTTP/1.1, HTTP/2, HTTP/3, QUIC, WebSocket, TLS, static delivery, and release validation in its public source.",
+      "maturity": "active-development",
+      "visibility": "public",
+      "featured": true,
+      "canonical_url": "https://groupsum.xyz/products/records/tigrcorn",
+      "source_name": "tigrcorn",
+      "parent_id": null,
+      "audience": [
+        "ASGI developers",
+        "Platform engineers"
+      ],
+      "ecosystems": [
+        "service"
+      ],
+      "technologies": [
+        "ASGI",
+        "HTTP/3",
+        "WebTransport"
+      ],
+      "languages": [
+        "python",
+        "rust",
+        "Python"
+      ],
+      "capabilities": [
+        "realtime",
+        "api-foundations"
+      ],
+      "evidence": [
+        {
+          "kind": "source",
+          "label": "Public repository, protocol modules, and validation workflow reviewed",
+          "checkedAt": "2026-08-02"
+        }
+      ],
+      "limitations": [
+        "Protocol support does not imply a universal latency or throughput result."
+      ],
+      "links": [
+        {
+          "kind": "source",
+          "label": "Public repository",
+          "href": "https://github.com/tigrbl/tigrcorn"
+        }
+      ],
+      "claim_boundary": null,
+      "content": {},
+      "related_slugs": []
+    },
+    {
+      "id": "swarmauri-sdk",
+      "slug": "swarmauri-sdk",
+      "organization_id": "swarmauri",
+      "record_type": "product",
+      "artifact_type": "suite",
+      "title": "Swarmauri SDK",
+      "summary": "Modular Python SDK and monorepo for agents, model integrations, tools, parsers, embeddings, vector stores, and application workflows.",
+      "maturity": "maintained",
+      "visibility": "public",
+      "featured": true,
+      "canonical_url": "https://groupsum.xyz/products/records/swarmauri-sdk",
+      "source_name": "swarmauri-sdk",
+      "parent_id": null,
+      "audience": [
+        "AI application developers",
+        "Python developers"
+      ],
+      "ecosystems": [],
+      "technologies": [
+        "LLM integrations",
+        "Tools",
+        "Vector stores"
+      ],
+      "languages": [
+        "python",
+        "Python"
+      ],
+      "capabilities": [
+        "ai-agents",
+        "dev-experience"
+      ],
+      "evidence": [
+        {
+          "kind": "source",
+          "label": "Public monorepo, package layout, and tests reviewed",
+          "checkedAt": "2026-08-02"
+        }
+      ],
+      "limitations": [
+        "Model quality, cost, and availability depend on selected providers and application-specific evaluation."
+      ],
+      "links": [
+        {
+          "kind": "source",
+          "label": "Public repository",
+          "href": "https://github.com/swarmauri/swarmauri-sdk"
+        }
+      ],
+      "claim_boundary": null,
+      "content": {},
+      "related_slugs": []
+    },
+    {
+      "id": "swarmauri-peagen",
+      "slug": "peagen",
+      "organization_id": "swarmauri",
+      "record_type": "product",
+      "artifact_type": "product",
+      "title": "Peagen",
+      "summary": "Template-driven, SSOT-governed code-generation workspace for DAG/Jinja2 rendering, CLI workflows, and gateway/worker services.",
+      "maturity": "active-development",
+      "visibility": "public",
+      "featured": true,
+      "canonical_url": "https://groupsum.xyz/products/records/peagen",
+      "source_name": "peagen",
+      "parent_id": null,
+      "audience": [
+        "Developer-experience teams",
+        "Python developers"
+      ],
+      "ecosystems": [
+        "service"
+      ],
+      "technologies": [
+        "Jinja2",
+        "DAGs",
+        "CLI"
+      ],
+      "languages": [
+        "python",
+        "Python"
+      ],
+      "capabilities": [
+        "dev-experience",
+        "ai-agents"
+      ],
+      "evidence": [
+        {
+          "kind": "source",
+          "label": "Public website source, documentation, and SDK integration marker reviewed",
+          "checkedAt": "2026-08-02"
+        }
+      ],
+      "limitations": [
+        "Generated output still requires project-specific review, testing, and ownership.",
+        "No public core implementation repository, API, demo, example, or showcase is verified in the current catalog."
+      ],
+      "links": [
+        {
+          "kind": "source",
+          "label": "Public website source",
+          "href": "https://github.com/swarmauri/peagen-com"
+        }
+      ],
+      "claim_boundary": null,
+      "content": {},
+      "related_slugs": []
+    },
+    {
+      "id": "groupsum-voltrack",
+      "slug": "voltrack",
+      "organization_id": "groupsum",
+      "record_type": "portfolio",
+      "artifact_type": "project",
+      "title": "Voltrack",
+      "summary": "Operational tracking workspace with local-first and Tigrbl-backed application modes in the inspected source.",
+      "maturity": "active-development",
+      "visibility": "review",
+      "featured": false,
+      "canonical_url": "https://groupsum.xyz/products/records/voltrack",
+      "source_name": "voltrack",
+      "parent_id": null,
+      "audience": [
+        "Operations teams",
+        "Platform engineers"
+      ],
+      "ecosystems": [
+        "web",
+        "service"
+      ],
+      "technologies": [
+        "React",
+        "Tigrbl",
+        "IndexedDB"
+      ],
+      "languages": [],
+      "capabilities": [
+        "infrastructure",
+        "dev-experience"
+      ],
+      "evidence": [
+        {
+          "kind": "implementation",
+          "label": "Local repository architecture and runtime modes reviewed",
+          "checkedAt": "2026-08-02"
+        }
+      ],
+      "limitations": [
+        "No public release or deployment claim is made."
+      ],
+      "links": [],
+      "claim_boundary": null,
+      "content": {},
+      "related_slugs": []
+    },
+    {
+      "id": "groupsum-dcim-rack-planner",
+      "slug": "dcim-rack-planner",
+      "organization_id": "groupsum",
+      "record_type": "portfolio",
+      "artifact_type": "project",
+      "title": "DCIM Rack Planner",
+      "summary": "Planning workspace for facilities, racks, devices, cabling, topology, and capacity in the inspected source.",
+      "maturity": "active-development",
+      "visibility": "review",
+      "featured": false,
+      "canonical_url": "https://groupsum.xyz/products/records/dcim-rack-planner",
+      "source_name": "dcim-rack-planner",
+      "parent_id": null,
+      "audience": [
+        "Infrastructure planners",
+        "Data-center operators"
+      ],
+      "ecosystems": [
+        "web",
+        "service"
+      ],
+      "technologies": [
+        "React",
+        "Vite",
+        "Tigrbl"
+      ],
+      "languages": [],
+      "capabilities": [
+        "infrastructure"
+      ],
+      "evidence": [
+        {
+          "kind": "implementation",
+          "label": "Local planning surfaces and schemas reviewed",
+          "checkedAt": "2026-08-02"
+        }
+      ],
+      "limitations": [
+        "No production inventory scale or public availability claim is made."
+      ],
+      "links": [],
+      "claim_boundary": null,
+      "content": {},
+      "related_slugs": []
+    },
+    {
+      "id": "groupsum-dcim-fiber-planner",
+      "slug": "dcim-fiber-planner",
+      "organization_id": "groupsum",
+      "record_type": "portfolio",
+      "artifact_type": "project",
+      "title": "DCIM Fiber Planner",
+      "summary": "Fiber, optical, cabling, and transport planning workspace in the inspected source.",
+      "maturity": "active-development",
+      "visibility": "review",
+      "featured": false,
+      "canonical_url": "https://groupsum.xyz/products/records/dcim-fiber-planner",
+      "source_name": "dcim-fiber-planner",
+      "parent_id": null,
+      "audience": [
+        "Network planners",
+        "Infrastructure operators"
+      ],
+      "ecosystems": [
+        "web",
+        "service"
+      ],
+      "technologies": [
+        "React",
+        "FastAPI",
+        "Optical planning"
+      ],
+      "languages": [],
+      "capabilities": [
+        "infrastructure",
+        "realtime"
+      ],
+      "evidence": [
+        {
+          "kind": "implementation",
+          "label": "Local fiber and optical planning surfaces reviewed",
+          "checkedAt": "2026-08-02"
+        }
+      ],
+      "limitations": [
+        "No carrier-grade, commercial-availability, or production claim is made."
+      ],
+      "links": [],
+      "claim_boundary": null,
+      "content": {},
+      "related_slugs": []
+    },
+    {
+      "id": "groupsum-deliverableops",
+      "slug": "deliverableops",
+      "organization_id": "groupsum",
+      "record_type": "portfolio",
+      "artifact_type": "project",
+      "title": "DeliverableOps",
+      "summary": "Source workspace connecting workflow runs, artifacts, evidence, delivery, and acceptance records.",
+      "maturity": "active-development",
+      "visibility": "review",
+      "featured": false,
+      "canonical_url": "https://groupsum.xyz/products/records/deliverableops",
+      "source_name": "deliverableops",
+      "parent_id": null,
+      "audience": [
+        "Delivery operations",
+        "Platform teams"
+      ],
+      "ecosystems": [
+        "service"
+      ],
+      "technologies": [
+        "Tigrbl",
+        "GitHub Actions"
+      ],
+      "languages": [
+        "python",
+        "Python"
+      ],
+      "capabilities": [
+        "governed-delivery",
+        "trust-policy"
+      ],
+      "evidence": [
+        {
+          "kind": "implementation",
+          "label": "Local runtime, bundle, and validation source reviewed",
+          "checkedAt": "2026-08-02"
+        }
+      ],
+      "limitations": [
+        "Examples and tests are not evidence of customer adoption or a hosted service."
+      ],
+      "links": [],
+      "claim_boundary": null,
+      "content": {},
+      "related_slugs": []
+    },
+    {
+      "id": "groupsum-cc-deliverable-ops",
+      "slug": "cc-deliverable-ops",
+      "organization_id": "groupsum",
+      "record_type": "portfolio",
+      "artifact_type": "project",
+      "title": "Confidential Workloads Delivery Ops",
+      "summary": "Confidential-workload delivery source with attestation, proof-of-possession, encrypted delivery, and signed receipt workflows.",
+      "maturity": "active-development",
+      "visibility": "review",
+      "featured": false,
+      "canonical_url": "https://groupsum.xyz/products/records/cc-deliverable-ops",
+      "source_name": "confidential-workloads-delivery-ops",
+      "parent_id": null,
+      "audience": [
+        "Security engineers",
+        "Confidential-computing operators"
+      ],
+      "ecosystems": [
+        "service"
+      ],
+      "technologies": [
+        "GCP Confidential Space",
+        "OIDC",
+        "ECDH"
+      ],
+      "languages": [
+        "python",
+        "Python"
+      ],
+      "capabilities": [
+        "governed-delivery",
+        "trust-policy"
+      ],
+      "evidence": [
+        {
+          "kind": "implementation",
+          "label": "Local implementation, tests, and deployment evidence model reviewed",
+          "checkedAt": "2026-08-02"
+        }
+      ],
+      "limitations": [
+        "Repository validation is separate from a currently reachable public service, customer availability, or third-party certification."
+      ],
+      "links": [],
+      "claim_boundary": null,
+      "content": {},
+      "related_slugs": []
+    },
+    {
+      "id": "groupsum-evidencevault",
+      "slug": "evidencevault",
+      "organization_id": "groupsum",
+      "record_type": "portfolio",
+      "artifact_type": "project",
+      "title": "EvidenceVault",
+      "summary": "Evidence-custody workspace source covering sealed bundles, audit trails, disclosure policy, and verification.",
+      "maturity": "active-development",
+      "visibility": "review",
+      "featured": false,
+      "canonical_url": "https://groupsum.xyz/products/records/evidencevault",
+      "source_name": "evidencevault",
+      "parent_id": null,
+      "audience": [
+        "Security teams",
+        "Auditors",
+        "Evidence custodians"
+      ],
+      "ecosystems": [
+        "web",
+        "service"
+      ],
+      "technologies": [
+        "React",
+        "FastAPI",
+        "IndexedDB",
+        "MinIO"
+      ],
+      "languages": [
+        "python"
+      ],
+      "capabilities": [
+        "storage",
+        "trust-policy"
+      ],
+      "evidence": [
+        {
+          "kind": "implementation",
+          "label": "Local vault, verifier, storage, and UI source reviewed",
+          "checkedAt": "2026-08-02"
+        }
+      ],
+      "limitations": [
+        "No hosted availability, integration, or independent assurance claim is made."
+      ],
+      "links": [],
+      "claim_boundary": null,
+      "content": {},
+      "related_slugs": []
+    },
+    {
+      "id": "solution-governed-product-delivery",
+      "slug": "governed-product-delivery",
+      "organization_id": "groupsum",
+      "record_type": "solution",
+      "artifact_type": "solution",
+      "title": "Traceable Product Delivery",
+      "summary": "Requirements, implementation, tests, deployment state, and public claims can drift apart.",
+      "maturity": "reviewed",
+      "visibility": "public",
+      "featured": false,
+      "canonical_url": "https://groupsum.xyz/solutions/governed-product-delivery",
+      "source_name": "governed-product-delivery",
+      "parent_id": null,
+      "audience": [
+        "Platform, product, and release teams"
+      ],
+      "ecosystems": [],
+      "technologies": [],
+      "languages": [],
+      "capabilities": [],
+      "evidence": [
+        {
+          "kind": "reviewed",
+          "label": "SSOT Registry public CLI and repository",
+          "checkedAt": "2026-08-02"
+        },
+        {
+          "kind": "reviewed",
+          "label": "npmctl public plan/apply workflow",
+          "checkedAt": "2026-08-02"
+        }
+      ],
+      "limitations": [
+        "Automation can evaluate recorded evidence; it cannot replace architectural or release judgment.",
+        "A passing source check does not prove a live deployment."
+      ],
+      "links": [],
+      "claim_boundary": "Evidence-scoped solution guidance; not a fixed offer or outcome guarantee.",
+      "content": {
+        "id": "governed-product-delivery",
+        "slug": "governed-product-delivery",
+        "title": "Traceable Product Delivery",
+        "problem": "Requirements, implementation, tests, deployment state, and public claims can drift apart.",
+        "audience": "Platform, product, and release teams",
+        "symptoms": [
+          "Requirements cannot be traced to tests",
+          "Release claims outpace deploy evidence",
+          "Documentation and runtime state are conflated"
+        ],
+        "capability": "Use source-controlled records and automated checks to connect intent, implementation, evidence, and release decisions.",
+        "suites": [
+          "ssot-registry",
+          "npmctl"
+        ],
+        "engagementPath": "Begin with a repository and release-evidence review; scope follows the verified gaps.",
+        "deliverables": [
+          "Current-state evidence map",
+          "Machine-checkable claim boundaries",
+          "Repository-integrated validation"
+        ],
+        "evidence": [
+          "SSOT Registry public CLI and repository",
+          "npmctl public plan/apply workflow"
+        ],
+        "limitations": [
+          "Automation can evaluate recorded evidence; it cannot replace architectural or release judgment.",
+          "A passing source check does not prove a live deployment."
+        ],
+        "cta": "Review your delivery evidence"
+      },
+      "related_slugs": [
+        "ssot-registry",
+        "npmctl"
+      ]
+    },
+    {
+      "id": "solution-api-platform-foundations",
+      "slug": "api-platform-foundations",
+      "organization_id": "groupsum",
+      "record_type": "solution",
+      "artifact_type": "solution",
+      "title": "Schema-first API Foundations",
+      "summary": "API behavior, validation, persistence, and transport code often diverge across services.",
+      "maturity": "reviewed",
+      "visibility": "public",
+      "featured": false,
+      "canonical_url": "https://groupsum.xyz/solutions/api-platform-foundations",
+      "source_name": "api-platform-foundations",
+      "parent_id": null,
+      "audience": [
+        "Backend and platform engineering teams"
+      ],
+      "ecosystems": [],
+      "technologies": [],
+      "languages": [],
+      "capabilities": [],
+      "evidence": [
+        {
+          "kind": "reviewed",
+          "label": "Tigrbl public Python and Rust workspace",
+          "checkedAt": "2026-08-02"
+        },
+        {
+          "kind": "reviewed",
+          "label": "Tigrcorn public protocol and release-validation source",
+          "checkedAt": "2026-08-02"
+        }
+      ],
+      "limitations": [
+        "Architecture and performance depend on workload, dependencies, and deployment environment.",
+        "Protocol support is not a throughput guarantee."
+      ],
+      "links": [],
+      "claim_boundary": "Evidence-scoped solution guidance; not a fixed offer or outcome guarantee.",
+      "content": {
+        "id": "api-platform-foundations",
+        "slug": "api-platform-foundations",
+        "title": "Schema-first API Foundations",
+        "problem": "API behavior, validation, persistence, and transport code often diverge across services.",
+        "audience": "Backend and platform engineering teams",
+        "symptoms": [
+          "Duplicated API plumbing",
+          "Inconsistent validation and operation semantics",
+          "Transport concerns leak into domain code"
+        ],
+        "capability": "Design typed service boundaries using schema-first models, explicit operations, pluggable engines, and testable ASGI interfaces.",
+        "suites": [
+          "tigrbl",
+          "tigrcorn"
+        ],
+        "engagementPath": "Start from one representative service and its existing contracts.",
+        "deliverables": [
+          "Target service architecture",
+          "Typed API and persistence contracts",
+          "Executable tests and migration guidance"
+        ],
+        "evidence": [
+          "Tigrbl public Python and Rust workspace",
+          "Tigrcorn public protocol and release-validation source"
+        ],
+        "limitations": [
+          "Architecture and performance depend on workload, dependencies, and deployment environment.",
+          "Protocol support is not a throughput guarantee."
+        ],
+        "cta": "Evaluate a service boundary"
+      },
+      "related_slugs": [
+        "tigrbl",
+        "tigrcorn"
+      ]
+    },
+    {
+      "id": "solution-identity-trust-policy",
+      "slug": "identity-trust-policy",
+      "organization_id": "groupsum",
+      "record_type": "solution",
+      "artifact_type": "solution",
+      "title": "Identity, Trust, and Policy",
+      "summary": "Identity protocols and authorization decisions become difficult to inspect when they are embedded throughout application code.",
+      "maturity": "reviewed",
+      "visibility": "public",
+      "featured": false,
+      "canonical_url": "https://groupsum.xyz/solutions/identity-trust-policy",
+      "source_name": "identity-trust-policy",
+      "parent_id": null,
+      "audience": [
+        "Identity, security, and platform teams"
+      ],
+      "ecosystems": [],
+      "technologies": [],
+      "languages": [],
+      "capabilities": [],
+      "evidence": [
+        {
+          "kind": "reviewed",
+          "label": "Tigrbl Auth public OIDC/OAuth workspace",
+          "checkedAt": "2026-08-02"
+        },
+        {
+          "kind": "reviewed",
+          "label": "Public Groupsum authentication governance pack",
+          "checkedAt": "2026-08-02"
+        }
+      ],
+      "limitations": [
+        "Source review is not a security audit or certification.",
+        "Production identity systems require environment-specific threat modeling and interoperability testing."
+      ],
+      "links": [],
+      "claim_boundary": "Evidence-scoped solution guidance; not a fixed offer or outcome guarantee.",
+      "content": {
+        "id": "identity-trust-policy",
+        "slug": "identity-trust-policy",
+        "title": "Identity, Trust, and Policy",
+        "problem": "Identity protocols and authorization decisions become difficult to inspect when they are embedded throughout application code.",
+        "audience": "Identity, security, and platform teams",
+        "symptoms": [
+          "Policy is mixed with route logic",
+          "Token and key handling lacks explicit boundaries",
+          "Protocol evidence is difficult to reproduce"
+        ],
+        "capability": "Model identity flows, policy decisions, credentials, keys, and verification evidence as explicit, testable system boundaries.",
+        "suites": [
+          "tigrbl-auth",
+          "authentication-governance-pack"
+        ],
+        "engagementPath": "Review the required protocol profile, threat model, and current implementation before choosing controls.",
+        "deliverables": [
+          "Protocol and trust-boundary map",
+          "Testable policy and identity contracts",
+          "Implementation and verification plan"
+        ],
+        "evidence": [
+          "Tigrbl Auth public OIDC/OAuth workspace",
+          "Public Groupsum authentication governance pack"
+        ],
+        "limitations": [
+          "Source review is not a security audit or certification.",
+          "Production identity systems require environment-specific threat modeling and interoperability testing."
+        ],
+        "cta": "Map an identity boundary"
+      },
+      "related_slugs": [
+        "tigrbl-auth",
+        "authentication-governance-pack"
+      ]
+    },
+    {
+      "id": "solution-ai-agent-systems",
+      "slug": "ai-agent-systems",
+      "organization_id": "groupsum",
+      "record_type": "solution",
+      "artifact_type": "solution",
+      "title": "Composable AI Application Systems",
+      "summary": "AI application code becomes hard to test when providers, prompts, tools, parsing, memory, and evaluation are tightly coupled.",
+      "maturity": "reviewed",
+      "visibility": "public",
+      "featured": false,
+      "canonical_url": "https://groupsum.xyz/solutions/ai-agent-systems",
+      "source_name": "ai-agent-systems",
+      "parent_id": null,
+      "audience": [
+        "AI application and platform developers"
+      ],
+      "ecosystems": [],
+      "technologies": [],
+      "languages": [],
+      "capabilities": [],
+      "evidence": [
+        {
+          "kind": "reviewed",
+          "label": "Swarmauri SDK public monorepo",
+          "checkedAt": "2026-08-02"
+        },
+        {
+          "kind": "reviewed",
+          "label": "Peagen public generation workspace",
+          "checkedAt": "2026-08-02"
+        }
+      ],
+      "limitations": [
+        "Model quality, cost, latency, and availability depend on providers and workload.",
+        "No model-output accuracy guarantee is implied."
+      ],
+      "links": [],
+      "claim_boundary": "Evidence-scoped solution guidance; not a fixed offer or outcome guarantee.",
+      "content": {
+        "id": "ai-agent-systems",
+        "slug": "ai-agent-systems",
+        "title": "Composable AI Application Systems",
+        "problem": "AI application code becomes hard to test when providers, prompts, tools, parsing, memory, and evaluation are tightly coupled.",
+        "audience": "AI application and platform developers",
+        "symptoms": [
+          "Provider-specific integrations dominate application logic",
+          "Tool and parser behavior is difficult to isolate",
+          "Evaluation is missing or application-agnostic"
+        ],
+        "capability": "Compose typed model, tool, parser, embedding, vector-store, and workflow components with application-specific evaluation.",
+        "suites": [
+          "swarmauri-sdk",
+          "peagen"
+        ],
+        "engagementPath": "Define the task, acceptable failure modes, data boundary, and evaluation set first.",
+        "deliverables": [
+          "Component and data-flow design",
+          "Provider-aware implementation",
+          "Task-specific evaluation harness"
+        ],
+        "evidence": [
+          "Swarmauri SDK public monorepo",
+          "Peagen public generation workspace"
+        ],
+        "limitations": [
+          "Model quality, cost, latency, and availability depend on providers and workload.",
+          "No model-output accuracy guarantee is implied."
+        ],
+        "cta": "Define an evaluable AI workflow"
+      },
+      "related_slugs": [
+        "swarmauri-sdk",
+        "peagen"
+      ]
+    },
+    {
+      "id": "solution-document-knowledge-operations",
+      "slug": "document-knowledge-operations",
+      "organization_id": "groupsum",
+      "record_type": "solution",
+      "artifact_type": "solution",
+      "title": "Document and Knowledge Workflows",
+      "summary": "Document content, rendering, metadata, accessibility work, and publication evidence are often managed in disconnected tools.",
+      "maturity": "reviewed",
+      "visibility": "public",
+      "featured": false,
+      "canonical_url": "https://groupsum.xyz/solutions/document-knowledge-operations",
+      "source_name": "document-knowledge-operations",
+      "parent_id": null,
+      "audience": [
+        "Documentation, accessibility, and web platform teams"
+      ],
+      "ecosystems": [],
+      "technologies": [],
+      "languages": [],
+      "capabilities": [],
+      "evidence": [
+        {
+          "kind": "reviewed",
+          "label": "MdWrk public package repositories",
+          "checkedAt": "2026-08-02"
+        },
+        {
+          "kind": "reviewed",
+          "label": "PDFRemed implementation and test plans",
+          "checkedAt": "2026-08-02"
+        }
+      ],
+      "limitations": [
+        "Accessibility outcomes are document-specific and require appropriate validation.",
+        "No automatic conformance or zero-defect guarantee is made."
+      ],
+      "links": [],
+      "claim_boundary": "Evidence-scoped solution guidance; not a fixed offer or outcome guarantee.",
+      "content": {
+        "id": "document-knowledge-operations",
+        "slug": "document-knowledge-operations",
+        "title": "Document and Knowledge Workflows",
+        "problem": "Document content, rendering, metadata, accessibility work, and publication evidence are often managed in disconnected tools.",
+        "audience": "Documentation, accessibility, and web platform teams",
+        "symptoms": [
+          "Content cannot be validated before publication",
+          "Rendering and metadata rules vary by surface",
+          "Accessibility remediation lacks a repeatable workflow"
+        ],
+        "capability": "Build source-controlled Markdown and PDF workflows with explicit parsing, rendering, review, and verification stages.",
+        "suites": [
+          "mdwrk",
+          "pdfremed"
+        ],
+        "engagementPath": "Inspect representative documents, current tooling, and required validation criteria.",
+        "deliverables": [
+          "Document workflow map",
+          "Parsing and rendering pipeline",
+          "Verification plan and reproducible checks"
+        ],
+        "evidence": [
+          "MdWrk public package repositories",
+          "PDFRemed implementation and test plans"
+        ],
+        "limitations": [
+          "Accessibility outcomes are document-specific and require appropriate validation.",
+          "No automatic conformance or zero-defect guarantee is made."
+        ],
+        "cta": "Review a document workflow"
+      },
+      "related_slugs": [
+        "mdwrk",
+        "pdfremed"
+      ]
+    },
+    {
+      "id": "solution-storage-evidence-movement",
+      "slug": "storage-evidence-movement",
+      "organization_id": "groupsum",
+      "record_type": "solution",
+      "artifact_type": "solution",
+      "title": "Storage Policy and Evidence",
+      "summary": "Storage policy, object changes, delivery receipts, and operational evidence are difficult to reconcile after the fact.",
+      "maturity": "reviewed",
+      "visibility": "public",
+      "featured": false,
+      "canonical_url": "https://groupsum.xyz/solutions/storage-evidence-movement",
+      "source_name": "storage-evidence-movement",
+      "parent_id": null,
+      "audience": [
+        "Cloud platform, storage, and security teams"
+      ],
+      "ecosystems": [],
+      "technologies": [],
+      "languages": [],
+      "capabilities": [],
+      "evidence": [
+        {
+          "kind": "reviewed",
+          "label": "BucketWarden platform source and deployment profiles",
+          "checkedAt": "2026-08-02"
+        },
+        {
+          "kind": "reviewed",
+          "label": "EvidenceVault local implementation source",
+          "checkedAt": "2026-08-02"
+        }
+      ],
+      "limitations": [
+        "No protected-volume, response-time, or certification claim is made.",
+        "Runtime protection must be verified in the target environment."
+      ],
+      "links": [],
+      "claim_boundary": "Evidence-scoped solution guidance; not a fixed offer or outcome guarantee.",
+      "content": {
+        "id": "storage-evidence-movement",
+        "slug": "storage-evidence-movement",
+        "title": "Storage Policy and Evidence",
+        "problem": "Storage policy, object changes, delivery receipts, and operational evidence are difficult to reconcile after the fact.",
+        "audience": "Cloud platform, storage, and security teams",
+        "symptoms": [
+          "Policy intent is not tied to evidence",
+          "Operator actions lack reproducible records",
+          "Source validation is mistaken for live-system health"
+        ],
+        "capability": "Design explicit policy, evidence, delivery, and operator boundaries for storage-related workflows.",
+        "suites": [
+          "bucketwarden",
+          "evidencevault"
+        ],
+        "engagementPath": "Start with the storage environment, threat model, operator workflow, and evidence requirements.",
+        "deliverables": [
+          "Policy and evidence model",
+          "Operator workflow design",
+          "Implementation and validation plan"
+        ],
+        "evidence": [
+          "BucketWarden platform source and deployment profiles",
+          "EvidenceVault local implementation source"
+        ],
+        "limitations": [
+          "No protected-volume, response-time, or certification claim is made.",
+          "Runtime protection must be verified in the target environment."
+        ],
+        "cta": "Review a storage control boundary"
+      },
+      "related_slugs": [
+        "bucketwarden",
+        "evidencevault"
+      ]
+    },
+    {
+      "id": "solution-realtime-modern-transport",
+      "slug": "realtime-modern-transport",
+      "organization_id": "groupsum",
+      "record_type": "solution",
+      "artifact_type": "solution",
+      "title": "Realtime and Modern Transport",
+      "summary": "Realtime systems need explicit connection lifecycles, fallbacks, fanout ownership, and transport-aware testing.",
+      "maturity": "reviewed",
+      "visibility": "public",
+      "featured": false,
+      "canonical_url": "https://groupsum.xyz/solutions/realtime-modern-transport",
+      "source_name": "realtime-modern-transport",
+      "parent_id": null,
+      "audience": [
+        "Realtime application and platform teams"
+      ],
+      "ecosystems": [],
+      "technologies": [],
+      "languages": [],
+      "capabilities": [],
+      "evidence": [
+        {
+          "kind": "reviewed",
+          "label": "Tigrcorn public protocol modules",
+          "checkedAt": "2026-08-02"
+        },
+        {
+          "kind": "reviewed",
+          "label": "Tigrbl public realtime examples",
+          "checkedAt": "2026-08-02"
+        }
+      ],
+      "limitations": [
+        "Network and application performance must be measured in the target environment.",
+        "Modern transport support varies by client and network."
+      ],
+      "links": [],
+      "claim_boundary": "Evidence-scoped solution guidance; not a fixed offer or outcome guarantee.",
+      "content": {
+        "id": "realtime-modern-transport",
+        "slug": "realtime-modern-transport",
+        "title": "Realtime and Modern Transport",
+        "problem": "Realtime systems need explicit connection lifecycles, fallbacks, fanout ownership, and transport-aware testing.",
+        "audience": "Realtime application and platform teams",
+        "symptoms": [
+          "Connection cleanup is inconsistent",
+          "Fallback behavior is undefined",
+          "Protocol support is confused with application performance"
+        ],
+        "capability": "Implement and test ASGI, WebSocket, HTTP/3, QUIC, and WebTransport boundaries where they fit the application.",
+        "suites": [
+          "tigrcorn",
+          "tigrbl"
+        ],
+        "engagementPath": "Choose transports from browser, network, deployment, and application constraints.",
+        "deliverables": [
+          "Transport decision record",
+          "Connection-lifecycle implementation",
+          "Environment-specific functional and performance tests"
+        ],
+        "evidence": [
+          "Tigrcorn public protocol modules",
+          "Tigrbl public realtime examples"
+        ],
+        "limitations": [
+          "Network and application performance must be measured in the target environment.",
+          "Modern transport support varies by client and network."
+        ],
+        "cta": "Review a realtime architecture"
+      },
+      "related_slugs": [
+        "tigrcorn",
+        "tigrbl"
+      ]
+    },
+    {
+      "id": "solution-infrastructure-operational-planning",
+      "slug": "infrastructure-operational-planning",
+      "organization_id": "groupsum",
+      "record_type": "solution",
+      "artifact_type": "solution",
+      "title": "Infrastructure and Operator Planning",
+      "summary": "Physical and software infrastructure decisions become risky when capacity, topology, change intent, and operator controls are separated.",
+      "maturity": "reviewed",
+      "visibility": "public",
+      "featured": false,
+      "canonical_url": "https://groupsum.xyz/solutions/infrastructure-operational-planning",
+      "source_name": "infrastructure-operational-planning",
+      "parent_id": null,
+      "audience": [
+        "Infrastructure planners and platform operators"
+      ],
+      "ecosystems": [],
+      "technologies": [],
+      "languages": [],
+      "capabilities": [],
+      "evidence": [
+        {
+          "kind": "reviewed",
+          "label": "DCIM planning application source",
+          "checkedAt": "2026-08-02"
+        },
+        {
+          "kind": "reviewed",
+          "label": "npmctl and Portwyrm public repositories",
+          "checkedAt": "2026-08-02"
+        }
+      ],
+      "limitations": [
+        "Planning software does not replace field validation or change control.",
+        "No production inventory scale is claimed."
+      ],
+      "links": [],
+      "claim_boundary": "Evidence-scoped solution guidance; not a fixed offer or outcome guarantee.",
+      "content": {
+        "id": "infrastructure-operational-planning",
+        "slug": "infrastructure-operational-planning",
+        "title": "Infrastructure and Operator Planning",
+        "problem": "Physical and software infrastructure decisions become risky when capacity, topology, change intent, and operator controls are separated.",
+        "audience": "Infrastructure planners and platform operators",
+        "symptoms": [
+          "Topology and capacity records drift",
+          "High-consequence changes lack a reviewable plan",
+          "Operator tools obscure ownership boundaries"
+        ],
+        "capability": "Create planning and control surfaces that keep topology, capacity, desired state, and evidence inspectable.",
+        "suites": [
+          "dcim-rack-planner",
+          "dcim-fiber-planner",
+          "npmctl",
+          "portwyrm"
+        ],
+        "engagementPath": "Inspect the current inventory, workflows, system boundaries, and required evidence.",
+        "deliverables": [
+          "Current-state model",
+          "Operator workflow and control boundaries",
+          "Incremental implementation plan"
+        ],
+        "evidence": [
+          "DCIM planning application source",
+          "npmctl and Portwyrm public repositories"
+        ],
+        "limitations": [
+          "Planning software does not replace field validation or change control.",
+          "No production inventory scale is claimed."
+        ],
+        "cta": "Map an operator workflow"
+      },
+      "related_slugs": [
+        "dcim-rack-planner",
+        "dcim-fiber-planner",
+        "npmctl",
+        "portwyrm"
+      ]
+    },
+    {
+      "id": "service-product-evidence-review",
+      "slug": "product-evidence-review",
+      "organization_id": "groupsum",
+      "record_type": "service",
+      "artifact_type": "service",
+      "title": "Product and Evidence Review",
+      "summary": "Scoped after a short discovery review; depth depends on portfolio size and evidence access.",
+      "maturity": "reviewed",
+      "visibility": "public",
+      "featured": false,
+      "canonical_url": "https://groupsum.xyz/services/product-evidence-review",
+      "source_name": "product-evidence-review",
+      "parent_id": null,
+      "audience": [
+        "Product, platform, and release leaders"
+      ],
+      "ecosystems": [],
+      "technologies": [],
+      "languages": [],
+      "capabilities": [],
+      "evidence": [],
+      "limitations": [
+        "Third-party certification",
+        "Legal opinions",
+        "Claims that cannot be supported by supplied evidence"
+      ],
+      "links": [],
+      "claim_boundary": "Engagement shape only; scope and terms follow discovery.",
+      "content": {
+        "id": "product-evidence-review",
+        "slug": "product-evidence-review",
+        "title": "Product and Evidence Review",
+        "audience": "Product, platform, and release leaders",
+        "usefulWhen": [
+          "Public claims are difficult to trace",
+          "Repository and deployment state are being conflated",
+          "A portfolio needs defensible maturity labels"
+        ],
+        "typicalOutputs": [
+          "Claim-to-evidence inventory",
+          "Maturity and publication boundaries",
+          "Prioritized correction plan"
+        ],
+        "inputs": [
+          "Repositories and documentation",
+          "Release and deployment records",
+          "Current public claims"
+        ],
+        "scope": [
+          "Inspect source and delivery evidence",
+          "Classify what is implemented, published, deployed, and reachable",
+          "Rewrite claims to match the available proof"
+        ],
+        "engagementShape": "Scoped after a short discovery review; depth depends on portfolio size and evidence access.",
+        "exclusions": [
+          "Third-party certification",
+          "Legal opinions",
+          "Claims that cannot be supported by supplied evidence"
+        ],
+        "relatedWorkSlugs": [
+          "ssot-registry"
+        ],
+        "cta": "Review your product evidence"
+      },
+      "related_slugs": [
+        "ssot-registry"
+      ]
+    },
+    {
+      "id": "service-architecture-specification",
+      "slug": "architecture-specification",
+      "organization_id": "groupsum",
+      "record_type": "service",
+      "artifact_type": "service",
+      "title": "Architecture and Specification Delivery",
+      "summary": "Milestones and schedule follow system discovery and an agreed statement of work.",
+      "maturity": "reviewed",
+      "visibility": "public",
+      "featured": false,
+      "canonical_url": "https://groupsum.xyz/services/architecture-specification",
+      "source_name": "architecture-specification",
+      "parent_id": null,
+      "audience": [
+        "Technical leads and platform teams"
+      ],
+      "ecosystems": [],
+      "technologies": [],
+      "languages": [],
+      "capabilities": [],
+      "evidence": [],
+      "limitations": [
+        "Unbounded feature development",
+        "Compliance certification",
+        "Guaranteed performance without target-environment testing"
+      ],
+      "links": [],
+      "claim_boundary": "Engagement shape only; scope and terms follow discovery.",
+      "content": {
+        "id": "architecture-specification",
+        "slug": "architecture-specification",
+        "title": "Architecture and Specification Delivery",
+        "audience": "Technical leads and platform teams",
+        "usefulWhen": [
+          "System boundaries are ambiguous",
+          "Interfaces change without a durable decision record",
+          "Teams need executable contracts"
+        ],
+        "typicalOutputs": [
+          "Architecture decision records",
+          "API and data contracts",
+          "Test and migration plan"
+        ],
+        "inputs": [
+          "Existing source and diagrams",
+          "Representative payloads and workflows",
+          "Operational constraints"
+        ],
+        "scope": [
+          "Map current boundaries",
+          "Document decisions and alternatives",
+          "Create validation that fits the repository"
+        ],
+        "engagementShape": "Milestones and schedule follow system discovery and an agreed statement of work.",
+        "exclusions": [
+          "Unbounded feature development",
+          "Compliance certification",
+          "Guaranteed performance without target-environment testing"
+        ],
+        "relatedWorkSlugs": [
+          "tigrbl",
+          "ssot-registry"
+        ],
+        "cta": "Clarify a system boundary"
+      },
+      "related_slugs": [
+        "tigrbl",
+        "ssot-registry"
+      ]
+    },
+    {
+      "id": "service-api-platform-engineering",
+      "slug": "api-platform-engineering",
+      "organization_id": "groupsum",
+      "record_type": "service",
+      "artifact_type": "service",
+      "title": "API and Platform Engineering",
+      "summary": "Incremental delivery sized around one verifiable service boundary at a time.",
+      "maturity": "reviewed",
+      "visibility": "public",
+      "featured": false,
+      "canonical_url": "https://groupsum.xyz/services/api-platform-engineering",
+      "source_name": "api-platform-engineering",
+      "parent_id": null,
+      "audience": [
+        "Backend and platform engineering teams"
+      ],
+      "ecosystems": [],
+      "technologies": [],
+      "languages": [],
+      "capabilities": [],
+      "evidence": [],
+      "limitations": [
+        "Universal throughput promises",
+        "Undisclosed production access",
+        "Operation of customer infrastructure unless explicitly contracted"
+      ],
+      "links": [],
+      "claim_boundary": "Engagement shape only; scope and terms follow discovery.",
+      "content": {
+        "id": "api-platform-engineering",
+        "slug": "api-platform-engineering",
+        "title": "API and Platform Engineering",
+        "audience": "Backend and platform engineering teams",
+        "usefulWhen": [
+          "Service contracts and persistence logic drift",
+          "API plumbing is repeatedly rebuilt",
+          "A typed migration path is needed"
+        ],
+        "typicalOutputs": [
+          "Working service slice",
+          "Typed schemas and operations",
+          "Tests, documentation, and migration guidance"
+        ],
+        "inputs": [
+          "Current service source",
+          "Data and API contracts",
+          "Deployment and reliability constraints"
+        ],
+        "scope": [
+          "Design schema-first service boundaries",
+          "Implement the agreed slice",
+          "Validate behavior in the target workflow"
+        ],
+        "engagementShape": "Incremental delivery sized around one verifiable service boundary at a time.",
+        "exclusions": [
+          "Universal throughput promises",
+          "Undisclosed production access",
+          "Operation of customer infrastructure unless explicitly contracted"
+        ],
+        "relatedWorkSlugs": [
+          "tigrbl",
+          "tigrcorn"
+        ],
+        "cta": "Evaluate an API boundary"
+      },
+      "related_slugs": [
+        "tigrbl",
+        "tigrcorn"
+      ]
+    },
+    {
+      "id": "service-developer-tooling",
+      "slug": "developer-tooling",
+      "organization_id": "groupsum",
+      "record_type": "service",
+      "artifact_type": "service",
+      "title": "Developer Tooling and Package Delivery",
+      "summary": "Scoped by package count, registry targets, compatibility requirements, and release risk.",
+      "maturity": "reviewed",
+      "visibility": "public",
+      "featured": false,
+      "canonical_url": "https://groupsum.xyz/services/developer-tooling",
+      "source_name": "developer-tooling",
+      "parent_id": null,
+      "audience": [
+        "Library maintainers and developer-experience teams"
+      ],
+      "ecosystems": [],
+      "technologies": [],
+      "languages": [],
+      "capabilities": [],
+      "evidence": [],
+      "limitations": [
+        "Registry availability guarantees",
+        "Community growth promises",
+        "Publishing credentials outside agreed secret-handling boundaries"
+      ],
+      "links": [],
+      "claim_boundary": "Engagement shape only; scope and terms follow discovery.",
+      "content": {
+        "id": "developer-tooling",
+        "slug": "developer-tooling",
+        "title": "Developer Tooling and Package Delivery",
+        "audience": "Library maintainers and developer-experience teams",
+        "usefulWhen": [
+          "Package boundaries are unclear",
+          "Build and release steps are not reproducible",
+          "Scaffolding and documentation have drifted"
+        ],
+        "typicalOutputs": [
+          "Package and dependency model",
+          "Build, test, and publication automation",
+          "Examples and maintainer documentation"
+        ],
+        "inputs": [
+          "Source repositories",
+          "Package manifests",
+          "Current contributor and release workflows"
+        ],
+        "scope": [
+          "Refine package boundaries",
+          "Automate repeatable checks",
+          "Document actual supported workflows"
+        ],
+        "engagementShape": "Scoped by package count, registry targets, compatibility requirements, and release risk.",
+        "exclusions": [
+          "Registry availability guarantees",
+          "Community growth promises",
+          "Publishing credentials outside agreed secret-handling boundaries"
+        ],
+        "relatedWorkSlugs": [
+          "swarmauri-sdk",
+          "peagen",
+          "mdwrk"
+        ],
+        "cta": "Make a package workflow reproducible"
+      },
+      "related_slugs": [
+        "swarmauri-sdk",
+        "peagen",
+        "mdwrk"
+      ]
+    },
+    {
+      "id": "service-operator-interface",
+      "slug": "operator-interface",
+      "organization_id": "groupsum",
+      "record_type": "service",
+      "artifact_type": "service",
+      "title": "Operator Interface Engineering",
+      "summary": "Delivered in testable workflow slices after roles, risks, and system boundaries are known.",
+      "maturity": "reviewed",
+      "visibility": "public",
+      "featured": false,
+      "canonical_url": "https://groupsum.xyz/services/operator-interface",
+      "source_name": "operator-interface",
+      "parent_id": null,
+      "audience": [
+        "Platform operators and product teams"
+      ],
+      "ecosystems": [],
+      "technologies": [],
+      "languages": [],
+      "capabilities": [],
+      "evidence": [],
+      "limitations": [
+        "Unverified automation of destructive actions",
+        "Brand campaigns",
+        "Claims of accessibility conformance without appropriate testing"
+      ],
+      "links": [],
+      "claim_boundary": "Engagement shape only; scope and terms follow discovery.",
+      "content": {
+        "id": "operator-interface",
+        "slug": "operator-interface",
+        "title": "Operator Interface Engineering",
+        "audience": "Platform operators and product teams",
+        "usefulWhen": [
+          "High-consequence actions are hard to review",
+          "Desired state and runtime state are confused",
+          "An internal tool needs clearer ownership and recovery paths"
+        ],
+        "typicalOutputs": [
+          "Operator journey and permission model",
+          "Responsive interface implementation",
+          "Validation, errors, recovery, and audit surfaces"
+        ],
+        "inputs": [
+          "Operator workflows",
+          "API contracts and permission rules",
+          "Failure and recovery requirements"
+        ],
+        "scope": [
+          "Audit the existing flow",
+          "Design explicit action consequences",
+          "Implement and validate the agreed interface"
+        ],
+        "engagementShape": "Delivered in testable workflow slices after roles, risks, and system boundaries are known.",
+        "exclusions": [
+          "Unverified automation of destructive actions",
+          "Brand campaigns",
+          "Claims of accessibility conformance without appropriate testing"
+        ],
+        "relatedWorkSlugs": [
+          "npmctl",
+          "portwyrm",
+          "bucketwarden"
+        ],
+        "cta": "Review an operator workflow"
+      },
+      "related_slugs": [
+        "npmctl",
+        "portwyrm",
+        "bucketwarden"
+      ]
+    },
+    {
+      "id": "service-delivery-release-operations",
+      "slug": "delivery-release-operations",
+      "organization_id": "groupsum",
+      "record_type": "service",
+      "artifact_type": "service",
+      "title": "Delivery and Release Operations",
+      "summary": "Scope depends on repositories, registries, environments, and the approvals needed to change them.",
+      "maturity": "reviewed",
+      "visibility": "public",
+      "featured": false,
+      "canonical_url": "https://groupsum.xyz/services/delivery-release-operations",
+      "source_name": "delivery-release-operations",
+      "parent_id": null,
+      "audience": [
+        "Release engineers, maintainers, and platform teams"
+      ],
+      "ecosystems": [],
+      "technologies": [],
+      "languages": [],
+      "capabilities": [],
+      "evidence": [],
+      "limitations": [
+        "Bypassing approval or secret controls",
+        "Guaranteed third-party uptime",
+        "Treating source state as deployment proof"
+      ],
+      "links": [],
+      "claim_boundary": "Engagement shape only; scope and terms follow discovery.",
+      "content": {
+        "id": "delivery-release-operations",
+        "slug": "delivery-release-operations",
+        "title": "Delivery and Release Operations",
+        "audience": "Release engineers, maintainers, and platform teams",
+        "usefulWhen": [
+          "Builds and publications are difficult to reproduce",
+          "Secrets and deployment authority are unclear",
+          "A passing CI run is treated as proof of availability"
+        ],
+        "typicalOutputs": [
+          "Delivery-state model",
+          "CI and publication workflow",
+          "Deployment and external-reachability verification"
+        ],
+        "inputs": [
+          "Repository workflows",
+          "Registry and deployment targets",
+          "Secret and approval boundaries"
+        ],
+        "scope": [
+          "Separate implementation, publication, deployment, and reachability",
+          "Automate scoped validation",
+          "Record evidence at each boundary"
+        ],
+        "engagementShape": "Scope depends on repositories, registries, environments, and the approvals needed to change them.",
+        "exclusions": [
+          "Bypassing approval or secret controls",
+          "Guaranteed third-party uptime",
+          "Treating source state as deployment proof"
+        ],
+        "relatedWorkSlugs": [
+          "ssot-registry",
+          "npmctl"
+        ],
+        "cta": "Make release state verifiable"
+      },
+      "related_slugs": [
+        "ssot-registry",
+        "npmctl"
+      ]
+    }
+  ]
+}
