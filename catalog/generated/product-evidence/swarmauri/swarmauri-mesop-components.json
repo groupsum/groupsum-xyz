@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-03T22:06:00Z",
+  "generated_at": "2026-08-03T23:39:08Z",
   "packages": [],
   "repository": {
     "archived": false,
@@ -146,7 +146,7 @@
     "evidence": [
       {
         "kind": "source",
-        "observed_at": "2026-08-03T22:06:02Z",
+        "observed_at": "2026-08-03T23:39:48Z",
         "url": "https://github.com/swarmauri/swarmauri-mesop-components"
       }
     ],
@@ -198,13 +198,12 @@
       "open_issues": 0,
       "packages": 0,
       "related_resources": 1,
-      "relationships": 1,
       "size_kb": 17,
       "stars": 3,
       "watchers": 0
     },
     "name": "swarmauri-mesop-components",
-    "observed_at": "2026-08-03T22:06:02Z",
+    "observed_at": "2026-08-03T23:39:48Z",
     "owner": "swarmauri",
     "package_ids": [],
     "packages": [],
@@ -217,7 +216,7 @@
         "legal_evidence": [],
         "legal_inherits_from": "repository:swarmauri/swarmauri-mesop-components",
         "name": "swarmauri-mesop-components",
-        "observed_at": "2026-08-03T22:06:02Z",
+        "observed_at": "2026-08-03T23:39:48Z",
         "path": null,
         "repository": "swarmauri/swarmauri-mesop-components",
         "repository_route": "/catalog/repositories/swarmauri/swarmauri-mesop-components",
@@ -235,7 +234,7 @@
       "coverage": {},
       "governed": false,
       "observation_status": "not_found",
-      "observed_at": "2026-08-03T23:58:12Z",
+      "observed_at": "2026-08-03T23:39:50Z",
       "present": false,
       "registry_url": null,
       "status_counts": {},

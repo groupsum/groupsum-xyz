@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-03T22:06:00Z",
+  "generated_at": "2026-08-03T23:39:08Z",
   "packages": [
     {
       "claim_boundary": "Publication is reported only when confirmed by the named public registry.",
@@ -73,7 +73,7 @@
       "evidence": [
         {
           "kind": "registry",
-          "observed_at": "2026-08-03T22:06:00Z",
+          "observed_at": "2026-08-03T23:39:08Z",
           "url": "https://pypi.org/project/marketing-attribution-conversion-governance-pack/"
         }
       ],
@@ -87,24 +87,7 @@
           "kind": "license-expression",
           "name": "Package manifest license",
           "scope": "direct",
-          "url": "https://github.com/groupsum/marketing-attribution-conversion-governance-pack/blob/HEAD/pyproject.toml"
-        },
-        {
-          "evidence_type": "pypi.registry",
-          "expression": "Apache-2.0",
-          "kind": "license-expression",
-          "name": "Registry license metadata",
-          "scope": "direct",
-          "url": "https://pypi.org/project/marketing-attribution-conversion-governance-pack/"
-        },
-        {
-          "evidence_type": "github.repository.license",
-          "expression": "Apache-2.0",
-          "kind": "license-expression",
-          "name": "GitHub detected license",
-          "path": null,
-          "scope": "inherited",
-          "url": "https://github.com/groupsum/marketing-attribution-conversion-governance-pack"
+          "url": "https://github.com/groupsum/marketing-attribution-conversion-governance-pack/blob/master/pyproject.toml"
         },
         {
           "evidence_type": "repository.tree",
@@ -122,7 +105,7 @@
       "license_status": "observed",
       "manifest_path": "pyproject.toml",
       "name": "marketing-attribution-conversion-governance-pack",
-      "observed_at": "2026-08-03T22:06:00Z",
+      "observed_at": "2026-08-03T23:39:08Z",
       "owner": "groupsum",
       "package_kind": "published-package",
       "private": false,
@@ -144,7 +127,7 @@
           "legal_inherits_from": "package:pypi:marketing-attribution-conversion-governance-pack:groupsum/marketing-attribution-conversion-governance-pack:pyproject.toml",
           "license_expression": "Apache-2.0",
           "license_status": "observed",
-          "observed_at": "2026-08-03T22:06:00Z",
+          "observed_at": "2026-08-03T23:39:08Z",
           "published_at": "2026-05-18T09:20:41.084685Z",
           "release_kind": "pypi",
           "route": "/catalog/releases/pypi/marketing-attribution-conversion-governance-pack-86b90c01db",
@@ -155,7 +138,10 @@
       "repository": "groupsum/marketing-attribution-conversion-governance-pack",
       "reviewed": false,
       "route": "/catalog/packages/pypi/marketing-attribution-conversion-governance-pack-a423f1d1",
-      "source_url": "https://github.com/groupsum/marketing-attribution-conversion-governance-pack/blob/HEAD/pyproject.toml",
+      "source_url": "https://github.com/groupsum/marketing-attribution-conversion-governance-pack/blob/master/pyproject.toml",
+      "technologies": [
+        "Python"
+      ],
       "version_declared": "0.1.1"
     }
   ],
@@ -304,12 +290,12 @@
     "evidence": [
       {
         "kind": "ssot-registry",
-        "observed_at": "2026-08-03T23:58:12Z",
+        "observed_at": "2026-08-03T23:39:19Z",
         "url": "https://github.com/groupsum/marketing-attribution-conversion-governance-pack/blob/master/.ssot/registry.json"
       },
       {
         "kind": "source",
-        "observed_at": "2026-08-03T22:06:00Z",
+        "observed_at": "2026-08-03T23:39:17Z",
         "url": "https://github.com/groupsum/marketing-attribution-conversion-governance-pack"
       }
     ],
@@ -324,7 +310,7 @@
         "legal_inherits_from": "repository:groupsum/marketing-attribution-conversion-governance-pack",
         "license_expression": "Apache-2.0",
         "license_status": "observed",
-        "observed_at": "2026-08-03T22:06:00Z",
+        "observed_at": "2026-08-03T23:39:17Z",
         "prerelease": false,
         "published_at": "2026-05-18T09:20:32Z",
         "release_kind": "github",
@@ -403,13 +389,12 @@
       "open_issues": 0,
       "packages": 1,
       "related_resources": 1,
-      "relationships": 2,
       "size_kb": 143,
       "stars": 0,
       "watchers": 0
     },
     "name": "marketing-attribution-conversion-governance-pack",
-    "observed_at": "2026-08-03T22:06:00Z",
+    "observed_at": "2026-08-03T23:39:17Z",
     "owner": "groupsum",
     "package_ids": [
       "package:pypi:marketing-attribution-conversion-governance-pack:groupsum/marketing-attribution-conversion-governance-pack:pyproject.toml"
@@ -418,11 +403,24 @@
       {
         "ecosystem": "pypi",
         "id": "package:pypi:marketing-attribution-conversion-governance-pack:groupsum/marketing-attribution-conversion-governance-pack:pyproject.toml",
+        "last_published_at": "2026-05-18T09:20:41.084685Z",
+        "latest_version": "0.1.1.dev1",
+        "license_expression": "Apache-2.0",
+        "license_status": "observed",
+        "license_url": "https://github.com/groupsum/marketing-attribution-conversion-governance-pack/blob/master/LICENSE",
         "manifest_path": "pyproject.toml",
         "name": "marketing-attribution-conversion-governance-pack",
+        "notice_count": 0,
         "package_kind": "published-package",
         "publication_status": "published",
         "published": true,
+        "release_activity": [
+          {
+            "count": 1,
+            "month": "2026-05"
+          }
+        ],
+        "release_count": 1,
         "route": "/catalog/packages/pypi/marketing-attribution-conversion-governance-pack-a423f1d1"
       }
     ],
@@ -435,7 +433,7 @@
         "legal_evidence": [],
         "legal_inherits_from": "repository:groupsum/marketing-attribution-conversion-governance-pack",
         "name": "docs/governance",
-        "observed_at": "2026-08-03T22:06:00Z",
+        "observed_at": "2026-08-03T23:39:17Z",
         "path": "docs/governance",
         "repository": "groupsum/marketing-attribution-conversion-governance-pack",
         "repository_route": "/catalog/repositories/groupsum/marketing-attribution-conversion-governance-pack",
@@ -694,19 +692,7 @@
         ],
         "tests": []
       },
-      "inventory_truncated": {
-        "adrs": 0,
-        "boundaries": 0,
-        "claims": 0,
-        "evidence": 0,
-        "features": 0,
-        "issues": 0,
-        "profiles": 0,
-        "releases": 0,
-        "specs": 0,
-        "tests": 0
-      },
-      "observed_at": "2026-08-03T23:58:12Z",
+      "observed_at": "2026-08-03T23:39:19Z",
       "present": true,
       "raw_url": "https://raw.githubusercontent.com/groupsum/marketing-attribution-conversion-governance-pack/master/.ssot/registry.json",
       "registry_url": "https://github.com/groupsum/marketing-attribution-conversion-governance-pack/blob/master/.ssot/registry.json",

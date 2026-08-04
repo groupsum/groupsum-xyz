@@ -8,7 +8,7 @@
     "evidence": [
       {
         "kind": "organization",
-        "observed_at": "2026-08-03T22:06:00Z",
+        "observed_at": "2026-08-03T23:39:08Z",
         "url": "https://github.com/bucketwarden"
       }
     ],
@@ -18,7 +18,7 @@
     "id": "organization:bucketwarden",
     "kind": "organization",
     "login": "bucketwarden",
-    "observed_at": "2026-08-03T22:06:00Z",
+    "observed_at": "2026-08-03T23:39:08Z",
     "package_count": 0,
     "package_releases": 0,
     "relationships": 0,
@@ -30,15 +30,15 @@
     "watchers": 0
   },
   {
-    "commits": 2197,
+    "commits": 2199,
     "contributors": 2,
-    "deployments": 587,
+    "deployments": 589,
     "description": "Public source, packages, and delivery records maintained by Groupsum.",
     "display_name": "Groupsum",
     "evidence": [
       {
         "kind": "organization",
-        "observed_at": "2026-08-03T22:06:00Z",
+        "observed_at": "2026-08-03T23:39:08Z",
         "url": "https://github.com/groupsum"
       }
     ],
@@ -56,7 +56,6 @@
           "open_issues": 0,
           "packages": 14,
           "related_resources": 35,
-          "relationships": 49,
           "size_kb": 77017,
           "stars": 5,
           "watchers": 0
@@ -77,7 +76,6 @@
           "open_issues": 0,
           "packages": 45,
           "related_resources": 76,
-          "relationships": 114,
           "size_kb": 1133214,
           "stars": 3,
           "watchers": 0
@@ -98,7 +96,6 @@
           "open_issues": 0,
           "packages": 1,
           "related_resources": 0,
-          "relationships": 1,
           "size_kb": 131,
           "stars": 2,
           "watchers": 0
@@ -119,7 +116,6 @@
           "open_issues": 0,
           "packages": 7,
           "related_resources": 39,
-          "relationships": 46,
           "size_kb": 11109,
           "stars": 1,
           "watchers": 0
@@ -140,7 +136,6 @@
           "open_issues": 0,
           "packages": 1,
           "related_resources": 1,
-          "relationships": 2,
           "size_kb": 75,
           "stars": 1,
           "watchers": 0
@@ -161,7 +156,6 @@
           "open_issues": 0,
           "packages": 1,
           "related_resources": 2,
-          "relationships": 3,
           "size_kb": 81,
           "stars": 1,
           "watchers": 0
@@ -182,7 +176,6 @@
           "open_issues": 0,
           "packages": 3,
           "related_resources": 15,
-          "relationships": 18,
           "size_kb": 1958,
           "stars": 0,
           "watchers": 0
@@ -203,7 +196,6 @@
           "open_issues": 0,
           "packages": 22,
           "related_resources": 12,
-          "relationships": 34,
           "size_kb": 15064,
           "stars": 0,
           "watchers": 0
@@ -217,10 +209,10 @@
     "id": "organization:groupsum",
     "kind": "organization",
     "login": "groupsum",
-    "observed_at": "2026-08-03T22:06:00Z",
+    "observed_at": "2026-08-03T23:39:08Z",
     "package_count": 152,
     "package_releases": 572,
-    "relationships": 1232,
+    "relationships": 1231,
     "repository_count": 37,
     "role": "primary",
     "route": "/products/groupsum",
@@ -248,7 +240,7 @@
     "evidence": [
       {
         "kind": "organization",
-        "observed_at": "2026-08-03T22:06:00Z",
+        "observed_at": "2026-08-03T23:39:08Z",
         "url": "https://github.com/swarmauri"
       }
     ],
@@ -266,7 +258,6 @@
           "open_issues": 176,
           "packages": 366,
           "related_resources": 111,
-          "relationships": 477,
           "size_kb": 77235,
           "stars": 104,
           "watchers": 5
@@ -287,7 +278,6 @@
           "open_issues": 9,
           "packages": 5,
           "related_resources": 1,
-          "relationships": 6,
           "size_kb": 3968,
           "stars": 25,
           "watchers": 0
@@ -308,7 +298,6 @@
           "open_issues": 25,
           "packages": 0,
           "related_resources": 1,
-          "relationships": 1,
           "size_kb": 32789,
           "stars": 18,
           "watchers": 4
@@ -329,7 +318,6 @@
           "open_issues": 8,
           "packages": 2,
           "related_resources": 1,
-          "relationships": 3,
           "size_kb": 237,
           "stars": 10,
           "watchers": 0
@@ -350,7 +338,6 @@
           "open_issues": 2,
           "packages": 1,
           "related_resources": 1,
-          "relationships": 2,
           "size_kb": 254,
           "stars": 7,
           "watchers": 0
@@ -371,7 +358,6 @@
           "open_issues": 9,
           "packages": 0,
           "related_resources": 1,
-          "relationships": 1,
           "size_kb": 34,
           "stars": 5,
           "watchers": 1
@@ -392,7 +378,6 @@
           "open_issues": 0,
           "packages": 0,
           "related_resources": 1,
-          "relationships": 1,
           "size_kb": 17,
           "stars": 3,
           "watchers": 0
@@ -413,7 +398,6 @@
           "open_issues": 3,
           "packages": 1,
           "related_resources": 1,
-          "relationships": 2,
           "size_kb": 149,
           "stars": 2,
           "watchers": 0
@@ -427,7 +411,7 @@
     "id": "organization:swarmauri",
     "kind": "organization",
     "login": "swarmauri",
-    "observed_at": "2026-08-03T22:06:00Z",
+    "observed_at": "2026-08-03T23:39:08Z",
     "package_count": 389,
     "package_releases": 7372,
     "relationships": 5668,
@@ -457,15 +441,15 @@
     "watchers": 10
   },
   {
-    "commits": 2202,
+    "commits": 2206,
     "contributors": 5,
-    "deployments": 2571,
+    "deployments": 2590,
     "description": "Public API, ASGI, identity, transport, package, and example records maintained by Tigrbl.",
     "display_name": "Tigrbl",
     "evidence": [
       {
         "kind": "organization",
-        "observed_at": "2026-08-03T22:06:00Z",
+        "observed_at": "2026-08-03T23:39:08Z",
         "url": "https://github.com/tigrbl"
       }
     ],
@@ -474,7 +458,7 @@
         "description": "Schema-first Python and Rust workspace for REST and JSON-RPC APIs with typed validation, SQLAlchemy models, and engine-backed execution.",
         "id": "repository:tigrbl/tigrbl",
         "metrics": {
-          "commits": 636,
+          "commits": 638,
           "contributors": 2,
           "deployments": 0,
           "environments": 0,
@@ -483,8 +467,7 @@
           "open_issues": 2,
           "packages": 54,
           "related_resources": 31,
-          "relationships": 82,
-          "size_kb": 82346,
+          "size_kb": 73673,
           "stars": 3,
           "watchers": 0
         },
@@ -495,17 +478,16 @@
         "description": "ASGI3 server with built-in HTTP/1.1, HTTP/2, HTTP/3, QUIC, WebSocket, TLS, static delivery, and release validation.",
         "id": "repository:tigrbl/tigrcorn",
         "metrics": {
-          "commits": 273,
+          "commits": 274,
           "contributors": 4,
-          "deployments": 2435,
+          "deployments": 2454,
           "environments": 6,
           "forks": 2,
           "github_releases": 40,
           "open_issues": 15,
           "packages": 16,
           "related_resources": 37,
-          "relationships": 53,
-          "size_kb": 18586,
+          "size_kb": 18970,
           "stars": 3,
           "watchers": 1
         },
@@ -525,7 +507,6 @@
           "open_issues": 13,
           "packages": 489,
           "related_resources": 56,
-          "relationships": 513,
           "size_kb": 25828,
           "stars": 2,
           "watchers": 0
@@ -537,7 +518,7 @@
         "description": "A formal ASGI event contract that normalizes HTTP, WebSocket, QUIC, and WebTransport into a typed, capability-safe application IR.",
         "id": "repository:tigrbl/tigr-asgi-contract",
         "metrics": {
-          "commits": 184,
+          "commits": 185,
           "contributors": 2,
           "deployments": 0,
           "environments": 0,
@@ -546,8 +527,7 @@
           "open_issues": 0,
           "packages": 8,
           "related_resources": 16,
-          "relationships": 24,
-          "size_kb": 4217,
+          "size_kb": 4249,
           "stars": 1,
           "watchers": 0
         },
@@ -567,7 +547,6 @@
           "open_issues": 0,
           "packages": 3,
           "related_resources": 1,
-          "relationships": 4,
           "size_kb": 1816,
           "stars": 0,
           "watchers": 0
@@ -588,7 +567,6 @@
           "open_issues": 0,
           "packages": 3,
           "related_resources": 0,
-          "relationships": 3,
           "size_kb": 2968,
           "stars": 0,
           "watchers": 0
@@ -609,7 +587,6 @@
           "open_issues": 0,
           "packages": 2,
           "related_resources": 6,
-          "relationships": 8,
           "size_kb": 141,
           "stars": 0,
           "watchers": 0
@@ -630,7 +607,6 @@
           "open_issues": 0,
           "packages": 2,
           "related_resources": 4,
-          "relationships": 6,
           "size_kb": 130,
           "stars": 0,
           "watchers": 0
@@ -644,7 +620,7 @@
     "id": "organization:tigrbl",
     "kind": "organization",
     "login": "tigrbl",
-    "observed_at": "2026-08-03T22:06:00Z",
+    "observed_at": "2026-08-03T23:39:08Z",
     "package_count": 584,
     "package_releases": 1835,
     "relationships": 3949,

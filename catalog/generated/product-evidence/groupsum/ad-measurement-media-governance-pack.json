@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-03T22:06:00Z",
+  "generated_at": "2026-08-03T23:39:08Z",
   "packages": [
     {
       "claim_boundary": "Publication is reported only when confirmed by the named public registry.",
@@ -63,7 +63,7 @@
       "evidence": [
         {
           "kind": "registry",
-          "observed_at": "2026-08-03T22:06:00Z",
+          "observed_at": "2026-08-03T23:39:08Z",
           "url": "https://pypi.org/project/ad-measurement-media-governance-pack/"
         }
       ],
@@ -77,24 +77,7 @@
           "kind": "license-expression",
           "name": "Package manifest license",
           "scope": "direct",
-          "url": "https://github.com/groupsum/ad-measurement-media-governance-pack/blob/HEAD/pyproject.toml"
-        },
-        {
-          "evidence_type": "pypi.registry",
-          "expression": "Apache-2.0",
-          "kind": "license-expression",
-          "name": "Registry license metadata",
-          "scope": "direct",
-          "url": "https://pypi.org/project/ad-measurement-media-governance-pack/"
-        },
-        {
-          "evidence_type": "github.repository.license",
-          "expression": "Apache-2.0",
-          "kind": "license-expression",
-          "name": "GitHub detected license",
-          "path": null,
-          "scope": "inherited",
-          "url": "https://github.com/groupsum/ad-measurement-media-governance-pack"
+          "url": "https://github.com/groupsum/ad-measurement-media-governance-pack/blob/master/pyproject.toml"
         },
         {
           "evidence_type": "repository.tree",
@@ -112,7 +95,7 @@
       "license_status": "observed",
       "manifest_path": "pyproject.toml",
       "name": "ad-measurement-media-governance-pack",
-      "observed_at": "2026-08-03T22:06:00Z",
+      "observed_at": "2026-08-03T23:39:08Z",
       "owner": "groupsum",
       "package_kind": "published-package",
       "private": false,
@@ -134,7 +117,7 @@
           "legal_inherits_from": "package:pypi:ad-measurement-media-governance-pack:groupsum/ad-measurement-media-governance-pack:pyproject.toml",
           "license_expression": "Apache-2.0",
           "license_status": "observed",
-          "observed_at": "2026-08-03T22:06:00Z",
+          "observed_at": "2026-08-03T23:39:08Z",
           "published_at": "2026-05-18T06:01:19.278914Z",
           "release_kind": "pypi",
           "route": "/catalog/releases/pypi/ad-measurement-media-governance-pack-14f265bf12",
@@ -145,7 +128,10 @@
       "repository": "groupsum/ad-measurement-media-governance-pack",
       "reviewed": false,
       "route": "/catalog/packages/pypi/ad-measurement-media-governance-pack-32e94b5a",
-      "source_url": "https://github.com/groupsum/ad-measurement-media-governance-pack/blob/HEAD/pyproject.toml",
+      "source_url": "https://github.com/groupsum/ad-measurement-media-governance-pack/blob/master/pyproject.toml",
+      "technologies": [
+        "Python"
+      ],
       "version_declared": "0.1.1.dev2"
     }
   ],
@@ -294,12 +280,12 @@
     "evidence": [
       {
         "kind": "ssot-registry",
-        "observed_at": "2026-08-03T23:58:12Z",
+        "observed_at": "2026-08-03T23:39:13Z",
         "url": "https://github.com/groupsum/ad-measurement-media-governance-pack/blob/master/.ssot/registry.json"
       },
       {
         "kind": "source",
-        "observed_at": "2026-08-03T22:06:00Z",
+        "observed_at": "2026-08-03T23:39:10Z",
         "url": "https://github.com/groupsum/ad-measurement-media-governance-pack"
       }
     ],
@@ -314,7 +300,7 @@
         "legal_inherits_from": "repository:groupsum/ad-measurement-media-governance-pack",
         "license_expression": "Apache-2.0",
         "license_status": "observed",
-        "observed_at": "2026-08-03T22:06:00Z",
+        "observed_at": "2026-08-03T23:39:10Z",
         "prerelease": false,
         "published_at": "2026-05-18T06:00:20Z",
         "release_kind": "github",
@@ -330,7 +316,7 @@
         "legal_inherits_from": "repository:groupsum/ad-measurement-media-governance-pack",
         "license_expression": "Apache-2.0",
         "license_status": "observed",
-        "observed_at": "2026-08-03T22:06:00Z",
+        "observed_at": "2026-08-03T23:39:10Z",
         "prerelease": false,
         "published_at": "2026-05-18T05:56:43Z",
         "release_kind": "github",
@@ -409,13 +395,12 @@
       "open_issues": 0,
       "packages": 1,
       "related_resources": 1,
-      "relationships": 2,
       "size_kb": 106,
       "stars": 0,
       "watchers": 0
     },
     "name": "ad-measurement-media-governance-pack",
-    "observed_at": "2026-08-03T22:06:00Z",
+    "observed_at": "2026-08-03T23:39:10Z",
     "owner": "groupsum",
     "package_ids": [
       "package:pypi:ad-measurement-media-governance-pack:groupsum/ad-measurement-media-governance-pack:pyproject.toml"
@@ -424,11 +409,24 @@
       {
         "ecosystem": "pypi",
         "id": "package:pypi:ad-measurement-media-governance-pack:groupsum/ad-measurement-media-governance-pack:pyproject.toml",
+        "last_published_at": "2026-05-18T06:01:19.278914Z",
+        "latest_version": "0.1.1.dev2",
+        "license_expression": "Apache-2.0",
+        "license_status": "observed",
+        "license_url": "https://github.com/groupsum/ad-measurement-media-governance-pack/blob/master/LICENSE",
         "manifest_path": "pyproject.toml",
         "name": "ad-measurement-media-governance-pack",
+        "notice_count": 0,
         "package_kind": "published-package",
         "publication_status": "published",
         "published": true,
+        "release_activity": [
+          {
+            "count": 1,
+            "month": "2026-05"
+          }
+        ],
+        "release_count": 1,
         "route": "/catalog/packages/pypi/ad-measurement-media-governance-pack-32e94b5a"
       }
     ],
@@ -441,7 +439,7 @@
         "legal_evidence": [],
         "legal_inherits_from": "repository:groupsum/ad-measurement-media-governance-pack",
         "name": "docs/governance",
-        "observed_at": "2026-08-03T22:06:00Z",
+        "observed_at": "2026-08-03T23:39:10Z",
         "path": "docs/governance",
         "repository": "groupsum/ad-measurement-media-governance-pack",
         "repository_route": "/catalog/repositories/groupsum/ad-measurement-media-governance-pack",
@@ -700,19 +698,7 @@
         ],
         "tests": []
       },
-      "inventory_truncated": {
-        "adrs": 0,
-        "boundaries": 0,
-        "claims": 0,
-        "evidence": 0,
-        "features": 0,
-        "issues": 0,
-        "profiles": 0,
-        "releases": 0,
-        "specs": 0,
-        "tests": 0
-      },
-      "observed_at": "2026-08-03T23:58:12Z",
+      "observed_at": "2026-08-03T23:39:13Z",
       "present": true,
       "raw_url": "https://raw.githubusercontent.com/groupsum/ad-measurement-media-governance-pack/master/.ssot/registry.json",
       "registry_url": "https://github.com/groupsum/ad-measurement-media-governance-pack/blob/master/.ssot/registry.json",

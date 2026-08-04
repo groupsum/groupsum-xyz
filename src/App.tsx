@@ -20,7 +20,7 @@ import { CapabilityBand } from "./components/CapabilityBand";
 import { CatalogSnapshotBand, PublicCatalogDetail, PublicCatalogExplorer } from "./components/PublicCatalog";
 import { ProductCollectionPage, ProductRecordPage, productRecordPath } from "./components/ProductPortfolio";
 import { groupSumVision, horizontalCapabilities } from "./data/vision";
-import { catalogSummary } from "./data/catalog.generated";
+import { catalogDatasetManifest, catalogSummary } from "./data/catalog.generated";
 import { useCatalogFilters } from "./hooks/useCatalogFilters";
 import { CatalogToolbar } from "./components/CatalogToolbar";
 import { CatalogGroup } from "./components/CatalogGroup";
@@ -784,7 +784,7 @@ function PortfolioPage({ onNavigate }: RouteProps) {
     ["Default-branch commits", catalogSummary.commits],
     ["GitHub releases", catalogSummary.github_releases],
     ["Deployment records", catalogSummary.deployments],
-    ["Relationships", catalogSummary.relationships],
+    ["Typed resources", catalogDatasetManifest.counts.resources],
   ] as const;
 
   return <>
@@ -794,7 +794,7 @@ function PortfolioPage({ onNavigate }: RouteProps) {
           <span className="text-xs font-mono uppercase tracking-wider text-accent font-bold block">Generated public inventory</span>
           <h1 className="font-serif text-3xl font-bold tracking-tight text-ink">Observed ecosystem snapshot</h1>
           <p className="text-sm text-ink-muted leading-relaxed">
-            Collected {new Date(catalogSummary.generated_at).toLocaleString()} from GitHub, repository manifests, PyPI, npm, and crates.io. Counts describe observed public records, not adoption or live-service health.
+            Collected {new Intl.DateTimeFormat("en-US", { dateStyle: "medium", timeStyle: "short", timeZone: "UTC" }).format(new Date(catalogSummary.generated_at))} UTC from GitHub, repository manifests, PyPI, npm, and crates.io. Counts describe observed public records, not adoption or live-service health.
           </p>
         </div>
         <a href="/catalog/catalog.json" className="text-xs font-mono font-semibold text-accent hover:underline">Download normalized JSON &rarr;</a>
@@ -804,7 +804,7 @@ function PortfolioPage({ onNavigate }: RouteProps) {
       </div>
     </section>
     <PublicCatalogExplorer onNavigate={onNavigate} compact />
-    <DenseCatalog entities={portfolioEntities.filter((entity) => entity.approved)} onNavigate={onNavigate} title="Reviewed product layer" description="These editorial records provide product grouping and reviewed descriptions. The generated evidence catalog above remains the source for current public repositories, packages, and technologies, with child evidence summarized on its parent records." />
+    <DenseCatalog entities={portfolioEntities.filter((entity) => entity.approved)} onNavigate={onNavigate} title="Reviewed product layer" description="These editorial records provide product grouping and reviewed descriptions. The generated evidence catalog above remains the source for current public repositories, packages, and typed resources, with technology stack tags scoped to packages." />
   </>;
 
   /* Legacy featured-card layout retained below for reference. */
@@ -1360,7 +1360,7 @@ function DenseCatalog({ entities, onNavigate, title, description }: { entities: 
     ["Packages & modules", catalog.filtered.filter((entity) => entity.kind === "package" || entity.kind === "package-family")],
     ["Specifications & packs", catalog.filtered.filter((entity) => entity.kind === "specification-pack" || entity.kind === "site-docs")],
   ] as const;
-  return <div className="max-w-[var(--content-max)] mx-auto px-4 sm:px-6 lg:px-8 py-12 space-y-8"><div className="max-w-3xl space-y-3"><span className="text-xs font-mono uppercase tracking-wider text-accent font-bold block">Dense portfolio catalog</span><h1 className="font-serif text-4xl font-bold tracking-tight text-ink">{title}</h1><p className="text-ink-muted text-base leading-relaxed">{description}</p></div><CatalogToolbar {...catalog} entities={entities} mobileFiltersOpen={mobileFiltersOpen} setMobileFiltersOpen={setMobileFiltersOpen} />{catalog.view === "cards" ? <div className="grid grid-cols-1 md:grid-cols-2 gap-4">{catalog.filtered.map((entity) => <button key={entity.id} type="button" onClick={() => onNavigate(productRecordPath(entity.slug))} className="text-left p-5 bg-surface border border-[var(--color-border-soft)] rounded-[var(--radius-md)] hover:border-accent"><span className="text-[10px] font-mono uppercase text-accent">{entity.kind} · {entity.maturity}</span><h2 className="font-serif text-lg font-bold text-ink mt-2">{entity.displayName}</h2><p className="text-xs text-ink-muted mt-1 leading-relaxed">{entity.summary}</p></button>)}</div> : <div className="space-y-8">{groups.map(([group, items]) => <CatalogGroup key={group} title={group} entities={items} onNavigate={onNavigate} />)}</div>}{catalog.filtered.length === 0 && <div className="p-10 text-center bg-surface border border-[var(--color-border-soft)] rounded-[var(--radius-md)] text-sm text-ink-muted">No catalog records match these filters.</div>}</div>;
+  return <div className="max-w-[var(--content-max)] mx-auto px-4 sm:px-6 lg:px-8 py-12 space-y-8"><div className="max-w-3xl space-y-3"><span className="text-xs font-mono uppercase tracking-wider text-accent font-bold block">Dense portfolio catalog</span><h1 className="font-serif text-4xl font-bold tracking-tight text-ink">{title}</h1><p className="text-ink-muted text-base leading-relaxed">{description}</p></div><CatalogToolbar {...catalog} entities={entities} mobileFiltersOpen={mobileFiltersOpen} setMobileFiltersOpen={setMobileFiltersOpen} />{catalog.view === "cards" ? <div className="divide-y divide-[var(--color-border-soft)] overflow-hidden rounded-[var(--radius-md)] border border-[var(--color-border-soft)] bg-surface">{catalog.filtered.map((entity) => <button key={entity.id} type="button" onClick={() => onNavigate(productRecordPath(entity.slug))} className="group flex w-full flex-wrap items-center gap-x-6 gap-y-3 p-5 text-left hover:bg-[color-mix(in_srgb,var(--color-accent)_4%,transparent)]"><div className="min-w-0 flex-[3_1_24rem]"><span className="text-[10px] font-mono uppercase text-accent">{entity.kind} · {entity.maturity}</span><h2 className="font-serif text-lg font-bold text-ink mt-2 group-hover:text-accent">{entity.displayName}</h2><p className="text-xs text-ink-muted mt-1 leading-relaxed">{entity.summary}</p></div><div className="min-w-0 flex-[1_1_10rem]"><span className="text-[9px] font-mono uppercase tracking-wide text-ink-muted">Organization</span><p className="mt-1 text-xs font-semibold text-ink">{entity.organization}</p></div><div className="flex flex-[1_1_12rem] flex-wrap gap-2"><span className="rounded-full border border-[var(--color-border-muted)] px-2.5 py-1 text-[10px] font-mono uppercase text-ink-muted">{entity.audience.slice(0, 2).join(" / ") || "General"}</span><span className="rounded-full border border-[var(--color-border-accent-soft)] px-2.5 py-1 text-[10px] font-mono uppercase text-accent">{entity.maturity}</span></div><ArrowRight className="h-4 w-4 shrink-0 text-accent transition-transform group-hover:translate-x-1" /></button>)}</div> : <div className="space-y-8">{groups.map(([group, items]) => <CatalogGroup key={group} title={group} entities={items} onNavigate={onNavigate} />)}</div>}{catalog.filtered.length === 0 && <div className="p-10 text-center bg-surface border border-[var(--color-border-soft)] rounded-[var(--radius-md)] text-sm text-ink-muted">No catalog records match these filters.</div>}</div>;
 }
 /* ========================================================================== 
    PRODUCTS INDEX PAGE

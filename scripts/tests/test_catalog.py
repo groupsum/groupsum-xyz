@@ -16,7 +16,7 @@ from catalog_collect import (
     relation_rows,
     summarize_ssot_registry,
 )
-from catalog_render import compile_catalog, related_resource_url
+from catalog_render import compile_catalog, related_resource_url, repair_text
 from catalog_validate import validate
 
 
@@ -151,6 +151,10 @@ class CatalogCollectorTests(unittest.TestCase):
             "https://github.com/groupsum/example-com/blob/master/examples/quickstart.py",
         )
 
+    def test_repeated_utf8_mojibake_is_repaired(self):
+        self.assertEqual(repair_text("RFC 9110 Ãƒâ€šÃ‚Â§8"), "RFC 9110 §8")
+        self.assertEqual(repair_text({"label": "Packages Â· releases"}), {"label": "Packages · releases"})
+
     def test_minimal_catalog_validation(self):
         now = dt.datetime.now(dt.timezone.utc).replace(microsecond=0).isoformat().replace("+00:00", "Z")
         catalog = {
@@ -192,7 +196,7 @@ class CatalogCollectorTests(unittest.TestCase):
                 "observations": [{"observed_at": now}],
             }],
             "packages": [{
-                "ecosystem": "pypi", "name": "example", "repository": "groupsum/example", "manifest_path": "pyproject.toml",
+                "ecosystem": "pypi", "name": "example", "owner": "groupsum", "manifest_path": "pyproject.toml",
                 "published": True, "registry_url": "https://pypi.org/project/example/", "releases": ["1.0.0"], "dependencies": [],
             }],
             "relationships": [],
@@ -212,7 +216,12 @@ class CatalogCollectorTests(unittest.TestCase):
         self.assertEqual(datasets["packages"][0]["releases"][0]["version"], "1.0.0")
         self.assertEqual(datasets["packages"][0]["releases"][0]["release_kind"], "pypi")
         self.assertEqual(datasets["packages"][0]["package_kind"], "published-package")
+        self.assertEqual(datasets["packages"][0]["repository"], "groupsum/example")
         self.assertEqual(datasets["repositories"][0]["packages"][0]["route"], datasets["packages"][0]["route"])
+        self.assertEqual(datasets["repositories"][0]["packages"][0]["release_count"], 1)
+        self.assertEqual(datasets["repositories"][0]["packages"][0]["latest_version"], None)
+        self.assertIn("license_expression", datasets["repositories"][0]["packages"][0])
+        self.assertIn("notice_count", datasets["repositories"][0]["packages"][0])
         self.assertEqual(datasets["technologies"][0]["repository_count"], 1)
 
 

@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-03T22:06:00Z",
+  "generated_at": "2026-08-03T23:39:08Z",
   "packages": [
     {
       "claim_boundary": "Publication is reported only when confirmed by the named public registry.",
@@ -261,7 +261,7 @@
       "evidence": [
         {
           "kind": "registry",
-          "observed_at": "2026-08-03T22:06:00Z",
+          "observed_at": "2026-08-03T23:39:08Z",
           "url": "https://www.npmjs.com/package/@groupsum/document-viewer"
         }
       ],
@@ -275,15 +275,7 @@
           "kind": "license-expression",
           "name": "Package manifest license",
           "scope": "direct",
-          "url": "https://github.com/groupsum/document-viewer/blob/HEAD/packages/document-viewer/package.json"
-        },
-        {
-          "evidence_type": "npm.registry",
-          "expression": "UNLICENSED",
-          "kind": "license-expression",
-          "name": "Registry license metadata",
-          "scope": "direct",
-          "url": "https://www.npmjs.com/package/@groupsum/document-viewer"
+          "url": "https://github.com/groupsum/document-viewer/blob/master/packages/document-viewer/package.json"
         },
         {
           "evidence_type": "repository.tree",
@@ -310,7 +302,7 @@
       "license_status": "observed",
       "manifest_path": "packages/document-viewer/package.json",
       "name": "@groupsum/document-viewer",
-      "observed_at": "2026-08-03T22:06:00Z",
+      "observed_at": "2026-08-03T23:39:08Z",
       "owner": "groupsum",
       "package_kind": "published-package",
       "private": false,
@@ -331,7 +323,7 @@
           "legal_inherits_from": "package:npm:@groupsum/document-viewer:groupsum/document-viewer:packages/document-viewer/package.json",
           "license_expression": "UNLICENSED",
           "license_status": "observed",
-          "observed_at": "2026-08-03T22:06:00Z",
+          "observed_at": "2026-08-03T23:39:08Z",
           "published_at": "2026-06-15T10:50:00.799Z",
           "release_kind": "npm",
           "route": "/catalog/releases/npm/groupsum-document-viewer-41c1759bf1",
@@ -342,7 +334,12 @@
       "repository": "groupsum/document-viewer",
       "reviewed": false,
       "route": "/catalog/packages/npm/groupsum-document-viewer-f2d5ecc7",
-      "source_url": "https://github.com/groupsum/document-viewer/blob/HEAD/packages/document-viewer/package.json",
+      "source_url": "https://github.com/groupsum/document-viewer/blob/master/packages/document-viewer/package.json",
+      "technologies": [
+        "CSS",
+        "HTML",
+        "TypeScript"
+      ],
       "version_declared": "0.1.0"
     },
     {
@@ -361,8 +358,8 @@
       "evidence": [
         {
           "kind": "source",
-          "observed_at": "2026-08-03T22:06:00Z",
-          "url": "https://github.com/groupsum/document-viewer/blob/HEAD/package.json"
+          "observed_at": "2026-08-03T23:39:08Z",
+          "url": "https://github.com/groupsum/document-viewer/blob/master/package.json"
         }
       ],
       "id": "package:npm:document-viewer-workspace:groupsum/document-viewer:package.json",
@@ -394,7 +391,7 @@
       "license_status": "observed",
       "manifest_path": "package.json",
       "name": "document-viewer-workspace",
-      "observed_at": "2026-08-03T22:06:00Z",
+      "observed_at": "2026-08-03T23:39:08Z",
       "owner": "groupsum",
       "package_kind": "workspace-project",
       "private": true,
@@ -410,7 +407,12 @@
       "repository": "groupsum/document-viewer",
       "reviewed": false,
       "route": "/catalog/packages/npm/document-viewer-workspace-602c9226",
-      "source_url": "https://github.com/groupsum/document-viewer/blob/HEAD/package.json",
+      "source_url": "https://github.com/groupsum/document-viewer/blob/master/package.json",
+      "technologies": [
+        "CSS",
+        "HTML",
+        "TypeScript"
+      ],
       "version_declared": "0.1.0"
     },
     {
@@ -439,8 +441,8 @@
       "evidence": [
         {
           "kind": "source",
-          "observed_at": "2026-08-03T22:06:00Z",
-          "url": "https://github.com/groupsum/document-viewer/blob/HEAD/pyproject.toml"
+          "observed_at": "2026-08-03T23:39:08Z",
+          "url": "https://github.com/groupsum/document-viewer/blob/master/pyproject.toml"
         }
       ],
       "id": "package:pypi:document-viewer-workspace:groupsum/document-viewer:pyproject.toml",
@@ -472,11 +474,11 @@
       "license_status": "observed",
       "manifest_path": "pyproject.toml",
       "name": "document-viewer-workspace",
-      "observed_at": "2026-08-03T22:06:00Z",
+      "observed_at": "2026-08-03T23:39:08Z",
       "owner": "groupsum",
       "package_kind": "package-candidate",
       "private": false,
-      "publication_status": "not-confirmed",
+      "publication_status": "registry_not_found",
       "published": false,
       "registry_url": null,
       "relationship_count": 2,
@@ -489,7 +491,12 @@
       "repository": "groupsum/document-viewer",
       "reviewed": false,
       "route": "/catalog/packages/pypi/document-viewer-workspace-6db51914",
-      "source_url": "https://github.com/groupsum/document-viewer/blob/HEAD/pyproject.toml",
+      "source_url": "https://github.com/groupsum/document-viewer/blob/master/pyproject.toml",
+      "technologies": [
+        "CSS",
+        "HTML",
+        "TypeScript"
+      ],
       "version_declared": "0.1.0"
     }
   ],
@@ -633,12 +640,12 @@
     "evidence": [
       {
         "kind": "ssot-registry",
-        "observed_at": "2026-08-03T23:58:12Z",
+        "observed_at": "2026-08-03T23:39:16Z",
         "url": "https://github.com/groupsum/document-viewer/blob/master/.ssot/registry.json"
       },
       {
         "kind": "source",
-        "observed_at": "2026-08-03T22:06:00Z",
+        "observed_at": "2026-08-03T23:39:13Z",
         "url": "https://github.com/groupsum/document-viewer"
       }
     ],
@@ -653,7 +660,7 @@
         "legal_inherits_from": "repository:groupsum/document-viewer",
         "license_expression": "NOASSERTION",
         "license_status": "observed",
-        "observed_at": "2026-08-03T22:06:00Z",
+        "observed_at": "2026-08-03T23:39:13Z",
         "prerelease": false,
         "published_at": "2026-06-15T10:49:47Z",
         "release_kind": "github",
@@ -715,13 +722,12 @@
       "open_issues": 0,
       "packages": 3,
       "related_resources": 0,
-      "relationships": 3,
       "size_kb": 141,
       "stars": 0,
       "watchers": 0
     },
     "name": "document-viewer",
-    "observed_at": "2026-08-03T22:06:00Z",
+    "observed_at": "2026-08-03T23:39:13Z",
     "owner": "groupsum",
     "package_ids": [
       "package:npm:@groupsum/document-viewer:groupsum/document-viewer:packages/document-viewer/package.json",
@@ -732,31 +738,60 @@
       {
         "ecosystem": "npm",
         "id": "package:npm:@groupsum/document-viewer:groupsum/document-viewer:packages/document-viewer/package.json",
+        "last_published_at": "2026-06-15T10:50:00.799Z",
+        "latest_version": "0.1.0",
+        "license_expression": "UNLICENSED",
+        "license_status": "observed",
+        "license_url": "https://github.com/groupsum/document-viewer/blob/master/LICENSE.md",
         "manifest_path": "packages/document-viewer/package.json",
         "name": "@groupsum/document-viewer",
+        "notice_count": 1,
         "package_kind": "published-package",
         "publication_status": "published",
         "published": true,
+        "release_activity": [
+          {
+            "count": 1,
+            "month": "2026-06"
+          }
+        ],
+        "release_count": 1,
         "route": "/catalog/packages/npm/groupsum-document-viewer-f2d5ecc7"
       },
       {
         "ecosystem": "npm",
         "id": "package:npm:document-viewer-workspace:groupsum/document-viewer:package.json",
+        "last_published_at": null,
+        "latest_version": "0.1.0",
+        "license_expression": "NOASSERTION",
+        "license_status": "observed",
+        "license_url": "https://github.com/groupsum/document-viewer/blob/master/LICENSE.md",
         "manifest_path": "package.json",
         "name": "document-viewer-workspace",
+        "notice_count": 1,
         "package_kind": "workspace-project",
         "publication_status": "manifest_private",
         "published": false,
+        "release_activity": [],
+        "release_count": 0,
         "route": "/catalog/packages/npm/document-viewer-workspace-602c9226"
       },
       {
         "ecosystem": "pypi",
         "id": "package:pypi:document-viewer-workspace:groupsum/document-viewer:pyproject.toml",
+        "last_published_at": null,
+        "latest_version": "0.1.0",
+        "license_expression": "NOASSERTION",
+        "license_status": "observed",
+        "license_url": "https://github.com/groupsum/document-viewer/blob/master/LICENSE.md",
         "manifest_path": "pyproject.toml",
         "name": "document-viewer-workspace",
+        "notice_count": 1,
         "package_kind": "package-candidate",
-        "publication_status": "not-confirmed",
+        "publication_status": "registry_not_found",
         "published": false,
+        "release_activity": [],
+        "release_count": 0,
         "route": "/catalog/packages/pypi/document-viewer-workspace-6db51914"
       }
     ],
@@ -890,6 +925,91 @@
             "id": "adr:0619",
             "status": "draft",
             "title": "Content Addressed Governed Source Snapshots"
+          },
+          {
+            "id": "adr:0620",
+            "status": "draft",
+            "title": "Local Evidence Bundles Are Derived Release Artifacts"
+          },
+          {
+            "id": "adr:0621",
+            "status": "draft",
+            "title": "General rules of interpretation govern SSOT meaning"
+          },
+          {
+            "id": "adr:0622",
+            "status": "draft",
+            "title": "Definitions govern SSOT vocabulary"
+          },
+          {
+            "id": "adr:0625",
+            "status": "draft",
+            "title": "Claim Tier Gates Govern Core Promotion"
+          },
+          {
+            "id": "adr:0626",
+            "status": "draft",
+            "title": "Externally Authored Validation Can Satisfy T4"
+          },
+          {
+            "id": "adr:0627",
+            "status": "accepted",
+            "title": "Feature parent links are inventory composition"
+          },
+          {
+            "id": "adr:0628",
+            "status": "draft",
+            "title": "SSOT MCP and CLI surfaces stay in parity"
+          },
+          {
+            "id": "adr:0629",
+            "status": "draft",
+            "title": "SSOT MCP workers may request registry repair authority"
+          },
+          {
+            "id": "adr:0630",
+            "status": "draft",
+            "title": "Scoped maturation claims ignore unrelated blockers"
+          },
+          {
+            "id": "adr:0631",
+            "status": "draft",
+            "title": "MCP mediated upgrade uses the current runtime"
+          },
+          {
+            "id": "adr:0632",
+            "status": "draft",
+            "title": "Targeted repair can proceed with unrelated baseline drift"
+          },
+          {
+            "id": "adr:0633",
+            "status": "accepted",
+            "title": "Public registry save validates before write"
+          },
+          {
+            "id": "adr:0634",
+            "status": "draft",
+            "title": "Proof Graph Is The Canonical Assurance Unit"
+          },
+          {
+            "id": "adr:0635",
+            "status": "draft",
+            "title": "Proof Graph Materialization And Certification Closure"
+          },
+          {
+            "id": "adr:0636",
+            "status": "draft",
+            "title": "Feature create defaults to proof-graph scaffolding"
+          },
+          {
+            "id": "adr:0637",
+            "status": "draft",
+            "title": "Pack schema compatibility is forward-only"
+          },
+          {
+            "id": "adr:0640",
+            "status": "draft",
+            "title": "Evidence Owns Proof Linkage"
           }
         ],
         "boundaries": [
@@ -1013,23 +1133,116 @@
             "id": "spc:0619",
             "status": "draft",
             "title": "Governed Source Snapshot Contract"
+          },
+          {
+            "id": "spc:0620",
+            "status": "draft",
+            "title": "Local Evidence Bundle Contract"
+          },
+          {
+            "id": "spc:0621",
+            "status": "draft",
+            "title": "Output Artifact Manifest Contract"
+          },
+          {
+            "id": "spc:0622",
+            "status": "draft",
+            "title": "Local Release Verification And Gate Contract"
+          },
+          {
+            "id": "spc:0623",
+            "status": "draft",
+            "title": "General rules of interpretation"
+          },
+          {
+            "id": "spc:0624",
+            "status": "draft",
+            "title": "SSOT definitions"
+          },
+          {
+            "id": "spc:0625",
+            "status": "draft",
+            "title": "Claim Tier Gates"
+          },
+          {
+            "id": "spc:0626",
+            "status": "draft",
+            "title": "External Validation Evidence"
+          },
+          {
+            "id": "spc:0627",
+            "status": "accepted",
+            "title": "Feature parent link contract"
+          },
+          {
+            "id": "spc:0628",
+            "status": "accepted",
+            "title": "Feature parent CLI contract"
+          },
+          {
+            "id": "spc:0629",
+            "status": "draft",
+            "title": "SSOT MCP and CLI surface parity contract"
+          },
+          {
+            "id": "spc:0630",
+            "status": "draft",
+            "title": "SSOT MCP registry repair authority"
+          },
+          {
+            "id": "spc:0631",
+            "status": "draft",
+            "title": "Scoped maturation blocker contract"
+          },
+          {
+            "id": "spc:0632",
+            "status": "draft",
+            "title": "MCP upgrade delegation contract"
+          },
+          {
+            "id": "spc:0633",
+            "status": "draft",
+            "title": "Targeted scaffold repair contract"
+          },
+          {
+            "id": "spc:0634",
+            "status": "draft",
+            "title": "Worker actionability and repair loop"
+          },
+          {
+            "id": "spc:0635",
+            "status": "accepted",
+            "title": "Registry save validation contract"
+          },
+          {
+            "id": "spc:0636",
+            "status": "draft",
+            "title": "Proof Graph Assurance Contract"
+          },
+          {
+            "id": "spc:0637",
+            "status": "draft",
+            "title": "Proof Graph Materialization And Certification Flow"
+          },
+          {
+            "id": "spc:0638",
+            "status": "draft",
+            "title": "Feature create default proof scaffold contract"
+          },
+          {
+            "id": "spc:0639",
+            "status": "draft",
+            "title": "Forward-only pack schema compatibility contract"
+          },
+          {
+            "id": "spc:0640",
+            "status": "draft",
+            "title": "Evidence Centered Proof Link Contract"
           }
         ],
         "tests": []
       },
-      "inventory_truncated": {
-        "adrs": 17,
-        "boundaries": 0,
-        "claims": 0,
-        "evidence": 0,
-        "features": 0,
-        "issues": 0,
-        "profiles": 0,
-        "releases": 0,
-        "specs": 21,
-        "tests": 0
-      },
-      "observed_at": "2026-08-03T23:58:12Z",
+      "observed_at": "2026-08-03T23:39:16Z",
       "present": true,
       "raw_url": "https://raw.githubusercontent.com/groupsum/document-viewer/master/.ssot/registry.json",
       "registry_url": "https://github.com/groupsum/document-viewer/blob/master/.ssot/registry.json",

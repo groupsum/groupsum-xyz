@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-03T22:06:00Z",
+  "generated_at": "2026-08-03T23:39:08Z",
   "packages": [
     {
       "claim_boundary": "Publication is reported only when confirmed by the named public registry.",
@@ -37,7 +37,7 @@
       "evidence": [
         {
           "kind": "registry",
-          "observed_at": "2026-08-03T22:06:00Z",
+          "observed_at": "2026-08-03T23:39:08Z",
           "url": "https://www.npmjs.com/package/@mdwrk/mdwrkcom-content-pack"
         }
       ],
@@ -51,24 +51,7 @@
           "kind": "license-expression",
           "name": "Package manifest license",
           "scope": "direct",
-          "url": "https://github.com/groupsum/mdwrkcom-content-pack/blob/HEAD/packages/content/mdwrkcom-content-pack/package.json"
-        },
-        {
-          "evidence_type": "npm.registry",
-          "expression": "Apache-2.0",
-          "kind": "license-expression",
-          "name": "Registry license metadata",
-          "scope": "direct",
-          "url": "https://www.npmjs.com/package/@mdwrk/mdwrkcom-content-pack"
-        },
-        {
-          "evidence_type": "github.repository.license",
-          "expression": "Apache-2.0",
-          "kind": "license-expression",
-          "name": "GitHub detected license",
-          "path": null,
-          "scope": "inherited",
-          "url": "https://github.com/groupsum/mdwrkcom-content-pack"
+          "url": "https://github.com/groupsum/mdwrkcom-content-pack/blob/master/packages/content/mdwrkcom-content-pack/package.json"
         },
         {
           "evidence_type": "repository.tree",
@@ -86,7 +69,7 @@
       "license_status": "observed",
       "manifest_path": "packages/content/mdwrkcom-content-pack/package.json",
       "name": "@mdwrk/mdwrkcom-content-pack",
-      "observed_at": "2026-08-03T22:06:00Z",
+      "observed_at": "2026-08-03T23:39:08Z",
       "owner": "groupsum",
       "package_kind": "published-package",
       "private": false,
@@ -107,7 +90,7 @@
           "legal_inherits_from": "package:npm:@mdwrk/mdwrkcom-content-pack:groupsum/mdwrkcom-content-pack:packages/content/mdwrkcom-content-pack/package.json",
           "license_expression": "Apache-2.0",
           "license_status": "observed",
-          "observed_at": "2026-08-03T22:06:00Z",
+          "observed_at": "2026-08-03T23:39:08Z",
           "published_at": "2026-05-18T16:40:27.385Z",
           "release_kind": "npm",
           "route": "/catalog/releases/npm/mdwrk-mdwrkcom-content-pack-7b17bb035e",
@@ -121,7 +104,7 @@
           "legal_inherits_from": "package:npm:@mdwrk/mdwrkcom-content-pack:groupsum/mdwrkcom-content-pack:packages/content/mdwrkcom-content-pack/package.json",
           "license_expression": "Apache-2.0",
           "license_status": "observed",
-          "observed_at": "2026-08-03T22:06:00Z",
+          "observed_at": "2026-08-03T23:39:08Z",
           "published_at": "2026-05-16T08:01:04.283Z",
           "release_kind": "npm",
           "route": "/catalog/releases/npm/mdwrk-mdwrkcom-content-pack-eb87aa2687",
@@ -132,7 +115,12 @@
       "repository": "groupsum/mdwrkcom-content-pack",
       "reviewed": false,
       "route": "/catalog/packages/npm/mdwrk-mdwrkcom-content-pack-fc2ad22e",
-      "source_url": "https://github.com/groupsum/mdwrkcom-content-pack/blob/HEAD/packages/content/mdwrkcom-content-pack/package.json",
+      "source_url": "https://github.com/groupsum/mdwrkcom-content-pack/blob/master/packages/content/mdwrkcom-content-pack/package.json",
+      "technologies": [
+        "JavaScript",
+        "TypeScript",
+        "XSLT"
+      ],
       "version_declared": "0.1.10"
     },
     {
@@ -170,8 +158,8 @@
       "evidence": [
         {
           "kind": "source",
-          "observed_at": "2026-08-03T22:06:00Z",
-          "url": "https://github.com/groupsum/mdwrkcom-content-pack/blob/HEAD/package.json"
+          "observed_at": "2026-08-03T23:39:08Z",
+          "url": "https://github.com/groupsum/mdwrkcom-content-pack/blob/master/package.json"
         }
       ],
       "id": "package:npm:mdwrkcom-content-pack:groupsum/mdwrkcom-content-pack:package.json",
@@ -184,16 +172,7 @@
           "kind": "license-expression",
           "name": "Package manifest license",
           "scope": "direct",
-          "url": "https://github.com/groupsum/mdwrkcom-content-pack/blob/HEAD/package.json"
-        },
-        {
-          "evidence_type": "github.repository.license",
-          "expression": "Apache-2.0",
-          "kind": "license-expression",
-          "name": "GitHub detected license",
-          "path": null,
-          "scope": "inherited",
-          "url": "https://github.com/groupsum/mdwrkcom-content-pack"
+          "url": "https://github.com/groupsum/mdwrkcom-content-pack/blob/master/package.json"
         },
         {
           "evidence_type": "repository.tree",
@@ -211,7 +190,7 @@
       "license_status": "observed",
       "manifest_path": "package.json",
       "name": "mdwrkcom-content-pack",
-      "observed_at": "2026-08-03T22:06:00Z",
+      "observed_at": "2026-08-03T23:39:08Z",
       "owner": "groupsum",
       "package_kind": "workspace-project",
       "private": true,
@@ -229,7 +208,12 @@
       "repository": "groupsum/mdwrkcom-content-pack",
       "reviewed": false,
       "route": "/catalog/packages/npm/mdwrkcom-content-pack-ecc5c6e7",
-      "source_url": "https://github.com/groupsum/mdwrkcom-content-pack/blob/HEAD/package.json",
+      "source_url": "https://github.com/groupsum/mdwrkcom-content-pack/blob/master/package.json",
+      "technologies": [
+        "JavaScript",
+        "TypeScript",
+        "XSLT"
+      ],
       "version_declared": "0.1.0"
     }
   ],
@@ -373,7 +357,7 @@
     "evidence": [
       {
         "kind": "source",
-        "observed_at": "2026-08-03T22:06:00Z",
+        "observed_at": "2026-08-03T23:39:19Z",
         "url": "https://github.com/groupsum/mdwrkcom-content-pack"
       }
     ],
@@ -425,13 +409,12 @@
       "open_issues": 0,
       "packages": 2,
       "related_resources": 12,
-      "relationships": 14,
       "size_kb": 7493,
       "stars": 0,
       "watchers": 0
     },
     "name": "mdwrkcom-content-pack",
-    "observed_at": "2026-08-03T22:06:00Z",
+    "observed_at": "2026-08-03T23:39:19Z",
     "owner": "groupsum",
     "package_ids": [
       "package:npm:@mdwrk/mdwrkcom-content-pack:groupsum/mdwrkcom-content-pack:packages/content/mdwrkcom-content-pack/package.json",
@@ -441,21 +424,42 @@
       {
         "ecosystem": "npm",
         "id": "package:npm:@mdwrk/mdwrkcom-content-pack:groupsum/mdwrkcom-content-pack:packages/content/mdwrkcom-content-pack/package.json",
+        "last_published_at": "2026-05-18T16:40:27.385Z",
+        "latest_version": "0.1.6",
+        "license_expression": "Apache-2.0",
+        "license_status": "observed",
+        "license_url": "https://github.com/groupsum/mdwrkcom-content-pack/blob/master/LICENSE",
         "manifest_path": "packages/content/mdwrkcom-content-pack/package.json",
         "name": "@mdwrk/mdwrkcom-content-pack",
+        "notice_count": 0,
         "package_kind": "published-package",
         "publication_status": "published",
         "published": true,
+        "release_activity": [
+          {
+            "count": 2,
+            "month": "2026-05"
+          }
+        ],
+        "release_count": 2,
         "route": "/catalog/packages/npm/mdwrk-mdwrkcom-content-pack-fc2ad22e"
       },
       {
         "ecosystem": "npm",
         "id": "package:npm:mdwrkcom-content-pack:groupsum/mdwrkcom-content-pack:package.json",
+        "last_published_at": null,
+        "latest_version": "0.1.0",
+        "license_expression": "Apache-2.0",
+        "license_status": "observed",
+        "license_url": "https://github.com/groupsum/mdwrkcom-content-pack/blob/master/LICENSE",
         "manifest_path": "package.json",
         "name": "mdwrkcom-content-pack",
+        "notice_count": 0,
         "package_kind": "workspace-project",
         "publication_status": "manifest_private",
         "published": false,
+        "release_activity": [],
+        "release_count": 0,
         "route": "/catalog/packages/npm/mdwrkcom-content-pack-ecc5c6e7"
       }
     ],
@@ -468,7 +472,7 @@
         "legal_evidence": [],
         "legal_inherits_from": "repository:groupsum/mdwrkcom-content-pack",
         "name": "packages/content/mdwrkcom-content-pack/content/pages/docs/extensions.md",
-        "observed_at": "2026-08-03T22:06:00Z",
+        "observed_at": "2026-08-03T23:39:19Z",
         "path": "packages/content/mdwrkcom-content-pack/content/pages/docs/extensions.md",
         "repository": "groupsum/mdwrkcom-content-pack",
         "repository_route": "/catalog/repositories/groupsum/mdwrkcom-content-pack",
@@ -482,7 +486,7 @@
         "legal_evidence": [],
         "legal_inherits_from": "repository:groupsum/mdwrkcom-content-pack",
         "name": "packages/content/mdwrkcom-content-pack/content/pages/docs/quickstart.md",
-        "observed_at": "2026-08-03T22:06:00Z",
+        "observed_at": "2026-08-03T23:39:19Z",
         "path": "packages/content/mdwrkcom-content-pack/content/pages/docs/quickstart.md",
         "repository": "groupsum/mdwrkcom-content-pack",
         "repository_route": "/catalog/repositories/groupsum/mdwrkcom-content-pack",
@@ -496,7 +500,7 @@
         "legal_evidence": [],
         "legal_inherits_from": "repository:groupsum/mdwrkcom-content-pack",
         "name": "packages/content/mdwrkcom-content-pack/content/pages/docs/theme-packs.md",
-        "observed_at": "2026-08-03T22:06:00Z",
+        "observed_at": "2026-08-03T23:39:19Z",
         "path": "packages/content/mdwrkcom-content-pack/content/pages/docs/theme-packs.md",
         "repository": "groupsum/mdwrkcom-content-pack",
         "repository_route": "/catalog/repositories/groupsum/mdwrkcom-content-pack",
@@ -510,7 +514,7 @@
         "legal_evidence": [],
         "legal_inherits_from": "repository:groupsum/mdwrkcom-content-pack",
         "name": "packages/content/mdwrkcom-content-pack/content/pages/es/docs/quickstart.md",
-        "observed_at": "2026-08-03T22:06:00Z",
+        "observed_at": "2026-08-03T23:39:19Z",
         "path": "packages/content/mdwrkcom-content-pack/content/pages/es/docs/quickstart.md",
         "repository": "groupsum/mdwrkcom-content-pack",
         "repository_route": "/catalog/repositories/groupsum/mdwrkcom-content-pack",
@@ -524,7 +528,7 @@
         "legal_evidence": [],
         "legal_inherits_from": "repository:groupsum/mdwrkcom-content-pack",
         "name": "packages/content/mdwrkcom-content-pack/data/markdown/docs/authoring",
-        "observed_at": "2026-08-03T22:06:00Z",
+        "observed_at": "2026-08-03T23:39:19Z",
         "path": "packages/content/mdwrkcom-content-pack/data/markdown/docs/authoring",
         "repository": "groupsum/mdwrkcom-content-pack",
         "repository_route": "/catalog/repositories/groupsum/mdwrkcom-content-pack",
@@ -538,7 +542,7 @@
         "legal_evidence": [],
         "legal_inherits_from": "repository:groupsum/mdwrkcom-content-pack",
         "name": "packages/content/mdwrkcom-content-pack/data/markdown/docs/comparisons",
-        "observed_at": "2026-08-03T22:06:00Z",
+        "observed_at": "2026-08-03T23:39:19Z",
         "path": "packages/content/mdwrkcom-content-pack/data/markdown/docs/comparisons",
         "repository": "groupsum/mdwrkcom-content-pack",
         "repository_route": "/catalog/repositories/groupsum/mdwrkcom-content-pack",
@@ -552,7 +556,7 @@
         "legal_evidence": [],
         "legal_inherits_from": "repository:groupsum/mdwrkcom-content-pack",
         "name": "packages/content/mdwrkcom-content-pack/data/markdown/docs/extensions",
-        "observed_at": "2026-08-03T22:06:00Z",
+        "observed_at": "2026-08-03T23:39:19Z",
         "path": "packages/content/mdwrkcom-content-pack/data/markdown/docs/extensions",
         "repository": "groupsum/mdwrkcom-content-pack",
         "repository_route": "/catalog/repositories/groupsum/mdwrkcom-content-pack",
@@ -566,7 +570,7 @@
         "legal_evidence": [],
         "legal_inherits_from": "repository:groupsum/mdwrkcom-content-pack",
         "name": "packages/content/mdwrkcom-content-pack/data/markdown/docs/getting-started",
-        "observed_at": "2026-08-03T22:06:00Z",
+        "observed_at": "2026-08-03T23:39:19Z",
         "path": "packages/content/mdwrkcom-content-pack/data/markdown/docs/getting-started",
         "repository": "groupsum/mdwrkcom-content-pack",
         "repository_route": "/catalog/repositories/groupsum/mdwrkcom-content-pack",
@@ -580,7 +584,7 @@
         "legal_evidence": [],
         "legal_inherits_from": "repository:groupsum/mdwrkcom-content-pack",
         "name": "packages/content/mdwrkcom-content-pack/data/markdown/docs/github-sync.md",
-        "observed_at": "2026-08-03T22:06:00Z",
+        "observed_at": "2026-08-03T23:39:19Z",
         "path": "packages/content/mdwrkcom-content-pack/data/markdown/docs/github-sync.md",
         "repository": "groupsum/mdwrkcom-content-pack",
         "repository_route": "/catalog/repositories/groupsum/mdwrkcom-content-pack",
@@ -594,7 +598,7 @@
         "legal_evidence": [],
         "legal_inherits_from": "repository:groupsum/mdwrkcom-content-pack",
         "name": "packages/content/mdwrkcom-content-pack/data/markdown/docs/product",
-        "observed_at": "2026-08-03T22:06:00Z",
+        "observed_at": "2026-08-03T23:39:19Z",
         "path": "packages/content/mdwrkcom-content-pack/data/markdown/docs/product",
         "repository": "groupsum/mdwrkcom-content-pack",
         "repository_route": "/catalog/repositories/groupsum/mdwrkcom-content-pack",
@@ -608,7 +612,7 @@
         "legal_evidence": [],
         "legal_inherits_from": "repository:groupsum/mdwrkcom-content-pack",
         "name": "packages/content/mdwrkcom-content-pack/data/markdown/docs/usage",
-        "observed_at": "2026-08-03T22:06:00Z",
+        "observed_at": "2026-08-03T23:39:19Z",
         "path": "packages/content/mdwrkcom-content-pack/data/markdown/docs/usage",
         "repository": "groupsum/mdwrkcom-content-pack",
         "repository_route": "/catalog/repositories/groupsum/mdwrkcom-content-pack",
@@ -622,7 +626,7 @@
         "legal_evidence": [],
         "legal_inherits_from": "repository:groupsum/mdwrkcom-content-pack",
         "name": "mdwrkcom-content-pack",
-        "observed_at": "2026-08-03T22:06:00Z",
+        "observed_at": "2026-08-03T23:39:19Z",
         "path": null,
         "repository": "groupsum/mdwrkcom-content-pack",
         "repository_route": "/catalog/repositories/groupsum/mdwrkcom-content-pack",
@@ -641,7 +645,7 @@
       "coverage": {},
       "governed": false,
       "observation_status": "not_found",
-      "observed_at": "2026-08-03T23:58:12Z",
+      "observed_at": "2026-08-03T23:39:21Z",
       "present": false,
       "registry_url": null,
       "status_counts": {},

@@ -1,5 +1,5 @@
 import React, { useEffect, useMemo, useState } from "react";
-import { ArrowLeft, ArrowRight, ExternalLink, Package, Search } from "lucide-react";
+import { ArrowLeft, ArrowRight, Box, Building2, CheckCircle2, ExternalLink, FileCode2, GitBranch, Info, Layers, Package, Search, ShieldCheck } from "lucide-react";
 import {
   PackageEvidence,
   RecordCollectionPageModel,
@@ -12,7 +12,8 @@ import {
 import { portfolioEntities } from "../data/entities";
 import { PortfolioEntity } from "../types";
 import { RepositorySignalStrip } from "./RepositorySignals";
-import { EntityOwnership, EntityRelationshipRows } from "./EntityIdentity";
+import { EntityOwnership } from "./EntityIdentity";
+import { CollectionHeader, ContextRailCard, MemberRowCard, RecordIdentityCard, SurfaceCard, factIcons } from "./CatalogVisuals";
 
 type Navigate = (path: string) => void;
 type CollectionMode = "products" | "portfolio";
@@ -166,35 +167,21 @@ function evidenceSignals(repository: RepositoryEvidence): RepositorySignals {
 
 function ProductRow({ record, onNavigate }: { record: CollectionRecord; onNavigate: Navigate }) {
   const path = collectionRecordPath(record);
-  return (
-    <article className="group border-b border-[var(--color-border-soft)] first:border-t">
-      <a
-        href={path}
-        onClick={(event) => { event.preventDefault(); onNavigate(path); }}
-        className="block py-6 sm:py-7 focus:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-4 focus-visible:ring-offset-canvas"
-      >
-        <div className="sm:grid sm:grid-cols-[10rem_minmax(0,1fr)_auto] sm:gap-6 sm:items-start">
-          <div className="flex flex-wrap items-center gap-2 text-[10px] font-mono uppercase tracking-wide text-ink-muted">
-            <span className="text-accent font-semibold">{humanize(record.kind)}</span>
-            <span>{humanize(record.maturity)}</span>
-          </div>
-          <div className="mt-2 sm:mt-0 min-w-0">
-            <h2 className="font-serif text-xl sm:text-2xl font-bold text-ink group-hover:text-accent transition-colors">{record.title}</h2>
-            <p className="text-sm text-ink-muted leading-relaxed mt-1 max-w-3xl">{record.summary}</p>
-            <div className="flex flex-wrap gap-x-4 gap-y-1 mt-3 text-[10px] font-mono text-ink-muted">
-              <span>{organizationNames[record.organization] || humanize(record.organization)}</span>
-              {record.repositoryCount > 0 && <span>{record.repositoryCount} repos</span>}
-              {record.packageCount > 0 && <span>{record.packageCount} packages</span>}
-              {record.resourceCount > 0 && <span>{record.resourceCount} resources</span>}
-            </div>
-          </div>
-          <span className="mt-4 sm:mt-1 inline-flex items-center gap-1 text-xs font-mono font-semibold text-accent">
-            View record <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-0.5" />
-          </span>
-        </div>
-      </a>
-    </article>
-  );
+  return <MemberRowCard
+    title={record.title}
+    summary={record.summary}
+    eyebrow={humanize(record.kind)}
+    owner={organizationNames[record.organization] || humanize(record.organization)}
+    route={path}
+    onNavigate={onNavigate}
+    Icon={record.recordType === "portfolio" ? Layers : Box}
+    pills={[humanize(record.maturity)]}
+    facts={[
+      { label: "Repositories", value: record.repositoryCount },
+      { label: "Packages", value: record.packageCount },
+      { label: "Resources", value: record.resourceCount },
+    ]}
+  />;
 }
 
 function staticCollectionRecord(entity: PortfolioEntity): CollectionRecord {
@@ -289,7 +276,7 @@ export function ProductCollectionPage({
     return baseRecords
       .filter((record) => owner === "all" || record.organization === owner)
       .filter((record) => kind === "all" || record.kind === kind)
-      .filter((record) => !normalized || [record.title, record.summary, ...record.technologies].join(" ").toLowerCase().includes(normalized))
+      .filter((record) => !normalized || [record.title, record.summary, ...record.audience].join(" ").toLowerCase().includes(normalized))
       .sort((left, right) => Number(right.featured) - Number(left.featured) || left.title.localeCompare(right.title));
   }, [baseRecords, kind, owner, query]);
   const productCount = baseRecords.filter((record) => record.kind === "product" || record.kind === "suite").length;
@@ -304,28 +291,30 @@ export function ProductCollectionPage({
 
   return (
     <div className="max-w-[var(--content-max)] mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-14 space-y-10">
-      <header className="max-w-4xl space-y-5">
-        <button onClick={() => organization ? onNavigate("/products") : onNavigate("/")} className="text-xs font-mono text-accent hover:underline inline-flex items-center gap-1 cursor-pointer">
-          <ArrowLeft className="w-3.5 h-3.5" /> {organization ? "All products" : "GroupSum home"}
-        </button>
-        <div className="space-y-3">
-          <span className="text-xs font-mono uppercase tracking-wider text-accent font-bold">{mode === "products" ? "Product collection" : "Reviewed portfolio"}</span>
-          <h1 className="font-serif text-4xl sm:text-5xl font-bold tracking-tight text-ink">{title}</h1>
-          <p className="text-base sm:text-lg text-ink-muted leading-relaxed max-w-3xl">{description}</p>
-        </div>
-        <dl className="flex flex-wrap gap-x-8 gap-y-3 border-y border-[var(--color-border-soft)] py-4">
-          <div><dt className="text-[10px] font-mono uppercase text-ink-muted">Visible records</dt><dd className="font-serif text-2xl font-bold text-ink">{baseRecords.length}</dd></div>
-          <div><dt className="text-[10px] font-mono uppercase text-ink-muted">Products and suites</dt><dd className="font-serif text-2xl font-bold text-ink">{productCount}</dd></div>
-          <div><dt className="text-[10px] font-mono uppercase text-ink-muted">Organizations</dt><dd className="font-serif text-2xl font-bold text-ink">{new Set(baseRecords.map((record) => record.organization)).size}</dd></div>
-        </dl>
-      </header>
+      <button onClick={() => organization ? onNavigate("/products") : onNavigate("/")} className="text-xs font-mono text-accent hover:underline inline-flex items-center gap-1 cursor-pointer">
+        <ArrowLeft className="w-3.5 h-3.5" /> {organization ? "All products" : "GroupSum home"}
+      </button>
+      <CollectionHeader
+        eyebrow={mode === "products" ? "Primary product evaluation collection" : "Reviewed portfolio collection"}
+        title={title}
+        description={description}
+        observedAt={collectionModel?.generated_at ? formatObserved(collectionModel.generated_at) : undefined}
+        exportHref="/catalog/catalog.json"
+        facts={[
+          { label: "Visible records", value: baseRecords.length, icon: mode === "products" ? Box : Layers },
+          { label: "Products & suites", value: productCount, icon: Box },
+          { label: "Organizations", value: new Set(baseRecords.map((record) => record.organization)).size, icon: Building2 },
+          { label: "Repositories", value: baseRecords.reduce((total, record) => total + record.repositoryCount, 0), icon: GitBranch },
+          { label: "Packages", value: baseRecords.reduce((total, record) => total + record.packageCount, 0), icon: Package },
+        ]}
+      />
 
       <section className="space-y-5" aria-label="Collection filters">
         <div className="flex flex-col lg:flex-row lg:items-center gap-4">
           <label className="relative block flex-1 max-w-2xl">
             <span className="sr-only">Search product and portfolio records</span>
             <Search className="w-4 h-4 text-ink-muted absolute left-3 top-3" />
-            <input value={query} onChange={(event) => setQuery(event.target.value)} placeholder="Search products, capabilities, and technologies" className="w-full pl-10 pr-4 py-2.5 bg-[var(--color-surface)] border border-[var(--color-border-muted)] rounded-[var(--radius-sm)] text-sm text-ink focus:outline-none focus:border-accent" />
+            <input value={query} onChange={(event) => setQuery(event.target.value)} placeholder="Search products, capabilities, and audiences" className="w-full pl-10 pr-4 py-2.5 bg-[var(--color-surface)] border border-[var(--color-border-muted)] rounded-[var(--radius-sm)] text-sm text-ink focus:outline-none focus:border-accent" />
           </label>
           {!organization && <div className="flex flex-wrap gap-2" aria-label="Filter by organization">
             {["all", "groupsum", "tigrbl", "swarmauri"].map((value) => <button key={value} onClick={() => setOwner(value)} aria-pressed={owner === value} className={`px-3 py-2 text-xs font-mono rounded-[var(--radius-sm)] border cursor-pointer ${owner === value ? "bg-accent text-white border-accent" : "text-ink-muted bg-[var(--color-surface)] border-[var(--color-border-soft)] hover:border-accent"}`}>{value === "all" ? "All organizations" : organizationNames[value]}</button>)}
@@ -338,7 +327,7 @@ export function ProductCollectionPage({
 
       <section aria-live="polite" aria-label="Product and portfolio records">
         <p className="text-xs font-mono text-ink-muted mb-3">{filtered.length} matching records</p>
-        {filtered.length > 0 ? filtered.map((record) => <ProductRow key={record.id} record={record} onNavigate={onNavigate} />) : <div className="border-y border-[var(--color-border-soft)] py-12 text-sm text-ink-muted">No records match these filters.</div>}
+        {filtered.length > 0 ? <div className="space-y-3">{filtered.map((record) => <ProductRow key={record.id} record={record} onNavigate={onNavigate} />)}</div> : <div className="rounded-[var(--radius-md)] border border-[var(--color-border-soft)] bg-[var(--color-surface)] py-12 text-center text-sm text-ink-muted">No records match these filters.</div>}
       </section>
     </div>
   );
@@ -349,12 +338,13 @@ function DetailRows({ rows }: { rows: Array<[string, React.ReactNode]> }) {
 }
 
 function ProductSection({ id, title, intro, children }: { id?: string; title: string; intro?: string; children: React.ReactNode }) {
-  return <section id={id} className="scroll-mt-24 border-t border-[var(--color-border-soft)] pt-8 space-y-4"><div className="max-w-3xl space-y-1"><h2 className="font-serif text-2xl font-bold text-ink">{title}</h2>{intro && <p className="text-sm text-ink-muted leading-relaxed">{intro}</p>}</div>{children}</section>;
+  const icons = { overview: CheckCircle2, implementation: GitBranch, governance: ShieldCheck, packages: Package, releases: ArrowRight, dependencies: Layers, resources: FileCode2, evidence: Info } as const;
+  return <SurfaceCard id={id} title={title} intro={intro} Icon={id ? icons[id as keyof typeof icons] || CheckCircle2 : CheckCircle2}>{children}</SurfaceCard>;
 }
 
 function EvidenceMetrics({ bundle }: { bundle: ProductEvidenceBundle }) {
   const values = [
-    ["Attached repositories", bundle.repository.repository_count || 1],
+    ["Attached repositories", bundle.repository.repository_count || 0],
     ["Packages", bundle.packages.length],
     ["Deployment records", bundle.repository.deployment_count || 0],
     ["Related resources", bundle.repository.related_resources?.length || 0],
@@ -381,8 +371,8 @@ function SsotRegistryReport({ registries }: { registries: ProductPageModel["gove
         <DetailRows rows={[
           ["Schema", registry.schema_version || "Not recorded"],
           ["Observed", registry.observed_at ? formatObserved(registry.observed_at, true) : "Not recorded"],
-          ["Registry inventory", ssotInventoryOrder.map((key) => `${humanize(key)} ${Number(counts[key] || 0).toLocaleString()}`).join(" Â· ")],
-          ["Claim evidence coverage", `${Number(coverage.claims_with_evidence || 0).toLocaleString()} linked Â· ${Number(coverage.claims_without_evidence || 0).toLocaleString()} without evidence Â· ${Number(coverage.claims_with_tests || 0).toLocaleString()} linked to tests`],
+          ["Registry inventory", ssotInventoryOrder.map((key) => `${humanize(key)} ${Number(counts[key] || 0).toLocaleString()}`).join(" · ")],
+          ["Claim evidence coverage", `${Number(coverage.claims_with_evidence || 0).toLocaleString()} linked · ${Number(coverage.claims_without_evidence || 0).toLocaleString()} without evidence · ${Number(coverage.claims_with_tests || 0).toLocaleString()} linked to tests`],
         ]} />
         {claims.length > 0 && <div><h4 className="text-[10px] font-mono uppercase text-ink font-semibold mb-2">Registry claims</h4><ul className="divide-y divide-[var(--color-border-soft)] border-y border-[var(--color-border-soft)]">{claims.slice(0, 20).map((claim) => <li key={claim.id} className="py-2 text-xs text-ink"><span className="font-mono text-accent">{claim.id}</span>{claim.statement || claim.title || claim.name ? <span className="text-ink-muted"> · {claim.statement || claim.title || claim.name}</span> : null}</li>)}</ul></div>}
         {evidence.length > 0 && <div><h4 className="text-[10px] font-mono uppercase text-ink font-semibold mb-2">Registry evidence</h4><ul className="divide-y divide-[var(--color-border-soft)] border-y border-[var(--color-border-soft)]">{evidence.slice(0, 20).map((item) => <li key={item.id} className="py-2 text-xs text-ink"><span className="font-mono text-accent">{item.id}</span>{item.title || item.name ? <span className="text-ink-muted"> · {item.title || item.name}</span> : null}</li>)}</ul></div>}
@@ -456,14 +446,18 @@ export function ProductRecordPage({
     pageModel?.taxonomies[taxonomy]?.map((item) => item.label) || fallback;
   const audience = taxonomyLabels("audience", entity?.audience || []);
   const ecosystems = taxonomyLabels("ecosystem", entity?.ecosystem.map(humanize) || []);
-  const technologies = taxonomyLabels("technology", entity?.technologies || []);
-  const languages = taxonomyLabels("language", []);
-  const evidenceRows = pageModel?.editorial.evidence.map((item) => ({
+  const recordPath = recordType === "product" ? productRecordPath(slug) : portfolioRecordPath(slug);
+  const isSelfLink = (value?: string) => {
+    if (!value) return false;
+    try { return new URL(value, "https://groupsum.xyz").pathname.replace(/\/+$/, "") === recordPath.replace(/\/+$/, ""); }
+    catch { return false; }
+  };
+  const evidenceRows = (pageModel?.editorial.evidence.map((item) => ({
     label: String(item.title || item.evidence_type || "Observed evidence"),
     checkedAt: String(item.observed_at || pageModel.generated_at),
     url: item.source_url ? String(item.source_url) : undefined,
     rootedInSsot: Boolean(item.rooted_in_ssot),
-  })) || entity?.evidence.map((item) => ({ ...item, url: undefined })) || [];
+  })) || entity?.evidence.map((item) => ({ ...item, url: undefined })) || []).map((item) => isSelfLink(item.url) ? { ...item, url: undefined } : item);
   const limitationRows = pageModel?.editorial.limitations.map((item) =>
     String(item.description || item.title || "Limitation not described"),
   ) || entity?.limitations || [];
@@ -485,45 +479,60 @@ export function ProductRecordPage({
   const dependencyGroups = packages.filter((pkg) => pkg.dependency_summary.edge_count > 0 || pkg.dependent_summary.edge_count > 0);
   const ssotRegistries = pageModel?.governance.repositories || [];
   const claims = pageModel?.editorial.claims || [];
+  const resourceCount = pageModel?.implementation.resources.length || bundle?.repository.related_resources?.length || 0;
+  const recordIcon = recordType === "portfolio" ? Layers : Box;
 
   return (
     <article className="max-w-[var(--content-max)] min-w-0 mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-14 space-y-10 overflow-x-clip">
-      <header className="max-w-5xl min-w-0 space-y-6">
-        <button onClick={() => onNavigate(recordType === "product" ? `/products/${recordOrganization}` : "/portfolio")} className="text-xs font-mono text-accent hover:underline inline-flex items-center gap-1 cursor-pointer"><ArrowLeft className="w-3.5 h-3.5" /> {recordType === "product" ? `${organizationNames[recordOrganization] || humanize(recordOrganization)} products` : "Portfolio collection"}</button>
-        <div className="space-y-3">
-          <span className="text-xs font-mono uppercase tracking-wider text-accent font-bold">{pageModel?.graph?.entity.type_label || humanize(displayKind)} record</span>
-          <h1 className="font-serif text-4xl sm:text-6xl font-bold tracking-tight text-ink">{displayName}</h1>
-          <p className="text-lg sm:text-xl text-ink-muted leading-relaxed max-w-4xl break-words">{summary}</p>
-        </div>
-        <div className="flex flex-wrap items-center gap-3">
-          <span className="px-2.5 py-1 border border-[var(--color-border-soft)] rounded text-xs font-mono text-ink">{humanize(maturity)}</span>
-          {sourceUrl && <a href={sourceUrl} target="_blank" rel="noreferrer" className="px-4 py-2 bg-accent text-white rounded-[var(--radius-sm)] text-xs font-mono font-semibold inline-flex items-center gap-1">{primaryLink?.label || "Public source"}<ExternalLink className="w-3.5 h-3.5" /></a>}
-          <button onClick={() => onNavigate("/contact")} className="px-4 py-2 border border-[var(--color-border-muted)] rounded-[var(--radius-sm)] text-xs font-mono font-semibold text-ink hover:border-accent cursor-pointer">Discuss this product</button>
-        </div>
-        <EntityOwnership graph={pageModel?.graph} onNavigate={onNavigate} />
-      </header>
+      <button onClick={() => onNavigate(recordType === "product" ? `/products/${recordOrganization}` : "/portfolio")} className="text-xs font-mono text-accent hover:underline inline-flex items-center gap-1 cursor-pointer"><ArrowLeft className="w-3.5 h-3.5" /> {recordType === "product" ? `${organizationNames[recordOrganization] || humanize(recordOrganization)} products` : "Portfolio collection"}</button>
+      <RecordIdentityCard
+        eyebrow={`${pageModel?.graph?.entity.type_label || humanize(displayKind)} record`}
+        title={displayName}
+        summary={summary}
+        Icon={recordIcon}
+        pills={[{ label: humanize(maturity), tone: "accent" }]}
+        actions={<>{sourceUrl && <a href={sourceUrl} target="_blank" rel="noreferrer" className="inline-flex min-h-10 items-center gap-1 rounded-[var(--radius-sm)] bg-accent px-4 text-xs font-mono font-semibold text-white hover:bg-accent-hover">{primaryLink?.label || "Public source"}<ExternalLink className="h-3.5 w-3.5" /></a>}<button onClick={() => onNavigate("/contact")} className="min-h-10 rounded-[var(--radius-sm)] border border-[var(--color-border-muted)] px-4 text-xs font-mono font-semibold text-ink hover:border-accent cursor-pointer">Discuss this product</button></>}
+        facts={[
+          { label: "Owner org", value: organizationNames[recordOrganization] || humanize(recordOrganization), icon: Building2 },
+          { label: "Audience", value: audience.slice(0, 2).join(" / ") || "Not classified", icon: factIcons.owner },
+          { label: "Repositories", value: repositories.length, icon: GitBranch },
+          { label: "Packages", value: packages.length, icon: Package },
+          { label: "Typed resources", value: resourceCount, icon: FileCode2 },
+        ]}
+      />
 
       <nav aria-label="Product record sections" className="sticky top-16 z-20 bg-canvas/95 backdrop-blur border-y border-[var(--color-border-soft)] py-3 flex flex-wrap gap-x-5 gap-y-2 text-xs font-mono">
         {[['overview','Overview'],['implementation','Implementation'],['governance','SSOT governance'],['packages','Packages'],['releases','Releases'],['dependencies','Dependencies'],['resources','Related resources'],['evidence','Evidence']].map(([id, label]) => <a key={id} href={`#${id}`} className="text-ink-muted hover:text-accent">{label}</a>)}
       </nav>
 
-      <div className="lg:grid lg:grid-cols-[17rem_minmax(0,1fr)] lg:gap-12 items-start">
-        <aside className="lg:sticky lg:top-32 space-y-5 mb-10 lg:mb-0">
-          <h2 className="font-serif text-xl font-bold text-ink">Product profile</h2>
-          <DetailRows rows={[
-            ["Audience", audience.join(", ") || "Not classified"],
-            ["Record type", humanize(displayKind)],
-            ["Maturity", humanize(maturity)],
-            ["Ecosystem", ecosystems.join(", ") || "Not classified"],
-            ["Technologies", technologies.join(", ") || "Not classified"],
-            ["Languages", languages.join(", ") || "Not observed"],
-          ]} />
+      <div className="grid grid-cols-1 items-start gap-8 lg:grid-cols-12">
+        <aside className="space-y-6 lg:order-2 lg:col-span-4 lg:sticky lg:top-32">
+          <ContextRailCard title="Evidence & provenance boundary" Icon={ShieldCheck}>
+            <div className="space-y-3 text-xs text-ink-muted">
+              <p><strong className="text-ink">Evidence state:</strong> {evidenceState === "ready" ? "Observed and source-backed" : humanize(evidenceState)}</p>
+              <p><strong className="text-ink">Last observed:</strong> {formatObserved(pageModel?.generated_at || bundle?.generated_at || new Date(0).toISOString(), true)} UTC</p>
+              {claimBoundary && <div className="rounded-[var(--radius-sm)] border border-[var(--color-border-soft)] bg-canvas p-3"><strong className="mb-1 block text-ink">Explicit boundary</strong>{claimBoundary}</div>}
+              {limitationRows.length > 0 && <ul className="list-disc space-y-1 pl-4">{limitationRows.slice(0, 5).map((limitation) => <li key={limitation}>{limitation}</li>)}</ul>}
+              {sourceUrl && <a href={sourceUrl} target="_blank" rel="noreferrer" className="inline-flex min-h-10 items-center gap-1 font-mono font-semibold text-accent hover:underline">Primary source<ExternalLink className="h-3.5 w-3.5" /></a>}
+            </div>
+          </ContextRailCard>
+          <ContextRailCard title="Record ownership & path" Icon={Building2}>
+            <EntityOwnership graph={pageModel?.graph} onNavigate={onNavigate} />
+            <DetailRows rows={[["Organization", organizationNames[recordOrganization] || humanize(recordOrganization)], ["Record slug", slug], ["Record type", humanize(displayKind)]]} />
+          </ContextRailCard>
+          <ContextRailCard title="Product profile" Icon={Info}>
+            <DetailRows rows={[
+              ["Audience", audience.join(", ") || "Not classified"],
+              ["Maturity", humanize(maturity)],
+              ["Ecosystem", ecosystems.join(", ") || "Not classified"],
+            ]} />
+          </ContextRailCard>
         </aside>
 
-        <div className="space-y-10 min-w-0">
+        <div className="min-w-0 space-y-8 lg:order-1 lg:col-span-8">
           <ProductSection id="overview" title="What this product is for">
             <p className="text-base text-ink leading-relaxed max-w-3xl">{summary}</p>
-            {claimBoundary && <aside className="border-l-2 border-accent pl-4 py-1 text-sm text-ink-muted"><strong className="block text-ink mb-1">Claim boundary</strong>{claimBoundary}</aside>}
+            {claims.length > 0 && <ul className="space-y-2">{claims.slice(0, 6).map((claim) => <li key={String(claim.id)} className="flex items-start gap-2 text-sm text-ink-muted"><CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-accent" aria-hidden="true" />{String(claim.statement)}</li>)}</ul>}
           </ProductSection>
 
           <ProductSection id="implementation" title="Public implementation evidence" intro="Catalog observations strengthen this product record without replacing reviewed product positioning.">
@@ -533,9 +542,9 @@ export function ProductRecordPage({
             {bundle && <><EvidenceMetrics bundle={bundle} /><DetailRows rows={[
               ["Observed", formatObserved(bundle.generated_at, true)],
             ]} />
-            {repositories.length ? <div className="space-y-3 pt-2"><h3 className="text-xs font-mono uppercase text-ink font-semibold">Repository-owned activity</h3><ul className="divide-y divide-[var(--color-border-soft)] border-y border-[var(--color-border-soft)]">{repositories.map((repository) => {
+            {repositories.length ? <div className="space-y-3 pt-2"><div className="flex flex-wrap items-center justify-between gap-2"><h3 className="text-xs font-mono uppercase text-ink font-semibold">Repository implementation map</h3><span className="text-[10px] font-mono text-ink-muted">{repositories.length} attached repositories</span></div><p className="text-xs text-ink-muted">Metrics remain owned by each repository card and are never promoted to the product.</p><ul className="space-y-3">{repositories.map((repository) => {
               const repositoryPath = `/catalog/repositories/${repository.owner}/${repository.name}`;
-              return <li key={repository.id} className="py-4 space-y-3"><div className="flex flex-wrap items-baseline justify-between gap-2"><div className="flex flex-wrap items-center gap-2"><a href={repositoryPath} onClick={(event) => { event.preventDefault(); onNavigate(repositoryPath); }} className="font-serif text-lg font-bold text-accent hover:underline">{repository.owner}/{repository.name}</a>{repository.governance.governed && <span className="px-2 py-1 rounded border border-accent text-[10px] font-mono uppercase font-semibold text-accent">SSOT governed</span>}</div><span className="text-[10px] font-mono uppercase text-ink-muted">{humanize(repository.role)}</span></div><RepositorySignalStrip signals={evidenceSignals(repository)} compact /><p className="text-[10px] text-ink-muted">Metrics and releases belong to this repository; they are not product totals.</p></li>;
+              return <li key={repository.id} className="space-y-3 rounded-[var(--radius-md)] border border-[var(--color-border-soft)] bg-canvas p-4 transition-colors hover:border-accent"><div className="flex flex-wrap items-start justify-between gap-2"><div><span className="text-[10px] font-mono uppercase text-ink-muted">{humanize(repository.role)}</span><div className="mt-1 flex flex-wrap items-center gap-2"><a href={repositoryPath} onClick={(event) => { event.preventDefault(); onNavigate(repositoryPath); }} className="font-serif text-lg font-bold text-accent hover:underline">{repository.owner}/{repository.name}</a>{repository.governance.governed && <span className="px-2 py-1 rounded border border-accent text-[10px] font-mono uppercase font-semibold text-accent">SSOT governed</span>}</div></div><a href={repositoryPath} onClick={(event) => { event.preventDefault(); onNavigate(repositoryPath); }} className="inline-flex min-h-10 items-center text-xs font-mono font-semibold text-accent hover:underline">View repository detail <ArrowRight className="h-3.5 w-3.5" /></a></div>{repository.description && <p className="text-xs leading-relaxed text-ink-muted">{repository.description}</p>}<div className="border-t border-[var(--color-border-soft)] pt-3"><RepositorySignalStrip signals={evidenceSignals(repository)} compact /></div></li>;
             })}</ul></div> : null}</>}
           </ProductSection>
 
@@ -548,20 +557,20 @@ export function ProductRecordPage({
               <div className="flex flex-wrap gap-2" aria-label="Filter packages by registry">
                 {["all", ...packageEcosystems].map((value) => <button key={value} type="button" onClick={() => setPackageEcosystem(value)} aria-pressed={packageEcosystem === value} className={`px-3 py-1.5 text-xs font-mono rounded border cursor-pointer ${packageEcosystem === value ? "bg-accent text-white border-accent" : "bg-surface text-ink-muted border-[var(--color-border-soft)] hover:border-accent"}`}>{value === "all" ? `All (${packages.length})` : `${ecosystemLabel(value)} (${packages.filter((item) => item.ecosystem === value).length})`}</button>)}
               </div>
-              <ul className="border-y border-[var(--color-border-soft)] divide-y divide-[var(--color-border-soft)]">{filteredPackages.slice(0, 50).map((pkg) => {
+              <ul className="grid grid-cols-1 gap-3 sm:grid-cols-2">{filteredPackages.slice(0, 50).map((pkg) => {
                 const packagePath = `/catalog/packages/${pkg.ecosystem}/${pkg.route_key}`;
                 const parents = pkg.repositories.map((repository) => `${repository.owner}/${repository.name}${repository.path ? ` · ${repository.path}` : ""}`).join(", ");
-                return <li key={pkg.id} className="py-4 sm:flex sm:items-center sm:justify-between gap-5"><div className="min-w-0"><span className="text-[10px] font-mono uppercase text-accent">{ecosystemLabel(pkg.ecosystem)}{pkg.role ? ` · ${humanize(pkg.role)}` : ""} · {humanize(pkg.package_kind)}</span><h3 className="font-serif text-lg font-bold text-ink break-all">{pkg.name}</h3><p className="text-xs text-ink-muted mt-1">Contained by {parents || "repository not linked"}</p><p className="text-xs text-ink-muted mt-1">{pkg.latest_version ? `Latest ${pkg.latest_version}` : "Version not recorded"} · {pkg.release_count.toLocaleString()} releases · {pkg.dependency_summary.edge_count.toLocaleString()} dependency edges · {pkg.dependent_summary.edge_count.toLocaleString()} observed dependent edges</p></div><a href={packagePath} onClick={(event) => { event.preventDefault(); onNavigate(packagePath); }} className="mt-2 sm:mt-0 text-xs font-mono text-accent hover:underline inline-flex items-center gap-1 shrink-0"><Package className="w-3.5 h-3.5" /> View package</a></li>;
+                return <li key={pkg.id} className="flex min-w-0 flex-col justify-between gap-4 rounded-[var(--radius-md)] border border-[var(--color-border-soft)] bg-canvas p-4 transition-colors hover:border-accent"><div className="min-w-0"><div className="flex flex-wrap items-center justify-between gap-2"><span className="text-[10px] font-mono uppercase text-accent">{ecosystemLabel(pkg.ecosystem)}{pkg.role ? ` · ${humanize(pkg.role)}` : ""}</span><span className="rounded border border-[var(--color-border-soft)] bg-[var(--color-surface)] px-2 py-1 text-[9px] font-mono uppercase text-ink-muted">{humanize(pkg.package_kind)}</span></div><h3 className="mt-2 break-all font-serif text-lg font-bold text-ink">{pkg.name}</h3><p className="mt-1 text-xs text-ink-muted">Contained by {parents || "repository not linked"}</p><dl className="mt-3 flex flex-wrap gap-x-5 gap-y-2 border-t border-[var(--color-border-soft)] pt-3 text-[10px] font-mono"><div><dt className="text-ink-muted">Version</dt><dd className="font-semibold text-ink">{pkg.latest_version || "Not recorded"}</dd></div><div><dt className="text-ink-muted">Releases</dt><dd className="font-semibold text-ink">{pkg.release_count.toLocaleString()}</dd></div><div><dt className="text-ink-muted">Dependencies</dt><dd className="font-semibold text-ink">{pkg.dependency_summary.edge_count.toLocaleString()}</dd></div><div><dt className="text-ink-muted">Dependents</dt><dd className="font-semibold text-ink">{pkg.dependent_summary.edge_count.toLocaleString()}</dd></div></dl></div><a href={packagePath} onClick={(event) => { event.preventDefault(); onNavigate(packagePath); }} className="inline-flex min-h-10 items-center justify-between gap-1 text-xs font-mono font-semibold text-accent hover:underline"><span className="inline-flex items-center gap-1"><Package className="h-3.5 w-3.5" />Inspect package</span><ArrowRight className="h-3.5 w-3.5" /></a></li>;
               })}</ul>
               {filteredPackages.length > 50 && <p className="text-xs text-ink-muted">Showing 50 of {filteredPackages.length} matching packages. Use the registry filter to narrow this list.</p>}
             </div> : <p className="text-sm text-ink-muted">{evidenceState === "loading" ? "Loading packages…" : "No public package records are attached to this product."}</p>}
           </ProductSection>
 
-          <ProductSection id="releases" title="Release activity by owner" intro="Package releases remain with their package; GitHub releases remain with their repository. This product does not own or merge those release histories.">
-            {packageReleaseGroups.length > 0 || repositoryReleaseGroups.length > 0 ? <div className="space-y-7">
-              {packageReleaseGroups.map((pkg) => <section key={pkg.id} className="space-y-2"><h3 className="font-serif text-lg font-bold text-ink">{ecosystemLabel(pkg.ecosystem)} package · {pkg.name}</h3><p className="text-xs text-ink-muted">{pkg.release_count.toLocaleString()} releases owned by this package.</p><ul className="border-y border-[var(--color-border-soft)] divide-y divide-[var(--color-border-soft)]">{pkg.releases.slice(0, 20).map((release) => <li key={release.id} className="py-3 sm:flex sm:items-baseline sm:justify-between gap-5"><span className="text-sm text-ink break-all">{release.version}</span><a href={release.url} target="_blank" rel="noreferrer" className="text-xs font-mono text-accent hover:underline">Release</a></li>)}</ul></section>)}
-              {repositoryReleaseGroups.map((repository) => <section key={repository.id} className="space-y-2"><h3 className="font-serif text-lg font-bold text-ink">Repository · {repository.owner}/{repository.name}</h3><p className="text-xs text-ink-muted">{repository.release_count.toLocaleString()} GitHub releases owned by this repository.</p><ul className="border-y border-[var(--color-border-soft)] divide-y divide-[var(--color-border-soft)]">{repository.releases.slice(0, 20).map((release) => <li key={release.id} className="py-3 sm:flex sm:items-baseline sm:justify-between gap-5"><span className="text-sm text-ink break-all">{release.version}</span><a href={release.url} target="_blank" rel="noreferrer" className="text-xs font-mono text-accent hover:underline">Release</a></li>)}</ul></section>)}
-            </div> : <p className="text-sm text-ink-muted">No package or repository release records are attached.</p>}
+          <ProductSection id="releases" title="Release activity by owner" intro="This product member summarizes release-owning relatives. Repository records provide aggregate analytics; package records provide their comprehensive local timelines.">
+            {packageReleaseGroups.length > 0 || repositoryReleaseGroups.length > 0 ? <ul className="divide-y divide-[var(--color-border-soft)]">
+              {packageReleaseGroups.map((pkg) => { const path = `/catalog/packages/${pkg.ecosystem}/${pkg.route_key}`; const latest = pkg.releases[0]; return <li key={pkg.id} className="flex flex-wrap items-center justify-between gap-4 py-4"><div><span className="text-[10px] font-mono uppercase text-accent">{ecosystemLabel(pkg.ecosystem)} package</span><h3 className="font-serif text-lg font-bold text-ink">{pkg.name}</h3><p className="text-xs text-ink-muted">{pkg.release_count.toLocaleString()} releases{latest ? ` · latest ${latest.version}` : ""}</p></div><a href={path} onClick={(event) => { event.preventDefault(); onNavigate(path); }} className="inline-flex min-h-11 items-center gap-1 text-xs font-mono font-semibold text-accent hover:underline">Full package timeline <ArrowRight className="h-3.5 w-3.5" /></a></li>; })}
+              {repositoryReleaseGroups.map((repository) => { const path = `/catalog/repositories/${repository.owner}/${repository.name}`; const latest = repository.releases[0]; return <li key={repository.id} className="flex flex-wrap items-center justify-between gap-4 py-4"><div><span className="text-[10px] font-mono uppercase text-accent">Repository</span><h3 className="font-serif text-lg font-bold text-ink">{repository.owner}/{repository.name}</h3><p className="text-xs text-ink-muted">{repository.release_count.toLocaleString()} GitHub releases{latest ? ` · latest ${latest.version}` : ""}</p></div><a href={path} onClick={(event) => { event.preventDefault(); onNavigate(path); }} className="inline-flex min-h-11 items-center gap-1 text-xs font-mono font-semibold text-accent hover:underline">Repository release analytics <ArrowRight className="h-3.5 w-3.5" /></a></li>; })}
+            </ul> : <p className="text-sm text-ink-muted">No package or repository release records are attached.</p>}
           </ProductSection>
 
           <ProductSection id="dependencies" title="Dependencies and dependents by package" intro="Every edge is grouped under the package that owns it. Counts are package metrics, not product attributes.">
@@ -569,8 +578,7 @@ export function ProductRecordPage({
           </ProductSection>
 
           <ProductSection id="resources" title="Demos, APIs, examples, and related resources" intro="These links are discovered from repository homepages, contracts, and source paths. A source path does not prove a live deployment.">
-            {pageModel?.graph && <div className="mb-7"><h3 className="text-xs font-mono uppercase text-ink font-semibold mb-2">Typed resource relationships</h3><EntityRelationshipRows graph={pageModel.graph} onNavigate={onNavigate} exclude={["implemented_by", "distributed_as"]} /></div>}
-            {resourcesByKind.size > 0 ? <div className="space-y-7">{[...resourcesByKind.entries()].sort(([left], [right]) => left.localeCompare(right)).map(([resourceKind, resources]) => <section key={resourceKind} className="space-y-2"><h3 className="text-xs font-mono uppercase tracking-wide text-ink font-semibold">{humanize(resourceKind)} <span className="text-ink-muted">({resources.length})</span></h3><ul className="border-y border-[var(--color-border-soft)] divide-y divide-[var(--color-border-soft)]">{resources.slice(0, 20).map((resource) => <li key={resource.id} className="py-3"><a href={resource.url} target="_blank" rel="noreferrer" className="text-sm text-accent hover:underline inline-flex items-start gap-1 break-all">{resource.name || humanize(resourceKind)}<ExternalLink className="w-3.5 h-3.5 shrink-0 mt-0.5" /></a></li>)}</ul>{resources.length > 20 && <p className="text-xs text-ink-muted">Showing 20 of {resources.length} observed {humanize(resourceKind).toLowerCase()} resources.</p>}</section>)}</div> : <p className="text-sm text-ink-muted">{evidenceState === "loading" ? "Loading related resources…" : "No API, demo, example, showcase, documentation, UI, or website paths were observed for this repository."}</p>}
+            {resourcesByKind.size > 0 ? <div className="space-y-7">{[...resourcesByKind.entries()].sort(([left], [right]) => left.localeCompare(right)).map(([resourceKind, resources]) => <section key={resourceKind} className="space-y-2"><h3 className="text-xs font-mono uppercase tracking-wide text-ink font-semibold">{humanize(resourceKind)} <span className="text-ink-muted">({resources.length})</span></h3><ul className="space-y-2">{resources.slice(0, 20).map((resource) => { const resourcePath = resource.route || (resource.url?.startsWith("/catalog/") ? resource.url : undefined); return <li key={resource.id} className="flex flex-wrap items-center justify-between gap-3 rounded-[var(--radius-sm)] border border-[var(--color-border-soft)] bg-canvas p-3.5"><div className="min-w-0"><span className="text-[9px] font-mono uppercase tracking-wide text-accent">{humanize(resourceKind)}</span><p className="break-words text-sm font-semibold text-ink">{resource.name || humanize(resourceKind)}</p></div><div className="flex flex-wrap items-center gap-3">{resourcePath && <a href={resourcePath} onClick={(event) => { event.preventDefault(); onNavigate(resourcePath); }} className="inline-flex min-h-10 items-center gap-1 text-xs font-mono font-semibold text-accent hover:underline">Inspect resource <ArrowRight className="h-3.5 w-3.5" /></a>}{resource.url && !resource.url.startsWith("/catalog/") && <a href={resource.url} target="_blank" rel="noreferrer" className="inline-flex min-h-10 items-center gap-1 text-xs font-mono text-accent hover:underline">Source <ExternalLink className="h-3.5 w-3.5" /></a>}</div></li>; })}</ul>{resources.length > 20 && <p className="text-xs text-ink-muted">Showing 20 of {resources.length} observed {humanize(resourceKind).toLowerCase()} resources.</p>}</section>)}</div> : <p className="text-sm text-ink-muted">{evidenceState === "loading" ? "Loading related resources…" : "No API, demo, example, showcase, documentation, UI, or website paths were observed for this repository."}</p>}
           </ProductSection>
 
           {connected.length > 0 && <ProductSection title="Connected portfolio records" intro="Reviewed products, applications, and packages grouped with this product."><ul className="border-y border-[var(--color-border-soft)] divide-y divide-[var(--color-border-soft)]">{connected.map((candidate) => <li key={candidate.id}><a href={productRoute(candidate)} onClick={(event) => { event.preventDefault(); onNavigate(productRoute(candidate)); }} className="group flex items-start justify-between gap-4 py-4"><div><span className="text-[10px] font-mono uppercase text-accent">{humanize(candidate.kind)}</span><h3 className="font-serif text-lg font-bold text-ink group-hover:text-accent">{candidate.displayName}</h3><p className="text-xs text-ink-muted mt-1">{candidate.summary}</p></div><ArrowRight className="w-4 h-4 text-accent shrink-0 mt-2" /></a></li>)}</ul></ProductSection>}

@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-03T22:06:00Z",
+  "generated_at": "2026-08-03T23:39:08Z",
   "packages": [
     {
       "claim_boundary": "Publication is reported only when confirmed by the named public registry.",
@@ -63,8 +63,8 @@
       "evidence": [
         {
           "kind": "source",
-          "observed_at": "2026-08-03T22:06:00Z",
-          "url": "https://github.com/groupsum/decentralized-identifiers-governance-pack/blob/HEAD/pyproject.toml"
+          "observed_at": "2026-08-03T23:39:08Z",
+          "url": "https://github.com/groupsum/decentralized-identifiers-governance-pack/blob/master/pyproject.toml"
         }
       ],
       "id": "package:pypi:decentralized-identifiers-governance-pack:groupsum/decentralized-identifiers-governance-pack:pyproject.toml",
@@ -77,16 +77,7 @@
           "kind": "license-expression",
           "name": "Package manifest license",
           "scope": "direct",
-          "url": "https://github.com/groupsum/decentralized-identifiers-governance-pack/blob/HEAD/pyproject.toml"
-        },
-        {
-          "evidence_type": "github.repository.license",
-          "expression": "Apache-2.0",
-          "kind": "license-expression",
-          "name": "GitHub detected license",
-          "path": null,
-          "scope": "inherited",
-          "url": "https://github.com/groupsum/decentralized-identifiers-governance-pack"
+          "url": "https://github.com/groupsum/decentralized-identifiers-governance-pack/blob/master/pyproject.toml"
         },
         {
           "evidence_type": "repository.tree",
@@ -104,11 +95,11 @@
       "license_status": "observed",
       "manifest_path": "pyproject.toml",
       "name": "decentralized-identifiers-governance-pack",
-      "observed_at": "2026-08-03T22:06:00Z",
+      "observed_at": "2026-08-03T23:39:08Z",
       "owner": "groupsum",
       "package_kind": "package-candidate",
       "private": false,
-      "publication_status": "not-confirmed",
+      "publication_status": "registry_not_found",
       "published": false,
       "registry_url": null,
       "relationship_count": 6,
@@ -122,7 +113,10 @@
       "repository": "groupsum/decentralized-identifiers-governance-pack",
       "reviewed": false,
       "route": "/catalog/packages/pypi/decentralized-identifiers-governance-pack-0a776519",
-      "source_url": "https://github.com/groupsum/decentralized-identifiers-governance-pack/blob/HEAD/pyproject.toml",
+      "source_url": "https://github.com/groupsum/decentralized-identifiers-governance-pack/blob/master/pyproject.toml",
+      "technologies": [
+        "Python"
+      ],
       "version_declared": "0.1.1.dev1"
     }
   ],
@@ -266,7 +260,7 @@
     "evidence": [
       {
         "kind": "source",
-        "observed_at": "2026-08-03T22:06:00Z",
+        "observed_at": "2026-08-03T23:39:13Z",
         "url": "https://github.com/groupsum/decentralized-identifiers-governance-pack"
       }
     ],
@@ -318,13 +312,12 @@
       "open_issues": 0,
       "packages": 1,
       "related_resources": 1,
-      "relationships": 2,
       "size_kb": 41,
       "stars": 0,
       "watchers": 0
     },
     "name": "decentralized-identifiers-governance-pack",
-    "observed_at": "2026-08-03T22:06:00Z",
+    "observed_at": "2026-08-03T23:39:13Z",
     "owner": "groupsum",
     "package_ids": [
       "package:pypi:decentralized-identifiers-governance-pack:groupsum/decentralized-identifiers-governance-pack:pyproject.toml"
@@ -333,11 +326,19 @@
       {
         "ecosystem": "pypi",
         "id": "package:pypi:decentralized-identifiers-governance-pack:groupsum/decentralized-identifiers-governance-pack:pyproject.toml",
+        "last_published_at": null,
+        "latest_version": "0.1.1.dev1",
+        "license_expression": "Apache-2.0",
+        "license_status": "observed",
+        "license_url": "https://github.com/groupsum/decentralized-identifiers-governance-pack/blob/master/LICENSE",
         "manifest_path": "pyproject.toml",
         "name": "decentralized-identifiers-governance-pack",
+        "notice_count": 0,
         "package_kind": "package-candidate",
-        "publication_status": "not-confirmed",
+        "publication_status": "registry_not_found",
         "published": false,
+        "release_activity": [],
+        "release_count": 0,
         "route": "/catalog/packages/pypi/decentralized-identifiers-governance-pack-0a776519"
       }
     ],
@@ -350,7 +351,7 @@
         "legal_evidence": [],
         "legal_inherits_from": "repository:groupsum/decentralized-identifiers-governance-pack",
         "name": "docs/governance",
-        "observed_at": "2026-08-03T22:06:00Z",
+        "observed_at": "2026-08-03T23:39:13Z",
         "path": "docs/governance",
         "repository": "groupsum/decentralized-identifiers-governance-pack",
         "repository_route": "/catalog/repositories/groupsum/decentralized-identifiers-governance-pack",
@@ -369,7 +370,7 @@
       "coverage": {},
       "governed": false,
       "observation_status": "not_found",
-      "observed_at": "2026-08-03T23:58:12Z",
+      "observed_at": "2026-08-03T23:39:15Z",
       "present": false,
       "registry_url": null,
       "status_counts": {},

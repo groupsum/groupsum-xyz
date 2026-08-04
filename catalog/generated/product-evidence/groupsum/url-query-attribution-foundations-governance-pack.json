@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-03T22:06:00Z",
+  "generated_at": "2026-08-03T23:39:08Z",
   "packages": [
     {
       "claim_boundary": "Publication is reported only when confirmed by the named public registry.",
@@ -73,7 +73,7 @@
       "evidence": [
         {
           "kind": "registry",
-          "observed_at": "2026-08-03T22:06:00Z",
+          "observed_at": "2026-08-03T23:39:08Z",
           "url": "https://pypi.org/project/url-query-attribution-foundations-governance-pack/"
         }
       ],
@@ -87,24 +87,7 @@
           "kind": "license-expression",
           "name": "Package manifest license",
           "scope": "direct",
-          "url": "https://github.com/groupsum/url-query-attribution-foundations-governance-pack/blob/HEAD/pyproject.toml"
-        },
-        {
-          "evidence_type": "pypi.registry",
-          "expression": "Apache-2.0",
-          "kind": "license-expression",
-          "name": "Registry license metadata",
-          "scope": "direct",
-          "url": "https://pypi.org/project/url-query-attribution-foundations-governance-pack/"
-        },
-        {
-          "evidence_type": "github.repository.license",
-          "expression": "Apache-2.0",
-          "kind": "license-expression",
-          "name": "GitHub detected license",
-          "path": null,
-          "scope": "inherited",
-          "url": "https://github.com/groupsum/url-query-attribution-foundations-governance-pack"
+          "url": "https://github.com/groupsum/url-query-attribution-foundations-governance-pack/blob/master/pyproject.toml"
         },
         {
           "evidence_type": "repository.tree",
@@ -122,7 +105,7 @@
       "license_status": "observed",
       "manifest_path": "pyproject.toml",
       "name": "url-query-attribution-foundations-governance-pack",
-      "observed_at": "2026-08-03T22:06:00Z",
+      "observed_at": "2026-08-03T23:39:08Z",
       "owner": "groupsum",
       "package_kind": "published-package",
       "private": false,
@@ -144,7 +127,7 @@
           "legal_inherits_from": "package:pypi:url-query-attribution-foundations-governance-pack:groupsum/url-query-attribution-foundations-governance-pack:pyproject.toml",
           "license_expression": "Apache-2.0",
           "license_status": "observed",
-          "observed_at": "2026-08-03T22:06:00Z",
+          "observed_at": "2026-08-03T23:39:08Z",
           "published_at": "2026-06-02T00:57:28.740304Z",
           "release_kind": "pypi",
           "route": "/catalog/releases/pypi/url-query-attribution-foundations-governance-pack-677c758c8f",
@@ -158,7 +141,7 @@
           "legal_inherits_from": "package:pypi:url-query-attribution-foundations-governance-pack:groupsum/url-query-attribution-foundations-governance-pack:pyproject.toml",
           "license_expression": "Apache-2.0",
           "license_status": "observed",
-          "observed_at": "2026-08-03T22:06:00Z",
+          "observed_at": "2026-08-03T23:39:08Z",
           "published_at": "2026-05-18T09:30:01.214836Z",
           "release_kind": "pypi",
           "route": "/catalog/releases/pypi/url-query-attribution-foundations-governance-pack-dc63d7c0d9",
@@ -169,7 +152,10 @@
       "repository": "groupsum/url-query-attribution-foundations-governance-pack",
       "reviewed": false,
       "route": "/catalog/packages/pypi/url-query-attribution-foundations-governance-pack-3ed66bcc",
-      "source_url": "https://github.com/groupsum/url-query-attribution-foundations-governance-pack/blob/HEAD/pyproject.toml",
+      "source_url": "https://github.com/groupsum/url-query-attribution-foundations-governance-pack/blob/master/pyproject.toml",
+      "technologies": [
+        "Python"
+      ],
       "version_declared": "0.1.1"
     }
   ],
@@ -318,12 +304,12 @@
     "evidence": [
       {
         "kind": "ssot-registry",
-        "observed_at": "2026-08-03T23:58:12Z",
+        "observed_at": "2026-08-03T23:39:29Z",
         "url": "https://github.com/groupsum/url-query-attribution-foundations-governance-pack/blob/master/.ssot/registry.json"
       },
       {
         "kind": "source",
-        "observed_at": "2026-08-03T22:06:01Z",
+        "observed_at": "2026-08-03T23:39:26Z",
         "url": "https://github.com/groupsum/url-query-attribution-foundations-governance-pack"
       }
     ],
@@ -338,7 +324,7 @@
         "legal_inherits_from": "repository:groupsum/url-query-attribution-foundations-governance-pack",
         "license_expression": "Apache-2.0",
         "license_status": "observed",
-        "observed_at": "2026-08-03T22:06:01Z",
+        "observed_at": "2026-08-03T23:39:26Z",
         "prerelease": false,
         "published_at": "2026-06-02T00:57:17Z",
         "release_kind": "github",
@@ -354,7 +340,7 @@
         "legal_inherits_from": "repository:groupsum/url-query-attribution-foundations-governance-pack",
         "license_expression": "Apache-2.0",
         "license_status": "observed",
-        "observed_at": "2026-08-03T22:06:01Z",
+        "observed_at": "2026-08-03T23:39:26Z",
         "prerelease": false,
         "published_at": "2026-05-18T09:29:25Z",
         "release_kind": "github",
@@ -433,13 +419,12 @@
       "open_issues": 0,
       "packages": 1,
       "related_resources": 1,
-      "relationships": 2,
       "size_kb": 151,
       "stars": 0,
       "watchers": 0
     },
     "name": "url-query-attribution-foundations-governance-pack",
-    "observed_at": "2026-08-03T22:06:01Z",
+    "observed_at": "2026-08-03T23:39:26Z",
     "owner": "groupsum",
     "package_ids": [
       "package:pypi:url-query-attribution-foundations-governance-pack:groupsum/url-query-attribution-foundations-governance-pack:pyproject.toml"
@@ -448,11 +433,28 @@
       {
         "ecosystem": "pypi",
         "id": "package:pypi:url-query-attribution-foundations-governance-pack:groupsum/url-query-attribution-foundations-governance-pack:pyproject.toml",
+        "last_published_at": "2026-06-02T00:57:28.740304Z",
+        "latest_version": "0.1.1",
+        "license_expression": "Apache-2.0",
+        "license_status": "observed",
+        "license_url": "https://github.com/groupsum/url-query-attribution-foundations-governance-pack/blob/master/LICENSE",
         "manifest_path": "pyproject.toml",
         "name": "url-query-attribution-foundations-governance-pack",
+        "notice_count": 0,
         "package_kind": "published-package",
         "publication_status": "published",
         "published": true,
+        "release_activity": [
+          {
+            "count": 1,
+            "month": "2026-05"
+          },
+          {
+            "count": 1,
+            "month": "2026-06"
+          }
+        ],
+        "release_count": 2,
         "route": "/catalog/packages/pypi/url-query-attribution-foundations-governance-pack-3ed66bcc"
       }
     ],
@@ -465,7 +467,7 @@
         "legal_evidence": [],
         "legal_inherits_from": "repository:groupsum/url-query-attribution-foundations-governance-pack",
         "name": "docs/governance",
-        "observed_at": "2026-08-03T22:06:01Z",
+        "observed_at": "2026-08-03T23:39:26Z",
         "path": "docs/governance",
         "repository": "groupsum/url-query-attribution-foundations-governance-pack",
         "repository_route": "/catalog/repositories/groupsum/url-query-attribution-foundations-governance-pack",
@@ -709,19 +711,7 @@
         ],
         "tests": []
       },
-      "inventory_truncated": {
-        "adrs": 0,
-        "boundaries": 0,
-        "claims": 0,
-        "evidence": 0,
-        "features": 0,
-        "issues": 0,
-        "profiles": 0,
-        "releases": 0,
-        "specs": 0,
-        "tests": 0
-      },
-      "observed_at": "2026-08-03T23:58:12Z",
+      "observed_at": "2026-08-03T23:39:29Z",
       "present": true,
       "raw_url": "https://raw.githubusercontent.com/groupsum/url-query-attribution-foundations-governance-pack/master/.ssot/registry.json",
       "registry_url": "https://github.com/groupsum/url-query-attribution-foundations-governance-pack/blob/master/.ssot/registry.json",

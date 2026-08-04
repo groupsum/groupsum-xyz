@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-03T22:06:00Z",
+  "generated_at": "2026-08-03T23:39:08Z",
   "packages": [
     {
       "claim_boundary": "Publication is reported only when confirmed by the named public registry.",
@@ -73,8 +73,8 @@
       "evidence": [
         {
           "kind": "source",
-          "observed_at": "2026-08-03T22:06:00Z",
-          "url": "https://github.com/swarmauri/swarmauri-flipcard/blob/HEAD/svelte/package.json"
+          "observed_at": "2026-08-03T23:39:08Z",
+          "url": "https://github.com/swarmauri/swarmauri-flipcard/blob/master/svelte/package.json"
         }
       ],
       "id": "package:npm:svelte:swarmauri/swarmauri-flipcard:svelte/package.json",
@@ -106,7 +106,7 @@
       "license_status": "observed",
       "manifest_path": "svelte/package.json",
       "name": "svelte",
-      "observed_at": "2026-08-03T22:06:00Z",
+      "observed_at": "2026-08-03T23:39:08Z",
       "owner": "swarmauri",
       "package_kind": "package-candidate",
       "private": true,
@@ -124,7 +124,13 @@
       "repository": "swarmauri/swarmauri-flipcard",
       "reviewed": false,
       "route": "/catalog/packages/npm/svelte-b9c27ccb",
-      "source_url": "https://github.com/swarmauri/swarmauri-flipcard/blob/HEAD/svelte/package.json",
+      "source_url": "https://github.com/swarmauri/swarmauri-flipcard/blob/master/svelte/package.json",
+      "technologies": [
+        "CSS",
+        "HTML",
+        "JavaScript",
+        "Svelte"
+      ],
       "version_declared": "0.0.0"
     }
   ],
@@ -273,7 +279,7 @@
     "evidence": [
       {
         "kind": "source",
-        "observed_at": "2026-08-03T22:06:02Z",
+        "observed_at": "2026-08-03T23:39:46Z",
         "url": "https://github.com/swarmauri/swarmauri-flipcard"
       }
     ],
@@ -325,13 +331,12 @@
       "open_issues": 0,
       "packages": 1,
       "related_resources": 0,
-      "relationships": 1,
       "size_kb": 21,
       "stars": 0,
       "watchers": 0
     },
     "name": "swarmauri-flipcard",
-    "observed_at": "2026-08-03T22:06:02Z",
+    "observed_at": "2026-08-03T23:39:46Z",
     "owner": "swarmauri",
     "package_ids": [
       "package:npm:svelte:swarmauri/swarmauri-flipcard:svelte/package.json"
@@ -340,11 +345,19 @@
       {
         "ecosystem": "npm",
         "id": "package:npm:svelte:swarmauri/swarmauri-flipcard:svelte/package.json",
+        "last_published_at": null,
+        "latest_version": "0.0.0",
+        "license_expression": "Apache-2.0",
+        "license_status": "observed",
+        "license_url": "https://github.com/swarmauri/swarmauri-flipcard/blob/master/LICENSE",
         "manifest_path": "svelte/package.json",
         "name": "svelte",
+        "notice_count": 0,
         "package_kind": "package-candidate",
         "publication_status": "manifest_private",
         "published": false,
+        "release_activity": [],
+        "release_count": 0,
         "route": "/catalog/packages/npm/svelte-b9c27ccb"
       }
     ],
@@ -360,7 +373,7 @@
       "coverage": {},
       "governed": false,
       "observation_status": "not_found",
-      "observed_at": "2026-08-03T23:58:12Z",
+      "observed_at": "2026-08-03T23:39:48Z",
       "present": false,
       "registry_url": null,
       "status_counts": {},

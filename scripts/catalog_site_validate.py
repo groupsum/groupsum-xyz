@@ -6,12 +6,14 @@ from __future__ import annotations
 import argparse
 import hashlib
 import json
+import re
 from pathlib import Path
 from typing import Any
 
 ROOT = Path(__file__).resolve().parents[1]
 REQUIRED_DATASETS = {"organizations", "repositories", "packages", "resources", "technologies"}
 DISALLOWED_DATASETS = {"releases", "deployments", "surfaces", "relationships"}
+MOJIBAKE = re.compile(r"(?:Ã.|Â.|â(?:€|€¦)|�)")
 
 
 def load_json(path: Path) -> Any:
@@ -53,6 +55,8 @@ def validate_site(site_dir: Path, typescript: Path) -> list[str]:
         if len(payload) != metadata.get("bytes"):
             errors.append(f"dataset byte count mismatch: {name}")
         records = json.loads(payload)
+        if MOJIBAKE.search(payload.decode("utf-8")):
+            errors.append(f"dataset contains mojibake: {name}")
         if len(records) != metadata.get("records") or len(records) != manifest.get("counts", {}).get(name):
             errors.append(f"dataset record count mismatch: {name}")
         ids: set[str] = set()
@@ -92,6 +96,13 @@ def validate_site(site_dir: Path, typescript: Path) -> list[str]:
                         errors.append(
                             f"repository contains unclassified package: {identity}: {package.get('id')}"
                         )
+                    if not {
+                        "release_count", "release_activity", "latest_version",
+                        "license_expression", "license_status", "license_url", "notice_count",
+                    } <= package.keys():
+                        errors.append(
+                            f"repository package missing release or legal summary: {identity}: {package.get('id')}"
+                        )
             if name == "repositories":
                 ssot = record.get("ssot_governance") or {}
                 if ssot.get("governed"):
@@ -117,6 +128,8 @@ def validate_site(site_dir: Path, typescript: Path) -> list[str]:
                 errors.append(f"package missing manifest classification: {identity}")
             if name == "packages" and not record.get("repository"):
                 errors.append(f"package missing repository ownership: {identity}")
+            if name == "packages" and "technologies" not in record:
+                errors.append(f"package missing technology stack field: {identity}")
             if name == "resources":
                 resource_path = str(record.get("path") or "").replace("\\", "/")
                 if resource_path.startswith(".ssot/"):

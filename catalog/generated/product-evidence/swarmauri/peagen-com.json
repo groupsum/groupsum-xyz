@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-03T22:06:00Z",
+  "generated_at": "2026-08-03T23:39:08Z",
   "packages": [
     {
       "claim_boundary": "Publication is reported only when confirmed by the named public registry.",
@@ -45,8 +45,8 @@
       "evidence": [
         {
           "kind": "source",
-          "observed_at": "2026-08-03T22:06:00Z",
-          "url": "https://github.com/swarmauri/peagen-com/blob/HEAD/packages/site-content-pack/package.json"
+          "observed_at": "2026-08-03T23:39:08Z",
+          "url": "https://github.com/swarmauri/peagen-com/blob/master/packages/site-content-pack/package.json"
         }
       ],
       "id": "package:npm:@swarmauri/peagen-com-content-pack:swarmauri/peagen-com:packages/site-content-pack/package.json",
@@ -59,7 +59,7 @@
           "kind": "license-expression",
           "name": "Package manifest license",
           "scope": "direct",
-          "url": "https://github.com/swarmauri/peagen-com/blob/HEAD/packages/site-content-pack/package.json"
+          "url": "https://github.com/swarmauri/peagen-com/blob/master/packages/site-content-pack/package.json"
         }
       ],
       "legal_repository": "swarmauri/peagen-com",
@@ -68,7 +68,7 @@
       "license_status": "observed",
       "manifest_path": "packages/site-content-pack/package.json",
       "name": "@swarmauri/peagen-com-content-pack",
-      "observed_at": "2026-08-03T22:06:00Z",
+      "observed_at": "2026-08-03T23:39:08Z",
       "owner": "swarmauri",
       "package_kind": "private-package",
       "private": true,
@@ -86,7 +86,15 @@
       "repository": "swarmauri/peagen-com",
       "reviewed": false,
       "route": "/catalog/packages/npm/swarmauri-peagen-com-content-pack-e0cfe8c4",
-      "source_url": "https://github.com/swarmauri/peagen-com/blob/HEAD/packages/site-content-pack/package.json",
+      "source_url": "https://github.com/swarmauri/peagen-com/blob/master/packages/site-content-pack/package.json",
+      "technologies": [
+        "CSS",
+        "Dockerfile",
+        "HTML",
+        "JavaScript",
+        "Python",
+        "TypeScript"
+      ],
       "version_declared": "0.1.0"
     },
     {
@@ -196,8 +204,8 @@
       "evidence": [
         {
           "kind": "source",
-          "observed_at": "2026-08-03T22:06:00Z",
-          "url": "https://github.com/swarmauri/peagen-com/blob/HEAD/package.json"
+          "observed_at": "2026-08-03T23:39:08Z",
+          "url": "https://github.com/swarmauri/peagen-com/blob/master/package.json"
         }
       ],
       "id": "package:npm:peagen-com:swarmauri/peagen-com:package.json",
@@ -210,7 +218,7 @@
       "license_status": "not-observed",
       "manifest_path": "package.json",
       "name": "peagen-com",
-      "observed_at": "2026-08-03T22:06:00Z",
+      "observed_at": "2026-08-03T23:39:08Z",
       "owner": "swarmauri",
       "package_kind": "workspace-project",
       "private": true,
@@ -228,7 +236,15 @@
       "repository": "swarmauri/peagen-com",
       "reviewed": false,
       "route": "/catalog/packages/npm/peagen-com-2786d449",
-      "source_url": "https://github.com/swarmauri/peagen-com/blob/HEAD/package.json",
+      "source_url": "https://github.com/swarmauri/peagen-com/blob/master/package.json",
+      "technologies": [
+        "CSS",
+        "Dockerfile",
+        "HTML",
+        "JavaScript",
+        "Python",
+        "TypeScript"
+      ],
       "version_declared": "0.1.0"
     },
     {
@@ -275,8 +291,8 @@
       "evidence": [
         {
           "kind": "source",
-          "observed_at": "2026-08-03T22:06:00Z",
-          "url": "https://github.com/swarmauri/peagen-com/blob/HEAD/pyproject.toml"
+          "observed_at": "2026-08-03T23:39:08Z",
+          "url": "https://github.com/swarmauri/peagen-com/blob/master/pyproject.toml"
         }
       ],
       "id": "package:pypi:peagen-com:swarmauri/peagen-com:pyproject.toml",
@@ -289,11 +305,11 @@
       "license_status": "not-observed",
       "manifest_path": "pyproject.toml",
       "name": "peagen-com",
-      "observed_at": "2026-08-03T22:06:00Z",
+      "observed_at": "2026-08-03T23:39:08Z",
       "owner": "swarmauri",
       "package_kind": "package-candidate",
       "private": false,
-      "publication_status": "not-confirmed",
+      "publication_status": "registry_not_found",
       "published": false,
       "registry_url": null,
       "relationship_count": 4,
@@ -306,7 +322,15 @@
       "repository": "swarmauri/peagen-com",
       "reviewed": false,
       "route": "/catalog/packages/pypi/peagen-com-ea371003",
-      "source_url": "https://github.com/swarmauri/peagen-com/blob/HEAD/pyproject.toml",
+      "source_url": "https://github.com/swarmauri/peagen-com/blob/master/pyproject.toml",
+      "technologies": [
+        "CSS",
+        "Dockerfile",
+        "HTML",
+        "JavaScript",
+        "Python",
+        "TypeScript"
+      ],
       "version_declared": "0.1.0"
     }
   ],
@@ -450,7 +474,7 @@
     "evidence": [
       {
         "kind": "source",
-        "observed_at": "2026-08-03T22:06:02Z",
+        "observed_at": "2026-08-03T23:39:41Z",
         "url": "https://github.com/swarmauri/peagen-com"
       }
     ],
@@ -483,13 +507,12 @@
       "open_issues": 0,
       "packages": 3,
       "related_resources": 0,
-      "relationships": 3,
       "size_kb": 2188,
       "stars": 0,
       "watchers": 0
     },
     "name": "peagen-com",
-    "observed_at": "2026-08-03T22:06:02Z",
+    "observed_at": "2026-08-03T23:39:41Z",
     "owner": "swarmauri",
     "package_ids": [
       "package:npm:@swarmauri/peagen-com-content-pack:swarmauri/peagen-com:packages/site-content-pack/package.json",
@@ -500,31 +523,55 @@
       {
         "ecosystem": "npm",
         "id": "package:npm:@swarmauri/peagen-com-content-pack:swarmauri/peagen-com:packages/site-content-pack/package.json",
+        "last_published_at": null,
+        "latest_version": "0.1.0",
+        "license_expression": "Apache-2.0",
+        "license_status": "observed",
+        "license_url": null,
         "manifest_path": "packages/site-content-pack/package.json",
         "name": "@swarmauri/peagen-com-content-pack",
+        "notice_count": 0,
         "package_kind": "private-package",
         "publication_status": "manifest_private",
         "published": false,
+        "release_activity": [],
+        "release_count": 0,
         "route": "/catalog/packages/npm/swarmauri-peagen-com-content-pack-e0cfe8c4"
       },
       {
         "ecosystem": "npm",
         "id": "package:npm:peagen-com:swarmauri/peagen-com:package.json",
+        "last_published_at": null,
+        "latest_version": "0.1.0",
+        "license_expression": null,
+        "license_status": "not-observed",
+        "license_url": null,
         "manifest_path": "package.json",
         "name": "peagen-com",
+        "notice_count": 0,
         "package_kind": "workspace-project",
         "publication_status": "manifest_private",
         "published": false,
+        "release_activity": [],
+        "release_count": 0,
         "route": "/catalog/packages/npm/peagen-com-2786d449"
       },
       {
         "ecosystem": "pypi",
         "id": "package:pypi:peagen-com:swarmauri/peagen-com:pyproject.toml",
+        "last_published_at": null,
+        "latest_version": "0.1.0",
+        "license_expression": null,
+        "license_status": "not-observed",
+        "license_url": null,
         "manifest_path": "pyproject.toml",
         "name": "peagen-com",
+        "notice_count": 0,
         "package_kind": "package-candidate",
-        "publication_status": "not-confirmed",
+        "publication_status": "registry_not_found",
         "published": false,
+        "release_activity": [],
+        "release_count": 0,
         "route": "/catalog/packages/pypi/peagen-com-ea371003"
       }
     ],
@@ -540,7 +587,7 @@
       "coverage": {},
       "governed": false,
       "observation_status": "not_found",
-      "observed_at": "2026-08-03T23:58:12Z",
+      "observed_at": "2026-08-03T23:39:43Z",
       "present": false,
       "registry_url": null,
       "status_counts": {},

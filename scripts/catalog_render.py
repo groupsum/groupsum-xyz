@@ -18,6 +18,26 @@ from catalog_collect import summarize
 ROOT = Path(__file__).resolve().parents[1]
 
 
+def repair_text(value: Any) -> Any:
+    """Repair repeatedly mis-decoded UTF-8 while preserving valid Unicode."""
+    if isinstance(value, str):
+        repaired = value
+        for _ in range(8):
+            try:
+                candidate = repaired.encode("cp1252").decode("utf-8")
+            except (UnicodeEncodeError, UnicodeDecodeError):
+                break
+            if candidate == repaired:
+                break
+            repaired = candidate
+        return repaired
+    if isinstance(value, list):
+        return [repair_text(item) for item in value]
+    if isinstance(value, dict):
+        return {key: repair_text(item) for key, item in value.items()}
+    return value
+
+
 def stable_hash(value: str, size: int = 12) -> str:
     return hashlib.sha256(value.encode("utf-8")).hexdigest()[:size]
 
@@ -65,7 +85,7 @@ def related_resource_url(item: dict[str, Any]) -> str | None:
 
 
 def write_json(path: Path, value: Any) -> dict[str, Any]:
-    payload = json.dumps(value, indent=2, sort_keys=True, ensure_ascii=False) + "\n"
+    payload = json.dumps(repair_text(value), indent=2, sort_keys=True, ensure_ascii=False) + "\n"
     path.parent.mkdir(parents=True, exist_ok=True)
     encoded = payload.encode("utf-8")
     path.write_bytes(encoded)
@@ -145,6 +165,16 @@ def normalized_releases(package: dict[str, Any], observed: str) -> list[dict[str
     )
 
 
+def release_activity(releases: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    """Aggregate dated releases into deterministic calendar-month buckets."""
+    counts: Counter[str] = Counter()
+    for release in releases:
+        published_at = str(release.get("published_at") or "")
+        if re.match(r"^\d{4}-\d{2}", published_at):
+            counts[published_at[:7]] += 1
+    return [{"month": month, "count": counts[month]} for month in sorted(counts)[-24:]]
+
+
 def compile_catalog(catalog: dict[str, Any], editorial: dict[str, Any]) -> dict[str, list[dict[str, Any]]]:
     generated_at = catalog["generated_at"]
     overrides = editorial.get("entities", {})
@@ -208,18 +238,20 @@ def compile_catalog(catalog: dict[str, Any], editorial: dict[str, Any]) -> dict[
         ecosystem = str(package.get("ecosystem") or "unknown")
         name = str(package.get("name") or "unnamed")
         repository = package.get("repository")
-        legal_repository = repository
-        if not legal_repository and package.get("owner") and package.get("name"):
+        if not repository and package.get("owner") and package.get("name"):
             candidate = f"{package['owner']}/{package['name']}"
             if candidate in source_repositories:
-                legal_repository = candidate
+                repository = candidate
+        legal_repository = repository
         package_identity = f"{ecosystem}:{name}:{repository or package.get('owner') or 'registry'}:{package.get('manifest_path') or 'package'}"
         package_id = f"package:{package_identity}"
         package_slug = f"{slug(name)}-{stable_hash(package_id, 8)}"
         checked_at = package.get("updated_at") or observed_at(package, generated_at)
         override = overrides.get(package_id, {})
         registry_url = package.get("registry_url") or package.get("url")
-        source_url = f"https://github.com/{repository}/blob/HEAD/{package.get('manifest_path')}" if repository and package.get("manifest_path") else None
+        source_repository = source_repositories.get(str(repository), {})
+        source_branch = str(source_repository.get("default_branch") or "HEAD")
+        source_url = f"https://github.com/{repository}/blob/{source_branch}/{package.get('manifest_path')}" if repository and package.get("manifest_path") else None
         release_records = normalized_releases(package, checked_at)
         for release in release_records:
             release_id = f"release:{stable_hash(f'{package_id}:{release['release_kind']}:{release['version']}', 16)}"
@@ -228,7 +260,10 @@ def compile_catalog(catalog: dict[str, Any], editorial: dict[str, Any]) -> dict[
                 f"/catalog/releases/{release['release_kind']}/"
                 f"{slug(name)}-{stable_hash(release_id, 10)}"
             )
-        source_repository = source_repositories.get(str(legal_repository), {})
+        source_repository = source_repositories.get(str(legal_repository), source_repository)
+        package_technologies = sorted(
+            ((source_repository.get("technologies") or {}).get("languages_bytes") or {}).keys()
+        )
         manifest_directory = str(package.get("manifest_path") or "").rsplit("/", 1)[0]
         license_expression = (
             package.get("license_expression")
@@ -267,7 +302,7 @@ def compile_catalog(catalog: dict[str, Any], editorial: dict[str, Any]) -> dict[
                     "kind": "license-file",
                     "name": str(package["license_file"]),
                     "path": license_path,
-                    "url": f"https://github.com/{repository}/blob/HEAD/{license_path}",
+                    "url": f"https://github.com/{repository}/blob/{source_branch}/{license_path}",
                     "scope": "direct",
                     "evidence_type": "repository.manifest",
                 }
@@ -292,6 +327,18 @@ def compile_catalog(catalog: dict[str, Any], editorial: dict[str, Any]) -> dict[
                     "evidence_type": item.get("evidence"),
                 }
             )
+        deduplicated_legal_evidence: list[dict[str, Any]] = []
+        seen_legal_evidence: set[tuple[str, str]] = set()
+        for item in legal_evidence:
+            identity = (
+                str(item.get("kind") or "legal-evidence"),
+                str(item.get("path") or item.get("expression") or item.get("url") or ""),
+            )
+            if identity in seen_legal_evidence:
+                continue
+            seen_legal_evidence.add(identity)
+            deduplicated_legal_evidence.append(item)
+        legal_evidence = deduplicated_legal_evidence
         for release in release_records:
             release["license_expression"] = license_expression
             release["license_status"] = "observed" if license_expression else "not-observed"
@@ -352,6 +399,7 @@ def compile_catalog(catalog: dict[str, Any], editorial: dict[str, Any]) -> dict[
             "legal_repository": legal_repository,
             "manifest_path": package.get("manifest_path"),
             "package_kind": package_kind,
+            "technologies": package_technologies,
             "private": bool(package.get("private")),
             "published": package.get("published") is True,
             "publication_status": package.get("publication_status") or ("published" if package.get("published") else "not-confirmed"),
@@ -451,6 +499,19 @@ def compile_catalog(catalog: dict[str, Any], editorial: dict[str, Any]) -> dict[
                 }
             )
         description = override.get("description") or repo.get("description") or f"Public source repository {full_name}."
+        repository_legal_evidence = [
+            {
+                "kind": item.get("kind"),
+                "name": item.get("name"),
+                "expression": item.get("expression"),
+                "path": item.get("path"),
+                "url": item.get("url"),
+                "scope": "direct",
+                "evidence_type": item.get("evidence"),
+            }
+            for item in repo.get("legal_evidence") or []
+            if not item.get("path") or "/" not in str(item.get("path"))
+        ]
         record = {
             "id": repo_id,
             "kind": "repository",
@@ -471,18 +532,7 @@ def compile_catalog(catalog: dict[str, Any], editorial: dict[str, Any]) -> dict[
             "default_branch": repo.get("default_branch"),
             "license": repo.get("license"),
             "ssot_governance": ssot_governance,
-            "legal_evidence": [
-                {
-                    "kind": item.get("kind"),
-                    "name": item.get("name"),
-                    "expression": item.get("expression"),
-                    "path": item.get("path"),
-                    "url": item.get("url"),
-                    "scope": "direct",
-                    "evidence_type": item.get("evidence"),
-                }
-                for item in repo.get("legal_evidence") or []
-            ],
+            "legal_evidence": repository_legal_evidence,
             "topics": sorted(repo.get("topics") or []),
             "created_at": repo.get("created_at"),
             "updated_at": repo.get("updated_at"),
@@ -500,7 +550,6 @@ def compile_catalog(catalog: dict[str, Any], editorial: dict[str, Any]) -> dict[
                 "deployments": len(repo.get("deployments") or []),
                 "environments": len(repo.get("environments") or []),
                 "packages": len(packages_by_repo.get(full_name, [])),
-                "relationships": sum(relationship_counts[full_name].values()),
                 "related_resources": len(related_resources),
             },
             "contributors": [
@@ -526,6 +575,32 @@ def compile_catalog(catalog: dict[str, Any], editorial: dict[str, Any]) -> dict[
                     "manifest_path": package.get("manifest_path"),
                     "published": package["published"],
                     "publication_status": package["publication_status"],
+                    "latest_version": package.get("latest_version"),
+                    "release_count": package.get("release_count", 0),
+                    "release_activity": release_activity(package.get("releases") or []),
+                    "last_published_at": next(
+                        (
+                            release.get("published_at")
+                            for release in package.get("releases") or []
+                            if release.get("published_at")
+                        ),
+                        None,
+                    ),
+                    "license_expression": package.get("license_expression"),
+                    "license_status": package.get("license_status"),
+                    "license_url": next(
+                        (
+                            item.get("url")
+                            for item in package.get("legal_evidence") or []
+                            if item.get("kind") == "license-file" and item.get("url")
+                        ),
+                        None,
+                    ),
+                    "notice_count": sum(
+                        1
+                        for item in package.get("legal_evidence") or []
+                        if item.get("kind") == "notice-file"
+                    ),
                     "route": package["route"],
                 }
                 for package_id in sorted(packages_by_repo.get(full_name, []))
@@ -812,7 +887,7 @@ def main() -> int:
     )
     parser.add_argument("--typescript", type=Path, default=ROOT / "src" / "data" / "catalog.generated.ts")
     args = parser.parse_args()
-    catalog = json.loads(args.catalog.read_text(encoding="utf-8"))
+    catalog = repair_text(json.loads(args.catalog.read_text(encoding="utf-8")))
     editorial = load_editorial(args.editorial)
     summary = summarize(catalog)
     datasets = compile_catalog(catalog, editorial)

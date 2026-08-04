@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-03T22:06:00Z",
+  "generated_at": "2026-08-03T23:39:08Z",
   "packages": [
     {
       "claim_boundary": "Publication is reported only when confirmed by the named public registry.",
@@ -126,8 +126,8 @@
       "evidence": [
         {
           "kind": "source",
-          "observed_at": "2026-08-03T22:06:00Z",
-          "url": "https://github.com/tigrbl/tigrbl_api_cron/blob/HEAD/pyproject.toml"
+          "observed_at": "2026-08-03T23:39:08Z",
+          "url": "https://github.com/tigrbl/tigrbl_api_cron/blob/master/pyproject.toml"
         }
       ],
       "id": "package:pypi:tigrbl-cron:tigrbl/tigrbl_api_cron:pyproject.toml",
@@ -140,16 +140,7 @@
           "kind": "license-expression",
           "name": "Package manifest license",
           "scope": "direct",
-          "url": "https://github.com/tigrbl/tigrbl_api_cron/blob/HEAD/pyproject.toml"
-        },
-        {
-          "evidence_type": "github.repository.license",
-          "expression": "Apache-2.0",
-          "kind": "license-expression",
-          "name": "GitHub detected license",
-          "path": null,
-          "scope": "inherited",
-          "url": "https://github.com/tigrbl/tigrbl_api_cron"
+          "url": "https://github.com/tigrbl/tigrbl_api_cron/blob/master/pyproject.toml"
         },
         {
           "evidence_type": "repository.tree",
@@ -167,11 +158,11 @@
       "license_status": "observed",
       "manifest_path": "pyproject.toml",
       "name": "tigrbl-cron",
-      "observed_at": "2026-08-03T22:06:00Z",
+      "observed_at": "2026-08-03T23:39:08Z",
       "owner": "tigrbl",
       "package_kind": "package-candidate",
       "private": false,
-      "publication_status": "not-confirmed",
+      "publication_status": "registry_not_found",
       "published": false,
       "registry_url": null,
       "relationship_count": 13,
@@ -185,7 +176,10 @@
       "repository": "tigrbl/tigrbl_api_cron",
       "reviewed": false,
       "route": "/catalog/packages/pypi/tigrbl-cron-86f68fde",
-      "source_url": "https://github.com/tigrbl/tigrbl_api_cron/blob/HEAD/pyproject.toml",
+      "source_url": "https://github.com/tigrbl/tigrbl_api_cron/blob/master/pyproject.toml",
+      "technologies": [
+        "Python"
+      ],
       "version_declared": "0.2.0"
     }
   ],
@@ -329,7 +323,7 @@
     "evidence": [
       {
         "kind": "source",
-        "observed_at": "2026-08-03T22:06:01Z",
+        "observed_at": "2026-08-03T23:39:32Z",
         "url": "https://github.com/tigrbl/tigrbl_api_cron"
       }
     ],
@@ -381,13 +375,12 @@
       "open_issues": 0,
       "packages": 1,
       "related_resources": 0,
-      "relationships": 1,
       "size_kb": 25,
       "stars": 0,
       "watchers": 0
     },
     "name": "tigrbl_api_cron",
-    "observed_at": "2026-08-03T22:06:01Z",
+    "observed_at": "2026-08-03T23:39:32Z",
     "owner": "tigrbl",
     "package_ids": [
       "package:pypi:tigrbl-cron:tigrbl/tigrbl_api_cron:pyproject.toml"
@@ -396,11 +389,19 @@
       {
         "ecosystem": "pypi",
         "id": "package:pypi:tigrbl-cron:tigrbl/tigrbl_api_cron:pyproject.toml",
+        "last_published_at": null,
+        "latest_version": "0.2.0",
+        "license_expression": "Apache-2.0",
+        "license_status": "observed",
+        "license_url": "https://github.com/tigrbl/tigrbl_api_cron/blob/master/LICENSE",
         "manifest_path": "pyproject.toml",
         "name": "tigrbl-cron",
+        "notice_count": 0,
         "package_kind": "package-candidate",
-        "publication_status": "not-confirmed",
+        "publication_status": "registry_not_found",
         "published": false,
+        "release_activity": [],
+        "release_count": 0,
         "route": "/catalog/packages/pypi/tigrbl-cron-86f68fde"
       }
     ],
@@ -416,7 +417,7 @@
       "coverage": {},
       "governed": false,
       "observation_status": "not_found",
-      "observed_at": "2026-08-03T23:58:13Z",
+      "observed_at": "2026-08-03T23:39:34Z",
       "present": false,
       "registry_url": null,
       "status_counts": {},
