@@ -120,7 +120,7 @@ export const portfolioEntities: PortfolioEntity[] = [
   {
     id: "swarmauri-peagen", slug: "peagen", sourceName: "peagen", displayName: "Peagen",
     organization: "swarmauri", kind: "product", capabilityIds: ["dev-experience", "ai-agents"], ecosystem: ["python", "service"],
-    summary: "Template-driven, SSOT-governed code-generation workspace for DAG/Jinja2 rendering, CLI workflows, and gateway/worker services.",
+    summary: "Template-driven code-generation workspace for DAG/Jinja2 rendering, CLI workflows, and gateway/worker services.",
     audience: ["Developer-experience teams", "Python developers"], maturity: "active-development",
     evidence: [{ kind: "source", label: "Public website source, documentation, and SDK integration marker reviewed", checkedAt }],
     limitations: [

@@ -630,7 +630,7 @@
       "record_type": "product",
       "artifact_type": "product",
       "title": "Peagen",
-      "summary": "Template-driven, SSOT-governed code-generation workspace for DAG/Jinja2 rendering, CLI workflows, and gateway/worker services.",
+      "summary": "Template-driven code-generation workspace for DAG/Jinja2 rendering, CLI workflows, and gateway/worker services.",
       "maturity": "active-development",
       "visibility": "public",
       "featured": true,
