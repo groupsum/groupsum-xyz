@@ -3,151 +3,93 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import React, { useState, useEffect } from "react";
-import { Logo } from "./Logo";
-import { Menu, X, ArrowRight } from "lucide-react";
+import React, { useEffect, useState } from "react";
+import { ArrowRight, Menu, X } from "lucide-react";
 
 interface SiteHeaderProps {
   currentPath: string;
   onNavigate: (path: string) => void;
 }
 
+const navItems = [
+  { label: "Products", path: "/products" },
+  { label: "Portfolio", path: "/portfolio" },
+  { label: "Solutions", path: "/solutions" },
+  { label: "Services", path: "/services" },
+  { label: "Insights", path: "/insights" },
+  { label: "About", path: "/about" },
+];
+
 export const SiteHeader: React.FC<SiteHeaderProps> = ({ currentPath, onNavigate }) => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
-  // Close mobile menu on escape key press
   useEffect(() => {
-    const handleKeyDown = (e: KeyboardEvent) => {
-      if (e.key === "Escape") {
-        setMobileMenuOpen(false);
-      }
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") setMobileMenuOpen(false);
     };
     window.addEventListener("keydown", handleKeyDown);
     return () => window.removeEventListener("keydown", handleKeyDown);
   }, []);
 
-  // Prevent background scroll when mobile menu is open
   useEffect(() => {
-    if (mobileMenuOpen) {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "";
-    }
-    return () => {
-      document.body.style.overflow = "";
-    };
+    document.body.style.overflow = mobileMenuOpen ? "hidden" : "";
+    return () => { document.body.style.overflow = ""; };
   }, [mobileMenuOpen]);
 
-  const navItems = [
-    { label: "Products", path: "/products" },
-    { label: "Portfolio", path: "/portfolio" },
-    { label: "Solutions", path: "/solutions" },
-    { label: "Services", path: "/services" },
-    { label: "Insights", path: "/insights" },
-    { label: "About", path: "/about" },
-  ];
-
-  const handleLinkClick = (path: string, e: React.MouseEvent) => {
-    e.preventDefault();
+  const navigate = (path: string, event: React.MouseEvent) => {
+    event.preventDefault();
     onNavigate(path);
     setMobileMenuOpen(false);
   };
 
-  const isActive = (path: string) => {
-    if (path === "/" && currentPath === "/") return true;
-    if (path !== "/" && currentPath.startsWith(path)) return true;
-    return false;
-  };
+  const isActive = (path: string) => currentPath === path || currentPath.startsWith(`${path}/`);
 
   return (
-    <header className="sticky top-0 z-40 w-full bg-surface/80 backdrop-blur-md border-b border-[var(--color-border-soft)]">
-      <div className="max-w-[var(--content-max)] mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between gap-6">
-        {/* Logo brand home link */}
-        <a
-          href="/"
-          onClick={(e) => handleLinkClick("/", e)}
-          className="flex items-center gap-2 shrink-0 focus-visible:outline-3 focus-visible:outline-[var(--focus-ring)] focus-visible:outline-offset-4 rounded"
-        >
-          <Logo />
-        </a>
+    <header className="sticky top-0 z-40 border-b border-[var(--color-border-soft)] bg-canvas/95 backdrop-blur-md">
+      <div className="mx-auto max-w-[var(--content-max)] px-4 sm:px-6 lg:px-8">
+        <div className="flex h-16 items-center justify-between gap-5">
+          <a href="/" onClick={(event) => navigate("/", event)} className="flex min-w-0 items-center gap-3 rounded-lg focus-visible:outline-3">
+            <span className="grid h-9 w-9 shrink-0 place-items-center rounded-lg bg-ink font-serif text-lg font-bold text-white shadow-sm" aria-hidden="true">G</span>
+            <span className="min-w-0">
+              <span className="block font-serif text-lg font-bold leading-none tracking-tight text-ink">GroupSum</span>
+              <span className="mt-1 block font-mono text-[10px] tracking-wide text-ink-muted">groupsum.xyz</span>
+            </span>
+          </a>
 
-        {/* Desktop Navigation */}
-        <nav className="hidden lg:flex flex-1 items-center justify-end gap-5 xl:gap-8" aria-label="Primary Navigation">
+          <div className="hidden min-w-0 items-center gap-3 md:flex">
+            <span className="rounded-full border border-[var(--color-border-soft)] bg-surface px-3 py-1 font-mono text-[10px] text-ink-muted">Products, evidence &amp; systems</span>
+            <a href="/contact" onClick={(event) => navigate("/contact", event)} className="inline-flex min-h-10 items-center gap-1.5 rounded-lg bg-ink px-4 font-mono text-xs font-semibold text-white transition-colors hover:bg-accent">
+              Discuss a project <ArrowRight className="h-3.5 w-3.5" aria-hidden="true" />
+            </a>
+          </div>
+
+          <button type="button" onClick={() => setMobileMenuOpen((open) => !open)} aria-expanded={mobileMenuOpen} aria-controls="mobile-navigation" aria-label={mobileMenuOpen ? "Close menu" : "Open menu"} className="rounded-lg p-2 text-ink-muted hover:bg-surface hover:text-ink md:hidden">
+            {mobileMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+          </button>
+        </div>
+
+        <nav className="hidden flex-wrap gap-1 border-t border-[var(--color-border-soft)] py-2 md:flex" aria-label="Primary navigation">
           {navItems.map((item) => (
-            <a
-              key={item.path}
-              href={item.path}
-              onClick={(e) => handleLinkClick(item.path, e)}
-              className={`text-xs font-semibold tracking-widest uppercase transition-colors duration-150 focus-visible:outline-3 focus-visible:outline-[var(--focus-ring)] focus-visible:outline-offset-2 rounded px-1.5 py-0.5 ${
-                isActive(item.path)
-                  ? "text-accent font-bold opacity-100"
-                  : "text-ink opacity-75 hover:opacity-100"
-              }`}
-              aria-current={isActive(item.path) ? "page" : undefined}
-            >
+            <a key={item.path} href={item.path} onClick={(event) => navigate(item.path, event)} aria-current={isActive(item.path) ? "page" : undefined} className={`rounded-md px-3 py-2 font-mono text-xs transition-colors ${isActive(item.path) ? "bg-ink font-semibold text-white" : "text-ink-muted hover:bg-surface hover:text-ink"}`}>
               {item.label}
             </a>
           ))}
-
-          <a
-            href="/contact"
-            onClick={(e) => handleLinkClick("/contact", e)}
-            className="shrink-0 whitespace-nowrap px-5 py-2.5 bg-accent hover:bg-accent-hover text-white text-xs font-bold uppercase tracking-wider rounded-md transition-all duration-150 focus-visible:outline-3 focus-visible:outline-[var(--focus-ring)] focus-visible:outline-offset-2"
-          >
-            <span className="hidden lg:inline">Discuss a project</span>
-            <span className="lg:hidden">Discuss</span>
-          </a>
         </nav>
-
-        {/* Mobile menu trigger button */}
-        <button
-          type="button"
-          onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-          aria-expanded={mobileMenuOpen}
-          aria-controls="mobile-navigation"
-          aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
-          className="p-2 -mr-2 text-ink-muted hover:text-ink lg:hidden focus-visible:outline-3 focus-visible:outline-[var(--focus-ring)] focus-visible:outline-offset-2 rounded"
-        >
-          {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-        </button>
       </div>
 
-      {/* Accessible Mobile navigation drawer */}
       {mobileMenuOpen && (
-        <div
-          id="mobile-navigation"
-          className="fixed inset-0 top-16 z-30 w-full h-[calc(100vh-4rem)] bg-[var(--color-canvas)] border-t border-[var(--color-border-soft)] lg:hidden transition-all duration-200"
-        >
-          <nav className="flex flex-col p-6 h-full justify-between" aria-label="Mobile Navigation">
-            <div className="space-y-4">
+        <div id="mobile-navigation" className="fixed inset-x-0 top-16 h-[calc(100dvh-4rem)] overflow-y-auto border-t border-[var(--color-border-soft)] bg-canvas md:hidden">
+          <nav className="mx-auto flex min-h-full max-w-[var(--content-max)] flex-col justify-between p-5" aria-label="Mobile navigation">
+            <div className="grid gap-2">
               {navItems.map((item) => (
-                <a
-                  key={item.path}
-                  href={item.path}
-                  onClick={(e) => handleLinkClick(item.path, e)}
-                  className={`block text-lg font-serif tracking-tight py-2 border-b border-[var(--color-border-soft)] ${
-                    isActive(item.path) ? "text-accent font-semibold" : "text-ink hover:text-accent"
-                  }`}
-                  aria-current={isActive(item.path) ? "page" : undefined}
-                >
+                <a key={item.path} href={item.path} onClick={(event) => navigate(item.path, event)} aria-current={isActive(item.path) ? "page" : undefined} className={`rounded-xl border px-4 py-3 font-serif text-lg ${isActive(item.path) ? "border-[var(--color-border-accent-soft)] bg-[color-mix(in_srgb,var(--color-accent)_7%,white)] text-accent" : "border-[var(--color-border-soft)] bg-white text-ink"}`}>
                   {item.label}
                 </a>
               ))}
             </div>
-
-            <div className="pt-6 border-t border-[var(--color-border-soft)]">
-              <a
-                href="/contact"
-                onClick={(e) => handleLinkClick("/contact", e)}
-                className="w-full inline-flex items-center justify-center gap-2 py-3 bg-accent hover:bg-accent-hover text-white text-sm font-mono font-semibold rounded-[var(--radius-sm)] transition-all"
-              >
-                <span>Discuss project</span>
-                <span className="sr-only">Discuss a project</span>
-                <ArrowRight className="w-4 h-4" />
-              </a>
-              <p className="text-center text-xs font-mono text-ink-muted/60 mt-4">
-                © {new Date().getFullYear()} Groupsum LLC
-              </p>
+            <div className="mt-8 border-t border-[var(--color-border-soft)] pt-5">
+              <a href="/contact" onClick={(event) => navigate("/contact", event)} className="inline-flex min-h-11 w-full items-center justify-center gap-2 rounded-lg bg-ink px-4 font-mono text-xs font-semibold text-white">Discuss a project <ArrowRight className="h-4 w-4" /></a>
+              <p className="mt-4 text-center font-mono text-[10px] text-ink-muted">© {new Date().getFullYear()} GroupSum LLC</p>
             </div>
           </nav>
         </div>

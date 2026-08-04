@@ -113,6 +113,10 @@ export function CollectionHeader({
   facts: MetricItem[];
   exportHref?: string;
 }) {
+  const observedLabel = observedAt ? (() => {
+    const date = new Date(observedAt);
+    return Number.isNaN(date.valueOf()) ? observedAt : new Intl.DateTimeFormat("en-US", { month: "short", day: "numeric", year: "numeric", timeZone: "UTC" }).format(date);
+  })() : null;
   return <header className="space-y-6 border-b border-[var(--color-border-soft)] pb-7">
     <div className="flex flex-wrap items-end justify-between gap-5">
       <div className="max-w-3xl space-y-2">
@@ -121,7 +125,7 @@ export function CollectionHeader({
         <p className="text-sm leading-relaxed text-ink-muted sm:text-base">{description}</p>
       </div>
       <div className="flex flex-wrap items-center gap-2 text-[10px] font-mono">
-        {observedAt && <span className="inline-flex min-h-9 items-center gap-1.5 rounded-[var(--radius-sm)] border border-[var(--color-border-soft)] bg-[var(--color-surface)] px-3 text-ink-muted"><CalendarDays className="h-3.5 w-3.5 text-accent" aria-hidden="true" />Observed {observedAt}</span>}
+        {observedLabel && <span className="inline-flex min-h-9 items-center gap-1.5 rounded-[var(--radius-sm)] border border-[var(--color-border-soft)] bg-[var(--color-surface)] px-3 text-ink-muted"><CalendarDays className="h-3.5 w-3.5 text-accent" aria-hidden="true" />Observed {observedLabel}</span>}
         {exportHref && <a href={exportHref} className="inline-flex min-h-9 items-center gap-1.5 rounded-[var(--radius-sm)] border border-[var(--color-border-muted)] bg-[var(--color-surface-raised)] px-3 font-semibold text-ink hover:border-accent hover:text-accent"><Download className="h-3.5 w-3.5" aria-hidden="true" />Export dataset</a>}
       </div>
     </div>

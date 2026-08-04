@@ -24,6 +24,7 @@ import { catalogDatasetManifest, catalogSummary } from "./data/catalog.generated
 import { useCatalogFilters } from "./hooks/useCatalogFilters";
 import { CatalogToolbar } from "./components/CatalogToolbar";
 import { CatalogGroup } from "./components/CatalogGroup";
+import { ExplorerAboutPage, ExplorerContactPage, ExplorerInsightsCollection, ExplorerPolicyPage, ExplorerServiceDetailPage, ExplorerServicesPage, ExplorerSolutionDetailPage, ExplorerSolutionsPage } from "./components/EditorialPages";
 import { StructuredData } from "mdwrk/structured-data";
 import { 
   ArrowRight, 
@@ -157,16 +158,16 @@ function RouteSwitcher({ path, onNavigate }: { path: string; onNavigate: (path: 
 
   if (primary === "solutions") {
     if (segments.length === 1) {
-      return <SolutionsPage onNavigate={onNavigate} />;
+      return <ExplorerSolutionsPage onNavigate={onNavigate} />;
     }
-    return <SolutionDetailPage slug={segments[1]} onNavigate={onNavigate} />;
+    return <ExplorerSolutionDetailPage slug={segments[1]} onNavigate={onNavigate} />;
   }
 
   if (primary === "services") {
     if (segments.length === 1) {
-      return <ServicesPage onNavigate={onNavigate} />;
+      return <ExplorerServicesPage onNavigate={onNavigate} />;
     }
-    return <ServiceDetailPage slug={segments[1]} onNavigate={onNavigate} />;
+    return <ExplorerServiceDetailPage slug={segments[1]} onNavigate={onNavigate} />;
   }
 
   if (primary === "insights") {
@@ -174,19 +175,19 @@ function RouteSwitcher({ path, onNavigate }: { path: string; onNavigate: (path: 
   }
 
   if (primary === "about") {
-    return <AboutPage onNavigate={onNavigate} />;
+    return <ExplorerAboutPage onNavigate={onNavigate} />;
   }
 
   if (primary === "contact") {
-    return <ContactPage />;
+    return <ExplorerContactPage />;
   }
 
   if (primary === "privacy-policy") {
-    return <PrivacyPage />;
+    return <ExplorerPolicyPage kind="privacy" />;
   }
 
   if (primary === "terms-of-service") {
-    return <TermsPage />;
+    return <ExplorerPolicyPage kind="terms" />;
   }
 
   // Otherwise, 404
@@ -1209,7 +1210,7 @@ function InsightsPage({ onNavigate }: RouteProps) {
       const matchText = `${post.title} ${post.excerpt} ${post.tags?.join(" ")}`.toLowerCase();
       return matchText.includes(searchQuery.toLowerCase());
     });
-  }, [searchQuery]);
+  }, [blogPosts, searchQuery]);
 
   // Handle pagination calculation
   const totalPages = Math.ceil(filteredPosts.length / postsPerPage);
@@ -1236,6 +1237,18 @@ function InsightsPage({ onNavigate }: RouteProps) {
       );
     }
   }
+
+  return <ExplorerInsightsCollection
+    posts={paginatedPosts}
+    matchingCount={filteredPosts.length}
+    legacyCount={filteredPosts.filter((post) => post.isLegacy).length}
+    searchQuery={searchQuery}
+    onSearch={setSearchQuery}
+    currentPage={currentPage}
+    totalPages={totalPages}
+    onPage={setCurrentPage}
+    onNavigate={onNavigate}
+  />;
 
   return (
     <div className="max-w-[var(--reading-max)] mx-auto px-4 sm:px-6 py-12 space-y-10">
