@@ -107,7 +107,7 @@ async function verify() {
   const generatedPortfolioHtml = await fetchText(
     "/portfolio/records/catalog-groupsum-groupsum-xyz/",
   );
-  for (const marker of ["groupsum/groupsum-xyz", "Claim boundary", "Dependencies"]) {
+  for (const marker of ["groupsum/groupsum-xyz", "Evidence &amp; provenance boundary", "Dependencies"]) {
     if (!generatedPortfolioHtml.includes(marker)) {
       throw new Error(`generated portfolio record is missing ${marker}`);
     }
