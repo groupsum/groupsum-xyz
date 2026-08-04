@@ -179,6 +179,7 @@
       "name": "soliloquy",
       "observed_at": "2026-08-03T22:06:00Z",
       "owner": "swarmauri",
+      "package_kind": "published-package",
       "private": false,
       "publication_status": "published",
       "published": true,
@@ -1283,6 +1284,18 @@
     "package_ids": [
       "package:pypi:soliloquy:swarmauri/soliloquy:pyproject.toml"
     ],
+    "packages": [
+      {
+        "ecosystem": "pypi",
+        "id": "package:pypi:soliloquy:swarmauri/soliloquy:pyproject.toml",
+        "manifest_path": "pyproject.toml",
+        "name": "soliloquy",
+        "package_kind": "published-package",
+        "publication_status": "published",
+        "published": true,
+        "route": "/catalog/packages/pypi/soliloquy-8d3798eb"
+      }
+    ],
     "pushed_at": "2025-03-03T04:15:53Z",
     "related_resources": [
       {
@@ -1310,8 +1323,8 @@
       "counts": {},
       "coverage": {},
       "governed": false,
-      "observation_status": "error",
-      "observed_at": "2026-08-03T22:06:02Z",
+      "observation_status": "not_found",
+      "observed_at": "2026-08-03T23:58:12Z",
       "present": false,
       "registry_url": null,
       "status_counts": {},

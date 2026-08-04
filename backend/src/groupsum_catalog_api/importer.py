@@ -90,6 +90,23 @@ def ensure_repository_ssot_columns(connection: Connection) -> None:
             connection.execute(f"ALTER TABLE repositories ADD COLUMN {name} {definition}")
 
 
+def ensure_package_ownership_columns(connection: Connection) -> None:
+    definitions = {
+        "package_kind": "VARCHAR(60) NOT NULL DEFAULT 'package-candidate'",
+        "private": "BOOLEAN NOT NULL DEFAULT FALSE",
+    }
+    if connection.postgres:
+        for name, definition in definitions.items():
+            connection.execute(
+                f"ALTER TABLE packages ADD COLUMN IF NOT EXISTS {name} {definition}"
+            )
+        return
+    present = {row[1] for row in connection.execute("PRAGMA table_info(packages)")}
+    for name, definition in definitions.items():
+        if name not in present:
+            connection.execute(f"ALTER TABLE packages ADD COLUMN {name} {definition}")
+
+
 ENTITY_TYPES = {
     "organization": ("Organization", "party"),
     "product": ("Product", "offering"),
@@ -478,6 +495,12 @@ def import_catalog(
     analytics_path = analytics_path or default_analytics_path(database_path)
     with connect(database_path) as connection, connect_analytics(analytics_path) as analytics:
         ensure_repository_ssot_columns(connection)
+        ensure_package_ownership_columns(connection)
+        # Product and portfolio records do not own repository metrics. Remove
+        # legacy record-wide rollups so evidence links cannot transfer stars,
+        # commits, contributors, releases, dependencies, or dependents.
+        analytics.execute("DELETE FROM metric_observations WHERE subject_kind = 'record'")
+        analytics.execute("DELETE FROM record_aggregates")
         # Release pages inherit legal evidence from their package or repository parent.
         # Remove legacy duplicated rows so refreshes converge to the compact model.
         connection.execute(
@@ -1109,6 +1132,8 @@ def import_catalog(
                     "registry_url": package_url,
                     "source_url": package.get("source_url"),
                     "manifest_path": package.get("manifest_path"),
+                    "package_kind": package.get("package_kind") or "package-candidate",
+                    "private": bool(package.get("private")),
                     "description": package.get("description"),
                     "latest_version": package.get("latest_version"),
                     "published": (
@@ -1350,6 +1375,8 @@ def import_catalog(
                         "registry_url": package.get("registry_url") or package["source_url"],
                         "source_url": package.get("source_url"),
                         "manifest_path": package.get("manifest_path"),
+                        "package_kind": package.get("package_kind") or "package-candidate",
+                        "private": bool(package.get("private")),
                         "description": package.get("description"),
                         "latest_version": package.get("latest_version"),
                         "published": (
@@ -1404,105 +1431,6 @@ def import_catalog(
                     },
                 )
         counts.update(rebuild_entity_graph(connection, generated_at))
-        public_records = connection.execute(
-            """
-            SELECT id FROM records
-             WHERE visibility = 'public' AND record_type IN ('product', 'portfolio')
-            """
-        ).fetchall()
-        for record_row in public_records:
-            record_id = record_row[0]
-            repository_rows = connection.execute(
-                """
-                SELECT repo.id, repo.observed_at
-                  FROM repositories repo
-                  JOIN record_repositories rr ON rr.repository_id = repo.id
-                 WHERE rr.record_id = ?
-                """,
-                (record_id,),
-            ).fetchall()
-            repository_id_rows = [row[0] for row in repository_rows]
-            if not repository_id_rows:
-                continue
-            placeholders = ",".join("?" for _ in repository_id_rows)
-            observed = max(
-                (str(row[1]) for row in repository_rows if row[1]),
-                default=generated_at,
-            )
-            aggregate_metrics = {
-                metric: analytics.execute(
-                    f"""
-                    SELECT COALESCE(SUM(value), 0) FROM metric_observations mo
-                     WHERE mo.subject_kind = 'repository' AND mo.metric = ?
-                       AND mo.subject_id IN ({placeholders})
-                       AND mo.observed_at = (
-                           SELECT MAX(latest.observed_at) FROM metric_observations latest
-                            WHERE latest.subject_kind = 'repository'
-                              AND latest.subject_id = mo.subject_id
-                              AND latest.metric = mo.metric
-                              AND latest.period_start IS NULL
-                       )
-                    """,
-                    (metric, *repository_id_rows),
-                ).fetchone()[0]
-                for metric in ("stars", "forks", "watchers", "commits")
-            }
-            aggregate_metrics["contributors"] = connection.execute(
-                f"SELECT COUNT(DISTINCT login) FROM repository_contributors "
-                f"WHERE repository_id IN ({placeholders})",
-                repository_id_rows,
-            ).fetchone()[0]
-            for metric, value in aggregate_metrics.items():
-                upsert_metric(
-                    analytics,
-                    {
-                        "id": stable_id("metric", "record", record_id, metric, observed),
-                        "subject_kind": "record",
-                        "subject_id": record_id,
-                        "metric": metric,
-                        "value": value,
-                        "unit": "count",
-                        "period_start": None,
-                        "period_end": None,
-                        "source_url": "https://groupsum.xyz/catalog/site/manifest.json",
-                        "observed_at": observed,
-                    },
-                )
-
-            aggregate_counts = connection.execute(
-                """
-                SELECT
-                  (SELECT COUNT(*) FROM record_repositories WHERE record_id = ?) repositories,
-                  (SELECT COUNT(*) FROM record_packages WHERE record_id = ?) packages,
-                  (SELECT COUNT(*) FROM record_resources WHERE record_id = ?) resources,
-                  (SELECT COUNT(*) FROM releases WHERE package_id IN
-                    (SELECT package_id FROM record_packages WHERE record_id = ?)
-                    OR repository_id IN
-                    (SELECT repository_id FROM record_repositories WHERE record_id = ?)) releases,
-                  (SELECT COUNT(*) FROM dependencies WHERE source_id IN
-                    (SELECT package_id FROM record_packages WHERE record_id = ?)) dependencies,
-                  (SELECT COUNT(*) FROM dependencies WHERE target_id IN
-                    (SELECT ecosystem || ':' || REPLACE(LOWER(name), '_', '-') FROM packages
-                     WHERE id IN (SELECT package_id FROM record_packages
-                                   WHERE record_id = ?))) dependents
-                """,
-                (record_id,) * 7,
-            ).fetchone()
-            analytics.execute(
-                """
-                INSERT INTO record_aggregates VALUES (?, ?, ?, ?, ?, ?, ?, ?)
-                ON CONFLICT(record_id) DO UPDATE SET
-                  repository_count=excluded.repository_count,
-                  package_count=excluded.package_count,
-                  resource_count=excluded.resource_count,
-                  release_count=excluded.release_count,
-                  dependency_count=excluded.dependency_count,
-                  dependent_count=excluded.dependent_count,
-                  refreshed_at=excluded.refreshed_at
-                """,
-                (record_id, *tuple(aggregate_counts.values()), generated_at),
-            )
-
         counts["releases"] = connection.execute(
             "SELECT COUNT(*) FROM releases"
         ).fetchone()[0]

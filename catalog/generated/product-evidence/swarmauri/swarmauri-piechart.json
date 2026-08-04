@@ -106,6 +106,7 @@
       "name": "gradio_mycomponent",
       "observed_at": "2026-08-03T22:06:00Z",
       "owner": "swarmauri",
+      "package_kind": "package-candidate",
       "private": false,
       "publication_status": "not-confirmed",
       "published": false,
@@ -237,6 +238,7 @@
       "name": "gradio_mycomponent",
       "observed_at": "2026-08-03T22:06:00Z",
       "owner": "swarmauri",
+      "package_kind": "published-package",
       "private": false,
       "publication_status": "published",
       "published": true,
@@ -479,6 +481,28 @@
       "package:npm:gradio_mycomponent:swarmauri/swarmauri-piechart:mycomponent/frontend/package.json",
       "package:pypi:gradio_mycomponent:swarmauri/swarmauri-piechart:mycomponent/pyproject.toml"
     ],
+    "packages": [
+      {
+        "ecosystem": "npm",
+        "id": "package:npm:gradio_mycomponent:swarmauri/swarmauri-piechart:mycomponent/frontend/package.json",
+        "manifest_path": "mycomponent/frontend/package.json",
+        "name": "gradio_mycomponent",
+        "package_kind": "package-candidate",
+        "publication_status": "not-confirmed",
+        "published": false,
+        "route": "/catalog/packages/npm/gradio-mycomponent-a1c0d108"
+      },
+      {
+        "ecosystem": "pypi",
+        "id": "package:pypi:gradio_mycomponent:swarmauri/swarmauri-piechart:mycomponent/pyproject.toml",
+        "manifest_path": "mycomponent/pyproject.toml",
+        "name": "gradio_mycomponent",
+        "package_kind": "published-package",
+        "publication_status": "published",
+        "published": true,
+        "route": "/catalog/packages/pypi/gradio-mycomponent-6ec563b6"
+      }
+    ],
     "pushed_at": "2024-09-04T08:20:30Z",
     "related_resources": [
       {
@@ -534,8 +558,8 @@
       "counts": {},
       "coverage": {},
       "governed": false,
-      "observation_status": "error",
-      "observed_at": "2026-08-03T22:06:02Z",
+      "observation_status": "not_found",
+      "observed_at": "2026-08-03T23:58:12Z",
       "present": false,
       "registry_url": null,
       "status_counts": {},

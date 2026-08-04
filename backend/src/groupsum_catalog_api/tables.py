@@ -272,6 +272,8 @@ class Package(RestTable):
     registry_url = Column(String(2048), nullable=False)
     source_url = Column(String(2048), nullable=True)
     manifest_path = Column(String(1000), nullable=True)
+    package_kind = Column(String(60), nullable=False, default="package-candidate", index=True)
+    private = Column(Boolean, nullable=False, default=False)
     description = Column(Text, nullable=True)
     latest_version = Column(String(120), nullable=True)
     published = Column(Boolean, nullable=True)

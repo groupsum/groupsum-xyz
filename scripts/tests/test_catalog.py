@@ -84,6 +84,11 @@ class CatalogCollectorTests(unittest.TestCase):
         self.assertEqual(summary["counts"]["claims"], 2)
         self.assertEqual(summary["coverage"]["claims_without_evidence"], 1)
         self.assertEqual(summary["status_counts"]["features"], {"implemented": 1})
+        self.assertEqual(summary["inventory"]["claims"][0]["id"], "claim:1")
+        self.assertEqual(
+            summary["inventory"]["claims"][0]["evidence_ids"], ["evidence:1"]
+        )
+        self.assertEqual(summary["inventory_truncated"]["claims"], 0)
         self.assertEqual(
             summary["registry_url"],
             "https://github.com/groupsum/example-com/blob/master/.ssot/registry.json",
@@ -206,6 +211,8 @@ class CatalogCollectorTests(unittest.TestCase):
         self.assertTrue(datasets["packages"][0]["route"].startswith("/catalog/packages/pypi/example-"))
         self.assertEqual(datasets["packages"][0]["releases"][0]["version"], "1.0.0")
         self.assertEqual(datasets["packages"][0]["releases"][0]["release_kind"], "pypi")
+        self.assertEqual(datasets["packages"][0]["package_kind"], "published-package")
+        self.assertEqual(datasets["repositories"][0]["packages"][0]["route"], datasets["packages"][0]["route"])
         self.assertEqual(datasets["technologies"][0]["repository_count"], 1)
 
 

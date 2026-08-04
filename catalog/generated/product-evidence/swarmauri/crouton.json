@@ -143,6 +143,7 @@
       "name": "crouton",
       "observed_at": "2026-08-03T22:06:00Z",
       "owner": "swarmauri",
+      "package_kind": "published-package",
       "private": false,
       "publication_status": "published",
       "published": true,
@@ -630,6 +631,7 @@
       "name": "crouton_client",
       "observed_at": "2026-08-03T22:06:00Z",
       "owner": "swarmauri",
+      "package_kind": "published-package",
       "private": false,
       "publication_status": "published",
       "published": true,
@@ -1130,6 +1132,28 @@
       "package:pypi:crouton:swarmauri/crouton:pkgs/crouton/pyproject.toml",
       "package:pypi:crouton_client:swarmauri/crouton:pkgs/crouton_client/pyproject.toml"
     ],
+    "packages": [
+      {
+        "ecosystem": "pypi",
+        "id": "package:pypi:crouton:swarmauri/crouton:pkgs/crouton/pyproject.toml",
+        "manifest_path": "pkgs/crouton/pyproject.toml",
+        "name": "crouton",
+        "package_kind": "published-package",
+        "publication_status": "published",
+        "published": true,
+        "route": "/catalog/packages/pypi/crouton-476b846d"
+      },
+      {
+        "ecosystem": "pypi",
+        "id": "package:pypi:crouton_client:swarmauri/crouton:pkgs/crouton_client/pyproject.toml",
+        "manifest_path": "pkgs/crouton_client/pyproject.toml",
+        "name": "crouton_client",
+        "package_kind": "published-package",
+        "publication_status": "published",
+        "published": true,
+        "route": "/catalog/packages/pypi/crouton-client-4c739a33"
+      }
+    ],
     "pushed_at": "2025-07-01T10:14:48Z",
     "related_resources": [
       {
@@ -1157,8 +1181,8 @@
       "counts": {},
       "coverage": {},
       "governed": false,
-      "observation_status": "error",
-      "observed_at": "2026-08-03T22:06:02Z",
+      "observation_status": "not_found",
+      "observed_at": "2026-08-03T23:58:12Z",
       "present": false,
       "registry_url": null,
       "status_counts": {},

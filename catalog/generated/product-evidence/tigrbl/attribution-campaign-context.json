@@ -106,6 +106,7 @@
       "name": "attribution-campaign-context",
       "observed_at": "2026-08-03T22:06:00Z",
       "owner": "tigrbl",
+      "package_kind": "published-package",
       "private": false,
       "publication_status": "published",
       "published": true,
@@ -280,7 +281,7 @@
     "evidence": [
       {
         "kind": "ssot-registry",
-        "observed_at": "2026-08-03T22:06:01Z",
+        "observed_at": "2026-08-03T23:58:12Z",
         "url": "https://github.com/tigrbl/attribution-campaign-context/blob/master/.ssot/registry.json"
       },
       {
@@ -334,6 +335,18 @@
     "owner": "tigrbl",
     "package_ids": [
       "package:pypi:attribution-campaign-context:tigrbl/attribution-campaign-context:pyproject.toml"
+    ],
+    "packages": [
+      {
+        "ecosystem": "pypi",
+        "id": "package:pypi:attribution-campaign-context:tigrbl/attribution-campaign-context:pyproject.toml",
+        "manifest_path": "pyproject.toml",
+        "name": "attribution-campaign-context",
+        "package_kind": "published-package",
+        "publication_status": "published",
+        "published": true,
+        "route": "/catalog/packages/pypi/attribution-campaign-context-d7634189"
+      }
     ],
     "pushed_at": "2026-06-14T10:49:16Z",
     "related_resources": [
@@ -408,7 +421,1153 @@
       },
       "evidence_type": "ssot.registry",
       "governed": true,
-      "observed_at": "2026-08-03T22:06:01Z",
+      "inventory": {
+        "adrs": [
+          {
+            "id": "adr:0600",
+            "status": "draft",
+            "title": "Canonical registry is a single JSON document"
+          },
+          {
+            "id": "adr:0601",
+            "status": "draft",
+            "title": "Features are the targetable units"
+          },
+          {
+            "id": "adr:0602",
+            "status": "draft",
+            "title": "Issues are plannable work items"
+          },
+          {
+            "id": "adr:0603",
+            "status": "draft",
+            "title": "Entity-centric registry with a derived graph export"
+          },
+          {
+            "id": "adr:0604",
+            "status": "draft",
+            "title": "Normalized prefixed IDs"
+          },
+          {
+            "id": "adr:0605",
+            "status": "draft",
+            "title": "Claim status and claim tier are orthogonal"
+          },
+          {
+            "id": "adr:0606",
+            "status": "draft",
+            "title": "Feature implementation state is separate from lifecycle state"
+          },
+          {
+            "id": "adr:0607",
+            "status": "draft",
+            "title": "Immutable boundary and release snapshots"
+          },
+          {
+            "id": "adr:0608",
+            "status": "draft",
+            "title": "Fail-closed guards"
+          },
+          {
+            "id": "adr:0609",
+            "status": "draft",
+            "title": "Generated projections are non-canonical"
+          },
+          {
+            "id": "adr:0610",
+            "status": "draft",
+            "title": "Explicit schema versioning"
+          },
+          {
+            "id": "adr:0611",
+            "status": "draft",
+            "title": "Portable SSOT core with repo-specific evidence adapters"
+          },
+          {
+            "id": "adr:0612",
+            "status": "draft",
+            "title": "Enforce max path and filename lengths under `.ssot`"
+          },
+          {
+            "id": "adr:0613",
+            "status": "accepted",
+            "title": "Profiles are reusable feature bundles with derived pass status"
+          },
+          {
+            "id": "adr:0614",
+            "status": "accepted",
+            "title": "SPECs own typed ADR links"
+          },
+          {
+            "id": "adr:0615",
+            "status": "accepted",
+            "title": "Downstream assurance-language ceilings for feature target claim tiers"
+          },
+          {
+            "id": "adr:0616",
+            "status": "accepted",
+            "title": "Out-of-bounds implementation disposition is explicit"
+          },
+          {
+            "id": "adr:0617",
+            "status": "accepted",
+            "title": "Feature implementation is capped by active required claims"
+          },
+          {
+            "id": "adr:0618",
+            "status": "draft",
+            "title": "Local Release Assurance Remains SSOT Native"
+          },
+          {
+            "id": "adr:0619",
+            "status": "draft",
+            "title": "Content Addressed Governed Source Snapshots"
+          }
+        ],
+        "boundaries": [
+          {
+            "feature_ids": [
+              "feat:attribution.extract-context",
+              "feat:attribution.level1-telemetry-only",
+              "feat:attribution.level2-generic-conversion-linkage",
+              "feat:attribution.level3-app-relational-integrity",
+              "feat:attribution.middleware-hook-flow",
+              "feat:attribution.public-operator-surfaces",
+              "feat:attribution.resolver-validation-modes",
+              "feat:attribution.subject-association",
+              "feat:attribution.table-model-contracts",
+              "feat:attribution.touch-ledger",
+              "feat:attribution.touch-lifecycle-policy"
+            ],
+            "id": "bnd:default",
+            "status": "frozen",
+            "title": "Attribution campaign context full runtime T2 closure boundary"
+          }
+        ],
+        "claims": [
+          {
+            "evidence_ids": [
+              "evd:t0.attribution.public-operator-surfaces.proof-graph",
+              "evd:t0.attribution-campaign-context.runtime"
+            ],
+            "feature_ids": [
+              "feat:attribution.public-operator-surfaces"
+            ],
+            "id": "clm:attribution.public-operator-surfaces.t0",
+            "status": "published",
+            "test_ids": [
+              "tst:pytest.attribution.public-operator-surfaces.t0.proof-graph",
+              "tst:pytest.attribution.public-surfaces.t0"
+            ],
+            "title": "Attribution public operator surfaces T0 claim"
+          },
+          {
+            "evidence_ids": [
+              "evd:t1.attribution-campaign-context.runtime"
+            ],
+            "feature_ids": [
+              "feat:attribution.public-operator-surfaces"
+            ],
+            "id": "clm:attribution.public-operator-surfaces.t1",
+            "status": "published",
+            "test_ids": [
+              "tst:pytest.attribution.association-hooks.t1",
+              "tst:pytest.attribution.extract-context.t1",
+              "tst:pytest.attribution.middleware.t1"
+            ],
+            "title": "Attribution public operator surfaces T1 happy-path runtime proof"
+          },
+          {
+            "evidence_ids": [
+              "evd:t2.attribution-campaign-context.runtime"
+            ],
+            "feature_ids": [
+              "feat:attribution.public-operator-surfaces"
+            ],
+            "id": "clm:attribution.public-operator-surfaces.t2",
+            "status": "published",
+            "test_ids": [
+              "tst:pytest.attribution.public-contract.t2"
+            ],
+            "title": "Attribution public operator surfaces T2 robustness proof"
+          },
+          {
+            "evidence_ids": [
+              "evd:t0.attribution-campaign-context.runtime"
+            ],
+            "feature_ids": [
+              "feat:attribution.extract-context"
+            ],
+            "id": "clm:attribution.extract-context.t0",
+            "status": "published",
+            "test_ids": [
+              "tst:pytest.attribution.constants.t0"
+            ],
+            "title": "Attribution request context extraction T0 import and surface proof"
+          },
+          {
+            "evidence_ids": [
+              "evd:t1.attribution-campaign-context.runtime"
+            ],
+            "feature_ids": [
+              "feat:attribution.extract-context"
+            ],
+            "id": "clm:attribution.extract-context.t1",
+            "status": "published",
+            "test_ids": [
+              "tst:pytest.attribution.extract-context.t1"
+            ],
+            "title": "Attribution request context extraction T1 happy-path runtime proof"
+          },
+          {
+            "evidence_ids": [
+              "evd:t2.attribution-campaign-context.runtime"
+            ],
+            "feature_ids": [
+              "feat:attribution.extract-context"
+            ],
+            "id": "clm:attribution.extract-context.t2",
+            "status": "published",
+            "test_ids": [
+              "tst:pytest.attribution.adoption-levels.t2",
+              "tst:pytest.attribution.extract-edge-cases.t2",
+              "tst:pytest.attribution.runtime-robustness.t2"
+            ],
+            "title": "Attribution request context extraction T2 robustness proof"
+          },
+          {
+            "evidence_ids": [
+              "evd:t0.attribution-campaign-context.runtime"
+            ],
+            "feature_ids": [
+              "feat:attribution.touch-ledger"
+            ],
+            "id": "clm:attribution.touch-ledger.t0",
+            "status": "published",
+            "test_ids": [
+              "tst:pytest.attribution.association-helpers.t0"
+            ],
+            "title": "Attribution touch ledger model T0 import and surface proof"
+          },
+          {
+            "evidence_ids": [
+              "evd:t1.attribution-campaign-context.runtime"
+            ],
+            "feature_ids": [
+              "feat:attribution.touch-ledger"
+            ],
+            "id": "clm:attribution.touch-ledger.t1",
+            "status": "published",
+            "test_ids": [
+              "tst:pytest.attribution.association-hooks.t1"
+            ],
+            "title": "Attribution touch ledger model T1 happy-path runtime proof"
+          },
+          {
+            "evidence_ids": [
+              "evd:t2.attribution-campaign-context.runtime"
+            ],
+            "feature_ids": [
+              "feat:attribution.touch-ledger"
+            ],
+            "id": "clm:attribution.touch-ledger.t2",
+            "status": "published",
+            "test_ids": [
+              "tst:pytest.attribution.adoption-levels.t2",
+              "tst:pytest.attribution.table-contracts.t2"
+            ],
+            "title": "Attribution touch ledger model T2 robustness proof"
+          },
+          {
+            "evidence_ids": [
+              "evd:t0.attribution-campaign-context.runtime"
+            ],
+            "feature_ids": [
+              "feat:attribution.subject-association"
+            ],
+            "id": "clm:attribution.subject-association.t0",
+            "status": "published",
+            "test_ids": [
+              "tst:pytest.attribution.association-helpers.t0"
+            ],
+            "title": "Attribution subject association table T0 import and surface proof"
+          },
+          {
+            "evidence_ids": [
+              "evd:t1.attribution-campaign-context.runtime"
+            ],
+            "feature_ids": [
+              "feat:attribution.subject-association"
+            ],
+            "id": "clm:attribution.subject-association.t1",
+            "status": "published",
+            "test_ids": [
+              "tst:pytest.attribution.association-hooks.t1"
+            ],
+            "title": "Attribution subject association table T1 happy-path runtime proof"
+          },
+          {
+            "evidence_ids": [
+              "evd:t2.attribution-campaign-context.runtime"
+            ],
+            "feature_ids": [
+              "feat:attribution.subject-association"
+            ],
+            "id": "clm:attribution.subject-association.t2",
+            "status": "published",
+            "test_ids": [
+              "tst:pytest.attribution.adoption-levels.t2",
+              "tst:pytest.attribution.adoption-modes.t2",
+              "tst:pytest.attribution.association-validation.t2",
+              "tst:pytest.attribution.hook-robustness.t2",
+              "tst:pytest.attribution.table-contracts.t2",
+              "tst:pytest.attribution.touch-lifecycle.t2"
+            ],
+            "title": "Attribution subject association table T2 robustness proof"
+          },
+          {
+            "evidence_ids": [
+              "evd:t0.attribution-campaign-context.runtime"
+            ],
+            "feature_ids": [
+              "feat:attribution.resolver-validation-modes"
+            ],
+            "id": "clm:attribution.resolver-validation-modes.t0",
+            "status": "published",
+            "test_ids": [
+              "tst:pytest.attribution.association-helpers.t0"
+            ],
+            "title": "Attribution subject resolver validation modes T0 import and surface proof"
+          },
+          {
+            "evidence_ids": [
+              "evd:t1.attribution-campaign-context.runtime"
+            ],
+            "feature_ids": [
+              "feat:attribution.resolver-validation-modes"
+            ],
+            "id": "clm:attribution.resolver-validation-modes.t1",
+            "status": "published",
+            "test_ids": [
+              "tst:pytest.attribution.association-hooks.t1"
+            ],
+            "title": "Attribution subject resolver validation modes T1 happy-path runtime proof"
+          },
+          {
+            "evidence_ids": [
+              "evd:t2.attribution-campaign-context.runtime"
+            ],
+            "feature_ids": [
+              "feat:attribution.resolver-validation-modes"
+            ],
+            "id": "clm:attribution.resolver-validation-modes.t2",
+            "status": "published",
+            "test_ids": [
+              "tst:pytest.attribution.adoption-levels.t2",
+              "tst:pytest.attribution.adoption-modes.t2",
+              "tst:pytest.attribution.association-validation.t2",
+              "tst:pytest.attribution.hook-robustness.t2",
+              "tst:pytest.attribution.resolver-validation.t2",
+              "tst:pytest.attribution.runtime-robustness.t2"
+            ],
+            "title": "Attribution subject resolver validation modes T2 robustness proof"
+          },
+          {
+            "evidence_ids": [
+              "evd:t0.attribution-campaign-context.runtime"
+            ],
+            "feature_ids": [
+              "feat:attribution.middleware-hook-flow"
+            ],
+            "id": "clm:attribution.middleware-hook-flow.t0",
+            "status": "published",
+            "test_ids": [
+              "tst:pytest.attribution.public-surfaces.t0"
+            ],
+            "title": "Attribution middleware and hook flow T0 import and surface proof"
+          },
+          {
+            "evidence_ids": [
+              "evd:t1.attribution-campaign-context.runtime"
+            ],
+            "feature_ids": [
+              "feat:attribution.middleware-hook-flow"
+            ],
+            "id": "clm:attribution.middleware-hook-flow.t1",
+            "status": "published",
+            "test_ids": [
+              "tst:pytest.attribution.middleware.t1"
+            ],
+            "title": "Attribution middleware and hook flow T1 happy-path runtime proof"
+          },
+          {
+            "evidence_ids": [
+              "evd:t2.attribution-campaign-context.runtime"
+            ],
+            "feature_ids": [
+              "feat:attribution.middleware-hook-flow"
+            ],
+            "id": "clm:attribution.middleware-hook-flow.t2",
+            "status": "published",
+            "test_ids": [
+              "tst:pytest.attribution.adoption-modes.t2",
+              "tst:pytest.attribution.hook-robustness.t2",
+              "tst:pytest.attribution.middleware-no-signal.t2",
+              "tst:pytest.attribution.middleware-robustness.t2",
+              "tst:pytest.attribution.runtime-robustness.t2"
+            ],
+            "title": "Attribution middleware and hook flow T2 robustness proof"
+          },
+          {
+            "evidence_ids": [
+              "evd:t2.attribution-campaign-context.runtime"
+            ],
+            "feature_ids": [
+              "feat:attribution.touch-lifecycle-policy"
+            ],
+            "id": "clm:attribution.touch-lifecycle-policy.t2",
+            "status": "published",
+            "test_ids": [
+              "tst:pytest.attribution.touch-lifecycle.t2"
+            ],
+            "title": "Attribution first and subsequent touch policy T2 robustness claim"
+          },
+          {
+            "evidence_ids": [
+              "evd:t2.attribution-campaign-context.runtime"
+            ],
+            "feature_ids": [
+              "feat:attribution.table-model-contracts"
+            ],
+            "id": "clm:attribution.table-model-contracts.t2",
+            "status": "published",
+            "test_ids": [
+              "tst:pytest.attribution.table-contracts.t2"
+            ],
+            "title": "Attribution touch and subject link table contracts T2 robustness claim"
+          }
+        ],
+        "evidence": [
+          {
+            "claim_ids": [
+              "clm:attribution.public-operator-surfaces.t0"
+            ],
+            "id": "evd:t0.attribution.public-operator-surfaces.proof-graph",
+            "status": "passed",
+            "test_ids": [
+              "tst:pytest.attribution.public-operator-surfaces.t0.proof-graph"
+            ],
+            "title": "Attribution public operator surfaces proof-graph scaffold evidence"
+          },
+          {
+            "claim_ids": [
+              "clm:attribution.extract-context.t0",
+              "clm:attribution.middleware-hook-flow.t0",
+              "clm:attribution.public-operator-surfaces.t0",
+              "clm:attribution.resolver-validation-modes.t0",
+              "clm:attribution.subject-association.t0",
+              "clm:attribution.touch-ledger.t0"
+            ],
+            "id": "evd:t0.attribution-campaign-context.runtime",
+            "status": "passed",
+            "test_ids": [
+              "tst:pytest.attribution.association-helpers.t0",
+              "tst:pytest.attribution.constants.t0",
+              "tst:pytest.attribution.public-operator-surfaces.t0.proof-graph",
+              "tst:pytest.attribution.public-surfaces.t0"
+            ],
+            "title": "Attribution campaign context runtime T0 pytest evidence"
+          },
+          {
+            "claim_ids": [
+              "clm:attribution.extract-context.t1",
+              "clm:attribution.middleware-hook-flow.t1",
+              "clm:attribution.public-operator-surfaces.t1",
+              "clm:attribution.resolver-validation-modes.t1",
+              "clm:attribution.subject-association.t1",
+              "clm:attribution.touch-ledger.t1"
+            ],
+            "id": "evd:t1.attribution-campaign-context.runtime",
+            "status": "passed",
+            "test_ids": [
+              "tst:pytest.attribution.association-hooks.t1",
+              "tst:pytest.attribution.extract-context.t1",
+              "tst:pytest.attribution.middleware.t1"
+            ],
+            "title": "Attribution campaign context runtime T1 pytest evidence"
+          },
+          {
+            "claim_ids": [
+              "clm:attribution.extract-context.t2",
+              "clm:attribution.level1-telemetry-only.t2",
+              "clm:attribution.level2-generic-conversion-linkage.t2",
+              "clm:attribution.level3-app-relational-integrity.t2",
+              "clm:attribution.middleware-hook-flow.t2",
+              "clm:attribution.public-operator-surfaces.t2",
+              "clm:attribution.resolver-validation-modes.t2",
+              "clm:attribution.subject-association.t2",
+              "clm:attribution.table-model-contracts.t2",
+              "clm:attribution.touch-ledger.t2",
+              "clm:attribution.touch-lifecycle-policy.t2"
+            ],
+            "id": "evd:t2.attribution-campaign-context.runtime",
+            "status": "passed",
+            "test_ids": [
+              "tst:pytest.attribution.adoption-levels.t2",
+              "tst:pytest.attribution.adoption-modes.t2",
+              "tst:pytest.attribution.association-validation.t2",
+              "tst:pytest.attribution.extract-edge-cases.t2",
+              "tst:pytest.attribution.hook-robustness.t2",
+              "tst:pytest.attribution.middleware-no-signal.t2",
+              "tst:pytest.attribution.middleware-robustness.t2",
+              "tst:pytest.attribution.public-contract.t2",
+              "tst:pytest.attribution.resolver-validation.t2",
+              "tst:pytest.attribution.runtime-robustness.t2",
+              "tst:pytest.attribution.table-contracts.t2",
+              "tst:pytest.attribution.touch-lifecycle.t2"
+            ],
+            "title": "Attribution campaign context runtime T2 pytest evidence"
+          }
+        ],
+        "features": [
+          {
+            "claim_ids": [
+              "clm:attribution.public-operator-surfaces.t0",
+              "clm:attribution.public-operator-surfaces.t1",
+              "clm:attribution.public-operator-surfaces.t2"
+            ],
+            "id": "feat:attribution.public-operator-surfaces",
+            "implementation_status": "implemented",
+            "test_ids": [
+              "tst:pytest.attribution.association-hooks.t1",
+              "tst:pytest.attribution.extract-context.t1",
+              "tst:pytest.attribution.middleware.t1",
+              "tst:pytest.attribution.public-contract.t2",
+              "tst:pytest.attribution.public-operator-surfaces.t0.proof-graph",
+              "tst:pytest.attribution.public-surfaces.t0"
+            ],
+            "title": "Attribution public operator surfaces"
+          },
+          {
+            "claim_ids": [
+              "clm:attribution.extract-context.t0",
+              "clm:attribution.extract-context.t1",
+              "clm:attribution.extract-context.t2"
+            ],
+            "id": "feat:attribution.extract-context",
+            "implementation_status": "implemented",
+            "test_ids": [
+              "tst:pytest.attribution.adoption-levels.t2",
+              "tst:pytest.attribution.constants.t0",
+              "tst:pytest.attribution.extract-context.t1",
+              "tst:pytest.attribution.extract-edge-cases.t2",
+              "tst:pytest.attribution.runtime-robustness.t2"
+            ],
+            "title": "Attribution request context extraction"
+          },
+          {
+            "claim_ids": [
+              "clm:attribution.touch-ledger.t0",
+              "clm:attribution.touch-ledger.t1",
+              "clm:attribution.touch-ledger.t2"
+            ],
+            "id": "feat:attribution.touch-ledger",
+            "implementation_status": "implemented",
+            "test_ids": [
+              "tst:pytest.attribution.adoption-levels.t2",
+              "tst:pytest.attribution.association-helpers.t0",
+              "tst:pytest.attribution.association-hooks.t1",
+              "tst:pytest.attribution.table-contracts.t2"
+            ],
+            "title": "Attribution touch ledger model"
+          },
+          {
+            "claim_ids": [
+              "clm:attribution.subject-association.t0",
+              "clm:attribution.subject-association.t1",
+              "clm:attribution.subject-association.t2"
+            ],
+            "id": "feat:attribution.subject-association",
+            "implementation_status": "implemented",
+            "test_ids": [
+              "tst:pytest.attribution.adoption-levels.t2",
+              "tst:pytest.attribution.adoption-modes.t2",
+              "tst:pytest.attribution.association-helpers.t0",
+              "tst:pytest.attribution.association-hooks.t1",
+              "tst:pytest.attribution.association-validation.t2",
+              "tst:pytest.attribution.hook-robustness.t2",
+              "tst:pytest.attribution.table-contracts.t2",
+              "tst:pytest.attribution.touch-lifecycle.t2"
+            ],
+            "title": "Attribution subject association table"
+          },
+          {
+            "claim_ids": [
+              "clm:attribution.resolver-validation-modes.t0",
+              "clm:attribution.resolver-validation-modes.t1",
+              "clm:attribution.resolver-validation-modes.t2"
+            ],
+            "id": "feat:attribution.resolver-validation-modes",
+            "implementation_status": "implemented",
+            "test_ids": [
+              "tst:pytest.attribution.adoption-levels.t2",
+              "tst:pytest.attribution.adoption-modes.t2",
+              "tst:pytest.attribution.association-helpers.t0",
+              "tst:pytest.attribution.association-hooks.t1",
+              "tst:pytest.attribution.association-validation.t2",
+              "tst:pytest.attribution.hook-robustness.t2",
+              "tst:pytest.attribution.resolver-validation.t2",
+              "tst:pytest.attribution.runtime-robustness.t2"
+            ],
+            "title": "Attribution subject resolver validation modes"
+          },
+          {
+            "claim_ids": [
+              "clm:attribution.middleware-hook-flow.t0",
+              "clm:attribution.middleware-hook-flow.t1",
+              "clm:attribution.middleware-hook-flow.t2"
+            ],
+            "id": "feat:attribution.middleware-hook-flow",
+            "implementation_status": "implemented",
+            "test_ids": [
+              "tst:pytest.attribution.adoption-modes.t2",
+              "tst:pytest.attribution.hook-robustness.t2",
+              "tst:pytest.attribution.middleware-no-signal.t2",
+              "tst:pytest.attribution.middleware-robustness.t2",
+              "tst:pytest.attribution.middleware.t1",
+              "tst:pytest.attribution.public-surfaces.t0",
+              "tst:pytest.attribution.runtime-robustness.t2"
+            ],
+            "title": "Attribution middleware and hook flow"
+          },
+          {
+            "claim_ids": [
+              "clm:attribution.touch-lifecycle-policy.t2"
+            ],
+            "id": "feat:attribution.touch-lifecycle-policy",
+            "implementation_status": "implemented",
+            "test_ids": [
+              "tst:pytest.attribution.touch-lifecycle.t2"
+            ],
+            "title": "Attribution first and subsequent touch policy"
+          },
+          {
+            "claim_ids": [
+              "clm:attribution.table-model-contracts.t2"
+            ],
+            "id": "feat:attribution.table-model-contracts",
+            "implementation_status": "implemented",
+            "test_ids": [
+              "tst:pytest.attribution.table-contracts.t2"
+            ],
+            "title": "Attribution touch and subject link table contracts"
+          },
+          {
+            "claim_ids": [
+              "clm:attribution.level1-telemetry-only.t2"
+            ],
+            "id": "feat:attribution.level1-telemetry-only",
+            "implementation_status": "implemented",
+            "test_ids": [
+              "tst:pytest.attribution.adoption-levels.t2"
+            ],
+            "title": "Level 1 telemetry-only adoption"
+          },
+          {
+            "claim_ids": [
+              "clm:attribution.level2-generic-conversion-linkage.t2"
+            ],
+            "id": "feat:attribution.level2-generic-conversion-linkage",
+            "implementation_status": "implemented",
+            "test_ids": [
+              "tst:pytest.attribution.adoption-levels.t2"
+            ],
+            "title": "Level 2 generic conversion linkage adoption"
+          },
+          {
+            "claim_ids": [
+              "clm:attribution.level3-app-relational-integrity.t2"
+            ],
+            "id": "feat:attribution.level3-app-relational-integrity",
+            "implementation_status": "implemented",
+            "test_ids": [
+              "tst:pytest.attribution.adoption-levels.t2"
+            ],
+            "title": "Level 3 app-specific relational integrity adoption"
+          }
+        ],
+        "issues": [],
+        "profiles": [],
+        "releases": [
+          {
+            "claim_ids": [
+              "clm:attribution.extract-context.t0",
+              "clm:attribution.extract-context.t1",
+              "clm:attribution.extract-context.t2",
+              "clm:attribution.level1-telemetry-only.t2",
+              "clm:attribution.level2-generic-conversion-linkage.t2",
+              "clm:attribution.level3-app-relational-integrity.t2",
+              "clm:attribution.middleware-hook-flow.t0",
+              "clm:attribution.middleware-hook-flow.t1",
+              "clm:attribution.middleware-hook-flow.t2",
+              "clm:attribution.public-operator-surfaces.t0",
+              "clm:attribution.public-operator-surfaces.t1",
+              "clm:attribution.public-operator-surfaces.t2",
+              "clm:attribution.resolver-validation-modes.t0",
+              "clm:attribution.resolver-validation-modes.t1",
+              "clm:attribution.resolver-validation-modes.t2",
+              "clm:attribution.subject-association.t0",
+              "clm:attribution.subject-association.t1",
+              "clm:attribution.subject-association.t2",
+              "clm:attribution.table-model-contracts.t2",
+              "clm:attribution.touch-ledger.t0",
+              "clm:attribution.touch-ledger.t1",
+              "clm:attribution.touch-ledger.t2",
+              "clm:attribution.touch-lifecycle-policy.t2"
+            ],
+            "evidence_ids": [
+              "evd:t0.attribution.public-operator-surfaces.proof-graph",
+              "evd:t0.attribution-campaign-context.runtime",
+              "evd:t1.attribution-campaign-context.runtime",
+              "evd:t2.attribution-campaign-context.runtime"
+            ],
+            "id": "rel:0.1.0",
+            "status": "published"
+          }
+        ],
+        "specs": [
+          {
+            "id": "spc:0600",
+            "status": "draft",
+            "title": "Registry core"
+          },
+          {
+            "id": "spc:0601",
+            "status": "draft",
+            "title": "CLI"
+          },
+          {
+            "id": "spc:0602",
+            "status": "draft",
+            "title": "Graph model"
+          },
+          {
+            "id": "spc:0603",
+            "status": "draft",
+            "title": "Feature lifecycle"
+          },
+          {
+            "id": "spc:0604",
+            "status": "draft",
+            "title": "Claim statuses"
+          },
+          {
+            "id": "spc:0605",
+            "status": "draft",
+            "title": "Claim tiers"
+          },
+          {
+            "id": "spc:0606",
+            "status": "draft",
+            "title": "Snapshots and reports"
+          },
+          {
+            "id": "spc:0607",
+            "status": "draft",
+            "title": "Repository policy"
+          },
+          {
+            "id": "spc:0608",
+            "status": "draft",
+            "title": "Gates and fences"
+          },
+          {
+            "id": "spc:0609",
+            "status": "draft",
+            "title": "ID normalization"
+          },
+          {
+            "id": "spc:0610",
+            "status": "draft",
+            "title": "File tree"
+          },
+          {
+            "id": "spc:0611",
+            "status": "draft",
+            "title": "Planning horizons"
+          },
+          {
+            "id": "spc:0612",
+            "status": "draft",
+            "title": "Python API"
+          },
+          {
+            "id": "spc:0613",
+            "status": "draft",
+            "title": "SSOT path-length policy"
+          },
+          {
+            "id": "spc:0614",
+            "status": "draft",
+            "title": "Profile evaluation and boundary resolution"
+          },
+          {
+            "id": "spc:0615",
+            "status": "accepted",
+            "title": "Typed SPEC-to-ADR linking"
+          },
+          {
+            "id": "spc:0616",
+            "status": "accepted",
+            "title": "Out-of-bounds implementation disposition"
+          },
+          {
+            "id": "spc:0617",
+            "status": "accepted",
+            "title": "Feature implementation claim ceilings"
+          },
+          {
+            "id": "spc:0618",
+            "status": "draft",
+            "title": "Local Release Assurance Candidate Scope"
+          },
+          {
+            "id": "spc:0619",
+            "status": "draft",
+            "title": "Governed Source Snapshot Contract"
+          }
+        ],
+        "tests": [
+          {
+            "claim_ids": [
+              "clm:attribution.public-operator-surfaces.t0"
+            ],
+            "evidence_ids": [
+              "evd:t0.attribution.public-operator-surfaces.proof-graph",
+              "evd:t0.attribution-campaign-context.runtime"
+            ],
+            "feature_ids": [
+              "feat:attribution.public-operator-surfaces"
+            ],
+            "id": "tst:pytest.attribution.public-operator-surfaces.t0.proof-graph",
+            "status": "passing",
+            "title": "Attribution public operator surfaces T0 proof-graph scaffold test"
+          },
+          {
+            "claim_ids": [
+              "clm:attribution.extract-context.t0"
+            ],
+            "evidence_ids": [
+              "evd:t0.attribution-campaign-context.runtime"
+            ],
+            "feature_ids": [
+              "feat:attribution.extract-context"
+            ],
+            "id": "tst:pytest.attribution.constants.t0",
+            "status": "passing",
+            "title": "Attribution constants T0 test"
+          },
+          {
+            "claim_ids": [
+              "clm:attribution.middleware-hook-flow.t0",
+              "clm:attribution.public-operator-surfaces.t0"
+            ],
+            "evidence_ids": [
+              "evd:t0.attribution-campaign-context.runtime"
+            ],
+            "feature_ids": [
+              "feat:attribution.middleware-hook-flow",
+              "feat:attribution.public-operator-surfaces"
+            ],
+            "id": "tst:pytest.attribution.public-surfaces.t0",
+            "status": "passing",
+            "title": "Attribution public surfaces T0 test"
+          },
+          {
+            "claim_ids": [
+              "clm:attribution.resolver-validation-modes.t0",
+              "clm:attribution.subject-association.t0",
+              "clm:attribution.touch-ledger.t0"
+            ],
+            "evidence_ids": [
+              "evd:t0.attribution-campaign-context.runtime"
+            ],
+            "feature_ids": [
+              "feat:attribution.resolver-validation-modes",
+              "feat:attribution.subject-association",
+              "feat:attribution.touch-ledger"
+            ],
+            "id": "tst:pytest.attribution.association-helpers.t0",
+            "status": "passing",
+            "title": "Attribution association helper T0 test"
+          },
+          {
+            "claim_ids": [
+              "clm:attribution.extract-context.t1",
+              "clm:attribution.public-operator-surfaces.t1"
+            ],
+            "evidence_ids": [
+              "evd:t1.attribution-campaign-context.runtime"
+            ],
+            "feature_ids": [
+              "feat:attribution.extract-context",
+              "feat:attribution.public-operator-surfaces"
+            ],
+            "id": "tst:pytest.attribution.extract-context.t1",
+            "status": "passing",
+            "title": "Attribution extraction T1 test"
+          },
+          {
+            "claim_ids": [
+              "clm:attribution.public-operator-surfaces.t1",
+              "clm:attribution.resolver-validation-modes.t1",
+              "clm:attribution.subject-association.t1",
+              "clm:attribution.touch-ledger.t1"
+            ],
+            "evidence_ids": [
+              "evd:t1.attribution-campaign-context.runtime"
+            ],
+            "feature_ids": [
+              "feat:attribution.public-operator-surfaces",
+              "feat:attribution.resolver-validation-modes",
+              "feat:attribution.subject-association",
+              "feat:attribution.touch-ledger"
+            ],
+            "id": "tst:pytest.attribution.association-hooks.t1",
+            "status": "passing",
+            "title": "Attribution association and hook T1 test"
+          },
+          {
+            "claim_ids": [
+              "clm:attribution.middleware-hook-flow.t1",
+              "clm:attribution.public-operator-surfaces.t1"
+            ],
+            "evidence_ids": [
+              "evd:t1.attribution-campaign-context.runtime"
+            ],
+            "feature_ids": [
+              "feat:attribution.middleware-hook-flow",
+              "feat:attribution.public-operator-surfaces"
+            ],
+            "id": "tst:pytest.attribution.middleware.t1",
+            "status": "passing",
+            "title": "Attribution middleware T1 test"
+          },
+          {
+            "claim_ids": [
+              "clm:attribution.resolver-validation-modes.t2"
+            ],
+            "evidence_ids": [
+              "evd:t2.attribution-campaign-context.runtime"
+            ],
+            "feature_ids": [
+              "feat:attribution.resolver-validation-modes"
+            ],
+            "id": "tst:pytest.attribution.resolver-validation.t2",
+            "status": "passing",
+            "title": "Attribution resolver validation T2 test"
+          },
+          {
+            "claim_ids": [
+              "clm:attribution.middleware-hook-flow.t2"
+            ],
+            "evidence_ids": [
+              "evd:t2.attribution-campaign-context.runtime"
+            ],
+            "feature_ids": [
+              "feat:attribution.middleware-hook-flow"
+            ],
+            "id": "tst:pytest.attribution.middleware-no-signal.t2",
+            "status": "passing",
+            "title": "Attribution middleware no-signal T2 test"
+          },
+          {
+            "claim_ids": [
+              "clm:attribution.extract-context.t2",
+              "clm:attribution.resolver-validation-modes.t2",
+              "clm:attribution.middleware-hook-flow.t2"
+            ],
+            "evidence_ids": [
+              "evd:t2.attribution-campaign-context.runtime"
+            ],
+            "feature_ids": [
+              "feat:attribution.extract-context",
+              "feat:attribution.resolver-validation-modes",
+              "feat:attribution.middleware-hook-flow"
+            ],
+            "id": "tst:pytest.attribution.runtime-robustness.t2",
+            "status": "passing",
+            "title": "Attribution runtime robustness T2 test"
+          },
+          {
+            "claim_ids": [
+              "clm:attribution.extract-context.t2"
+            ],
+            "evidence_ids": [
+              "evd:t2.attribution-campaign-context.runtime"
+            ],
+            "feature_ids": [
+              "feat:attribution.extract-context"
+            ],
+            "id": "tst:pytest.attribution.extract-edge-cases.t2",
+            "status": "passing",
+            "title": "Attribution extraction edge cases T2 test"
+          },
+          {
+            "claim_ids": [
+              "clm:attribution.subject-association.t2",
+              "clm:attribution.resolver-validation-modes.t2"
+            ],
+            "evidence_ids": [
+              "evd:t2.attribution-campaign-context.runtime"
+            ],
+            "feature_ids": [
+              "feat:attribution.subject-association",
+              "feat:attribution.resolver-validation-modes"
+            ],
+            "id": "tst:pytest.attribution.association-validation.t2",
+            "status": "passing",
+            "title": "Attribution association validation T2 test"
+          },
+          {
+            "claim_ids": [
+              "clm:attribution.middleware-hook-flow.t2",
+              "clm:attribution.subject-association.t2",
+              "clm:attribution.resolver-validation-modes.t2"
+            ],
+            "evidence_ids": [
+              "evd:t2.attribution-campaign-context.runtime"
+            ],
+            "feature_ids": [
+              "feat:attribution.middleware-hook-flow",
+              "feat:attribution.subject-association",
+              "feat:attribution.resolver-validation-modes"
+            ],
+            "id": "tst:pytest.attribution.hook-robustness.t2",
+            "status": "passing",
+            "title": "Attribution hook robustness T2 test"
+          },
+          {
+            "claim_ids": [
+              "clm:attribution.middleware-hook-flow.t2"
+            ],
+            "evidence_ids": [
+              "evd:t2.attribution-campaign-context.runtime"
+            ],
+            "feature_ids": [
+              "feat:attribution.middleware-hook-flow"
+            ],
+            "id": "tst:pytest.attribution.middleware-robustness.t2",
+            "status": "passing",
+            "title": "Attribution middleware robustness T2 test"
+          },
+          {
+            "claim_ids": [
+              "clm:attribution.public-operator-surfaces.t2"
+            ],
+            "evidence_ids": [
+              "evd:t2.attribution-campaign-context.runtime"
+            ],
+            "feature_ids": [
+              "feat:attribution.public-operator-surfaces"
+            ],
+            "id": "tst:pytest.attribution.public-contract.t2",
+            "status": "passing",
+            "title": "Attribution public contract T2 test"
+          },
+          {
+            "claim_ids": [
+              "clm:attribution.subject-association.t2",
+              "clm:attribution.resolver-validation-modes.t2",
+              "clm:attribution.middleware-hook-flow.t2"
+            ],
+            "evidence_ids": [
+              "evd:t2.attribution-campaign-context.runtime"
+            ],
+            "feature_ids": [
+              "feat:attribution.subject-association",
+              "feat:attribution.resolver-validation-modes",
+              "feat:attribution.middleware-hook-flow"
+            ],
+            "id": "tst:pytest.attribution.adoption-modes.t2",
+            "status": "passing",
+            "title": "Attribution adoption modes T2 test"
+          },
+          {
+            "claim_ids": [
+              "clm:attribution.touch-lifecycle-policy.t2",
+              "clm:attribution.subject-association.t2"
+            ],
+            "evidence_ids": [
+              "evd:t2.attribution-campaign-context.runtime"
+            ],
+            "feature_ids": [
+              "feat:attribution.touch-lifecycle-policy",
+              "feat:attribution.subject-association"
+            ],
+            "id": "tst:pytest.attribution.touch-lifecycle.t2",
+            "status": "passing",
+            "title": "Attribution first and subsequent touch lifecycle T2 test"
+          },
+          {
+            "claim_ids": [
+              "clm:attribution.table-model-contracts.t2",
+              "clm:attribution.touch-ledger.t2",
+              "clm:attribution.subject-association.t2"
+            ],
+            "evidence_ids": [
+              "evd:t2.attribution-campaign-context.runtime"
+            ],
+            "feature_ids": [
+              "feat:attribution.table-model-contracts",
+              "feat:attribution.touch-ledger",
+              "feat:attribution.subject-association"
+            ],
+            "id": "tst:pytest.attribution.table-contracts.t2",
+            "status": "passing",
+            "title": "Attribution table model contracts T2 test"
+          },
+          {
+            "claim_ids": [
+              "clm:attribution.level1-telemetry-only.t2",
+              "clm:attribution.level2-generic-conversion-linkage.t2",
+              "clm:attribution.level3-app-relational-integrity.t2",
+              "clm:attribution.extract-context.t2",
+              "clm:attribution.touch-ledger.t2",
+              "clm:attribution.subject-association.t2",
+              "clm:attribution.resolver-validation-modes.t2"
+            ],
+            "evidence_ids": [
+              "evd:t2.attribution-campaign-context.runtime"
+            ],
+            "feature_ids": [
+              "feat:attribution.level1-telemetry-only",
+              "feat:attribution.level2-generic-conversion-linkage",
+              "feat:attribution.level3-app-relational-integrity",
+              "feat:attribution.extract-context",
+              "feat:attribution.touch-ledger",
+              "feat:attribution.subject-association",
+              "feat:attribution.resolver-validation-modes"
+            ],
+            "id": "tst:pytest.attribution.adoption-levels.t2",
+            "status": "passing",
+            "title": "Attribution adoption levels T2 test"
+          }
+        ]
+      },
+      "inventory_truncated": {
+        "adrs": 33,
+        "boundaries": 0,
+        "claims": 3,
+        "evidence": 0,
+        "features": 0,
+        "issues": 0,
+        "profiles": 0,
+        "releases": 0,
+        "specs": 51,
+        "tests": 0
+      },
+      "observed_at": "2026-08-03T23:58:12Z",
       "present": true,
       "raw_url": "https://raw.githubusercontent.com/tigrbl/attribution-campaign-context/master/.ssot/registry.json",
       "registry_url": "https://github.com/tigrbl/attribution-campaign-context/blob/master/.ssot/registry.json",

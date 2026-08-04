@@ -105,6 +105,7 @@
       "name": "seo-aeo-aieo-governance-pack",
       "observed_at": "2026-08-03T22:06:00Z",
       "owner": "groupsum",
+      "package_kind": "published-package",
       "private": false,
       "publication_status": "published",
       "published": true,
@@ -549,6 +550,18 @@
     "package_ids": [
       "package:pypi:seo-aeo-aieo-governance-pack:groupsum/seo-aeo-aieo-governance-pack:pyproject.toml"
     ],
+    "packages": [
+      {
+        "ecosystem": "pypi",
+        "id": "package:pypi:seo-aeo-aieo-governance-pack:groupsum/seo-aeo-aieo-governance-pack:pyproject.toml",
+        "manifest_path": "pyproject.toml",
+        "name": "seo-aeo-aieo-governance-pack",
+        "package_kind": "published-package",
+        "publication_status": "published",
+        "published": true,
+        "route": "/catalog/packages/pypi/seo-aeo-aieo-governance-pack-626a7b5d"
+      }
+    ],
     "pushed_at": "2026-06-02T00:59:19Z",
     "related_resources": [],
     "relationship_counts": {
@@ -560,8 +573,8 @@
       "counts": {},
       "coverage": {},
       "governed": false,
-      "observation_status": "error",
-      "observed_at": "2026-08-03T22:06:01Z",
+      "observation_status": "not_found",
+      "observed_at": "2026-08-03T23:58:12Z",
       "present": false,
       "registry_url": null,
       "status_counts": {},

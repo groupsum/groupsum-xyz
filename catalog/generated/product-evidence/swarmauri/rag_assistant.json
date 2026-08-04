@@ -89,6 +89,7 @@
       "name": "rag_assistant",
       "observed_at": "2026-08-03T22:06:00Z",
       "owner": "swarmauri",
+      "package_kind": "published-package",
       "private": false,
       "publication_status": "published",
       "published": true,
@@ -953,6 +954,18 @@
     "package_ids": [
       "package:pypi:rag_assistant:swarmauri/rag_assistant:pyproject.toml"
     ],
+    "packages": [
+      {
+        "ecosystem": "pypi",
+        "id": "package:pypi:rag_assistant:swarmauri/rag_assistant:pyproject.toml",
+        "manifest_path": "pyproject.toml",
+        "name": "rag_assistant",
+        "package_kind": "published-package",
+        "publication_status": "published",
+        "published": true,
+        "route": "/catalog/packages/pypi/rag-assistant-8e539276"
+      }
+    ],
     "pushed_at": "2024-10-30T00:50:28Z",
     "related_resources": [
       {
@@ -980,8 +993,8 @@
       "counts": {},
       "coverage": {},
       "governed": false,
-      "observation_status": "error",
-      "observed_at": "2026-08-03T22:06:02Z",
+      "observation_status": "not_found",
+      "observed_at": "2026-08-03T23:58:12Z",
       "present": false,
       "registry_url": null,
       "status_counts": {},

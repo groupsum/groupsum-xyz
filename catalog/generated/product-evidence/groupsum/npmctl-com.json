@@ -70,6 +70,7 @@
       "name": "@groupsum/npmctl-com-content-pack",
       "observed_at": "2026-08-03T22:06:00Z",
       "owner": "groupsum",
+      "package_kind": "private-package",
       "private": true,
       "publication_status": "manifest_private",
       "published": false,
@@ -283,6 +284,7 @@
       "name": "react-example",
       "observed_at": "2026-08-03T22:06:00Z",
       "owner": "groupsum",
+      "package_kind": "workspace-project",
       "private": true,
       "publication_status": "manifest_private",
       "published": false,
@@ -360,6 +362,7 @@
       "name": "npmctl-com",
       "observed_at": "2026-08-03T22:06:00Z",
       "owner": "groupsum",
+      "package_kind": "package-candidate",
       "private": false,
       "publication_status": "not-confirmed",
       "published": false,
@@ -570,6 +573,38 @@
       "package:npm:react-example:groupsum/npmctl-com:package.json",
       "package:pypi:npmctl-com:groupsum/npmctl-com:pyproject.toml"
     ],
+    "packages": [
+      {
+        "ecosystem": "npm",
+        "id": "package:npm:@groupsum/npmctl-com-content-pack:groupsum/npmctl-com:packages/site-content-pack/package.json",
+        "manifest_path": "packages/site-content-pack/package.json",
+        "name": "@groupsum/npmctl-com-content-pack",
+        "package_kind": "private-package",
+        "publication_status": "manifest_private",
+        "published": false,
+        "route": "/catalog/packages/npm/groupsum-npmctl-com-content-pack-a07019fe"
+      },
+      {
+        "ecosystem": "npm",
+        "id": "package:npm:react-example:groupsum/npmctl-com:package.json",
+        "manifest_path": "package.json",
+        "name": "react-example",
+        "package_kind": "workspace-project",
+        "publication_status": "manifest_private",
+        "published": false,
+        "route": "/catalog/packages/npm/react-example-457df34e"
+      },
+      {
+        "ecosystem": "pypi",
+        "id": "package:pypi:npmctl-com:groupsum/npmctl-com:pyproject.toml",
+        "manifest_path": "pyproject.toml",
+        "name": "npmctl-com",
+        "package_kind": "package-candidate",
+        "publication_status": "not-confirmed",
+        "published": false,
+        "route": "/catalog/packages/pypi/npmctl-com-f70a8ac1"
+      }
+    ],
     "pushed_at": "2026-07-25T19:02:53Z",
     "related_resources": [],
     "relationship_counts": {
@@ -581,8 +616,8 @@
       "counts": {},
       "coverage": {},
       "governed": false,
-      "observation_status": "error",
-      "observed_at": "2026-08-03T22:06:01Z",
+      "observation_status": "not_found",
+      "observed_at": "2026-08-03T23:58:12Z",
       "present": false,
       "registry_url": null,
       "status_counts": {},

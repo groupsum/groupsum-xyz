@@ -62,23 +62,34 @@ async function verify() {
   const tigrblApi = await fetchResponse("/api/v1/products/tigrbl");
   if (!tigrblApi.ok) throw new Error(`Tigrbl API returned ${tigrblApi.status}`);
   const tigrblModel = await tigrblApi.json();
+  if (tigrblModel.implementation?.signals || tigrblModel.implementation?.releases || tigrblModel.implementation?.dependencies) {
+    throw new Error("Tigrbl API still exposes product-owned repository or package attributes");
+  }
   const releaseKinds = new Set(
-    (tigrblModel.implementation?.release_summary || []).map((item) => item.release_kind),
+    [
+      ...(tigrblModel.implementation?.packages || []).flatMap((item) => item.releases || []),
+      ...(tigrblModel.implementation?.repositories || []).flatMap((item) => item.releases || []),
+    ].map((item) => item.release_kind),
   );
   for (const releaseKind of ["pypi", "npm", "crates", "github"]) {
     if (!releaseKinds.has(releaseKind)) throw new Error(`Tigrbl API is missing ${releaseKind} releases`);
   }
-  if (tigrblModel.implementation?.dependency_summary?.dependencies < 500) {
+  const dependencyCount = (tigrblModel.implementation?.packages || []).reduce(
+    (total, item) => total + Number(item.dependency_summary?.edge_count || 0), 0,
+  );
+  const dependentCount = (tigrblModel.implementation?.packages || []).reduce(
+    (total, item) => total + Number(item.dependent_summary?.edge_count || 0), 0,
+  );
+  if (dependencyCount < 500) {
     throw new Error("Tigrbl API dependency projection is incomplete");
   }
-  if (tigrblModel.implementation?.dependency_summary?.dependents < 100) {
+  if (dependentCount < 100) {
     throw new Error("Tigrbl API dependent projection is incomplete");
   }
-  const signals = tigrblModel.implementation?.signals;
-  if (signals?.repository_count !== 4) throw new Error("Tigrbl aggregate repository signals are incomplete");
-  if (signals?.metrics?.contributors !== 2) throw new Error("Tigrbl contributor aggregation is inaccurate");
-  if (signals?.commit_activity?.length !== 30) throw new Error("Tigrbl commit activity window is incomplete");
-  const ssotRegistries = tigrblModel.governance?.ssot_registries || [];
+  if ((tigrblModel.implementation?.repositories || []).some((item) => item.commit_activity?.length !== 30)) {
+    throw new Error("Tigrbl repository-owned commit activity is incomplete");
+  }
+  const ssotRegistries = tigrblModel.governance?.repositories || [];
   const tigrblRegistry = ssotRegistries.find((item) => item.repository === "tigrbl/tigrbl");
   if (!tigrblRegistry?.governed) throw new Error("Tigrbl API lacks its SSOT-governed registry");
   if (tigrblRegistry.summary?.counts?.claims < 1) throw new Error("Tigrbl SSOT claim inventory is missing");

@@ -1,5 +1,5 @@
 // Generated from backend/openapi.json. Do not edit manually.
-export const OPENAPI_SHA256 = "dffb86f9f9f2a0feebdeaf2d580fd8001cc463d0e2dfea4e4da08606c2e5840d" as const;
+export const OPENAPI_SHA256 = "281be1b80ba1072be317eef2073f7d233da53899c8f1b0f40a5f00b60d548565" as const;
 
 export type TaxonomyItem = { slug: string; label: string; category: string | null };
 export type MetricPoint = { observed_at: string; value: number };
@@ -9,6 +9,16 @@ export type SsotGovernanceSummary = {
   source_sha256?: string | null; schema_version?: string | null; observed_at?: string | null;
   counts?: Record<string, number>; status_counts?: Record<string, Record<string, number>>;
   coverage?: Record<string, number>; limitation?: string | null;
+  inventory_truncated?: Record<string, number>;
+  inventory?: Record<string, Array<{
+    id: string; status?: string; implementation_status?: string; title?: string;
+    name?: string; statement?: string; evidence_ids?: string[]; test_ids?: string[];
+    claim_ids?: string[]; feature_ids?: string[];
+  }>>;
+};
+export type RepositoryGovernance = {
+  governed: boolean; registry_url?: string | null; registry_sha256?: string | null;
+  schema_version?: string | null; observed_at?: string | null; summary: SsotGovernanceSummary;
 };
 export type RepositorySignals = {
   repository_count?: number; metrics: Record<"stars" | "forks" | "watchers" | "contributors" | "commits", number>;
@@ -20,8 +30,7 @@ export type RepositoryEvidence = {
   default_branch?: string | null; is_archived: boolean; is_fork: boolean;
   observed_at?: string | null; role: string; metrics: Record<string, number>;
   history: RepositorySignals["history"]; commit_activity: CommitActivityPoint[];
-  ssot_governed?: boolean; ssot_registry_url?: string | null;
-  ssot_schema_version?: string | null; ssot_summary?: SsotGovernanceSummary;
+  releases: ReleaseEvidence[]; release_count: number; governance: RepositoryGovernance;
 };
 export type RepositoryMetricRecord = RepositorySignals & {
   id: string; owner: string; name: string; url: string; route: string;
@@ -34,11 +43,16 @@ export type RepositoryMetricSnapshot = {
 export type PackageEvidence = {
   id: string; ecosystem: string; name: string; registry_url: string;
   source_url?: string | null; manifest_path?: string | null; description?: string | null;
+  package_kind: string; private: boolean;
   latest_version?: string | null; published?: boolean | null; publication_status?: string | null;
   route_key?: string | null;
   published_at?: string | null; observed_at?: string | null; role: string;
   release_count: number; dependency_count: number; dependent_count: number;
   downloads?: number | null;
+  repositories: Array<{ id: string; owner: string; name: string; url: string; path?: string | null }>;
+  releases: ReleaseEvidence[]; dependencies: DependencyEvidence[]; dependents: DependencyEvidence[];
+  dependency_summary: { edge_count: number; unique_target_count: number; internal_edge_count: number; external_edge_count: number; by_scope: Record<string, number> };
+  dependent_summary: { edge_count: number; unique_source_count: number; by_completeness: Record<string, number>; coverage: string };
 };
 export type ResourceEvidence = {
   id: string; resource_type: string; title: string; url: string;
@@ -71,9 +85,7 @@ export type RecordSummary = {
   id: string; slug: string; record_type: string; title: string; eyebrow?: string | null;
   summary: string; maturity?: string | null; featured: boolean; canonical_url?: string | null;
   organization_id: string; organization_name: string; package_count: number;
-  repository_count: number; resource_count: number; release_count: number;
-  dependency_count: number; dependent_count: number; technologies: string[];
-  signals: RepositorySignals;
+  repository_count: number; resource_count: number; technologies: string[];
 };
 export type RecordCollectionPageModel = {
   kind: string; generated_at: string | null; count: number; records: RecordSummary[];
@@ -108,23 +120,16 @@ export type RecordPageModel = {
   taxonomies: Record<string, TaxonomyItem[]>;
   implementation: {
     repositories: RepositoryEvidence[]; packages: PackageEvidence[]; resources: ResourceEvidence[];
-    releases: ReleaseEvidence[]; release_summary: ReleaseSummary[];
-    deployments: Array<Record<string, unknown>>; dependencies: DependencyEvidence[];
-    dependents: DependencyEvidence[]; dependency_summary: DependencySummary;
-    signals: RepositorySignals;
+    deployments: Array<Record<string, unknown>>;
   };
   relations: Array<Record<string, unknown>>;
-  governance: {
-    features: Array<Record<string, unknown>>;
-    claims: Array<Record<string, unknown>>;
-    evidence: Array<Record<string, unknown>>;
-    limitations: Array<Record<string, unknown>>;
+  editorial: {
+    features: Array<Record<string, unknown>>; claims: Array<Record<string, unknown>>;
+    evidence: Array<Record<string, unknown>>; limitations: Array<Record<string, unknown>>;
     claim_rooting: { total: number; rooted: number; unrooted: number; status: string; limitation?: string | null };
-    ssot_registries: Array<{
-      repository_id: string; repository: string; governed: boolean;
-      registry_url?: string | null; schema_version?: string | null; observed_at?: string | null;
-      summary: SsotGovernanceSummary;
-    }>;
+  };
+  governance: {
+    repositories: Array<RepositoryGovernance & { repository_id: string; repository: string; role: string }>;
   };
   graph?: EntityGraph | null;
 };

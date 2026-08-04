@@ -70,6 +70,7 @@
       "name": "@groupsum/groupsum-xyz-content-pack",
       "observed_at": "2026-08-03T22:06:00Z",
       "owner": "groupsum",
+      "package_kind": "private-package",
       "private": true,
       "publication_status": "manifest_private",
       "published": false,
@@ -265,6 +266,7 @@
       "name": "groupsum-xyz",
       "observed_at": "2026-08-03T22:06:00Z",
       "owner": "groupsum",
+      "package_kind": "workspace-project",
       "private": true,
       "publication_status": "manifest_private",
       "published": false,
@@ -415,6 +417,7 @@
       "name": "groupsum-catalog-api",
       "observed_at": "2026-08-03T22:06:00Z",
       "owner": "groupsum",
+      "package_kind": "package-candidate",
       "private": false,
       "publication_status": "not-confirmed",
       "published": false,
@@ -626,6 +629,38 @@
       "package:npm:groupsum-xyz:groupsum/groupsum-xyz:package.json",
       "package:pypi:groupsum-catalog-api:groupsum/groupsum-xyz:backend/pyproject.toml"
     ],
+    "packages": [
+      {
+        "ecosystem": "npm",
+        "id": "package:npm:@groupsum/groupsum-xyz-content-pack:groupsum/groupsum-xyz:packages/site-content-pack/package.json",
+        "manifest_path": "packages/site-content-pack/package.json",
+        "name": "@groupsum/groupsum-xyz-content-pack",
+        "package_kind": "private-package",
+        "publication_status": "manifest_private",
+        "published": false,
+        "route": "/catalog/packages/npm/groupsum-groupsum-xyz-content-pack-f0edd9b4"
+      },
+      {
+        "ecosystem": "npm",
+        "id": "package:npm:groupsum-xyz:groupsum/groupsum-xyz:package.json",
+        "manifest_path": "package.json",
+        "name": "groupsum-xyz",
+        "package_kind": "workspace-project",
+        "publication_status": "manifest_private",
+        "published": false,
+        "route": "/catalog/packages/npm/groupsum-xyz-e18f6ace"
+      },
+      {
+        "ecosystem": "pypi",
+        "id": "package:pypi:groupsum-catalog-api:groupsum/groupsum-xyz:backend/pyproject.toml",
+        "manifest_path": "backend/pyproject.toml",
+        "name": "groupsum-catalog-api",
+        "package_kind": "package-candidate",
+        "publication_status": "not-confirmed",
+        "published": false,
+        "route": "/catalog/packages/pypi/groupsum-catalog-api-a186817e"
+      }
+    ],
     "pushed_at": "2026-08-03T20:14:23Z",
     "related_resources": [
       {
@@ -667,8 +702,8 @@
       "counts": {},
       "coverage": {},
       "governed": false,
-      "observation_status": "error",
-      "observed_at": "2026-08-03T22:06:01Z",
+      "observation_status": "not_found",
+      "observed_at": "2026-08-03T23:58:12Z",
       "present": false,
       "registry_url": null,
       "status_counts": {},

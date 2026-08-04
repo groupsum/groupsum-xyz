@@ -202,6 +202,7 @@
     "observed_at": "2026-08-03T22:06:01Z",
     "owner": "swarmauri",
     "package_ids": [],
+    "packages": [],
     "pushed_at": "2024-12-17T08:00:37Z",
     "related_resources": [
       {
@@ -228,8 +229,8 @@
       "counts": {},
       "coverage": {},
       "governed": false,
-      "observation_status": "error",
-      "observed_at": "2026-08-03T22:06:02Z",
+      "observation_status": "not_found",
+      "observed_at": "2026-08-03T23:58:12Z",
       "present": false,
       "registry_url": null,
       "status_counts": {},

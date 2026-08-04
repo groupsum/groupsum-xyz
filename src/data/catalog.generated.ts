@@ -12,8 +12,9 @@ export const catalogSummary = {
   "github_package_versions": 27,
   "github_releases": 7534,
   "observations_by_status": {
-    "cached": 6803,
-    "error": 565
+    "cached": 6833,
+    "error": 565,
+    "not_found": 38
   },
   "observations_with_errors": 565,
   "owners": 4,
@@ -26,7 +27,7 @@ export const catalogSummary = {
   "packages": 1125,
   "published_packages": 490,
   "registry_release_versions": 9752,
-  "relationships": 10734,
+  "relationships": 10735,
   "repositories": 68,
   "schema_version": "1.0.0",
   "stars": 198,
@@ -235,9 +236,9 @@ export const catalogOrganizations = [
           "forks": 0,
           "github_releases": 2,
           "open_issues": 0,
-          "packages": 2,
+          "packages": 3,
           "related_resources": 15,
-          "relationships": 17,
+          "relationships": 18,
           "size_kb": 1958,
           "stars": 0,
           "watchers": 0
@@ -275,7 +276,7 @@ export const catalogOrganizations = [
     "observed_at": "2026-08-03T22:06:00Z",
     "package_count": 152,
     "package_releases": 572,
-    "relationships": 1231,
+    "relationships": 1232,
     "repository_count": 37,
     "role": "primary",
     "route": "/products/groupsum",
@@ -1606,21 +1607,21 @@ export const catalogDatasetManifest = {
       "dataset": "organizations",
       "path": "organizations.json",
       "records": 4,
-      "sha256": "31c6088bbdfa75ec4ee5b5879b4b16731dfa2e168be55059d8d2b03ef3f518de"
+      "sha256": "743fda9faaf87b9ff4827bfd1692272c87ab68b93353bdc266f9de25af04aea7"
     },
     {
-      "bytes": 13646095,
+      "bytes": 13692387,
       "dataset": "packages",
       "path": "packages.json",
       "records": 1125,
-      "sha256": "8a14f89c8330ead121e4a8cd96bfb82d6929bcf669590975adc991911ffca4d7"
+      "sha256": "4e0ee9d74f501b747ee120d81c30c977e6a843bcff157b6562edfa61bd586e69"
     },
     {
-      "bytes": 6262844,
+      "bytes": 8654718,
       "dataset": "repositories",
       "path": "repositories.json",
       "records": 68,
-      "sha256": "eacad362c19dd00d18054568bc4ed08d8fd229a414fb1e62dc00ec1ffee00706"
+      "sha256": "6996c64ebf830fcb3e0f8e34589fa76b4d4bc61f532c8acdf50df842ff5e7127"
     },
     {
       "bytes": 706963,
@@ -1646,7 +1647,7 @@ export const catalogDatasetManifest = {
   "source": "/catalog/catalog.json",
   "source_counts": {
     "deployments": 3989,
-    "relationships": 10734,
+    "relationships": 10735,
     "releases": 17313
   }
 } as const;

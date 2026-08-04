@@ -88,6 +88,7 @@
       "name": "@mdwrk/mdwrkcom-content-pack",
       "observed_at": "2026-08-03T22:06:00Z",
       "owner": "groupsum",
+      "package_kind": "published-package",
       "private": false,
       "publication_status": "published",
       "published": true,
@@ -212,6 +213,7 @@
       "name": "mdwrkcom-content-pack",
       "observed_at": "2026-08-03T22:06:00Z",
       "owner": "groupsum",
+      "package_kind": "workspace-project",
       "private": true,
       "publication_status": "manifest_private",
       "published": false,
@@ -435,6 +437,28 @@
       "package:npm:@mdwrk/mdwrkcom-content-pack:groupsum/mdwrkcom-content-pack:packages/content/mdwrkcom-content-pack/package.json",
       "package:npm:mdwrkcom-content-pack:groupsum/mdwrkcom-content-pack:package.json"
     ],
+    "packages": [
+      {
+        "ecosystem": "npm",
+        "id": "package:npm:@mdwrk/mdwrkcom-content-pack:groupsum/mdwrkcom-content-pack:packages/content/mdwrkcom-content-pack/package.json",
+        "manifest_path": "packages/content/mdwrkcom-content-pack/package.json",
+        "name": "@mdwrk/mdwrkcom-content-pack",
+        "package_kind": "published-package",
+        "publication_status": "published",
+        "published": true,
+        "route": "/catalog/packages/npm/mdwrk-mdwrkcom-content-pack-fc2ad22e"
+      },
+      {
+        "ecosystem": "npm",
+        "id": "package:npm:mdwrkcom-content-pack:groupsum/mdwrkcom-content-pack:package.json",
+        "manifest_path": "package.json",
+        "name": "mdwrkcom-content-pack",
+        "package_kind": "workspace-project",
+        "publication_status": "manifest_private",
+        "published": false,
+        "route": "/catalog/packages/npm/mdwrkcom-content-pack-ecc5c6e7"
+      }
+    ],
     "pushed_at": "2026-06-16T02:39:56Z",
     "related_resources": [
       {
@@ -616,8 +640,8 @@
       "counts": {},
       "coverage": {},
       "governed": false,
-      "observation_status": "error",
-      "observed_at": "2026-08-03T22:06:01Z",
+      "observation_status": "not_found",
+      "observed_at": "2026-08-03T23:58:12Z",
       "present": false,
       "registry_url": null,
       "status_counts": {},

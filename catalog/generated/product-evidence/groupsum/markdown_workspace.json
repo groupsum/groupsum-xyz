@@ -133,6 +133,7 @@
       "name": "@mdwrk/desktop",
       "observed_at": "2026-08-03T22:06:00Z",
       "owner": "groupsum",
+      "package_kind": "package-candidate",
       "private": true,
       "publication_status": "manifest_private",
       "published": false,
@@ -300,6 +301,7 @@
       "name": "@mdwrk/example-editor-basic",
       "observed_at": "2026-08-03T22:06:00Z",
       "owner": "groupsum",
+      "package_kind": "package-candidate",
       "private": true,
       "publication_status": "manifest_private",
       "published": false,
@@ -468,6 +470,7 @@
       "name": "@mdwrk/example-page-template-demo",
       "observed_at": "2026-08-03T22:06:00Z",
       "owner": "groupsum",
+      "package_kind": "package-candidate",
       "private": true,
       "publication_status": "manifest_private",
       "published": false,
@@ -627,6 +630,7 @@
       "name": "@mdwrk/example-renderer-basic",
       "observed_at": "2026-08-03T22:06:00Z",
       "owner": "groupsum",
+      "package_kind": "package-candidate",
       "private": true,
       "publication_status": "manifest_private",
       "published": false,
@@ -740,6 +744,7 @@
       "name": "@mdwrk/extension-catalog-hello",
       "observed_at": "2026-08-03T22:06:00Z",
       "owner": "groupsum",
+      "package_kind": "published-package",
       "private": false,
       "publication_status": "published",
       "published": true,
@@ -906,6 +911,7 @@
       "name": "@mdwrk/extension-catalog-hello",
       "observed_at": "2026-08-03T22:06:00Z",
       "owner": "groupsum",
+      "package_kind": "private-package",
       "private": true,
       "publication_status": "manifest_private",
       "published": false,
@@ -1064,6 +1070,7 @@
       "name": "@mdwrk/extension-gemini-agent",
       "observed_at": "2026-08-03T22:06:00Z",
       "owner": "groupsum",
+      "package_kind": "published-package",
       "private": false,
       "publication_status": "published",
       "published": true,
@@ -1291,6 +1298,7 @@
       "name": "@mdwrk/extension-gemini-agent",
       "observed_at": "2026-08-03T22:06:00Z",
       "owner": "groupsum",
+      "package_kind": "private-package",
       "private": true,
       "publication_status": "manifest_private",
       "published": false,
@@ -1450,6 +1458,7 @@
       "name": "@mdwrk/extension-git-ops",
       "observed_at": "2026-08-03T22:06:00Z",
       "owner": "groupsum",
+      "package_kind": "published-package",
       "private": false,
       "publication_status": "published",
       "published": true,
@@ -1621,6 +1630,7 @@
       "name": "@mdwrk/extension-git-ops",
       "observed_at": "2026-08-03T22:06:00Z",
       "owner": "groupsum",
+      "package_kind": "private-package",
       "private": true,
       "publication_status": "manifest_private",
       "published": false,
@@ -1862,6 +1872,7 @@
       "name": "@mdwrk/extension-host",
       "observed_at": "2026-08-03T22:06:00Z",
       "owner": "groupsum",
+      "package_kind": "private-package",
       "private": true,
       "publication_status": "manifest_private",
       "published": false,
@@ -2074,6 +2085,7 @@
       "name": "@mdwrk/extension-language-pack-studio",
       "observed_at": "2026-08-03T22:06:00Z",
       "owner": "groupsum",
+      "package_kind": "published-package",
       "private": false,
       "publication_status": "published",
       "published": true,
@@ -2350,6 +2362,7 @@
       "name": "@mdwrk/extension-language-pack-studio",
       "observed_at": "2026-08-03T22:06:00Z",
       "owner": "groupsum",
+      "package_kind": "private-package",
       "private": true,
       "publication_status": "manifest_private",
       "published": false,
@@ -2572,6 +2585,7 @@
       "name": "@mdwrk/extension-manager",
       "observed_at": "2026-08-03T22:06:00Z",
       "owner": "groupsum",
+      "package_kind": "published-package",
       "private": false,
       "publication_status": "published",
       "published": true,
@@ -2876,6 +2890,7 @@
       "name": "@mdwrk/extension-manager",
       "observed_at": "2026-08-03T22:06:00Z",
       "owner": "groupsum",
+      "package_kind": "private-package",
       "private": true,
       "publication_status": "manifest_private",
       "published": false,
@@ -3107,6 +3122,7 @@
       "name": "@mdwrk/extension-manifest",
       "observed_at": "2026-08-03T22:06:00Z",
       "owner": "groupsum",
+      "package_kind": "private-package",
       "private": true,
       "publication_status": "manifest_private",
       "published": false,
@@ -3320,6 +3336,7 @@
       "name": "@mdwrk/extension-runtime",
       "observed_at": "2026-08-03T22:06:00Z",
       "owner": "groupsum",
+      "package_kind": "private-package",
       "private": true,
       "publication_status": "manifest_private",
       "published": false,
@@ -3586,6 +3603,7 @@
       "name": "@mdwrk/extension-theme-studio",
       "observed_at": "2026-08-03T22:06:00Z",
       "owner": "groupsum",
+      "package_kind": "published-package",
       "private": false,
       "publication_status": "published",
       "published": true,
@@ -3921,6 +3939,7 @@
       "name": "@mdwrk/extension-theme-studio",
       "observed_at": "2026-08-03T22:06:00Z",
       "owner": "groupsum",
+      "package_kind": "private-package",
       "private": true,
       "publication_status": "manifest_private",
       "published": false,
@@ -4080,6 +4099,7 @@
       "name": "@mdwrk/extension-workspace-files",
       "observed_at": "2026-08-03T22:06:00Z",
       "owner": "groupsum",
+      "package_kind": "published-package",
       "private": false,
       "publication_status": "published",
       "published": true,
@@ -4251,6 +4271,7 @@
       "name": "@mdwrk/extension-workspace-files",
       "observed_at": "2026-08-03T22:06:00Z",
       "owner": "groupsum",
+      "package_kind": "private-package",
       "private": true,
       "publication_status": "manifest_private",
       "published": false,
@@ -4338,6 +4359,7 @@
       "name": "@mdwrk/i18n",
       "observed_at": "2026-08-03T22:06:00Z",
       "owner": "groupsum",
+      "package_kind": "private-package",
       "private": true,
       "publication_status": "manifest_private",
       "published": false,
@@ -4424,6 +4446,7 @@
       "name": "@mdwrk/icons",
       "observed_at": "2026-08-03T22:06:00Z",
       "owner": "groupsum",
+      "package_kind": "private-package",
       "private": true,
       "publication_status": "manifest_private",
       "published": false,
@@ -4717,6 +4740,7 @@
       "name": "@mdwrk/lander-content-contract",
       "observed_at": "2026-08-03T22:06:00Z",
       "owner": "groupsum",
+      "package_kind": "private-package",
       "private": true,
       "publication_status": "manifest_private",
       "published": false,
@@ -4957,6 +4981,7 @@
       "name": "@mdwrk/lander-core",
       "observed_at": "2026-08-03T22:06:00Z",
       "owner": "groupsum",
+      "package_kind": "private-package",
       "private": true,
       "publication_status": "manifest_private",
       "published": false,
@@ -5052,6 +5077,7 @@
       "name": "@mdwrk/lander-markdown-content-adapter",
       "observed_at": "2026-08-03T22:06:00Z",
       "owner": "groupsum",
+      "package_kind": "private-package",
       "private": true,
       "publication_status": "manifest_private",
       "published": false,
@@ -5184,6 +5210,7 @@
       "name": "@mdwrk/lander-page-template-presets",
       "observed_at": "2026-08-03T22:06:00Z",
       "owner": "groupsum",
+      "package_kind": "private-package",
       "private": true,
       "publication_status": "manifest_private",
       "published": false,
@@ -5316,6 +5343,7 @@
       "name": "@mdwrk/lander-page-templates",
       "observed_at": "2026-08-03T22:06:00Z",
       "owner": "groupsum",
+      "package_kind": "private-package",
       "private": true,
       "publication_status": "manifest_private",
       "published": false,
@@ -5529,6 +5557,7 @@
       "name": "@mdwrk/lander-react",
       "observed_at": "2026-08-03T22:06:00Z",
       "owner": "groupsum",
+      "package_kind": "private-package",
       "private": true,
       "publication_status": "manifest_private",
       "published": false,
@@ -5626,6 +5655,7 @@
       "name": "@mdwrk/lander-seo",
       "observed_at": "2026-08-03T22:06:00Z",
       "owner": "groupsum",
+      "package_kind": "private-package",
       "private": true,
       "publication_status": "manifest_private",
       "published": false,
@@ -5739,6 +5769,7 @@
       "name": "@mdwrk/lander-theme",
       "observed_at": "2026-08-03T22:06:00Z",
       "owner": "groupsum",
+      "package_kind": "private-package",
       "private": true,
       "publication_status": "manifest_private",
       "published": false,
@@ -5961,6 +5992,7 @@
       "name": "@mdwrk/markdown-edit-in-renderer-react",
       "observed_at": "2026-08-03T22:06:00Z",
       "owner": "groupsum",
+      "package_kind": "private-package",
       "private": true,
       "publication_status": "manifest_private",
       "published": false,
@@ -6103,6 +6135,7 @@
       "name": "@mdwrk/markdown-editor-core",
       "observed_at": "2026-08-03T22:06:00Z",
       "owner": "groupsum",
+      "package_kind": "private-package",
       "private": true,
       "publication_status": "manifest_private",
       "published": false,
@@ -6389,6 +6422,7 @@
       "name": "@mdwrk/markdown-editor-react",
       "observed_at": "2026-08-03T22:06:00Z",
       "owner": "groupsum",
+      "package_kind": "private-package",
       "private": true,
       "publication_status": "manifest_private",
       "published": false,
@@ -6548,6 +6582,7 @@
       "name": "@mdwrk/markdown-renderer-core",
       "observed_at": "2026-08-03T22:06:00Z",
       "owner": "groupsum",
+      "package_kind": "private-package",
       "private": true,
       "publication_status": "manifest_private",
       "published": false,
@@ -6878,6 +6913,7 @@
       "name": "@mdwrk/markdown-renderer-react",
       "observed_at": "2026-08-03T22:06:00Z",
       "owner": "groupsum",
+      "package_kind": "private-package",
       "private": true,
       "publication_status": "manifest_private",
       "published": false,
@@ -7163,6 +7199,7 @@
       "name": "@mdwrk/mdwrkcom",
       "observed_at": "2026-08-03T22:06:00Z",
       "owner": "groupsum",
+      "package_kind": "package-candidate",
       "private": true,
       "publication_status": "manifest_private",
       "published": false,
@@ -7583,6 +7620,7 @@
       "name": "@mdwrk/mdwrkspace",
       "observed_at": "2026-08-03T22:06:00Z",
       "owner": "groupsum",
+      "package_kind": "package-candidate",
       "private": true,
       "publication_status": "manifest_private",
       "published": false,
@@ -7698,6 +7736,7 @@
       "name": "@mdwrk/page-template-demo-content-pack",
       "observed_at": "2026-08-03T22:06:00Z",
       "owner": "groupsum",
+      "package_kind": "private-package",
       "private": true,
       "publication_status": "manifest_private",
       "published": false,
@@ -7838,6 +7877,7 @@
       "name": "@mdwrk/structured-data",
       "observed_at": "2026-08-03T22:06:00Z",
       "owner": "groupsum",
+      "package_kind": "private-package",
       "private": true,
       "publication_status": "manifest_private",
       "published": false,
@@ -8041,6 +8081,7 @@
       "name": "@mdwrk/testing",
       "observed_at": "2026-08-03T22:06:00Z",
       "owner": "groupsum",
+      "package_kind": "private-package",
       "private": true,
       "publication_status": "manifest_private",
       "published": false,
@@ -8172,6 +8213,7 @@
       "name": "@mdwrk/theme-contract",
       "observed_at": "2026-08-03T22:06:00Z",
       "owner": "groupsum",
+      "package_kind": "private-package",
       "private": true,
       "publication_status": "manifest_private",
       "published": false,
@@ -8430,6 +8472,7 @@
       "name": "@mdwrk/ui-tokens",
       "observed_at": "2026-08-03T22:06:00Z",
       "owner": "groupsum",
+      "package_kind": "private-package",
       "private": true,
       "publication_status": "manifest_private",
       "published": false,
@@ -8552,6 +8595,7 @@
       "name": "markdown_workspace",
       "observed_at": "2026-08-03T22:06:00Z",
       "owner": "groupsum",
+      "package_kind": "workspace-project",
       "private": true,
       "publication_status": "manifest_private",
       "published": false,
@@ -8639,6 +8683,7 @@
       "name": "markdown-workspace",
       "observed_at": "2026-08-03T22:06:00Z",
       "owner": "groupsum",
+      "package_kind": "package-candidate",
       "private": false,
       "publication_status": "not-confirmed",
       "published": false,
@@ -8803,7 +8848,7 @@
     "evidence": [
       {
         "kind": "ssot-registry",
-        "observed_at": "2026-08-03T22:06:01Z",
+        "observed_at": "2026-08-03T23:58:12Z",
         "url": "https://github.com/groupsum/markdown_workspace/blob/master/.ssot/registry.json"
       },
       {
@@ -9648,6 +9693,458 @@
       "package:npm:@mdwrk/ui-tokens:groupsum/markdown_workspace:packages/shared/ui-tokens/package.json",
       "package:npm:markdown_workspace:groupsum/markdown_workspace:package.json",
       "package:pypi:markdown-workspace:groupsum/markdown_workspace:pyproject.toml"
+    ],
+    "packages": [
+      {
+        "ecosystem": "npm",
+        "id": "package:npm:@mdwrk/desktop:groupsum/markdown_workspace:apps/desktop/package.json",
+        "manifest_path": "apps/desktop/package.json",
+        "name": "@mdwrk/desktop",
+        "package_kind": "package-candidate",
+        "publication_status": "manifest_private",
+        "published": false,
+        "route": "/catalog/packages/npm/mdwrk-desktop-248d3c74"
+      },
+      {
+        "ecosystem": "npm",
+        "id": "package:npm:@mdwrk/example-editor-basic:groupsum/markdown_workspace:examples/editor-basic/package.json",
+        "manifest_path": "examples/editor-basic/package.json",
+        "name": "@mdwrk/example-editor-basic",
+        "package_kind": "package-candidate",
+        "publication_status": "manifest_private",
+        "published": false,
+        "route": "/catalog/packages/npm/mdwrk-example-editor-basic-8e46b996"
+      },
+      {
+        "ecosystem": "npm",
+        "id": "package:npm:@mdwrk/example-page-template-demo:groupsum/markdown_workspace:examples/page-template-demo/package.json",
+        "manifest_path": "examples/page-template-demo/package.json",
+        "name": "@mdwrk/example-page-template-demo",
+        "package_kind": "package-candidate",
+        "publication_status": "manifest_private",
+        "published": false,
+        "route": "/catalog/packages/npm/mdwrk-example-page-template-demo-45564204"
+      },
+      {
+        "ecosystem": "npm",
+        "id": "package:npm:@mdwrk/example-renderer-basic:groupsum/markdown_workspace:examples/renderer-basic/package.json",
+        "manifest_path": "examples/renderer-basic/package.json",
+        "name": "@mdwrk/example-renderer-basic",
+        "package_kind": "package-candidate",
+        "publication_status": "manifest_private",
+        "published": false,
+        "route": "/catalog/packages/npm/mdwrk-example-renderer-basic-08d294f7"
+      },
+      {
+        "ecosystem": "npm",
+        "id": "package:npm:@mdwrk/extension-catalog-hello:groupsum/markdown_workspace:artifacts/extensions/external.catalog-hello/1.1.2/package.json",
+        "manifest_path": "artifacts/extensions/external.catalog-hello/1.1.2/package.json",
+        "name": "@mdwrk/extension-catalog-hello",
+        "package_kind": "published-package",
+        "publication_status": "published",
+        "published": true,
+        "route": "/catalog/packages/npm/mdwrk-extension-catalog-hello-a5e82047"
+      },
+      {
+        "ecosystem": "npm",
+        "id": "package:npm:@mdwrk/extension-catalog-hello:groupsum/markdown_workspace:packages/extensions/extension-catalog-hello/package.json",
+        "manifest_path": "packages/extensions/extension-catalog-hello/package.json",
+        "name": "@mdwrk/extension-catalog-hello",
+        "package_kind": "private-package",
+        "publication_status": "manifest_private",
+        "published": false,
+        "route": "/catalog/packages/npm/mdwrk-extension-catalog-hello-3cfebccc"
+      },
+      {
+        "ecosystem": "npm",
+        "id": "package:npm:@mdwrk/extension-gemini-agent:groupsum/markdown_workspace:artifacts/extensions/core.gemini-agent/1.2.1/package.json",
+        "manifest_path": "artifacts/extensions/core.gemini-agent/1.2.1/package.json",
+        "name": "@mdwrk/extension-gemini-agent",
+        "package_kind": "published-package",
+        "publication_status": "published",
+        "published": true,
+        "route": "/catalog/packages/npm/mdwrk-extension-gemini-agent-ed94be59"
+      },
+      {
+        "ecosystem": "npm",
+        "id": "package:npm:@mdwrk/extension-gemini-agent:groupsum/markdown_workspace:packages/extensions/extension-gemini-agent/package.json",
+        "manifest_path": "packages/extensions/extension-gemini-agent/package.json",
+        "name": "@mdwrk/extension-gemini-agent",
+        "package_kind": "private-package",
+        "publication_status": "manifest_private",
+        "published": false,
+        "route": "/catalog/packages/npm/mdwrk-extension-gemini-agent-eb5ca491"
+      },
+      {
+        "ecosystem": "npm",
+        "id": "package:npm:@mdwrk/extension-git-ops:groupsum/markdown_workspace:artifacts/extensions/core.git-ops/1.0.1/package.json",
+        "manifest_path": "artifacts/extensions/core.git-ops/1.0.1/package.json",
+        "name": "@mdwrk/extension-git-ops",
+        "package_kind": "published-package",
+        "publication_status": "published",
+        "published": true,
+        "route": "/catalog/packages/npm/mdwrk-extension-git-ops-f561f7b8"
+      },
+      {
+        "ecosystem": "npm",
+        "id": "package:npm:@mdwrk/extension-git-ops:groupsum/markdown_workspace:packages/extensions/extension-git-ops/package.json",
+        "manifest_path": "packages/extensions/extension-git-ops/package.json",
+        "name": "@mdwrk/extension-git-ops",
+        "package_kind": "private-package",
+        "publication_status": "manifest_private",
+        "published": false,
+        "route": "/catalog/packages/npm/mdwrk-extension-git-ops-08a06e92"
+      },
+      {
+        "ecosystem": "npm",
+        "id": "package:npm:@mdwrk/extension-host:groupsum/markdown_workspace:packages/contracts/extension-host/package.json",
+        "manifest_path": "packages/contracts/extension-host/package.json",
+        "name": "@mdwrk/extension-host",
+        "package_kind": "private-package",
+        "publication_status": "manifest_private",
+        "published": false,
+        "route": "/catalog/packages/npm/mdwrk-extension-host-f643205d"
+      },
+      {
+        "ecosystem": "npm",
+        "id": "package:npm:@mdwrk/extension-language-pack-studio:groupsum/markdown_workspace:artifacts/extensions/core.language-pack-studio/1.0.5/package.json",
+        "manifest_path": "artifacts/extensions/core.language-pack-studio/1.0.5/package.json",
+        "name": "@mdwrk/extension-language-pack-studio",
+        "package_kind": "published-package",
+        "publication_status": "published",
+        "published": true,
+        "route": "/catalog/packages/npm/mdwrk-extension-language-pack-studio-bd3f90fa"
+      },
+      {
+        "ecosystem": "npm",
+        "id": "package:npm:@mdwrk/extension-language-pack-studio:groupsum/markdown_workspace:packages/extensions/extension-language-pack-studio/package.json",
+        "manifest_path": "packages/extensions/extension-language-pack-studio/package.json",
+        "name": "@mdwrk/extension-language-pack-studio",
+        "package_kind": "private-package",
+        "publication_status": "manifest_private",
+        "published": false,
+        "route": "/catalog/packages/npm/mdwrk-extension-language-pack-studio-309c5b94"
+      },
+      {
+        "ecosystem": "npm",
+        "id": "package:npm:@mdwrk/extension-manager:groupsum/markdown_workspace:artifacts/extensions/core.extension-manager/1.1.8/package.json",
+        "manifest_path": "artifacts/extensions/core.extension-manager/1.1.8/package.json",
+        "name": "@mdwrk/extension-manager",
+        "package_kind": "published-package",
+        "publication_status": "published",
+        "published": true,
+        "route": "/catalog/packages/npm/mdwrk-extension-manager-c4f1d350"
+      },
+      {
+        "ecosystem": "npm",
+        "id": "package:npm:@mdwrk/extension-manager:groupsum/markdown_workspace:packages/extensions/extension-manager/package.json",
+        "manifest_path": "packages/extensions/extension-manager/package.json",
+        "name": "@mdwrk/extension-manager",
+        "package_kind": "private-package",
+        "publication_status": "manifest_private",
+        "published": false,
+        "route": "/catalog/packages/npm/mdwrk-extension-manager-b4945489"
+      },
+      {
+        "ecosystem": "npm",
+        "id": "package:npm:@mdwrk/extension-manifest:groupsum/markdown_workspace:packages/contracts/extension-manifest/package.json",
+        "manifest_path": "packages/contracts/extension-manifest/package.json",
+        "name": "@mdwrk/extension-manifest",
+        "package_kind": "private-package",
+        "publication_status": "manifest_private",
+        "published": false,
+        "route": "/catalog/packages/npm/mdwrk-extension-manifest-8835c019"
+      },
+      {
+        "ecosystem": "npm",
+        "id": "package:npm:@mdwrk/extension-runtime:groupsum/markdown_workspace:packages/extensions/extension-runtime/package.json",
+        "manifest_path": "packages/extensions/extension-runtime/package.json",
+        "name": "@mdwrk/extension-runtime",
+        "package_kind": "private-package",
+        "publication_status": "manifest_private",
+        "published": false,
+        "route": "/catalog/packages/npm/mdwrk-extension-runtime-13afd17f"
+      },
+      {
+        "ecosystem": "npm",
+        "id": "package:npm:@mdwrk/extension-theme-studio:groupsum/markdown_workspace:artifacts/extensions/core.theme-studio/1.1.6/package.json",
+        "manifest_path": "artifacts/extensions/core.theme-studio/1.1.6/package.json",
+        "name": "@mdwrk/extension-theme-studio",
+        "package_kind": "published-package",
+        "publication_status": "published",
+        "published": true,
+        "route": "/catalog/packages/npm/mdwrk-extension-theme-studio-124194d4"
+      },
+      {
+        "ecosystem": "npm",
+        "id": "package:npm:@mdwrk/extension-theme-studio:groupsum/markdown_workspace:packages/extensions/extension-theme-studio/package.json",
+        "manifest_path": "packages/extensions/extension-theme-studio/package.json",
+        "name": "@mdwrk/extension-theme-studio",
+        "package_kind": "private-package",
+        "publication_status": "manifest_private",
+        "published": false,
+        "route": "/catalog/packages/npm/mdwrk-extension-theme-studio-c9292224"
+      },
+      {
+        "ecosystem": "npm",
+        "id": "package:npm:@mdwrk/extension-workspace-files:groupsum/markdown_workspace:artifacts/extensions/core.workspace-files/1.0.1/package.json",
+        "manifest_path": "artifacts/extensions/core.workspace-files/1.0.1/package.json",
+        "name": "@mdwrk/extension-workspace-files",
+        "package_kind": "published-package",
+        "publication_status": "published",
+        "published": true,
+        "route": "/catalog/packages/npm/mdwrk-extension-workspace-files-58bd01d3"
+      },
+      {
+        "ecosystem": "npm",
+        "id": "package:npm:@mdwrk/extension-workspace-files:groupsum/markdown_workspace:packages/extensions/extension-workspace-files/package.json",
+        "manifest_path": "packages/extensions/extension-workspace-files/package.json",
+        "name": "@mdwrk/extension-workspace-files",
+        "package_kind": "private-package",
+        "publication_status": "manifest_private",
+        "published": false,
+        "route": "/catalog/packages/npm/mdwrk-extension-workspace-files-c68d22e0"
+      },
+      {
+        "ecosystem": "npm",
+        "id": "package:npm:@mdwrk/i18n:groupsum/markdown_workspace:packages/shared/i18n/package.json",
+        "manifest_path": "packages/shared/i18n/package.json",
+        "name": "@mdwrk/i18n",
+        "package_kind": "private-package",
+        "publication_status": "manifest_private",
+        "published": false,
+        "route": "/catalog/packages/npm/mdwrk-i18n-610eab41"
+      },
+      {
+        "ecosystem": "npm",
+        "id": "package:npm:@mdwrk/icons:groupsum/markdown_workspace:packages/shared/icons/package.json",
+        "manifest_path": "packages/shared/icons/package.json",
+        "name": "@mdwrk/icons",
+        "package_kind": "private-package",
+        "publication_status": "manifest_private",
+        "published": false,
+        "route": "/catalog/packages/npm/mdwrk-icons-a03804ce"
+      },
+      {
+        "ecosystem": "npm",
+        "id": "package:npm:@mdwrk/lander-content-contract:groupsum/markdown_workspace:packages/lander/lander-content-contract/package.json",
+        "manifest_path": "packages/lander/lander-content-contract/package.json",
+        "name": "@mdwrk/lander-content-contract",
+        "package_kind": "private-package",
+        "publication_status": "manifest_private",
+        "published": false,
+        "route": "/catalog/packages/npm/mdwrk-lander-content-contract-0a33f62f"
+      },
+      {
+        "ecosystem": "npm",
+        "id": "package:npm:@mdwrk/lander-core:groupsum/markdown_workspace:packages/lander/lander-core/package.json",
+        "manifest_path": "packages/lander/lander-core/package.json",
+        "name": "@mdwrk/lander-core",
+        "package_kind": "private-package",
+        "publication_status": "manifest_private",
+        "published": false,
+        "route": "/catalog/packages/npm/mdwrk-lander-core-7051a880"
+      },
+      {
+        "ecosystem": "npm",
+        "id": "package:npm:@mdwrk/lander-markdown-content-adapter:groupsum/markdown_workspace:packages/lander/lander-markdown-content-adapter/package.json",
+        "manifest_path": "packages/lander/lander-markdown-content-adapter/package.json",
+        "name": "@mdwrk/lander-markdown-content-adapter",
+        "package_kind": "private-package",
+        "publication_status": "manifest_private",
+        "published": false,
+        "route": "/catalog/packages/npm/mdwrk-lander-markdown-content-adapter-283934bf"
+      },
+      {
+        "ecosystem": "npm",
+        "id": "package:npm:@mdwrk/lander-page-template-presets:groupsum/markdown_workspace:packages/lander/lander-page-template-presets/package.json",
+        "manifest_path": "packages/lander/lander-page-template-presets/package.json",
+        "name": "@mdwrk/lander-page-template-presets",
+        "package_kind": "private-package",
+        "publication_status": "manifest_private",
+        "published": false,
+        "route": "/catalog/packages/npm/mdwrk-lander-page-template-presets-2392b935"
+      },
+      {
+        "ecosystem": "npm",
+        "id": "package:npm:@mdwrk/lander-page-templates:groupsum/markdown_workspace:packages/lander/lander-page-templates/package.json",
+        "manifest_path": "packages/lander/lander-page-templates/package.json",
+        "name": "@mdwrk/lander-page-templates",
+        "package_kind": "private-package",
+        "publication_status": "manifest_private",
+        "published": false,
+        "route": "/catalog/packages/npm/mdwrk-lander-page-templates-1ad9e8d0"
+      },
+      {
+        "ecosystem": "npm",
+        "id": "package:npm:@mdwrk/lander-react:groupsum/markdown_workspace:packages/lander/lander-react/package.json",
+        "manifest_path": "packages/lander/lander-react/package.json",
+        "name": "@mdwrk/lander-react",
+        "package_kind": "private-package",
+        "publication_status": "manifest_private",
+        "published": false,
+        "route": "/catalog/packages/npm/mdwrk-lander-react-b556f2f1"
+      },
+      {
+        "ecosystem": "npm",
+        "id": "package:npm:@mdwrk/lander-seo:groupsum/markdown_workspace:packages/lander/lander-seo/package.json",
+        "manifest_path": "packages/lander/lander-seo/package.json",
+        "name": "@mdwrk/lander-seo",
+        "package_kind": "private-package",
+        "publication_status": "manifest_private",
+        "published": false,
+        "route": "/catalog/packages/npm/mdwrk-lander-seo-6aef4b77"
+      },
+      {
+        "ecosystem": "npm",
+        "id": "package:npm:@mdwrk/lander-theme:groupsum/markdown_workspace:packages/lander/lander-theme/package.json",
+        "manifest_path": "packages/lander/lander-theme/package.json",
+        "name": "@mdwrk/lander-theme",
+        "package_kind": "private-package",
+        "publication_status": "manifest_private",
+        "published": false,
+        "route": "/catalog/packages/npm/mdwrk-lander-theme-d469bc48"
+      },
+      {
+        "ecosystem": "npm",
+        "id": "package:npm:@mdwrk/markdown-edit-in-renderer-react:groupsum/markdown_workspace:packages/editor/markdown-edit-in-renderer-react/package.json",
+        "manifest_path": "packages/editor/markdown-edit-in-renderer-react/package.json",
+        "name": "@mdwrk/markdown-edit-in-renderer-react",
+        "package_kind": "private-package",
+        "publication_status": "manifest_private",
+        "published": false,
+        "route": "/catalog/packages/npm/mdwrk-markdown-edit-in-renderer-react-d6d9fc86"
+      },
+      {
+        "ecosystem": "npm",
+        "id": "package:npm:@mdwrk/markdown-editor-core:groupsum/markdown_workspace:packages/editor/markdown-editor-core/package.json",
+        "manifest_path": "packages/editor/markdown-editor-core/package.json",
+        "name": "@mdwrk/markdown-editor-core",
+        "package_kind": "private-package",
+        "publication_status": "manifest_private",
+        "published": false,
+        "route": "/catalog/packages/npm/mdwrk-markdown-editor-core-22e74371"
+      },
+      {
+        "ecosystem": "npm",
+        "id": "package:npm:@mdwrk/markdown-editor-react:groupsum/markdown_workspace:packages/editor/markdown-editor-react/package.json",
+        "manifest_path": "packages/editor/markdown-editor-react/package.json",
+        "name": "@mdwrk/markdown-editor-react",
+        "package_kind": "private-package",
+        "publication_status": "manifest_private",
+        "published": false,
+        "route": "/catalog/packages/npm/mdwrk-markdown-editor-react-38210047"
+      },
+      {
+        "ecosystem": "npm",
+        "id": "package:npm:@mdwrk/markdown-renderer-core:groupsum/markdown_workspace:packages/renderer/markdown-renderer-core/package.json",
+        "manifest_path": "packages/renderer/markdown-renderer-core/package.json",
+        "name": "@mdwrk/markdown-renderer-core",
+        "package_kind": "private-package",
+        "publication_status": "manifest_private",
+        "published": false,
+        "route": "/catalog/packages/npm/mdwrk-markdown-renderer-core-425c3187"
+      },
+      {
+        "ecosystem": "npm",
+        "id": "package:npm:@mdwrk/markdown-renderer-react:groupsum/markdown_workspace:packages/renderer/markdown-renderer-react/package.json",
+        "manifest_path": "packages/renderer/markdown-renderer-react/package.json",
+        "name": "@mdwrk/markdown-renderer-react",
+        "package_kind": "private-package",
+        "publication_status": "manifest_private",
+        "published": false,
+        "route": "/catalog/packages/npm/mdwrk-markdown-renderer-react-3bf37178"
+      },
+      {
+        "ecosystem": "npm",
+        "id": "package:npm:@mdwrk/mdwrkcom:groupsum/markdown_workspace:apps/mdwrkcom/package.json",
+        "manifest_path": "apps/mdwrkcom/package.json",
+        "name": "@mdwrk/mdwrkcom",
+        "package_kind": "package-candidate",
+        "publication_status": "manifest_private",
+        "published": false,
+        "route": "/catalog/packages/npm/mdwrk-mdwrkcom-fddf1669"
+      },
+      {
+        "ecosystem": "npm",
+        "id": "package:npm:@mdwrk/mdwrkspace:groupsum/markdown_workspace:apps/client/package.json",
+        "manifest_path": "apps/client/package.json",
+        "name": "@mdwrk/mdwrkspace",
+        "package_kind": "package-candidate",
+        "publication_status": "manifest_private",
+        "published": false,
+        "route": "/catalog/packages/npm/mdwrk-mdwrkspace-a174d6cb"
+      },
+      {
+        "ecosystem": "npm",
+        "id": "package:npm:@mdwrk/page-template-demo-content-pack:groupsum/markdown_workspace:packages/content/page-template-demo-content-pack/package.json",
+        "manifest_path": "packages/content/page-template-demo-content-pack/package.json",
+        "name": "@mdwrk/page-template-demo-content-pack",
+        "package_kind": "private-package",
+        "publication_status": "manifest_private",
+        "published": false,
+        "route": "/catalog/packages/npm/mdwrk-page-template-demo-content-pack-501df8a7"
+      },
+      {
+        "ecosystem": "npm",
+        "id": "package:npm:@mdwrk/structured-data:groupsum/markdown_workspace:packages/shared/structured-data/package.json",
+        "manifest_path": "packages/shared/structured-data/package.json",
+        "name": "@mdwrk/structured-data",
+        "package_kind": "private-package",
+        "publication_status": "manifest_private",
+        "published": false,
+        "route": "/catalog/packages/npm/mdwrk-structured-data-b638f76e"
+      },
+      {
+        "ecosystem": "npm",
+        "id": "package:npm:@mdwrk/testing:groupsum/markdown_workspace:packages/shared/testing/package.json",
+        "manifest_path": "packages/shared/testing/package.json",
+        "name": "@mdwrk/testing",
+        "package_kind": "private-package",
+        "publication_status": "manifest_private",
+        "published": false,
+        "route": "/catalog/packages/npm/mdwrk-testing-d281036c"
+      },
+      {
+        "ecosystem": "npm",
+        "id": "package:npm:@mdwrk/theme-contract:groupsum/markdown_workspace:packages/contracts/theme-contract/package.json",
+        "manifest_path": "packages/contracts/theme-contract/package.json",
+        "name": "@mdwrk/theme-contract",
+        "package_kind": "private-package",
+        "publication_status": "manifest_private",
+        "published": false,
+        "route": "/catalog/packages/npm/mdwrk-theme-contract-e8c64b77"
+      },
+      {
+        "ecosystem": "npm",
+        "id": "package:npm:@mdwrk/ui-tokens:groupsum/markdown_workspace:packages/shared/ui-tokens/package.json",
+        "manifest_path": "packages/shared/ui-tokens/package.json",
+        "name": "@mdwrk/ui-tokens",
+        "package_kind": "private-package",
+        "publication_status": "manifest_private",
+        "published": false,
+        "route": "/catalog/packages/npm/mdwrk-ui-tokens-408c7e5d"
+      },
+      {
+        "ecosystem": "npm",
+        "id": "package:npm:markdown_workspace:groupsum/markdown_workspace:package.json",
+        "manifest_path": "package.json",
+        "name": "markdown_workspace",
+        "package_kind": "workspace-project",
+        "publication_status": "manifest_private",
+        "published": false,
+        "route": "/catalog/packages/npm/markdown-workspace-24ef4a04"
+      },
+      {
+        "ecosystem": "pypi",
+        "id": "package:pypi:markdown-workspace:groupsum/markdown_workspace:pyproject.toml",
+        "manifest_path": "pyproject.toml",
+        "name": "markdown-workspace",
+        "package_kind": "package-candidate",
+        "publication_status": "not-confirmed",
+        "published": false,
+        "route": "/catalog/packages/pypi/markdown-workspace-b8077b3d"
+      }
     ],
     "pushed_at": "2026-06-09T05:49:44Z",
     "related_resources": [
@@ -10744,7 +11241,3227 @@
       },
       "evidence_type": "ssot.registry",
       "governed": true,
-      "observed_at": "2026-08-03T22:06:01Z",
+      "inventory": {
+        "adrs": [
+          {
+            "id": "adr:0600",
+            "status": "draft",
+            "title": "Canonical registry is a single JSON document"
+          },
+          {
+            "id": "adr:0601",
+            "status": "draft",
+            "title": "Features are the targetable units"
+          },
+          {
+            "id": "adr:0602",
+            "status": "draft",
+            "title": "Issues are plannable work items"
+          },
+          {
+            "id": "adr:0603",
+            "status": "draft",
+            "title": "Entity-centric registry with a derived graph export"
+          },
+          {
+            "id": "adr:0604",
+            "status": "draft",
+            "title": "Normalized prefixed IDs"
+          },
+          {
+            "id": "adr:0605",
+            "status": "draft",
+            "title": "Claim status and claim tier are orthogonal"
+          },
+          {
+            "id": "adr:0606",
+            "status": "draft",
+            "title": "Feature implementation state is separate from lifecycle state"
+          },
+          {
+            "id": "adr:0607",
+            "status": "draft",
+            "title": "Immutable boundary and release snapshots"
+          },
+          {
+            "id": "adr:0608",
+            "status": "draft",
+            "title": "Fail-closed guards"
+          },
+          {
+            "id": "adr:0609",
+            "status": "draft",
+            "title": "Generated projections are non-canonical"
+          },
+          {
+            "id": "adr:0610",
+            "status": "draft",
+            "title": "Explicit schema versioning"
+          },
+          {
+            "id": "adr:0611",
+            "status": "draft",
+            "title": "Portable SSOT core with repo-specific evidence adapters"
+          },
+          {
+            "id": "adr:0612",
+            "status": "draft",
+            "title": "Enforce max path and filename lengths under `.ssot`"
+          },
+          {
+            "id": "adr:0613",
+            "status": "accepted",
+            "title": "Profiles are reusable feature bundles with derived pass status"
+          },
+          {
+            "id": "adr:0614",
+            "status": "accepted",
+            "title": "SPECs own typed ADR links"
+          },
+          {
+            "id": "adr:0615",
+            "status": "accepted",
+            "title": "Downstream assurance-language ceilings for feature target claim tiers"
+          },
+          {
+            "id": "adr:0616",
+            "status": "accepted",
+            "title": "Out-of-bounds implementation disposition is explicit"
+          },
+          {
+            "id": "adr:0617",
+            "status": "accepted",
+            "title": "Feature implementation is capped by active required claims"
+          },
+          {
+            "id": "adr:0618",
+            "status": "draft",
+            "title": "Local Release Assurance Remains SSOT Native"
+          },
+          {
+            "id": "adr:0619",
+            "status": "draft",
+            "title": "Content Addressed Governed Source Snapshots"
+          }
+        ],
+        "boundaries": [
+          {
+            "feature_ids": [],
+            "id": "bnd:default",
+            "status": "frozen",
+            "title": "Default boundary"
+          },
+          {
+            "feature_ids": [
+              "feat:extension-platform",
+              "feat:extension-runtime-activation-lifecycle",
+              "feat:extension-manager",
+              "feat:extension-gemini-agent",
+              "feat:extension-theme-studio",
+              "feat:extension-language-pack-studio",
+              "feat:uix-extension-view-modes",
+              "feat:extension-capability-permissions",
+              "feat:extension-settings-schema-rendering",
+              "feat:extension-runtime-isolation",
+              "feat:extension-intent-registry",
+              "feat:extension-home-intent-hub",
+              "feat:extension-pane-shared-operations",
+              "feat:extension-capability-trust-disclosure",
+              "feat:extension-diagnostics-recovery-actions",
+              "feat:workspace-files-continuous-document-flow",
+              "feat:git-ops-continuous-source-control-flow",
+              "feat:theme-studio-continuous-authoring-flow",
+              "feat:language-pack-studio-continuous-localization-flow",
+              "feat:gemini-agent-safe-draft-writeback-flow",
+              "feat:external-extension-trust-policy-production-defaults",
+              "feat:shell-aware-import-export-bridge"
+            ],
+            "id": "bnd:extension-continuous-experience",
+            "status": "frozen",
+            "title": "Extension continuous experience boundary"
+          },
+          {
+            "feature_ids": [
+              "feat:lander-seo-demand-cluster-canonical-pages",
+              "feat:lander-seo-comparison-pages",
+              "feat:lander-entity-mdwrk-brand-normalization",
+              "feat:lander-seo-robots-policy",
+              "feat:lander-seo-sitemap-protocol",
+              "feat:lander-seo-canonical-url-metadata",
+              "feat:lander-seo-html-title-meta-link-metadata",
+              "feat:lander-seo-open-graph-metadata",
+              "feat:lander-seo-x-card-metadata",
+              "feat:lander-seo-dcmi-document-metadata",
+              "feat:lander-seo-core-web-vitals-targets",
+              "feat:lander-metadata-favicon-logo-fallback",
+              "feat:lander-static-content-compiler",
+              "feat:lander-static-artifact-verification"
+            ],
+            "id": "bnd:mdwrk-seo-discoverability-current",
+            "status": "draft",
+            "title": "MdWrk SEO Discoverability Current Boundary"
+          },
+          {
+            "feature_ids": [
+              "feat:lander-aeo-appended-answer-blocks",
+              "feat:lander-docs-answer-section-standardization",
+              "feat:lander-blog-article-guide-standardization",
+              "feat:lander-article-crawlability-internal-links",
+              "feat:lander-aeo-answerable-heading-contract",
+              "feat:lander-aeo-visible-citation-parity",
+              "feat:lander-aeo-faq-qna-howto-eligibility",
+              "feat:lander-aeo-structured-answer-section-parity",
+              "feat:lander-article-metadata-schema-validation",
+              "feat:lander-article-excerpt-embedded-metadata",
+              "feat:lander-article-related-link-copy",
+              "feat:lander-article-metadata-ci-gate"
+            ],
+            "id": "bnd:mdwrk-aeo-article-discoverability-current",
+            "status": "draft",
+            "title": "MdWrk AEO Article Discoverability Current Boundary"
+          },
+          {
+            "feature_ids": [
+              "feat:lander-aieo-crawlable-text-semantic-index",
+              "feat:lander-aieo-json-ld-structured-data",
+              "feat:lander-aieo-ai-crawler-policy",
+              "feat:lander-aieo-search-vs-training-crawler-policy",
+              "feat:lander-aieo-llms-txt-index",
+              "feat:lander-aieo-llms-full-index",
+              "feat:lander-aieo-markdown-mirror-consistency",
+              "feat:lander-aieo-content-registry-discovery-parity",
+              "feat:lander-static-artifact-verification"
+            ],
+            "id": "bnd:mdwrk-aieo-crawler-llm-discovery-current",
+            "status": "draft",
+            "title": "MdWrk AiEO Crawler LLM Discovery Current Boundary"
+          },
+          {
+            "feature_ids": [
+              "feat:accessibility-shell-baseline",
+              "feat:browser-e2e-conformance-matrix",
+              "feat:client-action-rail",
+              "feat:client-commands",
+              "feat:client-common",
+              "feat:client-diagnostics",
+              "feat:client-editor",
+              "feat:client-extensions",
+              "feat:client-i18n",
+              "feat:client-layout",
+              "feat:client-markdownprofiles",
+              "feat:client-notifications",
+              "feat:client-preferences",
+              "feat:client-settings",
+              "feat:client-shell-registry-orchestration",
+              "feat:client-views",
+              "feat:commonmark-conformance-profile",
+              "feat:cross-cutting",
+              "feat:desktop-folder-mounting",
+              "feat:desktop-launch-markdown-import",
+              "feat:desktop-preload-host-api",
+              "feat:edit-in-renderer-profile-contract",
+              "feat:editor-command-block-math",
+              "feat:editor-command-citation",
+              "feat:editor-command-front-matter",
+              "feat:editor-command-insert-tab",
+              "feat:editor-core-command-model",
+              "feat:editor-line-count-scroll-alignment",
+              "feat:editor-toolbar-active-state-display",
+              "feat:editor-toolbar-bold",
+              "feat:editor-toolbar-bullet-list",
+              "feat:editor-toolbar-command-dispatch",
+              "feat:editor-toolbar-disabled-state-display",
+              "feat:editor-toolbar-divider-grouping",
+              "feat:editor-toolbar-footnote",
+              "feat:editor-toolbar-hidden-button-preference",
+              "feat:editor-toolbar-indent",
+              "feat:editor-toolbar-inline-math",
+              "feat:editor-toolbar-insert-table",
+              "feat:editor-toolbar-italic",
+              "feat:editor-toolbar-outdent",
+              "feat:editor-toolbar-overflow-scroll",
+              "feat:editor-toolbar-redo",
+              "feat:editor-toolbar-responsive-placement",
+              "feat:editor-toolbar-split-resizing",
+              "feat:editor-toolbar-split-view-eligibility",
+              "feat:editor-toolbar-strikethrough",
+              "feat:editor-toolbar-subscript",
+              "feat:editor-toolbar-superscript",
+              "feat:editor-toolbar-task-list",
+              "feat:editor-toolbar-undo",
+              "feat:editor-toolbar-view-editor",
+              "feat:editor-toolbar-view-preview",
+              "feat:editor-toolbar-view-split",
+              "feat:extension-capability-permissions",
+              "feat:extension-capability-trust-disclosure",
+              "feat:extension-diagnostics-recovery-actions",
+              "feat:extension-gemini-agent",
+              "feat:extension-home-intent-hub",
+              "feat:extension-intent-registry",
+              "feat:extension-language-pack-studio",
+              "feat:extension-manager",
+              "feat:extension-manager-enabled-state-persistence",
+              "feat:extension-manager-health-diagnostics",
+              "feat:extension-manager-pane-layout",
+              "feat:extension-manifest-compatibility-gate",
+              "feat:extension-pane-shared-operations",
+              "feat:extension-platform",
+              "feat:extension-runtime-activation-lifecycle",
+              "feat:extension-runtime-isolation",
+              "feat:extension-settings-namespace",
+              "feat:extension-settings-schema-rendering",
+              "feat:extension-theme-studio",
+              "feat:external-extension-trust-policy-production-defaults",
+              "feat:gemini-agent-conversation-preview-pane-surface",
+              "feat:gemini-agent-safe-draft-writeback-flow",
+              "feat:gemini-agent-workspace-file-mentions",
+              "feat:git-ops-continuous-source-control-flow",
+              "feat:host-capability-adapter",
+              "feat:lander-aeo-appended-answer-blocks",
+              "feat:lander-aieo-crawlable-text-semantic-index",
+              "feat:lander-aieo-json-ld-structured-data",
+              "feat:lander-article-crawlability-internal-links",
+              "feat:lander-article-excerpt-embedded-metadata",
+              "feat:lander-article-metadata-ci-gate",
+              "feat:lander-article-metadata-schema-validation",
+              "feat:lander-article-related-link-copy",
+              "feat:lander-blog-article-guide-standardization",
+              "feat:lander-docs-answer-section-standardization",
+              "feat:lander-entity-mdwrk-brand-normalization",
+              "feat:lander-metadata-favicon-logo-fallback",
+              "feat:lander-seo-comparison-pages",
+              "feat:lander-seo-demand-cluster-canonical-pages",
+              "feat:lander-static-artifact-verification",
+              "feat:lander-static-content-compiler",
+              "feat:lander-static-page-frontmatter-schema",
+              "feat:language-pack-studio-continuous-localization-flow",
+              "feat:markdown-file-import",
+              "feat:markdown-profile-settings-persistence",
+              "feat:markdown-renderer-core",
+              "feat:markdown-renderer-react",
+              "feat:mdwrk-lander-content-pack",
+              "feat:mdwrk-shell-fixed-fit-screen",
+              "feat:native-filesystem-shell-behavior",
+              "feat:oidc-adapter",
+              "feat:oidc-browser-flow",
+              "feat:portable-lander-package-family",
+              "feat:preview-export-artifact-generation",
+              "feat:preview-export-profile-disclosure",
+              "feat:preview-link-cross-file-hash-scroll",
+              "feat:preview-link-export-rewrite",
+              "feat:preview-link-external-pass-through",
+              "feat:preview-link-internal-file-navigation",
+              "feat:preview-link-same-document-hash-scroll",
+              "feat:preview-link-unsafe-url-policy",
+              "feat:preview-overlay-actions",
+              "feat:profile-boundary-resolution",
+              "feat:pwa-version-manifest",
+              "feat:react-markdown-editor-surface",
+              "feat:shell-aware-import-export-bridge",
+              "feat:shell-evidence-matrix",
+              "feat:shell-taxonomy-runtime-detection",
+              "feat:theme-studio-continuous-authoring-flow",
+              "feat:toast-notification-behavior",
+              "feat:uix-breakpoint-token-contract",
+              "feat:uix-component-class-policy",
+              "feat:uix-css-token-chassis-contract",
+              "feat:uix-extension-view-modes",
+              "feat:uix-responsive-layout-matrix",
+              "feat:uix-zoom-scale",
+              "feat:workspace-file-action-rail-grouping",
+              "feat:workspace-files-continuous-document-flow",
+              "feat:workspace-open-tabs-persistence",
+              "feat:workspace-persistence",
+              "feat:workspace-project-loading",
+              "feat:workspace-sidebar-resizing",
+              "feat:workspace-tab-management"
+            ],
+            "id": "bnd:repo-certifiability-current-scope",
+            "status": "frozen",
+            "title": "Repository Current Certifiability Scope"
+          },
+          {
+            "feature_ids": [
+              "feat:accessibility-shell-baseline",
+              "feat:client-common",
+              "feat:client-diagnostics",
+              "feat:desktop-folder-mounting",
+              "feat:desktop-preload-host-api",
+              "feat:edit-in-renderer-profile-contract",
+              "feat:editor-toolbar-active-state-display",
+              "feat:editor-toolbar-disabled-state-display",
+              "feat:editor-toolbar-divider-grouping",
+              "feat:editor-toolbar-hidden-button-preference",
+              "feat:editor-toolbar-overflow-scroll",
+              "feat:editor-toolbar-responsive-placement",
+              "feat:editor-toolbar-split-view-eligibility",
+              "feat:host-capability-adapter",
+              "feat:lander-aeo-appended-answer-blocks",
+              "feat:lander-aieo-crawlable-text-semantic-index",
+              "feat:lander-aieo-json-ld-structured-data",
+              "feat:lander-article-crawlability-internal-links",
+              "feat:lander-article-excerpt-embedded-metadata",
+              "feat:lander-article-metadata-ci-gate",
+              "feat:lander-article-metadata-schema-validation",
+              "feat:lander-article-related-link-copy",
+              "feat:lander-blog-article-guide-standardization",
+              "feat:lander-docs-answer-section-standardization",
+              "feat:lander-entity-mdwrk-brand-normalization",
+              "feat:lander-international-crawler-safe-rendering",
+              "feat:lander-international-hreflang-metadata",
+              "feat:lander-international-locale-routes",
+              "feat:lander-international-locale-switcher",
+              "feat:lander-international-no-automatic-locale-redirects",
+              "feat:lander-international-sitemap-alternates",
+              "feat:lander-metadata-favicon-logo-fallback",
+              "feat:lander-seo-comparison-pages",
+              "feat:lander-seo-demand-cluster-canonical-pages",
+              "feat:mdwrk-shell-fixed-fit-screen",
+              "feat:native-filesystem-shell-behavior",
+              "feat:preview-export-artifact-generation",
+              "feat:preview-export-profile-disclosure",
+              "feat:preview-link-cross-file-hash-scroll",
+              "feat:preview-link-export-rewrite",
+              "feat:preview-link-external-pass-through",
+              "feat:preview-link-internal-file-navigation",
+              "feat:preview-link-same-document-hash-scroll",
+              "feat:preview-link-unsafe-url-policy",
+              "feat:profile-boundary-resolution",
+              "feat:uix-breakpoint-token-contract",
+              "feat:uix-responsive-layout-matrix",
+              "feat:workspace-open-tabs-persistence",
+              "feat:workspace-persistence"
+            ],
+            "id": "bnd:repo-certifiability-p1-current-partials",
+            "status": "frozen",
+            "title": "Repository Certifiability P1 Current Partials"
+          },
+          {
+            "feature_ids": [
+              "feat:docs-checkbox-autocomplete",
+              "feat:docs-desktop-app-boundary",
+              "feat:docs-extension-authoring-guide",
+              "feat:docs-markdown-profile-architecture",
+              "feat:docs-text-wrap-previewer",
+              "feat:docs-uix-responsive-contract",
+              "feat:docs-view-toolbar"
+            ],
+            "id": "bnd:docs-authoring-uix-current",
+            "status": "frozen",
+            "title": "Docs Authoring UIX Current Boundary"
+          },
+          {
+            "feature_ids": [
+              "feat:editor-checkbox-focus-preservation",
+              "feat:editor-line-count-bar-toggle",
+              "feat:editor-list-continuation",
+              "feat:editor-text-wrap",
+              "feat:editor-underline-policy"
+            ],
+            "id": "bnd:editor-input-formatting-current",
+            "status": "frozen",
+            "title": "Editor Input Formatting Current Boundary"
+          },
+          {
+            "feature_ids": [
+              "feat:mobile-action-rail-portrait-order",
+              "feat:mobile-file-explorer-rail-full-width",
+              "feat:mobile-filetabs-portrait",
+              "feat:mobile-fixed-shell-scrollable-panes",
+              "feat:mobile-gesture-mappings-tab",
+              "feat:mobile-git-rail-full-width",
+              "feat:mobile-keyboard-mappings-tab-hidden",
+              "feat:mobile-keyboard-viewport",
+              "feat:mobile-statusbar-landscape-hidden",
+              "feat:mobile-status-footer-portrait-hidden",
+              "feat:mobile-visual-keyboard-half-screen"
+            ],
+            "id": "bnd:mobile-responsive-shell-current",
+            "status": "frozen",
+            "title": "Mobile Responsive Shell Current Boundary"
+          },
+          {
+            "feature_ids": [
+              "feat:pwa-install-button-state",
+              "feat:pwa-version-system-config"
+            ],
+            "id": "bnd:pwa-install-version-current",
+            "status": "frozen",
+            "title": "PWA Install Version Current Boundary"
+          },
+          {
+            "feature_ids": [
+              "feat:editor-underline-policy",
+              "feat:extension-authoring-publishing",
+              "feat:extension-catalog-hello",
+              "feat:extension-install-import-remove-disable",
+              "feat:extension-retention-policy"
+            ],
+            "id": "bnd:extension-authoring-lifecycle-current",
+            "status": "frozen",
+            "title": "Extension Authoring Lifecycle Current Boundary"
+          },
+          {
+            "feature_ids": [
+              "feat:oidc-token-boundary-audit",
+              "feat:package-publish-build-graph",
+              "feat:git-ops-oidc",
+              "feat:git-ops-persistence"
+            ],
+            "id": "bnd:git-ops-security-publish-current",
+            "status": "frozen",
+            "title": "Git Ops Security Publish Current Boundary"
+          },
+          {
+            "feature_ids": [
+              "feat:frontend-settings-persistence",
+              "feat:indexeddb-vs-filesystem-persistence",
+              "feat:git-ops-persistence",
+              "feat:persistence-diagnostics-mode",
+              "feat:cloud-persistence-out-of-bounds"
+            ],
+            "id": "bnd:persistence-scope-current",
+            "status": "frozen",
+            "title": "Persistence Scope Current Boundary"
+          },
+          {
+            "feature_ids": [
+              "feat:header-settings-icon-spacing",
+              "feat:action-rail-icon-mappings",
+              "feat:mdwrk-view-toolbar-scroll",
+              "feat:uix-command-palette-responsive",
+              "feat:uix-iconized-compaction",
+              "feat:theme-default-anodized-billet"
+            ],
+            "id": "bnd:uix-toolbar-icon-theme-current",
+            "status": "frozen",
+            "title": "UIX Toolbar Icon Theme Current Boundary"
+          },
+          {
+            "feature_ids": [
+              "feat:custom-flavored-markdown-profile",
+              "feat:mdwrk-profile-citations",
+              "feat:mdwrk-profile-markdown-in-html",
+              "feat:readme-project-identity-alignment",
+              "feat:repo-governance-validation",
+              "feat:repository-top-level-hygiene",
+              "feat:ssot-registry-model-governance"
+            ],
+            "id": "bnd:current-gap-delivery-current",
+            "status": "frozen",
+            "title": "Current Gap Delivery Current Boundary"
+          },
+          {
+            "feature_ids": [
+              "feat:agent-extension-oidc",
+              "feat:android-shell-support",
+              "feat:desktop-filesystem-permissions",
+              "feat:desktop-packaging-versioning",
+              "feat:desktop-runtime-extension-default",
+              "feat:desktop-tabs",
+              "feat:desktop-window-state-persistence",
+              "feat:mdwrk-desktop-app-shell"
+            ],
+            "id": "bnd:desktop-shell-and-oidc-current",
+            "status": "frozen",
+            "title": "Desktop Shell And OIDC Current Boundary"
+          },
+          {
+            "feature_ids": [
+              "feat:lander-wcag-aa-contrast"
+            ],
+            "id": "bnd:lander-wcag-aa-contrast-current",
+            "status": "frozen",
+            "title": "Lander WCAG AA Contrast Current Boundary"
+          },
+          {
+            "feature_ids": [
+              "feat:lander-cache-resource-classification",
+              "feat:lander-immutable-fingerprinted-assets",
+              "feat:lander-mutable-validator-metadata",
+              "feat:lander-cache-header-manifest",
+              "feat:lander-critical-css-inline-defer",
+              "feat:lander-cache-policy-validation",
+              "feat:mdwrkcom-lander-cache-policy-adoption",
+              "feat:mdwrkcom-static-css-fingerprinted-delivery",
+              "feat:mdwrkcom-critical-css-profile",
+              "feat:mdwrkcom-mutable-route-validator-headers",
+              "feat:mdwrkcom-cache-header-artifact-export",
+              "feat:mdwrkcom-cache-policy-validation"
+            ],
+            "id": "bnd:portable-lander-cache-critical-css-next",
+            "status": "frozen",
+            "title": "Portable Lander Cache Critical CSS Next Boundary"
+          },
+          {
+            "feature_ids": [
+              "feat:google-structured-data-search-gallery-coverage",
+              "feat:json-ld-ai-discovery-entity-graph",
+              "feat:json-ld-article",
+              "feat:json-ld-book-actions",
+              "feat:json-ld-breadcrumb",
+              "feat:json-ld-carousel",
+              "feat:json-ld-course-list",
+              "feat:json-ld-dataset",
+              "feat:json-ld-discussion-forum",
+              "feat:json-ld-education-qa",
+              "feat:json-ld-employer-aggregate-rating",
+              "feat:json-ld-estimated-salary",
+              "feat:json-ld-event",
+              "feat:json-ld-fact-check",
+              "feat:json-ld-faq",
+              "feat:json-ld-image-metadata",
+              "feat:json-ld-job-posting",
+              "feat:json-ld-local-business",
+              "feat:json-ld-loyalty-program",
+              "feat:json-ld-math-solver",
+              "feat:json-ld-merchant-listing",
+              "feat:json-ld-merchant-return-policy",
+              "feat:json-ld-merchant-shipping-policy",
+              "feat:json-ld-movie",
+              "feat:json-ld-organization",
+              "feat:json-ld-practice-problem",
+              "feat:json-ld-product",
+              "feat:json-ld-product-snippet",
+              "feat:json-ld-product-variant",
+              "feat:json-ld-profile-page",
+              "feat:json-ld-qa",
+              "feat:json-ld-recipe",
+              "feat:json-ld-review-snippet",
+              "feat:json-ld-rich-results-validation",
+              "feat:json-ld-software-app",
+              "feat:json-ld-speakable",
+              "feat:json-ld-stable-entity-ids",
+              "feat:json-ld-subscription-paywalled-content",
+              "feat:json-ld-supported-type-gate",
+              "feat:json-ld-vacation-rental",
+              "feat:json-ld-vehicle-listing",
+              "feat:json-ld-video",
+              "feat:json-ld-visible-content-parity",
+              "feat:lander-aieo-json-ld-structured-data",
+              "feat:lander-react.structured-data.aggregate-rating-reusable-component",
+              "feat:lander-react.structured-data.article-reusable-component",
+              "feat:lander-react.structured-data.blog-posting-reusable-component",
+              "feat:lander-react.structured-data.book-reusable-component",
+              "feat:lander-react.structured-data.breadcrumb-list-reusable-component",
+              "feat:lander-react.structured-data.claim-review-reusable-component",
+              "feat:lander-react.structured-data.course-instance-reusable-component",
+              "feat:lander-react.structured-data.course-reusable-component",
+              "feat:lander-react.structured-data.dataset-reusable-component",
+              "feat:lander-react.structured-data.discussion-forum-posting-reusable-component",
+              "feat:lander-react.structured-data.employer-aggregate-rating-reusable-component",
+              "feat:lander-react.structured-data.event-reusable-component",
+              "feat:lander-react.structured-data.faq-page-reusable-component",
+              "feat:lander-react.structured-data.how-to-reusable-component",
+              "feat:lander-react.structured-data.image-object-reusable-component",
+              "feat:lander-react.structured-data.item-list-reusable-component",
+              "feat:lander-react.structured-data.job-posting-reusable-component",
+              "feat:lander-react.structured-data.local-business-reusable-component",
+              "feat:lander-react.structured-data.math-solver-reusable-component",
+              "feat:lander-react.structured-data.member-program-reusable-component",
+              "feat:lander-react.structured-data.merchant-return-policy-reusable-component",
+              "feat:lander-react.structured-data.monetary-amount-distribution-reusable-component",
+              "feat:lander-react.structured-data.movie-reusable-component",
+              "feat:lander-react.structured-data.offer-shipping-details-reusable-component",
+              "feat:lander-react.structured-data.organization-reusable-component",
+              "feat:lander-react.structured-data.product-group-reusable-component",
+              "feat:lander-react.structured-data.product-reusable-component",
+              "feat:lander-react.structured-data.profile-page-reusable-component",
+              "feat:lander-react.structured-data.qa-page-reusable-component",
+              "feat:lander-react.structured-data.read-action-reusable-component",
+              "feat:lander-react.structured-data.recipe-reusable-component",
+              "feat:lander-react.structured-data.review-reusable-component",
+              "feat:lander-react.structured-data.software-application-reusable-component",
+              "feat:lander-react.structured-data.software-source-code-reusable-component",
+              "feat:lander-react.structured-data.speakable-specification-reusable-component",
+              "feat:lander-react.structured-data.tech-article-reusable-component",
+              "feat:lander-react.structured-data.vacation-rental-reusable-component",
+              "feat:lander-react.structured-data.vehicle-reusable-component",
+              "feat:lander-react.structured-data.video-object-reusable-component",
+              "feat:lander-react.structured-data.web-application-reusable-component",
+              "feat:lander-react.structured-data.web-page-reusable-component",
+              "feat:lander-react.structured-data.web-site-reusable-component",
+              "feat:lander.structured-data.article",
+              "feat:lander.structured-data.blog-posting",
+              "feat:lander.structured-data.breadcrumb-list",
+              "feat:lander.structured-data.dataset",
+              "feat:lander.structured-data.faq-page",
+              "feat:lander.structured-data.image-object",
+              "feat:lander.structured-data.organization",
+              "feat:lander.structured-data.product",
+              "feat:lander.structured-data.profile-page",
+              "feat:lander.structured-data.software-application",
+              "feat:lander.structured-data.software-source-code",
+              "feat:lander.structured-data.tech-article",
+              "feat:lander.structured-data.video-object",
+              "feat:lander.structured-data.web-page",
+              "feat:lander.structured-data.web-site",
+              "feat:structured-data.aggregate-rating",
+              "feat:structured-data.article",
+              "feat:structured-data.blog-posting",
+              "feat:structured-data.book",
+              "feat:structured-data.breadcrumb-list",
+              "feat:structured-data.claim-review",
+              "feat:structured-data.course",
+              "feat:structured-data.course-instance",
+              "feat:structured-data.dataset",
+              "feat:structured-data.discussion-forum-posting",
+              "feat:structured-data.employer-aggregate-rating",
+              "feat:structured-data.event",
+              "feat:structured-data.faq-page",
+              "feat:structured-data.how-to",
+              "feat:structured-data.image-object",
+              "feat:structured-data.item-list",
+              "feat:structured-data.job-posting",
+              "feat:structured-data.local-business",
+              "feat:structured-data.math-solver",
+              "feat:structured-data.member-program",
+              "feat:structured-data.merchant-return-policy",
+              "feat:structured-data.monetary-amount-distribution",
+              "feat:structured-data.movie",
+              "feat:structured-data.offer-shipping-details",
+              "feat:structured-data.organization",
+              "feat:structured-data.product",
+              "feat:structured-data.product-group",
+              "feat:structured-data.profile-page",
+              "feat:structured-data.qa-page",
+              "feat:structured-data.read-action",
+              "feat:structured-data.recipe",
+              "feat:structured-data.review",
+              "feat:structured-data.review-snippet",
+              "feat:structured-data.software-application",
+              "feat:structured-data.software-source-code",
+              "feat:structured-data.speakable-specification",
+              "feat:structured-data.tech-article",
+              "feat:structured-data.vacation-rental",
+              "feat:structured-data.vehicle",
+              "feat:structured-data.video-object",
+              "feat:structured-data.web-application",
+              "feat:structured-data.web-page",
+              "feat:structured-data.web-site"
+            ],
+            "id": "bnd:structured-data-feature-family-current",
+            "status": "frozen",
+            "title": "Structured Data Feature Family Current Boundary"
+          }
+        ],
+        "claims": [
+          {
+            "evidence_ids": [
+              "evd:apps-client-hooks-useapp.test.tsx",
+              "evd:apps-client-hooks-usetabmanager.test.tsx",
+              "evd:apps-client-hooks-usetoast.test.tsx",
+              "evd:apps-client-services-oidc.test.ts",
+              "evd:apps-client-src-pwa-versionmanifest.test.ts",
+              "evd:apps-client-src-shell-actionrailhost.test.tsx",
+              "evd:apps-client-styles-alignmenttokens.test.ts",
+              "evd:apps-client-styles-chassisfittoscreen.test.ts",
+              "evd:apps-client-styles-zoombehavior.test.ts",
+              "evd:apps-client-tests-phase7-shell-parity.test.tsx",
+              "evd:apps-client-tests-playwright-file-file-baseline.spec.ts",
+              "evd:apps-client-tests-playwright-inline-inline.spec.ts",
+              "evd:apps-client-tests-playwright-browser-matrix.spec.ts",
+              "evd:apps-client-tests-playwright-preview-export.spec.ts",
+              "evd:apps-client-tests-playwright-settings-and-i18n.spec.ts",
+              "evd:apps-client-tests-playwright-shell-smoke.spec.ts",
+              "evd:packages-editor-markdown-editor-core-tests-commands.test.ts",
+              "evd:packages-editor-markdown-editor-core-tests-history.test.ts",
+              "evd:packages-editor-markdown-editor-core-tests-roundtrip.test.ts",
+              "evd:packages-editor-markdown-editor-core-tests-selection.test.ts",
+              "evd:packages-editor-markdown-editor-core-tests-transforms.test.ts",
+              "evd:packages-editor-markdown-editor-react-tests-component.test.tsx",
+              "evd:packages-editor-markdown-editor-react-tests-keyboard.test.tsx",
+              "evd:packages-extensions-extension-manager-tests-extension-manager.test.tsx",
+              "evd:packages-extensions-extension-runtime-tests-runtime.test.ts",
+              "evd:packages-renderer-markdown-renderer-core-tests-html.test.ts",
+              "evd:packages-renderer-markdown-renderer-react-tests-component.test.tsx",
+              "evd:apps-client-src-features-markdownprofiles-profileconfig.test.ts",
+              "evd:apps-client-components-markdown-workspacemarkdownrenderer.test.tsx",
+              "evd:apps-lander-scripts-validate-syntax-themes.mjs",
+              "evd:lander-static-content-ci-local",
+              "evd:ssot-reports-spec-coverage-index.json",
+              "evd:ssot-reports-ssot-graph-export-governance.json",
+              "evd:ssot-reports-release-snapshot-index.json",
+              "evd:packages-shared-structured-data-tests-run-smoke.mjs",
+              "evd:packages-lander-lander-react-tests-run-smoke.mjs",
+              "evd:tools-governance-validate-certifiability-feature-plan.mjs",
+              "evd:markdown-profile-commonmark-core-corpus",
+              "evd:markdown-profile-commonmark-official-corpus",
+              "evd:markdown-profile-gfm-default-profile",
+              "evd:markdown-profile-gfm-official-corpus",
+              "evd:markdown-profile-mdwrk-optional-profiles",
+              "evd:lander-seo-aeo-aieo-discovery-ci",
+              "evd:markdown-profile-custom-parser-profile",
+              "evd:markdown-profile-custom-previewer-profiles",
+              "evd:mdwrk-package-cr-order-runtime",
+              "evd:mdwrkcom-thin-host-runtime"
+            ],
+            "feature_ids": [
+              "feat:cross-cutting",
+              "feat:markdown-renderer-core",
+              "feat:markdown-renderer-react",
+              "feat:oidc-browser-flow",
+              "feat:browser-e2e-conformance-matrix",
+              "feat:shell-evidence-matrix",
+              "feat:preview-export-artifact-generation",
+              "feat:oidc-adapter",
+              "feat:profile-boundary-resolution",
+              "feat:commonmark-conformance-profile",
+              "feat:gfm-profile",
+              "feat:custom-flavored-markdown-profile",
+              "feat:preview-export-profile-disclosure",
+              "feat:preview-link-external-pass-through",
+              "feat:preview-link-internal-file-navigation",
+              "feat:preview-link-same-document-hash-scroll",
+              "feat:preview-link-cross-file-hash-scroll",
+              "feat:preview-link-export-rewrite",
+              "feat:preview-link-unsafe-url-policy",
+              "feat:preview-overlay-actions",
+              "feat:lander-seo-demand-cluster-canonical-pages",
+              "feat:lander-seo-comparison-pages",
+              "feat:lander-entity-mdwrk-brand-normalization",
+              "feat:lander-aeo-appended-answer-blocks",
+              "feat:lander-aieo-json-ld-structured-data",
+              "feat:lander-aieo-crawlable-text-semantic-index",
+              "feat:lander-docs-answer-section-standardization",
+              "feat:lander-blog-article-guide-standardization",
+              "feat:lander-article-related-link-copy",
+              "feat:lander-article-crawlability-internal-links",
+              "feat:lander-article-metadata-schema-validation",
+              "feat:lander-metadata-favicon-logo-fallback",
+              "feat:lander-article-excerpt-embedded-metadata",
+              "feat:lander-article-metadata-ci-gate",
+              "feat:lander-static-content-compiler",
+              "feat:lander-static-artifact-verification",
+              "feat:lander-static-page-frontmatter-schema",
+              "feat:spec-coverage-index",
+              "feat:ssot-graph-export-governance",
+              "feat:ssot-release-snapshot-reports",
+              "feat:google-structured-data-search-gallery-coverage",
+              "feat:json-ld-visible-content-parity",
+              "feat:json-ld-rich-results-validation",
+              "feat:json-ld-ai-discovery-entity-graph",
+              "feat:json-ld-article",
+              "feat:json-ld-breadcrumb",
+              "feat:json-ld-organization",
+              "feat:json-ld-software-app",
+              "feat:structured-data.web-page",
+              "feat:structured-data.web-site",
+              "feat:structured-data.organization",
+              "feat:structured-data.software-application",
+              "feat:structured-data.web-application",
+              "feat:structured-data.article",
+              "feat:structured-data.tech-article",
+              "feat:structured-data.blog-posting",
+              "feat:structured-data.breadcrumb-list",
+              "feat:structured-data.faq-page",
+              "feat:structured-data.qa-page",
+              "feat:structured-data.how-to",
+              "feat:structured-data.item-list",
+              "feat:structured-data.software-source-code",
+              "feat:structured-data.product",
+              "feat:structured-data.dataset",
+              "feat:structured-data.event",
+              "feat:structured-data.video-object",
+              "feat:structured-data.image-object",
+              "feat:structured-data.profile-page",
+              "feat:structured-data.review-snippet",
+              "feat:structured-data.course",
+              "feat:structured-data.discussion-forum-posting",
+              "feat:lander.structured-data.web-page",
+              "feat:lander.structured-data.web-site",
+              "feat:lander.structured-data.organization",
+              "feat:lander.structured-data.software-application",
+              "feat:lander.structured-data.article",
+              "feat:lander.structured-data.tech-article",
+              "feat:lander.structured-data.blog-posting",
+              "feat:lander.structured-data.breadcrumb-list",
+              "feat:lander.structured-data.faq-page",
+              "feat:lander.structured-data.software-source-code",
+              "feat:lander.structured-data.profile-page",
+              "feat:lander.structured-data.product",
+              "feat:lander.structured-data.dataset",
+              "feat:lander.structured-data.video-object",
+              "feat:lander.structured-data.image-object",
+              "feat:json-ld-book-actions",
+              "feat:json-ld-carousel",
+              "feat:json-ld-course-list",
+              "feat:json-ld-dataset",
+              "feat:json-ld-discussion-forum",
+              "feat:json-ld-education-qa",
+              "feat:json-ld-employer-aggregate-rating",
+              "feat:json-ld-estimated-salary",
+              "feat:json-ld-event",
+              "feat:json-ld-fact-check",
+              "feat:json-ld-faq",
+              "feat:json-ld-image-metadata",
+              "feat:json-ld-job-posting",
+              "feat:json-ld-local-business",
+              "feat:json-ld-loyalty-program",
+              "feat:json-ld-math-solver",
+              "feat:json-ld-merchant-listing",
+              "feat:json-ld-merchant-return-policy",
+              "feat:json-ld-merchant-shipping-policy",
+              "feat:json-ld-movie",
+              "feat:json-ld-practice-problem",
+              "feat:json-ld-product",
+              "feat:json-ld-product-snippet",
+              "feat:json-ld-product-variant",
+              "feat:json-ld-profile-page",
+              "feat:json-ld-qa",
+              "feat:json-ld-recipe",
+              "feat:json-ld-review-snippet",
+              "feat:json-ld-speakable",
+              "feat:json-ld-subscription-paywalled-content",
+              "feat:json-ld-vacation-rental",
+              "feat:json-ld-vehicle-listing",
+              "feat:json-ld-video",
+              "feat:repo-governance-validation",
+              "feat:commonmark-core-subset",
+              "feat:commonmark-official-corpus",
+              "feat:gfm-default-profile-subset",
+              "feat:gfm-official-corpus",
+              "feat:mdwrk-profile-front-matter",
+              "feat:mdwrk-profile-footnotes",
+              "feat:mdwrk-profile-definition-lists",
+              "feat:mdwrk-profile-math",
+              "feat:mdwrk-profile-citations",
+              "feat:mdwrk-profile-superscript",
+              "feat:mdwrk-profile-subscript",
+              "feat:mdwrk-profile-smart-punctuation",
+              "feat:mdwrk-profile-markdown-in-html",
+              "feat:lander-aeo-answerable-heading-contract",
+              "feat:lander-aeo-faq-qna-howto-eligibility",
+              "feat:lander-aeo-structured-answer-section-parity",
+              "feat:lander-aeo-visible-citation-parity",
+              "feat:lander-aieo-ai-crawler-policy",
+              "feat:lander-aieo-content-registry-discovery-parity",
+              "feat:lander-aieo-llms-full-index",
+              "feat:lander-aieo-llms-txt-index",
+              "feat:lander-aieo-markdown-mirror-consistency",
+              "feat:lander-aieo-search-vs-training-crawler-policy",
+              "feat:lander-seo-canonical-url-metadata",
+              "feat:lander-seo-core-web-vitals-targets",
+              "feat:lander-seo-dcmi-document-metadata",
+              "feat:lander-seo-html-title-meta-link-metadata",
+              "feat:lander-seo-open-graph-metadata",
+              "feat:lander-seo-robots-policy",
+              "feat:lander-seo-sitemap-protocol",
+              "feat:lander-seo-x-card-metadata",
+              "feat:mdwrk-custom-parser-profile",
+              "feat:mdwrk-custom-previewer-profiles",
+              "feat:structured-data.review",
+              "feat:structured-data.aggregate-rating",
+              "feat:structured-data.course-instance",
+              "feat:structured-data.book",
+              "feat:structured-data.read-action",
+              "feat:structured-data.claim-review",
+              "feat:structured-data.employer-aggregate-rating",
+              "feat:structured-data.monetary-amount-distribution",
+              "feat:structured-data.job-posting",
+              "feat:structured-data.local-business",
+              "feat:structured-data.member-program",
+              "feat:structured-data.math-solver",
+              "feat:structured-data.merchant-return-policy",
+              "feat:structured-data.offer-shipping-details",
+              "feat:structured-data.movie",
+              "feat:structured-data.product-group",
+              "feat:structured-data.recipe",
+              "feat:structured-data.speakable-specification",
+              "feat:structured-data.vacation-rental",
+              "feat:structured-data.vehicle",
+              "feat:lander-seo-human-readable-sitemap-table",
+              "feat:mdwrk-package-change-request-execution",
+              "feat:mdwrk-package-owned-version-bump-governance",
+              "feat:mdwrk-scoped-agent-ownership-instructions",
+              "feat:mdwrk-package-screenshot-evidence-matrix",
+              "feat:mdwrkcom-page-screenshot-evidence"
+            ],
+            "id": "clm:cross-cutting",
+            "status": "implemented",
+            "test_ids": [
+              "tst:apps-client-hooks-useapp.test.tsx",
+              "tst:apps-client-hooks-usetabmanager.test.tsx",
+              "tst:apps-client-hooks-usetoast.test.tsx",
+              "tst:apps-client-services-oidc.test.ts",
+              "tst:apps-client-src-pwa-versionmanifest.test.ts",
+              "tst:apps-client-src-shell-actionrailhost.test.tsx",
+              "tst:apps-client-styles-alignmenttokens.test.ts",
+              "tst:apps-client-styles-chassisfittoscreen.test.ts",
+              "tst:apps-client-styles-zoombehavior.test.ts",
+              "tst:apps-client-tests-phase7-shell-parity.test.tsx",
+              "tst:apps-client-tests-playwright-file-file-baseline.spec.ts",
+              "tst:apps-client-tests-playwright-inline-inline.spec.ts",
+              "tst:apps-client-tests-playwright-browser-matrix.spec.ts",
+              "tst:apps-client-tests-playwright-preview-export.spec.ts",
+              "tst:apps-client-tests-playwright-settings-and-i18n.spec.ts",
+              "tst:apps-client-tests-playwright-shell-smoke.spec.ts",
+              "tst:packages-editor-markdown-editor-core-tests-commands.test.ts",
+              "tst:packages-editor-markdown-editor-core-tests-history.test.ts",
+              "tst:packages-editor-markdown-editor-core-tests-roundtrip.test.ts",
+              "tst:packages-editor-markdown-editor-core-tests-selection.test.ts",
+              "tst:packages-editor-markdown-editor-core-tests-transforms.test.ts",
+              "tst:packages-editor-markdown-editor-react-tests-component.test.tsx",
+              "tst:packages-editor-markdown-editor-react-tests-keyboard.test.tsx",
+              "tst:packages-extensions-extension-manager-tests-extension-manager.test.tsx",
+              "tst:packages-extensions-extension-runtime-tests-runtime.test.ts",
+              "tst:packages-renderer-markdown-renderer-core-tests-html.test.ts",
+              "tst:packages-renderer-markdown-renderer-react-tests-component.test.tsx",
+              "tst:apps-client-src-features-markdownprofiles-profileconfig.test.ts",
+              "tst:apps-client-components-markdown-workspacemarkdownrenderer.test.tsx",
+              "tst:apps-lander-scripts-validate-syntax-themes.mjs",
+              "tst:apps-lander-src-cli-static-content",
+              "tst:github-workflows-lander-static-content",
+              "tst:tools-governance-validate-spec-coverage-index.mjs",
+              "tst:tools-governance-validate-ssot-graph-export.mjs",
+              "tst:tools-governance-validate-release-snapshots.mjs",
+              "tst:packages-shared-structured-data-tests-run-smoke.mjs",
+              "tst:packages-lander-lander-react-tests-run-smoke.mjs",
+              "tst:tools-governance-validate-certifiability-feature-plan.mjs",
+              "tst:packages-renderer-markdown-renderer-core-tests-commonmark-core-corpus.mjs",
+              "tst:packages-renderer-markdown-renderer-core-tests-commonmark-official-corpus.mjs",
+              "tst:packages-renderer-markdown-renderer-core-tests-gfm-default-profile.mjs",
+              "tst:packages-renderer-markdown-renderer-core-tests-gfm-official-corpus.mjs",
+              "tst:packages-renderer-markdown-renderer-core-tests-optional-profiles.mjs",
+              "tst:apps-mdwrkcom-scripts-validate-discoverability-artifacts.mjs",
+              "tst:apps-mdwrkcom-scripts-validate-aeo-content-parity.mjs",
+              "tst:apps-mdwrkcom-scripts-validate-ai-crawler-policy.mjs",
+              "tst:packages-renderer-markdown-renderer-core-tests-custom-parser-profile.mjs",
+              "tst:packages-renderer-markdown-renderer-core-tests-custom-previewer-profiles.mjs",
+              "tst:apps-mdwrkcom-scripts-validate-sitemap-human-readable-table",
+              "tst:tools-governance-mdwrk-package-cr-order.test.mjs",
+              "tst:tools-governance-mdwrk-version-bump-policy.test.mjs",
+              "tst:tools-governance-mdwrk-scoped-agent-ownership.test.mjs",
+              "tst:tools-governance-mdwrk-screenshot-evidence-matrix.test.mjs",
+              "tst:mdwrkcom-page-screenshot-evidence-manifest",
+              "tst:tools-governance-mdwrkcom-thin-host.test.mjs"
+            ],
+            "title": "Claim for Cross-cutting repository feature set"
+          },
+          {
+            "evidence_ids": [
+              "evd:apps-client-src-features-action-rail-actionrailregistry.test.ts",
+              "evd:apps-client-src-features-commands-commandregistry.test.ts",
+              "evd:apps-client-src-features-views-viewregistry.test.ts",
+              "evd:apps-client-src-shell-actionrailhost.test.tsx",
+              "evd:apps-client-tests-phase7-shell-parity.test.tsx",
+              "evd:apps-client-components-markdown-workspacemarkdownrenderer.test.tsx"
+            ],
+            "feature_ids": [
+              "feat:client-action-rail",
+              "feat:client-shell-registry-orchestration",
+              "feat:workspace-file-action-rail-grouping"
+            ],
+            "id": "clm:client-action-rail",
+            "status": "implemented",
+            "test_ids": [
+              "tst:apps-client-src-features-action-rail-actionrailregistry.test.ts",
+              "tst:apps-client-src-features-commands-commandregistry.test.ts",
+              "tst:apps-client-src-features-views-viewregistry.test.ts",
+              "tst:apps-client-src-shell-actionrailhost.test.tsx",
+              "tst:apps-client-tests-phase7-shell-parity.test.tsx",
+              "tst:apps-client-components-markdown-workspacemarkdownrenderer.test.tsx"
+            ],
+            "title": "Claim for Client feature: action-rail"
+          },
+          {
+            "evidence_ids": [
+              "evd:apps-client-src-features-commands-commandregistry.test.ts",
+              "evd:apps-client-src-features-action-rail-actionrailregistry.test.ts",
+              "evd:apps-client-src-features-views-viewregistry.test.ts",
+              "evd:apps-client-src-shell-actionrailhost.test.tsx",
+              "evd:apps-client-tests-phase7-shell-parity.test.tsx",
+              "evd:apps-client-components-markdown-workspacemarkdownrenderer.test.tsx"
+            ],
+            "feature_ids": [
+              "feat:client-commands",
+              "feat:client-shell-registry-orchestration",
+              "feat:workspace-file-action-rail-grouping"
+            ],
+            "id": "clm:client-commands",
+            "status": "implemented",
+            "test_ids": [
+              "tst:apps-client-src-features-commands-commandregistry.test.ts",
+              "tst:apps-client-src-features-action-rail-actionrailregistry.test.ts",
+              "tst:apps-client-src-features-views-viewregistry.test.ts",
+              "tst:apps-client-src-shell-actionrailhost.test.tsx",
+              "tst:apps-client-tests-phase7-shell-parity.test.tsx",
+              "tst:apps-client-components-markdown-workspacemarkdownrenderer.test.tsx"
+            ],
+            "title": "Claim for Client feature: commands"
+          },
+          {
+            "evidence_ids": [
+              "evd:apps-client-hooks-usetabmanager.test.tsx",
+              "evd:apps-client-hooks-useapp.test.tsx",
+              "evd:apps-client-tests-playwright-file-file-baseline.spec.ts",
+              "evd:apps-client-hooks-usetoast.test.tsx"
+            ],
+            "feature_ids": [
+              "feat:client-common",
+              "feat:workspace-tab-management",
+              "feat:workspace-project-loading",
+              "feat:desktop-launch-markdown-import",
+              "feat:host-capability-adapter",
+              "feat:native-filesystem-shell-behavior",
+              "feat:markdown-file-import",
+              "feat:workspace-open-tabs-persistence",
+              "feat:workspace-persistence",
+              "feat:desktop-preload-host-api",
+              "feat:desktop-folder-mounting"
+            ],
+            "id": "clm:client-common",
+            "status": "declared",
+            "test_ids": [
+              "tst:apps-client-hooks-usetabmanager.test.tsx",
+              "tst:apps-client-hooks-useapp.test.tsx",
+              "tst:apps-client-tests-playwright-file-file-baseline.spec.ts",
+              "tst:apps-client-hooks-usetoast.test.tsx"
+            ],
+            "title": "Claim for Client feature: common"
+          },
+          {
+            "evidence_ids": [
+              "evd:packages-extensions-extension-manager-tests-extension-manager.test.tsx"
+            ],
+            "feature_ids": [
+              "feat:client-diagnostics",
+              "feat:extension-manager-health-diagnostics"
+            ],
+            "id": "clm:client-diagnostics",
+            "status": "declared",
+            "test_ids": [
+              "tst:packages-extensions-extension-manager-tests-extension-manager.test.tsx"
+            ],
+            "title": "Claim for Client feature: diagnostics"
+          },
+          {
+            "evidence_ids": [
+              "evd:packages-editor-markdown-editor-core-tests-commands.test.ts",
+              "evd:packages-editor-markdown-editor-core-tests-history.test.ts",
+              "evd:packages-editor-markdown-editor-core-tests-roundtrip.test.ts",
+              "evd:packages-editor-markdown-editor-core-tests-selection.test.ts",
+              "evd:packages-editor-markdown-editor-core-tests-transforms.test.ts",
+              "evd:packages-editor-markdown-editor-react-tests-component.test.tsx",
+              "evd:packages-editor-markdown-editor-react-tests-keyboard.test.tsx",
+              "evd:mdwrk-editor-command-focus-runtime"
+            ],
+            "feature_ids": [
+              "feat:client-editor",
+              "feat:editor-core-command-model",
+              "feat:react-markdown-editor-surface",
+              "feat:editor-toolbar-view-editor",
+              "feat:editor-toolbar-view-split",
+              "feat:editor-toolbar-view-preview",
+              "feat:editor-toolbar-strikethrough",
+              "feat:editor-toolbar-bullet-list",
+              "feat:editor-toolbar-task-list",
+              "feat:editor-toolbar-indent",
+              "feat:editor-toolbar-outdent",
+              "feat:editor-toolbar-insert-table",
+              "feat:editor-toolbar-inline-math",
+              "feat:editor-toolbar-footnote",
+              "feat:editor-toolbar-superscript",
+              "feat:editor-toolbar-subscript",
+              "feat:editor-toolbar-bold",
+              "feat:editor-toolbar-italic",
+              "feat:editor-toolbar-undo",
+              "feat:editor-toolbar-redo",
+              "feat:editor-command-front-matter",
+              "feat:editor-command-citation",
+              "feat:editor-command-block-math",
+              "feat:editor-command-insert-tab",
+              "feat:editor-toolbar-hidden-button-preference",
+              "feat:editor-toolbar-active-state-display",
+              "feat:editor-toolbar-disabled-state-display",
+              "feat:editor-toolbar-command-dispatch",
+              "feat:editor-link-selected-text-wrap",
+              "feat:editor-link-empty-selection-stub",
+              "feat:editor-link-existing-edit",
+              "feat:editor-link-url-paste-wrap",
+              "feat:editor-link-internal-file-authoring",
+              "feat:editor-link-hash-authoring",
+              "feat:editor-checkbox-command-focus-integrity",
+              "feat:editor-toolbar-command-isolation",
+              "feat:editor-link-image-command-integrity",
+              "feat:edit-in-renderer-text-wrap-inline-image"
+            ],
+            "id": "clm:client-editor",
+            "status": "declared",
+            "test_ids": [
+              "tst:packages-editor-markdown-editor-core-tests-commands.test.ts",
+              "tst:packages-editor-markdown-editor-core-tests-history.test.ts",
+              "tst:packages-editor-markdown-editor-core-tests-roundtrip.test.ts",
+              "tst:packages-editor-markdown-editor-core-tests-selection.test.ts",
+              "tst:packages-editor-markdown-editor-core-tests-transforms.test.ts",
+              "tst:packages-editor-markdown-editor-react-tests-component.test.tsx",
+              "tst:packages-editor-markdown-editor-react-tests-keyboard.test.tsx",
+              "tst:packages-editor-markdown-editor-react-checkbox-focus.test.tsx",
+              "tst:packages-editor-markdown-editor-react-toolbar-command-isolation.test.tsx",
+              "tst:packages-editor-markdown-editor-core-link-image-command-integrity.test.mjs",
+              "tst:packages-editor-markdown-edit-in-renderer-inline-image-wrap.test.mjs"
+            ],
+            "title": "Claim for Client feature: editor"
+          },
+          {
+            "evidence_ids": [
+              "evd:apps-client-src-features-extensions-extensionworkspacesurfaces.test.tsx",
+              "evd:apps-client-hooks-usetoast.test.tsx",
+              "evd:apps-client-src-shell-actionrailhost.test.tsx",
+              "evd:apps-client-tests-phase7-shell-parity.test.tsx",
+              "evd:packages-extensions-extension-manager-tests-extension-manager.test.tsx",
+              "evd:packages-extensions-extension-runtime-tests-runtime.test.ts",
+              "evd:apps-client-src-features-settings-settingsschemarenderer.test.tsx",
+              "evd:apps-client-tests-playwright-settings-and-i18n.spec.ts",
+              "evd:apps-client-src-features-i18n-languagepackstudiocontroller.test.ts",
+              "evd:apps-client-src-extensions-runtime-extensionruntimeprovider.test.ts",
+              "evd:packages-extensions-extension-gemini-agent-tests-run-smoke.mjs",
+              "evd:packages-extensions-extension-theme-studio-tests-theme-studio.test.tsx",
+              "evd:packages-extensions-extension-language-pack-studio-tests-language-pack-studio-view.test.tsx",
+              "evd:mdwrk-extension-contributions-runtime"
+            ],
+            "feature_ids": [
+              "feat:client-extensions",
+              "feat:accessibility-shell-baseline",
+              "feat:extension-runtime-activation-lifecycle",
+              "feat:extension-manager-pane-layout",
+              "feat:extension-manager-enabled-state-persistence",
+              "feat:extension-manager-health-diagnostics",
+              "feat:extension-platform",
+              "feat:extension-manager",
+              "feat:extension-manifest-compatibility-gate",
+              "feat:extension-capability-permissions",
+              "feat:extension-settings-schema-rendering",
+              "feat:extension-runtime-isolation",
+              "feat:extension-settings-namespace",
+              "feat:extension-theme-studio",
+              "feat:extension-language-pack-studio",
+              "feat:uix-extension-view-modes",
+              "feat:extension-gemini-agent",
+              "feat:gemini-agent-conversation-preview-pane-surface",
+              "feat:gemini-agent-workspace-file-mentions",
+              "feat:extension-contribution-manifest-surfaces",
+              "feat:extension-host-contribution-contract",
+              "feat:extension-catalog-contribution-fixture"
+            ],
+            "id": "clm:client-extensions",
+            "status": "implemented",
+            "test_ids": [
+              "tst:apps-client-src-features-extensions-extensionworkspacesurfaces.test.tsx",
+              "tst:apps-client-hooks-usetoast.test.tsx",
+              "tst:apps-client-src-shell-actionrailhost.test.tsx",
+              "tst:apps-client-tests-phase7-shell-parity.test.tsx",
+              "tst:packages-extensions-extension-manager-tests-extension-manager.test.tsx",
+              "tst:packages-extensions-extension-runtime-tests-runtime.test.ts",
+              "tst:apps-client-src-features-settings-settingsschemarenderer.test.tsx",
+              "tst:apps-client-tests-playwright-settings-and-i18n.spec.ts",
+              "tst:apps-client-src-features-i18n-languagepackstudiocontroller.test.ts",
+              "tst:apps-client-src-extensions-runtime-extensionruntimeprovider.test.ts",
+              "tst:packages-extensions-extension-gemini-agent-tests-run-smoke.mjs",
+              "tst:packages-extensions-extension-theme-studio-tests-theme-studio.test.tsx",
+              "tst:packages-extensions-extension-language-pack-studio-tests-language-pack-studio-view.test.tsx",
+              "tst:tools-governance-mdwrk-extension-manifest-surfaces.test.mjs",
+              "tst:tools-governance-mdwrk-extension-host-contract.test.mjs",
+              "tst:tools-governance-mdwrk-extension-catalog-fixture.test.mjs"
+            ],
+            "title": "Claim for Client feature: extensions"
+          },
+          {
+            "evidence_ids": [
+              "evd:apps-client-src-features-i18n-clienti18nservice.test.ts",
+              "evd:apps-client-src-features-i18n-languagepackstudiocontroller.test.ts",
+              "evd:apps-client-tests-playwright-settings-and-i18n.spec.ts",
+              "evd:apps-client-src-features-extensions-extensionworkspacesurfaces.test.tsx",
+              "evd:packages-extensions-extension-language-pack-studio-tests-language-pack-studio-view.test.tsx"
+            ],
+            "feature_ids": [
+              "feat:client-i18n",
+              "feat:extension-language-pack-studio"
+            ],
+            "id": "clm:client-i18n",
+            "status": "implemented",
+            "test_ids": [
+              "tst:apps-client-src-features-i18n-clienti18nservice.test.ts",
+              "tst:apps-client-src-features-i18n-languagepackstudiocontroller.test.ts",
+              "tst:apps-client-tests-playwright-settings-and-i18n.spec.ts",
+              "tst:apps-client-src-features-extensions-extensionworkspacesurfaces.test.tsx",
+              "tst:packages-extensions-extension-language-pack-studio-tests-language-pack-studio-view.test.tsx"
+            ],
+            "title": "Claim for Client feature: i18n"
+          },
+          {
+            "evidence_ids": [
+              "evd:apps-client-styles-alignmenttokens.test.ts",
+              "evd:apps-client-styles-chassisfittoscreen.test.ts",
+              "evd:apps-client-tests-phase7-shell-parity.test.tsx",
+              "evd:apps-client-tests-playwright-browser-matrix.spec.ts",
+              "evd:apps-client-tests-playwright-shell-smoke.spec.ts",
+              "evd:apps-client-tests-playwright-file-file-baseline.spec.ts",
+              "evd:apps-client-tests-playwright-inline-inline.spec.ts",
+              "evd:apps-client-styles-zoombehavior.test.ts",
+              "evd:apps-client-hooks-usetoast.test.tsx",
+              "evd:apps-client-src-shell-actionrailhost.test.tsx",
+              "evd:apps-client-src-features-extensions-extensionworkspacesurfaces.test.tsx",
+              "evd:packages-extensions-extension-manager-tests-extension-manager.test.tsx",
+              "evd:apps-client-components-chassis-workpane-stage-editorpane.test.tsx",
+              "evd:apps-client-components-chassis-workpane-workpane.test.tsx",
+              "evd:apps-client-styles-componentclassnamepolicy.test.ts",
+              "evd:apps-client-tests-statusbar-contract.mjs",
+              "evd:packages-shared-ui-tokens-tests-run-smoke.mjs"
+            ],
+            "feature_ids": [
+              "feat:client-layout",
+              "feat:uix-css-token-chassis-contract",
+              "feat:uix-zoom-scale",
+              "feat:accessibility-shell-baseline",
+              "feat:shell-evidence-matrix",
+              "feat:shell-taxonomy-runtime-detection",
+              "feat:uix-responsive-layout-matrix",
+              "feat:uix-breakpoint-token-contract",
+              "feat:mdwrk-shell-fixed-fit-screen",
+              "feat:editor-toolbar-view-editor",
+              "feat:editor-toolbar-view-split",
+              "feat:editor-toolbar-view-preview",
+              "feat:editor-toolbar-responsive-placement",
+              "feat:editor-toolbar-active-state-display",
+              "feat:editor-toolbar-disabled-state-display",
+              "feat:editor-toolbar-split-view-eligibility",
+              "feat:editor-toolbar-split-resizing",
+              "feat:editor-toolbar-overflow-scroll",
+              "feat:editor-toolbar-divider-grouping",
+              "feat:editor-line-count-scroll-alignment",
+              "feat:workspace-sidebar-resizing",
+              "feat:uix-component-class-policy",
+              "feat:gemini-agent-conversation-preview-pane-surface",
+              "feat:statusbar-autosave-saved-state",
+              "feat:statusbar-hide-idb-persistent",
+              "feat:statusbar-separators",
+              "feat:client-mobile-chrome-responsive-contract",
+              "feat:client-action-rail-responsive-governance",
+              "feat:client-status-footer-mobile-visibility",
+              "feat:client-pwa-installed-state-controls",
+              "feat:client-split-pane-mobile-landscape",
+              "feat:client-toolbar-footer-alignment",
+              "feat:shared-ui-tokens-mobile-rail-alignment-contract"
+            ],
+            "id": "clm:client-layout",
+            "status": "declared",
+            "test_ids": [
+              "tst:apps-client-styles-alignmenttokens.test.ts",
+              "tst:apps-client-styles-chassisfittoscreen.test.ts",
+              "tst:apps-client-tests-phase7-shell-parity.test.tsx",
+              "tst:apps-client-tests-playwright-browser-matrix.spec.ts",
+              "tst:apps-client-tests-playwright-shell-smoke.spec.ts",
+              "tst:apps-client-tests-playwright-file-file-baseline.spec.ts",
+              "tst:apps-client-tests-playwright-inline-inline.spec.ts",
+              "tst:apps-client-styles-zoombehavior.test.ts",
+              "tst:apps-client-hooks-usetoast.test.tsx",
+              "tst:apps-client-src-shell-actionrailhost.test.tsx",
+              "tst:apps-client-src-features-extensions-extensionworkspacesurfaces.test.tsx",
+              "tst:packages-extensions-extension-manager-tests-extension-manager.test.tsx",
+              "tst:apps-client-components-chassis-workpane-stage-editorpane.test.tsx",
+              "tst:apps-client-components-chassis-workpane-workpane.test.tsx",
+              "tst:apps-client-styles-componentclassnamepolicy.test.ts",
+              "tst:apps-client-tests-statusbar-contract.mjs",
+              "tst:packages-shared-ui-tokens-tests-run-smoke.mjs"
+            ],
+            "title": "Claim for Client feature: layout"
+          },
+          {
+            "evidence_ids": [
+              "evd:apps-client-src-features-markdownprofiles-profileconfig.test.ts",
+              "evd:packages-renderer-markdown-renderer-core-tests-html.test.ts",
+              "evd:packages-renderer-markdown-renderer-react-tests-component.test.tsx",
+              "evd:packages-editor-markdown-editor-core-tests-roundtrip.test.ts",
+              "evd:markdown-profile-commonmark-core-corpus",
+              "evd:markdown-profile-commonmark-official-corpus",
+              "evd:markdown-profile-gfm-default-profile",
+              "evd:markdown-profile-gfm-official-corpus",
+              "evd:markdown-profile-mdwrk-optional-profiles",
+              "evd:markdown-profile-custom-parser-profile",
+              "evd:markdown-profile-custom-previewer-profiles"
+            ],
+            "feature_ids": [
+              "feat:client-markdownprofiles",
+              "feat:markdown-profile-settings-persistence",
+              "feat:profile-boundary-resolution",
+              "feat:commonmark-conformance-profile",
+              "feat:gfm-profile",
+              "feat:custom-flavored-markdown-profile",
+              "feat:commonmark-core-subset",
+              "feat:commonmark-official-corpus",
+              "feat:gfm-default-profile-subset",
+              "feat:gfm-official-corpus",
+              "feat:mdwrk-profile-front-matter",
+              "feat:mdwrk-profile-footnotes",
+              "feat:mdwrk-profile-definition-lists",
+              "feat:mdwrk-profile-math",
+              "feat:mdwrk-profile-citations",
+              "feat:mdwrk-profile-superscript",
+              "feat:mdwrk-profile-subscript",
+              "feat:mdwrk-profile-smart-punctuation",
+              "feat:mdwrk-profile-markdown-in-html",
+              "feat:mdwrk-custom-parser-profile",
+              "feat:mdwrk-custom-previewer-profiles"
+            ],
+            "id": "clm:client-markdownprofiles",
+            "status": "implemented",
+            "test_ids": [
+              "tst:apps-client-src-features-markdownprofiles-profileconfig.test.ts",
+              "tst:packages-renderer-markdown-renderer-core-tests-html.test.ts",
+              "tst:packages-renderer-markdown-renderer-react-tests-component.test.tsx",
+              "tst:packages-editor-markdown-editor-core-tests-roundtrip.test.ts",
+              "tst:packages-renderer-markdown-renderer-core-tests-commonmark-core-corpus.mjs",
+              "tst:packages-renderer-markdown-renderer-core-tests-commonmark-official-corpus.mjs",
+              "tst:packages-renderer-markdown-renderer-core-tests-gfm-default-profile.mjs",
+              "tst:packages-renderer-markdown-renderer-core-tests-gfm-official-corpus.mjs",
+              "tst:packages-renderer-markdown-renderer-core-tests-optional-profiles.mjs",
+              "tst:packages-renderer-markdown-renderer-core-tests-custom-parser-profile.mjs",
+              "tst:packages-renderer-markdown-renderer-core-tests-custom-previewer-profiles.mjs"
+            ],
+            "title": "Claim for Client feature: markdownprofiles"
+          },
+          {
+            "evidence_ids": [
+              "evd:apps-client-hooks-usetoast.test.tsx",
+              "evd:apps-client-src-shell-actionrailhost.test.tsx",
+              "evd:apps-client-tests-phase7-shell-parity.test.tsx",
+              "evd:apps-client-src-features-extensions-extensionworkspacesurfaces.test.tsx",
+              "evd:packages-extensions-extension-manager-tests-extension-manager.test.tsx"
+            ],
+            "feature_ids": [
+              "feat:client-notifications",
+              "feat:toast-notification-behavior",
+              "feat:accessibility-shell-baseline"
+            ],
+            "id": "clm:client-notifications",
+            "status": "declared",
+            "test_ids": [
+              "tst:apps-client-hooks-usetoast.test.tsx",
+              "tst:apps-client-src-shell-actionrailhost.test.tsx",
+              "tst:apps-client-tests-phase7-shell-parity.test.tsx",
+              "tst:apps-client-src-features-extensions-extensionworkspacesurfaces.test.tsx",
+              "tst:packages-extensions-extension-manager-tests-extension-manager.test.tsx"
+            ],
+            "title": "Claim for Client feature: notifications"
+          },
+          {
+            "evidence_ids": [
+              "evd:apps-client-src-pwa-versionmanifest.test.ts",
+              "evd:apps-client-src-features-markdownprofiles-profileconfig.test.ts",
+              "evd:apps-client-src-features-settings-datasettingspanel.test.tsx",
+              "evd:apps-client-src-features-settings-settingsschemarenderer.test.tsx",
+              "evd:apps-client-tests-playwright-settings-and-i18n.spec.ts"
+            ],
+            "feature_ids": [
+              "feat:client-preferences",
+              "feat:pwa-version-manifest",
+              "feat:editor-toolbar-hidden-button-preference",
+              "feat:pwa-install-button-state",
+              "feat:pwa-version-system-config"
+            ],
+            "id": "clm:client-preferences",
+            "status": "declared",
+            "test_ids": [
+              "tst:apps-client-src-pwa-versionmanifest.test.ts",
+              "tst:apps-client-src-features-markdownprofiles-profileconfig.test.ts",
+              "tst:apps-client-src-features-settings-datasettingspanel.test.tsx",
+              "tst:apps-client-src-features-settings-settingsschemarenderer.test.tsx",
+              "tst:apps-client-tests-playwright-settings-and-i18n.spec.ts"
+            ],
+            "title": "Claim for Client feature: preferences"
+          },
+          {
+            "evidence_ids": [
+              "evd:apps-client-src-features-settings-datasettingspanel.test.tsx",
+              "evd:apps-client-src-features-settings-settingsschemarenderer.test.tsx",
+              "evd:apps-client-tests-playwright-settings-and-i18n.spec.ts",
+              "evd:packages-extensions-extension-manager-tests-extension-manager.test.tsx"
+            ],
+            "feature_ids": [
+              "feat:client-settings",
+              "feat:extension-settings-schema-rendering",
+              "feat:pwa-install-button-state",
+              "feat:pwa-version-system-config"
+            ],
+            "id": "clm:client-settings",
+            "status": "implemented",
+            "test_ids": [
+              "tst:apps-client-src-features-settings-datasettingspanel.test.tsx",
+              "tst:apps-client-src-features-settings-settingsschemarenderer.test.tsx",
+              "tst:apps-client-tests-playwright-settings-and-i18n.spec.ts",
+              "tst:packages-extensions-extension-manager-tests-extension-manager.test.tsx"
+            ],
+            "title": "Claim for Client feature: settings"
+          },
+          {
+            "evidence_ids": [
+              "evd:apps-client-src-features-views-viewregistry.test.ts",
+              "evd:apps-client-src-features-action-rail-actionrailregistry.test.ts",
+              "evd:apps-client-src-features-commands-commandregistry.test.ts",
+              "evd:apps-client-src-shell-actionrailhost.test.tsx",
+              "evd:apps-client-tests-phase7-shell-parity.test.tsx"
+            ],
+            "feature_ids": [
+              "feat:client-views",
+              "feat:client-shell-registry-orchestration"
+            ],
+            "id": "clm:client-views",
+            "status": "implemented",
+            "test_ids": [
+              "tst:apps-client-src-features-views-viewregistry.test.ts",
+              "tst:apps-client-src-features-action-rail-actionrailregistry.test.ts",
+              "tst:apps-client-src-features-commands-commandregistry.test.ts",
+              "tst:apps-client-src-shell-actionrailhost.test.tsx",
+              "tst:apps-client-tests-phase7-shell-parity.test.tsx"
+            ],
+            "title": "Claim for Client feature: views"
+          },
+          {
+            "evidence_ids": [
+              "evd:packages-extensions-extension-runtime-tests-runtime.test.ts",
+              "evd:packages-extensions-extension-manager-tests-extension-manager.test.tsx",
+              "evd:apps-client-src-extensions-runtime-extensionruntimeprovider.test.ts",
+              "evd:packages-extensions-extension-gemini-agent-tests-run-smoke.mjs",
+              "evd:apps-client-src-features-extensions-extensionworkspacesurfaces.test.tsx",
+              "evd:mdwrk-extension-contributions-runtime"
+            ],
+            "feature_ids": [
+              "feat:extension-intent-registry",
+              "feat:extension-home-intent-hub",
+              "feat:extension-pane-shared-operations",
+              "feat:extension-capability-trust-disclosure",
+              "feat:extension-diagnostics-recovery-actions",
+              "feat:workspace-files-continuous-document-flow",
+              "feat:git-ops-continuous-source-control-flow",
+              "feat:theme-studio-continuous-authoring-flow",
+              "feat:language-pack-studio-continuous-localization-flow",
+              "feat:gemini-agent-safe-draft-writeback-flow",
+              "feat:external-extension-trust-policy-production-defaults",
+              "feat:shell-aware-import-export-bridge",
+              "feat:extension-platform",
+              "feat:extension-runtime-activation-lifecycle",
+              "feat:extension-manager",
+              "feat:extension-gemini-agent",
+              "feat:extension-theme-studio",
+              "feat:extension-language-pack-studio",
+              "feat:uix-extension-view-modes",
+              "feat:extension-capability-permissions",
+              "feat:extension-settings-schema-rendering",
+              "feat:extension-runtime-isolation",
+              "feat:gemini-agent-conversation-preview-pane-surface",
+              "feat:gemini-agent-workspace-file-mentions",
+              "feat:extension-catalog-hello",
+              "feat:extension-authoring-publishing",
+              "feat:extension-install-import-remove-disable",
+              "feat:extension-retention-policy",
+              "feat:extension-runtime-hook-dispatch",
+              "feat:extension-runtime-production-default-boundary"
+            ],
+            "id": "clm:extension-continuous-experience",
+            "status": "published",
+            "test_ids": [
+              "tst:packages-extensions-extension-runtime-tests-runtime.test.ts",
+              "tst:packages-extensions-extension-manager-tests-extension-manager.test.tsx",
+              "tst:apps-client-src-extensions-runtime-extensionruntimeprovider.test.ts",
+              "tst:packages-extensions-extension-gemini-agent-tests-run-smoke.mjs",
+              "tst:apps-client-src-features-extensions-extensionworkspacesurfaces.test.tsx",
+              "tst:tools-governance-mdwrk-extension-runtime-hooks.test.mjs",
+              "tst:tools-governance-mdwrk-extension-runtime-production-boundary.test.mjs"
+            ],
+            "title": "Extension continuous experience claim"
+          },
+          {
+            "evidence_ids": [
+              "evd:packages-editor-markdown-edit-in-renderer-react-tests-run-smoke-mjs"
+            ],
+            "feature_ids": [
+              "feat:edit-in-renderer-profile-contract"
+            ],
+            "id": "clm:edit-in-renderer-profile-contract",
+            "status": "declared",
+            "test_ids": [
+              "tst:packages-editor-markdown-edit-in-renderer-react-tests-run-smoke-mjs"
+            ],
+            "title": "Edit-in-renderer profile preserves plaintext source and rendered projection"
+          },
+          {
+            "evidence_ids": [
+              "evd:portable-lander-package-exports",
+              "evd:mdwrk-lander-package-suite-runtime"
+            ],
+            "feature_ids": [
+              "feat:portable-lander-package-family",
+              "feat:lander-package-suite-validation"
+            ],
+            "id": "clm:portable-lander-package-family",
+            "status": "evidenced",
+            "test_ids": [
+              "tst:packages-lander-package-family",
+              "tst:tools-governance-mdwrk-lander-package-suite.test.mjs"
+            ],
+            "title": "Portable lander package family is product agnostic"
+          },
+          {
+            "evidence_ids": [
+              "evd:mdwrk-lander-static-validation"
+            ],
+            "feature_ids": [
+              "feat:mdwrk-lander-content-pack"
+            ],
+            "id": "clm:mdwrk-lander-content-pack",
+            "status": "evidenced",
+            "test_ids": [
+              "tst:apps-lander-portable-content-pack"
+            ],
+            "title": "MdWrk lander content pack owns product truth"
+          },
+          {
+            "evidence_ids": [
+              "evd:tools-governance-validate-certifiability-feature-plan.mjs",
+              "evd:markdown-profile-custom-parser-profile"
+            ],
+            "feature_ids": [
+              "feat:mdwrk-custom-parser-profile"
+            ],
+            "id": "clm:mdwrk-custom-parser-profile-blocked",
+            "status": "evidenced",
+            "test_ids": [
+              "tst:tools-governance-validate-certifiability-feature-plan.mjs",
+              "tst:packages-renderer-markdown-renderer-core-tests-custom-parser-profile.mjs"
+            ],
+            "title": "CFM custom parser profile is implemented"
+          },
+          {
+            "evidence_ids": [
+              "evd:tools-governance-validate-certifiability-feature-plan.mjs",
+              "evd:markdown-profile-custom-previewer-profiles"
+            ],
+            "feature_ids": [
+              "feat:mdwrk-custom-previewer-profiles"
+            ],
+            "id": "clm:mdwrk-custom-previewer-profiles-blocked",
+            "status": "evidenced",
+            "test_ids": [
+              "tst:tools-governance-validate-certifiability-feature-plan.mjs",
+              "tst:packages-renderer-markdown-renderer-core-tests-custom-previewer-profiles.mjs"
+            ],
+            "title": "CFM custom previewer profiles are implemented"
+          }
+        ],
+        "evidence": [
+          {
+            "claim_ids": [
+              "clm:cross-cutting",
+              "clm:client-common",
+              "clm:repo-certifiability-p1-current-partials"
+            ],
+            "id": "evd:apps-client-hooks-useapp.test.tsx",
+            "status": "passed",
+            "test_ids": [
+              "tst:apps-client-hooks-useapp.test.tsx"
+            ],
+            "title": "Evidence: useApp.test.tsx"
+          },
+          {
+            "claim_ids": [
+              "clm:cross-cutting",
+              "clm:client-common",
+              "clm:repo-certifiability-p1-current-partials"
+            ],
+            "id": "evd:apps-client-hooks-usetabmanager.test.tsx",
+            "status": "passed",
+            "test_ids": [
+              "tst:apps-client-hooks-usetabmanager.test.tsx"
+            ],
+            "title": "Evidence: useTabManager.test.tsx"
+          },
+          {
+            "claim_ids": [
+              "clm:cross-cutting",
+              "clm:client-notifications",
+              "clm:client-layout",
+              "clm:client-extensions",
+              "clm:client-common",
+              "clm:repo-certifiability-p1-current-partials"
+            ],
+            "id": "evd:apps-client-hooks-usetoast.test.tsx",
+            "status": "passed",
+            "test_ids": [
+              "tst:apps-client-hooks-usetoast.test.tsx"
+            ],
+            "title": "Evidence: useToast.test.tsx"
+          },
+          {
+            "claim_ids": [
+              "clm:cross-cutting",
+              "clm:repo-certifiability-p1-current-partials",
+              "clm:oidc-token-boundary-audit",
+              "clm:git-ops-oidc"
+            ],
+            "id": "evd:apps-client-services-oidc.test.ts",
+            "status": "passed",
+            "test_ids": [
+              "tst:apps-client-services-oidc.test.ts"
+            ],
+            "title": "Evidence: oidc.test.ts"
+          },
+          {
+            "claim_ids": [
+              "clm:client-action-rail",
+              "clm:client-commands",
+              "clm:client-views",
+              "clm:repo-certifiability-p1-current-partials"
+            ],
+            "id": "evd:apps-client-src-features-action-rail-actionrailregistry.test.ts",
+            "status": "passed",
+            "test_ids": [
+              "tst:apps-client-src-features-action-rail-actionrailregistry.test.ts"
+            ],
+            "title": "Evidence: actionRailRegistry.test.ts"
+          },
+          {
+            "claim_ids": [
+              "clm:client-commands",
+              "clm:client-action-rail",
+              "clm:client-views",
+              "clm:repo-certifiability-p1-current-partials"
+            ],
+            "id": "evd:apps-client-src-features-commands-commandregistry.test.ts",
+            "status": "passed",
+            "test_ids": [
+              "tst:apps-client-src-features-commands-commandregistry.test.ts"
+            ],
+            "title": "Evidence: commandRegistry.test.ts"
+          },
+          {
+            "claim_ids": [
+              "clm:client-extensions",
+              "clm:client-layout",
+              "clm:client-notifications",
+              "clm:client-i18n",
+              "clm:extension-continuous-experience",
+              "clm:repo-certifiability-p1-current-partials"
+            ],
+            "id": "evd:apps-client-src-features-extensions-extensionworkspacesurfaces.test.tsx",
+            "status": "passed",
+            "test_ids": [
+              "tst:apps-client-src-features-extensions-extensionworkspacesurfaces.test.tsx"
+            ],
+            "title": "Evidence: extensionWorkspaceSurfaces.test.tsx"
+          },
+          {
+            "claim_ids": [
+              "clm:client-i18n",
+              "clm:repo-certifiability-p1-current-partials"
+            ],
+            "id": "evd:apps-client-src-features-i18n-clienti18nservice.test.ts",
+            "status": "passed",
+            "test_ids": [
+              "tst:apps-client-src-features-i18n-clienti18nservice.test.ts"
+            ],
+            "title": "Evidence: clientI18nService.test.ts"
+          },
+          {
+            "claim_ids": [
+              "clm:client-i18n",
+              "clm:client-extensions",
+              "clm:repo-certifiability-p1-current-partials"
+            ],
+            "id": "evd:apps-client-src-features-i18n-languagepackstudiocontroller.test.ts",
+            "status": "passed",
+            "test_ids": [
+              "tst:apps-client-src-features-i18n-languagepackstudiocontroller.test.ts"
+            ],
+            "title": "Evidence: languagePackStudioController.test.ts"
+          },
+          {
+            "claim_ids": [
+              "clm:client-markdownprofiles",
+              "clm:client-preferences",
+              "clm:cross-cutting",
+              "clm:repo-certifiability-p1-current-partials"
+            ],
+            "id": "evd:apps-client-src-features-markdownprofiles-profileconfig.test.ts",
+            "status": "passed",
+            "test_ids": [
+              "tst:apps-client-src-features-markdownprofiles-profileconfig.test.ts"
+            ],
+            "title": "Evidence: profileConfig.test.ts"
+          },
+          {
+            "claim_ids": [
+              "clm:client-settings",
+              "clm:client-preferences",
+              "clm:repo-certifiability-p1-current-partials",
+              "clm:frontend-settings-persistence",
+              "clm:persistence-diagnostics-mode",
+              "clm:indexeddb-vs-filesystem-persistence",
+              "clm:cloud-persistence-out-of-bounds"
+            ],
+            "id": "evd:apps-client-src-features-settings-datasettingspanel.test.tsx",
+            "status": "passed",
+            "test_ids": [
+              "tst:apps-client-src-features-settings-datasettingspanel.test.tsx"
+            ],
+            "title": "Evidence: DataSettingsPanel.test.tsx"
+          },
+          {
+            "claim_ids": [
+              "clm:client-settings",
+              "clm:client-preferences",
+              "clm:client-extensions",
+              "clm:repo-certifiability-p1-current-partials"
+            ],
+            "id": "evd:apps-client-src-features-settings-settingsschemarenderer.test.tsx",
+            "status": "passed",
+            "test_ids": [
+              "tst:apps-client-src-features-settings-settingsschemarenderer.test.tsx"
+            ],
+            "title": "Evidence: SettingsSchemaRenderer.test.tsx"
+          },
+          {
+            "claim_ids": [
+              "clm:client-views",
+              "clm:client-action-rail",
+              "clm:client-commands",
+              "clm:repo-certifiability-p1-current-partials"
+            ],
+            "id": "evd:apps-client-src-features-views-viewregistry.test.ts",
+            "status": "passed",
+            "test_ids": [
+              "tst:apps-client-src-features-views-viewregistry.test.ts"
+            ],
+            "title": "Evidence: viewRegistry.test.ts"
+          },
+          {
+            "claim_ids": [
+              "clm:cross-cutting",
+              "clm:client-preferences",
+              "clm:repo-certifiability-p1-current-partials"
+            ],
+            "id": "evd:apps-client-src-pwa-versionmanifest.test.ts",
+            "status": "passed",
+            "test_ids": [
+              "tst:apps-client-src-pwa-versionmanifest.test.ts"
+            ],
+            "title": "Evidence: versionManifest.test.ts"
+          },
+          {
+            "claim_ids": [
+              "clm:cross-cutting",
+              "clm:client-action-rail",
+              "clm:client-commands",
+              "clm:client-views",
+              "clm:client-layout",
+              "clm:client-notifications",
+              "clm:client-extensions",
+              "clm:repo-certifiability-p1-current-partials"
+            ],
+            "id": "evd:apps-client-src-shell-actionrailhost.test.tsx",
+            "status": "passed",
+            "test_ids": [
+              "tst:apps-client-src-shell-actionrailhost.test.tsx"
+            ],
+            "title": "Evidence: ActionRailHost.test.tsx"
+          },
+          {
+            "claim_ids": [
+              "clm:cross-cutting",
+              "clm:client-layout",
+              "clm:repo-certifiability-p1-current-partials"
+            ],
+            "id": "evd:apps-client-styles-alignmenttokens.test.ts",
+            "status": "passed",
+            "test_ids": [
+              "tst:apps-client-styles-alignmenttokens.test.ts"
+            ],
+            "title": "Evidence: alignmentTokens.test.ts"
+          },
+          {
+            "claim_ids": [
+              "clm:cross-cutting",
+              "clm:client-layout",
+              "clm:repo-certifiability-p1-current-partials",
+              "clm:mobile-uix-responsive-shell-contract"
+            ],
+            "id": "evd:apps-client-styles-chassisfittoscreen.test.ts",
+            "status": "passed",
+            "test_ids": [
+              "tst:apps-client-styles-chassisfittoscreen.test.ts"
+            ],
+            "title": "Evidence: chassisFitToScreen.test.ts"
+          },
+          {
+            "claim_ids": [
+              "clm:cross-cutting",
+              "clm:client-layout",
+              "clm:repo-certifiability-p1-current-partials"
+            ],
+            "id": "evd:apps-client-styles-zoombehavior.test.ts",
+            "status": "passed",
+            "test_ids": [
+              "tst:apps-client-styles-zoombehavior.test.ts"
+            ],
+            "title": "Evidence: zoomBehavior.test.ts"
+          },
+          {
+            "claim_ids": [
+              "clm:cross-cutting",
+              "clm:client-action-rail",
+              "clm:client-commands",
+              "clm:client-views",
+              "clm:client-layout",
+              "clm:client-notifications",
+              "clm:client-extensions",
+              "clm:repo-certifiability-p1-current-partials",
+              "clm:persistence-diagnostics-mode"
+            ],
+            "id": "evd:apps-client-tests-phase7-shell-parity.test.tsx",
+            "status": "passed",
+            "test_ids": [
+              "tst:apps-client-tests-phase7-shell-parity.test.tsx"
+            ],
+            "title": "Evidence: phase7-shell-parity.test.tsx"
+          },
+          {
+            "claim_ids": [
+              "clm:cross-cutting",
+              "clm:client-layout",
+              "clm:client-common",
+              "clm:repo-certifiability-p1-current-partials"
+            ],
+            "id": "evd:apps-client-tests-playwright-file-file-baseline.spec.ts",
+            "status": "passed",
+            "test_ids": [
+              "tst:apps-client-tests-playwright-file-file-baseline.spec.ts"
+            ],
+            "title": "Evidence: file-baseline.spec.ts"
+          }
+        ],
+        "features": [
+          {
+            "claim_ids": [
+              "clm:cross-cutting"
+            ],
+            "id": "feat:cross-cutting",
+            "implementation_status": "implemented",
+            "test_ids": [
+              "tst:apps-client-hooks-useapp.test.tsx",
+              "tst:apps-client-hooks-usetabmanager.test.tsx",
+              "tst:apps-client-hooks-usetoast.test.tsx",
+              "tst:apps-client-services-oidc.test.ts",
+              "tst:apps-client-src-pwa-versionmanifest.test.ts",
+              "tst:apps-client-src-shell-actionrailhost.test.tsx",
+              "tst:apps-client-styles-alignmenttokens.test.ts",
+              "tst:apps-client-styles-chassisfittoscreen.test.ts",
+              "tst:apps-client-styles-zoombehavior.test.ts",
+              "tst:apps-client-tests-phase7-shell-parity.test.tsx",
+              "tst:apps-client-tests-playwright-file-file-baseline.spec.ts",
+              "tst:apps-client-tests-playwright-inline-inline.spec.ts",
+              "tst:apps-client-tests-playwright-browser-matrix.spec.ts",
+              "tst:apps-client-tests-playwright-preview-export.spec.ts",
+              "tst:apps-client-tests-playwright-settings-and-i18n.spec.ts",
+              "tst:apps-client-tests-playwright-shell-smoke.spec.ts",
+              "tst:packages-editor-markdown-editor-core-tests-commands.test.ts",
+              "tst:packages-editor-markdown-editor-core-tests-history.test.ts",
+              "tst:packages-editor-markdown-editor-core-tests-roundtrip.test.ts",
+              "tst:packages-editor-markdown-editor-core-tests-selection.test.ts",
+              "tst:packages-editor-markdown-editor-core-tests-transforms.test.ts",
+              "tst:packages-editor-markdown-editor-react-tests-component.test.tsx",
+              "tst:packages-editor-markdown-editor-react-tests-keyboard.test.tsx",
+              "tst:packages-extensions-extension-manager-tests-extension-manager.test.tsx",
+              "tst:packages-extensions-extension-runtime-tests-runtime.test.ts",
+              "tst:packages-renderer-markdown-renderer-core-tests-html.test.ts",
+              "tst:packages-renderer-markdown-renderer-react-tests-component.test.tsx"
+            ],
+            "title": "Cross-cutting repository feature set"
+          },
+          {
+            "claim_ids": [
+              "clm:client-action-rail"
+            ],
+            "id": "feat:client-action-rail",
+            "implementation_status": "implemented",
+            "test_ids": [
+              "tst:apps-client-src-features-action-rail-actionrailregistry.test.ts",
+              "tst:apps-client-src-shell-actionrailhost.test.tsx"
+            ],
+            "title": "Client action rail"
+          },
+          {
+            "claim_ids": [
+              "clm:client-commands"
+            ],
+            "id": "feat:client-commands",
+            "implementation_status": "implemented",
+            "test_ids": [
+              "tst:apps-client-src-features-commands-commandregistry.test.ts",
+              "tst:apps-client-src-shell-actionrailhost.test.tsx"
+            ],
+            "title": "Client command registry"
+          },
+          {
+            "claim_ids": [
+              "clm:client-common",
+              "clm:repo-certifiability-p1-current-partials"
+            ],
+            "id": "feat:client-common",
+            "implementation_status": "implemented",
+            "test_ids": [
+              "tst:apps-client-hooks-useapp.test.tsx",
+              "tst:apps-client-hooks-usetabmanager.test.tsx",
+              "tst:apps-client-hooks-usetoast.test.tsx"
+            ],
+            "title": "Client common runtime hooks"
+          },
+          {
+            "claim_ids": [
+              "clm:client-diagnostics",
+              "clm:repo-certifiability-p1-current-partials"
+            ],
+            "id": "feat:client-diagnostics",
+            "implementation_status": "implemented",
+            "test_ids": [
+              "tst:packages-extensions-extension-manager-tests-extension-manager.test.tsx"
+            ],
+            "title": "Client diagnostics"
+          },
+          {
+            "claim_ids": [
+              "clm:client-editor"
+            ],
+            "id": "feat:client-editor",
+            "implementation_status": "implemented",
+            "test_ids": [
+              "tst:packages-editor-markdown-editor-core-tests-commands.test.ts",
+              "tst:packages-editor-markdown-editor-core-tests-history.test.ts",
+              "tst:packages-editor-markdown-editor-core-tests-roundtrip.test.ts",
+              "tst:packages-editor-markdown-editor-core-tests-selection.test.ts",
+              "tst:packages-editor-markdown-editor-core-tests-transforms.test.ts",
+              "tst:packages-editor-markdown-editor-react-tests-component.test.tsx",
+              "tst:packages-editor-markdown-editor-react-tests-keyboard.test.tsx"
+            ],
+            "title": "Client editor"
+          },
+          {
+            "claim_ids": [
+              "clm:client-extensions"
+            ],
+            "id": "feat:client-extensions",
+            "implementation_status": "implemented",
+            "test_ids": [
+              "tst:apps-client-src-features-extensions-extensionworkspacesurfaces.test.tsx",
+              "tst:packages-extensions-extension-manager-tests-extension-manager.test.tsx",
+              "tst:packages-extensions-extension-runtime-tests-runtime.test.ts"
+            ],
+            "title": "Client extension surfaces"
+          },
+          {
+            "claim_ids": [
+              "clm:client-i18n"
+            ],
+            "id": "feat:client-i18n",
+            "implementation_status": "implemented",
+            "test_ids": [
+              "tst:apps-client-src-features-i18n-clienti18nservice.test.ts",
+              "tst:apps-client-src-features-i18n-languagepackstudiocontroller.test.ts",
+              "tst:apps-client-tests-playwright-settings-and-i18n.spec.ts"
+            ],
+            "title": "Client i18n"
+          },
+          {
+            "claim_ids": [
+              "clm:client-layout"
+            ],
+            "id": "feat:client-layout",
+            "implementation_status": "implemented",
+            "test_ids": [
+              "tst:apps-client-styles-alignmenttokens.test.ts",
+              "tst:apps-client-styles-chassisfittoscreen.test.ts",
+              "tst:apps-client-styles-zoombehavior.test.ts",
+              "tst:apps-client-tests-phase7-shell-parity.test.tsx",
+              "tst:apps-client-tests-playwright-browser-matrix.spec.ts",
+              "tst:apps-client-tests-playwright-shell-smoke.spec.ts",
+              "tst:apps-client-tests-playwright-file-file-baseline.spec.ts",
+              "tst:apps-client-tests-playwright-inline-inline.spec.ts"
+            ],
+            "title": "Client layout"
+          },
+          {
+            "claim_ids": [
+              "clm:client-markdownprofiles"
+            ],
+            "id": "feat:client-markdownprofiles",
+            "implementation_status": "implemented",
+            "test_ids": [
+              "tst:apps-client-src-features-markdownprofiles-profileconfig.test.ts"
+            ],
+            "title": "Client markdown profiles"
+          },
+          {
+            "claim_ids": [
+              "clm:client-notifications"
+            ],
+            "id": "feat:client-notifications",
+            "implementation_status": "implemented",
+            "test_ids": [
+              "tst:apps-client-hooks-usetoast.test.tsx"
+            ],
+            "title": "Client notifications"
+          },
+          {
+            "claim_ids": [
+              "clm:client-preferences"
+            ],
+            "id": "feat:client-preferences",
+            "implementation_status": "implemented",
+            "test_ids": [
+              "tst:apps-client-src-features-markdownprofiles-profileconfig.test.ts",
+              "tst:apps-client-src-features-settings-datasettingspanel.test.tsx",
+              "tst:apps-client-src-features-settings-settingsschemarenderer.test.tsx",
+              "tst:apps-client-src-pwa-versionmanifest.test.ts",
+              "tst:apps-client-tests-playwright-settings-and-i18n.spec.ts"
+            ],
+            "title": "Client preferences"
+          },
+          {
+            "claim_ids": [
+              "clm:client-settings"
+            ],
+            "id": "feat:client-settings",
+            "implementation_status": "implemented",
+            "test_ids": [
+              "tst:apps-client-src-features-settings-datasettingspanel.test.tsx",
+              "tst:apps-client-src-features-settings-settingsschemarenderer.test.tsx",
+              "tst:apps-client-tests-playwright-settings-and-i18n.spec.ts"
+            ],
+            "title": "Client settings"
+          },
+          {
+            "claim_ids": [
+              "clm:client-views"
+            ],
+            "id": "feat:client-views",
+            "implementation_status": "implemented",
+            "test_ids": [
+              "tst:apps-client-src-features-views-viewregistry.test.ts",
+              "tst:apps-client-src-shell-actionrailhost.test.tsx"
+            ],
+            "title": "Client view registry"
+          },
+          {
+            "claim_ids": [
+              "clm:mdwrk-custom-parser-profile-blocked",
+              "clm:client-markdownprofiles",
+              "clm:cross-cutting",
+              "clm:markdown-profile-evidence-lanes"
+            ],
+            "id": "feat:mdwrk-custom-parser-profile",
+            "implementation_status": "implemented",
+            "test_ids": [
+              "tst:packages-renderer-markdown-renderer-core-tests-custom-parser-profile.mjs",
+              "tst:tools-conformance-validate-markdown-profile-evidence-lanes.mjs"
+            ],
+            "title": "CFM custom parser profile"
+          },
+          {
+            "claim_ids": [
+              "clm:mdwrk-custom-previewer-profiles-blocked",
+              "clm:client-markdownprofiles",
+              "clm:cross-cutting",
+              "clm:markdown-profile-evidence-lanes"
+            ],
+            "id": "feat:mdwrk-custom-previewer-profiles",
+            "implementation_status": "implemented",
+            "test_ids": [
+              "tst:packages-renderer-markdown-renderer-core-tests-custom-previewer-profiles.mjs",
+              "tst:tools-conformance-validate-markdown-profile-evidence-lanes.mjs"
+            ],
+            "title": "CFM custom previewer profiles"
+          },
+          {
+            "claim_ids": [
+              "clm:client-markdownprofiles",
+              "clm:cross-cutting"
+            ],
+            "id": "feat:commonmark-conformance-profile",
+            "implementation_status": "implemented",
+            "test_ids": [
+              "tst:packages-renderer-markdown-renderer-core-tests-html.test.ts",
+              "tst:packages-editor-markdown-editor-core-tests-roundtrip.test.ts"
+            ],
+            "title": "CommonMark Markdown profile"
+          },
+          {
+            "claim_ids": [
+              "clm:client-markdownprofiles",
+              "clm:cross-cutting"
+            ],
+            "id": "feat:custom-flavored-markdown-profile",
+            "implementation_status": "implemented",
+            "test_ids": [
+              "tst:apps-client-src-features-markdownprofiles-profileconfig.test.ts",
+              "tst:packages-renderer-markdown-renderer-core-tests-html.test.ts",
+              "tst:packages-renderer-markdown-renderer-react-tests-component.test.tsx"
+            ],
+            "title": "CFM Markdown profile"
+          },
+          {
+            "claim_ids": [
+              "clm:mdwrk-desktop-app-shell-current"
+            ],
+            "id": "feat:mdwrk-desktop-app-shell",
+            "implementation_status": "implemented",
+            "test_ids": [
+              "tst:mdwrk-desktop-app-shell-current"
+            ],
+            "title": "MdWrk desktop app shell"
+          },
+          {
+            "claim_ids": [
+              "clm:client-common",
+              "clm:repo-certifiability-p1-current-partials"
+            ],
+            "id": "feat:desktop-folder-mounting",
+            "implementation_status": "implemented",
+            "test_ids": [
+              "tst:apps-client-hooks-useapp.test.tsx"
+            ],
+            "title": "Desktop folder mounting and filesystem loading"
+          }
+        ],
+        "issues": [
+          {
+            "claim_ids": [
+              "clm:cross-cutting"
+            ],
+            "evidence_ids": [
+              "evd:apps-lander-scripts-validate-syntax-themes.mjs"
+            ],
+            "feature_ids": [
+              "feat:markdown-renderer-core",
+              "feat:markdown-renderer-react",
+              "feat:lander-docs-answer-section-standardization",
+              "feat:lander-blog-article-guide-standardization"
+            ],
+            "id": "iss:lander-code-block-syntax-highlighting-absent",
+            "status": "closed",
+            "test_ids": [
+              "tst:packages-renderer-markdown-renderer-core-tests-html.test.ts",
+              "tst:packages-renderer-markdown-renderer-react-tests-component.test.tsx",
+              "tst:apps-lander-scripts-validate-syntax-themes.mjs"
+            ],
+            "title": "Lander code blocks do not render syntax-colored tokens"
+          },
+          {
+            "claim_ids": [],
+            "evidence_ids": [],
+            "feature_ids": [
+              "feat:client-editor"
+            ],
+            "id": "iss:edit-in-renderer-blank-document-delete-fails",
+            "status": "open",
+            "test_ids": [],
+            "title": "Edit-in-renderer cannot delete to blank document"
+          },
+          {
+            "claim_ids": [],
+            "evidence_ids": [],
+            "feature_ids": [
+              "feat:client-editor"
+            ],
+            "id": "iss:edit-in-renderer-repeated-enter-breaks",
+            "status": "closed",
+            "test_ids": [],
+            "title": "Edit-in-renderer repeated Enter breaks blank-line editing"
+          },
+          {
+            "claim_ids": [
+              "clm:mdwrkcom-critical-css-profile"
+            ],
+            "evidence_ids": [
+              "evd:apps-mdwrkcom-scripts-validate-static-first-paint-theme.mjs"
+            ],
+            "feature_ids": [
+              "feat:mdwrkcom-critical-css-profile",
+              "feat:mdwrkcom-static-css-fingerprinted-delivery",
+              "feat:lander-critical-css-inline-defer"
+            ],
+            "id": "iss:mdwrkcom-static-first-paint-theme-flash",
+            "status": "closed",
+            "test_ids": [
+              "tst:apps-mdwrkcom-scripts-validate-static-first-paint-theme.mjs"
+            ],
+            "title": "MdWrkcom static pages flash light theme before dark first paint"
+          },
+          {
+            "claim_ids": [
+              "clm:structured-data.faq-page.t3"
+            ],
+            "evidence_ids": [],
+            "feature_ids": [
+              "feat:structured-data.faq-page"
+            ],
+            "id": "iss:structured-data-faq-page-google-deprecation",
+            "status": "open",
+            "test_ids": [],
+            "title": "FAQPage rich result support is deprecating in Google Search"
+          }
+        ],
+        "profiles": [
+          {
+            "feature_ids": [
+              "feat:client-editor",
+              "feat:editor-core-command-model",
+              "feat:react-markdown-editor-surface",
+              "feat:markdown-renderer-core",
+              "feat:markdown-renderer-react",
+              "feat:preview-export-artifact-generation",
+              "feat:preview-export-profile-disclosure",
+              "feat:editor-toolbar-view-editor",
+              "feat:editor-toolbar-view-split",
+              "feat:editor-toolbar-view-preview",
+              "feat:editor-toolbar-strikethrough",
+              "feat:editor-toolbar-bullet-list",
+              "feat:editor-toolbar-task-list",
+              "feat:editor-toolbar-indent",
+              "feat:editor-toolbar-outdent",
+              "feat:editor-toolbar-insert-table",
+              "feat:editor-toolbar-inline-math",
+              "feat:editor-toolbar-footnote",
+              "feat:editor-toolbar-superscript",
+              "feat:editor-toolbar-subscript",
+              "feat:editor-toolbar-bold",
+              "feat:editor-toolbar-italic",
+              "feat:editor-toolbar-undo",
+              "feat:editor-toolbar-redo",
+              "feat:editor-command-front-matter",
+              "feat:editor-command-citation",
+              "feat:editor-command-block-math",
+              "feat:editor-command-insert-tab",
+              "feat:editor-toolbar-responsive-placement",
+              "feat:editor-toolbar-hidden-button-preference",
+              "feat:editor-toolbar-active-state-display",
+              "feat:editor-toolbar-disabled-state-display",
+              "feat:editor-toolbar-command-dispatch",
+              "feat:editor-toolbar-split-view-eligibility",
+              "feat:editor-toolbar-split-resizing",
+              "feat:editor-toolbar-overflow-scroll",
+              "feat:editor-toolbar-divider-grouping",
+              "feat:editor-link-selected-text-wrap",
+              "feat:editor-link-empty-selection-stub",
+              "feat:editor-link-existing-edit",
+              "feat:editor-link-url-paste-wrap",
+              "feat:editor-link-internal-file-authoring",
+              "feat:editor-link-hash-authoring",
+              "feat:preview-link-external-pass-through",
+              "feat:preview-link-internal-file-navigation",
+              "feat:preview-link-same-document-hash-scroll",
+              "feat:preview-link-cross-file-hash-scroll",
+              "feat:preview-link-export-rewrite",
+              "feat:preview-link-unsafe-url-policy"
+            ],
+            "id": "prf:editor-authoring-default",
+            "status": "active",
+            "title": "Editor Authoring Default Profile"
+          },
+          {
+            "feature_ids": [
+              "feat:commonmark-conformance-profile",
+              "feat:markdown-renderer-core",
+              "feat:markdown-renderer-react",
+              "feat:client-editor",
+              "feat:commonmark-core-subset",
+              "feat:commonmark-official-corpus"
+            ],
+            "id": "prf:commonmark-editing-preview",
+            "status": "active",
+            "title": "CommonMark Editing And Previewing Profile"
+          },
+          {
+            "feature_ids": [
+              "feat:gfm-profile",
+              "feat:markdown-renderer-core",
+              "feat:markdown-renderer-react",
+              "feat:client-editor",
+              "feat:gfm-default-profile-subset",
+              "feat:gfm-official-corpus"
+            ],
+            "id": "prf:gfm-editing-preview",
+            "status": "active",
+            "title": "GFM Editing And Previewing Profile"
+          },
+          {
+            "feature_ids": [
+              "feat:custom-flavored-markdown-profile",
+              "feat:mdwrk-custom-parser-profile",
+              "feat:mdwrk-custom-previewer-profiles",
+              "feat:client-markdownprofiles",
+              "feat:client-editor",
+              "feat:mdwrk-profile-front-matter",
+              "feat:mdwrk-profile-footnotes",
+              "feat:mdwrk-profile-definition-lists",
+              "feat:mdwrk-profile-math",
+              "feat:mdwrk-profile-citations",
+              "feat:mdwrk-profile-superscript",
+              "feat:mdwrk-profile-subscript",
+              "feat:mdwrk-profile-smart-punctuation",
+              "feat:mdwrk-profile-markdown-in-html"
+            ],
+            "id": "prf:mdwrk-editing-preview",
+            "status": "active",
+            "title": "MdWrk Editing And Previewing Profile"
+          },
+          {
+            "feature_ids": [
+              "feat:edit-in-renderer-profile-contract"
+            ],
+            "id": "prf:edit-in-renderer-profile",
+            "status": "active",
+            "title": "Edit In Renderer All In One Profile"
+          },
+          {
+            "feature_ids": [
+              "feat:lander-aeo-answerable-heading-contract",
+              "feat:lander-aeo-faq-qna-howto-eligibility",
+              "feat:lander-aeo-structured-answer-section-parity",
+              "feat:lander-aeo-visible-citation-parity",
+              "feat:lander-aieo-ai-crawler-policy",
+              "feat:lander-aieo-content-registry-discovery-parity",
+              "feat:lander-aieo-llms-full-index",
+              "feat:lander-aieo-llms-txt-index",
+              "feat:lander-aieo-markdown-mirror-consistency",
+              "feat:lander-aieo-search-vs-training-crawler-policy",
+              "feat:lander-seo-canonical-url-metadata",
+              "feat:lander-seo-core-web-vitals-targets",
+              "feat:lander-seo-dcmi-document-metadata",
+              "feat:lander-seo-html-title-meta-link-metadata",
+              "feat:lander-seo-open-graph-metadata",
+              "feat:lander-seo-robots-policy",
+              "feat:lander-seo-sitemap-protocol",
+              "feat:lander-seo-x-card-metadata",
+              "feat:lander-aeo-appended-answer-blocks",
+              "feat:lander-aieo-crawlable-text-semantic-index",
+              "feat:lander-aieo-json-ld-structured-data",
+              "feat:lander-seo-comparison-pages",
+              "feat:lander-seo-demand-cluster-canonical-pages"
+            ],
+            "id": "prf:lander-seo-aeo-aieo-discovery",
+            "status": "active",
+            "title": "Lander SEO AEO AiEO discovery profile"
+          }
+        ],
+        "releases": [
+          {
+            "claim_ids": [],
+            "evidence_ids": [],
+            "id": "rel:0.1.0",
+            "status": "published"
+          },
+          {
+            "claim_ids": [
+              "clm:extension-continuous-experience"
+            ],
+            "evidence_ids": [
+              "evd:packages-extensions-extension-runtime-tests-runtime.test.ts",
+              "evd:packages-extensions-extension-manager-tests-extension-manager.test.tsx",
+              "evd:apps-client-src-extensions-runtime-extensionruntimeprovider.test.ts"
+            ],
+            "id": "rel:extension-continuous-experience",
+            "status": "published"
+          },
+          {
+            "claim_ids": [
+              "clm:client-action-rail",
+              "clm:client-commands",
+              "clm:client-common",
+              "clm:client-diagnostics",
+              "clm:client-editor",
+              "clm:client-extensions",
+              "clm:client-i18n",
+              "clm:client-layout",
+              "clm:client-markdownprofiles",
+              "clm:client-notifications",
+              "clm:client-preferences",
+              "clm:client-settings",
+              "clm:client-views",
+              "clm:cross-cutting",
+              "clm:edit-in-renderer-profile-contract",
+              "clm:extension-continuous-experience",
+              "clm:mdwrk-custom-parser-profile-blocked",
+              "clm:mdwrk-custom-previewer-profiles-blocked",
+              "clm:mdwrk-lander-content-pack",
+              "clm:portable-lander-package-family"
+            ],
+            "evidence_ids": [
+              "evd:apps-client-src-extensions-runtime-extensionruntimeprovider.test.ts",
+              "evd:apps-client-tests-statusbar-contract.mjs",
+              "evd:apps-lander-scripts-validate-syntax-themes.mjs",
+              "evd:lander-static-content-ci-local",
+              "evd:mdwrk-lander-static-validation",
+              "evd:packages-editor-markdown-edit-in-renderer-react-tests-run-smoke-mjs",
+              "evd:packages-extensions-extension-manager-tests-extension-manager.test.tsx",
+              "evd:packages-extensions-extension-runtime-tests-runtime.test.ts",
+              "evd:portable-lander-package-exports",
+              "evd:ssot-reports-release-snapshot-index.json",
+              "evd:ssot-reports-spec-coverage-index.json",
+              "evd:ssot-reports-ssot-graph-export-governance.json"
+            ],
+            "id": "rel:repo-certifiability-current-scope",
+            "status": "candidate"
+          },
+          {
+            "claim_ids": [
+              "clm:repo-certifiability-p1-current-partials"
+            ],
+            "evidence_ids": [
+              "evd:apps-client-components-chassis-workpane-stage-editorpane.test.tsx",
+              "evd:apps-client-components-chassis-workpane-workpane.test.tsx",
+              "evd:apps-client-components-markdown-workspacemarkdownrenderer.test.tsx",
+              "evd:apps-client-hooks-useapp.test.tsx",
+              "evd:apps-client-hooks-usetabmanager.test.tsx",
+              "evd:apps-client-hooks-usetoast.test.tsx",
+              "evd:apps-client-services-oidc.test.ts",
+              "evd:apps-client-src-extensions-runtime-extensionruntimeprovider.test.ts",
+              "evd:apps-client-src-features-action-rail-actionrailregistry.test.ts",
+              "evd:apps-client-src-features-commands-commandregistry.test.ts",
+              "evd:apps-client-src-features-extensions-extensionworkspacesurfaces.test.tsx",
+              "evd:apps-client-src-features-i18n-clienti18nservice.test.ts",
+              "evd:apps-client-src-features-i18n-languagepackstudiocontroller.test.ts",
+              "evd:apps-client-src-features-markdownprofiles-profileconfig.test.ts",
+              "evd:apps-client-src-features-settings-datasettingspanel.test.tsx",
+              "evd:apps-client-src-features-settings-settingsschemarenderer.test.tsx",
+              "evd:apps-client-src-features-views-viewregistry.test.ts",
+              "evd:apps-client-src-pwa-versionmanifest.test.ts",
+              "evd:apps-client-src-shell-actionrailhost.test.tsx",
+              "evd:apps-client-styles-alignmenttokens.test.ts",
+              "evd:apps-client-styles-chassisfittoscreen.test.ts",
+              "evd:apps-client-styles-componentclassnamepolicy.test.ts",
+              "evd:apps-client-styles-zoombehavior.test.ts",
+              "evd:apps-client-tests-phase7-shell-parity.test.tsx",
+              "evd:apps-client-tests-playwright-browser-matrix.spec.ts",
+              "evd:apps-client-tests-playwright-file-file-baseline.spec.ts",
+              "evd:apps-client-tests-playwright-inline-inline.spec.ts",
+              "evd:apps-client-tests-playwright-preview-export.spec.ts",
+              "evd:apps-client-tests-playwright-settings-and-i18n.spec.ts",
+              "evd:apps-client-tests-playwright-shell-smoke.spec.ts",
+              "evd:apps-client-tests-statusbar-contract.mjs",
+              "evd:apps-lander-scripts-validate-syntax-themes.mjs",
+              "evd:apps-mdwrkcom-scripts-validate-international-seo.mjs",
+              "evd:lander-static-content-ci-local",
+              "evd:packages-editor-markdown-edit-in-renderer-react-tests-run-smoke-mjs",
+              "evd:packages-editor-markdown-editor-core-tests-commands.test.ts",
+              "evd:packages-editor-markdown-editor-core-tests-history.test.ts",
+              "evd:packages-editor-markdown-editor-core-tests-roundtrip.test.ts",
+              "evd:packages-editor-markdown-editor-core-tests-selection.test.ts",
+              "evd:packages-editor-markdown-editor-core-tests-transforms.test.ts",
+              "evd:packages-editor-markdown-editor-react-tests-component.test.tsx",
+              "evd:packages-editor-markdown-editor-react-tests-keyboard.test.tsx",
+              "evd:packages-extensions-extension-gemini-agent-tests-run-smoke.mjs",
+              "evd:packages-extensions-extension-language-pack-studio-tests-language-pack-studio-view.test.tsx",
+              "evd:packages-extensions-extension-manager-tests-extension-manager.test.tsx",
+              "evd:packages-extensions-extension-runtime-tests-runtime.test.ts",
+              "evd:packages-extensions-extension-theme-studio-tests-theme-studio.test.tsx",
+              "evd:packages-lander-lander-react-tests-run-smoke.mjs",
+              "evd:packages-renderer-markdown-renderer-core-tests-html.test.ts",
+              "evd:packages-renderer-markdown-renderer-react-tests-component.test.tsx",
+              "evd:packages-shared-structured-data-tests-run-smoke.mjs",
+              "evd:ssot-reports-release-snapshot-index.json",
+              "evd:ssot-reports-spec-coverage-index.json",
+              "evd:ssot-reports-ssot-graph-export-governance.json",
+              "evd:tools-governance-validate-certifiability-feature-plan.mjs"
+            ],
+            "id": "rel:repo-certifiability-p1-current-partials",
+            "status": "published"
+          },
+          {
+            "claim_ids": [
+              "clm:agent-extension-oidc-current",
+              "clm:android-shell-support-current",
+              "clm:desktop-filesystem-permissions-current",
+              "clm:desktop-packaging-versioning-current",
+              "clm:desktop-runtime-extension-default-current",
+              "clm:desktop-tabs-current",
+              "clm:desktop-window-state-persistence-current",
+              "clm:mdwrk-desktop-app-shell-current"
+            ],
+            "evidence_ids": [
+              "evd:agent-extension-oidc-current",
+              "evd:android-shell-support-current",
+              "evd:desktop-filesystem-permissions-current",
+              "evd:desktop-packaging-versioning-current",
+              "evd:desktop-runtime-extension-default-current",
+              "evd:desktop-tabs-current",
+              "evd:desktop-window-state-persistence-current",
+              "evd:mdwrk-desktop-app-shell-current"
+            ],
+            "id": "rel:desktop-shell-and-oidc-current",
+            "status": "published"
+          },
+          {
+            "claim_ids": [
+              "clm:lander-react.structured-data.aggregate-rating-reusable-component.t3",
+              "clm:lander-react.structured-data.article-reusable-component.t3",
+              "clm:lander-react.structured-data.blog-posting-reusable-component.t3",
+              "clm:lander-react.structured-data.book-reusable-component.t3",
+              "clm:lander-react.structured-data.breadcrumb-list-reusable-component.t3",
+              "clm:lander-react.structured-data.claim-review-reusable-component.t3",
+              "clm:lander-react.structured-data.course-instance-reusable-component.t3",
+              "clm:lander-react.structured-data.course-reusable-component.t3",
+              "clm:lander-react.structured-data.dataset-reusable-component.t3",
+              "clm:lander-react.structured-data.discussion-forum-posting-reusable-component.t3",
+              "clm:lander-react.structured-data.employer-aggregate-rating-reusable-component.t3",
+              "clm:lander-react.structured-data.event-reusable-component.t3",
+              "clm:lander-react.structured-data.faq-page-reusable-component.t3",
+              "clm:lander-react.structured-data.how-to-reusable-component.t3",
+              "clm:lander-react.structured-data.image-object-reusable-component.t3",
+              "clm:lander-react.structured-data.item-list-reusable-component.t3",
+              "clm:lander-react.structured-data.job-posting-reusable-component.t3",
+              "clm:lander-react.structured-data.local-business-reusable-component.t3",
+              "clm:lander-react.structured-data.math-solver-reusable-component.t3",
+              "clm:lander-react.structured-data.member-program-reusable-component.t3",
+              "clm:lander-react.structured-data.merchant-return-policy-reusable-component.t3",
+              "clm:lander-react.structured-data.monetary-amount-distribution-reusable-component.t3",
+              "clm:lander-react.structured-data.movie-reusable-component.t3",
+              "clm:lander-react.structured-data.offer-shipping-details-reusable-component.t3",
+              "clm:lander-react.structured-data.organization-reusable-component.t3",
+              "clm:lander-react.structured-data.product-group-reusable-component.t3",
+              "clm:lander-react.structured-data.product-reusable-component.t3",
+              "clm:lander-react.structured-data.profile-page-reusable-component.t3",
+              "clm:lander-react.structured-data.qa-page-reusable-component.t3",
+              "clm:lander-react.structured-data.read-action-reusable-component.t3",
+              "clm:lander-react.structured-data.recipe-reusable-component.t3",
+              "clm:lander-react.structured-data.review-reusable-component.t3",
+              "clm:lander-react.structured-data.software-application-reusable-component.t3",
+              "clm:lander-react.structured-data.software-source-code-reusable-component.t3",
+              "clm:lander-react.structured-data.speakable-specification-reusable-component.t3",
+              "clm:lander-react.structured-data.tech-article-reusable-component.t3",
+              "clm:lander-react.structured-data.vacation-rental-reusable-component.t3",
+              "clm:lander-react.structured-data.vehicle-reusable-component.t3",
+              "clm:lander-react.structured-data.video-object-reusable-component.t3",
+              "clm:lander-react.structured-data.web-application-reusable-component.t3",
+              "clm:lander-react.structured-data.web-page-reusable-component.t3",
+              "clm:lander-react.structured-data.web-site-reusable-component.t3"
+            ],
+            "evidence_ids": [
+              "evd:lander-react-structured-data-components-t3-2026-05-13"
+            ],
+            "id": "rel:lander-react-structured-data-reusable-components-current",
+            "status": "published"
+          },
+          {
+            "claim_ids": [
+              "clm:mdwrkcom-content-pack-component-intent-declarations.t3",
+              "clm:lander-content-contract-component-intent-schema.t3",
+              "clm:lander-content-contract-schema-intent-schema.t3",
+              "clm:lander-core-content-pack-render-model-compiler.t3",
+              "clm:lander-core-schema-intent-compiler.t3",
+              "clm:lander-react-compiled-intent-renderer.t3",
+              "clm:lander-react-structured-data-intent-registry.t3",
+              "clm:mdwrkcom-compiled-lander-renderer-host.t3",
+              "clm:content-pack-rendering-no-drift-governance.t3"
+            ],
+            "evidence_ids": [
+              "evd:content-pack-driven-lander-rendering-current"
+            ],
+            "id": "rel:content-pack-driven-lander-rendering-current",
+            "status": "published"
+          },
+          {
+            "claim_ids": [
+              "clm:lander-seo-mdwrkcom-discovery-e2e"
+            ],
+            "evidence_ids": [
+              "evd:lander-seo-mdwrkcom-discovery-e2e-2026-05-13"
+            ],
+            "id": "rel:lander-seo-mdwrkcom-discovery-e2e",
+            "status": "published"
+          },
+          {
+            "claim_ids": [
+              "clm:lander-seo-aeo-aieo-discovery",
+              "clm:lander-international-seo",
+              "clm:repo-certifiability-p1-current-partials"
+            ],
+            "evidence_ids": [
+              "evd:lander-seo-aeo-aieo-profile-closure-2026-05-13",
+              "evd:apps-mdwrkcom-scripts-validate-international-seo.mjs",
+              "evd:packages-shared-structured-data-tests-run-smoke.mjs"
+            ],
+            "id": "rel:lander-seo-aeo-aieo-profile-closure-2026-05-13",
+            "status": "published"
+          }
+        ],
+        "specs": [
+          {
+            "id": "spc:0600",
+            "status": "draft",
+            "title": "Registry core"
+          },
+          {
+            "id": "spc:0601",
+            "status": "draft",
+            "title": "CLI"
+          },
+          {
+            "id": "spc:0602",
+            "status": "draft",
+            "title": "Graph model"
+          },
+          {
+            "id": "spc:0603",
+            "status": "draft",
+            "title": "Feature lifecycle"
+          },
+          {
+            "id": "spc:0604",
+            "status": "draft",
+            "title": "Claim statuses"
+          },
+          {
+            "id": "spc:0605",
+            "status": "draft",
+            "title": "Claim tiers"
+          },
+          {
+            "id": "spc:0606",
+            "status": "draft",
+            "title": "Snapshots and reports"
+          },
+          {
+            "id": "spc:0607",
+            "status": "draft",
+            "title": "Repository policy"
+          },
+          {
+            "id": "spc:0608",
+            "status": "draft",
+            "title": "Gates and fences"
+          },
+          {
+            "id": "spc:0609",
+            "status": "draft",
+            "title": "ID normalization"
+          },
+          {
+            "id": "spc:0610",
+            "status": "draft",
+            "title": "File tree"
+          },
+          {
+            "id": "spc:0611",
+            "status": "draft",
+            "title": "Planning horizons"
+          },
+          {
+            "id": "spc:0612",
+            "status": "draft",
+            "title": "Python API"
+          },
+          {
+            "id": "spc:0613",
+            "status": "draft",
+            "title": "SSOT path-length policy"
+          },
+          {
+            "id": "spc:0614",
+            "status": "draft",
+            "title": "Profile evaluation and boundary resolution"
+          },
+          {
+            "id": "spc:0615",
+            "status": "accepted",
+            "title": "Typed SPEC-to-ADR linking"
+          },
+          {
+            "id": "spc:0616",
+            "status": "accepted",
+            "title": "Out-of-bounds implementation disposition"
+          },
+          {
+            "id": "spc:0617",
+            "status": "accepted",
+            "title": "Feature implementation claim ceilings"
+          },
+          {
+            "id": "spc:0618",
+            "status": "draft",
+            "title": "Local Release Assurance Candidate Scope"
+          },
+          {
+            "id": "spc:0619",
+            "status": "draft",
+            "title": "Governed Source Snapshot Contract"
+          }
+        ],
+        "tests": [
+          {
+            "claim_ids": [
+              "clm:cross-cutting",
+              "clm:client-common",
+              "clm:repo-certifiability-p1-current-partials"
+            ],
+            "evidence_ids": [
+              "evd:apps-client-hooks-useapp.test.tsx"
+            ],
+            "feature_ids": [
+              "feat:cross-cutting",
+              "feat:workspace-project-loading",
+              "feat:desktop-launch-markdown-import",
+              "feat:host-capability-adapter",
+              "feat:native-filesystem-shell-behavior",
+              "feat:client-common",
+              "feat:markdown-file-import",
+              "feat:workspace-persistence",
+              "feat:desktop-preload-host-api",
+              "feat:desktop-folder-mounting"
+            ],
+            "id": "tst:apps-client-hooks-useapp.test.tsx",
+            "status": "passing",
+            "title": "useApp.test.tsx"
+          },
+          {
+            "claim_ids": [
+              "clm:cross-cutting",
+              "clm:client-common",
+              "clm:repo-certifiability-p1-current-partials"
+            ],
+            "evidence_ids": [
+              "evd:apps-client-hooks-usetabmanager.test.tsx"
+            ],
+            "feature_ids": [
+              "feat:cross-cutting",
+              "feat:workspace-tab-management",
+              "feat:client-common",
+              "feat:workspace-open-tabs-persistence",
+              "feat:workspace-persistence"
+            ],
+            "id": "tst:apps-client-hooks-usetabmanager.test.tsx",
+            "status": "passing",
+            "title": "useTabManager.test.tsx"
+          },
+          {
+            "claim_ids": [
+              "clm:cross-cutting",
+              "clm:client-notifications",
+              "clm:client-layout",
+              "clm:client-extensions",
+              "clm:client-common",
+              "clm:repo-certifiability-p1-current-partials"
+            ],
+            "evidence_ids": [
+              "evd:apps-client-hooks-usetoast.test.tsx"
+            ],
+            "feature_ids": [
+              "feat:cross-cutting",
+              "feat:toast-notification-behavior",
+              "feat:accessibility-shell-baseline",
+              "feat:client-notifications",
+              "feat:client-common"
+            ],
+            "id": "tst:apps-client-hooks-usetoast.test.tsx",
+            "status": "passing",
+            "title": "useToast.test.tsx"
+          },
+          {
+            "claim_ids": [
+              "clm:cross-cutting",
+              "clm:oidc-token-boundary-audit",
+              "clm:git-ops-oidc"
+            ],
+            "evidence_ids": [
+              "evd:apps-client-services-oidc.test.ts"
+            ],
+            "feature_ids": [
+              "feat:cross-cutting",
+              "feat:oidc-browser-flow",
+              "feat:oidc-adapter",
+              "feat:oidc-token-boundary-audit",
+              "feat:git-ops-oidc"
+            ],
+            "id": "tst:apps-client-services-oidc.test.ts",
+            "status": "passing",
+            "title": "oidc.test.ts"
+          },
+          {
+            "claim_ids": [
+              "clm:client-action-rail",
+              "clm:client-commands",
+              "clm:client-views"
+            ],
+            "evidence_ids": [
+              "evd:apps-client-src-features-action-rail-actionrailregistry.test.ts"
+            ],
+            "feature_ids": [
+              "feat:client-action-rail",
+              "feat:client-shell-registry-orchestration"
+            ],
+            "id": "tst:apps-client-src-features-action-rail-actionrailregistry.test.ts",
+            "status": "passing",
+            "title": "actionRailRegistry.test.ts"
+          },
+          {
+            "claim_ids": [
+              "clm:client-commands",
+              "clm:client-action-rail",
+              "clm:client-views"
+            ],
+            "evidence_ids": [
+              "evd:apps-client-src-features-commands-commandregistry.test.ts"
+            ],
+            "feature_ids": [
+              "feat:client-commands",
+              "feat:client-shell-registry-orchestration"
+            ],
+            "id": "tst:apps-client-src-features-commands-commandregistry.test.ts",
+            "status": "passing",
+            "title": "commandRegistry.test.ts"
+          },
+          {
+            "claim_ids": [
+              "clm:client-extensions",
+              "clm:client-layout",
+              "clm:client-notifications",
+              "clm:client-i18n",
+              "clm:extension-continuous-experience",
+              "clm:repo-certifiability-p1-current-partials"
+            ],
+            "evidence_ids": [
+              "evd:apps-client-src-features-extensions-extensionworkspacesurfaces.test.tsx"
+            ],
+            "feature_ids": [
+              "feat:client-extensions",
+              "feat:accessibility-shell-baseline",
+              "feat:extension-manager-pane-layout",
+              "feat:extension-manager",
+              "feat:extension-theme-studio",
+              "feat:extension-language-pack-studio",
+              "feat:uix-extension-view-modes",
+              "feat:gemini-agent-conversation-preview-pane-surface",
+              "feat:gemini-agent-workspace-file-mentions",
+              "feat:extension-gemini-agent"
+            ],
+            "id": "tst:apps-client-src-features-extensions-extensionworkspacesurfaces.test.tsx",
+            "status": "passing",
+            "title": "extensionWorkspaceSurfaces.test.tsx"
+          },
+          {
+            "claim_ids": [
+              "clm:client-i18n"
+            ],
+            "evidence_ids": [
+              "evd:apps-client-src-features-i18n-clienti18nservice.test.ts"
+            ],
+            "feature_ids": [
+              "feat:client-i18n"
+            ],
+            "id": "tst:apps-client-src-features-i18n-clienti18nservice.test.ts",
+            "status": "passing",
+            "title": "clientI18nService.test.ts"
+          },
+          {
+            "claim_ids": [
+              "clm:client-i18n",
+              "clm:client-extensions"
+            ],
+            "evidence_ids": [
+              "evd:apps-client-src-features-i18n-languagepackstudiocontroller.test.ts"
+            ],
+            "feature_ids": [
+              "feat:client-i18n",
+              "feat:extension-language-pack-studio"
+            ],
+            "id": "tst:apps-client-src-features-i18n-languagepackstudiocontroller.test.ts",
+            "status": "passing",
+            "title": "languagePackStudioController.test.ts"
+          },
+          {
+            "claim_ids": [
+              "clm:client-markdownprofiles",
+              "clm:client-preferences",
+              "clm:cross-cutting",
+              "clm:repo-certifiability-p1-current-partials"
+            ],
+            "evidence_ids": [
+              "evd:apps-client-src-features-markdownprofiles-profileconfig.test.ts"
+            ],
+            "feature_ids": [
+              "feat:client-markdownprofiles",
+              "feat:client-preferences",
+              "feat:markdown-profile-settings-persistence",
+              "feat:profile-boundary-resolution",
+              "feat:custom-flavored-markdown-profile",
+              "feat:editor-toolbar-hidden-button-preference"
+            ],
+            "id": "tst:apps-client-src-features-markdownprofiles-profileconfig.test.ts",
+            "status": "passing",
+            "title": "profileConfig.test.ts"
+          },
+          {
+            "claim_ids": [
+              "clm:client-settings",
+              "clm:client-preferences",
+              "clm:frontend-settings-persistence",
+              "clm:persistence-diagnostics-mode",
+              "clm:indexeddb-vs-filesystem-persistence",
+              "clm:cloud-persistence-out-of-bounds"
+            ],
+            "evidence_ids": [
+              "evd:apps-client-src-features-settings-datasettingspanel.test.tsx"
+            ],
+            "feature_ids": [
+              "feat:client-settings",
+              "feat:client-preferences",
+              "feat:pwa-install-button-state",
+              "feat:pwa-version-system-config",
+              "feat:frontend-settings-persistence",
+              "feat:persistence-diagnostics-mode",
+              "feat:indexeddb-vs-filesystem-persistence",
+              "feat:cloud-persistence-out-of-bounds"
+            ],
+            "id": "tst:apps-client-src-features-settings-datasettingspanel.test.tsx",
+            "status": "passing",
+            "title": "DataSettingsPanel.test.tsx"
+          },
+          {
+            "claim_ids": [
+              "clm:client-settings",
+              "clm:client-preferences",
+              "clm:client-extensions"
+            ],
+            "evidence_ids": [
+              "evd:apps-client-src-features-settings-settingsschemarenderer.test.tsx"
+            ],
+            "feature_ids": [
+              "feat:client-settings",
+              "feat:client-preferences",
+              "feat:extension-settings-schema-rendering"
+            ],
+            "id": "tst:apps-client-src-features-settings-settingsschemarenderer.test.tsx",
+            "status": "passing",
+            "title": "SettingsSchemaRenderer.test.tsx"
+          },
+          {
+            "claim_ids": [
+              "clm:client-views",
+              "clm:client-action-rail",
+              "clm:client-commands"
+            ],
+            "evidence_ids": [
+              "evd:apps-client-src-features-views-viewregistry.test.ts"
+            ],
+            "feature_ids": [
+              "feat:client-views",
+              "feat:client-shell-registry-orchestration"
+            ],
+            "id": "tst:apps-client-src-features-views-viewregistry.test.ts",
+            "status": "passing",
+            "title": "viewRegistry.test.ts"
+          },
+          {
+            "claim_ids": [
+              "clm:cross-cutting",
+              "clm:client-preferences"
+            ],
+            "evidence_ids": [
+              "evd:apps-client-src-pwa-versionmanifest.test.ts"
+            ],
+            "feature_ids": [
+              "feat:cross-cutting",
+              "feat:pwa-version-manifest",
+              "feat:client-preferences",
+              "feat:pwa-version-system-config",
+              "feat:client-pwa-installed-state-controls"
+            ],
+            "id": "tst:apps-client-src-pwa-versionmanifest.test.ts",
+            "status": "passing",
+            "title": "versionManifest.test.ts"
+          },
+          {
+            "claim_ids": [
+              "clm:cross-cutting",
+              "clm:client-action-rail",
+              "clm:client-commands",
+              "clm:client-views",
+              "clm:client-layout",
+              "clm:client-notifications",
+              "clm:client-extensions",
+              "clm:repo-certifiability-p1-current-partials"
+            ],
+            "evidence_ids": [
+              "evd:apps-client-src-shell-actionrailhost.test.tsx"
+            ],
+            "feature_ids": [
+              "feat:cross-cutting",
+              "feat:client-shell-registry-orchestration",
+              "feat:accessibility-shell-baseline",
+              "feat:client-action-rail",
+              "feat:client-commands",
+              "feat:client-views",
+              "feat:client-action-rail-responsive-governance"
+            ],
+            "id": "tst:apps-client-src-shell-actionrailhost.test.tsx",
+            "status": "passing",
+            "title": "ActionRailHost.test.tsx"
+          },
+          {
+            "claim_ids": [
+              "clm:cross-cutting",
+              "clm:client-layout",
+              "clm:repo-certifiability-p1-current-partials"
+            ],
+            "evidence_ids": [
+              "evd:apps-client-styles-alignmenttokens.test.ts"
+            ],
+            "feature_ids": [
+              "feat:cross-cutting",
+              "feat:uix-css-token-chassis-contract",
+              "feat:client-layout",
+              "feat:uix-breakpoint-token-contract",
+              "feat:editor-toolbar-view-editor",
+              "feat:editor-toolbar-view-split",
+              "feat:editor-toolbar-view-preview",
+              "feat:editor-toolbar-responsive-placement",
+              "feat:editor-toolbar-split-view-eligibility",
+              "feat:editor-toolbar-split-resizing",
+              "feat:editor-toolbar-overflow-scroll",
+              "feat:editor-toolbar-divider-grouping",
+              "feat:editor-line-count-scroll-alignment",
+              "feat:client-toolbar-footer-alignment"
+            ],
+            "id": "tst:apps-client-styles-alignmenttokens.test.ts",
+            "status": "passing",
+            "title": "alignmentTokens.test.ts"
+          },
+          {
+            "claim_ids": [
+              "clm:cross-cutting",
+              "clm:client-layout",
+              "clm:repo-certifiability-p1-current-partials",
+              "clm:mobile-uix-responsive-shell-contract"
+            ],
+            "evidence_ids": [
+              "evd:apps-client-styles-chassisfittoscreen.test.ts"
+            ],
+            "feature_ids": [
+              "feat:cross-cutting",
+              "feat:uix-css-token-chassis-contract",
+              "feat:client-layout",
+              "feat:uix-breakpoint-token-contract",
+              "feat:mdwrk-shell-fixed-fit-screen",
+              "feat:editor-toolbar-view-editor",
+              "feat:editor-toolbar-view-split",
+              "feat:editor-toolbar-view-preview",
+              "feat:editor-toolbar-responsive-placement",
+              "feat:editor-toolbar-split-view-eligibility",
+              "feat:editor-toolbar-split-resizing",
+              "feat:editor-toolbar-overflow-scroll",
+              "feat:editor-toolbar-divider-grouping",
+              "feat:mobile-action-rail-portrait-order",
+              "feat:mobile-file-explorer-rail-full-width",
+              "feat:mobile-filetabs-portrait",
+              "feat:mobile-fixed-shell-scrollable-panes",
+              "feat:mobile-git-rail-full-width",
+              "feat:mobile-keyboard-viewport",
+              "feat:mobile-statusbar-landscape-hidden",
+              "feat:mobile-status-footer-portrait-hidden",
+              "feat:mobile-visual-keyboard-half-screen",
+              "feat:mobile-keyboard-mappings-tab-hidden",
+              "feat:mobile-gesture-mappings-tab",
+              "feat:client-mobile-chrome-responsive-contract",
+              "feat:client-split-pane-mobile-landscape"
+            ],
+            "id": "tst:apps-client-styles-chassisfittoscreen.test.ts",
+            "status": "passing",
+            "title": "chassisFitToScreen.test.ts"
+          },
+          {
+            "claim_ids": [
+              "clm:cross-cutting",
+              "clm:client-layout"
+            ],
+            "evidence_ids": [
+              "evd:apps-client-styles-zoombehavior.test.ts"
+            ],
+            "feature_ids": [
+              "feat:cross-cutting",
+              "feat:uix-zoom-scale",
+              "feat:client-layout"
+            ],
+            "id": "tst:apps-client-styles-zoombehavior.test.ts",
+            "status": "passing",
+            "title": "zoomBehavior.test.ts"
+          },
+          {
+            "claim_ids": [
+              "clm:cross-cutting",
+              "clm:client-action-rail",
+              "clm:client-commands",
+              "clm:client-views",
+              "clm:client-layout",
+              "clm:client-notifications",
+              "clm:client-extensions",
+              "clm:repo-certifiability-p1-current-partials",
+              "clm:persistence-diagnostics-mode"
+            ],
+            "evidence_ids": [
+              "evd:apps-client-tests-phase7-shell-parity.test.tsx"
+            ],
+            "feature_ids": [
+              "feat:cross-cutting",
+              "feat:client-shell-registry-orchestration",
+              "feat:uix-css-token-chassis-contract",
+              "feat:accessibility-shell-baseline",
+              "feat:shell-evidence-matrix",
+              "feat:shell-taxonomy-runtime-detection",
+              "feat:uix-responsive-layout-matrix",
+              "feat:client-layout",
+              "feat:persistence-diagnostics-mode"
+            ],
+            "id": "tst:apps-client-tests-phase7-shell-parity.test.tsx",
+            "status": "passing",
+            "title": "phase7-shell-parity.test.tsx"
+          },
+          {
+            "claim_ids": [
+              "clm:cross-cutting",
+              "clm:client-layout",
+              "clm:client-common",
+              "clm:repo-certifiability-p1-current-partials"
+            ],
+            "evidence_ids": [
+              "evd:apps-client-tests-playwright-file-file-baseline.spec.ts"
+            ],
+            "feature_ids": [
+              "feat:cross-cutting",
+              "feat:uix-css-token-chassis-contract",
+              "feat:browser-e2e-conformance-matrix",
+              "feat:shell-evidence-matrix",
+              "feat:native-filesystem-shell-behavior",
+              "feat:uix-responsive-layout-matrix",
+              "feat:client-layout",
+              "feat:mdwrk-shell-fixed-fit-screen"
+            ],
+            "id": "tst:apps-client-tests-playwright-file-file-baseline.spec.ts",
+            "status": "passing",
+            "title": "file-baseline.spec.ts"
+          }
+        ]
+      },
+      "inventory_truncated": {
+        "adrs": 79,
+        "boundaries": 14,
+        "claims": 222,
+        "evidence": 95,
+        "features": 529,
+        "issues": 0,
+        "profiles": 0,
+        "releases": 0,
+        "specs": 110,
+        "tests": 157
+      },
+      "observed_at": "2026-08-03T23:58:12Z",
       "present": true,
       "raw_url": "https://raw.githubusercontent.com/groupsum/markdown_workspace/master/.ssot/registry.json",
       "registry_url": "https://github.com/groupsum/markdown_workspace/blob/master/.ssot/registry.json",

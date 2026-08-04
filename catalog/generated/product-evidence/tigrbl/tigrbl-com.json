@@ -70,6 +70,7 @@
       "name": "@tigrbl/tigrbl-com-content-pack",
       "observed_at": "2026-08-03T22:06:00Z",
       "owner": "tigrbl",
+      "package_kind": "private-package",
       "private": true,
       "publication_status": "manifest_private",
       "published": false,
@@ -211,6 +212,7 @@
       "name": "tigrbl-com",
       "observed_at": "2026-08-03T22:06:00Z",
       "owner": "tigrbl",
+      "package_kind": "workspace-project",
       "private": true,
       "publication_status": "manifest_private",
       "published": false,
@@ -289,6 +291,7 @@
       "name": "tigrbl-com",
       "observed_at": "2026-08-03T22:06:00Z",
       "owner": "tigrbl",
+      "package_kind": "package-candidate",
       "private": false,
       "publication_status": "not-confirmed",
       "published": false,
@@ -499,6 +502,38 @@
       "package:npm:tigrbl-com:tigrbl/tigrbl-com:package.json",
       "package:pypi:tigrbl-com:tigrbl/tigrbl-com:pyproject.toml"
     ],
+    "packages": [
+      {
+        "ecosystem": "npm",
+        "id": "package:npm:@tigrbl/tigrbl-com-content-pack:tigrbl/tigrbl-com:packages/site-content-pack/package.json",
+        "manifest_path": "packages/site-content-pack/package.json",
+        "name": "@tigrbl/tigrbl-com-content-pack",
+        "package_kind": "private-package",
+        "publication_status": "manifest_private",
+        "published": false,
+        "route": "/catalog/packages/npm/tigrbl-tigrbl-com-content-pack-fc859df9"
+      },
+      {
+        "ecosystem": "npm",
+        "id": "package:npm:tigrbl-com:tigrbl/tigrbl-com:package.json",
+        "manifest_path": "package.json",
+        "name": "tigrbl-com",
+        "package_kind": "workspace-project",
+        "publication_status": "manifest_private",
+        "published": false,
+        "route": "/catalog/packages/npm/tigrbl-com-be4b2a34"
+      },
+      {
+        "ecosystem": "pypi",
+        "id": "package:pypi:tigrbl-com:tigrbl/tigrbl-com:pyproject.toml",
+        "manifest_path": "pyproject.toml",
+        "name": "tigrbl-com",
+        "package_kind": "package-candidate",
+        "publication_status": "not-confirmed",
+        "published": false,
+        "route": "/catalog/packages/pypi/tigrbl-com-ada06730"
+      }
+    ],
     "pushed_at": "2026-07-25T17:59:36Z",
     "related_resources": [],
     "relationship_counts": {
@@ -510,8 +545,8 @@
       "counts": {},
       "coverage": {},
       "governed": false,
-      "observation_status": "error",
-      "observed_at": "2026-08-03T22:06:01Z",
+      "observation_status": "not_found",
+      "observed_at": "2026-08-03T23:58:13Z",
       "present": false,
       "registry_url": null,
       "status_counts": {},

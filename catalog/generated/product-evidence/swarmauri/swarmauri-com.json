@@ -223,6 +223,7 @@
       "name": "swarmauri-com",
       "observed_at": "2026-08-03T22:06:00Z",
       "owner": "swarmauri",
+      "package_kind": "workspace-project",
       "private": true,
       "publication_status": "manifest_private",
       "published": false,
@@ -301,6 +302,7 @@
       "name": "swarmauri-com",
       "observed_at": "2026-08-03T22:06:00Z",
       "owner": "swarmauri",
+      "package_kind": "package-candidate",
       "private": false,
       "publication_status": "not-confirmed",
       "published": false,
@@ -510,6 +512,28 @@
       "package:npm:swarmauri-com:swarmauri/swarmauri-com:package.json",
       "package:pypi:swarmauri-com:swarmauri/swarmauri-com:pyproject.toml"
     ],
+    "packages": [
+      {
+        "ecosystem": "npm",
+        "id": "package:npm:swarmauri-com:swarmauri/swarmauri-com:package.json",
+        "manifest_path": "package.json",
+        "name": "swarmauri-com",
+        "package_kind": "workspace-project",
+        "publication_status": "manifest_private",
+        "published": false,
+        "route": "/catalog/packages/npm/swarmauri-com-f1b7d107"
+      },
+      {
+        "ecosystem": "pypi",
+        "id": "package:pypi:swarmauri-com:swarmauri/swarmauri-com:pyproject.toml",
+        "manifest_path": "pyproject.toml",
+        "name": "swarmauri-com",
+        "package_kind": "package-candidate",
+        "publication_status": "not-confirmed",
+        "published": false,
+        "route": "/catalog/packages/pypi/swarmauri-com-0c0ecf8a"
+      }
+    ],
     "pushed_at": "2026-07-13T22:28:59Z",
     "related_resources": [
       {
@@ -537,8 +561,8 @@
       "counts": {},
       "coverage": {},
       "governed": false,
-      "observation_status": "error",
-      "observed_at": "2026-08-03T22:06:02Z",
+      "observation_status": "not_found",
+      "observed_at": "2026-08-03T23:58:12Z",
       "present": false,
       "registry_url": null,
       "status_counts": {},

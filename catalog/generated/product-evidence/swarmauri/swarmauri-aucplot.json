@@ -106,6 +106,7 @@
       "name": "gradio_aucplot",
       "observed_at": "2026-08-03T22:06:00Z",
       "owner": "swarmauri",
+      "package_kind": "package-candidate",
       "private": false,
       "publication_status": "not-confirmed",
       "published": false,
@@ -237,6 +238,7 @@
       "name": "gradio_aucplot",
       "observed_at": "2026-08-03T22:06:00Z",
       "owner": "swarmauri",
+      "package_kind": "package-candidate",
       "private": false,
       "publication_status": "not-confirmed",
       "published": false,
@@ -464,6 +466,28 @@
       "package:npm:gradio_aucplot:swarmauri/swarmauri-aucplot:aucplot/frontend/package.json",
       "package:pypi:gradio_aucplot:swarmauri/swarmauri-aucplot:aucplot/pyproject.toml"
     ],
+    "packages": [
+      {
+        "ecosystem": "npm",
+        "id": "package:npm:gradio_aucplot:swarmauri/swarmauri-aucplot:aucplot/frontend/package.json",
+        "manifest_path": "aucplot/frontend/package.json",
+        "name": "gradio_aucplot",
+        "package_kind": "package-candidate",
+        "publication_status": "not-confirmed",
+        "published": false,
+        "route": "/catalog/packages/npm/gradio-aucplot-391bdaf6"
+      },
+      {
+        "ecosystem": "pypi",
+        "id": "package:pypi:gradio_aucplot:swarmauri/swarmauri-aucplot:aucplot/pyproject.toml",
+        "manifest_path": "aucplot/pyproject.toml",
+        "name": "gradio_aucplot",
+        "package_kind": "package-candidate",
+        "publication_status": "not-confirmed",
+        "published": false,
+        "route": "/catalog/packages/pypi/gradio-aucplot-1125be63"
+      }
+    ],
     "pushed_at": "2024-09-03T07:06:13Z",
     "related_resources": [
       {
@@ -519,8 +543,8 @@
       "counts": {},
       "coverage": {},
       "governed": false,
-      "observation_status": "error",
-      "observed_at": "2026-08-03T22:06:02Z",
+      "observation_status": "not_found",
+      "observed_at": "2026-08-03T23:58:12Z",
       "present": false,
       "registry_url": null,
       "status_counts": {},

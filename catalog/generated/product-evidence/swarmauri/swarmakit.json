@@ -279,6 +279,7 @@
       "name": "@swarmakit/react",
       "observed_at": "2026-08-03T22:06:00Z",
       "owner": "swarmauri",
+      "package_kind": "published-package",
       "private": false,
       "publication_status": "published",
       "published": true,
@@ -760,6 +761,7 @@
       "name": "@swarmakit/svelte",
       "observed_at": "2026-08-03T22:06:00Z",
       "owner": "swarmauri",
+      "package_kind": "published-package",
       "private": false,
       "publication_status": "published",
       "published": true,
@@ -1156,6 +1158,7 @@
       "name": "@swarmakit/sveltekit",
       "observed_at": "2026-08-03T22:06:00Z",
       "owner": "swarmauri",
+      "package_kind": "published-package",
       "private": false,
       "publication_status": "published",
       "published": true,
@@ -1506,6 +1509,7 @@
       "name": "@swarmakit/vue",
       "observed_at": "2026-08-03T22:06:00Z",
       "owner": "swarmauri",
+      "package_kind": "published-package",
       "private": false,
       "publication_status": "published",
       "published": true,
@@ -1846,6 +1850,7 @@
       "name": "swarmakit",
       "observed_at": "2026-08-03T22:06:00Z",
       "owner": "swarmauri",
+      "package_kind": "published-package",
       "private": false,
       "publication_status": "published",
       "published": true,
@@ -2385,6 +2390,58 @@
       "package:npm:@swarmakit/vue:swarmauri/swarmakit:libs/vue/package.json",
       "package:npm:swarmakit:swarmauri/swarmakit:package.json"
     ],
+    "packages": [
+      {
+        "ecosystem": "npm",
+        "id": "package:npm:@swarmakit/react:swarmauri/swarmakit:libs/react/package.json",
+        "manifest_path": "libs/react/package.json",
+        "name": "@swarmakit/react",
+        "package_kind": "published-package",
+        "publication_status": "published",
+        "published": true,
+        "route": "/catalog/packages/npm/swarmakit-react-17b578dc"
+      },
+      {
+        "ecosystem": "npm",
+        "id": "package:npm:@swarmakit/svelte:swarmauri/swarmakit:libs/svelte/package.json",
+        "manifest_path": "libs/svelte/package.json",
+        "name": "@swarmakit/svelte",
+        "package_kind": "published-package",
+        "publication_status": "published",
+        "published": true,
+        "route": "/catalog/packages/npm/swarmakit-svelte-55ea3024"
+      },
+      {
+        "ecosystem": "npm",
+        "id": "package:npm:@swarmakit/sveltekit:swarmauri/swarmakit:libs/sveltekit/package.json",
+        "manifest_path": "libs/sveltekit/package.json",
+        "name": "@swarmakit/sveltekit",
+        "package_kind": "published-package",
+        "publication_status": "published",
+        "published": true,
+        "route": "/catalog/packages/npm/swarmakit-sveltekit-c1ce8687"
+      },
+      {
+        "ecosystem": "npm",
+        "id": "package:npm:@swarmakit/vue:swarmauri/swarmakit:libs/vue/package.json",
+        "manifest_path": "libs/vue/package.json",
+        "name": "@swarmakit/vue",
+        "package_kind": "published-package",
+        "publication_status": "published",
+        "published": true,
+        "route": "/catalog/packages/npm/swarmakit-vue-806b3aca"
+      },
+      {
+        "ecosystem": "npm",
+        "id": "package:npm:swarmakit:swarmauri/swarmakit:package.json",
+        "manifest_path": "package.json",
+        "name": "swarmakit",
+        "package_kind": "published-package",
+        "publication_status": "published",
+        "published": true,
+        "route": "/catalog/packages/npm/swarmakit-78110d61"
+      }
+    ],
     "pushed_at": "2025-01-17T19:28:28Z",
     "related_resources": [
       {
@@ -2412,8 +2469,8 @@
       "counts": {},
       "coverage": {},
       "governed": false,
-      "observation_status": "error",
-      "observed_at": "2026-08-03T22:06:02Z",
+      "observation_status": "not_found",
+      "observed_at": "2026-08-03T23:58:12Z",
       "present": false,
       "registry_url": null,
       "status_counts": {},

@@ -33,6 +33,7 @@
       "name": "docs-tigrcorn-com",
       "observed_at": "2026-08-03T22:06:00Z",
       "owner": "tigrbl",
+      "package_kind": "workspace-project",
       "private": true,
       "publication_status": "manifest_private",
       "published": false,
@@ -181,6 +182,7 @@
       "name": "docs-tigrcorn-com",
       "observed_at": "2026-08-03T22:06:00Z",
       "owner": "tigrbl",
+      "package_kind": "package-candidate",
       "private": false,
       "publication_status": "not-confirmed",
       "published": false,
@@ -385,6 +387,28 @@
       "package:npm:docs-tigrcorn-com:tigrbl/docs-tigrcorn-com:package.json",
       "package:pypi:docs-tigrcorn-com:tigrbl/docs-tigrcorn-com:pyproject.toml"
     ],
+    "packages": [
+      {
+        "ecosystem": "npm",
+        "id": "package:npm:docs-tigrcorn-com:tigrbl/docs-tigrcorn-com:package.json",
+        "manifest_path": "package.json",
+        "name": "docs-tigrcorn-com",
+        "package_kind": "workspace-project",
+        "publication_status": "manifest_private",
+        "published": false,
+        "route": "/catalog/packages/npm/docs-tigrcorn-com-f523de38"
+      },
+      {
+        "ecosystem": "pypi",
+        "id": "package:pypi:docs-tigrcorn-com:tigrbl/docs-tigrcorn-com:pyproject.toml",
+        "manifest_path": "pyproject.toml",
+        "name": "docs-tigrcorn-com",
+        "package_kind": "package-candidate",
+        "publication_status": "not-confirmed",
+        "published": false,
+        "route": "/catalog/packages/pypi/docs-tigrcorn-com-4dd54142"
+      }
+    ],
     "pushed_at": "2026-07-13T22:29:03Z",
     "related_resources": [
       {
@@ -454,8 +478,8 @@
       "counts": {},
       "coverage": {},
       "governed": false,
-      "observation_status": "error",
-      "observed_at": "2026-08-03T22:06:01Z",
+      "observation_status": "not_found",
+      "observed_at": "2026-08-03T23:58:13Z",
       "present": false,
       "registry_url": null,
       "status_counts": {},

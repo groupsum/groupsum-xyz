@@ -205,6 +205,7 @@
       "name": "ssot-registry-com",
       "observed_at": "2026-08-03T22:06:00Z",
       "owner": "groupsum",
+      "package_kind": "workspace-project",
       "private": true,
       "publication_status": "manifest_private",
       "published": false,
@@ -283,6 +284,7 @@
       "name": "ssot-registry-com",
       "observed_at": "2026-08-03T22:06:00Z",
       "owner": "groupsum",
+      "package_kind": "package-candidate",
       "private": false,
       "publication_status": "not-confirmed",
       "published": false,
@@ -492,6 +494,28 @@
       "package:npm:ssot-registry-com:groupsum/ssot-registry-com:package.json",
       "package:pypi:ssot-registry-com:groupsum/ssot-registry-com:pyproject.toml"
     ],
+    "packages": [
+      {
+        "ecosystem": "npm",
+        "id": "package:npm:ssot-registry-com:groupsum/ssot-registry-com:package.json",
+        "manifest_path": "package.json",
+        "name": "ssot-registry-com",
+        "package_kind": "workspace-project",
+        "publication_status": "manifest_private",
+        "published": false,
+        "route": "/catalog/packages/npm/ssot-registry-com-a3c205db"
+      },
+      {
+        "ecosystem": "pypi",
+        "id": "package:pypi:ssot-registry-com:groupsum/ssot-registry-com:pyproject.toml",
+        "manifest_path": "pyproject.toml",
+        "name": "ssot-registry-com",
+        "package_kind": "package-candidate",
+        "publication_status": "not-confirmed",
+        "published": false,
+        "route": "/catalog/packages/pypi/ssot-registry-com-038168e0"
+      }
+    ],
     "pushed_at": "2026-07-13T22:28:44Z",
     "related_resources": [],
     "relationship_counts": {
@@ -503,8 +527,8 @@
       "counts": {},
       "coverage": {},
       "governed": false,
-      "observation_status": "error",
-      "observed_at": "2026-08-03T22:06:01Z",
+      "observation_status": "not_found",
+      "observed_at": "2026-08-03T23:58:12Z",
       "present": false,
       "registry_url": null,
       "status_counts": {},

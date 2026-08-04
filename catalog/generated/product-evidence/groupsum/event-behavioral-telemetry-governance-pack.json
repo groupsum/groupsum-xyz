@@ -114,6 +114,7 @@
       "name": "event-behavioral-telemetry-governance-pack",
       "observed_at": "2026-08-03T22:06:00Z",
       "owner": "groupsum",
+      "package_kind": "published-package",
       "private": false,
       "publication_status": "published",
       "published": true,
@@ -293,7 +294,7 @@
     "evidence": [
       {
         "kind": "ssot-registry",
-        "observed_at": "2026-08-03T22:06:00Z",
+        "observed_at": "2026-08-03T23:58:12Z",
         "url": "https://github.com/groupsum/event-behavioral-telemetry-governance-pack/blob/master/.ssot/registry.json"
       },
       {
@@ -403,6 +404,18 @@
     "package_ids": [
       "package:pypi:event-behavioral-telemetry-governance-pack:groupsum/event-behavioral-telemetry-governance-pack:pyproject.toml"
     ],
+    "packages": [
+      {
+        "ecosystem": "pypi",
+        "id": "package:pypi:event-behavioral-telemetry-governance-pack:groupsum/event-behavioral-telemetry-governance-pack:pyproject.toml",
+        "manifest_path": "pyproject.toml",
+        "name": "event-behavioral-telemetry-governance-pack",
+        "package_kind": "published-package",
+        "publication_status": "published",
+        "published": true,
+        "route": "/catalog/packages/pypi/event-behavioral-telemetry-governance-pack-44e67296"
+      }
+    ],
     "pushed_at": "2026-05-18T09:39:34Z",
     "related_resources": [
       {
@@ -448,7 +461,242 @@
       },
       "evidence_type": "ssot.registry",
       "governed": true,
-      "observed_at": "2026-08-03T22:06:00Z",
+      "inventory": {
+        "adrs": [
+          {
+            "id": "adr:0600",
+            "status": "draft",
+            "title": "Canonical registry is a single JSON document"
+          },
+          {
+            "id": "adr:0601",
+            "status": "draft",
+            "title": "Features are the targetable units"
+          },
+          {
+            "id": "adr:0602",
+            "status": "draft",
+            "title": "Issues are plannable work items"
+          },
+          {
+            "id": "adr:0603",
+            "status": "draft",
+            "title": "Entity-centric registry with a derived graph export"
+          },
+          {
+            "id": "adr:0604",
+            "status": "draft",
+            "title": "Normalized prefixed IDs"
+          },
+          {
+            "id": "adr:0605",
+            "status": "draft",
+            "title": "Claim status and claim tier are orthogonal"
+          },
+          {
+            "id": "adr:0606",
+            "status": "draft",
+            "title": "Feature implementation state is separate from lifecycle state"
+          },
+          {
+            "id": "adr:0607",
+            "status": "draft",
+            "title": "Immutable boundary and release snapshots"
+          },
+          {
+            "id": "adr:0608",
+            "status": "draft",
+            "title": "Fail-closed guards"
+          },
+          {
+            "id": "adr:0609",
+            "status": "draft",
+            "title": "Generated projections are non-canonical"
+          },
+          {
+            "id": "adr:0610",
+            "status": "draft",
+            "title": "Explicit schema versioning"
+          },
+          {
+            "id": "adr:0611",
+            "status": "draft",
+            "title": "Portable SSOT core with repo-specific evidence adapters"
+          },
+          {
+            "id": "adr:0612",
+            "status": "draft",
+            "title": "Enforce max path and filename lengths under `.ssot`"
+          },
+          {
+            "id": "adr:0613",
+            "status": "accepted",
+            "title": "Profiles are reusable feature bundles with derived pass status"
+          },
+          {
+            "id": "adr:1001",
+            "status": "accepted",
+            "title": "Event Behavioral Telemetry Domain Boundary"
+          },
+          {
+            "id": "adr:1002",
+            "status": "accepted",
+            "title": "Event Envelope Authority Stratification"
+          },
+          {
+            "id": "adr:1003",
+            "status": "accepted",
+            "title": "Web Interaction Event Authority Boundary"
+          },
+          {
+            "id": "adr:1004",
+            "status": "accepted",
+            "title": "Activity And Learning Telemetry Inclusion Boundary"
+          },
+          {
+            "id": "adr:1005",
+            "status": "accepted",
+            "title": "Normalized Event Schema Inclusion Boundary"
+          }
+        ],
+        "boundaries": [
+          {
+            "feature_ids": [],
+            "id": "bnd:default",
+            "status": "draft",
+            "title": "Default boundary"
+          }
+        ],
+        "claims": [],
+        "evidence": [],
+        "features": [],
+        "issues": [],
+        "profiles": [],
+        "releases": [
+          {
+            "claim_ids": [],
+            "evidence_ids": [],
+            "id": "rel:0.1.0",
+            "status": "draft"
+          }
+        ],
+        "specs": [
+          {
+            "id": "spc:0600",
+            "status": "draft",
+            "title": "Registry core"
+          },
+          {
+            "id": "spc:0601",
+            "status": "draft",
+            "title": "CLI"
+          },
+          {
+            "id": "spc:0602",
+            "status": "draft",
+            "title": "Graph model"
+          },
+          {
+            "id": "spc:0603",
+            "status": "draft",
+            "title": "Feature lifecycle"
+          },
+          {
+            "id": "spc:0604",
+            "status": "draft",
+            "title": "Claim statuses"
+          },
+          {
+            "id": "spc:0605",
+            "status": "draft",
+            "title": "Claim tiers"
+          },
+          {
+            "id": "spc:0606",
+            "status": "draft",
+            "title": "Snapshots and reports"
+          },
+          {
+            "id": "spc:0607",
+            "status": "draft",
+            "title": "Repository policy"
+          },
+          {
+            "id": "spc:0608",
+            "status": "draft",
+            "title": "Gates and fences"
+          },
+          {
+            "id": "spc:0609",
+            "status": "draft",
+            "title": "ID normalization"
+          },
+          {
+            "id": "spc:0610",
+            "status": "draft",
+            "title": "File tree"
+          },
+          {
+            "id": "spc:0611",
+            "status": "draft",
+            "title": "Planning horizons"
+          },
+          {
+            "id": "spc:0612",
+            "status": "draft",
+            "title": "Python API"
+          },
+          {
+            "id": "spc:0613",
+            "status": "draft",
+            "title": "SSOT path-length policy"
+          },
+          {
+            "id": "spc:0614",
+            "status": "draft",
+            "title": "Profile evaluation and boundary resolution"
+          },
+          {
+            "id": "spc:2001",
+            "status": "accepted",
+            "title": "Event Behavioral Telemetry Target Curation Requirements"
+          },
+          {
+            "id": "spc:2002",
+            "status": "accepted",
+            "title": "Event Envelope Target Requirements"
+          },
+          {
+            "id": "spc:2003",
+            "status": "accepted",
+            "title": "Web Interaction Event Target Requirements"
+          },
+          {
+            "id": "spc:2004",
+            "status": "accepted",
+            "title": "Activity Telemetry Target Requirements"
+          },
+          {
+            "id": "spc:2005",
+            "status": "accepted",
+            "title": "Normalized Event Schema Target Requirements"
+          }
+        ],
+        "tests": []
+      },
+      "inventory_truncated": {
+        "adrs": 0,
+        "boundaries": 0,
+        "claims": 0,
+        "evidence": 0,
+        "features": 0,
+        "issues": 0,
+        "profiles": 0,
+        "releases": 0,
+        "specs": 0,
+        "tests": 0
+      },
+      "observed_at": "2026-08-03T23:58:12Z",
       "present": true,
       "raw_url": "https://raw.githubusercontent.com/groupsum/event-behavioral-telemetry-governance-pack/master/.ssot/registry.json",
       "registry_url": "https://github.com/groupsum/event-behavioral-telemetry-governance-pack/blob/master/.ssot/registry.json",

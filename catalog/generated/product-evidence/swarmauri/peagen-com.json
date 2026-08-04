@@ -70,6 +70,7 @@
       "name": "@swarmauri/peagen-com-content-pack",
       "observed_at": "2026-08-03T22:06:00Z",
       "owner": "swarmauri",
+      "package_kind": "private-package",
       "private": true,
       "publication_status": "manifest_private",
       "published": false,
@@ -211,6 +212,7 @@
       "name": "peagen-com",
       "observed_at": "2026-08-03T22:06:00Z",
       "owner": "swarmauri",
+      "package_kind": "workspace-project",
       "private": true,
       "publication_status": "manifest_private",
       "published": false,
@@ -289,6 +291,7 @@
       "name": "peagen-com",
       "observed_at": "2026-08-03T22:06:00Z",
       "owner": "swarmauri",
+      "package_kind": "package-candidate",
       "private": false,
       "publication_status": "not-confirmed",
       "published": false,
@@ -493,6 +496,38 @@
       "package:npm:peagen-com:swarmauri/peagen-com:package.json",
       "package:pypi:peagen-com:swarmauri/peagen-com:pyproject.toml"
     ],
+    "packages": [
+      {
+        "ecosystem": "npm",
+        "id": "package:npm:@swarmauri/peagen-com-content-pack:swarmauri/peagen-com:packages/site-content-pack/package.json",
+        "manifest_path": "packages/site-content-pack/package.json",
+        "name": "@swarmauri/peagen-com-content-pack",
+        "package_kind": "private-package",
+        "publication_status": "manifest_private",
+        "published": false,
+        "route": "/catalog/packages/npm/swarmauri-peagen-com-content-pack-e0cfe8c4"
+      },
+      {
+        "ecosystem": "npm",
+        "id": "package:npm:peagen-com:swarmauri/peagen-com:package.json",
+        "manifest_path": "package.json",
+        "name": "peagen-com",
+        "package_kind": "workspace-project",
+        "publication_status": "manifest_private",
+        "published": false,
+        "route": "/catalog/packages/npm/peagen-com-2786d449"
+      },
+      {
+        "ecosystem": "pypi",
+        "id": "package:pypi:peagen-com:swarmauri/peagen-com:pyproject.toml",
+        "manifest_path": "pyproject.toml",
+        "name": "peagen-com",
+        "package_kind": "package-candidate",
+        "publication_status": "not-confirmed",
+        "published": false,
+        "route": "/catalog/packages/pypi/peagen-com-ea371003"
+      }
+    ],
     "pushed_at": "2026-07-13T22:28:58Z",
     "related_resources": [],
     "relationship_counts": {
@@ -504,8 +539,8 @@
       "counts": {},
       "coverage": {},
       "governed": false,
-      "observation_status": "error",
-      "observed_at": "2026-08-03T22:06:02Z",
+      "observation_status": "not_found",
+      "observed_at": "2026-08-03T23:58:12Z",
       "present": false,
       "registry_url": null,
       "status_counts": {},

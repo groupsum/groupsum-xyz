@@ -70,6 +70,7 @@
       "name": "@tigrbl/tigrcorn-com-content-pack",
       "observed_at": "2026-08-03T22:06:00Z",
       "owner": "tigrbl",
+      "package_kind": "private-package",
       "private": true,
       "publication_status": "manifest_private",
       "published": false,
@@ -301,6 +302,7 @@
       "name": "react-example",
       "observed_at": "2026-08-03T22:06:00Z",
       "owner": "tigrbl",
+      "package_kind": "workspace-project",
       "private": true,
       "publication_status": "manifest_private",
       "published": false,
@@ -378,6 +380,7 @@
       "name": "tigrcorn-com",
       "observed_at": "2026-08-03T22:06:00Z",
       "owner": "tigrbl",
+      "package_kind": "package-candidate",
       "private": false,
       "publication_status": "not-confirmed",
       "published": false,
@@ -588,6 +591,38 @@
       "package:npm:react-example:tigrbl/tigrcorn-com:package.json",
       "package:pypi:tigrcorn-com:tigrbl/tigrcorn-com:pyproject.toml"
     ],
+    "packages": [
+      {
+        "ecosystem": "npm",
+        "id": "package:npm:@tigrbl/tigrcorn-com-content-pack:tigrbl/tigrcorn-com:packages/site-content-pack/package.json",
+        "manifest_path": "packages/site-content-pack/package.json",
+        "name": "@tigrbl/tigrcorn-com-content-pack",
+        "package_kind": "private-package",
+        "publication_status": "manifest_private",
+        "published": false,
+        "route": "/catalog/packages/npm/tigrbl-tigrcorn-com-content-pack-376d5dda"
+      },
+      {
+        "ecosystem": "npm",
+        "id": "package:npm:react-example:tigrbl/tigrcorn-com:package.json",
+        "manifest_path": "package.json",
+        "name": "react-example",
+        "package_kind": "workspace-project",
+        "publication_status": "manifest_private",
+        "published": false,
+        "route": "/catalog/packages/npm/react-example-62f1bfdd"
+      },
+      {
+        "ecosystem": "pypi",
+        "id": "package:pypi:tigrcorn-com:tigrbl/tigrcorn-com:pyproject.toml",
+        "manifest_path": "pyproject.toml",
+        "name": "tigrcorn-com",
+        "package_kind": "package-candidate",
+        "publication_status": "not-confirmed",
+        "published": false,
+        "route": "/catalog/packages/pypi/tigrcorn-com-19638b9b"
+      }
+    ],
     "pushed_at": "2026-07-13T22:29:06Z",
     "related_resources": [
       {
@@ -615,8 +650,8 @@
       "counts": {},
       "coverage": {},
       "governed": false,
-      "observation_status": "error",
-      "observed_at": "2026-08-03T22:06:02Z",
+      "observation_status": "not_found",
+      "observed_at": "2026-08-03T23:58:13Z",
       "present": false,
       "registry_url": null,
       "status_counts": {},

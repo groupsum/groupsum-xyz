@@ -330,6 +330,7 @@
       "name": "@groupsum/document-studio",
       "observed_at": "2026-08-03T22:06:00Z",
       "owner": "groupsum",
+      "package_kind": "published-package",
       "private": false,
       "publication_status": "published",
       "published": true,
@@ -413,6 +414,7 @@
       "name": "document-studio-workspace",
       "observed_at": "2026-08-03T22:06:00Z",
       "owner": "groupsum",
+      "package_kind": "workspace-project",
       "private": true,
       "publication_status": "manifest_private",
       "published": false,
@@ -490,6 +492,7 @@
       "name": "document-studio-workspace",
       "observed_at": "2026-08-03T22:06:00Z",
       "owner": "groupsum",
+      "package_kind": "package-candidate",
       "private": false,
       "publication_status": "not-confirmed",
       "published": false,
@@ -648,7 +651,7 @@
     "evidence": [
       {
         "kind": "ssot-registry",
-        "observed_at": "2026-08-03T22:06:00Z",
+        "observed_at": "2026-08-03T23:58:12Z",
         "url": "https://github.com/groupsum/document-studio/blob/master/.ssot/registry.json"
       },
       {
@@ -743,6 +746,38 @@
       "package:npm:document-studio-workspace:groupsum/document-studio:package.json",
       "package:pypi:document-studio-workspace:groupsum/document-studio:pyproject.toml"
     ],
+    "packages": [
+      {
+        "ecosystem": "npm",
+        "id": "package:npm:@groupsum/document-studio:groupsum/document-studio:packages/document-studio/package.json",
+        "manifest_path": "packages/document-studio/package.json",
+        "name": "@groupsum/document-studio",
+        "package_kind": "published-package",
+        "publication_status": "published",
+        "published": true,
+        "route": "/catalog/packages/npm/groupsum-document-studio-a7e8823b"
+      },
+      {
+        "ecosystem": "npm",
+        "id": "package:npm:document-studio-workspace:groupsum/document-studio:package.json",
+        "manifest_path": "package.json",
+        "name": "document-studio-workspace",
+        "package_kind": "workspace-project",
+        "publication_status": "manifest_private",
+        "published": false,
+        "route": "/catalog/packages/npm/document-studio-workspace-cab8ce10"
+      },
+      {
+        "ecosystem": "pypi",
+        "id": "package:pypi:document-studio-workspace:groupsum/document-studio:pyproject.toml",
+        "manifest_path": "pyproject.toml",
+        "name": "document-studio-workspace",
+        "package_kind": "package-candidate",
+        "publication_status": "not-confirmed",
+        "published": false,
+        "route": "/catalog/packages/pypi/document-studio-workspace-084b7d3e"
+      }
+    ],
     "pushed_at": "2026-06-16T20:49:38Z",
     "related_resources": [],
     "relationship_counts": {
@@ -772,7 +807,247 @@
       },
       "evidence_type": "ssot.registry",
       "governed": true,
-      "observed_at": "2026-08-03T22:06:00Z",
+      "inventory": {
+        "adrs": [
+          {
+            "id": "adr:0600",
+            "status": "draft",
+            "title": "Canonical registry is a single JSON document"
+          },
+          {
+            "id": "adr:0601",
+            "status": "draft",
+            "title": "Features are the targetable units"
+          },
+          {
+            "id": "adr:0602",
+            "status": "draft",
+            "title": "Issues are plannable work items"
+          },
+          {
+            "id": "adr:0603",
+            "status": "draft",
+            "title": "Entity-centric registry with a derived graph export"
+          },
+          {
+            "id": "adr:0604",
+            "status": "draft",
+            "title": "Normalized prefixed IDs"
+          },
+          {
+            "id": "adr:0605",
+            "status": "draft",
+            "title": "Claim status and claim tier are orthogonal"
+          },
+          {
+            "id": "adr:0606",
+            "status": "draft",
+            "title": "Feature implementation state is separate from lifecycle state"
+          },
+          {
+            "id": "adr:0607",
+            "status": "draft",
+            "title": "Immutable boundary and release snapshots"
+          },
+          {
+            "id": "adr:0608",
+            "status": "draft",
+            "title": "Fail-closed guards"
+          },
+          {
+            "id": "adr:0609",
+            "status": "draft",
+            "title": "Generated projections are non-canonical"
+          },
+          {
+            "id": "adr:0610",
+            "status": "draft",
+            "title": "Explicit schema versioning"
+          },
+          {
+            "id": "adr:0611",
+            "status": "draft",
+            "title": "Portable SSOT core with repo-specific evidence adapters"
+          },
+          {
+            "id": "adr:0612",
+            "status": "draft",
+            "title": "Enforce max path and filename lengths under `.ssot`"
+          },
+          {
+            "id": "adr:0613",
+            "status": "accepted",
+            "title": "Profiles are reusable feature bundles with derived pass status"
+          },
+          {
+            "id": "adr:0614",
+            "status": "accepted",
+            "title": "SPECs own typed ADR links"
+          },
+          {
+            "id": "adr:0615",
+            "status": "accepted",
+            "title": "Downstream assurance-language ceilings for feature target claim tiers"
+          },
+          {
+            "id": "adr:0616",
+            "status": "accepted",
+            "title": "Out-of-bounds implementation disposition is explicit"
+          },
+          {
+            "id": "adr:0617",
+            "status": "accepted",
+            "title": "Feature implementation is capped by active required claims"
+          },
+          {
+            "id": "adr:0618",
+            "status": "draft",
+            "title": "Local Release Assurance Remains SSOT Native"
+          },
+          {
+            "id": "adr:0619",
+            "status": "draft",
+            "title": "Content Addressed Governed Source Snapshots"
+          }
+        ],
+        "boundaries": [
+          {
+            "feature_ids": [],
+            "id": "bnd:default",
+            "status": "draft",
+            "title": "Default boundary"
+          }
+        ],
+        "claims": [],
+        "evidence": [],
+        "features": [],
+        "issues": [],
+        "profiles": [],
+        "releases": [
+          {
+            "claim_ids": [],
+            "evidence_ids": [],
+            "id": "rel:0.1.0",
+            "status": "draft"
+          }
+        ],
+        "specs": [
+          {
+            "id": "spc:0600",
+            "status": "draft",
+            "title": "Registry core"
+          },
+          {
+            "id": "spc:0601",
+            "status": "draft",
+            "title": "CLI"
+          },
+          {
+            "id": "spc:0602",
+            "status": "draft",
+            "title": "Graph model"
+          },
+          {
+            "id": "spc:0603",
+            "status": "draft",
+            "title": "Feature lifecycle"
+          },
+          {
+            "id": "spc:0604",
+            "status": "draft",
+            "title": "Claim statuses"
+          },
+          {
+            "id": "spc:0605",
+            "status": "draft",
+            "title": "Claim tiers"
+          },
+          {
+            "id": "spc:0606",
+            "status": "draft",
+            "title": "Snapshots and reports"
+          },
+          {
+            "id": "spc:0607",
+            "status": "draft",
+            "title": "Repository policy"
+          },
+          {
+            "id": "spc:0608",
+            "status": "draft",
+            "title": "Gates and fences"
+          },
+          {
+            "id": "spc:0609",
+            "status": "draft",
+            "title": "ID normalization"
+          },
+          {
+            "id": "spc:0610",
+            "status": "draft",
+            "title": "File tree"
+          },
+          {
+            "id": "spc:0611",
+            "status": "draft",
+            "title": "Planning horizons"
+          },
+          {
+            "id": "spc:0612",
+            "status": "draft",
+            "title": "Python API"
+          },
+          {
+            "id": "spc:0613",
+            "status": "draft",
+            "title": "SSOT path-length policy"
+          },
+          {
+            "id": "spc:0614",
+            "status": "draft",
+            "title": "Profile evaluation and boundary resolution"
+          },
+          {
+            "id": "spc:0615",
+            "status": "accepted",
+            "title": "Typed SPEC-to-ADR linking"
+          },
+          {
+            "id": "spc:0616",
+            "status": "accepted",
+            "title": "Out-of-bounds implementation disposition"
+          },
+          {
+            "id": "spc:0617",
+            "status": "accepted",
+            "title": "Feature implementation claim ceilings"
+          },
+          {
+            "id": "spc:0618",
+            "status": "draft",
+            "title": "Local Release Assurance Candidate Scope"
+          },
+          {
+            "id": "spc:0619",
+            "status": "draft",
+            "title": "Governed Source Snapshot Contract"
+          }
+        ],
+        "tests": []
+      },
+      "inventory_truncated": {
+        "adrs": 17,
+        "boundaries": 0,
+        "claims": 0,
+        "evidence": 0,
+        "features": 0,
+        "issues": 0,
+        "profiles": 0,
+        "releases": 0,
+        "specs": 21,
+        "tests": 0
+      },
+      "observed_at": "2026-08-03T23:58:12Z",
       "present": true,
       "raw_url": "https://raw.githubusercontent.com/groupsum/document-studio/master/.ssot/registry.json",
       "registry_url": "https://github.com/groupsum/document-studio/blob/master/.ssot/registry.json",

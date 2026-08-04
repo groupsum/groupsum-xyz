@@ -79,11 +79,23 @@ def _add_routes_and_legal_fields(connection: Connection) -> None:
                 connection.execute(f"ALTER TABLE {table} ADD COLUMN {name} {definition}")
 
 
+def _add_package_ownership_fields(connection: Connection) -> None:
+    additions = {
+        "package_kind": "TEXT NOT NULL DEFAULT 'package-candidate'",
+        "private": "BOOLEAN NOT NULL DEFAULT 0",
+    }
+    present = {row[1] for row in connection.execute("PRAGMA table_info(packages)")}
+    for name, definition in additions.items():
+        if name not in present:
+            connection.execute(f"ALTER TABLE packages ADD COLUMN {name} {definition}")
+
+
 MIGRATIONS = (
     Migration(1, "tigrbl_normalized_catalog_baseline", _baseline),
     Migration(2, "add_structured_record_content", _add_record_content),
     Migration(3, "add_registry_release_and_dependency_evidence", _add_registry_evidence_fields),
     Migration(4, "add_catalog_routes_and_legal_evidence", _add_routes_and_legal_fields),
+    Migration(5, "add_package_ownership_fields", _add_package_ownership_fields),
 )
 
 

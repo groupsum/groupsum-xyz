@@ -105,6 +105,7 @@
       "name": "digital-signature-governance-pack",
       "observed_at": "2026-08-03T22:06:00Z",
       "owner": "groupsum",
+      "package_kind": "published-package",
       "private": false,
       "publication_status": "published",
       "published": true,
@@ -473,6 +474,18 @@
     "package_ids": [
       "package:pypi:digital-signature-governance-pack:groupsum/digital-signature-governance-pack:pyproject.toml"
     ],
+    "packages": [
+      {
+        "ecosystem": "pypi",
+        "id": "package:pypi:digital-signature-governance-pack:groupsum/digital-signature-governance-pack:pyproject.toml",
+        "manifest_path": "pyproject.toml",
+        "name": "digital-signature-governance-pack",
+        "package_kind": "published-package",
+        "publication_status": "published",
+        "published": true,
+        "route": "/catalog/packages/pypi/digital-signature-governance-pack-9b83d7ea"
+      }
+    ],
     "pushed_at": "2026-06-02T00:58:11Z",
     "related_resources": [
       {
@@ -514,8 +527,8 @@
       "counts": {},
       "coverage": {},
       "governed": false,
-      "observation_status": "error",
-      "observed_at": "2026-08-03T22:06:00Z",
+      "observation_status": "not_found",
+      "observed_at": "2026-08-03T23:58:12Z",
       "present": false,
       "registry_url": null,
       "status_counts": {},

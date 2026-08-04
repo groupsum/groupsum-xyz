@@ -83,6 +83,16 @@ def validate_site(site_dir: Path, typescript: Path) -> list[str]:
             if name == "repositories" and "related_resources" not in record:
                 errors.append(f"repository missing related resources: {identity}")
             if name == "repositories":
+                for package in record.get("packages") or []:
+                    if not package.get("id") or not package.get("route"):
+                        errors.append(
+                            f"repository contains package without stable navigation: {identity}"
+                        )
+                    if not package.get("package_kind"):
+                        errors.append(
+                            f"repository contains unclassified package: {identity}: {package.get('id')}"
+                        )
+            if name == "repositories":
                 ssot = record.get("ssot_governance") or {}
                 if ssot.get("governed"):
                     required_ssot = {"registry_url", "source_sha256", "schema_version", "observed_at", "counts", "coverage"}
@@ -103,6 +113,10 @@ def validate_site(site_dir: Path, typescript: Path) -> list[str]:
                 errors.append(f"published package missing registry URL: {identity}")
             if name == "packages" and not {"release_count", "dependency_count", "downstream_count", "relationship_count", "relationship_counts"} <= record.keys():
                 errors.append(f"package missing child aggregates: {identity}")
+            if name == "packages" and not record.get("package_kind"):
+                errors.append(f"package missing manifest classification: {identity}")
+            if name == "packages" and not record.get("repository"):
+                errors.append(f"package missing repository ownership: {identity}")
             if name == "resources":
                 resource_path = str(record.get("path") or "").replace("\\", "/")
                 if resource_path.startswith(".ssot/"):

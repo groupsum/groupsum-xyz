@@ -321,6 +321,22 @@ def compile_catalog(catalog: dict[str, Any], editorial: dict[str, Any]) -> dict[
             }.values(),
             key=lambda item: (item["ecosystem"], item["name"], str(item.get("scope") or "")),
         )
+        manifest_path = str(package.get("manifest_path") or "")
+        package_directory = manifest_path.rsplit("/", 1)[0] if "/" in manifest_path else ""
+        is_package_directory = package_directory.split("/", 1)[0] in {
+            "packages",
+            "pkgs",
+            "libs",
+            "crates",
+        }
+        if package.get("published") is True:
+            package_kind = "published-package"
+        elif package.get("private") and is_package_directory:
+            package_kind = "private-package"
+        elif package.get("private") and not package_directory:
+            package_kind = "workspace-project"
+        else:
+            package_kind = "package-candidate"
         record = {
             "id": package_id,
             "kind": "package",
@@ -335,6 +351,7 @@ def compile_catalog(catalog: dict[str, Any], editorial: dict[str, Any]) -> dict[
             "repository": repository,
             "legal_repository": legal_repository,
             "manifest_path": package.get("manifest_path"),
+            "package_kind": package_kind,
             "private": bool(package.get("private")),
             "published": package.get("published") is True,
             "publication_status": package.get("publication_status") or ("published" if package.get("published") else "not-confirmed"),
@@ -365,6 +382,7 @@ def compile_catalog(catalog: dict[str, Any], editorial: dict[str, Any]) -> dict[
         if repository:
             packages_by_repo[repository].append(package_id)
 
+    packages_by_id = {record["id"]: record for record in package_records}
     for repo in catalog.get("repositories", []):
         full_name = str(repo["full_name"])
         repo_id = f"repository:{full_name}"
@@ -499,6 +517,20 @@ def compile_catalog(catalog: dict[str, Any], editorial: dict[str, Any]) -> dict[
             "relationship_counts": dict(sorted(relationship_counts[full_name].items())),
             "related_resources": related_resources,
             "package_ids": sorted(packages_by_repo.get(full_name, [])),
+            "packages": [
+                {
+                    "id": package["id"],
+                    "name": package["name"],
+                    "ecosystem": package["ecosystem"],
+                    "package_kind": package["package_kind"],
+                    "manifest_path": package.get("manifest_path"),
+                    "published": package["published"],
+                    "publication_status": package["publication_status"],
+                    "route": package["route"],
+                }
+                for package_id in sorted(packages_by_repo.get(full_name, []))
+                if (package := packages_by_id.get(package_id)) is not None
+            ],
             "latest_commit": activity.get("latest_commit"),
             "latest_release": latest_release,
             "github_releases": github_release_records,

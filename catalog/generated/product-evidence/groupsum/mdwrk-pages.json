@@ -178,6 +178,7 @@
       "name": "@mdwrk/example-learning-path-demo",
       "observed_at": "2026-08-03T22:06:00Z",
       "owner": "groupsum",
+      "package_kind": "private-package",
       "private": true,
       "publication_status": "manifest_private",
       "published": false,
@@ -364,6 +365,7 @@
       "name": "@mdwrk/example-page-template-demo",
       "observed_at": "2026-08-03T22:06:00Z",
       "owner": "groupsum",
+      "package_kind": "private-package",
       "private": true,
       "publication_status": "manifest_private",
       "published": false,
@@ -559,6 +561,7 @@
       "name": "@mdwrk/example-semantic-components-demo",
       "observed_at": "2026-08-03T22:06:00Z",
       "owner": "groupsum",
+      "package_kind": "private-package",
       "private": true,
       "publication_status": "manifest_private",
       "published": false,
@@ -763,6 +766,7 @@
       "name": "@mdwrk/example-subscription-store-demo",
       "observed_at": "2026-08-03T22:06:00Z",
       "owner": "groupsum",
+      "package_kind": "private-package",
       "private": true,
       "publication_status": "manifest_private",
       "published": false,
@@ -867,6 +871,7 @@
       "name": "@mdwrk/lander-commerce-contract",
       "observed_at": "2026-08-03T22:06:00Z",
       "owner": "groupsum",
+      "package_kind": "published-package",
       "private": false,
       "publication_status": "published",
       "published": true,
@@ -1201,6 +1206,7 @@
       "name": "@mdwrk/lander-content-contract",
       "observed_at": "2026-08-03T22:06:00Z",
       "owner": "groupsum",
+      "package_kind": "published-package",
       "private": false,
       "publication_status": "published",
       "published": true,
@@ -1478,6 +1484,7 @@
       "name": "@mdwrk/lander-core",
       "observed_at": "2026-08-03T22:06:00Z",
       "owner": "groupsum",
+      "package_kind": "published-package",
       "private": false,
       "publication_status": "published",
       "published": true,
@@ -1624,6 +1631,7 @@
       "name": "@mdwrk/lander-markdown-content-adapter",
       "observed_at": "2026-08-03T22:06:00Z",
       "owner": "groupsum",
+      "package_kind": "published-package",
       "private": false,
       "publication_status": "published",
       "published": true,
@@ -1793,6 +1801,7 @@
       "name": "@mdwrk/lander-page-template-presets",
       "observed_at": "2026-08-03T22:06:00Z",
       "owner": "groupsum",
+      "package_kind": "published-package",
       "private": false,
       "publication_status": "published",
       "published": true,
@@ -1962,6 +1971,7 @@
       "name": "@mdwrk/lander-page-templates",
       "observed_at": "2026-08-03T22:06:00Z",
       "owner": "groupsum",
+      "package_kind": "published-package",
       "private": false,
       "publication_status": "published",
       "published": true,
@@ -2131,6 +2141,7 @@
       "name": "@mdwrk/lander-primitives",
       "observed_at": "2026-08-03T22:06:00Z",
       "owner": "groupsum",
+      "package_kind": "published-package",
       "private": false,
       "publication_status": "published",
       "published": true,
@@ -2377,6 +2388,7 @@
       "name": "@mdwrk/lander-react",
       "observed_at": "2026-08-03T22:06:00Z",
       "owner": "groupsum",
+      "package_kind": "published-package",
       "private": false,
       "publication_status": "published",
       "published": true,
@@ -2547,6 +2559,7 @@
       "name": "@mdwrk/lander-react-commerce",
       "observed_at": "2026-08-03T22:06:00Z",
       "owner": "groupsum",
+      "package_kind": "published-package",
       "private": false,
       "publication_status": "published",
       "published": true,
@@ -2748,6 +2761,7 @@
       "name": "@mdwrk/lander-react-structured-data",
       "observed_at": "2026-08-03T22:06:00Z",
       "owner": "groupsum",
+      "package_kind": "published-package",
       "private": false,
       "publication_status": "published",
       "published": true,
@@ -2868,6 +2882,7 @@
       "name": "@mdwrk/lander-seo",
       "observed_at": "2026-08-03T22:06:00Z",
       "owner": "groupsum",
+      "package_kind": "published-package",
       "private": false,
       "publication_status": "published",
       "published": true,
@@ -3042,6 +3057,7 @@
       "name": "@mdwrk/lander-theme",
       "observed_at": "2026-08-03T22:06:00Z",
       "owner": "groupsum",
+      "package_kind": "published-package",
       "private": false,
       "publication_status": "published",
       "published": true,
@@ -3193,6 +3209,7 @@
       "name": "@mdwrk/page-template-demo-content-pack",
       "observed_at": "2026-08-03T22:06:00Z",
       "owner": "groupsum",
+      "package_kind": "published-package",
       "private": false,
       "publication_status": "published",
       "published": true,
@@ -3302,6 +3319,7 @@
       "name": "@mdwrk/pages-ui-tokens",
       "observed_at": "2026-08-03T22:06:00Z",
       "owner": "groupsum",
+      "package_kind": "published-package",
       "private": false,
       "publication_status": "published",
       "published": true,
@@ -3465,6 +3483,7 @@
       "name": "@mdwrk/structured-data",
       "observed_at": "2026-08-03T22:06:00Z",
       "owner": "groupsum",
+      "package_kind": "published-package",
       "private": false,
       "publication_status": "published",
       "published": true,
@@ -3644,6 +3663,7 @@
       "name": "@mdwrk/subscription-store-content-pack",
       "observed_at": "2026-08-03T22:06:00Z",
       "owner": "groupsum",
+      "package_kind": "published-package",
       "private": false,
       "publication_status": "published",
       "published": true,
@@ -3763,6 +3783,7 @@
       "name": "mdwrk-pages",
       "observed_at": "2026-08-03T22:06:00Z",
       "owner": "groupsum",
+      "package_kind": "workspace-project",
       "private": true,
       "publication_status": "manifest_private",
       "published": false,
@@ -3841,6 +3862,7 @@
       "name": "mdwrk-pages",
       "observed_at": "2026-08-03T22:06:00Z",
       "owner": "groupsum",
+      "package_kind": "package-candidate",
       "private": false,
       "publication_status": "not-confirmed",
       "published": false,
@@ -3999,7 +4021,7 @@
     "evidence": [
       {
         "kind": "ssot-registry",
-        "observed_at": "2026-08-03T22:06:00Z",
+        "observed_at": "2026-08-03T23:58:12Z",
         "url": "https://github.com/groupsum/mdwrk-pages/blob/master/.ssot/registry.json"
       },
       {
@@ -4105,6 +4127,228 @@
       "package:npm:@mdwrk/subscription-store-content-pack:groupsum/mdwrk-pages:packages/60-content-packs/subscription-store-content-pack/package.json",
       "package:npm:mdwrk-pages:groupsum/mdwrk-pages:package.json",
       "package:pypi:mdwrk-pages:groupsum/mdwrk-pages:pyproject.toml"
+    ],
+    "packages": [
+      {
+        "ecosystem": "npm",
+        "id": "package:npm:@mdwrk/example-learning-path-demo:groupsum/mdwrk-pages:packages/70-demos/learning-path-demo/package.json",
+        "manifest_path": "packages/70-demos/learning-path-demo/package.json",
+        "name": "@mdwrk/example-learning-path-demo",
+        "package_kind": "private-package",
+        "publication_status": "manifest_private",
+        "published": false,
+        "route": "/catalog/packages/npm/mdwrk-example-learning-path-demo-f14e8811"
+      },
+      {
+        "ecosystem": "npm",
+        "id": "package:npm:@mdwrk/example-page-template-demo:groupsum/mdwrk-pages:packages/70-demos/page-template-demo/package.json",
+        "manifest_path": "packages/70-demos/page-template-demo/package.json",
+        "name": "@mdwrk/example-page-template-demo",
+        "package_kind": "private-package",
+        "publication_status": "manifest_private",
+        "published": false,
+        "route": "/catalog/packages/npm/mdwrk-example-page-template-demo-aaa3b72f"
+      },
+      {
+        "ecosystem": "npm",
+        "id": "package:npm:@mdwrk/example-semantic-components-demo:groupsum/mdwrk-pages:packages/70-demos/semantic-components-demo/package.json",
+        "manifest_path": "packages/70-demos/semantic-components-demo/package.json",
+        "name": "@mdwrk/example-semantic-components-demo",
+        "package_kind": "private-package",
+        "publication_status": "manifest_private",
+        "published": false,
+        "route": "/catalog/packages/npm/mdwrk-example-semantic-components-demo-34bc2482"
+      },
+      {
+        "ecosystem": "npm",
+        "id": "package:npm:@mdwrk/example-subscription-store-demo:groupsum/mdwrk-pages:packages/70-demos/subscription-store-demo/package.json",
+        "manifest_path": "packages/70-demos/subscription-store-demo/package.json",
+        "name": "@mdwrk/example-subscription-store-demo",
+        "package_kind": "private-package",
+        "publication_status": "manifest_private",
+        "published": false,
+        "route": "/catalog/packages/npm/mdwrk-example-subscription-store-demo-e6e8914a"
+      },
+      {
+        "ecosystem": "npm",
+        "id": "package:npm:@mdwrk/lander-commerce-contract:groupsum/mdwrk-pages:packages/00-contracts/lander-commerce-contract/package.json",
+        "manifest_path": "packages/00-contracts/lander-commerce-contract/package.json",
+        "name": "@mdwrk/lander-commerce-contract",
+        "package_kind": "published-package",
+        "publication_status": "published",
+        "published": true,
+        "route": "/catalog/packages/npm/mdwrk-lander-commerce-contract-53c27ced"
+      },
+      {
+        "ecosystem": "npm",
+        "id": "package:npm:@mdwrk/lander-content-contract:groupsum/mdwrk-pages:packages/00-contracts/lander-content-contract/package.json",
+        "manifest_path": "packages/00-contracts/lander-content-contract/package.json",
+        "name": "@mdwrk/lander-content-contract",
+        "package_kind": "published-package",
+        "publication_status": "published",
+        "published": true,
+        "route": "/catalog/packages/npm/mdwrk-lander-content-contract-0298324a"
+      },
+      {
+        "ecosystem": "npm",
+        "id": "package:npm:@mdwrk/lander-core:groupsum/mdwrk-pages:packages/10-core/lander-core/package.json",
+        "manifest_path": "packages/10-core/lander-core/package.json",
+        "name": "@mdwrk/lander-core",
+        "package_kind": "published-package",
+        "publication_status": "published",
+        "published": true,
+        "route": "/catalog/packages/npm/mdwrk-lander-core-704db13d"
+      },
+      {
+        "ecosystem": "npm",
+        "id": "package:npm:@mdwrk/lander-markdown-content-adapter:groupsum/mdwrk-pages:packages/10-core/lander-markdown-content-adapter/package.json",
+        "manifest_path": "packages/10-core/lander-markdown-content-adapter/package.json",
+        "name": "@mdwrk/lander-markdown-content-adapter",
+        "package_kind": "published-package",
+        "publication_status": "published",
+        "published": true,
+        "route": "/catalog/packages/npm/mdwrk-lander-markdown-content-adapter-8ca7bb06"
+      },
+      {
+        "ecosystem": "npm",
+        "id": "package:npm:@mdwrk/lander-page-template-presets:groupsum/mdwrk-pages:packages/20-page-systems/lander-page-template-presets/package.json",
+        "manifest_path": "packages/20-page-systems/lander-page-template-presets/package.json",
+        "name": "@mdwrk/lander-page-template-presets",
+        "package_kind": "published-package",
+        "publication_status": "published",
+        "published": true,
+        "route": "/catalog/packages/npm/mdwrk-lander-page-template-presets-3ca6aed4"
+      },
+      {
+        "ecosystem": "npm",
+        "id": "package:npm:@mdwrk/lander-page-templates:groupsum/mdwrk-pages:packages/20-page-systems/lander-page-templates/package.json",
+        "manifest_path": "packages/20-page-systems/lander-page-templates/package.json",
+        "name": "@mdwrk/lander-page-templates",
+        "package_kind": "published-package",
+        "publication_status": "published",
+        "published": true,
+        "route": "/catalog/packages/npm/mdwrk-lander-page-templates-614d4dac"
+      },
+      {
+        "ecosystem": "npm",
+        "id": "package:npm:@mdwrk/lander-primitives:groupsum/mdwrk-pages:packages/30-ui-foundation/lander-primitives/package.json",
+        "manifest_path": "packages/30-ui-foundation/lander-primitives/package.json",
+        "name": "@mdwrk/lander-primitives",
+        "package_kind": "published-package",
+        "publication_status": "published",
+        "published": true,
+        "route": "/catalog/packages/npm/mdwrk-lander-primitives-0cadd94a"
+      },
+      {
+        "ecosystem": "npm",
+        "id": "package:npm:@mdwrk/lander-react-commerce:groupsum/mdwrk-pages:packages/40-react-renderers/lander-react-commerce/package.json",
+        "manifest_path": "packages/40-react-renderers/lander-react-commerce/package.json",
+        "name": "@mdwrk/lander-react-commerce",
+        "package_kind": "published-package",
+        "publication_status": "published",
+        "published": true,
+        "route": "/catalog/packages/npm/mdwrk-lander-react-commerce-b6cd9dd8"
+      },
+      {
+        "ecosystem": "npm",
+        "id": "package:npm:@mdwrk/lander-react-structured-data:groupsum/mdwrk-pages:packages/50-machine-output/lander-react-structured-data/package.json",
+        "manifest_path": "packages/50-machine-output/lander-react-structured-data/package.json",
+        "name": "@mdwrk/lander-react-structured-data",
+        "package_kind": "published-package",
+        "publication_status": "published",
+        "published": true,
+        "route": "/catalog/packages/npm/mdwrk-lander-react-structured-data-496cbfa0"
+      },
+      {
+        "ecosystem": "npm",
+        "id": "package:npm:@mdwrk/lander-react:groupsum/mdwrk-pages:packages/40-react-renderers/lander-react/package.json",
+        "manifest_path": "packages/40-react-renderers/lander-react/package.json",
+        "name": "@mdwrk/lander-react",
+        "package_kind": "published-package",
+        "publication_status": "published",
+        "published": true,
+        "route": "/catalog/packages/npm/mdwrk-lander-react-9727145b"
+      },
+      {
+        "ecosystem": "npm",
+        "id": "package:npm:@mdwrk/lander-seo:groupsum/mdwrk-pages:packages/50-machine-output/lander-seo/package.json",
+        "manifest_path": "packages/50-machine-output/lander-seo/package.json",
+        "name": "@mdwrk/lander-seo",
+        "package_kind": "published-package",
+        "publication_status": "published",
+        "published": true,
+        "route": "/catalog/packages/npm/mdwrk-lander-seo-163743c4"
+      },
+      {
+        "ecosystem": "npm",
+        "id": "package:npm:@mdwrk/lander-theme:groupsum/mdwrk-pages:packages/30-ui-foundation/lander-theme/package.json",
+        "manifest_path": "packages/30-ui-foundation/lander-theme/package.json",
+        "name": "@mdwrk/lander-theme",
+        "package_kind": "published-package",
+        "publication_status": "published",
+        "published": true,
+        "route": "/catalog/packages/npm/mdwrk-lander-theme-ab97533c"
+      },
+      {
+        "ecosystem": "npm",
+        "id": "package:npm:@mdwrk/page-template-demo-content-pack:groupsum/mdwrk-pages:packages/60-content-packs/page-template-demo-content-pack/package.json",
+        "manifest_path": "packages/60-content-packs/page-template-demo-content-pack/package.json",
+        "name": "@mdwrk/page-template-demo-content-pack",
+        "package_kind": "published-package",
+        "publication_status": "published",
+        "published": true,
+        "route": "/catalog/packages/npm/mdwrk-page-template-demo-content-pack-236bda02"
+      },
+      {
+        "ecosystem": "npm",
+        "id": "package:npm:@mdwrk/pages-ui-tokens:groupsum/mdwrk-pages:packages/30-ui-foundation/pages-ui-tokens/package.json",
+        "manifest_path": "packages/30-ui-foundation/pages-ui-tokens/package.json",
+        "name": "@mdwrk/pages-ui-tokens",
+        "package_kind": "published-package",
+        "publication_status": "published",
+        "published": true,
+        "route": "/catalog/packages/npm/mdwrk-pages-ui-tokens-b910e940"
+      },
+      {
+        "ecosystem": "npm",
+        "id": "package:npm:@mdwrk/structured-data:groupsum/mdwrk-pages:packages/00-contracts/structured-data/package.json",
+        "manifest_path": "packages/00-contracts/structured-data/package.json",
+        "name": "@mdwrk/structured-data",
+        "package_kind": "published-package",
+        "publication_status": "published",
+        "published": true,
+        "route": "/catalog/packages/npm/mdwrk-structured-data-fb682e1f"
+      },
+      {
+        "ecosystem": "npm",
+        "id": "package:npm:@mdwrk/subscription-store-content-pack:groupsum/mdwrk-pages:packages/60-content-packs/subscription-store-content-pack/package.json",
+        "manifest_path": "packages/60-content-packs/subscription-store-content-pack/package.json",
+        "name": "@mdwrk/subscription-store-content-pack",
+        "package_kind": "published-package",
+        "publication_status": "published",
+        "published": true,
+        "route": "/catalog/packages/npm/mdwrk-subscription-store-content-pack-3176826f"
+      },
+      {
+        "ecosystem": "npm",
+        "id": "package:npm:mdwrk-pages:groupsum/mdwrk-pages:package.json",
+        "manifest_path": "package.json",
+        "name": "mdwrk-pages",
+        "package_kind": "workspace-project",
+        "publication_status": "manifest_private",
+        "published": false,
+        "route": "/catalog/packages/npm/mdwrk-pages-0326af86"
+      },
+      {
+        "ecosystem": "pypi",
+        "id": "package:pypi:mdwrk-pages:groupsum/mdwrk-pages:pyproject.toml",
+        "manifest_path": "pyproject.toml",
+        "name": "mdwrk-pages",
+        "package_kind": "package-candidate",
+        "publication_status": "not-confirmed",
+        "published": false,
+        "route": "/catalog/packages/pypi/mdwrk-pages-22afb60e"
+      }
     ],
     "pushed_at": "2026-07-13T21:06:00Z",
     "related_resources": [
@@ -4305,7 +4549,2322 @@
       },
       "evidence_type": "ssot.registry",
       "governed": true,
-      "observed_at": "2026-08-03T22:06:00Z",
+      "inventory": {
+        "adrs": [
+          {
+            "id": "adr:0600",
+            "status": "draft",
+            "title": "Canonical registry is a single JSON document"
+          },
+          {
+            "id": "adr:0601",
+            "status": "draft",
+            "title": "Features are the targetable units"
+          },
+          {
+            "id": "adr:0602",
+            "status": "draft",
+            "title": "Issues are plannable work items"
+          },
+          {
+            "id": "adr:0603",
+            "status": "draft",
+            "title": "Entity-centric registry with a derived graph export"
+          },
+          {
+            "id": "adr:0604",
+            "status": "draft",
+            "title": "Normalized prefixed IDs"
+          },
+          {
+            "id": "adr:0605",
+            "status": "draft",
+            "title": "Claim status and claim tier are orthogonal"
+          },
+          {
+            "id": "adr:0606",
+            "status": "draft",
+            "title": "Feature implementation state is separate from lifecycle state"
+          },
+          {
+            "id": "adr:0607",
+            "status": "draft",
+            "title": "Immutable boundary and release snapshots"
+          },
+          {
+            "id": "adr:0608",
+            "status": "draft",
+            "title": "Fail-closed guards"
+          },
+          {
+            "id": "adr:0609",
+            "status": "draft",
+            "title": "Generated projections are non-canonical"
+          },
+          {
+            "id": "adr:0610",
+            "status": "draft",
+            "title": "Explicit schema versioning"
+          },
+          {
+            "id": "adr:0611",
+            "status": "draft",
+            "title": "Portable SSOT core with repo-specific evidence adapters"
+          },
+          {
+            "id": "adr:0612",
+            "status": "draft",
+            "title": "Enforce max path and filename lengths under `.ssot`"
+          },
+          {
+            "id": "adr:0613",
+            "status": "accepted",
+            "title": "Profiles are reusable feature bundles with derived pass status"
+          },
+          {
+            "id": "adr:0614",
+            "status": "accepted",
+            "title": "SPECs own typed ADR links"
+          },
+          {
+            "id": "adr:0615",
+            "status": "accepted",
+            "title": "Downstream assurance-language ceilings for feature target claim tiers"
+          },
+          {
+            "id": "adr:0616",
+            "status": "accepted",
+            "title": "Out-of-bounds implementation disposition is explicit"
+          },
+          {
+            "id": "adr:0617",
+            "status": "accepted",
+            "title": "Feature implementation is capped by active required claims"
+          },
+          {
+            "id": "adr:0618",
+            "status": "draft",
+            "title": "Local Release Assurance Remains SSOT Native"
+          },
+          {
+            "id": "adr:0619",
+            "status": "draft",
+            "title": "Content Addressed Governed Source Snapshots"
+          }
+        ],
+        "boundaries": [
+          {
+            "feature_ids": [
+              "feat:mdwrkcom-content-pack-component-intent-declarations",
+              "feat:lander-content-contract-component-intent-schema",
+              "feat:lander-content-contract-schema-intent-schema",
+              "feat:lander-core-content-pack-render-model-compiler",
+              "feat:lander-core-schema-intent-compiler",
+              "feat:lander-react-compiled-intent-renderer",
+              "feat:lander-react-structured-data-intent-registry",
+              "feat:mdwrkcom-compiled-lander-renderer-host",
+              "feat:content-pack-rendering-no-drift-governance"
+            ],
+            "id": "bnd:content-pack-driven-lander-rendering-current",
+            "status": "frozen",
+            "title": "Content-pack-driven lander rendering current closure"
+          },
+          {
+            "feature_ids": [],
+            "id": "bnd:default",
+            "status": "draft",
+            "title": "Default boundary"
+          },
+          {
+            "feature_ids": [
+              "feat:lander.page-templates.product-domain-bundle",
+              "feat:lander.page-templates.support-domain-bundle",
+              "feat:lander.page-templates.education-domain-bundle",
+              "feat:lander.page-templates.docs-domain-bundle",
+              "feat:lander.page-templates.package-domain-bundle",
+              "feat:lander.page-templates.trust-domain-bundle",
+              "feat:lander.page-templates.domain-bundle-smoke-tests",
+              "feat:lander.page-template-presets.product-site",
+              "feat:lander.page-template-presets.faq-hub",
+              "feat:lander.page-template-presets.education-path",
+              "feat:lander.page-template-presets.docs-hub",
+              "feat:lander.page-template-presets.package-catalog",
+              "feat:lander.page-template-presets.trust-center",
+              "feat:lander.page-template-presets.smoke-tests",
+              "feat:lander.page-template-presets.product-site-authored-graph",
+              "feat:lander.page-template-presets.faq-hub-authored-graph",
+              "feat:lander.page-template-presets.education-path-authored-graph",
+              "feat:lander.page-template-presets.docs-hub-authored-graph",
+              "feat:lander.page-template-presets.package-catalog-authored-graph",
+              "feat:lander.page-template-presets.trust-center-authored-graph"
+            ],
+            "id": "bnd:lander-page-template-default-graphs-next",
+            "status": "active",
+            "title": "Lander Page Template Default Graphs Next Boundary"
+          },
+          {
+            "feature_ids": [
+              "feat:lander.page-templates.relationship-role-types",
+              "feat:lander.page-templates.template-topology-types",
+              "feat:lander.page-templates.required-child-validation",
+              "feat:lander.page-templates.optional-child-validation",
+              "feat:lander.page-templates.terminal-template-validation",
+              "feat:lander.page-templates.incoming-edge-derivation",
+              "feat:lander.page-templates.relationship-validation",
+              "feat:lander.page-templates.link-slot-resolution",
+              "feat:lander.page-templates.ordered-relationship-resolution",
+              "feat:lander.page-templates.navigation-derivation",
+              "feat:lander.page-templates.core-types",
+              "feat:lander.page-template-presets.authored-page-content",
+              "feat:lander.page-template-presets.named-page-map",
+              "feat:lander.page-template-presets.named-link-map",
+              "feat:lander.page-template-presets.authored-graph-builder",
+              "feat:lander.page-template-presets.types",
+              "feat:lander.page-template-presets.authoring-topology-smoke-tests"
+            ],
+            "id": "bnd:lander-page-template-wiring-next",
+            "status": "active",
+            "title": "Lander Page Template Wiring Next Boundary"
+          },
+          {
+            "feature_ids": [
+              "feat:lander-react.structured-data.aggregate-rating-reusable-component",
+              "feat:lander-react.structured-data.article-reusable-component",
+              "feat:lander-react.structured-data.blog-posting-reusable-component",
+              "feat:lander-react.structured-data.book-reusable-component",
+              "feat:lander-react.structured-data.breadcrumb-list-reusable-component",
+              "feat:lander-react.structured-data.claim-review-reusable-component",
+              "feat:lander-react.structured-data.course-instance-reusable-component",
+              "feat:lander-react.structured-data.course-reusable-component",
+              "feat:lander-react.structured-data.dataset-reusable-component",
+              "feat:lander-react.structured-data.discussion-forum-posting-reusable-component",
+              "feat:lander-react.structured-data.employer-aggregate-rating-reusable-component",
+              "feat:lander-react.structured-data.event-reusable-component",
+              "feat:lander-react.structured-data.faq-page-reusable-component",
+              "feat:lander-react.structured-data.how-to-reusable-component",
+              "feat:lander-react.structured-data.image-object-reusable-component",
+              "feat:lander-react.structured-data.item-list-reusable-component",
+              "feat:lander-react.structured-data.job-posting-reusable-component",
+              "feat:lander-react.structured-data.local-business-reusable-component",
+              "feat:lander-react.structured-data.math-solver-reusable-component",
+              "feat:lander-react.structured-data.member-program-reusable-component",
+              "feat:lander-react.structured-data.merchant-return-policy-reusable-component",
+              "feat:lander-react.structured-data.monetary-amount-distribution-reusable-component",
+              "feat:lander-react.structured-data.movie-reusable-component",
+              "feat:lander-react.structured-data.offer-shipping-details-reusable-component",
+              "feat:lander-react.structured-data.organization-reusable-component",
+              "feat:lander-react.structured-data.product-group-reusable-component",
+              "feat:lander-react.structured-data.product-reusable-component",
+              "feat:lander-react.structured-data.profile-page-reusable-component",
+              "feat:lander-react.structured-data.qa-page-reusable-component",
+              "feat:lander-react.structured-data.read-action-reusable-component",
+              "feat:lander-react.structured-data.recipe-reusable-component",
+              "feat:lander-react.structured-data.review-reusable-component",
+              "feat:lander-react.structured-data.software-application-reusable-component",
+              "feat:lander-react.structured-data.software-source-code-reusable-component",
+              "feat:lander-react.structured-data.speakable-specification-reusable-component",
+              "feat:lander-react.structured-data.tech-article-reusable-component",
+              "feat:lander-react.structured-data.vacation-rental-reusable-component",
+              "feat:lander-react.structured-data.vehicle-reusable-component",
+              "feat:lander-react.structured-data.video-object-reusable-component",
+              "feat:lander-react.structured-data.web-application-reusable-component",
+              "feat:lander-react.structured-data.web-page-reusable-component",
+              "feat:lander-react.structured-data.web-site-reusable-component"
+            ],
+            "id": "bnd:lander-react-structured-data-reusable-components-current",
+            "status": "frozen",
+            "title": "Lander React Structured Data Reusable Components Current Boundary"
+          },
+          {
+            "feature_ids": [
+              "feat:schemaorg-vocabulary-baseline",
+              "feat:bcp47-language-metadata-normalization",
+              "feat:iso8601-temporal-metadata-normalization",
+              "feat:rfc6570-entrypoint-urltemplate-validation"
+            ],
+            "id": "bnd:lander-seo-aeo-aieo-profile-closure-2026-05-13",
+            "status": "frozen",
+            "title": "Lander SEO/AEO/AiEO profile closure 2026-05-13"
+          },
+          {
+            "feature_ids": [
+              "feat:lander-seo-discovery-artifact-pipeline",
+              "feat:lander-seo-discovery-artifact-serialization",
+              "feat:lander-seo-llms-full-builder",
+              "feat:lander-seo-content-index-builder",
+              "feat:lander-seo-semantic-index-builder",
+              "feat:lander-seo-content-registry-builder",
+              "feat:lander-seo-jsonld-graph-artifact-builder",
+              "feat:lander-seo-cache-manifest-discovery-inputs",
+              "feat:lander-seo-discovery-validation-suite",
+              "feat:lander-seo-crawler-policy-validation",
+              "feat:lander-seo-index-registry-parity-validation",
+              "feat:lander-seo-jsonld-graph-coverage-validation",
+              "feat:lander-seo-content-pack-artifact-mirror-validation",
+              "feat:mdwrkcom-discovery-pipeline-adopts-lander-seo",
+              "feat:mdwrkcom-content-pack-generated-artifact-mirror-from-lander-seo"
+            ],
+            "id": "bnd:lander-seo-mdwrkcom-discovery-e2e",
+            "status": "frozen",
+            "title": "Lander SEO mdwrkcom discovery E2E boundary"
+          },
+          {
+            "feature_ids": [
+              "feat:lander-wcag-aa-contrast"
+            ],
+            "id": "bnd:lander-wcag-aa-contrast-current",
+            "status": "frozen",
+            "title": "Lander WCAG AA Contrast Current Boundary"
+          },
+          {
+            "feature_ids": [
+              "feat:lander-aeo-appended-answer-blocks",
+              "feat:lander-docs-answer-section-standardization",
+              "feat:lander-blog-article-guide-standardization",
+              "feat:lander-article-crawlability-internal-links",
+              "feat:lander-aeo-answerable-heading-contract",
+              "feat:lander-aeo-visible-citation-parity",
+              "feat:lander-aeo-faq-qna-howto-eligibility",
+              "feat:lander-aeo-structured-answer-section-parity",
+              "feat:lander-article-metadata-schema-validation",
+              "feat:lander-article-excerpt-embedded-metadata",
+              "feat:lander-article-related-link-copy",
+              "feat:lander-article-metadata-ci-gate"
+            ],
+            "id": "bnd:mdwrk-aeo-article-discoverability-current",
+            "status": "draft",
+            "title": "MdWrk AEO Article Discoverability Current Boundary"
+          },
+          {
+            "feature_ids": [
+              "feat:lander-aieo-crawlable-text-semantic-index",
+              "feat:lander-aieo-json-ld-structured-data",
+              "feat:lander-aieo-ai-crawler-policy",
+              "feat:lander-aieo-search-vs-training-crawler-policy",
+              "feat:lander-aieo-llms-txt-index",
+              "feat:lander-aieo-llms-full-index",
+              "feat:lander-aieo-markdown-mirror-consistency",
+              "feat:lander-aieo-content-registry-discovery-parity",
+              "feat:lander-static-artifact-verification"
+            ],
+            "id": "bnd:mdwrk-aieo-crawler-llm-discovery-current",
+            "status": "draft",
+            "title": "MdWrk AiEO Crawler LLM Discovery Current Boundary"
+          },
+          {
+            "feature_ids": [
+              "feat:lander-package-suite-validation"
+            ],
+            "id": "bnd:mdwrk-lander-package-suite-next",
+            "status": "active",
+            "title": "MdWrk lander package suite next boundary"
+          },
+          {
+            "feature_ids": [
+              "feat:lander-seo-demand-cluster-canonical-pages",
+              "feat:lander-seo-comparison-pages",
+              "feat:lander-entity-mdwrk-brand-normalization",
+              "feat:lander-seo-robots-policy",
+              "feat:lander-seo-sitemap-protocol",
+              "feat:lander-seo-canonical-url-metadata",
+              "feat:lander-seo-html-title-meta-link-metadata",
+              "feat:lander-seo-open-graph-metadata",
+              "feat:lander-seo-x-card-metadata",
+              "feat:lander-seo-dcmi-document-metadata",
+              "feat:lander-seo-core-web-vitals-targets",
+              "feat:lander-metadata-favicon-logo-fallback",
+              "feat:lander-static-content-compiler",
+              "feat:lander-static-artifact-verification"
+            ],
+            "id": "bnd:mdwrk-seo-discoverability-current",
+            "status": "draft",
+            "title": "MdWrk SEO Discoverability Current Boundary"
+          },
+          {
+            "feature_ids": [
+              "feat:lander-cache-resource-classification",
+              "feat:lander-immutable-fingerprinted-assets",
+              "feat:lander-mutable-validator-metadata",
+              "feat:lander-cache-header-manifest",
+              "feat:lander-critical-css-inline-defer",
+              "feat:lander-cache-policy-validation",
+              "feat:mdwrkcom-lander-cache-policy-adoption",
+              "feat:mdwrkcom-static-css-fingerprinted-delivery",
+              "feat:mdwrkcom-critical-css-profile",
+              "feat:mdwrkcom-mutable-route-validator-headers",
+              "feat:mdwrkcom-cache-header-artifact-export",
+              "feat:mdwrkcom-cache-policy-validation"
+            ],
+            "id": "bnd:portable-lander-cache-critical-css-next",
+            "status": "frozen",
+            "title": "Portable Lander Cache Critical CSS Next Boundary"
+          },
+          {
+            "feature_ids": [
+              "feat:lander-critical-path-performance-budget",
+              "feat:lander-route-script-inclusion-gates",
+              "feat:lander-syntax-highlighting-route-gate",
+              "feat:lander-demo-script-route-gate",
+              "feat:lander-static-text-asset-compression-metadata",
+              "feat:lander-theme-first-viewport-motion-policy",
+              "feat:lander-critical-path-manifest",
+              "feat:lander-performance-budget-validation",
+              "feat:mdwrkcom-critical-path-profile-adoption"
+            ],
+            "id": "bnd:portable-lander-performance-budget-next",
+            "status": "active",
+            "title": "Portable Lander Performance Budget Next Boundary"
+          },
+          {
+            "feature_ids": [
+              "feat:lander-aeo-appended-answer-blocks",
+              "feat:lander-aieo-crawlable-text-semantic-index",
+              "feat:lander-aieo-json-ld-structured-data",
+              "feat:lander-article-crawlability-internal-links",
+              "feat:lander-article-excerpt-embedded-metadata",
+              "feat:lander-article-metadata-ci-gate",
+              "feat:lander-article-metadata-schema-validation",
+              "feat:lander-article-related-link-copy",
+              "feat:lander-blog-article-guide-standardization",
+              "feat:lander-docs-answer-section-standardization",
+              "feat:lander-entity-mdwrk-brand-normalization",
+              "feat:lander-metadata-favicon-logo-fallback",
+              "feat:lander-seo-comparison-pages",
+              "feat:lander-seo-demand-cluster-canonical-pages",
+              "feat:lander-static-artifact-verification",
+              "feat:lander-static-content-compiler",
+              "feat:lander-static-page-frontmatter-schema",
+              "feat:markdown-renderer-core",
+              "feat:markdown-renderer-react",
+              "feat:mdwrk-lander-content-pack",
+              "feat:portable-lander-package-family"
+            ],
+            "id": "bnd:repo-certifiability-current-scope",
+            "status": "frozen",
+            "title": "Repository Current Certifiability Scope"
+          },
+          {
+            "feature_ids": [
+              "feat:lander-aeo-appended-answer-blocks",
+              "feat:lander-aieo-crawlable-text-semantic-index",
+              "feat:lander-aieo-json-ld-structured-data",
+              "feat:lander-article-crawlability-internal-links",
+              "feat:lander-article-excerpt-embedded-metadata",
+              "feat:lander-article-metadata-ci-gate",
+              "feat:lander-article-metadata-schema-validation",
+              "feat:lander-article-related-link-copy",
+              "feat:lander-blog-article-guide-standardization",
+              "feat:lander-docs-answer-section-standardization",
+              "feat:lander-entity-mdwrk-brand-normalization",
+              "feat:lander-international-crawler-safe-rendering",
+              "feat:lander-international-hreflang-metadata",
+              "feat:lander-international-locale-routes",
+              "feat:lander-international-locale-switcher",
+              "feat:lander-international-no-automatic-locale-redirects",
+              "feat:lander-international-sitemap-alternates",
+              "feat:lander-metadata-favicon-logo-fallback",
+              "feat:lander-seo-comparison-pages",
+              "feat:lander-seo-demand-cluster-canonical-pages"
+            ],
+            "id": "bnd:repo-certifiability-p1-current-partials",
+            "status": "frozen",
+            "title": "Repository Certifiability P1 Current Partials"
+          },
+          {
+            "feature_ids": [
+              "feat:google-structured-data-search-gallery-coverage",
+              "feat:json-ld-ai-discovery-entity-graph",
+              "feat:json-ld-article",
+              "feat:json-ld-book-actions",
+              "feat:json-ld-breadcrumb",
+              "feat:json-ld-carousel",
+              "feat:json-ld-course-list",
+              "feat:json-ld-dataset",
+              "feat:json-ld-discussion-forum",
+              "feat:json-ld-education-qa",
+              "feat:json-ld-employer-aggregate-rating",
+              "feat:json-ld-estimated-salary",
+              "feat:json-ld-event",
+              "feat:json-ld-fact-check",
+              "feat:json-ld-faq",
+              "feat:json-ld-image-metadata",
+              "feat:json-ld-job-posting",
+              "feat:json-ld-local-business",
+              "feat:json-ld-loyalty-program",
+              "feat:json-ld-math-solver",
+              "feat:json-ld-merchant-listing",
+              "feat:json-ld-merchant-return-policy",
+              "feat:json-ld-merchant-shipping-policy",
+              "feat:json-ld-movie",
+              "feat:json-ld-organization",
+              "feat:json-ld-practice-problem",
+              "feat:json-ld-product",
+              "feat:json-ld-product-snippet",
+              "feat:json-ld-product-variant",
+              "feat:json-ld-profile-page",
+              "feat:json-ld-qa",
+              "feat:json-ld-recipe",
+              "feat:json-ld-review-snippet",
+              "feat:json-ld-rich-results-validation",
+              "feat:json-ld-software-app",
+              "feat:json-ld-speakable",
+              "feat:json-ld-stable-entity-ids",
+              "feat:json-ld-subscription-paywalled-content",
+              "feat:json-ld-supported-type-gate",
+              "feat:json-ld-vacation-rental",
+              "feat:json-ld-vehicle-listing",
+              "feat:json-ld-video",
+              "feat:json-ld-visible-content-parity",
+              "feat:lander-aieo-json-ld-structured-data",
+              "feat:lander-react.structured-data.aggregate-rating-reusable-component",
+              "feat:lander-react.structured-data.article-reusable-component",
+              "feat:lander-react.structured-data.blog-posting-reusable-component",
+              "feat:lander-react.structured-data.book-reusable-component",
+              "feat:lander-react.structured-data.breadcrumb-list-reusable-component",
+              "feat:lander-react.structured-data.claim-review-reusable-component",
+              "feat:lander-react.structured-data.course-instance-reusable-component",
+              "feat:lander-react.structured-data.course-reusable-component",
+              "feat:lander-react.structured-data.dataset-reusable-component",
+              "feat:lander-react.structured-data.discussion-forum-posting-reusable-component",
+              "feat:lander-react.structured-data.employer-aggregate-rating-reusable-component",
+              "feat:lander-react.structured-data.event-reusable-component",
+              "feat:lander-react.structured-data.faq-page-reusable-component",
+              "feat:lander-react.structured-data.how-to-reusable-component",
+              "feat:lander-react.structured-data.image-object-reusable-component",
+              "feat:lander-react.structured-data.item-list-reusable-component",
+              "feat:lander-react.structured-data.job-posting-reusable-component",
+              "feat:lander-react.structured-data.local-business-reusable-component",
+              "feat:lander-react.structured-data.math-solver-reusable-component",
+              "feat:lander-react.structured-data.member-program-reusable-component",
+              "feat:lander-react.structured-data.merchant-return-policy-reusable-component",
+              "feat:lander-react.structured-data.monetary-amount-distribution-reusable-component",
+              "feat:lander-react.structured-data.movie-reusable-component",
+              "feat:lander-react.structured-data.offer-shipping-details-reusable-component",
+              "feat:lander-react.structured-data.organization-reusable-component",
+              "feat:lander-react.structured-data.product-group-reusable-component",
+              "feat:lander-react.structured-data.product-reusable-component",
+              "feat:lander-react.structured-data.profile-page-reusable-component",
+              "feat:lander-react.structured-data.qa-page-reusable-component",
+              "feat:lander-react.structured-data.read-action-reusable-component",
+              "feat:lander-react.structured-data.recipe-reusable-component",
+              "feat:lander-react.structured-data.review-reusable-component",
+              "feat:lander-react.structured-data.software-application-reusable-component",
+              "feat:lander-react.structured-data.software-source-code-reusable-component",
+              "feat:lander-react.structured-data.speakable-specification-reusable-component",
+              "feat:lander-react.structured-data.tech-article-reusable-component",
+              "feat:lander-react.structured-data.vacation-rental-reusable-component",
+              "feat:lander-react.structured-data.vehicle-reusable-component",
+              "feat:lander-react.structured-data.video-object-reusable-component",
+              "feat:lander-react.structured-data.web-application-reusable-component",
+              "feat:lander-react.structured-data.web-page-reusable-component",
+              "feat:lander-react.structured-data.web-site-reusable-component",
+              "feat:lander.structured-data.article",
+              "feat:lander.structured-data.blog-posting",
+              "feat:lander.structured-data.breadcrumb-list",
+              "feat:lander.structured-data.dataset",
+              "feat:lander.structured-data.faq-page",
+              "feat:lander.structured-data.image-object",
+              "feat:lander.structured-data.organization",
+              "feat:lander.structured-data.product",
+              "feat:lander.structured-data.profile-page",
+              "feat:lander.structured-data.software-application",
+              "feat:lander.structured-data.software-source-code",
+              "feat:lander.structured-data.tech-article",
+              "feat:lander.structured-data.video-object",
+              "feat:lander.structured-data.web-page",
+              "feat:lander.structured-data.web-site",
+              "feat:structured-data.aggregate-rating",
+              "feat:structured-data.article",
+              "feat:structured-data.blog-posting",
+              "feat:structured-data.book",
+              "feat:structured-data.breadcrumb-list",
+              "feat:structured-data.claim-review",
+              "feat:structured-data.course",
+              "feat:structured-data.course-instance",
+              "feat:structured-data.dataset",
+              "feat:structured-data.discussion-forum-posting",
+              "feat:structured-data.employer-aggregate-rating",
+              "feat:structured-data.event",
+              "feat:structured-data.faq-page",
+              "feat:structured-data.how-to",
+              "feat:structured-data.image-object",
+              "feat:structured-data.item-list",
+              "feat:structured-data.job-posting",
+              "feat:structured-data.local-business",
+              "feat:structured-data.math-solver",
+              "feat:structured-data.member-program",
+              "feat:structured-data.merchant-return-policy",
+              "feat:structured-data.monetary-amount-distribution",
+              "feat:structured-data.movie",
+              "feat:structured-data.offer-shipping-details",
+              "feat:structured-data.organization",
+              "feat:structured-data.product",
+              "feat:structured-data.product-group",
+              "feat:structured-data.profile-page",
+              "feat:structured-data.qa-page",
+              "feat:structured-data.read-action",
+              "feat:structured-data.recipe",
+              "feat:structured-data.review",
+              "feat:structured-data.review-snippet",
+              "feat:structured-data.software-application",
+              "feat:structured-data.software-source-code",
+              "feat:structured-data.speakable-specification",
+              "feat:structured-data.tech-article",
+              "feat:structured-data.vacation-rental",
+              "feat:structured-data.vehicle",
+              "feat:structured-data.video-object",
+              "feat:structured-data.web-application",
+              "feat:structured-data.web-page",
+              "feat:structured-data.web-site"
+            ],
+            "id": "bnd:structured-data-feature-family-current",
+            "status": "frozen",
+            "title": "Structured Data Feature Family Current Boundary"
+          },
+          {
+            "feature_ids": [
+              "feat:lander-react-structured-data.intent-registry"
+            ],
+            "id": "bnd:lander-react-structured-data-registry-next",
+            "status": "active",
+            "title": "Lander React Structured Data Registry Next Boundary"
+          },
+          {
+            "feature_ids": [
+              "feat:lander-react.visible-ui-renderer-only"
+            ],
+            "id": "bnd:lander-react-visible-ui-only-next",
+            "status": "active",
+            "title": "Lander React Visible UI Only Next Boundary"
+          },
+          {
+            "feature_ids": [
+              "feat:structured-data.pure-schema-builder-layer"
+            ],
+            "id": "bnd:structured-data-pure-builder-layer-next",
+            "status": "active",
+            "title": "Structured Data Pure Builder Layer Next Boundary"
+          }
+        ],
+        "claims": [
+          {
+            "evidence_ids": [
+              "evd:packages-shared-structured-data-tests-run-smoke.mjs",
+              "evd:packages-lander-lander-react-tests-run-smoke.mjs"
+            ],
+            "feature_ids": [
+              "feat:markdown-renderer-core",
+              "feat:markdown-renderer-react",
+              "feat:lander-seo-demand-cluster-canonical-pages",
+              "feat:lander-seo-comparison-pages",
+              "feat:lander-entity-mdwrk-brand-normalization",
+              "feat:lander-aeo-appended-answer-blocks",
+              "feat:lander-aieo-json-ld-structured-data",
+              "feat:lander-aieo-crawlable-text-semantic-index",
+              "feat:lander-docs-answer-section-standardization",
+              "feat:lander-blog-article-guide-standardization",
+              "feat:lander-article-related-link-copy",
+              "feat:lander-article-crawlability-internal-links",
+              "feat:lander-article-metadata-schema-validation",
+              "feat:lander-metadata-favicon-logo-fallback",
+              "feat:lander-article-excerpt-embedded-metadata",
+              "feat:lander-article-metadata-ci-gate",
+              "feat:lander-static-content-compiler",
+              "feat:lander-static-artifact-verification",
+              "feat:lander-static-page-frontmatter-schema",
+              "feat:google-structured-data-search-gallery-coverage",
+              "feat:json-ld-visible-content-parity",
+              "feat:json-ld-rich-results-validation",
+              "feat:json-ld-ai-discovery-entity-graph",
+              "feat:json-ld-article",
+              "feat:json-ld-breadcrumb",
+              "feat:json-ld-organization",
+              "feat:json-ld-software-app",
+              "feat:structured-data.web-page",
+              "feat:structured-data.web-site",
+              "feat:structured-data.organization",
+              "feat:structured-data.software-application",
+              "feat:structured-data.web-application",
+              "feat:structured-data.article",
+              "feat:structured-data.tech-article",
+              "feat:structured-data.blog-posting",
+              "feat:structured-data.breadcrumb-list",
+              "feat:structured-data.faq-page",
+              "feat:structured-data.qa-page",
+              "feat:structured-data.how-to",
+              "feat:structured-data.item-list",
+              "feat:structured-data.software-source-code",
+              "feat:structured-data.product",
+              "feat:structured-data.dataset",
+              "feat:structured-data.event",
+              "feat:structured-data.video-object",
+              "feat:structured-data.image-object",
+              "feat:structured-data.profile-page",
+              "feat:structured-data.review-snippet",
+              "feat:structured-data.course",
+              "feat:structured-data.discussion-forum-posting",
+              "feat:lander.structured-data.web-page",
+              "feat:lander.structured-data.web-site",
+              "feat:lander.structured-data.organization",
+              "feat:lander.structured-data.software-application",
+              "feat:lander.structured-data.article",
+              "feat:lander.structured-data.tech-article",
+              "feat:lander.structured-data.blog-posting",
+              "feat:lander.structured-data.breadcrumb-list",
+              "feat:lander.structured-data.faq-page",
+              "feat:lander.structured-data.software-source-code",
+              "feat:lander.structured-data.profile-page",
+              "feat:lander.structured-data.product",
+              "feat:lander.structured-data.dataset",
+              "feat:lander.structured-data.video-object",
+              "feat:lander.structured-data.image-object",
+              "feat:json-ld-book-actions",
+              "feat:json-ld-carousel",
+              "feat:json-ld-course-list",
+              "feat:json-ld-dataset",
+              "feat:json-ld-discussion-forum",
+              "feat:json-ld-education-qa",
+              "feat:json-ld-employer-aggregate-rating",
+              "feat:json-ld-estimated-salary",
+              "feat:json-ld-event",
+              "feat:json-ld-fact-check",
+              "feat:json-ld-faq",
+              "feat:json-ld-image-metadata",
+              "feat:json-ld-job-posting",
+              "feat:json-ld-local-business",
+              "feat:json-ld-loyalty-program",
+              "feat:json-ld-math-solver",
+              "feat:json-ld-merchant-listing",
+              "feat:json-ld-merchant-return-policy",
+              "feat:json-ld-merchant-shipping-policy",
+              "feat:json-ld-movie",
+              "feat:json-ld-practice-problem",
+              "feat:json-ld-product",
+              "feat:json-ld-product-snippet",
+              "feat:json-ld-product-variant",
+              "feat:json-ld-profile-page",
+              "feat:json-ld-qa",
+              "feat:json-ld-recipe",
+              "feat:json-ld-review-snippet",
+              "feat:json-ld-speakable",
+              "feat:json-ld-subscription-paywalled-content",
+              "feat:json-ld-vacation-rental",
+              "feat:json-ld-vehicle-listing",
+              "feat:json-ld-video",
+              "feat:lander-aeo-answerable-heading-contract",
+              "feat:lander-aeo-faq-qna-howto-eligibility",
+              "feat:lander-aeo-structured-answer-section-parity",
+              "feat:lander-aeo-visible-citation-parity",
+              "feat:lander-aieo-ai-crawler-policy",
+              "feat:lander-aieo-content-registry-discovery-parity",
+              "feat:lander-aieo-llms-full-index",
+              "feat:lander-aieo-llms-txt-index",
+              "feat:lander-aieo-markdown-mirror-consistency",
+              "feat:lander-aieo-search-vs-training-crawler-policy",
+              "feat:lander-seo-canonical-url-metadata",
+              "feat:lander-seo-core-web-vitals-targets",
+              "feat:lander-seo-dcmi-document-metadata",
+              "feat:lander-seo-html-title-meta-link-metadata",
+              "feat:lander-seo-open-graph-metadata",
+              "feat:lander-seo-robots-policy",
+              "feat:lander-seo-sitemap-protocol",
+              "feat:lander-seo-x-card-metadata",
+              "feat:structured-data.review",
+              "feat:structured-data.aggregate-rating",
+              "feat:structured-data.course-instance",
+              "feat:structured-data.book",
+              "feat:structured-data.read-action",
+              "feat:structured-data.claim-review",
+              "feat:structured-data.employer-aggregate-rating",
+              "feat:structured-data.monetary-amount-distribution",
+              "feat:structured-data.job-posting",
+              "feat:structured-data.local-business",
+              "feat:structured-data.member-program",
+              "feat:structured-data.math-solver",
+              "feat:structured-data.merchant-return-policy",
+              "feat:structured-data.offer-shipping-details",
+              "feat:structured-data.movie",
+              "feat:structured-data.product-group",
+              "feat:structured-data.recipe",
+              "feat:structured-data.speakable-specification",
+              "feat:structured-data.vacation-rental",
+              "feat:structured-data.vehicle",
+              "feat:lander-seo-human-readable-sitemap-table",
+              "feat:structured-data.answer",
+              "feat:structured-data.answer.json-schema",
+              "feat:structured-data.article.json-schema",
+              "feat:structured-data.article.fused",
+              "feat:structured-data.article.fused-classnames",
+              "feat:structured-data.article.fused-classname-css-tokens",
+              "feat:structured-data.blog-posting.json-schema",
+              "feat:structured-data.broadcast-event",
+              "feat:structured-data.broadcast-event.json-schema",
+              "feat:structured-data.breadcrumb-list.json-schema",
+              "feat:structured-data.claim-review.json-schema",
+              "feat:structured-data.clip",
+              "feat:structured-data.clip.json-schema",
+              "feat:structured-data.course.json-schema",
+              "feat:structured-data.course.fused",
+              "feat:structured-data.course.fused-classnames",
+              "feat:structured-data.course.fused-classname-css-tokens",
+              "feat:structured-data.discussion-forum-posting.json-schema",
+              "feat:structured-data.employer-aggregate-rating.json-schema",
+              "feat:structured-data.event.json-schema",
+              "feat:structured-data.how-to.json-schema",
+              "feat:structured-data.image-object.json-schema",
+              "feat:structured-data.item-list.json-schema",
+              "feat:structured-data.job-posting.json-schema",
+              "feat:structured-data.learning-resource",
+              "feat:structured-data.learning-resource.json-schema",
+              "feat:structured-data.local-business.json-schema",
+              "feat:structured-data.math-solver.json-schema",
+              "feat:structured-data.merchant-return-policy.json-schema",
+              "feat:structured-data.monetary-amount-distribution.json-schema",
+              "feat:structured-data.movie.json-schema",
+              "feat:structured-data.news-article",
+              "feat:structured-data.news-article.json-schema",
+              "feat:structured-data.offer-shipping-details.json-schema",
+              "feat:structured-data.product.json-schema",
+              "feat:structured-data.product.fused",
+              "feat:structured-data.product.fused-classnames",
+              "feat:structured-data.product.fused-classname-css-tokens",
+              "feat:structured-data.product-group.json-schema",
+              "feat:structured-data.profile-page.json-schema",
+              "feat:structured-data.qa-page.json-schema",
+              "feat:structured-data.question",
+              "feat:structured-data.question.json-schema",
+              "feat:structured-data.quiz",
+              "feat:structured-data.quiz.json-schema",
+              "feat:structured-data.quiz.fused",
+              "feat:structured-data.quiz.fused-classnames",
+              "feat:structured-data.quiz.fused-classname-css-tokens",
+              "feat:structured-data.recipe.json-schema",
+              "feat:structured-data.review.json-schema",
+              "feat:structured-data.software-application.json-schema",
+              "feat:structured-data.solve-math-action",
+              "feat:structured-data.solve-math-action.json-schema",
+              "feat:structured-data.vacation-rental.json-schema",
+              "feat:structured-data.vehicle.json-schema",
+              "feat:structured-data.video-object.json-schema"
+            ],
+            "id": "clm:cross-cutting",
+            "status": "implemented",
+            "test_ids": [
+              "tst:packages-shared-structured-data-tests-run-smoke.mjs",
+              "tst:packages-lander-lander-react-tests-run-smoke.mjs"
+            ],
+            "title": "Claim for Cross-cutting repository feature set"
+          },
+          {
+            "evidence_ids": [
+              "evd:packages-lander-lander-core-cache-smoke"
+            ],
+            "feature_ids": [
+              "feat:lander-cache-header-manifest"
+            ],
+            "id": "clm:lander-cache-header-manifest",
+            "status": "evidenced",
+            "test_ids": [
+              "tst:packages-lander-lander-core-cache-smoke"
+            ],
+            "title": "Lander cache header manifest is implemented"
+          },
+          {
+            "evidence_ids": [
+              "evd:packages-lander-lander-core-cache-smoke"
+            ],
+            "feature_ids": [
+              "feat:lander-cache-policy-validation"
+            ],
+            "id": "clm:lander-cache-policy-validation",
+            "status": "evidenced",
+            "test_ids": [
+              "tst:packages-lander-lander-core-cache-smoke"
+            ],
+            "title": "Lander cache policy validation is implemented"
+          },
+          {
+            "evidence_ids": [
+              "evd:packages-lander-lander-core-cache-smoke"
+            ],
+            "feature_ids": [
+              "feat:lander-cache-resource-classification"
+            ],
+            "id": "clm:lander-cache-resource-classification",
+            "status": "evidenced",
+            "test_ids": [
+              "tst:packages-lander-lander-core-cache-smoke"
+            ],
+            "title": "Lander cache resource classification is implemented"
+          },
+          {
+            "evidence_ids": [
+              "evd:packages-lander-lander-core-route-breadcrumb-semantics"
+            ],
+            "feature_ids": [
+              "feat:lander-core.compiled-navigation-render-model",
+              "feat:lander-core-content-pack-render-model-compiler",
+              "feat:lander-core.slug-and-canonical-route-policy"
+            ],
+            "id": "clm:lander-core-route-breadcrumb-semantics.t3",
+            "status": "evidenced",
+            "test_ids": [
+              "tst:packages-lander-lander-core-route-breadcrumb-semantics"
+            ],
+            "title": "Lander core exports route and breadcrumb semantics"
+          },
+          {
+            "evidence_ids": [
+              "evd:packages-lander-lander-core-cache-smoke"
+            ],
+            "feature_ids": [
+              "feat:lander-critical-css-inline-defer"
+            ],
+            "id": "clm:lander-critical-css-inline-defer",
+            "status": "evidenced",
+            "test_ids": [
+              "tst:packages-lander-lander-core-cache-smoke"
+            ],
+            "title": "Lander critical CSS inline and defer is implemented"
+          },
+          {
+            "evidence_ids": [
+              "evd:packages-lander-lander-core-cache-smoke"
+            ],
+            "feature_ids": [
+              "feat:lander-critical-path-manifest"
+            ],
+            "id": "clm:lander-critical-path-manifest.t2",
+            "status": "implemented",
+            "test_ids": [
+              "tst:packages-lander-lander-core-cache-smoke",
+              "tst:packages-lander-lander-core-performance-budget.test.mjs"
+            ],
+            "title": "Portable lander critical-path manifest is governed"
+          },
+          {
+            "evidence_ids": [
+              "evd:packages-lander-lander-core-cache-smoke"
+            ],
+            "feature_ids": [
+              "feat:lander-critical-path-performance-budget"
+            ],
+            "id": "clm:lander-critical-path-performance-budget.t2",
+            "status": "implemented",
+            "test_ids": [
+              "tst:packages-lander-lander-core-cache-smoke",
+              "tst:packages-lander-lander-core-performance-budget.test.mjs"
+            ],
+            "title": "Portable lander critical-path performance budget is governed"
+          },
+          {
+            "evidence_ids": [
+              "evd:packages-lander-lander-core-cache-smoke"
+            ],
+            "feature_ids": [
+              "feat:lander-demo-script-route-gate"
+            ],
+            "id": "clm:lander-demo-script-route-gate.t2",
+            "status": "implemented",
+            "test_ids": [
+              "tst:packages-lander-lander-core-cache-smoke",
+              "tst:packages-lander-lander-core-performance-budget.test.mjs"
+            ],
+            "title": "Portable lander demo script route gate is governed"
+          },
+          {
+            "evidence_ids": [
+              "evd:packages-lander-lander-core-cache-smoke"
+            ],
+            "feature_ids": [
+              "feat:lander-immutable-fingerprinted-assets"
+            ],
+            "id": "clm:lander-immutable-fingerprinted-assets",
+            "status": "evidenced",
+            "test_ids": [
+              "tst:packages-lander-lander-core-cache-smoke"
+            ],
+            "title": "Lander immutable fingerprinted assets are implemented"
+          },
+          {
+            "evidence_ids": [
+              "evd:packages-lander-lander-core-cache-smoke"
+            ],
+            "feature_ids": [
+              "feat:lander-mutable-validator-metadata"
+            ],
+            "id": "clm:lander-mutable-validator-metadata",
+            "status": "evidenced",
+            "test_ids": [
+              "tst:packages-lander-lander-core-cache-smoke"
+            ],
+            "title": "Lander mutable validator metadata is implemented"
+          },
+          {
+            "evidence_ids": [
+              "evd:lander-page-templates-domain-bundle-smoke",
+              "evd:lander-page-template-presets-smoke"
+            ],
+            "feature_ids": [
+              "feat:lander.page-templates.product-domain-bundle",
+              "feat:lander.page-templates.support-domain-bundle",
+              "feat:lander.page-templates.education-domain-bundle",
+              "feat:lander.page-templates.docs-domain-bundle",
+              "feat:lander.page-templates.package-domain-bundle",
+              "feat:lander.page-templates.trust-domain-bundle",
+              "feat:lander.page-templates.domain-bundle-smoke-tests",
+              "feat:lander.page-template-presets.product-site",
+              "feat:lander.page-template-presets.faq-hub",
+              "feat:lander.page-template-presets.education-path",
+              "feat:lander.page-template-presets.docs-hub",
+              "feat:lander.page-template-presets.package-catalog",
+              "feat:lander.page-template-presets.trust-center",
+              "feat:lander.page-template-presets.smoke-tests",
+              "feat:lander.page-template-presets.product-site-authored-graph",
+              "feat:lander.page-template-presets.faq-hub-authored-graph",
+              "feat:lander.page-template-presets.education-path-authored-graph",
+              "feat:lander.page-template-presets.docs-hub-authored-graph",
+              "feat:lander.page-template-presets.package-catalog-authored-graph",
+              "feat:lander.page-template-presets.trust-center-authored-graph",
+              "feat:lander.page-templates.cli-graph-export",
+              "feat:lander.page-templates.education-learning-path-template",
+              "feat:lander.page-templates.education-course-template",
+              "feat:lander.page-templates.education-module-template",
+              "feat:lander.page-templates.education-quiz-template",
+              "feat:lander.page-templates.education-course-test-template",
+              "feat:lander.page-template-presets.education-learning-path-preset"
+            ],
+            "id": "clm:lander-page-template-default-graphs-runtime",
+            "status": "evidenced",
+            "test_ids": [
+              "tst:lander-page-templates-domain-bundle-smoke",
+              "tst:lander-page-template-presets-smoke",
+              "tst:lander-page-templates-product-domain-bundle",
+              "tst:lander-page-templates-support-domain-bundle",
+              "tst:lander-page-templates-education-domain-bundle",
+              "tst:lander-page-templates-docs-domain-bundle",
+              "tst:lander-page-templates-package-domain-bundle",
+              "tst:lander-page-templates-trust-domain-bundle",
+              "tst:lander-page-templates-domain-bundle-coverage",
+              "tst:lander-page-template-presets-product-site",
+              "tst:lander-page-template-presets-faq-hub",
+              "tst:lander-page-template-presets-education-path",
+              "tst:lander-page-template-presets-docs-hub",
+              "tst:lander-page-template-presets-package-catalog",
+              "tst:lander-page-template-presets-trust-center",
+              "tst:lander-page-template-presets-default-graph-coverage",
+              "tst:lander-page-template-presets-product-site-authored-graph",
+              "tst:lander-page-template-presets-faq-hub-authored-graph",
+              "tst:lander-page-template-presets-education-path-authored-graph",
+              "tst:lander-page-template-presets-docs-hub-authored-graph",
+              "tst:lander-page-template-presets-package-catalog-authored-graph",
+              "tst:lander-page-template-presets-trust-center-authored-graph",
+              "tst:lander-page-templates-core-smoke",
+              "tst:lander-page-templates-education-learning-path-schema-and-build",
+              "tst:lander-page-templates-education-course-schema-and-build",
+              "tst:lander-page-templates-education-module-schema-and-build",
+              "tst:lander-page-templates-education-quiz-schema-and-build",
+              "tst:lander-page-templates-education-course-test-schema-and-build",
+              "tst:lander-page-template-presets-education-path-builds-five-entity-graph"
+            ],
+            "title": "Lander page template default graphs runtime"
+          },
+          {
+            "evidence_ids": [
+              "evd:lander-page-template-preset-authoring-smoke",
+              "evd:page-template-demo-content-pack-smoke",
+              "evd:lander-content-contract-schema-registry-smoke"
+            ],
+            "feature_ids": [
+              "feat:lander.page-template-presets.authored-page-content",
+              "feat:lander.page-template-presets.named-page-map",
+              "feat:lander.page-template-presets.named-link-map",
+              "feat:lander.page-template-presets.authored-graph-builder",
+              "feat:lander.page-template-presets.types",
+              "feat:lander.page-template-presets.authoring-topology-smoke-tests",
+              "feat:lander.page-templates.source-model",
+              "feat:lander.page-templates.markdown-frontmatter-authoring",
+              "feat:lander.page-templates.imperative-compile-api",
+              "feat:lander.page-templates.authoring-adapter-parity",
+              "feat:lander.page-templates.cli-compile",
+              "feat:lander.page-templates.generated-content-pack-output",
+              "feat:lander.page-templates.markdown-section-mapping",
+              "feat:lander.page-templates.content-pack-filesystem-layout",
+              "feat:lander-content-contract.template-data-schema-registry",
+              "feat:lander.page-templates.json-schema-template-validation"
+            ],
+            "id": "clm:lander-page-template-preset-authoring-runtime",
+            "status": "evidenced",
+            "test_ids": [
+              "tst:lander-page-template-preset-authoring-smoke",
+              "tst:lander-page-template-presets-authored-page-content",
+              "tst:lander-page-template-presets-named-page-map",
+              "tst:lander-page-template-presets-named-link-map",
+              "tst:lander-page-template-presets-authored-graph-builder",
+              "tst:lander-page-template-presets-types",
+              "tst:lander-page-template-presets-authoring-topology-smoke-tests",
+              "tst:page-template-demo-content-pack-smoke",
+              "tst:lander-page-templates-core-smoke",
+              "tst:lander-content-contract-schema-registry-loads-education-schemas",
+              "tst:lander-page-templates-rejects-invalid-template-data"
+            ],
+            "title": "Lander page template preset authoring runtime"
+          },
+          {
+            "evidence_ids": [
+              "evd:lander-page-template-presets-smoke",
+              "evd:page-template-demo-content-pack-smoke"
+            ],
+            "feature_ids": [
+              "feat:lander.page-template-presets.package-boundary",
+              "feat:lander.page-template-presets.types",
+              "feat:lander.page-template-presets.product-site",
+              "feat:lander.page-template-presets.faq-hub",
+              "feat:lander.page-template-presets.education-path",
+              "feat:lander.page-template-presets.docs-hub",
+              "feat:lander.page-template-presets.package-catalog",
+              "feat:lander.page-template-presets.trust-center",
+              "feat:lander.page-template-presets.smoke-tests",
+              "feat:lander.page-template-presets.product-site-authored-graph",
+              "feat:lander.page-template-presets.faq-hub-authored-graph",
+              "feat:lander.page-template-presets.education-path-authored-graph",
+              "feat:lander.page-template-presets.docs-hub-authored-graph",
+              "feat:lander.page-template-presets.package-catalog-authored-graph",
+              "feat:lander.page-template-presets.trust-center-authored-graph",
+              "feat:lander.page-templates.demo-dual-authoring",
+              "feat:lander.page-template-presets.education-learning-path-preset"
+            ],
+            "id": "clm:lander-page-template-presets",
+            "status": "evidenced",
+            "test_ids": [
+              "tst:lander-page-template-presets-smoke",
+              "tst:lander-page-template-presets-product-site",
+              "tst:lander-page-template-presets-faq-hub",
+              "tst:lander-page-template-presets-education-path",
+              "tst:lander-page-template-presets-docs-hub",
+              "tst:lander-page-template-presets-package-catalog",
+              "tst:lander-page-template-presets-trust-center",
+              "tst:lander-page-template-presets-default-graph-coverage",
+              "tst:lander-page-template-presets-product-site-authored-graph",
+              "tst:lander-page-template-presets-faq-hub-authored-graph",
+              "tst:lander-page-template-presets-education-path-authored-graph",
+              "tst:lander-page-template-presets-docs-hub-authored-graph",
+              "tst:lander-page-template-presets-package-catalog-authored-graph",
+              "tst:lander-page-template-presets-trust-center-authored-graph",
+              "tst:page-template-demo-content-pack-smoke",
+              "tst:lander-page-template-presets-education-path-builds-five-entity-graph"
+            ],
+            "title": "Lander page template presets"
+          },
+          {
+            "evidence_ids": [
+              "evd:lander-page-template-wiring-topology-smoke"
+            ],
+            "feature_ids": [
+              "feat:lander.page-templates.relationship-role-types",
+              "feat:lander.page-templates.template-topology-types",
+              "feat:lander.page-templates.required-child-validation",
+              "feat:lander.page-templates.optional-child-validation",
+              "feat:lander.page-templates.terminal-template-validation",
+              "feat:lander.page-templates.incoming-edge-derivation",
+              "feat:lander.page-templates.relationship-validation",
+              "feat:lander.page-templates.link-slot-resolution",
+              "feat:lander.page-templates.ordered-relationship-resolution",
+              "feat:lander.page-templates.navigation-derivation",
+              "feat:lander.page-templates.core-types",
+              "feat:lander.page-templates.child-link-semantics",
+              "feat:lander.page-templates.cli-validate"
+            ],
+            "id": "clm:lander-page-template-wiring-topology-runtime",
+            "status": "evidenced",
+            "test_ids": [
+              "tst:lander-page-template-wiring-topology-smoke",
+              "tst:lander-page-templates-relationship-role-types",
+              "tst:lander-page-templates-template-topology-types",
+              "tst:lander-page-templates-required-child-validation",
+              "tst:lander-page-templates-optional-child-validation",
+              "tst:lander-page-templates-terminal-template-validation",
+              "tst:lander-page-templates-incoming-edge-derivation",
+              "tst:lander-page-templates-relationship-validation",
+              "tst:lander-page-templates-link-slot-resolution",
+              "tst:lander-page-templates-ordered-relationship-resolution",
+              "tst:lander-page-templates-navigation-derivation",
+              "tst:lander-page-templates-core-types",
+              "tst:lander-page-templates-core-smoke"
+            ],
+            "title": "Lander page template topology runtime"
+          },
+          {
+            "evidence_ids": [
+              "evd:lander-page-templates-core-smoke"
+            ],
+            "feature_ids": [
+              "feat:lander.page-templates.package-boundary",
+              "feat:lander.page-templates.core-types",
+              "feat:lander.page-templates.define-helpers",
+              "feat:lander.page-templates.relationship-validation",
+              "feat:lander.page-templates.link-slot-resolution",
+              "feat:lander.page-templates.ordered-relationship-resolution",
+              "feat:lander.page-templates.navigation-derivation",
+              "feat:lander.page-templates.pagespec-builder",
+              "feat:lander.page-templates.schema-intent-generation",
+              "feat:lander.page-templates.lander-core-react-compatibility",
+              "feat:lander.page-templates.core-smoke-tests",
+              "feat:lander.page-templates.compiler-diagnostics",
+              "feat:lander.page-templates.schema-defaults"
+            ],
+            "id": "clm:lander-page-templates-core-contract",
+            "status": "evidenced",
+            "test_ids": [
+              "tst:lander-page-templates-core-smoke"
+            ],
+            "title": "Lander page templates core contract"
+          },
+          {
+            "evidence_ids": [
+              "evd:lander-page-templates-domain-bundle-smoke"
+            ],
+            "feature_ids": [
+              "feat:lander.page-templates.product-domain-bundle",
+              "feat:lander.page-templates.support-domain-bundle",
+              "feat:lander.page-templates.education-domain-bundle",
+              "feat:lander.page-templates.docs-domain-bundle",
+              "feat:lander.page-templates.package-domain-bundle",
+              "feat:lander.page-templates.trust-domain-bundle",
+              "feat:lander.page-templates.domain-bundle-smoke-tests",
+              "feat:lander.page-templates.education-learning-path-template",
+              "feat:lander.page-templates.education-course-template",
+              "feat:lander.page-templates.education-module-template",
+              "feat:lander.page-templates.education-quiz-template",
+              "feat:lander.page-templates.education-course-test-template"
+            ],
+            "id": "clm:lander-page-templates-domain-bundles",
+            "status": "evidenced",
+            "test_ids": [
+              "tst:lander-page-templates-domain-bundle-smoke",
+              "tst:lander-page-templates-product-domain-bundle",
+              "tst:lander-page-templates-support-domain-bundle",
+              "tst:lander-page-templates-education-domain-bundle",
+              "tst:lander-page-templates-docs-domain-bundle",
+              "tst:lander-page-templates-package-domain-bundle",
+              "tst:lander-page-templates-trust-domain-bundle",
+              "tst:lander-page-templates-domain-bundle-coverage",
+              "tst:lander-page-templates-education-learning-path-schema-and-build",
+              "tst:lander-page-templates-education-course-schema-and-build",
+              "tst:lander-page-templates-education-module-schema-and-build",
+              "tst:lander-page-templates-education-quiz-schema-and-build",
+              "tst:lander-page-templates-education-course-test-schema-and-build"
+            ],
+            "title": "Lander page templates domain bundles"
+          },
+          {
+            "evidence_ids": [
+              "evd:packages-lander-lander-core-cache-smoke"
+            ],
+            "feature_ids": [
+              "feat:lander-performance-budget-validation"
+            ],
+            "id": "clm:lander-performance-budget-validation.t2",
+            "status": "implemented",
+            "test_ids": [
+              "tst:packages-lander-lander-core-cache-smoke",
+              "tst:packages-lander-lander-core-performance-budget.test.mjs"
+            ],
+            "title": "Portable lander performance budget validation is governed"
+          },
+          {
+            "evidence_ids": [
+              "evd:packages-lander-lander-react-breadcrumb-rendering"
+            ],
+            "feature_ids": [
+              "feat:lander-react.structured-data.breadcrumb-list-reusable-component"
+            ],
+            "id": "clm:lander-react-breadcrumb-rendering.t3",
+            "status": "proposed",
+            "test_ids": [
+              "tst:packages-lander-lander-react-breadcrumb-rendering"
+            ],
+            "title": "Lander react owns breadcrumb UI rendering"
+          },
+          {
+            "evidence_ids": [
+              "evd:packages-lander-lander-core-cache-smoke"
+            ],
+            "feature_ids": [
+              "feat:lander-route-script-inclusion-gates"
+            ],
+            "id": "clm:lander-route-script-inclusion-gates.t2",
+            "status": "implemented",
+            "test_ids": [
+              "tst:packages-lander-lander-core-cache-smoke",
+              "tst:packages-lander-lander-core-performance-budget.test.mjs"
+            ],
+            "title": "Portable lander route script inclusion gates are governed"
+          }
+        ],
+        "evidence": [
+          {
+            "claim_ids": [
+              "clm:lander-page-template-preset-authoring-runtime"
+            ],
+            "id": "evd:lander-page-template-preset-authoring-smoke",
+            "status": "passed",
+            "test_ids": [
+              "tst:lander-page-template-preset-authoring-smoke",
+              "tst:lander-page-template-presets-authored-graph-builder",
+              "tst:lander-page-template-presets-authored-page-content",
+              "tst:lander-page-template-presets-authoring-topology-smoke-tests",
+              "tst:lander-page-template-presets-named-link-map",
+              "tst:lander-page-template-presets-named-page-map",
+              "tst:lander-page-template-presets-types"
+            ],
+            "title": "Lander page template preset authoring smoke evidence"
+          },
+          {
+            "claim_ids": [
+              "clm:lander-page-template-default-graphs-runtime",
+              "clm:lander-page-template-presets"
+            ],
+            "id": "evd:lander-page-template-presets-smoke",
+            "status": "passed",
+            "test_ids": [
+              "tst:lander-page-template-presets-default-graph-coverage",
+              "tst:lander-page-template-presets-docs-hub",
+              "tst:lander-page-template-presets-docs-hub-authored-graph",
+              "tst:lander-page-template-presets-education-path",
+              "tst:lander-page-template-presets-education-path-authored-graph",
+              "tst:lander-page-template-presets-education-path-builds-five-entity-graph",
+              "tst:lander-page-template-presets-faq-hub",
+              "tst:lander-page-template-presets-faq-hub-authored-graph",
+              "tst:lander-page-template-presets-package-catalog",
+              "tst:lander-page-template-presets-package-catalog-authored-graph",
+              "tst:lander-page-template-presets-product-site",
+              "tst:lander-page-template-presets-product-site-authored-graph",
+              "tst:lander-page-template-presets-smoke",
+              "tst:lander-page-template-presets-trust-center",
+              "tst:lander-page-template-presets-trust-center-authored-graph"
+            ],
+            "title": "Lander page template presets smoke evidence"
+          },
+          {
+            "claim_ids": [
+              "clm:lander-page-template-default-graphs-runtime",
+              "clm:lander-page-template-preset-authoring-runtime",
+              "clm:lander-page-template-wiring-topology-runtime",
+              "clm:lander-page-templates-domain-bundles"
+            ],
+            "id": "evd:lander-page-template-wiring-topology-smoke",
+            "status": "passed",
+            "test_ids": [
+              "tst:lander-page-template-wiring-topology-smoke",
+              "tst:lander-page-templates-core-types",
+              "tst:lander-page-templates-education-course-schema-and-build",
+              "tst:lander-page-templates-education-course-test-schema-and-build",
+              "tst:lander-page-templates-education-learning-path-schema-and-build",
+              "tst:lander-page-templates-education-module-schema-and-build",
+              "tst:lander-page-templates-education-quiz-schema-and-build",
+              "tst:lander-page-templates-incoming-edge-derivation",
+              "tst:lander-page-templates-link-slot-resolution",
+              "tst:lander-page-templates-navigation-derivation",
+              "tst:lander-page-templates-optional-child-validation",
+              "tst:lander-page-templates-ordered-relationship-resolution",
+              "tst:lander-page-templates-rejects-invalid-template-data",
+              "tst:lander-page-templates-relationship-role-types",
+              "tst:lander-page-templates-relationship-validation",
+              "tst:lander-page-templates-required-child-validation",
+              "tst:lander-page-templates-template-topology-types",
+              "tst:lander-page-templates-terminal-template-validation"
+            ],
+            "title": "Lander page template topology smoke evidence"
+          },
+          {
+            "claim_ids": [
+              "clm:lander-page-template-default-graphs-runtime",
+              "clm:lander-page-template-preset-authoring-runtime",
+              "clm:lander-page-template-wiring-topology-runtime",
+              "clm:lander-page-templates-core-contract"
+            ],
+            "id": "evd:lander-page-templates-core-smoke",
+            "status": "passed",
+            "test_ids": [
+              "tst:lander-page-templates-core-smoke"
+            ],
+            "title": "Lander page templates core smoke evidence"
+          },
+          {
+            "claim_ids": [
+              "clm:lander-page-template-default-graphs-runtime",
+              "clm:lander-page-templates-domain-bundles"
+            ],
+            "id": "evd:lander-page-templates-domain-bundle-smoke",
+            "status": "passed",
+            "test_ids": [
+              "tst:lander-page-templates-docs-domain-bundle",
+              "tst:lander-page-templates-domain-bundle-coverage",
+              "tst:lander-page-templates-domain-bundle-smoke",
+              "tst:lander-page-templates-education-domain-bundle",
+              "tst:lander-page-templates-package-domain-bundle",
+              "tst:lander-page-templates-product-domain-bundle",
+              "tst:lander-page-templates-support-domain-bundle",
+              "tst:lander-page-templates-trust-domain-bundle"
+            ],
+            "title": "Lander page templates domain bundle smoke evidence"
+          },
+          {
+            "claim_ids": [
+              "clm:mdwrk-pages.cr-001.t0"
+            ],
+            "id": "evd:mdwrk-pages.cr-001.t0",
+            "status": "passed",
+            "test_ids": [
+              "tst:mdwrk-pages.cr-001.t0"
+            ],
+            "title": "MDWRK-PAGES-CR-001 T0 matrix evidence"
+          },
+          {
+            "claim_ids": [
+              "clm:mdwrk-pages.cr-014.t0"
+            ],
+            "id": "evd:mdwrk-pages.cr-014.t0",
+            "status": "passed",
+            "test_ids": [
+              "tst:mdwrk-pages.cr-014.t0"
+            ],
+            "title": "MDWRK-PAGES-CR-014 T0 matrix evidence"
+          },
+          {
+            "claim_ids": [
+              "clm:mdwrk-pages.cr-025.t0"
+            ],
+            "id": "evd:mdwrk-pages.cr-025.t0",
+            "status": "passed",
+            "test_ids": [
+              "tst:mdwrk-pages.cr-025.t0"
+            ],
+            "title": "MDWRK-PAGES-CR-025 T0 matrix evidence"
+          },
+          {
+            "claim_ids": [
+              "clm:mdwrk-pages.cr-026.t0"
+            ],
+            "id": "evd:mdwrk-pages.cr-026.t0",
+            "status": "passed",
+            "test_ids": [
+              "tst:mdwrk-pages.cr-026.t0"
+            ],
+            "title": "MDWRK-PAGES-CR-026 T0 matrix evidence"
+          },
+          {
+            "claim_ids": [
+              "clm:mdwrk-pages.cr-027.t0"
+            ],
+            "id": "evd:mdwrk-pages.cr-027.t0",
+            "status": "passed",
+            "test_ids": [
+              "tst:mdwrk-pages.cr-027.t0"
+            ],
+            "title": "MDWRK-PAGES-CR-027 T0 matrix evidence"
+          },
+          {
+            "claim_ids": [
+              "clm:mdwrk-pages.cr-028.t0"
+            ],
+            "id": "evd:mdwrk-pages.cr-028.t0",
+            "status": "passed",
+            "test_ids": [
+              "tst:mdwrk-pages.cr-028.t0"
+            ],
+            "title": "MDWRK-PAGES-CR-028 T0 matrix evidence"
+          },
+          {
+            "claim_ids": [
+              "clm:mdwrk-pages.cr-029.t0"
+            ],
+            "id": "evd:mdwrk-pages.cr-029.t0",
+            "status": "passed",
+            "test_ids": [
+              "tst:mdwrk-pages.cr-029.t0"
+            ],
+            "title": "MDWRK-PAGES-CR-029 T0 matrix evidence"
+          },
+          {
+            "claim_ids": [
+              "clm:mdwrk-pages.cr-030.t0"
+            ],
+            "id": "evd:mdwrk-pages.cr-030.t0",
+            "status": "passed",
+            "test_ids": [
+              "tst:mdwrk-pages.cr-030.t0"
+            ],
+            "title": "MDWRK-PAGES-CR-030 T0 matrix evidence"
+          },
+          {
+            "claim_ids": [
+              "clm:mdwrk-pages.cr-031.t0"
+            ],
+            "id": "evd:mdwrk-pages.cr-031.t0",
+            "status": "passed",
+            "test_ids": [
+              "tst:mdwrk-pages.cr-031.t0"
+            ],
+            "title": "MDWRK-PAGES-CR-031 T0 matrix evidence"
+          },
+          {
+            "claim_ids": [
+              "clm:mdwrk-pages.cr-032.t0"
+            ],
+            "id": "evd:mdwrk-pages.cr-032.t0",
+            "status": "passed",
+            "test_ids": [
+              "tst:mdwrk-pages.cr-032.t0"
+            ],
+            "title": "MDWRK-PAGES-CR-032 T0 matrix evidence"
+          },
+          {
+            "claim_ids": [
+              "clm:mdwrk-pages.cr-035.t0"
+            ],
+            "id": "evd:mdwrk-pages.cr-035.t0",
+            "status": "passed",
+            "test_ids": [
+              "tst:mdwrk-pages.cr-035.t0"
+            ],
+            "title": "MDWRK-PAGES-CR-035 T0 matrix evidence"
+          },
+          {
+            "claim_ids": [
+              "clm:mdwrk-pages.cr-036.t0"
+            ],
+            "id": "evd:mdwrk-pages.cr-036.t0",
+            "status": "passed",
+            "test_ids": [
+              "tst:mdwrk-pages.cr-036.t0"
+            ],
+            "title": "MDWRK-PAGES-CR-036 T0 matrix evidence"
+          },
+          {
+            "claim_ids": [
+              "clm:mdwrk-pages.scoped-agent-ownership-instructions.t2"
+            ],
+            "id": "evd:mdwrk-pages.scoped-agent-ownership-instructions.t2",
+            "status": "passed",
+            "test_ids": [
+              "tst:mdwrk-pages.scoped-agent-ownership-instructions.t2"
+            ],
+            "title": "Scoped agent ownership instructions validator"
+          },
+          {
+            "claim_ids": [
+              "clm:lander-cache-header-manifest",
+              "clm:lander-cache-policy-validation",
+              "clm:lander-cache-resource-classification",
+              "clm:lander-critical-css-inline-defer",
+              "clm:lander-critical-path-manifest.t2",
+              "clm:lander-critical-path-performance-budget.t2",
+              "clm:lander-demo-script-route-gate.t2",
+              "clm:lander-immutable-fingerprinted-assets",
+              "clm:lander-mutable-validator-metadata",
+              "clm:lander-performance-budget-validation.t2",
+              "clm:lander-route-script-inclusion-gates.t2",
+              "clm:lander-static-text-asset-compression-metadata.t2",
+              "clm:lander-syntax-highlighting-route-gate.t2",
+              "clm:mdwrkcom-cache-header-artifact-export",
+              "clm:mdwrkcom-cache-policy-validation",
+              "clm:mdwrkcom-critical-css-profile",
+              "clm:mdwrkcom-lander-cache-policy-adoption",
+              "clm:mdwrkcom-mutable-route-validator-headers",
+              "clm:mdwrkcom-static-css-fingerprinted-delivery"
+            ],
+            "id": "evd:packages-lander-lander-core-cache-smoke",
+            "status": "passed",
+            "test_ids": [
+              "tst:packages-lander-lander-core-cache-smoke",
+              "tst:packages-lander-lander-core-performance-budget.test.mjs"
+            ],
+            "title": "Lander core cache smoke test run"
+          },
+          {
+            "claim_ids": [
+              "clm:lander-core-route-breadcrumb-semantics.t3"
+            ],
+            "id": "evd:packages-lander-lander-core-route-breadcrumb-semantics",
+            "status": "passed",
+            "test_ids": [
+              "tst:packages-lander-lander-core-route-breadcrumb-semantics"
+            ],
+            "title": "Planned evidence for lander-core route and breadcrumb semantics"
+          }
+        ],
+        "features": [
+          {
+            "claim_ids": [],
+            "id": "feat:bcp47-language-metadata-normalization",
+            "implementation_status": "absent",
+            "test_ids": [],
+            "title": "BCP 47 language metadata normalization"
+          },
+          {
+            "claim_ids": [],
+            "id": "feat:content-pack-rendering-no-drift-governance",
+            "implementation_status": "absent",
+            "test_ids": [],
+            "title": "Content-pack rendering no-drift governance"
+          },
+          {
+            "claim_ids": [
+              "clm:cross-cutting"
+            ],
+            "id": "feat:google-structured-data-search-gallery-coverage",
+            "implementation_status": "partial",
+            "test_ids": [
+              "tst:packages-shared-structured-data-tests-run-smoke.mjs"
+            ],
+            "title": "Google structured data Search Gallery coverage"
+          },
+          {
+            "claim_ids": [],
+            "id": "feat:iso8601-temporal-metadata-normalization",
+            "implementation_status": "absent",
+            "test_ids": [],
+            "title": "ISO 8601 temporal metadata normalization"
+          },
+          {
+            "claim_ids": [
+              "clm:cross-cutting"
+            ],
+            "id": "feat:json-ld-ai-discovery-entity-graph",
+            "implementation_status": "implemented",
+            "test_ids": [
+              "tst:packages-shared-structured-data-tests-run-smoke.mjs"
+            ],
+            "title": "JSON-LD AI discovery entity graph"
+          },
+          {
+            "claim_ids": [
+              "clm:cross-cutting"
+            ],
+            "id": "feat:json-ld-article",
+            "implementation_status": "implemented",
+            "test_ids": [
+              "tst:packages-shared-structured-data-tests-run-smoke.mjs"
+            ],
+            "title": "JSON-LD Article"
+          },
+          {
+            "claim_ids": [
+              "clm:cross-cutting"
+            ],
+            "id": "feat:json-ld-book-actions",
+            "implementation_status": "implemented",
+            "test_ids": [
+              "tst:packages-shared-structured-data-tests-run-smoke.mjs"
+            ],
+            "title": "JSON-LD Book actions"
+          },
+          {
+            "claim_ids": [
+              "clm:cross-cutting"
+            ],
+            "id": "feat:json-ld-breadcrumb",
+            "implementation_status": "implemented",
+            "test_ids": [
+              "tst:packages-shared-structured-data-tests-run-smoke.mjs"
+            ],
+            "title": "JSON-LD BreadcrumbList"
+          },
+          {
+            "claim_ids": [
+              "clm:cross-cutting"
+            ],
+            "id": "feat:json-ld-carousel",
+            "implementation_status": "implemented",
+            "test_ids": [
+              "tst:packages-shared-structured-data-tests-run-smoke.mjs"
+            ],
+            "title": "JSON-LD Carousel"
+          },
+          {
+            "claim_ids": [
+              "clm:cross-cutting"
+            ],
+            "id": "feat:json-ld-course-list",
+            "implementation_status": "implemented",
+            "test_ids": [
+              "tst:packages-shared-structured-data-tests-run-smoke.mjs"
+            ],
+            "title": "JSON-LD Course list"
+          },
+          {
+            "claim_ids": [
+              "clm:cross-cutting"
+            ],
+            "id": "feat:json-ld-dataset",
+            "implementation_status": "implemented",
+            "test_ids": [
+              "tst:packages-shared-structured-data-tests-run-smoke.mjs"
+            ],
+            "title": "JSON-LD Dataset"
+          },
+          {
+            "claim_ids": [
+              "clm:cross-cutting"
+            ],
+            "id": "feat:json-ld-discussion-forum",
+            "implementation_status": "implemented",
+            "test_ids": [
+              "tst:packages-shared-structured-data-tests-run-smoke.mjs"
+            ],
+            "title": "JSON-LD Discussion forum"
+          },
+          {
+            "claim_ids": [
+              "clm:cross-cutting"
+            ],
+            "id": "feat:json-ld-education-qa",
+            "implementation_status": "implemented",
+            "test_ids": [
+              "tst:packages-shared-structured-data-tests-run-smoke.mjs"
+            ],
+            "title": "JSON-LD Education Q&A"
+          },
+          {
+            "claim_ids": [
+              "clm:cross-cutting"
+            ],
+            "id": "feat:json-ld-employer-aggregate-rating",
+            "implementation_status": "implemented",
+            "test_ids": [
+              "tst:packages-shared-structured-data-tests-run-smoke.mjs"
+            ],
+            "title": "JSON-LD Employer aggregate rating"
+          },
+          {
+            "claim_ids": [
+              "clm:cross-cutting"
+            ],
+            "id": "feat:json-ld-estimated-salary",
+            "implementation_status": "implemented",
+            "test_ids": [
+              "tst:packages-shared-structured-data-tests-run-smoke.mjs"
+            ],
+            "title": "JSON-LD Estimated salary"
+          },
+          {
+            "claim_ids": [
+              "clm:cross-cutting"
+            ],
+            "id": "feat:json-ld-event",
+            "implementation_status": "implemented",
+            "test_ids": [
+              "tst:packages-shared-structured-data-tests-run-smoke.mjs"
+            ],
+            "title": "JSON-LD Event"
+          },
+          {
+            "claim_ids": [
+              "clm:cross-cutting"
+            ],
+            "id": "feat:json-ld-fact-check",
+            "implementation_status": "implemented",
+            "test_ids": [
+              "tst:packages-shared-structured-data-tests-run-smoke.mjs"
+            ],
+            "title": "JSON-LD Fact check"
+          },
+          {
+            "claim_ids": [
+              "clm:cross-cutting"
+            ],
+            "id": "feat:json-ld-faq",
+            "implementation_status": "implemented",
+            "test_ids": [
+              "tst:packages-shared-structured-data-tests-run-smoke.mjs"
+            ],
+            "title": "JSON-LD FAQPage Question Answer"
+          },
+          {
+            "claim_ids": [
+              "clm:cross-cutting"
+            ],
+            "id": "feat:json-ld-image-metadata",
+            "implementation_status": "implemented",
+            "test_ids": [
+              "tst:packages-shared-structured-data-tests-run-smoke.mjs"
+            ],
+            "title": "JSON-LD Image metadata"
+          },
+          {
+            "claim_ids": [
+              "clm:cross-cutting"
+            ],
+            "id": "feat:json-ld-job-posting",
+            "implementation_status": "implemented",
+            "test_ids": [
+              "tst:packages-shared-structured-data-tests-run-smoke.mjs"
+            ],
+            "title": "JSON-LD Job posting"
+          }
+        ],
+        "issues": [
+          {
+            "claim_ids": [
+              "clm:cross-cutting"
+            ],
+            "evidence_ids": [],
+            "feature_ids": [
+              "feat:markdown-renderer-core",
+              "feat:markdown-renderer-react",
+              "feat:lander-docs-answer-section-standardization",
+              "feat:lander-blog-article-guide-standardization"
+            ],
+            "id": "iss:lander-code-block-syntax-highlighting-absent",
+            "status": "closed",
+            "test_ids": [],
+            "title": "Lander code blocks do not render syntax-colored tokens"
+          },
+          {
+            "claim_ids": [
+              "clm:mdwrkcom-critical-css-profile"
+            ],
+            "evidence_ids": [],
+            "feature_ids": [
+              "feat:mdwrkcom-critical-css-profile",
+              "feat:mdwrkcom-static-css-fingerprinted-delivery",
+              "feat:lander-critical-css-inline-defer"
+            ],
+            "id": "iss:mdwrkcom-static-first-paint-theme-flash",
+            "status": "closed",
+            "test_ids": [],
+            "title": "MdWrkcom static pages flash light theme before dark first paint"
+          },
+          {
+            "claim_ids": [],
+            "evidence_ids": [],
+            "feature_ids": [
+              "feat:structured-data.faq-page"
+            ],
+            "id": "iss:structured-data-faq-page-google-deprecation",
+            "status": "open",
+            "test_ids": [],
+            "title": "FAQPage rich result support is deprecating in Google Search"
+          }
+        ],
+        "profiles": [
+          {
+            "feature_ids": [
+              "feat:lander-aeo-answerable-heading-contract",
+              "feat:lander-aeo-faq-qna-howto-eligibility",
+              "feat:lander-aeo-structured-answer-section-parity",
+              "feat:lander-aeo-visible-citation-parity",
+              "feat:lander-aieo-ai-crawler-policy",
+              "feat:lander-aieo-content-registry-discovery-parity",
+              "feat:lander-aieo-llms-full-index",
+              "feat:lander-aieo-llms-txt-index",
+              "feat:lander-aieo-markdown-mirror-consistency",
+              "feat:lander-aieo-search-vs-training-crawler-policy",
+              "feat:lander-seo-canonical-url-metadata",
+              "feat:lander-seo-core-web-vitals-targets",
+              "feat:lander-seo-dcmi-document-metadata",
+              "feat:lander-seo-html-title-meta-link-metadata",
+              "feat:lander-seo-open-graph-metadata",
+              "feat:lander-seo-robots-policy",
+              "feat:lander-seo-sitemap-protocol",
+              "feat:lander-seo-x-card-metadata",
+              "feat:lander-aeo-appended-answer-blocks",
+              "feat:lander-aieo-crawlable-text-semantic-index",
+              "feat:lander-aieo-json-ld-structured-data",
+              "feat:lander-seo-comparison-pages",
+              "feat:lander-seo-demand-cluster-canonical-pages"
+            ],
+            "id": "prf:lander-seo-aeo-aieo-discovery",
+            "status": "active",
+            "title": "Lander SEO AEO AiEO discovery profile"
+          }
+        ],
+        "releases": [
+          {
+            "claim_ids": [],
+            "evidence_ids": [],
+            "id": "rel:0.1.0",
+            "status": "draft"
+          },
+          {
+            "claim_ids": [
+              "clm:structured-data.google-eligibility-profile.t0",
+              "clm:structured-data.google-eligibility-profile.t1",
+              "clm:structured-data.google-eligibility-profile.t2",
+              "clm:structured-data.google-software-application-builder.t0",
+              "clm:structured-data.google-software-application-builder.t1",
+              "clm:structured-data.google-software-application-builder.t2",
+              "clm:structured-data.google-product-snippet-builder.t0",
+              "clm:structured-data.google-product-snippet-builder.t1",
+              "clm:structured-data.google-product-snippet-builder.t2",
+              "clm:structured-data.google-job-posting-builder.t0",
+              "clm:structured-data.google-job-posting-builder.t1",
+              "clm:structured-data.google-job-posting-builder.t2",
+              "clm:structured-data.explicit-graph-entity-composition.t0",
+              "clm:structured-data.explicit-graph-entity-composition.t1",
+              "clm:structured-data.explicit-graph-entity-composition.t2",
+              "clm:json-ld-rich-results-validation.t0",
+              "clm:json-ld-rich-results-validation.t1",
+              "clm:json-ld-rich-results-validation.t2"
+            ],
+            "evidence_ids": [
+              "evd:t1.structured-data.google-eligibility-profile.proof-graph",
+              "evd:t2.structured-data.google-eligibility-profile.proof-graph",
+              "evd:t1.structured-data.google-software-application-builder.proof-graph",
+              "evd:t2.structured-data.google-software-application-builder.proof-graph",
+              "evd:t1.structured-data.google-product-snippet-builder.proof-graph",
+              "evd:t2.structured-data.google-product-snippet-builder.proof-graph",
+              "evd:t1.structured-data.google-job-posting-builder.proof-graph",
+              "evd:t2.structured-data.google-job-posting-builder.proof-graph",
+              "evd:t1.structured-data.explicit-graph-entity-composition.proof-graph",
+              "evd:t2.structured-data.explicit-graph-entity-composition.proof-graph"
+            ],
+            "id": "rel:structured-data.google-eligibility-0.2.0",
+            "status": "published"
+          }
+        ],
+        "specs": [
+          {
+            "id": "spc:0600",
+            "status": "draft",
+            "title": "Registry core"
+          },
+          {
+            "id": "spc:0601",
+            "status": "draft",
+            "title": "CLI"
+          },
+          {
+            "id": "spc:0602",
+            "status": "draft",
+            "title": "Graph model"
+          },
+          {
+            "id": "spc:0603",
+            "status": "draft",
+            "title": "Feature lifecycle"
+          },
+          {
+            "id": "spc:0604",
+            "status": "draft",
+            "title": "Claim statuses"
+          },
+          {
+            "id": "spc:0605",
+            "status": "draft",
+            "title": "Claim tiers"
+          },
+          {
+            "id": "spc:0606",
+            "status": "draft",
+            "title": "Snapshots and reports"
+          },
+          {
+            "id": "spc:0607",
+            "status": "draft",
+            "title": "Repository policy"
+          },
+          {
+            "id": "spc:0608",
+            "status": "draft",
+            "title": "Gates and fences"
+          },
+          {
+            "id": "spc:0609",
+            "status": "draft",
+            "title": "ID normalization"
+          },
+          {
+            "id": "spc:0610",
+            "status": "draft",
+            "title": "File tree"
+          },
+          {
+            "id": "spc:0611",
+            "status": "draft",
+            "title": "Planning horizons"
+          },
+          {
+            "id": "spc:0612",
+            "status": "draft",
+            "title": "Python API"
+          },
+          {
+            "id": "spc:0613",
+            "status": "draft",
+            "title": "SSOT path-length policy"
+          },
+          {
+            "id": "spc:0614",
+            "status": "draft",
+            "title": "Profile evaluation and boundary resolution"
+          },
+          {
+            "id": "spc:0615",
+            "status": "accepted",
+            "title": "Typed SPEC-to-ADR linking"
+          },
+          {
+            "id": "spc:0616",
+            "status": "accepted",
+            "title": "Out-of-bounds implementation disposition"
+          },
+          {
+            "id": "spc:0617",
+            "status": "accepted",
+            "title": "Feature implementation claim ceilings"
+          },
+          {
+            "id": "spc:0618",
+            "status": "draft",
+            "title": "Local Release Assurance Candidate Scope"
+          },
+          {
+            "id": "spc:0619",
+            "status": "draft",
+            "title": "Governed Source Snapshot Contract"
+          }
+        ],
+        "tests": [
+          {
+            "claim_ids": [
+              "clm:lander-page-template-preset-authoring-runtime"
+            ],
+            "evidence_ids": [
+              "evd:lander-page-template-preset-authoring-smoke"
+            ],
+            "feature_ids": [
+              "feat:lander.page-template-presets.authored-page-content",
+              "feat:lander.page-template-presets.named-page-map",
+              "feat:lander.page-template-presets.named-link-map",
+              "feat:lander.page-template-presets.authored-graph-builder",
+              "feat:lander.page-template-presets.types",
+              "feat:lander.page-template-presets.authoring-topology-smoke-tests",
+              "feat:lander.page-templates.source-model",
+              "feat:lander.page-templates.markdown-frontmatter-authoring",
+              "feat:lander.page-templates.imperative-compile-api",
+              "feat:lander.page-templates.authoring-adapter-parity",
+              "feat:lander.page-templates.cli-compile",
+              "feat:lander.page-templates.generated-content-pack-output",
+              "feat:lander.page-templates.markdown-section-mapping",
+              "feat:lander.page-templates.content-pack-filesystem-layout"
+            ],
+            "id": "tst:lander-page-template-preset-authoring-smoke",
+            "status": "passing",
+            "title": "Lander page template preset authoring smoke test"
+          },
+          {
+            "claim_ids": [
+              "clm:lander-page-template-preset-authoring-runtime"
+            ],
+            "evidence_ids": [
+              "evd:lander-page-template-preset-authoring-smoke"
+            ],
+            "feature_ids": [
+              "feat:lander.page-template-presets.authored-graph-builder"
+            ],
+            "id": "tst:lander-page-template-presets-authored-graph-builder",
+            "status": "passing",
+            "title": "Lander page template presets authored graph builder test"
+          },
+          {
+            "claim_ids": [
+              "clm:lander-page-template-preset-authoring-runtime"
+            ],
+            "evidence_ids": [
+              "evd:lander-page-template-preset-authoring-smoke"
+            ],
+            "feature_ids": [
+              "feat:lander.page-template-presets.authored-page-content"
+            ],
+            "id": "tst:lander-page-template-presets-authored-page-content",
+            "status": "passing",
+            "title": "Lander page template presets authored page content test"
+          },
+          {
+            "claim_ids": [
+              "clm:lander-page-template-preset-authoring-runtime"
+            ],
+            "evidence_ids": [
+              "evd:lander-page-template-preset-authoring-smoke"
+            ],
+            "feature_ids": [
+              "feat:lander.page-template-presets.authoring-topology-smoke-tests"
+            ],
+            "id": "tst:lander-page-template-presets-authoring-topology-smoke-tests",
+            "status": "passing",
+            "title": "Lander page template presets authoring topology smoke tests"
+          },
+          {
+            "claim_ids": [
+              "clm:lander-page-template-default-graphs-runtime",
+              "clm:lander-page-template-presets"
+            ],
+            "evidence_ids": [
+              "evd:lander-page-template-presets-smoke"
+            ],
+            "feature_ids": [
+              "feat:lander.page-template-presets.smoke-tests"
+            ],
+            "id": "tst:lander-page-template-presets-default-graph-coverage",
+            "status": "passing",
+            "title": "Lander default graph coverage guard"
+          },
+          {
+            "claim_ids": [
+              "clm:lander-page-template-default-graphs-runtime",
+              "clm:lander-page-template-presets"
+            ],
+            "evidence_ids": [
+              "evd:lander-page-template-presets-smoke"
+            ],
+            "feature_ids": [
+              "feat:lander.page-template-presets.docs-hub"
+            ],
+            "id": "tst:lander-page-template-presets-docs-hub",
+            "status": "passing",
+            "title": "Lander docs hub preset test"
+          },
+          {
+            "claim_ids": [
+              "clm:lander-page-template-default-graphs-runtime",
+              "clm:lander-page-template-presets"
+            ],
+            "evidence_ids": [
+              "evd:lander-page-template-presets-smoke"
+            ],
+            "feature_ids": [
+              "feat:lander.page-template-presets.docs-hub-authored-graph"
+            ],
+            "id": "tst:lander-page-template-presets-docs-hub-authored-graph",
+            "status": "passing",
+            "title": "Lander docs authored graph preset test"
+          },
+          {
+            "claim_ids": [
+              "clm:lander-page-template-default-graphs-runtime",
+              "clm:lander-page-template-presets"
+            ],
+            "evidence_ids": [
+              "evd:lander-page-template-presets-smoke"
+            ],
+            "feature_ids": [
+              "feat:lander.page-template-presets.education-path"
+            ],
+            "id": "tst:lander-page-template-presets-education-path",
+            "status": "passing",
+            "title": "Lander education path preset test"
+          },
+          {
+            "claim_ids": [
+              "clm:lander-page-template-default-graphs-runtime",
+              "clm:lander-page-template-presets"
+            ],
+            "evidence_ids": [
+              "evd:lander-page-template-presets-smoke"
+            ],
+            "feature_ids": [
+              "feat:lander.page-template-presets.education-path-authored-graph"
+            ],
+            "id": "tst:lander-page-template-presets-education-path-authored-graph",
+            "status": "passing",
+            "title": "Lander education authored graph preset test"
+          },
+          {
+            "claim_ids": [
+              "clm:lander-page-template-default-graphs-runtime",
+              "clm:lander-page-template-presets"
+            ],
+            "evidence_ids": [
+              "evd:lander-page-template-presets-smoke"
+            ],
+            "feature_ids": [
+              "feat:lander.page-template-presets.faq-hub"
+            ],
+            "id": "tst:lander-page-template-presets-faq-hub",
+            "status": "passing",
+            "title": "Lander FAQ hub preset test"
+          },
+          {
+            "claim_ids": [
+              "clm:lander-page-template-default-graphs-runtime",
+              "clm:lander-page-template-presets"
+            ],
+            "evidence_ids": [
+              "evd:lander-page-template-presets-smoke"
+            ],
+            "feature_ids": [
+              "feat:lander.page-template-presets.faq-hub-authored-graph"
+            ],
+            "id": "tst:lander-page-template-presets-faq-hub-authored-graph",
+            "status": "passing",
+            "title": "Lander FAQ authored graph preset test"
+          },
+          {
+            "claim_ids": [
+              "clm:lander-page-template-preset-authoring-runtime"
+            ],
+            "evidence_ids": [
+              "evd:lander-page-template-preset-authoring-smoke"
+            ],
+            "feature_ids": [
+              "feat:lander.page-template-presets.named-link-map"
+            ],
+            "id": "tst:lander-page-template-presets-named-link-map",
+            "status": "passing",
+            "title": "Lander page template presets named link map test"
+          },
+          {
+            "claim_ids": [
+              "clm:lander-page-template-preset-authoring-runtime"
+            ],
+            "evidence_ids": [
+              "evd:lander-page-template-preset-authoring-smoke"
+            ],
+            "feature_ids": [
+              "feat:lander.page-template-presets.named-page-map"
+            ],
+            "id": "tst:lander-page-template-presets-named-page-map",
+            "status": "passing",
+            "title": "Lander page template presets named page map test"
+          },
+          {
+            "claim_ids": [
+              "clm:lander-page-template-default-graphs-runtime",
+              "clm:lander-page-template-presets"
+            ],
+            "evidence_ids": [
+              "evd:lander-page-template-presets-smoke"
+            ],
+            "feature_ids": [
+              "feat:lander.page-template-presets.package-catalog"
+            ],
+            "id": "tst:lander-page-template-presets-package-catalog",
+            "status": "passing",
+            "title": "Lander package catalog preset test"
+          },
+          {
+            "claim_ids": [
+              "clm:lander-page-template-default-graphs-runtime",
+              "clm:lander-page-template-presets"
+            ],
+            "evidence_ids": [
+              "evd:lander-page-template-presets-smoke"
+            ],
+            "feature_ids": [
+              "feat:lander.page-template-presets.package-catalog-authored-graph"
+            ],
+            "id": "tst:lander-page-template-presets-package-catalog-authored-graph",
+            "status": "passing",
+            "title": "Lander package authored graph preset test"
+          },
+          {
+            "claim_ids": [
+              "clm:lander-page-template-default-graphs-runtime",
+              "clm:lander-page-template-presets"
+            ],
+            "evidence_ids": [
+              "evd:lander-page-template-presets-smoke"
+            ],
+            "feature_ids": [
+              "feat:lander.page-template-presets.product-site"
+            ],
+            "id": "tst:lander-page-template-presets-product-site",
+            "status": "passing",
+            "title": "Lander product site preset test"
+          },
+          {
+            "claim_ids": [
+              "clm:lander-page-template-default-graphs-runtime",
+              "clm:lander-page-template-presets"
+            ],
+            "evidence_ids": [
+              "evd:lander-page-template-presets-smoke"
+            ],
+            "feature_ids": [
+              "feat:lander.page-template-presets.product-site-authored-graph"
+            ],
+            "id": "tst:lander-page-template-presets-product-site-authored-graph",
+            "status": "passing",
+            "title": "Lander product authored graph preset test"
+          },
+          {
+            "claim_ids": [
+              "clm:lander-page-template-presets",
+              "clm:lander-page-template-default-graphs-runtime"
+            ],
+            "evidence_ids": [
+              "evd:lander-page-template-presets-smoke"
+            ],
+            "feature_ids": [
+              "feat:lander.page-template-presets.package-boundary",
+              "feat:lander.page-template-presets.types",
+              "feat:lander.page-template-presets.product-site",
+              "feat:lander.page-template-presets.faq-hub",
+              "feat:lander.page-template-presets.education-path",
+              "feat:lander.page-template-presets.docs-hub",
+              "feat:lander.page-template-presets.package-catalog",
+              "feat:lander.page-template-presets.trust-center",
+              "feat:lander.page-template-presets.smoke-tests",
+              "feat:lander.page-template-presets.product-site-authored-graph",
+              "feat:lander.page-template-presets.faq-hub-authored-graph",
+              "feat:lander.page-template-presets.education-path-authored-graph",
+              "feat:lander.page-template-presets.docs-hub-authored-graph",
+              "feat:lander.page-template-presets.package-catalog-authored-graph",
+              "feat:lander.page-template-presets.trust-center-authored-graph",
+              "feat:lander.page-templates.demo-dual-authoring"
+            ],
+            "id": "tst:lander-page-template-presets-smoke",
+            "status": "passing",
+            "title": "Lander page template presets smoke test"
+          },
+          {
+            "claim_ids": [
+              "clm:lander-page-template-default-graphs-runtime",
+              "clm:lander-page-template-presets"
+            ],
+            "evidence_ids": [
+              "evd:lander-page-template-presets-smoke"
+            ],
+            "feature_ids": [
+              "feat:lander.page-template-presets.trust-center"
+            ],
+            "id": "tst:lander-page-template-presets-trust-center",
+            "status": "passing",
+            "title": "Lander trust center preset test"
+          },
+          {
+            "claim_ids": [
+              "clm:lander-page-template-default-graphs-runtime",
+              "clm:lander-page-template-presets"
+            ],
+            "evidence_ids": [
+              "evd:lander-page-template-presets-smoke"
+            ],
+            "feature_ids": [
+              "feat:lander.page-template-presets.trust-center-authored-graph"
+            ],
+            "id": "tst:lander-page-template-presets-trust-center-authored-graph",
+            "status": "passing",
+            "title": "Lander trust authored graph preset test"
+          }
+        ]
+      },
+      "inventory_truncated": {
+        "adrs": 62,
+        "boundaries": 4,
+        "claims": 106,
+        "evidence": 63,
+        "features": 556,
+        "issues": 0,
+        "profiles": 0,
+        "releases": 0,
+        "specs": 72,
+        "tests": 168
+      },
+      "observed_at": "2026-08-03T23:58:12Z",
       "present": true,
       "raw_url": "https://raw.githubusercontent.com/groupsum/mdwrk-pages/master/.ssot/registry.json",
       "registry_url": "https://github.com/groupsum/mdwrk-pages/blob/master/.ssot/registry.json",

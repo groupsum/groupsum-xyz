@@ -3698,6 +3698,16 @@
             "default": null,
             "title": "Observed At"
           },
+          "package_kind": {
+            "default": null,
+            "title": "Package Kind",
+            "type": "string"
+          },
+          "private": {
+            "default": null,
+            "title": "Private",
+            "type": "boolean"
+          },
           "publication_status": {
             "anyOf": [
               {
@@ -3860,6 +3870,16 @@
             ],
             "default": null,
             "title": "Observed At"
+          },
+          "package_kind": {
+            "default": null,
+            "title": "Package Kind",
+            "type": "string"
+          },
+          "private": {
+            "default": null,
+            "title": "Private",
+            "type": "boolean"
           },
           "publication_status": {
             "anyOf": [
@@ -4024,6 +4044,16 @@
             "default": null,
             "title": "Observed At"
           },
+          "package_kind": {
+            "default": null,
+            "title": "Package Kind",
+            "type": "string"
+          },
+          "private": {
+            "default": null,
+            "title": "Private",
+            "type": "boolean"
+          },
           "publication_status": {
             "anyOf": [
               {
@@ -4186,6 +4216,16 @@
             ],
             "default": null,
             "title": "Observed At"
+          },
+          "package_kind": {
+            "default": null,
+            "title": "Package Kind",
+            "type": "string"
+          },
+          "private": {
+            "default": null,
+            "title": "Private",
+            "type": "boolean"
           },
           "publication_status": {
             "anyOf": [
@@ -13093,6 +13133,22 @@
           },
           {
             "in": "query",
+            "name": "package_kind",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "private",
+            "required": false,
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
+            "in": "query",
             "name": "description",
             "required": false,
             "schema": {
@@ -13335,6 +13391,22 @@
             "required": false,
             "schema": {
               "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "package_kind",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "private",
+            "required": false,
+            "schema": {
+              "type": "boolean"
             }
           },
           {

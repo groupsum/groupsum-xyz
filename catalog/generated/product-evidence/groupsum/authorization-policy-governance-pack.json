@@ -106,6 +106,7 @@
       "name": "authorization-policy-governance-pack",
       "observed_at": "2026-08-03T22:06:00Z",
       "owner": "groupsum",
+      "package_kind": "package-candidate",
       "private": false,
       "publication_status": "not-confirmed",
       "published": false,
@@ -328,6 +329,18 @@
     "package_ids": [
       "package:pypi:authorization-policy-governance-pack:groupsum/authorization-policy-governance-pack:pyproject.toml"
     ],
+    "packages": [
+      {
+        "ecosystem": "pypi",
+        "id": "package:pypi:authorization-policy-governance-pack:groupsum/authorization-policy-governance-pack:pyproject.toml",
+        "manifest_path": "pyproject.toml",
+        "name": "authorization-policy-governance-pack",
+        "package_kind": "package-candidate",
+        "publication_status": "not-confirmed",
+        "published": false,
+        "route": "/catalog/packages/pypi/authorization-policy-governance-pack-2750f97e"
+      }
+    ],
     "pushed_at": "2026-06-02T10:57:14Z",
     "related_resources": [
       {
@@ -355,8 +368,8 @@
       "counts": {},
       "coverage": {},
       "governed": false,
-      "observation_status": "error",
-      "observed_at": "2026-08-03T22:06:00Z",
+      "observation_status": "not_found",
+      "observed_at": "2026-08-03T23:58:12Z",
       "present": false,
       "registry_url": null,
       "status_counts": {},

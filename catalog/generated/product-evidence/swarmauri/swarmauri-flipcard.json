@@ -108,6 +108,7 @@
       "name": "svelte",
       "observed_at": "2026-08-03T22:06:00Z",
       "owner": "swarmauri",
+      "package_kind": "package-candidate",
       "private": true,
       "publication_status": "manifest_private",
       "published": false,
@@ -335,6 +336,18 @@
     "package_ids": [
       "package:npm:svelte:swarmauri/swarmauri-flipcard:svelte/package.json"
     ],
+    "packages": [
+      {
+        "ecosystem": "npm",
+        "id": "package:npm:svelte:swarmauri/swarmauri-flipcard:svelte/package.json",
+        "manifest_path": "svelte/package.json",
+        "name": "svelte",
+        "package_kind": "package-candidate",
+        "publication_status": "manifest_private",
+        "published": false,
+        "route": "/catalog/packages/npm/svelte-b9c27ccb"
+      }
+    ],
     "pushed_at": "2024-09-05T00:30:47Z",
     "related_resources": [],
     "relationship_counts": {
@@ -346,8 +359,8 @@
       "counts": {},
       "coverage": {},
       "governed": false,
-      "observation_status": "error",
-      "observed_at": "2026-08-03T22:06:02Z",
+      "observation_status": "not_found",
+      "observed_at": "2026-08-03T23:58:12Z",
       "present": false,
       "registry_url": null,
       "status_counts": {},

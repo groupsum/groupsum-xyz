@@ -179,6 +179,7 @@
       "name": "tigrbl_billing",
       "observed_at": "2026-08-03T22:06:00Z",
       "owner": "tigrbl",
+      "package_kind": "published-package",
       "private": false,
       "publication_status": "published",
       "published": true,
@@ -583,6 +584,18 @@
     "owner": "tigrbl",
     "package_ids": [
       "package:pypi:tigrbl_billing:tigrbl/tigrbl_billing:pyproject.toml"
+    ],
+    "packages": [
+      {
+        "ecosystem": "pypi",
+        "id": "package:pypi:tigrbl_billing:tigrbl/tigrbl_billing:pyproject.toml",
+        "manifest_path": "pyproject.toml",
+        "name": "tigrbl_billing",
+        "package_kind": "published-package",
+        "publication_status": "published",
+        "published": true,
+        "route": "/catalog/packages/pypi/tigrbl-billing-45d6972f"
+      }
     ],
     "pushed_at": "2026-05-20T03:06:58Z",
     "related_resources": [
@@ -1199,8 +1212,8 @@
       "counts": {},
       "coverage": {},
       "governed": false,
-      "observation_status": "error",
-      "observed_at": "2026-08-03T22:06:01Z",
+      "observation_status": "not_found",
+      "observed_at": "2026-08-03T23:58:13Z",
       "present": false,
       "registry_url": null,
       "status_counts": {},

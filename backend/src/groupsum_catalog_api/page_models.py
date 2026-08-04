@@ -382,25 +382,7 @@ def record_collection(
                    o.id AS organization_id, o.name AS organization_name,
                    COUNT(DISTINCT rp.package_id) AS package_count,
                    COUNT(DISTINCT rr.repository_id) AS repository_count,
-                   COUNT(DISTINCT rs.resource_id) AS resource_count,
-                   (SELECT COUNT(*) FROM releases rel
-                     WHERE rel.package_id IN (
-                               SELECT package_id FROM record_packages WHERE record_id = r.id
-                           )
-                        OR rel.repository_id IN (
-                               SELECT repository_id FROM record_repositories WHERE record_id = r.id
-                           )) AS release_count,
-                   (SELECT COUNT(*) FROM dependencies dep
-                     WHERE dep.source_kind = 'package' AND dep.source_id IN (
-                               SELECT package_id FROM record_packages WHERE record_id = r.id
-                           )) AS dependency_count,
-                   (SELECT COUNT(*) FROM dependencies dep
-                     WHERE dep.target_id IN (
-                               SELECT ecosystem || ':' || REPLACE(LOWER(name), '_', '-')
-                                 FROM packages WHERE id IN (
-                                     SELECT package_id FROM record_packages WHERE record_id = r.id
-                                 )
-                           )) AS dependent_count
+                   COUNT(DISTINCT rs.resource_id) AS resource_count
               FROM records r
               JOIN organizations o ON o.id = r.organization_id
          LEFT JOIN record_packages rp ON rp.record_id = r.id
@@ -414,7 +396,6 @@ def record_collection(
         )
         for record in records:
             record["featured"] = bool(record["featured"])
-            record["signals"] = record_signals(connection, record["id"])
             record["technologies"] = [
                 item["label"]
                 for item in rows(
@@ -763,11 +744,37 @@ def record_detail(
             if isinstance(repository.get("ssot_summary"), str):
                 repository["ssot_summary"] = json.loads(repository["ssot_summary"] or "{}")
             repository.update(repository_signals(connection, repository["id"]))
+            repository["releases"] = rows(
+                connection,
+                """
+                SELECT id, release_kind, route_key, version, url, published_at,
+                       downloads, prerelease, draft, observed_at
+                  FROM releases WHERE repository_id = ?
+              ORDER BY COALESCE(published_at, observed_at) DESC LIMIT 100
+                """,
+                (repository["id"],),
+            )
+            for release in repository["releases"]:
+                release["prerelease"] = bool(release["prerelease"])
+                release["draft"] = bool(release["draft"])
+            repository["release_count"] = connection.execute(
+                "SELECT COUNT(*) FROM releases WHERE repository_id = ?",
+                (repository["id"],),
+            ).fetchone()[0]
+            repository["governance"] = {
+                "governed": repository.pop("ssot_governed"),
+                "registry_url": repository.pop("ssot_registry_url"),
+                "registry_sha256": repository.pop("ssot_registry_sha256"),
+                "schema_version": repository.pop("ssot_schema_version"),
+                "observed_at": repository.pop("ssot_observed_at"),
+                "summary": repository.pop("ssot_summary") or {},
+            }
         packages = rows(
             connection,
             """
             SELECT p.id, p.ecosystem, p.name, p.registry_url, p.description,
-                   p.route_key, p.source_url, p.manifest_path, p.latest_version, p.published,
+                   p.route_key, p.source_url, p.manifest_path, p.package_kind, p.private,
+                   p.latest_version, p.published,
                    p.publication_status, p.published_at, p.observed_at, rp.role,
                    (SELECT COUNT(*) FROM releases rel WHERE rel.package_id = p.id)
                        AS release_count,
@@ -783,6 +790,7 @@ def record_detail(
             (record["id"],),
         )
         for package in packages:
+            package["private"] = bool(package["private"])
             package["published"] = (
                 bool(package["published"]) if package["published"] is not None else None
             )
@@ -798,6 +806,90 @@ def record_detail(
             package["downloads"] = (
                 metric_number(download_rows[0]["value"]) if download_rows else None
             )
+            package["repositories"] = rows(
+                connection,
+                """
+                SELECT repo.id, repo.owner, repo.name, repo.url, pr.path
+                  FROM repositories repo JOIN package_repositories pr
+                    ON pr.repository_id = repo.id
+                 WHERE pr.package_id = ? ORDER BY repo.owner, repo.name, pr.path
+                """,
+                (package["id"],),
+            )
+            package_dependencies = rows(
+                connection,
+                """
+                SELECT id, source_id, target_kind, target_id, requirement, scope,
+                       evidence_type, source_url, completeness, observed_at
+                  FROM dependencies
+                 WHERE source_kind = 'package' AND source_id = ?
+              ORDER BY scope, target_id
+                """,
+                (package["id"],),
+            )
+            natural_key = f"{package['ecosystem']}:{package['name'].lower().replace('_', '-')}"
+            package_dependents = rows(
+                connection,
+                """
+                SELECT dep.id, dep.source_kind, dep.source_id,
+                       source.ecosystem AS source_ecosystem,
+                       source.name AS source_name, dep.target_id,
+                       dep.requirement, dep.scope, dep.evidence_type, dep.source_url,
+                       dep.completeness, dep.observed_at
+                  FROM dependencies dep
+             LEFT JOIN packages source ON source.id = dep.source_id
+                 WHERE dep.target_id = ?
+              ORDER BY COALESCE(source.ecosystem, dep.source_kind),
+                       COALESCE(source.name, dep.source_id) COLLATE NOCASE
+                """,
+                (natural_key,),
+            )
+            scope_counts: dict[str, int] = defaultdict(int)
+            for dependency in package_dependencies:
+                scope_counts[str(dependency.get("scope") or "dependencies")] += 1
+            completeness_counts: dict[str, int] = defaultdict(int)
+            for dependent in package_dependents:
+                completeness_counts[str(dependent.get("completeness") or "catalog-observed")] += 1
+            package["dependencies"] = package_dependencies
+            package["dependents"] = package_dependents
+            package["dependency_summary"] = {
+                "edge_count": len(package_dependencies),
+                "unique_target_count": len(
+                    {item["target_id"] for item in package_dependencies}
+                ),
+                "internal_edge_count": sum(
+                    item["target_kind"] == "package" for item in package_dependencies
+                ),
+                "external_edge_count": sum(
+                    item["target_kind"] == "external-package"
+                    for item in package_dependencies
+                ),
+                "by_scope": dict(sorted(scope_counts.items())),
+            }
+            package["dependent_summary"] = {
+                "edge_count": len(package_dependents),
+                "unique_source_count": len(
+                    {item["source_id"] for item in package_dependents}
+                ),
+                "by_completeness": dict(sorted(completeness_counts.items())),
+                "coverage": (
+                    "All reverse edges within this collected catalog plus bounded registry "
+                    "observations where a registry exposes them; not a complete global count."
+                ),
+            }
+            package["releases"] = rows(
+                connection,
+                """
+                SELECT id, release_kind, route_key, version, url, published_at,
+                       downloads, prerelease, draft, observed_at
+                  FROM releases WHERE package_id = ?
+              ORDER BY COALESCE(published_at, observed_at) DESC LIMIT 100
+                """,
+                (package["id"],),
+            )
+            for release in package["releases"]:
+                release["prerelease"] = bool(release["prerelease"])
+                release["draft"] = bool(release["draft"])
         resources = rows(
             connection,
             """
@@ -808,120 +900,6 @@ def record_detail(
             """,
             (record["id"],),
         )
-        releases = rows(
-            connection,
-            """
-            SELECT rel.id, rel.release_kind, rel.route_key, rel.version, rel.url, rel.published_at,
-                   rel.downloads, rel.prerelease, rel.draft, rel.observed_at,
-                   rel.package_id, rel.repository_id, p.name AS package_name,
-                   p.ecosystem, repo.owner AS repository_owner,
-                   repo.name AS repository_name
-              FROM releases rel
-         LEFT JOIN packages p ON p.id = rel.package_id
-         LEFT JOIN repositories repo ON repo.id = rel.repository_id
-             WHERE rel.package_id IN (
-                       SELECT package_id FROM record_packages WHERE record_id = ?
-                   )
-                OR rel.repository_id IN (
-                       SELECT repository_id FROM record_repositories WHERE record_id = ?
-                   )
-          ORDER BY COALESCE(rel.published_at, rel.observed_at) DESC
-             LIMIT 100
-            """,
-            (record["id"], record["id"]),
-        )
-        for release in releases:
-            release["prerelease"] = bool(release["prerelease"])
-            release["draft"] = bool(release["draft"])
-        release_summary = rows(
-            connection,
-            """
-            SELECT COALESCE(p.ecosystem, rel.release_kind) AS release_kind,
-                   COUNT(*) AS release_count,
-                   MAX(COALESCE(rel.published_at, rel.observed_at)) AS latest_at,
-                   SUM(COALESCE(rel.downloads, 0)) AS downloads
-              FROM releases rel
-         LEFT JOIN packages p ON p.id = rel.package_id
-             WHERE rel.package_id IN (
-                       SELECT package_id FROM record_packages WHERE record_id = ?
-                   )
-                OR rel.repository_id IN (
-                       SELECT repository_id FROM record_repositories WHERE record_id = ?
-                   )
-          GROUP BY COALESCE(p.ecosystem, rel.release_kind)
-          ORDER BY release_count DESC, release_kind
-            """,
-            (record["id"], record["id"]),
-        )
-        dependencies = rows(
-            connection,
-            """
-            SELECT dep.id, dep.source_id, source.ecosystem AS source_ecosystem,
-                   source.name AS source_name, dep.target_kind, dep.target_id,
-                   dep.requirement, dep.scope, dep.evidence_type, dep.source_url,
-                   dep.completeness, dep.observed_at
-              FROM dependencies dep
-              JOIN packages source ON source.id = dep.source_id
-             WHERE dep.source_kind = 'package'
-               AND dep.source_id IN (
-                     SELECT package_id FROM record_packages WHERE record_id = ?
-               )
-          ORDER BY source.ecosystem, source.name COLLATE NOCASE,
-                   dep.scope, dep.target_id
-             LIMIT 200
-            """,
-            (record["id"],),
-        )
-        dependents = rows(
-            connection,
-            """
-            SELECT dep.id, dep.source_kind, dep.source_id,
-                   source.ecosystem AS source_ecosystem,
-                   source.name AS source_name, dep.target_id,
-                   dep.requirement, dep.scope, dep.evidence_type, dep.source_url,
-                   dep.completeness, dep.observed_at
-              FROM dependencies dep
-         LEFT JOIN packages source ON source.id = dep.source_id
-             WHERE dep.target_id IN (
-                       SELECT ecosystem || ':' || REPLACE(LOWER(name), '_', '-')
-                         FROM packages
-                        WHERE id IN (
-                            SELECT package_id FROM record_packages WHERE record_id = ?
-                        )
-                   )
-          ORDER BY COALESCE(source.ecosystem, dep.source_kind),
-                   COALESCE(source.name, dep.source_id) COLLATE NOCASE
-             LIMIT 200
-            """,
-            (record["id"],),
-        )
-        dependency_counts = connection.execute(
-            """
-            SELECT
-              (SELECT COUNT(*) FROM dependencies
-                WHERE source_kind = 'package' AND source_id IN (
-                    SELECT package_id FROM record_packages WHERE record_id = ?
-                )) AS dependencies,
-              (SELECT COUNT(*) FROM dependencies
-                WHERE target_id IN (
-                    SELECT ecosystem || ':' || REPLACE(LOWER(name), '_', '-')
-                      FROM packages WHERE id IN (
-                          SELECT package_id FROM record_packages WHERE record_id = ?
-                      )
-                )) AS dependents,
-              (SELECT COUNT(*) FROM dependencies
-                WHERE source_kind = 'package' AND target_kind = 'package'
-                  AND source_id IN (
-                      SELECT package_id FROM record_packages WHERE record_id = ?
-                  )) AS internal_dependencies,
-              (SELECT COUNT(*) FROM dependencies
-                WHERE source_kind = 'package' AND target_kind = 'external-package'
-                  AND source_id IN (
-                      SELECT package_id FROM record_packages WHERE record_id = ?
-                  )) AS external_dependencies
-            """,
-            (record["id"], record["id"], record["id"], record["id"]),
-        ).fetchone()
         deployments = rows(
             connection,
             """
@@ -984,7 +962,6 @@ def record_detail(
         for item in evidence:
             item["rooted_in_ssot"] = bool(item.get("ssot_claim_id"))
         rooted_claims = sum(1 for claim in claims if claim["rooted_in_ssot"])
-        signals = record_signals(connection, record["id"])
         entity_graph = entity_graph_for_source(connection, "records", record["id"])
     return cacheable_json(
         request,
@@ -998,25 +975,10 @@ def record_detail(
                 "repositories": repositories,
                 "packages": packages,
                 "resources": resources,
-                "releases": releases,
-                "release_summary": release_summary,
                 "deployments": deployments,
-                "dependencies": dependencies,
-                "dependents": dependents,
-                "dependency_summary": {
-                    **dict(dependency_counts),
-                    "dependency_rows_returned": len(dependencies),
-                    "dependent_rows_returned": len(dependents),
-                    "dependent_coverage": (
-                        "All reverse edges within this collected catalog plus bounded registry "
-                        "reverse-dependency observations where a registry exposes them; not a "
-                        "complete global npm or PyPI dependent count."
-                    ),
-                },
-                "signals": signals,
             },
             "relations": relations,
-            "governance": {
+            "editorial": {
                 "features": features,
                 "claims": claims,
                 "evidence": evidence,
@@ -1033,18 +995,16 @@ def record_detail(
                         "represented as SSOT-verified claims."
                     ),
                 },
-                "ssot_registries": [
+            },
+            "governance": {
+                "repositories": [
                     {
                         "repository_id": repository["id"],
                         "repository": f"{repository['owner']}/{repository['name']}",
-                        "governed": repository["ssot_governed"],
-                        "registry_url": repository.get("ssot_registry_url"),
-                        "schema_version": repository.get("ssot_schema_version"),
-                        "observed_at": repository.get("ssot_observed_at"),
-                        "summary": repository.get("ssot_summary") or {},
+                        "role": repository["role"],
+                        **repository["governance"],
                     }
                     for repository in repositories
-                    if repository.get("ssot_registry_url")
                 ],
             },
         },

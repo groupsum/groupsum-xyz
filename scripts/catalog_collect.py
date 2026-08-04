@@ -324,6 +324,37 @@ def summarize_ssot_registry(
             status = str(item.get("status") or item.get("implementation_status") or "unreported")
             statuses[status] = statuses.get(status, 0) + 1
         result["status_counts"][key] = dict(sorted(statuses.items()))
+    # Preserve a compact, registry-authored inventory so consumers can group
+    # governance by repository without publishing the raw registry payload.
+    # Only identity, status, display text, and explicit linkage fields cross
+    # this boundary; arbitrary registry extensions remain source-only.
+    result["inventory"] = {}
+    result["inventory_truncated"] = {}
+    inventory_limit = 20
+    for key in SSOT_ENTITY_KEYS:
+        values = registry.get(key)
+        rows = values if isinstance(values, list) else []
+        result["inventory"][key] = [
+            {
+                field: item[field]
+                for field in (
+                    "id",
+                    "status",
+                    "implementation_status",
+                    "title",
+                    "name",
+                    "statement",
+                    "evidence_ids",
+                    "test_ids",
+                    "claim_ids",
+                    "feature_ids",
+                )
+                if item.get(field) is not None
+            }
+            for item in rows[:inventory_limit]
+            if isinstance(item, dict) and item.get("id")
+        ]
+        result["inventory_truncated"][key] = max(0, len(rows) - inventory_limit)
     claims = [item for item in registry.get("claims", []) if isinstance(item, dict)]
     evidence = [item for item in registry.get("evidence", []) if isinstance(item, dict)]
     result["coverage"] = {
@@ -732,6 +763,7 @@ def collect_owner_packages(client: ApiClient, owner: str) -> tuple[list[dict[str
                 "ecosystem": "ghcr" if package_type == "container" else "github-npm",
                 "name": package_name, "url": row.get("html_url"), "created_at": row.get("created_at"),
                 "updated_at": row.get("updated_at"), "owner": owner, "published": True,
+                "repository": (row.get("repository") or {}).get("full_name"),
                 "versions": [
                     {"id": str(version.get("id")), "name": version.get("name"), "url": version.get("html_url"),
                      "created_at": version.get("created_at"), "updated_at": version.get("updated_at"),
@@ -1008,11 +1040,48 @@ def main() -> int:
                     f"{observation.status}",
                     file=sys.stderr,
                 )
+        github_package_ownership: dict[tuple[str, str, str], str] = {}
+        if config.get("include_github_packages", True):
+            with concurrent.futures.ThreadPoolExecutor(
+                max_workers=min(workers, len(owners) or 1)
+            ) as executor:
+                package_futures = [
+                    executor.submit(collect_owner_packages, client, owner)
+                    for owner in owners
+                ]
+                for package_future in concurrent.futures.as_completed(package_futures):
+                    package_rows, package_observations = package_future.result()
+                    observations.extend(package_observations)
+                    for package in package_rows:
+                        repository = package.get("repository")
+                        if repository:
+                            github_package_ownership[
+                                (
+                                    str(package.get("owner") or ""),
+                                    str(package.get("ecosystem") or ""),
+                                    str(package.get("name") or ""),
+                                )
+                            ] = str(repository)
+        ownership_links = 0
+        for package in current.get("packages", []):
+            repository = github_package_ownership.get(
+                (
+                    str(package.get("owner") or ""),
+                    str(package.get("ecosystem") or ""),
+                    str(package.get("name") or ""),
+                )
+            )
+            if repository and package.get("repository") != repository:
+                package["repository"] = repository
+                ownership_links += 1
         ssot_sources = {item.source for item in observations}
         current["observations"] = [
             item for item in current.get("observations", [])
             if item.get("source") not in ssot_sources
         ] + [item.as_dict() for item in observations]
+        current["relationships"] = relation_rows(
+            current.get("repositories", []), current.get("packages", [])
+        )
         current["ssot_observed_at"] = ISO_NOW()
         summary = summarize(current)
         args.output.write_text(json.dumps(current, indent=2, sort_keys=True) + "\n", encoding="utf-8")
@@ -1022,7 +1091,11 @@ def main() -> int:
             bool(item.get("ssot_governance", {}).get("governed"))
             for item in repositories
         )
-        print(json.dumps({"ssot_governed_repositories": governed, **summary}, indent=2))
+        print(json.dumps({
+            "ssot_governed_repositories": governed,
+            "github_package_ownership_links": ownership_links,
+            **summary,
+        }, indent=2))
         return 0
     observed_at = ISO_NOW()
     observations: list[Observation] = []

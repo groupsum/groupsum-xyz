@@ -159,6 +159,7 @@ function RepositoryDetail({ record, onNavigate }: { record: CatalogRecord; onNav
   const deployment = valueRecord(record.latest_deployment);
   const technologies = valueStrings(record.technologies);
   const resources = valueRecords(record.related_resources);
+  const packages = valueRecords(record.packages);
   return (
     <>
       <DetailSection title="Repository overview">
@@ -194,6 +195,9 @@ function RepositoryDetail({ record, onNavigate }: { record: CatalogRecord; onNav
       <DetailSection title="Relationships" intro="Relationship types are aggregated from repository manifests and catalog links.">
         <RelationshipRows values={record.relationship_counts} />
       </DetailSection>
+      <DetailSection title="Contained packages" intro="Every package is a child resource owned by this repository at an explicit manifest path.">
+        {packages.length > 0 ? <ul className="border-y border-[var(--color-border-soft)] divide-y divide-[var(--color-border-soft)]">{packages.map((pkg) => <li key={String(pkg.id)} className="py-3 sm:flex sm:items-baseline sm:justify-between gap-5"><div><span className="text-[10px] font-mono uppercase text-accent">{humanLabel(String(pkg.ecosystem || "package"))} · {humanLabel(String(pkg.package_kind || "package candidate"))}</span><p className="text-sm text-ink break-all">{String(pkg.name)}</p><p className="text-xs text-ink-muted">{String(pkg.manifest_path || "Manifest path not recorded")}</p></div><button onClick={() => onNavigate(String(pkg.route))} className="text-xs font-mono text-accent hover:underline cursor-pointer">View package</button></li>)}</ul> : <p className="text-sm text-ink-muted">No package manifests were observed in this repository.</p>}
+      </DetailSection>
       {resources.length > 0 && <DetailSection title="Related resources" intro="Source-backed APIs, demos, documentation, examples, showcases, UIs, and websites attached to this repository.">
         <ul className="border-y border-[var(--color-border-soft)] divide-y divide-[var(--color-border-soft)]">
           {resources.map((resource) => <li key={String(resource.id)} className="py-3 sm:flex sm:items-baseline sm:justify-between gap-5"><div><span className="text-[10px] font-mono uppercase text-accent">{humanLabel(String(resource.kind || "resource"))}</span><p className="text-sm text-ink break-all">{String(resource.name || "Related resource")}</p></div><div className="flex gap-3">{resource.route && <button onClick={() => onNavigate(String(resource.route))} className="text-xs font-mono text-accent hover:underline cursor-pointer">View details</button>}{resource.url && <a href={String(resource.url)} target="_blank" rel="noreferrer" className="text-xs font-mono text-accent hover:underline inline-flex items-center gap-1">Source <ExternalLink className="w-3.5 h-3.5" /></a>}</div></li>)}
@@ -207,13 +211,15 @@ function RepositoryDetail({ record, onNavigate }: { record: CatalogRecord; onNav
 function PackageDetail({ record, onNavigate }: { record: CatalogRecord; onNavigate: (path: string) => void }) {
   const registryLink = record.registry_url ? <a href={String(record.registry_url)} target="_blank" rel="noreferrer" className="text-accent hover:underline">{String(record.registry_url)}</a> : "Not confirmed";
   const sourceLink = record.source_url ? <a href={String(record.source_url)} target="_blank" rel="noreferrer" className="text-accent hover:underline">View manifest</a> : "Not recorded";
+  const repositories = valueRecords(record.repositories);
   return (
     <>
       <DetailSection title="Package overview">
         <DetailRows rows={[
           ["Owner", String(record.owner || "Not recorded")],
           ["Ecosystem", humanLabel(String(record.ecosystem || "unknown"))],
-          ["Repository", String(record.repository || "Not linked")],
+          ["Package kind", humanLabel(String(record.package_kind || "package candidate"))],
+          ["Repository", repositories.length > 0 ? repositories.map((repository, index) => <React.Fragment key={String(repository.id)}>{index > 0 ? ", " : ""}<button onClick={() => onNavigate(`/catalog/repositories/${String(repository.owner)}/${String(repository.name)}`)} className="text-accent hover:underline cursor-pointer">{String(repository.owner)}/{String(repository.name)}</button>{repository.path ? <span className="text-ink-muted"> · {String(repository.path)}</span> : null}</React.Fragment>) : String(record.repository || "Not linked")],
           ["Publication", humanLabel(String(record.publication_status || "not confirmed"))],
           ["Latest version", String(record.latest_version || "Not recorded")],
           ["Declared version", String(record.version_declared || "Not recorded")],
@@ -240,10 +246,10 @@ function PackageDetail({ record, onNavigate }: { record: CatalogRecord; onNaviga
   );
 }
 
-function ResourceDetail({ record }: { record: CatalogRecord }) {
+function ResourceDetail({ record, onNavigate }: { record: CatalogRecord; onNavigate: (path: string) => void }) {
   return <>
     <DetailSection title={`${humanLabel(String(record.resource_type || "resource"))} overview`} intro="This is a typed implementation-evidence resource attached to its parent repository or product.">
-      <DetailRows rows={[["Resource type", humanLabel(String(record.resource_type || "resource"))], ["Repository", String(record.repository || "Not linked")], ["Repository path", String(record.path || "Not recorded")], ["Evidence type", humanLabel(String(record.evidence_type || "source"))]]} />
+      <DetailRows rows={[["Resource type", humanLabel(String(record.resource_type || "resource"))], ["Repository", record.repository_route ? <button onClick={() => onNavigate(String(record.repository_route))} className="text-accent hover:underline cursor-pointer">{String(record.repository || "View repository")}</button> : String(record.repository || "Not linked")], ["Repository path", String(record.path || "Not recorded")], ["Evidence type", humanLabel(String(record.evidence_type || "source"))]]} />
     </DetailSection>
     <LegalSection record={record} />
   </>;
@@ -510,7 +516,7 @@ export function PublicCatalogDetail({ path, onNavigate }: { path: string; onNavi
             .then((response) => response.ok ? response.json() : Promise.reject(new Error(`resource response ${response.status}`)))
             .then((model: Record<string, unknown>) => {
               const item = valueRecord(model.item); const legal = valueRecord(model.legal); const implementation = valueRecord(model.implementation);
-              setRecord({ ...match, ...item, resource_type: model.resource_type || match.resource_type, parent: model.parent, entity_graph: model.graph as EntityGraph | null, legal_evidence: valueRecords(legal.evidence), license_expression: legal.license_expression, license_status: legal.status, releases: implementation.releases, dependencies: implementation.dependencies, dependents: implementation.dependents, downloads: valueRecord(implementation.downloads).value } as CatalogRecord);
+              setRecord({ ...match, ...item, resource_type: model.resource_type || match.resource_type, parent: model.parent, entity_graph: model.graph as EntityGraph | null, legal_evidence: valueRecords(legal.evidence), license_expression: legal.license_expression, license_status: legal.status, repositories: implementation.repositories, releases: implementation.releases, dependencies: implementation.dependencies, dependents: implementation.dependents, downloads: valueRecord(implementation.downloads).value } as CatalogRecord);
               setState("ready");
             })
             .catch(() => { setRecord(match); setState("ready"); });
@@ -518,7 +524,7 @@ export function PublicCatalogDetail({ path, onNavigate }: { path: string; onNavi
         }
         if (dataset === "repositories") {
           const owner = String(match.owner || segments.at(-2) || ""); const name = String(match.name || segments.at(-1) || "");
-          getEntityPageModel(`entity:repositories:github:${owner}/${name}`, controller.signal)
+          getEntityPageModel(`entity:repositories:repository:${owner}/${name}`, controller.signal)
             .then((model) => { setRecord({ ...match, entity_graph: model.graph }); setState("ready"); })
             .catch(() => { setRecord(match); setState("ready"); });
           return;
@@ -555,7 +561,7 @@ export function PublicCatalogDetail({ path, onNavigate }: { path: string; onNavi
       {record.claim_boundary && <aside className="border-l-2 border-accent pl-4 py-1 text-sm text-ink-muted leading-relaxed"><strong className="text-ink block mb-1">Source boundary</strong>{String(record.claim_boundary)}</aside>}
       {record.kind === "repository" && <RepositoryDetail record={record} onNavigate={onNavigate} />}
       {record.kind === "package" && <PackageDetail record={record} onNavigate={onNavigate} />}
-      {record.kind === "resource" && <ResourceDetail record={record} />}
+      {record.kind === "resource" && <ResourceDetail record={record} onNavigate={onNavigate} />}
       {record.kind === "release" && <ReleaseDetail record={record} onNavigate={onNavigate} />}
       {record.kind === "technology" && <TechnologyDetail record={record} />}
       {record.entity_graph && <DetailSection title="Connected resources" intro="Typed graph relationships keep ownership, implementation, distribution, and source-code roles explicit."><EntityRelationshipRows graph={record.entity_graph} onNavigate={onNavigate} /></DetailSection>}

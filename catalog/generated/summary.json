@@ -10,8 +10,9 @@
   "github_package_versions": 27,
   "github_releases": 7534,
   "observations_by_status": {
-    "cached": 6803,
-    "error": 565
+    "cached": 6833,
+    "error": 565,
+    "not_found": 38
   },
   "observations_with_errors": 565,
   "owners": 4,
@@ -24,7 +25,7 @@
   "packages": 1125,
   "published_packages": 490,
   "registry_release_versions": 9752,
-  "relationships": 10734,
+  "relationships": 10735,
   "repositories": 68,
   "schema_version": "1.0.0",
   "stars": 198,
