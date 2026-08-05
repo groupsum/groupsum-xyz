@@ -84,6 +84,11 @@ class CatalogCollection(ApiModel):
     kind: str
     resource_kind: Literal["repository", "package", "resource", "technology"]
     count: int
+    page: int = 1
+    page_size: int = 50
+    page_count: int = 1
+    facets: dict[str, dict[str, int]] = Field(default_factory=dict)
+    generated_at: datetime | None = None
     records: list[RepositorySummary | PackageSummary | TypedResourceSummary | TechnologySummary]
 
 

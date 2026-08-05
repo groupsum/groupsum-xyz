@@ -30,6 +30,28 @@ from .schemas.catalog import CatalogCollection, CatalogMember, CatalogOverview
 from .tables import ALL_TABLES
 
 
+def catalog_collection_from_request(database, request: Request, resource_kind: str):
+    params = request.query_params
+    try:
+        page = int(params.get("page", 1))
+        page_size = int(params.get("page_size", 50))
+    except (TypeError, ValueError):
+        page, page_size = 1, 50
+    return catalog_collection(
+        database,
+        request,
+        resource_kind,
+        page=page,
+        page_size=page_size,
+        query=params.get("q", ""),
+        resource_type=params.get("resource_type", ""),
+        owner=params.get("owner", params.get("repository_owner", "")),
+        ecosystem=params.get("ecosystem", ""),
+        publication_status=params.get("publication_status", ""),
+        sort=params.get("sort", "name"),
+    )
+
+
 class CatalogAppSpec(
     defineAppSpec(
         title="Groupsum Catalog API",
@@ -226,7 +248,7 @@ def build_app(
         response_model=CatalogCollection,
     )
     def catalog_repositories(request: Request):
-        return catalog_collection(database, request, "repository")
+        return catalog_collection_from_request(database, request, "repository")
 
     @catalog_app.get(
         "/api/v1/catalog/repositories/{owner}/{repository}",
@@ -241,7 +263,7 @@ def build_app(
         response_model=CatalogCollection,
     )
     def catalog_packages(request: Request):
-        return catalog_collection(database, request, "package")
+        return catalog_collection_from_request(database, request, "package")
 
     @catalog_app.get(
         "/api/v1/catalog/packages/{route_key}",
@@ -265,7 +287,7 @@ def build_app(
         response_model=CatalogCollection,
     )
     def catalog_resources(request: Request):
-        return catalog_collection(database, request, "resource")
+        return catalog_collection_from_request(database, request, "resource")
 
     @catalog_app.get(
         "/api/v1/catalog/resources/{route_key}",
@@ -281,7 +303,7 @@ def build_app(
         response_model=CatalogCollection,
     )
     def catalog_technologies(request: Request):
-        return catalog_collection(database, request, "technology")
+        return catalog_collection_from_request(database, request, "technology")
 
     @catalog_app.get(
         "/api/v1/catalog/technologies/{slug}", summary="Technology catalog member record"

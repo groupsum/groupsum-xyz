@@ -8,9 +8,47 @@
             "title": "Count",
             "type": "integer"
           },
+          "facets": {
+            "additionalProperties": {
+              "additionalProperties": {
+                "type": "integer"
+              },
+              "type": "object"
+            },
+            "title": "Facets",
+            "type": "object"
+          },
+          "generated_at": {
+            "anyOf": [
+              {
+                "format": "date-time",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Generated At"
+          },
           "kind": {
             "title": "Kind",
             "type": "string"
+          },
+          "page": {
+            "default": 1,
+            "title": "Page",
+            "type": "integer"
+          },
+          "page_count": {
+            "default": 1,
+            "title": "Page Count",
+            "type": "integer"
+          },
+          "page_size": {
+            "default": 50,
+            "title": "Page Size",
+            "type": "integer"
           },
           "records": {
             "items": {
@@ -4744,6 +4782,102 @@
         "title": "PackageSummary",
         "type": "object"
       },
+      "PackageTaxonomyCountResponse": {
+        "description": "Tigrbl v3 PackageTaxonomy count schema",
+        "properties": {
+          "id": {
+            "default": null,
+            "title": "Id",
+            "type": "string"
+          },
+          "package_id": {
+            "title": "Package Id",
+            "type": "string"
+          },
+          "taxonomy_id": {
+            "title": "Taxonomy Id",
+            "type": "string"
+          }
+        },
+        "required": [
+          "package_id",
+          "taxonomy_id"
+        ],
+        "title": "PackageTaxonomyCountResponse",
+        "type": "object"
+      },
+      "PackageTaxonomyExistsResponse": {
+        "description": "Tigrbl v3 PackageTaxonomy exists schema",
+        "properties": {
+          "id": {
+            "default": null,
+            "title": "Id",
+            "type": "string"
+          },
+          "package_id": {
+            "title": "Package Id",
+            "type": "string"
+          },
+          "taxonomy_id": {
+            "title": "Taxonomy Id",
+            "type": "string"
+          }
+        },
+        "required": [
+          "package_id",
+          "taxonomy_id"
+        ],
+        "title": "PackageTaxonomyExistsResponse",
+        "type": "object"
+      },
+      "PackageTaxonomyGroupByRequest": {
+        "description": "Tigrbl v3 PackageTaxonomy group_by schema",
+        "properties": {
+          "id": {
+            "default": null,
+            "title": "Id",
+            "type": "string"
+          },
+          "package_id": {
+            "title": "Package Id",
+            "type": "string"
+          },
+          "taxonomy_id": {
+            "title": "Taxonomy Id",
+            "type": "string"
+          }
+        },
+        "required": [
+          "package_id",
+          "taxonomy_id"
+        ],
+        "title": "PackageTaxonomyGroupByRequest",
+        "type": "object"
+      },
+      "PackageTaxonomyGroupByResponse": {
+        "description": "Tigrbl v3 PackageTaxonomy group_by schema",
+        "properties": {
+          "id": {
+            "default": null,
+            "title": "Id",
+            "type": "string"
+          },
+          "package_id": {
+            "title": "Package Id",
+            "type": "string"
+          },
+          "taxonomy_id": {
+            "title": "Taxonomy Id",
+            "type": "string"
+          }
+        },
+        "required": [
+          "package_id",
+          "taxonomy_id"
+        ],
+        "title": "PackageTaxonomyGroupByResponse",
+        "type": "object"
+      },
       "PersonCountResponse": {
         "description": "Tigrbl v3 Person count schema",
         "properties": {
@@ -7896,6 +8030,746 @@
         "title": "RepositoryGroupByResponse",
         "type": "object"
       },
+      "RepositoryLanguageCountResponse": {
+        "description": "Tigrbl v3 RepositoryLanguage count schema",
+        "properties": {
+          "bytes": {
+            "default": null,
+            "title": "Bytes",
+            "type": "integer"
+          },
+          "id": {
+            "default": null,
+            "title": "Id",
+            "type": "string"
+          },
+          "language": {
+            "title": "Language",
+            "type": "string"
+          },
+          "observed_at": {
+            "format": "date-time",
+            "title": "Observed At",
+            "type": "string"
+          },
+          "percentage": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "pattern": "^(?!^[-+.]*$)[+-]?0*\\d*\\.?\\d*$",
+                "type": "string"
+              }
+            ],
+            "default": null,
+            "title": "Percentage"
+          },
+          "repository_id": {
+            "title": "Repository Id",
+            "type": "string"
+          }
+        },
+        "required": [
+          "repository_id",
+          "language",
+          "observed_at"
+        ],
+        "title": "RepositoryLanguageCountResponse",
+        "type": "object"
+      },
+      "RepositoryLanguageExistsResponse": {
+        "description": "Tigrbl v3 RepositoryLanguage exists schema",
+        "properties": {
+          "bytes": {
+            "default": null,
+            "title": "Bytes",
+            "type": "integer"
+          },
+          "id": {
+            "default": null,
+            "title": "Id",
+            "type": "string"
+          },
+          "language": {
+            "title": "Language",
+            "type": "string"
+          },
+          "observed_at": {
+            "format": "date-time",
+            "title": "Observed At",
+            "type": "string"
+          },
+          "percentage": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "pattern": "^(?!^[-+.]*$)[+-]?0*\\d*\\.?\\d*$",
+                "type": "string"
+              }
+            ],
+            "default": null,
+            "title": "Percentage"
+          },
+          "repository_id": {
+            "title": "Repository Id",
+            "type": "string"
+          }
+        },
+        "required": [
+          "repository_id",
+          "language",
+          "observed_at"
+        ],
+        "title": "RepositoryLanguageExistsResponse",
+        "type": "object"
+      },
+      "RepositoryLanguageGroupByRequest": {
+        "description": "Tigrbl v3 RepositoryLanguage group_by schema",
+        "properties": {
+          "bytes": {
+            "default": null,
+            "title": "Bytes",
+            "type": "integer"
+          },
+          "id": {
+            "default": null,
+            "title": "Id",
+            "type": "string"
+          },
+          "language": {
+            "title": "Language",
+            "type": "string"
+          },
+          "observed_at": {
+            "format": "date-time",
+            "title": "Observed At",
+            "type": "string"
+          },
+          "percentage": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "pattern": "^(?!^[-+.]*$)[+-]?0*\\d*\\.?\\d*$",
+                "type": "string"
+              }
+            ],
+            "default": null,
+            "title": "Percentage"
+          },
+          "repository_id": {
+            "title": "Repository Id",
+            "type": "string"
+          }
+        },
+        "required": [
+          "repository_id",
+          "language",
+          "observed_at"
+        ],
+        "title": "RepositoryLanguageGroupByRequest",
+        "type": "object"
+      },
+      "RepositoryLanguageGroupByResponse": {
+        "description": "Tigrbl v3 RepositoryLanguage group_by schema",
+        "properties": {
+          "bytes": {
+            "default": null,
+            "title": "Bytes",
+            "type": "integer"
+          },
+          "id": {
+            "default": null,
+            "title": "Id",
+            "type": "string"
+          },
+          "language": {
+            "title": "Language",
+            "type": "string"
+          },
+          "observed_at": {
+            "format": "date-time",
+            "title": "Observed At",
+            "type": "string"
+          },
+          "percentage": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "pattern": "^(?!^[-+.]*$)[+-]?0*\\d*\\.?\\d*$",
+                "type": "string"
+              }
+            ],
+            "default": null,
+            "title": "Percentage"
+          },
+          "repository_id": {
+            "title": "Repository Id",
+            "type": "string"
+          }
+        },
+        "required": [
+          "repository_id",
+          "language",
+          "observed_at"
+        ],
+        "title": "RepositoryLanguageGroupByResponse",
+        "type": "object"
+      },
+      "RepositorySsotInventoryCountResponse": {
+        "description": "Tigrbl v3 RepositorySsotInventory count schema",
+        "properties": {
+          "entity_id": {
+            "title": "Entity Id",
+            "type": "string"
+          },
+          "entity_kind": {
+            "title": "Entity Kind",
+            "type": "string"
+          },
+          "id": {
+            "default": null,
+            "title": "Id",
+            "type": "string"
+          },
+          "implementation_status": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Implementation Status"
+          },
+          "payload": {
+            "anyOf": [
+              {
+                "additionalProperties": true,
+                "type": "object"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Payload"
+          },
+          "registry_id": {
+            "title": "Registry Id",
+            "type": "string"
+          },
+          "status": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Status"
+          },
+          "title": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Title"
+          }
+        },
+        "required": [
+          "registry_id",
+          "entity_kind",
+          "entity_id"
+        ],
+        "title": "RepositorySsotInventoryCountResponse",
+        "type": "object"
+      },
+      "RepositorySsotInventoryExistsResponse": {
+        "description": "Tigrbl v3 RepositorySsotInventory exists schema",
+        "properties": {
+          "entity_id": {
+            "title": "Entity Id",
+            "type": "string"
+          },
+          "entity_kind": {
+            "title": "Entity Kind",
+            "type": "string"
+          },
+          "id": {
+            "default": null,
+            "title": "Id",
+            "type": "string"
+          },
+          "implementation_status": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Implementation Status"
+          },
+          "payload": {
+            "anyOf": [
+              {
+                "additionalProperties": true,
+                "type": "object"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Payload"
+          },
+          "registry_id": {
+            "title": "Registry Id",
+            "type": "string"
+          },
+          "status": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Status"
+          },
+          "title": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Title"
+          }
+        },
+        "required": [
+          "registry_id",
+          "entity_kind",
+          "entity_id"
+        ],
+        "title": "RepositorySsotInventoryExistsResponse",
+        "type": "object"
+      },
+      "RepositorySsotInventoryGroupByRequest": {
+        "description": "Tigrbl v3 RepositorySsotInventory group_by schema",
+        "properties": {
+          "entity_id": {
+            "title": "Entity Id",
+            "type": "string"
+          },
+          "entity_kind": {
+            "title": "Entity Kind",
+            "type": "string"
+          },
+          "id": {
+            "default": null,
+            "title": "Id",
+            "type": "string"
+          },
+          "implementation_status": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Implementation Status"
+          },
+          "payload": {
+            "anyOf": [
+              {
+                "additionalProperties": true,
+                "type": "object"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Payload"
+          },
+          "registry_id": {
+            "title": "Registry Id",
+            "type": "string"
+          },
+          "status": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Status"
+          },
+          "title": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Title"
+          }
+        },
+        "required": [
+          "registry_id",
+          "entity_kind",
+          "entity_id"
+        ],
+        "title": "RepositorySsotInventoryGroupByRequest",
+        "type": "object"
+      },
+      "RepositorySsotInventoryGroupByResponse": {
+        "description": "Tigrbl v3 RepositorySsotInventory group_by schema",
+        "properties": {
+          "entity_id": {
+            "title": "Entity Id",
+            "type": "string"
+          },
+          "entity_kind": {
+            "title": "Entity Kind",
+            "type": "string"
+          },
+          "id": {
+            "default": null,
+            "title": "Id",
+            "type": "string"
+          },
+          "implementation_status": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Implementation Status"
+          },
+          "payload": {
+            "anyOf": [
+              {
+                "additionalProperties": true,
+                "type": "object"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Payload"
+          },
+          "registry_id": {
+            "title": "Registry Id",
+            "type": "string"
+          },
+          "status": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Status"
+          },
+          "title": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Title"
+          }
+        },
+        "required": [
+          "registry_id",
+          "entity_kind",
+          "entity_id"
+        ],
+        "title": "RepositorySsotInventoryGroupByResponse",
+        "type": "object"
+      },
+      "RepositorySsotRegistryCountResponse": {
+        "description": "Tigrbl v3 RepositorySsotRegistry count schema",
+        "properties": {
+          "id": {
+            "default": null,
+            "title": "Id",
+            "type": "string"
+          },
+          "observed_at": {
+            "format": "date-time",
+            "title": "Observed At",
+            "type": "string"
+          },
+          "registry_url": {
+            "title": "Registry Url",
+            "type": "string"
+          },
+          "repository_id": {
+            "title": "Repository Id",
+            "type": "string"
+          },
+          "schema_version": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Schema Version"
+          },
+          "source_sha256": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Source Sha256"
+          },
+          "valid": {
+            "default": null,
+            "title": "Valid",
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "repository_id",
+          "registry_url",
+          "observed_at"
+        ],
+        "title": "RepositorySsotRegistryCountResponse",
+        "type": "object"
+      },
+      "RepositorySsotRegistryExistsResponse": {
+        "description": "Tigrbl v3 RepositorySsotRegistry exists schema",
+        "properties": {
+          "id": {
+            "default": null,
+            "title": "Id",
+            "type": "string"
+          },
+          "observed_at": {
+            "format": "date-time",
+            "title": "Observed At",
+            "type": "string"
+          },
+          "registry_url": {
+            "title": "Registry Url",
+            "type": "string"
+          },
+          "repository_id": {
+            "title": "Repository Id",
+            "type": "string"
+          },
+          "schema_version": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Schema Version"
+          },
+          "source_sha256": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Source Sha256"
+          },
+          "valid": {
+            "default": null,
+            "title": "Valid",
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "repository_id",
+          "registry_url",
+          "observed_at"
+        ],
+        "title": "RepositorySsotRegistryExistsResponse",
+        "type": "object"
+      },
+      "RepositorySsotRegistryGroupByRequest": {
+        "description": "Tigrbl v3 RepositorySsotRegistry group_by schema",
+        "properties": {
+          "id": {
+            "default": null,
+            "title": "Id",
+            "type": "string"
+          },
+          "observed_at": {
+            "format": "date-time",
+            "title": "Observed At",
+            "type": "string"
+          },
+          "registry_url": {
+            "title": "Registry Url",
+            "type": "string"
+          },
+          "repository_id": {
+            "title": "Repository Id",
+            "type": "string"
+          },
+          "schema_version": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Schema Version"
+          },
+          "source_sha256": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Source Sha256"
+          },
+          "valid": {
+            "default": null,
+            "title": "Valid",
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "repository_id",
+          "registry_url",
+          "observed_at"
+        ],
+        "title": "RepositorySsotRegistryGroupByRequest",
+        "type": "object"
+      },
+      "RepositorySsotRegistryGroupByResponse": {
+        "description": "Tigrbl v3 RepositorySsotRegistry group_by schema",
+        "properties": {
+          "id": {
+            "default": null,
+            "title": "Id",
+            "type": "string"
+          },
+          "observed_at": {
+            "format": "date-time",
+            "title": "Observed At",
+            "type": "string"
+          },
+          "registry_url": {
+            "title": "Registry Url",
+            "type": "string"
+          },
+          "repository_id": {
+            "title": "Repository Id",
+            "type": "string"
+          },
+          "schema_version": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Schema Version"
+          },
+          "source_sha256": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Source Sha256"
+          },
+          "valid": {
+            "default": null,
+            "title": "Valid",
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "repository_id",
+          "registry_url",
+          "observed_at"
+        ],
+        "title": "RepositorySsotRegistryGroupByResponse",
+        "type": "object"
+      },
       "RepositorySummary": {
         "additionalProperties": true,
         "properties": {
@@ -8094,6 +8968,122 @@
           "url"
         ],
         "title": "ResourceCountResponse",
+        "type": "object"
+      },
+      "ResourceEvidenceCountResponse": {
+        "description": "Tigrbl v3 ResourceEvidence count schema",
+        "properties": {
+          "evidence_id": {
+            "title": "Evidence Id",
+            "type": "string"
+          },
+          "id": {
+            "default": null,
+            "title": "Id",
+            "type": "string"
+          },
+          "resource_id": {
+            "title": "Resource Id",
+            "type": "string"
+          },
+          "role": {
+            "default": null,
+            "title": "Role",
+            "type": "string"
+          }
+        },
+        "required": [
+          "resource_id",
+          "evidence_id"
+        ],
+        "title": "ResourceEvidenceCountResponse",
+        "type": "object"
+      },
+      "ResourceEvidenceExistsResponse": {
+        "description": "Tigrbl v3 ResourceEvidence exists schema",
+        "properties": {
+          "evidence_id": {
+            "title": "Evidence Id",
+            "type": "string"
+          },
+          "id": {
+            "default": null,
+            "title": "Id",
+            "type": "string"
+          },
+          "resource_id": {
+            "title": "Resource Id",
+            "type": "string"
+          },
+          "role": {
+            "default": null,
+            "title": "Role",
+            "type": "string"
+          }
+        },
+        "required": [
+          "resource_id",
+          "evidence_id"
+        ],
+        "title": "ResourceEvidenceExistsResponse",
+        "type": "object"
+      },
+      "ResourceEvidenceGroupByRequest": {
+        "description": "Tigrbl v3 ResourceEvidence group_by schema",
+        "properties": {
+          "evidence_id": {
+            "title": "Evidence Id",
+            "type": "string"
+          },
+          "id": {
+            "default": null,
+            "title": "Id",
+            "type": "string"
+          },
+          "resource_id": {
+            "title": "Resource Id",
+            "type": "string"
+          },
+          "role": {
+            "default": null,
+            "title": "Role",
+            "type": "string"
+          }
+        },
+        "required": [
+          "resource_id",
+          "evidence_id"
+        ],
+        "title": "ResourceEvidenceGroupByRequest",
+        "type": "object"
+      },
+      "ResourceEvidenceGroupByResponse": {
+        "description": "Tigrbl v3 ResourceEvidence group_by schema",
+        "properties": {
+          "evidence_id": {
+            "title": "Evidence Id",
+            "type": "string"
+          },
+          "id": {
+            "default": null,
+            "title": "Id",
+            "type": "string"
+          },
+          "resource_id": {
+            "title": "Resource Id",
+            "type": "string"
+          },
+          "role": {
+            "default": null,
+            "title": "Role",
+            "type": "string"
+          }
+        },
+        "required": [
+          "resource_id",
+          "evidence_id"
+        ],
+        "title": "ResourceEvidenceGroupByResponse",
         "type": "object"
       },
       "ResourceExistsResponse": {
@@ -8400,6 +9390,558 @@
           "url"
         ],
         "title": "ResourceGroupByResponse",
+        "type": "object"
+      },
+      "ResourceRepositoryCountResponse": {
+        "description": "Tigrbl v3 ResourceRepository count schema",
+        "properties": {
+          "id": {
+            "default": null,
+            "title": "Id",
+            "type": "string"
+          },
+          "observed_at": {
+            "anyOf": [
+              {
+                "format": "date-time",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Observed At"
+          },
+          "path": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Path"
+          },
+          "repository_id": {
+            "title": "Repository Id",
+            "type": "string"
+          },
+          "resource_id": {
+            "title": "Resource Id",
+            "type": "string"
+          },
+          "role": {
+            "default": null,
+            "title": "Role",
+            "type": "string"
+          }
+        },
+        "required": [
+          "resource_id",
+          "repository_id"
+        ],
+        "title": "ResourceRepositoryCountResponse",
+        "type": "object"
+      },
+      "ResourceRepositoryExistsResponse": {
+        "description": "Tigrbl v3 ResourceRepository exists schema",
+        "properties": {
+          "id": {
+            "default": null,
+            "title": "Id",
+            "type": "string"
+          },
+          "observed_at": {
+            "anyOf": [
+              {
+                "format": "date-time",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Observed At"
+          },
+          "path": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Path"
+          },
+          "repository_id": {
+            "title": "Repository Id",
+            "type": "string"
+          },
+          "resource_id": {
+            "title": "Resource Id",
+            "type": "string"
+          },
+          "role": {
+            "default": null,
+            "title": "Role",
+            "type": "string"
+          }
+        },
+        "required": [
+          "resource_id",
+          "repository_id"
+        ],
+        "title": "ResourceRepositoryExistsResponse",
+        "type": "object"
+      },
+      "ResourceRepositoryGroupByRequest": {
+        "description": "Tigrbl v3 ResourceRepository group_by schema",
+        "properties": {
+          "id": {
+            "default": null,
+            "title": "Id",
+            "type": "string"
+          },
+          "observed_at": {
+            "anyOf": [
+              {
+                "format": "date-time",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Observed At"
+          },
+          "path": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Path"
+          },
+          "repository_id": {
+            "title": "Repository Id",
+            "type": "string"
+          },
+          "resource_id": {
+            "title": "Resource Id",
+            "type": "string"
+          },
+          "role": {
+            "default": null,
+            "title": "Role",
+            "type": "string"
+          }
+        },
+        "required": [
+          "resource_id",
+          "repository_id"
+        ],
+        "title": "ResourceRepositoryGroupByRequest",
+        "type": "object"
+      },
+      "ResourceRepositoryGroupByResponse": {
+        "description": "Tigrbl v3 ResourceRepository group_by schema",
+        "properties": {
+          "id": {
+            "default": null,
+            "title": "Id",
+            "type": "string"
+          },
+          "observed_at": {
+            "anyOf": [
+              {
+                "format": "date-time",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Observed At"
+          },
+          "path": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Path"
+          },
+          "repository_id": {
+            "title": "Repository Id",
+            "type": "string"
+          },
+          "resource_id": {
+            "title": "Resource Id",
+            "type": "string"
+          },
+          "role": {
+            "default": null,
+            "title": "Role",
+            "type": "string"
+          }
+        },
+        "required": [
+          "resource_id",
+          "repository_id"
+        ],
+        "title": "ResourceRepositoryGroupByResponse",
+        "type": "object"
+      },
+      "ResourceTaxonomyCountResponse": {
+        "description": "Tigrbl v3 ResourceTaxonomy count schema",
+        "properties": {
+          "id": {
+            "default": null,
+            "title": "Id",
+            "type": "string"
+          },
+          "resource_id": {
+            "title": "Resource Id",
+            "type": "string"
+          },
+          "taxonomy_id": {
+            "title": "Taxonomy Id",
+            "type": "string"
+          }
+        },
+        "required": [
+          "resource_id",
+          "taxonomy_id"
+        ],
+        "title": "ResourceTaxonomyCountResponse",
+        "type": "object"
+      },
+      "ResourceTaxonomyExistsResponse": {
+        "description": "Tigrbl v3 ResourceTaxonomy exists schema",
+        "properties": {
+          "id": {
+            "default": null,
+            "title": "Id",
+            "type": "string"
+          },
+          "resource_id": {
+            "title": "Resource Id",
+            "type": "string"
+          },
+          "taxonomy_id": {
+            "title": "Taxonomy Id",
+            "type": "string"
+          }
+        },
+        "required": [
+          "resource_id",
+          "taxonomy_id"
+        ],
+        "title": "ResourceTaxonomyExistsResponse",
+        "type": "object"
+      },
+      "ResourceTaxonomyGroupByRequest": {
+        "description": "Tigrbl v3 ResourceTaxonomy group_by schema",
+        "properties": {
+          "id": {
+            "default": null,
+            "title": "Id",
+            "type": "string"
+          },
+          "resource_id": {
+            "title": "Resource Id",
+            "type": "string"
+          },
+          "taxonomy_id": {
+            "title": "Taxonomy Id",
+            "type": "string"
+          }
+        },
+        "required": [
+          "resource_id",
+          "taxonomy_id"
+        ],
+        "title": "ResourceTaxonomyGroupByRequest",
+        "type": "object"
+      },
+      "ResourceTaxonomyGroupByResponse": {
+        "description": "Tigrbl v3 ResourceTaxonomy group_by schema",
+        "properties": {
+          "id": {
+            "default": null,
+            "title": "Id",
+            "type": "string"
+          },
+          "resource_id": {
+            "title": "Resource Id",
+            "type": "string"
+          },
+          "taxonomy_id": {
+            "title": "Taxonomy Id",
+            "type": "string"
+          }
+        },
+        "required": [
+          "resource_id",
+          "taxonomy_id"
+        ],
+        "title": "ResourceTaxonomyGroupByResponse",
+        "type": "object"
+      },
+      "ResourceTypeCountResponse": {
+        "description": "Tigrbl v3 ResourceType count schema",
+        "properties": {
+          "category": {
+            "title": "Category",
+            "type": "string"
+          },
+          "description": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Description"
+          },
+          "detail_schema_key": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Detail Schema Key"
+          },
+          "icon_key": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Icon Key"
+          },
+          "id": {
+            "default": null,
+            "title": "Id",
+            "type": "string"
+          },
+          "label": {
+            "title": "Label",
+            "type": "string"
+          }
+        },
+        "required": [
+          "label",
+          "category"
+        ],
+        "title": "ResourceTypeCountResponse",
+        "type": "object"
+      },
+      "ResourceTypeExistsResponse": {
+        "description": "Tigrbl v3 ResourceType exists schema",
+        "properties": {
+          "category": {
+            "title": "Category",
+            "type": "string"
+          },
+          "description": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Description"
+          },
+          "detail_schema_key": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Detail Schema Key"
+          },
+          "icon_key": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Icon Key"
+          },
+          "id": {
+            "default": null,
+            "title": "Id",
+            "type": "string"
+          },
+          "label": {
+            "title": "Label",
+            "type": "string"
+          }
+        },
+        "required": [
+          "label",
+          "category"
+        ],
+        "title": "ResourceTypeExistsResponse",
+        "type": "object"
+      },
+      "ResourceTypeGroupByRequest": {
+        "description": "Tigrbl v3 ResourceType group_by schema",
+        "properties": {
+          "category": {
+            "title": "Category",
+            "type": "string"
+          },
+          "description": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Description"
+          },
+          "detail_schema_key": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Detail Schema Key"
+          },
+          "icon_key": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Icon Key"
+          },
+          "id": {
+            "default": null,
+            "title": "Id",
+            "type": "string"
+          },
+          "label": {
+            "title": "Label",
+            "type": "string"
+          }
+        },
+        "required": [
+          "label",
+          "category"
+        ],
+        "title": "ResourceTypeGroupByRequest",
+        "type": "object"
+      },
+      "ResourceTypeGroupByResponse": {
+        "description": "Tigrbl v3 ResourceType group_by schema",
+        "properties": {
+          "category": {
+            "title": "Category",
+            "type": "string"
+          },
+          "description": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Description"
+          },
+          "detail_schema_key": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Detail Schema Key"
+          },
+          "icon_key": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Icon Key"
+          },
+          "id": {
+            "default": null,
+            "title": "Id",
+            "type": "string"
+          },
+          "label": {
+            "title": "Label",
+            "type": "string"
+          }
+        },
+        "required": [
+          "label",
+          "category"
+        ],
+        "title": "ResourceTypeGroupByResponse",
         "type": "object"
       },
       "TaxonomyCountResponse": {
@@ -14623,6 +16165,236 @@
         }
       }
     },
+    "/packagetaxonomy": {
+      "get": {
+        "operationId": "PackageTaxonomy.count",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "id",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "package_id",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "taxonomy_id",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PackageTaxonomyCountResponse"
+                }
+              }
+            },
+            "description": "Successful Response"
+          }
+        },
+        "tags": [
+          "PackageTaxonomy"
+        ],
+        "x-tigrbl-auth": {
+          "policy": "public-by-default",
+          "public": true,
+          "security": []
+        },
+        "x-tigrbl-surface": {
+          "binding": {
+            "exchange": "request_response",
+            "family": "request",
+            "framing": "json",
+            "framingSpec": "JsonFramingSpec",
+            "methods": [
+              "GET"
+            ],
+            "path": "/packagetaxonomy",
+            "proto": "http.rest",
+            "rpcMethod": null
+          },
+          "bindings": [
+            {
+              "exchange": "request_response",
+              "family": "request",
+              "framing": "json",
+              "framingSpec": "JsonFramingSpec",
+              "methods": [
+                "GET"
+              ],
+              "path": "/packagetaxonomy",
+              "proto": "http.rest",
+              "rpcMethod": null
+            }
+          ],
+          "family": "crud"
+        }
+      },
+      "post": {
+        "operationId": "PackageTaxonomy.group_by",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PackageTaxonomyGroupByRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PackageTaxonomyGroupByResponse"
+                }
+              }
+            },
+            "description": "Successful Response"
+          }
+        },
+        "tags": [
+          "PackageTaxonomy"
+        ],
+        "x-tigrbl-auth": {
+          "policy": "public-by-default",
+          "public": true,
+          "security": []
+        },
+        "x-tigrbl-surface": {
+          "binding": {
+            "exchange": "request_response",
+            "family": "request",
+            "framing": "json",
+            "framingSpec": "JsonFramingSpec",
+            "methods": [
+              "POST"
+            ],
+            "path": "/packagetaxonomy",
+            "proto": "http.rest",
+            "rpcMethod": null
+          },
+          "bindings": [
+            {
+              "exchange": "request_response",
+              "family": "request",
+              "framing": "json",
+              "framingSpec": "JsonFramingSpec",
+              "methods": [
+                "POST"
+              ],
+              "path": "/packagetaxonomy",
+              "proto": "http.rest",
+              "rpcMethod": null
+            }
+          ],
+          "family": "crud"
+        }
+      }
+    },
+    "/packagetaxonomy/{item_id}": {
+      "get": {
+        "operationId": "PackageTaxonomy.exists",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "item_id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "id",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "package_id",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "taxonomy_id",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PackageTaxonomyExistsResponse"
+                }
+              }
+            },
+            "description": "Successful Response"
+          }
+        },
+        "tags": [
+          "PackageTaxonomy"
+        ],
+        "x-tigrbl-auth": {
+          "policy": "public-by-default",
+          "public": true,
+          "security": []
+        },
+        "x-tigrbl-surface": {
+          "binding": {
+            "exchange": "request_response",
+            "family": "request",
+            "framing": "json",
+            "framingSpec": "JsonFramingSpec",
+            "methods": [
+              "GET"
+            ],
+            "path": "/packagetaxonomy/{item_id}",
+            "proto": "http.rest",
+            "rpcMethod": null
+          },
+          "bindings": [
+            {
+              "exchange": "request_response",
+              "family": "request",
+              "framing": "json",
+              "framingSpec": "JsonFramingSpec",
+              "methods": [
+                "GET"
+              ],
+              "path": "/packagetaxonomy/{item_id}",
+              "proto": "http.rest",
+              "rpcMethod": null
+            }
+          ],
+          "family": "crud"
+        }
+      }
+    },
     "/person": {
       "get": {
         "operationId": "Person.count",
@@ -18445,6 +20217,888 @@
         }
       }
     },
+    "/repositorylanguage": {
+      "get": {
+        "operationId": "RepositoryLanguage.count",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "id",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "repository_id",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "language",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "bytes",
+            "required": false,
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "in": "query",
+            "name": "percentage",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "observed_at",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RepositoryLanguageCountResponse"
+                }
+              }
+            },
+            "description": "Successful Response"
+          }
+        },
+        "tags": [
+          "RepositoryLanguage"
+        ],
+        "x-tigrbl-auth": {
+          "policy": "public-by-default",
+          "public": true,
+          "security": []
+        },
+        "x-tigrbl-surface": {
+          "binding": {
+            "exchange": "request_response",
+            "family": "request",
+            "framing": "json",
+            "framingSpec": "JsonFramingSpec",
+            "methods": [
+              "GET"
+            ],
+            "path": "/repositorylanguage",
+            "proto": "http.rest",
+            "rpcMethod": null
+          },
+          "bindings": [
+            {
+              "exchange": "request_response",
+              "family": "request",
+              "framing": "json",
+              "framingSpec": "JsonFramingSpec",
+              "methods": [
+                "GET"
+              ],
+              "path": "/repositorylanguage",
+              "proto": "http.rest",
+              "rpcMethod": null
+            }
+          ],
+          "family": "crud"
+        }
+      },
+      "post": {
+        "operationId": "RepositoryLanguage.group_by",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RepositoryLanguageGroupByRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RepositoryLanguageGroupByResponse"
+                }
+              }
+            },
+            "description": "Successful Response"
+          }
+        },
+        "tags": [
+          "RepositoryLanguage"
+        ],
+        "x-tigrbl-auth": {
+          "policy": "public-by-default",
+          "public": true,
+          "security": []
+        },
+        "x-tigrbl-surface": {
+          "binding": {
+            "exchange": "request_response",
+            "family": "request",
+            "framing": "json",
+            "framingSpec": "JsonFramingSpec",
+            "methods": [
+              "POST"
+            ],
+            "path": "/repositorylanguage",
+            "proto": "http.rest",
+            "rpcMethod": null
+          },
+          "bindings": [
+            {
+              "exchange": "request_response",
+              "family": "request",
+              "framing": "json",
+              "framingSpec": "JsonFramingSpec",
+              "methods": [
+                "POST"
+              ],
+              "path": "/repositorylanguage",
+              "proto": "http.rest",
+              "rpcMethod": null
+            }
+          ],
+          "family": "crud"
+        }
+      }
+    },
+    "/repositorylanguage/{item_id}": {
+      "get": {
+        "operationId": "RepositoryLanguage.exists",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "item_id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "id",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "repository_id",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "language",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "bytes",
+            "required": false,
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "in": "query",
+            "name": "percentage",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "observed_at",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RepositoryLanguageExistsResponse"
+                }
+              }
+            },
+            "description": "Successful Response"
+          }
+        },
+        "tags": [
+          "RepositoryLanguage"
+        ],
+        "x-tigrbl-auth": {
+          "policy": "public-by-default",
+          "public": true,
+          "security": []
+        },
+        "x-tigrbl-surface": {
+          "binding": {
+            "exchange": "request_response",
+            "family": "request",
+            "framing": "json",
+            "framingSpec": "JsonFramingSpec",
+            "methods": [
+              "GET"
+            ],
+            "path": "/repositorylanguage/{item_id}",
+            "proto": "http.rest",
+            "rpcMethod": null
+          },
+          "bindings": [
+            {
+              "exchange": "request_response",
+              "family": "request",
+              "framing": "json",
+              "framingSpec": "JsonFramingSpec",
+              "methods": [
+                "GET"
+              ],
+              "path": "/repositorylanguage/{item_id}",
+              "proto": "http.rest",
+              "rpcMethod": null
+            }
+          ],
+          "family": "crud"
+        }
+      }
+    },
+    "/repositoryssotinventory": {
+      "get": {
+        "operationId": "RepositorySsotInventory.count",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "id",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "registry_id",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "entity_kind",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "entity_id",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "title",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "status",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "implementation_status",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "payload",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RepositorySsotInventoryCountResponse"
+                }
+              }
+            },
+            "description": "Successful Response"
+          }
+        },
+        "tags": [
+          "RepositorySsotInventory"
+        ],
+        "x-tigrbl-auth": {
+          "policy": "public-by-default",
+          "public": true,
+          "security": []
+        },
+        "x-tigrbl-surface": {
+          "binding": {
+            "exchange": "request_response",
+            "family": "request",
+            "framing": "json",
+            "framingSpec": "JsonFramingSpec",
+            "methods": [
+              "GET"
+            ],
+            "path": "/repositoryssotinventory",
+            "proto": "http.rest",
+            "rpcMethod": null
+          },
+          "bindings": [
+            {
+              "exchange": "request_response",
+              "family": "request",
+              "framing": "json",
+              "framingSpec": "JsonFramingSpec",
+              "methods": [
+                "GET"
+              ],
+              "path": "/repositoryssotinventory",
+              "proto": "http.rest",
+              "rpcMethod": null
+            }
+          ],
+          "family": "crud"
+        }
+      },
+      "post": {
+        "operationId": "RepositorySsotInventory.group_by",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RepositorySsotInventoryGroupByRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RepositorySsotInventoryGroupByResponse"
+                }
+              }
+            },
+            "description": "Successful Response"
+          }
+        },
+        "tags": [
+          "RepositorySsotInventory"
+        ],
+        "x-tigrbl-auth": {
+          "policy": "public-by-default",
+          "public": true,
+          "security": []
+        },
+        "x-tigrbl-surface": {
+          "binding": {
+            "exchange": "request_response",
+            "family": "request",
+            "framing": "json",
+            "framingSpec": "JsonFramingSpec",
+            "methods": [
+              "POST"
+            ],
+            "path": "/repositoryssotinventory",
+            "proto": "http.rest",
+            "rpcMethod": null
+          },
+          "bindings": [
+            {
+              "exchange": "request_response",
+              "family": "request",
+              "framing": "json",
+              "framingSpec": "JsonFramingSpec",
+              "methods": [
+                "POST"
+              ],
+              "path": "/repositoryssotinventory",
+              "proto": "http.rest",
+              "rpcMethod": null
+            }
+          ],
+          "family": "crud"
+        }
+      }
+    },
+    "/repositoryssotinventory/{item_id}": {
+      "get": {
+        "operationId": "RepositorySsotInventory.exists",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "item_id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "id",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "registry_id",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "entity_kind",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "entity_id",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "title",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "status",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "implementation_status",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "payload",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RepositorySsotInventoryExistsResponse"
+                }
+              }
+            },
+            "description": "Successful Response"
+          }
+        },
+        "tags": [
+          "RepositorySsotInventory"
+        ],
+        "x-tigrbl-auth": {
+          "policy": "public-by-default",
+          "public": true,
+          "security": []
+        },
+        "x-tigrbl-surface": {
+          "binding": {
+            "exchange": "request_response",
+            "family": "request",
+            "framing": "json",
+            "framingSpec": "JsonFramingSpec",
+            "methods": [
+              "GET"
+            ],
+            "path": "/repositoryssotinventory/{item_id}",
+            "proto": "http.rest",
+            "rpcMethod": null
+          },
+          "bindings": [
+            {
+              "exchange": "request_response",
+              "family": "request",
+              "framing": "json",
+              "framingSpec": "JsonFramingSpec",
+              "methods": [
+                "GET"
+              ],
+              "path": "/repositoryssotinventory/{item_id}",
+              "proto": "http.rest",
+              "rpcMethod": null
+            }
+          ],
+          "family": "crud"
+        }
+      }
+    },
+    "/repositoryssotregistry": {
+      "get": {
+        "operationId": "RepositorySsotRegistry.count",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "id",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "repository_id",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "registry_url",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "schema_version",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "source_sha256",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "valid",
+            "required": false,
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
+            "in": "query",
+            "name": "observed_at",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RepositorySsotRegistryCountResponse"
+                }
+              }
+            },
+            "description": "Successful Response"
+          }
+        },
+        "tags": [
+          "RepositorySsotRegistry"
+        ],
+        "x-tigrbl-auth": {
+          "policy": "public-by-default",
+          "public": true,
+          "security": []
+        },
+        "x-tigrbl-surface": {
+          "binding": {
+            "exchange": "request_response",
+            "family": "request",
+            "framing": "json",
+            "framingSpec": "JsonFramingSpec",
+            "methods": [
+              "GET"
+            ],
+            "path": "/repositoryssotregistry",
+            "proto": "http.rest",
+            "rpcMethod": null
+          },
+          "bindings": [
+            {
+              "exchange": "request_response",
+              "family": "request",
+              "framing": "json",
+              "framingSpec": "JsonFramingSpec",
+              "methods": [
+                "GET"
+              ],
+              "path": "/repositoryssotregistry",
+              "proto": "http.rest",
+              "rpcMethod": null
+            }
+          ],
+          "family": "crud"
+        }
+      },
+      "post": {
+        "operationId": "RepositorySsotRegistry.group_by",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RepositorySsotRegistryGroupByRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RepositorySsotRegistryGroupByResponse"
+                }
+              }
+            },
+            "description": "Successful Response"
+          }
+        },
+        "tags": [
+          "RepositorySsotRegistry"
+        ],
+        "x-tigrbl-auth": {
+          "policy": "public-by-default",
+          "public": true,
+          "security": []
+        },
+        "x-tigrbl-surface": {
+          "binding": {
+            "exchange": "request_response",
+            "family": "request",
+            "framing": "json",
+            "framingSpec": "JsonFramingSpec",
+            "methods": [
+              "POST"
+            ],
+            "path": "/repositoryssotregistry",
+            "proto": "http.rest",
+            "rpcMethod": null
+          },
+          "bindings": [
+            {
+              "exchange": "request_response",
+              "family": "request",
+              "framing": "json",
+              "framingSpec": "JsonFramingSpec",
+              "methods": [
+                "POST"
+              ],
+              "path": "/repositoryssotregistry",
+              "proto": "http.rest",
+              "rpcMethod": null
+            }
+          ],
+          "family": "crud"
+        }
+      }
+    },
+    "/repositoryssotregistry/{item_id}": {
+      "get": {
+        "operationId": "RepositorySsotRegistry.exists",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "item_id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "id",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "repository_id",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "registry_url",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "schema_version",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "source_sha256",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "valid",
+            "required": false,
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
+            "in": "query",
+            "name": "observed_at",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RepositorySsotRegistryExistsResponse"
+                }
+              }
+            },
+            "description": "Successful Response"
+          }
+        },
+        "tags": [
+          "RepositorySsotRegistry"
+        ],
+        "x-tigrbl-auth": {
+          "policy": "public-by-default",
+          "public": true,
+          "security": []
+        },
+        "x-tigrbl-surface": {
+          "binding": {
+            "exchange": "request_response",
+            "family": "request",
+            "framing": "json",
+            "framingSpec": "JsonFramingSpec",
+            "methods": [
+              "GET"
+            ],
+            "path": "/repositoryssotregistry/{item_id}",
+            "proto": "http.rest",
+            "rpcMethod": null
+          },
+          "bindings": [
+            {
+              "exchange": "request_response",
+              "family": "request",
+              "framing": "json",
+              "framingSpec": "JsonFramingSpec",
+              "methods": [
+                "GET"
+              ],
+              "path": "/repositoryssotregistry/{item_id}",
+              "proto": "http.rest",
+              "rpcMethod": null
+            }
+          ],
+          "family": "crud"
+        }
+      }
+    },
     "/resource": {
       "get": {
         "operationId": "Resource.count",
@@ -18779,6 +21433,1038 @@
                 "GET"
               ],
               "path": "/resource/{item_id}",
+              "proto": "http.rest",
+              "rpcMethod": null
+            }
+          ],
+          "family": "crud"
+        }
+      }
+    },
+    "/resourceevidence": {
+      "get": {
+        "operationId": "ResourceEvidence.count",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "id",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "resource_id",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "evidence_id",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "role",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResourceEvidenceCountResponse"
+                }
+              }
+            },
+            "description": "Successful Response"
+          }
+        },
+        "tags": [
+          "ResourceEvidence"
+        ],
+        "x-tigrbl-auth": {
+          "policy": "public-by-default",
+          "public": true,
+          "security": []
+        },
+        "x-tigrbl-surface": {
+          "binding": {
+            "exchange": "request_response",
+            "family": "request",
+            "framing": "json",
+            "framingSpec": "JsonFramingSpec",
+            "methods": [
+              "GET"
+            ],
+            "path": "/resourceevidence",
+            "proto": "http.rest",
+            "rpcMethod": null
+          },
+          "bindings": [
+            {
+              "exchange": "request_response",
+              "family": "request",
+              "framing": "json",
+              "framingSpec": "JsonFramingSpec",
+              "methods": [
+                "GET"
+              ],
+              "path": "/resourceevidence",
+              "proto": "http.rest",
+              "rpcMethod": null
+            }
+          ],
+          "family": "crud"
+        }
+      },
+      "post": {
+        "operationId": "ResourceEvidence.group_by",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ResourceEvidenceGroupByRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResourceEvidenceGroupByResponse"
+                }
+              }
+            },
+            "description": "Successful Response"
+          }
+        },
+        "tags": [
+          "ResourceEvidence"
+        ],
+        "x-tigrbl-auth": {
+          "policy": "public-by-default",
+          "public": true,
+          "security": []
+        },
+        "x-tigrbl-surface": {
+          "binding": {
+            "exchange": "request_response",
+            "family": "request",
+            "framing": "json",
+            "framingSpec": "JsonFramingSpec",
+            "methods": [
+              "POST"
+            ],
+            "path": "/resourceevidence",
+            "proto": "http.rest",
+            "rpcMethod": null
+          },
+          "bindings": [
+            {
+              "exchange": "request_response",
+              "family": "request",
+              "framing": "json",
+              "framingSpec": "JsonFramingSpec",
+              "methods": [
+                "POST"
+              ],
+              "path": "/resourceevidence",
+              "proto": "http.rest",
+              "rpcMethod": null
+            }
+          ],
+          "family": "crud"
+        }
+      }
+    },
+    "/resourceevidence/{item_id}": {
+      "get": {
+        "operationId": "ResourceEvidence.exists",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "item_id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "id",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "resource_id",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "evidence_id",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "role",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResourceEvidenceExistsResponse"
+                }
+              }
+            },
+            "description": "Successful Response"
+          }
+        },
+        "tags": [
+          "ResourceEvidence"
+        ],
+        "x-tigrbl-auth": {
+          "policy": "public-by-default",
+          "public": true,
+          "security": []
+        },
+        "x-tigrbl-surface": {
+          "binding": {
+            "exchange": "request_response",
+            "family": "request",
+            "framing": "json",
+            "framingSpec": "JsonFramingSpec",
+            "methods": [
+              "GET"
+            ],
+            "path": "/resourceevidence/{item_id}",
+            "proto": "http.rest",
+            "rpcMethod": null
+          },
+          "bindings": [
+            {
+              "exchange": "request_response",
+              "family": "request",
+              "framing": "json",
+              "framingSpec": "JsonFramingSpec",
+              "methods": [
+                "GET"
+              ],
+              "path": "/resourceevidence/{item_id}",
+              "proto": "http.rest",
+              "rpcMethod": null
+            }
+          ],
+          "family": "crud"
+        }
+      }
+    },
+    "/resourcerepository": {
+      "get": {
+        "operationId": "ResourceRepository.count",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "id",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "resource_id",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "repository_id",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "role",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "path",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "observed_at",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResourceRepositoryCountResponse"
+                }
+              }
+            },
+            "description": "Successful Response"
+          }
+        },
+        "tags": [
+          "ResourceRepository"
+        ],
+        "x-tigrbl-auth": {
+          "policy": "public-by-default",
+          "public": true,
+          "security": []
+        },
+        "x-tigrbl-surface": {
+          "binding": {
+            "exchange": "request_response",
+            "family": "request",
+            "framing": "json",
+            "framingSpec": "JsonFramingSpec",
+            "methods": [
+              "GET"
+            ],
+            "path": "/resourcerepository",
+            "proto": "http.rest",
+            "rpcMethod": null
+          },
+          "bindings": [
+            {
+              "exchange": "request_response",
+              "family": "request",
+              "framing": "json",
+              "framingSpec": "JsonFramingSpec",
+              "methods": [
+                "GET"
+              ],
+              "path": "/resourcerepository",
+              "proto": "http.rest",
+              "rpcMethod": null
+            }
+          ],
+          "family": "crud"
+        }
+      },
+      "post": {
+        "operationId": "ResourceRepository.group_by",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ResourceRepositoryGroupByRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResourceRepositoryGroupByResponse"
+                }
+              }
+            },
+            "description": "Successful Response"
+          }
+        },
+        "tags": [
+          "ResourceRepository"
+        ],
+        "x-tigrbl-auth": {
+          "policy": "public-by-default",
+          "public": true,
+          "security": []
+        },
+        "x-tigrbl-surface": {
+          "binding": {
+            "exchange": "request_response",
+            "family": "request",
+            "framing": "json",
+            "framingSpec": "JsonFramingSpec",
+            "methods": [
+              "POST"
+            ],
+            "path": "/resourcerepository",
+            "proto": "http.rest",
+            "rpcMethod": null
+          },
+          "bindings": [
+            {
+              "exchange": "request_response",
+              "family": "request",
+              "framing": "json",
+              "framingSpec": "JsonFramingSpec",
+              "methods": [
+                "POST"
+              ],
+              "path": "/resourcerepository",
+              "proto": "http.rest",
+              "rpcMethod": null
+            }
+          ],
+          "family": "crud"
+        }
+      }
+    },
+    "/resourcerepository/{item_id}": {
+      "get": {
+        "operationId": "ResourceRepository.exists",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "item_id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "id",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "resource_id",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "repository_id",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "role",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "path",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "observed_at",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResourceRepositoryExistsResponse"
+                }
+              }
+            },
+            "description": "Successful Response"
+          }
+        },
+        "tags": [
+          "ResourceRepository"
+        ],
+        "x-tigrbl-auth": {
+          "policy": "public-by-default",
+          "public": true,
+          "security": []
+        },
+        "x-tigrbl-surface": {
+          "binding": {
+            "exchange": "request_response",
+            "family": "request",
+            "framing": "json",
+            "framingSpec": "JsonFramingSpec",
+            "methods": [
+              "GET"
+            ],
+            "path": "/resourcerepository/{item_id}",
+            "proto": "http.rest",
+            "rpcMethod": null
+          },
+          "bindings": [
+            {
+              "exchange": "request_response",
+              "family": "request",
+              "framing": "json",
+              "framingSpec": "JsonFramingSpec",
+              "methods": [
+                "GET"
+              ],
+              "path": "/resourcerepository/{item_id}",
+              "proto": "http.rest",
+              "rpcMethod": null
+            }
+          ],
+          "family": "crud"
+        }
+      }
+    },
+    "/resourcetaxonomy": {
+      "get": {
+        "operationId": "ResourceTaxonomy.count",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "id",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "resource_id",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "taxonomy_id",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResourceTaxonomyCountResponse"
+                }
+              }
+            },
+            "description": "Successful Response"
+          }
+        },
+        "tags": [
+          "ResourceTaxonomy"
+        ],
+        "x-tigrbl-auth": {
+          "policy": "public-by-default",
+          "public": true,
+          "security": []
+        },
+        "x-tigrbl-surface": {
+          "binding": {
+            "exchange": "request_response",
+            "family": "request",
+            "framing": "json",
+            "framingSpec": "JsonFramingSpec",
+            "methods": [
+              "GET"
+            ],
+            "path": "/resourcetaxonomy",
+            "proto": "http.rest",
+            "rpcMethod": null
+          },
+          "bindings": [
+            {
+              "exchange": "request_response",
+              "family": "request",
+              "framing": "json",
+              "framingSpec": "JsonFramingSpec",
+              "methods": [
+                "GET"
+              ],
+              "path": "/resourcetaxonomy",
+              "proto": "http.rest",
+              "rpcMethod": null
+            }
+          ],
+          "family": "crud"
+        }
+      },
+      "post": {
+        "operationId": "ResourceTaxonomy.group_by",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ResourceTaxonomyGroupByRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResourceTaxonomyGroupByResponse"
+                }
+              }
+            },
+            "description": "Successful Response"
+          }
+        },
+        "tags": [
+          "ResourceTaxonomy"
+        ],
+        "x-tigrbl-auth": {
+          "policy": "public-by-default",
+          "public": true,
+          "security": []
+        },
+        "x-tigrbl-surface": {
+          "binding": {
+            "exchange": "request_response",
+            "family": "request",
+            "framing": "json",
+            "framingSpec": "JsonFramingSpec",
+            "methods": [
+              "POST"
+            ],
+            "path": "/resourcetaxonomy",
+            "proto": "http.rest",
+            "rpcMethod": null
+          },
+          "bindings": [
+            {
+              "exchange": "request_response",
+              "family": "request",
+              "framing": "json",
+              "framingSpec": "JsonFramingSpec",
+              "methods": [
+                "POST"
+              ],
+              "path": "/resourcetaxonomy",
+              "proto": "http.rest",
+              "rpcMethod": null
+            }
+          ],
+          "family": "crud"
+        }
+      }
+    },
+    "/resourcetaxonomy/{item_id}": {
+      "get": {
+        "operationId": "ResourceTaxonomy.exists",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "item_id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "id",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "resource_id",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "taxonomy_id",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResourceTaxonomyExistsResponse"
+                }
+              }
+            },
+            "description": "Successful Response"
+          }
+        },
+        "tags": [
+          "ResourceTaxonomy"
+        ],
+        "x-tigrbl-auth": {
+          "policy": "public-by-default",
+          "public": true,
+          "security": []
+        },
+        "x-tigrbl-surface": {
+          "binding": {
+            "exchange": "request_response",
+            "family": "request",
+            "framing": "json",
+            "framingSpec": "JsonFramingSpec",
+            "methods": [
+              "GET"
+            ],
+            "path": "/resourcetaxonomy/{item_id}",
+            "proto": "http.rest",
+            "rpcMethod": null
+          },
+          "bindings": [
+            {
+              "exchange": "request_response",
+              "family": "request",
+              "framing": "json",
+              "framingSpec": "JsonFramingSpec",
+              "methods": [
+                "GET"
+              ],
+              "path": "/resourcetaxonomy/{item_id}",
+              "proto": "http.rest",
+              "rpcMethod": null
+            }
+          ],
+          "family": "crud"
+        }
+      }
+    },
+    "/resourcetype": {
+      "get": {
+        "operationId": "ResourceType.count",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "id",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "label",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "category",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "description",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "icon_key",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "detail_schema_key",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResourceTypeCountResponse"
+                }
+              }
+            },
+            "description": "Successful Response"
+          }
+        },
+        "tags": [
+          "ResourceType"
+        ],
+        "x-tigrbl-auth": {
+          "policy": "public-by-default",
+          "public": true,
+          "security": []
+        },
+        "x-tigrbl-surface": {
+          "binding": {
+            "exchange": "request_response",
+            "family": "request",
+            "framing": "json",
+            "framingSpec": "JsonFramingSpec",
+            "methods": [
+              "GET"
+            ],
+            "path": "/resourcetype",
+            "proto": "http.rest",
+            "rpcMethod": null
+          },
+          "bindings": [
+            {
+              "exchange": "request_response",
+              "family": "request",
+              "framing": "json",
+              "framingSpec": "JsonFramingSpec",
+              "methods": [
+                "GET"
+              ],
+              "path": "/resourcetype",
+              "proto": "http.rest",
+              "rpcMethod": null
+            }
+          ],
+          "family": "crud"
+        }
+      },
+      "post": {
+        "operationId": "ResourceType.group_by",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ResourceTypeGroupByRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResourceTypeGroupByResponse"
+                }
+              }
+            },
+            "description": "Successful Response"
+          }
+        },
+        "tags": [
+          "ResourceType"
+        ],
+        "x-tigrbl-auth": {
+          "policy": "public-by-default",
+          "public": true,
+          "security": []
+        },
+        "x-tigrbl-surface": {
+          "binding": {
+            "exchange": "request_response",
+            "family": "request",
+            "framing": "json",
+            "framingSpec": "JsonFramingSpec",
+            "methods": [
+              "POST"
+            ],
+            "path": "/resourcetype",
+            "proto": "http.rest",
+            "rpcMethod": null
+          },
+          "bindings": [
+            {
+              "exchange": "request_response",
+              "family": "request",
+              "framing": "json",
+              "framingSpec": "JsonFramingSpec",
+              "methods": [
+                "POST"
+              ],
+              "path": "/resourcetype",
+              "proto": "http.rest",
+              "rpcMethod": null
+            }
+          ],
+          "family": "crud"
+        }
+      }
+    },
+    "/resourcetype/{item_id}": {
+      "get": {
+        "operationId": "ResourceType.exists",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "item_id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "id",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "label",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "category",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "description",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "icon_key",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "detail_schema_key",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResourceTypeExistsResponse"
+                }
+              }
+            },
+            "description": "Successful Response"
+          }
+        },
+        "tags": [
+          "ResourceType"
+        ],
+        "x-tigrbl-auth": {
+          "policy": "public-by-default",
+          "public": true,
+          "security": []
+        },
+        "x-tigrbl-surface": {
+          "binding": {
+            "exchange": "request_response",
+            "family": "request",
+            "framing": "json",
+            "framingSpec": "JsonFramingSpec",
+            "methods": [
+              "GET"
+            ],
+            "path": "/resourcetype/{item_id}",
+            "proto": "http.rest",
+            "rpcMethod": null
+          },
+          "bindings": [
+            {
+              "exchange": "request_response",
+              "family": "request",
+              "framing": "json",
+              "framingSpec": "JsonFramingSpec",
+              "methods": [
+                "GET"
+              ],
+              "path": "/resourcetype/{item_id}",
               "proto": "http.rest",
               "rpcMethod": null
             }

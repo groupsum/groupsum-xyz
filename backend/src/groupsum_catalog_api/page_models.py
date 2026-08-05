@@ -7,6 +7,7 @@ from datetime import UTC, datetime
 from pathlib import Path
 from typing import Any
 
+import orjson
 from tigrbl import JSONResponse, Request, Response
 
 from .analytics import connect_analytics, default_analytics_path, metric_rows
@@ -163,7 +164,7 @@ def entity_detail(
 
 
 def cacheable_json(request: Request, payload: dict[str, Any]) -> JSONResponse | Response:
-    body = json.dumps(payload, sort_keys=True, separators=(",", ":"), default=str).encode()
+    body = orjson.dumps(payload, option=orjson.OPT_SORT_KEYS | orjson.OPT_NAIVE_UTC, default=str)
     etag = f'"{hashlib.sha256(body).hexdigest()}"'
     headers = {
         "Cache-Control": CACHE_CONTROL,
@@ -173,7 +174,7 @@ def cacheable_json(request: Request, payload: dict[str, Any]) -> JSONResponse | 
     }
     if request.headers.get("if-none-match") == etag:
         return Response(status_code=304, headers=headers)
-    return JSONResponse(payload, headers=headers)
+    return Response(content=body, media_type="application/json", headers=headers)
 
 
 def metric_number(value: Any) -> int | float:
@@ -450,6 +451,14 @@ def catalog_collection(
     database_path: str | Path,
     request: Request,
     resource_kind: str,
+    page: int = 1,
+    page_size: int = 50,
+    query: str = "",
+    resource_type: str = "",
+    owner: str = "",
+    ecosystem: str = "",
+    publication_status: str = "",
+    sort: str = "name",
 ) -> JSONResponse | Response:
     """Return collection page models for the catalog routes exposed by the frontend."""
     with connect(database_path) as connection:
@@ -539,13 +548,62 @@ def catalog_collection(
                 record["route"] = f"/catalog/technologies/{record['slug']}"
         else:
             return JSONResponse({"detail": "Unsupported catalog collection"}, status_code=404)
+    normalized_query = query.strip().casefold()
+    filtered = []
+    for record in records:
+        if normalized_query and normalized_query not in " ".join(
+            str(record.get(key) or "")
+            for key in ("name", "title", "description", "summary", "owner")
+        ).casefold():
+            continue
+        if resource_type and record.get("resource_type") != resource_type:
+            continue
+        if owner and record.get("owner", record.get("repository_owner")) != owner:
+            continue
+        if ecosystem and record.get("ecosystem") != ecosystem:
+            continue
+        if publication_status and record.get("publication_status") != publication_status:
+            continue
+        filtered.append(record)
+    if sort == "recent":
+        filtered.sort(key=lambda item: str(item.get("observed_at") or ""), reverse=True)
+    elif sort == "activity":
+        filtered.sort(
+            key=lambda item: float((item.get("metrics") or {}).get("stars", 0)),
+            reverse=True,
+        )
+    total = len(filtered)
+    page_size = min(max(page_size, 1), 100)
+    page_count = max(1, (total + page_size - 1) // page_size)
+    page = min(max(page, 1), page_count)
+    start = (page - 1) * page_size
+    facet_fields = {
+        "repository": ("owner",),
+        "package": ("ecosystem", "publication_status"),
+        "resource": ("resource_type", "repository_owner"),
+        "technology": ("category",),
+    }[resource_kind]
+    facets = {
+        field: {
+            str(value): sum(1 for item in records if item.get(field) == value)
+            for value in sorted({item.get(field) for item in records if item.get(field)})
+        }
+        for field in facet_fields
+    }
     return cacheable_json(
         request,
         {
             "kind": f"catalog_{resource_kind}_collection",
             "resource_kind": resource_kind,
-            "count": len(records),
-            "records": records,
+            "count": total,
+            "page": page,
+            "page_size": page_size,
+            "page_count": page_count,
+            "facets": facets,
+            "generated_at": max(
+                (str(item.get("observed_at") or "") for item in records), default=""
+            ) or None,
+            "records": filtered[start : start + page_size],
         },
     )
 
