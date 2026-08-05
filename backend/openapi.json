@@ -1,6 +1,57 @@
 {
   "components": {
     "schemas": {
+      "CatalogCollection": {
+        "additionalProperties": true,
+        "properties": {
+          "count": {
+            "title": "Count",
+            "type": "integer"
+          },
+          "kind": {
+            "title": "Kind",
+            "type": "string"
+          },
+          "records": {
+            "items": {
+              "anyOf": [
+                {
+                  "$ref": "#/components/schemas/RepositorySummary"
+                },
+                {
+                  "$ref": "#/components/schemas/PackageSummary"
+                },
+                {
+                  "$ref": "#/components/schemas/TypedResourceSummary"
+                },
+                {
+                  "$ref": "#/components/schemas/TechnologySummary"
+                }
+              ]
+            },
+            "title": "Records",
+            "type": "array"
+          },
+          "resource_kind": {
+            "enum": [
+              "repository",
+              "package",
+              "resource",
+              "technology"
+            ],
+            "title": "Resource Kind",
+            "type": "string"
+          }
+        },
+        "required": [
+          "kind",
+          "resource_kind",
+          "count",
+          "records"
+        ],
+        "title": "CatalogCollection",
+        "type": "object"
+      },
       "CatalogEntityCountResponse": {
         "description": "Tigrbl v3 CatalogEntity count schema",
         "properties": {
@@ -421,6 +472,110 @@
         "title": "CatalogEntityGroupByResponse",
         "type": "object"
       },
+      "CatalogMember": {
+        "additionalProperties": true,
+        "properties": {
+          "graph": {
+            "anyOf": [
+              {
+                "additionalProperties": true,
+                "type": "object"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Graph"
+          },
+          "implementation": {
+            "additionalProperties": true,
+            "title": "Implementation",
+            "type": "object"
+          },
+          "item": {
+            "additionalProperties": true,
+            "title": "Item",
+            "type": "object"
+          },
+          "kind": {
+            "title": "Kind",
+            "type": "string"
+          },
+          "legal": {
+            "additionalProperties": true,
+            "title": "Legal",
+            "type": "object"
+          },
+          "parent": {
+            "anyOf": [
+              {
+                "additionalProperties": true,
+                "type": "object"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Parent"
+          },
+          "resource_type": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Resource Type"
+          }
+        },
+        "required": [
+          "kind",
+          "item"
+        ],
+        "title": "CatalogMember",
+        "type": "object"
+      },
+      "CatalogOverview": {
+        "additionalProperties": true,
+        "properties": {
+          "counts": {
+            "additionalProperties": {
+              "type": "integer"
+            },
+            "title": "Counts",
+            "type": "object"
+          },
+          "generated_at": {
+            "anyOf": [
+              {
+                "format": "date-time",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Generated At"
+          },
+          "kind": {
+            "const": "catalog_overview",
+            "title": "Kind",
+            "type": "string"
+          }
+        },
+        "required": [
+          "kind",
+          "counts"
+        ],
+        "title": "CatalogOverview",
+        "type": "object"
+      },
       "ClaimCountResponse": {
         "description": "Tigrbl v3 Claim count schema",
         "properties": {
@@ -799,6 +954,25 @@
           "statement"
         ],
         "title": "ClaimGroupByResponse",
+        "type": "object"
+      },
+      "CommitPoint": {
+        "additionalProperties": true,
+        "properties": {
+          "count": {
+            "title": "Count",
+            "type": "integer"
+          },
+          "date": {
+            "title": "Date",
+            "type": "string"
+          }
+        },
+        "required": [
+          "date",
+          "count"
+        ],
+        "title": "CommitPoint",
         "type": "object"
       },
       "DependencyCountResponse": {
@@ -3317,6 +3491,33 @@
         "title": "LimitationGroupByResponse",
         "type": "object"
       },
+      "MetricPoint": {
+        "additionalProperties": true,
+        "properties": {
+          "observed_at": {
+            "anyOf": [
+              {
+                "format": "date-time",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Observed At"
+          },
+          "value": {
+            "title": "Value",
+            "type": "number"
+          }
+        },
+        "required": [
+          "value"
+        ],
+        "title": "MetricPoint",
+        "type": "object"
+      },
       "OrganizationCountResponse": {
         "description": "Tigrbl v3 Organization count schema",
         "properties": {
@@ -4443,6 +4644,104 @@
           "repository_id"
         ],
         "title": "PackageRepositoryGroupByResponse",
+        "type": "object"
+      },
+      "PackageSummary": {
+        "additionalProperties": true,
+        "properties": {
+          "dependency_count": {
+            "default": 0,
+            "title": "Dependency Count",
+            "type": "integer"
+          },
+          "ecosystem": {
+            "title": "Ecosystem",
+            "type": "string"
+          },
+          "id": {
+            "title": "Id",
+            "type": "string"
+          },
+          "latest_version": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Latest Version"
+          },
+          "name": {
+            "title": "Name",
+            "type": "string"
+          },
+          "observed_at": {
+            "anyOf": [
+              {
+                "format": "date-time",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Observed At"
+          },
+          "package_kind": {
+            "title": "Package Kind",
+            "type": "string"
+          },
+          "publication_status": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Publication Status"
+          },
+          "registry_url": {
+            "title": "Registry Url",
+            "type": "string"
+          },
+          "release_count": {
+            "default": 0,
+            "title": "Release Count",
+            "type": "integer"
+          },
+          "route": {
+            "title": "Route",
+            "type": "string"
+          },
+          "route_key": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Route Key"
+          }
+        },
+        "required": [
+          "id",
+          "ecosystem",
+          "name",
+          "registry_url",
+          "route",
+          "package_kind"
+        ],
+        "title": "PackageSummary",
         "type": "object"
       },
       "PersonCountResponse": {
@@ -7597,6 +7896,104 @@
         "title": "RepositoryGroupByResponse",
         "type": "object"
       },
+      "RepositorySummary": {
+        "additionalProperties": true,
+        "properties": {
+          "commit_activity": {
+            "items": {
+              "$ref": "#/components/schemas/CommitPoint"
+            },
+            "title": "Commit Activity",
+            "type": "array"
+          },
+          "description": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Description"
+          },
+          "history": {
+            "additionalProperties": {
+              "items": {
+                "$ref": "#/components/schemas/MetricPoint"
+              },
+              "type": "array"
+            },
+            "title": "History",
+            "type": "object"
+          },
+          "id": {
+            "title": "Id",
+            "type": "string"
+          },
+          "metrics": {
+            "additionalProperties": {
+              "type": "number"
+            },
+            "title": "Metrics",
+            "type": "object"
+          },
+          "name": {
+            "title": "Name",
+            "type": "string"
+          },
+          "observed_at": {
+            "anyOf": [
+              {
+                "format": "date-time",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Observed At"
+          },
+          "owner": {
+            "title": "Owner",
+            "type": "string"
+          },
+          "package_count": {
+            "default": 0,
+            "title": "Package Count",
+            "type": "integer"
+          },
+          "release_count": {
+            "default": 0,
+            "title": "Release Count",
+            "type": "integer"
+          },
+          "resource_count": {
+            "default": 0,
+            "title": "Resource Count",
+            "type": "integer"
+          },
+          "route": {
+            "title": "Route",
+            "type": "string"
+          },
+          "url": {
+            "title": "Url",
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "owner",
+          "name",
+          "url",
+          "route"
+        ],
+        "title": "RepositorySummary",
+        "type": "object"
+      },
       "ResourceCountResponse": {
         "description": "Tigrbl v3 Resource count schema",
         "properties": {
@@ -8216,6 +8613,159 @@
         ],
         "title": "TaxonomyGroupByResponse",
         "type": "object"
+      },
+      "TechnologySummary": {
+        "additionalProperties": true,
+        "properties": {
+          "category": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Category"
+          },
+          "description": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Description"
+          },
+          "id": {
+            "title": "Id",
+            "type": "string"
+          },
+          "name": {
+            "title": "Name",
+            "type": "string"
+          },
+          "record_count": {
+            "default": 0,
+            "title": "Record Count",
+            "type": "integer"
+          },
+          "route": {
+            "title": "Route",
+            "type": "string"
+          },
+          "slug": {
+            "title": "Slug",
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "slug",
+          "name",
+          "route"
+        ],
+        "title": "TechnologySummary",
+        "type": "object"
+      },
+      "TypedResourceSummary": {
+        "additionalProperties": true,
+        "properties": {
+          "id": {
+            "title": "Id",
+            "type": "string"
+          },
+          "observed_at": {
+            "anyOf": [
+              {
+                "format": "date-time",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Observed At"
+          },
+          "repository_name": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Repository Name"
+          },
+          "repository_owner": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Repository Owner"
+          },
+          "resource_type": {
+            "title": "Resource Type",
+            "type": "string"
+          },
+          "route": {
+            "title": "Route",
+            "type": "string"
+          },
+          "route_key": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Route Key"
+          },
+          "summary": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Summary"
+          },
+          "title": {
+            "title": "Title",
+            "type": "string"
+          },
+          "url": {
+            "title": "Url",
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "resource_type",
+          "title",
+          "url",
+          "route"
+        ],
+        "title": "TypedResourceSummary",
+        "type": "object"
       }
     }
   },
@@ -8232,6 +8782,13 @@
         "operationId": "catalog",
         "responses": {
           "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CatalogOverview"
+                }
+              }
+            },
             "description": "Successful Response"
           }
         },
@@ -8262,6 +8819,13 @@
         "operationId": "catalog_packages",
         "responses": {
           "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CatalogCollection"
+                }
+              }
+            },
             "description": "Successful Response"
           }
         },
@@ -8302,6 +8866,13 @@
         ],
         "responses": {
           "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CatalogMember"
+                }
+              }
+            },
             "description": "Successful Response"
           }
         },
@@ -8342,6 +8913,13 @@
         ],
         "responses": {
           "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CatalogMember"
+                }
+              }
+            },
             "description": "Successful Response"
           }
         },
@@ -8372,6 +8950,13 @@
         "operationId": "catalog_repositories",
         "responses": {
           "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CatalogCollection"
+                }
+              }
+            },
             "description": "Successful Response"
           }
         },
@@ -8450,6 +9035,13 @@
         "operationId": "catalog_resources",
         "responses": {
           "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CatalogCollection"
+                }
+              }
+            },
             "description": "Successful Response"
           }
         },
@@ -8490,6 +9082,13 @@
         ],
         "responses": {
           "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CatalogMember"
+                }
+              }
+            },
             "description": "Successful Response"
           }
         },
@@ -8520,6 +9119,13 @@
         "operationId": "catalog_technologies",
         "responses": {
           "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CatalogCollection"
+                }
+              }
+            },
             "description": "Successful Response"
           }
         },

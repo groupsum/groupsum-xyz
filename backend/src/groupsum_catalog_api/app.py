@@ -26,6 +26,7 @@ from .page_models import (
     record_detail,
     repository_metric_snapshot,
 )
+from .schemas.catalog import CatalogCollection, CatalogMember, CatalogOverview
 from .tables import ALL_TABLES
 
 
@@ -214,13 +215,15 @@ def build_app(
         return repository_metric_snapshot(database, request, requested_owner)
 
     @catalog_app.get(
-        "/api/v1/catalog", summary="Catalog overview page model"
+        "/api/v1/catalog", summary="Catalog overview page model", response_model=CatalogOverview
     )
     def catalog(request: Request):
         return catalog_overview(database, request)
 
     @catalog_app.get(
-        "/api/v1/catalog/repositories", summary="Repository catalog collection"
+        "/api/v1/catalog/repositories",
+        summary="Repository catalog collection",
+        response_model=CatalogCollection,
     )
     def catalog_repositories(request: Request):
         return catalog_collection(database, request, "repository")
@@ -233,37 +236,49 @@ def build_app(
         return catalog_repository_detail(database, request, owner, repository)
 
     @catalog_app.get(
-        "/api/v1/catalog/packages", summary="Package catalog collection"
+        "/api/v1/catalog/packages",
+        summary="Package catalog collection",
+        response_model=CatalogCollection,
     )
     def catalog_packages(request: Request):
         return catalog_collection(database, request, "package")
 
     @catalog_app.get(
-        "/api/v1/catalog/packages/{route_key}", summary="Package catalog resource record"
+        "/api/v1/catalog/packages/{route_key}",
+        summary="Package catalog resource record",
+        response_model=CatalogMember,
     )
     def catalog_package(request: Request, route_key: str):
         return catalog_resource_detail(database, request, "package", route_key)
 
     @catalog_app.get(
-        "/api/v1/catalog/releases/{route_key}", summary="Release catalog resource record"
+        "/api/v1/catalog/releases/{route_key}",
+        summary="Release catalog resource record",
+        response_model=CatalogMember,
     )
     def catalog_release(request: Request, route_key: str):
         return catalog_resource_detail(database, request, "release", route_key)
 
     @catalog_app.get(
-        "/api/v1/catalog/resources", summary="Typed resource catalog collection"
+        "/api/v1/catalog/resources",
+        summary="Typed resource catalog collection",
+        response_model=CatalogCollection,
     )
     def catalog_resources(request: Request):
         return catalog_collection(database, request, "resource")
 
     @catalog_app.get(
-        "/api/v1/catalog/resources/{route_key}", summary="Typed catalog resource record"
+        "/api/v1/catalog/resources/{route_key}",
+        summary="Typed catalog resource record",
+        response_model=CatalogMember,
     )
     def catalog_resource(request: Request, route_key: str):
         return catalog_resource_detail(database, request, "resource", route_key)
 
     @catalog_app.get(
-        "/api/v1/catalog/technologies", summary="Technology catalog collection"
+        "/api/v1/catalog/technologies",
+        summary="Technology catalog collection",
+        response_model=CatalogCollection,
     )
     def catalog_technologies(request: Request):
         return catalog_collection(database, request, "technology")
