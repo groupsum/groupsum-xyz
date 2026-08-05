@@ -12,26 +12,9 @@ import { EntityOwnership } from "./EntityIdentity";
 import { CatalogPill, CollectionHeader, ContextRailCard, FactPanel, MemberRowCard, RecordIdentityCard, SurfaceCard, factIcons, MetricBand, metricIcons, type MetricItem } from "./CatalogVisuals";
 import { ExplorerFilterToolbar, TypeBadge, type ExplorerFilters } from "./CatalogExplorerUI";
 import { useCatalogCollection } from "../hooks/useCatalogCollection";
+import type { CatalogViewRecord } from "../types/catalog-view";
 
-type CatalogRecord = Record<string, unknown> & {
-  id: string;
-  kind?: string;
-  name?: string;
-  display_name?: string;
-  full_name?: string;
-  title?: string;
-  description?: string;
-  route?: string;
-  url?: string;
-  registry_url?: string;
-  observed_at?: string;
-  claim_boundary?: string;
-  metrics?: Record<string, number>;
-  evidence?: Array<{ kind?: string; url?: string; observed_at?: string }>;
-  legal_evidence?: Array<Record<string, unknown>>;
-  ssot_governance?: Record<string, unknown>;
-  entity_graph?: EntityGraph | null;
-};
+type CatalogRecord = CatalogViewRecord;
 
 const datasetOrder = ["repositories", "packages", "resources", "technologies"] as const;
 type DatasetName = (typeof datasetOrder)[number];
@@ -588,28 +571,13 @@ export function PublicCatalogExplorer({ onNavigate, compact = false, fixedDatase
   }, [collection.data?.records, dataset]);
   const state = collection.isPending ? "loading" : collection.isError ? "error" : "ready";
 
-  const filtered = useMemo(() => {
-    const normalized = filters.search.trim().toLowerCase();
-    const selected = records.filter((record) => {
-      if (normalized && !JSON.stringify(record).toLowerCase().includes(normalized)) return false;
-      if (filters.owner && String(record.owner || record.organization || "") !== filters.owner) return false;
-      if (filters.ecosystem && String(record.ecosystem || "") !== filters.ecosystem) return false;
-      if (filters.publication && String(record.publication_status || record.package_kind || "") !== filters.publication) return false;
-      if (filters.resourceType && String(record.resource_type || "") !== filters.resourceType) return false;
-      return true;
-    });
-    return [...selected].sort((left, right) => {
-      if (filters.sort === "activity") return Number(valueRecord(right.metrics).stars || right.release_count || 0) - Number(valueRecord(left.metrics).stars || left.release_count || 0);
-      if (filters.sort === "recent") return String(right.observed_at || right.published_at || "").localeCompare(String(left.observed_at || left.published_at || ""));
-      return recordTitle(left).localeCompare(recordTitle(right));
-    });
-  }, [filters, records]);
-  const filterOptions = useMemo(() => ({
-    owners: [...new Set(records.map((record) => String(record.owner || record.organization || "")).filter(Boolean))].sort(),
-    ecosystems: [...new Set(records.map((record) => String(record.ecosystem || "")).filter(Boolean))].sort(),
-    publications: [...new Set(records.map((record) => String(record.publication_status || record.package_kind || "")).filter(Boolean))].sort(),
-    resourceTypes: [...new Set(records.map((record) => String(record.resource_type || "")).filter(Boolean))].sort(),
-  }), [records]);
+  const facetValues = (name: string) => Object.keys(collection.data?.facets?.[name] || {}).sort();
+  const filterOptions = {
+    owners: dataset === "resources" ? facetValues("repository_owner") : facetValues("owner"),
+    ecosystems: facetValues("ecosystem"),
+    publications: facetValues("publication_status"),
+    resourceTypes: facetValues("resource_type"),
+  };
   const summaryFacts = useMemo<MetricItem[]>(() => {
     if (dataset === "repositories") return [
       { label: "Repositories", value: records.length, icon: Code2 },
@@ -632,7 +600,7 @@ export function PublicCatalogExplorer({ onNavigate, compact = false, fixedDatase
     return [{ label: "Technology tags", value: records.length, icon: ServerCog }, { label: "Repository references", value: records.reduce((total, record) => total + Number(record.repository_count || 0), 0), icon: Code2 }];
   }, [dataset, filterOptions, records]);
   const pages = Number(collection.data?.page_count || 1);
-  const visible = filtered;
+  const visible = records;
 
   return (
     <section className="catalog-explorer max-w-[var(--content-max)] mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-6">
@@ -655,7 +623,7 @@ export function PublicCatalogExplorer({ onNavigate, compact = false, fixedDatase
       {state === "error" && <div className="p-6 border border-red-500/20 bg-red-500/5 text-sm text-red-700 rounded-[var(--radius-sm)]" role="alert">The generated dataset could not be loaded. The normalized JSON remains available from the download links below.</div>}
       {state === "ready" && (
         <>
-          <div className="text-xs font-mono text-ink-muted">{filtered.length.toLocaleString()} matching records · page {page.toLocaleString()} of {pages.toLocaleString()}</div>
+          <div className="text-xs font-mono text-ink-muted">{Number(collection.data?.count || 0).toLocaleString()} matching records · page {page.toLocaleString()} of {pages.toLocaleString()}</div>
           <div className="space-y-3">{visible.map((record) => <CollectionRow key={record.id} record={record} dataset={dataset} onNavigate={onNavigate} />)}</div>
           {visible.length === 0 && <div className="p-10 text-center border border-[var(--color-border-soft)] rounded-[var(--radius-md)] text-sm text-ink-muted">No generated records match this search.</div>}
           {pages > 1 && <div className="flex items-center justify-between gap-4"><button disabled={page === 1} onClick={() => setPage((value) => Math.max(1, value - 1))} className="px-3 py-2 text-xs font-mono border border-[var(--color-border-soft)] rounded disabled:opacity-40 cursor-pointer">Previous</button><button disabled={page === pages} onClick={() => setPage((value) => Math.min(pages, value + 1))} className="px-3 py-2 text-xs font-mono border border-[var(--color-border-soft)] rounded disabled:opacity-40 cursor-pointer">Next</button></div>}
