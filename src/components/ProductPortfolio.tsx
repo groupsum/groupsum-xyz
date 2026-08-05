@@ -14,6 +14,7 @@ import { PortfolioEntity } from "../types";
 import { RepositorySignalStrip } from "./RepositorySignals";
 import { EntityOwnership } from "./EntityIdentity";
 import { CollectionHeader, ContextRailCard, MemberRowCard, RecordIdentityCard, SurfaceCard, factIcons } from "./CatalogVisuals";
+import { ExplorerProductPortfolioCollection } from "./ExplorerProductPortfolioCollection";
 
 type Navigate = (path: string) => void;
 type CollectionMode = "products" | "portfolio";
@@ -253,7 +254,7 @@ export function ProductCollectionPage({
   const baseRecords = useMemo(() => {
     const staticRecords = portfolioEntities
       .filter((entity) => entity.approved)
-      .filter((entity) => mode !== "products" || collectionKinds.has(entity.kind))
+      .filter((entity) => mode === "products" ? collectionKinds.has(entity.kind) : entity.kind === "project")
       .map(staticCollectionRecord);
     const merged = new Map(staticRecords.map((record) => [`${record.recordType}:${record.slug}`, record]));
     for (const backend of collectionModel?.records || []) {
@@ -288,6 +289,14 @@ export function ProductCollectionPage({
     : mode === "products"
       ? "Start with the product. Each record connects its reviewed positioning to public repositories, packages, releases, deployments, examples, APIs, demos, and related work."
       : "A unified collection of products, suites, applications, packages, projects, and specifications, each linked to the evidence that supports it.";
+
+  return <ExplorerProductPortfolioCollection
+    mode={mode}
+    records={baseRecords}
+    observedAt={collectionModel?.generated_at}
+    organization={organization}
+    onNavigate={onNavigate}
+  />;
 
   return (
     <div className="max-w-[var(--content-max)] mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-14 space-y-10">
