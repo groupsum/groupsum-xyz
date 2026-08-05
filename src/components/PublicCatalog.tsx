@@ -4,12 +4,13 @@ import {
   catalogOrganizations,
   catalogSummary,
 } from "../data/catalog.generated";
-import { EntityGraph, getCatalogCollection, getCatalogOverview, getCatalogRepository, getCatalogTechnology, getEntityPageModel, getRepositoryMetricSnapshot, RepositoryMetricRecord, type RepositorySignals } from "../api/catalog.generated";
+import { EntityGraph, getCatalogOverview, getCatalogRepository, getCatalogTechnology, getEntityPageModel, getRepositoryMetricSnapshot, RepositoryMetricRecord, type RepositorySignals } from "../api/catalog.generated";
 import { Activity, ArrowLeft, ArrowRight, BadgeCheck, BookOpen, Boxes, Braces, CalendarDays, Code2, ExternalLink, FileCode2, GitBranch, Globe2, Package, Scale, ServerCog, ShieldCheck } from "lucide-react";
 import { RepositorySignalStrip } from "./RepositorySignals";
 import { EntityOwnership } from "./EntityIdentity";
 import { CatalogPill, CollectionHeader, ContextRailCard, FactPanel, MemberRowCard, RecordIdentityCard, SurfaceCard, factIcons, MetricBand, metricIcons, type MetricItem } from "./CatalogVisuals";
 import { ExplorerFilterToolbar, TypeBadge, type ExplorerFilters } from "./CatalogExplorerUI";
+import { useCatalogCollection } from "../hooks/useCatalogCollection";
 
 type CatalogRecord = Record<string, unknown> & {
   id: string;
@@ -559,10 +560,8 @@ export function PublicCatalogOverview({ onNavigate }: { onNavigate: (path: strin
 
 export function PublicCatalogExplorer({ onNavigate, compact = false, fixedDataset, initialQuery = "" }: { onNavigate: (path: string) => void; compact?: boolean; fixedDataset?: DatasetName; initialQuery?: string }) {
   const [dataset, setDataset] = useState<DatasetName>(fixedDataset || "repositories");
-  const [records, setRecords] = useState<CatalogRecord[]>([]);
   const [filters, setFilters] = useState<ExplorerFilters>({ search: initialQuery, owner: "", ecosystem: "", publication: "", resourceType: "", sort: "name" });
   const [page, setPage] = useState(1);
-  const [state, setState] = useState<"loading" | "ready" | "error">("loading");
   const pageSize = compact ? 24 : 50;
 
   useEffect(() => {
@@ -571,28 +570,22 @@ export function PublicCatalogExplorer({ onNavigate, compact = false, fixedDatase
 
   useEffect(() => setFilters((current) => ({ ...current, search: initialQuery })), [initialQuery]);
 
-  useEffect(() => {
-    const controller = new AbortController();
-    setState("loading");
-    setPage(1);
-    const staticFallback = () => fetch(`/catalog/site/${dataset}.json`, { signal: controller.signal })
-      .then((response) => {
-        if (!response.ok) throw new Error(`catalog response ${response.status}`);
-        return response.json() as Promise<CatalogRecord[]>;
-      });
-    getCatalogCollection(dataset, controller.signal)
-      .then((model) => model.records as CatalogRecord[])
-      .catch(staticFallback)
-      .then((value) => {
-        const kind = dataset === "technologies" ? "technology" : dataset.slice(0, -1);
-        setRecords(value.map((record) => ({ ...record, kind: record.kind || kind })));
-        setState("ready");
-      })
-      .catch((error: Error) => {
-        if (error.name !== "AbortError") setState("error");
-      });
-    return () => controller.abort();
-  }, [dataset]);
+  const collection = useCatalogCollection(dataset, {
+    page,
+    page_size: pageSize,
+    q: filters.search || undefined,
+    owner: dataset === "repositories" ? filters.owner || undefined : undefined,
+    ecosystem: dataset === "packages" ? filters.ecosystem || undefined : undefined,
+    publication_status: dataset === "packages" ? filters.publication || undefined : undefined,
+    resource_type: dataset === "resources" ? filters.resourceType || undefined : undefined,
+    repository_owner: dataset === "resources" ? filters.owner || undefined : undefined,
+    sort: filters.sort,
+  });
+  const records = useMemo(() => {
+    const kind = dataset === "technologies" ? "technology" : dataset.slice(0, -1);
+    return (collection.data?.records || []).map((record) => ({ ...record, kind })) as CatalogRecord[];
+  }, [collection.data?.records, dataset]);
+  const state = collection.isPending ? "loading" : collection.isError ? "error" : "ready";
 
   const filtered = useMemo(() => {
     const normalized = filters.search.trim().toLowerCase();
@@ -637,8 +630,8 @@ export function PublicCatalogExplorer({ onNavigate, compact = false, fixedDatase
     ];
     return [{ label: "Technology tags", value: records.length, icon: ServerCog }, { label: "Repository references", value: records.reduce((total, record) => total + Number(record.repository_count || 0), 0), icon: Code2 }];
   }, [dataset, filterOptions, records]);
-  const pages = Math.max(1, Math.ceil(filtered.length / pageSize));
-  const visible = filtered.slice((page - 1) * pageSize, page * pageSize);
+  const pages = Number(collection.data?.page_count || 1);
+  const visible = filtered;
 
   return (
     <section className="catalog-explorer max-w-[var(--content-max)] mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-6">
@@ -656,7 +649,7 @@ export function PublicCatalogExplorer({ onNavigate, compact = false, fixedDatase
           </button>
         ))}
       </div>}
-      <ExplorerFilterToolbar filters={filters} onChange={(next) => { setFilters(next); setPage(1); }} owners={dataset === "repositories" ? filterOptions.owners : []} ecosystems={dataset === "packages" ? filterOptions.ecosystems : []} publications={dataset === "packages" ? filterOptions.publications : []} resourceTypes={dataset === "resources" ? filterOptions.resourceTypes : []} sortOptions={[{ label: "Name (A–Z)", value: "name" }, { label: "Most activity", value: "activity" }, { label: "Recently observed", value: "recent" }]} total={filtered.length} />
+      <ExplorerFilterToolbar filters={filters} onChange={(next) => { setFilters(next); setPage(1); }} owners={dataset === "repositories" ? Object.keys(collection.data?.facets?.owner || {}) : []} ecosystems={dataset === "packages" ? Object.keys(collection.data?.facets?.ecosystem || {}) : []} publications={dataset === "packages" ? Object.keys(collection.data?.facets?.publication_status || {}) : []} resourceTypes={dataset === "resources" ? Object.keys(collection.data?.facets?.resource_type || {}) : []} sortOptions={[{ label: "Name (A–Z)", value: "name" }, { label: "Most activity", value: "activity" }, { label: "Recently observed", value: "recent" }]} total={Number(collection.data?.count || 0)} />
       {state === "loading" && <div className="p-10 text-center text-sm text-ink-muted" role="status">Loading {labels[dataset].toLowerCase()}…</div>}
       {state === "error" && <div className="p-6 border border-red-500/20 bg-red-500/5 text-sm text-red-700 rounded-[var(--radius-sm)]" role="alert">The generated dataset could not be loaded. The normalized JSON remains available from the download links below.</div>}
       {state === "ready" && (

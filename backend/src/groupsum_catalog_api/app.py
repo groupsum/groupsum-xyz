@@ -247,8 +247,17 @@ def build_app(
         summary="Repository catalog collection",
         response_model=CatalogCollection,
     )
-    def catalog_repositories(request: Request):
-        return catalog_collection_from_request(database, request, "repository")
+    def catalog_repositories(
+        request: Request,
+        page: int = 1,
+        page_size: int = 50,
+        q: str = "",
+        owner: str = "",
+        sort: str = "name",
+    ):
+        return catalog_collection(
+            database, request, "repository", page, page_size, q, owner=owner, sort=sort
+        )
 
     @catalog_app.get(
         "/api/v1/catalog/repositories/{owner}/{repository}",
@@ -262,8 +271,26 @@ def build_app(
         summary="Package catalog collection",
         response_model=CatalogCollection,
     )
-    def catalog_packages(request: Request):
-        return catalog_collection_from_request(database, request, "package")
+    def catalog_packages(
+        request: Request,
+        page: int = 1,
+        page_size: int = 50,
+        q: str = "",
+        ecosystem: str = "",
+        publication_status: str = "",
+        sort: str = "name",
+    ):
+        return catalog_collection(
+            database,
+            request,
+            "package",
+            page,
+            page_size,
+            q,
+            ecosystem=ecosystem,
+            publication_status=publication_status,
+            sort=sort,
+        )
 
     @catalog_app.get(
         "/api/v1/catalog/packages/{route_key}",
@@ -286,8 +313,26 @@ def build_app(
         summary="Typed resource catalog collection",
         response_model=CatalogCollection,
     )
-    def catalog_resources(request: Request):
-        return catalog_collection_from_request(database, request, "resource")
+    def catalog_resources(
+        request: Request,
+        page: int = 1,
+        page_size: int = 50,
+        q: str = "",
+        resource_type: str = "",
+        repository_owner: str = "",
+        sort: str = "name",
+    ):
+        return catalog_collection(
+            database,
+            request,
+            "resource",
+            page,
+            page_size,
+            q,
+            resource_type=resource_type,
+            owner=repository_owner,
+            sort=sort,
+        )
 
     @catalog_app.get(
         "/api/v1/catalog/resources/{route_key}",
@@ -302,8 +347,14 @@ def build_app(
         summary="Technology catalog collection",
         response_model=CatalogCollection,
     )
-    def catalog_technologies(request: Request):
-        return catalog_collection_from_request(database, request, "technology")
+    def catalog_technologies(
+        request: Request,
+        page: int = 1,
+        page_size: int = 50,
+        q: str = "",
+        sort: str = "name",
+    ):
+        return catalog_collection(database, request, "technology", page, page_size, q, sort=sort)
 
     @catalog_app.get(
         "/api/v1/catalog/technologies/{slug}", summary="Technology catalog member record"

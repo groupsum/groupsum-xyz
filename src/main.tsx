@@ -1,6 +1,7 @@
 import {StrictMode} from 'react';
 import {createRoot, hydrateRoot} from 'react-dom/client';
 import {BrowserRouter} from './router';
+import {QueryClient, QueryClientProvider} from '@tanstack/react-query';
 import App from './App.tsx';
 import './index.css';
 
@@ -9,11 +10,17 @@ if (serializedModel?.textContent) {
   globalThis.__GROUPSUM_PAGE_MODEL__ = JSON.parse(serializedModel.textContent);
 }
 
+const queryClient = new QueryClient({
+  defaultOptions: { queries: { staleTime: 60_000, refetchOnWindowFocus: false } },
+});
+
 const application = (
   <StrictMode>
-    <BrowserRouter>
-      <App />
-    </BrowserRouter>
+    <QueryClientProvider client={queryClient}>
+      <BrowserRouter>
+        <App />
+      </BrowserRouter>
+    </QueryClientProvider>
   </StrictMode>
 );
 

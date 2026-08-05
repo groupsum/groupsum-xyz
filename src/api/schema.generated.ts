@@ -7168,7 +7168,14 @@ export interface operations {
     };
     catalog_packages: {
         parameters: {
-            query?: never;
+            query?: {
+                page?: number;
+                page_size?: number;
+                q?: string;
+                ecosystem?: string;
+                publication_status?: string;
+                sort?: string;
+            };
             header?: never;
             path?: never;
             cookie?: never;
@@ -7232,7 +7239,13 @@ export interface operations {
     };
     catalog_repositories: {
         parameters: {
-            query?: never;
+            query?: {
+                page?: number;
+                page_size?: number;
+                q?: string;
+                owner?: string;
+                sort?: string;
+            };
             header?: never;
             path?: never;
             cookie?: never;
@@ -7273,7 +7286,14 @@ export interface operations {
     };
     catalog_resources: {
         parameters: {
-            query?: never;
+            query?: {
+                page?: number;
+                page_size?: number;
+                q?: string;
+                resource_type?: string;
+                repository_owner?: string;
+                sort?: string;
+            };
             header?: never;
             path?: never;
             cookie?: never;
@@ -7315,7 +7335,12 @@ export interface operations {
     };
     catalog_technologies: {
         parameters: {
-            query?: never;
+            query?: {
+                page?: number;
+                page_size?: number;
+                q?: string;
+                sort?: string;
+            };
             header?: never;
             path?: never;
             cookie?: never;
