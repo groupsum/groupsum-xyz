@@ -4,7 +4,17 @@
  */
 
 import React, { useEffect, useState } from "react";
-import { ArrowRight, Menu, X } from "lucide-react";
+import {
+  ArrowRight,
+  BookOpen,
+  Box,
+  Building2,
+  Compass,
+  Layers,
+  Menu,
+  SlidersHorizontal,
+  X,
+} from "lucide-react";
 
 interface SiteHeaderProps {
   currentPath: string;
@@ -12,12 +22,12 @@ interface SiteHeaderProps {
 }
 
 const navItems = [
-  { label: "Products", path: "/products" },
-  { label: "Portfolio", path: "/portfolio" },
-  { label: "Solutions", path: "/solutions" },
-  { label: "Services", path: "/services" },
-  { label: "Insights", path: "/insights" },
-  { label: "About", path: "/about" },
+  { label: "Products", path: "/products", icon: Box },
+  { label: "Portfolio", path: "/portfolio", icon: Layers },
+  { label: "Solutions", path: "/solutions", icon: Compass },
+  { label: "Services", path: "/services", icon: SlidersHorizontal },
+  { label: "Insights", path: "/insights", icon: BookOpen },
+  { label: "About", path: "/about", icon: Building2 },
 ];
 
 export const SiteHeader: React.FC<SiteHeaderProps> = ({ currentPath, onNavigate }) => {
@@ -69,11 +79,16 @@ export const SiteHeader: React.FC<SiteHeaderProps> = ({ currentPath, onNavigate 
         </div>
 
         <nav className="hidden flex-wrap gap-1 border-t border-[var(--color-border-soft)] py-2 md:flex" aria-label="Primary navigation">
-          {navItems.map((item) => (
-            <a key={item.path} href={item.path} onClick={(event) => navigate(item.path, event)} aria-current={isActive(item.path) ? "page" : undefined} className={`rounded-md px-3 py-2 font-mono text-xs transition-colors ${isActive(item.path) ? "bg-ink font-semibold text-white" : "text-ink-muted hover:bg-surface hover:text-ink"}`}>
-              {item.label}
-            </a>
-          ))}
+          {navItems.map((item) => {
+            const Icon = item.icon;
+            const active = isActive(item.path);
+            return (
+              <a key={item.path} href={item.path} onClick={(event) => navigate(item.path, event)} aria-current={active ? "page" : undefined} className={`inline-flex min-h-9 items-center gap-1.5 whitespace-nowrap rounded-md px-3 py-1.5 font-mono text-xs transition-all focus:outline-none focus:ring-1 focus:ring-[#1A73E8] ${active ? "bg-ink font-semibold text-white shadow-sm" : "text-ink-muted hover:bg-surface hover:text-ink"}`}>
+                <Icon className={`h-3.5 w-3.5 ${active ? "text-white" : "text-[#7A827C]"}`} aria-hidden="true" />
+                <span>{item.label}</span>
+              </a>
+            );
+          })}
         </nav>
       </div>
 
@@ -81,11 +96,16 @@ export const SiteHeader: React.FC<SiteHeaderProps> = ({ currentPath, onNavigate 
         <div id="mobile-navigation" className="fixed inset-x-0 top-16 h-[calc(100dvh-4rem)] overflow-y-auto border-t border-[var(--color-border-soft)] bg-canvas md:hidden">
           <nav className="mx-auto flex min-h-full max-w-[var(--content-max)] flex-col justify-between p-5" aria-label="Mobile navigation">
             <div className="grid gap-2">
-              {navItems.map((item) => (
-                <a key={item.path} href={item.path} onClick={(event) => navigate(item.path, event)} aria-current={isActive(item.path) ? "page" : undefined} className={`rounded-xl border px-4 py-3 font-serif text-lg ${isActive(item.path) ? "border-[var(--color-border-accent-soft)] bg-[color-mix(in_srgb,var(--color-accent)_7%,white)] text-accent" : "border-[var(--color-border-soft)] bg-white text-ink"}`}>
-                  {item.label}
-                </a>
-              ))}
+              {navItems.map((item) => {
+                const Icon = item.icon;
+                const active = isActive(item.path);
+                return (
+                  <a key={item.path} href={item.path} onClick={(event) => navigate(item.path, event)} aria-current={active ? "page" : undefined} className={`inline-flex items-center gap-3 rounded-xl border px-4 py-3 font-mono text-sm font-medium ${active ? "border-[var(--color-border-accent-soft)] bg-[color-mix(in_srgb,var(--color-accent)_7%,white)] text-accent" : "border-[var(--color-border-soft)] bg-white text-ink"}`}>
+                    <Icon className={`h-4 w-4 ${active ? "text-accent" : "text-[#7A827C]"}`} aria-hidden="true" />
+                    <span>{item.label}</span>
+                  </a>
+                );
+              })}
             </div>
             <div className="mt-8 border-t border-[var(--color-border-soft)] pt-5">
               <a href="/contact" onClick={(event) => navigate("/contact", event)} className="inline-flex min-h-11 w-full items-center justify-center gap-2 rounded-lg bg-ink px-4 font-mono text-xs font-semibold text-white">Discuss a project <ArrowRight className="h-4 w-4" /></a>

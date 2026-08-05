@@ -6,6 +6,7 @@ import {
   Calendar,
   CheckCircle2,
   ChevronRight,
+  Cpu,
   Download,
   GitBranch,
   Layers,
@@ -51,18 +52,25 @@ function formatObserved(value?: string | null): string {
 
 function maturityBadge(value: string) {
   const normalized = value.toLowerCase();
-  const palette = normalized === "production"
-    ? "border-[#C5E1CD] bg-[#EBF5EE] text-[#1E5631]"
-    : normalized === "active"
-      ? "border-[#C6D7F9] bg-[#E8F0FE] text-[#1A56DB]"
-      : normalized === "beta"
-        ? "border-[#FCD34D] bg-[#FFF4E5] text-[#B45309]"
-        : normalized === "experimental"
-          ? "border-[#E9D5FF] bg-[#F3E8FF] text-[#6B21A8]"
-          : "border-[#D5D8D6] bg-[#F1F3F2] text-[#5C635E]";
-  return <span className={`inline-flex items-center gap-1 rounded-md border px-2 py-0.5 font-mono text-[11px] font-medium ${palette}`}>
+  const palette = {
+    production: "border-[#C5E1CD] bg-[#EBF5EE] text-[#1E5631]",
+    released: "border-[#B7E4D8] bg-[#E8F7F2] text-[#176B57]",
+    maintained: "border-[#C6D7F9] bg-[#E8F0FE] text-[#1A56DB]",
+    usable: "border-[#BAE6FD] bg-[#E0F2FE] text-[#0369A1]",
+    active: "border-[#C6D7F9] bg-[#E8F0FE] text-[#1A56DB]",
+    "active-development": "border-[#FCD34D] bg-[#FFF4E5] text-[#9A4F0A]",
+    beta: "border-[#FCD34D] bg-[#FFF4E5] text-[#9A4F0A]",
+    experimental: "border-[#E9D5FF] bg-[#F3E8FF] text-[#6B21A8]",
+    exploratory: "border-[#DDD6FE] bg-[#EDE9FE] text-[#5B21B6]",
+    concept: "border-[#DDD6FE] bg-[#F5F3FF] text-[#6D28D9]",
+    deprecated: "border-[#FECACA] bg-[#FEF2F2] text-[#991B1B]",
+    archived: "border-[#D5D8D6] bg-[#F1F3F2] text-[#5C635E]",
+    "observed-public": "border-[#D5D8D6] bg-[#F8F8F6] text-[#5C635E]",
+  }[normalized] || "border-[#D5D8D6] bg-[#F1F3F2] text-[#5C635E]";
+  const label = value.replace(/[-_]+/g, " ").replace(/\b\w/g, (letter) => letter.toUpperCase());
+  return <span className={`inline-flex items-center gap-1 rounded-[3px] border px-2 py-0.5 font-mono text-[10px] font-semibold leading-4 ${palette}`}>
     <span className="h-1.5 w-1.5 rounded-full bg-current" aria-hidden="true" />
-    {value}
+    {label}
   </span>;
 }
 
@@ -128,7 +136,6 @@ export function ExplorerProductPortfolioCollection({ mode, records, observedAt, 
   const [owner, setOwner] = useState(organization || "");
   const [maturity, setMaturity] = useState("");
   const [sortBy, setSortBy] = useState("name");
-  const [density] = useState<"comfortable" | "compact">("comfortable");
   const owners = useMemo(() => [...new Set(records.map((record) => record.organization))].sort(), [records]);
   const maturities = useMemo(() => [...new Set(records.map((record) => record.maturity))].sort(), [records]);
   const filtered = useMemo(() => {
@@ -157,7 +164,7 @@ export function ExplorerProductPortfolioCollection({ mode, records, observedAt, 
           <option value="">All Owners / Orgs</option>{owners.map((value) => <option key={value} value={value}>{organizationNames[value] || value}</option>)}
         </select>}
         <select value={maturity} onChange={(event) => setMaturity(event.target.value)} className="min-h-9 rounded-lg border border-[#E5E3DC] bg-white px-3 py-2 font-mono text-xs text-[#1F2421] focus:outline-none focus:ring-2 focus:ring-[#1A73E8]">
-          <option value="">All Maturity States</option>{maturities.map((value) => <option key={value} value={value}>{value}</option>)}
+          <option value="">All Maturity States</option>{maturities.map((value) => <option key={value} value={value}>{value.replace(/[-_]+/g, " ")}</option>)}
         </select>
         <div className="ml-auto flex items-center space-x-1"><ArrowUpDown className="h-3.5 w-3.5 text-[#7A827C]" /><select value={sortBy} onChange={(event) => setSortBy(event.target.value)} className="min-h-9 rounded-lg border border-[#E5E3DC] bg-white px-3 py-2 font-mono text-xs text-[#1F2421] focus:outline-none focus:ring-2 focus:ring-[#1A73E8]"><option value="name">Sort: Name (A-Z)</option><option value="activity">Sort: Most Activity</option><option value="recent">Sort: Featured First</option></select></div>
       </div>
@@ -167,10 +174,10 @@ export function ExplorerProductPortfolioCollection({ mode, records, observedAt, 
     <div className="space-y-3">
       {filtered.map((record) => {
         const route = record.recordType === "portfolio" ? `/portfolio/records/${record.slug}` : `/products/records/${record.slug}`;
-        const pad = density === "comfortable" ? "p-5" : "p-3.5";
-        return <div key={record.id} role="link" tabIndex={0} onClick={() => onNavigate(route)} onKeyDown={(event) => { if (event.key === "Enter" || event.key === " ") { event.preventDefault(); onNavigate(route); } }} className={`group flex cursor-pointer flex-col justify-between gap-4 rounded-xl border border-[#E5E3DC] bg-white shadow-sm transition-all duration-200 hover:border-[#1A73E8] hover:bg-[#FAF9F6] md:flex-row md:items-center ${pad}`}>
-          <div className="flex min-w-0 flex-1 items-start space-x-3.5"><div className="shrink-0 rounded-lg border border-[#E5E3DC] bg-[#F4F3EF] p-2.5 transition-colors group-hover:bg-white">{record.recordType === "portfolio" ? <Layers className="h-5 w-5 text-[#5B4699]" /> : <Box className="h-5 w-5 text-[#2E6B9E]" />}</div><div className="min-w-0 flex-1 space-y-1.5"><div className="flex flex-wrap items-center space-x-2"><span className="truncate font-serif text-lg font-bold text-[#1F2421] transition-colors group-hover:text-[#1A73E8]">{record.title}</span>{maturityBadge(record.maturity)}</div><p className="line-clamp-2 text-xs leading-relaxed text-[#5C635E]">{record.summary}</p><div className="flex flex-wrap items-center gap-x-3 gap-y-1 pt-0.5 font-mono text-xs text-[#7A827C]"><span className="inline-flex items-center space-x-1"><Building2 className="h-3 w-3" /><span>{organizationNames[record.organization] || record.organization}</span></span><span className="text-[#D5D8D6]">•</span><span className="text-[#5C635E]">{record.kind}</span><span className="text-[#D5D8D6]">•</span><span className="inline-flex items-center gap-1 text-[#5B4699]"><GitBranch className="h-3 w-3" />{record.repositoryCount} Repositories</span><span className="text-[#D5D8D6]">•</span><span className="font-medium text-[#2E6B9E]">{record.packageCount} Contained Packages</span></div></div></div>
-          <div className="flex shrink-0 items-center justify-between space-x-3 border-t border-[#E5E3DC]/60 pt-2 md:justify-end md:border-t-0 md:pt-0"><span className="inline-flex items-center gap-1 font-mono text-xs font-semibold text-[#1A73E8] group-hover:underline">Inspect Member Record<ChevronRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" /></span></div>
+        const visibleTechnologies = record.technologies.slice(0, 3);
+        return <div key={record.id} role="link" tabIndex={0} onClick={() => onNavigate(route)} onKeyDown={(event) => { if (event.key === "Enter" || event.key === " ") { event.preventDefault(); onNavigate(route); } }} className="group flex cursor-pointer flex-col justify-between gap-3 rounded-lg border border-[#E5E3DC] bg-white p-3.5 shadow-sm transition-all duration-200 hover:border-[#1A73E8] hover:bg-[#FAF9F6] md:flex-row md:items-center">
+          <div className="flex min-w-0 flex-1 items-start gap-3"><div className="shrink-0 rounded-[3px] border border-[#E5E3DC] bg-[#F4F3EF] p-2 transition-colors group-hover:bg-white">{record.recordType === "portfolio" ? <Layers className="h-4 w-4 text-[#5B4699]" /> : <Box className="h-4 w-4 text-[#2E6B9E]" />}</div><div className="min-w-0 flex-1 space-y-1"><div className="flex flex-wrap items-center gap-2"><span className="truncate font-serif text-base font-bold text-[#1F2421] transition-colors group-hover:text-[#1A73E8]">{record.title}</span>{maturityBadge(record.maturity)}</div><p className="line-clamp-2 text-xs leading-5 text-[#5C635E] md:line-clamp-1">{record.summary}</p><div className="flex flex-wrap items-center gap-x-2.5 gap-y-1 font-mono text-[11px] text-[#7A827C]"><span className="inline-flex items-center gap-1"><Building2 className="h-3 w-3" /><span>{organizationNames[record.organization] || record.organization}</span></span><span className="text-[#D5D8D6]">•</span><span className="inline-flex items-center gap-1 font-medium text-[#5C635E]"><Cpu className="h-3 w-3" />{visibleTechnologies.length ? visibleTechnologies.join(" · ") : "Tech not reported"}</span><span className="text-[#D5D8D6]">•</span><span className="inline-flex items-center gap-1 text-[#5B4699]"><GitBranch className="h-3 w-3" />{record.repositoryCount} repos</span><span className="text-[#D5D8D6]">•</span><span className="font-semibold text-[#2E6B9E]">{record.packageCount} packages</span></div></div></div>
+          <div className="flex shrink-0 items-center justify-end border-t border-[#E5E3DC]/60 pt-2 md:border-t-0 md:pt-0"><span className="inline-flex items-center gap-1 font-mono text-[11px] font-semibold text-[#1A73E8]">View record<ChevronRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5" /></span></div>
         </div>;
       })}
       {filtered.length === 0 && <div className="rounded-xl border border-[#E5E3DC] bg-white p-8 text-center font-mono text-xs text-[#7A827C]">No records match the active filter criteria. Try adjusting search terms or clearing filters.</div>}
