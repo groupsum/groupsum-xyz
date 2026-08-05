@@ -37,11 +37,13 @@ jobs:
         working-directory: backend
       - run: uv run --locked python scripts/export_openapi.py
         working-directory: backend
+      - run: uv run --locked python scripts/validate_openapi_contract.py
+        working-directory: backend
       - run: uv run --locked python scripts/export_page_models.py
         working-directory: backend
       - run: npm run generate:api-client
       - name: Verify generated contracts are current
-        run: git diff --exit-code -- catalog/content/records.json backend/openapi.json src/api/catalog.generated.ts
+        run: git diff --exit-code -- catalog/content/records.json backend/openapi.json src/api/catalog.generated.ts src/api/schema.generated.ts src/api/contract.generated.ts
       - run: npm run check
       - run: npm run build
       - name: Validate Docker proxy target

@@ -255,9 +255,7 @@ def build_app(
         owner: str = "",
         sort: str = "name",
     ):
-        return catalog_collection(
-            database, request, "repository", page, page_size, q, owner=owner, sort=sort
-        )
+        return catalog_collection_from_request(database, request, "repository")
 
     @catalog_app.get(
         "/api/v1/catalog/repositories/{owner}/{repository}",
@@ -281,17 +279,7 @@ def build_app(
         publication_status: str = "",
         sort: str = "name",
     ):
-        return catalog_collection(
-            database,
-            request,
-            "package",
-            page,
-            page_size,
-            q,
-            ecosystem=ecosystem,
-            publication_status=publication_status,
-            sort=sort,
-        )
+        return catalog_collection_from_request(database, request, "package")
 
     @catalog_app.get(
         "/api/v1/catalog/packages/{route_key}",
@@ -323,17 +311,7 @@ def build_app(
         repository_owner: str = "",
         sort: str = "name",
     ):
-        return catalog_collection(
-            database,
-            request,
-            "resource",
-            page,
-            page_size,
-            q,
-            resource_type=resource_type,
-            owner=repository_owner,
-            sort=sort,
-        )
+        return catalog_collection_from_request(database, request, "resource")
 
     @catalog_app.get(
         "/api/v1/catalog/resources/{route_key}",
@@ -355,7 +333,7 @@ def build_app(
         q: str = "",
         sort: str = "name",
     ):
-        return catalog_collection(database, request, "technology", page, page_size, q, sort=sort)
+        return catalog_collection_from_request(database, request, "technology")
 
     @catalog_app.get(
         "/api/v1/catalog/technologies/{slug}",

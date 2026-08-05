@@ -481,17 +481,26 @@ def catalog_collection(
             records = rows(
                 connection,
                 """
+                WITH package_counts AS (
+                    SELECT repository_id, COUNT(DISTINCT package_id) AS count
+                      FROM package_repositories GROUP BY repository_id
+                ), resource_counts AS (
+                    SELECT repository_id, COUNT(*) AS count
+                      FROM resources GROUP BY repository_id
+                ), release_counts AS (
+                    SELECT repository_id, COUNT(*) AS count
+                      FROM releases WHERE repository_id IS NOT NULL GROUP BY repository_id
+                )
                 SELECT repo.id, repo.owner, repo.name, repo.url, repo.description,
                        repo.default_branch, repo.is_archived, repo.is_fork,
                        repo.license_expression, repo.ssot_governed, repo.observed_at,
-                       COUNT(DISTINCT pr.package_id) AS package_count,
-                       COUNT(DISTINCT rs.id) AS resource_count,
-                       COUNT(DISTINCT rel.id) AS release_count
+                       COALESCE(pc.count, 0) AS package_count,
+                       COALESCE(rc.count, 0) AS resource_count,
+                       COALESCE(rlc.count, 0) AS release_count
                   FROM repositories repo
-             LEFT JOIN package_repositories pr ON pr.repository_id = repo.id
-             LEFT JOIN resources rs ON rs.repository_id = repo.id
-             LEFT JOIN releases rel ON rel.repository_id = repo.id
-              GROUP BY repo.id
+             LEFT JOIN package_counts pc ON pc.repository_id = repo.id
+             LEFT JOIN resource_counts rc ON rc.repository_id = repo.id
+             LEFT JOIN release_counts rlc ON rlc.repository_id = repo.id
               ORDER BY repo.owner, repo.name COLLATE NOCASE
                 """,
             )
@@ -500,23 +509,27 @@ def catalog_collection(
                 record["is_fork"] = bool(record["is_fork"])
                 record["ssot_governed"] = bool(record["ssot_governed"])
                 record["route"] = f"/catalog/repositories/{record['owner']}/{record['name']}"
-                record.update(repository_signals(connection, record["id"]))
         elif resource_kind == "package":
             records = rows(
                 connection,
                 """
+                WITH release_counts AS (
+                    SELECT package_id, COUNT(*) AS count
+                      FROM releases WHERE package_id IS NOT NULL GROUP BY package_id
+                ), dependency_counts AS (
+                    SELECT source_id AS package_id, COUNT(*) AS count
+                      FROM dependencies WHERE source_kind = 'package' GROUP BY source_id
+                )
                 SELECT p.id, p.ecosystem, p.name, p.description, p.registry_url,
                        p.source_url, p.manifest_path, p.package_kind, p.private,
                        p.latest_version, p.published, p.publication_status,
                        p.route_key, p.license_expression, p.license_status,
                        p.published_at, p.observed_at,
-                       COUNT(DISTINCT rel.id) AS release_count,
-                       COUNT(DISTINCT dep.id) AS dependency_count
+                       COALESCE(rc.count, 0) AS release_count,
+                       COALESCE(dc.count, 0) AS dependency_count
                   FROM packages p
-             LEFT JOIN releases rel ON rel.package_id = p.id
-             LEFT JOIN dependencies dep
-                    ON dep.source_kind = 'package' AND dep.source_id = p.id
-              GROUP BY p.id
+             LEFT JOIN release_counts rc ON rc.package_id = p.id
+             LEFT JOIN dependency_counts dc ON dc.package_id = p.id
               ORDER BY p.ecosystem, p.name COLLATE NOCASE
                 """,
             )
@@ -580,6 +593,10 @@ def catalog_collection(
         if publication_status and record.get("publication_status") != publication_status:
             continue
         filtered.append(record)
+    if sort == "activity" and resource_kind == "repository":
+        with connect(database_path) as signal_connection:
+            for record in filtered:
+                record.update(repository_signals(signal_connection, record["id"]))
     if sort == "recent":
         filtered.sort(key=lambda item: str(item.get("observed_at") or ""), reverse=True)
     elif sort == "activity":
@@ -592,6 +609,11 @@ def catalog_collection(
     page_count = max(1, (total + page_size - 1) // page_size)
     page = min(max(page, 1), page_count)
     start = (page - 1) * page_size
+    page_records = filtered[start : start + page_size]
+    if resource_kind == "repository" and sort != "activity":
+        with connect(database_path) as signal_connection:
+            for record in page_records:
+                record.update(repository_signals(signal_connection, record["id"]))
     facet_fields = {
         "repository": ("owner",),
         "package": ("ecosystem", "publication_status"),
@@ -618,7 +640,7 @@ def catalog_collection(
             "generated_at": max(
                 (str(item.get("observed_at") or "") for item in records), default=""
             ) or None,
-            "records": filtered[start : start + page_size],
+            "records": page_records,
         },
     )
 

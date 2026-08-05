@@ -24,6 +24,8 @@ export default defineConfig({
       output: {
         manualChunks(id) {
           if (id.includes("node_modules/react") || id.includes("node_modules/scheduler")) return "react-runtime";
+          if (id.includes("node_modules/@tanstack/react-query") || id.includes("node_modules/@tanstack/query-core")) return "query-runtime";
+          if (id.includes("node_modules/openapi-fetch")) return "openapi-runtime";
           if (id.includes("node_modules/lucide-react")) return "icons";
           if (id.includes("/src/mdwrk/")) return "mdwrk-runtime";
           return undefined;

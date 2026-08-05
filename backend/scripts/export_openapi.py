@@ -5,7 +5,6 @@ from pathlib import Path
 
 from groupsum_catalog_api.app import build_app
 
-
 COLLECTION_PARAMETERS = {
     "/api/v1/catalog/repositories": ("page", "page_size", "q", "owner", "sort"),
     "/api/v1/catalog/packages": (

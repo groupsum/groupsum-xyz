@@ -115,11 +115,15 @@ async function verify() {
   const openapi = JSON.parse(await fetchText("/openapi.json"));
   if (!openapi.paths?.["/api/v1/products/{slug}"]) throw new Error("deployed OpenAPI lacks product record page model");
   if (!openapi.paths?.["/api/v1/repository-metrics"]) throw new Error("deployed OpenAPI lacks repository metric histories");
+  const repositoryPage = JSON.parse(await fetchText("/api/v1/catalog/repositories?page=1&page_size=5&sort=name"));
+  if (repositoryPage.resource_kind !== "repository" || repositoryPage.records?.length !== 5 || repositoryPage.page !== 1) {
+    throw new Error("deployed repository collection does not honor its typed pagination contract");
+  }
   const homeHtml = await fetchText("/");
   const asset = homeHtml.match(/<script[^>]+src="([^"]+\.js)"/i)?.[1];
   if (!asset) throw new Error("deployed application JavaScript asset was not found");
   const bundle = await fetchText(asset);
-  for (const marker of ["GroupSum Products", "GroupSum Portfolios", "Demos, APIs, examples, and related resources", "/catalog/site/"]) {
+  for (const marker of ["GroupSum Products", "GroupSum Portfolios", "Typed resources", "/api/v1/catalog/"]) {
     if (!bundle.includes(marker)) throw new Error(`deployed bundle missing marker: ${marker}`);
   }
   console.log(`deployment verified: ${baseUrl}, repositories=${manifest.counts.repositories}, packages=${manifest.counts.packages}`);

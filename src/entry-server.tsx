@@ -1,5 +1,6 @@
 import fs from "node:fs";
 import path from "node:path";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { renderToString } from "react-dom/server";
 import { StaticRouter } from "./router";
 
@@ -25,11 +26,16 @@ export function getPageModel(url: string): unknown | null {
 
 export function render(url: string): string {
   globalThis.__GROUPSUM_PAGE_MODEL__ = getPageModel(url);
+  const queryClient = new QueryClient({
+    defaultOptions: { queries: { retry: false, staleTime: 60_000 } },
+  });
   try {
     return renderToString(
-      <StaticRouter location={url}>
-        <App />
-      </StaticRouter>,
+      <QueryClientProvider client={queryClient}>
+        <StaticRouter location={url}>
+          <App />
+        </StaticRouter>
+      </QueryClientProvider>,
     );
   } finally {
     globalThis.__GROUPSUM_PAGE_MODEL__ = null;
