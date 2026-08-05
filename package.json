@@ -11,6 +11,7 @@
     "check": "npm run catalog:test && npm run catalog:validate && npm run build:content && npm run build:insights && npm run validate:claims && npm run validate:portfolio && npm run validate:catalog && npm --prefix packages/site-content-pack run test && tsc --noEmit",
     "generate:static": "node scripts/generate-static.mjs",
     "generate:api-client": "node scripts/generate-api-client.mjs",
+    "validate:api-contract": "npm run generate:api-client && git diff --exit-code -- backend/openapi.json src/api/schema.generated.ts src/api/contract.generated.ts",
     "preview": "vite preview --host 0.0.0.0",
     "docker:build": "docker compose build groupsum-xyz",
     "dns:plan": "npmctl plan .npmctl/desired-state/production/dns.yaml --owner groupsum-xyz",
@@ -42,8 +43,10 @@
     "@mdwrk/lander-theme": "^0.1.4",
     "@mdwrk/structured-data": "^0.1.4",
     "@tailwindcss/vite": "^4.1.14",
+    "@tanstack/react-query": "^5.101.4",
     "@vitejs/plugin-react": "^4.3.4",
     "lucide-react": "^0.546.0",
+    "openapi-fetch": "^0.17.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "tailwindcss": "^4.1.14",
@@ -54,6 +57,7 @@
     "@lhci/cli": "^0.15.1",
     "@types/node": "^22.14.0",
     "@types/react": "^19.0.0",
-    "@types/react-dom": "^19.0.0"
+    "@types/react-dom": "^19.0.0",
+    "openapi-typescript": "^7.13.0"
   }
 }
