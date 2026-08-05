@@ -164,8 +164,19 @@ def entity_detail(
 
 
 def cacheable_json(request: Request, payload: dict[str, Any]) -> JSONResponse | Response:
-    body = orjson.dumps(payload, option=orjson.OPT_SORT_KEYS | orjson.OPT_NAIVE_UTC, default=str)
-    etag = f'"{hashlib.sha256(body).hexdigest()}"'
+    item = payload.get("item") if isinstance(payload.get("item"), dict) else {}
+    revision = payload.get("generated_at") or item.get("observed_at")
+    request_url = getattr(request, "url", None)
+    path = getattr(request_url, "path", "")
+    query = getattr(request_url, "query", "")
+    if revision:
+        cache_identity = f"{path}?{query}|{revision}|{payload.get('kind', '')}".encode()
+        etag = f'"{hashlib.sha256(cache_identity).hexdigest()}"'
+    else:
+        body = orjson.dumps(
+            payload, option=orjson.OPT_SORT_KEYS | orjson.OPT_NAIVE_UTC, default=str
+        )
+        etag = f'"{hashlib.sha256(body).hexdigest()}"'
     headers = {
         "Cache-Control": CACHE_CONTROL,
         "ETag": etag,
@@ -174,6 +185,10 @@ def cacheable_json(request: Request, payload: dict[str, Any]) -> JSONResponse | 
     }
     if request.headers.get("if-none-match") == etag:
         return Response(status_code=304, headers=headers)
+    if revision:
+        body = orjson.dumps(
+            payload, option=orjson.OPT_SORT_KEYS | orjson.OPT_NAIVE_UTC, default=str
+        )
     return Response(content=body, media_type="application/json", headers=headers)
 
 
