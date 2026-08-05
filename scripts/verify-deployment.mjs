@@ -119,7 +119,7 @@ async function verify() {
   const asset = homeHtml.match(/<script[^>]+src="([^"]+\.js)"/i)?.[1];
   if (!asset) throw new Error("deployed application JavaScript asset was not found");
   const bundle = await fetchText(asset);
-  for (const marker of ["Products built as connected systems", "Demos, APIs, examples, and related resources", "/catalog/site/"]) {
+  for (const marker of ["GroupSum Products", "GroupSum Portfolios", "Demos, APIs, examples, and related resources", "/catalog/site/"]) {
     if (!bundle.includes(marker)) throw new Error(`deployed bundle missing marker: ${marker}`);
   }
   console.log(`deployment verified: ${baseUrl}, repositories=${manifest.counts.repositories}, packages=${manifest.counts.packages}`);
