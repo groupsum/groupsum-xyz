@@ -490,6 +490,7 @@ def import_catalog(
         "releases": 0,
         "dependencies": 0,
         "resources": 0,
+        "languages": 0,
     }
 
     analytics_path = analytics_path or default_analytics_path(database_path)
@@ -816,6 +817,7 @@ def import_catalog(
         site_root = repo_root / "catalog" / "generated" / "site"
         site_repositories = json.loads((site_root / "repositories.json").read_text())
         site_packages = json.loads((site_root / "packages.json").read_text())
+        site_technologies = json.loads((site_root / "technologies.json").read_text())
         claimed_repositories: set[str] = set()
         for record in editorial["records"]:
             if record["record_type"] not in {"product", "portfolio"}:
@@ -1286,6 +1288,27 @@ def import_catalog(
                     },
                 )
             counts["packages"] += 1
+
+        for technology in site_technologies:
+            route_slug = technology.get("route", "").rstrip("/").split("/")[-1]
+            if not route_slug:
+                continue
+            upsert(
+                connection,
+                "taxonomies",
+                {
+                    "id": technology["id"],
+                    "taxonomy_type": "language",
+                    "slug": route_slug,
+                    "label": technology["name"],
+                    "category": "observed-source-language",
+                    "description": (
+                        f"Observed through GitHub language byte counts in "
+                        f"{technology.get('repository_count', 0)} public repositories."
+                    ),
+                },
+            )
+            counts["languages"] += 1
 
         for record in editorial["records"]:
             if record["record_type"] not in {"product", "portfolio"}:

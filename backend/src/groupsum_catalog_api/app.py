@@ -13,7 +13,11 @@ from tigrbl_engine_postgres.plugin import register as register_postgres_engine
 from .config import Settings
 from .migrations import migrate
 from .page_models import (
+    catalog_collection,
+    catalog_overview,
+    catalog_repository_detail,
     catalog_resource_detail,
+    catalog_technology_detail,
     entity_collection,
     entity_detail,
     insight_collection,
@@ -210,6 +214,31 @@ def build_app(
         return repository_metric_snapshot(database, request, requested_owner)
 
     @catalog_app.get(
+        "/api/v1/catalog", summary="Catalog overview page model"
+    )
+    def catalog(request: Request):
+        return catalog_overview(database, request)
+
+    @catalog_app.get(
+        "/api/v1/catalog/repositories", summary="Repository catalog collection"
+    )
+    def catalog_repositories(request: Request):
+        return catalog_collection(database, request, "repository")
+
+    @catalog_app.get(
+        "/api/v1/catalog/repositories/{owner}/{repository}",
+        summary="Repository catalog member record",
+    )
+    def catalog_repository(request: Request, owner: str, repository: str):
+        return catalog_repository_detail(database, request, owner, repository)
+
+    @catalog_app.get(
+        "/api/v1/catalog/packages", summary="Package catalog collection"
+    )
+    def catalog_packages(request: Request):
+        return catalog_collection(database, request, "package")
+
+    @catalog_app.get(
         "/api/v1/catalog/packages/{route_key}", summary="Package catalog resource record"
     )
     def catalog_package(request: Request, route_key: str):
@@ -222,10 +251,28 @@ def build_app(
         return catalog_resource_detail(database, request, "release", route_key)
 
     @catalog_app.get(
+        "/api/v1/catalog/resources", summary="Typed resource catalog collection"
+    )
+    def catalog_resources(request: Request):
+        return catalog_collection(database, request, "resource")
+
+    @catalog_app.get(
         "/api/v1/catalog/resources/{route_key}", summary="Typed catalog resource record"
     )
     def catalog_resource(request: Request, route_key: str):
         return catalog_resource_detail(database, request, "resource", route_key)
+
+    @catalog_app.get(
+        "/api/v1/catalog/technologies", summary="Technology catalog collection"
+    )
+    def catalog_technologies(request: Request):
+        return catalog_collection(database, request, "technology")
+
+    @catalog_app.get(
+        "/api/v1/catalog/technologies/{slug}", summary="Technology catalog member record"
+    )
+    def catalog_technology(request: Request, slug: str):
+        return catalog_technology_detail(database, request, slug)
 
     return catalog_app
 

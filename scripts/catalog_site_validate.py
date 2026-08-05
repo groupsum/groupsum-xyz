@@ -50,12 +50,15 @@ def validate_site(site_dir: Path, typescript: Path) -> list[str]:
             errors.append(f"missing dataset file: {name}")
             continue
         payload = path.read_bytes()
-        if hashlib.sha256(payload).hexdigest() != metadata.get("sha256"):
+        # Git may materialize tracked JSON with CRLF on Windows. The renderer and
+        # published manifest intentionally describe canonical UTF-8/LF bytes.
+        canonical_payload = payload.replace(b"\r\n", b"\n")
+        if hashlib.sha256(canonical_payload).hexdigest() != metadata.get("sha256"):
             errors.append(f"dataset hash mismatch: {name}")
-        if len(payload) != metadata.get("bytes"):
+        if len(canonical_payload) != metadata.get("bytes"):
             errors.append(f"dataset byte count mismatch: {name}")
-        records = json.loads(payload)
-        if MOJIBAKE.search(payload.decode("utf-8")):
+        records = json.loads(canonical_payload)
+        if MOJIBAKE.search(canonical_payload.decode("utf-8")):
             errors.append(f"dataset contains mojibake: {name}")
         if len(records) != metadata.get("records") or len(records) != manifest.get("counts", {}).get(name):
             errors.append(f"dataset record count mismatch: {name}")

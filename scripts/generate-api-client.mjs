@@ -96,6 +96,14 @@ export type RecordSummary = {
 export type RecordCollectionPageModel = {
   kind: string; generated_at: string | null; count: number; records: RecordSummary[];
 };
+export type CatalogDatasetName = "repositories" | "packages" | "resources" | "technologies";
+export type CatalogOverviewPageModel = {
+  kind: "catalog_overview"; generated_at?: string | null;
+  counts: Record<"products" | "portfolio" | CatalogDatasetName, number>;
+};
+export type CatalogCollectionPageModel = {
+  kind: string; resource_kind: string; count: number; records: Array<Record<string, unknown>>;
+};
 export type CatalogEntity = {
   id: string; entity_type_id: string; type_label: string; semantic_class: string;
   organization_id?: string | null; slug: string; name: string; summary?: string | null;
@@ -148,6 +156,30 @@ export async function getRecordPageModel(path: string, signal?: AbortSignal): Pr
   });
   if (!response.ok) throw new Error(\`Catalog API response \${response.status}\`);
   return response.json() as Promise<RecordPageModel>;
+}
+
+export async function getCatalogOverview(signal?: AbortSignal): Promise<CatalogOverviewPageModel> {
+  const response = await fetch("/api/v1/catalog", { signal, headers: { Accept: "application/json" }, cache: "default" });
+  if (!response.ok) throw new Error(\`Catalog overview response \${response.status}\`);
+  return response.json() as Promise<CatalogOverviewPageModel>;
+}
+
+export async function getCatalogCollection(dataset: CatalogDatasetName, signal?: AbortSignal): Promise<CatalogCollectionPageModel> {
+  const response = await fetch(\`/api/v1/catalog/\${dataset}\`, { signal, headers: { Accept: "application/json" }, cache: "default" });
+  if (!response.ok) throw new Error(\`Catalog collection response \${response.status}\`);
+  return response.json() as Promise<CatalogCollectionPageModel>;
+}
+
+export async function getCatalogRepository(owner: string, repository: string, signal?: AbortSignal): Promise<Record<string, unknown>> {
+  const response = await fetch(\`/api/v1/catalog/repositories/\${encodeURIComponent(owner)}/\${encodeURIComponent(repository)}\`, { signal, headers: { Accept: "application/json" }, cache: "default" });
+  if (!response.ok) throw new Error(\`Catalog repository response \${response.status}\`);
+  return response.json() as Promise<Record<string, unknown>>;
+}
+
+export async function getCatalogTechnology(slug: string, signal?: AbortSignal): Promise<Record<string, unknown>> {
+  const response = await fetch(\`/api/v1/catalog/technologies/\${encodeURIComponent(slug)}\`, { signal, headers: { Accept: "application/json" }, cache: "default" });
+  if (!response.ok) throw new Error(\`Catalog technology response \${response.status}\`);
+  return response.json() as Promise<Record<string, unknown>>;
 }
 
 export async function getRepositoryMetricSnapshot(owner = "", signal?: AbortSignal): Promise<RepositoryMetricSnapshot> {

@@ -420,6 +420,246 @@ def record_collection(
     )
 
 
+def catalog_overview(
+    database_path: str | Path,
+    request: Request,
+) -> JSONResponse | Response:
+    with connect(database_path) as connection:
+        counts = {
+            "products": connection.execute("SELECT COUNT(*) FROM records WHERE record_type = 'product' AND visibility = 'public'").fetchone()[0],
+            "portfolio": connection.execute("SELECT COUNT(*) FROM records WHERE record_type = 'portfolio' AND visibility = 'public'").fetchone()[0],
+            "repositories": connection.execute("SELECT COUNT(*) FROM repositories").fetchone()[0],
+            "packages": connection.execute("SELECT COUNT(*) FROM packages").fetchone()[0],
+            "resources": connection.execute("SELECT COUNT(*) FROM resources").fetchone()[0],
+            "technologies": connection.execute("SELECT COUNT(*) FROM taxonomies WHERE taxonomy_type = 'technology'").fetchone()[0],
+        }
+        observed_at = connection.execute(
+            """SELECT MAX(observed_at) FROM (
+                 SELECT observed_at FROM repositories UNION ALL
+                 SELECT observed_at FROM packages UNION ALL
+                 SELECT observed_at FROM resources
+               )"""
+        ).fetchone()[0]
+    return cacheable_json(
+        request,
+        {"kind": "catalog_overview", "generated_at": observed_at, "counts": counts},
+    )
+
+
+def catalog_collection(
+    database_path: str | Path,
+    request: Request,
+    resource_kind: str,
+) -> JSONResponse | Response:
+    """Return collection page models for the catalog routes exposed by the frontend."""
+    with connect(database_path) as connection:
+        if resource_kind == "repository":
+            records = rows(
+                connection,
+                """
+                SELECT repo.id, repo.owner, repo.name, repo.url, repo.description,
+                       repo.default_branch, repo.is_archived, repo.is_fork,
+                       repo.license_expression, repo.ssot_governed, repo.observed_at,
+                       COUNT(DISTINCT pr.package_id) AS package_count,
+                       COUNT(DISTINCT rs.id) AS resource_count,
+                       COUNT(DISTINCT rel.id) AS release_count
+                  FROM repositories repo
+             LEFT JOIN package_repositories pr ON pr.repository_id = repo.id
+             LEFT JOIN resources rs ON rs.repository_id = repo.id
+             LEFT JOIN releases rel ON rel.repository_id = repo.id
+              GROUP BY repo.id
+              ORDER BY repo.owner, repo.name COLLATE NOCASE
+                """,
+            )
+            for record in records:
+                record["is_archived"] = bool(record["is_archived"])
+                record["is_fork"] = bool(record["is_fork"])
+                record["ssot_governed"] = bool(record["ssot_governed"])
+                record["route"] = f"/catalog/repositories/{record['owner']}/{record['name']}"
+                record.update(repository_signals(connection, record["id"]))
+        elif resource_kind == "package":
+            records = rows(
+                connection,
+                """
+                SELECT p.id, p.ecosystem, p.name, p.description, p.registry_url,
+                       p.source_url, p.manifest_path, p.package_kind, p.private,
+                       p.latest_version, p.published, p.publication_status,
+                       p.route_key, p.license_expression, p.license_status,
+                       p.published_at, p.observed_at,
+                       COUNT(DISTINCT rel.id) AS release_count,
+                       COUNT(DISTINCT dep.id) AS dependency_count
+                  FROM packages p
+             LEFT JOIN releases rel ON rel.package_id = p.id
+             LEFT JOIN dependencies dep
+                    ON dep.source_kind = 'package' AND dep.source_id = p.id
+              GROUP BY p.id
+              ORDER BY p.ecosystem, p.name COLLATE NOCASE
+                """,
+            )
+            for record in records:
+                record["private"] = bool(record["private"])
+                record["published"] = bool(record["published"]) if record["published"] is not None else None
+                record["route"] = f"/catalog/packages/{record['ecosystem']}/{record['route_key']}"
+                record["repositories"] = rows(
+                    connection,
+                    """SELECT repo.id, repo.owner, repo.name, repo.url, pr.path
+                         FROM repositories repo JOIN package_repositories pr
+                           ON pr.repository_id = repo.id
+                        WHERE pr.package_id = ? ORDER BY repo.owner, repo.name""",
+                    (record["id"],),
+                )
+        elif resource_kind == "resource":
+            records = rows(
+                connection,
+                """
+                SELECT rs.id, rs.resource_type, rs.route_key, rs.title, rs.url,
+                       rs.summary, rs.path, rs.source_url, rs.observed_at,
+                       repo.owner AS repository_owner, repo.name AS repository_name
+                  FROM resources rs
+             LEFT JOIN repositories repo ON repo.id = rs.repository_id
+              ORDER BY rs.resource_type, rs.title COLLATE NOCASE
+                """,
+            )
+            for record in records:
+                record["route"] = f"/catalog/resources/{record['resource_type']}/{record['route_key']}"
+        elif resource_kind == "technology":
+            records = rows(
+                connection,
+                """
+                SELECT t.id, t.slug, t.label AS name, t.category, t.description,
+                       COUNT(DISTINCT rt.record_id) AS record_count
+                  FROM taxonomies t
+             LEFT JOIN record_taxonomies rt ON rt.taxonomy_id = t.id
+                 WHERE t.taxonomy_type = 'technology'
+              GROUP BY t.id
+              ORDER BY t.label COLLATE NOCASE
+                """,
+            )
+            for record in records:
+                record["route"] = f"/catalog/technologies/{record['slug']}"
+        else:
+            return JSONResponse({"detail": "Unsupported catalog collection"}, status_code=404)
+    return cacheable_json(
+        request,
+        {
+            "kind": f"catalog_{resource_kind}_collection",
+            "resource_kind": resource_kind,
+            "count": len(records),
+            "records": records,
+        },
+    )
+
+
+def catalog_repository_detail(
+    database_path: str | Path,
+    request: Request,
+    owner: str,
+    repository: str,
+) -> JSONResponse | Response:
+    with connect(database_path) as connection:
+        row = connection.execute(
+            "SELECT * FROM repositories WHERE owner = ? AND name = ?",
+            (owner, repository),
+        ).fetchone()
+        if row is None:
+            return JSONResponse({"detail": "Repository not found"}, status_code=404)
+        item = dict(row)
+        item["is_archived"] = bool(item["is_archived"])
+        item["is_fork"] = bool(item["is_fork"])
+        item["ssot_governed"] = bool(item["ssot_governed"])
+        if isinstance(item.get("ssot_summary"), str):
+            item["ssot_summary"] = json.loads(item["ssot_summary"] or "{}")
+        item.update(repository_signals(connection, item["id"]))
+        packages = rows(
+            connection,
+            """
+            SELECT p.id, p.ecosystem, p.name, p.route_key, p.registry_url,
+                   p.manifest_path, p.latest_version, p.license_expression,
+                   p.license_status, p.observed_at
+              FROM packages p JOIN package_repositories pr ON pr.package_id = p.id
+             WHERE pr.repository_id = ? ORDER BY p.ecosystem, p.name COLLATE NOCASE
+            """,
+            (item["id"],),
+        )
+        for package in packages:
+            package["route"] = f"/catalog/packages/{package['ecosystem']}/{package['route_key']}"
+        resources = rows(
+            connection,
+            """SELECT id, resource_type, route_key, title, url, summary, path, observed_at
+                   FROM resources WHERE repository_id = ?
+               ORDER BY resource_type, title COLLATE NOCASE""",
+            (item["id"],),
+        )
+        for resource in resources:
+            resource["route"] = f"/catalog/resources/{resource['resource_type']}/{resource['route_key']}"
+        releases = rows(
+            connection,
+            """SELECT id, release_kind, route_key, version, url, published_at,
+                      downloads, prerelease, draft, observed_at
+                   FROM releases WHERE repository_id = ?
+               ORDER BY COALESCE(published_at, observed_at) DESC LIMIT 100""",
+            (item["id"],),
+        )
+        legal = rows(
+            connection,
+            """SELECT evidence_kind, name, expression, path, url, scope,
+                      evidence_type, observed_at
+                   FROM legal_evidence
+                  WHERE subject_kind = 'repository' AND subject_id = ?
+               ORDER BY scope, evidence_kind, name""",
+            (item["id"],),
+        )
+        graph = entity_graph_for_source(connection, "repositories", item["id"])
+    return cacheable_json(
+        request,
+        {
+            "kind": "catalog_repository_record",
+            "item": item,
+            "graph": graph,
+            "implementation": {"packages": packages, "resources": resources, "releases": releases},
+            "governance": {
+                "governed": item["ssot_governed"],
+                "registry_url": item.get("ssot_registry_url"),
+                "schema_version": item.get("ssot_schema_version"),
+                "summary": item.get("ssot_summary") or {},
+                "observed_at": item.get("ssot_observed_at"),
+            },
+            "legal": {
+                "license_expression": item.get("license_expression"),
+                "status": "observed" if legal or item.get("license_expression") else "not-observed",
+                "evidence": legal,
+            },
+        },
+    )
+
+
+def catalog_technology_detail(
+    database_path: str | Path,
+    request: Request,
+    slug: str,
+) -> JSONResponse | Response:
+    with connect(database_path) as connection:
+        row = connection.execute(
+            "SELECT * FROM taxonomies WHERE slug = ? AND taxonomy_type IN ('technology', 'language')",
+            (slug,),
+        ).fetchone()
+        if row is None:
+            return JSONResponse({"detail": "Technology not found"}, status_code=404)
+        item = dict(row)
+        records = rows(
+            connection,
+            """SELECT r.id, r.slug, r.record_type, r.title, r.summary, r.canonical_url
+                   FROM records r JOIN record_taxonomies rt ON rt.record_id = r.id
+                  WHERE rt.taxonomy_id = ? AND r.visibility = 'public'
+               ORDER BY r.record_type, r.title COLLATE NOCASE""",
+            (item["id"],),
+        )
+    return cacheable_json(
+        request,
+        {"kind": "catalog_technology_record", "item": item, "related_records": records},
+    )
+
+
 def insight_collection(
     database_path: Path,
     request: Request,

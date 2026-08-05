@@ -53,7 +53,7 @@ export function CatalogPill({ children, tone = "neutral", Icon }: { children: Re
     accent: "border-[var(--color-border-accent-soft)] text-accent bg-[color-mix(in_srgb,var(--color-accent)_6%,var(--color-surface))]",
     signal: "border-[color-mix(in_srgb,var(--color-signal)_28%,transparent)] text-[color-mix(in_srgb,var(--color-signal)_78%,var(--color-ink))] bg-[var(--color-signal-soft)]/35",
   };
-  return <span className={`inline-flex min-h-6 cursor-default select-none items-center gap-1.5 rounded-full border px-2.5 py-1 text-[10px] font-mono font-semibold uppercase tracking-wide ${tones[tone]}`}>{Icon && <Icon className="h-3 w-3" aria-hidden="true" />}{children}</span>;
+  return <span className={`inline-flex min-h-6 cursor-default select-none items-center gap-1.5 rounded-[3px] border px-2.5 py-1 text-[10px] font-mono font-semibold uppercase tracking-wide ${tones[tone]}`}>{Icon && <Icon className="h-3 w-3" aria-hidden="true" />}{children}</span>;
 }
 
 export type MetricItem = { label: string; value: number | string; icon?: CatalogIcon; note?: string; tone?: "accent" | "signal" };
@@ -154,12 +154,12 @@ export function MemberRowCard({
   pills?: string[];
   facts?: Array<{ label: string; value: number }>;
 }) {
-  return <article className="group relative flex cursor-pointer flex-wrap items-center gap-x-6 gap-y-4 rounded-[var(--radius-md)] border border-[var(--color-border-soft)] bg-[var(--color-surface)] p-5 transition-colors hover:border-accent hover:bg-[color-mix(in_srgb,var(--color-accent)_3%,var(--color-surface))]">
+  return <article className="group relative flex cursor-pointer flex-wrap items-center gap-x-5 gap-y-3 rounded-[6px] border border-[var(--color-border-soft)] bg-[var(--color-surface)] p-4 transition-colors hover:border-accent hover:bg-[color-mix(in_srgb,var(--color-accent)_3%,var(--color-surface))]">
     <div className="flex min-w-0 flex-[3_1_28rem] items-start gap-3.5">
-      <div className="grid h-11 w-11 shrink-0 place-items-center rounded-[var(--radius-sm)] border border-[var(--color-border-soft)] bg-canvas text-accent"><Icon className="h-5 w-5" aria-hidden="true" /></div>
+      <div className="grid h-10 w-10 shrink-0 place-items-center rounded-[3px] border border-[var(--color-border-soft)] bg-canvas text-accent"><Icon className="h-4.5 w-4.5" aria-hidden="true" /></div>
       <div className="min-w-0">
         <div className="flex flex-wrap items-center gap-2"><span className="text-[10px] font-mono font-bold uppercase tracking-wide text-accent">{eyebrow}</span>{pills.map((pill) => <CatalogPill key={pill}>{pill}</CatalogPill>)}</div>
-        <h2 className="mt-1 font-serif text-xl font-bold text-ink"><a href={route} onClick={(event) => { event.preventDefault(); onNavigate(route); }} className="break-words hover:text-accent before:absolute before:inset-0 before:content-['']">{title}</a></h2>
+        <h2 className="mt-1 font-serif text-lg font-bold text-ink"><a href={route} onClick={(event) => { event.preventDefault(); onNavigate(route); }} className="break-words hover:text-accent before:absolute before:inset-0 before:content-['']">{title}</a></h2>
         <p className="mt-1 line-clamp-2 text-xs leading-relaxed text-ink-muted">{summary}</p>
         <span className="mt-2 inline-flex items-center gap-1 text-[10px] font-mono text-ink-muted"><Users className="h-3 w-3" aria-hidden="true" />{owner}</span>
       </div>

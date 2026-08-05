@@ -36,7 +36,7 @@ const pages = [
   ["/products/tigrbl/", "Tigrbl products", "Tigrbl packages and suites for durable data contracts, APIs, and storage-aware applications.", "website"],
   ["/products/swarmauri/", "Swarmauri products", "Swarmauri packages and suites for composable AI systems, agents, and evaluators.", "website"],
   ["/portfolio/", "Portfolio | GroupSum", "A browsable portfolio of Groupsum, Tigrbl, and Swarmauri projects, packages, suites, and specifications.", "website"],
-  ["/catalog/", "Public ecosystem catalog | GroupSum", "Generated public repositories, packages, and technologies with release, deployment, and relationship evidence aggregated on parent records.", "website"],
+  ["/catalog/", "Public ecosystem catalog | GroupSum", "Generated public repositories, packages, typed resources, technologies, and release evidence aggregated on their canonical parent records.", "website"],
   ["/solutions/", "Solutions | GroupSum", "Evidence-led solution paths for teams moving from ambiguity to an operable technical system.", "website"],
   ["/services/", "Services | GroupSum", "Focused services for architecture, product delivery, platform hardening, and technical decision support.", "website"],
   ["/insights/", "Insights | GroupSum", "Legacy articles and current field notes on software, systems, AI, and technical practice.", "website"],
@@ -45,6 +45,12 @@ const pages = [
   ["/privacy-policy/", "Privacy policy | GroupSum", "GroupSum privacy policy.", "website"],
   ["/terms-of-service/", "Terms of service | GroupSum", "GroupSum terms of service.", "website"]
 ].map(([route, title, description, type]) => ({ route, title, description, type, url: absolute(route) }));
+pages.push(
+  { route: "/catalog/repositories/", title: "Repositories | GroupSum catalog", description: "Public source repositories with repository-owned activity, packages, governance, and typed resources.", type: "website", url: absolute("/catalog/repositories/"), schemaFamily: "catalog-collection" },
+  { route: "/catalog/packages/", title: "Packages | GroupSum catalog", description: "Manifest and registry-backed packages with releases, dependencies, dependents, license, and notice evidence.", type: "website", url: absolute("/catalog/packages/"), schemaFamily: "catalog-collection" },
+  { route: "/catalog/resources/", title: "Typed resources | GroupSum catalog", description: "Public APIs, documentation, demos, examples, websites, showcases, and user interfaces attached to their source owners.", type: "website", url: absolute("/catalog/resources/"), schemaFamily: "catalog-collection" },
+  { route: "/catalog/technologies/", title: "Technologies | GroupSum catalog", description: "Categorical stack evidence observed from public source and package metadata.", type: "website", url: absolute("/catalog/technologies/"), schemaFamily: "catalog-collection" },
+);
 const slugsFrom = (file) => {
   const source = fs.readFileSync(file, "utf8");
   return [...source.matchAll(/slug:\s*["']([^"']+)["']/g)].map((match) => match[1]);

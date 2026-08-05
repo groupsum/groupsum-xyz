@@ -12,7 +12,7 @@ for (const marker of ["MetricBand", "MemberSectionNav", "DependencyTable", "Repo
 for (const marker of ["CollectionHeader", "MemberRowCard", "RecordIdentityCard", "SurfaceCard", "ContextRailCard", "lg:grid-cols-12"]) if (!productPortfolio.includes(marker) || !publicCatalog.includes(marker)) throw new Error(`ZIP-derived catalog composition marker missing: ${marker}`);
 if (!publicCatalog.includes('href={String(pkg.route)}')) throw new Error("repository package navigation is not a canonical link");
 if (!publicCatalog.includes('timeZone: "UTC"')) throw new Error("catalog timestamps are not deterministic across SSR hydration");
-if (publicCatalog.includes('const datasetOrder = ["repositories", "packages", "resources", "technologies"]')) throw new Error("technologies remain exposed as a headline catalog collection");
+for (const marker of ["PublicCatalogOverview", 'fixedDataset?: DatasetName', '"repositories", "packages", "resources", "technologies"']) if (!publicCatalog.includes(marker)) throw new Error(`catalog collection routing marker missing: ${marker}`);
 if (publicCatalog.includes('overflow-x-auto') || publicCatalog.includes('overflow-y-auto')) throw new Error("catalog layouts must reflow instead of introducing local scroll regions");
 if (publicCatalog.includes('["relationships"') || app.includes('["Relationships"')) throw new Error("relationships remain exposed as a public metric");
 if (!publicCatalog.includes('aria-label="Package technology stack"')) throw new Error("technology stack tags are not scoped to package views");

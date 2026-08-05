@@ -17,7 +17,7 @@ import { featuredBlogPosts } from "./data/posts.featured.generated";
 import { BlogPost, PortfolioItem, PortfolioEntity, SolutionItem, ServiceItem } from "./types";
 import { MarkdownRenderer } from "mdwrk/renderer-core";
 import { CapabilityBand } from "./components/CapabilityBand";
-import { CatalogSnapshotBand, PublicCatalogDetail, PublicCatalogExplorer } from "./components/PublicCatalog";
+import { CatalogSnapshotBand, PublicCatalogDetail, PublicCatalogExplorer, PublicCatalogOverview } from "./components/PublicCatalog";
 import { ProductCollectionPage, ProductRecordPage, productRecordPath } from "./components/ProductPortfolio";
 import { groupSumVision, horizontalCapabilities } from "./data/vision";
 import { catalogDatasetManifest, catalogSummary } from "./data/catalog.generated";
@@ -86,7 +86,7 @@ export default function App() {
             onNavigate={navigate} 
           />
         ) : (
-          <RouteSwitcher path={currentPath} onNavigate={navigate} />
+          <RouteSwitcher path={`${location.pathname}${location.search}`} onNavigate={navigate} />
         )}
       </main>
 
@@ -102,6 +102,7 @@ interface RouteProps {
 function RouteSwitcher({ path, onNavigate }: { path: string; onNavigate: (path: string) => void }) {
   // Normalize path and split into segments to handle sub-routing cleanly
   const cleanPath = path.split("?")[0].split("#")[0];
+  const query = new URLSearchParams(path.split("?")[1] || "").get("q") || "";
   const segments = cleanPath.split("/").filter(Boolean);
 
   if (segments.length === 0 || segments[0] === "home" || segments[0] === "index.html") {
@@ -151,7 +152,10 @@ function RouteSwitcher({ path, onNavigate }: { path: string; onNavigate: (path: 
 
   if (primary === "catalog") {
     if (segments.length === 1) {
-      return <PublicCatalogExplorer onNavigate={onNavigate} />;
+      return query ? <PublicCatalogExplorer onNavigate={onNavigate} initialQuery={query} /> : <PublicCatalogOverview onNavigate={onNavigate} />;
+    }
+    if (segments.length === 2 && ["repositories", "packages", "resources", "technologies"].includes(segments[1])) {
+      return <PublicCatalogExplorer onNavigate={onNavigate} fixedDataset={segments[1] as "repositories" | "packages" | "resources" | "technologies"} initialQuery={query} />;
     }
     return <PublicCatalogDetail path={cleanPath} onNavigate={onNavigate} />;
   }

@@ -37,6 +37,12 @@ async def test_health_and_openapi(tmp_path: Path) -> None:
         assert "/api/v1/repository-metrics" in openapi.json()["paths"]
         assert "/api/v1/entities" in openapi.json()["paths"]
         assert "/api/v1/entities/{entity_id}" in openapi.json()["paths"]
+        assert "/api/v1/catalog" in openapi.json()["paths"]
+        assert "/api/v1/catalog/repositories" in openapi.json()["paths"]
+        assert "/api/v1/catalog/repositories/{owner}/{repository}" in openapi.json()["paths"]
+        assert "/api/v1/catalog/packages" in openapi.json()["paths"]
+        assert "/api/v1/catalog/resources" in openapi.json()["paths"]
+        assert "/api/v1/catalog/technologies" in openapi.json()["paths"]
         operation_ids = {
             operation["operationId"]
             for path in ("/record", "/record/{item_id}")
@@ -219,6 +225,33 @@ async def test_peagen_page_model_has_explicit_attachments(tmp_path: Path) -> Non
             for repository in repository_metric_model["repositories"]
         )
         assert repository_metrics.headers["etag"]
+
+        catalog_overview = await client.get("/api/v1/catalog")
+        assert catalog_overview.status_code == 200
+        assert catalog_overview.json()["counts"]["repositories"] == 68
+        assert catalog_overview.json()["counts"]["packages"] == 1_125
+
+        repositories = await client.get("/api/v1/catalog/repositories")
+        assert repositories.status_code == 200
+        assert repositories.json()["count"] == 68
+        assert all(item["route"].startswith("/catalog/repositories/") for item in repositories.json()["records"])
+
+        repository_detail = await client.get("/api/v1/catalog/repositories/groupsum/groupsum-xyz")
+        assert repository_detail.status_code == 200
+        assert repository_detail.json()["item"]["name"] == "groupsum-xyz"
+        assert "packages" in repository_detail.json()["implementation"]
+
+        packages = await client.get("/api/v1/catalog/packages")
+        assert packages.status_code == 200
+        assert packages.json()["count"] == 1_125
+
+        resources = await client.get("/api/v1/catalog/resources")
+        assert resources.status_code == 200
+        assert resources.json()["count"] > 0
+
+        technologies = await client.get("/api/v1/catalog/technologies")
+        assert technologies.status_code == 200
+        assert technologies.json()["count"] > 0
 
         portfolio = await client.get("/api/v1/portfolio")
         assert portfolio.status_code == 200

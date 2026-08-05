@@ -8,6 +8,10 @@ const RouterContext = createContext<RouterValue | null>(null);
 
 function parseLocation(value: string): LocationValue {
   const url = new URL(value, "https://groupsum.xyz");
+  if (url.hash.startsWith("#/")) {
+    const hashRoute = new URL(url.hash.slice(1), url.origin);
+    return { pathname: hashRoute.pathname, search: hashRoute.search, hash: "" };
+  }
   return { pathname: url.pathname, search: url.search, hash: url.hash };
 }
 
@@ -16,7 +20,11 @@ export function BrowserRouter({ children }: { children: ReactNode }) {
   useEffect(() => {
     const update = () => setLocation(parseLocation(window.location.href));
     window.addEventListener("popstate", update);
-    return () => window.removeEventListener("popstate", update);
+    window.addEventListener("hashchange", update);
+    return () => {
+      window.removeEventListener("popstate", update);
+      window.removeEventListener("hashchange", update);
+    };
   }, []);
   const value = useMemo<RouterValue>(
     () => ({

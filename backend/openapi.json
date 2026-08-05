@@ -8227,6 +8227,66 @@
   "jsonSchemaDialect": "https://json-schema.org/draft/2020-12/schema",
   "openapi": "3.1.0",
   "paths": {
+    "/api/v1/catalog": {
+      "get": {
+        "operationId": "catalog",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        },
+        "summary": "Catalog overview page model",
+        "x-tigrbl-auth": {
+          "policy": "public-by-default",
+          "public": true,
+          "security": []
+        },
+        "x-tigrbl-surface": {
+          "binding": {
+            "exchange": "request_response",
+            "family": "request",
+            "framing": "json",
+            "framingSpec": "JsonFramingSpec",
+            "methods": [
+              "GET"
+            ],
+            "path": "/api/v1/catalog",
+            "proto": "http.rest",
+            "rpcMethod": null
+          }
+        }
+      }
+    },
+    "/api/v1/catalog/packages": {
+      "get": {
+        "operationId": "catalog_packages",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        },
+        "summary": "Package catalog collection",
+        "x-tigrbl-auth": {
+          "policy": "public-by-default",
+          "public": true,
+          "security": []
+        },
+        "x-tigrbl-surface": {
+          "binding": {
+            "exchange": "request_response",
+            "family": "request",
+            "framing": "json",
+            "framingSpec": "JsonFramingSpec",
+            "methods": [
+              "GET"
+            ],
+            "path": "/api/v1/catalog/packages",
+            "proto": "http.rest",
+            "rpcMethod": null
+          }
+        }
+      }
+    },
     "/api/v1/catalog/packages/{route_key}": {
       "get": {
         "operationId": "catalog_package",
@@ -8307,6 +8367,114 @@
         }
       }
     },
+    "/api/v1/catalog/repositories": {
+      "get": {
+        "operationId": "catalog_repositories",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        },
+        "summary": "Repository catalog collection",
+        "x-tigrbl-auth": {
+          "policy": "public-by-default",
+          "public": true,
+          "security": []
+        },
+        "x-tigrbl-surface": {
+          "binding": {
+            "exchange": "request_response",
+            "family": "request",
+            "framing": "json",
+            "framingSpec": "JsonFramingSpec",
+            "methods": [
+              "GET"
+            ],
+            "path": "/api/v1/catalog/repositories",
+            "proto": "http.rest",
+            "rpcMethod": null
+          }
+        }
+      }
+    },
+    "/api/v1/catalog/repositories/{owner}/{repository}": {
+      "get": {
+        "operationId": "catalog_repository",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "owner",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "path",
+            "name": "repository",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        },
+        "summary": "Repository catalog member record",
+        "x-tigrbl-auth": {
+          "policy": "public-by-default",
+          "public": true,
+          "security": []
+        },
+        "x-tigrbl-surface": {
+          "binding": {
+            "exchange": "request_response",
+            "family": "request",
+            "framing": "json",
+            "framingSpec": "JsonFramingSpec",
+            "methods": [
+              "GET"
+            ],
+            "path": "/api/v1/catalog/repositories/{owner}/{repository}",
+            "proto": "http.rest",
+            "rpcMethod": null
+          }
+        }
+      }
+    },
+    "/api/v1/catalog/resources": {
+      "get": {
+        "operationId": "catalog_resources",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        },
+        "summary": "Typed resource catalog collection",
+        "x-tigrbl-auth": {
+          "policy": "public-by-default",
+          "public": true,
+          "security": []
+        },
+        "x-tigrbl-surface": {
+          "binding": {
+            "exchange": "request_response",
+            "family": "request",
+            "framing": "json",
+            "framingSpec": "JsonFramingSpec",
+            "methods": [
+              "GET"
+            ],
+            "path": "/api/v1/catalog/resources",
+            "proto": "http.rest",
+            "rpcMethod": null
+          }
+        }
+      }
+    },
     "/api/v1/catalog/resources/{route_key}": {
       "get": {
         "operationId": "catalog_resource",
@@ -8341,6 +8509,76 @@
               "GET"
             ],
             "path": "/api/v1/catalog/resources/{route_key}",
+            "proto": "http.rest",
+            "rpcMethod": null
+          }
+        }
+      }
+    },
+    "/api/v1/catalog/technologies": {
+      "get": {
+        "operationId": "catalog_technologies",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        },
+        "summary": "Technology catalog collection",
+        "x-tigrbl-auth": {
+          "policy": "public-by-default",
+          "public": true,
+          "security": []
+        },
+        "x-tigrbl-surface": {
+          "binding": {
+            "exchange": "request_response",
+            "family": "request",
+            "framing": "json",
+            "framingSpec": "JsonFramingSpec",
+            "methods": [
+              "GET"
+            ],
+            "path": "/api/v1/catalog/technologies",
+            "proto": "http.rest",
+            "rpcMethod": null
+          }
+        }
+      }
+    },
+    "/api/v1/catalog/technologies/{slug}": {
+      "get": {
+        "operationId": "catalog_technology",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "slug",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        },
+        "summary": "Technology catalog member record",
+        "x-tigrbl-auth": {
+          "policy": "public-by-default",
+          "public": true,
+          "security": []
+        },
+        "x-tigrbl-surface": {
+          "binding": {
+            "exchange": "request_response",
+            "family": "request",
+            "framing": "json",
+            "framingSpec": "JsonFramingSpec",
+            "methods": [
+              "GET"
+            ],
+            "path": "/api/v1/catalog/technologies/{slug}",
             "proto": "http.rest",
             "rpcMethod": null
           }

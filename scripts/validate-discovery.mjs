@@ -42,4 +42,8 @@ const productEvidenceFiles = fs.readdirSync("dist/catalog/product-evidence", { r
 if (productEvidenceFiles.length !== manifest.product_evidence?.records) fail("product evidence bundle count does not match manifest");
 const catalogHtml = fs.readFileSync("dist/catalog/index.html", "utf8");
 for (const marker of ["Public ecosystem catalog", "DataCatalog", "og:url\" content=\"https://groupsum.xyz/catalog/"]) if (!catalogHtml.includes(marker)) fail(`catalog metadata missing ${marker}`);
+for (const collection of ["repositories", "packages", "resources", "technologies"]) {
+  const html = fs.readFileSync(path.join("dist", "catalog", collection, "index.html"), "utf8");
+  for (const marker of ["DataCatalog", "ItemList", `og:url\" content=\"https://groupsum.xyz/catalog/${collection}/`]) if (!html.includes(marker)) fail(`${collection} collection metadata missing ${marker}`);
+}
 if (!process.exitCode) console.log(`discovery ok: ${childFiles.length} child sitemaps, ${fs.readFileSync("dist/llms-full.txt", "utf8").split("\n").length} full-index lines`);
