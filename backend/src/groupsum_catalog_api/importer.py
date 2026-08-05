@@ -22,6 +22,16 @@ def package_key(ecosystem: str, name: str) -> str:
     return f"{ecosystem}:{name.casefold().replace('_', '-')}"
 
 
+def canonical_package_id(
+    connection: Connection, proposed_id: str, ecosystem: str, name: str
+) -> str:
+    row = connection.execute(
+        "SELECT id FROM packages WHERE ecosystem = ? AND name = ?",
+        (ecosystem, name),
+    ).fetchone()
+    return str(row[0]) if row else proposed_id
+
+
 def record_slug(owner: str, name: str) -> str:
     value = re.sub(r"[^a-z0-9]+", "-", f"catalog-{owner}-{name}".lower()).strip("-")
     return value or hashlib.sha256(f"{owner}/{name}".encode()).hexdigest()[:16]
@@ -67,6 +77,106 @@ def import_legal_evidence(
                 "observed_at": observed_at,
             },
         )
+
+
+RESOURCE_TYPES = {
+    "website": ("Website", "experience"),
+    "documentation": ("Documentation", "content"),
+    "api_definition": ("API definition", "contract"),
+    "api_source": ("API source", "source"),
+    "api": ("Live API", "experience"),
+    "demo": ("Demo", "experience"),
+    "example": ("Example", "content"),
+    "showcase": ("Showcase", "experience"),
+    "ui": ("User interface", "experience"),
+}
+
+
+def import_resource_type(connection: Connection, resource_type: str) -> None:
+    label, category = RESOURCE_TYPES.get(
+        resource_type, (resource_type.replace("_", " ").title(), "resource")
+    )
+    upsert(
+        connection,
+        "resource_types",
+        {
+            "id": resource_type,
+            "label": label,
+            "category": category,
+            "description": None,
+            "icon_key": resource_type,
+            "detail_schema_key": resource_type,
+        },
+    )
+
+
+def import_resource_repository(
+    connection: Connection,
+    resource_id: str,
+    repository_id: str | None,
+    path: str | None,
+    observed_at: str,
+) -> None:
+    if not repository_id:
+        return
+    upsert(
+        connection,
+        "resource_repositories",
+        {
+            "id": stable_id("resource-repository", resource_id, repository_id, "owner"),
+            "resource_id": resource_id,
+            "repository_id": repository_id,
+            "role": "owner",
+            "path": path,
+            "observed_at": observed_at,
+        },
+    )
+
+
+def import_repository_ssot(
+    connection: Connection,
+    repository_id: str,
+    ssot: dict[str, Any],
+    observed_at: str,
+) -> None:
+    registry_url = ssot.get("registry_url")
+    if not ssot.get("governed") or not registry_url:
+        return
+    registry_id = stable_id("ssot-registry", repository_id, str(registry_url))
+    upsert(
+        connection,
+        "repository_ssot_registries",
+        {
+            "id": registry_id,
+            "repository_id": repository_id,
+            "registry_url": registry_url,
+            "schema_version": ssot.get("schema_version"),
+            "source_sha256": ssot.get("source_sha256"),
+            "valid": bool(ssot.get("valid", True)),
+            "observed_at": ssot.get("observed_at") or observed_at,
+        },
+    )
+    for entity_kind, items in (ssot.get("inventory") or {}).items():
+        if not isinstance(items, list):
+            continue
+        for item in items:
+            entity_id = str(
+                item.get("id") or stable_id(entity_kind, json.dumps(item, sort_keys=True))
+            )
+            upsert(
+                connection,
+                "repository_ssot_inventory",
+                {
+                    "id": stable_id("ssot-inventory", registry_id, entity_kind, entity_id),
+                    "registry_id": registry_id,
+                    "entity_kind": entity_kind,
+                    "entity_id": entity_id,
+                    "title": item.get("title") or item.get("name") or item.get("statement"),
+                    "status": item.get("status"),
+                    "implementation_status": item.get("implementation_status"),
+                    "payload": json.dumps(item, sort_keys=True),
+                },
+            )
 
 
 def ensure_repository_ssot_columns(connection: Connection) -> None:
@@ -892,6 +1002,12 @@ def import_catalog(
                 repository.get("legal_evidence", []),
                 repository.get("observed_at") or generated_at,
             )
+            import_repository_ssot(
+                connection,
+                repository_id,
+                ssot,
+                repository.get("observed_at") or generated_at,
+            )
             counts["repositories"] += 1
             for metric, value in repository.get("metrics", {}).items():
                 if not isinstance(value, int | float):
@@ -1084,12 +1200,14 @@ def import_catalog(
                 if not resource.get("url"):
                     continue
                 resource_id = stable_id("resource-url", resource["url"])
+                resource_type = resource.get("kind") or "resource"
+                import_resource_type(connection, resource_type)
                 upsert(
                     connection,
                     "resources",
                     {
                         "id": resource_id,
-                        "resource_type": resource.get("kind") or "resource",
+                        "resource_type": resource_type,
                         "route_key": resource.get("route", "").rstrip("/").split("/")[-1] or None,
                         "repository_id": repository_id,
                         "path": resource.get("path"),
@@ -1099,6 +1217,13 @@ def import_catalog(
                         "source_url": resource["url"],
                         "observed_at": repository.get("observed_at") or generated_at,
                     },
+                )
+                import_resource_repository(
+                    connection,
+                    resource_id,
+                    repository_id,
+                    resource.get("path"),
+                    repository.get("observed_at") or generated_at,
                 )
                 upsert(
                     connection,
@@ -1111,14 +1236,22 @@ def import_catalog(
                         "sort_order": 0,
                     },
                 )
+                import_repository_ssot(
+                    connection,
+                    repository_id,
+                    ssot,
+                    bundle["generated_at"],
+                )
                 counts["resources"] += 1
             counts["records"] += 1
 
         package_ids_by_key: dict[str, list[str]] = {}
         for package in site_packages:
-            package_id = package["id"]
             ecosystem = package["ecosystem"]
             name = package["name"]
+            package_id = canonical_package_id(
+                connection, package["id"], ecosystem, name
+            )
             natural_key = package_key(ecosystem, name)
             package_ids_by_key.setdefault(natural_key, []).append(package_id)
             package_url = package.get("registry_url") or package.get("source_url")
@@ -1387,7 +1520,12 @@ def import_catalog(
                         },
                     )
             for package in bundle["packages"]:
-                package_id = package["id"]
+                package_id = canonical_package_id(
+                    connection,
+                    package["id"],
+                    package["ecosystem"],
+                    package["name"],
+                )
                 upsert(
                     connection,
                     "packages",
@@ -1424,16 +1562,17 @@ def import_catalog(
                 )
             for resource in bundle["repository"].get("related_resources", []):
                 resource_id = stable_id("resource-url", resource["url"])
+                resource_type = resource.get("kind") or "resource"
+                repository_id = repository_ids.get(bundle["repository"].get("full_name"))
+                import_resource_type(connection, resource_type)
                 upsert(
                     connection,
                     "resources",
                     {
                         "id": resource_id,
-                        "resource_type": resource["kind"],
+                        "resource_type": resource_type,
                         "route_key": resource.get("route", "").rstrip("/").split("/")[-1] or None,
-                        "repository_id": repository_ids.get(
-                            bundle["repository"].get("full_name")
-                        ),
+                        "repository_id": repository_id,
                         "path": resource.get("path"),
                         "title": resource.get("name") or resource["kind"],
                         "url": resource["url"],
@@ -1441,6 +1580,13 @@ def import_catalog(
                         "source_url": resource["url"],
                         "observed_at": bundle["generated_at"],
                     },
+                )
+                import_resource_repository(
+                    connection,
+                    resource_id,
+                    repository_id,
+                    resource.get("path"),
+                    bundle["generated_at"],
                 )
                 upsert(
                     connection,
