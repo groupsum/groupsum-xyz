@@ -535,7 +535,7 @@ export function PublicCatalogOverview({ onNavigate }: { onNavigate: (path: strin
       {datasetOrder.map((name) => {
         const Icon = datasetDetails[name].Icon;
         const route = `/catalog/${name}`;
-        return <article key={name} className="group relative flex min-w-0 items-start gap-3 rounded-[6px] border border-[var(--color-border-soft)] bg-white p-4 transition-colors hover:border-accent hover:bg-[#FAF9F6]">
+        return <article key={name} className="group relative flex min-w-0 items-start gap-3 rounded-[var(--radius-md)] border border-[var(--color-border-soft)] bg-white p-4 transition-colors hover:border-accent hover:bg-[#FAF9F6]">
           <div className="grid h-10 w-10 shrink-0 place-items-center rounded-[3px] border border-[var(--color-border-soft)] bg-surface text-accent"><Icon className="h-4.5 w-4.5" aria-hidden="true" /></div>
           <div className="min-w-0 flex-1"><div className="flex flex-wrap items-center justify-between gap-2"><h2 className="font-serif text-lg font-bold text-ink"><a href={route} onClick={(event) => { event.preventDefault(); onNavigate(route); }} className="hover:text-accent before:absolute before:inset-0 before:content-['']">{labels[name]}</a></h2><strong className="font-mono text-lg tabular-nums text-ink">{counts[name].toLocaleString()}</strong></div><p className="mt-1 text-xs leading-relaxed text-ink-muted">{datasetDetails[name].description}</p><span className="mt-3 inline-flex items-center gap-1 font-mono text-[10px] font-semibold text-accent">Open collection <ArrowRight className="h-3.5 w-3.5" /></span></div>
         </article>;

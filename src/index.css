@@ -30,9 +30,14 @@
   --shadow-hover: 0 22px 60px rgba(35, 45, 40, 0.12);
   --focus-ring: #1a73e8;
 
-  --radius-sm: 0.5rem;
-  --radius-md: 0.9rem;
-  --radius-lg: 1.4rem;
+  /* Explorer geometry: cards and controls stay visibly rectangular. */
+  --radius-xs: 0.125rem;
+  --radius-sm: 0.1875rem;
+  --radius-md: 0.25rem;
+  --radius-lg: 0.25rem;
+  --radius-xl: 0.25rem;
+  --radius-2xl: 0.25rem;
+  --radius-3xl: 0.25rem;
 }
 
 /* Global resets and foundational styling */

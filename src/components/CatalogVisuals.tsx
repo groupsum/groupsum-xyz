@@ -154,7 +154,7 @@ export function MemberRowCard({
   pills?: string[];
   facts?: Array<{ label: string; value: number }>;
 }) {
-  return <article className="group relative flex cursor-pointer flex-wrap items-center gap-x-5 gap-y-3 rounded-[6px] border border-[var(--color-border-soft)] bg-[var(--color-surface)] p-4 transition-colors hover:border-accent hover:bg-[color-mix(in_srgb,var(--color-accent)_3%,var(--color-surface))]">
+  return <article className="group relative flex cursor-pointer flex-wrap items-center gap-x-5 gap-y-3 rounded-[var(--radius-md)] border border-[var(--color-border-soft)] bg-[var(--color-surface)] p-4 transition-colors hover:border-accent hover:bg-[color-mix(in_srgb,var(--color-accent)_3%,var(--color-surface))]">
     <div className="flex min-w-0 flex-[3_1_28rem] items-start gap-3.5">
       <div className="grid h-10 w-10 shrink-0 place-items-center rounded-[3px] border border-[var(--color-border-soft)] bg-canvas text-accent"><Icon className="h-4.5 w-4.5" aria-hidden="true" /></div>
       <div className="min-w-0">
