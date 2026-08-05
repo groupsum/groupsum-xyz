@@ -99,4 +99,6 @@ class CatalogMember(ApiModel):
     graph: dict[str, Any] | None = None
     parent: dict[str, Any] | None = None
     implementation: dict[str, Any] = Field(default_factory=dict)
+    governance: dict[str, Any] = Field(default_factory=dict)
     legal: dict[str, Any] = Field(default_factory=dict)
+    related_records: list[dict[str, Any]] = Field(default_factory=list)

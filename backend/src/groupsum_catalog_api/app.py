@@ -262,6 +262,7 @@ def build_app(
     @catalog_app.get(
         "/api/v1/catalog/repositories/{owner}/{repository}",
         summary="Repository catalog member record",
+        response_model=CatalogMember,
     )
     def catalog_repository(request: Request, owner: str, repository: str):
         return catalog_repository_detail(database, request, owner, repository)
@@ -357,7 +358,9 @@ def build_app(
         return catalog_collection(database, request, "technology", page, page_size, q, sort=sort)
 
     @catalog_app.get(
-        "/api/v1/catalog/technologies/{slug}", summary="Technology catalog member record"
+        "/api/v1/catalog/technologies/{slug}",
+        summary="Technology catalog member record",
+        response_model=CatalogMember,
     )
     def catalog_technology(request: Request, slug: str):
         return catalog_technology_detail(database, request, slug)

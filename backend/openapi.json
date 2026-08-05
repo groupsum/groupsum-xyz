@@ -513,6 +513,11 @@
       "CatalogMember": {
         "additionalProperties": true,
         "properties": {
+          "governance": {
+            "additionalProperties": true,
+            "title": "Governance",
+            "type": "object"
+          },
           "graph": {
             "anyOf": [
               {
@@ -557,6 +562,14 @@
             ],
             "default": null,
             "title": "Parent"
+          },
+          "related_records": {
+            "items": {
+              "additionalProperties": true,
+              "type": "object"
+            },
+            "title": "Related Records",
+            "type": "array"
           },
           "resource_type": {
             "anyOf": [
@@ -10643,6 +10656,13 @@
         ],
         "responses": {
           "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CatalogMember"
+                }
+              }
+            },
             "description": "Successful Response"
           }
         },
@@ -10892,6 +10912,13 @@
         ],
         "responses": {
           "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CatalogMember"
+                }
+              }
+            },
             "description": "Successful Response"
           }
         },

@@ -4,7 +4,8 @@ import {
   catalogOrganizations,
   catalogSummary,
 } from "../data/catalog.generated";
-import { EntityGraph, getCatalogOverview, getCatalogRepository, getCatalogTechnology, getEntityPageModel, getRepositoryMetricSnapshot, RepositoryMetricRecord, type RepositorySignals } from "../api/catalog.generated";
+import { EntityGraph, getCatalogOverview, getRepositoryMetricSnapshot, RepositoryMetricRecord, type RepositorySignals } from "../api/catalog.generated";
+import { getCatalogPackageMember, getCatalogReleaseMember, getCatalogRepositoryMember, getCatalogResourceMember, getCatalogTechnologyMember } from "../api/catalog";
 import { Activity, ArrowLeft, ArrowRight, BadgeCheck, BookOpen, Boxes, Braces, CalendarDays, Code2, ExternalLink, FileCode2, GitBranch, Globe2, Package, Scale, ServerCog, ShieldCheck } from "lucide-react";
 import { RepositorySignalStrip } from "./RepositorySignals";
 import { EntityOwnership } from "./EntityIdentity";
@@ -683,91 +684,73 @@ function MemberSectionNav({ record }: { record: CatalogRecord }) {
 export function PublicCatalogDetail({ path, onNavigate }: { path: string; onNavigate: (path: string) => void }) {
   const segments = path.split(/[?#]/)[0].split("/").filter(Boolean);
   const dataset = segments[1] as DetailDatasetName;
-  const normalizedPath = `/${segments.join("/")}`;
   const [record, setRecord] = useState<CatalogRecord | null>(null);
   const [state, setState] = useState<"loading" | "ready" | "missing" | "error">("loading");
 
   useEffect(() => {
+    setState("loading");
+    setRecord(null);
+    const controller = new AbortController();
+    const routeKey = segments.at(-1) || "";
+
+    const acceptResourceMember = (model: Awaited<ReturnType<typeof getCatalogPackageMember>>, kind: string) => {
+      const item = valueRecord(model.item);
+      const legal = valueRecord(model.legal);
+      const implementation = valueRecord(model.implementation);
+      setRecord({
+        ...item,
+        id: String(item.id || routeKey),
+        kind,
+        resource_type: model.resource_type,
+        parent: model.parent,
+        entity_graph: model.graph as EntityGraph | null,
+        legal_evidence: valueRecords(legal.evidence),
+        license_expression: legal.license_expression,
+        license_status: legal.status,
+        repositories: implementation.repositories,
+        releases: implementation.releases,
+        dependencies: implementation.dependencies,
+        dependents: implementation.dependents,
+        downloads: valueRecord(implementation.downloads).value,
+      } as CatalogRecord);
+      setState("ready");
+    };
+
     if (dataset === "releases") {
-      const controller = new AbortController();
-      const routeKey = segments.at(-1) || "";
-      fetch(`/api/v1/catalog/releases/${encodeURIComponent(routeKey)}`, { signal: controller.signal })
-        .then((response) => { if (!response.ok) throw new Error(`catalog response ${response.status}`); return response.json(); })
-        .then((model: Record<string, unknown>) => {
+      getCatalogReleaseMember(routeKey, controller.signal)
+        .then((model) => acceptResourceMember(model, "release"))
+        .catch((error: Error) => { if (error.name !== "AbortError") setState(error.message.includes("404") ? "missing" : "error"); });
+      return () => controller.abort();
+    }
+    if (dataset === "technologies") {
+      getCatalogTechnologyMember(routeKey, controller.signal)
+        .then((model) => {
           const item = valueRecord(model.item);
-          const legal = valueRecord(model.legal);
-          setRecord({
-            ...item,
-            id: String(item.id || routeKey),
-            kind: "release",
-            resource_type: model.resource_type,
-            parent: model.parent,
-            legal_evidence: valueRecords(legal.evidence),
-            license_expression: legal.license_expression,
-            license_status: legal.status,
-          } as CatalogRecord);
+          setRecord({ ...item, id: String(item.id || routeKey), kind: "technology", display_name: item.label || item.name, related_records: model.related_records } as CatalogRecord);
           setState("ready");
         })
         .catch((error: Error) => { if (error.name !== "AbortError") setState(error.message.includes("404") ? "missing" : "error"); });
       return () => controller.abort();
     }
-    if (dataset === "technologies") {
-      const controller = new AbortController();
-      const routeKey = segments.at(-1) || "";
-      const staticFallback = () => fetch("/catalog/site/technologies.json", { signal: controller.signal })
-        .then((response) => response.ok ? response.json() : Promise.reject(new Error(`technology response ${response.status}`)))
-        .then((records: CatalogRecord[]) => records.find((item) => item.route === normalizedPath) || Promise.reject(new Error("technology missing")));
-      getCatalogTechnology(routeKey, controller.signal)
-        .then((model) => {
-          const item = valueRecord(model.item);
-          return { ...item, id: String(item.id || routeKey), kind: "technology", display_name: item.label || item.name, related_records: model.related_records } as CatalogRecord;
-        })
-        .catch(staticFallback)
-        .then((technology) => { setRecord(technology); setState("ready"); })
-        .catch((error: Error) => { if (error.name !== "AbortError") setState("missing"); });
-      return () => controller.abort();
-    }
-    if (![...datasetOrder, "technologies"].includes(dataset as DatasetName | "technologies")) {
+    if (!datasetOrder.includes(dataset as DatasetName)) {
       setState("missing");
       return;
     }
-    const controller = new AbortController();
-    fetch(`/catalog/site/${dataset}.json`, { signal: controller.signal })
-      .then((response) => {
-        if (!response.ok) throw new Error(`catalog response ${response.status}`);
-        return response.json();
-      })
-      .then((records: CatalogRecord[]) => {
-        const match = records.find((item) => item.route === normalizedPath);
-        if (!match) { setRecord(null); setState("missing"); return; }
-        if (dataset === "packages" || dataset === "resources") {
-          const routeKey = segments.at(-1) || "";
-          fetch(`/api/v1/catalog/${dataset}/${encodeURIComponent(routeKey)}`, { signal: controller.signal })
-            .then((response) => response.ok ? response.json() : Promise.reject(new Error(`resource response ${response.status}`)))
-            .then((model: Record<string, unknown>) => {
-              const item = valueRecord(model.item); const legal = valueRecord(model.legal); const implementation = valueRecord(model.implementation);
-              setRecord({ ...match, ...item, resource_type: model.resource_type || match.resource_type, parent: model.parent, entity_graph: model.graph as EntityGraph | null, legal_evidence: valueRecords(legal.evidence), license_expression: legal.license_expression, license_status: legal.status, repositories: implementation.repositories, releases: implementation.releases, dependencies: implementation.dependencies, dependents: implementation.dependents, downloads: valueRecord(implementation.downloads).value } as CatalogRecord);
-              setState("ready");
-            })
-            .catch(() => { setRecord(match); setState("ready"); });
-          return;
-        }
-        if (dataset === "repositories") {
-          const owner = String(match.owner || segments.at(-2) || ""); const name = String(match.name || segments.at(-1) || "");
-          getCatalogRepository(owner, name, controller.signal)
-            .then((model) => {
-              const item = valueRecord(model.item); const implementation = valueRecord(model.implementation); const legal = valueRecord(model.legal);
-              setRecord({ ...match, ...item, kind: "repository", entity_graph: model.graph as EntityGraph | null, packages: implementation.packages, related_resources: implementation.resources, releases: implementation.releases, ssot_governance: model.governance, legal_evidence: valueRecords(legal.evidence), license_expression: legal.license_expression, license_status: legal.status } as CatalogRecord);
-              setState("ready");
-            })
-            .catch(() => getEntityPageModel(`entity:repositories:repository:${owner}/${name}`, controller.signal).then((model) => { setRecord({ ...match, entity_graph: model.graph }); setState("ready"); }).catch(() => { setRecord(match); setState("ready"); }));
-          return;
-        }
-        setRecord(match); setState("ready");
-      })
-      .catch((error: Error) => { if (error.name !== "AbortError") setState("error"); });
+
+    const request = dataset === "packages"
+      ? getCatalogPackageMember(routeKey, controller.signal).then((model) => acceptResourceMember(model, "package"))
+      : dataset === "resources"
+        ? getCatalogResourceMember(routeKey, controller.signal).then((model) => acceptResourceMember(model, "resource"))
+        : getCatalogRepositoryMember(segments.at(-2) || "", routeKey, controller.signal).then((model) => {
+          const item = valueRecord(model.item);
+          const implementation = valueRecord(model.implementation);
+          const legal = valueRecord(model.legal);
+          setRecord({ ...item, id: String(item.id || routeKey), kind: "repository", entity_graph: model.graph as EntityGraph | null, packages: implementation.packages, related_resources: implementation.resources, releases: implementation.releases, ssot_governance: model.governance, legal_evidence: valueRecords(legal.evidence), license_expression: legal.license_expression, license_status: legal.status } as CatalogRecord);
+          setState("ready");
+        });
+    request.catch((error: Error) => { if (error.name !== "AbortError") setState(error.message.includes("404") ? "missing" : "error"); });
     return () => controller.abort();
-  }, [dataset, normalizedPath, path]);
+  }, [dataset, path]);
 
   if (state === "loading") return <div className="max-w-3xl mx-auto px-4 py-20 text-sm text-ink-muted" role="status">Loading generated catalog record…</div>;
   if (state !== "ready" || !record) return <div className="max-w-3xl mx-auto px-4 py-20 space-y-4"><h1 className="font-serif text-3xl font-bold text-ink">Catalog record unavailable</h1><p className="text-sm text-ink-muted">{state === "error" ? "The generated catalog could not be loaded. Please try again shortly." : "The route is not present in the current generated public dataset."}</p><button onClick={() => onNavigate("/catalog")} className="text-xs font-mono text-accent hover:underline cursor-pointer">Return to public catalog</button></div>;

@@ -1924,6 +1924,10 @@ export interface components {
         };
         /** CatalogMember */
         CatalogMember: {
+            /** Governance */
+            governance?: {
+                [key: string]: unknown;
+            };
             /**
              * Graph
              * @default null
@@ -1952,6 +1956,10 @@ export interface components {
             parent: {
                 [key: string]: unknown;
             } | null;
+            /** Related Records */
+            related_records?: {
+                [key: string]: unknown;
+            }[];
             /**
              * Resource Type
              * @default null
@@ -7280,7 +7288,9 @@ export interface operations {
                 headers: {
                     [name: string]: unknown;
                 };
-                content?: never;
+                content: {
+                    "application/json": components["schemas"]["CatalogMember"];
+                };
             };
         };
     };
@@ -7374,7 +7384,9 @@ export interface operations {
                 headers: {
                     [name: string]: unknown;
                 };
-                content?: never;
+                content: {
+                    "application/json": components["schemas"]["CatalogMember"];
+                };
             };
         };
     };
