@@ -287,7 +287,7 @@ export function ProductCollectionPage({
   const description = organization
     ? `Reviewed ${organizationNames[organization] || organization} products, applications, packages, and source-backed work in one navigable collection.`
     : mode === "products"
-      ? "Start with the product. Each record connects its reviewed positioning to public repositories, packages, releases, deployments, examples, APIs, demos, and related work."
+      ? "Start with the product. Each record connects its reviewed positioning to public repositories, packages, releases, deployments, and typed resources."
       : "A unified collection of products, suites, applications, packages, projects, and specifications, each linked to the evidence that supports it.";
 
   return <ExplorerProductPortfolioCollection

@@ -5,10 +5,11 @@ import {
   catalogSummary,
 } from "../data/catalog.generated";
 import { EntityGraph, getCatalogCollection, getCatalogOverview, getCatalogRepository, getCatalogTechnology, getEntityPageModel, getRepositoryMetricSnapshot, RepositoryMetricRecord, type RepositorySignals } from "../api/catalog.generated";
-import { Activity, ArrowLeft, ArrowRight, BadgeCheck, BookOpen, Boxes, Braces, CalendarDays, Code2, ExternalLink, FileCode2, Filter, GitBranch, Globe2, Package, Scale, Search, ServerCog, ShieldCheck } from "lucide-react";
+import { Activity, ArrowLeft, ArrowRight, BadgeCheck, BookOpen, Boxes, Braces, CalendarDays, Code2, ExternalLink, FileCode2, GitBranch, Globe2, Package, Scale, ServerCog, ShieldCheck } from "lucide-react";
 import { RepositorySignalStrip } from "./RepositorySignals";
 import { EntityOwnership } from "./EntityIdentity";
 import { CatalogPill, CollectionHeader, ContextRailCard, FactPanel, MemberRowCard, RecordIdentityCard, SurfaceCard, factIcons, MetricBand, metricIcons, type MetricItem } from "./CatalogVisuals";
+import { ExplorerFilterToolbar, TypeBadge, type ExplorerFilters } from "./CatalogExplorerUI";
 
 type CatalogRecord = Record<string, unknown> & {
   id: string;
@@ -37,14 +38,14 @@ type DetailDatasetName = DatasetName | "releases";
 const labels: Record<DatasetName, string> = {
   repositories: "Repositories",
   packages: "Packages",
-  resources: "APIs, demos & examples",
+  resources: "Typed resources",
   technologies: "Technologies",
 };
 
 const datasetDetails: Record<DatasetName, { description: string; Icon: typeof Code2 }> = {
   repositories: { description: "Source repositories with repository-owned activity, packages, governance, and typed resources.", Icon: Code2 },
   packages: { description: "Manifest and registry-backed packages grouped independently from their containing repositories.", Icon: Package },
-  resources: { description: "Typed documentation, APIs, demos, examples, websites, showcases, and user interfaces.", Icon: Braces },
+  resources: { description: "Public resources classified by type, ownership, purpose, and source evidence.", Icon: Braces },
   technologies: { description: "Categorical stack evidence observed from public source and package metadata.", Icon: ServerCog },
 };
 
@@ -273,7 +274,7 @@ function RepositoryDetail({ record, onNavigate }: { record: CatalogRecord; onNav
       <DetailSection title="Contained packages" intro="Every package is a child resource owned by this repository. Its license belongs with the package rather than the repository-level legal summary.">
         {packages.length > 0 ? <ul className="divide-y divide-[var(--color-border-soft)]">{packages.map((pkg) => <li key={String(pkg.id)} className="py-4 sm:flex sm:items-center sm:justify-between gap-5"><div className="min-w-0"><span className="text-[10px] font-mono uppercase text-accent">{humanLabel(String(pkg.ecosystem || "package"))} · {humanLabel(String(pkg.package_kind || "package candidate"))}</span><p className="break-all text-sm font-semibold text-ink">{String(pkg.name)}</p><p className="text-xs text-ink-muted">{String(pkg.manifest_path || "Manifest path not recorded")}</p><p className="mt-1 text-xs text-ink-muted">License: {pkg.license_url ? <a href={String(pkg.license_url)} target="_blank" rel="noreferrer" className="font-semibold text-accent hover:underline">{String(pkg.license_expression || "Observed license")}</a> : String(pkg.license_expression || "Not observed")}{Number(pkg.notice_count || 0) > 0 ? ` · ${Number(pkg.notice_count).toLocaleString()} notice file${Number(pkg.notice_count) === 1 ? "" : "s"}` : ""}</p></div><div className="mt-2 flex flex-wrap items-center gap-x-5 gap-y-2 sm:mt-0"><span className="text-[10px] font-mono text-ink-muted"><strong className="block text-sm text-ink">{Number(pkg.release_count || 0).toLocaleString()}</strong>releases</span><span className="text-[10px] font-mono text-ink-muted"><strong className="block text-sm text-ink">{String(pkg.latest_version || "—")}</strong>latest</span><a href={String(pkg.route)} onClick={(event) => { event.preventDefault(); onNavigate(String(pkg.route)); }} className="inline-flex min-h-11 items-center text-xs font-mono font-semibold text-accent hover:underline">View package</a></div></li>)}</ul> : <p className="text-sm text-ink-muted">No package manifests were observed in this repository.</p>}
       </DetailSection>
-      {resources.length > 0 && <DetailSection title="Related resources" intro="Source-backed APIs, demos, documentation, examples, showcases, UIs, and websites attached to this repository.">
+      {resources.length > 0 && <DetailSection title="Typed resources" intro="Source-backed resources attached to this repository and labeled by their specific resource type.">
         <ul className="border-y border-[var(--color-border-soft)] divide-y divide-[var(--color-border-soft)]">
           {resources.map((resource) => <li key={String(resource.id)} className="py-3 sm:flex sm:items-baseline sm:justify-between gap-5"><div><span className="text-[10px] font-mono uppercase text-accent">{humanLabel(String(resource.kind || "resource"))}</span><p className="text-sm text-ink break-all">{String(resource.name || "Related resource")}</p></div><div className="flex gap-3">{resource.route && <a href={String(resource.route)} onClick={(event) => { event.preventDefault(); onNavigate(String(resource.route)); }} className="inline-flex min-h-11 items-center text-xs font-mono text-accent hover:underline">View details</a>}{resource.url && <a href={String(resource.url)} target="_blank" rel="noreferrer" className="text-xs font-mono text-accent hover:underline inline-flex items-center gap-1">Source <ExternalLink className="w-3.5 h-3.5" /></a>}</div></li>)}
         </ul>
@@ -507,6 +508,7 @@ function CollectionRow({ record, dataset, onNavigate }: { record: CatalogRecord;
     route={route}
     onNavigate={onNavigate}
     Icon={Icon}
+    badge={dataset === "resources" ? <TypeBadge value={humanLabel(type)} /> : undefined}
     pills={[
       ...(record.kind === "repository" && Boolean(record.ssot_governance && valueRecord(record.ssot_governance).governed) ? ["SSOT governed"] : []),
       ...technologies.slice(0, 5),
@@ -517,27 +519,35 @@ function CollectionRow({ record, dataset, onNavigate }: { record: CatalogRecord;
 
 export function PublicCatalogOverview({ onNavigate }: { onNavigate: (path: string) => void }) {
   const [counts, setCounts] = useState<Record<DatasetName, number>>(() => Object.fromEntries(datasetOrder.map((name) => [name, Number(catalogDatasetManifest.counts[name] || 0)])) as Record<DatasetName, number>);
+  const [primaryCounts, setPrimaryCounts] = useState({ products: 0, portfolio: 0 });
   useEffect(() => {
     const controller = new AbortController();
-    getCatalogOverview(controller.signal).then((model) => setCounts(Object.fromEntries(datasetOrder.map((name) => [name, Number(model.counts[name] || 0)])) as Record<DatasetName, number>)).catch(() => undefined);
+    getCatalogOverview(controller.signal).then((model) => {
+      setCounts(Object.fromEntries(datasetOrder.map((name) => [name, Number(model.counts[name] || 0)])) as Record<DatasetName, number>);
+      setPrimaryCounts({ products: Number(model.counts.products || 0), portfolio: Number(model.counts.portfolio || 0) });
+    }).catch(() => undefined);
     return () => controller.abort();
   }, []);
-  return <section className="mx-auto max-w-[var(--content-max)] space-y-8 px-4 py-10 sm:px-6 lg:px-8">
+  const collections = [
+    { key: "products", label: "Products", route: "/products", value: primaryCounts.products, description: "Reviewed public products with purpose, audience, maturity, and implementation evidence.", Icon: Boxes },
+    { key: "portfolio", label: "Portfolio", route: "/portfolio", value: primaryCounts.portfolio, description: "Strategic portfolio records grouping related products and implementation resources.", Icon: BadgeCheck },
+    ...datasetOrder.map((name) => ({ key: name, label: labels[name], route: `/catalog/${name}`, value: counts[name], description: datasetDetails[name].description, Icon: datasetDetails[name].Icon })),
+  ];
+  return <section className="catalog-explorer mx-auto max-w-[var(--content-max)] space-y-6 px-4 py-8 sm:px-6 lg:px-8">
     <CollectionHeader
-      eyebrow="Catalog collection"
+      eyebrow="Supporting evidence and public catalog explorer"
       title="GroupSum ecosystem catalog"
-      description="Traverse public source repositories, contained packages, typed APIs, documentation, demos, examples, websites, showcases, user interfaces, and observed stack evidence through canonical collection and member routes."
+      description="Traverse reviewed products and portfolio records into repositories, contained packages, typed resources, and observed stack evidence without losing ownership context."
       observedAt={formatDate(catalogSummary.generated_at)}
       exportHref="/catalog/catalog.json"
       facts={datasetOrder.map((name) => ({ label: labels[name], value: counts[name], icon: datasetDetails[name].Icon }))}
     />
-    <div className="grid gap-3 md:grid-cols-2">
-      {datasetOrder.map((name) => {
-        const Icon = datasetDetails[name].Icon;
-        const route = `/catalog/${name}`;
-        return <article key={name} className="group relative flex min-w-0 items-start gap-3 rounded-[var(--radius-md)] border border-[var(--color-border-soft)] bg-white p-4 transition-colors hover:border-accent hover:bg-[#FAF9F6]">
+    <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+      {collections.map((collection) => {
+        const Icon = collection.Icon;
+        return <article key={collection.key} className="group relative flex min-w-0 items-start gap-3 rounded-[var(--radius-md)] border border-[var(--color-border-soft)] bg-white p-4 transition-colors hover:border-accent hover:bg-[#FAF9F6]">
           <div className="grid h-10 w-10 shrink-0 place-items-center rounded-[3px] border border-[var(--color-border-soft)] bg-surface text-accent"><Icon className="h-4.5 w-4.5" aria-hidden="true" /></div>
-          <div className="min-w-0 flex-1"><div className="flex flex-wrap items-center justify-between gap-2"><h2 className="font-serif text-lg font-bold text-ink"><a href={route} onClick={(event) => { event.preventDefault(); onNavigate(route); }} className="hover:text-accent before:absolute before:inset-0 before:content-['']">{labels[name]}</a></h2><strong className="font-mono text-lg tabular-nums text-ink">{counts[name].toLocaleString()}</strong></div><p className="mt-1 text-xs leading-relaxed text-ink-muted">{datasetDetails[name].description}</p><span className="mt-3 inline-flex items-center gap-1 font-mono text-[10px] font-semibold text-accent">Open collection <ArrowRight className="h-3.5 w-3.5" /></span></div>
+          <div className="min-w-0 flex-1"><div className="flex flex-wrap items-center justify-between gap-2"><h2 className="font-serif text-lg font-bold text-ink"><a href={collection.route} onClick={(event) => { event.preventDefault(); onNavigate(collection.route); }} className="hover:text-accent before:absolute before:inset-0 before:content-['']">{collection.label}</a></h2><strong className="font-mono text-lg tabular-nums text-ink">{collection.value.toLocaleString()}</strong></div><p className="mt-1 text-[11px] leading-relaxed text-ink-muted">{collection.description}</p><span className="mt-3 inline-flex items-center gap-1 font-mono text-[10px] font-semibold text-accent">Browse collection <ArrowRight className="h-3.5 w-3.5" /></span></div>
         </article>;
       })}
     </div>
@@ -550,7 +560,7 @@ export function PublicCatalogOverview({ onNavigate }: { onNavigate: (path: strin
 export function PublicCatalogExplorer({ onNavigate, compact = false, fixedDataset, initialQuery = "" }: { onNavigate: (path: string) => void; compact?: boolean; fixedDataset?: DatasetName; initialQuery?: string }) {
   const [dataset, setDataset] = useState<DatasetName>(fixedDataset || "repositories");
   const [records, setRecords] = useState<CatalogRecord[]>([]);
-  const [query, setQuery] = useState(initialQuery);
+  const [filters, setFilters] = useState<ExplorerFilters>({ search: initialQuery, owner: "", ecosystem: "", publication: "", resourceType: "", sort: "name" });
   const [page, setPage] = useState(1);
   const [state, setState] = useState<"loading" | "ready" | "error">("loading");
   const pageSize = compact ? 24 : 50;
@@ -559,7 +569,7 @@ export function PublicCatalogExplorer({ onNavigate, compact = false, fixedDatase
     if (fixedDataset) setDataset(fixedDataset);
   }, [fixedDataset]);
 
-  useEffect(() => setQuery(initialQuery), [initialQuery]);
+  useEffect(() => setFilters((current) => ({ ...current, search: initialQuery })), [initialQuery]);
 
   useEffect(() => {
     const controller = new AbortController();
@@ -585,19 +595,57 @@ export function PublicCatalogExplorer({ onNavigate, compact = false, fixedDatase
   }, [dataset]);
 
   const filtered = useMemo(() => {
-    const normalized = query.trim().toLowerCase();
-    if (!normalized) return records;
-    return records.filter((record) => JSON.stringify(record).toLowerCase().includes(normalized));
-  }, [query, records]);
+    const normalized = filters.search.trim().toLowerCase();
+    const selected = records.filter((record) => {
+      if (normalized && !JSON.stringify(record).toLowerCase().includes(normalized)) return false;
+      if (filters.owner && String(record.owner || record.organization || "") !== filters.owner) return false;
+      if (filters.ecosystem && String(record.ecosystem || "") !== filters.ecosystem) return false;
+      if (filters.publication && String(record.publication_status || record.package_kind || "") !== filters.publication) return false;
+      if (filters.resourceType && String(record.resource_type || "") !== filters.resourceType) return false;
+      return true;
+    });
+    return [...selected].sort((left, right) => {
+      if (filters.sort === "activity") return Number(valueRecord(right.metrics).stars || right.release_count || 0) - Number(valueRecord(left.metrics).stars || left.release_count || 0);
+      if (filters.sort === "recent") return String(right.observed_at || right.published_at || "").localeCompare(String(left.observed_at || left.published_at || ""));
+      return recordTitle(left).localeCompare(recordTitle(right));
+    });
+  }, [filters, records]);
+  const filterOptions = useMemo(() => ({
+    owners: [...new Set(records.map((record) => String(record.owner || record.organization || "")).filter(Boolean))].sort(),
+    ecosystems: [...new Set(records.map((record) => String(record.ecosystem || "")).filter(Boolean))].sort(),
+    publications: [...new Set(records.map((record) => String(record.publication_status || record.package_kind || "")).filter(Boolean))].sort(),
+    resourceTypes: [...new Set(records.map((record) => String(record.resource_type || "")).filter(Boolean))].sort(),
+  }), [records]);
+  const summaryFacts = useMemo<MetricItem[]>(() => {
+    if (dataset === "repositories") return [
+      { label: "Repositories", value: records.length, icon: Code2 },
+      { label: "Stars observed", value: records.reduce((total, record) => total + Number(valueRecord(record.metrics).stars || 0), 0), icon: metricIcons.stars },
+      { label: "SSOT governed", value: records.filter((record) => Boolean(valueRecord(record.ssot_governance).governed)).length, icon: ShieldCheck },
+      { label: "Contained packages", value: records.reduce((total, record) => total + valueRecords(record.packages).length, 0), icon: Package },
+    ];
+    if (dataset === "packages") return [
+      { label: "Packages", value: records.length, icon: Package },
+      { label: "Published", value: records.filter((record) => Boolean(record.published) || record.publication_status === "published").length, icon: BadgeCheck },
+      { label: "Release records", value: records.reduce((total, record) => total + Number(record.release_count || 0), 0), icon: metricIcons.releases },
+      { label: "Ecosystems", value: filterOptions.ecosystems.length, icon: Boxes },
+    ];
+    if (dataset === "resources") return [
+      { label: "Typed resources", value: records.length, icon: Braces },
+      { label: "Resource types", value: filterOptions.resourceTypes.length, icon: FileCode2 },
+      { label: "Source-linked", value: records.filter((record) => Boolean(record.url || record.source_url)).length, icon: ExternalLink },
+      { label: "Repository-owned", value: records.filter((record) => Boolean(record.repository || record.repository_id)).length, icon: GitBranch },
+    ];
+    return [{ label: "Technology tags", value: records.length, icon: ServerCog }, { label: "Repository references", value: records.reduce((total, record) => total + Number(record.repository_count || 0), 0), icon: Code2 }];
+  }, [dataset, filterOptions, records]);
   const pages = Math.max(1, Math.ceil(filtered.length / pageSize));
   const visible = filtered.slice((page - 1) * pageSize, page * pageSize);
 
   return (
-    <section className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-14 space-y-8">
+    <section className="catalog-explorer max-w-[var(--content-max)] mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-6">
       {!compact && (
         <div className="space-y-5">
           <button onClick={() => onNavigate("/catalog")} className="text-xs font-mono text-accent hover:underline inline-flex items-center gap-1 cursor-pointer"><ArrowLeft className="w-3.5 h-3.5" /> Catalog overview</button>
-          <CollectionHeader eyebrow={`${labels[dataset]} collection`} title={labels[dataset]} description={datasetDetails[dataset].description} observedAt={formatDate(catalogSummary.generated_at)} exportHref={`/catalog/site/${dataset}.json`} facts={[{ label: labels[dataset], value: Number(catalogDatasetManifest.counts[dataset] || 0), icon: datasetDetails[dataset].Icon }]} />
+          <CollectionHeader eyebrow={`${labels[dataset]} collection`} title={labels[dataset]} description={datasetDetails[dataset].description} observedAt={formatDate(catalogSummary.generated_at)} exportHref={`/catalog/site/${dataset}.json`} facts={summaryFacts} />
         </div>
       )}
       {!fixedDataset && <div className="flex flex-wrap gap-2" aria-label="Catalog datasets" role="tablist">
@@ -608,14 +656,7 @@ export function PublicCatalogExplorer({ onNavigate, compact = false, fixedDatase
           </button>
         ))}
       </div>}
-      <div className="flex flex-col gap-3 rounded-[var(--radius-md)] border border-[var(--color-border-soft)] bg-[var(--color-surface)] p-3 sm:flex-row sm:items-center sm:justify-between">
-        <label className="relative block w-full max-w-2xl">
-          <span className="sr-only">Search {labels[dataset]}</span>
-          <Search className="w-4 h-4 text-ink-muted absolute left-3 top-3.5" aria-hidden="true" />
-          <input value={query} onChange={(event) => { setQuery(event.target.value); setPage(1); }} placeholder={`Search ${labels[dataset].toLowerCase()}...`} className="min-h-11 w-full rounded-[var(--radius-sm)] border border-[var(--color-border-muted)] bg-[var(--color-surface-raised)] pl-10 pr-4 text-sm text-ink focus:outline-none focus:border-accent" />
-        </label>
-        <span className="inline-flex items-center gap-1.5 whitespace-nowrap text-[10px] font-mono uppercase tracking-wide text-ink-muted"><Filter className="h-3.5 w-3.5 text-accent" aria-hidden="true" />{filtered.length.toLocaleString()} matching</span>
-      </div>
+      <ExplorerFilterToolbar filters={filters} onChange={(next) => { setFilters(next); setPage(1); }} owners={dataset === "repositories" ? filterOptions.owners : []} ecosystems={dataset === "packages" ? filterOptions.ecosystems : []} publications={dataset === "packages" ? filterOptions.publications : []} resourceTypes={dataset === "resources" ? filterOptions.resourceTypes : []} sortOptions={[{ label: "Name (A–Z)", value: "name" }, { label: "Most activity", value: "activity" }, { label: "Recently observed", value: "recent" }]} total={filtered.length} />
       {state === "loading" && <div className="p-10 text-center text-sm text-ink-muted" role="status">Loading {labels[dataset].toLowerCase()}…</div>}
       {state === "error" && <div className="p-6 border border-red-500/20 bg-red-500/5 text-sm text-red-700 rounded-[var(--radius-sm)]" role="alert">The generated dataset could not be loaded. The normalized JSON remains available from the download links below.</div>}
       {state === "ready" && (
