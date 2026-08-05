@@ -263,6 +263,18 @@ class RepositoryContributor(RestTable):
     )
 
 
+class RepositoryLanguage(RestTable):
+    __tablename__ = "repository_languages"
+    __allow_unmapped__ = True
+    id = Column(String(300), primary_key=True)
+    repository_id = Column(String(240), ForeignKey("repositories.id"), nullable=False, index=True)
+    language = Column(String(120), nullable=False, index=True)
+    bytes = Column(Integer, nullable=False, default=0)
+    percentage = Column(Numeric(8, 4), nullable=False, default=0)
+    observed_at = Column(DateTime, nullable=False, index=True)
+    __table_args__ = (UniqueConstraint("repository_id", "language", name="uq_repository_language"),)
+
+
 class Package(RestTable):
     __tablename__ = "packages"
     __allow_unmapped__ = True
@@ -309,6 +321,15 @@ class PackageRepository(RestTable):
     )
 
 
+class PackageTaxonomy(RestTable):
+    __tablename__ = "package_taxonomies"
+    __allow_unmapped__ = True
+    id = Column(String(300), primary_key=True)
+    package_id = Column(String(260), ForeignKey("packages.id"), nullable=False, index=True)
+    taxonomy_id = Column(String(200), ForeignKey("taxonomies.id"), nullable=False, index=True)
+    __table_args__ = (UniqueConstraint("package_id", "taxonomy_id", name="uq_package_taxonomy"),)
+
+
 class Release(RestOlapTable):
     __tablename__ = "releases"
     __allow_unmapped__ = True
@@ -339,6 +360,40 @@ class Resource(RestTable):
     summary = Column(Text, nullable=True)
     source_url = Column(String(2048), nullable=True)
     observed_at = Column(DateTime, nullable=True)
+
+
+class ResourceType(RestTable):
+    __tablename__ = "resource_types"
+    __allow_unmapped__ = True
+    id = Column(String(60), primary_key=True)
+    label = Column(String(160), nullable=False)
+    category = Column(String(80), nullable=False)
+    description = Column(Text, nullable=True)
+    icon_key = Column(String(80), nullable=True)
+    detail_schema_key = Column(String(120), nullable=True)
+
+
+class ResourceRepository(RestTable):
+    __tablename__ = "resource_repositories"
+    __allow_unmapped__ = True
+    id = Column(String(340), primary_key=True)
+    resource_id = Column(String(280), ForeignKey("resources.id"), nullable=False, index=True)
+    repository_id = Column(String(240), ForeignKey("repositories.id"), nullable=False, index=True)
+    role = Column(String(60), nullable=False, default="owner")
+    path = Column(String(1000), nullable=True)
+    observed_at = Column(DateTime, nullable=True)
+    __table_args__ = (
+        UniqueConstraint("resource_id", "repository_id", "role", name="uq_resource_repository"),
+    )
+
+
+class ResourceTaxonomy(RestTable):
+    __tablename__ = "resource_taxonomies"
+    __allow_unmapped__ = True
+    id = Column(String(320), primary_key=True)
+    resource_id = Column(String(280), ForeignKey("resources.id"), nullable=False, index=True)
+    taxonomy_id = Column(String(200), ForeignKey("taxonomies.id"), nullable=False, index=True)
+    __table_args__ = (UniqueConstraint("resource_id", "taxonomy_id", name="uq_resource_taxonomy"),)
 
 
 class LegalEvidence(RestTable):
@@ -448,6 +503,48 @@ class ClaimEvidence(RestTable):
     __table_args__ = (UniqueConstraint("claim_id", "evidence_id", name="uq_claim_evidence"),)
 
 
+class ResourceEvidence(RestTable):
+    __tablename__ = "resource_evidence"
+    __allow_unmapped__ = True
+    id = Column(String(340), primary_key=True)
+    resource_id = Column(String(280), ForeignKey("resources.id"), nullable=False, index=True)
+    evidence_id = Column(String(280), ForeignKey("evidence.id"), nullable=False, index=True)
+    role = Column(String(60), nullable=False, default="supports")
+    __table_args__ = (
+        UniqueConstraint("resource_id", "evidence_id", "role", name="uq_resource_evidence"),
+    )
+
+
+class RepositorySsotRegistry(RestTable):
+    __tablename__ = "repository_ssot_registries"
+    __allow_unmapped__ = True
+    id = Column(String(300), primary_key=True)
+    repository_id = Column(String(240), ForeignKey("repositories.id"), nullable=False, index=True)
+    registry_url = Column(String(2048), nullable=False)
+    schema_version = Column(String(60), nullable=True)
+    source_sha256 = Column(String(64), nullable=True)
+    valid = Column(Boolean, nullable=False, default=False)
+    observed_at = Column(DateTime, nullable=False, index=True)
+
+
+class RepositorySsotInventory(RestTable):
+    __tablename__ = "repository_ssot_inventory"
+    __allow_unmapped__ = True
+    id = Column(String(360), primary_key=True)
+    registry_id = Column(
+        String(300), ForeignKey("repository_ssot_registries.id"), nullable=False, index=True
+    )
+    entity_kind = Column(String(60), nullable=False, index=True)
+    entity_id = Column(String(260), nullable=False)
+    title = Column(Text, nullable=True)
+    status = Column(String(60), nullable=True)
+    implementation_status = Column(String(60), nullable=True)
+    payload = Column(JSON, nullable=True)
+    __table_args__ = (
+        UniqueConstraint("registry_id", "entity_kind", "entity_id", name="uq_ssot_inventory"),
+    )
+
+
 class RecordFeature(RestTable):
     __tablename__ = "record_features"
     __allow_unmapped__ = True
@@ -533,11 +630,16 @@ ALL_TABLES = (
     Repository,
     RecordRepository,
     RepositoryContributor,
+    RepositoryLanguage,
     Package,
     RecordPackage,
     PackageRepository,
+    PackageTaxonomy,
     Release,
     Resource,
+    ResourceType,
+    ResourceRepository,
+    ResourceTaxonomy,
     LegalEvidence,
     RecordResource,
     Deployment,
@@ -546,6 +648,9 @@ ALL_TABLES = (
     Claim,
     Evidence,
     ClaimEvidence,
+    ResourceEvidence,
+    RepositorySsotRegistry,
+    RepositorySsotInventory,
     RecordFeature,
     Limitation,
     CollectionRun,

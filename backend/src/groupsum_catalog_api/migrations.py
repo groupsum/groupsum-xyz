@@ -90,12 +90,43 @@ def _add_package_ownership_fields(connection: Connection) -> None:
             connection.execute(f"ALTER TABLE packages ADD COLUMN {name} {definition}")
 
 
+def _backfill_normalized_resource_ownership(connection: Connection) -> None:
+    resource_types = {
+        "website": ("Website", "experience"),
+        "documentation": ("Documentation", "content"),
+        "api_definition": ("API definition", "contract"),
+        "api_source": ("API source", "source"),
+        "api": ("Live API", "experience"),
+        "demo": ("Demo", "experience"),
+        "example": ("Example", "content"),
+        "showcase": ("Showcase", "experience"),
+        "ui": ("User interface", "experience"),
+    }
+    for type_id, (label, category) in resource_types.items():
+        connection.execute(
+            "INSERT INTO resource_types(id, label, category) VALUES (?, ?, ?) "
+            "ON CONFLICT(id) DO UPDATE SET label=excluded.label, category=excluded.category",
+            (type_id, label, category),
+        )
+    for row in connection.execute(
+        "SELECT id, repository_id, path, observed_at FROM resources "
+        "WHERE repository_id IS NOT NULL"
+    ).fetchall():
+        connection.execute(
+            "INSERT INTO resource_repositories"
+            "(id, resource_id, repository_id, role, path, observed_at) VALUES (?, ?, ?, ?, ?, ?) "
+            "ON CONFLICT(id) DO UPDATE SET path=excluded.path, observed_at=excluded.observed_at",
+            (f"resource-repository:{row[0]}", row[0], row[1], "owner", row[2], row[3]),
+        )
+
+
 MIGRATIONS = (
     Migration(1, "tigrbl_normalized_catalog_baseline", _baseline),
     Migration(2, "add_structured_record_content", _add_record_content),
     Migration(3, "add_registry_release_and_dependency_evidence", _add_registry_evidence_fields),
     Migration(4, "add_catalog_routes_and_legal_evidence", _add_routes_and_legal_fields),
     Migration(5, "add_package_ownership_fields", _add_package_ownership_fields),
+    Migration(6, "normalize_resource_ownership", _backfill_normalized_resource_ownership),
 )
 
 
