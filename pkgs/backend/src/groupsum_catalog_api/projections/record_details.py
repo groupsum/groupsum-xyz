@@ -7,6 +7,7 @@ from pathlib import Path
 
 from tigrbl import JSONResponse, Request, Response
 
+from ..dependency_requirements import present_requirements
 from ..importer import connect
 
 CACHE_CONTROL = "public, max-age=60, s-maxage=300, stale-while-revalidate=86400"
@@ -150,21 +151,24 @@ def record_detail(
                 """,
                 (package["id"],),
             )
-            package_dependencies = rows(
-                connection,
-                """
+            package_dependencies = present_requirements(
+                rows(
+                    connection,
+                    """
                 SELECT id, source_id, target_kind, target_id, requirement, scope,
                        origin_kind, source_url, completeness, observed_at
                   FROM dependencies
                  WHERE source_kind = 'package' AND source_id = ?
               ORDER BY scope, target_id
                 """,
-                (package["id"],),
+                    (package["id"],),
+                )
             )
             natural_key = f"{package['ecosystem']}:{package['name'].lower().replace('_', '-')}"
-            package_dependents = rows(
-                connection,
-                """
+            package_dependents = present_requirements(
+                rows(
+                    connection,
+                    """
                 SELECT dep.id, dep.source_kind, dep.source_id,
                        source.ecosystem AS source_ecosystem,
                        source.name AS source_name, dep.target_id,
@@ -176,7 +180,8 @@ def record_detail(
               ORDER BY COALESCE(source.ecosystem, dep.source_kind),
                        COALESCE(source.name, dep.source_id) COLLATE NOCASE
                 """,
-                (natural_key,),
+                    (natural_key,),
+                )
             )
             scope_counts: dict[str, int] = defaultdict(int)
             for dependency in package_dependencies:

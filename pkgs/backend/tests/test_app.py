@@ -143,6 +143,19 @@ async def test_peagen_page_model_has_explicit_attachments(tmp_path: Path) -> Non
         dependency_count = connection.execute("SELECT COUNT(*) FROM dependencies").fetchone()[0]
         assert release_count == counts["releases"]
         assert dependency_count == counts["dependencies"]
+        stored_pyo3_requirement = connection.execute(
+            """
+            SELECT dependency.requirement
+              FROM dependencies dependency
+              JOIN packages package ON package.id = dependency.source_id
+             WHERE package.route_key = ? AND dependency.target_id = ?
+            """,
+            ("fasttokenizer-3b1c6d25", "crates:pyo3"),
+        ).fetchone()[0]
+        assert json.loads(stored_pyo3_requirement) == {
+            "version": "0.29.0",
+            "features": ["extension-module"],
+        }
         assert (
             connection.execute("SELECT COUNT(*) FROM repository_contributors").fetchone()[0] >= 40
         )
@@ -369,6 +382,18 @@ async def test_peagen_page_model_has_explicit_attachments(tmp_path: Path) -> Non
         assert "dependencies" in package_detail.json()["implementation"]
         assert package_detail.json()["implementation"]["repositories"]
         assert package_detail.json()["graph"]["entity"]["entity_type_id"] == "distribution.package"
+
+        fasttokenizer = await client.get("/api/v1/catalog/packages/fasttokenizer-3b1c6d25")
+        assert fasttokenizer.status_code == 200
+        pyo3 = next(
+            dependency
+            for dependency in fasttokenizer.json()["implementation"]["dependencies"]
+            if dependency["target_id"] == "crates:pyo3"
+        )
+        assert pyo3["requirement"] == {
+            "version": "0.29.0",
+            "features": ["extension-module"],
+        }
 
         entities = await client.get("/api/v1/entities?entity_type=interface.website&page_size=5")
         assert entities.status_code == 200

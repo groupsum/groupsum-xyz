@@ -4,6 +4,7 @@ from typing import Any
 
 from ..analytics import upsert_metric
 from ..database import Connection
+from ..dependency_requirements import stored_requirement
 from .common import *  # noqa: F403
 
 
@@ -129,7 +130,7 @@ def import_packages(
                         "package" if dependency.get("internal") else "external-package"
                     ),
                     "target_id": target_key,
-                    "requirement": dependency.get("requirement"),
+                    "requirement": stored_requirement(dependency.get("requirement")),
                     "scope": dependency.get("scope"),
                     "evidence_type": dependency.get("evidence") or "repository.manifest",
                     "origin_kind": dependency.get("evidence") or "repository.manifest",
@@ -155,7 +156,7 @@ def import_packages(
                     "source_id": dependent["package_key"],
                     "target_kind": "package",
                     "target_id": natural_key,
-                    "requirement": dependent.get("requirement"),
+                    "requirement": stored_requirement(dependent.get("requirement")),
                     "scope": dependent.get("scope") or "registry-dependent",
                     "evidence_type": (dependent.get("evidence") or "registry.reverse_dependencies"),
                     "origin_kind": (dependent.get("evidence") or "registry.reverse_dependencies"),

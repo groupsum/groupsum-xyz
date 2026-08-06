@@ -6,6 +6,7 @@ from typing import Any
 
 from tigrbl import JSONResponse, Request, Response
 
+from ..dependency_requirements import present_requirements
 from ..importer import connect
 
 CACHE_CONTROL = "public, max-age=60, s-maxage=300, stale-while-revalidate=86400"
@@ -139,26 +140,30 @@ def catalog_resource_detail(
                 """,
                 (item["id"],),
             )
-            dependencies = rows(
-                connection,
-                """
+            dependencies = present_requirements(
+                rows(
+                    connection,
+                    """
                 SELECT target_kind, target_id, requirement, scope, origin_kind,
                        source_url, completeness, observed_at
                   FROM dependencies WHERE source_kind = 'package' AND source_id = ?
               ORDER BY scope, target_id LIMIT 300
                 """,
-                (item["id"],),
+                    (item["id"],),
+                )
             )
             natural_key = f"{item['ecosystem']}:{item['name'].lower().replace('_', '-')}"
-            dependents = rows(
-                connection,
-                """
+            dependents = present_requirements(
+                rows(
+                    connection,
+                    """
                 SELECT source_kind, source_id, requirement, scope, origin_kind,
                        source_url, completeness, observed_at
                   FROM dependencies WHERE target_id = ?
               ORDER BY source_kind, source_id LIMIT 300
                 """,
-                (natural_key,),
+                    (natural_key,),
+                )
             )
             downloads = analytics_rows(
                 connection,
