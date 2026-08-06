@@ -60,12 +60,12 @@ export type MetricItem = { label: string; value: number | string; icon?: Catalog
 
 export function MetricBand({ items, label = "Record summary" }: { items: MetricItem[]; label?: string }) {
   if (!items.length) return null;
-  return <dl aria-label={label} className="grid grid-cols-2 gap-x-5 gap-y-3 rounded-[var(--radius-md)] border border-[var(--color-border-soft)] bg-[var(--color-surface-raised)] p-3 sm:grid-cols-3 lg:grid-cols-4">
+  return <dl aria-label={label} className="grid grid-cols-2 gap-3 pt-2 sm:grid-cols-3 lg:grid-cols-5">
     {items.map((item) => {
       const Icon = item.icon || metricIcons[item.label.toLowerCase().replace(/\s+/g, "_")] || Activity;
-      return <div key={item.label} className="min-w-0">
-        <dt className="flex items-center gap-1.5 text-[10px] font-mono uppercase tracking-wide text-ink-muted"><Icon className={`h-3.5 w-3.5 ${item.color || (item.tone === "signal" ? "text-signal" : "text-accent")}`} aria-hidden="true" />{item.label}</dt>
-        <dd className="mt-1 font-serif text-xl font-bold tabular-nums text-ink">{typeof item.value === "number" ? compactNumber(item.value) : item.value}</dd>
+      return <div key={item.label} className="flex min-w-0 flex-col justify-between space-y-1 rounded-xl border border-[var(--color-border-soft)] bg-white p-3 shadow-sm transition-colors hover:border-[#B5B0A6]">
+        <dt className="flex items-center justify-between gap-1.5 font-mono text-xs text-ink-muted"><span className="truncate">{item.label}</span><Icon className={`h-4 w-4 shrink-0 ${item.color || (item.tone === "signal" ? "text-signal" : "text-accent")}`} aria-hidden="true" /></dt>
+        <dd className="font-mono text-xl font-bold tabular-nums tracking-tight text-ink">{typeof item.value === "number" ? compactNumber(item.value) : item.value}</dd>
         {item.note && <dd className="mt-1 text-[10px] leading-snug text-ink-muted">{item.note}</dd>}
       </div>;
     })}
@@ -117,16 +117,16 @@ export function CollectionHeader({
     const date = new Date(observedAt);
     return Number.isNaN(date.valueOf()) ? observedAt : new Intl.DateTimeFormat("en-US", { month: "short", day: "numeric", year: "numeric", timeZone: "UTC" }).format(date);
   })() : null;
-  return <header className="space-y-4 border-b border-[var(--color-border-soft)] pb-5">
-    <div className="flex flex-wrap items-end justify-between gap-5">
+  return <header className="space-y-6 border-b border-[var(--color-border-soft)] pb-6">
+    <div className="flex flex-col justify-between gap-4 md:flex-row md:items-end">
       <div className="max-w-3xl space-y-2">
-        <span className="inline-flex items-center gap-2 text-[10px] font-mono font-bold uppercase tracking-[0.18em] text-accent"><span className="h-2 w-2 rounded-full bg-accent" aria-hidden="true" />{eyebrow}</span>
+        <span className="inline-flex items-center gap-2 font-mono text-xs font-semibold uppercase tracking-wider text-accent"><span className="h-2 w-2 rounded-full bg-accent" aria-hidden="true" />{eyebrow}</span>
         <h1 className="font-serif text-3xl font-bold tracking-tight text-ink sm:text-4xl">{title}</h1>
-        <p className="max-w-3xl text-xs leading-relaxed text-ink-muted sm:text-sm">{description}</p>
+        <p className="max-w-3xl text-sm leading-relaxed text-ink-muted sm:text-base">{description}</p>
       </div>
-      <div className="flex flex-wrap items-center gap-2 text-[10px] font-mono">
-        {observedLabel && <span className="inline-flex min-h-9 items-center gap-1.5 rounded-[var(--radius-sm)] border border-[var(--color-border-soft)] bg-[var(--color-surface)] px-3 text-ink-muted"><CalendarDays className="h-3.5 w-3.5 text-accent" aria-hidden="true" />Observed {observedLabel}</span>}
-        {exportHref && <a href={exportHref} className="inline-flex min-h-9 items-center gap-1.5 rounded-[var(--radius-sm)] border border-[var(--color-border-muted)] bg-[var(--color-surface-raised)] px-3 font-semibold text-ink hover:border-accent hover:text-accent"><Download className="h-3.5 w-3.5" aria-hidden="true" />Export dataset</a>}
+      <div className="flex flex-col items-start space-y-2 font-mono text-xs md:items-end">
+        {observedLabel && <span className="inline-flex items-center gap-1.5 rounded-md border border-[var(--color-border-soft)] bg-surface px-2.5 py-1 text-[#7A827C]"><CalendarDays className="h-3.5 w-3.5 text-accent" aria-hidden="true" />Observed: {observedLabel}</span>}
+        {exportHref && <a href={exportHref} className="inline-flex min-h-9 items-center gap-1.5 rounded-lg border border-[var(--color-border-soft)] bg-white px-3 py-1.5 font-medium text-ink shadow-sm transition-all hover:bg-surface focus:outline-none focus:ring-2 focus:ring-accent"><Download className="h-3.5 w-3.5 text-accent" aria-hidden="true" />Export JSON Dataset</a>}
       </div>
     </div>
     <MetricBand label={`${title} collection summary`} items={facts} />
@@ -156,18 +156,18 @@ export function MemberRowCard({
   badge?: React.ReactNode;
   facts?: Array<{ label: string; value: number }>;
 }) {
-  return <article className="group relative flex cursor-pointer flex-wrap items-center gap-x-4 gap-y-2.5 rounded-[var(--radius-md)] border border-[var(--color-border-soft)] bg-[var(--color-surface)] p-3 transition-colors hover:border-accent hover:bg-[color-mix(in_srgb,var(--color-accent)_3%,var(--color-surface))]">
+  return <article className="catalog-density-card group relative flex cursor-pointer flex-wrap items-center gap-x-4 gap-y-4 rounded-xl border border-[var(--color-border-soft)] bg-white p-5 shadow-sm transition-all duration-200 hover:border-accent hover:bg-canvas">
     <div className="flex min-w-0 flex-[3_1_28rem] items-start gap-3.5">
-      <div className="grid h-10 w-10 shrink-0 place-items-center rounded-[3px] border border-[var(--color-border-soft)] bg-canvas text-accent"><Icon className="h-4.5 w-4.5" aria-hidden="true" /></div>
+      <div className="grid h-11 w-11 shrink-0 place-items-center rounded-lg border border-[var(--color-border-soft)] bg-surface text-accent transition-colors group-hover:bg-white"><Icon className="h-5 w-5" aria-hidden="true" /></div>
       <div className="min-w-0">
         <div className="flex flex-wrap items-center gap-2">{badge || <span className="text-[10px] font-mono font-bold uppercase tracking-wide text-accent">{eyebrow}</span>}{pills.map((pill) => <CatalogPill key={pill}>{pill}</CatalogPill>)}</div>
-        <h2 className="mt-0.5 font-serif text-[17px] font-bold leading-tight text-ink"><a href={route} onClick={(event) => { event.preventDefault(); onNavigate(route); }} className="break-words hover:text-accent before:absolute before:inset-0 before:content-['']">{title}</a></h2>
-        <p className="mt-0.5 line-clamp-2 text-[11px] leading-relaxed text-ink-muted">{summary}</p>
-        <span className="mt-2 inline-flex items-center gap-1 text-[10px] font-mono text-ink-muted"><Users className="h-3 w-3" aria-hidden="true" />{owner}</span>
+        <h2 className="mt-0.5 font-serif text-lg font-bold leading-tight text-ink"><a href={route} onClick={(event) => { event.preventDefault(); onNavigate(route); }} className="break-words hover:text-accent before:absolute before:inset-0 before:content-['']">{title}</a></h2>
+        <p className="mt-1 line-clamp-2 text-xs leading-relaxed text-ink-muted">{summary}</p>
+        <span className="mt-2 inline-flex items-center gap-1 font-mono text-xs text-[#7A827C]"><Users className="h-3 w-3" aria-hidden="true" />{owner}</span>
       </div>
     </div>
     {facts.length > 0 && <dl className="flex min-w-0 flex-[1_1_16rem] flex-wrap gap-x-6 gap-y-3">{facts.map((fact) => <div key={fact.label} className="min-w-[5rem]"><dt className="text-[9px] font-mono uppercase tracking-wide text-ink-muted">{fact.label}</dt><dd className="mt-1 font-serif text-lg font-bold tabular-nums text-ink">{compactNumber(fact.value)}</dd></div>)}</dl>}
-    <span className="relative z-[1] inline-flex min-h-9 shrink-0 items-center gap-1 text-[10px] font-mono font-semibold text-accent">Inspect member record<ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-1" aria-hidden="true" /></span>
+    <span className="relative z-[1] inline-flex min-h-9 shrink-0 items-center gap-1 font-mono text-xs font-semibold text-accent group-hover:underline">Inspect Member Record<ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" aria-hidden="true" /></span>
   </article>;
 }
 

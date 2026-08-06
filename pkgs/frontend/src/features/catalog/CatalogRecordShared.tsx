@@ -6,7 +6,7 @@ import {
 } from "../../data/catalog.generated";
 import { EntityGraph, getCatalogOverview, getRepositoryMetricSnapshot, RepositoryMetricRecord, type RepositorySignals } from "../../api/catalog.generated";
 import { getCatalogPackageMember, getCatalogReleaseMember, getCatalogRepositoryMember, getCatalogResourceMember, getCatalogTechnologyMember } from "../../api/catalog";
-import { Activity, ArrowLeft, ArrowRight, BadgeCheck, BookOpen, Boxes, Braces, CalendarDays, Code2, ExternalLink, FileCode2, GitBranch, Globe2, Package, Scale, ServerCog, ShieldCheck } from "lucide-react";
+import { Activity, ArrowLeft, ArrowRight, BadgeCheck, BookOpen, Boxes, Braces, CalendarDays, Code2, ExternalLink, FileCode2, GitBranch, Globe2, Package, Scale, ServerCog, ShieldCheck, Sparkles } from "lucide-react";
 import { RepositorySignalStrip } from "./RepositorySignals";
 import { EntityOwnership } from "./EntityIdentity";
 import { CatalogPill, CollectionHeader, ContextRailCard, FactPanel, MemberRowCard, RecordIdentityCard, SurfaceCard, factIcons, MetricBand, metricIcons, type MetricItem } from "./CatalogVisuals";
@@ -23,15 +23,15 @@ export type DetailDatasetName = DatasetName | "releases";
 export const labels: Record<DatasetName, string> = {
   repositories: "Repositories",
   packages: "Packages",
-  resources: "Typed resources",
-  technologies: "Technologies",
+  resources: "Typed Resources",
+  technologies: "Categorical Technologies",
 };
 
 export const datasetDetails: Record<DatasetName, { description: string; Icon: typeof Code2 }> = {
   repositories: { description: "Source repositories with repository-owned activity, packages, governance, and typed resources.", Icon: Code2 },
   packages: { description: "Manifest and registry-backed packages grouped independently from their containing repositories.", Icon: Package },
   resources: { description: "Public resources classified by one canonical type and connected through observed relationships.", Icon: Braces },
-  technologies: { description: "Categorical stack evidence observed from public source and package metadata.", Icon: ServerCog },
+  technologies: { description: "Categorical stack evidence observed from public source and package metadata.", Icon: Sparkles },
 };
 
 export function recordTitle(record: CatalogRecord): string {

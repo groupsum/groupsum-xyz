@@ -134,7 +134,12 @@ def catalog_collection(
                        repo.license_expression, repo.ssot_governed, repo.observed_at,
                        COALESCE(pc.count, 0) AS package_count,
                        COALESCE(rc.count, 0) AS resource_count,
-                       COALESCE(rlc.count, 0) AS release_count
+                       COALESCE(rlc.count, 0) AS release_count,
+                       (SELECT rel.version
+                          FROM releases rel
+                         WHERE rel.repository_id = repo.id
+                      ORDER BY COALESCE(rel.published_at, rel.observed_at) DESC
+                         LIMIT 1) AS latest_release
                   FROM repositories repo
              LEFT JOIN package_counts pc ON pc.repository_id = repo.id
              LEFT JOIN resource_counts rc ON rc.repository_id = repo.id

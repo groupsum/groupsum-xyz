@@ -17,7 +17,7 @@ function SelectFilter({ label, value, options, onChange }: { label: string; valu
   if (!options.length) return null;
   return <label className="min-w-[9.5rem] flex-1 sm:flex-none">
     <span className="sr-only">{label}</span>
-    <select value={value} onChange={(event) => onChange(event.target.value)} className="min-h-9 w-full rounded-[var(--radius-sm)] border border-[var(--color-border-soft)] bg-white px-2.5 text-[10px] font-mono text-ink focus:border-accent focus:outline-none">
+    <select value={value} onChange={(event) => onChange(event.target.value)} className="min-h-9 w-full rounded-lg border border-[var(--color-border-soft)] bg-white px-3 py-2 font-mono text-xs text-ink focus:border-accent focus:outline-none focus:ring-2 focus:ring-accent">
       <option value="">{label}</option>
       {options.map((option) => <option key={option} value={option}>{option}</option>)}
     </select>
@@ -27,12 +27,12 @@ function SelectFilter({ label, value, options, onChange }: { label: string; valu
 export function ExplorerFilterToolbar({ filters, onChange, owners = [], ecosystems = [], publications = [], resourceTypes = [], sortOptions, total }: { filters: ExplorerFilters; onChange: (next: ExplorerFilters) => void; owners?: string[]; ecosystems?: string[]; publications?: string[]; resourceTypes?: string[]; sortOptions: Option[]; total: number }) {
   const update = (patch: Partial<ExplorerFilters>) => onChange({ ...filters, ...patch });
   const active = [filters.owner, filters.ecosystem, filters.publication, filters.resourceType].filter(Boolean);
-  return <div className="space-y-2.5">
-    <div className="flex flex-wrap items-center gap-2 rounded-[var(--radius-md)] border border-[var(--color-border-soft)] bg-[var(--color-surface)] p-2.5">
+  return <div className="space-y-3 py-4">
+    <div className="flex flex-wrap items-center gap-3 rounded-xl border border-[var(--color-border-soft)] bg-canvas p-3">
       <label className="relative min-w-[15rem] flex-[2_1_22rem]">
         <span className="sr-only">Search catalog records</span>
-        <Search className="absolute left-2.5 top-2.5 h-3.5 w-3.5 text-ink-muted" aria-hidden="true" />
-        <input value={filters.search} onChange={(event) => update({ search: event.target.value })} placeholder="Search name, summary, owner, or type" className="min-h-9 w-full rounded-[var(--radius-sm)] border border-[var(--color-border-soft)] bg-white pl-8 pr-8 text-[11px] font-mono text-ink placeholder:text-ink-muted focus:border-accent focus:outline-none" />
+        <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-ink-muted" aria-hidden="true" />
+        <input value={filters.search} onChange={(event) => update({ search: event.target.value })} placeholder="Search name, summary, owner, or type" className="min-h-9 w-full rounded-lg border border-[var(--color-border-soft)] bg-white py-2 pl-9 pr-8 font-mono text-xs text-ink placeholder:text-[#A3A8A2] focus:border-accent focus:outline-none focus:ring-2 focus:ring-accent" />
         {filters.search && <button type="button" onClick={() => update({ search: "" })} className="absolute right-2 top-2 grid h-5 w-5 cursor-pointer place-items-center text-ink-muted hover:text-ink" aria-label="Clear search"><X className="h-3 w-3" /></button>}
       </label>
       <SelectFilter label="All owners" value={filters.owner} options={owners} onChange={(value) => update({ owner: value })} />
@@ -42,12 +42,12 @@ export function ExplorerFilterToolbar({ filters, onChange, owners = [], ecosyste
       <label className="relative min-w-[10rem] flex-1 sm:flex-none">
         <ArrowUpDown className="pointer-events-none absolute left-2.5 top-2.5 h-3.5 w-3.5 text-ink-muted" aria-hidden="true" />
         <span className="sr-only">Sort records</span>
-        <select value={filters.sort} onChange={(event) => update({ sort: event.target.value })} className="min-h-9 w-full rounded-[var(--radius-sm)] border border-[var(--color-border-soft)] bg-white pl-8 pr-2 text-[10px] font-mono text-ink focus:border-accent focus:outline-none">
+        <select value={filters.sort} onChange={(event) => update({ sort: event.target.value })} className="min-h-9 w-full rounded-lg border border-[var(--color-border-soft)] bg-white py-2 pl-8 pr-3 font-mono text-xs text-ink focus:border-accent focus:outline-none focus:ring-2 focus:ring-accent">
           {sortOptions.map((option) => <option key={option.value} value={option.value}>Sort: {option.label}</option>)}
         </select>
       </label>
     </div>
-    <div className="flex flex-wrap items-center justify-between gap-2 border-b border-[var(--color-border-soft)] pb-2 text-[10px] font-mono text-ink-muted">
+    <div className="flex flex-wrap items-center justify-between gap-2 border-b border-[var(--color-border-soft)] pb-2 font-mono text-xs text-ink-muted">
       <span><strong className="text-ink">{total.toLocaleString()}</strong> matching records</span>
       {(filters.search || active.length > 0) && <div className="flex flex-wrap items-center gap-1.5">
         {filters.search && <CatalogPill>Query: {filters.search}</CatalogPill>}

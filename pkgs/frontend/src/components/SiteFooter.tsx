@@ -10,6 +10,9 @@ import { catalogSummary } from "../data/catalog.generated";
 interface SiteFooterProps { onNavigate: (path: string) => void; }
 
 const footerLinks = [
+  ["Solutions", "/solutions"],
+  ["Services", "/services"],
+  ["Insights", "/insights"],
   ["About", "/about"],
   ["Contact", "/contact"],
   ["Privacy", "/privacy-policy"],

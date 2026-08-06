@@ -283,6 +283,7 @@ async def test_peagen_page_model_has_explicit_attachments(tmp_path: Path) -> Non
         assert repositories.json()["count"] == counts["repositories"]
         assert repositories.json()["page_size"] == 5
         assert len(repositories.json()["records"]) == 5
+        assert all("latest_release" in item for item in repositories.json()["records"])
         assert all(
             item["route"].startswith("/catalog/repositories/")
             for item in repositories.json()["records"]

@@ -160,24 +160,26 @@ export function PublicCatalogOverview({ onNavigate }: { onNavigate: (path: strin
   }, []);
   const collections = [
     { key: "products", label: "Products", route: "/products", value: primaryCounts.products, description: "Reviewed public products with purpose, audience, maturity, and implementation evidence.", Icon: Boxes },
-    { key: "portfolio", label: "Portfolio", route: "/portfolio", value: primaryCounts.portfolio, description: "Strategic portfolio records grouping related products and implementation resources.", Icon: BadgeCheck },
+    { key: "portfolio", label: "Portfolios", route: "/portfolio", value: primaryCounts.portfolio, description: "Strategic portfolio records grouping related products and implementation resources.", Icon: BadgeCheck },
     ...datasetOrder.map((name) => ({ key: name, label: labels[name], route: `/catalog/${name}`, value: counts[name], description: datasetDetails[name].description, Icon: datasetDetails[name].Icon })),
   ];
-  return <section className="catalog-explorer mx-auto max-w-[var(--content-max)] space-y-6 px-4 py-8 sm:px-6 lg:px-8">
+  return <section className="catalog-explorer mx-auto max-w-7xl space-y-6 px-4 py-8 sm:px-6 lg:px-8">
+    <div className="catalog-overview-hero rounded-2xl border border-[var(--color-border-soft)] bg-white p-8 shadow-sm">
     <CollectionHeader
       eyebrow="Supporting evidence and public catalog explorer"
-      title="GroupSum ecosystem catalog"
+      title="GroupSum Ecosystem Catalog"
       description="Traverse reviewed products and portfolio records into repositories, contained packages, typed resources, and observed stack evidence without losing ownership context."
       observedAt={formatDate(catalogSummary.generated_at)}
       exportHref="/catalog/catalog.json"
-      facts={datasetOrder.map((name) => ({ label: labels[name], value: counts[name], icon: datasetDetails[name].Icon }))}
+      facts={[]}
     />
+    </div>
     <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
       {collections.map((collection) => {
         const Icon = collection.Icon;
-        return <article key={collection.key} className="group relative flex min-w-0 items-start gap-3 rounded-[var(--radius-md)] border border-[var(--color-border-soft)] bg-white p-4 transition-colors hover:border-accent hover:bg-[#FAF9F6]">
-          <div className="grid h-10 w-10 shrink-0 place-items-center rounded-[3px] border border-[var(--color-border-soft)] bg-surface text-accent"><Icon className="h-4.5 w-4.5" aria-hidden="true" /></div>
-          <div className="min-w-0 flex-1"><div className="flex flex-wrap items-center justify-between gap-2"><h2 className="font-serif text-lg font-bold text-ink"><a href={collection.route} onClick={(event) => { event.preventDefault(); onNavigate(collection.route); }} className="hover:text-accent before:absolute before:inset-0 before:content-['']">{collection.label}</a></h2><strong className="font-mono text-lg tabular-nums text-ink">{collection.value.toLocaleString()}</strong></div><p className="mt-1 text-[11px] leading-relaxed text-ink-muted">{collection.description}</p><span className="mt-3 inline-flex items-center gap-1 font-mono text-[10px] font-semibold text-accent">Browse collection <ArrowRight className="h-3.5 w-3.5" /></span></div>
+        return <article key={collection.key} className="group relative flex min-w-0 flex-col justify-between space-y-4 rounded-xl border border-[var(--color-border-soft)] bg-white p-6 shadow-sm transition-all duration-200 hover:border-accent hover:bg-canvas">
+          <div className="flex items-start justify-between gap-3"><div className="grid h-12 w-12 shrink-0 place-items-center rounded-lg bg-surface text-accent"><Icon className="h-6 w-6" aria-hidden="true" /></div><strong className="rounded-full border border-[var(--color-border-soft)] bg-surface px-3 py-1 font-mono text-xl font-bold tabular-nums text-ink">{collection.value.toLocaleString()}</strong></div>
+          <div className="min-w-0 flex-1"><h2 className="font-serif text-2xl font-bold text-ink"><a href={collection.route} onClick={(event) => { event.preventDefault(); onNavigate(collection.route); }} className="hover:text-accent before:absolute before:inset-0 before:content-['']">{collection.label}</a></h2><p className="mt-2 text-xs leading-relaxed text-ink-muted">{collection.description}</p></div><span className="border-t border-[var(--color-border-soft)] pt-3 font-mono text-xs font-semibold text-accent">Browse collection <ArrowRight className="inline h-3.5 w-3.5" /></span>
         </article>;
       })}
     </div>
@@ -226,32 +228,31 @@ export function PublicCatalogExplorer({ onNavigate, compact = false, fixedDatase
   const summaryFacts = useMemo<MetricItem[]>(() => {
     if (dataset === "repositories") return [
       { label: "Repositories", value: Number(collection.data?.count || 0), icon: Code2, color: "text-emerald-700" },
-      { label: "Stars on page", value: records.reduce((total, record) => total + Number(valueRecord(record.metrics).stars || 0), 0), icon: metricIcons.stars, color: "text-amber-600" },
-      { label: "SSOT governed on page", value: records.filter((record) => Boolean(record.ssot_governed)).length, icon: ShieldCheck, color: "text-indigo-600" },
-      { label: "Packages on page", value: records.reduce((total, record) => total + Number(record.package_count || 0), 0), icon: Package, color: "text-orange-600" },
+      { label: "Total Stars Observed", value: records.reduce((total, record) => total + Number(valueRecord(record.metrics).stars || 0), 0), icon: metricIcons.stars, color: "text-amber-600" },
+      { label: "SSOT Governed", value: records.filter((record) => Boolean(record.ssot_governed)).length, icon: ShieldCheck, color: "text-indigo-600" },
+      { label: "Contained Packages", value: records.reduce((total, record) => total + Number(record.package_count || 0), 0), icon: Package, color: "text-accent" },
     ];
     if (dataset === "packages") return [
       { label: "Packages", value: Number(collection.data?.count || 0), icon: Package, color: "text-orange-600" },
-      { label: "Published on page", value: records.filter((record) => Boolean(record.published) || record.publication_status === "published").length, icon: BadgeCheck, color: "text-sky-600" },
-      { label: "Releases on page", value: records.reduce((total, record) => total + Number(record.release_count || 0), 0), icon: metricIcons.releases, color: "text-violet-600" },
+      { label: "Published Registry", value: records.filter((record) => Boolean(record.published) || record.publication_status === "published").length, icon: BadgeCheck, color: "text-sky-600" },
+      { label: "Private / Candidates", value: records.filter((record) => !record.published && record.publication_status !== "published").length, icon: ShieldCheck, color: "text-amber-700" },
       { label: "Ecosystems", value: filterOptions.ecosystems.length, icon: Boxes, color: "text-emerald-700" },
     ];
     if (dataset === "resources") return [
-      { label: "Typed resources", value: records.length, icon: Braces },
-      { label: "Resource types", value: filterOptions.resourceTypes.length, icon: FileCode2 },
-      { label: "Source-linked", value: records.filter((record) => Boolean(record.url || record.source_url)).length, icon: ExternalLink },
-      { label: "Repository-owned", value: records.filter((record) => Boolean(record.repository || record.repository_id)).length, icon: GitBranch },
+      { label: "Typed Resources", value: records.length, icon: Braces },
+      { label: "Websites & Docs", value: records.filter((record) => ["website", "documentation"].includes(String(record.resource_type))).length, icon: Globe2 },
+      { label: "APIs & Endpoints", value: records.filter((record) => String(record.resource_type).includes("api")).length, icon: FileCode2 },
+      { label: "Demos & Showcases", value: records.filter((record) => ["demo", "example", "showcase"].includes(String(record.resource_type))).length, icon: BadgeCheck },
     ];
-    return [{ label: "Technology tags", value: records.length, icon: ServerCog }, { label: "Repository references", value: records.reduce((total, record) => total + Number(record.repository_count || 0), 0), icon: Code2 }];
+    return [{ label: "Categorical Technologies", value: records.length, icon: ServerCog }, { label: "Technology Categories", value: new Set(records.map((record) => String(record.category || "Uncategorized"))).size, icon: Boxes }, { label: "Language Distinction", value: "Strictly Separate", icon: ShieldCheck, note: "Languages kept in language composition" }];
   }, [collection.data?.count, dataset, filterOptions, records]);
   const pages = Number(collection.data?.page_count || 1);
   const visible = records;
 
   return (
-    <section className="catalog-explorer max-w-[var(--content-max)] mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-6">
+    <section className="catalog-explorer mx-auto max-w-7xl space-y-6 px-4 py-8 sm:px-6 lg:px-8">
       {!compact && (
-        <div className="space-y-5">
-          <button onClick={() => onNavigate("/catalog")} className="text-xs font-mono text-accent hover:underline inline-flex items-center gap-1 cursor-pointer"><ArrowLeft className="w-3.5 h-3.5" /> Catalog overview</button>
+        <div>
           <CollectionHeader eyebrow={`${labels[dataset]} collection`} title={labels[dataset]} description={datasetDetails[dataset].description} observedAt={formatDate(catalogSummary.generated_at)} exportHref={`/catalog/site/${dataset}.json`} facts={summaryFacts} />
         </div>
       )}
