@@ -3,7 +3,22 @@
 # groupsum.xyz
 
 Evidence-backed product and portfolio website for [groupsum.xyz](https://groupsum.xyz),
-with a Tigrbl REST API and durable SQLite catalog.
+with a Tigrbl REST API, PostgreSQL system of record, and DuckDB analytics store.
+
+## Workspace
+
+Runtime packages live under `pkgs/`:
+
+- `pkgs/frontend`: React website, static rendering, and generated API client.
+- `pkgs/backend`: Tigrbl tables, bound operations, import services, projections,
+  OpenAPI export, migrations, and tests.
+- `pkgs/catalog-pipeline`: collectors, normalization, validation, and display-safe
+  catalog exports.
+- `pkgs/site-content-pack`: generated editorial content package.
+
+Deployment and repository validation utilities live under `ops/`. Authored source
+modules are limited to 400 lines so table ownership, collection, projection, and UI
+responsibilities remain explicit.
 
 ## Commands
 
@@ -23,34 +38,40 @@ The GitHub workflows install `npmctl` and `npmctl-namecheap` from PyPI, then use
 
 ## Backend
 
-The backend in `backend/` uses Tigrbl REST tables and read-only bound operations over
-SQLite. It stores normalized products, portfolio records, organizations, authors,
+The backend in `pkgs/backend/` uses Tigrbl REST tables and table-bound operations over
+PostgreSQL in production and SQLite for lightweight local development. DuckDB stores
+aggregated metric series. It stores normalized products, portfolio records, organizations, authors,
 packages, repositories, implementation resources, releases, deployments, evidence,
 limitations, claims, features, taxonomies, relationships, and timestamped metrics.
 Languages and ecosystem classifications are intentionally separate.
 
 ```powershell
-uv sync --project backend --locked
-uv run --project backend python backend/scripts/migrate.py
-uv run --project backend python backend/scripts/import_catalog.py
-uv run --project backend python backend/scripts/export_openapi.py
-uv run --project backend pytest backend/tests
-uv run --project backend uvicorn groupsum_catalog_api.app:app --app-dir backend/src --reload
+uv sync --project pkgs/backend --locked
+uv run --project pkgs/backend python pkgs/backend/scripts/migrate.py
+uv run --project pkgs/backend python pkgs/backend/scripts/import_catalog.py
+uv run --project pkgs/backend python pkgs/backend/scripts/export_openapi.py
+uv run --project pkgs/backend python pkgs/backend/scripts/export_static_api.py
+uv run --project pkgs/backend pytest pkgs/backend/tests
+uv run --project pkgs/backend uvicorn groupsum_catalog_api.app:app --app-dir pkgs/backend/src --reload
 ```
 
-The default development database is `backend/data/groupsum-catalog.sqlite3`. Production
-sets `GROUPSUM_DATABASE_PATH=/data/groupsum-catalog.sqlite3`, backed by the named Docker
-volume `groupsum-xyz-catalog-data`. Schema changes are applied by numbered, idempotent
+The default development database is `pkgs/backend/data/groupsum-catalog.sqlite3`.
+Production sets `GROUPSUM_DATABASE_URL` for PostgreSQL and `GROUPSUM_ANALYTICS_PATH` for
+the DuckDB metric store. Schema changes are applied by numbered, idempotent
 migrations before import. Create an online, integrity-checked backup with:
 
 ```powershell
-uv run --project backend python backend/scripts/backup.py
+uv run --project pkgs/backend python pkgs/backend/scripts/backup.py
 ```
 
 The public contract is available at `/openapi.json`. Page-oriented endpoints under
 `/api/v1/` return compact product, portfolio, solution, service, insight, and organization
 models with strong ETags and shared-cache directives. Canonical Tigrbl tables are exposed
 read-only; collection observations remain internal.
+
+Database import and public reads enter through owning Tigrbl table handlers; REST routes
+invoke the same bound operations. Static builds are exported by exercising the in-process
+API, rather than reading database rows through a parallel page-model implementation.
 
 The catalog import is deterministic and idempotent. Reviewed records and explicit
 attachments live in `catalog/content/`; collected public facts remain in
@@ -64,9 +85,9 @@ The evidence-governed catalog pipeline is documented in [`catalog/README.md`](ca
 
 ## Deployment
 
-This repo deploys as two self-hosted Docker services: `groupsum-catalog-api` and the
-nginx-served `groupsum-xyz` frontend. nginx proxies `/api/` and `/openapi.json` to the API.
-The deploy workflow persists SQLite in the named volume, runs migrations/import during
+This repo deploys PostgreSQL, DuckDB, `groupsum-catalog-api`, and the nginx-served
+`groupsum-xyz` frontend. nginx proxies `/api/` and `/openapi.json` to the API.
+The deploy workflow persists both data services, runs migrations/import during
 API startup, verifies rendered Peagen relationship markers, checks exact API attachment
 counts, exercises conditional ETag requests, and confirms the deployed OpenAPI contract.
 

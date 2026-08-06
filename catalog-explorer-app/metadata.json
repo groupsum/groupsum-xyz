@@ -1,6 +1,0 @@
-{
-  "name": "GroupSum Catalog Explorer",
-  "description": "Catalog collection and member evidence explorer for GroupSum products, portfolio items, repositories, packages, typed resources, technologies, and governance.",
-  "requestFramePermissions": [],
-  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
-}

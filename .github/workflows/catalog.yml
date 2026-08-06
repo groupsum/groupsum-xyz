@@ -41,7 +41,7 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          if git diff --quiet -- catalog/generated src/data/catalog.generated.ts; then
+          if git diff --quiet -- catalog/generated pkgs/frontend/src/data/catalog.generated.ts; then
             echo "Catalog is current."
             exit 0
           fi
@@ -50,7 +50,7 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git fetch origin "$branch:refs/remotes/origin/$branch" || true
           git checkout -B "$branch"
-          git add catalog/generated src/data/catalog.generated.ts
+          git add catalog/generated pkgs/frontend/src/data/catalog.generated.ts
           git commit -m "Refresh public ecosystem catalog"
           git push --force-with-lease origin "$branch"
           gh pr view "$branch" --json url >/dev/null 2>&1 || gh pr create --base master --head "$branch" --title "Refresh public ecosystem catalog" --body "Automated refresh from GitHub, PyPI, npm, crates.io, and repository manifests. Validation and parser tests passed."

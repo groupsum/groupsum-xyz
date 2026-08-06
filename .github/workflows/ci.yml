@@ -21,23 +21,23 @@ jobs:
       - run: npm ci
       - run: npm run build:content
       - run: npm run build:insights
-      - run: node scripts/export-editorial-records.mjs
+      - run: node pkgs/catalog-pipeline/export-editorial-records.mjs
       - run: python -m pip install uv==0.11.28
       - run: uv sync --locked --all-groups
-        working-directory: backend
+        working-directory: pkgs/backend
       - run: uv run --locked pytest -q
-        working-directory: backend
+        working-directory: pkgs/backend
       - run: uv run --locked ruff check src tests scripts
-        working-directory: backend
+        working-directory: pkgs/backend
       - run: uv run --locked python scripts/export_openapi.py
-        working-directory: backend
+        working-directory: pkgs/backend
       - run: uv run --locked python scripts/validate_openapi_contract.py
-        working-directory: backend
-      - run: uv run --locked python scripts/export_page_models.py
-        working-directory: backend
+        working-directory: pkgs/backend
+      - run: uv run --locked python scripts/export_static_api.py
+        working-directory: pkgs/backend
       - run: npm run generate:api-client
       - name: Verify generated backend and frontend contracts are current
-        run: git diff --exit-code -- catalog/content/records.json backend/openapi.json src/api/catalog.generated.ts src/api/schema.generated.ts src/api/contract.generated.ts
+        run: git diff --exit-code -- catalog/content/records.json pkgs/backend/openapi.json pkgs/frontend/src/api/catalog.generated.ts pkgs/frontend/src/api/schema.generated.ts pkgs/frontend/src/api/contract.generated.ts
       - run: npm run check
       - run: npm run build
       - run: npm run lighthouse

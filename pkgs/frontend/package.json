@@ -1,0 +1,33 @@
+{
+  "name": "@groupsum/groupsum-xyz-frontend",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host 0.0.0.0",
+    "typecheck": "tsc --noEmit",
+    "preview": "vite preview --host 0.0.0.0"
+  },
+  "dependencies": {
+    "@mdwrk/lander-core": "^0.1.2",
+    "@mdwrk/lander-react": "^0.1.2",
+    "@mdwrk/lander-theme": "^0.1.4",
+    "@mdwrk/structured-data": "^0.1.4",
+    "@tailwindcss/vite": "^4.1.14",
+    "@tanstack/react-query": "^5.101.4",
+    "@vitejs/plugin-react": "^4.3.4",
+    "lucide-react": "^0.546.0",
+    "openapi-fetch": "^0.17.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "tailwindcss": "^4.1.14",
+    "typescript": "^5.8.0",
+    "vite": "^6.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.14.0",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "openapi-typescript": "^7.13.0"
+  }
+}

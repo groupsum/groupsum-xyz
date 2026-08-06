@@ -20,7 +20,7 @@ services:
   groupsum-catalog-api:
     build:
       context: .
-      dockerfile: backend/Dockerfile
+      dockerfile: pkgs/backend/Dockerfile
     container_name: groupsum-catalog-api
     restart: unless-stopped
     environment:
@@ -46,7 +46,7 @@ services:
   groupsum-duckdb:
     build:
       context: .
-      dockerfile: backend/Dockerfile
+      dockerfile: pkgs/backend/Dockerfile
     container_name: groupsum-duckdb
     restart: unless-stopped
     command: ["python", "-m", "groupsum_catalog_api.duckdb_service"]
@@ -66,7 +66,9 @@ services:
       - dockerwp
 
   groupsum-xyz:
-    build: .
+    build:
+      context: .
+      dockerfile: pkgs/frontend/Dockerfile
     container_name: groupsum-xyz
     restart: unless-stopped
     labels:
