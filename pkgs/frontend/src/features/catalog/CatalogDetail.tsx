@@ -1,21 +1,14 @@
-import React, { useEffect, useMemo, useState } from "react";
-import {
-  catalogDatasetManifest,
-  catalogOrganizations,
-  catalogSummary,
-} from "../../data/catalog.generated";
-import { EntityGraph, getCatalogOverview, getRepositoryMetricSnapshot, RepositoryMetricRecord, type RepositorySignals } from "../../api/catalog.generated";
+import { useEffect, useState } from "react";
+import type { EntityGraph } from "../../api/catalog.generated";
 import { getCatalogPackageMember, getCatalogReleaseMember, getCatalogRepositoryMember, getCatalogResourceMember, getCatalogTechnologyMember } from "../../api/catalog";
-import { Activity, ArrowLeft, ArrowRight, BadgeCheck, BookOpen, Boxes, Braces, CalendarDays, Code2, ExternalLink, FileCode2, GitBranch, Globe2, Package, Scale, ServerCog, ShieldCheck } from "lucide-react";
-import { RepositorySignalStrip } from "./RepositorySignals";
+import { BadgeCheck, Code2, ExternalLink, FileCode2, GitBranch, Package, ShieldCheck } from "lucide-react";
 import { EntityOwnership } from "./EntityIdentity";
-import { CatalogPill, CollectionHeader, ContextRailCard, FactPanel, MemberRowCard, RecordIdentityCard, SurfaceCard, factIcons, MetricBand, metricIcons, type MetricItem } from "./CatalogVisuals";
-import { ExplorerFilterToolbar, TypeBadge, type ExplorerFilters } from "./CatalogExplorerUI";
-import { useCatalogCollection } from "../../hooks/useCatalogCollection";
-import type { CatalogViewRecord } from "../../types/catalog-view";
+import { ContextRailCard, RecordIdentityCard } from "./CatalogVisuals";
 
 import { LinkedResourceSections } from "./CatalogCollections";
+import { CatalogRecordNavigation } from "./CatalogRecordNavigation";
 import { PackageDetail, ReleaseDetail, RepositoryDetail, ResourceDetail, TechnologyDetail } from "./CatalogMemberDetails";
+import { PackageIdentityCard } from "./PackageIdentityCard";
 import { datasetOrder, formatDate, humanLabel, isCurrentPageLink, metricItems, recordDescription, recordTitle, resourceIcon, valueRecord, valueRecords, type CatalogRecord, type DatasetName, type DetailDatasetName } from "./CatalogRecordShared";
 
 function MemberSectionNav({ record }: { record: CatalogRecord }) {
@@ -111,8 +104,10 @@ export function PublicCatalogDetail({ path, onNavigate }: { path: string; onNavi
   const RecordIcon = record.kind === "repository" ? Code2 : record.kind === "package" ? Package : record.kind === "resource" ? resourceIcon(String(record.resource_type || "resource")) : FileCode2;
   return (
     <article className="max-w-[var(--content-max)] mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-12 space-y-8 sm:space-y-10">
-      <button onClick={() => onNavigate("/catalog")} className="text-xs font-mono text-accent hover:underline inline-flex items-center gap-1 cursor-pointer"><ArrowLeft className="w-3.5 h-3.5" /> Public catalog</button>
-      <RecordIdentityCard eyebrow={`${humanLabel(String(record.kind || "catalog"))} member`} title={recordTitle(record)} summary={recordDescription(record)} Icon={RecordIcon} pills={[...(record.kind === "repository" && Boolean(record.ssot_governance?.governed) ? [{ label: "SSOT governed", tone: "accent" as const }] : []), { label: record.description_source === "reviewed-editorial" ? "Reviewed description" : "Source-derived description" }]} actions={primaryUrl && <a href={String(primaryUrl)} target="_blank" rel="noreferrer" className="inline-flex min-h-10 items-center gap-1 rounded-[var(--radius-sm)] bg-accent px-4 text-xs font-mono font-semibold text-white hover:bg-accent-hover">Open primary source <ExternalLink className="h-3.5 w-3.5" /></a>} facts={metricItems(record, 5)} />
+      <CatalogRecordNavigation dataset={dataset} record={record} onNavigate={onNavigate} />
+      {record.kind === "package"
+        ? <PackageIdentityCard record={record} primaryUrl={primaryUrl} onNavigate={onNavigate} />
+        : <RecordIdentityCard eyebrow={`${humanLabel(String(record.kind || "catalog"))} member`} title={recordTitle(record)} summary={recordDescription(record)} Icon={RecordIcon} pills={[...(record.kind === "repository" && Boolean(record.ssot_governance?.governed) ? [{ label: "SSOT governed", tone: "accent" as const }] : []), { label: record.description_source === "reviewed-editorial" ? "Reviewed description" : "Source-derived description" }]} actions={primaryUrl && <a href={String(primaryUrl)} target="_blank" rel="noreferrer" className="inline-flex min-h-10 items-center gap-1 rounded-[var(--radius-sm)] bg-accent px-4 text-xs font-mono font-semibold text-white hover:bg-accent-hover">Open primary source <ExternalLink className="h-3.5 w-3.5" /></a>} facts={metricItems(record, 5)} />}
       <MemberSectionNav record={record} />
       <div className="grid grid-cols-1 items-start gap-8 lg:grid-cols-12">
       <main className="space-y-6 lg:col-span-8">

@@ -44,6 +44,10 @@ requireMarkers(
   ["LegalContext", "license_url", "notice_count", "Its license belongs with the package"],
   "ownership-aware legal UIX",
 );
+requireMarkers(
+  ["CatalogRecordNavigation", "Ownership hierarchy", "Back to {collection} Collection", "PackageIdentityCard", "Owning repository", "Manifest path"],
+  "member navigation and package identity UIX",
+);
 
 if (!source.includes("portfolioEntities.filter")) throw new Error("portfolio pages do not use the approved entity catalog");
 if (!source.includes("ContainedPackageList") || !source.includes("href={route}")) throw new Error("repository package navigation is not canonical");
@@ -55,5 +59,6 @@ if (source.includes("border-b border-r")) throw new Error("metric summaries draw
 if (/[ÃÂâ�]/u.test(source)) throw new Error("catalog frontend source contains mojibake");
 if ((collectionTables.match(/<table className="[^"]*text-xs"/g) || []).length !== 2) throw new Error("repository and package tables must use text-xs body typography");
 if ((collectionTables.match(/<thead className="[^"]*text-\[11px\]/g) || []).length !== 2) throw new Error("repository and package table headers must match the 11px prototype scale");
+if (source.includes('aria-label="Ownership hierarchy" className="overflow-x-auto')) throw new Error("record breadcrumbs must wrap instead of scrolling");
 
 console.log(`catalog content ok: ${sourceFiles.length} modular source files checked`);

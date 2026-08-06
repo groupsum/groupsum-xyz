@@ -108,7 +108,7 @@ export function repositorySignals(record: CatalogRecord): RepositorySignals {
 }
 
 export function humanLabel(value: string): string {
-  return value.replace(/[._]/g, " ").replace(/\b\w/g, (letter) => letter.toUpperCase());
+  return value.replace(/[._-]/g, " ").replace(/\b\w/g, (letter) => letter.toUpperCase());
 }
 
 export function isCurrentPageLink(value: unknown): boolean {

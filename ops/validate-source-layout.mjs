@@ -9,6 +9,7 @@ const exemptPatterns = [
   /(^|\/)catalog\/generated\//,
   /(^|\/)dist(-server)?\//,
   /(^|\/)node_modules\//,
+  /(^|\/)\.tmp\//,
   /(^|\/)\.venv\//,
   /(^|\/)articles\.generated\.ts$/,
   /(^|\/)schema\.generated\.ts$/,
