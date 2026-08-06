@@ -9,6 +9,14 @@ import pytest
 from groupsum_catalog_api.analytics import connect_analytics, default_analytics_path
 from groupsum_catalog_api.app import build_app
 from groupsum_catalog_api.importer import canonical_package_id, connect, import_catalog
+from groupsum_catalog_api.page_models import decode_json_value
+
+
+def test_json_columns_accept_sqlite_text_and_postgres_objects() -> None:
+    decoded = {"generated_from": "public-catalog"}
+    assert decode_json_value(decoded, {}) is decoded
+    assert decode_json_value('{"generated_from":"public-catalog"}', {}) == decoded
+    assert decode_json_value(None, {}) == {}
 
 
 def test_package_identity_reuses_persisted_route_key(tmp_path: Path) -> None:

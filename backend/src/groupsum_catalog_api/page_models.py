@@ -17,6 +17,15 @@ from .importer import connect
 CACHE_CONTROL = "public, max-age=60, s-maxage=300, stale-while-revalidate=86400"
 
 
+def decode_json_value(value: Any, fallback: Any) -> Any:
+    """Normalize SQLite JSON text and PostgreSQL's already-decoded JSON values."""
+    if value is None or value == "":
+        return fallback
+    if isinstance(value, str | bytes | bytearray):
+        return json.loads(value)
+    return value
+
+
 def rows(connection: Connection, query: str, parameters: tuple[Any, ...] = ()) -> list[dict]:
     return [dict(row) for row in connection.execute(query, parameters).fetchall()]
 
@@ -883,7 +892,7 @@ def insight_collection(
             (*parameters, page_size, (page - 1) * page_size),
         )
         for record in records:
-            record["content"] = json.loads(record["content"] or "{}")
+            record["content"] = decode_json_value(record.get("content"), {})
     return cacheable_json(
         request,
         {
@@ -1209,7 +1218,7 @@ def record_detail(
             )
         record = dict(record_row)
         record["featured"] = bool(record["featured"])
-        record["content"] = json.loads(record["content"] or "{}")
+        record["content"] = decode_json_value(record.get("content"), {})
         taxonomy_rows = rows(
             connection,
             """

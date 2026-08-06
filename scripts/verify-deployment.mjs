@@ -107,9 +107,24 @@ async function verify() {
   const generatedPortfolioHtml = await fetchText(
     "/portfolio/records/catalog-groupsum-groupsum-xyz/",
   );
-  for (const marker of ["groupsum/groupsum-xyz", "Evidence &amp; provenance boundary", "Dependencies"]) {
+  for (const marker of ["groupsum/groupsum-xyz", "Source &amp; observation boundary", "Dependencies"]) {
     if (!generatedPortfolioHtml.includes(marker)) {
       throw new Error(`generated portfolio record is missing ${marker}`);
+    }
+  }
+  const governancePackSlug = "catalog-groupsum-ad-measurement-media-governance-pack";
+  const governancePackResponse = await fetchResponse(`/api/v1/portfolio/${governancePackSlug}`);
+  if (!governancePackResponse.ok) {
+    throw new Error(`governance-pack portfolio API returned ${governancePackResponse.status}`);
+  }
+  const governancePackModel = await governancePackResponse.json();
+  if (governancePackModel.record?.slug !== governancePackSlug) {
+    throw new Error("governance-pack portfolio API returned the wrong record");
+  }
+  const governancePackHtml = await fetchText(`/portfolio/records/${governancePackSlug}/`);
+  for (const marker of ["ad-measurement-media-governance-pack", "Source &amp; observation boundary"]) {
+    if (!governancePackHtml.includes(marker) || governancePackHtml.includes("Portfolio record unavailable")) {
+      throw new Error(`governance-pack portfolio page is missing ${marker}`);
     }
   }
   const openapi = JSON.parse(await fetchText("/openapi.json"));
