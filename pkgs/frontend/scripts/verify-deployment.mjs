@@ -140,13 +140,18 @@ async function verify() {
     }
   }
   const fasttokenizerHtml = await fetchText("/catalog/packages/crates/fasttokenizer-3b1c6d25/");
-  for (const marker of ["fasttokenizer", "Version", "0.29.0", "Features", "extension-module"]) {
-    if (!fasttokenizerHtml.includes(marker)) {
-      throw new Error(`fasttokenizer package page is missing structured dependency field ${marker}`);
-    }
-  }
+  if (!fasttokenizerHtml.includes("fasttokenizer")) throw new Error("fasttokenizer package page is missing its record identity");
   if (fasttokenizerHtml.includes("{'version': '0.29.0'")) {
     throw new Error("fasttokenizer package page exposes a serialized dependency requirement");
+  }
+  const fasttokenizerApi = await fetchResponse("/api/v1/catalog/packages/fasttokenizer-3b1c6d25");
+  if (!fasttokenizerApi.ok) throw new Error(`fasttokenizer API returned ${fasttokenizerApi.status}`);
+  const fasttokenizerModel = await fasttokenizerApi.json();
+  const pyo3 = fasttokenizerModel.implementation?.dependencies?.find(
+    (item) => item.target_id === "crates:pyo3",
+  );
+  if (pyo3?.requirement?.version !== "0.29.0" || !pyo3.requirement.features?.includes("extension-module")) {
+    throw new Error("fasttokenizer API lacks structured PyO3 dependency fields");
   }
   const openapi = JSON.parse(await fetchText("/openapi.json"));
   if (!openapi.paths?.["/api/v1/products/{slug}"]) throw new Error("deployed OpenAPI lacks product record resource representation");
@@ -160,11 +165,8 @@ async function verify() {
     throw new Error("deployed package collection does not honor its typed pagination contract");
   }
   const homeHtml = await fetchText("/");
-  const asset = homeHtml.match(/<script[^>]+src="([^"]+\.js)"/i)?.[1];
-  if (!asset) throw new Error("deployed application JavaScript asset was not found");
-  const bundle = await fetchText(asset);
   for (const marker of ["GroupSum Products", "GroupSum Portfolios", "Typed resources", "/api/v1/catalog/"]) {
-    if (!bundle.includes(marker)) throw new Error(`deployed bundle missing marker: ${marker}`);
+    await requirePageAssetMarker(homeHtml, marker, `deployed bundle marker ${marker}`);
   }
   console.log(`deployment verified: ${baseUrl}, repositories=${manifest.counts.repositories}, packages=${manifest.counts.packages}`);
 }
