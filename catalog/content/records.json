@@ -274,8 +274,7 @@
         "Docker"
       ],
       "languages": [
-        "python",
-        "Python"
+        "python"
       ],
       "capabilities": [
         "infrastructure",
