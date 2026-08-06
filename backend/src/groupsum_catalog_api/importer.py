@@ -268,6 +268,9 @@ def ensure_universal_resource_columns(connection: Connection) -> None:
                 connection.execute(
                     f"ALTER TABLE {table} ADD COLUMN IF NOT EXISTS {name} {definition}"
                 )
+        # Existing deployments created this compatibility column as NOT NULL.
+        # Observations are not SSOT evidence, so new rows deliberately leave it empty.
+        connection.execute("ALTER TABLE observations ALTER COLUMN evidence_type DROP NOT NULL")
         return
     for table, columns in additions.items():
         present = {row[1] for row in connection.execute(f"PRAGMA table_info({table})")}
