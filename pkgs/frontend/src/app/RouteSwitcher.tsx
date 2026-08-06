@@ -18,7 +18,7 @@ export function RouteSwitcher({ path, onNavigate }: { path: string; onNavigate: 
   if (primary === "products") {
     if (segments.length === 1) return <ProductCollectionPage mode="products" onNavigate={onNavigate} />;
     const slug = segments[1] === "records" ? segments[2] : segments[1];
-    if (["groupsum", "tigrbl", "swarmauri"].includes(slug)) return <ProductCollectionPage mode="portfolio" organization={slug} onNavigate={onNavigate} />;
+    if (segments[1] !== "records" && ["groupsum", "tigrbl", "swarmauri"].includes(slug)) return <ProductCollectionPage mode="portfolio" organization={slug} onNavigate={onNavigate} />;
     return <ProductRecordPage slug={slug} onNavigate={onNavigate} />;
   }
   if (primary === "portfolio") {

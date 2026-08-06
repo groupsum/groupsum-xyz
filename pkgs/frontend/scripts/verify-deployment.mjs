@@ -16,6 +16,14 @@ async function fetchResponse(pathname, headers = {}) {
   return fetch(`${baseUrl}${pathname}`, { headers: { "cache-control": "no-cache", ...headers } });
 }
 
+async function requirePageAssetMarker(html, marker, label) {
+  const assets = [...html.matchAll(/(?:src|href)="([^"]+\.js)"/g)].map((match) => match[1]);
+  for (const asset of new Set(assets)) {
+    if ((await fetchText(asset)).includes(marker)) return;
+  }
+  throw new Error(`${label} component is missing from emitted page assets`);
+}
+
 async function verify() {
   const manifest = JSON.parse(await fetchText("/catalog/site/manifest.json"));
   for (const [name, minimum] of Object.entries(expected)) {
@@ -29,6 +37,10 @@ async function verify() {
   }
   const repositories = JSON.parse(await fetchText("/catalog/site/repositories.json"));
   if (repositories.some((record) => String(record.name).toLowerCase() === ".github")) throw new Error("excluded .github repository is still published");
+  const repositoryCollectionHtml = await fetchText("/catalog/repositories/");
+  await requirePageAssetMarker(repositoryCollectionHtml, "Repository catalog records", "repository collection table");
+  const packageCollectionHtml = await fetchText("/catalog/packages/");
+  await requirePageAssetMarker(packageCollectionHtml, "Package catalog records", "package collection table");
   const portwyrmEvidence = JSON.parse(await fetchText("/catalog/product-evidence/groupsum/portwyrm.json"));
   if (portwyrmEvidence.repository?.full_name !== "groupsum/portwyrm") throw new Error("Portwyrm product evidence has the wrong repository");
   if (!portwyrmEvidence.packages?.length) throw new Error("Portwyrm product evidence is missing packages");
@@ -142,6 +154,10 @@ async function verify() {
   const repositoryPage = JSON.parse(await fetchText("/api/v1/catalog/repositories?page=1&page_size=5&sort=name"));
   if (repositoryPage.resource_kind !== "repository" || repositoryPage.records?.length !== 5 || repositoryPage.page !== 1) {
     throw new Error("deployed repository collection does not honor its typed pagination contract");
+  }
+  const packagePage = JSON.parse(await fetchText("/api/v1/catalog/packages?page=1&page_size=5&sort=name"));
+  if (packagePage.resource_kind !== "package" || packagePage.records?.length !== 5 || packagePage.page !== 1) {
+    throw new Error("deployed package collection does not honor its typed pagination contract");
   }
   const homeHtml = await fetchText("/");
   const asset = homeHtml.match(/<script[^>]+src="([^"]+\.js)"/i)?.[1];
