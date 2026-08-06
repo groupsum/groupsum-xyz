@@ -9,4 +9,6 @@ for (const marker of ["governability", "controlled-delivery", "evidence-and-trus
   if (!vision.includes(`id: "${marker}"`)) throw new Error(`missing horizontal capability: ${marker}`);
 }
 if (/slug:\s*["']wyrmctl["']/i.test(entities)) throw new Error("Wyrmctl must remain unresolved until separately evidenced");
+const portwyrm = entities.match(/slug:\s*["']portwyrm["'][\s\S]*?technologies:\s*\[([^\]]+)\]/i)?.[1] || "";
+if (!portwyrm.includes('"Tigrbl"') || portwyrm.includes('"FastAPI"')) throw new Error("Portwyrm technology metadata must identify Tigrbl, not FastAPI");
 console.log(`portfolio content ok: ${required.length} researched entities, 5 horizontal capabilities`);

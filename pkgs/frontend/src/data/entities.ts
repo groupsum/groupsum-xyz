@@ -56,7 +56,7 @@ export const portfolioEntities: PortfolioEntity[] = [
     evidence: [{ kind: "source", label: "Public repository, API surface, and deployment configuration reviewed", checkedAt }],
     limitations: ["Active development; public source does not establish a supported hosted service."],
     links: [{ kind: "source", label: "Public repository", href: "https://github.com/groupsum/portwyrm" }],
-    featured: true, approved: true, disposition: "public", technologies: ["Python", "FastAPI", "React", "Docker"]
+    featured: true, approved: true, disposition: "public", technologies: ["Tigrbl", "React", "Docker"]
   },
   {
     id: "bucketwarden-platform", slug: "bucketwarden", sourceName: "bucketwarden-platform", displayName: "BucketWarden",

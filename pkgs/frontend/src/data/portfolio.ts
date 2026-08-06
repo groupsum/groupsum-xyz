@@ -54,7 +54,7 @@ export const portfolioItems: PortfolioItem[] = [
     capabilityFamily: "infrastructure", artifactType: "product", maturity: "active",
     evidenceLabel: "Public source and deployment configuration reviewed on 2026-08-02", evidenceOwner: "Groupsum repository maintainers",
     links: [{ label: "Public repository", href: "https://github.com/groupsum/portwyrm" }], featured: true, approved: true,
-    technologies: ["Python", "FastAPI", "React", "Docker"]
+    technologies: ["Tigrbl", "React", "Docker"]
   },
   {
     slug: "trustsig", name: "TrustSig",

@@ -339,6 +339,12 @@ async def test_peagen_page_model_has_explicit_attachments(tmp_path: Path) -> Non
         technologies = await client.get("/api/v1/catalog/technologies")
         assert technologies.status_code == 200
         assert technologies.json()["count"] > 0
+        fastapi = await client.get("/api/v1/catalog/technologies/fastapi")
+        assert fastapi.status_code == 200
+        assert "portwyrm" not in {record["slug"] for record in fastapi.json()["related_records"]}
+        tigrbl = await client.get("/api/v1/catalog/technologies/tigrbl")
+        assert tigrbl.status_code == 200
+        assert "portwyrm" in {record["slug"] for record in tigrbl.json()["related_records"]}
 
         portfolio = await client.get("/api/v1/portfolio")
         assert portfolio.status_code == 200

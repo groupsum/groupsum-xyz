@@ -269,7 +269,7 @@
         "service"
       ],
       "technologies": [
-        "FastAPI",
+        "Tigrbl",
         "React",
         "Docker"
       ],
