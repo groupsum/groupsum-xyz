@@ -739,6 +739,9 @@
     "homepage": null,
     "id": "repository:tigrbl/tigrbl_spiffe",
     "kind": "repository",
+    "language_bytes": {
+      "Python": 54051
+    },
     "latest_commit": {
       "author": "cobycloud",
       "authored_at": "2026-05-20T02:21:01Z",

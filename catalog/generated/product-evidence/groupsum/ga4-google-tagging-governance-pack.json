@@ -312,6 +312,9 @@
     "homepage": null,
     "id": "repository:groupsum/ga4-google-tagging-governance-pack",
     "kind": "repository",
+    "language_bytes": {
+      "Python": 12294
+    },
     "latest_commit": {
       "author": "cobycloud",
       "authored_at": "2026-05-18T09:39:08Z",

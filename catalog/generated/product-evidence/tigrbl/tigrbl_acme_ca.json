@@ -722,6 +722,9 @@
     "homepage": null,
     "id": "repository:tigrbl/tigrbl_acme_ca",
     "kind": "repository",
+    "language_bytes": {
+      "Python": 107854
+    },
     "latest_commit": {
       "author": "cobycloud",
       "authored_at": "2026-05-20T02:21:00Z",

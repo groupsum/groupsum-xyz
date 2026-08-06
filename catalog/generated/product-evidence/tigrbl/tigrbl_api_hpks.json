@@ -605,6 +605,9 @@
     "homepage": null,
     "id": "repository:tigrbl/tigrbl_api_hpks",
     "kind": "repository",
+    "language_bytes": {
+      "Python": 54119
+    },
     "latest_commit": {
       "author": "cobycloud",
       "authored_at": "2026-05-20T02:21:00Z",

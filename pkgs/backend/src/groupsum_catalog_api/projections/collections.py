@@ -157,6 +157,9 @@ def catalog_collection(
                 ), dependency_counts AS (
                     SELECT source_id AS package_id, COUNT(*) AS count
                       FROM dependencies WHERE source_kind = 'package' GROUP BY source_id
+                ), dependent_counts AS (
+                    SELECT target_id AS package_key, COUNT(*) AS count
+                      FROM dependencies GROUP BY target_id
                 )
                 SELECT p.id, p.ecosystem, p.name, p.description, p.registry_url,
                        p.source_url, p.manifest_path, p.package_kind, p.private,
@@ -164,10 +167,13 @@ def catalog_collection(
                        p.route_key, p.license_expression, p.license_status,
                        p.published_at, p.observed_at,
                        COALESCE(rc.count, 0) AS release_count,
-                       COALESCE(dc.count, 0) AS dependency_count
+                       COALESCE(dc.count, 0) AS dependency_count,
+                       COALESCE(dpc.count, 0) AS dependent_count
                   FROM packages p
              LEFT JOIN release_counts rc ON rc.package_id = p.id
              LEFT JOIN dependency_counts dc ON dc.package_id = p.id
+             LEFT JOIN dependent_counts dpc
+                    ON dpc.package_key = p.ecosystem || ':' || REPLACE(LOWER(p.name), '_', '-')
               ORDER BY p.ecosystem, p.name COLLATE NOCASE
                 """,
             )

@@ -8958,6 +8958,16 @@
     "homepage": "https://mdwrk.com",
     "id": "repository:groupsum/markdown_workspace",
     "kind": "repository",
+    "language_bytes": {
+      "CSS": 320171,
+      "Dockerfile": 1139,
+      "HTML": 9292193,
+      "JavaScript": 1277332,
+      "Python": 7884,
+      "Shell": 2530,
+      "TypeScript": 1898749,
+      "XSLT": 7950
+    },
     "latest_commit": {
       "author": "cobycloud",
       "authored_at": "2026-06-09T05:49:09Z",

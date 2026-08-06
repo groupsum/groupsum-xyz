@@ -151,6 +151,9 @@
     "homepage": "https://swarmauri.com",
     "id": "repository:swarmauri/crouton-boilerplate",
     "kind": "repository",
+    "language_bytes": {
+      "Python": 1393
+    },
     "latest_commit": {
       "author": "cobycloud",
       "authored_at": "2024-12-17T08:00:37Z",

@@ -326,6 +326,8 @@ async def test_peagen_page_model_has_explicit_attachments(tmp_path: Path) -> Non
         assert repository_detail.status_code == 200
         assert repository_detail.json()["item"]["name"] == "groupsum-xyz"
         assert "packages" in repository_detail.json()["implementation"]
+        assert repository_detail.json()["implementation"]["languages"]
+        assert "technologies" in repository_detail.json()["implementation"]
 
         packages = await client.get("/api/v1/catalog/packages")
         assert packages.status_code == 200

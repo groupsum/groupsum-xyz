@@ -45,7 +45,7 @@ requireMarkers(
 );
 
 if (!source.includes("portfolioEntities.filter")) throw new Error("portfolio pages do not use the approved entity catalog");
-if (!source.includes("href={String(pkg.route)}")) throw new Error("repository package navigation is not canonical");
+if (!source.includes("ContainedPackageList") || !source.includes("href={route}")) throw new Error("repository package navigation is not canonical");
 if (!source.includes('timeZone: "UTC"')) throw new Error("catalog timestamps are not deterministic across SSR hydration");
 if (!source.includes('aria-label="Package technology stack"')) throw new Error("technology tags are not package-scoped");
 if (!source.includes("cursor-default select-none")) throw new Error("catalog tags lack stable cursor semantics");

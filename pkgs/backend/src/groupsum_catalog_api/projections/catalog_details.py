@@ -39,14 +39,50 @@ def catalog_repository_detail(
             """
             SELECT p.id, p.ecosystem, p.name, p.route_key, p.registry_url,
                    p.manifest_path, p.latest_version, p.license_expression,
-                   p.license_status, p.observed_at
+                   p.license_status, p.package_kind, p.published,
+                   p.publication_status, p.observed_at,
+                   (SELECT COUNT(*) FROM releases rel WHERE rel.package_id = p.id)
+                       AS release_count,
+                   (SELECT COUNT(*) FROM dependencies dep
+                     WHERE dep.source_kind = 'package' AND dep.source_id = p.id)
+                       AS dependency_count,
+                   (SELECT COUNT(*) FROM legal_evidence le
+                     WHERE le.subject_kind = 'package' AND le.subject_id = p.id
+                       AND le.evidence_kind LIKE '%notice%') AS notice_count,
+                   (SELECT le.url FROM legal_evidence le
+                     WHERE le.subject_kind = 'package' AND le.subject_id = p.id
+                       AND le.evidence_kind LIKE 'license%'
+                       AND le.url IS NOT NULL ORDER BY le.scope LIMIT 1) AS license_url
               FROM packages p JOIN package_repositories pr ON pr.package_id = p.id
              WHERE pr.repository_id = ? ORDER BY p.ecosystem, p.name COLLATE NOCASE
             """,
             (item["id"],),
         )
         for package in packages:
+            package["published"] = (
+                bool(package["published"]) if package["published"] is not None else None
+            )
             package["route"] = f"/catalog/packages/{package['ecosystem']}/{package['route_key']}"
+        languages = rows(
+            connection,
+            """SELECT language AS name, bytes, percentage, observed_at
+                 FROM repository_languages
+                WHERE repository_id = ? ORDER BY bytes DESC, language COLLATE NOCASE""",
+            (item["id"],),
+        )
+        technologies = [
+            technology["label"]
+            for technology in rows(
+                connection,
+                """SELECT DISTINCT t.label
+                     FROM taxonomies t
+                     JOIN record_taxonomies rt ON rt.taxonomy_id = t.id
+                     JOIN record_repositories rr ON rr.record_id = rt.record_id
+                    WHERE rr.repository_id = ? AND t.taxonomy_type = 'technology'
+                    ORDER BY t.label COLLATE NOCASE""",
+                (item["id"],),
+            )
+        ]
         resources = rows(
             connection,
             """SELECT id, resource_type, route_key, title, url, summary, path, observed_at
@@ -97,7 +133,13 @@ def catalog_repository_detail(
             "item": item,
             "graph": graph,
             "linked_sections": linked_sections,
-            "implementation": {"packages": packages, "resources": resources, "releases": releases},
+            "implementation": {
+                "packages": packages,
+                "resources": resources,
+                "releases": releases,
+                "languages": languages,
+                "technologies": technologies,
+            },
             "governance": {
                 "governed": item["ssot_governed"],
                 "registry_url": item.get("ssot_registry_url"),

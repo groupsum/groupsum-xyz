@@ -56,7 +56,7 @@ export function CatalogPill({ children, tone = "neutral", Icon }: { children: Re
   return <span className={`inline-flex min-h-6 cursor-default select-none items-center gap-1.5 rounded-[3px] border px-2.5 py-1 text-[10px] font-mono font-semibold uppercase tracking-wide ${tones[tone]}`}>{Icon && <Icon className="h-3 w-3" aria-hidden="true" />}{children}</span>;
 }
 
-export type MetricItem = { label: string; value: number | string; icon?: CatalogIcon; note?: string; tone?: "accent" | "signal" };
+export type MetricItem = { label: string; value: number | string; icon?: CatalogIcon; note?: string; tone?: "accent" | "signal"; color?: string };
 
 export function MetricBand({ items, label = "Record summary" }: { items: MetricItem[]; label?: string }) {
   if (!items.length) return null;
@@ -64,7 +64,7 @@ export function MetricBand({ items, label = "Record summary" }: { items: MetricI
     {items.map((item) => {
       const Icon = item.icon || metricIcons[item.label.toLowerCase().replace(/\s+/g, "_")] || Activity;
       return <div key={item.label} className="min-w-0">
-        <dt className="flex items-center gap-1.5 text-[10px] font-mono uppercase tracking-wide text-ink-muted"><Icon className={`h-3.5 w-3.5 ${item.tone === "signal" ? "text-signal" : "text-accent"}`} aria-hidden="true" />{item.label}</dt>
+        <dt className="flex items-center gap-1.5 text-[10px] font-mono uppercase tracking-wide text-ink-muted"><Icon className={`h-3.5 w-3.5 ${item.color || (item.tone === "signal" ? "text-signal" : "text-accent")}`} aria-hidden="true" />{item.label}</dt>
         <dd className="mt-1 font-serif text-xl font-bold tabular-nums text-ink">{typeof item.value === "number" ? compactNumber(item.value) : item.value}</dd>
         {item.note && <dd className="mt-1 text-[10px] leading-snug text-ink-muted">{item.note}</dd>}
       </div>;

@@ -388,6 +388,9 @@
     "homepage": null,
     "id": "repository:groupsum/digital-signature-governance-pack",
     "kind": "repository",
+    "language_bytes": {
+      "Python": 18521
+    },
     "latest_commit": {
       "author": "github-actions[bot]",
       "authored_at": "2026-06-02T00:57:35Z",

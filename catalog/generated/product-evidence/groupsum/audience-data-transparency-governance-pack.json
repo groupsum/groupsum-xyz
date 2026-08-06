@@ -312,6 +312,9 @@
     "homepage": null,
     "id": "repository:groupsum/audience-data-transparency-governance-pack",
     "kind": "repository",
+    "language_bytes": {
+      "Python": 13040
+    },
     "latest_commit": {
       "author": "cobycloud",
       "authored_at": "2026-05-18T09:39:07Z",

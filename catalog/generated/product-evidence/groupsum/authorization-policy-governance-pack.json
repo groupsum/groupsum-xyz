@@ -270,6 +270,9 @@
     "homepage": null,
     "id": "repository:groupsum/authorization-policy-governance-pack",
     "kind": "repository",
+    "language_bytes": {
+      "Python": 16708
+    },
     "latest_commit": {
       "author": "cobycloud",
       "authored_at": "2026-06-02T10:56:38Z",

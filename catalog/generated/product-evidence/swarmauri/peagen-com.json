@@ -484,6 +484,14 @@
     "homepage": null,
     "id": "repository:swarmauri/peagen-com",
     "kind": "repository",
+    "language_bytes": {
+      "CSS": 5041,
+      "Dockerfile": 233,
+      "HTML": 1270,
+      "JavaScript": 3586,
+      "Python": 5286,
+      "TypeScript": 18974
+    },
     "latest_commit": {
       "author": "cobycloud",
       "authored_at": "2026-07-13T22:27:52Z",

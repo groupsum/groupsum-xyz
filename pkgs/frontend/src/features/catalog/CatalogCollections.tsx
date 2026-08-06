@@ -11,6 +11,7 @@ import { RepositorySignalStrip } from "./RepositorySignals";
 import { EntityOwnership } from "./EntityIdentity";
 import { CatalogPill, CollectionHeader, ContextRailCard, FactPanel, MemberRowCard, RecordIdentityCard, SurfaceCard, factIcons, MetricBand, metricIcons, type MetricItem } from "./CatalogVisuals";
 import { ExplorerFilterToolbar, TypeBadge, type ExplorerFilters } from "./CatalogExplorerUI";
+import { PackageCollectionTable, RepositoryCollectionTable } from "./CatalogCollectionTables";
 import { useCatalogCollection } from "../../hooks/useCatalogCollection";
 import type { CatalogViewRecord } from "../../types/catalog-view";
 
@@ -224,16 +225,16 @@ export function PublicCatalogExplorer({ onNavigate, compact = false, fixedDatase
   };
   const summaryFacts = useMemo<MetricItem[]>(() => {
     if (dataset === "repositories") return [
-      { label: "Repositories", value: records.length, icon: Code2 },
-      { label: "Stars observed", value: records.reduce((total, record) => total + Number(valueRecord(record.metrics).stars || 0), 0), icon: metricIcons.stars },
-      { label: "SSOT governed", value: records.filter((record) => Boolean(valueRecord(record.ssot_governance).governed)).length, icon: ShieldCheck },
-      { label: "Contained packages", value: records.reduce((total, record) => total + valueRecords(record.packages).length, 0), icon: Package },
+      { label: "Repositories", value: Number(collection.data?.count || 0), icon: Code2, color: "text-emerald-700" },
+      { label: "Stars on page", value: records.reduce((total, record) => total + Number(valueRecord(record.metrics).stars || 0), 0), icon: metricIcons.stars, color: "text-amber-600" },
+      { label: "SSOT governed on page", value: records.filter((record) => Boolean(record.ssot_governed)).length, icon: ShieldCheck, color: "text-indigo-600" },
+      { label: "Packages on page", value: records.reduce((total, record) => total + Number(record.package_count || 0), 0), icon: Package, color: "text-orange-600" },
     ];
     if (dataset === "packages") return [
-      { label: "Packages", value: records.length, icon: Package },
-      { label: "Published", value: records.filter((record) => Boolean(record.published) || record.publication_status === "published").length, icon: BadgeCheck },
-      { label: "Release records", value: records.reduce((total, record) => total + Number(record.release_count || 0), 0), icon: metricIcons.releases },
-      { label: "Ecosystems", value: filterOptions.ecosystems.length, icon: Boxes },
+      { label: "Packages", value: Number(collection.data?.count || 0), icon: Package, color: "text-orange-600" },
+      { label: "Published on page", value: records.filter((record) => Boolean(record.published) || record.publication_status === "published").length, icon: BadgeCheck, color: "text-sky-600" },
+      { label: "Releases on page", value: records.reduce((total, record) => total + Number(record.release_count || 0), 0), icon: metricIcons.releases, color: "text-violet-600" },
+      { label: "Ecosystems", value: filterOptions.ecosystems.length, icon: Boxes, color: "text-emerald-700" },
     ];
     if (dataset === "resources") return [
       { label: "Typed resources", value: records.length, icon: Braces },
@@ -242,7 +243,7 @@ export function PublicCatalogExplorer({ onNavigate, compact = false, fixedDatase
       { label: "Repository-owned", value: records.filter((record) => Boolean(record.repository || record.repository_id)).length, icon: GitBranch },
     ];
     return [{ label: "Technology tags", value: records.length, icon: ServerCog }, { label: "Repository references", value: records.reduce((total, record) => total + Number(record.repository_count || 0), 0), icon: Code2 }];
-  }, [dataset, filterOptions, records]);
+  }, [collection.data?.count, dataset, filterOptions, records]);
   const pages = Number(collection.data?.page_count || 1);
   const visible = records;
 
@@ -268,7 +269,7 @@ export function PublicCatalogExplorer({ onNavigate, compact = false, fixedDatase
       {state === "ready" && (
         <>
           <div className="text-xs font-mono text-ink-muted">{Number(collection.data?.count || 0).toLocaleString()} matching records Â· page {page.toLocaleString()} of {pages.toLocaleString()}</div>
-          <div className="space-y-3">{visible.map((record) => <CollectionRow key={record.id} record={record} dataset={dataset} onNavigate={onNavigate} />)}</div>
+          {dataset === "repositories" ? <RepositoryCollectionTable records={visible} onNavigate={onNavigate} /> : dataset === "packages" ? <PackageCollectionTable records={visible} onNavigate={onNavigate} /> : <div className="space-y-3">{visible.map((record) => <CollectionRow key={record.id} record={record} dataset={dataset} onNavigate={onNavigate} />)}</div>}
           {visible.length === 0 && <div className="p-10 text-center border border-[var(--color-border-soft)] rounded-[var(--radius-md)] text-sm text-ink-muted">No generated records match this search.</div>}
           {pages > 1 && <div className="flex items-center justify-between gap-4"><button disabled={page === 1} onClick={() => setPage((value) => Math.max(1, value - 1))} className="px-3 py-2 text-xs font-mono border border-[var(--color-border-soft)] rounded disabled:opacity-40 cursor-pointer">Previous</button><button disabled={page === pages} onClick={() => setPage((value) => Math.min(pages, value + 1))} className="px-3 py-2 text-xs font-mono border border-[var(--color-border-soft)] rounded disabled:opacity-40 cursor-pointer">Next</button></div>}
         </>

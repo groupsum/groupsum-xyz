@@ -10442,6 +10442,13 @@
     "homepage": "https://tigrcorn.com",
     "id": "repository:tigrbl/tigrcorn",
     "kind": "repository",
+    "language_bytes": {
+      "HTML": 2812130,
+      "Makefile": 365,
+      "Python": 4146425,
+      "Shell": 1164,
+      "TypeScript": 17417
+    },
     "latest_commit": null,
     "latest_deployment": {
       "environment": "ci",

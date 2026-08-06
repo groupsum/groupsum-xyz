@@ -1154,6 +1154,11 @@
     "homepage": null,
     "id": "repository:groupsum/wyrmctl",
     "kind": "repository",
+    "language_bytes": {
+      "Dockerfile": 157,
+      "Python": 635969,
+      "Shell": 247
+    },
     "latest_commit": {
       "author": "cobycloud",
       "authored_at": "2026-08-04T16:43:03Z",

@@ -823,6 +823,14 @@
     "homepage": null,
     "id": "repository:groupsum/groupsum-xyz",
     "kind": "repository",
+    "language_bytes": {
+      "CSS": 13323,
+      "Dockerfile": 935,
+      "HTML": 1645,
+      "JavaScript": 68223,
+      "Python": 342449,
+      "TypeScript": 16265732
+    },
     "latest_commit": {
       "author": "cobycloud",
       "authored_at": "2026-08-06T02:51:20Z",

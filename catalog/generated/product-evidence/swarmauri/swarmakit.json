@@ -2364,6 +2364,15 @@
     "homepage": "https://swarmauri.com",
     "id": "repository:swarmauri/swarmakit",
     "kind": "repository",
+    "language_bytes": {
+      "CSS": 213396,
+      "HTML": 1538,
+      "JavaScript": 3606,
+      "MDX": 11360,
+      "Svelte": 136639,
+      "TypeScript": 442815,
+      "Vue": 298691
+    },
     "latest_commit": {
       "author": "cobycloud",
       "authored_at": "2024-12-22T03:25:43Z",

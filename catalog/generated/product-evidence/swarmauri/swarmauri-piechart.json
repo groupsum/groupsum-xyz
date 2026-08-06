@@ -437,6 +437,11 @@
     "homepage": null,
     "id": "repository:swarmauri/swarmauri-piechart",
     "kind": "repository",
+    "language_bytes": {
+      "JavaScript": 110,
+      "Python": 6612,
+      "Svelte": 3879
+    },
     "latest_commit": {
       "author": "cobycloud",
       "authored_at": "2024-09-04T08:20:30Z",

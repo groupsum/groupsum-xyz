@@ -114,6 +114,30 @@ def import_repositories(
                     "observed_at": repository.get("observed_at") or generated_at,
                 },
             )
+        connection.execute(
+            "DELETE FROM repository_languages WHERE repository_id = ?",
+            (repository_id,),
+        )
+        language_bytes = repository.get("language_bytes") or {}
+        language_total = sum(max(0, int(value or 0)) for value in language_bytes.values())
+        for language, byte_count in sorted(language_bytes.items()):
+            observed_bytes = max(0, int(byte_count or 0))
+            upsert(
+                connection,
+                "repository_languages",
+                {
+                    "id": stable_id("repository-language", repository_id, language),
+                    "repository_id": repository_id,
+                    "language": language,
+                    "bytes": observed_bytes,
+                    "percentage": (
+                        round(observed_bytes * 100 / language_total, 4)
+                        if language_total
+                        else 0
+                    ),
+                    "observed_at": repository.get("observed_at") or generated_at,
+                },
+            )
         for activity in repository.get("commit_activity", []):
             day = str(activity["date"])
             period_start = f"{day}T00:00:00Z"

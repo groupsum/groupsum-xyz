@@ -464,6 +464,9 @@
     "homepage": null,
     "id": "repository:groupsum/seo-aeo-aieo-governance-pack",
     "kind": "repository",
+    "language_bytes": {
+      "Python": 19002
+    },
     "latest_commit": {
       "author": "github-actions[bot]",
       "authored_at": "2026-06-02T00:58:38Z",

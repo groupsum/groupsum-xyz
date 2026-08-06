@@ -192,6 +192,9 @@
     "homepage": null,
     "id": "repository:groupsum/ad-measurement-media-governance-pack",
     "kind": "repository",
+    "language_bytes": {
+      "Python": 12952
+    },
     "latest_commit": {
       "author": "cobycloud",
       "authored_at": "2026-05-18T09:39:07Z",
@@ -790,6 +793,9 @@
     "homepage": null,
     "id": "repository:groupsum/ad-supply-chain-transparency-governance-pack",
     "kind": "repository",
+    "language_bytes": {
+      "Python": 13050
+    },
     "latest_commit": {
       "author": "cobycloud",
       "authored_at": "2026-05-18T09:39:07Z",
@@ -1366,6 +1372,9 @@
     "homepage": null,
     "id": "repository:tigrbl/attribution-campaign-context",
     "kind": "repository",
+    "language_bytes": {
+      "Python": 55829
+    },
     "latest_commit": {
       "author": "cobycloud",
       "authored_at": "2026-06-14T10:49:11Z",
@@ -2873,6 +2882,9 @@
     "homepage": null,
     "id": "repository:groupsum/audience-data-transparency-governance-pack",
     "kind": "repository",
+    "language_bytes": {
+      "Python": 13040
+    },
     "latest_commit": {
       "author": "cobycloud",
       "authored_at": "2026-05-18T09:39:07Z",
@@ -3444,6 +3456,9 @@
     "homepage": null,
     "id": "repository:groupsum/authentication-governance-pack",
     "kind": "repository",
+    "language_bytes": {
+      "Python": 16629
+    },
     "latest_commit": {
       "author": "cobycloud",
       "authored_at": "2026-06-02T10:56:38Z",
@@ -3709,6 +3724,9 @@
     "homepage": null,
     "id": "repository:groupsum/authnz-policy-governance-pack",
     "kind": "repository",
+    "language_bytes": {
+      "Python": 16607
+    },
     "latest_commit": {
       "author": "cobycloud",
       "authored_at": "2026-06-02T10:15:28Z",
@@ -3974,6 +3992,9 @@
     "homepage": null,
     "id": "repository:groupsum/authorization-policy-governance-pack",
     "kind": "repository",
+    "language_bytes": {
+      "Python": 16708
+    },
     "latest_commit": {
       "author": "cobycloud",
       "authored_at": "2026-06-02T10:56:38Z",
@@ -4341,6 +4362,9 @@
     "homepage": null,
     "id": "repository:groupsum/cache-freshness-governance-pack",
     "kind": "repository",
+    "language_bytes": {
+      "Python": 18489
+    },
     "latest_commit": {
       "author": "github-actions[bot]",
       "authored_at": "2026-06-02T00:57:34Z",
@@ -4661,6 +4685,9 @@
     "homepage": null,
     "id": "repository:groupsum/consent-privacy-signals-governance-pack",
     "kind": "repository",
+    "language_bytes": {
+      "Python": 12583
+    },
     "latest_commit": {
       "author": "cobycloud",
       "authored_at": "2026-05-18T09:39:07Z",
@@ -5257,6 +5284,9 @@
     "homepage": "https://swarmauri.com",
     "id": "repository:swarmauri/crouton",
     "kind": "repository",
+    "language_bytes": {
+      "Python": 93260
+    },
     "latest_commit": {
       "author": "cobycloud",
       "authored_at": "2025-07-01T10:14:20Z",
@@ -5586,6 +5616,9 @@
     "homepage": "https://swarmauri.com",
     "id": "repository:swarmauri/crouton-boilerplate",
     "kind": "repository",
+    "language_bytes": {
+      "Python": 1393
+    },
     "latest_commit": {
       "author": "cobycloud",
       "authored_at": "2024-12-17T08:00:37Z",
@@ -5869,6 +5902,9 @@
     "homepage": null,
     "id": "repository:groupsum/customer-commerce-semantics-governance-pack",
     "kind": "repository",
+    "language_bytes": {
+      "Python": 12633
+    },
     "latest_commit": {
       "author": "cobycloud",
       "authored_at": "2026-05-18T09:39:07Z",
@@ -6467,6 +6503,9 @@
     "homepage": null,
     "id": "repository:groupsum/customer-identity-profile-governance-pack",
     "kind": "repository",
+    "language_bytes": {
+      "Python": 12627
+    },
     "latest_commit": {
       "author": "cobycloud",
       "authored_at": "2026-05-18T09:39:08Z",
@@ -7065,6 +7104,9 @@
     "homepage": null,
     "id": "repository:groupsum/data-catalog-lineage-contracts-governance-pack",
     "kind": "repository",
+    "language_bytes": {
+      "Python": 13044
+    },
     "latest_commit": {
       "author": "cobycloud",
       "authored_at": "2026-05-18T09:39:08Z",
@@ -7636,6 +7678,9 @@
     "homepage": null,
     "id": "repository:groupsum/decentralized-identifiers-governance-pack",
     "kind": "repository",
+    "language_bytes": {
+      "Python": 16783
+    },
     "latest_commit": {
       "author": "cobycloud",
       "authored_at": "2026-06-01T23:57:22Z",
@@ -7971,6 +8016,9 @@
     "homepage": null,
     "id": "repository:groupsum/digital-signature-governance-pack",
     "kind": "repository",
+    "language_bytes": {
+      "Python": 18521
+    },
     "latest_commit": {
       "author": "github-actions[bot]",
       "authored_at": "2026-06-02T00:57:35Z",
@@ -8278,6 +8326,11 @@
     "homepage": null,
     "id": "repository:swarmauri/docs-peagen-com",
     "kind": "repository",
+    "language_bytes": {
+      "Dockerfile": 112,
+      "JavaScript": 2479,
+      "Python": 5286
+    },
     "latest_commit": {
       "author": "cobycloud",
       "authored_at": "2026-07-13T22:27:52Z",
@@ -8613,6 +8666,11 @@
     "homepage": null,
     "id": "repository:swarmauri/docs-swarmauri-com",
     "kind": "repository",
+    "language_bytes": {
+      "Dockerfile": 112,
+      "JavaScript": 2479,
+      "Python": 5286
+    },
     "latest_commit": {
       "author": "cobycloud",
       "authored_at": "2026-07-13T22:27:52Z",
@@ -8990,6 +9048,11 @@
     "homepage": null,
     "id": "repository:tigrbl/docs-tigrbl-com",
     "kind": "repository",
+    "language_bytes": {
+      "Dockerfile": 112,
+      "JavaScript": 2479,
+      "Python": 5286
+    },
     "latest_commit": {
       "author": "cobycloud",
       "authored_at": "2026-07-13T22:27:53Z",
@@ -9339,6 +9402,11 @@
     "homepage": null,
     "id": "repository:tigrbl/docs-tigrcorn-com",
     "kind": "repository",
+    "language_bytes": {
+      "Dockerfile": 112,
+      "JavaScript": 2218,
+      "Python": 5286
+    },
     "latest_commit": {
       "author": "cobycloud",
       "authored_at": "2026-07-13T22:27:53Z",
@@ -9682,6 +9750,11 @@
     "homepage": null,
     "id": "repository:groupsum/document-studio",
     "kind": "repository",
+    "language_bytes": {
+      "CSS": 670,
+      "HTML": 311,
+      "TypeScript": 66554
+    },
     "latest_commit": {
       "author": "cobycloud",
       "authored_at": "2026-06-15T10:48:36Z",
@@ -10287,6 +10360,11 @@
     "homepage": null,
     "id": "repository:groupsum/document-viewer",
     "kind": "repository",
+    "language_bytes": {
+      "CSS": 707,
+      "HTML": 311,
+      "TypeScript": 30232
+    },
     "latest_commit": {
       "author": "cobycloud",
       "authored_at": "2026-06-15T10:48:36Z",
@@ -10897,6 +10975,9 @@
     "homepage": null,
     "id": "repository:groupsum/event-behavioral-telemetry-governance-pack",
     "kind": "repository",
+    "language_bytes": {
+      "Python": 12650
+    },
     "latest_commit": {
       "author": "cobycloud",
       "authored_at": "2026-05-18T09:39:08Z",
@@ -11490,6 +11571,11 @@
     "homepage": null,
     "id": "repository:groupsum/file-browser",
     "kind": "repository",
+    "language_bytes": {
+      "CSS": 815,
+      "HTML": 299,
+      "TypeScript": 51526
+    },
     "latest_commit": {
       "author": "cobycloud",
       "authored_at": "2026-06-15T10:48:36Z",
@@ -12100,6 +12186,9 @@
     "homepage": null,
     "id": "repository:groupsum/ga4-google-tagging-governance-pack",
     "kind": "repository",
+    "language_bytes": {
+      "Python": 12294
+    },
     "latest_commit": {
       "author": "cobycloud",
       "authored_at": "2026-05-18T09:39:08Z",
@@ -12666,6 +12755,14 @@
     "homepage": null,
     "id": "repository:groupsum/groupsum-xyz",
     "kind": "repository",
+    "language_bytes": {
+      "CSS": 13323,
+      "Dockerfile": 935,
+      "HTML": 1645,
+      "JavaScript": 68223,
+      "Python": 342449,
+      "TypeScript": 16265732
+    },
     "latest_commit": {
       "author": "cobycloud",
       "authored_at": "2026-08-06T02:51:20Z",
@@ -13087,6 +13184,9 @@
     "homepage": null,
     "id": "repository:groupsum/gs1-product-link-event-data-governance-pack",
     "kind": "repository",
+    "language_bytes": {
+      "Python": 12988
+    },
     "latest_commit": {
       "author": "cobycloud",
       "authored_at": "2026-05-18T09:39:08Z",
@@ -13750,6 +13850,16 @@
     "homepage": "https://mdwrk.com",
     "id": "repository:groupsum/markdown_workspace",
     "kind": "repository",
+    "language_bytes": {
+      "CSS": 320171,
+      "Dockerfile": 1139,
+      "HTML": 9292193,
+      "JavaScript": 1277332,
+      "Python": 7884,
+      "Shell": 2530,
+      "TypeScript": 1898749,
+      "XSLT": 7950
+    },
     "latest_commit": {
       "author": "cobycloud",
       "authored_at": "2026-06-09T05:49:09Z",
@@ -19872,6 +19982,9 @@
     "homepage": null,
     "id": "repository:groupsum/marketing-attribution-conversion-governance-pack",
     "kind": "repository",
+    "language_bytes": {
+      "Python": 12745
+    },
     "latest_commit": {
       "author": "cobycloud",
       "authored_at": "2026-06-02T10:10:51Z",
@@ -20497,6 +20610,14 @@
     "homepage": null,
     "id": "repository:groupsum/mdwrk",
     "kind": "repository",
+    "language_bytes": {
+      "CSS": 36696,
+      "HTML": 2798,
+      "JavaScript": 703050,
+      "Python": 7884,
+      "Shell": 1007,
+      "TypeScript": 266348
+    },
     "latest_commit": {
       "author": "cobycloud",
       "authored_at": "2026-07-12T21:41:17Z",
@@ -23565,6 +23686,14 @@
     "homepage": null,
     "id": "repository:groupsum/mdwrk-pages",
     "kind": "repository",
+    "language_bytes": {
+      "CSS": 9592580,
+      "Dockerfile": 1504,
+      "HTML": 1247,
+      "JavaScript": 1971171,
+      "Python": 1782,
+      "TypeScript": 18843237
+    },
     "latest_commit": {
       "author": "cobycloud",
       "authored_at": "2026-07-13T21:05:58Z",
@@ -26888,6 +27017,11 @@
     "homepage": "https://mdwrk.com",
     "id": "repository:groupsum/mdwrkcom-content-pack",
     "kind": "repository",
+    "language_bytes": {
+      "JavaScript": 30367,
+      "TypeScript": 8502,
+      "XSLT": 3975
+    },
     "latest_commit": {
       "author": "cobycloud",
       "authored_at": "2026-06-16T02:39:53Z",
@@ -27360,6 +27494,9 @@
     "homepage": null,
     "id": "repository:groupsum/mobile-install-attribution-governance-pack",
     "kind": "repository",
+    "language_bytes": {
+      "Python": 12682
+    },
     "latest_commit": {
       "author": "cobycloud",
       "authored_at": "2026-05-18T09:39:09Z",
@@ -28092,6 +28229,11 @@
     "homepage": null,
     "id": "repository:groupsum/npmctl",
     "kind": "repository",
+    "language_bytes": {
+      "Dockerfile": 153,
+      "Python": 299383,
+      "Shell": 247
+    },
     "latest_commit": {
       "author": "cobycloud",
       "authored_at": "2026-08-04T19:45:10Z",
@@ -31646,6 +31788,14 @@
     "homepage": null,
     "id": "repository:groupsum/npmctl-com",
     "kind": "repository",
+    "language_bytes": {
+      "CSS": 6166,
+      "Dockerfile": 233,
+      "HTML": 1569,
+      "JavaScript": 3586,
+      "Python": 5286,
+      "TypeScript": 203254
+    },
     "latest_commit": {
       "author": "cobycloud",
       "authored_at": "2026-07-25T19:02:53Z",
@@ -31934,6 +32084,14 @@
     "homepage": null,
     "id": "repository:swarmauri/peagen-com",
     "kind": "repository",
+    "language_bytes": {
+      "CSS": 5041,
+      "Dockerfile": 233,
+      "HTML": 1270,
+      "JavaScript": 3586,
+      "Python": 5286,
+      "TypeScript": 18974
+    },
     "latest_commit": {
       "author": "cobycloud",
       "authored_at": "2026-07-13T22:27:52Z",
@@ -32303,6 +32461,14 @@
     "homepage": null,
     "id": "repository:groupsum/portwyrm",
     "kind": "repository",
+    "language_bytes": {
+      "CSS": 818,
+      "Dockerfile": 1823,
+      "HTML": 1569,
+      "JavaScript": 6326,
+      "Python": 623096,
+      "TypeScript": 357390
+    },
     "latest_commit": {
       "author": "cobycloud",
       "authored_at": "2026-08-04T17:13:35Z",
@@ -34598,6 +34764,9 @@
     "homepage": null,
     "id": "repository:groupsum/privacy-governance-records-governance-pack",
     "kind": "repository",
+    "language_bytes": {
+      "Python": 12673
+    },
     "latest_commit": {
       "author": "cobycloud",
       "authored_at": "2026-05-18T09:39:09Z",
@@ -35191,6 +35360,9 @@
     "homepage": "https://swarmauri.com",
     "id": "repository:swarmauri/rag_assistant",
     "kind": "repository",
+    "language_bytes": {
+      "Python": 36929
+    },
     "latest_commit": {
       "author": "cobycloud",
       "authored_at": "2024-10-30T00:50:28Z",
@@ -35580,6 +35752,9 @@
     "homepage": null,
     "id": "repository:groupsum/seo-aeo-aieo-governance-pack",
     "kind": "repository",
+    "language_bytes": {
+      "Python": 19002
+    },
     "latest_commit": {
       "author": "github-actions[bot]",
       "authored_at": "2026-06-02T00:58:38Z",
@@ -35857,6 +36032,9 @@
     "homepage": "https://swarmauri.com",
     "id": "repository:swarmauri/soliloquy",
     "kind": "repository",
+    "language_bytes": {
+      "Python": 83874
+    },
     "latest_commit": {
       "author": "cobycloud",
       "authored_at": "2025-02-04T12:19:40Z",
@@ -43307,6 +43485,16 @@
     "homepage": null,
     "id": "repository:groupsum/ssot-registry",
     "kind": "repository",
+    "language_bytes": {
+      "CSS": 10383,
+      "HTML": 6308532,
+      "JavaScript": 1123,
+      "Makefile": 180792,
+      "Python": 1800643,
+      "Rust": 9206,
+      "Shell": 4586,
+      "TypeScript": 367298
+    },
     "latest_commit": {
       "author": "cobycloud",
       "authored_at": "2026-08-03T17:44:02Z",
@@ -48696,6 +48884,15 @@
     "homepage": null,
     "id": "repository:groupsum/ssot-registry-com",
     "kind": "repository",
+    "language_bytes": {
+      "CSS": 8409,
+      "Dockerfile": 372,
+      "HTML": 300,
+      "JavaScript": 5486,
+      "Python": 5286,
+      "TypeScript": 3911911,
+      "XSLT": 6259
+    },
     "latest_commit": {
       "author": "cobycloud",
       "authored_at": "2026-07-13T22:27:50Z",
@@ -49041,6 +49238,15 @@
     "homepage": "https://swarmauri.com",
     "id": "repository:swarmauri/swarmakit",
     "kind": "repository",
+    "language_bytes": {
+      "CSS": 213396,
+      "HTML": 1538,
+      "JavaScript": 3606,
+      "MDX": 11360,
+      "Svelte": 136639,
+      "TypeScript": 442815,
+      "Vue": 298691
+    },
     "latest_commit": {
       "author": "cobycloud",
       "authored_at": "2024-12-22T03:25:43Z",
@@ -49473,6 +49679,11 @@
     "homepage": null,
     "id": "repository:swarmauri/swarmauri-aucplot",
     "kind": "repository",
+    "language_bytes": {
+      "JavaScript": 110,
+      "Python": 5632,
+      "Svelte": 3879
+    },
     "latest_commit": {
       "author": "cobycloud",
       "authored_at": "2024-09-03T07:06:13Z",
@@ -49787,6 +49998,15 @@
     "homepage": null,
     "id": "repository:swarmauri/swarmauri-com",
     "kind": "repository",
+    "language_bytes": {
+      "CSS": 10633,
+      "Dockerfile": 233,
+      "HTML": 8943,
+      "JavaScript": 32692,
+      "Python": 7486,
+      "TypeScript": 673552,
+      "XSLT": 7197
+    },
     "latest_commit": {
       "author": "cobycloud",
       "authored_at": "2026-07-13T22:27:52Z",
@@ -50079,6 +50299,12 @@
     "homepage": null,
     "id": "repository:swarmauri/swarmauri-flipcard",
     "kind": "repository",
+    "language_bytes": {
+      "CSS": 1276,
+      "HTML": 369,
+      "JavaScript": 543,
+      "Svelte": 2656
+    },
     "latest_commit": {
       "author": "cobycloud",
       "authored_at": "2024-09-05T00:30:47Z",
@@ -50336,6 +50562,10 @@
     "homepage": "https://swarmauri.com",
     "id": "repository:swarmauri/swarmauri-mesop-components",
     "kind": "repository",
+    "language_bytes": {
+      "JavaScript": 6817,
+      "Python": 4683
+    },
     "latest_commit": {
       "author": "cobycloud",
       "authored_at": "2024-09-07T15:34:02Z",
@@ -50692,6 +50922,9 @@
     "homepage": "https://swarmauri.com",
     "id": "repository:swarmauri/swarmauri-notebooks",
     "kind": "repository",
+    "language_bytes": {
+      "Jupyter Notebook": 40131541
+    },
     "latest_commit": {
       "author": "cobycloud",
       "authored_at": "2025-01-09T11:31:07Z",
@@ -50948,6 +51181,11 @@
     "homepage": null,
     "id": "repository:swarmauri/swarmauri-piechart",
     "kind": "repository",
+    "language_bytes": {
+      "JavaScript": 110,
+      "Python": 6612,
+      "Svelte": 3879
+    },
     "latest_commit": {
       "author": "cobycloud",
       "authored_at": "2024-09-04T08:20:30Z",
@@ -51282,6 +51520,10 @@
     "homepage": "https://swarmauri.com",
     "id": "repository:swarmauri/swarmauri-playground",
     "kind": "repository",
+    "language_bytes": {
+      "Jupyter Notebook": 2331,
+      "Python": 9270
+    },
     "latest_commit": {
       "author": "cobycloud",
       "authored_at": "2024-10-22T10:15:54Z",
@@ -143494,6 +143736,18 @@
     "homepage": "https://swarmauri.com",
     "id": "repository:swarmauri/swarmauri-sdk",
     "kind": "repository",
+    "language_bytes": {
+      "C": 4211,
+      "C++": 32243,
+      "Dockerfile": 1450,
+      "HTML": 1619,
+      "JavaScript": 43807,
+      "Jinja": 18019,
+      "Meson": 4296,
+      "Python": 9891945,
+      "Rust": 14554,
+      "Shell": 1675
+    },
     "latest_commit": {
       "author": "github-actions[bot]",
       "authored_at": "2026-07-27T15:54:06Z",
@@ -159199,6 +159453,12 @@
     "homepage": null,
     "id": "repository:tigrbl/tigr-asgi-contract",
     "kind": "repository",
+    "language_bytes": {
+      "JavaScript": 1252,
+      "Python": 483816,
+      "Rust": 37634,
+      "TypeScript": 61168
+    },
     "latest_commit": {
       "author": "cobycloud",
       "authored_at": "2026-08-03T22:32:39Z",
@@ -185162,6 +185422,10 @@
     "homepage": "https://tigrbl.com",
     "id": "repository:tigrbl/tigrbl",
     "kind": "repository",
+    "language_bytes": {
+      "Jupyter Notebook": 35668,
+      "Python": 6976175
+    },
     "latest_commit": {
       "author": "cobycloud",
       "authored_at": "2026-08-06T00:23:18Z",
@@ -191970,6 +192234,14 @@
     "homepage": null,
     "id": "repository:tigrbl/tigrbl-com",
     "kind": "repository",
+    "language_bytes": {
+      "CSS": 5035,
+      "Dockerfile": 233,
+      "HTML": 1303,
+      "JavaScript": 3586,
+      "Python": 5286,
+      "TypeScript": 18959
+    },
     "latest_commit": {
       "author": "cobycloud",
       "authored_at": "2026-07-25T17:59:37Z",
@@ -192259,6 +192531,9 @@
     "homepage": null,
     "id": "repository:tigrbl/tigrbl_acme_ca",
     "kind": "repository",
+    "language_bytes": {
+      "Python": 107854
+    },
     "latest_commit": {
       "author": "cobycloud",
       "authored_at": "2026-05-20T02:21:00Z",
@@ -192525,6 +192800,9 @@
     "homepage": null,
     "id": "repository:tigrbl/tigrbl_api_cron",
     "kind": "repository",
+    "language_bytes": {
+      "Python": 33422
+    },
     "latest_commit": {
       "author": "cobycloud",
       "authored_at": "2026-07-27T06:13:54Z",
@@ -192774,6 +193052,9 @@
     "homepage": null,
     "id": "repository:tigrbl/tigrbl_api_hpks",
     "kind": "repository",
+    "language_bytes": {
+      "Python": 54119
+    },
     "latest_commit": {
       "author": "cobycloud",
       "authored_at": "2026-05-20T02:21:00Z",
@@ -193243,6 +193524,15 @@
     "homepage": null,
     "id": "repository:tigrbl/tigrbl_auth",
     "kind": "repository",
+    "language_bytes": {
+      "CSS": 123265,
+      "Dockerfile": 2738,
+      "HTML": 2768283,
+      "JavaScript": 12620,
+      "Python": 7200873,
+      "Shell": 2608,
+      "TypeScript": 4351521
+    },
     "latest_commit": {
       "author": "cobycloud",
       "authored_at": "2026-08-06T02:25:56Z",
@@ -206403,6 +206693,9 @@
     "homepage": null,
     "id": "repository:tigrbl/tigrbl_billing",
     "kind": "repository",
+    "language_bytes": {
+      "Python": 348353
+    },
     "latest_commit": {
       "author": "cobycloud",
       "authored_at": "2026-05-20T03:06:37Z",
@@ -207269,6 +207562,10 @@
     "homepage": null,
     "id": "repository:tigrbl/tigrbl_kms",
     "kind": "repository",
+    "language_bytes": {
+      "Dockerfile": 399,
+      "Python": 88372
+    },
     "latest_commit": {
       "author": "cobycloud",
       "authored_at": "2026-05-21T03:23:41Z",
@@ -207536,6 +207833,9 @@
     "homepage": null,
     "id": "repository:tigrbl/tigrbl_spiffe",
     "kind": "repository",
+    "language_bytes": {
+      "Python": 54051
+    },
     "latest_commit": {
       "author": "cobycloud",
       "authored_at": "2026-05-20T02:21:01Z",
@@ -208605,6 +208905,13 @@
     "homepage": "https://tigrcorn.com",
     "id": "repository:tigrbl/tigrcorn",
     "kind": "repository",
+    "language_bytes": {
+      "HTML": 2812130,
+      "Makefile": 365,
+      "Python": 4146425,
+      "Shell": 1164,
+      "TypeScript": 17417
+    },
     "latest_commit": null,
     "latest_deployment": {
       "environment": "ci",
@@ -217071,6 +217378,14 @@
     "homepage": null,
     "id": "repository:tigrbl/tigrcorn-com",
     "kind": "repository",
+    "language_bytes": {
+      "CSS": 11110,
+      "Dockerfile": 233,
+      "HTML": 2889,
+      "JavaScript": 3586,
+      "Python": 5286,
+      "TypeScript": 158701
+    },
     "latest_commit": {
       "author": "cobycloud",
       "authored_at": "2026-07-13T22:27:54Z",
@@ -217419,6 +217734,9 @@
     "homepage": null,
     "id": "repository:groupsum/url-query-attribution-foundations-governance-pack",
     "kind": "repository",
+    "language_bytes": {
+      "Python": 17194
+    },
     "latest_commit": {
       "author": "github-actions[bot]",
       "authored_at": "2026-06-02T00:56:23Z",
@@ -217979,6 +218297,9 @@
     "homepage": null,
     "id": "repository:groupsum/verifiable-credentials-governance-pack",
     "kind": "repository",
+    "language_bytes": {
+      "Python": 16771
+    },
     "latest_commit": {
       "author": "cobycloud",
       "authored_at": "2026-06-01T23:57:22Z",
@@ -218271,6 +218592,9 @@
     "homepage": null,
     "id": "repository:groupsum/web-app-analytics-governance-pack",
     "kind": "repository",
+    "language_bytes": {
+      "Python": 12414
+    },
     "latest_commit": {
       "author": "cobycloud",
       "authored_at": "2026-05-18T09:39:09Z",
@@ -218869,6 +219193,9 @@
     "homepage": null,
     "id": "repository:groupsum/web-performance-rum-governance-pack",
     "kind": "repository",
+    "language_bytes": {
+      "Python": 12870
+    },
     "latest_commit": {
       "author": "cobycloud",
       "authored_at": "2026-05-18T09:39:09Z",
@@ -219435,6 +219762,11 @@
     "homepage": null,
     "id": "repository:groupsum/wyrmctl",
     "kind": "repository",
+    "language_bytes": {
+      "Dockerfile": 157,
+      "Python": 635969,
+      "Shell": 247
+    },
     "latest_commit": {
       "author": "cobycloud",
       "authored_at": "2026-08-04T16:43:03Z",

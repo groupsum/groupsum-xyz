@@ -312,6 +312,9 @@
     "homepage": null,
     "id": "repository:groupsum/ad-supply-chain-transparency-governance-pack",
     "kind": "repository",
+    "language_bytes": {
+      "Python": 13050
+    },
     "latest_commit": {
       "author": "cobycloud",
       "authored_at": "2026-05-18T09:39:07Z",

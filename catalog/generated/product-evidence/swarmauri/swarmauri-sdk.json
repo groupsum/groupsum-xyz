@@ -372224,6 +372224,18 @@
     "homepage": "https://swarmauri.com",
     "id": "repository:swarmauri/swarmauri-sdk",
     "kind": "repository",
+    "language_bytes": {
+      "C": 4211,
+      "C++": 32243,
+      "Dockerfile": 1450,
+      "HTML": 1619,
+      "JavaScript": 43807,
+      "Jinja": 18019,
+      "Meson": 4296,
+      "Python": 9891945,
+      "Rust": 14554,
+      "Shell": 1675
+    },
     "latest_commit": {
       "author": "github-actions[bot]",
       "authored_at": "2026-07-27T15:54:06Z",

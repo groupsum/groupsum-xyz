@@ -54,6 +54,7 @@ class PackageSummary(ApiModel):
     latest_version: str | None = None
     release_count: int = 0
     dependency_count: int = 0
+    dependent_count: int = 0
     observed_at: datetime | None = None
 
 

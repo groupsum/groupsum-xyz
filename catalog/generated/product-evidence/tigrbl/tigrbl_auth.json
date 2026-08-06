@@ -76602,6 +76602,15 @@
     "homepage": null,
     "id": "repository:tigrbl/tigrbl_auth",
     "kind": "repository",
+    "language_bytes": {
+      "CSS": 123265,
+      "Dockerfile": 2738,
+      "HTML": 2768283,
+      "JavaScript": 12620,
+      "Python": 7200873,
+      "Shell": 2608,
+      "TypeScript": 4351521
+    },
     "latest_commit": {
       "author": "cobycloud",
       "authored_at": "2026-08-06T02:25:56Z",

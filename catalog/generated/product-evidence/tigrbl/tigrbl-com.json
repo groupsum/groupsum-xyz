@@ -484,6 +484,14 @@
     "homepage": null,
     "id": "repository:tigrbl/tigrbl-com",
     "kind": "repository",
+    "language_bytes": {
+      "CSS": 5035,
+      "Dockerfile": 233,
+      "HTML": 1303,
+      "JavaScript": 3586,
+      "Python": 5286,
+      "TypeScript": 18959
+    },
     "latest_commit": {
       "author": "cobycloud",
       "authored_at": "2026-07-25T17:59:37Z",

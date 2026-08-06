@@ -270,6 +270,9 @@
     "homepage": null,
     "id": "repository:groupsum/decentralized-identifiers-governance-pack",
     "kind": "repository",
+    "language_bytes": {
+      "Python": 16783
+    },
     "latest_commit": {
       "author": "cobycloud",
       "authored_at": "2026-06-01T23:57:22Z",

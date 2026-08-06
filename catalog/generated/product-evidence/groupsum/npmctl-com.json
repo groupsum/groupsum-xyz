@@ -555,6 +555,14 @@
     "homepage": null,
     "id": "repository:groupsum/npmctl-com",
     "kind": "repository",
+    "language_bytes": {
+      "CSS": 6166,
+      "Dockerfile": 233,
+      "HTML": 1569,
+      "JavaScript": 3586,
+      "Python": 5286,
+      "TypeScript": 203254
+    },
     "latest_commit": {
       "author": "cobycloud",
       "authored_at": "2026-07-25T19:02:53Z",

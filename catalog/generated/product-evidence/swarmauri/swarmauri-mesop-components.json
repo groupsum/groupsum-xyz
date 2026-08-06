@@ -156,6 +156,10 @@
     "homepage": "https://swarmauri.com",
     "id": "repository:swarmauri/swarmauri-mesop-components",
     "kind": "repository",
+    "language_bytes": {
+      "JavaScript": 6817,
+      "Python": 4683
+    },
     "latest_commit": {
       "author": "cobycloud",
       "authored_at": "2024-09-07T15:34:02Z",

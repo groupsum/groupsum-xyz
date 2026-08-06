@@ -573,6 +573,11 @@
     "homepage": null,
     "id": "repository:groupsum/file-browser",
     "kind": "repository",
+    "language_bytes": {
+      "CSS": 815,
+      "HTML": 299,
+      "TypeScript": 51526
+    },
     "latest_commit": {
       "author": "cobycloud",
       "authored_at": "2026-06-15T10:48:36Z",

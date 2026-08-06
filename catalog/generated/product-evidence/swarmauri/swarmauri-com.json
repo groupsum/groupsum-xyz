@@ -489,6 +489,15 @@
     "homepage": null,
     "id": "repository:swarmauri/swarmauri-com",
     "kind": "repository",
+    "language_bytes": {
+      "CSS": 10633,
+      "Dockerfile": 233,
+      "HTML": 8943,
+      "JavaScript": 32692,
+      "Python": 7486,
+      "TypeScript": 673552,
+      "XSLT": 7197
+    },
     "latest_commit": {
       "author": "cobycloud",
       "authored_at": "2026-07-13T22:27:52Z",

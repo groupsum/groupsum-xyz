@@ -230,6 +230,7 @@ class CatalogCollectorTests(unittest.TestCase):
             {"organizations", "repositories", "packages", "resources", "technologies"},
         )
         self.assertIn("relationship_counts", datasets["repositories"][0])
+        self.assertEqual(datasets["repositories"][0]["language_bytes"], {"Python": 100})
         self.assertEqual(datasets["organizations"][0]["package_releases"], 1)
         self.assertTrue(datasets["packages"][0]["route"].startswith("/catalog/packages/pypi/example-"))
         self.assertEqual(datasets["packages"][0]["releases"][0]["version"], "1.0.0")

@@ -28,6 +28,7 @@ export default defineConfig({
           if (id.includes("node_modules/openapi-fetch")) return "openapi-runtime";
           if (id.includes("node_modules/lucide-react")) return "icons";
           if (id.includes("/src/mdwrk/")) return "mdwrk-runtime";
+          if (id.includes("/src/features/catalog/")) return "catalog-ui";
           return undefined;
         },
       },

@@ -142,6 +142,10 @@ def compile_repositories(catalog: dict[str, Any], generated_at: str, overrides: 
             ],
             "commit_activity": daily_commit_activity(activity, checked_at),
             "technologies": sorted(languages),
+            "language_bytes": {
+                language: int(byte_count or 0)
+                for language, byte_count in sorted(languages.items())
+            },
             "relationship_counts": dict(sorted(relationship_counts[full_name].items())),
             "related_resources": related_resources,
             "package_ids": sorted(packages_by_repo.get(full_name, [])),

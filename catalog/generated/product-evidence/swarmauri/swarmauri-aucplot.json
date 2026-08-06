@@ -413,6 +413,11 @@
     "homepage": null,
     "id": "repository:swarmauri/swarmauri-aucplot",
     "kind": "repository",
+    "language_bytes": {
+      "JavaScript": 110,
+      "Python": 5632,
+      "Svelte": 3879
+    },
     "latest_commit": {
       "author": "cobycloud",
       "authored_at": "2024-09-03T07:06:13Z",

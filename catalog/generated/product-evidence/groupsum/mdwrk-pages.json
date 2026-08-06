@@ -3895,6 +3895,14 @@
     "homepage": null,
     "id": "repository:groupsum/mdwrk-pages",
     "kind": "repository",
+    "language_bytes": {
+      "CSS": 9592580,
+      "Dockerfile": 1504,
+      "HTML": 1247,
+      "JavaScript": 1971171,
+      "Python": 1782,
+      "TypeScript": 18843237
+    },
     "latest_commit": {
       "author": "cobycloud",
       "authored_at": "2026-07-13T21:05:58Z",

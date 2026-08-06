@@ -166,6 +166,10 @@
     "homepage": "https://swarmauri.com",
     "id": "repository:swarmauri/swarmauri-playground",
     "kind": "repository",
+    "language_bytes": {
+      "Jupyter Notebook": 2331,
+      "Python": 9270
+    },
     "latest_commit": {
       "author": "cobycloud",
       "authored_at": "2024-10-22T10:15:54Z",

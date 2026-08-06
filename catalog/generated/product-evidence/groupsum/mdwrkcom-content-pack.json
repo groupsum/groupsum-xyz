@@ -367,6 +367,11 @@
     "homepage": "https://mdwrk.com",
     "id": "repository:groupsum/mdwrkcom-content-pack",
     "kind": "repository",
+    "language_bytes": {
+      "JavaScript": 30367,
+      "TypeScript": 8502,
+      "XSLT": 3975
+    },
     "latest_commit": {
       "author": "cobycloud",
       "authored_at": "2026-06-16T02:39:53Z",

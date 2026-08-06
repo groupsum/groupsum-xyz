@@ -322,6 +322,9 @@
     "homepage": null,
     "id": "repository:groupsum/marketing-attribution-conversion-governance-pack",
     "kind": "repository",
+    "language_bytes": {
+      "Python": 12745
+    },
     "latest_commit": {
       "author": "cobycloud",
       "authored_at": "2026-06-02T10:10:51Z",

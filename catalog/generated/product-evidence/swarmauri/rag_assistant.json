@@ -907,6 +907,9 @@
     "homepage": "https://swarmauri.com",
     "id": "repository:swarmauri/rag_assistant",
     "kind": "repository",
+    "language_bytes": {
+      "Python": 36929
+    },
     "latest_commit": {
       "author": "cobycloud",
       "authored_at": "2024-10-30T00:50:28Z",

@@ -798,6 +798,14 @@
     "homepage": null,
     "id": "repository:groupsum/portwyrm",
     "kind": "repository",
+    "language_bytes": {
+      "CSS": 818,
+      "Dockerfile": 1823,
+      "HTML": 1569,
+      "JavaScript": 6326,
+      "Python": 623096,
+      "TypeScript": 357390
+    },
     "latest_commit": {
       "author": "cobycloud",
       "authored_at": "2026-08-04T17:13:35Z",

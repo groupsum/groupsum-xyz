@@ -270,6 +270,9 @@
     "homepage": null,
     "id": "repository:groupsum/authnz-policy-governance-pack",
     "kind": "repository",
+    "language_bytes": {
+      "Python": 16607
+    },
     "latest_commit": {
       "author": "cobycloud",
       "authored_at": "2026-06-02T10:15:28Z",

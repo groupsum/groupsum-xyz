@@ -95,7 +95,7 @@ export function PublicCatalogDetail({ path, onNavigate }: { path: string; onNavi
           const item = valueRecord(model.item);
           const implementation = valueRecord(model.implementation);
           const legal = valueRecord(model.legal);
-          setRecord({ ...item, id: String(item.id || routeKey), kind: "repository", entity_graph: model.graph as EntityGraph | null, linked_sections: model.linked_sections, packages: implementation.packages, releases: implementation.releases, ssot_governance: model.governance, legal_observations: valueRecords(legal.observations), license_expression: legal.license_expression, license_status: legal.status } as CatalogRecord);
+          setRecord({ ...item, id: String(item.id || routeKey), kind: "repository", entity_graph: model.graph as EntityGraph | null, linked_sections: model.linked_sections, packages: implementation.packages, releases: implementation.releases, languages: implementation.languages, technologies: implementation.technologies, ssot_governance: model.governance, legal_observations: valueRecords(legal.observations), license_expression: legal.license_expression, license_status: legal.status } as CatalogRecord);
           setState("ready");
         });
     request.catch((error: Error) => { if (error.name !== "AbortError") setState(error.message.includes("404") ? "missing" : "error"); });

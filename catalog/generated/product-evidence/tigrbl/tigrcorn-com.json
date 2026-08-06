@@ -573,6 +573,14 @@
     "homepage": null,
     "id": "repository:tigrbl/tigrcorn-com",
     "kind": "repository",
+    "language_bytes": {
+      "CSS": 11110,
+      "Dockerfile": 233,
+      "HTML": 2889,
+      "JavaScript": 3586,
+      "Python": 5286,
+      "TypeScript": 158701
+    },
     "latest_commit": {
       "author": "cobycloud",
       "authored_at": "2026-07-13T22:27:54Z",

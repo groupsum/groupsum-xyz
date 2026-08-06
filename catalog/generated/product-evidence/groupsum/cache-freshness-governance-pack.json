@@ -448,6 +448,9 @@
     "homepage": null,
     "id": "repository:groupsum/cache-freshness-governance-pack",
     "kind": "repository",
+    "language_bytes": {
+      "Python": 18489
+    },
     "latest_commit": {
       "author": "github-actions[bot]",
       "authored_at": "2026-06-02T00:57:34Z",

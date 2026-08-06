@@ -299,6 +299,9 @@
     "homepage": null,
     "id": "repository:tigrbl/attribution-campaign-context",
     "kind": "repository",
+    "language_bytes": {
+      "Python": 55829
+    },
     "latest_commit": {
       "author": "cobycloud",
       "authored_at": "2026-06-14T10:49:11Z",

@@ -352,6 +352,9 @@
     "homepage": null,
     "id": "repository:groupsum/url-query-attribution-foundations-governance-pack",
     "kind": "repository",
+    "language_bytes": {
+      "Python": 17194
+    },
     "latest_commit": {
       "author": "github-actions[bot]",
       "authored_at": "2026-06-02T00:56:23Z",

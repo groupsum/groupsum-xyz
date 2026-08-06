@@ -84426,6 +84426,10 @@
     "homepage": "https://tigrbl.com",
     "id": "repository:tigrbl/tigrbl",
     "kind": "repository",
+    "language_bytes": {
+      "Jupyter Notebook": 35668,
+      "Python": 6976175
+    },
     "latest_commit": {
       "author": "cobycloud",
       "authored_at": "2026-08-06T00:23:18Z",

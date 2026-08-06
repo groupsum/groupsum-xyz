@@ -289,6 +289,12 @@
     "homepage": null,
     "id": "repository:swarmauri/swarmauri-flipcard",
     "kind": "repository",
+    "language_bytes": {
+      "CSS": 1276,
+      "HTML": 369,
+      "JavaScript": 543,
+      "Svelte": 2656
+    },
     "latest_commit": {
       "author": "cobycloud",
       "authored_at": "2024-09-05T00:30:47Z",

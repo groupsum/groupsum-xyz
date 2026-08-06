@@ -34,11 +34,11 @@
       "sha256": "22337a7083c401c65b7d26f69d59cc93971a2980e3ec64b9f7cc79c4daea0f86"
     },
     {
-      "bytes": 9230907,
+      "bytes": 9237528,
       "dataset": "repositories",
       "path": "repositories.json",
       "records": 69,
-      "sha256": "5a5fd5fb509a8184bea0f42d23ae02f7e32270be24c44dcfeb7673c814b79bf4"
+      "sha256": "99ccd9ea35ea56980fb001afb9ca562242232721b25d93b724486e8ecb0e008f"
     },
     {
       "bytes": 715041,

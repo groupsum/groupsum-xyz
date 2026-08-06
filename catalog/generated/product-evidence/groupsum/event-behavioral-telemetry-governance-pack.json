@@ -312,6 +312,9 @@
     "homepage": null,
     "id": "repository:groupsum/event-behavioral-telemetry-governance-pack",
     "kind": "repository",
+    "language_bytes": {
+      "Python": 12650
+    },
     "latest_commit": {
       "author": "cobycloud",
       "authored_at": "2026-05-18T09:39:08Z",

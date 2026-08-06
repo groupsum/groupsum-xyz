@@ -26607,6 +26607,16 @@
     "homepage": null,
     "id": "repository:groupsum/ssot-registry",
     "kind": "repository",
+    "language_bytes": {
+      "CSS": 10383,
+      "HTML": 6308532,
+      "JavaScript": 1123,
+      "Makefile": 180792,
+      "Python": 1800643,
+      "Rust": 9206,
+      "Shell": 4586,
+      "TypeScript": 367298
+    },
     "latest_commit": {
       "author": "cobycloud",
       "authored_at": "2026-08-03T17:44:02Z",

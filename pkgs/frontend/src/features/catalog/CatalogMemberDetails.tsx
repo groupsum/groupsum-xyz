@@ -16,6 +16,7 @@ import type { CatalogViewRecord } from "../../types/catalog-view";
 
 import { DetailRows, DetailSection, formatDate, humanLabel, isCurrentPageLink, LegalContext, monthlyReleaseActivity, recordTitle, ReleaseTimeline, repositorySignals, resourceIcon, SsotGovernanceSection, valueRecord, valueRecords, valueStrings, type CatalogRecord } from "./CatalogRecordShared";
 import { LinkedResourceSections } from "./CatalogCollections";
+import { ContainedPackageList, RepositoryLanguagePanel } from "./RepositoryImplementationPanels";
 
 export function RepositoryDetail({ record, onNavigate }: { record: CatalogRecord; onNavigate: (path: string) => void }) {
   const commit = valueRecord(record.latest_commit);
@@ -48,6 +49,7 @@ export function RepositoryDetail({ record, onNavigate }: { record: CatalogRecord
         <RepositorySignalStrip signals={repositorySignals(record)} />
         <MetricBand label="Additional repository metrics" items={Object.entries(valueRecord(record.metrics)).filter(([key]) => !["stars", "forks", "watchers", "contributors", "commits", "relationships"].includes(key)).map(([key, value]) => ({ label: humanLabel(key), value: Number(value || 0), icon: metricIcons[key] }))} />
       </DetailSection>
+      <RepositoryLanguagePanel languagesValue={record.languages} technologiesValue={record.technologies} />
       <DetailSection title="Release activity" intro="Repository analytics aggregate its GitHub releases and the registry releases owned by contained packages. Individual package histories remain on their package records.">
         <MetricBand label="Repository release summary" items={[
           { label: "Package releases", value: packageReleaseCount, icon: metricIcons.releases },
@@ -70,7 +72,7 @@ export function RepositoryDetail({ record, onNavigate }: { record: CatalogRecord
         ]} />
       </DetailSection>
       <DetailSection title="Contained packages" intro="Every package is a child resource owned by this repository. Its license belongs with the package rather than the repository-level legal summary.">
-        {packages.length > 0 ? <ul className="divide-y divide-[var(--color-border-soft)]">{packages.map((pkg) => <li key={String(pkg.id)} className="py-4 sm:flex sm:items-center sm:justify-between gap-5"><div className="min-w-0"><span className="text-[10px] font-mono uppercase text-accent">{humanLabel(String(pkg.ecosystem || "package"))} Â· {humanLabel(String(pkg.package_kind || "package candidate"))}</span><p className="break-all text-sm font-semibold text-ink">{String(pkg.name)}</p><p className="text-xs text-ink-muted">{String(pkg.manifest_path || "Manifest path not recorded")}</p><p className="mt-1 text-xs text-ink-muted">License: {pkg.license_url ? <a href={String(pkg.license_url)} target="_blank" rel="noreferrer" className="font-semibold text-accent hover:underline">{String(pkg.license_expression || "Observed license")}</a> : String(pkg.license_expression || "Not observed")}{Number(pkg.notice_count || 0) > 0 ? ` Â· ${Number(pkg.notice_count).toLocaleString()} notice file${Number(pkg.notice_count) === 1 ? "" : "s"}` : ""}</p></div><div className="mt-2 flex flex-wrap items-center gap-x-5 gap-y-2 sm:mt-0"><span className="text-[10px] font-mono text-ink-muted"><strong className="block text-sm text-ink">{Number(pkg.release_count || 0).toLocaleString()}</strong>releases</span><span className="text-[10px] font-mono text-ink-muted"><strong className="block text-sm text-ink">{String(pkg.latest_version || "â€”")}</strong>latest</span><a href={String(pkg.route)} onClick={(event) => { event.preventDefault(); onNavigate(String(pkg.route)); }} className="inline-flex min-h-11 items-center text-xs font-mono font-semibold text-accent hover:underline">View package</a></div></li>)}</ul> : <p className="text-sm text-ink-muted">No package manifests were observed in this repository.</p>}
+        <ContainedPackageList packagesValue={packages} onNavigate={onNavigate} />
       </DetailSection>
       <LinkedResourceSections sections={record.linked_sections} onNavigate={onNavigate} />
     </>

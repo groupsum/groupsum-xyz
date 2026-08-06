@@ -672,6 +672,11 @@
     "homepage": null,
     "id": "repository:groupsum/document-viewer",
     "kind": "repository",
+    "language_bytes": {
+      "CSS": 707,
+      "HTML": 311,
+      "TypeScript": 30232
+    },
     "latest_commit": {
       "author": "cobycloud",
       "authored_at": "2026-06-15T10:48:36Z",

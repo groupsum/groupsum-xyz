@@ -3432,6 +3432,11 @@ export interface components {
              * @default 0
              */
             dependency_count: number;
+            /**
+             * Dependent Count
+             * @default 0
+             */
+            dependent_count: number;
             /** Ecosystem */
             ecosystem: string;
             /** Id */

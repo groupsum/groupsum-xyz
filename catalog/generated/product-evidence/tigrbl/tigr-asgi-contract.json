@@ -2622,6 +2622,12 @@
     "homepage": null,
     "id": "repository:tigrbl/tigr-asgi-contract",
     "kind": "repository",
+    "language_bytes": {
+      "JavaScript": 1252,
+      "Python": 483816,
+      "Rust": 37634,
+      "TypeScript": 61168
+    },
     "latest_commit": {
       "author": "cobycloud",
       "authored_at": "2026-08-03T22:32:39Z",

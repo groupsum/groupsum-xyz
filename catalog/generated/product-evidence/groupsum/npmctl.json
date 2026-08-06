@@ -5247,6 +5247,11 @@
     "homepage": null,
     "id": "repository:groupsum/npmctl",
     "kind": "repository",
+    "language_bytes": {
+      "Dockerfile": 153,
+      "Python": 299383,
+      "Shell": 247
+    },
     "latest_commit": {
       "author": "cobycloud",
       "authored_at": "2026-08-04T19:45:10Z",
