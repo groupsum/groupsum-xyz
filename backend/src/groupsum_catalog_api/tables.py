@@ -55,6 +55,9 @@ class EntityType(RestTable):
     label = Column(String(160), nullable=False)
     semantic_class = Column(String(60), nullable=False, index=True)
     description = Column(Text, nullable=True)
+    parent_type_id = Column(String(80), nullable=True, index=True)
+    icon_key = Column(String(80), nullable=True)
+    detail_schema_key = Column(String(120), nullable=True)
 
 
 class CatalogEntity(RestTable):
@@ -95,11 +98,13 @@ class EntityUrl(RestTable):
     url_role = Column(String(60), nullable=False)
     url = Column(String(2048), nullable=False)
     label = Column(String(240), nullable=True)
+    # Deprecated compatibility field. Generic catalog provenance is an origin,
+    # never SSOT evidence.
     evidence_type = Column(String(80), nullable=False)
+    origin_kind = Column(String(80), nullable=False, default="collector_observation")
+    observation_id = Column(String(300), nullable=True, index=True)
     observed_at = Column(DateTime, nullable=True)
-    __table_args__ = (
-        UniqueConstraint("entity_id", "url_role", "url", name="uq_entity_url"),
-    )
+    __table_args__ = (UniqueConstraint("entity_id", "url_role", "url", name="uq_entity_url"),)
 
 
 class EntityRelationship(RestTable):
@@ -114,7 +119,11 @@ class EntityRelationship(RestTable):
     )
     relationship_type = Column(String(80), nullable=False, index=True)
     role = Column(String(512), nullable=True)
+    # Deprecated compatibility field retained for existing deployments.
     evidence_type = Column(String(80), nullable=False)
+    origin_kind = Column(String(80), nullable=False, default="collector_observation")
+    observation_id = Column(String(300), nullable=True, index=True)
+    ssot_entity_id = Column(String(360), nullable=True, index=True)
     source_url = Column(String(2048), nullable=True)
     confidence = Column(String(40), nullable=False, default="observed")
     status = Column(String(40), nullable=False, default="active")
@@ -249,18 +258,12 @@ class RepositoryContributor(RestTable):
     __tablename__ = "repository_contributors"
     __allow_unmapped__ = True
     id = Column(String(300), primary_key=True)
-    repository_id = Column(
-        String(240), ForeignKey("repositories.id"), nullable=False, index=True
-    )
+    repository_id = Column(String(240), ForeignKey("repositories.id"), nullable=False, index=True)
     login = Column(String(240), nullable=False, index=True)
     profile_url = Column(String(2048), nullable=True)
     contributions = Column(Integer, nullable=False, default=0)
     observed_at = Column(DateTime, nullable=False, index=True)
-    __table_args__ = (
-        UniqueConstraint(
-            "repository_id", "login", name="uq_repository_contributor"
-        ),
-    )
+    __table_args__ = (UniqueConstraint("repository_id", "login", name="uq_repository_contributor"),)
 
 
 class RepositoryLanguage(RestTable):
@@ -399,6 +402,7 @@ class ResourceTaxonomy(RestTable):
 class LegalEvidence(RestTable):
     __tablename__ = "legal_evidence"
     __allow_unmapped__ = True
+    TABLE_PROFILE = INTERNAL_TABLE_PROFILE
     id = Column(String(320), primary_key=True)
     subject_kind = Column(String(40), nullable=False, index=True)
     subject_id = Column(String(300), nullable=False, index=True)
@@ -408,6 +412,8 @@ class LegalEvidence(RestTable):
     path = Column(String(1000), nullable=True)
     url = Column(String(2048), nullable=False)
     scope = Column(String(40), nullable=False, default="direct")
+    origin_kind = Column(String(80), nullable=False, default="repository.file")
+    # Deprecated compatibility field. Legal file discovery is an observation.
     evidence_type = Column(String(80), nullable=False)
     observed_at = Column(DateTime, nullable=True)
 
@@ -447,6 +453,8 @@ class Dependency(RestTable):
     target_id = Column(String(260), nullable=False)
     requirement = Column(String(240), nullable=True)
     scope = Column(String(60), nullable=True)
+    origin_kind = Column(String(80), nullable=False, default="repository.manifest")
+    # Deprecated compatibility field. Dependency discovery is an observation.
     evidence_type = Column(String(80), nullable=False, default="repository.manifest")
     source_url = Column(String(2048), nullable=True)
     completeness = Column(String(80), nullable=False, default="catalog-observed")
@@ -461,6 +469,7 @@ class Dependency(RestTable):
 class Feature(RestTable):
     __tablename__ = "features"
     __allow_unmapped__ = True
+    TABLE_PROFILE = INTERNAL_TABLE_PROFILE
     id = Column(String(240), primary_key=True)
     slug = Column(String(200), nullable=False, unique=True)
     name = Column(String(240), nullable=False)
@@ -471,6 +480,7 @@ class Feature(RestTable):
 class Claim(RestTable):
     __tablename__ = "claims"
     __allow_unmapped__ = True
+    TABLE_PROFILE = INTERNAL_TABLE_PROFILE
     id = Column(String(260), primary_key=True)
     record_id = Column(String(200), ForeignKey("records.id"), nullable=True, index=True)
     claim_type = Column(String(60), nullable=False)
@@ -483,6 +493,7 @@ class Claim(RestTable):
 class Evidence(RestTable):
     __tablename__ = "evidence"
     __allow_unmapped__ = True
+    TABLE_PROFILE = INTERNAL_TABLE_PROFILE
     id = Column(String(280), primary_key=True)
     evidence_type = Column(String(60), nullable=False)
     title = Column(String(300), nullable=False)
@@ -496,6 +507,7 @@ class Evidence(RestTable):
 class ClaimEvidence(RestTable):
     __tablename__ = "claim_evidence"
     __allow_unmapped__ = True
+    TABLE_PROFILE = INTERNAL_TABLE_PROFILE
     id = Column(String(320), primary_key=True)
     claim_id = Column(String(260), ForeignKey("claims.id"), nullable=False, index=True)
     evidence_id = Column(String(280), ForeignKey("evidence.id"), nullable=False, index=True)
@@ -506,6 +518,7 @@ class ClaimEvidence(RestTable):
 class ResourceEvidence(RestTable):
     __tablename__ = "resource_evidence"
     __allow_unmapped__ = True
+    TABLE_PROFILE = INTERNAL_TABLE_PROFILE
     id = Column(String(340), primary_key=True)
     resource_id = Column(String(280), ForeignKey("resources.id"), nullable=False, index=True)
     evidence_id = Column(String(280), ForeignKey("evidence.id"), nullable=False, index=True)
@@ -548,6 +561,7 @@ class RepositorySsotInventory(RestTable):
 class RecordFeature(RestTable):
     __tablename__ = "record_features"
     __allow_unmapped__ = True
+    TABLE_PROFILE = INTERNAL_TABLE_PROFILE
     id = Column(String(300), primary_key=True)
     record_id = Column(String(200), ForeignKey("records.id"), nullable=False, index=True)
     feature_id = Column(String(240), ForeignKey("features.id"), nullable=False, index=True)
@@ -590,7 +604,9 @@ class Observation(TableBase):
     )
     subject_kind = Column(String(60), nullable=False, index=True)
     subject_id = Column(String(280), nullable=False, index=True)
-    evidence_type = Column(String(60), nullable=False)
+    observation_type = Column(String(80), nullable=False, default="inventory")
+    # Deprecated compatibility field. Evidence is reserved for SSOT entities.
+    evidence_type = Column(String(60), nullable=True)
     source_url = Column(String(2048), nullable=False)
     payload = Column(JSON, nullable=True)
     completeness = Column(String(60), nullable=False, default="observed")

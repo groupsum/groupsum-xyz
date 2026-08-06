@@ -118,7 +118,7 @@ export interface paths {
         patch?: never;
         trace?: never;
     };
-    "/api/v1/catalog/resources/{route_key}": {
+    "/api/v1/catalog/resources/{resource_type}/{route_key}": {
         parameters: {
             query?: never;
             header?: never;
@@ -126,6 +126,23 @@ export interface paths {
             cookie?: never;
         };
         /** Typed catalog resource record */
+        get: operations["typed_catalog_resource"];
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/api/v1/catalog/resources/{route_key}": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        /** Legacy typed catalog resource record route */
         get: operations["catalog_resource"];
         put?: never;
         post?: never;
@@ -439,70 +456,6 @@ export interface paths {
         patch?: never;
         trace?: never;
     };
-    "/claim": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        get: operations["Claim.count"];
-        put?: never;
-        post: operations["Claim.group_by"];
-        delete?: never;
-        options?: never;
-        head?: never;
-        patch?: never;
-        trace?: never;
-    };
-    "/claim/{item_id}": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        get: operations["Claim.exists"];
-        put?: never;
-        post?: never;
-        delete?: never;
-        options?: never;
-        head?: never;
-        patch?: never;
-        trace?: never;
-    };
-    "/claimevidence": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        get: operations["ClaimEvidence.count"];
-        put?: never;
-        post: operations["ClaimEvidence.group_by"];
-        delete?: never;
-        options?: never;
-        head?: never;
-        patch?: never;
-        trace?: never;
-    };
-    "/claimevidence/{item_id}": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        get: operations["ClaimEvidence.exists"];
-        put?: never;
-        post?: never;
-        delete?: never;
-        options?: never;
-        head?: never;
-        patch?: never;
-        trace?: never;
-    };
     "/dependency": {
         parameters: {
             query?: never;
@@ -695,70 +648,6 @@ export interface paths {
         patch?: never;
         trace?: never;
     };
-    "/evidence": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        get: operations["Evidence.count"];
-        put?: never;
-        post: operations["Evidence.group_by"];
-        delete?: never;
-        options?: never;
-        head?: never;
-        patch?: never;
-        trace?: never;
-    };
-    "/evidence/{item_id}": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        get: operations["Evidence.exists"];
-        put?: never;
-        post?: never;
-        delete?: never;
-        options?: never;
-        head?: never;
-        patch?: never;
-        trace?: never;
-    };
-    "/feature": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        get: operations["Feature.count"];
-        put?: never;
-        post: operations["Feature.group_by"];
-        delete?: never;
-        options?: never;
-        head?: never;
-        patch?: never;
-        trace?: never;
-    };
-    "/feature/{item_id}": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        get: operations["Feature.exists"];
-        put?: never;
-        post?: never;
-        delete?: never;
-        options?: never;
-        head?: never;
-        patch?: never;
-        trace?: never;
-    };
     "/healthz": {
         parameters: {
             query?: never;
@@ -768,38 +657,6 @@ export interface paths {
         };
         /** Catalog API health */
         get: operations["healthz"];
-        put?: never;
-        post?: never;
-        delete?: never;
-        options?: never;
-        head?: never;
-        patch?: never;
-        trace?: never;
-    };
-    "/legalevidence": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        get: operations["LegalEvidence.count"];
-        put?: never;
-        post: operations["LegalEvidence.group_by"];
-        delete?: never;
-        options?: never;
-        head?: never;
-        patch?: never;
-        trace?: never;
-    };
-    "/legalevidence/{item_id}": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        get: operations["LegalEvidence.exists"];
         put?: never;
         post?: never;
         delete?: never;
@@ -1088,38 +945,6 @@ export interface paths {
             cookie?: never;
         };
         get: operations["RecordAuthor.exists"];
-        put?: never;
-        post?: never;
-        delete?: never;
-        options?: never;
-        head?: never;
-        patch?: never;
-        trace?: never;
-    };
-    "/recordfeature": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        get: operations["RecordFeature.count"];
-        put?: never;
-        post: operations["RecordFeature.group_by"];
-        delete?: never;
-        options?: never;
-        head?: never;
-        patch?: never;
-        trace?: never;
-    };
-    "/recordfeature/{item_id}": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        get: operations["RecordFeature.exists"];
         put?: never;
         post?: never;
         delete?: never;
@@ -1504,38 +1329,6 @@ export interface paths {
             cookie?: never;
         };
         get: operations["Resource.exists"];
-        put?: never;
-        post?: never;
-        delete?: never;
-        options?: never;
-        head?: never;
-        patch?: never;
-        trace?: never;
-    };
-    "/resourceevidence": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        get: operations["ResourceEvidence.count"];
-        put?: never;
-        post: operations["ResourceEvidence.group_by"];
-        delete?: never;
-        options?: never;
-        head?: never;
-        patch?: never;
-        trace?: never;
-    };
-    "/resourceevidence/{item_id}": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        get: operations["ResourceEvidence.exists"];
         put?: never;
         post?: never;
         delete?: never;
@@ -1949,6 +1742,10 @@ export interface components {
             legal?: {
                 [key: string]: unknown;
             };
+            /** Linked Sections */
+            linked_sections?: {
+                [key: string]: unknown;
+            }[];
             /**
              * Parent
              * @default null
@@ -1987,226 +1784,6 @@ export interface components {
         } & {
             [key: string]: unknown;
         };
-        /**
-         * ClaimCountResponse
-         * @description Tigrbl v3 Claim count schema
-         */
-        ClaimCountResponse: {
-            /** Claim Type */
-            claim_type: string;
-            /**
-             * Id
-             * @default null
-             */
-            id: string;
-            /**
-             * Record Id
-             * @default null
-             */
-            record_id: string | null;
-            /**
-             * Reviewed At
-             * @default null
-             */
-            reviewed_at: string | null;
-            /**
-             * Ssot Claim Id
-             * @default null
-             */
-            ssot_claim_id: string | null;
-            /** Statement */
-            statement: string;
-            /**
-             * Status
-             * @default null
-             */
-            status: string;
-        };
-        /**
-         * ClaimEvidenceCountResponse
-         * @description Tigrbl v3 ClaimEvidence count schema
-         */
-        ClaimEvidenceCountResponse: {
-            /** Claim Id */
-            claim_id: string;
-            /** Evidence Id */
-            evidence_id: string;
-            /**
-             * Id
-             * @default null
-             */
-            id: string;
-            /**
-             * Support
-             * @default null
-             */
-            support: string;
-        };
-        /**
-         * ClaimEvidenceExistsResponse
-         * @description Tigrbl v3 ClaimEvidence exists schema
-         */
-        ClaimEvidenceExistsResponse: {
-            /** Claim Id */
-            claim_id: string;
-            /** Evidence Id */
-            evidence_id: string;
-            /**
-             * Id
-             * @default null
-             */
-            id: string;
-            /**
-             * Support
-             * @default null
-             */
-            support: string;
-        };
-        /**
-         * ClaimEvidenceGroupByRequest
-         * @description Tigrbl v3 ClaimEvidence group_by schema
-         */
-        ClaimEvidenceGroupByRequest: {
-            /** Claim Id */
-            claim_id: string;
-            /** Evidence Id */
-            evidence_id: string;
-            /**
-             * Id
-             * @default null
-             */
-            id: string;
-            /**
-             * Support
-             * @default null
-             */
-            support: string;
-        };
-        /**
-         * ClaimEvidenceGroupByResponse
-         * @description Tigrbl v3 ClaimEvidence group_by schema
-         */
-        ClaimEvidenceGroupByResponse: {
-            /** Claim Id */
-            claim_id: string;
-            /** Evidence Id */
-            evidence_id: string;
-            /**
-             * Id
-             * @default null
-             */
-            id: string;
-            /**
-             * Support
-             * @default null
-             */
-            support: string;
-        };
-        /**
-         * ClaimExistsResponse
-         * @description Tigrbl v3 Claim exists schema
-         */
-        ClaimExistsResponse: {
-            /** Claim Type */
-            claim_type: string;
-            /**
-             * Id
-             * @default null
-             */
-            id: string;
-            /**
-             * Record Id
-             * @default null
-             */
-            record_id: string | null;
-            /**
-             * Reviewed At
-             * @default null
-             */
-            reviewed_at: string | null;
-            /**
-             * Ssot Claim Id
-             * @default null
-             */
-            ssot_claim_id: string | null;
-            /** Statement */
-            statement: string;
-            /**
-             * Status
-             * @default null
-             */
-            status: string;
-        };
-        /**
-         * ClaimGroupByRequest
-         * @description Tigrbl v3 Claim group_by schema
-         */
-        ClaimGroupByRequest: {
-            /** Claim Type */
-            claim_type: string;
-            /**
-             * Id
-             * @default null
-             */
-            id: string;
-            /**
-             * Record Id
-             * @default null
-             */
-            record_id: string | null;
-            /**
-             * Reviewed At
-             * @default null
-             */
-            reviewed_at: string | null;
-            /**
-             * Ssot Claim Id
-             * @default null
-             */
-            ssot_claim_id: string | null;
-            /** Statement */
-            statement: string;
-            /**
-             * Status
-             * @default null
-             */
-            status: string;
-        };
-        /**
-         * ClaimGroupByResponse
-         * @description Tigrbl v3 Claim group_by schema
-         */
-        ClaimGroupByResponse: {
-            /** Claim Type */
-            claim_type: string;
-            /**
-             * Id
-             * @default null
-             */
-            id: string;
-            /**
-             * Record Id
-             * @default null
-             */
-            record_id: string | null;
-            /**
-             * Reviewed At
-             * @default null
-             */
-            reviewed_at: string | null;
-            /**
-             * Ssot Claim Id
-             * @default null
-             */
-            ssot_claim_id: string | null;
-            /** Statement */
-            statement: string;
-            /**
-             * Status
-             * @default null
-             */
-            status: string;
-        };
         /** CommitPoint */
         CommitPoint: {
             /** Count */
@@ -2241,6 +1818,11 @@ export interface components {
              * @default null
              */
             observed_at: string | null;
+            /**
+             * Origin Kind
+             * @default null
+             */
+            origin_kind: string;
             /**
              * Requirement
              * @default null
@@ -2291,6 +1873,11 @@ export interface components {
              */
             observed_at: string | null;
             /**
+             * Origin Kind
+             * @default null
+             */
+            origin_kind: string;
+            /**
              * Requirement
              * @default null
              */
@@ -2340,6 +1927,11 @@ export interface components {
              */
             observed_at: string | null;
             /**
+             * Origin Kind
+             * @default null
+             */
+            origin_kind: string;
+            /**
              * Requirement
              * @default null
              */
@@ -2388,6 +1980,11 @@ export interface components {
              * @default null
              */
             observed_at: string | null;
+            /**
+             * Origin Kind
+             * @default null
+             */
+            origin_kind: string;
             /**
              * Requirement
              * @default null
@@ -2626,10 +2223,20 @@ export interface components {
              */
             id: string;
             /**
+             * Observation Id
+             * @default null
+             */
+            observation_id: string | null;
+            /**
              * Observed At
              * @default null
              */
             observed_at: string | null;
+            /**
+             * Origin Kind
+             * @default null
+             */
+            origin_kind: string;
             /** Relationship Type */
             relationship_type: string;
             /**
@@ -2644,6 +2251,11 @@ export interface components {
              * @default null
              */
             source_url: string | null;
+            /**
+             * Ssot Entity Id
+             * @default null
+             */
+            ssot_entity_id: string | null;
             /**
              * Status
              * @default null
@@ -2670,10 +2282,20 @@ export interface components {
              */
             id: string;
             /**
+             * Observation Id
+             * @default null
+             */
+            observation_id: string | null;
+            /**
              * Observed At
              * @default null
              */
             observed_at: string | null;
+            /**
+             * Origin Kind
+             * @default null
+             */
+            origin_kind: string;
             /** Relationship Type */
             relationship_type: string;
             /**
@@ -2688,6 +2310,11 @@ export interface components {
              * @default null
              */
             source_url: string | null;
+            /**
+             * Ssot Entity Id
+             * @default null
+             */
+            ssot_entity_id: string | null;
             /**
              * Status
              * @default null
@@ -2714,10 +2341,20 @@ export interface components {
              */
             id: string;
             /**
+             * Observation Id
+             * @default null
+             */
+            observation_id: string | null;
+            /**
              * Observed At
              * @default null
              */
             observed_at: string | null;
+            /**
+             * Origin Kind
+             * @default null
+             */
+            origin_kind: string;
             /** Relationship Type */
             relationship_type: string;
             /**
@@ -2732,6 +2369,11 @@ export interface components {
              * @default null
              */
             source_url: string | null;
+            /**
+             * Ssot Entity Id
+             * @default null
+             */
+            ssot_entity_id: string | null;
             /**
              * Status
              * @default null
@@ -2758,10 +2400,20 @@ export interface components {
              */
             id: string;
             /**
+             * Observation Id
+             * @default null
+             */
+            observation_id: string | null;
+            /**
              * Observed At
              * @default null
              */
             observed_at: string | null;
+            /**
+             * Origin Kind
+             * @default null
+             */
+            origin_kind: string;
             /** Relationship Type */
             relationship_type: string;
             /**
@@ -2776,6 +2428,11 @@ export interface components {
              * @default null
              */
             source_url: string | null;
+            /**
+             * Ssot Entity Id
+             * @default null
+             */
+            ssot_entity_id: string | null;
             /**
              * Status
              * @default null
@@ -2795,12 +2452,27 @@ export interface components {
              */
             description: string | null;
             /**
+             * Detail Schema Key
+             * @default null
+             */
+            detail_schema_key: string | null;
+            /**
+             * Icon Key
+             * @default null
+             */
+            icon_key: string | null;
+            /**
              * Id
              * @default null
              */
             id: string;
             /** Label */
             label: string;
+            /**
+             * Parent Type Id
+             * @default null
+             */
+            parent_type_id: string | null;
             /** Semantic Class */
             semantic_class: string;
         };
@@ -2815,12 +2487,27 @@ export interface components {
              */
             description: string | null;
             /**
+             * Detail Schema Key
+             * @default null
+             */
+            detail_schema_key: string | null;
+            /**
+             * Icon Key
+             * @default null
+             */
+            icon_key: string | null;
+            /**
              * Id
              * @default null
              */
             id: string;
             /** Label */
             label: string;
+            /**
+             * Parent Type Id
+             * @default null
+             */
+            parent_type_id: string | null;
             /** Semantic Class */
             semantic_class: string;
         };
@@ -2835,12 +2522,27 @@ export interface components {
              */
             description: string | null;
             /**
+             * Detail Schema Key
+             * @default null
+             */
+            detail_schema_key: string | null;
+            /**
+             * Icon Key
+             * @default null
+             */
+            icon_key: string | null;
+            /**
              * Id
              * @default null
              */
             id: string;
             /** Label */
             label: string;
+            /**
+             * Parent Type Id
+             * @default null
+             */
+            parent_type_id: string | null;
             /** Semantic Class */
             semantic_class: string;
         };
@@ -2855,12 +2557,27 @@ export interface components {
              */
             description: string | null;
             /**
+             * Detail Schema Key
+             * @default null
+             */
+            detail_schema_key: string | null;
+            /**
+             * Icon Key
+             * @default null
+             */
+            icon_key: string | null;
+            /**
              * Id
              * @default null
              */
             id: string;
             /** Label */
             label: string;
+            /**
+             * Parent Type Id
+             * @default null
+             */
+            parent_type_id: string | null;
             /** Semantic Class */
             semantic_class: string;
         };
@@ -2884,10 +2601,20 @@ export interface components {
              */
             label: string | null;
             /**
+             * Observation Id
+             * @default null
+             */
+            observation_id: string | null;
+            /**
              * Observed At
              * @default null
              */
             observed_at: string | null;
+            /**
+             * Origin Kind
+             * @default null
+             */
+            origin_kind: string;
             /** Url */
             url: string;
             /** Url Role */
@@ -2913,10 +2640,20 @@ export interface components {
              */
             label: string | null;
             /**
+             * Observation Id
+             * @default null
+             */
+            observation_id: string | null;
+            /**
              * Observed At
              * @default null
              */
             observed_at: string | null;
+            /**
+             * Origin Kind
+             * @default null
+             */
+            origin_kind: string;
             /** Url */
             url: string;
             /** Url Role */
@@ -2942,10 +2679,20 @@ export interface components {
              */
             label: string | null;
             /**
+             * Observation Id
+             * @default null
+             */
+            observation_id: string | null;
+            /**
              * Observed At
              * @default null
              */
             observed_at: string | null;
+            /**
+             * Origin Kind
+             * @default null
+             */
+            origin_kind: string;
             /** Url */
             url: string;
             /** Url Role */
@@ -2971,434 +2718,24 @@ export interface components {
              */
             label: string | null;
             /**
+             * Observation Id
+             * @default null
+             */
+            observation_id: string | null;
+            /**
              * Observed At
              * @default null
              */
             observed_at: string | null;
+            /**
+             * Origin Kind
+             * @default null
+             */
+            origin_kind: string;
             /** Url */
             url: string;
             /** Url Role */
             url_role: string;
-        };
-        /**
-         * EvidenceCountResponse
-         * @description Tigrbl v3 Evidence count schema
-         */
-        EvidenceCountResponse: {
-            /** Evidence Type */
-            evidence_type: string;
-            /**
-             * Excerpt
-             * @default null
-             */
-            excerpt: string | null;
-            /**
-             * Expires At
-             * @default null
-             */
-            expires_at: string | null;
-            /**
-             * Id
-             * @default null
-             */
-            id: string;
-            /**
-             * Locator
-             * @default null
-             */
-            locator: string | null;
-            /**
-             * Observed At
-             * Format: date-time
-             */
-            observed_at: string;
-            /** Source Url */
-            source_url: string;
-            /** Title */
-            title: string;
-        };
-        /**
-         * EvidenceExistsResponse
-         * @description Tigrbl v3 Evidence exists schema
-         */
-        EvidenceExistsResponse: {
-            /** Evidence Type */
-            evidence_type: string;
-            /**
-             * Excerpt
-             * @default null
-             */
-            excerpt: string | null;
-            /**
-             * Expires At
-             * @default null
-             */
-            expires_at: string | null;
-            /**
-             * Id
-             * @default null
-             */
-            id: string;
-            /**
-             * Locator
-             * @default null
-             */
-            locator: string | null;
-            /**
-             * Observed At
-             * Format: date-time
-             */
-            observed_at: string;
-            /** Source Url */
-            source_url: string;
-            /** Title */
-            title: string;
-        };
-        /**
-         * EvidenceGroupByRequest
-         * @description Tigrbl v3 Evidence group_by schema
-         */
-        EvidenceGroupByRequest: {
-            /** Evidence Type */
-            evidence_type: string;
-            /**
-             * Excerpt
-             * @default null
-             */
-            excerpt: string | null;
-            /**
-             * Expires At
-             * @default null
-             */
-            expires_at: string | null;
-            /**
-             * Id
-             * @default null
-             */
-            id: string;
-            /**
-             * Locator
-             * @default null
-             */
-            locator: string | null;
-            /**
-             * Observed At
-             * Format: date-time
-             */
-            observed_at: string;
-            /** Source Url */
-            source_url: string;
-            /** Title */
-            title: string;
-        };
-        /**
-         * EvidenceGroupByResponse
-         * @description Tigrbl v3 Evidence group_by schema
-         */
-        EvidenceGroupByResponse: {
-            /** Evidence Type */
-            evidence_type: string;
-            /**
-             * Excerpt
-             * @default null
-             */
-            excerpt: string | null;
-            /**
-             * Expires At
-             * @default null
-             */
-            expires_at: string | null;
-            /**
-             * Id
-             * @default null
-             */
-            id: string;
-            /**
-             * Locator
-             * @default null
-             */
-            locator: string | null;
-            /**
-             * Observed At
-             * Format: date-time
-             */
-            observed_at: string;
-            /** Source Url */
-            source_url: string;
-            /** Title */
-            title: string;
-        };
-        /**
-         * FeatureCountResponse
-         * @description Tigrbl v3 Feature count schema
-         */
-        FeatureCountResponse: {
-            /**
-             * Description
-             * @default null
-             */
-            description: string | null;
-            /**
-             * Id
-             * @default null
-             */
-            id: string;
-            /** Name */
-            name: string;
-            /** Slug */
-            slug: string;
-            /**
-             * Ssot Feature Id
-             * @default null
-             */
-            ssot_feature_id: string | null;
-        };
-        /**
-         * FeatureExistsResponse
-         * @description Tigrbl v3 Feature exists schema
-         */
-        FeatureExistsResponse: {
-            /**
-             * Description
-             * @default null
-             */
-            description: string | null;
-            /**
-             * Id
-             * @default null
-             */
-            id: string;
-            /** Name */
-            name: string;
-            /** Slug */
-            slug: string;
-            /**
-             * Ssot Feature Id
-             * @default null
-             */
-            ssot_feature_id: string | null;
-        };
-        /**
-         * FeatureGroupByRequest
-         * @description Tigrbl v3 Feature group_by schema
-         */
-        FeatureGroupByRequest: {
-            /**
-             * Description
-             * @default null
-             */
-            description: string | null;
-            /**
-             * Id
-             * @default null
-             */
-            id: string;
-            /** Name */
-            name: string;
-            /** Slug */
-            slug: string;
-            /**
-             * Ssot Feature Id
-             * @default null
-             */
-            ssot_feature_id: string | null;
-        };
-        /**
-         * FeatureGroupByResponse
-         * @description Tigrbl v3 Feature group_by schema
-         */
-        FeatureGroupByResponse: {
-            /**
-             * Description
-             * @default null
-             */
-            description: string | null;
-            /**
-             * Id
-             * @default null
-             */
-            id: string;
-            /** Name */
-            name: string;
-            /** Slug */
-            slug: string;
-            /**
-             * Ssot Feature Id
-             * @default null
-             */
-            ssot_feature_id: string | null;
-        };
-        /**
-         * LegalEvidenceCountResponse
-         * @description Tigrbl v3 LegalEvidence count schema
-         */
-        LegalEvidenceCountResponse: {
-            /** Evidence Kind */
-            evidence_kind: string;
-            /** Evidence Type */
-            evidence_type: string;
-            /**
-             * Expression
-             * @default null
-             */
-            expression: string | null;
-            /**
-             * Id
-             * @default null
-             */
-            id: string;
-            /** Name */
-            name: string;
-            /**
-             * Observed At
-             * @default null
-             */
-            observed_at: string | null;
-            /**
-             * Path
-             * @default null
-             */
-            path: string | null;
-            /**
-             * Scope
-             * @default null
-             */
-            scope: string;
-            /** Subject Id */
-            subject_id: string;
-            /** Subject Kind */
-            subject_kind: string;
-            /** Url */
-            url: string;
-        };
-        /**
-         * LegalEvidenceExistsResponse
-         * @description Tigrbl v3 LegalEvidence exists schema
-         */
-        LegalEvidenceExistsResponse: {
-            /** Evidence Kind */
-            evidence_kind: string;
-            /** Evidence Type */
-            evidence_type: string;
-            /**
-             * Expression
-             * @default null
-             */
-            expression: string | null;
-            /**
-             * Id
-             * @default null
-             */
-            id: string;
-            /** Name */
-            name: string;
-            /**
-             * Observed At
-             * @default null
-             */
-            observed_at: string | null;
-            /**
-             * Path
-             * @default null
-             */
-            path: string | null;
-            /**
-             * Scope
-             * @default null
-             */
-            scope: string;
-            /** Subject Id */
-            subject_id: string;
-            /** Subject Kind */
-            subject_kind: string;
-            /** Url */
-            url: string;
-        };
-        /**
-         * LegalEvidenceGroupByRequest
-         * @description Tigrbl v3 LegalEvidence group_by schema
-         */
-        LegalEvidenceGroupByRequest: {
-            /** Evidence Kind */
-            evidence_kind: string;
-            /** Evidence Type */
-            evidence_type: string;
-            /**
-             * Expression
-             * @default null
-             */
-            expression: string | null;
-            /**
-             * Id
-             * @default null
-             */
-            id: string;
-            /** Name */
-            name: string;
-            /**
-             * Observed At
-             * @default null
-             */
-            observed_at: string | null;
-            /**
-             * Path
-             * @default null
-             */
-            path: string | null;
-            /**
-             * Scope
-             * @default null
-             */
-            scope: string;
-            /** Subject Id */
-            subject_id: string;
-            /** Subject Kind */
-            subject_kind: string;
-            /** Url */
-            url: string;
-        };
-        /**
-         * LegalEvidenceGroupByResponse
-         * @description Tigrbl v3 LegalEvidence group_by schema
-         */
-        LegalEvidenceGroupByResponse: {
-            /** Evidence Kind */
-            evidence_kind: string;
-            /** Evidence Type */
-            evidence_type: string;
-            /**
-             * Expression
-             * @default null
-             */
-            expression: string | null;
-            /**
-             * Id
-             * @default null
-             */
-            id: string;
-            /** Name */
-            name: string;
-            /**
-             * Observed At
-             * @default null
-             */
-            observed_at: string | null;
-            /**
-             * Path
-             * @default null
-             */
-            path: string | null;
-            /**
-             * Scope
-             * @default null
-             */
-            scope: string;
-            /** Subject Id */
-            subject_id: string;
-            /** Subject Kind */
-            subject_kind: string;
-            /** Url */
-            url: string;
         };
         /**
          * LimitationCountResponse
@@ -4590,106 +3927,6 @@ export interface components {
              * @default null
              */
             visibility: string;
-        };
-        /**
-         * RecordFeatureCountResponse
-         * @description Tigrbl v3 RecordFeature count schema
-         */
-        RecordFeatureCountResponse: {
-            /**
-             * Claim Id
-             * @default null
-             */
-            claim_id: string | null;
-            /** Feature Id */
-            feature_id: string;
-            /**
-             * Id
-             * @default null
-             */
-            id: string;
-            /** Record Id */
-            record_id: string;
-            /**
-             * Status
-             * @default null
-             */
-            status: string;
-        };
-        /**
-         * RecordFeatureExistsResponse
-         * @description Tigrbl v3 RecordFeature exists schema
-         */
-        RecordFeatureExistsResponse: {
-            /**
-             * Claim Id
-             * @default null
-             */
-            claim_id: string | null;
-            /** Feature Id */
-            feature_id: string;
-            /**
-             * Id
-             * @default null
-             */
-            id: string;
-            /** Record Id */
-            record_id: string;
-            /**
-             * Status
-             * @default null
-             */
-            status: string;
-        };
-        /**
-         * RecordFeatureGroupByRequest
-         * @description Tigrbl v3 RecordFeature group_by schema
-         */
-        RecordFeatureGroupByRequest: {
-            /**
-             * Claim Id
-             * @default null
-             */
-            claim_id: string | null;
-            /** Feature Id */
-            feature_id: string;
-            /**
-             * Id
-             * @default null
-             */
-            id: string;
-            /** Record Id */
-            record_id: string;
-            /**
-             * Status
-             * @default null
-             */
-            status: string;
-        };
-        /**
-         * RecordFeatureGroupByResponse
-         * @description Tigrbl v3 RecordFeature group_by schema
-         */
-        RecordFeatureGroupByResponse: {
-            /**
-             * Claim Id
-             * @default null
-             */
-            claim_id: string | null;
-            /** Feature Id */
-            feature_id: string;
-            /**
-             * Id
-             * @default null
-             */
-            id: string;
-            /** Record Id */
-            record_id: string;
-            /**
-             * Status
-             * @default null
-             */
-            status: string;
         };
         /**
          * RecordGroupByRequest
@@ -6449,86 +5686,6 @@ export interface components {
             url: string;
         };
         /**
-         * ResourceEvidenceCountResponse
-         * @description Tigrbl v3 ResourceEvidence count schema
-         */
-        ResourceEvidenceCountResponse: {
-            /** Evidence Id */
-            evidence_id: string;
-            /**
-             * Id
-             * @default null
-             */
-            id: string;
-            /** Resource Id */
-            resource_id: string;
-            /**
-             * Role
-             * @default null
-             */
-            role: string;
-        };
-        /**
-         * ResourceEvidenceExistsResponse
-         * @description Tigrbl v3 ResourceEvidence exists schema
-         */
-        ResourceEvidenceExistsResponse: {
-            /** Evidence Id */
-            evidence_id: string;
-            /**
-             * Id
-             * @default null
-             */
-            id: string;
-            /** Resource Id */
-            resource_id: string;
-            /**
-             * Role
-             * @default null
-             */
-            role: string;
-        };
-        /**
-         * ResourceEvidenceGroupByRequest
-         * @description Tigrbl v3 ResourceEvidence group_by schema
-         */
-        ResourceEvidenceGroupByRequest: {
-            /** Evidence Id */
-            evidence_id: string;
-            /**
-             * Id
-             * @default null
-             */
-            id: string;
-            /** Resource Id */
-            resource_id: string;
-            /**
-             * Role
-             * @default null
-             */
-            role: string;
-        };
-        /**
-         * ResourceEvidenceGroupByResponse
-         * @description Tigrbl v3 ResourceEvidence group_by schema
-         */
-        ResourceEvidenceGroupByResponse: {
-            /** Evidence Id */
-            evidence_id: string;
-            /**
-             * Id
-             * @default null
-             */
-            id: string;
-            /** Resource Id */
-            resource_id: string;
-            /**
-             * Role
-             * @default null
-             */
-            role: string;
-        };
-        /**
          * ResourceExistsResponse
          * @description Tigrbl v3 Resource exists schema
          */
@@ -7107,6 +6264,11 @@ export interface components {
         };
         /** TypedResourceSummary */
         TypedResourceSummary: {
+            /**
+             * Icon Key
+             * @default null
+             */
+            icon_key: string | null;
             /** Id */
             id: string;
             /**
@@ -7124,6 +6286,11 @@ export interface components {
              * @default null
              */
             repository_owner: string | null;
+            /**
+             * Resource Family
+             * @default null
+             */
+            resource_family: string | null;
             /** Resource Type */
             resource_type: string;
             /** Route */
@@ -7140,6 +6307,11 @@ export interface components {
             summary: string | null;
             /** Title */
             title: string;
+            /**
+             * Type Label
+             * @default null
+             */
+            type_label: string | null;
             /** Url */
             url: string;
         } & {
@@ -7317,6 +6489,29 @@ export interface operations {
                 };
                 content: {
                     "application/json": components["schemas"]["CatalogCollection"];
+                };
+            };
+        };
+    };
+    typed_catalog_resource: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path: {
+                resource_type: string;
+                route_key: string;
+            };
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description Successful Response */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["CatalogMember"];
                 };
             };
         };
@@ -7748,164 +6943,6 @@ export interface operations {
             };
         };
     };
-    "Claim.count": {
-        parameters: {
-            query?: {
-                id?: string;
-                record_id?: string;
-                claim_type?: string;
-                statement?: string;
-                status?: string;
-                ssot_claim_id?: string;
-                reviewed_at?: string;
-            };
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        requestBody?: never;
-        responses: {
-            /** @description Successful Response */
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json": components["schemas"]["ClaimCountResponse"];
-                };
-            };
-        };
-    };
-    "Claim.group_by": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        requestBody: {
-            content: {
-                "application/json": components["schemas"]["ClaimGroupByRequest"];
-            };
-        };
-        responses: {
-            /** @description Successful Response */
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json": components["schemas"]["ClaimGroupByResponse"];
-                };
-            };
-        };
-    };
-    "Claim.exists": {
-        parameters: {
-            query?: {
-                id?: string;
-                record_id?: string;
-                claim_type?: string;
-                statement?: string;
-                status?: string;
-                ssot_claim_id?: string;
-                reviewed_at?: string;
-            };
-            header?: never;
-            path: {
-                item_id: string;
-            };
-            cookie?: never;
-        };
-        requestBody?: never;
-        responses: {
-            /** @description Successful Response */
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json": components["schemas"]["ClaimExistsResponse"];
-                };
-            };
-        };
-    };
-    "ClaimEvidence.count": {
-        parameters: {
-            query?: {
-                id?: string;
-                claim_id?: string;
-                evidence_id?: string;
-                support?: string;
-            };
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        requestBody?: never;
-        responses: {
-            /** @description Successful Response */
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json": components["schemas"]["ClaimEvidenceCountResponse"];
-                };
-            };
-        };
-    };
-    "ClaimEvidence.group_by": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        requestBody: {
-            content: {
-                "application/json": components["schemas"]["ClaimEvidenceGroupByRequest"];
-            };
-        };
-        responses: {
-            /** @description Successful Response */
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json": components["schemas"]["ClaimEvidenceGroupByResponse"];
-                };
-            };
-        };
-    };
-    "ClaimEvidence.exists": {
-        parameters: {
-            query?: {
-                id?: string;
-                claim_id?: string;
-                evidence_id?: string;
-                support?: string;
-            };
-            header?: never;
-            path: {
-                item_id: string;
-            };
-            cookie?: never;
-        };
-        requestBody?: never;
-        responses: {
-            /** @description Successful Response */
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json": components["schemas"]["ClaimEvidenceExistsResponse"];
-                };
-            };
-        };
-    };
     "Dependency.count": {
         parameters: {
             query?: {
@@ -7916,6 +6953,7 @@ export interface operations {
                 target_id?: string;
                 requirement?: string;
                 scope?: string;
+                origin_kind?: string;
                 evidence_type?: string;
                 source_url?: string;
                 completeness?: string;
@@ -7972,6 +7010,7 @@ export interface operations {
                 target_id?: string;
                 requirement?: string;
                 scope?: string;
+                origin_kind?: string;
                 evidence_type?: string;
                 source_url?: string;
                 completeness?: string;
@@ -8163,6 +7202,9 @@ export interface operations {
                 relationship_type?: string;
                 role?: string;
                 evidence_type?: string;
+                origin_kind?: string;
+                observation_id?: string;
+                ssot_entity_id?: string;
                 source_url?: string;
                 confidence?: string;
                 status?: string;
@@ -8218,6 +7260,9 @@ export interface operations {
                 relationship_type?: string;
                 role?: string;
                 evidence_type?: string;
+                origin_kind?: string;
+                observation_id?: string;
+                ssot_entity_id?: string;
                 source_url?: string;
                 confidence?: string;
                 status?: string;
@@ -8249,6 +7294,9 @@ export interface operations {
                 label?: string;
                 semantic_class?: string;
                 description?: string;
+                parent_type_id?: string;
+                icon_key?: string;
+                detail_schema_key?: string;
             };
             header?: never;
             path?: never;
@@ -8298,6 +7346,9 @@ export interface operations {
                 label?: string;
                 semantic_class?: string;
                 description?: string;
+                parent_type_id?: string;
+                icon_key?: string;
+                detail_schema_key?: string;
             };
             header?: never;
             path: {
@@ -8327,6 +7378,8 @@ export interface operations {
                 url?: string;
                 label?: string;
                 evidence_type?: string;
+                origin_kind?: string;
+                observation_id?: string;
                 observed_at?: string;
             };
             header?: never;
@@ -8379,6 +7432,8 @@ export interface operations {
                 url?: string;
                 label?: string;
                 evidence_type?: string;
+                origin_kind?: string;
+                observation_id?: string;
                 observed_at?: string;
             };
             header?: never;
@@ -8400,168 +7455,6 @@ export interface operations {
             };
         };
     };
-    "Evidence.count": {
-        parameters: {
-            query?: {
-                id?: string;
-                evidence_type?: string;
-                title?: string;
-                source_url?: string;
-                locator?: string;
-                excerpt?: string;
-                observed_at?: string;
-                expires_at?: string;
-            };
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        requestBody?: never;
-        responses: {
-            /** @description Successful Response */
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json": components["schemas"]["EvidenceCountResponse"];
-                };
-            };
-        };
-    };
-    "Evidence.group_by": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        requestBody: {
-            content: {
-                "application/json": components["schemas"]["EvidenceGroupByRequest"];
-            };
-        };
-        responses: {
-            /** @description Successful Response */
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json": components["schemas"]["EvidenceGroupByResponse"];
-                };
-            };
-        };
-    };
-    "Evidence.exists": {
-        parameters: {
-            query?: {
-                id?: string;
-                evidence_type?: string;
-                title?: string;
-                source_url?: string;
-                locator?: string;
-                excerpt?: string;
-                observed_at?: string;
-                expires_at?: string;
-            };
-            header?: never;
-            path: {
-                item_id: string;
-            };
-            cookie?: never;
-        };
-        requestBody?: never;
-        responses: {
-            /** @description Successful Response */
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json": components["schemas"]["EvidenceExistsResponse"];
-                };
-            };
-        };
-    };
-    "Feature.count": {
-        parameters: {
-            query?: {
-                id?: string;
-                slug?: string;
-                name?: string;
-                description?: string;
-                ssot_feature_id?: string;
-            };
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        requestBody?: never;
-        responses: {
-            /** @description Successful Response */
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json": components["schemas"]["FeatureCountResponse"];
-                };
-            };
-        };
-    };
-    "Feature.group_by": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        requestBody: {
-            content: {
-                "application/json": components["schemas"]["FeatureGroupByRequest"];
-            };
-        };
-        responses: {
-            /** @description Successful Response */
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json": components["schemas"]["FeatureGroupByResponse"];
-                };
-            };
-        };
-    };
-    "Feature.exists": {
-        parameters: {
-            query?: {
-                id?: string;
-                slug?: string;
-                name?: string;
-                description?: string;
-                ssot_feature_id?: string;
-            };
-            header?: never;
-            path: {
-                item_id: string;
-            };
-            cookie?: never;
-        };
-        requestBody?: never;
-        responses: {
-            /** @description Successful Response */
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json": components["schemas"]["FeatureExistsResponse"];
-                };
-            };
-        };
-    };
     healthz: {
         parameters: {
             query?: never;
@@ -8577,96 +7470,6 @@ export interface operations {
                     [name: string]: unknown;
                 };
                 content?: never;
-            };
-        };
-    };
-    "LegalEvidence.count": {
-        parameters: {
-            query?: {
-                id?: string;
-                subject_kind?: string;
-                subject_id?: string;
-                evidence_kind?: string;
-                name?: string;
-                expression?: string;
-                path?: string;
-                url?: string;
-                scope?: string;
-                evidence_type?: string;
-                observed_at?: string;
-            };
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        requestBody?: never;
-        responses: {
-            /** @description Successful Response */
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json": components["schemas"]["LegalEvidenceCountResponse"];
-                };
-            };
-        };
-    };
-    "LegalEvidence.group_by": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        requestBody: {
-            content: {
-                "application/json": components["schemas"]["LegalEvidenceGroupByRequest"];
-            };
-        };
-        responses: {
-            /** @description Successful Response */
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json": components["schemas"]["LegalEvidenceGroupByResponse"];
-                };
-            };
-        };
-    };
-    "LegalEvidence.exists": {
-        parameters: {
-            query?: {
-                id?: string;
-                subject_kind?: string;
-                subject_id?: string;
-                evidence_kind?: string;
-                name?: string;
-                expression?: string;
-                path?: string;
-                url?: string;
-                scope?: string;
-                evidence_type?: string;
-                observed_at?: string;
-            };
-            header?: never;
-            path: {
-                item_id: string;
-            };
-            cookie?: never;
-        };
-        requestBody?: never;
-        responses: {
-            /** @description Successful Response */
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json": components["schemas"]["LegalEvidenceExistsResponse"];
-                };
             };
         };
     };
@@ -9412,84 +8215,6 @@ export interface operations {
                 };
                 content: {
                     "application/json": components["schemas"]["RecordAuthorExistsResponse"];
-                };
-            };
-        };
-    };
-    "RecordFeature.count": {
-        parameters: {
-            query?: {
-                id?: string;
-                record_id?: string;
-                feature_id?: string;
-                claim_id?: string;
-                status?: string;
-            };
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        requestBody?: never;
-        responses: {
-            /** @description Successful Response */
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json": components["schemas"]["RecordFeatureCountResponse"];
-                };
-            };
-        };
-    };
-    "RecordFeature.group_by": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        requestBody: {
-            content: {
-                "application/json": components["schemas"]["RecordFeatureGroupByRequest"];
-            };
-        };
-        responses: {
-            /** @description Successful Response */
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json": components["schemas"]["RecordFeatureGroupByResponse"];
-                };
-            };
-        };
-    };
-    "RecordFeature.exists": {
-        parameters: {
-            query?: {
-                id?: string;
-                record_id?: string;
-                feature_id?: string;
-                claim_id?: string;
-                status?: string;
-            };
-            header?: never;
-            path: {
-                item_id: string;
-            };
-            cookie?: never;
-        };
-        requestBody?: never;
-        responses: {
-            /** @description Successful Response */
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json": components["schemas"]["RecordFeatureExistsResponse"];
                 };
             };
         };
@@ -10482,82 +9207,6 @@ export interface operations {
                 };
                 content: {
                     "application/json": components["schemas"]["ResourceExistsResponse"];
-                };
-            };
-        };
-    };
-    "ResourceEvidence.count": {
-        parameters: {
-            query?: {
-                id?: string;
-                resource_id?: string;
-                evidence_id?: string;
-                role?: string;
-            };
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        requestBody?: never;
-        responses: {
-            /** @description Successful Response */
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json": components["schemas"]["ResourceEvidenceCountResponse"];
-                };
-            };
-        };
-    };
-    "ResourceEvidence.group_by": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        requestBody: {
-            content: {
-                "application/json": components["schemas"]["ResourceEvidenceGroupByRequest"];
-            };
-        };
-        responses: {
-            /** @description Successful Response */
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json": components["schemas"]["ResourceEvidenceGroupByResponse"];
-                };
-            };
-        };
-    };
-    "ResourceEvidence.exists": {
-        parameters: {
-            query?: {
-                id?: string;
-                resource_id?: string;
-                evidence_id?: string;
-                role?: string;
-            };
-            header?: never;
-            path: {
-                item_id: string;
-            };
-            cookie?: never;
-        };
-        requestBody?: never;
-        responses: {
-            /** @description Successful Response */
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json": components["schemas"]["ResourceEvidenceExistsResponse"];
                 };
             };
         };

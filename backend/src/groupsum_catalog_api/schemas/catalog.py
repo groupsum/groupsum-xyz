@@ -68,6 +68,9 @@ class TypedResourceSummary(ApiModel):
     repository_owner: str | None = None
     repository_name: str | None = None
     observed_at: datetime | None = None
+    type_label: str | None = None
+    resource_family: str | None = None
+    icon_key: str | None = None
 
 
 class TechnologySummary(ApiModel):
@@ -97,6 +100,7 @@ class CatalogMember(ApiModel):
     resource_type: str | None = None
     item: dict[str, Any]
     graph: dict[str, Any] | None = None
+    linked_sections: list[dict[str, Any]] = Field(default_factory=list)
     parent: dict[str, Any] | None = None
     implementation: dict[str, Any] = Field(default_factory=dict)
     governance: dict[str, Any] = Field(default_factory=dict)

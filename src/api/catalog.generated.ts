@@ -25,12 +25,12 @@ export type RepositorySignals = {
   history: Record<"stars" | "forks" | "watchers" | "contributors", MetricPoint[]>;
   commit_activity: CommitActivityPoint[]; observed_at?: string | null;
 };
-export type RepositoryEvidence = {
+export type RepositoryResource = {
   id: string; owner: string; name: string; url: string; description?: string | null;
   default_branch?: string | null; is_archived: boolean; is_fork: boolean;
   observed_at?: string | null; role: string; metrics: Record<string, number>;
   history: RepositorySignals["history"]; commit_activity: CommitActivityPoint[];
-  releases: ReleaseEvidence[]; release_count: number; governance: RepositoryGovernance;
+  releases: ReleaseRecord[]; release_count: number; governance: RepositoryGovernance;
 };
 export type RepositoryMetricRecord = RepositorySignals & {
   id: string; owner: string; name: string; url: string; route: string;
@@ -40,7 +40,7 @@ export type RepositoryMetricSnapshot = {
   kind: "repository_metric_snapshot"; owner?: string | null; generated_at?: string | null;
   count: number; repositories: RepositoryMetricRecord[];
 };
-export type PackageEvidence = {
+export type PackageResource = {
   id: string; ecosystem: string; name: string; registry_url: string;
   source_url?: string | null; manifest_path?: string | null; description?: string | null;
   package_kind: string; private: boolean;
@@ -50,16 +50,16 @@ export type PackageEvidence = {
   release_count: number; dependency_count: number; dependent_count: number;
   downloads?: number | null;
   repositories: Array<{ id: string; owner: string; name: string; url: string; path?: string | null }>;
-  releases: ReleaseEvidence[]; dependencies: DependencyEvidence[]; dependents: DependencyEvidence[];
+  releases: ReleaseRecord[]; dependencies: DependencyObservation[]; dependents: DependencyObservation[];
   dependency_summary: { edge_count: number; unique_target_count: number; internal_edge_count: number; external_edge_count: number; by_scope: Record<string, number> };
   dependent_summary: { edge_count: number; unique_source_count: number; by_completeness: Record<string, number>; coverage: string };
 };
-export type ResourceEvidence = {
+export type LinkedCatalogResource = {
   id: string; resource_type: string; title: string; url: string;
   route_key?: string | null;
   summary?: string | null; observed_at?: string | null; role: string;
 };
-export type ReleaseEvidence = {
+export type ReleaseRecord = {
   id: string; release_kind: string; version: string; url: string;
   route_key?: string | null;
   published_at?: string | null; downloads?: number | null; prerelease: boolean; draft: boolean;
@@ -70,10 +70,10 @@ export type ReleaseEvidence = {
 export type ReleaseSummary = {
   release_kind: string; release_count: number; latest_at?: string | null; downloads: number;
 };
-export type DependencyEvidence = {
+export type DependencyObservation = {
   id: string; source_id: string; source_kind?: string; source_ecosystem?: string | null;
   source_name?: string | null; target_kind?: string; target_id: string;
-  requirement?: string | null; scope?: string | null; evidence_type: string;
+  requirement?: string | null; scope?: string | null; origin_kind: string;
   source_url?: string | null; completeness: string; observed_at?: string | null;
 };
 export type DependencySummary = {
@@ -105,7 +105,8 @@ export type CatalogEntity = {
   observed_at?: string | null;
 };
 export type EntityRelationship = {
-  id: string; relationship_type: string; role?: string | null; evidence_type: string;
+  id: string; relationship_type: string; role?: string | null; origin_kind: string;
+  observation_id?: string | null; ssot_entity_id?: string | null;
   source_url?: string | null; confidence: string; status: string; observed_at?: string | null;
   entity_id: string; entity_type_id: string; type_label: string; semantic_class: string;
   name: string; summary?: string | null; canonical_url?: string | null; route?: string | null;
@@ -113,7 +114,7 @@ export type EntityRelationship = {
 };
 export type EntityGraph = {
   entity: CatalogEntity; owner?: EntityRelationship | null;
-  urls: Array<{ url_role: string; url: string; label?: string | null; evidence_type: string; observed_at?: string | null }>;
+  urls: Array<{ url_role: string; url: string; label?: string | null; origin_kind: string; observation_id?: string | null; observed_at?: string | null }>;
   relationships: EntityRelationship[]; outgoing: EntityRelationship[]; incoming: EntityRelationship[];
 };
 export type EntityPageModel = { kind: "entity_record"; graph: EntityGraph };
@@ -127,19 +128,25 @@ export type RecordPageModel = {
   record: Record<string, unknown> & { id: string; slug: string; title: string; summary: string };
   taxonomies: Record<string, TaxonomyItem[]>;
   implementation: {
-    repositories: RepositoryEvidence[]; packages: PackageEvidence[]; resources: ResourceEvidence[];
+    repositories: RepositoryResource[]; packages: PackageResource[]; resources: LinkedCatalogResource[];
     deployments: Array<Record<string, unknown>>;
   };
   relations: Array<Record<string, unknown>>;
   editorial: {
-    features: Array<Record<string, unknown>>; claims: Array<Record<string, unknown>>;
-    evidence: Array<Record<string, unknown>>; limitations: Array<Record<string, unknown>>;
-    claim_rooting: { total: number; rooted: number; unrooted: number; status: string; limitation?: string | null };
+    observations: Array<Record<string, unknown>>; limitations: Array<Record<string, unknown>>;
+    ssot_claim_rooting: { status: string; limitation?: string | null };
   };
   governance: {
     repositories: Array<RepositoryGovernance & { repository_id: string; repository: string; role: string }>;
   };
   graph?: EntityGraph | null;
+  linked_sections?: LinkedResourceSection[];
+};
+
+export type LinkedResourceSection = {
+  type_key: string; label: string; family: string; icon_key?: string | null;
+  detail_schema_key?: string | null; count: number;
+  members: Array<Record<string, unknown>>;
 };
 
 export async function getRecordPageModel(path: string, signal?: AbortSignal): Promise<RecordPageModel> {

@@ -49,9 +49,9 @@ export async function getCatalogPackageMember(routeKey: string, signal?: AbortSi
   return data;
 }
 
-export async function getCatalogResourceMember(routeKey: string, signal?: AbortSignal) {
-  const { data, error, response } = await catalogApi.GET("/api/v1/catalog/resources/{route_key}", {
-    params: { path: { route_key: routeKey } },
+export async function getCatalogResourceMember(resourceType: string, routeKey: string, signal?: AbortSignal) {
+  const { data, error, response } = await catalogApi.GET("/api/v1/catalog/resources/{resource_type}/{route_key}", {
+    params: { path: { resource_type: resourceType, route_key: routeKey } },
     signal,
   });
   if (error || !data) throw new Error(`Typed resource member response ${response.status}`);

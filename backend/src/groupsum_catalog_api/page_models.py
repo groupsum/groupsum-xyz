@@ -33,7 +33,8 @@ def entity_graph_for_source(
 ) -> dict[str, Any] | None:
     entity_row = connection.execute(
         """
-        SELECT e.*, t.label AS type_label, t.semantic_class
+        SELECT e.*, t.label AS type_label, t.semantic_class, t.icon_key,
+               t.detail_schema_key
           FROM catalog_entities e JOIN entity_types t ON t.id = e.entity_type_id
          WHERE e.source_table = ? AND e.source_id = ?
         """,
@@ -46,7 +47,7 @@ def entity_graph_for_source(
     urls = rows(
         connection,
         """
-        SELECT url_role, url, label, evidence_type, observed_at
+        SELECT url_role, url, label, origin_kind, observation_id, observed_at
           FROM entity_urls WHERE entity_id = ? ORDER BY url_role, url
         """,
         (entity["id"],),
@@ -58,11 +59,13 @@ def entity_graph_for_source(
         result = rows(
             connection,
             f"""
-            SELECT rel.id, rel.relationship_type, rel.role, rel.evidence_type,
-                   rel.source_url, rel.confidence, rel.status, rel.observed_at,
+            SELECT rel.id, rel.relationship_type, rel.role, rel.origin_kind,
+                   rel.observation_id, rel.ssot_entity_id, rel.source_url,
+                   rel.confidence, rel.status, rel.observed_at,
                    remote.id AS entity_id, remote.entity_type_id, remote.name,
                    remote.summary, remote.canonical_url, remote.organization_id,
-                   type.label AS type_label, type.semantic_class
+                   type.label AS type_label, type.semantic_class, type.icon_key,
+                   type.detail_schema_key
               FROM entity_relationships rel
               JOIN catalog_entities remote ON remote.id = rel.{remote_column}
               JOIN entity_types type ON type.id = remote.entity_type_id
@@ -90,6 +93,55 @@ def entity_graph_for_source(
         "outgoing": outgoing,
         "incoming": incoming,
     }
+
+
+def linked_resource_sections_for_source(
+    connection: Connection,
+    source_table: str,
+    source_id: str,
+    *,
+    excluded_types: frozenset[str] = frozenset(),
+) -> list[dict[str, Any]]:
+    """Group directly linked resources by their single canonical leaf type."""
+    graph = entity_graph_for_source(connection, source_table, source_id)
+    if graph is None:
+        return []
+    grouped: dict[str, dict[str, Any]] = {}
+    for member in graph["relationships"]:
+        type_key = str(member["entity_type_id"])
+        if type_key in excluded_types:
+            continue
+        section = grouped.setdefault(
+            type_key,
+            {
+                "type_key": type_key,
+                "label": member["type_label"],
+                "family": member["semantic_class"],
+                "icon_key": member.get("icon_key"),
+                "detail_schema_key": member.get("detail_schema_key"),
+                "members": [],
+            },
+        )
+        section["members"].append(
+            {
+                "id": member["entity_id"],
+                "name": member["name"],
+                "summary": member.get("summary"),
+                "route": member.get("route"),
+                "relationship": member["relationship_type"],
+                "direction": member["direction"],
+                "role": member.get("role"),
+                "origin_kind": member.get("origin_kind"),
+                "source_url": member.get("source_url"),
+                "observed_at": member.get("observed_at"),
+            }
+        )
+    sections = list(grouped.values())
+    for section in sections:
+        section["members"].sort(key=lambda item: str(item["name"]).casefold())
+        section["count"] = len(section["members"])
+    sections.sort(key=lambda item: (str(item["family"]), str(item["label"])))
+    return sections
 
 
 def entity_collection(
@@ -280,9 +332,7 @@ def record_signals(connection: Connection, record_id: str) -> dict[str, Any]:
             "metrics": {
                 metric: 0 for metric in ("stars", "forks", "watchers", "contributors", "commits")
             },
-            "history": {
-                metric: [] for metric in ("stars", "forks", "watchers", "contributors")
-            },
+            "history": {metric: [] for metric in ("stars", "forks", "watchers", "contributors")},
             "commit_activity": [],
             "observed_at": None,
         }
@@ -330,8 +380,7 @@ def record_signals(connection: Connection, record_id: str) -> dict[str, Any]:
         "metrics": metrics,
         "history": history,
         "commit_activity": [
-            {"date": day, "count": count}
-            for day, count in sorted(commit_days.items())[-30:]
+            {"date": day, "count": count} for day, count in sorted(commit_days.items())[-30:]
         ],
         "observed_at": max(
             [item["observed_at"] for item in latest.values()]
@@ -442,12 +491,22 @@ def catalog_overview(
 ) -> JSONResponse | Response:
     with connect(database_path) as connection:
         counts = {
-            "products": connection.execute("SELECT COUNT(*) FROM records WHERE record_type = 'product' AND visibility = 'public'").fetchone()[0],
-            "portfolio": connection.execute("SELECT COUNT(*) FROM records WHERE record_type = 'portfolio' AND visibility = 'public'").fetchone()[0],
+            "products": connection.execute(
+                "SELECT COUNT(*) FROM records "
+                "WHERE record_type = 'product' AND visibility = 'public'"
+            ).fetchone()[0],
+            "portfolio": connection.execute(
+                "SELECT COUNT(*) FROM records "
+                "WHERE record_type = 'portfolio' AND visibility = 'public'"
+            ).fetchone()[0],
             "repositories": connection.execute("SELECT COUNT(*) FROM repositories").fetchone()[0],
             "packages": connection.execute("SELECT COUNT(*) FROM packages").fetchone()[0],
-            "resources": connection.execute("SELECT COUNT(*) FROM resources").fetchone()[0],
-            "technologies": connection.execute("SELECT COUNT(*) FROM taxonomies WHERE taxonomy_type = 'technology'").fetchone()[0],
+            "resources": connection.execute(
+                "SELECT COUNT(*) FROM catalog_entities WHERE visibility = 'public'"
+            ).fetchone()[0],
+            "technologies": connection.execute(
+                "SELECT COUNT(*) FROM taxonomies WHERE taxonomy_type = 'technology'"
+            ).fetchone()[0],
         }
         observed_at = connection.execute(
             """SELECT MAX(observed_at) FROM (
@@ -535,7 +594,9 @@ def catalog_collection(
             )
             for record in records:
                 record["private"] = bool(record["private"])
-                record["published"] = bool(record["published"]) if record["published"] is not None else None
+                record["published"] = (
+                    bool(record["published"]) if record["published"] is not None else None
+                )
                 record["route"] = f"/catalog/packages/{record['ecosystem']}/{record['route_key']}"
                 record["repositories"] = rows(
                     connection,
@@ -549,16 +610,26 @@ def catalog_collection(
             records = rows(
                 connection,
                 """
-                SELECT rs.id, rs.resource_type, rs.route_key, rs.title, rs.url,
-                       rs.summary, rs.path, rs.source_url, rs.observed_at,
-                       repo.owner AS repository_owner, repo.name AS repository_name
-                  FROM resources rs
-             LEFT JOIN repositories repo ON repo.id = rs.repository_id
-              ORDER BY rs.resource_type, rs.title COLLATE NOCASE
+                SELECT e.id, e.entity_type_id AS resource_type, e.slug AS route_key,
+                       e.name AS title, e.canonical_url AS url, e.summary,
+                       e.source_table, e.source_id, e.organization_id,
+                       e.observed_at, t.label AS type_label,
+                       t.semantic_class AS resource_family, t.icon_key,
+                       o.slug AS repository_owner, o.name AS repository_name
+                  FROM catalog_entities e
+                  JOIN entity_types t ON t.id = e.entity_type_id
+             LEFT JOIN organizations o ON o.id = e.organization_id
+                 WHERE e.visibility = 'public'
+              ORDER BY t.semantic_class, t.label, e.name COLLATE NOCASE
                 """,
             )
             for record in records:
-                record["route"] = f"/catalog/resources/{record['resource_type']}/{record['route_key']}"
+                canonical_route = entity_route(record.get("url"))
+                record["route"] = (
+                    canonical_route
+                    if canonical_route and str(canonical_route).startswith("/")
+                    else f"/catalog/resources/{record['resource_type']}/{record['route_key']}"
+                )
         elif resource_kind == "technology":
             records = rows(
                 connection,
@@ -579,10 +650,14 @@ def catalog_collection(
     normalized_query = query.strip().casefold()
     filtered = []
     for record in records:
-        if normalized_query and normalized_query not in " ".join(
-            str(record.get(key) or "")
-            for key in ("name", "title", "description", "summary", "owner")
-        ).casefold():
+        if (
+            normalized_query
+            and normalized_query
+            not in " ".join(
+                str(record.get(key) or "")
+                for key in ("name", "title", "description", "summary", "owner")
+            ).casefold()
+        ):
             continue
         if resource_type and record.get("resource_type") != resource_type:
             continue
@@ -639,7 +714,8 @@ def catalog_collection(
             "facets": facets,
             "generated_at": max(
                 (str(item.get("observed_at") or "") for item in records), default=""
-            ) or None,
+            )
+            or None,
             "records": page_records,
         },
     )
@@ -686,7 +762,9 @@ def catalog_repository_detail(
             (item["id"],),
         )
         for resource in resources:
-            resource["route"] = f"/catalog/resources/{resource['resource_type']}/{resource['route_key']}"
+            resource["route"] = (
+                f"/catalog/resources/{resource['resource_type']}/{resource['route_key']}"
+            )
         releases = rows(
             connection,
             """SELECT id, release_kind, route_key, version, url, published_at,
@@ -698,19 +776,34 @@ def catalog_repository_detail(
         legal = rows(
             connection,
             """SELECT evidence_kind, name, expression, path, url, scope,
-                      evidence_type, observed_at
+                      origin_kind, observed_at
                    FROM legal_evidence
                   WHERE subject_kind = 'repository' AND subject_id = ?
                ORDER BY scope, evidence_kind, name""",
             (item["id"],),
         )
         graph = entity_graph_for_source(connection, "repositories", item["id"])
+        linked_sections = linked_resource_sections_for_source(
+            connection,
+            "repositories",
+            item["id"],
+            excluded_types=frozenset(
+                {
+                    "party.organization",
+                    "distribution.package",
+                    "release.package",
+                    "release.container",
+                    "release.repository",
+                }
+            ),
+        )
     return cacheable_json(
         request,
         {
             "kind": "catalog_repository_record",
             "item": item,
             "graph": graph,
+            "linked_sections": linked_sections,
             "implementation": {"packages": packages, "resources": resources, "releases": releases},
             "governance": {
                 "governed": item["ssot_governed"],
@@ -722,7 +815,7 @@ def catalog_repository_detail(
             "legal": {
                 "license_expression": item.get("license_expression"),
                 "status": "observed" if legal or item.get("license_expression") else "not-observed",
-                "evidence": legal,
+                "observations": legal,
             },
         },
     )
@@ -735,7 +828,8 @@ def catalog_technology_detail(
 ) -> JSONResponse | Response:
     with connect(database_path) as connection:
         row = connection.execute(
-            "SELECT * FROM taxonomies WHERE slug = ? AND taxonomy_type IN ('technology', 'language')",
+            "SELECT * FROM taxonomies "
+            "WHERE slug = ? AND taxonomy_type IN ('technology', 'language')",
             (slug,),
         ).fetchone()
         if row is None:
@@ -845,6 +939,7 @@ def catalog_resource_detail(
     request: Request,
     resource_kind: str,
     route_key: str,
+    entity_type: str | None = None,
 ) -> JSONResponse | Response:
     table = {"package": "packages", "release": "releases", "resource": "resources"}.get(
         resource_kind
@@ -856,6 +951,73 @@ def catalog_resource_detail(
             f"SELECT * FROM {table} WHERE route_key = ?", (route_key,)
         ).fetchone()
         if item_row is None:
+            if resource_kind == "resource":
+                entity_row = connection.execute(
+                    """
+                    SELECT e.*, t.label AS type_label, t.semantic_class AS resource_family,
+                           t.icon_key, t.detail_schema_key
+                      FROM catalog_entities e
+                      JOIN entity_types t ON t.id = e.entity_type_id
+                     WHERE e.slug = ? AND e.visibility = 'public'
+                       AND (? IS NULL OR e.entity_type_id = ?)
+                  ORDER BY e.id LIMIT 1
+                    """,
+                    (route_key, entity_type, entity_type),
+                ).fetchone()
+                if entity_row is not None:
+                    item = dict(entity_row)
+                    item["title"] = item["name"]
+                    item["resource_type"] = item["entity_type_id"]
+                    item["route_key"] = item["slug"]
+                    item["url"] = next(
+                        (
+                            url[0]
+                            for url in connection.execute(
+                                """SELECT url FROM entity_urls
+                                     WHERE entity_id = ? AND url_role = 'source'
+                                  ORDER BY observed_at DESC""",
+                                (item["id"],),
+                            ).fetchall()
+                        ),
+                        None,
+                    )
+                    if item["source_table"] == "repository_ssot_inventory":
+                        ssot_row = connection.execute(
+                            """SELECT entity_kind, entity_id, status,
+                                      implementation_status, payload
+                                 FROM repository_ssot_inventory WHERE id = ?""",
+                            (item["source_id"],),
+                        ).fetchone()
+                        if ssot_row is not None:
+                            ssot_item = dict(ssot_row)
+                            if isinstance(ssot_item.get("payload"), str):
+                                ssot_item["payload"] = json.loads(ssot_item["payload"])
+                            item["ssot"] = ssot_item
+                    graph = entity_graph_for_source(
+                        connection, item["source_table"], item["source_id"]
+                    )
+                    linked_sections = linked_resource_sections_for_source(
+                        connection, item["source_table"], item["source_id"]
+                    )
+                    return cacheable_json(
+                        request,
+                        {
+                            "kind": "catalog_resource_record",
+                            "resource_type": item["resource_type"],
+                            "item": item,
+                            "graph": graph,
+                            "linked_sections": linked_sections,
+                            "implementation": {},
+                            "legal": {
+                                "status": "not-observed",
+                                "observations": [],
+                                "notice": (
+                                    "Legal metadata is reported only when observed for "
+                                    "this resource or an explicit owning resource."
+                                ),
+                            },
+                        },
+                    )
             return JSONResponse(
                 {"detail": "Catalog resource not found", "route_key": route_key},
                 status_code=404,
@@ -866,7 +1028,7 @@ def catalog_resource_detail(
             connection,
             """
             SELECT evidence_kind, name, expression, path, url, scope,
-                   evidence_type, observed_at
+                   origin_kind, observed_at
               FROM legal_evidence
              WHERE subject_kind = ? AND subject_id = ?
           ORDER BY scope, evidence_kind, name
@@ -900,7 +1062,7 @@ def catalog_resource_detail(
             dependencies = rows(
                 connection,
                 """
-                SELECT target_kind, target_id, requirement, scope, evidence_type,
+                SELECT target_kind, target_id, requirement, scope, origin_kind,
                        source_url, completeness, observed_at
                   FROM dependencies WHERE source_kind = 'package' AND source_id = ?
               ORDER BY scope, target_id LIMIT 300
@@ -911,7 +1073,7 @@ def catalog_resource_detail(
             dependents = rows(
                 connection,
                 """
-                SELECT source_kind, source_id, requirement, scope, evidence_type,
+                SELECT source_kind, source_id, requirement, scope, origin_kind,
                        source_url, completeness, observed_at
                   FROM dependencies WHERE target_id = ?
               ORDER BY source_kind, source_id LIMIT 300
@@ -954,7 +1116,7 @@ def catalog_resource_detail(
                     connection,
                     """
                     SELECT evidence_kind, name, expression, path, url, scope,
-                           evidence_type, observed_at
+                           origin_kind, observed_at
                       FROM legal_evidence
                      WHERE subject_kind = ? AND subject_id = ?
                   ORDER BY scope, evidence_kind, name
@@ -974,7 +1136,7 @@ def catalog_resource_detail(
                     connection,
                     """
                     SELECT evidence_kind, name, expression, path, url, scope,
-                           evidence_type, observed_at
+                           origin_kind, observed_at
                       FROM legal_evidence
                      WHERE subject_kind = 'repository' AND subject_id = ?
                   ORDER BY scope, evidence_kind, name
@@ -984,28 +1146,35 @@ def catalog_resource_detail(
                 legal_source = {"kind": "repository", "id": parent["id"]}
         entity_graph = entity_graph_for_source(
             connection,
-            {"package": "packages", "resource": "resources", "release": "releases"}[
-                resource_kind
-            ],
+            {"package": "packages", "resource": "resources", "release": "releases"}[resource_kind],
             item["id"],
+        )
+        linked_sections = linked_resource_sections_for_source(
+            connection,
+            {"package": "packages", "resource": "resources", "release": "releases"}[resource_kind],
+            item["id"],
+            excluded_types=frozenset(
+                {"source.repository", "release.package", "release.container", "release.repository"}
+                if resource_kind == "package"
+                else set()
+            ),
         )
     return cacheable_json(
         request,
         {
             "kind": f"catalog_{resource_kind}_record",
             "resource_type": (
-                item.get("resource_type")
-                or item.get("release_kind")
-                or item.get("ecosystem")
+                item.get("resource_type") or item.get("release_kind") or item.get("ecosystem")
             ),
             "item": item,
             "graph": entity_graph,
+            "linked_sections": linked_sections,
             "parent": parent,
             "implementation": implementation,
             "legal": {
                 "license_expression": item.get("license_expression"),
                 "status": item.get("license_status") or ("observed" if legal else "not-observed"),
-                "evidence": legal,
+                "observations": legal,
                 "inherited_from": legal_source if legal_source["kind"] != resource_kind else None,
                 "notice": (
                     "License and notice data reports observed metadata and files; "
@@ -1155,7 +1324,7 @@ def record_detail(
                 connection,
                 """
                 SELECT id, source_id, target_kind, target_id, requirement, scope,
-                       evidence_type, source_url, completeness, observed_at
+                       origin_kind, source_url, completeness, observed_at
                   FROM dependencies
                  WHERE source_kind = 'package' AND source_id = ?
               ORDER BY scope, target_id
@@ -1169,7 +1338,7 @@ def record_detail(
                 SELECT dep.id, dep.source_kind, dep.source_id,
                        source.ecosystem AS source_ecosystem,
                        source.name AS source_name, dep.target_id,
-                       dep.requirement, dep.scope, dep.evidence_type, dep.source_url,
+                       dep.requirement, dep.scope, dep.origin_kind, dep.source_url,
                        dep.completeness, dep.observed_at
                   FROM dependencies dep
              LEFT JOIN packages source ON source.id = dep.source_id
@@ -1189,23 +1358,18 @@ def record_detail(
             package["dependents"] = package_dependents
             package["dependency_summary"] = {
                 "edge_count": len(package_dependencies),
-                "unique_target_count": len(
-                    {item["target_id"] for item in package_dependencies}
-                ),
+                "unique_target_count": len({item["target_id"] for item in package_dependencies}),
                 "internal_edge_count": sum(
                     item["target_kind"] == "package" for item in package_dependencies
                 ),
                 "external_edge_count": sum(
-                    item["target_kind"] == "external-package"
-                    for item in package_dependencies
+                    item["target_kind"] == "external-package" for item in package_dependencies
                 ),
                 "by_scope": dict(sorted(scope_counts.items())),
             }
             package["dependent_summary"] = {
                 "edge_count": len(package_dependents),
-                "unique_source_count": len(
-                    {item["source_id"] for item in package_dependents}
-                ),
+                "unique_source_count": len({item["source_id"] for item in package_dependents}),
                 "by_completeness": dict(sorted(completeness_counts.items())),
                 "coverage": (
                     "All reverse edges within this collected catalog plus bounded registry "
@@ -1254,50 +1418,38 @@ def record_detail(
             """,
             (record["id"],),
         )
-        evidence = rows(
+        observations = rows(
             connection,
             """
-            SELECT e.id, e.evidence_type, e.title, e.source_url, e.locator,
-                   e.excerpt, e.observed_at, e.expires_at, c.id AS claim_id,
-                   c.statement AS claim, c.status AS claim_status,
-                   c.ssot_claim_id
-              FROM claims c
-              JOIN claim_evidence ce ON ce.claim_id = c.id
-              JOIN evidence e ON e.id = ce.evidence_id
-             WHERE c.record_id = ? ORDER BY e.observed_at DESC
+            SELECT id, observation_type, source_url, payload, completeness, observed_at
+              FROM observations
+             WHERE subject_kind = 'record' AND subject_id = ?
+          ORDER BY observed_at DESC
             """,
             (record["id"],),
         )
+        for observation in observations:
+            if isinstance(observation.get("payload"), str):
+                observation["payload"] = json.loads(observation["payload"])
         limitations = rows(
             connection,
             "SELECT id, title, description, severity, reviewed_at FROM limitations "
             "WHERE record_id = ? ORDER BY id",
             (record["id"],),
         )
-        features = rows(
-            connection,
-            """
-            SELECT f.id, f.slug, f.name, f.description, f.ssot_feature_id,
-                   rf.status, rf.claim_id
-              FROM features f JOIN record_features rf ON rf.feature_id = f.id
-             WHERE rf.record_id = ? ORDER BY f.name COLLATE NOCASE
-            """,
-            (record["id"],),
-        )
-        claims = rows(
-            connection,
-            """
-            SELECT id, statement, status, ssot_claim_id, reviewed_at
-              FROM claims WHERE record_id = ? ORDER BY id
-            """,
-            (record["id"],),
-        )
-        for claim in claims:
-            claim["rooted_in_ssot"] = bool(claim.get("ssot_claim_id"))
-        for item in evidence:
-            item["rooted_in_ssot"] = bool(item.get("ssot_claim_id"))
-        rooted_claims = sum(1 for claim in claims if claim["rooted_in_ssot"])
         entity_graph = entity_graph_for_source(connection, "records", record["id"])
+        linked_sections = linked_resource_sections_for_source(
+            connection,
+            "records",
+            record["id"],
+            excluded_types=frozenset(
+                {
+                    "party.organization",
+                    "source.repository",
+                    "distribution.package",
+                }
+            ),
+        )
     return cacheable_json(
         request,
         {
@@ -1305,6 +1457,7 @@ def record_detail(
             "generated_at": record["updated_at"] or datetime.now(UTC).isoformat(),
             "record": record,
             "graph": entity_graph,
+            "linked_sections": linked_sections,
             "taxonomies": dict(taxonomies),
             "implementation": {
                 "repositories": repositories,
@@ -1314,20 +1467,13 @@ def record_detail(
             },
             "relations": relations,
             "editorial": {
-                "features": features,
-                "claims": claims,
-                "evidence": evidence,
+                "observations": observations,
                 "limitations": limitations,
-                "claim_rooting": {
-                    "total": len(claims),
-                    "rooted": rooted_claims,
-                    "unrooted": len(claims) - rooted_claims,
-                    "status": "complete" if len(claims) == rooted_claims else "incomplete",
+                "ssot_claim_rooting": {
+                    "status": "repository-scoped",
                     "limitation": (
-                        None
-                        if len(claims) == rooted_claims
-                        else "Unrooted editorial claims are reported as limitations and are not "
-                        "represented as SSOT-verified claims."
+                        "Claims and evidence are exposed only from linked repository SSOT "
+                        "registries; inventory observations are not governance evidence."
                     ),
                 },
             },

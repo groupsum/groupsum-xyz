@@ -46,13 +46,16 @@ def test_package_identity_reuses_persisted_route_key(tmp_path: Path) -> None:
                 False,
             ),
         )
-        assert canonical_package_id(
-            connection,
-            "new:package:id",
-            "npm",
-            "@mdwrk/example-editor-basic",
-            "mdwrk-example-editor-basic-8e46b996",
-        ) == "legacy:package:id"
+        assert (
+            canonical_package_id(
+                connection,
+                "new:package:id",
+                "npm",
+                "@mdwrk/example-editor-basic",
+                "mdwrk-example-editor-basic-8e46b996",
+            )
+            == "legacy:package:id"
+        )
 
 
 @pytest.mark.anyio
@@ -95,6 +98,7 @@ async def test_health_and_openapi(tmp_path: Path) -> None:
             for operation_id in operation_ids
         )
         assert "/observation" not in openapi.json()["paths"]
+        assert "/evidence" not in openapi.json()["paths"]
 
 
 @pytest.mark.anyio
@@ -116,17 +120,29 @@ async def test_peagen_page_model_has_explicit_attachments(tmp_path: Path) -> Non
         dependency_count = connection.execute("SELECT COUNT(*) FROM dependencies").fetchone()[0]
         assert release_count == counts["releases"]
         assert dependency_count == counts["dependencies"]
-        assert connection.execute(
-            "SELECT COUNT(*) FROM repository_contributors"
-        ).fetchone()[0] >= 40
+        assert (
+            connection.execute("SELECT COUNT(*) FROM repository_contributors").fetchone()[0] >= 40
+        )
+        assert (
+            connection.execute(
+                "SELECT COUNT(*) FROM observations WHERE evidence_type IS NOT NULL"
+            ).fetchone()[0]
+            == 0
+        )
     with connect_analytics(default_analytics_path(database_path), read_only=True) as analytics:
-        assert analytics.execute(
-            "SELECT COUNT(*) FROM metric_observations WHERE metric = 'commits_daily'"
-        ).fetchone()[0] == counts["repositories"] * 30
+        assert (
+            analytics.execute(
+                "SELECT COUNT(*) FROM metric_observations WHERE metric = 'commits_daily'"
+            ).fetchone()[0]
+            == counts["repositories"] * 30
+        )
         assert analytics.execute("SELECT COUNT(*) FROM record_aggregates").fetchone()[0] == 0
-        assert analytics.execute(
-            "SELECT COUNT(*) FROM metric_observations WHERE subject_kind = 'record'"
-        ).fetchone()[0] == 0
+        assert (
+            analytics.execute(
+                "SELECT COUNT(*) FROM metric_observations WHERE subject_kind = 'record'"
+            ).fetchone()[0]
+            == 0
+        )
 
     transport = httpx.ASGITransport(app=app)
     async with httpx.AsyncClient(transport=transport, base_url="http://test") as client:
@@ -138,7 +154,7 @@ async def test_peagen_page_model_has_explicit_attachments(tmp_path: Path) -> Non
         assert model["graph"]["owner"]["name"] == "Swarmauri"
         assert model["graph"]["owner"]["relationship_type"] == "owned_by"
         assert any(
-            relation["relationship_type"] == "documented_by"
+            relation["relationship_type"] == "documents"
             for relation in model["graph"]["relationships"]
         )
         assert len(model["implementation"]["repositories"]) == 3
@@ -162,9 +178,7 @@ async def test_peagen_page_model_has_explicit_attachments(tmp_path: Path) -> Non
             for package in model["implementation"]["packages"]
         )
         peagen_dependency_groups = {
-            (package["ecosystem"], package["name"]): package["dependency_summary"][
-                "edge_count"
-            ]
+            (package["ecosystem"], package["name"]): package["dependency_summary"]["edge_count"]
             for package in model["implementation"]["packages"]
         }
         assert peagen_dependency_groups[("npm", "peagen-com")] == 10
@@ -221,14 +235,20 @@ async def test_peagen_page_model_has_explicit_attachments(tmp_path: Path) -> Non
             "npm",
             "pypi",
         }
-        assert sum(
-            package["dependency_summary"]["edge_count"]
-            for package in tigrbl_model["implementation"]["packages"]
-        ) >= 450
-        assert sum(
-            package["dependent_summary"]["edge_count"]
-            for package in tigrbl_model["implementation"]["packages"]
-        ) > 100
+        assert (
+            sum(
+                package["dependency_summary"]["edge_count"]
+                for package in tigrbl_model["implementation"]["packages"]
+            )
+            >= 450
+        )
+        assert (
+            sum(
+                package["dependent_summary"]["edge_count"]
+                for package in tigrbl_model["implementation"]["packages"]
+            )
+            > 100
+        )
         assert all(
             len(repository["commit_activity"]) == 30
             for repository in tigrbl_model["implementation"]["repositories"]
@@ -239,10 +259,7 @@ async def test_peagen_page_model_has_explicit_attachments(tmp_path: Path) -> Non
             if repository["governance"]["governed"]
         ]
         assert governed_repositories
-        assert all(
-            repository["governance"]["registry_url"]
-            for repository in governed_repositories
-        )
+        assert all(repository["governance"]["registry_url"] for repository in governed_repositories)
         assert tigrbl_model["governance"]["repositories"]
         tigrbl_registry = next(
             registry
@@ -252,10 +269,9 @@ async def test_peagen_page_model_has_explicit_attachments(tmp_path: Path) -> Non
         assert tigrbl_registry["summary"]["counts"]["adrs"] > 0
         assert tigrbl_registry["summary"]["counts"]["claims"] > 0
         assert tigrbl_registry["summary"]["inventory"]["claims"]
-        assert tigrbl_model["editorial"]["claim_rooting"]["status"] in {
-            "complete",
-            "incomplete",
-        }
+        assert tigrbl_model["editorial"]["ssot_claim_rooting"]["status"] == "repository-scoped"
+        assert "evidence" not in tigrbl_model["editorial"]
+        assert "observations" in tigrbl_model["editorial"]
 
         repository_metrics = await client.get("/api/v1/repository-metrics?owner=tigrbl")
         assert repository_metrics.status_code == 200
@@ -278,7 +294,10 @@ async def test_peagen_page_model_has_explicit_attachments(tmp_path: Path) -> Non
         assert repositories.json()["count"] == counts["repositories"]
         assert repositories.json()["page_size"] == 5
         assert len(repositories.json()["records"]) == 5
-        assert all(item["route"].startswith("/catalog/repositories/") for item in repositories.json()["records"])
+        assert all(
+            item["route"].startswith("/catalog/repositories/")
+            for item in repositories.json()["records"]
+        )
 
         repository_detail = await client.get("/api/v1/catalog/repositories/groupsum/groupsum-xyz")
         assert repository_detail.status_code == 200
@@ -292,6 +311,7 @@ async def test_peagen_page_model_has_explicit_attachments(tmp_path: Path) -> Non
         resources = await client.get("/api/v1/catalog/resources")
         assert resources.status_code == 200
         assert resources.json()["count"] > 0
+        assert all("." in resource["resource_type"] for resource in resources.json()["records"])
 
         technologies = await client.get("/api/v1/catalog/technologies")
         assert technologies.status_code == 200
@@ -308,24 +328,22 @@ async def test_peagen_page_model_has_explicit_attachments(tmp_path: Path) -> Non
 
         package_row = next(
             item
-            for item in json.loads(
-                (repo_root / "catalog/generated/site/packages.json").read_text()
-            )
+            for item in json.loads((repo_root / "catalog/generated/site/packages.json").read_text())
             if item.get("route") and item.get("legal_evidence")
         )
         package_key = package_row["route"].rstrip("/").split("/")[-1]
         package_detail = await client.get(f"/api/v1/catalog/packages/{package_key}")
         assert package_detail.status_code == 200
-        assert package_detail.json()["legal"]["evidence"]
+        assert package_detail.json()["legal"]["observations"]
         assert "dependencies" in package_detail.json()["implementation"]
         assert package_detail.json()["implementation"]["repositories"]
-        assert package_detail.json()["graph"]["entity"]["entity_type_id"] == "package"
+        assert package_detail.json()["graph"]["entity"]["entity_type_id"] == "distribution.package"
 
-        entities = await client.get("/api/v1/entities?entity_type=website&page_size=5")
+        entities = await client.get("/api/v1/entities?entity_type=interface.website&page_size=5")
         assert entities.status_code == 200
         assert entities.json()["total"] > 0
         assert all(
-            entity["entity_type_id"] == "website"
+            entity["entity_type_id"] == "interface.website"
             for entity in entities.json()["entities"]
         )
 

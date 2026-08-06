@@ -9,6 +9,15 @@ from typing import Any
 
 from .analytics import connect_analytics, default_analytics_path, upsert_metric
 from .database import Connection, connect
+from .ontology import (
+    RECORD_RESOURCE_TYPES,
+    RELATIONSHIP_TYPES,
+    SSOT_RESOURCE_TYPES,
+    normalize_legacy_resource_type,
+)
+from .ontology import (
+    RESOURCE_TYPES as CATALOG_RESOURCE_TYPES,
+)
 
 
 def stable_id(*parts: str) -> str:
@@ -59,7 +68,7 @@ def upsert(connection: Connection, table: str, values: dict[str, Any]) -> None:
     )
 
 
-def import_legal_evidence(
+def import_legal_observations(
     connection: Connection,
     subject_kind: str,
     subject_id: str,
@@ -85,12 +94,13 @@ def import_legal_evidence(
                 "url": url,
                 "scope": item.get("scope") or "direct",
                 "evidence_type": item.get("evidence") or "repository.file",
+                "origin_kind": item.get("evidence") or "repository.file",
                 "observed_at": observed_at,
             },
         )
 
 
-RESOURCE_TYPES = {
+DISCOVERED_RESOURCE_TYPES = {
     "website": ("Website", "experience"),
     "documentation": ("Documentation", "content"),
     "api_definition": ("API definition", "contract"),
@@ -104,7 +114,7 @@ RESOURCE_TYPES = {
 
 
 def import_resource_type(connection: Connection, resource_type: str) -> None:
-    label, category = RESOURCE_TYPES.get(
+    label, category = DISCOVERED_RESOURCE_TYPES.get(
         resource_type, (resource_type.replace("_", " ").title(), "resource")
     )
     upsert(
@@ -218,9 +228,7 @@ def ensure_package_ownership_columns(connection: Connection) -> None:
     }
     if connection.postgres:
         for name, definition in definitions.items():
-            connection.execute(
-                f"ALTER TABLE packages ADD COLUMN IF NOT EXISTS {name} {definition}"
-            )
+            connection.execute(f"ALTER TABLE packages ADD COLUMN IF NOT EXISTS {name} {definition}")
         return
     present = {row[1] for row in connection.execute("PRAGMA table_info(packages)")}
     for name, definition in definitions.items():
@@ -228,27 +236,44 @@ def ensure_package_ownership_columns(connection: Connection) -> None:
             connection.execute(f"ALTER TABLE packages ADD COLUMN {name} {definition}")
 
 
-ENTITY_TYPES = {
-    "organization": ("Organization", "party"),
-    "product": ("Product", "offering"),
-    "portfolio": ("Portfolio", "collection"),
-    "solution": ("Solution", "offering"),
-    "service": ("Service", "offering"),
-    "insight": ("Insight", "content"),
-    "repository": ("Repository", "resource"),
-    "package": ("Package", "resource"),
-    "website": ("Website", "experience"),
-    "documentation": ("Documentation", "content"),
-    "api_definition": ("API definition", "resource"),
-    "api_source": ("API source", "resource"),
-    "api": ("Live API", "experience"),
-    "demo": ("Demo", "experience"),
-    "example": ("Example", "content"),
-    "showcase": ("Showcase", "experience"),
-    "ui": ("User interface", "experience"),
-    "resource": ("Resource", "resource"),
-    "governance_registry": ("SSOT registry", "governance"),
-}
+def ensure_universal_resource_columns(connection: Connection) -> None:
+    additions = {
+        "entity_types": {
+            "parent_type_id": "VARCHAR(80)",
+            "icon_key": "VARCHAR(80)",
+            "detail_schema_key": "VARCHAR(120)",
+        },
+        "entity_urls": {
+            "origin_kind": "VARCHAR(80) NOT NULL DEFAULT 'collector_observation'",
+            "observation_id": "VARCHAR(300)",
+        },
+        "entity_relationships": {
+            "origin_kind": "VARCHAR(80) NOT NULL DEFAULT 'collector_observation'",
+            "observation_id": "VARCHAR(300)",
+            "ssot_entity_id": "VARCHAR(360)",
+        },
+        "observations": {
+            "observation_type": "VARCHAR(80) NOT NULL DEFAULT 'inventory'",
+        },
+        "dependencies": {
+            "origin_kind": "VARCHAR(80) NOT NULL DEFAULT 'repository.manifest'",
+        },
+        "legal_evidence": {
+            "origin_kind": "VARCHAR(80) NOT NULL DEFAULT 'repository.file'",
+        },
+    }
+    if connection.postgres:
+        for table, columns in additions.items():
+            for name, definition in columns.items():
+                connection.execute(
+                    f"ALTER TABLE {table} ADD COLUMN IF NOT EXISTS {name} {definition}"
+                )
+        return
+    for table, columns in additions.items():
+        present = {row[1] for row in connection.execute(f"PRAGMA table_info({table})")}
+        for name, definition in columns.items():
+            if name not in present:
+                connection.execute(f"ALTER TABLE {table} ADD COLUMN {name} {definition}")
 
 
 def catalog_entity_id(source_table: str, source_id: str) -> str:
@@ -256,25 +281,26 @@ def catalog_entity_id(source_table: str, source_id: str) -> str:
 
 
 def rebuild_entity_graph(connection: Connection, generated_at: str) -> dict[str, int]:
-    """Project normalized tables into one canonical, evidence-bearing entity graph."""
+    """Project domain tables into one single-type, observation-backed resource graph."""
     if connection.postgres:
         # create_all does not widen an existing deployment column. Relationship roles
         # include manifest paths, so keep the additive schema migration idempotent.
-        connection.execute(
-            "ALTER TABLE entity_relationships ALTER COLUMN role TYPE VARCHAR(512)"
-        )
+        connection.execute("ALTER TABLE entity_relationships ALTER COLUMN role TYPE VARCHAR(512)")
     for table in ("entity_relationships", "entity_urls", "entity_aliases", "catalog_entities"):
         connection.execute(f"DELETE FROM {table}")
     connection.execute("DELETE FROM entity_types")
-    for type_id, (label, semantic_class) in ENTITY_TYPES.items():
+    for type_id, definition in CATALOG_RESOURCE_TYPES.items():
         upsert(
             connection,
             "entity_types",
             {
                 "id": type_id,
-                "label": label,
-                "semantic_class": semantic_class,
+                "label": definition.label,
+                "semantic_class": definition.family,
                 "description": None,
+                "parent_type_id": definition.family,
+                "icon_key": definition.icon_key,
+                "detail_schema_key": definition.detail_schema_key,
             },
         )
 
@@ -299,7 +325,7 @@ def rebuild_entity_graph(connection: Connection, generated_at: str) -> dict[str,
             "catalog_entities",
             {
                 "id": entity_id,
-                "entity_type_id": entity_type if entity_type in ENTITY_TYPES else "resource",
+                "entity_type_id": entity_type,
                 "organization_id": organization_id,
                 "slug": slug,
                 "name": name,
@@ -312,9 +338,9 @@ def rebuild_entity_graph(connection: Connection, generated_at: str) -> dict[str,
                 "observed_at": observed_at or generated_at,
             },
         )
-        for role, url, label, evidence_type in (
-            ("canonical", canonical_url, "Canonical record", "catalog.projection"),
-            ("source", source_url, "Primary source", "source.observation"),
+        for role, url, label, origin_kind in (
+            ("canonical", canonical_url, "Canonical record", "catalog_projection"),
+            ("source", source_url, "Primary source", "collector_observation"),
         ):
             if not url:
                 continue
@@ -327,7 +353,9 @@ def rebuild_entity_graph(connection: Connection, generated_at: str) -> dict[str,
                     "url_role": role,
                     "url": url,
                     "label": label,
-                    "evidence_type": evidence_type,
+                    "evidence_type": origin_kind,
+                    "origin_kind": origin_kind,
+                    "observation_id": None,
                     "observed_at": observed_at or generated_at,
                 },
             )
@@ -350,11 +378,15 @@ def rebuild_entity_graph(connection: Connection, generated_at: str) -> dict[str,
         relationship_type: str,
         *,
         role: str | None = None,
-        evidence_type: str,
+        origin_kind: str,
         source_url: str | None = None,
         observed_at: str | None = None,
+        observation_id: str | None = None,
+        ssot_entity_id: str | None = None,
         confidence: str = "observed",
     ) -> None:
+        if relationship_type not in RELATIONSHIP_TYPES:
+            raise ValueError(f"Unregistered resource relationship: {relationship_type}")
         upsert(
             connection,
             "entity_relationships",
@@ -370,7 +402,10 @@ def rebuild_entity_graph(connection: Connection, generated_at: str) -> dict[str,
                 "target_entity_id": target_entity,
                 "relationship_type": relationship_type,
                 "role": role,
-                "evidence_type": evidence_type,
+                "evidence_type": origin_kind,
+                "origin_kind": origin_kind,
+                "observation_id": observation_id,
+                "ssot_entity_id": ssot_entity_id,
                 "source_url": source_url,
                 "confidence": confidence,
                 "status": "active",
@@ -384,7 +419,7 @@ def rebuild_entity_graph(connection: Connection, generated_at: str) -> dict[str,
         organization_entities[item["id"]] = add_entity(
             "organizations",
             item["id"],
-            "organization",
+            "party.organization",
             item["slug"],
             item["name"],
             organization_id=item["id"],
@@ -399,7 +434,7 @@ def rebuild_entity_graph(connection: Connection, generated_at: str) -> dict[str,
         entity_id = add_entity(
             "records",
             item["id"],
-            item["record_type"],
+            RECORD_RESOURCE_TYPES[item["record_type"]],
             item["slug"],
             item["title"],
             organization_id=item["organization_id"],
@@ -416,18 +451,20 @@ def rebuild_entity_graph(connection: Connection, generated_at: str) -> dict[str,
                 entity_id,
                 owner,
                 "owned_by",
-                evidence_type="editorial.organization_id",
+                origin_kind="editorial",
                 source_url=item.get("canonical_url"),
                 observed_at=item.get("updated_at"),
             )
 
+    repository_entities: dict[str, str] = {}
+    ssot_registry_entities: dict[str, str] = {}
     for row in connection.execute("SELECT * FROM repositories").fetchall():
         item = dict(row)
         canonical = f"https://groupsum.xyz/catalog/repositories/{item['owner']}/{item['name']}"
         entity_id = add_entity(
             "repositories",
             item["id"],
-            "repository",
+            "source.repository",
             f"{item['owner']}/{item['name']}",
             f"{item['owner']}/{item['name']}",
             organization_id=item.get("organization_id"),
@@ -437,13 +474,14 @@ def rebuild_entity_graph(connection: Connection, generated_at: str) -> dict[str,
             observed_at=item.get("observed_at"),
             source_url=item.get("url"),
         )
+        repository_entities[item["id"]] = entity_id
         owner = organization_entities.get(item.get("organization_id"))
         if owner:
             link(
                 entity_id,
                 owner,
                 "owned_by",
-                evidence_type="github.repository_owner",
+                origin_kind="provider_api",
                 source_url=item.get("url"),
                 observed_at=item.get("observed_at"),
             )
@@ -451,7 +489,7 @@ def rebuild_entity_graph(connection: Connection, generated_at: str) -> dict[str,
             registry_id = add_entity(
                 "ssot_registries",
                 item["id"],
-                "governance_registry",
+                "governance.registry",
                 f"{item['owner']}/{item['name']}/ssot-registry",
                 f"{item['owner']}/{item['name']} SSOT registry",
                 organization_id=item.get("organization_id"),
@@ -460,11 +498,16 @@ def rebuild_entity_graph(connection: Connection, generated_at: str) -> dict[str,
                 observed_at=item.get("ssot_observed_at"),
                 source_url=item["ssot_registry_url"],
             )
+            for registry_row in connection.execute(
+                "SELECT id FROM repository_ssot_registries WHERE repository_id = ?",
+                (item["id"],),
+            ).fetchall():
+                ssot_registry_entities[str(registry_row[0])] = registry_id
             link(
                 entity_id,
                 registry_id,
                 "governed_by",
-                evidence_type="ssot.registry",
+                origin_kind="ssot_registry",
                 source_url=item["ssot_registry_url"],
                 observed_at=item.get("ssot_observed_at"),
             )
@@ -479,7 +522,7 @@ def rebuild_entity_graph(connection: Connection, generated_at: str) -> dict[str,
         add_entity(
             "packages",
             item["id"],
-            "package",
+            "distribution.package",
             f"{item['ecosystem']}:{item['name']}",
             item["name"],
             summary=item.get("description"),
@@ -489,15 +532,28 @@ def rebuild_entity_graph(connection: Connection, generated_at: str) -> dict[str,
             source_url=item.get("registry_url") or item.get("source_url"),
         )
 
+    package_entities = {
+        str(row[0]): catalog_entity_id("packages", str(row[0]))
+        for row in connection.execute("SELECT id FROM packages").fetchall()
+    }
+    package_by_key = {
+        package_key(str(row[1]), str(row[2])): str(row[0])
+        for row in connection.execute("SELECT id, ecosystem, name FROM packages").fetchall()
+    }
+
+    projected_resource_entities: dict[str, str] = {}
     for row in connection.execute("SELECT * FROM resources").fetchall():
         item = dict(row)
-        resource_type = item.get("resource_type") or "resource"
+        legacy_type = item.get("resource_type") or ""
+        resource_type = normalize_legacy_resource_type(legacy_type, item.get("path"))
+        if resource_type is None:
+            continue
         route = (
             f"https://groupsum.xyz/catalog/resources/{resource_type}/{item['route_key']}"
             if item.get("route_key")
             else item.get("url")
         )
-        add_entity(
+        projected_resource_entities[item["id"]] = add_entity(
             "resources",
             item["id"],
             resource_type,
@@ -507,6 +563,210 @@ def rebuild_entity_graph(connection: Connection, generated_at: str) -> dict[str,
             canonical_url=route,
             observed_at=item.get("observed_at"),
             source_url=item.get("url"),
+        )
+
+    for row in connection.execute("SELECT * FROM releases").fetchall():
+        item = dict(row)
+        route = (
+            f"https://groupsum.xyz/catalog/releases/{item['route_key']}"
+            if item.get("route_key")
+            else item.get("url")
+        )
+        release_type = (
+            "release.container"
+            if str(item.get("release_kind") or "").lower() in {"ghcr", "docker", "container"}
+            else "release.package"
+            if item.get("package_id")
+            else "release.repository"
+        )
+        release_entity = add_entity(
+            "releases",
+            item["id"],
+            release_type,
+            item.get("route_key") or item["id"],
+            str(item.get("version") or "Release"),
+            canonical_url=route,
+            observed_at=item.get("observed_at"),
+            source_url=item.get("url"),
+        )
+        parent_entity = (
+            package_entities.get(str(item.get("package_id")))
+            if item.get("package_id")
+            else repository_entities.get(str(item.get("repository_id")))
+        )
+        if parent_entity:
+            link(
+                release_entity,
+                parent_entity,
+                "release_of",
+                origin_kind="provider_api",
+                source_url=item.get("url"),
+                observed_at=item.get("observed_at"),
+            )
+
+    ssot_entities_by_registry_key: dict[tuple[str, str, str], str] = {}
+    ssot_inventory_items: list[dict[str, Any]] = []
+    for row in connection.execute("SELECT * FROM repository_ssot_inventory").fetchall():
+        item = dict(row)
+        resource_type = SSOT_RESOURCE_TYPES.get(str(item["entity_kind"]))
+        registry_entity = ssot_registry_entities.get(str(item["registry_id"]))
+        if not resource_type or not registry_entity:
+            continue
+        if isinstance(item.get("payload"), str):
+            item["payload"] = json.loads(item["payload"])
+        ssot_inventory_items.append(item)
+        route_key = hashlib.sha256(str(item["id"]).encode()).hexdigest()[:20]
+        title = str(item.get("title") or item.get("entity_id") or resource_type)
+        entity_id = add_entity(
+            "repository_ssot_inventory",
+            item["id"],
+            resource_type,
+            route_key,
+            title,
+            canonical_url=f"https://groupsum.xyz/catalog/resources/{resource_type}/{route_key}",
+            maturity=item.get("implementation_status") or item.get("status"),
+            source_url=connection.execute(
+                "SELECT registry_url FROM repository_ssot_registries WHERE id = ?",
+                (item["registry_id"],),
+            ).fetchone()[0],
+        )
+        ssot_entities_by_registry_key[
+            (str(item["registry_id"]), str(item["entity_kind"]), str(item["entity_id"]))
+        ] = entity_id
+        link(
+            registry_entity,
+            entity_id,
+            "declares",
+            origin_kind="ssot_registry",
+            ssot_entity_id=item["id"],
+        )
+        repository_id_row = connection.execute(
+            "SELECT repository_id FROM repository_ssot_registries WHERE id = ?",
+            (item["registry_id"],),
+        ).fetchone()
+        if repository_id_row and str(repository_id_row[0]) in repository_entities:
+            link(
+                repository_entities[str(repository_id_row[0])],
+                entity_id,
+                "contains",
+                origin_kind="ssot_registry",
+                ssot_entity_id=item["id"],
+            )
+
+    reference_rules = {
+        "evidence_ids": ("evidence", "claim_has_evidence", "forward"),
+        "test_ids": ("tests", "verifies", "reverse"),
+        "claim_ids": ("claims", "references", "forward"),
+        "feature_ids": ("features", "references", "forward"),
+        "spec_ids": ("specs", "implements_spec", "forward"),
+        "adr_ids": ("adrs", "decides", "reverse"),
+        "issue_ids": ("issues", "addresses", "reverse"),
+        "boundary_ids": ("boundaries", "constrains", "reverse"),
+        "profile_ids": ("profiles", "profiles", "reverse"),
+        "release_ids": ("releases", "includes", "reverse"),
+    }
+    for item in ssot_inventory_items:
+        source_entity = ssot_entities_by_registry_key.get(
+            (str(item["registry_id"]), str(item["entity_kind"]), str(item["entity_id"]))
+        )
+        payload = item.get("payload") if isinstance(item.get("payload"), dict) else {}
+        if source_entity is None:
+            continue
+        for field, (target_kind, default_relation, direction) in reference_rules.items():
+            reference_ids = payload.get(field)
+            if not isinstance(reference_ids, list):
+                continue
+            for reference_id in reference_ids:
+                target_entity = ssot_entities_by_registry_key.get(
+                    (str(item["registry_id"]), target_kind, str(reference_id))
+                )
+                if target_entity is None:
+                    continue
+                relationship_type = default_relation
+                relationship_direction = direction
+                if field == "claim_ids" and item["entity_kind"] == "evidence":
+                    relationship_type, relationship_direction = "claim_has_evidence", "reverse"
+                elif field == "claim_ids" and item["entity_kind"] == "tests":
+                    relationship_type = "verifies"
+                elif field == "feature_ids" and item["entity_kind"] == "tests":
+                    relationship_type = "tests"
+                elif field == "feature_ids" and item["entity_kind"] == "claims":
+                    relationship_type, relationship_direction = "asserts_claim", "reverse"
+                edge_source, edge_target = source_entity, target_entity
+                if relationship_direction == "reverse":
+                    edge_source, edge_target = edge_target, edge_source
+                link(
+                    edge_source,
+                    edge_target,
+                    relationship_type,
+                    origin_kind="ssot_registry",
+                    ssot_entity_id=item["id"],
+                )
+
+    for row in connection.execute(
+        "SELECT id, taxonomy_type, slug, label, category, description FROM taxonomies"
+    ).fetchall():
+        item = dict(row)
+        taxonomy_type = str(item["taxonomy_type"])
+        resource_type = {
+            "technology": "taxonomy.technology",
+            "language": "taxonomy.language",
+            "ecosystem": "taxonomy.ecosystem",
+            "audience": "taxonomy.audience",
+            "capability": "taxonomy.capability",
+            "domain": "taxonomy.domain",
+            "topic": "taxonomy.topic",
+            "category": "taxonomy.category",
+        }.get(taxonomy_type)
+        if not resource_type:
+            continue
+        taxonomy_route = (
+            f"https://groupsum.xyz/catalog/technologies/{item['slug']}"
+            if resource_type == "taxonomy.technology"
+            else f"https://groupsum.xyz/catalog/resources/{resource_type}/{item['slug']}"
+        )
+        add_entity(
+            "taxonomies",
+            item["id"],
+            resource_type,
+            item["slug"],
+            item["label"],
+            summary=item.get("description"),
+            canonical_url=taxonomy_route,
+        )
+
+    for row in connection.execute("SELECT * FROM dependencies").fetchall():
+        item = dict(row)
+        source_entity = package_entities.get(str(item.get("source_id")))
+        if not source_entity:
+            continue
+        target_package_id = package_by_key.get(str(item.get("target_id")))
+        if target_package_id:
+            target_entity = package_entities[target_package_id]
+        else:
+            target_id = str(item.get("target_id") or "unknown")
+            route_key = hashlib.sha256(target_id.encode()).hexdigest()[:20]
+            target_entity = add_entity(
+                "external_packages",
+                target_id,
+                "distribution.package",
+                route_key,
+                target_id.split(":", 1)[-1],
+                canonical_url=(
+                    f"https://groupsum.xyz/catalog/resources/distribution.package/{route_key}"
+                ),
+                visibility="public",
+                observed_at=item.get("observed_at"),
+                source_url=item.get("source_url"),
+            )
+        link(
+            source_entity,
+            target_entity,
+            "depends_on",
+            role=item.get("scope"),
+            origin_kind="repository_manifest",
+            source_url=item.get("source_url"),
+            observed_at=item.get("observed_at"),
         )
 
     record_repository_edges = connection.execute(
@@ -520,7 +780,7 @@ def rebuild_entity_graph(connection: Connection, generated_at: str) -> dict[str,
             catalog_entity_id("repositories", item["repository_id"]),
             "implemented_by",
             role=item.get("role"),
-            evidence_type="catalog.record_repository",
+            origin_kind="editorial",
             source_url=item.get("url"),
         )
     for row in connection.execute("SELECT * FROM record_packages").fetchall():
@@ -530,61 +790,87 @@ def rebuild_entity_graph(connection: Connection, generated_at: str) -> dict[str,
             catalog_entity_id("packages", item["package_id"]),
             "distributed_as",
             role=item.get("role"),
-            evidence_type="catalog.record_package",
+            origin_kind="editorial",
         )
-    resource_relationships = {
-        "website": "presented_at",
-        "documentation": "documented_by",
-        "api_definition": "defines_api_with",
-        "api_source": "implements_api_with",
-        "api": "exposes_api",
-        "demo": "demonstrated_by",
-        "example": "has_example",
-        "showcase": "showcased_by",
-        "ui": "has_ui",
-    }
     for row in connection.execute(
-        "SELECT rr.*, rs.resource_type, rs.url FROM record_resources rr "
+        "SELECT rr.*, rs.resource_type, rs.path, rs.url FROM record_resources rr "
         "JOIN resources rs ON rs.id = rr.resource_id"
     ).fetchall():
         item = dict(row)
+        resource_entity = projected_resource_entities.get(str(item["resource_id"]))
+        if resource_entity is None:
+            continue
+        record_entity = catalog_entity_id("records", item["record_id"])
+        resource_type = normalize_legacy_resource_type(
+            str(item.get("resource_type") or ""), item.get("path")
+        )
+        relationship_type = "includes"
+        source_entity, target_entity = record_entity, resource_entity
+        if resource_type and resource_type.startswith("documentation."):
+            source_entity, target_entity = resource_entity, record_entity
+            relationship_type = "documents"
+        elif resource_type == "implementation.demo":
+            source_entity, target_entity = resource_entity, record_entity
+            relationship_type = "demonstrates"
+        elif resource_type == "implementation.showcase":
+            source_entity, target_entity = resource_entity, record_entity
+            relationship_type = "showcases"
+        elif resource_type == "implementation.example":
+            source_entity, target_entity = resource_entity, record_entity
+            relationship_type = "example_of"
+        elif resource_type and resource_type.startswith("contract."):
+            relationship_type = "described_by"
+        elif resource_type and resource_type.startswith(("interface.", "runtime.")):
+            relationship_type = "provides"
         link(
-            catalog_entity_id("records", item["record_id"]),
-            catalog_entity_id("resources", item["resource_id"]),
-            resource_relationships.get(item["resource_type"], "related_to"),
+            source_entity,
+            target_entity,
+            relationship_type,
             role=item.get("role"),
-            evidence_type="catalog.record_resource",
+            origin_kind="editorial",
             source_url=item.get("url"),
         )
     for row in connection.execute("SELECT * FROM package_repositories").fetchall():
         item = dict(row)
         link(
-            catalog_entity_id("packages", item["package_id"]),
             catalog_entity_id("repositories", item["repository_id"]),
-            "source_code_at",
+            catalog_entity_id("packages", item["package_id"]),
+            "contains",
             role=item.get("path"),
-            evidence_type="repository.manifest",
+            origin_kind="repository_manifest",
         )
     for row in connection.execute(
         "SELECT id, repository_id, url, path FROM resources WHERE repository_id IS NOT NULL"
     ).fetchall():
         item = dict(row)
+        resource_entity = projected_resource_entities.get(str(item["id"]))
+        if resource_entity is None:
+            continue
         link(
-            catalog_entity_id("resources", item["id"]),
             catalog_entity_id("repositories", item["repository_id"]),
-            "source_code_at",
+            resource_entity,
+            "contains",
             role=item.get("path"),
-            evidence_type="repository.resource_path",
+            origin_kind="collector_observation",
             source_url=item.get("url"),
         )
     for row in connection.execute("SELECT * FROM record_relations").fetchall():
         item = dict(row)
+        relationship_type = {
+            "part_of": "groups",
+            "related": "references",
+        }.get(str(item["relation_type"]), str(item["relation_type"]))
+        source_entity = catalog_entity_id("records", item["source_record_id"])
+        target_entity = catalog_entity_id("records", item["target_record_id"])
+        # A parent groups a child; reverse the legacy child -> parent edge.
+        if item["relation_type"] == "part_of":
+            source_entity, target_entity = target_entity, source_entity
         link(
-            catalog_entity_id("records", item["source_record_id"]),
-            catalog_entity_id("records", item["target_record_id"]),
-            item["relation_type"],
+            source_entity,
+            target_entity,
+            relationship_type,
             role=item.get("note"),
-            evidence_type="editorial.record_relation",
+            origin_kind="editorial",
         )
     return {
         "entities": connection.execute("SELECT COUNT(*) FROM catalog_entities").fetchone()[0],
@@ -618,6 +904,7 @@ def import_catalog(
     with connect(database_path) as connection, connect_analytics(analytics_path) as analytics:
         ensure_repository_ssot_columns(connection)
         ensure_package_ownership_columns(connection)
+        ensure_universal_resource_columns(connection)
         # Product and portfolio records do not own repository metrics. Remove
         # legacy record-wide rollups so evidence links cannot transfer stars,
         # commits, contributors, releases, dependencies, or dependents.
@@ -668,6 +955,15 @@ def import_catalog(
         connection.execute("DELETE FROM dependencies")
         connection.execute("DELETE FROM releases")
         connection.execute("DELETE FROM legal_evidence")
+        # Evidence and governance features are reserved for SSOT registry entities.
+        # Legacy editorial/source checks are re-imported as observations below.
+        connection.execute("UPDATE limitations SET evidence_id = NULL")
+        connection.execute("DELETE FROM claim_evidence")
+        connection.execute("DELETE FROM resource_evidence")
+        connection.execute("DELETE FROM record_features")
+        connection.execute("DELETE FROM features")
+        connection.execute("DELETE FROM claims")
+        connection.execute("DELETE FROM evidence")
         for organization in editorial["organizations"]:
             upsert(
                 connection,
@@ -731,72 +1027,30 @@ def import_catalog(
                         "note": None,
                     },
                 )
-            claim_id = stable_id("claim", record["id"], "reviewed-positioning")
-            upsert(
-                connection,
-                "claims",
-                {
-                    "id": claim_id,
-                    "record_id": record["id"],
-                    "claim_type": "reviewed-positioning",
-                    "statement": record.get("claim_boundary") or record["summary"],
-                    "status": "reviewed",
-                    "ssot_claim_id": None,
-                    "reviewed_at": generated_at,
-                },
-            )
             source_url = next(
                 (link["href"] for link in record["links"] if link.get("kind") == "source"),
                 record["canonical_url"],
             )
-            for index, evidence in enumerate(record["evidence"]):
-                evidence_id = stable_id("evidence", record["id"], str(index))
+            for index, source_check in enumerate(record["evidence"]):
                 upsert(
                     connection,
-                    "evidence",
+                    "observations",
                     {
-                        "id": evidence_id,
-                        "evidence_type": evidence.get("kind", "reviewed"),
-                        "title": evidence["label"],
+                        "id": stable_id("observation", run_id, record["id"], str(index)),
+                        "collection_run_id": run_id,
+                        "subject_kind": "record",
+                        "subject_id": record["id"],
+                        "observation_type": "editorial-source-check",
+                        "evidence_type": None,
                         "source_url": source_url,
-                        "locator": None,
-                        "excerpt": None,
-                        "observed_at": evidence.get("checkedAt") or generated_at,
-                        "expires_at": None,
-                    },
-                )
-                upsert(
-                    connection,
-                    "claim_evidence",
-                    {
-                        "id": stable_id("claim-evidence", claim_id, evidence_id),
-                        "claim_id": claim_id,
-                        "evidence_id": evidence_id,
-                        "support": "supports",
-                    },
-                )
-            for feature_slug in record["capabilities"]:
-                feature_id = stable_id("feature", feature_slug)
-                upsert(
-                    connection,
-                    "features",
-                    {
-                        "id": feature_id,
-                        "slug": feature_slug,
-                        "name": feature_slug.replace("-", " ").title(),
-                        "description": None,
-                        "ssot_feature_id": None,
-                    },
-                )
-                upsert(
-                    connection,
-                    "record_features",
-                    {
-                        "id": stable_id("record-feature", record["id"], feature_id),
-                        "record_id": record["id"],
-                        "feature_id": feature_id,
-                        "claim_id": claim_id,
-                        "status": "reviewed",
+                        "payload": json.dumps(
+                            {
+                                "kind": source_check.get("kind", "reviewed"),
+                                "label": source_check["label"],
+                            }
+                        ),
+                        "completeness": "reviewed-source-check",
+                        "observed_at": source_check.get("checkedAt") or generated_at,
                     },
                 )
             for taxonomy_type, values in (
@@ -954,13 +1208,9 @@ def import_catalog(
             if not bundle_path.exists():
                 continue
             bundle = json.loads(bundle_path.read_text())
-            attached = bundle["repository"].get("attached_repositories") or [
-                bundle["repository"]
-            ]
+            attached = bundle["repository"].get("attached_repositories") or [bundle["repository"]]
             claimed_repositories.update(
-                item.get("full_name")
-                for item in attached
-                if item.get("full_name")
+                item.get("full_name") for item in attached if item.get("full_name")
             )
 
         connection.execute(
@@ -1006,7 +1256,7 @@ def import_catalog(
                     "observed_at": repository.get("observed_at") or generated_at,
                 },
             )
-            import_legal_evidence(
+            import_legal_observations(
                 connection,
                 "repository",
                 repository_id,
@@ -1063,8 +1313,7 @@ def import_catalog(
                 day = str(activity["date"])
                 period_start = f"{day}T00:00:00Z"
                 period_end = (
-                    datetime.fromisoformat(period_start.replace("Z", "+00:00"))
-                    + timedelta(days=1)
+                    datetime.fromisoformat(period_start.replace("Z", "+00:00")) + timedelta(days=1)
                 ).isoformat()
                 upsert_metric(
                     analytics,
@@ -1129,9 +1378,7 @@ def import_catalog(
                         }
                     ),
                     "maturity": (
-                        "archived"
-                        if repository.get("archived")
-                        else "observed-public-source"
+                        "archived" if repository.get("archived") else "observed-public-source"
                     ),
                     "visibility": "public",
                     "featured": False,
@@ -1152,43 +1399,20 @@ def import_catalog(
                     "role": "primary-public-evidence",
                 },
             )
-            claim_id = stable_id("claim", generated_record_id, "catalog-observation")
-            evidence_id = stable_id("evidence", generated_record_id, "repository")
             upsert(
                 connection,
-                "claims",
+                "observations",
                 {
-                    "id": claim_id,
-                    "record_id": generated_record_id,
-                    "claim_type": "catalog-observation",
-                    "statement": summary,
-                    "status": "observed",
-                    "ssot_claim_id": None,
-                    "reviewed_at": None,
-                },
-            )
-            upsert(
-                connection,
-                "evidence",
-                {
-                    "id": evidence_id,
-                    "evidence_type": "source",
-                    "title": "Public GitHub repository observation",
+                    "id": stable_id("observation", run_id, generated_record_id, "repository"),
+                    "collection_run_id": run_id,
+                    "subject_kind": "record",
+                    "subject_id": generated_record_id,
+                    "observation_type": "repository-inventory",
+                    "evidence_type": None,
                     "source_url": repository["url"],
-                    "locator": None,
-                    "excerpt": None,
+                    "payload": json.dumps({"summary": summary}),
+                    "completeness": "catalog-observed",
                     "observed_at": repository.get("observed_at") or generated_at,
-                    "expires_at": None,
-                },
-            )
-            upsert(
-                connection,
-                "claim_evidence",
-                {
-                    "id": stable_id("claim-evidence", claim_id, evidence_id),
-                    "claim_id": claim_id,
-                    "evidence_id": evidence_id,
-                    "support": "supports",
                 },
             )
             upsert(
@@ -1199,11 +1423,11 @@ def import_catalog(
                     "record_id": generated_record_id,
                     "title": "Editorial status",
                     "description": (
-                        "Catalog-generated evidence record; product positioning and "
+                        "Catalog-generated inventory record; product positioning and "
                         "maturity have not been editorially reviewed."
                     ),
                     "severity": None,
-                    "evidence_id": evidence_id,
+                    "evidence_id": None,
                     "reviewed_at": None,
                 },
             )
@@ -1261,9 +1485,7 @@ def import_catalog(
             ecosystem = package["ecosystem"]
             name = package["name"]
             route_key = package.get("route", "").rstrip("/").split("/")[-1] or None
-            package_id = canonical_package_id(
-                connection, package["id"], ecosystem, name, route_key
-            )
+            package_id = canonical_package_id(connection, package["id"], ecosystem, name, route_key)
             natural_key = package_key(ecosystem, name)
             package_ids_by_key.setdefault(natural_key, []).append(package_id)
             package_url = package.get("registry_url") or package.get("source_url")
@@ -1296,7 +1518,7 @@ def import_catalog(
                     "observed_at": package.get("observed_at") or generated_at,
                 },
             )
-            import_legal_evidence(
+            import_legal_observations(
                 connection,
                 "package",
                 package_id,
@@ -1370,14 +1592,13 @@ def import_catalog(
                         "source_kind": "package",
                         "source_id": package_id,
                         "target_kind": (
-                            "package"
-                            if dependency.get("internal")
-                            else "external-package"
+                            "package" if dependency.get("internal") else "external-package"
                         ),
                         "target_id": target_key,
                         "requirement": dependency.get("requirement"),
                         "scope": dependency.get("scope"),
                         "evidence_type": dependency.get("evidence") or "repository.manifest",
+                        "origin_kind": dependency.get("evidence") or "repository.manifest",
                         "source_url": package.get("source_url"),
                         "completeness": "catalog-observed",
                         "observed_at": package.get("observed_at") or generated_at,
@@ -1403,13 +1624,14 @@ def import_catalog(
                         "requirement": dependent.get("requirement"),
                         "scope": dependent.get("scope") or "registry-dependent",
                         "evidence_type": (
-                            dependent.get("evidence")
-                            or "registry.reverse_dependencies"
+                            dependent.get("evidence") or "registry.reverse_dependencies"
+                        ),
+                        "origin_kind": (
+                            dependent.get("evidence") or "registry.reverse_dependencies"
                         ),
                         "source_url": package.get("registry_url"),
                         "completeness": (
-                            dependent.get("completeness")
-                            or "bounded-registry-observation"
+                            dependent.get("completeness") or "bounded-registry-observation"
                         ),
                         "observed_at": package.get("observed_at") or generated_at,
                     },
@@ -1612,12 +1834,10 @@ def import_catalog(
                     },
                 )
         counts.update(rebuild_entity_graph(connection, generated_at))
-        counts["releases"] = connection.execute(
-            "SELECT COUNT(*) FROM releases"
-        ).fetchone()[0]
-        counts["dependencies"] = connection.execute(
-            "SELECT COUNT(*) FROM dependencies"
-        ).fetchone()[0]
+        counts["releases"] = connection.execute("SELECT COUNT(*) FROM releases").fetchone()[0]
+        counts["dependencies"] = connection.execute("SELECT COUNT(*) FROM dependencies").fetchone()[
+            0
+        ]
         connection.execute(
             "UPDATE collection_runs SET completed_at = ?, status = ?, summary = ? WHERE id = ?",
             (generated_at, "complete", json.dumps(counts, sort_keys=True), run_id),

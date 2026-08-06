@@ -56,9 +56,7 @@ class CatalogAppSpec(
     defineAppSpec(
         title="Groupsum Catalog API",
         version="0.2.0",
-        description=(
-            "PostgreSQL system of record and DuckDB analytical metrics for groupsum.xyz."
-        ),
+        description=("PostgreSQL system of record and DuckDB analytical metrics for groupsum.xyz."),
     ),
     TigrblApp,
 ):
@@ -314,8 +312,18 @@ def build_app(
         return catalog_collection_from_request(database, request, "resource")
 
     @catalog_app.get(
-        "/api/v1/catalog/resources/{route_key}",
+        "/api/v1/catalog/resources/{resource_type}/{route_key}",
         summary="Typed catalog resource record",
+        response_model=CatalogMember,
+    )
+    def typed_catalog_resource(request: Request, resource_type: str, route_key: str):
+        return catalog_resource_detail(
+            database, request, "resource", route_key, entity_type=resource_type
+        )
+
+    @catalog_app.get(
+        "/api/v1/catalog/resources/{route_key}",
+        summary="Legacy typed catalog resource record route",
         response_model=CatalogMember,
     )
     def catalog_resource(request: Request, route_key: str):
