@@ -167,7 +167,7 @@ ${item.summary}
 - **Evidence trail:** Maturity, evidence, and limitations remain visible beside the description.
 - **Next step:** Use the linked source, specification, or product surface to continue evaluation.
 
-_Evidence reviewed: August 2, 2026 Â· Document ref: CATALOG-${item.slug.toUpperCase()}_`}
+_Evidence reviewed: August 2, 2026 · Document ref: CATALOG-${item.slug.toUpperCase()}_`}
           />
 
           <div className="mt-8 pt-6 border-t border-[var(--color-border-soft)]">

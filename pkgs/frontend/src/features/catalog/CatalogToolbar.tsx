@@ -21,6 +21,6 @@ export const CatalogToolbar: React.FC<Props> = ({ query, setQuery, view, setView
       <select value={filters.kind} onChange={(event) => update("kind", event.target.value)} aria-label="Entity type" className="px-2.5 py-2 text-xs font-mono bg-surface border border-[var(--color-border-soft)] rounded"><option value="all">All entity types</option>{kinds.map((value) => <option key={value} value={value}>{value}</option>)}</select>
       <select value={filters.maturity} onChange={(event) => update("maturity", event.target.value)} aria-label="Maturity" className="px-2.5 py-2 text-xs font-mono bg-surface border border-[var(--color-border-soft)] rounded"><option value="all">All maturity</option>{maturities.map((value) => <option key={value} value={value}>{value}</option>)}</select>
     </div>
-    <div className="flex items-center justify-between text-[10px] font-mono text-ink-muted"><span aria-live="polite">{entities.length} catalog records Â· {hasFilters ? "filtered" : "all records"}</span>{hasFilters && <button type="button" onClick={clear} className="inline-flex items-center gap-1 text-accent hover:underline">Clear <X className="w-3 h-3" /></button>}</div>
+    <div className="flex items-center justify-between text-[10px] font-mono text-ink-muted"><span aria-live="polite">{entities.length} catalog records · {hasFilters ? "filtered" : "all records"}</span>{hasFilters && <button type="button" onClick={clear} className="inline-flex items-center gap-1 text-accent hover:underline">Clear <X className="w-3 h-3" /></button>}</div>
   </div>;
 };

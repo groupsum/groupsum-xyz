@@ -179,7 +179,7 @@ export function LegalContext({ record, detail = false }: { record: CatalogRecord
       ["License file", licenseFile ? <a href={String(licenseFile.url)} target="_blank" rel="noreferrer" className="text-accent hover:underline">{String(licenseFile.path || licenseFile.name || "View license")}</a> : null],
       ["Notice file", noticeFile ? <a href={String(noticeFile.url)} target="_blank" rel="noreferrer" className="text-accent hover:underline">{String(noticeFile.path || noticeFile.name || "View notice")}</a> : null],
     ]} />
-    {detail && legal.length > 0 && <ul className="divide-y divide-[var(--color-border-soft)]">{legal.map((item, index) => <li key={`${String(item.kind)}-${String(item.path || item.expression || item.url)}-${index}`} className="py-3 sm:flex sm:justify-between gap-4"><div><span className="text-[10px] font-mono uppercase text-accent">{humanLabel(String(item.kind || "legal evidence"))} Â· {humanLabel(String(item.scope || "direct"))}</span><p className="text-sm text-ink">{String(item.name || item.path || "License or notice")}</p>{item.expression && <p className="text-xs text-ink-muted mt-1">{String(item.expression)}</p>}</div>{item.url && <a href={String(item.url)} target="_blank" rel="noreferrer" className="shrink-0 text-xs font-mono text-accent hover:underline">View evidence</a>}</li>)}</ul>}
+    {detail && legal.length > 0 && <ul className="divide-y divide-[var(--color-border-soft)]">{legal.map((item, index) => <li key={`${String(item.kind)}-${String(item.path || item.expression || item.url)}-${index}`} className="py-3 sm:flex sm:justify-between gap-4"><div><span className="text-[10px] font-mono uppercase text-accent">{humanLabel(String(item.kind || "legal evidence"))} · {humanLabel(String(item.scope || "direct"))}</span><p className="text-sm text-ink">{String(item.name || item.path || "License or notice")}</p>{item.expression && <p className="text-xs text-ink-muted mt-1">{String(item.expression)}</p>}</div>{item.url && <a href={String(item.url)} target="_blank" rel="noreferrer" className="shrink-0 text-xs font-mono text-accent hover:underline">View evidence</a>}</li>)}</ul>}
   </div>;
 }
 
@@ -195,7 +195,7 @@ export function SsotGovernanceSection({ governance }: { governance: Record<strin
       ["Registry", registryUrl ? <a href={registryUrl} target="_blank" rel="noreferrer" className="text-accent hover:underline">View canonical registry</a> : "Not available"],
       ["Schema version", String(governance.schema_version || "Not recorded")],
       ["Observed", formatDate(governance.observed_at as string | undefined)],
-      ["Source digest", governance.source_sha256 ? <code className="font-mono text-xs">{String(governance.source_sha256).slice(0, 16)}â€¦</code> : "Not recorded"],
+      ["Source digest", governance.source_sha256 ? <code className="font-mono text-xs">{String(governance.source_sha256).slice(0, 16)}…</code> : "Not recorded"],
     ]} />
     <MetricBand label="SSOT registry inventory" items={ssotCountOrder.map((key) => ({ label: humanLabel(key), value: Number(counts[key] || 0), icon: key === "tests" ? BadgeCheck : key === "releases" ? metricIcons.releases : FileCode2 }))} />
     <div>

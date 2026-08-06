@@ -24,8 +24,8 @@ const decodeEntities = (value: string) =>
     .replace(/&quot;/gi, '"')
     .replace(/&#0*39;|&apos;/gi, "'")
     .replace(/&hellip;/gi, "...")
-    .replace(/&mdash;/gi, "â€”")
-    .replace(/&ndash;/gi, "â€“")
+    .replace(/&mdash;/gi, "—")
+    .replace(/&ndash;/gi, "–")
     .replace(/&#(\d+);/g, (_match, code: string) => String.fromCodePoint(Number(code)))
     .replace(/&#x([0-9a-f]+);/gi, (_match, code: string) => String.fromCodePoint(Number.parseInt(code, 16)));
 

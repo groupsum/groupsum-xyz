@@ -193,7 +193,7 @@ export function MarkdownRenderer({ content }: MarkdownRendererProps) {
       }
 
       // Unordered Lists
-      if (trimmed.startsWith("- ") || trimmed.startsWith("* ") || trimmed.startsWith("â€¢ ")) {
+      if (trimmed.startsWith("- ") || trimmed.startsWith("* ") || trimmed.startsWith("• ")) {
         if (currentBlock !== "list-unordered") {
           flushBlock(`${lineIndex}`);
           currentBlock = "list-unordered";

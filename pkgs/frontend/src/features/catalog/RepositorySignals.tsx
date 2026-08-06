@@ -56,7 +56,7 @@ function CommitBars({ points }: { points: CommitActivityPoint[] }) {
           return <rect key={point.date} x={index * (barWidth + gap)} y={height - barHeight} width={barWidth} height={barHeight} rx="0.6" fill="currentColor" aria-label={`${point.date}: ${point.count} commits`} />;
         })}
       </svg>
-      <span className="block text-[9px] font-mono text-ink-muted">{compactNumber(total)} commits Â· {points.length} days</span>
+      <span className="block text-[9px] font-mono text-ink-muted">{compactNumber(total)} commits · {points.length} days</span>
     </div>
   );
 }

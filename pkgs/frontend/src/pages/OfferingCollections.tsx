@@ -187,7 +187,7 @@ export function InsightsPage({ onNavigate }: RouteProps) {
               </div>
 
               <div className="pt-4 mt-4 border-t border-[var(--color-border-soft)] text-xs font-mono text-accent font-semibold hover:underline text-left">
-                Read Full Paper â†’
+                Read Full Paper →
               </div>
             </article>
           ))

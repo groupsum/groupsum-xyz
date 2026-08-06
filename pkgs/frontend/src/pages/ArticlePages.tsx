@@ -150,14 +150,14 @@ function ArticleLayout({ post, onBack, onNavigate }: ArticleLayoutProps) {
             <Calendar className="w-3.5 h-3.5" />
             {new Date(post.date).toLocaleDateString(undefined, { year: 'numeric', month: 'long', day: 'numeric' })}
           </span>
-          <span>â€¢</span>
+          <span>•</span>
           <span className="flex items-center gap-1">
             <User className="w-3.5 h-3.5" />
             {post.author}
           </span>
           {post.category && (
             <>
-              <span>â€¢</span>
+              <span>•</span>
               <span className="text-accent font-semibold">{post.category}</span>
             </>
           )}
@@ -230,7 +230,7 @@ export function LegacyArticlePage({ year, month, day, slug, onNavigate }: Legacy
   }, [requestedPath]);
 
   if (!post) {
-    return <section className="max-w-[var(--reading-max)] mx-auto px-4 sm:px-6 py-16" aria-busy="true"><p className="text-sm text-ink-muted">Loading archived articleâ€¦</p></section>;
+    return <section className="max-w-[var(--reading-max)] mx-auto px-4 sm:px-6 py-16" aria-busy="true"><p className="text-sm text-ink-muted">Loading archived article…</p></section>;
   }
 
   return (

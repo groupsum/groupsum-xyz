@@ -12,6 +12,7 @@ const visit = (directory) => {
 };
 visit(frontend);
 const source = sourceFiles.map((file) => fs.readFileSync(file, "utf8")).join("\n");
+const collectionTables = fs.readFileSync(path.join(frontend, "features/catalog/CatalogCollectionTables.tsx"), "utf8");
 
 const requireMarkers = (markers, concern) => {
   for (const marker of markers) {
@@ -51,6 +52,8 @@ if (!source.includes('aria-label="Package technology stack"')) throw new Error("
 if (!source.includes("cursor-default select-none")) throw new Error("catalog tags lack stable cursor semantics");
 if (source.includes("function LegalSection") || source.includes('<DetailSection title="License and notices"')) throw new Error("legal data remains detached from its owner");
 if (source.includes("border-b border-r")) throw new Error("metric summaries draw unnecessary inner cell borders");
-if (/[ÃƒÃ‚ï¿½]|Ã¢â‚¬Â¦/.test(source)) throw new Error("catalog frontend source contains mojibake");
+if (/[ÃÂâ�]/u.test(source)) throw new Error("catalog frontend source contains mojibake");
+if ((collectionTables.match(/<table className="[^"]*text-xs"/g) || []).length !== 2) throw new Error("repository and package tables must use text-xs body typography");
+if ((collectionTables.match(/<thead className="[^"]*text-\[11px\]/g) || []).length !== 2) throw new Error("repository and package table headers must match the 11px prototype scale");
 
 console.log(`catalog content ok: ${sourceFiles.length} modular source files checked`);

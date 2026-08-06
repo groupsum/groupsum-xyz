@@ -64,7 +64,7 @@ export function CatalogSnapshotBand({
       <div className="max-w-[var(--content-max)] mx-auto px-4 sm:px-6 lg:px-8 py-9 space-y-6">
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-4">
           <div className="max-w-3xl space-y-2">
-            <span className="text-[10px] font-mono uppercase tracking-[0.2em] text-accent font-bold">Observed data Â· {formatDate(catalogSummary.generated_at)}</span>
+            <span className="text-[10px] font-mono uppercase tracking-[0.2em] text-accent font-bold">Observed data · {formatDate(catalogSummary.generated_at)}</span>
             <h2 className="font-serif text-2xl md:text-3xl font-bold tracking-tight text-ink">{title}</h2>
             <p className="text-sm text-ink-muted leading-relaxed">
               {organization?.description || "Public records compiled from GitHub, repository manifests, PyPI, npm, crates.io, and GitHub Packages. Releases and deployments are summarized on their repository or package records; live availability remains a separate evidence state."}
@@ -83,7 +83,7 @@ export function CatalogSnapshotBand({
           ))}
         </div>
         <div className="min-h-[67rem] sm:min-h-[33rem] lg:min-h-[16rem]">
-          {metricState === "loading" && <div className="min-h-[67rem] sm:min-h-[33rem] lg:min-h-[16rem] border-y border-[var(--color-border-soft)] py-8 text-sm text-ink-muted" role="status">Loading persisted repository activityâ€¦</div>}
+          {metricState === "loading" && <div className="min-h-[67rem] sm:min-h-[33rem] lg:min-h-[16rem] border-y border-[var(--color-border-soft)] py-8 text-sm text-ink-muted" role="status">Loading persisted repository activity…</div>}
           {metricState === "error" && <div className="min-h-[67rem] sm:min-h-[33rem] lg:min-h-[16rem] border-y border-[var(--color-border-soft)] py-6 text-sm text-ink-muted" role="alert">Persisted repository activity is temporarily unavailable.</div>}
           {repositories.length > 0 && (
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
@@ -139,7 +139,7 @@ export function LinkedResourceSections({ sections, onNavigate }: { sections: unk
       <ul className="divide-y divide-[var(--color-border-soft)]">
         {members.map((member) => <li key={String(member.id)} className="flex flex-wrap items-center gap-x-5 gap-y-3 py-3">
           <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-[3px] border border-[var(--color-border-soft)] bg-canvas text-accent"><Icon className="h-4 w-4" aria-hidden="true" /></span>
-          <div className="min-w-0 flex-[1_1_20rem]"><p className="break-words text-sm font-semibold text-ink">{String(member.name || "Untitled resource")}</p>{member.summary && <p className="mt-0.5 text-xs leading-relaxed text-ink-muted">{String(member.summary)}</p>}<p className="mt-1 text-[9px] font-mono uppercase tracking-wide text-ink-muted">{humanLabel(String(member.relationship || "linked"))} Â· {humanLabel(String(member.direction || "observed"))}</p></div>
+          <div className="min-w-0 flex-[1_1_20rem]"><p className="break-words text-sm font-semibold text-ink">{String(member.name || "Untitled resource")}</p>{member.summary && <p className="mt-0.5 text-xs leading-relaxed text-ink-muted">{String(member.summary)}</p>}<p className="mt-1 text-[9px] font-mono uppercase tracking-wide text-ink-muted">{humanLabel(String(member.relationship || "linked"))} · {humanLabel(String(member.direction || "observed"))}</p></div>
           <div className="flex flex-wrap items-center gap-3">{member.route && <a href={String(member.route)} onClick={(event) => { event.preventDefault(); onNavigate(String(member.route)); }} className="inline-flex min-h-10 items-center text-xs font-mono font-semibold text-accent hover:underline">View {label.toLowerCase()}</a>}{member.source_url && !isCurrentPageLink(member.source_url) && <a href={String(member.source_url)} target="_blank" rel="noreferrer" className="inline-flex min-h-10 items-center gap-1 text-xs font-mono text-accent hover:underline">Source <ExternalLink className="h-3.5 w-3.5" /></a>}</div>
         </li>)}
       </ul>
@@ -182,7 +182,7 @@ export function PublicCatalogOverview({ onNavigate }: { onNavigate: (path: strin
       })}
     </div>
     <SurfaceCard title="Canonical resource hierarchy" Icon={GitBranch} intro="Collection pages summarize a resource family; member pages preserve local ownership, evidence, metrics, and navigation to parents and children.">
-      <p className="font-mono text-xs leading-relaxed text-ink-muted">Organization â†’ product or portfolio â†’ repository â†’ package or typed resource â†’ release evidence</p>
+      <p className="font-mono text-xs leading-relaxed text-ink-muted">Organization → product or portfolio → repository → package or typed resource → release evidence</p>
     </SurfaceCard>
   </section>;
 }
@@ -263,12 +263,12 @@ export function PublicCatalogExplorer({ onNavigate, compact = false, fixedDatase
           </button>
         ))}
       </div>}
-      <ExplorerFilterToolbar filters={filters} onChange={(next) => { setFilters(next); setPage(1); }} owners={dataset === "repositories" ? Object.keys(collection.data?.facets?.owner || {}) : []} ecosystems={dataset === "packages" ? Object.keys(collection.data?.facets?.ecosystem || {}) : []} publications={dataset === "packages" ? Object.keys(collection.data?.facets?.publication_status || {}) : []} resourceTypes={dataset === "resources" ? Object.keys(collection.data?.facets?.resource_type || {}) : []} sortOptions={[{ label: "Name (Aâ€“Z)", value: "name" }, { label: "Most activity", value: "activity" }, { label: "Recently observed", value: "recent" }]} total={Number(collection.data?.count || 0)} />
-      {state === "loading" && <div className="p-10 text-center text-sm text-ink-muted" role="status">Loading {labels[dataset].toLowerCase()}â€¦</div>}
+      <ExplorerFilterToolbar filters={filters} onChange={(next) => { setFilters(next); setPage(1); }} owners={dataset === "repositories" ? Object.keys(collection.data?.facets?.owner || {}) : []} ecosystems={dataset === "packages" ? Object.keys(collection.data?.facets?.ecosystem || {}) : []} publications={dataset === "packages" ? Object.keys(collection.data?.facets?.publication_status || {}) : []} resourceTypes={dataset === "resources" ? Object.keys(collection.data?.facets?.resource_type || {}) : []} sortOptions={[{ label: "Name (A–Z)", value: "name" }, { label: "Most activity", value: "activity" }, { label: "Recently observed", value: "recent" }]} total={Number(collection.data?.count || 0)} />
+      {state === "loading" && <div className="p-10 text-center text-sm text-ink-muted" role="status">Loading {labels[dataset].toLowerCase()}…</div>}
       {state === "error" && <div className="p-6 border border-red-500/20 bg-red-500/5 text-sm text-red-700 rounded-[var(--radius-sm)]" role="alert">The generated dataset could not be loaded. The normalized JSON remains available from the download links below.</div>}
       {state === "ready" && (
         <>
-          <div className="text-xs font-mono text-ink-muted">{Number(collection.data?.count || 0).toLocaleString()} matching records Â· page {page.toLocaleString()} of {pages.toLocaleString()}</div>
+          <div className="text-xs font-mono text-ink-muted">{Number(collection.data?.count || 0).toLocaleString()} matching records · page {page.toLocaleString()} of {pages.toLocaleString()}</div>
           {dataset === "repositories" ? <RepositoryCollectionTable records={visible} onNavigate={onNavigate} /> : dataset === "packages" ? <PackageCollectionTable records={visible} onNavigate={onNavigate} /> : <div className="space-y-3">{visible.map((record) => <CollectionRow key={record.id} record={record} dataset={dataset} onNavigate={onNavigate} />)}</div>}
           {visible.length === 0 && <div className="p-10 text-center border border-[var(--color-border-soft)] rounded-[var(--radius-md)] text-sm text-ink-muted">No generated records match this search.</div>}
           {pages > 1 && <div className="flex items-center justify-between gap-4"><button disabled={page === 1} onClick={() => setPage((value) => Math.max(1, value - 1))} className="px-3 py-2 text-xs font-mono border border-[var(--color-border-soft)] rounded disabled:opacity-40 cursor-pointer">Previous</button><button disabled={page === pages} onClick={() => setPage((value) => Math.min(pages, value + 1))} className="px-3 py-2 text-xs font-mono border border-[var(--color-border-soft)] rounded disabled:opacity-40 cursor-pointer">Next</button></div>}

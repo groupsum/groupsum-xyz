@@ -53,7 +53,7 @@ export function CatalogPill({ children, tone = "neutral", Icon }: { children: Re
     accent: "border-[var(--color-border-accent-soft)] text-accent bg-[color-mix(in_srgb,var(--color-accent)_6%,var(--color-surface))]",
     signal: "border-[color-mix(in_srgb,var(--color-signal)_28%,transparent)] text-[color-mix(in_srgb,var(--color-signal)_78%,var(--color-ink))] bg-[var(--color-signal-soft)]/35",
   };
-  return <span className={`inline-flex min-h-6 cursor-default select-none items-center gap-1.5 rounded-[3px] border px-2.5 py-1 text-[10px] font-mono font-semibold uppercase tracking-wide ${tones[tone]}`}>{Icon && <Icon className="h-3 w-3" aria-hidden="true" />}{children}</span>;
+  return <span className={`inline-flex min-h-6 cursor-default select-none items-center gap-1.5 rounded-[3px] border px-2.5 py-1 text-[11px] font-mono font-semibold uppercase tracking-wide ${tones[tone]}`}>{Icon && <Icon className="h-3 w-3" aria-hidden="true" />}{children}</span>;
 }
 
 export type MetricItem = { label: string; value: number | string; icon?: CatalogIcon; note?: string; tone?: "accent" | "signal"; color?: string };

@@ -102,7 +102,7 @@ export function PackageDetailPage({ slug, onNavigate }: { slug: string; onNaviga
         <div className="space-y-2 border-b border-[var(--color-border-soft)] pb-4">
           <div className="flex items-center gap-2 text-[10px] font-mono text-ink-muted">
             <span className="font-bold text-accent uppercase">PACKAGE // {pkg.ecosystem[0]}</span>
-            <span>â€¢</span>
+            <span>•</span>
             <span>Maturity: {pkg.maturity}</span>
           </div>
           <h1 className="font-serif text-3xl font-bold text-ink leading-tight">
