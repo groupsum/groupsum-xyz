@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-03T23:39:08Z",
+  "generated_at": "2026-08-06T02:54:46Z",
   "packages": [
     {
       "claim_boundary": "Publication is reported only when confirmed by the named public registry.",
@@ -17,7 +17,7 @@
       "evidence": [
         {
           "kind": "registry",
-          "observed_at": "2026-07-25T15:04:02Z",
+          "observed_at": "2026-08-04T17:27:11Z",
           "url": "https://github.com/orgs/groupsum/packages/container/package/portwyrm"
         }
       ],
@@ -50,396 +50,19 @@
       "license_status": "observed",
       "manifest_path": null,
       "name": "portwyrm",
-      "observed_at": "2026-07-25T15:04:02Z",
+      "observed_at": "2026-08-04T17:27:11Z",
       "owner": "groupsum",
       "package_kind": "published-package",
       "private": false,
       "publication_status": "published",
       "published": true,
       "registry_url": "https://github.com/orgs/groupsum/packages/container/package/portwyrm",
-      "relationship_count": 0,
-      "relationship_counts": {},
-      "release_count": 27,
-      "releases": [
-        {
-          "downloads": null,
-          "id": "release:703a6508cd1db721",
-          "legal_evidence": [],
-          "legal_inherits_from": "package:ghcr:portwyrm:groupsum/portwyrm:package",
-          "license_expression": "Apache-2.0",
-          "license_status": "observed",
-          "observed_at": "2026-07-25T15:04:02Z",
-          "published_at": "2026-07-25T15:04:02Z",
-          "release_kind": "ghcr",
-          "route": "/catalog/releases/ghcr/portwyrm-9bb151568d",
-          "url": "https://github.com/orgs/groupsum/packages/container/portwyrm/1066084797",
-          "version": "sha256:73b4859528b1ad45fd0c7ae805209a8623e96f0c5c7908e110cf67e29bc0a579"
-        },
-        {
-          "downloads": null,
-          "id": "release:5f5845c88ab433a4",
-          "legal_evidence": [],
-          "legal_inherits_from": "package:ghcr:portwyrm:groupsum/portwyrm:package",
-          "license_expression": "Apache-2.0",
-          "license_status": "observed",
-          "observed_at": "2026-07-25T15:04:02Z",
-          "published_at": "2026-07-25T15:04:01Z",
-          "release_kind": "ghcr",
-          "route": "/catalog/releases/ghcr/portwyrm-9322bffb7e",
-          "url": "https://github.com/orgs/groupsum/packages/container/portwyrm/1066084791",
-          "version": "sha256:1dd0bbf9daf0a643effe2fc98ae5379954f73cd0369b5e8929d2d81762d766d9"
-        },
-        {
-          "downloads": null,
-          "id": "release:1e26761763e1749d",
-          "legal_evidence": [],
-          "legal_inherits_from": "package:ghcr:portwyrm:groupsum/portwyrm:package",
-          "license_expression": "Apache-2.0",
-          "license_status": "observed",
-          "observed_at": "2026-07-25T15:04:02Z",
-          "published_at": "2026-07-25T15:03:57Z",
-          "release_kind": "ghcr",
-          "route": "/catalog/releases/ghcr/portwyrm-4c601c0d67",
-          "url": "https://github.com/orgs/groupsum/packages/container/portwyrm/1066084597",
-          "version": "sha256:6dd83c7116603aa844e10c045e365ad64364ded936499cf747567c5d62fe6633"
-        },
-        {
-          "downloads": null,
-          "id": "release:495849e5af813a9f",
-          "legal_evidence": [],
-          "legal_inherits_from": "package:ghcr:portwyrm:groupsum/portwyrm:package",
-          "license_expression": "Apache-2.0",
-          "license_status": "observed",
-          "observed_at": "2026-07-25T15:04:02Z",
-          "published_at": "2026-07-25T15:03:52Z",
-          "release_kind": "ghcr",
-          "route": "/catalog/releases/ghcr/portwyrm-98d6f3026e",
-          "url": "https://github.com/orgs/groupsum/packages/container/portwyrm/1066084468",
-          "version": "sha256:1052f79777ec339e5d0b6577cefa4f472f6a3328cbb78d4e7b2b23cf48ea12e9"
-        },
-        {
-          "downloads": null,
-          "id": "release:b55c74f2198a95ac",
-          "legal_evidence": [],
-          "legal_inherits_from": "package:ghcr:portwyrm:groupsum/portwyrm:package",
-          "license_expression": "Apache-2.0",
-          "license_status": "observed",
-          "observed_at": "2026-07-25T15:04:02Z",
-          "published_at": "2026-07-25T15:03:51Z",
-          "release_kind": "ghcr",
-          "route": "/catalog/releases/ghcr/portwyrm-eb0065f4d6",
-          "url": "https://github.com/orgs/groupsum/packages/container/portwyrm/1066084443",
-          "version": "sha256:e006e6a7a40f829a217c803daee982db44920843cd213e4de998b73ff0691d34"
-        },
-        {
-          "downloads": null,
-          "id": "release:3e5b4301d12804cb",
-          "legal_evidence": [],
-          "legal_inherits_from": "package:ghcr:portwyrm:groupsum/portwyrm:package",
-          "license_expression": "Apache-2.0",
-          "license_status": "observed",
-          "observed_at": "2026-07-25T15:04:02Z",
-          "published_at": "2026-07-25T15:03:51Z",
-          "release_kind": "ghcr",
-          "route": "/catalog/releases/ghcr/portwyrm-be0245b052",
-          "url": "https://github.com/orgs/groupsum/packages/container/portwyrm/1066084457",
-          "version": "sha256:859a9b25371d0ee58037bf7794cdf8a3050077f5059e394570a7f5631cee73d0"
-        },
-        {
-          "downloads": null,
-          "id": "release:737d27d1a234e168",
-          "legal_evidence": [],
-          "legal_inherits_from": "package:ghcr:portwyrm:groupsum/portwyrm:package",
-          "license_expression": "Apache-2.0",
-          "license_status": "observed",
-          "observed_at": "2026-07-25T15:04:02Z",
-          "published_at": "2026-07-25T15:03:51Z",
-          "release_kind": "ghcr",
-          "route": "/catalog/releases/ghcr/portwyrm-25f8cd783e",
-          "url": "https://github.com/orgs/groupsum/packages/container/portwyrm/1066084449",
-          "version": "sha256:836c9c03a5e0ceede30384ab80bcf636c9e7ba8f21dd38b3a54fab734f0fa1a2"
-        },
-        {
-          "downloads": null,
-          "id": "release:12888b065bc46218",
-          "legal_evidence": [],
-          "legal_inherits_from": "package:ghcr:portwyrm:groupsum/portwyrm:package",
-          "license_expression": "Apache-2.0",
-          "license_status": "observed",
-          "observed_at": "2026-07-25T15:04:02Z",
-          "published_at": "2026-07-25T15:03:51Z",
-          "release_kind": "ghcr",
-          "route": "/catalog/releases/ghcr/portwyrm-4837413151",
-          "url": "https://github.com/orgs/groupsum/packages/container/portwyrm/1066084434",
-          "version": "sha256:1c6f8d8720be7154dc5a22e31c43b3569cb2c9f5340ad9a64597314517fa52c1"
-        },
-        {
-          "downloads": null,
-          "id": "release:9ddf5d332e444dd4",
-          "legal_evidence": [],
-          "legal_inherits_from": "package:ghcr:portwyrm:groupsum/portwyrm:package",
-          "license_expression": "Apache-2.0",
-          "license_status": "observed",
-          "observed_at": "2026-07-25T15:04:02Z",
-          "published_at": "2026-07-24T04:46:26Z",
-          "release_kind": "ghcr",
-          "route": "/catalog/releases/ghcr/portwyrm-e225dc7dce",
-          "url": "https://github.com/orgs/groupsum/packages/container/portwyrm/1062134276",
-          "version": "sha256:d4a6361855235c725dc712b472eb1cbcde8a86cdc59ad3bbb4cc328e23b63737"
-        },
-        {
-          "downloads": null,
-          "id": "release:07c978055668b4e7",
-          "legal_evidence": [],
-          "legal_inherits_from": "package:ghcr:portwyrm:groupsum/portwyrm:package",
-          "license_expression": "Apache-2.0",
-          "license_status": "observed",
-          "observed_at": "2026-07-25T15:04:02Z",
-          "published_at": "2026-07-24T04:46:25Z",
-          "release_kind": "ghcr",
-          "route": "/catalog/releases/ghcr/portwyrm-5303edcadb",
-          "url": "https://github.com/orgs/groupsum/packages/container/portwyrm/1062134265",
-          "version": "sha256:c794954d2481fb413b2ffb94df194960eba8379db32d4b7b3f9fb76a0603fbb4"
-        },
-        {
-          "downloads": null,
-          "id": "release:0b9d1370865cdf1d",
-          "legal_evidence": [],
-          "legal_inherits_from": "package:ghcr:portwyrm:groupsum/portwyrm:package",
-          "license_expression": "Apache-2.0",
-          "license_status": "observed",
-          "observed_at": "2026-07-25T15:04:02Z",
-          "published_at": "2026-07-24T04:46:20Z",
-          "release_kind": "ghcr",
-          "route": "/catalog/releases/ghcr/portwyrm-2296d0b165",
-          "url": "https://github.com/orgs/groupsum/packages/container/portwyrm/1062134149",
-          "version": "sha256:2f0d63127caa1175d3c2aed692f36312d4e562b6543536bde1f57bd8e0d76ad0"
-        },
-        {
-          "downloads": null,
-          "id": "release:df087c22c24c191b",
-          "legal_evidence": [],
-          "legal_inherits_from": "package:ghcr:portwyrm:groupsum/portwyrm:package",
-          "license_expression": "Apache-2.0",
-          "license_status": "observed",
-          "observed_at": "2026-07-25T15:04:02Z",
-          "published_at": "2026-07-24T04:46:15Z",
-          "release_kind": "ghcr",
-          "route": "/catalog/releases/ghcr/portwyrm-8d81891afe",
-          "url": "https://github.com/orgs/groupsum/packages/container/portwyrm/1062133999",
-          "version": "sha256:7c1bcaf4a328952451686ff185924e555a1ed4a5d42c2b1d9ef052225795e0fa"
-        },
-        {
-          "downloads": null,
-          "id": "release:1792aee13dc0d868",
-          "legal_evidence": [],
-          "legal_inherits_from": "package:ghcr:portwyrm:groupsum/portwyrm:package",
-          "license_expression": "Apache-2.0",
-          "license_status": "observed",
-          "observed_at": "2026-07-25T15:04:02Z",
-          "published_at": "2026-07-24T04:46:15Z",
-          "release_kind": "ghcr",
-          "route": "/catalog/releases/ghcr/portwyrm-c89de5d4b5",
-          "url": "https://github.com/orgs/groupsum/packages/container/portwyrm/1062134010",
-          "version": "sha256:04746a7d44a39ac9f06d941a7b2c22b9e36c0e86883e02e0896e9be035ff084c"
-        },
-        {
-          "downloads": null,
-          "id": "release:dbc13c2a30abdc87",
-          "legal_evidence": [],
-          "legal_inherits_from": "package:ghcr:portwyrm:groupsum/portwyrm:package",
-          "license_expression": "Apache-2.0",
-          "license_status": "observed",
-          "observed_at": "2026-07-25T15:04:02Z",
-          "published_at": "2026-07-24T04:46:14Z",
-          "release_kind": "ghcr",
-          "route": "/catalog/releases/ghcr/portwyrm-a99f4f0c27",
-          "url": "https://github.com/orgs/groupsum/packages/container/portwyrm/1062133974",
-          "version": "sha256:ea24e1e40528a72547b2a351b219ef675ba8d993a7ec93b21d8096c2e8ef803a"
-        },
-        {
-          "downloads": null,
-          "id": "release:96cf2853580ace13",
-          "legal_evidence": [],
-          "legal_inherits_from": "package:ghcr:portwyrm:groupsum/portwyrm:package",
-          "license_expression": "Apache-2.0",
-          "license_status": "observed",
-          "observed_at": "2026-07-25T15:04:02Z",
-          "published_at": "2026-07-24T04:46:14Z",
-          "release_kind": "ghcr",
-          "route": "/catalog/releases/ghcr/portwyrm-e6bb9b9168",
-          "url": "https://github.com/orgs/groupsum/packages/container/portwyrm/1062133989",
-          "version": "sha256:c3899082ad92adda458194c955c33e82869ea9fc696eef59a706165db1127c56"
-        },
-        {
-          "downloads": null,
-          "id": "release:78d8036a6bae3255",
-          "legal_evidence": [],
-          "legal_inherits_from": "package:ghcr:portwyrm:groupsum/portwyrm:package",
-          "license_expression": "Apache-2.0",
-          "license_status": "observed",
-          "observed_at": "2026-07-25T15:04:02Z",
-          "published_at": "2026-07-24T04:46:14Z",
-          "release_kind": "ghcr",
-          "route": "/catalog/releases/ghcr/portwyrm-b0c1b43e3a",
-          "url": "https://github.com/orgs/groupsum/packages/container/portwyrm/1062133980",
-          "version": "sha256:1cd179b0f2ca875c947fcd4d222cdc2f6b13cac46273b3c9b6811fdea2489401"
-        },
-        {
-          "downloads": null,
-          "id": "release:8a6940d1b1e6f036",
-          "legal_evidence": [],
-          "legal_inherits_from": "package:ghcr:portwyrm:groupsum/portwyrm:package",
-          "license_expression": "Apache-2.0",
-          "license_status": "observed",
-          "observed_at": "2026-07-25T15:04:02Z",
-          "published_at": "2026-07-24T04:40:38Z",
-          "release_kind": "ghcr",
-          "route": "/catalog/releases/ghcr/portwyrm-f3d3694620",
-          "url": "https://github.com/orgs/groupsum/packages/container/portwyrm/1062125269",
-          "version": "sha256:733dd75d9a69c8b6a317d80ffe13c713d08519c800e766bc8068e1b1c509bccf"
-        },
-        {
-          "downloads": null,
-          "id": "release:2bd675fb60d71aa7",
-          "legal_evidence": [],
-          "legal_inherits_from": "package:ghcr:portwyrm:groupsum/portwyrm:package",
-          "license_expression": "Apache-2.0",
-          "license_status": "observed",
-          "observed_at": "2026-07-25T15:04:02Z",
-          "published_at": "2026-07-24T04:40:37Z",
-          "release_kind": "ghcr",
-          "route": "/catalog/releases/ghcr/portwyrm-d9bc2a80ae",
-          "url": "https://github.com/orgs/groupsum/packages/container/portwyrm/1062125263",
-          "version": "sha256:702eaeb5a87729bbf00d6de9c61b5f537b7bdb4babcb3b7cbcd9d94a6e83a5e4"
-        },
-        {
-          "downloads": null,
-          "id": "release:1c15d74b9a4496d1",
-          "legal_evidence": [],
-          "legal_inherits_from": "package:ghcr:portwyrm:groupsum/portwyrm:package",
-          "license_expression": "Apache-2.0",
-          "license_status": "observed",
-          "observed_at": "2026-07-25T15:04:02Z",
-          "published_at": "2026-07-24T04:40:30Z",
-          "release_kind": "ghcr",
-          "route": "/catalog/releases/ghcr/portwyrm-57d6fd25d0",
-          "url": "https://github.com/orgs/groupsum/packages/container/portwyrm/1062125116",
-          "version": "sha256:3473de7b2a574b6cd1e8e9442e0f03add4e787fce82a3b7e8d766f4a3bb70797"
-        },
-        {
-          "downloads": null,
-          "id": "release:17a2263b70fb0751",
-          "legal_evidence": [],
-          "legal_inherits_from": "package:ghcr:portwyrm:groupsum/portwyrm:package",
-          "license_expression": "Apache-2.0",
-          "license_status": "observed",
-          "observed_at": "2026-07-25T15:04:02Z",
-          "published_at": "2026-07-24T04:40:24Z",
-          "release_kind": "ghcr",
-          "route": "/catalog/releases/ghcr/portwyrm-cba86aa968",
-          "url": "https://github.com/orgs/groupsum/packages/container/portwyrm/1062124994",
-          "version": "sha256:a4c02afc44539deba76c9e47c17b5cc5ff31841413981d09fd9024a15f1a4a7b"
-        },
-        {
-          "downloads": null,
-          "id": "release:7fcefb23a91e122b",
-          "legal_evidence": [],
-          "legal_inherits_from": "package:ghcr:portwyrm:groupsum/portwyrm:package",
-          "license_expression": "Apache-2.0",
-          "license_status": "observed",
-          "observed_at": "2026-07-25T15:04:02Z",
-          "published_at": "2026-07-24T04:40:24Z",
-          "release_kind": "ghcr",
-          "route": "/catalog/releases/ghcr/portwyrm-d297b4c44f",
-          "url": "https://github.com/orgs/groupsum/packages/container/portwyrm/1062124997",
-          "version": "sha256:993559fe9382f2e6e86826eee52d6aa6a7910c3294dc54d2abf8c69b030e8f14"
-        },
-        {
-          "downloads": null,
-          "id": "release:7b12be2c21725df2",
-          "legal_evidence": [],
-          "legal_inherits_from": "package:ghcr:portwyrm:groupsum/portwyrm:package",
-          "license_expression": "Apache-2.0",
-          "license_status": "observed",
-          "observed_at": "2026-07-25T15:04:02Z",
-          "published_at": "2026-07-24T04:40:24Z",
-          "release_kind": "ghcr",
-          "route": "/catalog/releases/ghcr/portwyrm-805bb434c0",
-          "url": "https://github.com/orgs/groupsum/packages/container/portwyrm/1062124993",
-          "version": "sha256:968bcb5ae69fd19a36d2e0576b6883a4a5ac5f9e96602d3881f258e60539ad67"
-        },
-        {
-          "downloads": null,
-          "id": "release:8e9ec0ea3b5ed85d",
-          "legal_evidence": [],
-          "legal_inherits_from": "package:ghcr:portwyrm:groupsum/portwyrm:package",
-          "license_expression": "Apache-2.0",
-          "license_status": "observed",
-          "observed_at": "2026-07-25T15:04:02Z",
-          "published_at": "2026-07-24T04:40:23Z",
-          "release_kind": "ghcr",
-          "route": "/catalog/releases/ghcr/portwyrm-3e5e6594c8",
-          "url": "https://github.com/orgs/groupsum/packages/container/portwyrm/1062124984",
-          "version": "sha256:4f38a99e9c42a2a54ca8d37cb45f58e61f20b6739947a30a900cf2a59bc65597"
-        },
-        {
-          "downloads": null,
-          "id": "release:569dea0ac27f2cc4",
-          "legal_evidence": [],
-          "legal_inherits_from": "package:ghcr:portwyrm:groupsum/portwyrm:package",
-          "license_expression": "Apache-2.0",
-          "license_status": "observed",
-          "observed_at": "2026-07-25T15:04:02Z",
-          "published_at": "2026-07-24T04:40:23Z",
-          "release_kind": "ghcr",
-          "route": "/catalog/releases/ghcr/portwyrm-1f935f8cdd",
-          "url": "https://github.com/orgs/groupsum/packages/container/portwyrm/1062124989",
-          "version": "sha256:2a644fc22082e896c3f2eccea0dcce776f873910ed0fa34e5ed2336e27940242"
-        },
-        {
-          "downloads": null,
-          "id": "release:44d4da23b4bfa61b",
-          "legal_evidence": [],
-          "legal_inherits_from": "package:ghcr:portwyrm:groupsum/portwyrm:package",
-          "license_expression": "Apache-2.0",
-          "license_status": "observed",
-          "observed_at": "2026-07-25T15:04:02Z",
-          "published_at": "2026-07-14T00:46:20Z",
-          "release_kind": "ghcr",
-          "route": "/catalog/releases/ghcr/portwyrm-07ff351774",
-          "url": "https://github.com/orgs/groupsum/packages/container/portwyrm/1027517798",
-          "version": "sha256:194743e8a2002f935e63fb81164b9197f0e55f43be7f8a43b558f7a9bb56092b"
-        },
-        {
-          "downloads": null,
-          "id": "release:e1b39c1db12450a3",
-          "legal_evidence": [],
-          "legal_inherits_from": "package:ghcr:portwyrm:groupsum/portwyrm:package",
-          "license_expression": "Apache-2.0",
-          "license_status": "observed",
-          "observed_at": "2026-07-25T15:04:02Z",
-          "published_at": "2026-07-14T00:46:19Z",
-          "release_kind": "ghcr",
-          "route": "/catalog/releases/ghcr/portwyrm-f253cfff98",
-          "url": "https://github.com/orgs/groupsum/packages/container/portwyrm/1027517785",
-          "version": "sha256:d023a0dd100e0566da24ef2a1c78a6fc5a3f70a3f7636f74c884597b4ef5b1bd"
-        },
-        {
-          "downloads": null,
-          "id": "release:c74c9c7b0f8d3d63",
-          "legal_evidence": [],
-          "legal_inherits_from": "package:ghcr:portwyrm:groupsum/portwyrm:package",
-          "license_expression": "Apache-2.0",
-          "license_status": "observed",
-          "observed_at": "2026-07-25T15:04:02Z",
-          "published_at": "2026-07-14T00:46:19Z",
-          "release_kind": "ghcr",
-          "route": "/catalog/releases/ghcr/portwyrm-f9c3ca511e",
-          "url": "https://github.com/orgs/groupsum/packages/container/portwyrm/1027517787",
-          "version": "sha256:904a13d47aa0aab63f31dd494b37ebba3866df8ba0a9feaa0a4c65b2bb7aebaf"
-        }
-      ],
+      "relationship_count": 1,
+      "relationship_counts": {
+        "repository_contains_package": 1
+      },
+      "release_count": 0,
+      "releases": [],
       "repository": "groupsum/portwyrm",
       "reviewed": false,
       "route": "/catalog/packages/ghcr/portwyrm-e1235b14",
@@ -579,7 +202,7 @@
       "evidence": [
         {
           "kind": "source",
-          "observed_at": "2026-08-03T23:39:08Z",
+          "observed_at": "2026-08-06T02:54:46Z",
           "url": "https://github.com/groupsum/portwyrm/blob/master/frontend/package.json"
         }
       ],
@@ -612,7 +235,7 @@
       "license_status": "observed",
       "manifest_path": "frontend/package.json",
       "name": "portwyrm-uix",
-      "observed_at": "2026-08-03T23:39:08Z",
+      "observed_at": "2026-08-06T02:54:46Z",
       "owner": "groupsum",
       "package_kind": "package-candidate",
       "private": true,
@@ -667,7 +290,7 @@
           "internal": false,
           "name": "cryptography",
           "package_key": "pypi:cryptography",
-          "requirement": ">=48.0.1,<49",
+          "requirement": ">=50.0.0,<51",
           "scope": "dependencies"
         },
         {
@@ -792,13 +415,13 @@
       "evidence": [
         {
           "kind": "registry",
-          "observed_at": "2026-08-03T23:39:08Z",
+          "observed_at": "2026-08-06T02:54:46Z",
           "url": "https://pypi.org/project/portwyrm/"
         }
       ],
       "id": "package:pypi:portwyrm:groupsum/portwyrm:pyproject.toml",
       "kind": "package",
-      "latest_version": "0.1.0a4",
+      "latest_version": "0.1.0a7",
       "legal_evidence": [
         {
           "evidence_type": "repository.manifest",
@@ -824,7 +447,7 @@
       "license_status": "observed",
       "manifest_path": "pyproject.toml",
       "name": "portwyrm",
-      "observed_at": "2026-08-03T23:39:08Z",
+      "observed_at": "2026-08-06T02:54:46Z",
       "owner": "groupsum",
       "package_kind": "published-package",
       "private": false,
@@ -837,8 +460,50 @@
         "package_depends_on_package": 2,
         "repository_contains_package": 1
       },
-      "release_count": 3,
+      "release_count": 6,
       "releases": [
+        {
+          "downloads": null,
+          "id": "release:dc7bdcd2779988db",
+          "legal_evidence": [],
+          "legal_inherits_from": "package:pypi:portwyrm:groupsum/portwyrm:pyproject.toml",
+          "license_expression": "Apache-2.0",
+          "license_status": "observed",
+          "observed_at": "2026-08-06T02:54:46Z",
+          "published_at": "2026-08-04T17:20:36.004786Z",
+          "release_kind": "pypi",
+          "route": "/catalog/releases/pypi/portwyrm-a33d2aac6a",
+          "url": "https://pypi.org/project/portwyrm/0.1.0a7/",
+          "version": "0.1.0a7"
+        },
+        {
+          "downloads": null,
+          "id": "release:757bcb5397a63073",
+          "legal_evidence": [],
+          "legal_inherits_from": "package:pypi:portwyrm:groupsum/portwyrm:pyproject.toml",
+          "license_expression": "Apache-2.0",
+          "license_status": "observed",
+          "observed_at": "2026-08-06T02:54:46Z",
+          "published_at": "2026-08-04T17:11:27.049667Z",
+          "release_kind": "pypi",
+          "route": "/catalog/releases/pypi/portwyrm-2f01e8efa1",
+          "url": "https://pypi.org/project/portwyrm/0.1.0a6/",
+          "version": "0.1.0a6"
+        },
+        {
+          "downloads": null,
+          "id": "release:4a0230dc746a8e04",
+          "legal_evidence": [],
+          "legal_inherits_from": "package:pypi:portwyrm:groupsum/portwyrm:pyproject.toml",
+          "license_expression": "Apache-2.0",
+          "license_status": "observed",
+          "observed_at": "2026-08-06T02:54:46Z",
+          "published_at": "2026-08-04T17:05:56.442852Z",
+          "release_kind": "pypi",
+          "route": "/catalog/releases/pypi/portwyrm-acd540fb95",
+          "url": "https://pypi.org/project/portwyrm/0.1.0a5/",
+          "version": "0.1.0a5"
+        },
         {
           "downloads": null,
           "id": "release:6db1e7f6b0320107",
@@ -846,7 +511,7 @@
           "legal_inherits_from": "package:pypi:portwyrm:groupsum/portwyrm:pyproject.toml",
           "license_expression": "Apache-2.0",
           "license_status": "observed",
-          "observed_at": "2026-08-03T23:39:08Z",
+          "observed_at": "2026-08-06T02:54:46Z",
           "published_at": "2026-07-25T15:00:22.572323Z",
           "release_kind": "pypi",
           "route": "/catalog/releases/pypi/portwyrm-c2c6eb0e55",
@@ -860,7 +525,7 @@
           "legal_inherits_from": "package:pypi:portwyrm:groupsum/portwyrm:pyproject.toml",
           "license_expression": "Apache-2.0",
           "license_status": "observed",
-          "observed_at": "2026-08-03T23:39:08Z",
+          "observed_at": "2026-08-06T02:54:46Z",
           "published_at": "2026-07-25T14:43:28.105314Z",
           "release_kind": "pypi",
           "route": "/catalog/releases/pypi/portwyrm-6ee0f5269e",
@@ -874,7 +539,7 @@
           "legal_inherits_from": "package:pypi:portwyrm:groupsum/portwyrm:pyproject.toml",
           "license_expression": "Apache-2.0",
           "license_status": "observed",
-          "observed_at": "2026-08-03T23:39:08Z",
+          "observed_at": "2026-08-06T02:54:46Z",
           "published_at": "2026-07-24T04:54:38.472671Z",
           "release_kind": "pypi",
           "route": "/catalog/releases/pypi/portwyrm-ca97c7de44",
@@ -894,25 +559,13 @@
         "Python",
         "TypeScript"
       ],
-      "version_declared": "0.1.0a4"
+      "version_declared": "0.1.0a7"
     }
   ],
   "repository": {
     "archived": false,
     "claim_boundary": "SSOT artifact counts and coverage are registry-reported observations; they do not by themselves prove that every public product claim is supported.",
     "commit_activity": [
-      {
-        "count": 0,
-        "date": "2026-07-05"
-      },
-      {
-        "count": 0,
-        "date": "2026-07-06"
-      },
-      {
-        "count": 0,
-        "date": "2026-07-07"
-      },
       {
         "count": 0,
         "date": "2026-07-08"
@@ -1020,11 +673,23 @@
       {
         "count": 0,
         "date": "2026-08-03"
+      },
+      {
+        "count": 3,
+        "date": "2026-08-04"
+      },
+      {
+        "count": 0,
+        "date": "2026-08-05"
+      },
+      {
+        "count": 0,
+        "date": "2026-08-06"
       }
     ],
     "contributors": [
       {
-        "contributions": 95,
+        "contributions": 98,
         "login": "cobycloud",
         "url": "https://github.com/cobycloud"
       }
@@ -1037,12 +702,12 @@
     "evidence": [
       {
         "kind": "ssot-registry",
-        "observed_at": "2026-08-03T23:39:26Z",
+        "observed_at": "2026-08-06T02:55:10Z",
         "url": "https://github.com/groupsum/portwyrm/blob/master/.ssot/registry.json"
       },
       {
         "kind": "source",
-        "observed_at": "2026-08-03T23:39:22Z",
+        "observed_at": "2026-08-06T02:55:04Z",
         "url": "https://github.com/groupsum/portwyrm"
       }
     ],
@@ -1052,12 +717,60 @@
       {
         "downloads": 0,
         "draft": false,
+        "id": "release:9b618e370faa88b9",
+        "legal_evidence": [],
+        "legal_inherits_from": "repository:groupsum/portwyrm",
+        "license_expression": "Apache-2.0",
+        "license_status": "observed",
+        "observed_at": "2026-08-06T02:55:04Z",
+        "prerelease": false,
+        "published_at": "2026-08-04T17:20:50Z",
+        "release_kind": "github",
+        "route": "/catalog/releases/github/portwyrm-fa1f43f714",
+        "url": "https://github.com/groupsum/portwyrm/releases/tag/v0.1.0a7",
+        "version": "v0.1.0a7"
+      },
+      {
+        "downloads": 0,
+        "draft": false,
+        "id": "release:54ea523c56356b6b",
+        "legal_evidence": [],
+        "legal_inherits_from": "repository:groupsum/portwyrm",
+        "license_expression": "Apache-2.0",
+        "license_status": "observed",
+        "observed_at": "2026-08-06T02:55:04Z",
+        "prerelease": false,
+        "published_at": "2026-08-04T17:11:40Z",
+        "release_kind": "github",
+        "route": "/catalog/releases/github/portwyrm-15a6d16931",
+        "url": "https://github.com/groupsum/portwyrm/releases/tag/v0.1.0a6",
+        "version": "v0.1.0a6"
+      },
+      {
+        "downloads": 0,
+        "draft": false,
+        "id": "release:07f95e89d2ddcf92",
+        "legal_evidence": [],
+        "legal_inherits_from": "repository:groupsum/portwyrm",
+        "license_expression": "Apache-2.0",
+        "license_status": "observed",
+        "observed_at": "2026-08-06T02:55:04Z",
+        "prerelease": false,
+        "published_at": "2026-08-04T17:06:20Z",
+        "release_kind": "github",
+        "route": "/catalog/releases/github/portwyrm-e5ac1a4f38",
+        "url": "https://github.com/groupsum/portwyrm/releases/tag/v0.1.0a5",
+        "version": "v0.1.0a5"
+      },
+      {
+        "downloads": 0,
+        "draft": false,
         "id": "release:00ecb3ba1861c697",
         "legal_evidence": [],
         "legal_inherits_from": "repository:groupsum/portwyrm",
         "license_expression": "Apache-2.0",
         "license_status": "observed",
-        "observed_at": "2026-08-03T23:39:22Z",
+        "observed_at": "2026-08-06T02:55:04Z",
         "prerelease": false,
         "published_at": "2026-07-25T14:43:39Z",
         "release_kind": "github",
@@ -1073,7 +786,7 @@
         "legal_inherits_from": "repository:groupsum/portwyrm",
         "license_expression": "Apache-2.0",
         "license_status": "observed",
-        "observed_at": "2026-08-03T23:39:22Z",
+        "observed_at": "2026-08-06T02:55:04Z",
         "prerelease": true,
         "published_at": "2026-07-25T15:00:38Z",
         "release_kind": "github",
@@ -1087,39 +800,39 @@
     "kind": "repository",
     "latest_commit": {
       "author": "cobycloud",
-      "authored_at": "2026-07-25T14:56:54Z",
-      "committed_at": "2026-07-25T14:56:54Z",
+      "authored_at": "2026-08-04T17:13:35Z",
+      "committed_at": "2026-08-04T17:13:35Z",
       "committer": "cobycloud",
-      "message": "release: prepare Portwyrm 0.1.0a4",
-      "sha": "31d0b7e0e5fe1c6af8f335555ac4ad997215bf6f",
-      "url": "https://github.com/groupsum/portwyrm/commit/31d0b7e0e5fe1c6af8f335555ac4ad997215bf6f"
+      "message": "release: support PEP 440 alpha image tags",
+      "sha": "fc089fc9897d5854bbcbf85965c66c4da0c26525",
+      "url": "https://github.com/groupsum/portwyrm/commit/fc089fc9897d5854bbcbf85965c66c4da0c26525"
     },
     "latest_deployment": {
       "environment": "pypi",
       "environment_url": "",
-      "log_url": "https://github.com/groupsum/portwyrm/actions/runs/30162709107/job/89690625551",
-      "state": "success",
-      "updated_at": "2026-07-25T15:00:27Z"
+      "log_url": "https://github.com/groupsum/portwyrm/actions/runs/30933568179/job/92074304770",
+      "state": "failure",
+      "updated_at": "2026-08-04T17:23:31Z"
     },
     "latest_release": {
       "assets": [
         {
           "downloads": 0,
-          "name": "portwyrm-0.1.0a3-py3-none-any.whl",
-          "url": "https://github.com/groupsum/portwyrm/releases/download/v0.1.0-a3/portwyrm-0.1.0a3-py3-none-any.whl"
+          "name": "portwyrm-0.1.0a7-py3-none-any.whl",
+          "url": "https://github.com/groupsum/portwyrm/releases/download/v0.1.0a7/portwyrm-0.1.0a7-py3-none-any.whl"
         },
         {
           "downloads": 0,
-          "name": "portwyrm-0.1.0a3.tar.gz",
-          "url": "https://github.com/groupsum/portwyrm/releases/download/v0.1.0-a3/portwyrm-0.1.0a3.tar.gz"
+          "name": "portwyrm-0.1.0a7.tar.gz",
+          "url": "https://github.com/groupsum/portwyrm/releases/download/v0.1.0a7/portwyrm-0.1.0a7.tar.gz"
         }
       ],
       "draft": false,
-      "name": "v0.1.0-a3",
+      "name": "v0.1.0a7",
       "prerelease": false,
-      "published_at": "2026-07-25T14:43:39Z",
-      "tag": "v0.1.0-a3",
-      "url": "https://github.com/groupsum/portwyrm/releases/tag/v0.1.0-a3"
+      "published_at": "2026-08-04T17:20:50Z",
+      "tag": "v0.1.0a7",
+      "url": "https://github.com/groupsum/portwyrm/releases/tag/v0.1.0a7"
     },
     "legal_evidence": [
       {
@@ -1143,21 +856,21 @@
     ],
     "license": "Apache-2.0",
     "metrics": {
-      "commits": 95,
+      "commits": 98,
       "contributors": 1,
-      "deployments": 5,
+      "deployments": 9,
       "environments": 1,
       "forks": 0,
-      "github_releases": 2,
+      "github_releases": 5,
       "open_issues": 0,
       "packages": 3,
       "related_resources": 15,
-      "size_kb": 1958,
+      "size_kb": 2170,
       "stars": 0,
       "watchers": 0
     },
     "name": "portwyrm",
-    "observed_at": "2026-08-03T23:39:22Z",
+    "observed_at": "2026-08-06T02:55:04Z",
     "owner": "groupsum",
     "package_ids": [
       "package:ghcr:portwyrm:groupsum/portwyrm:package",
@@ -1168,7 +881,7 @@
       {
         "ecosystem": "ghcr",
         "id": "package:ghcr:portwyrm:groupsum/portwyrm:package",
-        "last_published_at": "2026-07-25T15:04:02Z",
+        "last_published_at": null,
         "latest_version": null,
         "license_expression": "Apache-2.0",
         "license_status": "observed",
@@ -1179,13 +892,8 @@
         "package_kind": "published-package",
         "publication_status": "published",
         "published": true,
-        "release_activity": [
-          {
-            "count": 27,
-            "month": "2026-07"
-          }
-        ],
-        "release_count": 27,
+        "release_activity": [],
+        "release_count": 0,
         "route": "/catalog/packages/ghcr/portwyrm-e1235b14"
       },
       {
@@ -1209,8 +917,8 @@
       {
         "ecosystem": "pypi",
         "id": "package:pypi:portwyrm:groupsum/portwyrm:pyproject.toml",
-        "last_published_at": "2026-07-25T15:00:22.572323Z",
-        "latest_version": "0.1.0a4",
+        "last_published_at": "2026-08-04T17:20:36.004786Z",
+        "latest_version": "0.1.0a7",
         "license_expression": "Apache-2.0",
         "license_status": "observed",
         "license_url": "https://github.com/groupsum/portwyrm/blob/master/LICENSE",
@@ -1224,13 +932,17 @@
           {
             "count": 3,
             "month": "2026-07"
+          },
+          {
+            "count": 3,
+            "month": "2026-08"
           }
         ],
-        "release_count": 3,
+        "release_count": 6,
         "route": "/catalog/packages/pypi/portwyrm-3f693826"
       }
     ],
-    "pushed_at": "2026-07-25T14:58:56Z",
+    "pushed_at": "2026-08-04T17:21:58Z",
     "related_resources": [
       {
         "evidence_type": "repository.blob",
@@ -1239,7 +951,7 @@
         "legal_evidence": [],
         "legal_inherits_from": "repository:groupsum/portwyrm",
         "name": "src/portwyrm/api/__init__.py",
-        "observed_at": "2026-08-03T23:39:22Z",
+        "observed_at": "2026-08-06T02:55:04Z",
         "path": "src/portwyrm/api/__init__.py",
         "repository": "groupsum/portwyrm",
         "repository_route": "/catalog/repositories/groupsum/portwyrm",
@@ -1253,7 +965,7 @@
         "legal_evidence": [],
         "legal_inherits_from": "repository:groupsum/portwyrm",
         "name": "src/portwyrm/api/app.py",
-        "observed_at": "2026-08-03T23:39:22Z",
+        "observed_at": "2026-08-06T02:55:04Z",
         "path": "src/portwyrm/api/app.py",
         "repository": "groupsum/portwyrm",
         "repository_route": "/catalog/repositories/groupsum/portwyrm",
@@ -1267,7 +979,7 @@
         "legal_evidence": [],
         "legal_inherits_from": "repository:groupsum/portwyrm",
         "name": "src/portwyrm/api/compat",
-        "observed_at": "2026-08-03T23:39:22Z",
+        "observed_at": "2026-08-06T02:55:04Z",
         "path": "src/portwyrm/api/compat",
         "repository": "groupsum/portwyrm",
         "repository_route": "/catalog/repositories/groupsum/portwyrm",
@@ -1281,7 +993,7 @@
         "legal_evidence": [],
         "legal_inherits_from": "repository:groupsum/portwyrm",
         "name": "src/portwyrm/api/mfa.py",
-        "observed_at": "2026-08-03T23:39:22Z",
+        "observed_at": "2026-08-06T02:55:04Z",
         "path": "src/portwyrm/api/mfa.py",
         "repository": "groupsum/portwyrm",
         "repository_route": "/catalog/repositories/groupsum/portwyrm",
@@ -1295,7 +1007,7 @@
         "legal_evidence": [],
         "legal_inherits_from": "repository:groupsum/portwyrm",
         "name": "src/portwyrm/api/middleware.py",
-        "observed_at": "2026-08-03T23:39:22Z",
+        "observed_at": "2026-08-06T02:55:04Z",
         "path": "src/portwyrm/api/middleware.py",
         "repository": "groupsum/portwyrm",
         "repository_route": "/catalog/repositories/groupsum/portwyrm",
@@ -1309,7 +1021,7 @@
         "legal_evidence": [],
         "legal_inherits_from": "repository:groupsum/portwyrm",
         "name": "src/portwyrm/api/native",
-        "observed_at": "2026-08-03T23:39:22Z",
+        "observed_at": "2026-08-06T02:55:04Z",
         "path": "src/portwyrm/api/native",
         "repository": "groupsum/portwyrm",
         "repository_route": "/catalog/repositories/groupsum/portwyrm",
@@ -1323,7 +1035,7 @@
         "legal_evidence": [],
         "legal_inherits_from": "repository:groupsum/portwyrm",
         "name": "src/portwyrm/api/portability.py",
-        "observed_at": "2026-08-03T23:39:22Z",
+        "observed_at": "2026-08-06T02:55:04Z",
         "path": "src/portwyrm/api/portability.py",
         "repository": "groupsum/portwyrm",
         "repository_route": "/catalog/repositories/groupsum/portwyrm",
@@ -1337,7 +1049,7 @@
         "legal_evidence": [],
         "legal_inherits_from": "repository:groupsum/portwyrm",
         "name": "src/portwyrm/api/security.py",
-        "observed_at": "2026-08-03T23:39:22Z",
+        "observed_at": "2026-08-06T02:55:04Z",
         "path": "src/portwyrm/api/security.py",
         "repository": "groupsum/portwyrm",
         "repository_route": "/catalog/repositories/groupsum/portwyrm",
@@ -1351,7 +1063,7 @@
         "legal_evidence": [],
         "legal_inherits_from": "repository:groupsum/portwyrm",
         "name": "docs/architecture",
-        "observed_at": "2026-08-03T23:39:22Z",
+        "observed_at": "2026-08-06T02:55:04Z",
         "path": "docs/architecture",
         "repository": "groupsum/portwyrm",
         "repository_route": "/catalog/repositories/groupsum/portwyrm",
@@ -1365,7 +1077,7 @@
         "legal_evidence": [],
         "legal_inherits_from": "repository:groupsum/portwyrm",
         "name": "docs/compatibility",
-        "observed_at": "2026-08-03T23:39:22Z",
+        "observed_at": "2026-08-06T02:55:04Z",
         "path": "docs/compatibility",
         "repository": "groupsum/portwyrm",
         "repository_route": "/catalog/repositories/groupsum/portwyrm",
@@ -1379,7 +1091,7 @@
         "legal_evidence": [],
         "legal_inherits_from": "repository:groupsum/portwyrm",
         "name": "docs/delivery",
-        "observed_at": "2026-08-03T23:39:22Z",
+        "observed_at": "2026-08-06T02:55:04Z",
         "path": "docs/delivery",
         "repository": "groupsum/portwyrm",
         "repository_route": "/catalog/repositories/groupsum/portwyrm",
@@ -1393,7 +1105,7 @@
         "legal_evidence": [],
         "legal_inherits_from": "repository:groupsum/portwyrm",
         "name": "docs/product",
-        "observed_at": "2026-08-03T23:39:22Z",
+        "observed_at": "2026-08-06T02:55:04Z",
         "path": "docs/product",
         "repository": "groupsum/portwyrm",
         "repository_route": "/catalog/repositories/groupsum/portwyrm",
@@ -1407,7 +1119,7 @@
         "legal_evidence": [],
         "legal_inherits_from": "repository:groupsum/portwyrm",
         "name": "docs/research",
-        "observed_at": "2026-08-03T23:39:22Z",
+        "observed_at": "2026-08-06T02:55:04Z",
         "path": "docs/research",
         "repository": "groupsum/portwyrm",
         "repository_route": "/catalog/repositories/groupsum/portwyrm",
@@ -1421,7 +1133,7 @@
         "legal_evidence": [],
         "legal_inherits_from": "repository:groupsum/portwyrm",
         "name": "docs/testing",
-        "observed_at": "2026-08-03T23:39:22Z",
+        "observed_at": "2026-08-06T02:55:04Z",
         "path": "docs/testing",
         "repository": "groupsum/portwyrm",
         "repository_route": "/catalog/repositories/groupsum/portwyrm",
@@ -1435,7 +1147,7 @@
         "legal_evidence": [],
         "legal_inherits_from": "repository:groupsum/portwyrm",
         "name": "docs/ux",
-        "observed_at": "2026-08-03T23:39:22Z",
+        "observed_at": "2026-08-06T02:55:04Z",
         "path": "docs/ux",
         "repository": "groupsum/portwyrm",
         "repository_route": "/catalog/repositories/groupsum/portwyrm",
@@ -1444,29 +1156,29 @@
       }
     ],
     "relationship_counts": {
-      "repository_contains_package": 2,
+      "repository_contains_package": 3,
       "repository_contains_related_resource": 15
     },
     "reviewed": false,
     "route": "/catalog/repositories/groupsum/portwyrm",
     "ssot_governance": {
       "counts": {
-        "adrs": 55,
+        "adrs": 56,
         "boundaries": 9,
-        "claims": 93,
-        "evidence": 91,
-        "features": 35,
+        "claims": 96,
+        "evidence": 92,
+        "features": 36,
         "issues": 2,
         "profiles": 1,
         "releases": 1,
-        "specs": 62,
-        "tests": 98
+        "specs": 63,
+        "tests": 101
       },
       "coverage": {
-        "claims_with_evidence": 93,
-        "claims_with_tests": 93,
+        "claims_with_evidence": 96,
+        "claims_with_tests": 96,
         "claims_without_evidence": 0,
-        "evidence_linked_to_claims": 91,
+        "evidence_linked_to_claims": 92,
         "evidence_without_claims": 0
       },
       "evidence_type": "ssot.registry",
@@ -1572,181 +1284,6 @@
             "id": "adr:0619",
             "status": "draft",
             "title": "Content Addressed Governed Source Snapshots"
-          },
-          {
-            "id": "adr:0620",
-            "status": "draft",
-            "title": "Local Evidence Bundles Are Derived Release Artifacts"
-          },
-          {
-            "id": "adr:0621",
-            "status": "draft",
-            "title": "General rules of interpretation govern SSOT meaning"
-          },
-          {
-            "id": "adr:0622",
-            "status": "draft",
-            "title": "Definitions govern SSOT vocabulary"
-          },
-          {
-            "id": "adr:0625",
-            "status": "draft",
-            "title": "Claim Tier Gates Govern Core Promotion"
-          },
-          {
-            "id": "adr:0626",
-            "status": "draft",
-            "title": "Externally Authored Validation Can Satisfy T4"
-          },
-          {
-            "id": "adr:0627",
-            "status": "accepted",
-            "title": "Feature parent links are inventory composition"
-          },
-          {
-            "id": "adr:0628",
-            "status": "draft",
-            "title": "SSOT MCP and CLI surfaces stay in parity"
-          },
-          {
-            "id": "adr:0629",
-            "status": "draft",
-            "title": "SSOT MCP workers may request registry repair authority"
-          },
-          {
-            "id": "adr:0630",
-            "status": "draft",
-            "title": "Scoped maturation claims ignore unrelated blockers"
-          },
-          {
-            "id": "adr:0631",
-            "status": "draft",
-            "title": "MCP mediated upgrade uses the current runtime"
-          },
-          {
-            "id": "adr:0632",
-            "status": "draft",
-            "title": "Targeted repair can proceed with unrelated baseline drift"
-          },
-          {
-            "id": "adr:0633",
-            "status": "accepted",
-            "title": "Public registry save validates before write"
-          },
-          {
-            "id": "adr:0634",
-            "status": "draft",
-            "title": "Proof Graph Is The Canonical Assurance Unit"
-          },
-          {
-            "id": "adr:0635",
-            "status": "draft",
-            "title": "Proof Graph Materialization And Certification Closure"
-          },
-          {
-            "id": "adr:0636",
-            "status": "draft",
-            "title": "Feature create defaults to proof-graph scaffolding"
-          },
-          {
-            "id": "adr:0637",
-            "status": "draft",
-            "title": "Pack schema compatibility is forward-only"
-          },
-          {
-            "id": "adr:0640",
-            "status": "draft",
-            "title": "Evidence Owns Proof Linkage"
-          },
-          {
-            "id": "adr:0641",
-            "status": "draft",
-            "title": "Lineage HTML opening is an explicit CLI side effect"
-          },
-          {
-            "id": "adr:1000",
-            "status": "accepted",
-            "title": "Versioned compatibility envelope"
-          },
-          {
-            "id": "adr:1001",
-            "status": "accepted",
-            "title": "Control-plane and data-plane separation"
-          },
-          {
-            "id": "adr:1002",
-            "status": "accepted",
-            "title": "Persistence port architecture"
-          },
-          {
-            "id": "adr:1003",
-            "status": "accepted",
-            "title": "Atomic Nginx reconciliation"
-          },
-          {
-            "id": "adr:1004",
-            "status": "accepted",
-            "title": "Authentication, RBAC, and token model"
-          },
-          {
-            "id": "adr:1005",
-            "status": "accepted",
-            "title": "Certificate and secret boundary"
-          },
-          {
-            "id": "adr:1006",
-            "status": "accepted",
-            "title": "NPM migration strategy"
-          },
-          {
-            "id": "adr:1007",
-            "status": "accepted",
-            "title": "P100 release and distribution policy"
-          },
-          {
-            "id": "adr:1008",
-            "status": "accepted",
-            "title": "No-build operator UI delivery"
-          },
-          {
-            "id": "adr:1009",
-            "status": "accepted",
-            "title": "Profile-scoped API transport and security"
-          },
-          {
-            "id": "adr:1010",
-            "status": "accepted",
-            "title": "Operational runtime subsystems"
-          },
-          {
-            "id": "adr:1011",
-            "status": "accepted",
-            "title": "Tier-specific proof artifacts"
-          },
-          {
-            "id": "adr:1012",
-            "status": "accepted",
-            "title": "Isolated ACME provider execution"
-          },
-          {
-            "id": "adr:1013",
-            "status": "accepted",
-            "title": "Container runtime and process supervision"
-          },
-          {
-            "id": "adr:1014",
-            "status": "accepted",
-            "title": "Advanced Nginx configuration trust boundary"
-          },
-          {
-            "id": "adr:1015",
-            "status": "accepted",
-            "title": "Observed host health is separate from desired and applied state"
-          },
-          {
-            "id": "adr:1016",
-            "status": "draft",
-            "title": "Referentially complete npmctl deletion"
           }
         ],
         "boundaries": [
@@ -2252,1034 +1789,6 @@
               "tst:pytest.routing.redirection-dead-hosts.t1.proof-graph"
             ],
             "title": "Redirection and dead hosts T1 claim"
-          },
-          {
-            "evidence_ids": [
-              "evd:t2.routing.redirection-dead-hosts.proof-graph"
-            ],
-            "feature_ids": [
-              "feat:routing.redirection-dead-hosts"
-            ],
-            "id": "clm:routing.redirection-dead-hosts.t2",
-            "status": "published",
-            "test_ids": [
-              "tst:pytest.routing.redirection-dead-hosts.t2.proof-graph"
-            ],
-            "title": "Redirection and dead hosts T2 claim"
-          },
-          {
-            "evidence_ids": [
-              "evd:t0.routing.streams.scope"
-            ],
-            "feature_ids": [
-              "feat:routing.streams"
-            ],
-            "id": "clm:routing.streams.t0",
-            "status": "certified",
-            "test_ids": [
-              "tst:pytest.routing.streams.t0.proof-graph"
-            ],
-            "title": "TCP and UDP streams T0 claim"
-          },
-          {
-            "evidence_ids": [
-              "evd:t1.routing.streams.direct"
-            ],
-            "feature_ids": [
-              "feat:routing.streams"
-            ],
-            "id": "clm:routing.streams.t1",
-            "status": "certified",
-            "test_ids": [
-              "tst:pytest.routing.streams.t1.proof-graph"
-            ],
-            "title": "TCP and UDP streams T1 claim"
-          },
-          {
-            "evidence_ids": [
-              "evd:t2.routing.streams.proof-graph"
-            ],
-            "feature_ids": [
-              "feat:routing.streams"
-            ],
-            "id": "clm:routing.streams.t2",
-            "status": "published",
-            "test_ids": [
-              "tst:pytest.routing.streams.t2.proof-graph"
-            ],
-            "title": "TCP and UDP streams T2 claim"
-          },
-          {
-            "evidence_ids": [
-              "evd:t0.routing.access-lists.scope"
-            ],
-            "feature_ids": [
-              "feat:routing.access-lists"
-            ],
-            "id": "clm:routing.access-lists.t0",
-            "status": "certified",
-            "test_ids": [
-              "tst:pytest.routing.access-lists.t0.proof-graph"
-            ],
-            "title": "Proxy access lists T0 claim"
-          },
-          {
-            "evidence_ids": [
-              "evd:t1.routing.access-lists.direct"
-            ],
-            "feature_ids": [
-              "feat:routing.access-lists"
-            ],
-            "id": "clm:routing.access-lists.t1",
-            "status": "certified",
-            "test_ids": [
-              "tst:pytest.routing.access-lists.t1.proof-graph"
-            ],
-            "title": "Proxy access lists T1 claim"
-          },
-          {
-            "evidence_ids": [
-              "evd:t2.routing.access-lists.proof-graph"
-            ],
-            "feature_ids": [
-              "feat:routing.access-lists"
-            ],
-            "id": "clm:routing.access-lists.t2",
-            "status": "published",
-            "test_ids": [
-              "tst:pytest.routing.access-lists.t2.proof-graph"
-            ],
-            "title": "Proxy access lists T2 claim"
-          },
-          {
-            "evidence_ids": [
-              "evd:t0.certificates.custom.scope"
-            ],
-            "feature_ids": [
-              "feat:certificates.custom"
-            ],
-            "id": "clm:certificates.custom.t0",
-            "status": "certified",
-            "test_ids": [
-              "tst:pytest.certificates.custom.t0.proof-graph"
-            ],
-            "title": "Custom certificates T0 claim"
-          },
-          {
-            "evidence_ids": [
-              "evd:t1.certificates.custom.direct"
-            ],
-            "feature_ids": [
-              "feat:certificates.custom"
-            ],
-            "id": "clm:certificates.custom.t1",
-            "status": "certified",
-            "test_ids": [
-              "tst:pytest.certificates.custom.t1.proof-graph"
-            ],
-            "title": "Custom certificates T1 claim"
-          },
-          {
-            "evidence_ids": [
-              "evd:t2.certificates.custom.proof-graph"
-            ],
-            "feature_ids": [
-              "feat:certificates.custom"
-            ],
-            "id": "clm:certificates.custom.t2",
-            "status": "published",
-            "test_ids": [
-              "tst:pytest.certificates.custom.t2.proof-graph"
-            ],
-            "title": "Custom certificates T2 claim"
-          },
-          {
-            "evidence_ids": [
-              "evd:t0.certificates.acme.scope"
-            ],
-            "feature_ids": [
-              "feat:certificates.acme"
-            ],
-            "id": "clm:certificates.acme.t0",
-            "status": "certified",
-            "test_ids": [
-              "tst:pytest.certificates.acme.t0.proof-graph"
-            ],
-            "title": "ACME certificate lifecycle T0 claim"
-          },
-          {
-            "evidence_ids": [
-              "evd:t1.certificates.acme.direct"
-            ],
-            "feature_ids": [
-              "feat:certificates.acme"
-            ],
-            "id": "clm:certificates.acme.t1",
-            "status": "certified",
-            "test_ids": [
-              "tst:pytest.certificates.acme.t1.proof-graph"
-            ],
-            "title": "ACME certificate lifecycle T1 claim"
-          },
-          {
-            "evidence_ids": [
-              "evd:t2.certificates.acme.proof-graph"
-            ],
-            "feature_ids": [
-              "feat:certificates.acme"
-            ],
-            "id": "clm:certificates.acme.t2",
-            "status": "published",
-            "test_ids": [
-              "tst:pytest.certificates.acme.t2.proof-graph"
-            ],
-            "title": "ACME certificate lifecycle T2 claim"
-          },
-          {
-            "evidence_ids": [
-              "evd:t0.certificates.dns01-providers.scope"
-            ],
-            "feature_ids": [
-              "feat:certificates.dns01-providers"
-            ],
-            "id": "clm:certificates.dns01-providers.t0",
-            "status": "certified",
-            "test_ids": [
-              "tst:pytest.certificates.dns01-providers.t0.proof-graph"
-            ],
-            "title": "DNS-01 provider catalog T0 claim"
-          },
-          {
-            "evidence_ids": [
-              "evd:t1.certificates.dns01-providers.direct"
-            ],
-            "feature_ids": [
-              "feat:certificates.dns01-providers"
-            ],
-            "id": "clm:certificates.dns01-providers.t1",
-            "status": "certified",
-            "test_ids": [
-              "tst:pytest.certificates.dns01-providers.t1.proof-graph"
-            ],
-            "title": "DNS-01 provider catalog T1 claim"
-          },
-          {
-            "evidence_ids": [
-              "evd:t2.certificates.dns01-providers.proof-graph"
-            ],
-            "feature_ids": [
-              "feat:certificates.dns01-providers"
-            ],
-            "id": "clm:certificates.dns01-providers.t2",
-            "status": "published",
-            "test_ids": [
-              "tst:pytest.certificates.dns01-providers.t2.proof-graph"
-            ],
-            "title": "DNS-01 provider catalog T2 claim"
-          },
-          {
-            "evidence_ids": [
-              "evd:t0.runtime.nginx-reconciliation.scope"
-            ],
-            "feature_ids": [
-              "feat:runtime.nginx-reconciliation"
-            ],
-            "id": "clm:runtime.nginx-reconciliation.t0",
-            "status": "certified",
-            "test_ids": [
-              "tst:pytest.runtime.nginx-reconciliation.t0.proof-graph"
-            ],
-            "title": "Atomic Nginx reconciliation T0 claim"
-          },
-          {
-            "evidence_ids": [
-              "evd:t1.runtime.nginx-reconciliation.direct"
-            ],
-            "feature_ids": [
-              "feat:runtime.nginx-reconciliation"
-            ],
-            "id": "clm:runtime.nginx-reconciliation.t1",
-            "status": "certified",
-            "test_ids": [
-              "tst:pytest.runtime.nginx-reconciliation.t1.proof-graph"
-            ],
-            "title": "Atomic Nginx reconciliation T1 claim"
-          },
-          {
-            "evidence_ids": [
-              "evd:t2.runtime.nginx-reconciliation.proof-graph"
-            ],
-            "feature_ids": [
-              "feat:runtime.nginx-reconciliation"
-            ],
-            "id": "clm:runtime.nginx-reconciliation.t2",
-            "status": "published",
-            "test_ids": [
-              "tst:pytest.runtime.nginx-reconciliation.t2.proof-graph"
-            ],
-            "title": "Atomic Nginx reconciliation T2 claim"
-          },
-          {
-            "evidence_ids": [
-              "evd:t0.persistence.memory.scope"
-            ],
-            "feature_ids": [
-              "feat:persistence.memory"
-            ],
-            "id": "clm:persistence.memory.t0",
-            "status": "certified",
-            "test_ids": [
-              "tst:pytest.persistence.memory.t0.proof-graph"
-            ],
-            "title": "In-memory persistence T0 claim"
-          },
-          {
-            "evidence_ids": [
-              "evd:t1.persistence.memory.direct"
-            ],
-            "feature_ids": [
-              "feat:persistence.memory"
-            ],
-            "id": "clm:persistence.memory.t1",
-            "status": "certified",
-            "test_ids": [
-              "tst:pytest.persistence.memory.t1.proof-graph"
-            ],
-            "title": "In-memory persistence T1 claim"
-          },
-          {
-            "evidence_ids": [
-              "evd:t2.persistence.memory.proof-graph"
-            ],
-            "feature_ids": [
-              "feat:persistence.memory"
-            ],
-            "id": "clm:persistence.memory.t2",
-            "status": "published",
-            "test_ids": [
-              "tst:pytest.persistence.memory.t2.proof-graph"
-            ],
-            "title": "In-memory persistence T2 claim"
-          },
-          {
-            "evidence_ids": [
-              "evd:t0.persistence.sqlite.scope"
-            ],
-            "feature_ids": [
-              "feat:persistence.sqlite"
-            ],
-            "id": "clm:persistence.sqlite.t0",
-            "status": "certified",
-            "test_ids": [
-              "tst:pytest.persistence.sqlite.t0.proof-graph"
-            ],
-            "title": "SQLite persistence T0 claim"
-          },
-          {
-            "evidence_ids": [
-              "evd:t1.persistence.sqlite.direct"
-            ],
-            "feature_ids": [
-              "feat:persistence.sqlite"
-            ],
-            "id": "clm:persistence.sqlite.t1",
-            "status": "certified",
-            "test_ids": [
-              "tst:pytest.persistence.sqlite.t1.proof-graph"
-            ],
-            "title": "SQLite persistence T1 claim"
-          },
-          {
-            "evidence_ids": [
-              "evd:t2.persistence.sqlite.proof-graph"
-            ],
-            "feature_ids": [
-              "feat:persistence.sqlite"
-            ],
-            "id": "clm:persistence.sqlite.t2",
-            "status": "published",
-            "test_ids": [
-              "tst:pytest.persistence.sqlite.t2.proof-graph"
-            ],
-            "title": "SQLite persistence T2 claim"
-          },
-          {
-            "evidence_ids": [
-              "evd:t0.persistence.mysql.scope"
-            ],
-            "feature_ids": [
-              "feat:persistence.mysql"
-            ],
-            "id": "clm:persistence.mysql.t0",
-            "status": "certified",
-            "test_ids": [
-              "tst:pytest.persistence.mysql.t0.proof-graph"
-            ],
-            "title": "MySQL and MariaDB persistence T0 claim"
-          },
-          {
-            "evidence_ids": [
-              "evd:t1.persistence.mysql.direct"
-            ],
-            "feature_ids": [
-              "feat:persistence.mysql"
-            ],
-            "id": "clm:persistence.mysql.t1",
-            "status": "certified",
-            "test_ids": [
-              "tst:pytest.persistence.mysql.t1.proof-graph"
-            ],
-            "title": "MySQL and MariaDB persistence T1 claim"
-          },
-          {
-            "evidence_ids": [
-              "evd:t2.persistence.mysql.proof-graph"
-            ],
-            "feature_ids": [
-              "feat:persistence.mysql"
-            ],
-            "id": "clm:persistence.mysql.t2",
-            "status": "published",
-            "test_ids": [
-              "tst:pytest.persistence.mysql.t2.proof-graph"
-            ],
-            "title": "MySQL and MariaDB persistence T2 claim"
-          },
-          {
-            "evidence_ids": [
-              "evd:t0.persistence.postgresql.scope"
-            ],
-            "feature_ids": [
-              "feat:persistence.postgresql"
-            ],
-            "id": "clm:persistence.postgresql.t0",
-            "status": "certified",
-            "test_ids": [
-              "tst:pytest.persistence.postgresql.t0.proof-graph"
-            ],
-            "title": "PostgreSQL persistence T0 claim"
-          },
-          {
-            "evidence_ids": [
-              "evd:t1.persistence.postgresql.direct"
-            ],
-            "feature_ids": [
-              "feat:persistence.postgresql"
-            ],
-            "id": "clm:persistence.postgresql.t1",
-            "status": "certified",
-            "test_ids": [
-              "tst:pytest.persistence.postgresql.t1.proof-graph"
-            ],
-            "title": "PostgreSQL persistence T1 claim"
-          },
-          {
-            "evidence_ids": [
-              "evd:t2.persistence.postgresql.proof-graph"
-            ],
-            "feature_ids": [
-              "feat:persistence.postgresql"
-            ],
-            "id": "clm:persistence.postgresql.t2",
-            "status": "published",
-            "test_ids": [
-              "tst:pytest.persistence.postgresql.t2.proof-graph"
-            ],
-            "title": "PostgreSQL persistence T2 claim"
-          },
-          {
-            "evidence_ids": [
-              "evd:t0.persistence.filesystem.scope"
-            ],
-            "feature_ids": [
-              "feat:persistence.filesystem"
-            ],
-            "id": "clm:persistence.filesystem.t0",
-            "status": "certified",
-            "test_ids": [
-              "tst:pytest.persistence.filesystem.t0.proof-graph"
-            ],
-            "title": "Filesystem persistence T0 claim"
-          },
-          {
-            "evidence_ids": [
-              "evd:t1.persistence.filesystem.direct"
-            ],
-            "feature_ids": [
-              "feat:persistence.filesystem"
-            ],
-            "id": "clm:persistence.filesystem.t1",
-            "status": "certified",
-            "test_ids": [
-              "tst:pytest.persistence.filesystem.t1.proof-graph"
-            ],
-            "title": "Filesystem persistence T1 claim"
-          },
-          {
-            "evidence_ids": [
-              "evd:t2.persistence.filesystem.proof-graph"
-            ],
-            "feature_ids": [
-              "feat:persistence.filesystem"
-            ],
-            "id": "clm:persistence.filesystem.t2",
-            "status": "published",
-            "test_ids": [
-              "tst:pytest.persistence.filesystem.t2.proof-graph"
-            ],
-            "title": "Filesystem persistence T2 claim"
-          },
-          {
-            "evidence_ids": [
-              "evd:t0.persistence.hybrid.scope"
-            ],
-            "feature_ids": [
-              "feat:persistence.hybrid"
-            ],
-            "id": "clm:persistence.hybrid.t0",
-            "status": "certified",
-            "test_ids": [
-              "tst:pytest.persistence.hybrid.t0.proof-graph"
-            ],
-            "title": "Hybrid persistence T0 claim"
-          },
-          {
-            "evidence_ids": [
-              "evd:t1.persistence.hybrid.direct"
-            ],
-            "feature_ids": [
-              "feat:persistence.hybrid"
-            ],
-            "id": "clm:persistence.hybrid.t1",
-            "status": "certified",
-            "test_ids": [
-              "tst:pytest.persistence.hybrid.t1.proof-graph"
-            ],
-            "title": "Hybrid persistence T1 claim"
-          },
-          {
-            "evidence_ids": [
-              "evd:t2.persistence.hybrid.proof-graph"
-            ],
-            "feature_ids": [
-              "feat:persistence.hybrid"
-            ],
-            "id": "clm:persistence.hybrid.t2",
-            "status": "published",
-            "test_ids": [
-              "tst:pytest.persistence.hybrid.t2.proof-graph"
-            ],
-            "title": "Hybrid persistence T2 claim"
-          },
-          {
-            "evidence_ids": [
-              "evd:t0.experience.operator-ui.scope"
-            ],
-            "feature_ids": [
-              "feat:experience.operator-ui"
-            ],
-            "id": "clm:experience.operator-ui.t0",
-            "status": "certified",
-            "test_ids": [
-              "tst:pytest.experience.operator-ui.t0.proof-graph"
-            ],
-            "title": "Operator UI T0 claim"
-          },
-          {
-            "evidence_ids": [
-              "evd:t1.experience.operator-ui.direct"
-            ],
-            "feature_ids": [
-              "feat:experience.operator-ui"
-            ],
-            "id": "clm:experience.operator-ui.t1",
-            "status": "certified",
-            "test_ids": [
-              "tst:pytest.experience.operator-ui.t1.proof-graph",
-              "tst:pytest.identity.bootstrap-password-change.t1",
-              "tst:pytest.experience.operator-ui.audit-columns.t1"
-            ],
-            "title": "Operator UI T1 claim"
-          },
-          {
-            "evidence_ids": [
-              "evd:t2.experience.operator-ui.proof-graph"
-            ],
-            "feature_ids": [
-              "feat:experience.operator-ui"
-            ],
-            "id": "clm:experience.operator-ui.t2",
-            "status": "published",
-            "test_ids": [
-              "tst:pytest.experience.operator-ui.t2.proof-graph"
-            ],
-            "title": "Operator UI T2 claim"
-          },
-          {
-            "evidence_ids": [
-              "evd:t0.operations.settings-audit-health.scope"
-            ],
-            "feature_ids": [
-              "feat:operations.settings-audit-health"
-            ],
-            "id": "clm:operations.settings-audit-health.t0",
-            "status": "certified",
-            "test_ids": [
-              "tst:pytest.operations.settings-audit-health.t0.proof-graph"
-            ],
-            "title": "Settings, audit, reporting, and health T0 claim"
-          },
-          {
-            "evidence_ids": [
-              "evd:t1.operations.settings-audit-health.direct"
-            ],
-            "feature_ids": [
-              "feat:operations.settings-audit-health"
-            ],
-            "id": "clm:operations.settings-audit-health.t1",
-            "status": "certified",
-            "test_ids": [
-              "tst:pytest.operations.settings-audit-health.t1.proof-graph"
-            ],
-            "title": "Settings, audit, reporting, and health T1 claim"
-          },
-          {
-            "evidence_ids": [
-              "evd:t2.operations.settings-audit-health.proof-graph"
-            ],
-            "feature_ids": [
-              "feat:operations.settings-audit-health"
-            ],
-            "id": "clm:operations.settings-audit-health.t2",
-            "status": "published",
-            "test_ids": [
-              "tst:pytest.operations.settings-audit-health.t2.proof-graph"
-            ],
-            "title": "Settings, audit, reporting, and health T2 claim"
-          },
-          {
-            "evidence_ids": [
-              "evd:t0.migration.npm.scope"
-            ],
-            "feature_ids": [
-              "feat:migration.npm"
-            ],
-            "id": "clm:migration.npm.t0",
-            "status": "certified",
-            "test_ids": [
-              "tst:pytest.migration.npm.t0.proof-graph"
-            ],
-            "title": "NPM migration and cutover T0 claim"
-          },
-          {
-            "evidence_ids": [
-              "evd:t1.migration.npm.direct"
-            ],
-            "feature_ids": [
-              "feat:migration.npm"
-            ],
-            "id": "clm:migration.npm.t1",
-            "status": "certified",
-            "test_ids": [
-              "tst:pytest.migration.npm.t1.proof-graph"
-            ],
-            "title": "NPM migration and cutover T1 claim"
-          },
-          {
-            "evidence_ids": [
-              "evd:t2.migration.npm.proof-graph"
-            ],
-            "feature_ids": [
-              "feat:migration.npm"
-            ],
-            "id": "clm:migration.npm.t2",
-            "status": "published",
-            "test_ids": [
-              "tst:pytest.migration.npm.t2.proof-graph"
-            ],
-            "title": "NPM migration and cutover T2 claim"
-          },
-          {
-            "evidence_ids": [
-              "evd:t0.distribution.oci.scope"
-            ],
-            "feature_ids": [
-              "feat:distribution.oci"
-            ],
-            "id": "clm:distribution.oci.t0",
-            "status": "certified",
-            "test_ids": [
-              "tst:pytest.distribution.oci.t0.proof-graph"
-            ],
-            "title": "OCI distribution T0 claim"
-          },
-          {
-            "evidence_ids": [
-              "evd:t1.distribution.oci.direct"
-            ],
-            "feature_ids": [
-              "feat:distribution.oci"
-            ],
-            "id": "clm:distribution.oci.t1",
-            "status": "certified",
-            "test_ids": [
-              "tst:pytest.distribution.oci.t1.proof-graph"
-            ],
-            "title": "OCI distribution T1 claim"
-          },
-          {
-            "evidence_ids": [
-              "evd:t2.distribution.oci.proof-graph",
-              "evd:t2.distribution.oci.publication"
-            ],
-            "feature_ids": [
-              "feat:distribution.oci"
-            ],
-            "id": "clm:distribution.oci.t2",
-            "status": "published",
-            "test_ids": [
-              "tst:pytest.distribution.oci.t2.proof-graph",
-              "tst:oci.distribution.oci.publication"
-            ],
-            "title": "OCI distribution T2 claim"
-          },
-          {
-            "evidence_ids": [
-              "evd:t0.compat.api-transport.scope"
-            ],
-            "feature_ids": [
-              "feat:compat.api-transport"
-            ],
-            "id": "clm:compat.api-transport.t0",
-            "status": "certified",
-            "test_ids": [
-              "tst:pytest.compat.api-transport.t0.proof-graph"
-            ],
-            "title": "Compatibility API transport T0 claim"
-          },
-          {
-            "evidence_ids": [
-              "evd:t1.compat.api-transport.proof-graph"
-            ],
-            "feature_ids": [
-              "feat:compat.api-transport"
-            ],
-            "id": "clm:compat.api-transport.t1",
-            "status": "certified",
-            "test_ids": [
-              "tst:pytest.compat.api-transport.t1.proof-graph"
-            ],
-            "title": "Compatibility API transport T1 claim"
-          },
-          {
-            "evidence_ids": [
-              "evd:t0.runtime.nginx-platform.scope"
-            ],
-            "feature_ids": [
-              "feat:runtime.nginx-platform"
-            ],
-            "id": "clm:runtime.nginx-platform.t0",
-            "status": "certified",
-            "test_ids": [
-              "tst:pytest.runtime.nginx-platform.t0.proof-graph"
-            ],
-            "title": "Nginx platform controls T0 claim"
-          },
-          {
-            "evidence_ids": [
-              "evd:t1.runtime.nginx-platform.proof-graph"
-            ],
-            "feature_ids": [
-              "feat:runtime.nginx-platform"
-            ],
-            "id": "clm:runtime.nginx-platform.t1",
-            "status": "certified",
-            "test_ids": [
-              "tst:pytest.runtime.nginx-platform.t1.proof-graph"
-            ],
-            "title": "Nginx platform controls T1 claim"
-          },
-          {
-            "evidence_ids": [
-              "evd:t0.operations.traffic-logs.scope"
-            ],
-            "feature_ids": [
-              "feat:operations.traffic-logs"
-            ],
-            "id": "clm:operations.traffic-logs.t0",
-            "status": "certified",
-            "test_ids": [
-              "tst:pytest.operations.traffic-logs.t0.proof-graph"
-            ],
-            "title": "Traffic logs and rotation T0 claim"
-          },
-          {
-            "evidence_ids": [
-              "evd:t1.operations.traffic-logs.proof-graph"
-            ],
-            "feature_ids": [
-              "feat:operations.traffic-logs"
-            ],
-            "id": "clm:operations.traffic-logs.t1",
-            "status": "certified",
-            "test_ids": [
-              "tst:pytest.operations.traffic-logs.t1.proof-graph"
-            ],
-            "title": "Traffic logs and rotation T1 claim"
-          },
-          {
-            "evidence_ids": [
-              "evd:t0.operations.upgrades.scope"
-            ],
-            "feature_ids": [
-              "feat:operations.upgrades"
-            ],
-            "id": "clm:operations.upgrades.t0",
-            "status": "certified",
-            "test_ids": [
-              "tst:pytest.operations.upgrades.t0.proof-graph"
-            ],
-            "title": "Runtime upgrades and version policy T0 claim"
-          },
-          {
-            "evidence_ids": [
-              "evd:t1.operations.upgrades.proof-graph"
-            ],
-            "feature_ids": [
-              "feat:operations.upgrades"
-            ],
-            "id": "clm:operations.upgrades.t1",
-            "status": "certified",
-            "test_ids": [
-              "tst:pytest.operations.upgrades.t1.proof-graph"
-            ],
-            "title": "Runtime upgrades and version policy T1 claim"
-          },
-          {
-            "evidence_ids": [
-              "evd:t0.distribution.runtime-identity.scope"
-            ],
-            "feature_ids": [
-              "feat:distribution.runtime-identity"
-            ],
-            "id": "clm:distribution.runtime-identity.t0",
-            "status": "certified",
-            "test_ids": [
-              "tst:pytest.distribution.runtime-identity.t0.proof-graph"
-            ],
-            "title": "Container runtime identity T0 claim"
-          },
-          {
-            "evidence_ids": [
-              "evd:t1.distribution.runtime-identity.proof-graph"
-            ],
-            "feature_ids": [
-              "feat:distribution.runtime-identity"
-            ],
-            "id": "clm:distribution.runtime-identity.t1",
-            "status": "certified",
-            "test_ids": [
-              "tst:pytest.distribution.runtime-identity.t1.proof-graph"
-            ],
-            "title": "Container runtime identity T1 claim"
-          },
-          {
-            "evidence_ids": [
-              "evd:t2.compat.api-transport.robustness"
-            ],
-            "feature_ids": [
-              "feat:compat.api-transport"
-            ],
-            "id": "clm:compat.api-transport.t2",
-            "status": "published",
-            "test_ids": [
-              "tst:pytest.compat.api-transport.t2.proof-graph"
-            ],
-            "title": "compat.api-transport T2 claim"
-          },
-          {
-            "evidence_ids": [
-              "evd:t2.runtime.nginx-platform.robustness"
-            ],
-            "feature_ids": [
-              "feat:runtime.nginx-platform"
-            ],
-            "id": "clm:runtime.nginx-platform.t2",
-            "status": "published",
-            "test_ids": [
-              "tst:pytest.runtime.nginx-platform.t2.proof-graph"
-            ],
-            "title": "runtime.nginx-platform T2 claim"
-          },
-          {
-            "evidence_ids": [
-              "evd:t2.operations.traffic-logs.robustness"
-            ],
-            "feature_ids": [
-              "feat:operations.traffic-logs"
-            ],
-            "id": "clm:operations.traffic-logs.t2",
-            "status": "published",
-            "test_ids": [
-              "tst:pytest.operations.traffic-logs.t2.proof-graph"
-            ],
-            "title": "operations.traffic-logs T2 claim"
-          },
-          {
-            "evidence_ids": [
-              "evd:t2.operations.upgrades.robustness"
-            ],
-            "feature_ids": [
-              "feat:operations.upgrades"
-            ],
-            "id": "clm:operations.upgrades.t2",
-            "status": "published",
-            "test_ids": [
-              "tst:pytest.operations.upgrades.t2.proof-graph"
-            ],
-            "title": "operations.upgrades T2 claim"
-          },
-          {
-            "evidence_ids": [
-              "evd:t2.distribution.runtime-identity.robustness",
-              "evd:t2.distribution.oci.publication"
-            ],
-            "feature_ids": [
-              "feat:distribution.runtime-identity"
-            ],
-            "id": "clm:distribution.runtime-identity.t2",
-            "status": "published",
-            "test_ids": [
-              "tst:pytest.distribution.runtime-identity.t2.proof-graph",
-              "tst:oci.distribution.oci.publication"
-            ],
-            "title": "distribution.runtime-identity T2 claim"
-          },
-          {
-            "evidence_ids": [
-              "evd:t1.experience.operator-cli.proof-graph"
-            ],
-            "feature_ids": [
-              "feat:experience.operator-cli"
-            ],
-            "id": "clm:experience.operator-cli.t0",
-            "status": "evidenced",
-            "test_ids": [
-              "tst:pytest.experience.operator-cli.t0.proof-graph"
-            ],
-            "title": "Operator CLI governed inventory"
-          },
-          {
-            "evidence_ids": [
-              "evd:t1.experience.operator-cli.proof-graph"
-            ],
-            "feature_ids": [
-              "feat:experience.operator-cli"
-            ],
-            "id": "clm:experience.operator-cli.t1",
-            "status": "evidenced",
-            "test_ids": [
-              "tst:pytest.experience.operator-cli.t1.proof-graph"
-            ],
-            "title": "Operator CLI direct behavior"
-          },
-          {
-            "evidence_ids": [
-              "evd:t2.experience.operator-cli.container"
-            ],
-            "feature_ids": [
-              "feat:experience.operator-cli"
-            ],
-            "id": "clm:experience.operator-cli.t2",
-            "status": "evidenced",
-            "test_ids": [
-              "tst:container.experience.operator-cli.t2"
-            ],
-            "title": "Operator CLI T2 container claim"
-          },
-          {
-            "evidence_ids": [
-              "evd:t2.routing.upstream-health.proof-graph"
-            ],
-            "feature_ids": [
-              "feat:routing.upstream-health"
-            ],
-            "id": "clm:routing.upstream-health.t0",
-            "status": "evidenced",
-            "test_ids": [
-              "tst:pytest.routing.upstream-health.t0.proof-graph"
-            ],
-            "title": "Proxy-host upstream health T0 claim"
-          },
-          {
-            "evidence_ids": [
-              "evd:t2.routing.upstream-health.proof-graph"
-            ],
-            "feature_ids": [
-              "feat:routing.upstream-health"
-            ],
-            "id": "clm:routing.upstream-health.t1",
-            "status": "evidenced",
-            "test_ids": [
-              "tst:pytest.routing.upstream-health.t1.proof-graph"
-            ],
-            "title": "Proxy-host upstream health T1 claim"
-          },
-          {
-            "evidence_ids": [
-              "evd:t2.routing.upstream-health.proof-graph"
-            ],
-            "feature_ids": [
-              "feat:routing.upstream-health"
-            ],
-            "id": "clm:routing.upstream-health.t2",
-            "status": "evidenced",
-            "test_ids": [
-              "tst:pytest.routing.upstream-health.t2.proof-graph"
-            ],
-            "title": "Proxy-host upstream health T2 claim"
-          },
-          {
-            "evidence_ids": [
-              "evd:t2.routing.disabled-host-isolation.proof-graph"
-            ],
-            "feature_ids": [
-              "feat:routing.disabled-host-isolation"
-            ],
-            "id": "clm:routing.disabled-host-isolation.t0",
-            "status": "evidenced",
-            "test_ids": [
-              "tst:pytest.routing.disabled-host-isolation.t0.proof-graph"
-            ],
-            "title": "Disabled proxy-host isolation T0 claim"
-          },
-          {
-            "evidence_ids": [
-              "evd:t2.routing.disabled-host-isolation.proof-graph"
-            ],
-            "feature_ids": [
-              "feat:routing.disabled-host-isolation"
-            ],
-            "id": "clm:routing.disabled-host-isolation.t1",
-            "status": "evidenced",
-            "test_ids": [
-              "tst:pytest.routing.disabled-host-isolation.t1.proof-graph"
-            ],
-            "title": "Disabled proxy-host isolation T1 claim"
-          },
-          {
-            "evidence_ids": [
-              "evd:t2.routing.disabled-host-isolation.proof-graph"
-            ],
-            "feature_ids": [
-              "feat:routing.disabled-host-isolation"
-            ],
-            "id": "clm:routing.disabled-host-isolation.t2",
-            "status": "evidenced",
-            "test_ids": [
-              "tst:pytest.routing.disabled-host-isolation.t2.proof-graph"
-            ],
-            "title": "Disabled proxy-host isolation T2 claim"
           }
         ],
         "evidence": [
@@ -3503,802 +2012,6 @@
               "tst:pytest.experience.operator-ui.t2.proof-graph"
             ],
             "title": "experience.operator-ui T2 robustness evidence"
-          },
-          {
-            "claim_ids": [
-              "clm:operations.settings-audit-health.t2"
-            ],
-            "id": "evd:t2.operations.settings-audit-health.proof-graph",
-            "status": "passed",
-            "test_ids": [
-              "tst:pytest.operations.settings-audit-health.t2.proof-graph"
-            ],
-            "title": "operations.settings-audit-health T2 robustness evidence"
-          },
-          {
-            "claim_ids": [
-              "clm:migration.npm.t2"
-            ],
-            "id": "evd:t2.migration.npm.proof-graph",
-            "status": "passed",
-            "test_ids": [
-              "tst:pytest.migration.npm.t2.proof-graph"
-            ],
-            "title": "migration.npm T2 robustness evidence"
-          },
-          {
-            "claim_ids": [
-              "clm:distribution.oci.t2"
-            ],
-            "id": "evd:t2.distribution.oci.proof-graph",
-            "status": "passed",
-            "test_ids": [
-              "tst:pytest.distribution.oci.t2.proof-graph"
-            ],
-            "title": "distribution.oci T2 robustness evidence"
-          },
-          {
-            "claim_ids": [
-              "clm:compat.api-transport.t1"
-            ],
-            "id": "evd:t1.compat.api-transport.proof-graph",
-            "status": "passed",
-            "test_ids": [
-              "tst:pytest.compat.api-transport.t1.proof-graph"
-            ],
-            "title": "Compatibility API transport T1 direct behavior evidence"
-          },
-          {
-            "claim_ids": [
-              "clm:runtime.nginx-platform.t1"
-            ],
-            "id": "evd:t1.runtime.nginx-platform.proof-graph",
-            "status": "passed",
-            "test_ids": [
-              "tst:pytest.runtime.nginx-platform.t1.proof-graph"
-            ],
-            "title": "Nginx platform controls T1 direct behavior evidence"
-          },
-          {
-            "claim_ids": [
-              "clm:operations.traffic-logs.t1"
-            ],
-            "id": "evd:t1.operations.traffic-logs.proof-graph",
-            "status": "passed",
-            "test_ids": [
-              "tst:pytest.operations.traffic-logs.t1.proof-graph"
-            ],
-            "title": "Traffic logs and rotation T1 direct behavior evidence"
-          },
-          {
-            "claim_ids": [
-              "clm:operations.upgrades.t1"
-            ],
-            "id": "evd:t1.operations.upgrades.proof-graph",
-            "status": "passed",
-            "test_ids": [
-              "tst:pytest.operations.upgrades.t1.proof-graph"
-            ],
-            "title": "Runtime upgrades and version policy T1 direct behavior evidence"
-          },
-          {
-            "claim_ids": [
-              "clm:distribution.runtime-identity.t1"
-            ],
-            "id": "evd:t1.distribution.runtime-identity.proof-graph",
-            "status": "passed",
-            "test_ids": [
-              "tst:pytest.distribution.runtime-identity.t1.proof-graph"
-            ],
-            "title": "Container runtime identity T1 direct behavior evidence"
-          },
-          {
-            "claim_ids": [
-              "clm:compat.npm-api.t1"
-            ],
-            "id": "evd:t1.compat.npm-api.direct",
-            "status": "passed",
-            "test_ids": [
-              "tst:pytest.compat.npm-api.t1.proof-graph"
-            ],
-            "title": "Versioned NPM API compatibility T1 direct behavior evidence"
-          },
-          {
-            "claim_ids": [
-              "clm:compat.npmctl.t1"
-            ],
-            "id": "evd:t1.compat.npmctl.direct",
-            "status": "passed",
-            "test_ids": [
-              "tst:pytest.compat.npmctl.t1.proof-graph"
-            ],
-            "title": "npmctl compatibility T1 direct behavior evidence"
-          },
-          {
-            "claim_ids": [
-              "clm:identity.users-rbac.t1"
-            ],
-            "id": "evd:t1.identity.users-rbac.direct",
-            "status": "passed",
-            "test_ids": [
-              "tst:pytest.identity.users-rbac.t1.proof-graph",
-              "tst:pytest.identity.bootstrap-password-change.t1"
-            ],
-            "title": "Users and RBAC T1 direct behavior evidence"
-          },
-          {
-            "claim_ids": [
-              "clm:identity.auth-2fa.t1"
-            ],
-            "id": "evd:t1.identity.auth-2fa.direct",
-            "status": "passed",
-            "test_ids": [
-              "tst:pytest.identity.auth-2fa.t1.proof-graph"
-            ],
-            "title": "Authentication and 2FA T1 direct behavior evidence"
-          },
-          {
-            "claim_ids": [
-              "clm:identity.access-tokens.t1"
-            ],
-            "id": "evd:t1.identity.access-tokens.direct",
-            "status": "passed",
-            "test_ids": [
-              "tst:pytest.identity.access-tokens.t1.proof-graph",
-              "tst:pytest.identity.access-tokens.management"
-            ],
-            "title": "Native access tokens T1 direct behavior evidence"
-          },
-          {
-            "claim_ids": [
-              "clm:routing.proxy-hosts.t1"
-            ],
-            "id": "evd:t1.routing.proxy-hosts.direct",
-            "status": "passed",
-            "test_ids": [
-              "tst:pytest.routing.proxy-hosts.t1.proof-graph"
-            ],
-            "title": "Proxy hosts T1 direct behavior evidence"
-          },
-          {
-            "claim_ids": [
-              "clm:routing.redirection-dead-hosts.t1"
-            ],
-            "id": "evd:t1.routing.redirection-dead-hosts.direct",
-            "status": "passed",
-            "test_ids": [
-              "tst:pytest.routing.redirection-dead-hosts.t1.proof-graph"
-            ],
-            "title": "Redirection and dead hosts T1 direct behavior evidence"
-          },
-          {
-            "claim_ids": [
-              "clm:routing.streams.t1"
-            ],
-            "id": "evd:t1.routing.streams.direct",
-            "status": "passed",
-            "test_ids": [
-              "tst:pytest.routing.streams.t1.proof-graph"
-            ],
-            "title": "TCP and UDP streams T1 direct behavior evidence"
-          },
-          {
-            "claim_ids": [
-              "clm:routing.access-lists.t1"
-            ],
-            "id": "evd:t1.routing.access-lists.direct",
-            "status": "passed",
-            "test_ids": [
-              "tst:pytest.routing.access-lists.t1.proof-graph"
-            ],
-            "title": "Proxy access lists T1 direct behavior evidence"
-          },
-          {
-            "claim_ids": [
-              "clm:certificates.custom.t1"
-            ],
-            "id": "evd:t1.certificates.custom.direct",
-            "status": "passed",
-            "test_ids": [
-              "tst:pytest.certificates.custom.t1.proof-graph"
-            ],
-            "title": "Custom certificates T1 direct behavior evidence"
-          },
-          {
-            "claim_ids": [
-              "clm:certificates.acme.t1"
-            ],
-            "id": "evd:t1.certificates.acme.direct",
-            "status": "passed",
-            "test_ids": [
-              "tst:pytest.certificates.acme.t1.proof-graph"
-            ],
-            "title": "ACME certificate lifecycle T1 direct behavior evidence"
-          },
-          {
-            "claim_ids": [
-              "clm:certificates.dns01-providers.t1"
-            ],
-            "id": "evd:t1.certificates.dns01-providers.direct",
-            "status": "passed",
-            "test_ids": [
-              "tst:pytest.certificates.dns01-providers.t1.proof-graph"
-            ],
-            "title": "DNS-01 provider catalog T1 direct behavior evidence"
-          },
-          {
-            "claim_ids": [
-              "clm:runtime.nginx-reconciliation.t1"
-            ],
-            "id": "evd:t1.runtime.nginx-reconciliation.direct",
-            "status": "passed",
-            "test_ids": [
-              "tst:pytest.runtime.nginx-reconciliation.t1.proof-graph"
-            ],
-            "title": "Atomic Nginx reconciliation T1 direct behavior evidence"
-          },
-          {
-            "claim_ids": [
-              "clm:persistence.memory.t1"
-            ],
-            "id": "evd:t1.persistence.memory.direct",
-            "status": "passed",
-            "test_ids": [
-              "tst:pytest.persistence.memory.t1.proof-graph"
-            ],
-            "title": "In-memory persistence T1 direct behavior evidence"
-          },
-          {
-            "claim_ids": [
-              "clm:persistence.sqlite.t1"
-            ],
-            "id": "evd:t1.persistence.sqlite.direct",
-            "status": "passed",
-            "test_ids": [
-              "tst:pytest.persistence.sqlite.t1.proof-graph"
-            ],
-            "title": "SQLite persistence T1 direct behavior evidence"
-          },
-          {
-            "claim_ids": [
-              "clm:persistence.mysql.t1"
-            ],
-            "id": "evd:t1.persistence.mysql.direct",
-            "status": "passed",
-            "test_ids": [
-              "tst:pytest.persistence.mysql.t1.proof-graph"
-            ],
-            "title": "MySQL and MariaDB persistence T1 direct behavior evidence"
-          },
-          {
-            "claim_ids": [
-              "clm:persistence.postgresql.t1"
-            ],
-            "id": "evd:t1.persistence.postgresql.direct",
-            "status": "passed",
-            "test_ids": [
-              "tst:pytest.persistence.postgresql.t1.proof-graph"
-            ],
-            "title": "PostgreSQL persistence T1 direct behavior evidence"
-          },
-          {
-            "claim_ids": [
-              "clm:persistence.filesystem.t1"
-            ],
-            "id": "evd:t1.persistence.filesystem.direct",
-            "status": "passed",
-            "test_ids": [
-              "tst:pytest.persistence.filesystem.t1.proof-graph"
-            ],
-            "title": "Filesystem persistence T1 direct behavior evidence"
-          },
-          {
-            "claim_ids": [
-              "clm:persistence.hybrid.t1"
-            ],
-            "id": "evd:t1.persistence.hybrid.direct",
-            "status": "passed",
-            "test_ids": [
-              "tst:pytest.persistence.hybrid.t1.proof-graph"
-            ],
-            "title": "Hybrid persistence T1 direct behavior evidence"
-          },
-          {
-            "claim_ids": [
-              "clm:experience.operator-ui.t1"
-            ],
-            "id": "evd:t1.experience.operator-ui.direct",
-            "status": "passed",
-            "test_ids": [
-              "tst:pytest.experience.operator-ui.t1.proof-graph",
-              "tst:pytest.identity.bootstrap-password-change.t1",
-              "tst:pytest.experience.operator-ui.audit-columns.t1"
-            ],
-            "title": "Operator UI T1 direct behavior evidence"
-          },
-          {
-            "claim_ids": [
-              "clm:operations.settings-audit-health.t1"
-            ],
-            "id": "evd:t1.operations.settings-audit-health.direct",
-            "status": "passed",
-            "test_ids": [
-              "tst:pytest.operations.settings-audit-health.t1.proof-graph"
-            ],
-            "title": "Settings, audit, reporting, and health T1 direct behavior evidence"
-          },
-          {
-            "claim_ids": [
-              "clm:migration.npm.t1"
-            ],
-            "id": "evd:t1.migration.npm.direct",
-            "status": "passed",
-            "test_ids": [
-              "tst:pytest.migration.npm.t1.proof-graph"
-            ],
-            "title": "NPM migration and cutover T1 direct behavior evidence"
-          },
-          {
-            "claim_ids": [
-              "clm:distribution.oci.t1"
-            ],
-            "id": "evd:t1.distribution.oci.direct",
-            "status": "passed",
-            "test_ids": [
-              "tst:pytest.distribution.oci.t1.proof-graph"
-            ],
-            "title": "OCI distribution T1 direct behavior evidence"
-          },
-          {
-            "claim_ids": [
-              "clm:compat.npm-api.t0"
-            ],
-            "id": "evd:t0.compat.npm-api.scope",
-            "status": "passed",
-            "test_ids": [
-              "tst:pytest.compat.npm-api.t0.proof-graph"
-            ],
-            "title": "Versioned NPM API compatibility T0 governed scope evidence"
-          },
-          {
-            "claim_ids": [
-              "clm:compat.npmctl.t0"
-            ],
-            "id": "evd:t0.compat.npmctl.scope",
-            "status": "passed",
-            "test_ids": [
-              "tst:pytest.compat.npmctl.t0.proof-graph"
-            ],
-            "title": "npmctl compatibility T0 governed scope evidence"
-          },
-          {
-            "claim_ids": [
-              "clm:identity.users-rbac.t0"
-            ],
-            "id": "evd:t0.identity.users-rbac.scope",
-            "status": "passed",
-            "test_ids": [
-              "tst:pytest.identity.users-rbac.t0.proof-graph"
-            ],
-            "title": "Users and RBAC T0 governed scope evidence"
-          },
-          {
-            "claim_ids": [
-              "clm:identity.auth-2fa.t0"
-            ],
-            "id": "evd:t0.identity.auth-2fa.scope",
-            "status": "passed",
-            "test_ids": [
-              "tst:pytest.identity.auth-2fa.t0.proof-graph"
-            ],
-            "title": "Authentication and 2FA T0 governed scope evidence"
-          },
-          {
-            "claim_ids": [
-              "clm:identity.access-tokens.t0"
-            ],
-            "id": "evd:t0.identity.access-tokens.scope",
-            "status": "passed",
-            "test_ids": [
-              "tst:pytest.identity.access-tokens.t0.proof-graph"
-            ],
-            "title": "Native access tokens T0 governed scope evidence"
-          },
-          {
-            "claim_ids": [
-              "clm:routing.proxy-hosts.t0"
-            ],
-            "id": "evd:t0.routing.proxy-hosts.scope",
-            "status": "passed",
-            "test_ids": [
-              "tst:pytest.routing.proxy-hosts.t0.proof-graph"
-            ],
-            "title": "Proxy hosts T0 governed scope evidence"
-          },
-          {
-            "claim_ids": [
-              "clm:routing.redirection-dead-hosts.t0"
-            ],
-            "id": "evd:t0.routing.redirection-dead-hosts.scope",
-            "status": "passed",
-            "test_ids": [
-              "tst:pytest.routing.redirection-dead-hosts.t0.proof-graph"
-            ],
-            "title": "Redirection and dead hosts T0 governed scope evidence"
-          },
-          {
-            "claim_ids": [
-              "clm:routing.streams.t0"
-            ],
-            "id": "evd:t0.routing.streams.scope",
-            "status": "passed",
-            "test_ids": [
-              "tst:pytest.routing.streams.t0.proof-graph"
-            ],
-            "title": "TCP and UDP streams T0 governed scope evidence"
-          },
-          {
-            "claim_ids": [
-              "clm:routing.access-lists.t0"
-            ],
-            "id": "evd:t0.routing.access-lists.scope",
-            "status": "passed",
-            "test_ids": [
-              "tst:pytest.routing.access-lists.t0.proof-graph"
-            ],
-            "title": "Proxy access lists T0 governed scope evidence"
-          },
-          {
-            "claim_ids": [
-              "clm:certificates.custom.t0"
-            ],
-            "id": "evd:t0.certificates.custom.scope",
-            "status": "passed",
-            "test_ids": [
-              "tst:pytest.certificates.custom.t0.proof-graph"
-            ],
-            "title": "Custom certificates T0 governed scope evidence"
-          },
-          {
-            "claim_ids": [
-              "clm:certificates.acme.t0"
-            ],
-            "id": "evd:t0.certificates.acme.scope",
-            "status": "passed",
-            "test_ids": [
-              "tst:pytest.certificates.acme.t0.proof-graph"
-            ],
-            "title": "ACME certificate lifecycle T0 governed scope evidence"
-          },
-          {
-            "claim_ids": [
-              "clm:certificates.dns01-providers.t0"
-            ],
-            "id": "evd:t0.certificates.dns01-providers.scope",
-            "status": "passed",
-            "test_ids": [
-              "tst:pytest.certificates.dns01-providers.t0.proof-graph"
-            ],
-            "title": "DNS-01 provider catalog T0 governed scope evidence"
-          },
-          {
-            "claim_ids": [
-              "clm:runtime.nginx-reconciliation.t0"
-            ],
-            "id": "evd:t0.runtime.nginx-reconciliation.scope",
-            "status": "passed",
-            "test_ids": [
-              "tst:pytest.runtime.nginx-reconciliation.t0.proof-graph"
-            ],
-            "title": "Atomic Nginx reconciliation T0 governed scope evidence"
-          },
-          {
-            "claim_ids": [
-              "clm:persistence.memory.t0"
-            ],
-            "id": "evd:t0.persistence.memory.scope",
-            "status": "passed",
-            "test_ids": [
-              "tst:pytest.persistence.memory.t0.proof-graph"
-            ],
-            "title": "In-memory persistence T0 governed scope evidence"
-          },
-          {
-            "claim_ids": [
-              "clm:persistence.sqlite.t0"
-            ],
-            "id": "evd:t0.persistence.sqlite.scope",
-            "status": "passed",
-            "test_ids": [
-              "tst:pytest.persistence.sqlite.t0.proof-graph"
-            ],
-            "title": "SQLite persistence T0 governed scope evidence"
-          },
-          {
-            "claim_ids": [
-              "clm:persistence.mysql.t0"
-            ],
-            "id": "evd:t0.persistence.mysql.scope",
-            "status": "passed",
-            "test_ids": [
-              "tst:pytest.persistence.mysql.t0.proof-graph"
-            ],
-            "title": "MySQL and MariaDB persistence T0 governed scope evidence"
-          },
-          {
-            "claim_ids": [
-              "clm:persistence.postgresql.t0"
-            ],
-            "id": "evd:t0.persistence.postgresql.scope",
-            "status": "passed",
-            "test_ids": [
-              "tst:pytest.persistence.postgresql.t0.proof-graph"
-            ],
-            "title": "PostgreSQL persistence T0 governed scope evidence"
-          },
-          {
-            "claim_ids": [
-              "clm:persistence.filesystem.t0"
-            ],
-            "id": "evd:t0.persistence.filesystem.scope",
-            "status": "passed",
-            "test_ids": [
-              "tst:pytest.persistence.filesystem.t0.proof-graph"
-            ],
-            "title": "Filesystem persistence T0 governed scope evidence"
-          },
-          {
-            "claim_ids": [
-              "clm:persistence.hybrid.t0"
-            ],
-            "id": "evd:t0.persistence.hybrid.scope",
-            "status": "passed",
-            "test_ids": [
-              "tst:pytest.persistence.hybrid.t0.proof-graph"
-            ],
-            "title": "Hybrid persistence T0 governed scope evidence"
-          },
-          {
-            "claim_ids": [
-              "clm:experience.operator-ui.t0"
-            ],
-            "id": "evd:t0.experience.operator-ui.scope",
-            "status": "passed",
-            "test_ids": [
-              "tst:pytest.experience.operator-ui.t0.proof-graph"
-            ],
-            "title": "Operator UI T0 governed scope evidence"
-          },
-          {
-            "claim_ids": [
-              "clm:operations.settings-audit-health.t0"
-            ],
-            "id": "evd:t0.operations.settings-audit-health.scope",
-            "status": "passed",
-            "test_ids": [
-              "tst:pytest.operations.settings-audit-health.t0.proof-graph"
-            ],
-            "title": "Settings, audit, reporting, and health T0 governed scope evidence"
-          },
-          {
-            "claim_ids": [
-              "clm:migration.npm.t0"
-            ],
-            "id": "evd:t0.migration.npm.scope",
-            "status": "passed",
-            "test_ids": [
-              "tst:pytest.migration.npm.t0.proof-graph"
-            ],
-            "title": "NPM migration and cutover T0 governed scope evidence"
-          },
-          {
-            "claim_ids": [
-              "clm:distribution.oci.t0"
-            ],
-            "id": "evd:t0.distribution.oci.scope",
-            "status": "passed",
-            "test_ids": [
-              "tst:pytest.distribution.oci.t0.proof-graph"
-            ],
-            "title": "OCI distribution T0 governed scope evidence"
-          },
-          {
-            "claim_ids": [
-              "clm:compat.api-transport.t0"
-            ],
-            "id": "evd:t0.compat.api-transport.scope",
-            "status": "passed",
-            "test_ids": [
-              "tst:pytest.compat.api-transport.t0.proof-graph"
-            ],
-            "title": "Compatibility API transport T0 governed scope evidence"
-          },
-          {
-            "claim_ids": [
-              "clm:runtime.nginx-platform.t0"
-            ],
-            "id": "evd:t0.runtime.nginx-platform.scope",
-            "status": "passed",
-            "test_ids": [
-              "tst:pytest.runtime.nginx-platform.t0.proof-graph"
-            ],
-            "title": "Nginx platform controls T0 governed scope evidence"
-          },
-          {
-            "claim_ids": [
-              "clm:operations.traffic-logs.t0"
-            ],
-            "id": "evd:t0.operations.traffic-logs.scope",
-            "status": "passed",
-            "test_ids": [
-              "tst:pytest.operations.traffic-logs.t0.proof-graph"
-            ],
-            "title": "Traffic logs and rotation T0 governed scope evidence"
-          },
-          {
-            "claim_ids": [
-              "clm:operations.upgrades.t0"
-            ],
-            "id": "evd:t0.operations.upgrades.scope",
-            "status": "passed",
-            "test_ids": [
-              "tst:pytest.operations.upgrades.t0.proof-graph"
-            ],
-            "title": "Runtime upgrades and version policy T0 governed scope evidence"
-          },
-          {
-            "claim_ids": [
-              "clm:distribution.runtime-identity.t0"
-            ],
-            "id": "evd:t0.distribution.runtime-identity.scope",
-            "status": "passed",
-            "test_ids": [
-              "tst:pytest.distribution.runtime-identity.t0.proof-graph"
-            ],
-            "title": "Container runtime identity T0 governed scope evidence"
-          },
-          {
-            "claim_ids": [
-              "clm:compat.api-transport.t2"
-            ],
-            "id": "evd:t2.compat.api-transport.robustness",
-            "status": "passed",
-            "test_ids": [
-              "tst:pytest.compat.api-transport.t2.proof-graph"
-            ],
-            "title": "compat.api-transport T2 robustness evidence"
-          },
-          {
-            "claim_ids": [
-              "clm:runtime.nginx-platform.t2"
-            ],
-            "id": "evd:t2.runtime.nginx-platform.robustness",
-            "status": "passed",
-            "test_ids": [
-              "tst:pytest.runtime.nginx-platform.t2.proof-graph"
-            ],
-            "title": "runtime.nginx-platform T2 robustness evidence"
-          },
-          {
-            "claim_ids": [
-              "clm:operations.traffic-logs.t2"
-            ],
-            "id": "evd:t2.operations.traffic-logs.robustness",
-            "status": "passed",
-            "test_ids": [
-              "tst:pytest.operations.traffic-logs.t2.proof-graph"
-            ],
-            "title": "operations.traffic-logs T2 robustness evidence"
-          },
-          {
-            "claim_ids": [
-              "clm:operations.upgrades.t2"
-            ],
-            "id": "evd:t2.operations.upgrades.robustness",
-            "status": "passed",
-            "test_ids": [
-              "tst:pytest.operations.upgrades.t2.proof-graph"
-            ],
-            "title": "operations.upgrades T2 robustness evidence"
-          },
-          {
-            "claim_ids": [
-              "clm:distribution.runtime-identity.t2"
-            ],
-            "id": "evd:t2.distribution.runtime-identity.robustness",
-            "status": "passed",
-            "test_ids": [
-              "tst:pytest.distribution.runtime-identity.t2.proof-graph"
-            ],
-            "title": "distribution.runtime-identity T2 robustness evidence"
-          },
-          {
-            "claim_ids": [
-              "clm:distribution.oci.t2",
-              "clm:distribution.runtime-identity.t2"
-            ],
-            "id": "evd:t2.distribution.oci.publication",
-            "status": "passed",
-            "test_ids": [
-              "tst:oci.distribution.oci.publication"
-            ],
-            "title": "GHCR OCI publication evidence"
-          },
-          {
-            "claim_ids": [
-              "clm:experience.operator-cli.t0",
-              "clm:experience.operator-cli.t1"
-            ],
-            "id": "evd:t1.experience.operator-cli.proof-graph",
-            "status": "passed",
-            "test_ids": [
-              "tst:pytest.experience.operator-cli.t0.proof-graph",
-              "tst:pytest.experience.operator-cli.t1.proof-graph"
-            ],
-            "title": "Operator CLI direct test evidence"
-          },
-          {
-            "claim_ids": [
-              "clm:experience.operator-cli.t2"
-            ],
-            "id": "evd:t2.experience.operator-cli.container",
-            "status": "passed",
-            "test_ids": [
-              "tst:container.experience.operator-cli.t2"
-            ],
-            "title": "Operator CLI composed container evidence"
-          },
-          {
-            "claim_ids": [
-              "clm:routing.upstream-health.t0",
-              "clm:routing.upstream-health.t1",
-              "clm:routing.upstream-health.t2"
-            ],
-            "id": "evd:t2.routing.upstream-health.proof-graph",
-            "status": "passed",
-            "test_ids": [
-              "tst:pytest.routing.upstream-health.t0.proof-graph",
-              "tst:pytest.routing.upstream-health.t1.proof-graph",
-              "tst:pytest.routing.upstream-health.t2.proof-graph"
-            ],
-            "title": "Proxy-host upstream health proof-graph scaffold evidence"
-          },
-          {
-            "claim_ids": [
-              "clm:routing.disabled-host-isolation.t0",
-              "clm:routing.disabled-host-isolation.t1",
-              "clm:routing.disabled-host-isolation.t2"
-            ],
-            "id": "evd:t2.routing.disabled-host-isolation.proof-graph",
-            "status": "passed",
-            "test_ids": [
-              "tst:pytest.routing.disabled-host-isolation.t0.proof-graph",
-              "tst:pytest.routing.disabled-host-isolation.t1.proof-graph",
-              "tst:pytest.routing.disabled-host-isolation.t2.proof-graph"
-            ],
-            "title": "Disabled proxy-host isolation proof-graph scaffold evidence"
-          },
-          {
-            "claim_ids": [
-              "clm:compat.npmctl.t2"
-            ],
-            "id": "evd:t2.compat.npmctl.live-replay-2026-07-19",
-            "status": "passed",
-            "test_ids": [
-              "tst:pytest.compat.npmctl.t2.proof-graph"
-            ],
-            "title": "Current npmctl live replay against Portwyrm image"
-          },
-          {
-            "claim_ids": [
-              "clm:compat.npmctl.t1"
-            ],
-            "id": "evd:t1.compat.npmctl.resource-matrix-2026-07-19",
-            "status": "passed",
-            "test_ids": [
-              "tst:pytest.compat.npmctl.resource-matrix.t1"
-            ],
-            "title": "Non-proxy npmctl resource matrix"
           }
         ],
         "features": [
@@ -4606,201 +2319,6 @@
               "tst:pytest.experience.operator-ui.audit-columns.t1"
             ],
             "title": "Operator UI"
-          },
-          {
-            "claim_ids": [
-              "clm:operations.settings-audit-health.t0",
-              "clm:operations.settings-audit-health.t1",
-              "clm:operations.settings-audit-health.t2"
-            ],
-            "id": "feat:operations.settings-audit-health",
-            "implementation_status": "partial",
-            "test_ids": [
-              "tst:pytest.operations.settings-audit-health.t0.proof-graph",
-              "tst:pytest.operations.settings-audit-health.t1.proof-graph",
-              "tst:pytest.operations.settings-audit-health.t2.proof-graph"
-            ],
-            "title": "Settings, audit, reporting, and health"
-          },
-          {
-            "claim_ids": [
-              "clm:migration.npm.t0",
-              "clm:migration.npm.t1",
-              "clm:migration.npm.t2"
-            ],
-            "id": "feat:migration.npm",
-            "implementation_status": "implemented",
-            "test_ids": [
-              "tst:pytest.migration.npm.t0.proof-graph",
-              "tst:pytest.migration.npm.t1.proof-graph",
-              "tst:pytest.migration.npm.t2.proof-graph"
-            ],
-            "title": "NPM migration and cutover"
-          },
-          {
-            "claim_ids": [
-              "clm:distribution.oci.t0",
-              "clm:distribution.oci.t1",
-              "clm:distribution.oci.t2"
-            ],
-            "id": "feat:distribution.oci",
-            "implementation_status": "implemented",
-            "test_ids": [
-              "tst:pytest.distribution.oci.t0.proof-graph",
-              "tst:pytest.distribution.oci.t1.proof-graph",
-              "tst:pytest.distribution.oci.t2.proof-graph",
-              "tst:oci.distribution.oci.publication"
-            ],
-            "title": "OCI distribution"
-          },
-          {
-            "claim_ids": [
-              "clm:compat.api-transport.t0",
-              "clm:compat.api-transport.t1",
-              "clm:compat.api-transport.t2"
-            ],
-            "id": "feat:compat.api-transport",
-            "implementation_status": "implemented",
-            "test_ids": [
-              "tst:pytest.compat.api-transport.t0.proof-graph",
-              "tst:pytest.compat.api-transport.t1.proof-graph",
-              "tst:pytest.compat.api-transport.t2.proof-graph"
-            ],
-            "title": "Compatibility API transport"
-          },
-          {
-            "claim_ids": [
-              "clm:runtime.nginx-platform.t0",
-              "clm:runtime.nginx-platform.t1",
-              "clm:runtime.nginx-platform.t2"
-            ],
-            "id": "feat:runtime.nginx-platform",
-            "implementation_status": "implemented",
-            "test_ids": [
-              "tst:pytest.runtime.nginx-platform.t0.proof-graph",
-              "tst:pytest.runtime.nginx-platform.t1.proof-graph",
-              "tst:pytest.runtime.nginx-platform.t2.proof-graph"
-            ],
-            "title": "Nginx platform controls"
-          },
-          {
-            "claim_ids": [
-              "clm:operations.traffic-logs.t0",
-              "clm:operations.traffic-logs.t1",
-              "clm:operations.traffic-logs.t2"
-            ],
-            "id": "feat:operations.traffic-logs",
-            "implementation_status": "implemented",
-            "test_ids": [
-              "tst:pytest.operations.traffic-logs.t0.proof-graph",
-              "tst:pytest.operations.traffic-logs.t1.proof-graph",
-              "tst:pytest.operations.traffic-logs.t2.proof-graph"
-            ],
-            "title": "Traffic logs and rotation"
-          },
-          {
-            "claim_ids": [
-              "clm:operations.upgrades.t0",
-              "clm:operations.upgrades.t1",
-              "clm:operations.upgrades.t2"
-            ],
-            "id": "feat:operations.upgrades",
-            "implementation_status": "implemented",
-            "test_ids": [
-              "tst:pytest.operations.upgrades.t0.proof-graph",
-              "tst:pytest.operations.upgrades.t1.proof-graph",
-              "tst:pytest.operations.upgrades.t2.proof-graph"
-            ],
-            "title": "Runtime upgrades and version policy"
-          },
-          {
-            "claim_ids": [
-              "clm:distribution.runtime-identity.t0",
-              "clm:distribution.runtime-identity.t1",
-              "clm:distribution.runtime-identity.t2"
-            ],
-            "id": "feat:distribution.runtime-identity",
-            "implementation_status": "implemented",
-            "test_ids": [
-              "tst:pytest.distribution.runtime-identity.t0.proof-graph",
-              "tst:pytest.distribution.runtime-identity.t1.proof-graph",
-              "tst:pytest.distribution.runtime-identity.t2.proof-graph",
-              "tst:oci.distribution.oci.publication"
-            ],
-            "title": "Container runtime identity"
-          },
-          {
-            "claim_ids": [
-              "clm:experience.operator-cli.t0",
-              "clm:experience.operator-cli.t1",
-              "clm:experience.operator-cli.t2"
-            ],
-            "id": "feat:experience.operator-cli",
-            "implementation_status": "implemented",
-            "test_ids": [
-              "tst:pytest.experience.operator-cli.t0.proof-graph",
-              "tst:pytest.experience.operator-cli.t1.proof-graph",
-              "tst:container.experience.operator-cli.t2"
-            ],
-            "title": "Operator CLI"
-          },
-          {
-            "claim_ids": [],
-            "id": "feat:security.mtls",
-            "implementation_status": "absent",
-            "test_ids": [],
-            "title": "Mutual TLS"
-          },
-          {
-            "claim_ids": [],
-            "id": "feat:routing.http3-quic",
-            "implementation_status": "absent",
-            "test_ids": [],
-            "title": "HTTP/3 and QUIC data plane"
-          },
-          {
-            "claim_ids": [],
-            "id": "feat:experience.advanced-user-preferences",
-            "implementation_status": "absent",
-            "test_ids": [],
-            "title": "Advanced durable user preferences"
-          },
-          {
-            "claim_ids": [],
-            "id": "feat:routing.webtransport",
-            "implementation_status": "absent",
-            "test_ids": [],
-            "title": "WebTransport"
-          },
-          {
-            "claim_ids": [
-              "clm:routing.upstream-health.t0",
-              "clm:routing.upstream-health.t1",
-              "clm:routing.upstream-health.t2"
-            ],
-            "id": "feat:routing.upstream-health",
-            "implementation_status": "implemented",
-            "test_ids": [
-              "tst:pytest.routing.upstream-health.t0.proof-graph",
-              "tst:pytest.routing.upstream-health.t1.proof-graph",
-              "tst:pytest.routing.upstream-health.t2.proof-graph"
-            ],
-            "title": "Proxy-host upstream health"
-          },
-          {
-            "claim_ids": [
-              "clm:routing.disabled-host-isolation.t0",
-              "clm:routing.disabled-host-isolation.t1",
-              "clm:routing.disabled-host-isolation.t2"
-            ],
-            "id": "feat:routing.disabled-host-isolation",
-            "implementation_status": "implemented",
-            "test_ids": [
-              "tst:pytest.routing.disabled-host-isolation.t0.proof-graph",
-              "tst:pytest.routing.disabled-host-isolation.t1.proof-graph",
-              "tst:pytest.routing.disabled-host-isolation.t2.proof-graph"
-            ],
-            "title": "Disabled proxy-host isolation"
           }
         ],
         "issues": [
@@ -5035,216 +2553,6 @@
             "id": "spc:0619",
             "status": "draft",
             "title": "Governed Source Snapshot Contract"
-          },
-          {
-            "id": "spc:0620",
-            "status": "draft",
-            "title": "Local Evidence Bundle Contract"
-          },
-          {
-            "id": "spc:0621",
-            "status": "draft",
-            "title": "Output Artifact Manifest Contract"
-          },
-          {
-            "id": "spc:0622",
-            "status": "draft",
-            "title": "Local Release Verification And Gate Contract"
-          },
-          {
-            "id": "spc:0623",
-            "status": "draft",
-            "title": "General rules of interpretation"
-          },
-          {
-            "id": "spc:0624",
-            "status": "draft",
-            "title": "SSOT definitions"
-          },
-          {
-            "id": "spc:0625",
-            "status": "draft",
-            "title": "Claim Tier Gates"
-          },
-          {
-            "id": "spc:0626",
-            "status": "draft",
-            "title": "External Validation Evidence"
-          },
-          {
-            "id": "spc:0627",
-            "status": "accepted",
-            "title": "Feature parent link contract"
-          },
-          {
-            "id": "spc:0628",
-            "status": "accepted",
-            "title": "Feature parent CLI contract"
-          },
-          {
-            "id": "spc:0629",
-            "status": "draft",
-            "title": "SSOT MCP and CLI surface parity contract"
-          },
-          {
-            "id": "spc:0630",
-            "status": "draft",
-            "title": "SSOT MCP registry repair authority"
-          },
-          {
-            "id": "spc:0631",
-            "status": "draft",
-            "title": "Scoped maturation blocker contract"
-          },
-          {
-            "id": "spc:0632",
-            "status": "draft",
-            "title": "MCP upgrade delegation contract"
-          },
-          {
-            "id": "spc:0633",
-            "status": "draft",
-            "title": "Targeted scaffold repair contract"
-          },
-          {
-            "id": "spc:0634",
-            "status": "draft",
-            "title": "Worker actionability and repair loop"
-          },
-          {
-            "id": "spc:0635",
-            "status": "accepted",
-            "title": "Registry save validation contract"
-          },
-          {
-            "id": "spc:0636",
-            "status": "draft",
-            "title": "Proof Graph Assurance Contract"
-          },
-          {
-            "id": "spc:0637",
-            "status": "draft",
-            "title": "Proof Graph Materialization And Certification Flow"
-          },
-          {
-            "id": "spc:0638",
-            "status": "draft",
-            "title": "Feature create default proof scaffold contract"
-          },
-          {
-            "id": "spc:0639",
-            "status": "draft",
-            "title": "Forward-only pack schema compatibility contract"
-          },
-          {
-            "id": "spc:0640",
-            "status": "draft",
-            "title": "Evidence Centered Proof Link Contract"
-          },
-          {
-            "id": "spc:0641",
-            "status": "draft",
-            "title": "Lineage graph HTML open flag contract"
-          },
-          {
-            "id": "spc:1000",
-            "status": "accepted",
-            "title": "NPM and npmctl compatibility"
-          },
-          {
-            "id": "spc:1001",
-            "status": "accepted",
-            "title": "Canonical resource and ownership model"
-          },
-          {
-            "id": "spc:1002",
-            "status": "accepted",
-            "title": "Identity, authentication, and authorization"
-          },
-          {
-            "id": "spc:1003",
-            "status": "accepted",
-            "title": "Hosts, streams, and access lists"
-          },
-          {
-            "id": "spc:1004",
-            "status": "accepted",
-            "title": "Certificate, ACME, and DNS lifecycle"
-          },
-          {
-            "id": "spc:1005",
-            "status": "accepted",
-            "title": "Nginx runtime reconciliation"
-          },
-          {
-            "id": "spc:1006",
-            "status": "accepted",
-            "title": "Persistence and export-bundle conformance"
-          },
-          {
-            "id": "spc:1007",
-            "status": "accepted",
-            "title": "Operator UI experience"
-          },
-          {
-            "id": "spc:1008",
-            "status": "accepted",
-            "title": "Settings, audit, reporting, and health"
-          },
-          {
-            "id": "spc:1009",
-            "status": "accepted",
-            "title": "NPM migration, backup, and cutover"
-          },
-          {
-            "id": "spc:1010",
-            "status": "accepted",
-            "title": "OCI distribution and release gates"
-          },
-          {
-            "id": "spc:1011",
-            "status": "accepted",
-            "title": "Proof and release evidence contract"
-          },
-          {
-            "id": "spc:1012",
-            "status": "accepted",
-            "title": "Container runtime contract"
-          },
-          {
-            "id": "spc:1013",
-            "status": "accepted",
-            "title": "Advanced Nginx configuration security contract"
-          },
-          {
-            "id": "spc:1014",
-            "status": "accepted",
-            "title": "DNS provider plugin contract"
-          },
-          {
-            "id": "spc:1015",
-            "status": "accepted",
-            "title": "API transport and security contract"
-          },
-          {
-            "id": "spc:1016",
-            "status": "accepted",
-            "title": "Nginx platform and operations contract"
-          },
-          {
-            "id": "spc:1017",
-            "status": "accepted",
-            "title": "Compiled operator UI contract"
-          },
-          {
-            "id": "spc:1018",
-            "status": "accepted",
-            "title": "Reverse-proxy operational health"
-          },
-          {
-            "id": "spc:1019",
-            "status": "draft",
-            "title": "npmctl aggregate lifecycle closure"
           }
         ],
         "tests": [
@@ -5528,1117 +2836,30 @@
             "id": "tst:pytest.routing.redirection-dead-hosts.t2.proof-graph",
             "status": "passing",
             "title": "routing.redirection-dead-hosts T2 robustness"
-          },
-          {
-            "claim_ids": [
-              "clm:routing.streams.t0"
-            ],
-            "evidence_ids": [
-              "evd:t0.routing.streams.scope"
-            ],
-            "feature_ids": [
-              "feat:routing.streams"
-            ],
-            "id": "tst:pytest.routing.streams.t0.proof-graph",
-            "status": "passing",
-            "title": "TCP and UDP streams T0 governed inventory"
-          },
-          {
-            "claim_ids": [
-              "clm:routing.streams.t1"
-            ],
-            "evidence_ids": [
-              "evd:t1.routing.streams.direct"
-            ],
-            "feature_ids": [
-              "feat:routing.streams"
-            ],
-            "id": "tst:pytest.routing.streams.t1.proof-graph",
-            "status": "passing",
-            "title": "TCP and UDP streams T1 direct behavior"
-          },
-          {
-            "claim_ids": [
-              "clm:routing.streams.t2"
-            ],
-            "evidence_ids": [
-              "evd:t2.routing.streams.proof-graph"
-            ],
-            "feature_ids": [
-              "feat:routing.streams"
-            ],
-            "id": "tst:pytest.routing.streams.t2.proof-graph",
-            "status": "passing",
-            "title": "routing.streams T2 robustness"
-          },
-          {
-            "claim_ids": [
-              "clm:routing.access-lists.t0"
-            ],
-            "evidence_ids": [
-              "evd:t0.routing.access-lists.scope"
-            ],
-            "feature_ids": [
-              "feat:routing.access-lists"
-            ],
-            "id": "tst:pytest.routing.access-lists.t0.proof-graph",
-            "status": "passing",
-            "title": "Proxy access lists T0 governed inventory"
-          },
-          {
-            "claim_ids": [
-              "clm:routing.access-lists.t1"
-            ],
-            "evidence_ids": [
-              "evd:t1.routing.access-lists.direct"
-            ],
-            "feature_ids": [
-              "feat:routing.access-lists"
-            ],
-            "id": "tst:pytest.routing.access-lists.t1.proof-graph",
-            "status": "passing",
-            "title": "Proxy access lists T1 direct behavior"
-          },
-          {
-            "claim_ids": [
-              "clm:routing.access-lists.t2"
-            ],
-            "evidence_ids": [
-              "evd:t2.routing.access-lists.proof-graph"
-            ],
-            "feature_ids": [
-              "feat:routing.access-lists"
-            ],
-            "id": "tst:pytest.routing.access-lists.t2.proof-graph",
-            "status": "passing",
-            "title": "routing.access-lists T2 robustness"
-          },
-          {
-            "claim_ids": [
-              "clm:certificates.custom.t0"
-            ],
-            "evidence_ids": [
-              "evd:t0.certificates.custom.scope"
-            ],
-            "feature_ids": [
-              "feat:certificates.custom"
-            ],
-            "id": "tst:pytest.certificates.custom.t0.proof-graph",
-            "status": "passing",
-            "title": "Custom certificates T0 governed inventory"
-          },
-          {
-            "claim_ids": [
-              "clm:certificates.custom.t1"
-            ],
-            "evidence_ids": [
-              "evd:t1.certificates.custom.direct"
-            ],
-            "feature_ids": [
-              "feat:certificates.custom"
-            ],
-            "id": "tst:pytest.certificates.custom.t1.proof-graph",
-            "status": "passing",
-            "title": "Custom certificates T1 direct behavior"
-          },
-          {
-            "claim_ids": [
-              "clm:certificates.custom.t2"
-            ],
-            "evidence_ids": [
-              "evd:t2.certificates.custom.proof-graph"
-            ],
-            "feature_ids": [
-              "feat:certificates.custom"
-            ],
-            "id": "tst:pytest.certificates.custom.t2.proof-graph",
-            "status": "passing",
-            "title": "certificates.custom T2 robustness"
-          },
-          {
-            "claim_ids": [
-              "clm:certificates.acme.t0"
-            ],
-            "evidence_ids": [
-              "evd:t0.certificates.acme.scope"
-            ],
-            "feature_ids": [
-              "feat:certificates.acme"
-            ],
-            "id": "tst:pytest.certificates.acme.t0.proof-graph",
-            "status": "passing",
-            "title": "ACME certificate lifecycle T0 governed inventory"
-          },
-          {
-            "claim_ids": [
-              "clm:certificates.acme.t1"
-            ],
-            "evidence_ids": [
-              "evd:t1.certificates.acme.direct"
-            ],
-            "feature_ids": [
-              "feat:certificates.acme"
-            ],
-            "id": "tst:pytest.certificates.acme.t1.proof-graph",
-            "status": "passing",
-            "title": "ACME certificate lifecycle T1 direct behavior"
-          },
-          {
-            "claim_ids": [
-              "clm:certificates.acme.t2"
-            ],
-            "evidence_ids": [
-              "evd:t2.certificates.acme.proof-graph"
-            ],
-            "feature_ids": [
-              "feat:certificates.acme"
-            ],
-            "id": "tst:pytest.certificates.acme.t2.proof-graph",
-            "status": "passing",
-            "title": "certificates.acme T2 robustness"
-          },
-          {
-            "claim_ids": [
-              "clm:certificates.dns01-providers.t0"
-            ],
-            "evidence_ids": [
-              "evd:t0.certificates.dns01-providers.scope"
-            ],
-            "feature_ids": [
-              "feat:certificates.dns01-providers"
-            ],
-            "id": "tst:pytest.certificates.dns01-providers.t0.proof-graph",
-            "status": "passing",
-            "title": "DNS-01 provider catalog T0 governed inventory"
-          },
-          {
-            "claim_ids": [
-              "clm:certificates.dns01-providers.t1"
-            ],
-            "evidence_ids": [
-              "evd:t1.certificates.dns01-providers.direct"
-            ],
-            "feature_ids": [
-              "feat:certificates.dns01-providers"
-            ],
-            "id": "tst:pytest.certificates.dns01-providers.t1.proof-graph",
-            "status": "passing",
-            "title": "DNS-01 provider catalog T1 direct behavior"
-          },
-          {
-            "claim_ids": [
-              "clm:certificates.dns01-providers.t2"
-            ],
-            "evidence_ids": [
-              "evd:t2.certificates.dns01-providers.proof-graph"
-            ],
-            "feature_ids": [
-              "feat:certificates.dns01-providers"
-            ],
-            "id": "tst:pytest.certificates.dns01-providers.t2.proof-graph",
-            "status": "passing",
-            "title": "certificates.dns01-providers T2 robustness"
-          },
-          {
-            "claim_ids": [
-              "clm:runtime.nginx-reconciliation.t0"
-            ],
-            "evidence_ids": [
-              "evd:t0.runtime.nginx-reconciliation.scope"
-            ],
-            "feature_ids": [
-              "feat:runtime.nginx-reconciliation"
-            ],
-            "id": "tst:pytest.runtime.nginx-reconciliation.t0.proof-graph",
-            "status": "passing",
-            "title": "Atomic Nginx reconciliation T0 governed inventory"
-          },
-          {
-            "claim_ids": [
-              "clm:runtime.nginx-reconciliation.t1"
-            ],
-            "evidence_ids": [
-              "evd:t1.runtime.nginx-reconciliation.direct"
-            ],
-            "feature_ids": [
-              "feat:runtime.nginx-reconciliation"
-            ],
-            "id": "tst:pytest.runtime.nginx-reconciliation.t1.proof-graph",
-            "status": "passing",
-            "title": "Atomic Nginx reconciliation T1 direct behavior"
-          },
-          {
-            "claim_ids": [
-              "clm:runtime.nginx-reconciliation.t2"
-            ],
-            "evidence_ids": [
-              "evd:t2.runtime.nginx-reconciliation.proof-graph"
-            ],
-            "feature_ids": [
-              "feat:runtime.nginx-reconciliation"
-            ],
-            "id": "tst:pytest.runtime.nginx-reconciliation.t2.proof-graph",
-            "status": "passing",
-            "title": "runtime.nginx-reconciliation T2 robustness"
-          },
-          {
-            "claim_ids": [
-              "clm:persistence.memory.t0"
-            ],
-            "evidence_ids": [
-              "evd:t0.persistence.memory.scope"
-            ],
-            "feature_ids": [
-              "feat:persistence.memory"
-            ],
-            "id": "tst:pytest.persistence.memory.t0.proof-graph",
-            "status": "passing",
-            "title": "In-memory persistence T0 governed inventory"
-          },
-          {
-            "claim_ids": [
-              "clm:persistence.memory.t1"
-            ],
-            "evidence_ids": [
-              "evd:t1.persistence.memory.direct"
-            ],
-            "feature_ids": [
-              "feat:persistence.memory"
-            ],
-            "id": "tst:pytest.persistence.memory.t1.proof-graph",
-            "status": "passing",
-            "title": "In-memory persistence T1 direct behavior"
-          },
-          {
-            "claim_ids": [
-              "clm:persistence.memory.t2"
-            ],
-            "evidence_ids": [
-              "evd:t2.persistence.memory.proof-graph"
-            ],
-            "feature_ids": [
-              "feat:persistence.memory"
-            ],
-            "id": "tst:pytest.persistence.memory.t2.proof-graph",
-            "status": "passing",
-            "title": "persistence.memory T2 robustness"
-          },
-          {
-            "claim_ids": [
-              "clm:persistence.sqlite.t0"
-            ],
-            "evidence_ids": [
-              "evd:t0.persistence.sqlite.scope"
-            ],
-            "feature_ids": [
-              "feat:persistence.sqlite"
-            ],
-            "id": "tst:pytest.persistence.sqlite.t0.proof-graph",
-            "status": "passing",
-            "title": "SQLite persistence T0 governed inventory"
-          },
-          {
-            "claim_ids": [
-              "clm:persistence.sqlite.t1"
-            ],
-            "evidence_ids": [
-              "evd:t1.persistence.sqlite.direct"
-            ],
-            "feature_ids": [
-              "feat:persistence.sqlite"
-            ],
-            "id": "tst:pytest.persistence.sqlite.t1.proof-graph",
-            "status": "passing",
-            "title": "SQLite persistence T1 direct behavior"
-          },
-          {
-            "claim_ids": [
-              "clm:persistence.sqlite.t2"
-            ],
-            "evidence_ids": [
-              "evd:t2.persistence.sqlite.proof-graph"
-            ],
-            "feature_ids": [
-              "feat:persistence.sqlite"
-            ],
-            "id": "tst:pytest.persistence.sqlite.t2.proof-graph",
-            "status": "passing",
-            "title": "persistence.sqlite T2 robustness"
-          },
-          {
-            "claim_ids": [
-              "clm:persistence.mysql.t0"
-            ],
-            "evidence_ids": [
-              "evd:t0.persistence.mysql.scope"
-            ],
-            "feature_ids": [
-              "feat:persistence.mysql"
-            ],
-            "id": "tst:pytest.persistence.mysql.t0.proof-graph",
-            "status": "passing",
-            "title": "MySQL and MariaDB persistence T0 governed inventory"
-          },
-          {
-            "claim_ids": [
-              "clm:persistence.mysql.t1"
-            ],
-            "evidence_ids": [
-              "evd:t1.persistence.mysql.direct"
-            ],
-            "feature_ids": [
-              "feat:persistence.mysql"
-            ],
-            "id": "tst:pytest.persistence.mysql.t1.proof-graph",
-            "status": "passing",
-            "title": "MySQL and MariaDB persistence T1 direct behavior"
-          },
-          {
-            "claim_ids": [
-              "clm:persistence.mysql.t2"
-            ],
-            "evidence_ids": [
-              "evd:t2.persistence.mysql.proof-graph"
-            ],
-            "feature_ids": [
-              "feat:persistence.mysql"
-            ],
-            "id": "tst:pytest.persistence.mysql.t2.proof-graph",
-            "status": "passing",
-            "title": "persistence.mysql T2 robustness"
-          },
-          {
-            "claim_ids": [
-              "clm:persistence.postgresql.t0"
-            ],
-            "evidence_ids": [
-              "evd:t0.persistence.postgresql.scope"
-            ],
-            "feature_ids": [
-              "feat:persistence.postgresql"
-            ],
-            "id": "tst:pytest.persistence.postgresql.t0.proof-graph",
-            "status": "passing",
-            "title": "PostgreSQL persistence T0 governed inventory"
-          },
-          {
-            "claim_ids": [
-              "clm:persistence.postgresql.t1"
-            ],
-            "evidence_ids": [
-              "evd:t1.persistence.postgresql.direct"
-            ],
-            "feature_ids": [
-              "feat:persistence.postgresql"
-            ],
-            "id": "tst:pytest.persistence.postgresql.t1.proof-graph",
-            "status": "passing",
-            "title": "PostgreSQL persistence T1 direct behavior"
-          },
-          {
-            "claim_ids": [
-              "clm:persistence.postgresql.t2"
-            ],
-            "evidence_ids": [
-              "evd:t2.persistence.postgresql.proof-graph"
-            ],
-            "feature_ids": [
-              "feat:persistence.postgresql"
-            ],
-            "id": "tst:pytest.persistence.postgresql.t2.proof-graph",
-            "status": "passing",
-            "title": "persistence.postgresql T2 robustness"
-          },
-          {
-            "claim_ids": [
-              "clm:persistence.filesystem.t0"
-            ],
-            "evidence_ids": [
-              "evd:t0.persistence.filesystem.scope"
-            ],
-            "feature_ids": [
-              "feat:persistence.filesystem"
-            ],
-            "id": "tst:pytest.persistence.filesystem.t0.proof-graph",
-            "status": "passing",
-            "title": "Filesystem persistence T0 governed inventory"
-          },
-          {
-            "claim_ids": [
-              "clm:persistence.filesystem.t1"
-            ],
-            "evidence_ids": [
-              "evd:t1.persistence.filesystem.direct"
-            ],
-            "feature_ids": [
-              "feat:persistence.filesystem"
-            ],
-            "id": "tst:pytest.persistence.filesystem.t1.proof-graph",
-            "status": "passing",
-            "title": "Filesystem persistence T1 direct behavior"
-          },
-          {
-            "claim_ids": [
-              "clm:persistence.filesystem.t2"
-            ],
-            "evidence_ids": [
-              "evd:t2.persistence.filesystem.proof-graph"
-            ],
-            "feature_ids": [
-              "feat:persistence.filesystem"
-            ],
-            "id": "tst:pytest.persistence.filesystem.t2.proof-graph",
-            "status": "passing",
-            "title": "persistence.filesystem T2 robustness"
-          },
-          {
-            "claim_ids": [
-              "clm:persistence.hybrid.t0"
-            ],
-            "evidence_ids": [
-              "evd:t0.persistence.hybrid.scope"
-            ],
-            "feature_ids": [
-              "feat:persistence.hybrid"
-            ],
-            "id": "tst:pytest.persistence.hybrid.t0.proof-graph",
-            "status": "passing",
-            "title": "Hybrid persistence T0 governed inventory"
-          },
-          {
-            "claim_ids": [
-              "clm:persistence.hybrid.t1"
-            ],
-            "evidence_ids": [
-              "evd:t1.persistence.hybrid.direct"
-            ],
-            "feature_ids": [
-              "feat:persistence.hybrid"
-            ],
-            "id": "tst:pytest.persistence.hybrid.t1.proof-graph",
-            "status": "passing",
-            "title": "Hybrid persistence T1 direct behavior"
-          },
-          {
-            "claim_ids": [
-              "clm:persistence.hybrid.t2"
-            ],
-            "evidence_ids": [
-              "evd:t2.persistence.hybrid.proof-graph"
-            ],
-            "feature_ids": [
-              "feat:persistence.hybrid"
-            ],
-            "id": "tst:pytest.persistence.hybrid.t2.proof-graph",
-            "status": "passing",
-            "title": "persistence.hybrid T2 robustness"
-          },
-          {
-            "claim_ids": [
-              "clm:experience.operator-ui.t0"
-            ],
-            "evidence_ids": [
-              "evd:t0.experience.operator-ui.scope"
-            ],
-            "feature_ids": [
-              "feat:experience.operator-ui"
-            ],
-            "id": "tst:pytest.experience.operator-ui.t0.proof-graph",
-            "status": "passing",
-            "title": "Operator UI T0 governed inventory"
-          },
-          {
-            "claim_ids": [
-              "clm:experience.operator-ui.t1"
-            ],
-            "evidence_ids": [
-              "evd:t1.experience.operator-ui.direct"
-            ],
-            "feature_ids": [
-              "feat:experience.operator-ui"
-            ],
-            "id": "tst:pytest.experience.operator-ui.t1.proof-graph",
-            "status": "passing",
-            "title": "Operator UI T1 direct behavior"
-          },
-          {
-            "claim_ids": [
-              "clm:experience.operator-ui.t2"
-            ],
-            "evidence_ids": [
-              "evd:t2.experience.operator-ui.proof-graph"
-            ],
-            "feature_ids": [
-              "feat:experience.operator-ui"
-            ],
-            "id": "tst:pytest.experience.operator-ui.t2.proof-graph",
-            "status": "passing",
-            "title": "experience.operator-ui T2 robustness"
-          },
-          {
-            "claim_ids": [
-              "clm:operations.settings-audit-health.t0"
-            ],
-            "evidence_ids": [
-              "evd:t0.operations.settings-audit-health.scope"
-            ],
-            "feature_ids": [
-              "feat:operations.settings-audit-health"
-            ],
-            "id": "tst:pytest.operations.settings-audit-health.t0.proof-graph",
-            "status": "passing",
-            "title": "Settings, audit, reporting, and health T0 governed inventory"
-          },
-          {
-            "claim_ids": [
-              "clm:operations.settings-audit-health.t1"
-            ],
-            "evidence_ids": [
-              "evd:t1.operations.settings-audit-health.direct"
-            ],
-            "feature_ids": [
-              "feat:operations.settings-audit-health"
-            ],
-            "id": "tst:pytest.operations.settings-audit-health.t1.proof-graph",
-            "status": "passing",
-            "title": "Settings, audit, reporting, and health T1 direct behavior"
-          },
-          {
-            "claim_ids": [
-              "clm:operations.settings-audit-health.t2"
-            ],
-            "evidence_ids": [
-              "evd:t2.operations.settings-audit-health.proof-graph"
-            ],
-            "feature_ids": [
-              "feat:operations.settings-audit-health"
-            ],
-            "id": "tst:pytest.operations.settings-audit-health.t2.proof-graph",
-            "status": "passing",
-            "title": "operations.settings-audit-health T2 robustness"
-          },
-          {
-            "claim_ids": [
-              "clm:migration.npm.t0"
-            ],
-            "evidence_ids": [
-              "evd:t0.migration.npm.scope"
-            ],
-            "feature_ids": [
-              "feat:migration.npm"
-            ],
-            "id": "tst:pytest.migration.npm.t0.proof-graph",
-            "status": "passing",
-            "title": "NPM migration and cutover T0 governed inventory"
-          },
-          {
-            "claim_ids": [
-              "clm:migration.npm.t1"
-            ],
-            "evidence_ids": [
-              "evd:t1.migration.npm.direct"
-            ],
-            "feature_ids": [
-              "feat:migration.npm"
-            ],
-            "id": "tst:pytest.migration.npm.t1.proof-graph",
-            "status": "passing",
-            "title": "NPM migration and cutover T1 direct behavior"
-          },
-          {
-            "claim_ids": [
-              "clm:migration.npm.t2"
-            ],
-            "evidence_ids": [
-              "evd:t2.migration.npm.proof-graph"
-            ],
-            "feature_ids": [
-              "feat:migration.npm"
-            ],
-            "id": "tst:pytest.migration.npm.t2.proof-graph",
-            "status": "passing",
-            "title": "migration.npm T2 robustness"
-          },
-          {
-            "claim_ids": [
-              "clm:distribution.oci.t0"
-            ],
-            "evidence_ids": [
-              "evd:t0.distribution.oci.scope"
-            ],
-            "feature_ids": [
-              "feat:distribution.oci"
-            ],
-            "id": "tst:pytest.distribution.oci.t0.proof-graph",
-            "status": "passing",
-            "title": "OCI distribution T0 governed inventory"
-          },
-          {
-            "claim_ids": [
-              "clm:distribution.oci.t1"
-            ],
-            "evidence_ids": [
-              "evd:t1.distribution.oci.direct"
-            ],
-            "feature_ids": [
-              "feat:distribution.oci"
-            ],
-            "id": "tst:pytest.distribution.oci.t1.proof-graph",
-            "status": "passing",
-            "title": "OCI publication policy and gate declarations"
-          },
-          {
-            "claim_ids": [
-              "clm:distribution.oci.t2"
-            ],
-            "evidence_ids": [
-              "evd:t2.distribution.oci.proof-graph"
-            ],
-            "feature_ids": [
-              "feat:distribution.oci"
-            ],
-            "id": "tst:pytest.distribution.oci.t2.proof-graph",
-            "status": "passing",
-            "title": "OCI publication assurance and cleanup boundaries"
-          },
-          {
-            "claim_ids": [
-              "clm:compat.api-transport.t0"
-            ],
-            "evidence_ids": [
-              "evd:t0.compat.api-transport.scope"
-            ],
-            "feature_ids": [
-              "feat:compat.api-transport"
-            ],
-            "id": "tst:pytest.compat.api-transport.t0.proof-graph",
-            "status": "passing",
-            "title": "Compatibility API transport T0 governed inventory"
-          },
-          {
-            "claim_ids": [
-              "clm:compat.api-transport.t1"
-            ],
-            "evidence_ids": [
-              "evd:t1.compat.api-transport.proof-graph"
-            ],
-            "feature_ids": [
-              "feat:compat.api-transport"
-            ],
-            "id": "tst:pytest.compat.api-transport.t1.proof-graph",
-            "status": "passing",
-            "title": "Compatibility API transport T1 direct behavior"
-          },
-          {
-            "claim_ids": [
-              "clm:runtime.nginx-platform.t0"
-            ],
-            "evidence_ids": [
-              "evd:t0.runtime.nginx-platform.scope"
-            ],
-            "feature_ids": [
-              "feat:runtime.nginx-platform"
-            ],
-            "id": "tst:pytest.runtime.nginx-platform.t0.proof-graph",
-            "status": "passing",
-            "title": "Nginx platform controls T0 governed inventory"
-          },
-          {
-            "claim_ids": [
-              "clm:runtime.nginx-platform.t1"
-            ],
-            "evidence_ids": [
-              "evd:t1.runtime.nginx-platform.proof-graph"
-            ],
-            "feature_ids": [
-              "feat:runtime.nginx-platform"
-            ],
-            "id": "tst:pytest.runtime.nginx-platform.t1.proof-graph",
-            "status": "passing",
-            "title": "Nginx platform controls T1 direct behavior"
-          },
-          {
-            "claim_ids": [
-              "clm:operations.traffic-logs.t0"
-            ],
-            "evidence_ids": [
-              "evd:t0.operations.traffic-logs.scope"
-            ],
-            "feature_ids": [
-              "feat:operations.traffic-logs"
-            ],
-            "id": "tst:pytest.operations.traffic-logs.t0.proof-graph",
-            "status": "passing",
-            "title": "Traffic logs and rotation T0 governed inventory"
-          },
-          {
-            "claim_ids": [
-              "clm:operations.traffic-logs.t1"
-            ],
-            "evidence_ids": [
-              "evd:t1.operations.traffic-logs.proof-graph"
-            ],
-            "feature_ids": [
-              "feat:operations.traffic-logs"
-            ],
-            "id": "tst:pytest.operations.traffic-logs.t1.proof-graph",
-            "status": "passing",
-            "title": "Traffic logs and rotation T1 direct behavior"
-          },
-          {
-            "claim_ids": [
-              "clm:operations.upgrades.t0"
-            ],
-            "evidence_ids": [
-              "evd:t0.operations.upgrades.scope"
-            ],
-            "feature_ids": [
-              "feat:operations.upgrades"
-            ],
-            "id": "tst:pytest.operations.upgrades.t0.proof-graph",
-            "status": "passing",
-            "title": "Runtime upgrades and version policy T0 governed inventory"
-          },
-          {
-            "claim_ids": [
-              "clm:operations.upgrades.t1"
-            ],
-            "evidence_ids": [
-              "evd:t1.operations.upgrades.proof-graph"
-            ],
-            "feature_ids": [
-              "feat:operations.upgrades"
-            ],
-            "id": "tst:pytest.operations.upgrades.t1.proof-graph",
-            "status": "passing",
-            "title": "Runtime upgrades and version policy T1 direct behavior"
-          },
-          {
-            "claim_ids": [
-              "clm:distribution.runtime-identity.t0"
-            ],
-            "evidence_ids": [
-              "evd:t0.distribution.runtime-identity.scope"
-            ],
-            "feature_ids": [
-              "feat:distribution.runtime-identity"
-            ],
-            "id": "tst:pytest.distribution.runtime-identity.t0.proof-graph",
-            "status": "passing",
-            "title": "Container runtime identity T0 governed inventory"
-          },
-          {
-            "claim_ids": [
-              "clm:distribution.runtime-identity.t1"
-            ],
-            "evidence_ids": [
-              "evd:t1.distribution.runtime-identity.proof-graph"
-            ],
-            "feature_ids": [
-              "feat:distribution.runtime-identity"
-            ],
-            "id": "tst:pytest.distribution.runtime-identity.t1.proof-graph",
-            "status": "passing",
-            "title": "Container runtime identity T1 direct behavior"
-          },
-          {
-            "claim_ids": [
-              "clm:compat.npm-api.t2"
-            ],
-            "evidence_ids": [
-              "evd:t2.compat.npm-api.proof-graph"
-            ],
-            "feature_ids": [
-              "feat:compat.npm-api"
-            ],
-            "id": "tst:pytest.compat.npm-api.t2.proof-graph",
-            "status": "passing",
-            "title": "compat.npm-api T2 robustness"
-          },
-          {
-            "claim_ids": [
-              "clm:compat.api-transport.t2"
-            ],
-            "evidence_ids": [
-              "evd:t2.compat.api-transport.robustness"
-            ],
-            "feature_ids": [
-              "feat:compat.api-transport"
-            ],
-            "id": "tst:pytest.compat.api-transport.t2.proof-graph",
-            "status": "passing",
-            "title": "compat.api-transport T2 robustness"
-          },
-          {
-            "claim_ids": [
-              "clm:runtime.nginx-platform.t2"
-            ],
-            "evidence_ids": [
-              "evd:t2.runtime.nginx-platform.robustness"
-            ],
-            "feature_ids": [
-              "feat:runtime.nginx-platform"
-            ],
-            "id": "tst:pytest.runtime.nginx-platform.t2.proof-graph",
-            "status": "passing",
-            "title": "runtime.nginx-platform T2 robustness"
-          },
-          {
-            "claim_ids": [
-              "clm:operations.traffic-logs.t2"
-            ],
-            "evidence_ids": [
-              "evd:t2.operations.traffic-logs.robustness"
-            ],
-            "feature_ids": [
-              "feat:operations.traffic-logs"
-            ],
-            "id": "tst:pytest.operations.traffic-logs.t2.proof-graph",
-            "status": "passing",
-            "title": "operations.traffic-logs T2 robustness"
-          },
-          {
-            "claim_ids": [
-              "clm:operations.upgrades.t2"
-            ],
-            "evidence_ids": [
-              "evd:t2.operations.upgrades.robustness"
-            ],
-            "feature_ids": [
-              "feat:operations.upgrades"
-            ],
-            "id": "tst:pytest.operations.upgrades.t2.proof-graph",
-            "status": "passing",
-            "title": "operations.upgrades T2 robustness"
-          },
-          {
-            "claim_ids": [
-              "clm:distribution.runtime-identity.t2"
-            ],
-            "evidence_ids": [
-              "evd:t2.distribution.runtime-identity.robustness"
-            ],
-            "feature_ids": [
-              "feat:distribution.runtime-identity"
-            ],
-            "id": "tst:pytest.distribution.runtime-identity.t2.proof-graph",
-            "status": "passing",
-            "title": "distribution.runtime-identity T2 robustness"
-          },
-          {
-            "claim_ids": [
-              "clm:distribution.oci.t2",
-              "clm:distribution.runtime-identity.t2"
-            ],
-            "evidence_ids": [
-              "evd:t2.distribution.oci.publication"
-            ],
-            "feature_ids": [
-              "feat:distribution.oci",
-              "feat:distribution.runtime-identity"
-            ],
-            "id": "tst:oci.distribution.oci.publication",
-            "status": "passing",
-            "title": "Historical OCI digest verification"
-          },
-          {
-            "claim_ids": [
-              "clm:experience.operator-cli.t0"
-            ],
-            "evidence_ids": [
-              "evd:t1.experience.operator-cli.proof-graph"
-            ],
-            "feature_ids": [
-              "feat:experience.operator-cli"
-            ],
-            "id": "tst:pytest.experience.operator-cli.t0.proof-graph",
-            "status": "passing",
-            "title": "Operator CLI T0 governed inventory"
-          },
-          {
-            "claim_ids": [
-              "clm:experience.operator-cli.t1"
-            ],
-            "evidence_ids": [
-              "evd:t1.experience.operator-cli.proof-graph"
-            ],
-            "feature_ids": [
-              "feat:experience.operator-cli"
-            ],
-            "id": "tst:pytest.experience.operator-cli.t1.proof-graph",
-            "status": "passing",
-            "title": "Operator CLI T1 direct behavior"
-          },
-          {
-            "claim_ids": [
-              "clm:experience.operator-cli.t2"
-            ],
-            "evidence_ids": [
-              "evd:t2.experience.operator-cli.container"
-            ],
-            "feature_ids": [
-              "feat:experience.operator-cli"
-            ],
-            "id": "tst:container.experience.operator-cli.t2",
-            "status": "passing",
-            "title": "Operator CLI composed container smoke"
-          },
-          {
-            "claim_ids": [
-              "clm:identity.access-tokens.t1",
-              "clm:identity.access-tokens.t2"
-            ],
-            "evidence_ids": [
-              "evd:t1.identity.access-tokens.direct",
-              "evd:t2.identity.access-tokens.proof-graph"
-            ],
-            "feature_ids": [
-              "feat:identity.access-tokens"
-            ],
-            "id": "tst:pytest.identity.access-tokens.management",
-            "status": "passing",
-            "title": "Access token management lifecycle"
-          },
-          {
-            "claim_ids": [
-              "clm:identity.users-rbac.t1",
-              "clm:experience.operator-ui.t1"
-            ],
-            "evidence_ids": [
-              "evd:t1.identity.users-rbac.direct",
-              "evd:t1.experience.operator-ui.direct"
-            ],
-            "feature_ids": [
-              "feat:identity.users-rbac",
-              "feat:experience.operator-ui"
-            ],
-            "id": "tst:pytest.identity.bootstrap-password-change.t1",
-            "status": "passing",
-            "title": "Bootstrap password change lifecycle"
-          },
-          {
-            "claim_ids": [
-              "clm:experience.operator-ui.t1"
-            ],
-            "evidence_ids": [
-              "evd:t1.experience.operator-ui.direct"
-            ],
-            "feature_ids": [
-              "feat:experience.operator-ui"
-            ],
-            "id": "tst:pytest.experience.operator-ui.audit-columns.t1",
-            "status": "passing",
-            "title": "Audit table column contract"
-          },
-          {
-            "claim_ids": [
-              "clm:routing.upstream-health.t0"
-            ],
-            "evidence_ids": [
-              "evd:t2.routing.upstream-health.proof-graph"
-            ],
-            "feature_ids": [
-              "feat:routing.upstream-health"
-            ],
-            "id": "tst:pytest.routing.upstream-health.t0.proof-graph",
-            "status": "passing",
-            "title": "Proxy-host upstream health T0 governed contract"
-          },
-          {
-            "claim_ids": [
-              "clm:routing.upstream-health.t1"
-            ],
-            "evidence_ids": [
-              "evd:t2.routing.upstream-health.proof-graph"
-            ],
-            "feature_ids": [
-              "feat:routing.upstream-health"
-            ],
-            "id": "tst:pytest.routing.upstream-health.t1.proof-graph",
-            "status": "passing",
-            "title": "Proxy-host upstream health T1 kernel behavior"
-          },
-          {
-            "claim_ids": [
-              "clm:routing.upstream-health.t2"
-            ],
-            "evidence_ids": [
-              "evd:t2.routing.upstream-health.proof-graph"
-            ],
-            "feature_ids": [
-              "feat:routing.upstream-health"
-            ],
-            "id": "tst:pytest.routing.upstream-health.t2.proof-graph",
-            "status": "passing",
-            "title": "Proxy-host upstream health T2 data-plane robustness"
-          },
-          {
-            "claim_ids": [
-              "clm:routing.disabled-host-isolation.t0"
-            ],
-            "evidence_ids": [
-              "evd:t2.routing.disabled-host-isolation.proof-graph"
-            ],
-            "feature_ids": [
-              "feat:routing.disabled-host-isolation"
-            ],
-            "id": "tst:pytest.routing.disabled-host-isolation.t0.proof-graph",
-            "status": "passing",
-            "title": "Disabled proxy-host isolation T0 governed contract"
-          },
-          {
-            "claim_ids": [
-              "clm:routing.disabled-host-isolation.t1"
-            ],
-            "evidence_ids": [
-              "evd:t2.routing.disabled-host-isolation.proof-graph"
-            ],
-            "feature_ids": [
-              "feat:routing.disabled-host-isolation"
-            ],
-            "id": "tst:pytest.routing.disabled-host-isolation.t1.proof-graph",
-            "status": "passing",
-            "title": "Disabled proxy-host isolation T1 render behavior"
-          },
-          {
-            "claim_ids": [
-              "clm:routing.disabled-host-isolation.t2"
-            ],
-            "evidence_ids": [
-              "evd:t2.routing.disabled-host-isolation.proof-graph"
-            ],
-            "feature_ids": [
-              "feat:routing.disabled-host-isolation"
-            ],
-            "id": "tst:pytest.routing.disabled-host-isolation.t2.proof-graph",
-            "status": "passing",
-            "title": "Disabled proxy-host isolation T2 protocol behavior"
-          },
-          {
-            "claim_ids": [
-              "clm:compat.npmctl.t1"
-            ],
-            "evidence_ids": [
-              "evd:t1.compat.npmctl.resource-matrix-2026-07-19"
-            ],
-            "feature_ids": [
-              "feat:compat.npmctl"
-            ],
-            "id": "tst:pytest.compat.npmctl.resource-matrix.t1",
-            "status": "passing",
-            "title": "npmctl non-proxy resource matrix"
           }
         ]
       },
-      "observed_at": "2026-08-03T23:39:26Z",
+      "inventory_truncated": {
+        "adrs": 36,
+        "boundaries": 0,
+        "claims": 76,
+        "evidence": 72,
+        "features": 16,
+        "issues": 0,
+        "profiles": 0,
+        "releases": 0,
+        "specs": 43,
+        "tests": 81
+      },
+      "observed_at": "2026-08-06T02:55:10Z",
       "present": true,
       "raw_url": "https://raw.githubusercontent.com/groupsum/portwyrm/master/.ssot/registry.json",
       "registry_url": "https://github.com/groupsum/portwyrm/blob/master/.ssot/registry.json",
       "schema_version": "0.8.0",
-      "source_sha256": "2f4d39d1efb5fdf6e9e9346a9784c6a02a894a34acbd5bf1b9e662ee5a4042a3",
+      "source_sha256": "55edf65a573ac979ece7491dbb043f24c19f6638b78daa2e36a5e7ad948fc550",
       "status_counts": {
         "adrs": {
-          "accepted": 23,
+          "accepted": 24,
           "draft": 32
         },
         "boundaries": {
@@ -6647,15 +2868,18 @@
         },
         "claims": {
           "certified": 56,
+          "declared": 1,
           "evidenced": 9,
+          "proposed": 2,
           "published": 28
         },
         "evidence": {
-          "passed": 91
+          "passed": 91,
+          "planned": 1
         },
         "features": {
           "absent": 4,
-          "implemented": 28,
+          "implemented": 29,
           "partial": 3
         },
         "issues": {
@@ -6668,11 +2892,12 @@
           "published": 1
         },
         "specs": {
-          "accepted": 25,
+          "accepted": 26,
           "draft": 37
         },
         "tests": {
-          "passing": 98
+          "passing": 99,
+          "planned": 2
         }
       },
       "valid": true
@@ -6687,7 +2912,7 @@
     ],
     "template": false,
     "topics": [],
-    "updated_at": "2026-07-25T14:57:02Z",
+    "updated_at": "2026-08-04T17:13:51Z",
     "url": "https://github.com/groupsum/portwyrm",
     "visibility": "public"
   },

@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-03T23:39:08Z",
+  "generated_at": "2026-08-06T02:54:46Z",
   "packages": [
     {
       "claim_boundary": "Publication is reported only when confirmed by the named public registry.",
@@ -279,7 +279,7 @@
       "evidence": [
         {
           "kind": "registry",
-          "observed_at": "2026-08-03T23:39:08Z",
+          "observed_at": "2026-08-06T02:54:46Z",
           "url": "https://www.npmjs.com/package/@groupsum/document-studio"
         }
       ],
@@ -320,7 +320,7 @@
       "license_status": "observed",
       "manifest_path": "packages/document-studio/package.json",
       "name": "@groupsum/document-studio",
-      "observed_at": "2026-08-03T23:39:08Z",
+      "observed_at": "2026-08-06T02:54:46Z",
       "owner": "groupsum",
       "package_kind": "published-package",
       "private": false,
@@ -341,7 +341,7 @@
           "legal_inherits_from": "package:npm:@groupsum/document-studio:groupsum/document-studio:packages/document-studio/package.json",
           "license_expression": "UNLICENSED",
           "license_status": "observed",
-          "observed_at": "2026-08-03T23:39:08Z",
+          "observed_at": "2026-08-06T02:54:46Z",
           "published_at": "2026-06-16T20:50:58.043Z",
           "release_kind": "npm",
           "route": "/catalog/releases/npm/groupsum-document-studio-6251d5bba4",
@@ -376,7 +376,7 @@
       "evidence": [
         {
           "kind": "source",
-          "observed_at": "2026-08-03T23:39:08Z",
+          "observed_at": "2026-08-06T02:54:46Z",
           "url": "https://github.com/groupsum/document-studio/blob/master/package.json"
         }
       ],
@@ -409,7 +409,7 @@
       "license_status": "observed",
       "manifest_path": "package.json",
       "name": "document-studio-workspace",
-      "observed_at": "2026-08-03T23:39:08Z",
+      "observed_at": "2026-08-06T02:54:46Z",
       "owner": "groupsum",
       "package_kind": "workspace-project",
       "private": true,
@@ -459,7 +459,7 @@
       "evidence": [
         {
           "kind": "source",
-          "observed_at": "2026-08-03T23:39:08Z",
+          "observed_at": "2026-08-06T02:54:46Z",
           "url": "https://github.com/groupsum/document-studio/blob/master/pyproject.toml"
         }
       ],
@@ -492,7 +492,7 @@
       "license_status": "observed",
       "manifest_path": "pyproject.toml",
       "name": "document-studio-workspace",
-      "observed_at": "2026-08-03T23:39:08Z",
+      "observed_at": "2026-08-06T02:54:46Z",
       "owner": "groupsum",
       "package_kind": "package-candidate",
       "private": false,
@@ -522,18 +522,6 @@
     "archived": false,
     "claim_boundary": "SSOT artifact counts and coverage are registry-reported observations; they do not by themselves prove that every public product claim is supported.",
     "commit_activity": [
-      {
-        "count": 0,
-        "date": "2026-07-05"
-      },
-      {
-        "count": 0,
-        "date": "2026-07-06"
-      },
-      {
-        "count": 0,
-        "date": "2026-07-07"
-      },
       {
         "count": 0,
         "date": "2026-07-08"
@@ -641,6 +629,18 @@
       {
         "count": 0,
         "date": "2026-08-03"
+      },
+      {
+        "count": 0,
+        "date": "2026-08-04"
+      },
+      {
+        "count": 0,
+        "date": "2026-08-05"
+      },
+      {
+        "count": 0,
+        "date": "2026-08-06"
       }
     ],
     "contributors": [
@@ -658,12 +658,12 @@
     "evidence": [
       {
         "kind": "ssot-registry",
-        "observed_at": "2026-08-03T23:39:16Z",
+        "observed_at": "2026-08-06T02:54:56Z",
         "url": "https://github.com/groupsum/document-studio/blob/master/.ssot/registry.json"
       },
       {
         "kind": "source",
-        "observed_at": "2026-08-03T23:39:13Z",
+        "observed_at": "2026-08-06T02:54:53Z",
         "url": "https://github.com/groupsum/document-studio"
       }
     ],
@@ -678,7 +678,7 @@
         "legal_inherits_from": "repository:groupsum/document-studio",
         "license_expression": "NOASSERTION",
         "license_status": "observed",
-        "observed_at": "2026-08-03T23:39:13Z",
+        "observed_at": "2026-08-06T02:54:53Z",
         "prerelease": false,
         "published_at": "2026-06-16T20:50:39Z",
         "release_kind": "github",
@@ -745,7 +745,7 @@
       "watchers": 0
     },
     "name": "document-studio",
-    "observed_at": "2026-08-03T23:39:13Z",
+    "observed_at": "2026-08-06T02:54:53Z",
     "owner": "groupsum",
     "package_ids": [
       "package:npm:@groupsum/document-studio:groupsum/document-studio:packages/document-studio/package.json",
@@ -943,91 +943,6 @@
             "id": "adr:0619",
             "status": "draft",
             "title": "Content Addressed Governed Source Snapshots"
-          },
-          {
-            "id": "adr:0620",
-            "status": "draft",
-            "title": "Local Evidence Bundles Are Derived Release Artifacts"
-          },
-          {
-            "id": "adr:0621",
-            "status": "draft",
-            "title": "General rules of interpretation govern SSOT meaning"
-          },
-          {
-            "id": "adr:0622",
-            "status": "draft",
-            "title": "Definitions govern SSOT vocabulary"
-          },
-          {
-            "id": "adr:0625",
-            "status": "draft",
-            "title": "Claim Tier Gates Govern Core Promotion"
-          },
-          {
-            "id": "adr:0626",
-            "status": "draft",
-            "title": "Externally Authored Validation Can Satisfy T4"
-          },
-          {
-            "id": "adr:0627",
-            "status": "accepted",
-            "title": "Feature parent links are inventory composition"
-          },
-          {
-            "id": "adr:0628",
-            "status": "draft",
-            "title": "SSOT MCP and CLI surfaces stay in parity"
-          },
-          {
-            "id": "adr:0629",
-            "status": "draft",
-            "title": "SSOT MCP workers may request registry repair authority"
-          },
-          {
-            "id": "adr:0630",
-            "status": "draft",
-            "title": "Scoped maturation claims ignore unrelated blockers"
-          },
-          {
-            "id": "adr:0631",
-            "status": "draft",
-            "title": "MCP mediated upgrade uses the current runtime"
-          },
-          {
-            "id": "adr:0632",
-            "status": "draft",
-            "title": "Targeted repair can proceed with unrelated baseline drift"
-          },
-          {
-            "id": "adr:0633",
-            "status": "accepted",
-            "title": "Public registry save validates before write"
-          },
-          {
-            "id": "adr:0634",
-            "status": "draft",
-            "title": "Proof Graph Is The Canonical Assurance Unit"
-          },
-          {
-            "id": "adr:0635",
-            "status": "draft",
-            "title": "Proof Graph Materialization And Certification Closure"
-          },
-          {
-            "id": "adr:0636",
-            "status": "draft",
-            "title": "Feature create defaults to proof-graph scaffolding"
-          },
-          {
-            "id": "adr:0637",
-            "status": "draft",
-            "title": "Pack schema compatibility is forward-only"
-          },
-          {
-            "id": "adr:0640",
-            "status": "draft",
-            "title": "Evidence Owns Proof Linkage"
           }
         ],
         "boundaries": [
@@ -1151,116 +1066,23 @@
             "id": "spc:0619",
             "status": "draft",
             "title": "Governed Source Snapshot Contract"
-          },
-          {
-            "id": "spc:0620",
-            "status": "draft",
-            "title": "Local Evidence Bundle Contract"
-          },
-          {
-            "id": "spc:0621",
-            "status": "draft",
-            "title": "Output Artifact Manifest Contract"
-          },
-          {
-            "id": "spc:0622",
-            "status": "draft",
-            "title": "Local Release Verification And Gate Contract"
-          },
-          {
-            "id": "spc:0623",
-            "status": "draft",
-            "title": "General rules of interpretation"
-          },
-          {
-            "id": "spc:0624",
-            "status": "draft",
-            "title": "SSOT definitions"
-          },
-          {
-            "id": "spc:0625",
-            "status": "draft",
-            "title": "Claim Tier Gates"
-          },
-          {
-            "id": "spc:0626",
-            "status": "draft",
-            "title": "External Validation Evidence"
-          },
-          {
-            "id": "spc:0627",
-            "status": "accepted",
-            "title": "Feature parent link contract"
-          },
-          {
-            "id": "spc:0628",
-            "status": "accepted",
-            "title": "Feature parent CLI contract"
-          },
-          {
-            "id": "spc:0629",
-            "status": "draft",
-            "title": "SSOT MCP and CLI surface parity contract"
-          },
-          {
-            "id": "spc:0630",
-            "status": "draft",
-            "title": "SSOT MCP registry repair authority"
-          },
-          {
-            "id": "spc:0631",
-            "status": "draft",
-            "title": "Scoped maturation blocker contract"
-          },
-          {
-            "id": "spc:0632",
-            "status": "draft",
-            "title": "MCP upgrade delegation contract"
-          },
-          {
-            "id": "spc:0633",
-            "status": "draft",
-            "title": "Targeted scaffold repair contract"
-          },
-          {
-            "id": "spc:0634",
-            "status": "draft",
-            "title": "Worker actionability and repair loop"
-          },
-          {
-            "id": "spc:0635",
-            "status": "accepted",
-            "title": "Registry save validation contract"
-          },
-          {
-            "id": "spc:0636",
-            "status": "draft",
-            "title": "Proof Graph Assurance Contract"
-          },
-          {
-            "id": "spc:0637",
-            "status": "draft",
-            "title": "Proof Graph Materialization And Certification Flow"
-          },
-          {
-            "id": "spc:0638",
-            "status": "draft",
-            "title": "Feature create default proof scaffold contract"
-          },
-          {
-            "id": "spc:0639",
-            "status": "draft",
-            "title": "Forward-only pack schema compatibility contract"
-          },
-          {
-            "id": "spc:0640",
-            "status": "draft",
-            "title": "Evidence Centered Proof Link Contract"
           }
         ],
         "tests": []
       },
-      "observed_at": "2026-08-03T23:39:16Z",
+      "inventory_truncated": {
+        "adrs": 17,
+        "boundaries": 0,
+        "claims": 0,
+        "evidence": 0,
+        "features": 0,
+        "issues": 0,
+        "profiles": 0,
+        "releases": 0,
+        "specs": 21,
+        "tests": 0
+      },
+      "observed_at": "2026-08-06T02:54:56Z",
       "present": true,
       "raw_url": "https://raw.githubusercontent.com/groupsum/document-studio/master/.ssot/registry.json",
       "registry_url": "https://github.com/groupsum/document-studio/blob/master/.ssot/registry.json",

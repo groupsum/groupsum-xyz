@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-03T23:39:08Z",
+  "generated_at": "2026-08-06T02:54:46Z",
   "packages": [
     {
       "claim_boundary": "Publication is reported only when confirmed by the named public registry.",
@@ -45,7 +45,7 @@
       "evidence": [
         {
           "kind": "source",
-          "observed_at": "2026-08-03T23:39:08Z",
+          "observed_at": "2026-08-06T02:54:46Z",
           "url": "https://github.com/groupsum/npmctl-com/blob/master/packages/site-content-pack/package.json"
         }
       ],
@@ -68,7 +68,7 @@
       "license_status": "observed",
       "manifest_path": "packages/site-content-pack/package.json",
       "name": "@groupsum/npmctl-com-content-pack",
-      "observed_at": "2026-08-03T23:39:08Z",
+      "observed_at": "2026-08-06T02:54:46Z",
       "owner": "groupsum",
       "package_kind": "private-package",
       "private": true,
@@ -276,7 +276,7 @@
       "evidence": [
         {
           "kind": "source",
-          "observed_at": "2026-08-03T23:39:08Z",
+          "observed_at": "2026-08-06T02:54:46Z",
           "url": "https://github.com/groupsum/npmctl-com/blob/master/package.json"
         }
       ],
@@ -290,7 +290,7 @@
       "license_status": "not-observed",
       "manifest_path": "package.json",
       "name": "react-example",
-      "observed_at": "2026-08-03T23:39:08Z",
+      "observed_at": "2026-08-06T02:54:46Z",
       "owner": "groupsum",
       "package_kind": "workspace-project",
       "private": true,
@@ -362,7 +362,7 @@
       "evidence": [
         {
           "kind": "source",
-          "observed_at": "2026-08-03T23:39:08Z",
+          "observed_at": "2026-08-06T02:54:46Z",
           "url": "https://github.com/groupsum/npmctl-com/blob/master/pyproject.toml"
         }
       ],
@@ -376,7 +376,7 @@
       "license_status": "not-observed",
       "manifest_path": "pyproject.toml",
       "name": "npmctl-com",
-      "observed_at": "2026-08-03T23:39:08Z",
+      "observed_at": "2026-08-06T02:54:46Z",
       "owner": "groupsum",
       "package_kind": "package-candidate",
       "private": false,
@@ -409,18 +409,6 @@
     "archived": false,
     "claim_boundary": "No canonical .ssot/registry.json was observed; repository, release, deployment, and live-service states are reported separately.",
     "commit_activity": [
-      {
-        "count": 0,
-        "date": "2026-07-05"
-      },
-      {
-        "count": 0,
-        "date": "2026-07-06"
-      },
-      {
-        "count": 0,
-        "date": "2026-07-07"
-      },
       {
         "count": 0,
         "date": "2026-07-08"
@@ -528,6 +516,18 @@
       {
         "count": 0,
         "date": "2026-08-03"
+      },
+      {
+        "count": 0,
+        "date": "2026-08-04"
+      },
+      {
+        "count": 0,
+        "date": "2026-08-05"
+      },
+      {
+        "count": 0,
+        "date": "2026-08-06"
       }
     ],
     "contributors": [
@@ -545,7 +545,7 @@
     "evidence": [
       {
         "kind": "source",
-        "observed_at": "2026-08-03T23:39:20Z",
+        "observed_at": "2026-08-06T02:55:02Z",
         "url": "https://github.com/groupsum/npmctl-com"
       }
     ],
@@ -589,7 +589,7 @@
       "watchers": 0
     },
     "name": "npmctl-com",
-    "observed_at": "2026-08-03T23:39:20Z",
+    "observed_at": "2026-08-06T02:55:02Z",
     "owner": "groupsum",
     "package_ids": [
       "package:npm:@groupsum/npmctl-com-content-pack:groupsum/npmctl-com:packages/site-content-pack/package.json",
@@ -664,7 +664,7 @@
       "coverage": {},
       "governed": false,
       "observation_status": "not_found",
-      "observed_at": "2026-08-03T23:39:24Z",
+      "observed_at": "2026-08-06T02:55:06Z",
       "present": false,
       "registry_url": null,
       "status_counts": {},

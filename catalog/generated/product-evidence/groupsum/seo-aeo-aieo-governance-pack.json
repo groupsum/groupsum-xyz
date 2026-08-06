@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-03T23:39:08Z",
+  "generated_at": "2026-08-06T02:54:46Z",
   "packages": [
     {
       "claim_boundary": "Publication is reported only when confirmed by the named public registry.",
@@ -54,7 +54,7 @@
       "evidence": [
         {
           "kind": "registry",
-          "observed_at": "2026-08-03T23:39:08Z",
+          "observed_at": "2026-08-06T02:54:46Z",
           "url": "https://pypi.org/project/seo-aeo-aieo-governance-pack/"
         }
       ],
@@ -86,7 +86,7 @@
       "license_status": "observed",
       "manifest_path": "pyproject.toml",
       "name": "seo-aeo-aieo-governance-pack",
-      "observed_at": "2026-08-03T23:39:08Z",
+      "observed_at": "2026-08-06T02:54:46Z",
       "owner": "groupsum",
       "package_kind": "published-package",
       "private": false,
@@ -108,7 +108,7 @@
           "legal_inherits_from": "package:pypi:seo-aeo-aieo-governance-pack:groupsum/seo-aeo-aieo-governance-pack:pyproject.toml",
           "license_expression": "Apache-2.0",
           "license_status": "observed",
-          "observed_at": "2026-08-03T23:39:08Z",
+          "observed_at": "2026-08-06T02:54:46Z",
           "published_at": "2026-06-02T00:59:38.481258Z",
           "release_kind": "pypi",
           "route": "/catalog/releases/pypi/seo-aeo-aieo-governance-pack-d258ec6b21",
@@ -122,7 +122,7 @@
           "legal_inherits_from": "package:pypi:seo-aeo-aieo-governance-pack:groupsum/seo-aeo-aieo-governance-pack:pyproject.toml",
           "license_expression": "Apache-2.0",
           "license_status": "observed",
-          "observed_at": "2026-08-03T23:39:08Z",
+          "observed_at": "2026-08-06T02:54:46Z",
           "published_at": "2026-05-16T16:54:41.803481Z",
           "release_kind": "pypi",
           "route": "/catalog/releases/pypi/seo-aeo-aieo-governance-pack-aa1b4ef3da",
@@ -136,7 +136,7 @@
           "legal_inherits_from": "package:pypi:seo-aeo-aieo-governance-pack:groupsum/seo-aeo-aieo-governance-pack:pyproject.toml",
           "license_expression": "Apache-2.0",
           "license_status": "observed",
-          "observed_at": "2026-08-03T23:39:08Z",
+          "observed_at": "2026-08-06T02:54:46Z",
           "published_at": "2026-05-16T16:07:37.656048Z",
           "release_kind": "pypi",
           "route": "/catalog/releases/pypi/seo-aeo-aieo-governance-pack-2bc5444334",
@@ -150,7 +150,7 @@
           "legal_inherits_from": "package:pypi:seo-aeo-aieo-governance-pack:groupsum/seo-aeo-aieo-governance-pack:pyproject.toml",
           "license_expression": "Apache-2.0",
           "license_status": "observed",
-          "observed_at": "2026-08-03T23:39:08Z",
+          "observed_at": "2026-08-06T02:54:46Z",
           "published_at": "2026-05-08T05:34:12.248763Z",
           "release_kind": "pypi",
           "route": "/catalog/releases/pypi/seo-aeo-aieo-governance-pack-da23ba6544",
@@ -164,7 +164,7 @@
           "legal_inherits_from": "package:pypi:seo-aeo-aieo-governance-pack:groupsum/seo-aeo-aieo-governance-pack:pyproject.toml",
           "license_expression": "Apache-2.0",
           "license_status": "observed",
-          "observed_at": "2026-08-03T23:39:08Z",
+          "observed_at": "2026-08-06T02:54:46Z",
           "published_at": "2026-05-07T04:28:27.797490Z",
           "release_kind": "pypi",
           "route": "/catalog/releases/pypi/seo-aeo-aieo-governance-pack-f71366c273",
@@ -178,7 +178,7 @@
           "legal_inherits_from": "package:pypi:seo-aeo-aieo-governance-pack:groupsum/seo-aeo-aieo-governance-pack:pyproject.toml",
           "license_expression": "Apache-2.0",
           "license_status": "observed",
-          "observed_at": "2026-08-03T23:39:08Z",
+          "observed_at": "2026-08-06T02:54:46Z",
           "published_at": "2026-05-06T22:57:35.597127Z",
           "release_kind": "pypi",
           "route": "/catalog/releases/pypi/seo-aeo-aieo-governance-pack-e9dc35c5b4",
@@ -200,18 +200,6 @@
     "archived": false,
     "claim_boundary": "No canonical .ssot/registry.json was observed; repository, release, deployment, and live-service states are reported separately.",
     "commit_activity": [
-      {
-        "count": 0,
-        "date": "2026-07-05"
-      },
-      {
-        "count": 0,
-        "date": "2026-07-06"
-      },
-      {
-        "count": 0,
-        "date": "2026-07-07"
-      },
       {
         "count": 0,
         "date": "2026-07-08"
@@ -319,6 +307,18 @@
       {
         "count": 0,
         "date": "2026-08-03"
+      },
+      {
+        "count": 0,
+        "date": "2026-08-04"
+      },
+      {
+        "count": 0,
+        "date": "2026-08-05"
+      },
+      {
+        "count": 0,
+        "date": "2026-08-06"
       }
     ],
     "contributors": [
@@ -341,7 +341,7 @@
     "evidence": [
       {
         "kind": "source",
-        "observed_at": "2026-08-03T23:39:23Z",
+        "observed_at": "2026-08-06T02:55:07Z",
         "url": "https://github.com/groupsum/seo-aeo-aieo-governance-pack"
       }
     ],
@@ -356,7 +356,7 @@
         "legal_inherits_from": "repository:groupsum/seo-aeo-aieo-governance-pack",
         "license_expression": "Apache-2.0",
         "license_status": "observed",
-        "observed_at": "2026-08-03T23:39:23Z",
+        "observed_at": "2026-08-06T02:55:07Z",
         "prerelease": false,
         "published_at": "2026-06-02T00:59:32Z",
         "release_kind": "github",
@@ -372,7 +372,7 @@
         "legal_inherits_from": "repository:groupsum/seo-aeo-aieo-governance-pack",
         "license_expression": "Apache-2.0",
         "license_status": "observed",
-        "observed_at": "2026-08-03T23:39:23Z",
+        "observed_at": "2026-08-06T02:55:07Z",
         "prerelease": false,
         "published_at": "2026-05-16T16:07:34Z",
         "release_kind": "github",
@@ -388,7 +388,7 @@
         "legal_inherits_from": "repository:groupsum/seo-aeo-aieo-governance-pack",
         "license_expression": "Apache-2.0",
         "license_status": "observed",
-        "observed_at": "2026-08-03T23:39:23Z",
+        "observed_at": "2026-08-06T02:55:07Z",
         "prerelease": false,
         "published_at": "2026-05-16T16:54:36Z",
         "release_kind": "github",
@@ -404,7 +404,7 @@
         "legal_inherits_from": "repository:groupsum/seo-aeo-aieo-governance-pack",
         "license_expression": "Apache-2.0",
         "license_status": "observed",
-        "observed_at": "2026-08-03T23:39:23Z",
+        "observed_at": "2026-08-06T02:55:07Z",
         "prerelease": false,
         "published_at": "2026-05-08T05:34:07Z",
         "release_kind": "github",
@@ -420,7 +420,7 @@
         "legal_inherits_from": "repository:groupsum/seo-aeo-aieo-governance-pack",
         "license_expression": "Apache-2.0",
         "license_status": "observed",
-        "observed_at": "2026-08-03T23:39:23Z",
+        "observed_at": "2026-08-06T02:55:07Z",
         "prerelease": false,
         "published_at": "2026-05-07T04:28:09Z",
         "release_kind": "github",
@@ -436,7 +436,7 @@
         "legal_inherits_from": "repository:groupsum/seo-aeo-aieo-governance-pack",
         "license_expression": "Apache-2.0",
         "license_status": "observed",
-        "observed_at": "2026-08-03T23:39:23Z",
+        "observed_at": "2026-08-06T02:55:07Z",
         "prerelease": false,
         "published_at": "2026-05-06T22:57:31Z",
         "release_kind": "github",
@@ -452,7 +452,7 @@
         "legal_inherits_from": "repository:groupsum/seo-aeo-aieo-governance-pack",
         "license_expression": "Apache-2.0",
         "license_status": "observed",
-        "observed_at": "2026-08-03T23:39:23Z",
+        "observed_at": "2026-08-06T02:55:07Z",
         "prerelease": false,
         "published_at": "2026-05-06T21:08:45Z",
         "release_kind": "github",
@@ -530,7 +530,7 @@
       "watchers": 0
     },
     "name": "seo-aeo-aieo-governance-pack",
-    "observed_at": "2026-08-03T23:39:23Z",
+    "observed_at": "2026-08-06T02:55:07Z",
     "owner": "groupsum",
     "package_ids": [
       "package:pypi:seo-aeo-aieo-governance-pack:groupsum/seo-aeo-aieo-governance-pack:pyproject.toml"
@@ -576,7 +576,7 @@
       "coverage": {},
       "governed": false,
       "observation_status": "not_found",
-      "observed_at": "2026-08-03T23:39:25Z",
+      "observed_at": "2026-08-06T02:55:10Z",
       "present": false,
       "registry_url": null,
       "status_counts": {},

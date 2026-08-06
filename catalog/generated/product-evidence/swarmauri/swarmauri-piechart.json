@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-03T23:39:08Z",
+  "generated_at": "2026-08-06T02:54:46Z",
   "packages": [
     {
       "claim_boundary": "Publication is reported only when confirmed by the named public registry.",
@@ -63,7 +63,7 @@
       "evidence": [
         {
           "kind": "source",
-          "observed_at": "2026-08-03T23:39:08Z",
+          "observed_at": "2026-08-06T02:54:46Z",
           "url": "https://github.com/swarmauri/swarmauri-piechart/blob/master/mycomponent/frontend/package.json"
         }
       ],
@@ -104,7 +104,7 @@
       "license_status": "observed",
       "manifest_path": "mycomponent/frontend/package.json",
       "name": "gradio_mycomponent",
-      "observed_at": "2026-08-03T23:39:08Z",
+      "observed_at": "2026-08-06T02:54:46Z",
       "owner": "swarmauri",
       "package_kind": "package-candidate",
       "private": false,
@@ -200,7 +200,7 @@
       "evidence": [
         {
           "kind": "registry",
-          "observed_at": "2026-08-03T23:39:08Z",
+          "observed_at": "2026-08-06T02:54:46Z",
           "url": "https://pypi.org/project/gradio_mycomponent/"
         }
       ],
@@ -241,7 +241,7 @@
       "license_status": "observed",
       "manifest_path": "mycomponent/pyproject.toml",
       "name": "gradio_mycomponent",
-      "observed_at": "2026-08-03T23:39:08Z",
+      "observed_at": "2026-08-06T02:54:46Z",
       "owner": "swarmauri",
       "package_kind": "published-package",
       "private": false,
@@ -262,7 +262,7 @@
           "legal_inherits_from": "package:pypi:gradio_mycomponent:swarmauri/swarmauri-piechart:mycomponent/pyproject.toml",
           "license_expression": "apache-2.0",
           "license_status": "observed",
-          "observed_at": "2026-08-03T23:39:08Z",
+          "observed_at": "2026-08-06T02:54:46Z",
           "published_at": "2024-05-09T14:13:16.542756Z",
           "release_kind": "pypi",
           "route": "/catalog/releases/pypi/gradio-mycomponent-7fe3827a77",
@@ -286,18 +286,6 @@
     "archived": false,
     "claim_boundary": "No canonical .ssot/registry.json was observed; repository, release, deployment, and live-service states are reported separately.",
     "commit_activity": [
-      {
-        "count": 0,
-        "date": "2026-07-05"
-      },
-      {
-        "count": 0,
-        "date": "2026-07-06"
-      },
-      {
-        "count": 0,
-        "date": "2026-07-07"
-      },
       {
         "count": 0,
         "date": "2026-07-08"
@@ -405,6 +393,18 @@
       {
         "count": 0,
         "date": "2026-08-03"
+      },
+      {
+        "count": 0,
+        "date": "2026-08-04"
+      },
+      {
+        "count": 0,
+        "date": "2026-08-05"
+      },
+      {
+        "count": 0,
+        "date": "2026-08-06"
       }
     ],
     "contributors": [
@@ -427,7 +427,7 @@
     "evidence": [
       {
         "kind": "source",
-        "observed_at": "2026-08-03T23:39:50Z",
+        "observed_at": "2026-08-06T02:55:46Z",
         "url": "https://github.com/swarmauri/swarmauri-piechart"
       }
     ],
@@ -484,7 +484,7 @@
       "watchers": 0
     },
     "name": "swarmauri-piechart",
-    "observed_at": "2026-08-03T23:39:50Z",
+    "observed_at": "2026-08-06T02:55:46Z",
     "owner": "swarmauri",
     "package_ids": [
       "package:npm:gradio_mycomponent:swarmauri/swarmauri-piechart:mycomponent/frontend/package.json",
@@ -542,7 +542,7 @@
         "legal_evidence": [],
         "legal_inherits_from": "repository:swarmauri/swarmauri-piechart",
         "name": "mycomponent/demo/__init__.py",
-        "observed_at": "2026-08-03T23:39:50Z",
+        "observed_at": "2026-08-06T02:55:46Z",
         "path": "mycomponent/demo/__init__.py",
         "repository": "swarmauri/swarmauri-piechart",
         "repository_route": "/catalog/repositories/swarmauri/swarmauri-piechart",
@@ -556,7 +556,7 @@
         "legal_evidence": [],
         "legal_inherits_from": "repository:swarmauri/swarmauri-piechart",
         "name": "mycomponent/demo/app.py",
-        "observed_at": "2026-08-03T23:39:50Z",
+        "observed_at": "2026-08-06T02:55:46Z",
         "path": "mycomponent/demo/app.py",
         "repository": "swarmauri/swarmauri-piechart",
         "repository_route": "/catalog/repositories/swarmauri/swarmauri-piechart",
@@ -570,7 +570,7 @@
         "legal_evidence": [],
         "legal_inherits_from": "repository:swarmauri/swarmauri-piechart",
         "name": "mycomponent/demo/requirements.txt",
-        "observed_at": "2026-08-03T23:39:50Z",
+        "observed_at": "2026-08-06T02:55:46Z",
         "path": "mycomponent/demo/requirements.txt",
         "repository": "swarmauri/swarmauri-piechart",
         "repository_route": "/catalog/repositories/swarmauri/swarmauri-piechart",
@@ -589,7 +589,7 @@
       "coverage": {},
       "governed": false,
       "observation_status": "not_found",
-      "observed_at": "2026-08-03T23:39:53Z",
+      "observed_at": "2026-08-06T02:55:49Z",
       "present": false,
       "registry_url": null,
       "status_counts": {},

@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-03T23:39:08Z",
+  "generated_at": "2026-08-06T02:54:46Z",
   "packages": [
     {
       "claim_boundary": "Publication is reported only when confirmed by the named public registry.",
@@ -73,7 +73,7 @@
       "evidence": [
         {
           "kind": "registry",
-          "observed_at": "2026-08-03T23:39:08Z",
+          "observed_at": "2026-08-06T02:54:46Z",
           "url": "https://pypi.org/project/marketing-attribution-conversion-governance-pack/"
         }
       ],
@@ -105,7 +105,7 @@
       "license_status": "observed",
       "manifest_path": "pyproject.toml",
       "name": "marketing-attribution-conversion-governance-pack",
-      "observed_at": "2026-08-03T23:39:08Z",
+      "observed_at": "2026-08-06T02:54:46Z",
       "owner": "groupsum",
       "package_kind": "published-package",
       "private": false,
@@ -127,7 +127,7 @@
           "legal_inherits_from": "package:pypi:marketing-attribution-conversion-governance-pack:groupsum/marketing-attribution-conversion-governance-pack:pyproject.toml",
           "license_expression": "Apache-2.0",
           "license_status": "observed",
-          "observed_at": "2026-08-03T23:39:08Z",
+          "observed_at": "2026-08-06T02:54:46Z",
           "published_at": "2026-05-18T09:20:41.084685Z",
           "release_kind": "pypi",
           "route": "/catalog/releases/pypi/marketing-attribution-conversion-governance-pack-86b90c01db",
@@ -149,18 +149,6 @@
     "archived": false,
     "claim_boundary": "SSOT artifact counts and coverage are registry-reported observations; they do not by themselves prove that every public product claim is supported.",
     "commit_activity": [
-      {
-        "count": 0,
-        "date": "2026-07-05"
-      },
-      {
-        "count": 0,
-        "date": "2026-07-06"
-      },
-      {
-        "count": 0,
-        "date": "2026-07-07"
-      },
       {
         "count": 0,
         "date": "2026-07-08"
@@ -268,6 +256,18 @@
       {
         "count": 0,
         "date": "2026-08-03"
+      },
+      {
+        "count": 0,
+        "date": "2026-08-04"
+      },
+      {
+        "count": 0,
+        "date": "2026-08-05"
+      },
+      {
+        "count": 0,
+        "date": "2026-08-06"
       }
     ],
     "contributors": [
@@ -290,12 +290,12 @@
     "evidence": [
       {
         "kind": "ssot-registry",
-        "observed_at": "2026-08-03T23:39:19Z",
+        "observed_at": "2026-08-06T02:55:01Z",
         "url": "https://github.com/groupsum/marketing-attribution-conversion-governance-pack/blob/master/.ssot/registry.json"
       },
       {
         "kind": "source",
-        "observed_at": "2026-08-03T23:39:17Z",
+        "observed_at": "2026-08-06T02:54:58Z",
         "url": "https://github.com/groupsum/marketing-attribution-conversion-governance-pack"
       }
     ],
@@ -310,7 +310,7 @@
         "legal_inherits_from": "repository:groupsum/marketing-attribution-conversion-governance-pack",
         "license_expression": "Apache-2.0",
         "license_status": "observed",
-        "observed_at": "2026-08-03T23:39:17Z",
+        "observed_at": "2026-08-06T02:54:58Z",
         "prerelease": false,
         "published_at": "2026-05-18T09:20:32Z",
         "release_kind": "github",
@@ -394,7 +394,7 @@
       "watchers": 0
     },
     "name": "marketing-attribution-conversion-governance-pack",
-    "observed_at": "2026-08-03T23:39:17Z",
+    "observed_at": "2026-08-06T02:54:58Z",
     "owner": "groupsum",
     "package_ids": [
       "package:pypi:marketing-attribution-conversion-governance-pack:groupsum/marketing-attribution-conversion-governance-pack:pyproject.toml"
@@ -433,7 +433,7 @@
         "legal_evidence": [],
         "legal_inherits_from": "repository:groupsum/marketing-attribution-conversion-governance-pack",
         "name": "docs/governance",
-        "observed_at": "2026-08-03T23:39:17Z",
+        "observed_at": "2026-08-06T02:54:58Z",
         "path": "docs/governance",
         "repository": "groupsum/marketing-attribution-conversion-governance-pack",
         "repository_route": "/catalog/repositories/groupsum/marketing-attribution-conversion-governance-pack",
@@ -692,7 +692,19 @@
         ],
         "tests": []
       },
-      "observed_at": "2026-08-03T23:39:19Z",
+      "inventory_truncated": {
+        "adrs": 0,
+        "boundaries": 0,
+        "claims": 0,
+        "evidence": 0,
+        "features": 0,
+        "issues": 0,
+        "profiles": 0,
+        "releases": 0,
+        "specs": 0,
+        "tests": 0
+      },
+      "observed_at": "2026-08-06T02:55:01Z",
       "present": true,
       "raw_url": "https://raw.githubusercontent.com/groupsum/marketing-attribution-conversion-governance-pack/master/.ssot/registry.json",
       "registry_url": "https://github.com/groupsum/marketing-attribution-conversion-governance-pack/blob/master/.ssot/registry.json",

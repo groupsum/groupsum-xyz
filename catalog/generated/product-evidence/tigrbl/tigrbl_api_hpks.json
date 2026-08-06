@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-03T23:39:08Z",
+  "generated_at": "2026-08-06T02:54:46Z",
   "packages": [
     {
       "claim_boundary": "Publication is reported only when confirmed by the named public registry.",
@@ -162,7 +162,7 @@
       "evidence": [
         {
           "kind": "registry",
-          "observed_at": "2026-08-03T23:39:08Z",
+          "observed_at": "2026-08-06T02:54:46Z",
           "url": "https://pypi.org/project/tigrbl_api_hpks/"
         }
       ],
@@ -205,7 +205,7 @@
       "license_status": "observed",
       "manifest_path": "pyproject.toml",
       "name": "tigrbl_api_hpks",
-      "observed_at": "2026-08-03T23:39:08Z",
+      "observed_at": "2026-08-06T02:54:46Z",
       "owner": "tigrbl",
       "package_kind": "published-package",
       "private": false,
@@ -227,7 +227,7 @@
           "legal_inherits_from": "package:pypi:tigrbl_api_hpks:tigrbl/tigrbl_api_hpks:pyproject.toml",
           "license_expression": "Apache-2.0",
           "license_status": "observed",
-          "observed_at": "2026-08-03T23:39:08Z",
+          "observed_at": "2026-08-06T02:54:46Z",
           "published_at": "2026-05-20T07:50:21.046652Z",
           "release_kind": "pypi",
           "route": "/catalog/releases/pypi/tigrbl-api-hpks-2096e1591a",
@@ -241,7 +241,7 @@
           "legal_inherits_from": "package:pypi:tigrbl_api_hpks:tigrbl/tigrbl_api_hpks:pyproject.toml",
           "license_expression": "Apache-2.0",
           "license_status": "observed",
-          "observed_at": "2026-08-03T23:39:08Z",
+          "observed_at": "2026-08-06T02:54:46Z",
           "published_at": "2026-03-24T06:01:35.887953Z",
           "release_kind": "pypi",
           "route": "/catalog/releases/pypi/tigrbl-api-hpks-bcc6091dad",
@@ -255,7 +255,7 @@
           "legal_inherits_from": "package:pypi:tigrbl_api_hpks:tigrbl/tigrbl_api_hpks:pyproject.toml",
           "license_expression": "Apache-2.0",
           "license_status": "observed",
-          "observed_at": "2026-08-03T23:39:08Z",
+          "observed_at": "2026-08-06T02:54:46Z",
           "published_at": "2026-03-23T07:40:11.077870Z",
           "release_kind": "pypi",
           "route": "/catalog/releases/pypi/tigrbl-api-hpks-985f33d177",
@@ -269,7 +269,7 @@
           "legal_inherits_from": "package:pypi:tigrbl_api_hpks:tigrbl/tigrbl_api_hpks:pyproject.toml",
           "license_expression": "Apache-2.0",
           "license_status": "observed",
-          "observed_at": "2026-08-03T23:39:08Z",
+          "observed_at": "2026-08-06T02:54:46Z",
           "published_at": "2026-03-20T17:57:39.343098Z",
           "release_kind": "pypi",
           "route": "/catalog/releases/pypi/tigrbl-api-hpks-0d9cdbd20d",
@@ -283,7 +283,7 @@
           "legal_inherits_from": "package:pypi:tigrbl_api_hpks:tigrbl/tigrbl_api_hpks:pyproject.toml",
           "license_expression": "Apache-2.0",
           "license_status": "observed",
-          "observed_at": "2026-08-03T23:39:08Z",
+          "observed_at": "2026-08-06T02:54:46Z",
           "published_at": "2026-03-20T17:37:53.583399Z",
           "release_kind": "pypi",
           "route": "/catalog/releases/pypi/tigrbl-api-hpks-6130e24804",
@@ -297,7 +297,7 @@
           "legal_inherits_from": "package:pypi:tigrbl_api_hpks:tigrbl/tigrbl_api_hpks:pyproject.toml",
           "license_expression": "Apache-2.0",
           "license_status": "observed",
-          "observed_at": "2026-08-03T23:39:08Z",
+          "observed_at": "2026-08-06T02:54:46Z",
           "published_at": "2026-03-20T10:03:13.874445Z",
           "release_kind": "pypi",
           "route": "/catalog/releases/pypi/tigrbl-api-hpks-0d2bd21f36",
@@ -311,7 +311,7 @@
           "legal_inherits_from": "package:pypi:tigrbl_api_hpks:tigrbl/tigrbl_api_hpks:pyproject.toml",
           "license_expression": "Apache-2.0",
           "license_status": "observed",
-          "observed_at": "2026-08-03T23:39:08Z",
+          "observed_at": "2026-08-06T02:54:46Z",
           "published_at": "2026-03-20T09:44:05.453208Z",
           "release_kind": "pypi",
           "route": "/catalog/releases/pypi/tigrbl-api-hpks-411a255c86",
@@ -325,7 +325,7 @@
           "legal_inherits_from": "package:pypi:tigrbl_api_hpks:tigrbl/tigrbl_api_hpks:pyproject.toml",
           "license_expression": "Apache-2.0",
           "license_status": "observed",
-          "observed_at": "2026-08-03T23:39:08Z",
+          "observed_at": "2026-08-06T02:54:46Z",
           "published_at": "2026-03-20T09:20:56.902323Z",
           "release_kind": "pypi",
           "route": "/catalog/releases/pypi/tigrbl-api-hpks-be82aa30b5",
@@ -339,7 +339,7 @@
           "legal_inherits_from": "package:pypi:tigrbl_api_hpks:tigrbl/tigrbl_api_hpks:pyproject.toml",
           "license_expression": "Apache-2.0",
           "license_status": "observed",
-          "observed_at": "2026-08-03T23:39:08Z",
+          "observed_at": "2026-08-06T02:54:46Z",
           "published_at": "2026-03-20T08:02:45.470329Z",
           "release_kind": "pypi",
           "route": "/catalog/releases/pypi/tigrbl-api-hpks-a2403f6150",
@@ -353,7 +353,7 @@
           "legal_inherits_from": "package:pypi:tigrbl_api_hpks:tigrbl/tigrbl_api_hpks:pyproject.toml",
           "license_expression": "Apache-2.0",
           "license_status": "observed",
-          "observed_at": "2026-08-03T23:39:08Z",
+          "observed_at": "2026-08-06T02:54:46Z",
           "published_at": "2026-03-20T07:41:15.619599Z",
           "release_kind": "pypi",
           "route": "/catalog/releases/pypi/tigrbl-api-hpks-814c0300d7",
@@ -367,7 +367,7 @@
           "legal_inherits_from": "package:pypi:tigrbl_api_hpks:tigrbl/tigrbl_api_hpks:pyproject.toml",
           "license_expression": "Apache-2.0",
           "license_status": "observed",
-          "observed_at": "2026-08-03T23:39:08Z",
+          "observed_at": "2026-08-06T02:54:46Z",
           "published_at": "2026-02-23T10:26:13.649207Z",
           "release_kind": "pypi",
           "route": "/catalog/releases/pypi/tigrbl-api-hpks-8f1ba6e1c0",
@@ -381,7 +381,7 @@
           "legal_inherits_from": "package:pypi:tigrbl_api_hpks:tigrbl/tigrbl_api_hpks:pyproject.toml",
           "license_expression": "Apache-2.0",
           "license_status": "observed",
-          "observed_at": "2026-08-03T23:39:08Z",
+          "observed_at": "2026-08-06T02:54:46Z",
           "published_at": "2026-02-17T19:39:05.803083Z",
           "release_kind": "pypi",
           "route": "/catalog/releases/pypi/tigrbl-api-hpks-d7dbed4d70",
@@ -395,7 +395,7 @@
           "legal_inherits_from": "package:pypi:tigrbl_api_hpks:tigrbl/tigrbl_api_hpks:pyproject.toml",
           "license_expression": "Apache-2.0",
           "license_status": "observed",
-          "observed_at": "2026-08-03T23:39:08Z",
+          "observed_at": "2026-08-06T02:54:46Z",
           "published_at": "2026-02-12T08:26:29.891142Z",
           "release_kind": "pypi",
           "route": "/catalog/releases/pypi/tigrbl-api-hpks-c8f9f6cb57",
@@ -409,7 +409,7 @@
           "legal_inherits_from": "package:pypi:tigrbl_api_hpks:tigrbl/tigrbl_api_hpks:pyproject.toml",
           "license_expression": "Apache-2.0",
           "license_status": "observed",
-          "observed_at": "2026-08-03T23:39:08Z",
+          "observed_at": "2026-08-06T02:54:46Z",
           "published_at": "2026-01-28T08:17:21.271916Z",
           "release_kind": "pypi",
           "route": "/catalog/releases/pypi/tigrbl-api-hpks-a9dfa99fef",
@@ -423,7 +423,7 @@
           "legal_inherits_from": "package:pypi:tigrbl_api_hpks:tigrbl/tigrbl_api_hpks:pyproject.toml",
           "license_expression": "Apache-2.0",
           "license_status": "observed",
-          "observed_at": "2026-08-03T23:39:08Z",
+          "observed_at": "2026-08-06T02:54:46Z",
           "published_at": "2026-01-28T00:54:33.009851Z",
           "release_kind": "pypi",
           "route": "/catalog/releases/pypi/tigrbl-api-hpks-75306d9d30",
@@ -437,7 +437,7 @@
           "legal_inherits_from": "package:pypi:tigrbl_api_hpks:tigrbl/tigrbl_api_hpks:pyproject.toml",
           "license_expression": "Apache-2.0",
           "license_status": "observed",
-          "observed_at": "2026-08-03T23:39:08Z",
+          "observed_at": "2026-08-06T02:54:46Z",
           "published_at": "2026-01-27T23:01:41.184891Z",
           "release_kind": "pypi",
           "route": "/catalog/releases/pypi/tigrbl-api-hpks-f3267d83ad",
@@ -459,18 +459,6 @@
     "archived": false,
     "claim_boundary": "No canonical .ssot/registry.json was observed; repository, release, deployment, and live-service states are reported separately.",
     "commit_activity": [
-      {
-        "count": 0,
-        "date": "2026-07-05"
-      },
-      {
-        "count": 0,
-        "date": "2026-07-06"
-      },
-      {
-        "count": 0,
-        "date": "2026-07-07"
-      },
       {
         "count": 0,
         "date": "2026-07-08"
@@ -578,6 +566,18 @@
       {
         "count": 0,
         "date": "2026-08-03"
+      },
+      {
+        "count": 0,
+        "date": "2026-08-04"
+      },
+      {
+        "count": 0,
+        "date": "2026-08-05"
+      },
+      {
+        "count": 0,
+        "date": "2026-08-06"
       }
     ],
     "contributors": [
@@ -595,7 +595,7 @@
     "evidence": [
       {
         "kind": "source",
-        "observed_at": "2026-08-03T23:39:33Z",
+        "observed_at": "2026-08-06T02:55:23Z",
         "url": "https://github.com/tigrbl/tigrbl_api_hpks"
       }
     ],
@@ -652,7 +652,7 @@
       "watchers": 0
     },
     "name": "tigrbl_api_hpks",
-    "observed_at": "2026-08-03T23:39:33Z",
+    "observed_at": "2026-08-06T02:55:23Z",
     "owner": "tigrbl",
     "package_ids": [
       "package:pypi:tigrbl_api_hpks:tigrbl/tigrbl_api_hpks:pyproject.toml"
@@ -706,7 +706,7 @@
       "coverage": {},
       "governed": false,
       "observation_status": "not_found",
-      "observed_at": "2026-08-03T23:39:35Z",
+      "observed_at": "2026-08-06T02:55:26Z",
       "present": false,
       "registry_url": null,
       "status_counts": {},

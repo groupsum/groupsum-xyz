@@ -4,13 +4,13 @@
     "evidence": [
       {
         "kind": "github-languages",
-        "observed_at": "2026-08-03T23:39:08Z"
+        "observed_at": "2026-08-06T02:54:46Z"
       }
     ],
     "id": "technology:c:6b23c0d5",
     "kind": "technology",
     "name": "C",
-    "observed_at": "2026-08-03T23:39:08Z",
+    "observed_at": "2026-08-06T02:54:46Z",
     "repositories": [
       "swarmauri/swarmauri-sdk"
     ],
@@ -22,13 +22,13 @@
     "evidence": [
       {
         "kind": "github-languages",
-        "observed_at": "2026-08-03T23:39:08Z"
+        "observed_at": "2026-08-06T02:54:46Z"
       }
     ],
     "id": "technology:c:f1deb75f",
     "kind": "technology",
     "name": "C++",
-    "observed_at": "2026-08-03T23:39:08Z",
+    "observed_at": "2026-08-06T02:54:46Z",
     "repositories": [
       "swarmauri/swarmauri-sdk"
     ],
@@ -36,17 +36,17 @@
     "route": "/catalog/technologies/c-f1deb75f"
   },
   {
-    "bytes": 10359524,
+    "bytes": 10360494,
     "evidence": [
       {
         "kind": "github-languages",
-        "observed_at": "2026-08-03T23:39:08Z"
+        "observed_at": "2026-08-06T02:54:46Z"
       }
     ],
     "id": "technology:css:b581e460",
     "kind": "technology",
     "name": "CSS",
-    "observed_at": "2026-08-03T23:39:08Z",
+    "observed_at": "2026-08-06T02:54:46Z",
     "repositories": [
       "groupsum/document-studio",
       "groupsum/document-viewer",
@@ -71,17 +71,17 @@
     "route": "/catalog/technologies/css-b581e460"
   },
   {
-    "bytes": 12111,
+    "bytes": 12283,
     "evidence": [
       {
         "kind": "github-languages",
-        "observed_at": "2026-08-03T23:39:08Z"
+        "observed_at": "2026-08-06T02:54:46Z"
       }
     ],
     "id": "technology:dockerfile:dd2c0eb6",
     "kind": "technology",
     "name": "Dockerfile",
-    "observed_at": "2026-08-03T23:39:08Z",
+    "observed_at": "2026-08-06T02:54:46Z",
     "repositories": [
       "groupsum/groupsum-xyz",
       "groupsum/markdown_workspace",
@@ -90,6 +90,7 @@
       "groupsum/npmctl-com",
       "groupsum/portwyrm",
       "groupsum/ssot-registry-com",
+      "groupsum/wyrmctl",
       "swarmauri/docs-peagen-com",
       "swarmauri/docs-swarmauri-com",
       "swarmauri/peagen-com",
@@ -102,21 +103,21 @@
       "tigrbl/tigrbl_kms",
       "tigrbl/tigrcorn-com"
     ],
-    "repository_count": 18,
+    "repository_count": 19,
     "route": "/catalog/technologies/dockerfile-dd2c0eb6"
   },
   {
-    "bytes": 21207871,
+    "bytes": 21209118,
     "evidence": [
       {
         "kind": "github-languages",
-        "observed_at": "2026-08-03T23:39:08Z"
+        "observed_at": "2026-08-06T02:54:46Z"
       }
     ],
     "id": "technology:html:07239dbd",
     "kind": "technology",
     "name": "HTML",
-    "observed_at": "2026-08-03T23:39:08Z",
+    "observed_at": "2026-08-06T02:54:46Z",
     "repositories": [
       "groupsum/document-studio",
       "groupsum/document-viewer",
@@ -143,17 +144,17 @@
     "route": "/catalog/technologies/html-07239dbd"
   },
   {
-    "bytes": 4193027,
+    "bytes": 4188634,
     "evidence": [
       {
         "kind": "github-languages",
-        "observed_at": "2026-08-03T23:39:08Z"
+        "observed_at": "2026-08-06T02:54:46Z"
       }
     ],
     "id": "technology:javascript:b27ad06d",
     "kind": "technology",
     "name": "JavaScript",
-    "observed_at": "2026-08-03T23:39:08Z",
+    "observed_at": "2026-08-06T02:54:46Z",
     "repositories": [
       "groupsum/groupsum-xyz",
       "groupsum/markdown_workspace",
@@ -189,13 +190,13 @@
     "evidence": [
       {
         "kind": "github-languages",
-        "observed_at": "2026-08-03T23:39:08Z"
+        "observed_at": "2026-08-06T02:54:46Z"
       }
     ],
     "id": "technology:jinja:7c43eabf",
     "kind": "technology",
     "name": "Jinja",
-    "observed_at": "2026-08-03T23:39:08Z",
+    "observed_at": "2026-08-06T02:54:46Z",
     "repositories": [
       "swarmauri/swarmauri-sdk"
     ],
@@ -207,13 +208,13 @@
     "evidence": [
       {
         "kind": "github-languages",
-        "observed_at": "2026-08-03T23:39:08Z"
+        "observed_at": "2026-08-06T02:54:46Z"
       }
     ],
     "id": "technology:jupyter-notebook:c98b6019",
     "kind": "technology",
     "name": "Jupyter Notebook",
-    "observed_at": "2026-08-03T23:39:08Z",
+    "observed_at": "2026-08-06T02:54:46Z",
     "repositories": [
       "swarmauri/swarmauri-notebooks",
       "swarmauri/swarmauri-playground",
@@ -227,13 +228,13 @@
     "evidence": [
       {
         "kind": "github-languages",
-        "observed_at": "2026-08-03T23:39:08Z"
+        "observed_at": "2026-08-06T02:54:46Z"
       }
     ],
     "id": "technology:makefile:76ed074a",
     "kind": "technology",
     "name": "Makefile",
-    "observed_at": "2026-08-03T23:39:08Z",
+    "observed_at": "2026-08-06T02:54:46Z",
     "repositories": [
       "groupsum/ssot-registry",
       "tigrbl/tigrcorn"
@@ -246,13 +247,13 @@
     "evidence": [
       {
         "kind": "github-languages",
-        "observed_at": "2026-08-03T23:39:08Z"
+        "observed_at": "2026-08-06T02:54:46Z"
       }
     ],
     "id": "technology:mdx:d434e4eb",
     "kind": "technology",
     "name": "MDX",
-    "observed_at": "2026-08-03T23:39:08Z",
+    "observed_at": "2026-08-06T02:54:46Z",
     "repositories": [
       "swarmauri/swarmakit"
     ],
@@ -264,13 +265,13 @@
     "evidence": [
       {
         "kind": "github-languages",
-        "observed_at": "2026-08-03T23:39:08Z"
+        "observed_at": "2026-08-06T02:54:46Z"
       }
     ],
     "id": "technology:meson:33742f46",
     "kind": "technology",
     "name": "Meson",
-    "observed_at": "2026-08-03T23:39:08Z",
+    "observed_at": "2026-08-06T02:54:46Z",
     "repositories": [
       "swarmauri/swarmauri-sdk"
     ],
@@ -278,17 +279,17 @@
     "route": "/catalog/technologies/meson-33742f46"
   },
   {
-    "bytes": 32697478,
+    "bytes": 33804986,
     "evidence": [
       {
         "kind": "github-languages",
-        "observed_at": "2026-08-03T23:39:08Z"
+        "observed_at": "2026-08-06T02:54:46Z"
       }
     ],
     "id": "technology:python:18885f27",
     "kind": "technology",
     "name": "Python",
-    "observed_at": "2026-08-03T23:39:08Z",
+    "observed_at": "2026-08-06T02:54:46Z",
     "repositories": [
       "groupsum/ad-measurement-media-governance-pack",
       "groupsum/ad-supply-chain-transparency-governance-pack",
@@ -323,6 +324,7 @@
       "groupsum/verifiable-credentials-governance-pack",
       "groupsum/web-app-analytics-governance-pack",
       "groupsum/web-performance-rum-governance-pack",
+      "groupsum/wyrmctl",
       "swarmauri/crouton",
       "swarmauri/crouton-boilerplate",
       "swarmauri/docs-peagen-com",
@@ -352,7 +354,7 @@
       "tigrbl/tigrcorn",
       "tigrbl/tigrcorn-com"
     ],
-    "repository_count": 61,
+    "repository_count": 62,
     "route": "/catalog/technologies/python-18885f27"
   },
   {
@@ -360,13 +362,13 @@
     "evidence": [
       {
         "kind": "github-languages",
-        "observed_at": "2026-08-03T23:39:08Z"
+        "observed_at": "2026-08-06T02:54:46Z"
       }
     ],
     "id": "technology:rust:d9aa89fd",
     "kind": "technology",
     "name": "Rust",
-    "observed_at": "2026-08-03T23:39:08Z",
+    "observed_at": "2026-08-06T02:54:46Z",
     "repositories": [
       "groupsum/ssot-registry",
       "swarmauri/swarmauri-sdk",
@@ -376,27 +378,28 @@
     "route": "/catalog/technologies/rust-d9aa89fd"
   },
   {
-    "bytes": 13817,
+    "bytes": 14064,
     "evidence": [
       {
         "kind": "github-languages",
-        "observed_at": "2026-08-03T23:39:08Z"
+        "observed_at": "2026-08-06T02:54:46Z"
       }
     ],
     "id": "technology:shell:a7332854",
     "kind": "technology",
     "name": "Shell",
-    "observed_at": "2026-08-03T23:39:08Z",
+    "observed_at": "2026-08-06T02:54:46Z",
     "repositories": [
       "groupsum/markdown_workspace",
       "groupsum/mdwrk",
       "groupsum/npmctl",
       "groupsum/ssot-registry",
+      "groupsum/wyrmctl",
       "swarmauri/swarmauri-sdk",
       "tigrbl/tigrbl_auth",
       "tigrbl/tigrcorn"
     ],
-    "repository_count": 7,
+    "repository_count": 8,
     "route": "/catalog/technologies/shell-a7332854"
   },
   {
@@ -404,13 +407,13 @@
     "evidence": [
       {
         "kind": "github-languages",
-        "observed_at": "2026-08-03T23:39:08Z"
+        "observed_at": "2026-08-06T02:54:46Z"
       }
     ],
     "id": "technology:svelte:0073bfca",
     "kind": "technology",
     "name": "Svelte",
-    "observed_at": "2026-08-03T23:39:08Z",
+    "observed_at": "2026-08-06T02:54:46Z",
     "repositories": [
       "swarmauri/swarmakit",
       "swarmauri/swarmauri-aucplot",
@@ -421,17 +424,17 @@
     "route": "/catalog/technologies/svelte-0073bfca"
   },
   {
-    "bytes": 47408631,
+    "bytes": 48013840,
     "evidence": [
       {
         "kind": "github-languages",
-        "observed_at": "2026-08-03T23:39:08Z"
+        "observed_at": "2026-08-06T02:54:46Z"
       }
     ],
     "id": "technology:typescript:ed0504f7",
     "kind": "technology",
     "name": "TypeScript",
-    "observed_at": "2026-08-03T23:39:08Z",
+    "observed_at": "2026-08-06T02:54:46Z",
     "repositories": [
       "groupsum/document-studio",
       "groupsum/document-viewer",
@@ -462,13 +465,13 @@
     "evidence": [
       {
         "kind": "github-languages",
-        "observed_at": "2026-08-03T23:39:08Z"
+        "observed_at": "2026-08-06T02:54:46Z"
       }
     ],
     "id": "technology:vue:b111a2a2",
     "kind": "technology",
     "name": "Vue",
-    "observed_at": "2026-08-03T23:39:08Z",
+    "observed_at": "2026-08-06T02:54:46Z",
     "repositories": [
       "swarmauri/swarmakit"
     ],
@@ -480,13 +483,13 @@
     "evidence": [
       {
         "kind": "github-languages",
-        "observed_at": "2026-08-03T23:39:08Z"
+        "observed_at": "2026-08-06T02:54:46Z"
       }
     ],
     "id": "technology:xslt:1370c71d",
     "kind": "technology",
     "name": "XSLT",
-    "observed_at": "2026-08-03T23:39:08Z",
+    "observed_at": "2026-08-06T02:54:46Z",
     "repositories": [
       "groupsum/markdown_workspace",
       "groupsum/mdwrkcom-content-pack",

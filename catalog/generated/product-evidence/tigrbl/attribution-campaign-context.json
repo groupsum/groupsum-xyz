@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-03T23:39:08Z",
+  "generated_at": "2026-08-06T02:54:46Z",
   "packages": [
     {
       "claim_boundary": "Publication is reported only when confirmed by the named public registry.",
@@ -81,7 +81,7 @@
       "evidence": [
         {
           "kind": "registry",
-          "observed_at": "2026-08-03T23:39:08Z",
+          "observed_at": "2026-08-06T02:54:46Z",
           "url": "https://pypi.org/project/attribution-campaign-context/"
         }
       ],
@@ -104,7 +104,7 @@
       "license_status": "observed",
       "manifest_path": "pyproject.toml",
       "name": "attribution-campaign-context",
-      "observed_at": "2026-08-03T23:39:08Z",
+      "observed_at": "2026-08-06T02:54:46Z",
       "owner": "tigrbl",
       "package_kind": "published-package",
       "private": false,
@@ -126,7 +126,7 @@
           "legal_inherits_from": "package:pypi:attribution-campaign-context:tigrbl/attribution-campaign-context:pyproject.toml",
           "license_expression": "Apache-2.0",
           "license_status": "observed",
-          "observed_at": "2026-08-03T23:39:08Z",
+          "observed_at": "2026-08-06T02:54:46Z",
           "published_at": "2026-06-14T10:49:53.870015Z",
           "release_kind": "pypi",
           "route": "/catalog/releases/pypi/attribution-campaign-context-53f9747af0",
@@ -148,18 +148,6 @@
     "archived": false,
     "claim_boundary": "SSOT artifact counts and coverage are registry-reported observations; they do not by themselves prove that every public product claim is supported.",
     "commit_activity": [
-      {
-        "count": 0,
-        "date": "2026-07-05"
-      },
-      {
-        "count": 0,
-        "date": "2026-07-06"
-      },
-      {
-        "count": 0,
-        "date": "2026-07-07"
-      },
       {
         "count": 0,
         "date": "2026-07-08"
@@ -267,6 +255,18 @@
       {
         "count": 0,
         "date": "2026-08-03"
+      },
+      {
+        "count": 0,
+        "date": "2026-08-04"
+      },
+      {
+        "count": 0,
+        "date": "2026-08-05"
+      },
+      {
+        "count": 0,
+        "date": "2026-08-06"
       }
     ],
     "contributors": [
@@ -284,12 +284,12 @@
     "evidence": [
       {
         "kind": "ssot-registry",
-        "observed_at": "2026-08-03T23:39:30Z",
+        "observed_at": "2026-08-06T02:55:18Z",
         "url": "https://github.com/tigrbl/attribution-campaign-context/blob/master/.ssot/registry.json"
       },
       {
         "kind": "source",
-        "observed_at": "2026-08-03T23:39:28Z",
+        "observed_at": "2026-08-06T02:55:15Z",
         "url": "https://github.com/tigrbl/attribution-campaign-context"
       }
     ],
@@ -333,7 +333,7 @@
       "watchers": 0
     },
     "name": "attribution-campaign-context",
-    "observed_at": "2026-08-03T23:39:28Z",
+    "observed_at": "2026-08-06T02:55:15Z",
     "owner": "tigrbl",
     "package_ids": [
       "package:pypi:attribution-campaign-context:tigrbl/attribution-campaign-context:pyproject.toml"
@@ -372,7 +372,7 @@
         "legal_evidence": [],
         "legal_inherits_from": "repository:tigrbl/attribution-campaign-context",
         "name": "docs/attribution-keys.md",
-        "observed_at": "2026-08-03T23:39:28Z",
+        "observed_at": "2026-08-06T02:55:15Z",
         "path": "docs/attribution-keys.md",
         "repository": "tigrbl/attribution-campaign-context",
         "repository_route": "/catalog/repositories/tigrbl/attribution-campaign-context",
@@ -386,7 +386,7 @@
         "legal_evidence": [],
         "legal_inherits_from": "repository:tigrbl/attribution-campaign-context",
         "name": "docs/public-operator-surfaces.md",
-        "observed_at": "2026-08-03T23:39:28Z",
+        "observed_at": "2026-08-06T02:55:15Z",
         "path": "docs/public-operator-surfaces.md",
         "repository": "tigrbl/attribution-campaign-context",
         "repository_route": "/catalog/repositories/tigrbl/attribution-campaign-context",
@@ -400,7 +400,7 @@
         "legal_evidence": [],
         "legal_inherits_from": "repository:tigrbl/attribution-campaign-context",
         "name": "docs/ssot-governance-packs.md",
-        "observed_at": "2026-08-03T23:39:28Z",
+        "observed_at": "2026-08-06T02:55:15Z",
         "path": "docs/ssot-governance-packs.md",
         "repository": "tigrbl/attribution-campaign-context",
         "repository_route": "/catalog/repositories/tigrbl/attribution-campaign-context",
@@ -537,171 +537,6 @@
             "id": "adr:0619",
             "status": "draft",
             "title": "Content Addressed Governed Source Snapshots"
-          },
-          {
-            "id": "adr:0620",
-            "status": "draft",
-            "title": "Local Evidence Bundles Are Derived Release Artifacts"
-          },
-          {
-            "id": "adr:0621",
-            "status": "draft",
-            "title": "General rules of interpretation govern SSOT meaning"
-          },
-          {
-            "id": "adr:0622",
-            "status": "draft",
-            "title": "Definitions govern SSOT vocabulary"
-          },
-          {
-            "id": "adr:0625",
-            "status": "draft",
-            "title": "Claim Tier Gates Govern Core Promotion"
-          },
-          {
-            "id": "adr:0626",
-            "status": "draft",
-            "title": "Externally Authored Validation Can Satisfy T4"
-          },
-          {
-            "id": "adr:0627",
-            "status": "accepted",
-            "title": "Feature parent links are inventory composition"
-          },
-          {
-            "id": "adr:0628",
-            "status": "draft",
-            "title": "SSOT MCP and CLI surfaces stay in parity"
-          },
-          {
-            "id": "adr:0629",
-            "status": "draft",
-            "title": "SSOT MCP workers may request registry repair authority"
-          },
-          {
-            "id": "adr:0630",
-            "status": "draft",
-            "title": "Scoped maturation claims ignore unrelated blockers"
-          },
-          {
-            "id": "adr:0631",
-            "status": "draft",
-            "title": "MCP mediated upgrade uses the current runtime"
-          },
-          {
-            "id": "adr:0632",
-            "status": "draft",
-            "title": "Targeted repair can proceed with unrelated baseline drift"
-          },
-          {
-            "id": "adr:0633",
-            "status": "accepted",
-            "title": "Public registry save validates before write"
-          },
-          {
-            "id": "adr:0634",
-            "status": "draft",
-            "title": "Proof Graph Is The Canonical Assurance Unit"
-          },
-          {
-            "id": "adr:0635",
-            "status": "draft",
-            "title": "Proof Graph Materialization And Certification Closure"
-          },
-          {
-            "id": "adr:0636",
-            "status": "draft",
-            "title": "Feature create defaults to proof-graph scaffolding"
-          },
-          {
-            "id": "adr:0637",
-            "status": "draft",
-            "title": "Pack schema compatibility is forward-only"
-          },
-          {
-            "id": "adr:1000",
-            "status": "accepted",
-            "title": "Attribution campaign context surfaces stay generic"
-          },
-          {
-            "id": "adr:pack.marketing-attribution-conversion.browser-attribution-reporting-policy",
-            "status": "accepted",
-            "title": "Browser Attribution Reporting Policy"
-          },
-          {
-            "id": "adr:pack.marketing-attribution-conversion.tracking-template-parameter-policy",
-            "status": "accepted",
-            "title": "Tracking Template Parameter Policy"
-          },
-          {
-            "id": "adr:pack.marketing-attribution-conversion.clean-room-attribution-protocol-policy",
-            "status": "accepted",
-            "title": "Clean Room Attribution Protocol Policy"
-          },
-          {
-            "id": "adr:pack.marketing-attribution-conversion.enhanced-conversion-identifier-policy",
-            "status": "accepted",
-            "title": "Enhanced Conversion Identifier Policy"
-          },
-          {
-            "id": "adr:pack.url-query-attribution-foundations.attribution-state-context-policy",
-            "status": "accepted",
-            "title": "Attribution State Context Policy"
-          },
-          {
-            "id": "adr:pack.url-query-attribution-foundations.http-metadata-discovery-policy",
-            "status": "accepted",
-            "title": "HTTP Metadata Discovery Policy"
-          },
-          {
-            "id": "adr:pack.url-query-attribution-foundations.traffic-source-classification-policy",
-            "status": "accepted",
-            "title": "Traffic Source Classification Policy"
-          },
-          {
-            "id": "adr:pack.marketing-attribution-conversion.conversion-consent-and-privacy-policy",
-            "status": "accepted",
-            "title": "Conversion Consent And Privacy Policy"
-          },
-          {
-            "id": "adr:pack.url-query-attribution-foundations.referrer-observability-policy",
-            "status": "accepted",
-            "title": "Referrer Observability Policy"
-          },
-          {
-            "id": "adr:pack.marketing-attribution-conversion.industry-conversion-event-protocol-policy",
-            "status": "accepted",
-            "title": "Industry Conversion Event Protocol Policy"
-          },
-          {
-            "id": "adr:pack.marketing-attribution-conversion.click-measurement-quality-policy",
-            "status": "accepted",
-            "title": "Click Measurement Quality Policy"
-          },
-          {
-            "id": "adr:pack.marketing-attribution-conversion.offline-conversion-upload-policy",
-            "status": "accepted",
-            "title": "Offline Conversion Upload Policy"
-          },
-          {
-            "id": "adr:pack.marketing-attribution-conversion.server-conversion-api-policy",
-            "status": "accepted",
-            "title": "Server Conversion API Policy"
-          },
-          {
-            "id": "adr:pack.url-query-attribution-foundations.uri-query-attribution-boundary",
-            "status": "accepted",
-            "title": "URI Query Attribution Boundary"
-          },
-          {
-            "id": "adr:pack.url-query-attribution-foundations.campaign-parameter-semantics-authority",
-            "status": "accepted",
-            "title": "Campaign Parameter Semantics Authority"
-          },
-          {
-            "id": "adr:pack.marketing-attribution-conversion.click-id-capture-and-retention-policy",
-            "status": "accepted",
-            "title": "Click ID Capture And Retention Policy"
           }
         ],
         "boundaries": [
@@ -1025,48 +860,6 @@
               "tst:pytest.attribution.table-contracts.t2"
             ],
             "title": "Attribution touch and subject link table contracts T2 robustness claim"
-          },
-          {
-            "evidence_ids": [
-              "evd:t2.attribution-campaign-context.runtime"
-            ],
-            "feature_ids": [
-              "feat:attribution.level1-telemetry-only"
-            ],
-            "id": "clm:attribution.level1-telemetry-only.t2",
-            "status": "published",
-            "test_ids": [
-              "tst:pytest.attribution.adoption-levels.t2"
-            ],
-            "title": "Level 1 telemetry-only adoption T2 robustness claim"
-          },
-          {
-            "evidence_ids": [
-              "evd:t2.attribution-campaign-context.runtime"
-            ],
-            "feature_ids": [
-              "feat:attribution.level2-generic-conversion-linkage"
-            ],
-            "id": "clm:attribution.level2-generic-conversion-linkage.t2",
-            "status": "published",
-            "test_ids": [
-              "tst:pytest.attribution.adoption-levels.t2"
-            ],
-            "title": "Level 2 generic conversion linkage adoption T2 robustness claim"
-          },
-          {
-            "evidence_ids": [
-              "evd:t2.attribution-campaign-context.runtime"
-            ],
-            "feature_ids": [
-              "feat:attribution.level3-app-relational-integrity"
-            ],
-            "id": "clm:attribution.level3-app-relational-integrity.t2",
-            "status": "published",
-            "test_ids": [
-              "tst:pytest.attribution.adoption-levels.t2"
-            ],
-            "title": "Level 3 app-specific relational integrity adoption T2 robustness claim"
           }
         ],
         "evidence": [
@@ -1457,261 +1250,6 @@
             "id": "spc:0619",
             "status": "draft",
             "title": "Governed Source Snapshot Contract"
-          },
-          {
-            "id": "spc:0620",
-            "status": "draft",
-            "title": "Local Evidence Bundle Contract"
-          },
-          {
-            "id": "spc:0621",
-            "status": "draft",
-            "title": "Output Artifact Manifest Contract"
-          },
-          {
-            "id": "spc:0622",
-            "status": "draft",
-            "title": "Local Release Verification And Gate Contract"
-          },
-          {
-            "id": "spc:0623",
-            "status": "draft",
-            "title": "General rules of interpretation"
-          },
-          {
-            "id": "spc:0624",
-            "status": "draft",
-            "title": "SSOT definitions"
-          },
-          {
-            "id": "spc:0625",
-            "status": "draft",
-            "title": "Claim Tier Gates"
-          },
-          {
-            "id": "spc:0626",
-            "status": "draft",
-            "title": "External Validation Evidence"
-          },
-          {
-            "id": "spc:0627",
-            "status": "accepted",
-            "title": "Feature parent link contract"
-          },
-          {
-            "id": "spc:0628",
-            "status": "accepted",
-            "title": "Feature parent CLI contract"
-          },
-          {
-            "id": "spc:0629",
-            "status": "draft",
-            "title": "SSOT MCP and CLI surface parity contract"
-          },
-          {
-            "id": "spc:0630",
-            "status": "draft",
-            "title": "SSOT MCP registry repair authority"
-          },
-          {
-            "id": "spc:0631",
-            "status": "draft",
-            "title": "Scoped maturation blocker contract"
-          },
-          {
-            "id": "spc:0632",
-            "status": "draft",
-            "title": "MCP upgrade delegation contract"
-          },
-          {
-            "id": "spc:0633",
-            "status": "draft",
-            "title": "Targeted scaffold repair contract"
-          },
-          {
-            "id": "spc:0634",
-            "status": "draft",
-            "title": "Worker actionability and repair loop"
-          },
-          {
-            "id": "spc:0635",
-            "status": "accepted",
-            "title": "Registry save validation contract"
-          },
-          {
-            "id": "spc:0636",
-            "status": "draft",
-            "title": "Proof Graph Assurance Contract"
-          },
-          {
-            "id": "spc:0637",
-            "status": "draft",
-            "title": "Proof Graph Materialization And Certification Flow"
-          },
-          {
-            "id": "spc:0638",
-            "status": "draft",
-            "title": "Feature create default proof scaffold contract"
-          },
-          {
-            "id": "spc:0639",
-            "status": "draft",
-            "title": "Forward-only pack schema compatibility contract"
-          },
-          {
-            "id": "spc:1000",
-            "status": "accepted",
-            "title": "Attribution public operator surfaces"
-          },
-          {
-            "id": "spc:pack.marketing-attribution-conversion.iab-video-ad-measurement-requirements",
-            "status": "accepted",
-            "title": "IAB Video Ad Measurement Requirements"
-          },
-          {
-            "id": "spc:pack.url-query-attribution-foundations.fetch-navigation-attribution-context-requirements",
-            "status": "accepted",
-            "title": "Fetch And Navigation Attribution Context Requirements"
-          },
-          {
-            "id": "spc:pack.marketing-attribution-conversion.meta-conversions-api-requirements",
-            "status": "accepted",
-            "title": "Meta Conversions API Requirements"
-          },
-          {
-            "id": "spc:pack.marketing-attribution-conversion.microsoft-url-tracking-requirements",
-            "status": "accepted",
-            "title": "Microsoft URL Tracking Requirements"
-          },
-          {
-            "id": "spc:pack.marketing-attribution-conversion.microsoft-uet-capi-requirements",
-            "status": "accepted",
-            "title": "Microsoft UET CAPI Requirements"
-          },
-          {
-            "id": "spc:pack.marketing-attribution-conversion.google-ads-valuetrack-parameter-requirements",
-            "status": "accepted",
-            "title": "Google Ads ValueTrack Parameter Requirements"
-          },
-          {
-            "id": "spc:pack.marketing-attribution-conversion.meta-pixel-conversion-event-requirements",
-            "status": "accepted",
-            "title": "Meta Pixel Conversion Event Requirements"
-          },
-          {
-            "id": "spc:pack.url-query-attribution-foundations.uri-query-syntax-requirements",
-            "status": "accepted",
-            "title": "URI Query Syntax Requirements"
-          },
-          {
-            "id": "spc:pack.marketing-attribution-conversion.linkedin-conversions-api-requirements",
-            "status": "accepted",
-            "title": "LinkedIn Conversions API Requirements"
-          },
-          {
-            "id": "spc:pack.url-query-attribution-foundations.campaign-query-parameter-requirements",
-            "status": "accepted",
-            "title": "Campaign Query Parameter Requirements"
-          },
-          {
-            "id": "spc:pack.marketing-attribution-conversion.iab-click-measurement-quality-requirements",
-            "status": "accepted",
-            "title": "IAB Click Measurement Quality Requirements"
-          },
-          {
-            "id": "spc:pack.marketing-attribution-conversion.w3c-attribution-reporting-requirements",
-            "status": "accepted",
-            "title": "W3C Attribution Reporting Requirements"
-          },
-          {
-            "id": "spc:pack.url-query-attribution-foundations.http-request-attribution-context-requirements",
-            "status": "accepted",
-            "title": "HTTP Request Attribution Context Requirements"
-          },
-          {
-            "id": "spc:pack.marketing-attribution-conversion.tiktok-events-api-requirements",
-            "status": "accepted",
-            "title": "TikTok Events API Requirements"
-          },
-          {
-            "id": "spc:pack.marketing-attribution-conversion.google-ads-auto-tagging-click-id-requirements",
-            "status": "accepted",
-            "title": "Google Ads Auto-Tagging Click ID Requirements"
-          },
-          {
-            "id": "spc:pack.marketing-attribution-conversion.iab-ecapi-conversion-event-requirements",
-            "status": "accepted",
-            "title": "IAB ECAPI Conversion Event Requirements"
-          },
-          {
-            "id": "spc:pack.url-query-attribution-foundations.referrer-policy-observability-requirements",
-            "status": "accepted",
-            "title": "Referrer Policy Observability Requirements"
-          },
-          {
-            "id": "spc:pack.url-query-attribution-foundations.ga4-traffic-source-mapping-requirements",
-            "status": "accepted",
-            "title": "GA4 Traffic Source Mapping Requirements"
-          },
-          {
-            "id": "spc:pack.marketing-attribution-conversion.microsoft-offline-conversion-requirements",
-            "status": "accepted",
-            "title": "Microsoft Offline Conversion Requirements"
-          },
-          {
-            "id": "spc:pack.url-query-attribution-foundations.structured-field-attribution-metadata-requirements",
-            "status": "accepted",
-            "title": "Structured Field Attribution Metadata Requirements"
-          },
-          {
-            "id": "spc:pack.marketing-attribution-conversion.google-ads-enhanced-conversion-lead-requirements",
-            "status": "accepted",
-            "title": "Google Ads Enhanced Conversion Lead Requirements"
-          },
-          {
-            "id": "spc:pack.url-query-attribution-foundations.http-caching-attribution-observability-requirements",
-            "status": "accepted",
-            "title": "HTTP Caching Attribution Observability Requirements"
-          },
-          {
-            "id": "spc:pack.url-query-attribution-foundations.cookie-attribution-state-requirements",
-            "status": "accepted",
-            "title": "Cookie Attribution State Requirements"
-          },
-          {
-            "id": "spc:pack.marketing-attribution-conversion.mrc-measurement-quality-reference-requirements",
-            "status": "accepted",
-            "title": "MRC Measurement Quality Reference Requirements"
-          },
-          {
-            "id": "spc:pack.marketing-attribution-conversion.google-ads-click-conversion-upload-requirements",
-            "status": "accepted",
-            "title": "Google Ads Click Conversion Upload Requirements"
-          },
-          {
-            "id": "spc:pack.marketing-attribution-conversion.linkedin-conversion-source-requirements",
-            "status": "accepted",
-            "title": "LinkedIn Conversion Source Requirements"
-          },
-          {
-            "id": "spc:pack.url-query-attribution-foundations.default-channel-classification-requirements",
-            "status": "accepted",
-            "title": "Default Channel Classification Requirements"
-          },
-          {
-            "id": "spc:pack.url-query-attribution-foundations.well-known-attribution-metadata-requirements",
-            "status": "accepted",
-            "title": "Well-Known Attribution Metadata Requirements"
-          },
-          {
-            "id": "spc:pack.url-query-attribution-foundations.web-storage-attribution-state-requirements",
-            "status": "accepted",
-            "title": "Web Storage Attribution State Requirements"
-          },
-          {
-            "id": "spc:pack.marketing-attribution-conversion.iab-admap-clean-room-attribution-requirements",
-            "status": "accepted",
-            "title": "IAB ADMaP Clean Room Attribution Requirements"
           }
         ],
         "tests": [
@@ -2032,7 +1570,19 @@
           }
         ]
       },
-      "observed_at": "2026-08-03T23:39:30Z",
+      "inventory_truncated": {
+        "adrs": 33,
+        "boundaries": 0,
+        "claims": 3,
+        "evidence": 0,
+        "features": 0,
+        "issues": 0,
+        "profiles": 0,
+        "releases": 0,
+        "specs": 51,
+        "tests": 0
+      },
+      "observed_at": "2026-08-06T02:55:18Z",
       "present": true,
       "raw_url": "https://raw.githubusercontent.com/tigrbl/attribution-campaign-context/master/.ssot/registry.json",
       "registry_url": "https://github.com/tigrbl/attribution-campaign-context/blob/master/.ssot/registry.json",

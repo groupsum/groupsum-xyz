@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-03T23:39:08Z",
+  "generated_at": "2026-08-06T02:54:46Z",
   "packages": [
     {
       "claim_boundary": "Publication is reported only when confirmed by the named public registry.",
@@ -45,7 +45,7 @@
       "evidence": [
         {
           "kind": "source",
-          "observed_at": "2026-08-03T23:39:08Z",
+          "observed_at": "2026-08-06T02:54:46Z",
           "url": "https://github.com/groupsum/groupsum-xyz/blob/master/packages/site-content-pack/package.json"
         }
       ],
@@ -68,7 +68,7 @@
       "license_status": "observed",
       "manifest_path": "packages/site-content-pack/package.json",
       "name": "@groupsum/groupsum-xyz-content-pack",
-      "observed_at": "2026-08-03T23:39:08Z",
+      "observed_at": "2026-08-06T02:54:46Z",
       "owner": "groupsum",
       "package_kind": "private-package",
       "private": true,
@@ -96,6 +96,173 @@
         "TypeScript"
       ],
       "version_declared": "0.1.0"
+    },
+    {
+      "claim_boundary": "Publication is reported only when confirmed by the named public registry.",
+      "dependencies": [
+        {
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "@tailwindcss/vite",
+          "package_key": "npm:@tailwindcss/vite",
+          "requirement": "^4.1.14",
+          "scope": "dependencies"
+        },
+        {
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "@vitejs/plugin-react",
+          "package_key": "npm:@vitejs/plugin-react",
+          "requirement": "^5.0.4",
+          "scope": "dependencies"
+        },
+        {
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "lucide-react",
+          "package_key": "npm:lucide-react",
+          "requirement": "^0.546.0",
+          "scope": "dependencies"
+        },
+        {
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "react",
+          "package_key": "npm:react",
+          "requirement": "^19.0.1",
+          "scope": "dependencies"
+        },
+        {
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "react-dom",
+          "package_key": "npm:react-dom",
+          "requirement": "^19.0.1",
+          "scope": "dependencies"
+        },
+        {
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "vite",
+          "package_key": "npm:vite",
+          "requirement": "^6.2.3",
+          "scope": "dependencies"
+        },
+        {
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "@types/node",
+          "package_key": "npm:@types/node",
+          "requirement": "^22.14.0",
+          "scope": "devDependencies"
+        },
+        {
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "autoprefixer",
+          "package_key": "npm:autoprefixer",
+          "requirement": "^10.4.21",
+          "scope": "devDependencies"
+        },
+        {
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "esbuild",
+          "package_key": "npm:esbuild",
+          "requirement": "^0.25.0",
+          "scope": "devDependencies"
+        },
+        {
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "tailwindcss",
+          "package_key": "npm:tailwindcss",
+          "requirement": "^4.1.14",
+          "scope": "devDependencies"
+        },
+        {
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "typescript",
+          "package_key": "npm:typescript",
+          "requirement": "~5.8.2",
+          "scope": "devDependencies"
+        },
+        {
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "vite",
+          "package_key": "npm:vite",
+          "requirement": "^6.2.3",
+          "scope": "devDependencies"
+        }
+      ],
+      "dependency_count": 12,
+      "dependent_count": 0,
+      "dependents": [],
+      "description": "Observed npm package record for groupsum-catalog-explorer.",
+      "description_source": "generated-factual",
+      "display_name": "groupsum-catalog-explorer",
+      "downloads": null,
+      "downstream_completeness": "not-observed",
+      "downstream_count": 0,
+      "ecosystem": "npm",
+      "evidence": [
+        {
+          "kind": "source",
+          "observed_at": "2026-08-06T02:54:46Z",
+          "url": "https://github.com/groupsum/groupsum-xyz/blob/master/catalog-explorer-app/package.json"
+        }
+      ],
+      "id": "package:npm:groupsum-catalog-explorer:groupsum/groupsum-xyz:catalog-explorer-app/package.json",
+      "kind": "package",
+      "latest_version": "0.0.0",
+      "legal_evidence": [],
+      "legal_repository": "groupsum/groupsum-xyz",
+      "license_classifiers": [],
+      "license_expression": null,
+      "license_status": "not-observed",
+      "manifest_path": "catalog-explorer-app/package.json",
+      "name": "groupsum-catalog-explorer",
+      "observed_at": "2026-08-06T02:54:46Z",
+      "owner": "groupsum",
+      "package_kind": "package-candidate",
+      "private": true,
+      "publication_status": "manifest_private",
+      "published": false,
+      "registry_url": null,
+      "relationship_count": 13,
+      "relationship_counts": {
+        "package_depends_on_external": 12,
+        "repository_contains_package": 1
+      },
+      "release_count": 0,
+      "releases": [],
+      "repository": "groupsum/groupsum-xyz",
+      "reviewed": false,
+      "route": "/catalog/packages/npm/groupsum-catalog-explorer-d51fdac1",
+      "source_url": "https://github.com/groupsum/groupsum-xyz/blob/master/catalog-explorer-app/package.json",
+      "technologies": [
+        "CSS",
+        "Dockerfile",
+        "HTML",
+        "JavaScript",
+        "Python",
+        "TypeScript"
+      ],
+      "version_declared": "0.0.0"
     },
     {
       "claim_boundary": "Publication is reported only when confirmed by the named public registry.",
@@ -149,6 +316,15 @@
           "ecosystem": "npm",
           "evidence": "repository.manifest",
           "internal": false,
+          "name": "@tanstack/react-query",
+          "package_key": "npm:@tanstack/react-query",
+          "requirement": "^5.101.4",
+          "scope": "dependencies"
+        },
+        {
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "internal": false,
           "name": "@vitejs/plugin-react",
           "package_key": "npm:@vitejs/plugin-react",
           "requirement": "^4.3.4",
@@ -161,6 +337,15 @@
           "name": "lucide-react",
           "package_key": "npm:lucide-react",
           "requirement": "^0.546.0",
+          "scope": "dependencies"
+        },
+        {
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "openapi-fetch",
+          "package_key": "npm:openapi-fetch",
+          "requirement": "^0.17.0",
           "scope": "dependencies"
         },
         {
@@ -243,9 +428,18 @@
           "package_key": "npm:@types/react-dom",
           "requirement": "^19.0.0",
           "scope": "devDependencies"
+        },
+        {
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "openapi-typescript",
+          "package_key": "npm:openapi-typescript",
+          "requirement": "^7.13.0",
+          "scope": "devDependencies"
         }
       ],
-      "dependency_count": 16,
+      "dependency_count": 19,
       "dependent_count": 0,
       "dependents": [],
       "description": "Observed npm package record for groupsum-xyz.",
@@ -258,7 +452,7 @@
       "evidence": [
         {
           "kind": "source",
-          "observed_at": "2026-08-03T23:39:08Z",
+          "observed_at": "2026-08-06T02:54:46Z",
           "url": "https://github.com/groupsum/groupsum-xyz/blob/master/package.json"
         }
       ],
@@ -272,16 +466,16 @@
       "license_status": "not-observed",
       "manifest_path": "package.json",
       "name": "groupsum-xyz",
-      "observed_at": "2026-08-03T23:39:08Z",
+      "observed_at": "2026-08-06T02:54:46Z",
       "owner": "groupsum",
       "package_kind": "workspace-project",
       "private": true,
       "publication_status": "manifest_private",
       "published": false,
       "registry_url": null,
-      "relationship_count": 17,
+      "relationship_count": 20,
       "relationship_counts": {
-        "package_depends_on_external": 12,
+        "package_depends_on_external": 15,
         "package_depends_on_package": 4,
         "repository_contains_package": 1
       },
@@ -353,6 +547,24 @@
           "ecosystem": "pypi",
           "evidence": "repository.manifest",
           "internal": false,
+          "name": "orjson",
+          "package_key": "pypi:orjson",
+          "requirement": ">=3.10,<4",
+          "scope": "dependencies"
+        },
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "pydantic",
+          "package_key": "pypi:pydantic",
+          "requirement": ">=2.11,<3",
+          "scope": "dependencies"
+        },
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": false,
           "name": "psycopg",
           "package_key": "pypi:psycopg",
           "requirement": "[binary]>=3.2,<4",
@@ -404,7 +616,7 @@
           "scope": "dependency-groups.dev"
         }
       ],
-      "dependency_count": 11,
+      "dependency_count": 13,
       "dependent_count": 0,
       "dependents": [],
       "description": "Observed pypi package record for groupsum-catalog-api.",
@@ -417,7 +629,7 @@
       "evidence": [
         {
           "kind": "source",
-          "observed_at": "2026-08-03T23:39:08Z",
+          "observed_at": "2026-08-06T02:54:46Z",
           "url": "https://github.com/groupsum/groupsum-xyz/blob/master/backend/pyproject.toml"
         }
       ],
@@ -431,16 +643,16 @@
       "license_status": "not-observed",
       "manifest_path": "backend/pyproject.toml",
       "name": "groupsum-catalog-api",
-      "observed_at": "2026-08-03T23:39:08Z",
+      "observed_at": "2026-08-06T02:54:46Z",
       "owner": "groupsum",
       "package_kind": "package-candidate",
       "private": false,
       "publication_status": "registry_not_found",
       "published": false,
       "registry_url": null,
-      "relationship_count": 12,
+      "relationship_count": 14,
       "relationship_counts": {
-        "package_depends_on_external": 7,
+        "package_depends_on_external": 9,
         "package_depends_on_package": 4,
         "repository_contains_package": 1
       },
@@ -465,18 +677,6 @@
     "archived": false,
     "claim_boundary": "No canonical .ssot/registry.json was observed; repository, release, deployment, and live-service states are reported separately.",
     "commit_activity": [
-      {
-        "count": 0,
-        "date": "2026-07-05"
-      },
-      {
-        "count": 0,
-        "date": "2026-07-06"
-      },
-      {
-        "count": 0,
-        "date": "2026-07-07"
-      },
       {
         "count": 0,
         "date": "2026-07-08"
@@ -584,11 +784,23 @@
       {
         "count": 19,
         "date": "2026-08-03"
+      },
+      {
+        "count": 14,
+        "date": "2026-08-04"
+      },
+      {
+        "count": 16,
+        "date": "2026-08-05"
+      },
+      {
+        "count": 1,
+        "date": "2026-08-06"
       }
     ],
     "contributors": [
       {
-        "contributions": 64,
+        "contributions": 95,
         "login": "cobycloud",
         "url": "https://github.com/cobycloud"
       }
@@ -601,7 +813,7 @@
     "evidence": [
       {
         "kind": "source",
-        "observed_at": "2026-08-03T23:39:16Z",
+        "observed_at": "2026-08-06T02:54:57Z",
         "url": "https://github.com/groupsum/groupsum-xyz"
       }
     ],
@@ -613,42 +825,43 @@
     "kind": "repository",
     "latest_commit": {
       "author": "cobycloud",
-      "authored_at": "2026-08-03T22:36:03Z",
-      "committed_at": "2026-08-03T22:36:03Z",
+      "authored_at": "2026-08-06T02:51:20Z",
+      "committed_at": "2026-08-06T02:51:20Z",
       "committer": "cobycloud",
-      "message": "fix: widen catalog relationship roles for postgres",
-      "sha": "7015e498af94b091bb487732f5f8e7a09440fd56",
-      "url": "https://github.com/groupsum/groupsum-xyz/commit/7015e498af94b091bb487732f5f8e7a09440fd56"
+      "message": "Prevent catalog deploy route collisions and downtime",
+      "sha": "8c62e4328a1a16681f267a80f9dae055a521a864",
+      "url": "https://github.com/groupsum/groupsum-xyz/commit/8c62e4328a1a16681f267a80f9dae055a521a864"
     },
     "latest_deployment": {
       "environment": "deployment",
       "environment_url": "",
-      "log_url": "https://github.com/groupsum/groupsum-xyz/actions/runs/30859281005/job/91837451444",
-      "state": "success",
-      "updated_at": "2026-08-03T22:40:55Z"
+      "log_url": "https://github.com/groupsum/groupsum-xyz/actions/runs/31066807859/job/92506120291",
+      "state": "failure",
+      "updated_at": "2026-08-06T02:53:57Z"
     },
     "latest_release": null,
     "legal_evidence": [],
     "license": null,
     "metrics": {
-      "commits": 64,
+      "commits": 95,
       "contributors": 1,
-      "deployments": 24,
+      "deployments": 40,
       "environments": 1,
       "forks": 0,
       "github_releases": 0,
       "open_issues": 1,
-      "packages": 3,
-      "related_resources": 2,
-      "size_kb": 18828,
+      "packages": 4,
+      "related_resources": 6,
+      "size_kb": 22623,
       "stars": 0,
       "watchers": 0
     },
     "name": "groupsum-xyz",
-    "observed_at": "2026-08-03T23:39:16Z",
+    "observed_at": "2026-08-06T02:54:57Z",
     "owner": "groupsum",
     "package_ids": [
       "package:npm:@groupsum/groupsum-xyz-content-pack:groupsum/groupsum-xyz:packages/site-content-pack/package.json",
+      "package:npm:groupsum-catalog-explorer:groupsum/groupsum-xyz:catalog-explorer-app/package.json",
       "package:npm:groupsum-xyz:groupsum/groupsum-xyz:package.json",
       "package:pypi:groupsum-catalog-api:groupsum/groupsum-xyz:backend/pyproject.toml"
     ],
@@ -670,6 +883,24 @@
         "release_activity": [],
         "release_count": 0,
         "route": "/catalog/packages/npm/groupsum-groupsum-xyz-content-pack-f0edd9b4"
+      },
+      {
+        "ecosystem": "npm",
+        "id": "package:npm:groupsum-catalog-explorer:groupsum/groupsum-xyz:catalog-explorer-app/package.json",
+        "last_published_at": null,
+        "latest_version": "0.0.0",
+        "license_expression": null,
+        "license_status": "not-observed",
+        "license_url": null,
+        "manifest_path": "catalog-explorer-app/package.json",
+        "name": "groupsum-catalog-explorer",
+        "notice_count": 0,
+        "package_kind": "package-candidate",
+        "publication_status": "manifest_private",
+        "published": false,
+        "release_activity": [],
+        "release_count": 0,
+        "route": "/catalog/packages/npm/groupsum-catalog-explorer-d51fdac1"
       },
       {
         "ecosystem": "npm",
@@ -708,7 +939,7 @@
         "route": "/catalog/packages/pypi/groupsum-catalog-api-a186817e"
       }
     ],
-    "pushed_at": "2026-08-03T22:36:15Z",
+    "pushed_at": "2026-08-06T02:51:37Z",
     "related_resources": [
       {
         "evidence_type": "repository.api_definition",
@@ -717,7 +948,7 @@
         "legal_evidence": [],
         "legal_inherits_from": "repository:groupsum/groupsum-xyz",
         "name": "backend/openapi.json",
-        "observed_at": "2026-08-03T23:39:16Z",
+        "observed_at": "2026-08-06T02:54:57Z",
         "path": "backend/openapi.json",
         "repository": "groupsum/groupsum-xyz",
         "repository_route": "/catalog/repositories/groupsum/groupsum-xyz",
@@ -731,17 +962,73 @@
         "legal_evidence": [],
         "legal_inherits_from": "repository:groupsum/groupsum-xyz",
         "name": "src/api/catalog.generated.ts",
-        "observed_at": "2026-08-03T23:39:16Z",
+        "observed_at": "2026-08-06T02:54:57Z",
         "path": "src/api/catalog.generated.ts",
         "repository": "groupsum/groupsum-xyz",
         "repository_route": "/catalog/repositories/groupsum/groupsum-xyz",
         "route": "/catalog/resources/api-source/c80be4144ea1",
         "url": "https://github.com/groupsum/groupsum-xyz/blob/master/src/api/catalog.generated.ts"
+      },
+      {
+        "evidence_type": "repository.blob",
+        "id": "resource:39718be4aad6",
+        "kind": "api_source",
+        "legal_evidence": [],
+        "legal_inherits_from": "repository:groupsum/groupsum-xyz",
+        "name": "src/api/catalog.ts",
+        "observed_at": "2026-08-06T02:54:57Z",
+        "path": "src/api/catalog.ts",
+        "repository": "groupsum/groupsum-xyz",
+        "repository_route": "/catalog/repositories/groupsum/groupsum-xyz",
+        "route": "/catalog/resources/api-source/39718be4aad6",
+        "url": "https://github.com/groupsum/groupsum-xyz/blob/master/src/api/catalog.ts"
+      },
+      {
+        "evidence_type": "repository.blob",
+        "id": "resource:a19c50f02c8c",
+        "kind": "api_source",
+        "legal_evidence": [],
+        "legal_inherits_from": "repository:groupsum/groupsum-xyz",
+        "name": "src/api/client.ts",
+        "observed_at": "2026-08-06T02:54:57Z",
+        "path": "src/api/client.ts",
+        "repository": "groupsum/groupsum-xyz",
+        "repository_route": "/catalog/repositories/groupsum/groupsum-xyz",
+        "route": "/catalog/resources/api-source/a19c50f02c8c",
+        "url": "https://github.com/groupsum/groupsum-xyz/blob/master/src/api/client.ts"
+      },
+      {
+        "evidence_type": "repository.blob",
+        "id": "resource:3e85eee8dd8f",
+        "kind": "api_source",
+        "legal_evidence": [],
+        "legal_inherits_from": "repository:groupsum/groupsum-xyz",
+        "name": "src/api/contract.generated.ts",
+        "observed_at": "2026-08-06T02:54:57Z",
+        "path": "src/api/contract.generated.ts",
+        "repository": "groupsum/groupsum-xyz",
+        "repository_route": "/catalog/repositories/groupsum/groupsum-xyz",
+        "route": "/catalog/resources/api-source/3e85eee8dd8f",
+        "url": "https://github.com/groupsum/groupsum-xyz/blob/master/src/api/contract.generated.ts"
+      },
+      {
+        "evidence_type": "repository.blob",
+        "id": "resource:cef5da78fd92",
+        "kind": "api_source",
+        "legal_evidence": [],
+        "legal_inherits_from": "repository:groupsum/groupsum-xyz",
+        "name": "src/api/schema.generated.ts",
+        "observed_at": "2026-08-06T02:54:57Z",
+        "path": "src/api/schema.generated.ts",
+        "repository": "groupsum/groupsum-xyz",
+        "repository_route": "/catalog/repositories/groupsum/groupsum-xyz",
+        "route": "/catalog/resources/api-source/cef5da78fd92",
+        "url": "https://github.com/groupsum/groupsum-xyz/blob/master/src/api/schema.generated.ts"
       }
     ],
     "relationship_counts": {
-      "repository_contains_package": 3,
-      "repository_contains_related_resource": 2
+      "repository_contains_package": 4,
+      "repository_contains_related_resource": 6
     },
     "reviewed": false,
     "route": "/catalog/repositories/groupsum/groupsum-xyz",
@@ -750,7 +1037,7 @@
       "coverage": {},
       "governed": false,
       "observation_status": "not_found",
-      "observed_at": "2026-08-03T23:39:26Z",
+      "observed_at": "2026-08-06T02:55:13Z",
       "present": false,
       "registry_url": null,
       "status_counts": {},
@@ -776,7 +1063,7 @@
       "npmctl",
       "static-site"
     ],
-    "updated_at": "2026-08-03T22:36:29Z",
+    "updated_at": "2026-08-06T02:51:51Z",
     "url": "https://github.com/groupsum/groupsum-xyz",
     "visibility": "public"
   },

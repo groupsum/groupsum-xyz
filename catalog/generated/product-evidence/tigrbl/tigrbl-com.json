@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-03T23:39:08Z",
+  "generated_at": "2026-08-06T02:54:46Z",
   "packages": [
     {
       "claim_boundary": "Publication is reported only when confirmed by the named public registry.",
@@ -45,7 +45,7 @@
       "evidence": [
         {
           "kind": "source",
-          "observed_at": "2026-08-03T23:39:08Z",
+          "observed_at": "2026-08-06T02:54:46Z",
           "url": "https://github.com/tigrbl/tigrbl-com/blob/master/packages/site-content-pack/package.json"
         }
       ],
@@ -68,7 +68,7 @@
       "license_status": "observed",
       "manifest_path": "packages/site-content-pack/package.json",
       "name": "@tigrbl/tigrbl-com-content-pack",
-      "observed_at": "2026-08-03T23:39:08Z",
+      "observed_at": "2026-08-06T02:54:46Z",
       "owner": "tigrbl",
       "package_kind": "private-package",
       "private": true,
@@ -204,7 +204,7 @@
       "evidence": [
         {
           "kind": "source",
-          "observed_at": "2026-08-03T23:39:08Z",
+          "observed_at": "2026-08-06T02:54:46Z",
           "url": "https://github.com/tigrbl/tigrbl-com/blob/master/package.json"
         }
       ],
@@ -218,7 +218,7 @@
       "license_status": "not-observed",
       "manifest_path": "package.json",
       "name": "tigrbl-com",
-      "observed_at": "2026-08-03T23:39:08Z",
+      "observed_at": "2026-08-06T02:54:46Z",
       "owner": "tigrbl",
       "package_kind": "workspace-project",
       "private": true,
@@ -291,7 +291,7 @@
       "evidence": [
         {
           "kind": "source",
-          "observed_at": "2026-08-03T23:39:08Z",
+          "observed_at": "2026-08-06T02:54:46Z",
           "url": "https://github.com/tigrbl/tigrbl-com/blob/master/pyproject.toml"
         }
       ],
@@ -305,7 +305,7 @@
       "license_status": "not-observed",
       "manifest_path": "pyproject.toml",
       "name": "tigrbl-com",
-      "observed_at": "2026-08-03T23:39:08Z",
+      "observed_at": "2026-08-06T02:54:46Z",
       "owner": "tigrbl",
       "package_kind": "package-candidate",
       "private": false,
@@ -338,18 +338,6 @@
     "archived": false,
     "claim_boundary": "No canonical .ssot/registry.json was observed; repository, release, deployment, and live-service states are reported separately.",
     "commit_activity": [
-      {
-        "count": 0,
-        "date": "2026-07-05"
-      },
-      {
-        "count": 0,
-        "date": "2026-07-06"
-      },
-      {
-        "count": 0,
-        "date": "2026-07-07"
-      },
       {
         "count": 0,
         "date": "2026-07-08"
@@ -457,6 +445,18 @@
       {
         "count": 0,
         "date": "2026-08-03"
+      },
+      {
+        "count": 0,
+        "date": "2026-08-04"
+      },
+      {
+        "count": 0,
+        "date": "2026-08-05"
+      },
+      {
+        "count": 0,
+        "date": "2026-08-06"
       }
     ],
     "contributors": [
@@ -474,7 +474,7 @@
     "evidence": [
       {
         "kind": "source",
-        "observed_at": "2026-08-03T23:39:30Z",
+        "observed_at": "2026-08-06T02:55:19Z",
         "url": "https://github.com/tigrbl/tigrbl-com"
       }
     ],
@@ -518,7 +518,7 @@
       "watchers": 0
     },
     "name": "tigrbl-com",
-    "observed_at": "2026-08-03T23:39:30Z",
+    "observed_at": "2026-08-06T02:55:19Z",
     "owner": "tigrbl",
     "package_ids": [
       "package:npm:@tigrbl/tigrbl-com-content-pack:tigrbl/tigrbl-com:packages/site-content-pack/package.json",
@@ -593,7 +593,7 @@
       "coverage": {},
       "governed": false,
       "observation_status": "not_found",
-      "observed_at": "2026-08-03T23:39:35Z",
+      "observed_at": "2026-08-06T02:55:25Z",
       "present": false,
       "registry_url": null,
       "status_counts": {},

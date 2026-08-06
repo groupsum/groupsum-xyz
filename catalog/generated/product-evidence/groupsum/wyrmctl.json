@@ -1,0 +1,4448 @@
+{
+  "generated_at": "2026-08-06T02:54:46Z",
+  "packages": [
+    {
+      "claim_boundary": "Publication is reported only when confirmed by the named public registry.",
+      "dependencies": [
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "PyYAML",
+          "package_key": "pypi:pyyaml",
+          "requirement": ">=6.0.2",
+          "scope": "dependencies"
+        },
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "requests",
+          "package_key": "pypi:requests",
+          "requirement": ">=2.32.0",
+          "scope": "dependencies"
+        },
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "tomli",
+          "package_key": "pypi:tomli",
+          "requirement": ">=2.0.1; python_version < '3.11'",
+          "scope": "dependencies"
+        },
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "cryptography",
+          "package_key": "pypi:cryptography",
+          "requirement": ">=44.0.0",
+          "scope": "optional-dependencies.signing"
+        },
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "uv-build",
+          "package_key": "pypi:uv-build",
+          "requirement": ">=0.11.8,<0.12",
+          "scope": "build-system.requires"
+        }
+      ],
+      "dependency_count": 5,
+      "dependent_count": 6,
+      "dependents": [
+        {
+          "completeness": "catalog-observed",
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "name": "npmctl",
+          "package_key": "pypi:npmctl",
+          "requirement": ">=0.4.1,<1",
+          "scope": "dependencies"
+        },
+        {
+          "completeness": "catalog-observed",
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "name": "wyrmctl-cloudflare",
+          "package_key": "pypi:wyrmctl-cloudflare",
+          "requirement": ">=0.4.0,<1",
+          "scope": "dependencies"
+        },
+        {
+          "completeness": "catalog-observed",
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "name": "wyrmctl-digitalocean",
+          "package_key": "pypi:wyrmctl-digitalocean",
+          "requirement": ">=0.4.0,<1",
+          "scope": "dependencies"
+        },
+        {
+          "completeness": "catalog-observed",
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "name": "wyrmctl-godaddy",
+          "package_key": "pypi:wyrmctl-godaddy",
+          "requirement": ">=0.4.0,<1",
+          "scope": "dependencies"
+        },
+        {
+          "completeness": "catalog-observed",
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "name": "wyrmctl-namecheap",
+          "package_key": "pypi:wyrmctl-namecheap",
+          "requirement": ">=0.4.0,<1",
+          "scope": "dependencies"
+        },
+        {
+          "completeness": "catalog-observed",
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "name": "wyrmctl-route53",
+          "package_key": "pypi:wyrmctl-route53",
+          "requirement": ">=0.4.0,<1",
+          "scope": "dependencies"
+        }
+      ],
+      "description": "Observed pypi package record for wyrmctl.",
+      "description_source": "generated-factual",
+      "display_name": "wyrmctl",
+      "downloads": null,
+      "downstream_completeness": "not-observed",
+      "downstream_count": 0,
+      "ecosystem": "pypi",
+      "evidence": [
+        {
+          "kind": "registry",
+          "observed_at": "2026-08-06T02:54:46Z",
+          "url": "https://pypi.org/project/wyrmctl/"
+        }
+      ],
+      "id": "package:pypi:wyrmctl:groupsum/wyrmctl:packages/wyrmctl/pyproject.toml",
+      "kind": "package",
+      "latest_version": "0.4.1",
+      "legal_evidence": [
+        {
+          "evidence_type": "repository.manifest",
+          "expression": "Apache-2.0",
+          "kind": "license-expression",
+          "name": "Package manifest license",
+          "scope": "direct",
+          "url": "https://github.com/groupsum/wyrmctl/blob/master/packages/wyrmctl/pyproject.toml"
+        },
+        {
+          "evidence_type": "repository.tree",
+          "expression": null,
+          "kind": "license-file",
+          "name": "LICENSE",
+          "path": "LICENSE",
+          "scope": "inherited",
+          "url": "https://github.com/groupsum/wyrmctl/blob/master/LICENSE"
+        },
+        {
+          "evidence_type": "repository.tree",
+          "expression": null,
+          "kind": "license-file",
+          "name": "LICENSE",
+          "path": "packages/wyrmctl/LICENSE",
+          "scope": "inherited",
+          "url": "https://github.com/groupsum/wyrmctl/blob/master/packages/wyrmctl/LICENSE"
+        }
+      ],
+      "legal_repository": "groupsum/wyrmctl",
+      "license_classifiers": [],
+      "license_expression": "Apache-2.0",
+      "license_status": "observed",
+      "manifest_path": "packages/wyrmctl/pyproject.toml",
+      "name": "wyrmctl",
+      "observed_at": "2026-08-06T02:54:46Z",
+      "owner": "groupsum",
+      "package_kind": "published-package",
+      "private": false,
+      "publication_status": "published",
+      "published": true,
+      "registry_url": "https://pypi.org/project/wyrmctl/",
+      "relationship_count": 12,
+      "relationship_counts": {
+        "package_depends_on_external": 5,
+        "package_depends_on_package": 6,
+        "repository_contains_package": 1
+      },
+      "release_count": 2,
+      "releases": [
+        {
+          "downloads": null,
+          "id": "release:0c02c3f1adcf22f8",
+          "legal_evidence": [],
+          "legal_inherits_from": "package:pypi:wyrmctl:groupsum/wyrmctl:packages/wyrmctl/pyproject.toml",
+          "license_expression": "Apache-2.0",
+          "license_status": "observed",
+          "observed_at": "2026-08-06T02:54:46Z",
+          "published_at": "2026-08-04T16:52:37.412229Z",
+          "release_kind": "pypi",
+          "route": "/catalog/releases/pypi/wyrmctl-83d1c8d690",
+          "url": "https://pypi.org/project/wyrmctl/0.4.1/",
+          "version": "0.4.1"
+        },
+        {
+          "downloads": null,
+          "id": "release:19882c08a2aaf95c",
+          "legal_evidence": [],
+          "legal_inherits_from": "package:pypi:wyrmctl:groupsum/wyrmctl:packages/wyrmctl/pyproject.toml",
+          "license_expression": "Apache-2.0",
+          "license_status": "observed",
+          "observed_at": "2026-08-06T02:54:46Z",
+          "published_at": "2026-07-21T23:59:27.647274Z",
+          "release_kind": "pypi",
+          "route": "/catalog/releases/pypi/wyrmctl-d5e8e3fc67",
+          "url": "https://pypi.org/project/wyrmctl/0.4.0/",
+          "version": "0.4.0"
+        }
+      ],
+      "repository": "groupsum/wyrmctl",
+      "reviewed": false,
+      "route": "/catalog/packages/pypi/wyrmctl-0e69dbf7",
+      "source_url": "https://github.com/groupsum/wyrmctl/blob/master/packages/wyrmctl/pyproject.toml",
+      "technologies": [
+        "Dockerfile",
+        "Python",
+        "Shell"
+      ],
+      "version_declared": "0.4.1"
+    },
+    {
+      "claim_boundary": "Publication is reported only when confirmed by the named public registry.",
+      "dependencies": [
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": true,
+          "name": "wyrmctl",
+          "package_key": "pypi:wyrmctl",
+          "requirement": ">=0.4.0,<1",
+          "scope": "dependencies"
+        },
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "requests",
+          "package_key": "pypi:requests",
+          "requirement": ">=2.32.0",
+          "scope": "dependencies"
+        },
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "uv-build",
+          "package_key": "pypi:uv-build",
+          "requirement": ">=0.11.8,<0.12",
+          "scope": "build-system.requires"
+        }
+      ],
+      "dependency_count": 3,
+      "dependent_count": 1,
+      "dependents": [
+        {
+          "completeness": "catalog-observed",
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "name": "npmctl-cloudflare",
+          "package_key": "pypi:npmctl-cloudflare",
+          "requirement": ">=0.4.0,<1",
+          "scope": "dependencies"
+        }
+      ],
+      "description": "Observed pypi package record for wyrmctl-cloudflare.",
+      "description_source": "generated-factual",
+      "display_name": "wyrmctl-cloudflare",
+      "downloads": null,
+      "downstream_completeness": "not-observed",
+      "downstream_count": 0,
+      "ecosystem": "pypi",
+      "evidence": [
+        {
+          "kind": "source",
+          "observed_at": "2026-08-06T02:54:46Z",
+          "url": "https://github.com/groupsum/wyrmctl/blob/master/packages/wyrmctl-cloudflare/pyproject.toml"
+        }
+      ],
+      "id": "package:pypi:wyrmctl-cloudflare:groupsum/wyrmctl:packages/wyrmctl-cloudflare/pyproject.toml",
+      "kind": "package",
+      "latest_version": "0.4.1",
+      "legal_evidence": [
+        {
+          "evidence_type": "repository.manifest",
+          "expression": "Apache-2.0",
+          "kind": "license-expression",
+          "name": "Package manifest license",
+          "scope": "direct",
+          "url": "https://github.com/groupsum/wyrmctl/blob/master/packages/wyrmctl-cloudflare/pyproject.toml"
+        },
+        {
+          "evidence_type": "repository.tree",
+          "expression": null,
+          "kind": "license-file",
+          "name": "LICENSE",
+          "path": "LICENSE",
+          "scope": "inherited",
+          "url": "https://github.com/groupsum/wyrmctl/blob/master/LICENSE"
+        },
+        {
+          "evidence_type": "repository.tree",
+          "expression": null,
+          "kind": "license-file",
+          "name": "LICENSE",
+          "path": "packages/wyrmctl-cloudflare/LICENSE",
+          "scope": "inherited",
+          "url": "https://github.com/groupsum/wyrmctl/blob/master/packages/wyrmctl-cloudflare/LICENSE"
+        }
+      ],
+      "legal_repository": "groupsum/wyrmctl",
+      "license_classifiers": [],
+      "license_expression": "Apache-2.0",
+      "license_status": "observed",
+      "manifest_path": "packages/wyrmctl-cloudflare/pyproject.toml",
+      "name": "wyrmctl-cloudflare",
+      "observed_at": "2026-08-06T02:54:46Z",
+      "owner": "groupsum",
+      "package_kind": "package-candidate",
+      "private": false,
+      "publication_status": "registry_not_found",
+      "published": false,
+      "registry_url": null,
+      "relationship_count": 5,
+      "relationship_counts": {
+        "package_depends_on_external": 2,
+        "package_depends_on_package": 2,
+        "repository_contains_package": 1
+      },
+      "release_count": 0,
+      "releases": [],
+      "repository": "groupsum/wyrmctl",
+      "reviewed": false,
+      "route": "/catalog/packages/pypi/wyrmctl-cloudflare-2432e540",
+      "source_url": "https://github.com/groupsum/wyrmctl/blob/master/packages/wyrmctl-cloudflare/pyproject.toml",
+      "technologies": [
+        "Dockerfile",
+        "Python",
+        "Shell"
+      ],
+      "version_declared": "0.4.1"
+    },
+    {
+      "claim_boundary": "Publication is reported only when confirmed by the named public registry.",
+      "dependencies": [
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": true,
+          "name": "wyrmctl",
+          "package_key": "pypi:wyrmctl",
+          "requirement": ">=0.4.0,<1",
+          "scope": "dependencies"
+        },
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "requests",
+          "package_key": "pypi:requests",
+          "requirement": ">=2.32.0",
+          "scope": "dependencies"
+        },
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "uv-build",
+          "package_key": "pypi:uv-build",
+          "requirement": ">=0.11.8,<0.12",
+          "scope": "build-system.requires"
+        }
+      ],
+      "dependency_count": 3,
+      "dependent_count": 1,
+      "dependents": [
+        {
+          "completeness": "catalog-observed",
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "name": "npmctl-digitalocean",
+          "package_key": "pypi:npmctl-digitalocean",
+          "requirement": ">=0.4.0,<1",
+          "scope": "dependencies"
+        }
+      ],
+      "description": "Observed pypi package record for wyrmctl-digitalocean.",
+      "description_source": "generated-factual",
+      "display_name": "wyrmctl-digitalocean",
+      "downloads": null,
+      "downstream_completeness": "not-observed",
+      "downstream_count": 0,
+      "ecosystem": "pypi",
+      "evidence": [
+        {
+          "kind": "source",
+          "observed_at": "2026-08-06T02:54:46Z",
+          "url": "https://github.com/groupsum/wyrmctl/blob/master/packages/wyrmctl-digitalocean/pyproject.toml"
+        }
+      ],
+      "id": "package:pypi:wyrmctl-digitalocean:groupsum/wyrmctl:packages/wyrmctl-digitalocean/pyproject.toml",
+      "kind": "package",
+      "latest_version": "0.4.1",
+      "legal_evidence": [
+        {
+          "evidence_type": "repository.manifest",
+          "expression": "Apache-2.0",
+          "kind": "license-expression",
+          "name": "Package manifest license",
+          "scope": "direct",
+          "url": "https://github.com/groupsum/wyrmctl/blob/master/packages/wyrmctl-digitalocean/pyproject.toml"
+        },
+        {
+          "evidence_type": "repository.tree",
+          "expression": null,
+          "kind": "license-file",
+          "name": "LICENSE",
+          "path": "LICENSE",
+          "scope": "inherited",
+          "url": "https://github.com/groupsum/wyrmctl/blob/master/LICENSE"
+        },
+        {
+          "evidence_type": "repository.tree",
+          "expression": null,
+          "kind": "license-file",
+          "name": "LICENSE",
+          "path": "packages/wyrmctl-digitalocean/LICENSE",
+          "scope": "inherited",
+          "url": "https://github.com/groupsum/wyrmctl/blob/master/packages/wyrmctl-digitalocean/LICENSE"
+        }
+      ],
+      "legal_repository": "groupsum/wyrmctl",
+      "license_classifiers": [],
+      "license_expression": "Apache-2.0",
+      "license_status": "observed",
+      "manifest_path": "packages/wyrmctl-digitalocean/pyproject.toml",
+      "name": "wyrmctl-digitalocean",
+      "observed_at": "2026-08-06T02:54:46Z",
+      "owner": "groupsum",
+      "package_kind": "package-candidate",
+      "private": false,
+      "publication_status": "registry_not_found",
+      "published": false,
+      "registry_url": null,
+      "relationship_count": 5,
+      "relationship_counts": {
+        "package_depends_on_external": 2,
+        "package_depends_on_package": 2,
+        "repository_contains_package": 1
+      },
+      "release_count": 0,
+      "releases": [],
+      "repository": "groupsum/wyrmctl",
+      "reviewed": false,
+      "route": "/catalog/packages/pypi/wyrmctl-digitalocean-338d928b",
+      "source_url": "https://github.com/groupsum/wyrmctl/blob/master/packages/wyrmctl-digitalocean/pyproject.toml",
+      "technologies": [
+        "Dockerfile",
+        "Python",
+        "Shell"
+      ],
+      "version_declared": "0.4.1"
+    },
+    {
+      "claim_boundary": "Publication is reported only when confirmed by the named public registry.",
+      "dependencies": [
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": true,
+          "name": "wyrmctl",
+          "package_key": "pypi:wyrmctl",
+          "requirement": ">=0.4.0,<1",
+          "scope": "dependencies"
+        },
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "requests",
+          "package_key": "pypi:requests",
+          "requirement": ">=2.32.0",
+          "scope": "dependencies"
+        },
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "uv-build",
+          "package_key": "pypi:uv-build",
+          "requirement": ">=0.11.8,<0.12",
+          "scope": "build-system.requires"
+        }
+      ],
+      "dependency_count": 3,
+      "dependent_count": 1,
+      "dependents": [
+        {
+          "completeness": "catalog-observed",
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "name": "npmctl-godaddy",
+          "package_key": "pypi:npmctl-godaddy",
+          "requirement": ">=0.4.0,<1",
+          "scope": "dependencies"
+        }
+      ],
+      "description": "Observed pypi package record for wyrmctl-godaddy.",
+      "description_source": "generated-factual",
+      "display_name": "wyrmctl-godaddy",
+      "downloads": null,
+      "downstream_completeness": "not-observed",
+      "downstream_count": 0,
+      "ecosystem": "pypi",
+      "evidence": [
+        {
+          "kind": "source",
+          "observed_at": "2026-08-06T02:54:46Z",
+          "url": "https://github.com/groupsum/wyrmctl/blob/master/packages/wyrmctl-godaddy/pyproject.toml"
+        }
+      ],
+      "id": "package:pypi:wyrmctl-godaddy:groupsum/wyrmctl:packages/wyrmctl-godaddy/pyproject.toml",
+      "kind": "package",
+      "latest_version": "0.4.1",
+      "legal_evidence": [
+        {
+          "evidence_type": "repository.manifest",
+          "expression": "Apache-2.0",
+          "kind": "license-expression",
+          "name": "Package manifest license",
+          "scope": "direct",
+          "url": "https://github.com/groupsum/wyrmctl/blob/master/packages/wyrmctl-godaddy/pyproject.toml"
+        },
+        {
+          "evidence_type": "repository.tree",
+          "expression": null,
+          "kind": "license-file",
+          "name": "LICENSE",
+          "path": "LICENSE",
+          "scope": "inherited",
+          "url": "https://github.com/groupsum/wyrmctl/blob/master/LICENSE"
+        },
+        {
+          "evidence_type": "repository.tree",
+          "expression": null,
+          "kind": "license-file",
+          "name": "LICENSE",
+          "path": "packages/wyrmctl-godaddy/LICENSE",
+          "scope": "inherited",
+          "url": "https://github.com/groupsum/wyrmctl/blob/master/packages/wyrmctl-godaddy/LICENSE"
+        }
+      ],
+      "legal_repository": "groupsum/wyrmctl",
+      "license_classifiers": [],
+      "license_expression": "Apache-2.0",
+      "license_status": "observed",
+      "manifest_path": "packages/wyrmctl-godaddy/pyproject.toml",
+      "name": "wyrmctl-godaddy",
+      "observed_at": "2026-08-06T02:54:46Z",
+      "owner": "groupsum",
+      "package_kind": "package-candidate",
+      "private": false,
+      "publication_status": "registry_not_found",
+      "published": false,
+      "registry_url": null,
+      "relationship_count": 5,
+      "relationship_counts": {
+        "package_depends_on_external": 2,
+        "package_depends_on_package": 2,
+        "repository_contains_package": 1
+      },
+      "release_count": 0,
+      "releases": [],
+      "repository": "groupsum/wyrmctl",
+      "reviewed": false,
+      "route": "/catalog/packages/pypi/wyrmctl-godaddy-64c6c6f4",
+      "source_url": "https://github.com/groupsum/wyrmctl/blob/master/packages/wyrmctl-godaddy/pyproject.toml",
+      "technologies": [
+        "Dockerfile",
+        "Python",
+        "Shell"
+      ],
+      "version_declared": "0.4.1"
+    },
+    {
+      "claim_boundary": "Publication is reported only when confirmed by the named public registry.",
+      "dependencies": [
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": true,
+          "name": "wyrmctl",
+          "package_key": "pypi:wyrmctl",
+          "requirement": ">=0.4.0,<1",
+          "scope": "dependencies"
+        },
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "requests",
+          "package_key": "pypi:requests",
+          "requirement": ">=2.32.0",
+          "scope": "dependencies"
+        },
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "uv-build",
+          "package_key": "pypi:uv-build",
+          "requirement": ">=0.11.8,<0.12",
+          "scope": "build-system.requires"
+        }
+      ],
+      "dependency_count": 3,
+      "dependent_count": 1,
+      "dependents": [
+        {
+          "completeness": "catalog-observed",
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "name": "npmctl-namecheap",
+          "package_key": "pypi:npmctl-namecheap",
+          "requirement": ">=0.4.0,<1",
+          "scope": "dependencies"
+        }
+      ],
+      "description": "Observed pypi package record for wyrmctl-namecheap.",
+      "description_source": "generated-factual",
+      "display_name": "wyrmctl-namecheap",
+      "downloads": null,
+      "downstream_completeness": "not-observed",
+      "downstream_count": 0,
+      "ecosystem": "pypi",
+      "evidence": [
+        {
+          "kind": "source",
+          "observed_at": "2026-08-06T02:54:46Z",
+          "url": "https://github.com/groupsum/wyrmctl/blob/master/packages/wyrmctl-namecheap/pyproject.toml"
+        }
+      ],
+      "id": "package:pypi:wyrmctl-namecheap:groupsum/wyrmctl:packages/wyrmctl-namecheap/pyproject.toml",
+      "kind": "package",
+      "latest_version": "0.4.1",
+      "legal_evidence": [
+        {
+          "evidence_type": "repository.manifest",
+          "expression": "Apache-2.0",
+          "kind": "license-expression",
+          "name": "Package manifest license",
+          "scope": "direct",
+          "url": "https://github.com/groupsum/wyrmctl/blob/master/packages/wyrmctl-namecheap/pyproject.toml"
+        },
+        {
+          "evidence_type": "repository.tree",
+          "expression": null,
+          "kind": "license-file",
+          "name": "LICENSE",
+          "path": "LICENSE",
+          "scope": "inherited",
+          "url": "https://github.com/groupsum/wyrmctl/blob/master/LICENSE"
+        },
+        {
+          "evidence_type": "repository.tree",
+          "expression": null,
+          "kind": "license-file",
+          "name": "LICENSE",
+          "path": "packages/wyrmctl-namecheap/LICENSE",
+          "scope": "inherited",
+          "url": "https://github.com/groupsum/wyrmctl/blob/master/packages/wyrmctl-namecheap/LICENSE"
+        }
+      ],
+      "legal_repository": "groupsum/wyrmctl",
+      "license_classifiers": [],
+      "license_expression": "Apache-2.0",
+      "license_status": "observed",
+      "manifest_path": "packages/wyrmctl-namecheap/pyproject.toml",
+      "name": "wyrmctl-namecheap",
+      "observed_at": "2026-08-06T02:54:46Z",
+      "owner": "groupsum",
+      "package_kind": "package-candidate",
+      "private": false,
+      "publication_status": "registry_not_found",
+      "published": false,
+      "registry_url": null,
+      "relationship_count": 5,
+      "relationship_counts": {
+        "package_depends_on_external": 2,
+        "package_depends_on_package": 2,
+        "repository_contains_package": 1
+      },
+      "release_count": 0,
+      "releases": [],
+      "repository": "groupsum/wyrmctl",
+      "reviewed": false,
+      "route": "/catalog/packages/pypi/wyrmctl-namecheap-8cf2ebfe",
+      "source_url": "https://github.com/groupsum/wyrmctl/blob/master/packages/wyrmctl-namecheap/pyproject.toml",
+      "technologies": [
+        "Dockerfile",
+        "Python",
+        "Shell"
+      ],
+      "version_declared": "0.4.1"
+    },
+    {
+      "claim_boundary": "Publication is reported only when confirmed by the named public registry.",
+      "dependencies": [
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": true,
+          "name": "wyrmctl",
+          "package_key": "pypi:wyrmctl",
+          "requirement": ">=0.4.0,<1",
+          "scope": "dependencies"
+        },
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "boto3",
+          "package_key": "pypi:boto3",
+          "requirement": ">=1.34.0",
+          "scope": "dependencies"
+        },
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "uv-build",
+          "package_key": "pypi:uv-build",
+          "requirement": ">=0.11.8,<0.12",
+          "scope": "build-system.requires"
+        }
+      ],
+      "dependency_count": 3,
+      "dependent_count": 1,
+      "dependents": [
+        {
+          "completeness": "catalog-observed",
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "name": "npmctl-route53",
+          "package_key": "pypi:npmctl-route53",
+          "requirement": ">=0.4.0,<1",
+          "scope": "dependencies"
+        }
+      ],
+      "description": "Observed pypi package record for wyrmctl-route53.",
+      "description_source": "generated-factual",
+      "display_name": "wyrmctl-route53",
+      "downloads": null,
+      "downstream_completeness": "not-observed",
+      "downstream_count": 0,
+      "ecosystem": "pypi",
+      "evidence": [
+        {
+          "kind": "source",
+          "observed_at": "2026-08-06T02:54:46Z",
+          "url": "https://github.com/groupsum/wyrmctl/blob/master/packages/wyrmctl-route53/pyproject.toml"
+        }
+      ],
+      "id": "package:pypi:wyrmctl-route53:groupsum/wyrmctl:packages/wyrmctl-route53/pyproject.toml",
+      "kind": "package",
+      "latest_version": "0.4.1",
+      "legal_evidence": [
+        {
+          "evidence_type": "repository.manifest",
+          "expression": "Apache-2.0",
+          "kind": "license-expression",
+          "name": "Package manifest license",
+          "scope": "direct",
+          "url": "https://github.com/groupsum/wyrmctl/blob/master/packages/wyrmctl-route53/pyproject.toml"
+        },
+        {
+          "evidence_type": "repository.tree",
+          "expression": null,
+          "kind": "license-file",
+          "name": "LICENSE",
+          "path": "LICENSE",
+          "scope": "inherited",
+          "url": "https://github.com/groupsum/wyrmctl/blob/master/LICENSE"
+        },
+        {
+          "evidence_type": "repository.tree",
+          "expression": null,
+          "kind": "license-file",
+          "name": "LICENSE",
+          "path": "packages/wyrmctl-route53/LICENSE",
+          "scope": "inherited",
+          "url": "https://github.com/groupsum/wyrmctl/blob/master/packages/wyrmctl-route53/LICENSE"
+        }
+      ],
+      "legal_repository": "groupsum/wyrmctl",
+      "license_classifiers": [],
+      "license_expression": "Apache-2.0",
+      "license_status": "observed",
+      "manifest_path": "packages/wyrmctl-route53/pyproject.toml",
+      "name": "wyrmctl-route53",
+      "observed_at": "2026-08-06T02:54:46Z",
+      "owner": "groupsum",
+      "package_kind": "package-candidate",
+      "private": false,
+      "publication_status": "registry_not_found",
+      "published": false,
+      "registry_url": null,
+      "relationship_count": 5,
+      "relationship_counts": {
+        "package_depends_on_external": 2,
+        "package_depends_on_package": 2,
+        "repository_contains_package": 1
+      },
+      "release_count": 0,
+      "releases": [],
+      "repository": "groupsum/wyrmctl",
+      "reviewed": false,
+      "route": "/catalog/packages/pypi/wyrmctl-route53-7424c702",
+      "source_url": "https://github.com/groupsum/wyrmctl/blob/master/packages/wyrmctl-route53/pyproject.toml",
+      "technologies": [
+        "Dockerfile",
+        "Python",
+        "Shell"
+      ],
+      "version_declared": "0.4.1"
+    },
+    {
+      "claim_boundary": "Publication is reported only when confirmed by the named public registry.",
+      "dependencies": [
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "build",
+          "package_key": "pypi:build",
+          "requirement": ">=1.2.2",
+          "scope": "dependency-groups.dev"
+        },
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "coverage",
+          "package_key": "pypi:coverage",
+          "requirement": "[toml]>=7.8.0",
+          "scope": "dependency-groups.dev"
+        },
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "jsonschema",
+          "package_key": "pypi:jsonschema",
+          "requirement": ">=4.25.0",
+          "scope": "dependency-groups.dev"
+        },
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "pytest",
+          "package_key": "pypi:pytest",
+          "requirement": ">=8.3.0",
+          "scope": "dependency-groups.dev"
+        },
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "pytest-cov",
+          "package_key": "pypi:pytest-cov",
+          "requirement": ">=6.0.0",
+          "scope": "dependency-groups.dev"
+        },
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "PyYAML",
+          "package_key": "pypi:pyyaml",
+          "requirement": ">=6.0.2",
+          "scope": "dependency-groups.dev"
+        },
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "requests",
+          "package_key": "pypi:requests",
+          "requirement": ">=2.32.0",
+          "scope": "dependency-groups.dev"
+        },
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "ruff",
+          "package_key": "pypi:ruff",
+          "requirement": ">=0.12.0",
+          "scope": "dependency-groups.dev"
+        },
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": true,
+          "name": "ssot-registry",
+          "package_key": "pypi:ssot-registry",
+          "requirement": "==0.2.13",
+          "scope": "dependency-groups.dev"
+        },
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "uv-build",
+          "package_key": "pypi:uv-build",
+          "requirement": ">=0.11.8,<0.12",
+          "scope": "dependency-groups.dev"
+        },
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "yamllint",
+          "package_key": "pypi:yamllint",
+          "requirement": ">=1.35.0",
+          "scope": "dependency-groups.dev"
+        }
+      ],
+      "dependency_count": 11,
+      "dependent_count": 0,
+      "dependents": [],
+      "description": "Observed pypi package record for wyrmctl-workspace.",
+      "description_source": "generated-factual",
+      "display_name": "wyrmctl-workspace",
+      "downloads": null,
+      "downstream_completeness": "not-observed",
+      "downstream_count": 0,
+      "ecosystem": "pypi",
+      "evidence": [
+        {
+          "kind": "source",
+          "observed_at": "2026-08-06T02:54:46Z",
+          "url": "https://github.com/groupsum/wyrmctl/blob/master/pyproject.toml"
+        }
+      ],
+      "id": "package:pypi:wyrmctl-workspace:groupsum/wyrmctl:pyproject.toml",
+      "kind": "package",
+      "latest_version": "0.4.1",
+      "legal_evidence": [
+        {
+          "evidence_type": "repository.manifest",
+          "expression": "Apache-2.0",
+          "kind": "license-expression",
+          "name": "Package manifest license",
+          "scope": "direct",
+          "url": "https://github.com/groupsum/wyrmctl/blob/master/pyproject.toml"
+        },
+        {
+          "evidence_type": "repository.tree",
+          "expression": null,
+          "kind": "license-file",
+          "name": "LICENSE",
+          "path": "LICENSE",
+          "scope": "inherited",
+          "url": "https://github.com/groupsum/wyrmctl/blob/master/LICENSE"
+        }
+      ],
+      "legal_repository": "groupsum/wyrmctl",
+      "license_classifiers": [],
+      "license_expression": "Apache-2.0",
+      "license_status": "observed",
+      "manifest_path": "pyproject.toml",
+      "name": "wyrmctl-workspace",
+      "observed_at": "2026-08-06T02:54:46Z",
+      "owner": "groupsum",
+      "package_kind": "package-candidate",
+      "private": false,
+      "publication_status": "registry_not_found",
+      "published": false,
+      "registry_url": null,
+      "relationship_count": 12,
+      "relationship_counts": {
+        "package_depends_on_external": 10,
+        "package_depends_on_package": 1,
+        "repository_contains_package": 1
+      },
+      "release_count": 0,
+      "releases": [],
+      "repository": "groupsum/wyrmctl",
+      "reviewed": false,
+      "route": "/catalog/packages/pypi/wyrmctl-workspace-da2cab30",
+      "source_url": "https://github.com/groupsum/wyrmctl/blob/master/pyproject.toml",
+      "technologies": [
+        "Dockerfile",
+        "Python",
+        "Shell"
+      ],
+      "version_declared": "0.4.1"
+    }
+  ],
+  "repository": {
+    "archived": false,
+    "claim_boundary": "SSOT artifact counts and coverage are registry-reported observations; they do not by themselves prove that every public product claim is supported.",
+    "commit_activity": [
+      {
+        "count": 0,
+        "date": "2026-07-08"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-09"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-10"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-11"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-12"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-13"
+      },
+      {
+        "count": 1,
+        "date": "2026-07-14"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-15"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-16"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-17"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-18"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-19"
+      },
+      {
+        "count": 1,
+        "date": "2026-07-20"
+      },
+      {
+        "count": 10,
+        "date": "2026-07-21"
+      },
+      {
+        "count": 1,
+        "date": "2026-07-22"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-23"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-24"
+      },
+      {
+        "count": 2,
+        "date": "2026-07-25"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-26"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-27"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-28"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-29"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-30"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-31"
+      },
+      {
+        "count": 0,
+        "date": "2026-08-01"
+      },
+      {
+        "count": 0,
+        "date": "2026-08-02"
+      },
+      {
+        "count": 0,
+        "date": "2026-08-03"
+      },
+      {
+        "count": 4,
+        "date": "2026-08-04"
+      },
+      {
+        "count": 0,
+        "date": "2026-08-05"
+      },
+      {
+        "count": 0,
+        "date": "2026-08-06"
+      }
+    ],
+    "contributors": [
+      {
+        "contributions": 92,
+        "login": "cobycloud",
+        "url": "https://github.com/cobycloud"
+      },
+      {
+        "contributions": 9,
+        "login": "github-actions[bot]",
+        "url": "https://github.com/apps/github-actions"
+      }
+    ],
+    "created_at": "2026-07-20T22:46:59Z",
+    "default_branch": "master",
+    "description": "Portwyrm CLI helper and provider foundation",
+    "description_source": "github-repository",
+    "display_name": "wyrmctl",
+    "evidence": [
+      {
+        "kind": "ssot-registry",
+        "observed_at": "2026-08-06T02:55:20Z",
+        "url": "https://github.com/groupsum/wyrmctl/blob/master/.ssot/registry.json"
+      },
+      {
+        "kind": "source",
+        "observed_at": "2026-08-06T02:55:15Z",
+        "url": "https://github.com/groupsum/wyrmctl"
+      }
+    ],
+    "fork": false,
+    "full_name": "groupsum/wyrmctl",
+    "github_releases": [],
+    "homepage": null,
+    "id": "repository:groupsum/wyrmctl",
+    "kind": "repository",
+    "latest_commit": {
+      "author": "cobycloud",
+      "authored_at": "2026-08-04T16:43:03Z",
+      "committed_at": "2026-08-04T16:43:03Z",
+      "committer": "cobycloud",
+      "message": "docs: refresh generated SSOT registry views",
+      "sha": "6c841ae783447f7f540a3884ce167da9c71fc700",
+      "url": "https://github.com/groupsum/wyrmctl/commit/6c841ae783447f7f540a3884ce167da9c71fc700"
+    },
+    "latest_deployment": {
+      "environment": "pypi",
+      "environment_url": "",
+      "log_url": "https://github.com/groupsum/wyrmctl/actions/runs/30930495856/job/92066044223",
+      "state": "failure",
+      "updated_at": "2026-08-04T16:52:44Z"
+    },
+    "latest_release": null,
+    "legal_evidence": [
+      {
+        "evidence_type": "github.repository.license",
+        "expression": "Apache-2.0",
+        "kind": "license-expression",
+        "name": "GitHub detected license",
+        "path": null,
+        "scope": "direct",
+        "url": "https://github.com/groupsum/wyrmctl"
+      },
+      {
+        "evidence_type": "repository.tree",
+        "expression": null,
+        "kind": "license-file",
+        "name": "LICENSE",
+        "path": "LICENSE",
+        "scope": "direct",
+        "url": "https://github.com/groupsum/wyrmctl/blob/master/LICENSE"
+      }
+    ],
+    "license": "Apache-2.0",
+    "metrics": {
+      "commits": 101,
+      "contributors": 2,
+      "deployments": 4,
+      "environments": 1,
+      "forks": 0,
+      "github_releases": 0,
+      "open_issues": 5,
+      "packages": 7,
+      "related_resources": 39,
+      "size_kb": 11210,
+      "stars": 0,
+      "watchers": 0
+    },
+    "name": "wyrmctl",
+    "observed_at": "2026-08-06T02:55:15Z",
+    "owner": "groupsum",
+    "package_ids": [
+      "package:pypi:wyrmctl-cloudflare:groupsum/wyrmctl:packages/wyrmctl-cloudflare/pyproject.toml",
+      "package:pypi:wyrmctl-digitalocean:groupsum/wyrmctl:packages/wyrmctl-digitalocean/pyproject.toml",
+      "package:pypi:wyrmctl-godaddy:groupsum/wyrmctl:packages/wyrmctl-godaddy/pyproject.toml",
+      "package:pypi:wyrmctl-namecheap:groupsum/wyrmctl:packages/wyrmctl-namecheap/pyproject.toml",
+      "package:pypi:wyrmctl-route53:groupsum/wyrmctl:packages/wyrmctl-route53/pyproject.toml",
+      "package:pypi:wyrmctl-workspace:groupsum/wyrmctl:pyproject.toml",
+      "package:pypi:wyrmctl:groupsum/wyrmctl:packages/wyrmctl/pyproject.toml"
+    ],
+    "packages": [
+      {
+        "ecosystem": "pypi",
+        "id": "package:pypi:wyrmctl-cloudflare:groupsum/wyrmctl:packages/wyrmctl-cloudflare/pyproject.toml",
+        "last_published_at": null,
+        "latest_version": "0.4.1",
+        "license_expression": "Apache-2.0",
+        "license_status": "observed",
+        "license_url": "https://github.com/groupsum/wyrmctl/blob/master/LICENSE",
+        "manifest_path": "packages/wyrmctl-cloudflare/pyproject.toml",
+        "name": "wyrmctl-cloudflare",
+        "notice_count": 0,
+        "package_kind": "package-candidate",
+        "publication_status": "registry_not_found",
+        "published": false,
+        "release_activity": [],
+        "release_count": 0,
+        "route": "/catalog/packages/pypi/wyrmctl-cloudflare-2432e540"
+      },
+      {
+        "ecosystem": "pypi",
+        "id": "package:pypi:wyrmctl-digitalocean:groupsum/wyrmctl:packages/wyrmctl-digitalocean/pyproject.toml",
+        "last_published_at": null,
+        "latest_version": "0.4.1",
+        "license_expression": "Apache-2.0",
+        "license_status": "observed",
+        "license_url": "https://github.com/groupsum/wyrmctl/blob/master/LICENSE",
+        "manifest_path": "packages/wyrmctl-digitalocean/pyproject.toml",
+        "name": "wyrmctl-digitalocean",
+        "notice_count": 0,
+        "package_kind": "package-candidate",
+        "publication_status": "registry_not_found",
+        "published": false,
+        "release_activity": [],
+        "release_count": 0,
+        "route": "/catalog/packages/pypi/wyrmctl-digitalocean-338d928b"
+      },
+      {
+        "ecosystem": "pypi",
+        "id": "package:pypi:wyrmctl-godaddy:groupsum/wyrmctl:packages/wyrmctl-godaddy/pyproject.toml",
+        "last_published_at": null,
+        "latest_version": "0.4.1",
+        "license_expression": "Apache-2.0",
+        "license_status": "observed",
+        "license_url": "https://github.com/groupsum/wyrmctl/blob/master/LICENSE",
+        "manifest_path": "packages/wyrmctl-godaddy/pyproject.toml",
+        "name": "wyrmctl-godaddy",
+        "notice_count": 0,
+        "package_kind": "package-candidate",
+        "publication_status": "registry_not_found",
+        "published": false,
+        "release_activity": [],
+        "release_count": 0,
+        "route": "/catalog/packages/pypi/wyrmctl-godaddy-64c6c6f4"
+      },
+      {
+        "ecosystem": "pypi",
+        "id": "package:pypi:wyrmctl-namecheap:groupsum/wyrmctl:packages/wyrmctl-namecheap/pyproject.toml",
+        "last_published_at": null,
+        "latest_version": "0.4.1",
+        "license_expression": "Apache-2.0",
+        "license_status": "observed",
+        "license_url": "https://github.com/groupsum/wyrmctl/blob/master/LICENSE",
+        "manifest_path": "packages/wyrmctl-namecheap/pyproject.toml",
+        "name": "wyrmctl-namecheap",
+        "notice_count": 0,
+        "package_kind": "package-candidate",
+        "publication_status": "registry_not_found",
+        "published": false,
+        "release_activity": [],
+        "release_count": 0,
+        "route": "/catalog/packages/pypi/wyrmctl-namecheap-8cf2ebfe"
+      },
+      {
+        "ecosystem": "pypi",
+        "id": "package:pypi:wyrmctl-route53:groupsum/wyrmctl:packages/wyrmctl-route53/pyproject.toml",
+        "last_published_at": null,
+        "latest_version": "0.4.1",
+        "license_expression": "Apache-2.0",
+        "license_status": "observed",
+        "license_url": "https://github.com/groupsum/wyrmctl/blob/master/LICENSE",
+        "manifest_path": "packages/wyrmctl-route53/pyproject.toml",
+        "name": "wyrmctl-route53",
+        "notice_count": 0,
+        "package_kind": "package-candidate",
+        "publication_status": "registry_not_found",
+        "published": false,
+        "release_activity": [],
+        "release_count": 0,
+        "route": "/catalog/packages/pypi/wyrmctl-route53-7424c702"
+      },
+      {
+        "ecosystem": "pypi",
+        "id": "package:pypi:wyrmctl-workspace:groupsum/wyrmctl:pyproject.toml",
+        "last_published_at": null,
+        "latest_version": "0.4.1",
+        "license_expression": "Apache-2.0",
+        "license_status": "observed",
+        "license_url": "https://github.com/groupsum/wyrmctl/blob/master/LICENSE",
+        "manifest_path": "pyproject.toml",
+        "name": "wyrmctl-workspace",
+        "notice_count": 0,
+        "package_kind": "package-candidate",
+        "publication_status": "registry_not_found",
+        "published": false,
+        "release_activity": [],
+        "release_count": 0,
+        "route": "/catalog/packages/pypi/wyrmctl-workspace-da2cab30"
+      },
+      {
+        "ecosystem": "pypi",
+        "id": "package:pypi:wyrmctl:groupsum/wyrmctl:packages/wyrmctl/pyproject.toml",
+        "last_published_at": "2026-08-04T16:52:37.412229Z",
+        "latest_version": "0.4.1",
+        "license_expression": "Apache-2.0",
+        "license_status": "observed",
+        "license_url": "https://github.com/groupsum/wyrmctl/blob/master/LICENSE",
+        "manifest_path": "packages/wyrmctl/pyproject.toml",
+        "name": "wyrmctl",
+        "notice_count": 0,
+        "package_kind": "published-package",
+        "publication_status": "published",
+        "published": true,
+        "release_activity": [
+          {
+            "count": 1,
+            "month": "2026-07"
+          },
+          {
+            "count": 1,
+            "month": "2026-08"
+          }
+        ],
+        "release_count": 2,
+        "route": "/catalog/packages/pypi/wyrmctl-0e69dbf7"
+      }
+    ],
+    "pushed_at": "2026-08-04T16:43:06Z",
+    "related_resources": [
+      {
+        "evidence_type": "repository.api_definition",
+        "id": "resource:3d10d345c7db",
+        "kind": "api_definition",
+        "legal_evidence": [],
+        "legal_inherits_from": "repository:groupsum/wyrmctl",
+        "name": "schemas/npm/2.10.4/openapi.json",
+        "observed_at": "2026-08-06T02:55:15Z",
+        "path": "schemas/npm/2.10.4/openapi.json",
+        "repository": "groupsum/wyrmctl",
+        "repository_route": "/catalog/repositories/groupsum/wyrmctl",
+        "route": "/catalog/resources/api-definition/3d10d345c7db",
+        "url": "https://github.com/groupsum/wyrmctl/blob/master/schemas/npm/2.10.4/openapi.json"
+      },
+      {
+        "evidence_type": "repository.blob",
+        "id": "resource:6242cc3d5c0d",
+        "kind": "documentation",
+        "legal_evidence": [],
+        "legal_inherits_from": "repository:groupsum/wyrmctl",
+        "name": "docs/AGENTS.md",
+        "observed_at": "2026-08-06T02:55:15Z",
+        "path": "docs/AGENTS.md",
+        "repository": "groupsum/wyrmctl",
+        "repository_route": "/catalog/repositories/groupsum/wyrmctl",
+        "route": "/catalog/resources/documentation/6242cc3d5c0d",
+        "url": "https://github.com/groupsum/wyrmctl/blob/master/docs/AGENTS.md"
+      },
+      {
+        "evidence_type": "repository.blob",
+        "id": "resource:699005ba1d1c",
+        "kind": "documentation",
+        "legal_evidence": [],
+        "legal_inherits_from": "repository:groupsum/wyrmctl",
+        "name": "docs/access-lists.md",
+        "observed_at": "2026-08-06T02:55:15Z",
+        "path": "docs/access-lists.md",
+        "repository": "groupsum/wyrmctl",
+        "repository_route": "/catalog/repositories/groupsum/wyrmctl",
+        "route": "/catalog/resources/documentation/699005ba1d1c",
+        "url": "https://github.com/groupsum/wyrmctl/blob/master/docs/access-lists.md"
+      },
+      {
+        "evidence_type": "repository.blob",
+        "id": "resource:ed490b5e2a57",
+        "kind": "documentation",
+        "legal_evidence": [],
+        "legal_inherits_from": "repository:groupsum/wyrmctl",
+        "name": "docs/adoption.md",
+        "observed_at": "2026-08-06T02:55:15Z",
+        "path": "docs/adoption.md",
+        "repository": "groupsum/wyrmctl",
+        "repository_route": "/catalog/repositories/groupsum/wyrmctl",
+        "route": "/catalog/resources/documentation/ed490b5e2a57",
+        "url": "https://github.com/groupsum/wyrmctl/blob/master/docs/adoption.md"
+      },
+      {
+        "evidence_type": "repository.tree",
+        "id": "resource:9928b7ae0c7f",
+        "kind": "documentation",
+        "legal_evidence": [],
+        "legal_inherits_from": "repository:groupsum/wyrmctl",
+        "name": "docs/adrs",
+        "observed_at": "2026-08-06T02:55:15Z",
+        "path": "docs/adrs",
+        "repository": "groupsum/wyrmctl",
+        "repository_route": "/catalog/repositories/groupsum/wyrmctl",
+        "route": "/catalog/resources/documentation/9928b7ae0c7f",
+        "url": "https://github.com/groupsum/wyrmctl/tree/master/docs/adrs"
+      },
+      {
+        "evidence_type": "repository.blob",
+        "id": "resource:81db5dc8d1f5",
+        "kind": "documentation",
+        "legal_evidence": [],
+        "legal_inherits_from": "repository:groupsum/wyrmctl",
+        "name": "docs/artifact-trust.md",
+        "observed_at": "2026-08-06T02:55:15Z",
+        "path": "docs/artifact-trust.md",
+        "repository": "groupsum/wyrmctl",
+        "repository_route": "/catalog/repositories/groupsum/wyrmctl",
+        "route": "/catalog/resources/documentation/81db5dc8d1f5",
+        "url": "https://github.com/groupsum/wyrmctl/blob/master/docs/artifact-trust.md"
+      },
+      {
+        "evidence_type": "repository.tree",
+        "id": "resource:0e193ad47fb5",
+        "kind": "documentation",
+        "legal_evidence": [],
+        "legal_inherits_from": "repository:groupsum/wyrmctl",
+        "name": "docs/brand",
+        "observed_at": "2026-08-06T02:55:15Z",
+        "path": "docs/brand",
+        "repository": "groupsum/wyrmctl",
+        "repository_route": "/catalog/repositories/groupsum/wyrmctl",
+        "route": "/catalog/resources/documentation/0e193ad47fb5",
+        "url": "https://github.com/groupsum/wyrmctl/tree/master/docs/brand"
+      },
+      {
+        "evidence_type": "repository.blob",
+        "id": "resource:288b697bc3fe",
+        "kind": "documentation",
+        "legal_evidence": [],
+        "legal_inherits_from": "repository:groupsum/wyrmctl",
+        "name": "docs/cli.md",
+        "observed_at": "2026-08-06T02:55:15Z",
+        "path": "docs/cli.md",
+        "repository": "groupsum/wyrmctl",
+        "repository_route": "/catalog/repositories/groupsum/wyrmctl",
+        "route": "/catalog/resources/documentation/288b697bc3fe",
+        "url": "https://github.com/groupsum/wyrmctl/blob/master/docs/cli.md"
+      },
+      {
+        "evidence_type": "repository.blob",
+        "id": "resource:0993ede9febc",
+        "kind": "documentation",
+        "legal_evidence": [],
+        "legal_inherits_from": "repository:groupsum/wyrmctl",
+        "name": "docs/compliance.md",
+        "observed_at": "2026-08-06T02:55:15Z",
+        "path": "docs/compliance.md",
+        "repository": "groupsum/wyrmctl",
+        "repository_route": "/catalog/repositories/groupsum/wyrmctl",
+        "route": "/catalog/resources/documentation/0993ede9febc",
+        "url": "https://github.com/groupsum/wyrmctl/blob/master/docs/compliance.md"
+      },
+      {
+        "evidence_type": "repository.blob",
+        "id": "resource:0ac2cfa7a783",
+        "kind": "documentation",
+        "legal_evidence": [],
+        "legal_inherits_from": "repository:groupsum/wyrmctl",
+        "name": "docs/contracts.md",
+        "observed_at": "2026-08-06T02:55:15Z",
+        "path": "docs/contracts.md",
+        "repository": "groupsum/wyrmctl",
+        "repository_route": "/catalog/repositories/groupsum/wyrmctl",
+        "route": "/catalog/resources/documentation/0ac2cfa7a783",
+        "url": "https://github.com/groupsum/wyrmctl/blob/master/docs/contracts.md"
+      },
+      {
+        "evidence_type": "repository.blob",
+        "id": "resource:77ce2848ea6b",
+        "kind": "documentation",
+        "legal_evidence": [],
+        "legal_inherits_from": "repository:groupsum/wyrmctl",
+        "name": "docs/desired-state.md",
+        "observed_at": "2026-08-06T02:55:15Z",
+        "path": "docs/desired-state.md",
+        "repository": "groupsum/wyrmctl",
+        "repository_route": "/catalog/repositories/groupsum/wyrmctl",
+        "route": "/catalog/resources/documentation/77ce2848ea6b",
+        "url": "https://github.com/groupsum/wyrmctl/blob/master/docs/desired-state.md"
+      },
+      {
+        "evidence_type": "repository.blob",
+        "id": "resource:c98bc28a9d0c",
+        "kind": "documentation",
+        "legal_evidence": [],
+        "legal_inherits_from": "repository:groupsum/wyrmctl",
+        "name": "docs/dns-providers.md",
+        "observed_at": "2026-08-06T02:55:15Z",
+        "path": "docs/dns-providers.md",
+        "repository": "groupsum/wyrmctl",
+        "repository_route": "/catalog/repositories/groupsum/wyrmctl",
+        "route": "/catalog/resources/documentation/c98bc28a9d0c",
+        "url": "https://github.com/groupsum/wyrmctl/blob/master/docs/dns-providers.md"
+      },
+      {
+        "evidence_type": "repository.blob",
+        "id": "resource:ca85cc74cb14",
+        "kind": "documentation",
+        "legal_evidence": [],
+        "legal_inherits_from": "repository:groupsum/wyrmctl",
+        "name": "docs/dns.md",
+        "observed_at": "2026-08-06T02:55:15Z",
+        "path": "docs/dns.md",
+        "repository": "groupsum/wyrmctl",
+        "repository_route": "/catalog/repositories/groupsum/wyrmctl",
+        "route": "/catalog/resources/documentation/ca85cc74cb14",
+        "url": "https://github.com/groupsum/wyrmctl/blob/master/docs/dns.md"
+      },
+      {
+        "evidence_type": "repository.tree",
+        "id": "resource:c6b5be11e63a",
+        "kind": "documentation",
+        "legal_evidence": [],
+        "legal_inherits_from": "repository:groupsum/wyrmctl",
+        "name": "docs/evidence",
+        "observed_at": "2026-08-06T02:55:15Z",
+        "path": "docs/evidence",
+        "repository": "groupsum/wyrmctl",
+        "repository_route": "/catalog/repositories/groupsum/wyrmctl",
+        "route": "/catalog/resources/documentation/c6b5be11e63a",
+        "url": "https://github.com/groupsum/wyrmctl/tree/master/docs/evidence"
+      },
+      {
+        "evidence_type": "repository.tree",
+        "id": "resource:3817ab64538e",
+        "kind": "documentation",
+        "legal_evidence": [],
+        "legal_inherits_from": "repository:groupsum/wyrmctl",
+        "name": "docs/examples",
+        "observed_at": "2026-08-06T02:55:15Z",
+        "path": "docs/examples",
+        "repository": "groupsum/wyrmctl",
+        "repository_route": "/catalog/repositories/groupsum/wyrmctl",
+        "route": "/catalog/resources/documentation/3817ab64538e",
+        "url": "https://github.com/groupsum/wyrmctl/tree/master/docs/examples"
+      },
+      {
+        "evidence_type": "repository.blob",
+        "id": "resource:7fc51c1b791b",
+        "kind": "documentation",
+        "legal_evidence": [],
+        "legal_inherits_from": "repository:groupsum/wyrmctl",
+        "name": "docs/extensions.md",
+        "observed_at": "2026-08-06T02:55:15Z",
+        "path": "docs/extensions.md",
+        "repository": "groupsum/wyrmctl",
+        "repository_route": "/catalog/repositories/groupsum/wyrmctl",
+        "route": "/catalog/resources/documentation/7fc51c1b791b",
+        "url": "https://github.com/groupsum/wyrmctl/blob/master/docs/extensions.md"
+      },
+      {
+        "evidence_type": "repository.tree",
+        "id": "resource:058f98ccb49e",
+        "kind": "documentation",
+        "legal_evidence": [],
+        "legal_inherits_from": "repository:groupsum/wyrmctl",
+        "name": "docs/fragments",
+        "observed_at": "2026-08-06T02:55:15Z",
+        "path": "docs/fragments",
+        "repository": "groupsum/wyrmctl",
+        "repository_route": "/catalog/repositories/groupsum/wyrmctl",
+        "route": "/catalog/resources/documentation/058f98ccb49e",
+        "url": "https://github.com/groupsum/wyrmctl/tree/master/docs/fragments"
+      },
+      {
+        "evidence_type": "repository.blob",
+        "id": "resource:814e5a6e2b68",
+        "kind": "documentation",
+        "legal_evidence": [],
+        "legal_inherits_from": "repository:groupsum/wyrmctl",
+        "name": "docs/github-actions.md",
+        "observed_at": "2026-08-06T02:55:15Z",
+        "path": "docs/github-actions.md",
+        "repository": "groupsum/wyrmctl",
+        "repository_route": "/catalog/repositories/groupsum/wyrmctl",
+        "route": "/catalog/resources/documentation/814e5a6e2b68",
+        "url": "https://github.com/groupsum/wyrmctl/blob/master/docs/github-actions.md"
+      },
+      {
+        "evidence_type": "repository.tree",
+        "id": "resource:4e17d0f6b94e",
+        "kind": "documentation",
+        "legal_evidence": [],
+        "legal_inherits_from": "repository:groupsum/wyrmctl",
+        "name": "docs/images",
+        "observed_at": "2026-08-06T02:55:15Z",
+        "path": "docs/images",
+        "repository": "groupsum/wyrmctl",
+        "repository_route": "/catalog/repositories/groupsum/wyrmctl",
+        "route": "/catalog/resources/documentation/4e17d0f6b94e",
+        "url": "https://github.com/groupsum/wyrmctl/tree/master/docs/images"
+      },
+      {
+        "evidence_type": "repository.blob",
+        "id": "resource:ffdf42f2b8aa",
+        "kind": "documentation",
+        "legal_evidence": [],
+        "legal_inherits_from": "repository:groupsum/wyrmctl",
+        "name": "docs/index.md",
+        "observed_at": "2026-08-06T02:55:15Z",
+        "path": "docs/index.md",
+        "repository": "groupsum/wyrmctl",
+        "repository_route": "/catalog/repositories/groupsum/wyrmctl",
+        "route": "/catalog/resources/documentation/ffdf42f2b8aa",
+        "url": "https://github.com/groupsum/wyrmctl/blob/master/docs/index.md"
+      },
+      {
+        "evidence_type": "repository.blob",
+        "id": "resource:9e11af14c4a9",
+        "kind": "documentation",
+        "legal_evidence": [],
+        "legal_inherits_from": "repository:groupsum/wyrmctl",
+        "name": "docs/migration-manifests.md",
+        "observed_at": "2026-08-06T02:55:15Z",
+        "path": "docs/migration-manifests.md",
+        "repository": "groupsum/wyrmctl",
+        "repository_route": "/catalog/repositories/groupsum/wyrmctl",
+        "route": "/catalog/resources/documentation/9e11af14c4a9",
+        "url": "https://github.com/groupsum/wyrmctl/blob/master/docs/migration-manifests.md"
+      },
+      {
+        "evidence_type": "repository.blob",
+        "id": "resource:f1075162d299",
+        "kind": "documentation",
+        "legal_evidence": [],
+        "legal_inherits_from": "repository:groupsum/wyrmctl",
+        "name": "docs/migration-recovery.md",
+        "observed_at": "2026-08-06T02:55:15Z",
+        "path": "docs/migration-recovery.md",
+        "repository": "groupsum/wyrmctl",
+        "repository_route": "/catalog/repositories/groupsum/wyrmctl",
+        "route": "/catalog/resources/documentation/f1075162d299",
+        "url": "https://github.com/groupsum/wyrmctl/blob/master/docs/migration-recovery.md"
+      },
+      {
+        "evidence_type": "repository.blob",
+        "id": "resource:8ef5570cca0b",
+        "kind": "documentation",
+        "legal_evidence": [],
+        "legal_inherits_from": "repository:groupsum/wyrmctl",
+        "name": "docs/namecheap.md",
+        "observed_at": "2026-08-06T02:55:15Z",
+        "path": "docs/namecheap.md",
+        "repository": "groupsum/wyrmctl",
+        "repository_route": "/catalog/repositories/groupsum/wyrmctl",
+        "route": "/catalog/resources/documentation/8ef5570cca0b",
+        "url": "https://github.com/groupsum/wyrmctl/blob/master/docs/namecheap.md"
+      },
+      {
+        "evidence_type": "repository.blob",
+        "id": "resource:b9f7c3972d85",
+        "kind": "documentation",
+        "legal_evidence": [],
+        "legal_inherits_from": "repository:groupsum/wyrmctl",
+        "name": "docs/npm-api-compatibility.md",
+        "observed_at": "2026-08-06T02:55:15Z",
+        "path": "docs/npm-api-compatibility.md",
+        "repository": "groupsum/wyrmctl",
+        "repository_route": "/catalog/repositories/groupsum/wyrmctl",
+        "route": "/catalog/resources/documentation/b9f7c3972d85",
+        "url": "https://github.com/groupsum/wyrmctl/blob/master/docs/npm-api-compatibility.md"
+      },
+      {
+        "evidence_type": "repository.blob",
+        "id": "resource:be1e7d253c0f",
+        "kind": "documentation",
+        "legal_evidence": [],
+        "legal_inherits_from": "repository:groupsum/wyrmctl",
+        "name": "docs/operational-hardening.md",
+        "observed_at": "2026-08-06T02:55:15Z",
+        "path": "docs/operational-hardening.md",
+        "repository": "groupsum/wyrmctl",
+        "repository_route": "/catalog/repositories/groupsum/wyrmctl",
+        "route": "/catalog/resources/documentation/be1e7d253c0f",
+        "url": "https://github.com/groupsum/wyrmctl/blob/master/docs/operational-hardening.md"
+      },
+      {
+        "evidence_type": "repository.blob",
+        "id": "resource:0de4c0853674",
+        "kind": "documentation",
+        "legal_evidence": [],
+        "legal_inherits_from": "repository:groupsum/wyrmctl",
+        "name": "docs/owner-scoped-reconcile.md",
+        "observed_at": "2026-08-06T02:55:15Z",
+        "path": "docs/owner-scoped-reconcile.md",
+        "repository": "groupsum/wyrmctl",
+        "repository_route": "/catalog/repositories/groupsum/wyrmctl",
+        "route": "/catalog/resources/documentation/0de4c0853674",
+        "url": "https://github.com/groupsum/wyrmctl/blob/master/docs/owner-scoped-reconcile.md"
+      },
+      {
+        "evidence_type": "repository.blob",
+        "id": "resource:1b982abbf553",
+        "kind": "documentation",
+        "legal_evidence": [],
+        "legal_inherits_from": "repository:groupsum/wyrmctl",
+        "name": "docs/plan-artifacts.md",
+        "observed_at": "2026-08-06T02:55:15Z",
+        "path": "docs/plan-artifacts.md",
+        "repository": "groupsum/wyrmctl",
+        "repository_route": "/catalog/repositories/groupsum/wyrmctl",
+        "route": "/catalog/resources/documentation/1b982abbf553",
+        "url": "https://github.com/groupsum/wyrmctl/blob/master/docs/plan-artifacts.md"
+      },
+      {
+        "evidence_type": "repository.tree",
+        "id": "resource:9ab391d2dff6",
+        "kind": "documentation",
+        "legal_evidence": [],
+        "legal_inherits_from": "repository:groupsum/wyrmctl",
+        "name": "docs/plans",
+        "observed_at": "2026-08-06T02:55:15Z",
+        "path": "docs/plans",
+        "repository": "groupsum/wyrmctl",
+        "repository_route": "/catalog/repositories/groupsum/wyrmctl",
+        "route": "/catalog/resources/documentation/9ab391d2dff6",
+        "url": "https://github.com/groupsum/wyrmctl/tree/master/docs/plans"
+      },
+      {
+        "evidence_type": "repository.blob",
+        "id": "resource:ee96c5268f70",
+        "kind": "documentation",
+        "legal_evidence": [],
+        "legal_inherits_from": "repository:groupsum/wyrmctl",
+        "name": "docs/provider-capabilities.md",
+        "observed_at": "2026-08-06T02:55:15Z",
+        "path": "docs/provider-capabilities.md",
+        "repository": "groupsum/wyrmctl",
+        "repository_route": "/catalog/repositories/groupsum/wyrmctl",
+        "route": "/catalog/resources/documentation/ee96c5268f70",
+        "url": "https://github.com/groupsum/wyrmctl/blob/master/docs/provider-capabilities.md"
+      },
+      {
+        "evidence_type": "repository.blob",
+        "id": "resource:1330e379b25a",
+        "kind": "documentation",
+        "legal_evidence": [],
+        "legal_inherits_from": "repository:groupsum/wyrmctl",
+        "name": "docs/repository-manifest.md",
+        "observed_at": "2026-08-06T02:55:15Z",
+        "path": "docs/repository-manifest.md",
+        "repository": "groupsum/wyrmctl",
+        "repository_route": "/catalog/repositories/groupsum/wyrmctl",
+        "route": "/catalog/resources/documentation/1330e379b25a",
+        "url": "https://github.com/groupsum/wyrmctl/blob/master/docs/repository-manifest.md"
+      },
+      {
+        "evidence_type": "repository.blob",
+        "id": "resource:a87798ca5ef7",
+        "kind": "documentation",
+        "legal_evidence": [],
+        "legal_inherits_from": "repository:groupsum/wyrmctl",
+        "name": "docs/schema-migrations.md",
+        "observed_at": "2026-08-06T02:55:15Z",
+        "path": "docs/schema-migrations.md",
+        "repository": "groupsum/wyrmctl",
+        "repository_route": "/catalog/repositories/groupsum/wyrmctl",
+        "route": "/catalog/resources/documentation/a87798ca5ef7",
+        "url": "https://github.com/groupsum/wyrmctl/blob/master/docs/schema-migrations.md"
+      },
+      {
+        "evidence_type": "repository.blob",
+        "id": "resource:4cfc635d0e4c",
+        "kind": "documentation",
+        "legal_evidence": [],
+        "legal_inherits_from": "repository:groupsum/wyrmctl",
+        "name": "docs/security.md",
+        "observed_at": "2026-08-06T02:55:15Z",
+        "path": "docs/security.md",
+        "repository": "groupsum/wyrmctl",
+        "repository_route": "/catalog/repositories/groupsum/wyrmctl",
+        "route": "/catalog/resources/documentation/4cfc635d0e4c",
+        "url": "https://github.com/groupsum/wyrmctl/blob/master/docs/security.md"
+      },
+      {
+        "evidence_type": "repository.tree",
+        "id": "resource:fa8f23061cb7",
+        "kind": "documentation",
+        "legal_evidence": [],
+        "legal_inherits_from": "repository:groupsum/wyrmctl",
+        "name": "docs/seo",
+        "observed_at": "2026-08-06T02:55:15Z",
+        "path": "docs/seo",
+        "repository": "groupsum/wyrmctl",
+        "repository_route": "/catalog/repositories/groupsum/wyrmctl",
+        "route": "/catalog/resources/documentation/fa8f23061cb7",
+        "url": "https://github.com/groupsum/wyrmctl/tree/master/docs/seo"
+      },
+      {
+        "evidence_type": "repository.blob",
+        "id": "resource:7bbefdc59e4f",
+        "kind": "documentation",
+        "legal_evidence": [],
+        "legal_inherits_from": "repository:groupsum/wyrmctl",
+        "name": "docs/seo-aeo-aieo.md",
+        "observed_at": "2026-08-06T02:55:15Z",
+        "path": "docs/seo-aeo-aieo.md",
+        "repository": "groupsum/wyrmctl",
+        "repository_route": "/catalog/repositories/groupsum/wyrmctl",
+        "route": "/catalog/resources/documentation/7bbefdc59e4f",
+        "url": "https://github.com/groupsum/wyrmctl/blob/master/docs/seo-aeo-aieo.md"
+      },
+      {
+        "evidence_type": "repository.tree",
+        "id": "resource:749b5c9282b3",
+        "kind": "documentation",
+        "legal_evidence": [],
+        "legal_inherits_from": "repository:groupsum/wyrmctl",
+        "name": "docs/specs",
+        "observed_at": "2026-08-06T02:55:15Z",
+        "path": "docs/specs",
+        "repository": "groupsum/wyrmctl",
+        "repository_route": "/catalog/repositories/groupsum/wyrmctl",
+        "route": "/catalog/resources/documentation/749b5c9282b3",
+        "url": "https://github.com/groupsum/wyrmctl/tree/master/docs/specs"
+      },
+      {
+        "evidence_type": "repository.blob",
+        "id": "resource:1d307a3df590",
+        "kind": "documentation",
+        "legal_evidence": [],
+        "legal_inherits_from": "repository:groupsum/wyrmctl",
+        "name": "docs/ssl-certificates.md",
+        "observed_at": "2026-08-06T02:55:15Z",
+        "path": "docs/ssl-certificates.md",
+        "repository": "groupsum/wyrmctl",
+        "repository_route": "/catalog/repositories/groupsum/wyrmctl",
+        "route": "/catalog/resources/documentation/1d307a3df590",
+        "url": "https://github.com/groupsum/wyrmctl/blob/master/docs/ssl-certificates.md"
+      },
+      {
+        "evidence_type": "repository.tree",
+        "id": "resource:dfd0a85a6f46",
+        "kind": "documentation",
+        "legal_evidence": [],
+        "legal_inherits_from": "repository:groupsum/wyrmctl",
+        "name": "docs/ssot",
+        "observed_at": "2026-08-06T02:55:15Z",
+        "path": "docs/ssot",
+        "repository": "groupsum/wyrmctl",
+        "repository_route": "/catalog/repositories/groupsum/wyrmctl",
+        "route": "/catalog/resources/documentation/dfd0a85a6f46",
+        "url": "https://github.com/groupsum/wyrmctl/tree/master/docs/ssot"
+      },
+      {
+        "evidence_type": "repository.tree",
+        "id": "resource:f35bb95c2352",
+        "kind": "example",
+        "legal_evidence": [],
+        "legal_inherits_from": "repository:groupsum/wyrmctl",
+        "name": "examples/desired-state",
+        "observed_at": "2026-08-06T02:55:15Z",
+        "path": "examples/desired-state",
+        "repository": "groupsum/wyrmctl",
+        "repository_route": "/catalog/repositories/groupsum/wyrmctl",
+        "route": "/catalog/resources/example/f35bb95c2352",
+        "url": "https://github.com/groupsum/wyrmctl/tree/master/examples/desired-state"
+      },
+      {
+        "evidence_type": "repository.tree",
+        "id": "resource:024797555242",
+        "kind": "example",
+        "legal_evidence": [],
+        "legal_inherits_from": "repository:groupsum/wyrmctl",
+        "name": "examples/github-actions",
+        "observed_at": "2026-08-06T02:55:15Z",
+        "path": "examples/github-actions",
+        "repository": "groupsum/wyrmctl",
+        "repository_route": "/catalog/repositories/groupsum/wyrmctl",
+        "route": "/catalog/resources/example/024797555242",
+        "url": "https://github.com/groupsum/wyrmctl/tree/master/examples/github-actions"
+      }
+    ],
+    "relationship_counts": {
+      "repository_contains_package": 7,
+      "repository_contains_related_resource": 39
+    },
+    "reviewed": false,
+    "route": "/catalog/repositories/groupsum/wyrmctl",
+    "ssot_governance": {
+      "counts": {
+        "adrs": 32,
+        "boundaries": 5,
+        "claims": 18,
+        "evidence": 20,
+        "features": 215,
+        "issues": 7,
+        "profiles": 1,
+        "releases": 4,
+        "specs": 37,
+        "tests": 161
+      },
+      "coverage": {
+        "claims_with_evidence": 18,
+        "claims_with_tests": 18,
+        "claims_without_evidence": 0,
+        "evidence_linked_to_claims": 20,
+        "evidence_without_claims": 0
+      },
+      "evidence_type": "ssot.registry",
+      "governed": true,
+      "inventory": {
+        "adrs": [
+          {
+            "id": "adr:0600",
+            "status": "draft",
+            "title": "Canonical registry is a single JSON document"
+          },
+          {
+            "id": "adr:0601",
+            "status": "draft",
+            "title": "Features are the targetable units"
+          },
+          {
+            "id": "adr:0602",
+            "status": "draft",
+            "title": "Issues are plannable work items"
+          },
+          {
+            "id": "adr:0603",
+            "status": "draft",
+            "title": "Entity-centric registry with a derived graph export"
+          },
+          {
+            "id": "adr:0604",
+            "status": "draft",
+            "title": "Normalized prefixed IDs"
+          },
+          {
+            "id": "adr:0605",
+            "status": "draft",
+            "title": "Claim status and claim tier are orthogonal"
+          },
+          {
+            "id": "adr:0606",
+            "status": "draft",
+            "title": "Feature implementation state is separate from lifecycle state"
+          },
+          {
+            "id": "adr:0607",
+            "status": "draft",
+            "title": "Immutable boundary and release snapshots"
+          },
+          {
+            "id": "adr:0608",
+            "status": "draft",
+            "title": "Fail-closed guards"
+          },
+          {
+            "id": "adr:0609",
+            "status": "draft",
+            "title": "Generated projections are non-canonical"
+          },
+          {
+            "id": "adr:0610",
+            "status": "draft",
+            "title": "Explicit schema versioning"
+          },
+          {
+            "id": "adr:0611",
+            "status": "draft",
+            "title": "Portable SSOT core with repo-specific evidence adapters"
+          },
+          {
+            "id": "adr:0612",
+            "status": "draft",
+            "title": "Enforce max path and filename lengths under `.ssot`"
+          },
+          {
+            "id": "adr:0613",
+            "status": "accepted",
+            "title": "Profiles are reusable feature bundles with derived pass status"
+          },
+          {
+            "id": "adr:0615",
+            "status": "accepted",
+            "title": "Downstream assurance-language ceilings for feature target claim tiers"
+          },
+          {
+            "id": "adr:1000",
+            "status": "accepted",
+            "title": "Use create-only reconciliation for NPM proxy hosts"
+          },
+          {
+            "id": "adr:1001",
+            "status": "accepted",
+            "title": "Require npmctl metadata ownership markers"
+          },
+          {
+            "id": "adr:1002",
+            "status": "draft",
+            "title": "Repair-safe certificate reconciliation"
+          },
+          {
+            "id": "adr:1003",
+            "status": "draft",
+            "title": "Provider-backed DNS reconciliation is a first-class apply surface"
+          },
+          {
+            "id": "adr:1004",
+            "status": "draft",
+            "title": "DNS record ownership and delete semantics for registrar APIs"
+          }
+        ],
+        "boundaries": [
+          {
+            "feature_ids": [],
+            "id": "bnd:default",
+            "status": "frozen",
+            "title": "npmctl current certification boundary"
+          },
+          {
+            "feature_ids": [
+              "feat:access-list-crud",
+              "feat:adoption",
+              "feat:auth-token",
+              "feat:certificate-crud",
+              "feat:ci-real-npm-coverage-artifact",
+              "feat:ci-real-npm-scheduled-e2e",
+              "feat:cli-completion",
+              "feat:cli-config-file",
+              "feat:cli-doctor",
+              "feat:cli-env-diagnostics",
+              "feat:cli-plan-output-schema-validation",
+              "feat:cli-surface",
+              "feat:cli-version-json",
+              "feat:compliance-dependency-vulnerability-gate",
+              "feat:compliance-owner-scope-safety-profile",
+              "feat:compliance-provenance-attestation",
+              "feat:compliance-real-oss-artifacts",
+              "feat:compliance-release-gate-profile",
+              "feat:compliance-sbom",
+              "feat:compliance-security-scan-gate",
+              "feat:conformance-live-api-version-matrix",
+              "feat:conformance-npm-2-10-4-api-profile",
+              "feat:conformance-openapi-subset-doc",
+              "feat:conformance-release-blocking-live-npm",
+              "feat:conformance-schema-drift-report",
+              "feat:coverage-cli-exception-branches",
+              "feat:coverage-client-auth-wrapper",
+              "feat:coverage-client-wrapper-functions",
+              "feat:coverage-entrypoint-main",
+              "feat:coverage-logging-redaction",
+              "feat:coverage-model-validation-edges",
+              "feat:coverage-total-100-percent",
+              "feat:coverage-validation-module",
+              "feat:create-missing-proxy-hosts",
+              "feat:dev-coverage-threshold-ratchet",
+              "feat:dev-real-e2e-coverage-measurement",
+              "feat:dev-schema-fixture-roundtrip",
+              "feat:dev-type-checking",
+              "feat:discover-proxy-hosts",
+              "feat:extension-resource-contract-api",
+              "feat:gap-acl-ref-negative",
+              "feat:gap-apply-adopt-merge",
+              "feat:gap-apply-conflict-no-mutation",
+              "feat:gap-apply-delete-results",
+              "feat:gap-apply-operation-ordering",
+              "feat:gap-apply-resolve-reference",
+              "feat:gap-apply-unresolved-reference",
+              "feat:gap-cert-ref-negative",
+              "feat:gap-cli-command-matrix",
+              "feat:gap-cli-exit-code-mapping",
+              "feat:gap-cli-json-error-shape",
+              "feat:gap-cli-option-combinations",
+              "feat:gap-cli-required-api-args",
+              "feat:gap-cli-schema-output",
+              "feat:gap-cli-secret-redaction",
+              "feat:gap-cli-validate-output",
+              "feat:gap-client-authz-errors",
+              "feat:gap-client-error-redaction",
+              "feat:gap-client-login-failures",
+              "feat:gap-client-malformed-success",
+              "feat:gap-client-non-json-errors",
+              "feat:gap-client-nonget-no-retry",
+              "feat:gap-client-token-refresh-expiry",
+              "feat:gap-client-transient-get-retry",
+              "feat:gap-loader-api-version-validation",
+              "feat:gap-loader-discovery-ordering",
+              "feat:gap-loader-duplicate-identities",
+              "feat:gap-loader-malformed-documents",
+              "feat:gap-model-advanced-config-validation",
+              "feat:gap-model-api-payload-validation",
+              "feat:gap-model-forward-host-validation",
+              "feat:gap-model-forward-scheme-validation",
+              "feat:gap-model-locations-validation",
+              "feat:gap-model-toggle-validation",
+              "feat:gap-package-metadata-urls",
+              "feat:gap-packaging-console-script",
+              "feat:gap-planner-duplicate-domains",
+              "feat:gap-planner-nonproxy-drift-foreign-owner",
+              "feat:gap-planner-nonproxy-duplicate-identity",
+              "feat:gap-planner-owner-filtering",
+              "feat:gap-planner-partial-capabilities",
+              "feat:gap-planner-prune-selected-owner",
+              "feat:gap-real-npm-acl-capability",
+              "feat:gap-real-npm-acl-create-readback",
+              "feat:gap-real-npm-acl-update-delete-prune",
+              "feat:gap-real-npm-advanced-config",
+              "feat:gap-real-npm-block-exploits",
+              "feat:gap-real-npm-cache-assets",
+              "feat:gap-real-npm-cert-capability",
+              "feat:gap-real-npm-cert-create-readback",
+              "feat:gap-real-npm-cert-ref-applied",
+              "feat:gap-real-npm-cert-update-delete-prune",
+              "feat:gap-real-npm-cleanup",
+              "feat:gap-real-npm-domain-collision",
+              "feat:gap-real-npm-enabled-hsts",
+              "feat:gap-real-npm-foreign-owner",
+              "feat:gap-real-npm-forward-scheme",
+              "feat:gap-real-npm-http2",
+              "feat:gap-real-npm-locations",
+              "feat:gap-real-npm-meta-readback",
+              "feat:gap-real-npm-owner-filtering",
+              "feat:gap-real-npm-proxy-acl-ref",
+              "feat:gap-real-npm-proxy-adopt",
+              "feat:gap-real-npm-proxy-cert-ref",
+              "feat:gap-real-npm-proxy-delete-prune",
+              "feat:gap-real-npm-proxy-readback",
+              "feat:gap-real-npm-proxy-update",
+              "feat:gap-real-npm-prune-owner-isolation",
+              "feat:gap-real-npm-ssl-forced",
+              "feat:gap-real-npm-websockets",
+              "feat:gap-workflow-semantics",
+              "feat:github-actions-gates",
+              "feat:metadata-ownership",
+              "feat:ops-apply-transaction-report",
+              "feat:ops-audit-log-output",
+              "feat:ops-containerized-cli-image",
+              "feat:ops-resource-drift-report",
+              "feat:ops-rollback-plan",
+              "feat:ops-state-backup-before-apply",
+              "feat:owner-scoped-reconcile",
+              "feat:plugin-custom-cert-provider",
+              "feat:plugin-custom-resource-kind",
+              "feat:plugin-provider-interface",
+              "feat:plugin-runtime-loading",
+              "feat:proxy-host-crud",
+              "feat:resource-audit-log",
+              "feat:resource-dead-hosts",
+              "feat:resource-redirection-hosts",
+              "feat:resource-settings",
+              "feat:resource-streams",
+              "feat:resource-users",
+              "feat:schema-capabilities",
+              "feat:schema-migrations",
+              "feat:ssot-feature-family-proof-closure",
+              "feat:strict-plan"
+            ],
+            "id": "bnd:npmctl-certification-closure",
+            "status": "frozen",
+            "title": "npmctl certification closure boundary"
+          },
+          {
+            "feature_ids": [
+              "feat:ci-real-npm-coverage-artifact",
+              "feat:ci-real-npm-scheduled-e2e",
+              "feat:cli-completion",
+              "feat:cli-config-file",
+              "feat:cli-doctor",
+              "feat:cli-env-diagnostics",
+              "feat:cli-plan-output-schema-validation",
+              "feat:cli-version-json",
+              "feat:compliance-dependency-vulnerability-gate",
+              "feat:compliance-owner-scope-safety-profile",
+              "feat:compliance-provenance-attestation",
+              "feat:compliance-release-gate-profile",
+              "feat:compliance-sbom",
+              "feat:compliance-security-scan-gate",
+              "feat:conformance-live-api-version-matrix",
+              "feat:conformance-npm-2-10-4-api-profile",
+              "feat:conformance-openapi-subset-doc",
+              "feat:conformance-schema-drift-report",
+              "feat:coverage-client-auth-wrapper",
+              "feat:coverage-client-wrapper-functions",
+              "feat:coverage-cli-exception-branches",
+              "feat:coverage-entrypoint-main",
+              "feat:coverage-logging-redaction",
+              "feat:coverage-model-validation-edges",
+              "feat:coverage-validation-module",
+              "feat:dev-coverage-threshold-ratchet",
+              "feat:dev-real-e2e-coverage-measurement",
+              "feat:dev-schema-fixture-roundtrip",
+              "feat:dev-type-checking",
+              "feat:extension-resource-contract-api",
+              "feat:ops-apply-transaction-report",
+              "feat:ops-audit-log-output",
+              "feat:ops-containerized-cli-image",
+              "feat:ops-resource-drift-report",
+              "feat:ops-rollback-plan",
+              "feat:ops-state-backup-before-apply",
+              "feat:plugin-custom-cert-provider",
+              "feat:plugin-custom-resource-kind",
+              "feat:plugin-provider-interface",
+              "feat:resource-audit-log",
+              "feat:resource-dead-hosts",
+              "feat:resource-redirection-hosts",
+              "feat:resource-settings",
+              "feat:resource-streams",
+              "feat:resource-users"
+            ],
+            "id": "bnd:npmctl-expanded-feature-scope",
+            "status": "frozen",
+            "title": "npmctl expanded feature scope boundary"
+          },
+          {
+            "feature_ids": [
+              "feat:adopt-metadata-only",
+              "feat:adopt-resource-family-scope",
+              "feat:plan-adoptable-compatible-unmanaged",
+              "feat:certificate-policy-mode-reuse",
+              "feat:certificate-policy-mode-create",
+              "feat:certificate-policy-mode-rotate",
+              "feat:certificate-domain-set-reuse-detection",
+              "feat:certificate-issuance-deduplication",
+              "feat:certificate-issuance-cooldown",
+              "feat:certificate-failure-classification",
+              "feat:certificate-lock-retryable-class",
+              "feat:certificate-order-stale-class",
+              "feat:plan-certificate-policy-conflicts",
+              "feat:apply-structured-certificate-error-output",
+              "feat:repair-safe-public-endpoint-workflow"
+            ],
+            "id": "bnd:npmctl-repair-safe-certificate-reconciliation",
+            "status": "frozen",
+            "title": "npmctl repair-safe certificate reconciliation boundary"
+          },
+          {
+            "feature_ids": [
+              "feat:dns-supported-record-type-writes"
+            ],
+            "id": "bnd:dns-supported-record-type-writes-closure",
+            "status": "frozen",
+            "title": "DNS supported record type writes closure"
+          }
+        ],
+        "claims": [
+          {
+            "evidence_ids": [
+              "evd:cli-operator-certification"
+            ],
+            "feature_ids": [
+              "feat:cli-completion",
+              "feat:cli-config-file",
+              "feat:cli-doctor",
+              "feat:cli-env-diagnostics",
+              "feat:cli-plan-output-schema-validation",
+              "feat:cli-version-json",
+              "feat:dns-provider-cli"
+            ],
+            "id": "clm:cli-operator-certification",
+            "status": "certified",
+            "test_ids": [
+              "tst:cli-operator-certification"
+            ],
+            "title": "CLI operator certification claim"
+          },
+          {
+            "evidence_ids": [
+              "evd:compliance-real-oss-release"
+            ],
+            "feature_ids": [
+              "feat:compliance-dependency-vulnerability-gate",
+              "feat:compliance-owner-scope-safety-profile",
+              "feat:compliance-provenance-attestation",
+              "feat:compliance-real-oss-artifacts",
+              "feat:compliance-release-gate-profile",
+              "feat:compliance-sbom",
+              "feat:compliance-security-scan-gate"
+            ],
+            "id": "clm:compliance-real-oss-release",
+            "status": "certified",
+            "test_ids": [
+              "tst:compliance-real-oss-release"
+            ],
+            "title": "Real OSS compliance release claim"
+          },
+          {
+            "evidence_ids": [
+              "evd:conformance-release-blocking-live-npm"
+            ],
+            "feature_ids": [
+              "feat:ci-real-npm-coverage-artifact",
+              "feat:ci-real-npm-scheduled-e2e",
+              "feat:conformance-live-api-version-matrix",
+              "feat:conformance-npm-2-10-4-api-profile",
+              "feat:conformance-openapi-subset-doc",
+              "feat:conformance-release-blocking-live-npm",
+              "feat:conformance-schema-drift-report",
+              "feat:dev-real-e2e-coverage-measurement"
+            ],
+            "id": "clm:conformance-release-blocking-live-npm",
+            "status": "certified",
+            "test_ids": [
+              "tst:conformance-release-blocking-live-npm"
+            ],
+            "title": "Release-blocking live NPM conformance claim"
+          },
+          {
+            "evidence_ids": [
+              "evd:coverage-total-100-percent"
+            ],
+            "feature_ids": [
+              "feat:coverage-cli-exception-branches",
+              "feat:coverage-client-auth-wrapper",
+              "feat:coverage-client-wrapper-functions",
+              "feat:coverage-entrypoint-main",
+              "feat:coverage-logging-redaction",
+              "feat:coverage-model-validation-edges",
+              "feat:coverage-total-100-percent",
+              "feat:coverage-validation-module",
+              "feat:dev-coverage-threshold-ratchet"
+            ],
+            "id": "clm:coverage-total-100-percent",
+            "status": "certified",
+            "test_ids": [
+              "tst:coverage-total-100-percent"
+            ],
+            "title": "Coverage total 100 percent claim"
+          },
+          {
+            "evidence_ids": [
+              "evd:e2e-real-npm",
+              "evd:integration-fake-npm",
+              "evd:unit-client-cli",
+              "evd:unit-planner"
+            ],
+            "feature_ids": [
+              "feat:auth-token",
+              "feat:cli-surface",
+              "feat:create-missing-proxy-hosts",
+              "feat:discover-proxy-hosts",
+              "feat:strict-plan"
+            ],
+            "id": "clm:create-only-integrity",
+            "status": "certified",
+            "test_ids": [
+              "tst:e2e-real-npm",
+              "tst:integration-fake-npm",
+              "tst:unit-client-cli",
+              "tst:unit-planner"
+            ],
+            "title": "Create-only apply preserves existing resources"
+          },
+          {
+            "evidence_ids": [
+              "evd:development-gate-certification"
+            ],
+            "feature_ids": [
+              "feat:dev-schema-fixture-roundtrip",
+              "feat:dev-type-checking",
+              "feat:ssot-feature-family-proof-closure"
+            ],
+            "id": "clm:development-gate-certification",
+            "status": "certified",
+            "test_ids": [
+              "tst:development-gate-certification"
+            ],
+            "title": "Development gate certification claim"
+          },
+          {
+            "evidence_ids": [
+              "evd:expanded-feature-scope-planning"
+            ],
+            "feature_ids": [
+              "feat:ci-real-npm-coverage-artifact",
+              "feat:ci-real-npm-scheduled-e2e",
+              "feat:cli-completion",
+              "feat:cli-config-file",
+              "feat:cli-doctor",
+              "feat:cli-env-diagnostics",
+              "feat:cli-plan-output-schema-validation",
+              "feat:cli-version-json",
+              "feat:compliance-dependency-vulnerability-gate",
+              "feat:compliance-owner-scope-safety-profile",
+              "feat:compliance-provenance-attestation",
+              "feat:compliance-release-gate-profile",
+              "feat:compliance-sbom",
+              "feat:compliance-security-scan-gate",
+              "feat:conformance-live-api-version-matrix",
+              "feat:conformance-npm-2-10-4-api-profile",
+              "feat:conformance-openapi-subset-doc",
+              "feat:conformance-schema-drift-report",
+              "feat:coverage-client-auth-wrapper",
+              "feat:coverage-client-wrapper-functions",
+              "feat:coverage-cli-exception-branches",
+              "feat:coverage-entrypoint-main",
+              "feat:coverage-logging-redaction",
+              "feat:coverage-model-validation-edges",
+              "feat:coverage-validation-module",
+              "feat:dev-coverage-threshold-ratchet",
+              "feat:dev-real-e2e-coverage-measurement",
+              "feat:dev-schema-fixture-roundtrip",
+              "feat:dev-type-checking",
+              "feat:extension-resource-contract-api",
+              "feat:ops-apply-transaction-report",
+              "feat:ops-audit-log-output",
+              "feat:ops-containerized-cli-image",
+              "feat:ops-resource-drift-report",
+              "feat:ops-rollback-plan",
+              "feat:ops-state-backup-before-apply",
+              "feat:plugin-custom-cert-provider",
+              "feat:plugin-custom-resource-kind",
+              "feat:plugin-provider-interface",
+              "feat:resource-audit-log",
+              "feat:resource-dead-hosts",
+              "feat:resource-redirection-hosts",
+              "feat:resource-settings",
+              "feat:resource-streams",
+              "feat:resource-users",
+              "feat:adopt-metadata-only",
+              "feat:adopt-resource-family-scope",
+              "feat:plan-adoptable-compatible-unmanaged",
+              "feat:certificate-policy-mode-reuse",
+              "feat:certificate-policy-mode-create",
+              "feat:certificate-policy-mode-rotate",
+              "feat:certificate-domain-set-reuse-detection",
+              "feat:certificate-issuance-deduplication",
+              "feat:certificate-issuance-cooldown",
+              "feat:certificate-failure-classification",
+              "feat:certificate-lock-retryable-class",
+              "feat:certificate-order-stale-class",
+              "feat:plan-certificate-policy-conflicts",
+              "feat:apply-structured-certificate-error-output",
+              "feat:repair-safe-public-endpoint-workflow",
+              "feat:resource-quic-passthrough-hosts"
+            ],
+            "id": "clm:expanded-feature-scope-planning",
+            "status": "certified",
+            "test_ids": [
+              "tst:expanded-feature-scope-planning",
+              "tst:quic-passthrough-capability-artifact"
+            ],
+            "title": "Expanded feature scope planning claim"
+          },
+          {
+            "evidence_ids": [
+              "evd:integration-fake-npm",
+              "evd:unit-planner",
+              "evd:unit-validation"
+            ],
+            "feature_ids": [
+              "feat:metadata-ownership",
+              "feat:strict-plan"
+            ],
+            "id": "clm:metadata-conflict-guard",
+            "status": "certified",
+            "test_ids": [
+              "tst:integration-fake-npm",
+              "tst:unit-planner",
+              "tst:unit-validation"
+            ],
+            "title": "Metadata ownership prevents accidental adoption"
+          },
+          {
+            "evidence_ids": [
+              "evd:operational-hardening-certification"
+            ],
+            "feature_ids": [
+              "feat:ops-apply-transaction-report",
+              "feat:ops-audit-log-output",
+              "feat:ops-containerized-cli-image",
+              "feat:ops-resource-drift-report",
+              "feat:ops-rollback-plan",
+              "feat:ops-state-backup-before-apply"
+            ],
+            "id": "clm:operational-hardening-certification",
+            "status": "certified",
+            "test_ids": [
+              "tst:operational-hardening-certification"
+            ],
+            "title": "Operational hardening certification claim"
+          },
+          {
+            "evidence_ids": [
+              "evd:e2e-real-npm",
+              "evd:integration-fake-npm",
+              "evd:unit-planner"
+            ],
+            "feature_ids": [
+              "feat:access-list-crud",
+              "feat:adoption",
+              "feat:certificate-crud",
+              "feat:github-actions-gates",
+              "feat:owner-scoped-reconcile",
+              "feat:proxy-host-crud",
+              "feat:schema-capabilities",
+              "feat:schema-migrations",
+              "feat:dns-record-schema-v2",
+              "feat:dns-reconciliation-plan-apply",
+              "feat:dns-owner-scoped-record-prune",
+              "feat:dns-mutation-reporting",
+              "feat:namecheap-dns-unmanaged-preservation"
+            ],
+            "id": "clm:owner-scoped-integrity",
+            "status": "certified",
+            "test_ids": [
+              "tst:e2e-real-npm",
+              "tst:integration-fake-npm",
+              "tst:unit-planner",
+              "tst:dns-planner-record-operations",
+              "tst:dns-owner-scoped-record-prune",
+              "tst:dns-mixed-npm-and-dns-plan",
+              "tst:namecheap-preserve-unmanaged-records",
+              "tst:namecheap-remove-stale-owned-records"
+            ],
+            "title": "Owner-scoped CRUD preserves resource integrity"
+          },
+          {
+            "evidence_ids": [
+              "evd:plugin-runtime-certification"
+            ],
+            "feature_ids": [
+              "feat:extension-resource-contract-api",
+              "feat:plugin-custom-cert-provider",
+              "feat:plugin-custom-resource-kind",
+              "feat:plugin-provider-interface",
+              "feat:plugin-runtime-loading",
+              "feat:namecheap-dns-provider",
+              "feat:cloudflare-dns-provider",
+              "feat:route53-dns-provider",
+              "feat:digitalocean-dns-provider",
+              "feat:godaddy-dns-provider",
+              "feat:dns-provider-write-contract",
+              "feat:dns-readonly-provider-fail-closed",
+              "feat:namecheap-dns-sethosts-apply",
+              "feat:namecheap-dns-unmanaged-preservation",
+              "feat:namecheap-dns-env-validation",
+              "feat:dns-supported-record-type-writes"
+            ],
+            "id": "clm:plugin-runtime-certification",
+            "status": "certified",
+            "test_ids": [
+              "tst:plugin-runtime-certification",
+              "tst:dns-readonly-provider-apply-fails",
+              "tst:namecheap-sethosts-a-cname-payload",
+              "tst:namecheap-preserve-unmanaged-records",
+              "tst:namecheap-remove-stale-owned-records",
+              "tst:namecheap-client-ip-required",
+              "tst:namecheap-api-error-redaction",
+              "tst:namecheap-post-apply-record-readback",
+              "tst:route53-supported-record-type-writes",
+              "tst:cloudflare-supported-record-type-writes",
+              "tst:digitalocean-supported-record-type-writes",
+              "tst:godaddy-supported-record-type-writes"
+            ],
+            "title": "Plugin runtime certification claim"
+          },
+          {
+            "evidence_ids": [
+              "evd:resource-expanded-certification"
+            ],
+            "feature_ids": [
+              "feat:resource-audit-log",
+              "feat:resource-dead-hosts",
+              "feat:resource-redirection-hosts",
+              "feat:resource-settings",
+              "feat:resource-streams",
+              "feat:resource-users"
+            ],
+            "id": "clm:resource-expanded-certification",
+            "status": "certified",
+            "test_ids": [
+              "tst:resource-expanded-certification"
+            ],
+            "title": "Expanded resource certification claim"
+          },
+          {
+            "evidence_ids": [
+              "evd:integration-fake-npm",
+              "evd:unit-schema"
+            ],
+            "feature_ids": [
+              "feat:schema-capabilities"
+            ],
+            "id": "clm:schema-gated-api",
+            "status": "certified",
+            "test_ids": [
+              "tst:integration-fake-npm",
+              "tst:unit-schema"
+            ],
+            "title": "Schema capability gates prevent unsupported API calls"
+          },
+          {
+            "evidence_ids": [
+              "evd:test-coverage-gap-plan"
+            ],
+            "feature_ids": [
+              "feat:gap-acl-ref-negative",
+              "feat:gap-apply-adopt-merge",
+              "feat:gap-apply-conflict-no-mutation",
+              "feat:gap-apply-delete-results",
+              "feat:gap-apply-operation-ordering",
+              "feat:gap-apply-resolve-reference",
+              "feat:gap-apply-unresolved-reference",
+              "feat:gap-cert-ref-negative",
+              "feat:gap-cli-command-matrix",
+              "feat:gap-cli-exit-code-mapping",
+              "feat:gap-cli-json-error-shape",
+              "feat:gap-cli-option-combinations",
+              "feat:gap-cli-required-api-args",
+              "feat:gap-cli-schema-output",
+              "feat:gap-cli-secret-redaction",
+              "feat:gap-cli-validate-output",
+              "feat:gap-client-authz-errors",
+              "feat:gap-client-error-redaction",
+              "feat:gap-client-login-failures",
+              "feat:gap-client-malformed-success",
+              "feat:gap-client-non-json-errors",
+              "feat:gap-client-nonget-no-retry",
+              "feat:gap-client-token-refresh-expiry",
+              "feat:gap-client-transient-get-retry",
+              "feat:gap-loader-api-version-validation",
+              "feat:gap-loader-discovery-ordering",
+              "feat:gap-loader-duplicate-identities",
+              "feat:gap-loader-malformed-documents",
+              "feat:gap-model-advanced-config-validation",
+              "feat:gap-model-api-payload-validation",
+              "feat:gap-model-forward-host-validation",
+              "feat:gap-model-forward-scheme-validation",
+              "feat:gap-model-locations-validation",
+              "feat:gap-model-toggle-validation",
+              "feat:gap-package-metadata-urls",
+              "feat:gap-packaging-console-script",
+              "feat:gap-planner-duplicate-domains",
+              "feat:gap-planner-nonproxy-drift-foreign-owner",
+              "feat:gap-planner-nonproxy-duplicate-identity",
+              "feat:gap-planner-owner-filtering",
+              "feat:gap-planner-partial-capabilities",
+              "feat:gap-planner-prune-selected-owner",
+              "feat:gap-real-npm-acl-capability",
+              "feat:gap-real-npm-acl-create-readback",
+              "feat:gap-real-npm-acl-update-delete-prune",
+              "feat:gap-real-npm-advanced-config",
+              "feat:gap-real-npm-block-exploits",
+              "feat:gap-real-npm-cache-assets",
+              "feat:gap-real-npm-cert-capability",
+              "feat:gap-real-npm-cert-create-readback",
+              "feat:gap-real-npm-cert-ref-applied",
+              "feat:gap-real-npm-cert-update-delete-prune",
+              "feat:gap-real-npm-cleanup",
+              "feat:gap-real-npm-domain-collision",
+              "feat:gap-real-npm-enabled-hsts",
+              "feat:gap-real-npm-foreign-owner",
+              "feat:gap-real-npm-forward-scheme",
+              "feat:gap-real-npm-http2",
+              "feat:gap-real-npm-locations",
+              "feat:gap-real-npm-meta-readback",
+              "feat:gap-real-npm-owner-filtering",
+              "feat:gap-real-npm-proxy-acl-ref",
+              "feat:gap-real-npm-proxy-adopt",
+              "feat:gap-real-npm-proxy-cert-ref",
+              "feat:gap-real-npm-proxy-delete-prune",
+              "feat:gap-real-npm-proxy-readback",
+              "feat:gap-real-npm-proxy-update",
+              "feat:gap-real-npm-prune-owner-isolation",
+              "feat:gap-real-npm-ssl-forced",
+              "feat:gap-real-npm-websockets",
+              "feat:gap-workflow-semantics"
+            ],
+            "id": "clm:test-coverage-gap-plan",
+            "status": "certified",
+            "test_ids": [
+              "tst:gap-acl-ref-negative",
+              "tst:gap-apply-adopt-merge",
+              "tst:gap-apply-conflict-no-mutation",
+              "tst:gap-apply-delete-results",
+              "tst:gap-apply-operation-ordering",
+              "tst:gap-apply-resolve-reference",
+              "tst:gap-apply-unresolved-reference",
+              "tst:gap-cert-ref-negative",
+              "tst:gap-cli-command-matrix",
+              "tst:gap-cli-exit-code-mapping",
+              "tst:gap-cli-json-error-shape",
+              "tst:gap-cli-option-combinations",
+              "tst:gap-cli-required-api-args",
+              "tst:gap-cli-schema-output",
+              "tst:gap-cli-secret-redaction",
+              "tst:gap-cli-validate-output",
+              "tst:gap-client-authz-errors",
+              "tst:gap-client-error-redaction",
+              "tst:gap-client-login-failures",
+              "tst:gap-client-malformed-success",
+              "tst:gap-client-non-json-errors",
+              "tst:gap-client-nonget-no-retry",
+              "tst:gap-client-token-refresh-expiry",
+              "tst:gap-client-transient-get-retry",
+              "tst:gap-loader-api-version-validation",
+              "tst:gap-loader-discovery-ordering",
+              "tst:gap-loader-duplicate-identities",
+              "tst:gap-loader-malformed-documents",
+              "tst:gap-model-advanced-config-validation",
+              "tst:gap-model-api-payload-validation",
+              "tst:gap-model-forward-host-validation",
+              "tst:gap-model-forward-scheme-validation",
+              "tst:gap-model-locations-validation",
+              "tst:gap-model-toggle-validation",
+              "tst:gap-package-metadata-urls",
+              "tst:gap-packaging-console-script",
+              "tst:gap-planner-duplicate-domains",
+              "tst:gap-planner-nonproxy-drift-foreign-owner",
+              "tst:gap-planner-nonproxy-duplicate-identity",
+              "tst:gap-planner-owner-filtering",
+              "tst:gap-planner-partial-capabilities",
+              "tst:gap-planner-prune-selected-owner",
+              "tst:gap-real-npm-acl-capability",
+              "tst:gap-real-npm-acl-create-readback",
+              "tst:gap-real-npm-acl-update-delete-prune",
+              "tst:gap-real-npm-advanced-config",
+              "tst:gap-real-npm-block-exploits",
+              "tst:gap-real-npm-cache-assets",
+              "tst:gap-real-npm-cert-capability",
+              "tst:gap-real-npm-cert-create-readback",
+              "tst:gap-real-npm-cert-ref-applied",
+              "tst:gap-real-npm-cert-update-delete-prune",
+              "tst:gap-real-npm-cleanup",
+              "tst:gap-real-npm-domain-collision",
+              "tst:gap-real-npm-enabled-hsts",
+              "tst:gap-real-npm-foreign-owner",
+              "tst:gap-real-npm-forward-scheme",
+              "tst:gap-real-npm-http2",
+              "tst:gap-real-npm-locations",
+              "tst:gap-real-npm-meta-readback",
+              "tst:gap-real-npm-owner-filtering",
+              "tst:gap-real-npm-proxy-acl-ref",
+              "tst:gap-real-npm-proxy-adopt",
+              "tst:gap-real-npm-proxy-cert-ref",
+              "tst:gap-real-npm-proxy-delete-prune",
+              "tst:gap-real-npm-proxy-readback",
+              "tst:gap-real-npm-proxy-update",
+              "tst:gap-real-npm-prune-owner-isolation",
+              "tst:gap-real-npm-ssl-forced",
+              "tst:gap-real-npm-websockets",
+              "tst:gap-workflow-semantics"
+            ],
+            "title": "Coverage gaps have implemented feature and test rows"
+          },
+          {
+            "evidence_ids": [
+              "evd:repair-safe-certificate-reconciliation-implementation"
+            ],
+            "feature_ids": [
+              "feat:adopt-metadata-only",
+              "feat:adopt-resource-family-scope",
+              "feat:plan-adoptable-compatible-unmanaged",
+              "feat:repair-safe-public-endpoint-workflow"
+            ],
+            "id": "clm:repair-safe-adoption-controls",
+            "status": "certified",
+            "test_ids": [
+              "tst:repair-safe-adoption-controls"
+            ],
+            "title": "Repair-safe adoption controls claim"
+          },
+          {
+            "evidence_ids": [
+              "evd:repair-safe-certificate-reconciliation-implementation"
+            ],
+            "feature_ids": [
+              "feat:certificate-policy-mode-reuse",
+              "feat:certificate-policy-mode-create",
+              "feat:certificate-policy-mode-rotate",
+              "feat:certificate-domain-set-reuse-detection",
+              "feat:plan-certificate-policy-conflicts"
+            ],
+            "id": "clm:repair-safe-certificate-policy",
+            "status": "certified",
+            "test_ids": [
+              "tst:repair-safe-certificate-policy"
+            ],
+            "title": "Repair-safe certificate reconciliation policy claim"
+          },
+          {
+            "evidence_ids": [
+              "evd:repair-safe-certificate-reconciliation-implementation"
+            ],
+            "feature_ids": [
+              "feat:certificate-issuance-deduplication",
+              "feat:certificate-issuance-cooldown",
+              "feat:certificate-failure-classification",
+              "feat:certificate-lock-retryable-class",
+              "feat:certificate-order-stale-class",
+              "feat:apply-structured-certificate-error-output"
+            ],
+            "id": "clm:repair-safe-certificate-issuance-safety",
+            "status": "certified",
+            "test_ids": [
+              "tst:repair-safe-certificate-issuance-safety"
+            ],
+            "title": "Repair-safe certificate issuance safety claim"
+          },
+          {
+            "evidence_ids": [
+              "evd:versioning-migration-test-plan"
+            ],
+            "feature_ids": [
+              "feat:apply-reviewed-plan-artifact",
+              "feat:canonical-document-digests",
+              "feat:complete-zone-lock-policy",
+              "feat:contract-compatibility-policy",
+              "feat:contract-registry",
+              "feat:contract-version-reporting",
+              "feat:immutable-plan-artifact",
+              "feat:live-state-import-classification",
+              "feat:migration-forward-repair",
+              "feat:migration-ledger",
+              "feat:migration-manifest",
+              "feat:migration-ownership-transfer",
+              "feat:migration-prechange-snapshot",
+              "feat:migration-prune-delete",
+              "feat:migration-resource-adoption",
+              "feat:migration-resume",
+              "feat:migration-reversibility-classification",
+              "feat:migration-verification",
+              "feat:npm-api-profile-negotiation",
+              "feat:npmctl-lockfile",
+              "feat:ordinary-apply-migration-guard",
+              "feat:plan-staleness-detection",
+              "feat:provider-capability-contract",
+              "feat:provider-capability-negotiation",
+              "feat:repository-environment-resolution",
+              "feat:repository-layout-validation",
+              "feat:repository-manifest",
+              "feat:stepwise-migration-graph",
+              "feat:transactional-filesystem-migration",
+              "feat:artifact-data-minimization",
+              "feat:artifact-retention-policy",
+              "feat:artifact-secret-redaction",
+              "feat:artifact-signature-verification",
+              "feat:cli-stable-error-envelope",
+              "feat:cli-stable-exit-code-contract",
+              "feat:deterministic-plan-artifact",
+              "feat:lost-response-reconciliation",
+              "feat:migration-execution-lease",
+              "feat:migration-idempotency-key",
+              "feat:migration-lease-recovery",
+              "feat:no-implicit-contract-migration",
+              "feat:plugin-contract-version-negotiation",
+              "feat:plugin-custom-resource-schema-registry",
+              "feat:plugin-migration-conflict-detection",
+              "feat:plugin-migration-step-registration",
+              "feat:provider-request-correlation",
+              "feat:safe-contract-downgrade",
+              "feat:trusted-artifact-key-policy"
+            ],
+            "id": "clm:versioning-migration-contracts",
+            "status": "proposed",
+            "test_ids": [
+              "tst:contract-version-matrix",
+              "tst:contract-future-version-rejection",
+              "tst:contract-deprecation-policy",
+              "tst:canonical-digest-stability",
+              "tst:lockfile-reproducibility",
+              "tst:plan-artifact-roundtrip",
+              "tst:plan-artifact-tamper-rejection",
+              "tst:plan-artifact-staleness",
+              "tst:migration-step-matrix",
+              "tst:migration-manifest-schema",
+              "tst:migration-atomic-failure",
+              "tst:migration-ledger-append-only",
+              "tst:migration-resume",
+              "tst:migration-verification",
+              "tst:live-state-classification",
+              "tst:migration-adoption-gates",
+              "tst:ownership-transfer",
+              "tst:migration-delete-gates",
+              "tst:apply-rejects-migration-operations",
+              "tst:provider-capability-matrix",
+              "tst:unsupported-provider-capability",
+              "tst:npm-api-profile-drift",
+              "tst:complete-zone-concurrency",
+              "tst:migration-reversibility-classification",
+              "tst:reversible-migration-rollback",
+              "tst:irreversible-migration-rejects-rollback",
+              "tst:forward-repair-from-snapshot",
+              "tst:repository-manifest-validation",
+              "tst:repository-layout-validation",
+              "tst:repository-cross-environment-isolation",
+              "tst:validate-never-migrates",
+              "tst:plan-never-migrates",
+              "tst:apply-never-migrates",
+              "tst:safe-downgrade-roundtrip",
+              "tst:irreversible-downgrade-rejection",
+              "tst:artifact-valid-signature",
+              "tst:artifact-invalid-signature",
+              "tst:artifact-untrusted-signer",
+              "tst:artifact-secret-redaction",
+              "tst:snapshot-sensitive-field-omission",
+              "tst:artifact-retention-expiry",
+              "tst:concurrent-migration-rejection",
+              "tst:migration-lease-expiry",
+              "tst:duplicate-operation-idempotency",
+              "tst:provider-response-loss",
+              "tst:resume-after-provider-success",
+              "tst:plugin-supported-contract-version",
+              "tst:plugin-future-schema-rejection",
+              "tst:plugin-migration-discovery",
+              "tst:plugin-migration-path-conflict",
+              "tst:plugin-missing-migration-step",
+              "tst:repeated-plan-determinism",
+              "tst:operation-order-determinism",
+              "tst:cli-versioned-error-envelope",
+              "tst:cli-versioned-exit-code-matrix"
+            ],
+            "title": "Versioning and migration contract implementation and verification"
+          }
+        ],
+        "evidence": [
+          {
+            "claim_ids": [
+              "clm:cli-operator-certification"
+            ],
+            "id": "evd:cli-operator-certification",
+            "status": "passed",
+            "test_ids": [
+              "tst:cli-operator-certification"
+            ],
+            "title": "CLI operator certification evidence"
+          },
+          {
+            "claim_ids": [
+              "clm:compliance-real-oss-release"
+            ],
+            "id": "evd:compliance-real-oss-release",
+            "status": "passed",
+            "test_ids": [
+              "tst:compliance-real-oss-release"
+            ],
+            "title": "Real OSS compliance release evidence"
+          },
+          {
+            "claim_ids": [
+              "clm:conformance-release-blocking-live-npm"
+            ],
+            "id": "evd:conformance-release-blocking-live-npm",
+            "status": "passed",
+            "test_ids": [
+              "tst:conformance-release-blocking-live-npm"
+            ],
+            "title": "Release-blocking live NPM conformance evidence"
+          },
+          {
+            "claim_ids": [
+              "clm:coverage-total-100-percent"
+            ],
+            "id": "evd:coverage-total-100-percent",
+            "status": "passed",
+            "test_ids": [
+              "tst:coverage-total-100-percent"
+            ],
+            "title": "Coverage total 100 percent evidence"
+          },
+          {
+            "claim_ids": [
+              "clm:development-gate-certification"
+            ],
+            "id": "evd:development-gate-certification",
+            "status": "passed",
+            "test_ids": [
+              "tst:development-gate-certification"
+            ],
+            "title": "Development gate certification evidence"
+          },
+          {
+            "claim_ids": [
+              "clm:create-only-integrity",
+              "clm:owner-scoped-integrity"
+            ],
+            "id": "evd:e2e-real-npm",
+            "status": "passed",
+            "test_ids": [
+              "tst:e2e-real-npm"
+            ],
+            "title": "Real NPM opt-in E2E evidence"
+          },
+          {
+            "claim_ids": [
+              "clm:expanded-feature-scope-planning"
+            ],
+            "id": "evd:expanded-feature-scope-planning",
+            "status": "passed",
+            "test_ids": [
+              "tst:expanded-feature-scope-planning",
+              "tst:quic-passthrough-capability-artifact"
+            ],
+            "title": "Historical expanded feature scope planning evidence"
+          },
+          {
+            "claim_ids": [
+              "clm:create-only-integrity",
+              "clm:metadata-conflict-guard",
+              "clm:owner-scoped-integrity",
+              "clm:schema-gated-api"
+            ],
+            "id": "evd:integration-fake-npm",
+            "status": "passed",
+            "test_ids": [
+              "tst:integration-fake-npm",
+              "tst:dns-mixed-npm-and-dns-plan"
+            ],
+            "title": "Fake NPM integration pytest evidence"
+          },
+          {
+            "claim_ids": [
+              "clm:operational-hardening-certification"
+            ],
+            "id": "evd:operational-hardening-certification",
+            "status": "passed",
+            "test_ids": [
+              "tst:operational-hardening-certification"
+            ],
+            "title": "Operational hardening certification evidence"
+          },
+          {
+            "claim_ids": [
+              "clm:plugin-runtime-certification"
+            ],
+            "id": "evd:plugin-runtime-certification",
+            "status": "passed",
+            "test_ids": [
+              "tst:plugin-runtime-certification",
+              "tst:dns-readonly-provider-apply-fails",
+              "tst:namecheap-sethosts-a-cname-payload",
+              "tst:namecheap-preserve-unmanaged-records",
+              "tst:namecheap-remove-stale-owned-records",
+              "tst:namecheap-client-ip-required",
+              "tst:namecheap-api-error-redaction",
+              "tst:namecheap-post-apply-record-readback",
+              "tst:route53-supported-record-type-writes",
+              "tst:cloudflare-supported-record-type-writes",
+              "tst:digitalocean-supported-record-type-writes",
+              "tst:godaddy-supported-record-type-writes"
+            ],
+            "title": "Plugin runtime certification evidence"
+          },
+          {
+            "claim_ids": [
+              "clm:owner-scoped-integrity"
+            ],
+            "id": "evd:real-npm-workflow",
+            "status": "passed",
+            "test_ids": [
+              "tst:real-npm-workflow"
+            ],
+            "title": "Real NPM workflow evidence"
+          },
+          {
+            "claim_ids": [
+              "clm:resource-expanded-certification"
+            ],
+            "id": "evd:resource-expanded-certification",
+            "status": "passed",
+            "test_ids": [
+              "tst:resource-expanded-certification"
+            ],
+            "title": "Expanded resource certification evidence"
+          },
+          {
+            "claim_ids": [
+              "clm:test-coverage-gap-plan"
+            ],
+            "id": "evd:test-coverage-gap-plan",
+            "status": "passed",
+            "test_ids": [
+              "tst:gap-acl-ref-negative",
+              "tst:gap-apply-adopt-merge",
+              "tst:gap-apply-conflict-no-mutation",
+              "tst:gap-apply-delete-results",
+              "tst:gap-apply-operation-ordering",
+              "tst:gap-apply-resolve-reference",
+              "tst:gap-apply-unresolved-reference",
+              "tst:gap-cert-ref-negative",
+              "tst:gap-cli-command-matrix",
+              "tst:gap-cli-exit-code-mapping",
+              "tst:gap-cli-json-error-shape",
+              "tst:gap-cli-option-combinations",
+              "tst:gap-cli-required-api-args",
+              "tst:gap-cli-schema-output",
+              "tst:gap-cli-secret-redaction",
+              "tst:gap-cli-validate-output",
+              "tst:gap-client-authz-errors",
+              "tst:gap-client-error-redaction",
+              "tst:gap-client-login-failures",
+              "tst:gap-client-malformed-success",
+              "tst:gap-client-non-json-errors",
+              "tst:gap-client-nonget-no-retry",
+              "tst:gap-client-token-refresh-expiry",
+              "tst:gap-client-transient-get-retry",
+              "tst:gap-loader-api-version-validation",
+              "tst:gap-loader-discovery-ordering",
+              "tst:gap-loader-duplicate-identities",
+              "tst:gap-loader-malformed-documents",
+              "tst:gap-model-advanced-config-validation",
+              "tst:gap-model-api-payload-validation",
+              "tst:gap-model-forward-host-validation",
+              "tst:gap-model-forward-scheme-validation",
+              "tst:gap-model-locations-validation",
+              "tst:gap-model-toggle-validation",
+              "tst:gap-package-metadata-urls",
+              "tst:gap-packaging-console-script",
+              "tst:gap-planner-duplicate-domains",
+              "tst:gap-planner-nonproxy-drift-foreign-owner",
+              "tst:gap-planner-nonproxy-duplicate-identity",
+              "tst:gap-planner-owner-filtering",
+              "tst:gap-planner-partial-capabilities",
+              "tst:gap-planner-prune-selected-owner",
+              "tst:gap-real-npm-acl-capability",
+              "tst:gap-real-npm-acl-create-readback",
+              "tst:gap-real-npm-acl-update-delete-prune",
+              "tst:gap-real-npm-advanced-config",
+              "tst:gap-real-npm-block-exploits",
+              "tst:gap-real-npm-cache-assets",
+              "tst:gap-real-npm-cert-capability",
+              "tst:gap-real-npm-cert-create-readback",
+              "tst:gap-real-npm-cert-ref-applied",
+              "tst:gap-real-npm-cert-update-delete-prune",
+              "tst:gap-real-npm-cleanup",
+              "tst:gap-real-npm-domain-collision",
+              "tst:gap-real-npm-enabled-hsts",
+              "tst:gap-real-npm-foreign-owner",
+              "tst:gap-real-npm-forward-scheme",
+              "tst:gap-real-npm-http2",
+              "tst:gap-real-npm-locations",
+              "tst:gap-real-npm-meta-readback",
+              "tst:gap-real-npm-owner-filtering",
+              "tst:gap-real-npm-proxy-acl-ref",
+              "tst:gap-real-npm-proxy-adopt",
+              "tst:gap-real-npm-proxy-cert-ref",
+              "tst:gap-real-npm-proxy-delete-prune",
+              "tst:gap-real-npm-proxy-readback",
+              "tst:gap-real-npm-proxy-update",
+              "tst:gap-real-npm-prune-owner-isolation",
+              "tst:gap-real-npm-ssl-forced",
+              "tst:gap-real-npm-websockets",
+              "tst:gap-workflow-semantics"
+            ],
+            "title": "Test coverage gap implementation evidence"
+          },
+          {
+            "claim_ids": [
+              "clm:create-only-integrity"
+            ],
+            "id": "evd:unit-client-cli",
+            "status": "passed",
+            "test_ids": [
+              "tst:unit-client-cli"
+            ],
+            "title": "Unit client and CLI pytest evidence"
+          },
+          {
+            "claim_ids": [
+              "clm:owner-scoped-integrity"
+            ],
+            "id": "evd:unit-migrations",
+            "status": "passed",
+            "test_ids": [
+              "tst:unit-migrations"
+            ],
+            "title": "Unit migration pytest evidence"
+          },
+          {
+            "claim_ids": [
+              "clm:create-only-integrity",
+              "clm:metadata-conflict-guard",
+              "clm:owner-scoped-integrity"
+            ],
+            "id": "evd:unit-planner",
+            "status": "passed",
+            "test_ids": [
+              "tst:unit-planner",
+              "tst:dns-planner-record-operations",
+              "tst:dns-owner-scoped-record-prune"
+            ],
+            "title": "Unit planner pytest evidence"
+          },
+          {
+            "claim_ids": [
+              "clm:schema-gated-api"
+            ],
+            "id": "evd:unit-schema",
+            "status": "passed",
+            "test_ids": [
+              "tst:unit-schema"
+            ],
+            "title": "Unit schema pytest evidence"
+          },
+          {
+            "claim_ids": [
+              "clm:metadata-conflict-guard"
+            ],
+            "id": "evd:unit-validation",
+            "status": "passed",
+            "test_ids": [
+              "tst:unit-validation"
+            ],
+            "title": "Unit validation pytest evidence"
+          },
+          {
+            "claim_ids": [
+              "clm:repair-safe-adoption-controls",
+              "clm:repair-safe-certificate-policy",
+              "clm:repair-safe-certificate-issuance-safety"
+            ],
+            "id": "evd:repair-safe-certificate-reconciliation-implementation",
+            "status": "passed",
+            "test_ids": [
+              "tst:repair-safe-adoption-controls",
+              "tst:repair-safe-certificate-policy",
+              "tst:repair-safe-certificate-issuance-safety"
+            ],
+            "title": "Repair-safe certificate reconciliation implementation evidence"
+          },
+          {
+            "claim_ids": [
+              "clm:versioning-migration-contracts"
+            ],
+            "id": "evd:versioning-migration-test-plan",
+            "status": "collected",
+            "test_ids": [
+              "tst:contract-version-matrix",
+              "tst:contract-future-version-rejection",
+              "tst:contract-deprecation-policy",
+              "tst:canonical-digest-stability",
+              "tst:lockfile-reproducibility",
+              "tst:plan-artifact-roundtrip",
+              "tst:plan-artifact-tamper-rejection",
+              "tst:plan-artifact-staleness",
+              "tst:migration-step-matrix",
+              "tst:migration-manifest-schema",
+              "tst:migration-atomic-failure",
+              "tst:migration-ledger-append-only",
+              "tst:migration-resume",
+              "tst:migration-verification",
+              "tst:live-state-classification",
+              "tst:migration-adoption-gates",
+              "tst:ownership-transfer",
+              "tst:migration-delete-gates",
+              "tst:apply-rejects-migration-operations",
+              "tst:provider-capability-matrix",
+              "tst:unsupported-provider-capability",
+              "tst:npm-api-profile-drift",
+              "tst:complete-zone-concurrency",
+              "tst:migration-reversibility-classification",
+              "tst:reversible-migration-rollback",
+              "tst:irreversible-migration-rejects-rollback",
+              "tst:forward-repair-from-snapshot",
+              "tst:repository-manifest-validation",
+              "tst:repository-layout-validation",
+              "tst:repository-cross-environment-isolation",
+              "tst:validate-never-migrates",
+              "tst:plan-never-migrates",
+              "tst:apply-never-migrates",
+              "tst:safe-downgrade-roundtrip",
+              "tst:irreversible-downgrade-rejection",
+              "tst:artifact-valid-signature",
+              "tst:artifact-invalid-signature",
+              "tst:artifact-untrusted-signer",
+              "tst:artifact-secret-redaction",
+              "tst:snapshot-sensitive-field-omission",
+              "tst:artifact-retention-expiry",
+              "tst:concurrent-migration-rejection",
+              "tst:migration-lease-expiry",
+              "tst:duplicate-operation-idempotency",
+              "tst:provider-response-loss",
+              "tst:resume-after-provider-success",
+              "tst:plugin-supported-contract-version",
+              "tst:plugin-future-schema-rejection",
+              "tst:plugin-migration-discovery",
+              "tst:plugin-migration-path-conflict",
+              "tst:plugin-missing-migration-step",
+              "tst:repeated-plan-determinism",
+              "tst:operation-order-determinism",
+              "tst:cli-versioned-error-envelope",
+              "tst:cli-versioned-exit-code-matrix"
+            ],
+            "title": "Versioning and migration executable test plan"
+          }
+        ],
+        "features": [
+          {
+            "claim_ids": [
+              "clm:owner-scoped-integrity"
+            ],
+            "id": "feat:access-list-crud",
+            "implementation_status": "implemented",
+            "test_ids": [
+              "tst:e2e-real-npm",
+              "tst:integration-fake-npm",
+              "tst:unit-planner"
+            ],
+            "title": "Owner-scoped ACL CRUD"
+          },
+          {
+            "claim_ids": [
+              "clm:owner-scoped-integrity"
+            ],
+            "id": "feat:adoption",
+            "implementation_status": "implemented",
+            "test_ids": [
+              "tst:e2e-real-npm",
+              "tst:integration-fake-npm",
+              "tst:unit-planner"
+            ],
+            "title": "Explicit adoption of unmanaged resources"
+          },
+          {
+            "claim_ids": [
+              "clm:create-only-integrity"
+            ],
+            "id": "feat:auth-token",
+            "implementation_status": "implemented",
+            "test_ids": [
+              "tst:e2e-real-npm",
+              "tst:integration-fake-npm",
+              "tst:unit-client-cli"
+            ],
+            "title": "Authenticate to NPM API"
+          },
+          {
+            "claim_ids": [
+              "clm:owner-scoped-integrity"
+            ],
+            "id": "feat:certificate-crud",
+            "implementation_status": "implemented",
+            "test_ids": [
+              "tst:e2e-real-npm",
+              "tst:integration-fake-npm",
+              "tst:unit-planner"
+            ],
+            "title": "Owner-scoped SSL certificate CRUD"
+          },
+          {
+            "claim_ids": [
+              "clm:conformance-release-blocking-live-npm",
+              "clm:expanded-feature-scope-planning"
+            ],
+            "id": "feat:ci-real-npm-coverage-artifact",
+            "implementation_status": "implemented",
+            "test_ids": [
+              "tst:conformance-release-blocking-live-npm",
+              "tst:expanded-feature-scope-planning"
+            ],
+            "title": "Real NPM coverage artifact"
+          },
+          {
+            "claim_ids": [
+              "clm:conformance-release-blocking-live-npm",
+              "clm:expanded-feature-scope-planning"
+            ],
+            "id": "feat:ci-real-npm-scheduled-e2e",
+            "implementation_status": "implemented",
+            "test_ids": [
+              "tst:conformance-release-blocking-live-npm",
+              "tst:expanded-feature-scope-planning"
+            ],
+            "title": "Scheduled live NPM gate CI"
+          },
+          {
+            "claim_ids": [
+              "clm:cli-operator-certification",
+              "clm:expanded-feature-scope-planning"
+            ],
+            "id": "feat:cli-completion",
+            "implementation_status": "implemented",
+            "test_ids": [
+              "tst:cli-operator-certification",
+              "tst:expanded-feature-scope-planning"
+            ],
+            "title": "CLI shell completions"
+          },
+          {
+            "claim_ids": [
+              "clm:cli-operator-certification",
+              "clm:expanded-feature-scope-planning"
+            ],
+            "id": "feat:cli-config-file",
+            "implementation_status": "implemented",
+            "test_ids": [
+              "tst:cli-operator-certification",
+              "tst:expanded-feature-scope-planning"
+            ],
+            "title": "CLI config file"
+          },
+          {
+            "claim_ids": [
+              "clm:cli-operator-certification",
+              "clm:expanded-feature-scope-planning"
+            ],
+            "id": "feat:cli-doctor",
+            "implementation_status": "implemented",
+            "test_ids": [
+              "tst:cli-operator-certification",
+              "tst:expanded-feature-scope-planning"
+            ],
+            "title": "CLI doctor diagnostics"
+          },
+          {
+            "claim_ids": [
+              "clm:cli-operator-certification",
+              "clm:expanded-feature-scope-planning"
+            ],
+            "id": "feat:cli-env-diagnostics",
+            "implementation_status": "implemented",
+            "test_ids": [
+              "tst:cli-operator-certification",
+              "tst:expanded-feature-scope-planning"
+            ],
+            "title": "CLI environment diagnostics"
+          },
+          {
+            "claim_ids": [
+              "clm:cli-operator-certification",
+              "clm:expanded-feature-scope-planning"
+            ],
+            "id": "feat:cli-plan-output-schema-validation",
+            "implementation_status": "implemented",
+            "test_ids": [
+              "tst:cli-operator-certification",
+              "tst:expanded-feature-scope-planning"
+            ],
+            "title": "CLI plan output schema validation"
+          },
+          {
+            "claim_ids": [
+              "clm:create-only-integrity"
+            ],
+            "id": "feat:cli-surface",
+            "implementation_status": "implemented",
+            "test_ids": [
+              "tst:unit-client-cli"
+            ],
+            "title": "Operator CLI surface"
+          },
+          {
+            "claim_ids": [
+              "clm:cli-operator-certification",
+              "clm:expanded-feature-scope-planning"
+            ],
+            "id": "feat:cli-version-json",
+            "implementation_status": "implemented",
+            "test_ids": [
+              "tst:cli-operator-certification",
+              "tst:expanded-feature-scope-planning"
+            ],
+            "title": "CLI JSON version output"
+          },
+          {
+            "claim_ids": [
+              "clm:compliance-real-oss-release",
+              "clm:expanded-feature-scope-planning"
+            ],
+            "id": "feat:compliance-dependency-vulnerability-gate",
+            "implementation_status": "implemented",
+            "test_ids": [
+              "tst:compliance-real-oss-release",
+              "tst:expanded-feature-scope-planning"
+            ],
+            "title": "Dependency vulnerability compliance gate"
+          },
+          {
+            "claim_ids": [
+              "clm:compliance-real-oss-release",
+              "clm:expanded-feature-scope-planning"
+            ],
+            "id": "feat:compliance-owner-scope-safety-profile",
+            "implementation_status": "implemented",
+            "test_ids": [
+              "tst:compliance-real-oss-release",
+              "tst:expanded-feature-scope-planning"
+            ],
+            "title": "Owner scope safety compliance profile"
+          },
+          {
+            "claim_ids": [
+              "clm:compliance-real-oss-release",
+              "clm:expanded-feature-scope-planning"
+            ],
+            "id": "feat:compliance-provenance-attestation",
+            "implementation_status": "implemented",
+            "test_ids": [
+              "tst:compliance-real-oss-release",
+              "tst:expanded-feature-scope-planning"
+            ],
+            "title": "Release provenance attestation"
+          },
+          {
+            "claim_ids": [
+              "clm:compliance-real-oss-release"
+            ],
+            "id": "feat:compliance-real-oss-artifacts",
+            "implementation_status": "implemented",
+            "test_ids": [
+              "tst:compliance-real-oss-release"
+            ],
+            "title": "Real OSS compliance artifacts"
+          },
+          {
+            "claim_ids": [
+              "clm:compliance-real-oss-release",
+              "clm:expanded-feature-scope-planning"
+            ],
+            "id": "feat:compliance-release-gate-profile",
+            "implementation_status": "implemented",
+            "test_ids": [
+              "tst:compliance-real-oss-release",
+              "tst:expanded-feature-scope-planning"
+            ],
+            "title": "Release gate compliance profile"
+          },
+          {
+            "claim_ids": [
+              "clm:compliance-real-oss-release",
+              "clm:expanded-feature-scope-planning"
+            ],
+            "id": "feat:compliance-sbom",
+            "implementation_status": "implemented",
+            "test_ids": [
+              "tst:compliance-real-oss-release",
+              "tst:expanded-feature-scope-planning"
+            ],
+            "title": "Release SBOM"
+          },
+          {
+            "claim_ids": [
+              "clm:compliance-real-oss-release",
+              "clm:expanded-feature-scope-planning"
+            ],
+            "id": "feat:compliance-security-scan-gate",
+            "implementation_status": "implemented",
+            "test_ids": [
+              "tst:compliance-real-oss-release",
+              "tst:expanded-feature-scope-planning"
+            ],
+            "title": "Security scan compliance gate"
+          }
+        ],
+        "issues": [
+          {
+            "claim_ids": [
+              "clm:coverage-total-100-percent"
+            ],
+            "evidence_ids": [
+              "evd:coverage-total-100-percent"
+            ],
+            "feature_ids": [
+              "feat:coverage-total-100-percent"
+            ],
+            "id": "iss:coverage-100-percent-blocker",
+            "status": "resolved",
+            "test_ids": [
+              "tst:coverage-total-100-percent"
+            ],
+            "title": "100 percent coverage gate was not enforced"
+          },
+          {
+            "claim_ids": [
+              "clm:development-gate-certification"
+            ],
+            "evidence_ids": [
+              "evd:development-gate-certification"
+            ],
+            "feature_ids": [
+              "feat:ssot-feature-family-proof-closure"
+            ],
+            "id": "iss:expanded-proof-bundle-blocker",
+            "status": "resolved",
+            "test_ids": [
+              "tst:development-gate-certification"
+            ],
+            "title": "Expanded features used one broad proof bundle"
+          },
+          {
+            "claim_ids": [
+              "clm:conformance-release-blocking-live-npm"
+            ],
+            "evidence_ids": [
+              "evd:conformance-release-blocking-live-npm"
+            ],
+            "feature_ids": [
+              "feat:conformance-release-blocking-live-npm"
+            ],
+            "id": "iss:live-npm-release-blocker",
+            "status": "resolved",
+            "test_ids": [
+              "tst:conformance-release-blocking-live-npm"
+            ],
+            "title": "Live NPM conformance was optional"
+          },
+          {
+            "claim_ids": [
+              "clm:development-gate-certification"
+            ],
+            "evidence_ids": [
+              "evd:development-gate-certification"
+            ],
+            "feature_ids": [
+              "feat:ssot-feature-family-proof-closure"
+            ],
+            "id": "iss:missing-spec-links-blocker",
+            "status": "resolved",
+            "test_ids": [
+              "tst:development-gate-certification"
+            ],
+            "title": "Expanded features lacked direct SPEC proof links"
+          },
+          {
+            "claim_ids": [
+              "clm:compliance-real-oss-release"
+            ],
+            "evidence_ids": [
+              "evd:compliance-real-oss-release"
+            ],
+            "feature_ids": [
+              "feat:compliance-real-oss-artifacts"
+            ],
+            "id": "iss:placeholder-compliance-blocker",
+            "status": "resolved",
+            "test_ids": [
+              "tst:compliance-real-oss-release"
+            ],
+            "title": "Compliance artifacts were placeholders"
+          },
+          {
+            "claim_ids": [
+              "clm:plugin-runtime-certification"
+            ],
+            "evidence_ids": [
+              "evd:plugin-runtime-certification"
+            ],
+            "feature_ids": [
+              "feat:plugin-runtime-loading"
+            ],
+            "id": "iss:plugin-runtime-blocker",
+            "status": "resolved",
+            "test_ids": [
+              "tst:plugin-runtime-certification"
+            ],
+            "title": "Plugin support was contract-only"
+          },
+          {
+            "claim_ids": [
+              "clm:owner-scoped-integrity",
+              "clm:plugin-runtime-certification"
+            ],
+            "evidence_ids": [],
+            "feature_ids": [
+              "feat:namecheap-dns-provider",
+              "feat:dns-record-schema-v2",
+              "feat:owner-scoped-reconcile",
+              "feat:plugin-provider-interface",
+              "feat:dns-reconciliation-plan-apply",
+              "feat:dns-provider-write-contract",
+              "feat:dns-readonly-provider-fail-closed",
+              "feat:dns-owner-scoped-record-prune",
+              "feat:dns-mutation-reporting",
+              "feat:namecheap-dns-sethosts-apply",
+              "feat:namecheap-dns-unmanaged-preservation",
+              "feat:namecheap-dns-env-validation"
+            ],
+            "id": "iss:namecheap-dns-apply-gap",
+            "status": "closed",
+            "test_ids": [
+              "tst:plugin-runtime-certification",
+              "tst:unit-planner",
+              "tst:dns-planner-record-operations",
+              "tst:dns-owner-scoped-record-prune",
+              "tst:dns-readonly-provider-apply-fails",
+              "tst:dns-mixed-npm-and-dns-plan",
+              "tst:namecheap-sethosts-a-cname-payload",
+              "tst:namecheap-preserve-unmanaged-records",
+              "tst:namecheap-remove-stale-owned-records",
+              "tst:namecheap-client-ip-required",
+              "tst:namecheap-api-error-redaction",
+              "tst:namecheap-post-apply-record-readback"
+            ],
+            "title": "Namecheap DNS apply does not mutate provider records"
+          }
+        ],
+        "profiles": [
+          {
+            "feature_ids": [
+              "feat:access-list-crud",
+              "feat:adoption",
+              "feat:auth-token",
+              "feat:certificate-crud",
+              "feat:cli-surface",
+              "feat:create-missing-proxy-hosts",
+              "feat:discover-proxy-hosts",
+              "feat:gap-acl-ref-negative",
+              "feat:gap-apply-adopt-merge",
+              "feat:gap-apply-conflict-no-mutation",
+              "feat:gap-apply-delete-results",
+              "feat:gap-apply-operation-ordering",
+              "feat:gap-apply-resolve-reference",
+              "feat:gap-apply-unresolved-reference",
+              "feat:gap-cert-ref-negative",
+              "feat:gap-cli-command-matrix",
+              "feat:gap-cli-exit-code-mapping",
+              "feat:gap-cli-json-error-shape",
+              "feat:gap-cli-option-combinations",
+              "feat:gap-cli-required-api-args",
+              "feat:gap-cli-schema-output",
+              "feat:gap-cli-secret-redaction",
+              "feat:gap-cli-validate-output",
+              "feat:gap-client-authz-errors",
+              "feat:gap-client-error-redaction",
+              "feat:gap-client-login-failures",
+              "feat:gap-client-malformed-success",
+              "feat:gap-client-non-json-errors",
+              "feat:gap-client-nonget-no-retry",
+              "feat:gap-client-token-refresh-expiry",
+              "feat:gap-client-transient-get-retry",
+              "feat:gap-loader-api-version-validation",
+              "feat:gap-loader-discovery-ordering",
+              "feat:gap-loader-duplicate-identities",
+              "feat:gap-loader-malformed-documents",
+              "feat:gap-model-advanced-config-validation",
+              "feat:gap-model-api-payload-validation",
+              "feat:gap-model-forward-host-validation",
+              "feat:gap-model-forward-scheme-validation",
+              "feat:gap-model-locations-validation",
+              "feat:gap-model-toggle-validation",
+              "feat:gap-package-metadata-urls",
+              "feat:gap-packaging-console-script",
+              "feat:gap-planner-duplicate-domains",
+              "feat:gap-planner-nonproxy-drift-foreign-owner",
+              "feat:gap-planner-nonproxy-duplicate-identity",
+              "feat:gap-planner-owner-filtering",
+              "feat:gap-planner-partial-capabilities",
+              "feat:gap-planner-prune-selected-owner",
+              "feat:gap-real-npm-acl-capability",
+              "feat:gap-real-npm-acl-create-readback",
+              "feat:gap-real-npm-acl-update-delete-prune",
+              "feat:gap-real-npm-advanced-config",
+              "feat:gap-real-npm-block-exploits",
+              "feat:gap-real-npm-cache-assets",
+              "feat:gap-real-npm-cert-capability",
+              "feat:gap-real-npm-cert-create-readback",
+              "feat:gap-real-npm-cert-ref-applied",
+              "feat:gap-real-npm-cert-update-delete-prune",
+              "feat:gap-real-npm-cleanup",
+              "feat:gap-real-npm-domain-collision",
+              "feat:gap-real-npm-enabled-hsts",
+              "feat:gap-real-npm-foreign-owner",
+              "feat:gap-real-npm-forward-scheme",
+              "feat:gap-real-npm-http2",
+              "feat:gap-real-npm-locations",
+              "feat:gap-real-npm-meta-readback",
+              "feat:gap-real-npm-owner-filtering",
+              "feat:gap-real-npm-proxy-acl-ref",
+              "feat:gap-real-npm-proxy-adopt",
+              "feat:gap-real-npm-proxy-cert-ref",
+              "feat:gap-real-npm-proxy-delete-prune",
+              "feat:gap-real-npm-proxy-readback",
+              "feat:gap-real-npm-proxy-update",
+              "feat:gap-real-npm-prune-owner-isolation",
+              "feat:gap-real-npm-ssl-forced",
+              "feat:gap-real-npm-websockets",
+              "feat:gap-workflow-semantics",
+              "feat:github-actions-gates",
+              "feat:metadata-ownership",
+              "feat:owner-scoped-reconcile",
+              "feat:proxy-host-crud",
+              "feat:schema-capabilities",
+              "feat:schema-migrations",
+              "feat:strict-plan"
+            ],
+            "id": "prf:npmctl-current-certification",
+            "status": "active",
+            "title": "npmctl current certification profile"
+          }
+        ],
+        "releases": [
+          {
+            "claim_ids": [
+              "clm:create-only-integrity",
+              "clm:metadata-conflict-guard",
+              "clm:owner-scoped-integrity",
+              "clm:schema-gated-api",
+              "clm:test-coverage-gap-plan"
+            ],
+            "evidence_ids": [
+              "evd:e2e-real-npm",
+              "evd:integration-fake-npm",
+              "evd:real-npm-workflow",
+              "evd:test-coverage-gap-plan",
+              "evd:unit-client-cli",
+              "evd:unit-migrations",
+              "evd:unit-planner",
+              "evd:unit-schema",
+              "evd:unit-validation"
+            ],
+            "id": "rel:0.2.0",
+            "status": "certified"
+          },
+          {
+            "claim_ids": [
+              "clm:expanded-feature-scope-planning"
+            ],
+            "evidence_ids": [
+              "evd:expanded-feature-scope-planning"
+            ],
+            "id": "rel:0.3.0",
+            "status": "published"
+          },
+          {
+            "claim_ids": [
+              "clm:cli-operator-certification",
+              "clm:compliance-real-oss-release",
+              "clm:conformance-release-blocking-live-npm",
+              "clm:coverage-total-100-percent",
+              "clm:create-only-integrity",
+              "clm:development-gate-certification",
+              "clm:metadata-conflict-guard",
+              "clm:operational-hardening-certification",
+              "clm:owner-scoped-integrity",
+              "clm:plugin-runtime-certification",
+              "clm:resource-expanded-certification",
+              "clm:schema-gated-api",
+              "clm:test-coverage-gap-plan"
+            ],
+            "evidence_ids": [
+              "evd:cli-operator-certification",
+              "evd:compliance-real-oss-release",
+              "evd:conformance-release-blocking-live-npm",
+              "evd:coverage-total-100-percent",
+              "evd:development-gate-certification",
+              "evd:e2e-real-npm",
+              "evd:integration-fake-npm",
+              "evd:operational-hardening-certification",
+              "evd:plugin-runtime-certification",
+              "evd:real-npm-workflow",
+              "evd:resource-expanded-certification",
+              "evd:test-coverage-gap-plan",
+              "evd:unit-client-cli",
+              "evd:unit-migrations",
+              "evd:unit-planner",
+              "evd:unit-schema",
+              "evd:unit-validation"
+            ],
+            "id": "rel:0.3.1-certification-closure",
+            "status": "certified"
+          },
+          {
+            "claim_ids": [
+              "clm:repair-safe-adoption-controls",
+              "clm:repair-safe-certificate-policy",
+              "clm:repair-safe-certificate-issuance-safety"
+            ],
+            "evidence_ids": [
+              "evd:repair-safe-certificate-reconciliation-implementation"
+            ],
+            "id": "rel:0.3.2-repair-safe-certificate-reconciliation",
+            "status": "certified"
+          }
+        ],
+        "specs": [
+          {
+            "id": "spc:0600",
+            "status": "draft",
+            "title": "Registry core"
+          },
+          {
+            "id": "spc:0601",
+            "status": "draft",
+            "title": "CLI"
+          },
+          {
+            "id": "spc:0602",
+            "status": "draft",
+            "title": "Graph model"
+          },
+          {
+            "id": "spc:0603",
+            "status": "draft",
+            "title": "Feature lifecycle"
+          },
+          {
+            "id": "spc:0604",
+            "status": "draft",
+            "title": "Claim statuses"
+          },
+          {
+            "id": "spc:0605",
+            "status": "draft",
+            "title": "Claim tiers"
+          },
+          {
+            "id": "spc:0606",
+            "status": "draft",
+            "title": "Snapshots and reports"
+          },
+          {
+            "id": "spc:0607",
+            "status": "draft",
+            "title": "Repository policy"
+          },
+          {
+            "id": "spc:0608",
+            "status": "draft",
+            "title": "Gates and fences"
+          },
+          {
+            "id": "spc:0609",
+            "status": "draft",
+            "title": "ID normalization"
+          },
+          {
+            "id": "spc:0610",
+            "status": "draft",
+            "title": "File tree"
+          },
+          {
+            "id": "spc:0611",
+            "status": "draft",
+            "title": "Planning horizons"
+          },
+          {
+            "id": "spc:0612",
+            "status": "draft",
+            "title": "Python API"
+          },
+          {
+            "id": "spc:0613",
+            "status": "draft",
+            "title": "SSOT path-length policy"
+          },
+          {
+            "id": "spc:0614",
+            "status": "draft",
+            "title": "Profile evaluation and boundary resolution"
+          },
+          {
+            "id": "spc:1000",
+            "status": "accepted",
+            "title": "Create-only controller contract"
+          },
+          {
+            "id": "spc:1001",
+            "status": "accepted",
+            "title": "Metadata ownership and conflict guards"
+          },
+          {
+            "id": "spc:1002",
+            "status": "draft",
+            "title": "Adoption repair controls"
+          },
+          {
+            "id": "spc:1003",
+            "status": "draft",
+            "title": "Certificate reconciliation policy"
+          },
+          {
+            "id": "spc:1004",
+            "status": "draft",
+            "title": "Certificate issuance safety and error classification"
+          }
+        ],
+        "tests": [
+          {
+            "claim_ids": [
+              "clm:cli-operator-certification"
+            ],
+            "evidence_ids": [
+              "evd:cli-operator-certification"
+            ],
+            "feature_ids": [
+              "feat:cli-completion",
+              "feat:cli-config-file",
+              "feat:cli-doctor",
+              "feat:cli-env-diagnostics",
+              "feat:cli-plan-output-schema-validation",
+              "feat:cli-version-json",
+              "feat:dns-provider-cli"
+            ],
+            "id": "tst:cli-operator-certification",
+            "status": "passing",
+            "title": "CLI operator certification tests"
+          },
+          {
+            "claim_ids": [
+              "clm:compliance-real-oss-release"
+            ],
+            "evidence_ids": [
+              "evd:compliance-real-oss-release"
+            ],
+            "feature_ids": [
+              "feat:compliance-dependency-vulnerability-gate",
+              "feat:compliance-owner-scope-safety-profile",
+              "feat:compliance-provenance-attestation",
+              "feat:compliance-real-oss-artifacts",
+              "feat:compliance-release-gate-profile",
+              "feat:compliance-sbom",
+              "feat:compliance-security-scan-gate"
+            ],
+            "id": "tst:compliance-real-oss-release",
+            "status": "passing",
+            "title": "Real OSS compliance release tests"
+          },
+          {
+            "claim_ids": [
+              "clm:conformance-release-blocking-live-npm"
+            ],
+            "evidence_ids": [
+              "evd:conformance-release-blocking-live-npm"
+            ],
+            "feature_ids": [
+              "feat:ci-real-npm-coverage-artifact",
+              "feat:ci-real-npm-scheduled-e2e",
+              "feat:conformance-live-api-version-matrix",
+              "feat:conformance-npm-2-10-4-api-profile",
+              "feat:conformance-openapi-subset-doc",
+              "feat:conformance-release-blocking-live-npm",
+              "feat:conformance-schema-drift-report",
+              "feat:dev-real-e2e-coverage-measurement"
+            ],
+            "id": "tst:conformance-release-blocking-live-npm",
+            "status": "passing",
+            "title": "Release-blocking live NPM conformance tests"
+          },
+          {
+            "claim_ids": [
+              "clm:coverage-total-100-percent"
+            ],
+            "evidence_ids": [
+              "evd:coverage-total-100-percent"
+            ],
+            "feature_ids": [
+              "feat:coverage-cli-exception-branches",
+              "feat:coverage-client-auth-wrapper",
+              "feat:coverage-client-wrapper-functions",
+              "feat:coverage-entrypoint-main",
+              "feat:coverage-logging-redaction",
+              "feat:coverage-model-validation-edges",
+              "feat:coverage-total-100-percent",
+              "feat:coverage-validation-module",
+              "feat:dev-coverage-threshold-ratchet"
+            ],
+            "id": "tst:coverage-total-100-percent",
+            "status": "passing",
+            "title": "Coverage total 100 percent tests"
+          },
+          {
+            "claim_ids": [
+              "clm:development-gate-certification"
+            ],
+            "evidence_ids": [
+              "evd:development-gate-certification"
+            ],
+            "feature_ids": [
+              "feat:dev-schema-fixture-roundtrip",
+              "feat:dev-type-checking",
+              "feat:ssot-feature-family-proof-closure"
+            ],
+            "id": "tst:development-gate-certification",
+            "status": "passing",
+            "title": "Development gate certification tests"
+          },
+          {
+            "claim_ids": [
+              "clm:create-only-integrity",
+              "clm:owner-scoped-integrity"
+            ],
+            "evidence_ids": [
+              "evd:e2e-real-npm"
+            ],
+            "feature_ids": [
+              "feat:access-list-crud",
+              "feat:adoption",
+              "feat:auth-token",
+              "feat:certificate-crud",
+              "feat:create-missing-proxy-hosts",
+              "feat:discover-proxy-hosts",
+              "feat:github-actions-gates",
+              "feat:owner-scoped-reconcile",
+              "feat:proxy-host-crud",
+              "feat:schema-capabilities"
+            ],
+            "id": "tst:e2e-real-npm",
+            "status": "passing",
+            "title": "Real Nginx Proxy Manager opt-in E2E coverage"
+          },
+          {
+            "claim_ids": [
+              "clm:expanded-feature-scope-planning"
+            ],
+            "evidence_ids": [
+              "evd:expanded-feature-scope-planning"
+            ],
+            "feature_ids": [
+              "feat:ci-real-npm-coverage-artifact",
+              "feat:ci-real-npm-scheduled-e2e",
+              "feat:cli-completion",
+              "feat:cli-config-file",
+              "feat:cli-doctor",
+              "feat:cli-env-diagnostics",
+              "feat:cli-plan-output-schema-validation",
+              "feat:cli-version-json",
+              "feat:compliance-dependency-vulnerability-gate",
+              "feat:compliance-owner-scope-safety-profile",
+              "feat:compliance-provenance-attestation",
+              "feat:compliance-release-gate-profile",
+              "feat:compliance-sbom",
+              "feat:compliance-security-scan-gate",
+              "feat:conformance-live-api-version-matrix",
+              "feat:conformance-npm-2-10-4-api-profile",
+              "feat:conformance-openapi-subset-doc",
+              "feat:conformance-schema-drift-report",
+              "feat:coverage-client-auth-wrapper",
+              "feat:coverage-client-wrapper-functions",
+              "feat:coverage-cli-exception-branches",
+              "feat:coverage-entrypoint-main",
+              "feat:coverage-logging-redaction",
+              "feat:coverage-model-validation-edges",
+              "feat:coverage-validation-module",
+              "feat:dev-coverage-threshold-ratchet",
+              "feat:dev-real-e2e-coverage-measurement",
+              "feat:dev-schema-fixture-roundtrip",
+              "feat:dev-type-checking",
+              "feat:extension-resource-contract-api",
+              "feat:ops-apply-transaction-report",
+              "feat:ops-audit-log-output",
+              "feat:ops-containerized-cli-image",
+              "feat:ops-resource-drift-report",
+              "feat:ops-rollback-plan",
+              "feat:ops-state-backup-before-apply",
+              "feat:plugin-custom-cert-provider",
+              "feat:plugin-custom-resource-kind",
+              "feat:plugin-provider-interface",
+              "feat:resource-audit-log",
+              "feat:resource-dead-hosts",
+              "feat:resource-redirection-hosts",
+              "feat:resource-settings",
+              "feat:resource-streams",
+              "feat:resource-users",
+              "feat:adopt-metadata-only",
+              "feat:adopt-resource-family-scope",
+              "feat:plan-adoptable-compatible-unmanaged",
+              "feat:certificate-policy-mode-reuse",
+              "feat:certificate-policy-mode-create",
+              "feat:certificate-policy-mode-rotate",
+              "feat:certificate-domain-set-reuse-detection",
+              "feat:certificate-issuance-deduplication",
+              "feat:certificate-issuance-cooldown",
+              "feat:certificate-failure-classification",
+              "feat:certificate-lock-retryable-class",
+              "feat:certificate-order-stale-class",
+              "feat:plan-certificate-policy-conflicts",
+              "feat:apply-structured-certificate-error-output",
+              "feat:repair-safe-public-endpoint-workflow",
+              "feat:resource-quic-passthrough-hosts"
+            ],
+            "id": "tst:expanded-feature-scope-planning",
+            "status": "passing",
+            "title": "Historical expanded feature scope planning verification"
+          },
+          {
+            "claim_ids": [
+              "clm:test-coverage-gap-plan"
+            ],
+            "evidence_ids": [
+              "evd:test-coverage-gap-plan"
+            ],
+            "feature_ids": [
+              "feat:gap-acl-ref-negative"
+            ],
+            "id": "tst:gap-acl-ref-negative",
+            "status": "passing",
+            "title": "Access-list reference negative coverage"
+          },
+          {
+            "claim_ids": [
+              "clm:test-coverage-gap-plan"
+            ],
+            "evidence_ids": [
+              "evd:test-coverage-gap-plan"
+            ],
+            "feature_ids": [
+              "feat:gap-apply-adopt-merge"
+            ],
+            "id": "tst:gap-apply-adopt-merge",
+            "status": "passing",
+            "title": "Apply adopt merge coverage"
+          },
+          {
+            "claim_ids": [
+              "clm:test-coverage-gap-plan"
+            ],
+            "evidence_ids": [
+              "evd:test-coverage-gap-plan"
+            ],
+            "feature_ids": [
+              "feat:gap-apply-conflict-no-mutation"
+            ],
+            "id": "tst:gap-apply-conflict-no-mutation",
+            "status": "passing",
+            "title": "Apply conflict no-mutation coverage"
+          },
+          {
+            "claim_ids": [
+              "clm:test-coverage-gap-plan"
+            ],
+            "evidence_ids": [
+              "evd:test-coverage-gap-plan"
+            ],
+            "feature_ids": [
+              "feat:gap-apply-delete-results"
+            ],
+            "id": "tst:gap-apply-delete-results",
+            "status": "passing",
+            "title": "Apply delete result coverage"
+          },
+          {
+            "claim_ids": [
+              "clm:test-coverage-gap-plan"
+            ],
+            "evidence_ids": [
+              "evd:test-coverage-gap-plan"
+            ],
+            "feature_ids": [
+              "feat:gap-apply-operation-ordering"
+            ],
+            "id": "tst:gap-apply-operation-ordering",
+            "status": "passing",
+            "title": "Apply operation ordering coverage"
+          },
+          {
+            "claim_ids": [
+              "clm:test-coverage-gap-plan"
+            ],
+            "evidence_ids": [
+              "evd:test-coverage-gap-plan"
+            ],
+            "feature_ids": [
+              "feat:gap-apply-resolve-reference"
+            ],
+            "id": "tst:gap-apply-resolve-reference",
+            "status": "passing",
+            "title": "Apply reference resolution coverage"
+          },
+          {
+            "claim_ids": [
+              "clm:test-coverage-gap-plan"
+            ],
+            "evidence_ids": [
+              "evd:test-coverage-gap-plan"
+            ],
+            "feature_ids": [
+              "feat:gap-apply-unresolved-reference"
+            ],
+            "id": "tst:gap-apply-unresolved-reference",
+            "status": "passing",
+            "title": "Apply unresolved reference coverage"
+          },
+          {
+            "claim_ids": [
+              "clm:test-coverage-gap-plan"
+            ],
+            "evidence_ids": [
+              "evd:test-coverage-gap-plan"
+            ],
+            "feature_ids": [
+              "feat:gap-cert-ref-negative"
+            ],
+            "id": "tst:gap-cert-ref-negative",
+            "status": "passing",
+            "title": "Certificate reference negative coverage"
+          },
+          {
+            "claim_ids": [
+              "clm:test-coverage-gap-plan"
+            ],
+            "evidence_ids": [
+              "evd:test-coverage-gap-plan"
+            ],
+            "feature_ids": [
+              "feat:gap-cli-command-matrix"
+            ],
+            "id": "tst:gap-cli-command-matrix",
+            "status": "passing",
+            "title": "CLI command matrix coverage"
+          },
+          {
+            "claim_ids": [
+              "clm:test-coverage-gap-plan"
+            ],
+            "evidence_ids": [
+              "evd:test-coverage-gap-plan"
+            ],
+            "feature_ids": [
+              "feat:gap-cli-exit-code-mapping"
+            ],
+            "id": "tst:gap-cli-exit-code-mapping",
+            "status": "passing",
+            "title": "CLI exit-code mapping coverage"
+          },
+          {
+            "claim_ids": [
+              "clm:test-coverage-gap-plan"
+            ],
+            "evidence_ids": [
+              "evd:test-coverage-gap-plan"
+            ],
+            "feature_ids": [
+              "feat:gap-cli-json-error-shape"
+            ],
+            "id": "tst:gap-cli-json-error-shape",
+            "status": "passing",
+            "title": "CLI JSON error shape coverage"
+          },
+          {
+            "claim_ids": [
+              "clm:test-coverage-gap-plan"
+            ],
+            "evidence_ids": [
+              "evd:test-coverage-gap-plan"
+            ],
+            "feature_ids": [
+              "feat:gap-cli-option-combinations"
+            ],
+            "id": "tst:gap-cli-option-combinations",
+            "status": "passing",
+            "title": "CLI option combination coverage"
+          },
+          {
+            "claim_ids": [
+              "clm:test-coverage-gap-plan"
+            ],
+            "evidence_ids": [
+              "evd:test-coverage-gap-plan"
+            ],
+            "feature_ids": [
+              "feat:gap-cli-required-api-args"
+            ],
+            "id": "tst:gap-cli-required-api-args",
+            "status": "passing",
+            "title": "CLI required API argument coverage"
+          }
+        ]
+      },
+      "inventory_truncated": {
+        "adrs": 12,
+        "boundaries": 0,
+        "claims": 0,
+        "evidence": 0,
+        "features": 195,
+        "issues": 0,
+        "profiles": 0,
+        "releases": 0,
+        "specs": 17,
+        "tests": 141
+      },
+      "observed_at": "2026-08-06T02:55:20Z",
+      "present": true,
+      "raw_url": "https://raw.githubusercontent.com/groupsum/wyrmctl/master/.ssot/registry.json",
+      "registry_url": "https://github.com/groupsum/wyrmctl/blob/master/.ssot/registry.json",
+      "schema_version": "0.2.0",
+      "source_sha256": "223caf09f9bf5f349246fc32770d5cb279184079b1825200629bbcf360a48360",
+      "status_counts": {
+        "adrs": {
+          "accepted": 16,
+          "draft": 16
+        },
+        "boundaries": {
+          "frozen": 5
+        },
+        "claims": {
+          "certified": 17,
+          "proposed": 1
+        },
+        "evidence": {
+          "collected": 1,
+          "passed": 19
+        },
+        "features": {
+          "absent": 12,
+          "implemented": 195,
+          "partial": 8
+        },
+        "issues": {
+          "closed": 1,
+          "resolved": 6
+        },
+        "profiles": {
+          "active": 1
+        },
+        "releases": {
+          "certified": 3,
+          "published": 1
+        },
+        "specs": {
+          "accepted": 12,
+          "draft": 20,
+          "in_review": 5
+        },
+        "tests": {
+          "passing": 139,
+          "planned": 22
+        }
+      },
+      "valid": true
+    },
+    "technologies": [
+      "Dockerfile",
+      "Python",
+      "Shell"
+    ],
+    "template": false,
+    "topics": [],
+    "updated_at": "2026-08-04T18:43:37Z",
+    "url": "https://github.com/groupsum/wyrmctl",
+    "visibility": "public"
+  },
+  "schema_version": "1.0.0"
+}
