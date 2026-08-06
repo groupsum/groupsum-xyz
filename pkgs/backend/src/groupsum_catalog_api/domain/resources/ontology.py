@@ -355,6 +355,11 @@ def api_contract_type(path: str | None) -> str:
 
 
 def normalize_legacy_resource_type(resource_type: str, path: str | None = None) -> str | None:
+    normalized_path = (path or "").replace("\\", "/").lstrip("/").lower()
+    if normalized_path == ".ssot" or normalized_path.startswith(".ssot/"):
+        # SSOT artifacts are projected from registry entities with governance.*
+        # types. A filename containing "openapi" does not make a spec an API.
+        return None
     if resource_type == "api_definition":
         return api_contract_type(path)
     # Source directories and component files are implementation observations,

@@ -114,8 +114,31 @@ async def test_peagen_page_model_has_explicit_attachments(tmp_path: Path) -> Non
     assert counts["dependencies"] > 8_000
     assert counts["entities"] > 1_700
     assert counts["entity_relationships"] > 1_000
+    stale_resource_id = "resource-url:https://example.invalid/stale-openapi-spec"
+    with connect(database_path) as connection:
+        connection.execute(
+            "INSERT INTO resources "
+            "(id, resource_type, route_key, repository_id, path, title, url, source_url) "
+            "VALUES (?, ?, ?, ?, ?, ?, ?, ?)",
+            (
+                stale_resource_id,
+                "api_definition",
+                "stale-openapi-spec",
+                "repository:tigrbl/tigrbl_auth",
+                ".ssot/specs/SPEC-stale-openapi.yaml",
+                "Stale OpenAPI spec",
+                "https://example.invalid/stale-openapi-spec",
+                "https://example.invalid/stale-openapi-spec",
+            ),
+        )
     assert await import_catalog(database_path, repo_root) == counts
     with connect(database_path) as connection:
+        assert (
+            connection.execute(
+                "SELECT COUNT(*) FROM resources WHERE id = ?", (stale_resource_id,)
+            ).fetchone()[0]
+            == 0
+        )
         release_count = connection.execute("SELECT COUNT(*) FROM releases").fetchone()[0]
         dependency_count = connection.execute("SELECT COUNT(*) FROM dependencies").fetchone()[0]
         assert release_count == counts["releases"]

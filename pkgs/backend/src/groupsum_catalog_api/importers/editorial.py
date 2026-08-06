@@ -63,6 +63,11 @@ def prepare_import(
     # These tables are a deterministic projection of the current public catalog,
     # not append-only observations. Replacing them prevents removed relationships
     # and release IDs from older importer versions from surviving a refresh.
+    connection.execute("DELETE FROM resource_evidence")
+    connection.execute("DELETE FROM resource_taxonomies")
+    connection.execute("DELETE FROM resource_repositories")
+    connection.execute("DELETE FROM record_resources")
+    connection.execute("DELETE FROM resources")
     connection.execute("DELETE FROM package_repositories")
     connection.execute("DELETE FROM repository_contributors")
     connection.execute("DELETE FROM dependencies")
@@ -72,7 +77,6 @@ def prepare_import(
     # Legacy editorial/source checks are re-imported as observations below.
     connection.execute("UPDATE limitations SET evidence_id = NULL")
     connection.execute("DELETE FROM claim_evidence")
-    connection.execute("DELETE FROM resource_evidence")
     connection.execute("DELETE FROM record_features")
     connection.execute("DELETE FROM features")
     connection.execute("DELETE FROM claims")

@@ -25,6 +25,12 @@ def test_non_addressable_source_paths_are_not_projected_as_resources() -> None:
     assert normalize_legacy_resource_type("api_source", "src/api") is None
     assert normalize_legacy_resource_type("ui", "src/components/Button.tsx") is None
     assert normalize_legacy_resource_type("documentation") == "documentation.collection"
+    assert (
+        normalize_legacy_resource_type(
+            "api_definition", ".ssot/specs/SPEC-1027-openapi-baseline-public-full-json.yaml"
+        )
+        is None
+    )
 
 
 def test_relationship_vocabulary_has_no_ambiguous_related_edge() -> None:
