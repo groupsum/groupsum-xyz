@@ -23,12 +23,23 @@ def package_key(ecosystem: str, name: str) -> str:
 
 
 def canonical_package_id(
-    connection: Connection, proposed_id: str, ecosystem: str, name: str
+    connection: Connection,
+    proposed_id: str,
+    ecosystem: str,
+    name: str,
+    route_key: str | None = None,
 ) -> str:
-    row = connection.execute(
-        "SELECT id FROM packages WHERE ecosystem = ? AND name = ?",
-        (ecosystem, name),
-    ).fetchone()
+    row = None
+    if route_key:
+        row = connection.execute(
+            "SELECT id FROM packages WHERE route_key = ?",
+            (route_key,),
+        ).fetchone()
+    if row is None:
+        row = connection.execute(
+            "SELECT id FROM packages WHERE ecosystem = ? AND name = ?",
+            (ecosystem, name),
+        ).fetchone()
     return str(row[0]) if row else proposed_id
 
 
@@ -1249,8 +1260,9 @@ def import_catalog(
         for package in site_packages:
             ecosystem = package["ecosystem"]
             name = package["name"]
+            route_key = package.get("route", "").rstrip("/").split("/")[-1] or None
             package_id = canonical_package_id(
-                connection, package["id"], ecosystem, name
+                connection, package["id"], ecosystem, name, route_key
             )
             natural_key = package_key(ecosystem, name)
             package_ids_by_key.setdefault(natural_key, []).append(package_id)
@@ -1277,7 +1289,7 @@ def import_catalog(
                         else None
                     ),
                     "publication_status": package.get("publication_status"),
-                    "route_key": package.get("route", "").rstrip("/").split("/")[-1] or None,
+                    "route_key": route_key,
                     "license_expression": package.get("license_expression"),
                     "license_status": package.get("license_status"),
                     "published_at": None,
