@@ -6,16 +6,16 @@ import {
 } from "../../data/catalog.generated";
 import { EntityGraph, getCatalogOverview, getRepositoryMetricSnapshot, RepositoryMetricRecord, type RepositorySignals } from "../../api/catalog.generated";
 import { getCatalogPackageMember, getCatalogReleaseMember, getCatalogRepositoryMember, getCatalogResourceMember, getCatalogTechnologyMember } from "../../api/catalog";
-import { Activity, ArrowLeft, ArrowRight, BadgeCheck, BookOpen, Boxes, Braces, CalendarDays, Code2, ExternalLink, FileCode2, GitBranch, Globe2, Package, Scale, ServerCog, ShieldCheck } from "lucide-react";
+import { AlertTriangle, ArrowRight, Box, Calendar, CheckCircle2, Cpu, ExternalLink, FileCode, FolderGit2, GitBranch, Globe, Layers, Package, ShieldCheck, Sparkles, Star, Terminal } from "lucide-react";
 import { RepositorySignalStrip } from "./RepositorySignals";
 import { EntityOwnership } from "./EntityIdentity";
-import { CatalogPill, CollectionHeader, ContextRailCard, FactPanel, MemberRowCard, RecordIdentityCard, SurfaceCard, factIcons, MetricBand, metricIcons, type MetricItem } from "./CatalogVisuals";
+import { CatalogPill, CollectionHeader, ContextRailCard, FactPanel, MemberRowCard, RecordIdentityCard, SurfaceCard, factIcons, MetricBand, type MetricItem } from "./CatalogVisuals";
 import { ExplorerFilterToolbar, TypeBadge, type ExplorerFilters } from "./CatalogExplorerUI";
 import { PackageCollectionTable, RepositoryCollectionTable } from "./CatalogCollectionTables";
 import { useCatalogCollection } from "../../hooks/useCatalogCollection";
 import type { CatalogViewRecord } from "../../types/catalog-view";
 
-import { datasetDetails, datasetOrder, DetailSection, formatDate, humanLabel, isCurrentPageLink, labels, metricItems, recordDescription, recordTitle, resourceIcon, valueRecord, valueRecords, valueStrings, type CatalogRecord, type DatasetName } from "./CatalogRecordShared";
+import { datasetDetails, datasetOrder, DetailSection, formatDate, humanLabel, isCurrentPageLink, labels, recordDescription, recordTitle, resourceIcon, valueRecord, valueRecords, valueStrings, type CatalogRecord, type DatasetName } from "./CatalogRecordShared";
 
 export function CatalogSnapshotBand({
   onNavigate,
@@ -107,9 +107,17 @@ export function CatalogSnapshotBand({
 export function CollectionRow({ record, dataset, onNavigate }: { record: CatalogRecord; dataset: DatasetName; onNavigate: (path: string) => void }) {
   const type = String(record.resource_type || record.kind || dataset.slice(0, -1));
   const Icon = dataset === "resources" ? resourceIcon(type) : datasetDetails[dataset].Icon;
-  const metrics = metricItems(record, 3);
   const route = String(record.route || "");
-  const context = dataset === "repositories" ? String(record.owner || "Owner not recorded") : dataset === "packages" ? humanLabel(String(record.ecosystem || "Unknown ecosystem")) : dataset === "technologies" ? "Observed stack evidence" : String(record.repository || "Repository not linked");
+  const repository = valueRecords(record.repositories)[0] || valueRecord(record.repository);
+  const context = dataset === "repositories"
+    ? String(record.owner || "Owner not recorded")
+    : dataset === "packages"
+      ? humanLabel(String(record.ecosystem || "Unknown ecosystem"))
+      : dataset === "technologies"
+        ? `Category: ${humanLabel(String(record.category || "Uncategorized"))}`
+        : repository.owner && repository.name
+          ? `${String(repository.owner)}/${String(repository.name)}`
+          : String(record.repository_name || record.repository || "Global Resource");
   const technologies = dataset === "packages" ? valueStrings(record.technologies) : [];
   return <MemberRowCard
     title={recordTitle(record)}
@@ -124,7 +132,6 @@ export function CollectionRow({ record, dataset, onNavigate }: { record: Catalog
       ...(record.kind === "repository" && Boolean(record.ssot_governance && valueRecord(record.ssot_governance).governed) ? ["SSOT governed"] : []),
       ...technologies.slice(0, 5),
     ]}
-    facts={metrics.filter((item): item is MetricItem & { value: number } => typeof item.value === "number").map((item) => ({ label: item.label, value: item.value }))}
   />;
 }
 
@@ -158,28 +165,34 @@ export function PublicCatalogOverview({ onNavigate }: { onNavigate: (path: strin
     }).catch(() => undefined);
     return () => controller.abort();
   }, []);
+  const collectionPresentation = {
+    products: { Icon: Box, iconClass: "text-[#2E6B9E]", iconBackground: "bg-[#EBF3FA]" },
+    portfolio: { Icon: Layers, iconClass: "text-[#5B4699]", iconBackground: "bg-[#F3E8FF]" },
+    repositories: { Icon: FolderGit2, iconClass: "text-[#166534]", iconBackground: "bg-[#DCFCE7]" },
+    packages: { Icon: Package, iconClass: "text-[#C46D20]", iconBackground: "bg-[#FEF3C7]" },
+    resources: { Icon: FileCode, iconClass: "text-[#0369A1]", iconBackground: "bg-[#E0F2FE]" },
+    technologies: { Icon: Cpu, iconClass: "text-[#B45309]", iconBackground: "bg-[#FFEDD5]" },
+  } as const;
   const collections = [
-    { key: "products", label: "Products", route: "/products", value: primaryCounts.products, description: "Reviewed public products with purpose, audience, maturity, and implementation evidence.", Icon: Boxes },
-    { key: "portfolio", label: "Portfolios", route: "/portfolio", value: primaryCounts.portfolio, description: "Strategic portfolio records grouping related products and implementation resources.", Icon: BadgeCheck },
-    ...datasetOrder.map((name) => ({ key: name, label: labels[name], route: `/catalog/${name}`, value: counts[name], description: datasetDetails[name].description, Icon: datasetDetails[name].Icon })),
+    { key: "products", label: "Products", route: "/products", value: primaryCounts.products, description: "Reviewed public products with purpose, audience, maturity, and implementation evidence.", ...collectionPresentation.products },
+    { key: "portfolio", label: "Portfolios", route: "/portfolio", value: primaryCounts.portfolio, description: "Strategic portfolio records grouping related products and implementation resources.", ...collectionPresentation.portfolio },
+    ...datasetOrder.map((name) => ({ key: name, label: labels[name], route: `/catalog/${name}`, value: counts[name], description: datasetDetails[name].description, ...collectionPresentation[name] })),
   ];
-  return <section className="catalog-explorer mx-auto max-w-7xl space-y-6 px-4 py-8 sm:px-6 lg:px-8">
-    <div className="catalog-overview-hero rounded-2xl border border-[var(--color-border-soft)] bg-white p-8 shadow-sm">
-    <CollectionHeader
-      eyebrow="Supporting evidence and public catalog explorer"
-      title="GroupSum Ecosystem Catalog"
-      description="Traverse reviewed products and portfolio records into repositories, contained packages, typed resources, and observed stack evidence without losing ownership context."
-      observedAt={formatDate(catalogSummary.generated_at)}
-      exportHref="/catalog/catalog.json"
-      facts={[]}
-    />
+  return <section className="catalog-explorer mx-auto max-w-7xl space-y-8 px-4 py-8 sm:px-6 lg:px-8">
+    <div className="rounded-2xl border border-[var(--color-border-soft)] bg-white p-8 shadow-sm">
+      <div className="space-y-4">
+        <span className="inline-flex items-center gap-2 font-mono text-xs font-semibold uppercase tracking-wider text-accent"><ShieldCheck className="h-4 w-4" aria-hidden="true" />Supporting evidence &amp; public catalog explorer</span>
+        <h1 className="font-serif text-3xl font-bold tracking-tight text-ink sm:text-4xl">GroupSum Ecosystem Catalog</h1>
+        <p className="max-w-3xl text-sm leading-relaxed text-ink-muted sm:text-base">Traverse reviewed products and portfolio records into repositories, contained packages, typed resources, and observed stack evidence without losing ownership context.</p>
+        <p className="flex flex-wrap items-center gap-2 pt-2 font-mono text-xs text-[#7A827C]"><Calendar className="h-3.5 w-3.5" aria-hidden="true" />Active Observation Period: 30-Day Window <span aria-hidden="true">&bull;</span> Refreshed {formatDate(catalogSummary.generated_at)}</p>
+      </div>
     </div>
-    <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+    <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
       {collections.map((collection) => {
         const Icon = collection.Icon;
-        return <article key={collection.key} className="group relative flex min-w-0 flex-col justify-between space-y-4 rounded-xl border border-[var(--color-border-soft)] bg-white p-6 shadow-sm transition-all duration-200 hover:border-accent hover:bg-canvas">
-          <div className="flex items-start justify-between gap-3"><div className="grid h-12 w-12 shrink-0 place-items-center rounded-lg bg-surface text-accent"><Icon className="h-6 w-6" aria-hidden="true" /></div><strong className="rounded-full border border-[var(--color-border-soft)] bg-surface px-3 py-1 font-mono text-xl font-bold tabular-nums text-ink">{collection.value.toLocaleString()}</strong></div>
-          <div className="min-w-0 flex-1"><h2 className="font-serif text-2xl font-bold text-ink"><a href={collection.route} onClick={(event) => { event.preventDefault(); onNavigate(collection.route); }} className="hover:text-accent before:absolute before:inset-0 before:content-['']">{collection.label}</a></h2><p className="mt-2 text-xs leading-relaxed text-ink-muted">{collection.description}</p></div><span className="border-t border-[var(--color-border-soft)] pt-3 font-mono text-xs font-semibold text-accent">Browse collection <ArrowRight className="inline h-3.5 w-3.5" /></span>
+        return <article key={collection.key} className="group relative flex min-w-0 flex-col justify-between space-y-4 rounded-xl border border-[var(--color-border-soft)] bg-white p-6 shadow-sm transition-all duration-200 hover:border-accent-hover hover:bg-canvas">
+          <div className="flex items-center justify-between gap-3"><div className={`grid h-12 w-12 shrink-0 place-items-center rounded-lg ${collection.iconBackground} ${collection.iconClass}`}><Icon className="h-6 w-6" aria-hidden="true" /></div><strong className="rounded-full border border-[var(--color-border-soft)] bg-surface px-3 py-1 font-mono text-xl font-bold tabular-nums text-ink">{collection.value.toLocaleString()}</strong></div>
+          <div className="min-w-0 flex-1"><h2 className="font-serif text-2xl font-bold text-ink transition-colors group-hover:text-accent-hover"><a href={collection.route} onClick={(event) => { event.preventDefault(); onNavigate(collection.route); }} className="before:absolute before:inset-0 before:content-['']">{collection.label}</a></h2><p className="mt-3 text-xs leading-relaxed text-ink-muted">{collection.description}</p></div><span className="flex items-center justify-between border-t border-[var(--color-border-soft)] pt-3 font-mono text-xs font-semibold text-accent-hover">Browse Collection <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" /></span>
         </article>;
       })}
     </div>
@@ -227,24 +240,24 @@ export function PublicCatalogExplorer({ onNavigate, compact = false, fixedDatase
   };
   const summaryFacts = useMemo<MetricItem[]>(() => {
     if (dataset === "repositories") return [
-      { label: "Repositories", value: Number(collection.data?.count || 0), icon: Code2, color: "text-emerald-700" },
-      { label: "Total Stars Observed", value: records.reduce((total, record) => total + Number(valueRecord(record.metrics).stars || 0), 0), icon: metricIcons.stars, color: "text-amber-600" },
+      { label: "Repositories", value: Number(collection.data?.count || 0), icon: FolderGit2, color: "text-[#166534]" },
+      { label: "Total Stars Observed", value: records.reduce((total, record) => total + Number(valueRecord(record.metrics).stars || 0), 0), icon: Star, color: "text-[#B45309]" },
       { label: "SSOT Governed", value: records.filter((record) => Boolean(record.ssot_governed)).length, icon: ShieldCheck, color: "text-indigo-600" },
-      { label: "Contained Packages", value: records.reduce((total, record) => total + Number(record.package_count || 0), 0), icon: Package, color: "text-accent" },
+      { label: "Contained Packages", value: records.reduce((total, record) => total + Number(record.package_count || 0), 0), icon: CheckCircle2, color: "text-[#2E6B9E]" },
     ];
     if (dataset === "packages") return [
       { label: "Packages", value: Number(collection.data?.count || 0), icon: Package, color: "text-orange-600" },
-      { label: "Published Registry", value: records.filter((record) => Boolean(record.published) || record.publication_status === "published").length, icon: BadgeCheck, color: "text-sky-600" },
-      { label: "Private / Candidates", value: records.filter((record) => !record.published && record.publication_status !== "published").length, icon: ShieldCheck, color: "text-amber-700" },
-      { label: "Ecosystems", value: filterOptions.ecosystems.length, icon: Boxes, color: "text-emerald-700" },
+      { label: "Published Registry", value: records.filter((record) => Boolean(record.published) || record.publication_status === "published").length, icon: CheckCircle2, color: "text-[#0D47A1]" },
+      { label: "Private / Candidates", value: records.filter((record) => !record.published && record.publication_status !== "published").length, icon: AlertTriangle, color: "text-[#92400E]", note: "Unpublished or candidate" },
+      { label: "Ecosystems", value: filterOptions.ecosystems.length, icon: ShieldCheck, color: "text-[#166534]" },
     ];
     if (dataset === "resources") return [
-      { label: "Typed Resources", value: records.length, icon: Braces },
-      { label: "Websites & Docs", value: records.filter((record) => ["website", "documentation"].includes(String(record.resource_type))).length, icon: Globe2 },
-      { label: "APIs & Endpoints", value: records.filter((record) => String(record.resource_type).includes("api")).length, icon: FileCode2 },
-      { label: "Demos & Showcases", value: records.filter((record) => ["demo", "example", "showcase"].includes(String(record.resource_type))).length, icon: BadgeCheck },
+      { label: "Typed Resources", value: records.length, icon: FileCode, color: "text-[#0369A1]" },
+      { label: "Websites & Docs", value: records.filter((record) => ["website", "documentation"].includes(String(record.resource_type))).length, icon: Globe, color: "text-[#2E6B9E]" },
+      { label: "APIs & Endpoints", value: records.filter((record) => String(record.resource_type).includes("api")).length, icon: Terminal, color: "text-[#9D174D]" },
+      { label: "Demos & Showcases", value: records.filter((record) => ["demo", "example", "showcase"].includes(String(record.resource_type))).length, icon: Sparkles, color: "text-[#B45309]" },
     ];
-    return [{ label: "Categorical Technologies", value: records.length, icon: ServerCog }, { label: "Technology Categories", value: new Set(records.map((record) => String(record.category || "Uncategorized"))).size, icon: Boxes }, { label: "Language Distinction", value: "Strictly Separate", icon: ShieldCheck, note: "Languages kept in language composition" }];
+    return [{ label: "Categorical Technologies", value: records.length, icon: Cpu, color: "text-[#B45309]" }, { label: "Technology Categories", value: new Set(records.map((record) => String(record.category || "Uncategorized"))).size, icon: Layers, color: "text-[#2E6B9E]" }, { label: "Language Distinction", value: "Strictly Separate", icon: ShieldCheck, color: "text-[#166534]", note: "Languages kept in language composition" }];
   }, [collection.data?.count, dataset, filterOptions, records]);
   const pages = Number(collection.data?.page_count || 1);
   const visible = records;
@@ -264,12 +277,11 @@ export function PublicCatalogExplorer({ onNavigate, compact = false, fixedDatase
           </button>
         ))}
       </div>}
-      <ExplorerFilterToolbar filters={filters} onChange={(next) => { setFilters(next); setPage(1); }} owners={dataset === "repositories" ? Object.keys(collection.data?.facets?.owner || {}) : []} ecosystems={dataset === "packages" ? Object.keys(collection.data?.facets?.ecosystem || {}) : []} publications={dataset === "packages" ? Object.keys(collection.data?.facets?.publication_status || {}) : []} resourceTypes={dataset === "resources" ? Object.keys(collection.data?.facets?.resource_type || {}) : []} sortOptions={[{ label: "Name (A–Z)", value: "name" }, { label: "Most activity", value: "activity" }, { label: "Recently observed", value: "recent" }]} total={Number(collection.data?.count || 0)} />
+      <ExplorerFilterToolbar filters={filters} onChange={(next) => { setFilters(next); setPage(1); }} owners={dataset === "repositories" ? Object.keys(collection.data?.facets?.owner || {}) : []} ecosystems={dataset === "packages" ? Object.keys(collection.data?.facets?.ecosystem || {}) : []} publications={dataset === "packages" ? Object.keys(collection.data?.facets?.publication_status || {}) : []} resourceTypes={dataset === "resources" ? Object.keys(collection.data?.facets?.resource_type || {}) : []} sortOptions={[{ label: "Name (A–Z)", value: "name" }, { label: "Most activity", value: "activity" }, { label: "Recently observed", value: "recent" }]} total={Number(collection.data?.count || 0)} statusDetail={`Page ${page.toLocaleString()} of ${pages.toLocaleString()}`} />
       {state === "loading" && <div className="p-10 text-center text-sm text-ink-muted" role="status">Loading {labels[dataset].toLowerCase()}…</div>}
       {state === "error" && <div className="p-6 border border-red-500/20 bg-red-500/5 text-sm text-red-700 rounded-[var(--radius-sm)]" role="alert">The generated dataset could not be loaded. The normalized JSON remains available from the download links below.</div>}
       {state === "ready" && (
         <>
-          <div className="text-xs font-mono text-ink-muted">{Number(collection.data?.count || 0).toLocaleString()} matching records · page {page.toLocaleString()} of {pages.toLocaleString()}</div>
           {dataset === "repositories" ? <RepositoryCollectionTable records={visible} onNavigate={onNavigate} /> : dataset === "packages" ? <PackageCollectionTable records={visible} onNavigate={onNavigate} /> : <div className="space-y-3">{visible.map((record) => <CollectionRow key={record.id} record={record} dataset={dataset} onNavigate={onNavigate} />)}</div>}
           {visible.length === 0 && <div className="p-10 text-center border border-[var(--color-border-soft)] rounded-[var(--radius-md)] text-sm text-ink-muted">No generated records match this search.</div>}
           {pages > 1 && <div className="flex items-center justify-between gap-4"><button disabled={page === 1} onClick={() => setPage((value) => Math.max(1, value - 1))} className="px-3 py-2 text-xs font-mono border border-[var(--color-border-soft)] rounded disabled:opacity-40 cursor-pointer">Previous</button><button disabled={page === pages} onClick={() => setPage((value) => Math.min(pages, value + 1))} className="px-3 py-2 text-xs font-mono border border-[var(--color-border-soft)] rounded disabled:opacity-40 cursor-pointer">Next</button></div>}
