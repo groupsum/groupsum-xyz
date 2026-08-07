@@ -52,7 +52,7 @@ uv run --project pkgs/backend python pkgs/backend/scripts/import_catalog.py
 uv run --project pkgs/backend python pkgs/backend/scripts/export_openapi.py
 uv run --project pkgs/backend python pkgs/backend/scripts/export_static_api.py
 uv run --project pkgs/backend pytest pkgs/backend/tests
-uv run --project pkgs/backend uvicorn groupsum_catalog_api.app:app --app-dir pkgs/backend/src --reload
+uv run --project pkgs/backend tigrcorn groupsum_catalog_api.app:app --app-dir pkgs/backend/src --reload
 ```
 
 The default development database is `pkgs/backend/data/groupsum-catalog.sqlite3`.
