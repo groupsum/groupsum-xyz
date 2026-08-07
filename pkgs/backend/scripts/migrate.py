@@ -4,7 +4,6 @@ import argparse
 from pathlib import Path
 
 from groupsum_catalog_api.app import build_app
-from groupsum_catalog_api.migrations import migrate
 
 
 def main() -> None:
@@ -14,8 +13,8 @@ def main() -> None:
         "--database", type=Path, default=backend_root / "data" / "groupsum-catalog.sqlite3"
     )
     args = parser.parse_args()
-    build_app(args.database)
-    print(f"applied migrations: {migrate(args.database)}")
+    app = build_app(args.database)
+    print(f"initialized {len(app.tables)} Tigrbl tables")
 
 
 if __name__ == "__main__":

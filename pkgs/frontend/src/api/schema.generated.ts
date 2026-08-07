@@ -1,13 +1,12 @@
 export interface paths {
-    "/api/v1/catalog": {
+    "/catalogentry": {
         parameters: {
             query?: never;
             header?: never;
             path?: never;
             cookie?: never;
         };
-        /** Catalog overview resource representation */
-        get: operations["catalog"];
+        get: operations["CatalogEntry.list"];
         put?: never;
         post?: never;
         delete?: never;
@@ -16,630 +15,14 @@ export interface paths {
         patch?: never;
         trace?: never;
     };
-    "/api/v1/catalog/packages": {
+    "/catalogentry/{item_id}": {
         parameters: {
             query?: never;
             header?: never;
             path?: never;
             cookie?: never;
         };
-        /** Package catalog collection */
-        get: operations["catalog_packages"];
-        put?: never;
-        post?: never;
-        delete?: never;
-        options?: never;
-        head?: never;
-        patch?: never;
-        trace?: never;
-    };
-    "/api/v1/catalog/packages/{route_key}": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        /** Package catalog resource record */
-        get: operations["catalog_package"];
-        put?: never;
-        post?: never;
-        delete?: never;
-        options?: never;
-        head?: never;
-        patch?: never;
-        trace?: never;
-    };
-    "/api/v1/catalog/releases/{route_key}": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        /** Release catalog resource record */
-        get: operations["catalog_release"];
-        put?: never;
-        post?: never;
-        delete?: never;
-        options?: never;
-        head?: never;
-        patch?: never;
-        trace?: never;
-    };
-    "/api/v1/catalog/repositories": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        /** Repository catalog collection */
-        get: operations["catalog_repositories"];
-        put?: never;
-        post?: never;
-        delete?: never;
-        options?: never;
-        head?: never;
-        patch?: never;
-        trace?: never;
-    };
-    "/api/v1/catalog/repositories/{owner}/{repository}": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        /** Repository catalog member record */
-        get: operations["catalog_repository"];
-        put?: never;
-        post?: never;
-        delete?: never;
-        options?: never;
-        head?: never;
-        patch?: never;
-        trace?: never;
-    };
-    "/api/v1/catalog/resources": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        /** Typed resource catalog collection */
-        get: operations["catalog_resources"];
-        put?: never;
-        post?: never;
-        delete?: never;
-        options?: never;
-        head?: never;
-        patch?: never;
-        trace?: never;
-    };
-    "/api/v1/catalog/resources/{resource_type}/{route_key}": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        /** Typed catalog resource record */
-        get: operations["typed_catalog_resource"];
-        put?: never;
-        post?: never;
-        delete?: never;
-        options?: never;
-        head?: never;
-        patch?: never;
-        trace?: never;
-    };
-    "/api/v1/catalog/resources/{route_key}": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        /** Legacy typed catalog resource record route */
-        get: operations["catalog_resource"];
-        put?: never;
-        post?: never;
-        delete?: never;
-        options?: never;
-        head?: never;
-        patch?: never;
-        trace?: never;
-    };
-    "/api/v1/catalog/technologies": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        /** Technology catalog collection */
-        get: operations["catalog_technologies"];
-        put?: never;
-        post?: never;
-        delete?: never;
-        options?: never;
-        head?: never;
-        patch?: never;
-        trace?: never;
-    };
-    "/api/v1/catalog/technologies/{slug}": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        /** Technology catalog member record */
-        get: operations["catalog_technology"];
-        put?: never;
-        post?: never;
-        delete?: never;
-        options?: never;
-        head?: never;
-        patch?: never;
-        trace?: never;
-    };
-    "/api/v1/entities": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        /** Canonical catalog entity collection */
-        get: operations["entities"];
-        put?: never;
-        post?: never;
-        delete?: never;
-        options?: never;
-        head?: never;
-        patch?: never;
-        trace?: never;
-    };
-    "/api/v1/entities/{entity_id}": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        /** Canonical catalog entity graph */
-        get: operations["entity"];
-        put?: never;
-        post?: never;
-        delete?: never;
-        options?: never;
-        head?: never;
-        patch?: never;
-        trace?: never;
-    };
-    "/api/v1/insights": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        /** Insight collection resource representation */
-        get: operations["insights"];
-        put?: never;
-        post?: never;
-        delete?: never;
-        options?: never;
-        head?: never;
-        patch?: never;
-        trace?: never;
-    };
-    "/api/v1/insights/{slug}": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        /** Insight record resource representation */
-        get: operations["insight"];
-        put?: never;
-        post?: never;
-        delete?: never;
-        options?: never;
-        head?: never;
-        patch?: never;
-        trace?: never;
-    };
-    "/api/v1/organizations/{slug}": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        /** Organization record resource representation */
-        get: operations["organization"];
-        put?: never;
-        post?: never;
-        delete?: never;
-        options?: never;
-        head?: never;
-        patch?: never;
-        trace?: never;
-    };
-    "/api/v1/portfolio": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        /** Portfolio collection resource representation */
-        get: operations["portfolio"];
-        put?: never;
-        post?: never;
-        delete?: never;
-        options?: never;
-        head?: never;
-        patch?: never;
-        trace?: never;
-    };
-    "/api/v1/portfolio/{slug}": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        /** Portfolio record resource representation */
-        get: operations["portfolio_record"];
-        put?: never;
-        post?: never;
-        delete?: never;
-        options?: never;
-        head?: never;
-        patch?: never;
-        trace?: never;
-    };
-    "/api/v1/products": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        /** Product collection resource representation */
-        get: operations["products"];
-        put?: never;
-        post?: never;
-        delete?: never;
-        options?: never;
-        head?: never;
-        patch?: never;
-        trace?: never;
-    };
-    "/api/v1/products/{slug}": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        /** Product record resource representation */
-        get: operations["product"];
-        put?: never;
-        post?: never;
-        delete?: never;
-        options?: never;
-        head?: never;
-        patch?: never;
-        trace?: never;
-    };
-    "/api/v1/repository-metrics": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        /** Persisted repository metric histories */
-        get: operations["repository_metrics"];
-        put?: never;
-        post?: never;
-        delete?: never;
-        options?: never;
-        head?: never;
-        patch?: never;
-        trace?: never;
-    };
-    "/api/v1/services": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        /** Service collection resource representation */
-        get: operations["services"];
-        put?: never;
-        post?: never;
-        delete?: never;
-        options?: never;
-        head?: never;
-        patch?: never;
-        trace?: never;
-    };
-    "/api/v1/services/{slug}": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        /** Service record resource representation */
-        get: operations["service"];
-        put?: never;
-        post?: never;
-        delete?: never;
-        options?: never;
-        head?: never;
-        patch?: never;
-        trace?: never;
-    };
-    "/api/v1/solutions": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        /** Solution collection resource representation */
-        get: operations["solutions"];
-        put?: never;
-        post?: never;
-        delete?: never;
-        options?: never;
-        head?: never;
-        patch?: never;
-        trace?: never;
-    };
-    "/api/v1/solutions/{slug}": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        /** Solution record resource representation */
-        get: operations["solution"];
-        put?: never;
-        post?: never;
-        delete?: never;
-        options?: never;
-        head?: never;
-        patch?: never;
-        trace?: never;
-    };
-    "/catalogentity": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        get: operations["CatalogEntity.count"];
-        put?: never;
-        post: operations["CatalogEntity.group_by"];
-        delete?: never;
-        options?: never;
-        head?: never;
-        patch?: never;
-        trace?: never;
-    };
-    "/catalogentity/{item_id}": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        get: operations["CatalogEntity.exists"];
-        put?: never;
-        post?: never;
-        delete?: never;
-        options?: never;
-        head?: never;
-        patch?: never;
-        trace?: never;
-    };
-    "/dependency": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        get: operations["Dependency.count"];
-        put?: never;
-        post: operations["Dependency.group_by"];
-        delete?: never;
-        options?: never;
-        head?: never;
-        patch?: never;
-        trace?: never;
-    };
-    "/dependency/{item_id}": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        get: operations["Dependency.exists"];
-        put?: never;
-        post?: never;
-        delete?: never;
-        options?: never;
-        head?: never;
-        patch?: never;
-        trace?: never;
-    };
-    "/deployment": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        get: operations["Deployment.count"];
-        put?: never;
-        post: operations["Deployment.group_by"];
-        delete?: never;
-        options?: never;
-        head?: never;
-        patch?: never;
-        trace?: never;
-    };
-    "/deployment/{item_id}": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        get: operations["Deployment.exists"];
-        put?: never;
-        post?: never;
-        delete?: never;
-        options?: never;
-        head?: never;
-        patch?: never;
-        trace?: never;
-    };
-    "/entityalias": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        get: operations["EntityAlias.count"];
-        put?: never;
-        post: operations["EntityAlias.group_by"];
-        delete?: never;
-        options?: never;
-        head?: never;
-        patch?: never;
-        trace?: never;
-    };
-    "/entityalias/{item_id}": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        get: operations["EntityAlias.exists"];
-        put?: never;
-        post?: never;
-        delete?: never;
-        options?: never;
-        head?: never;
-        patch?: never;
-        trace?: never;
-    };
-    "/entityrelationship": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        get: operations["EntityRelationship.count"];
-        put?: never;
-        post: operations["EntityRelationship.group_by"];
-        delete?: never;
-        options?: never;
-        head?: never;
-        patch?: never;
-        trace?: never;
-    };
-    "/entityrelationship/{item_id}": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        get: operations["EntityRelationship.exists"];
-        put?: never;
-        post?: never;
-        delete?: never;
-        options?: never;
-        head?: never;
-        patch?: never;
-        trace?: never;
-    };
-    "/entitytype": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        get: operations["EntityType.count"];
-        put?: never;
-        post: operations["EntityType.group_by"];
-        delete?: never;
-        options?: never;
-        head?: never;
-        patch?: never;
-        trace?: never;
-    };
-    "/entitytype/{item_id}": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        get: operations["EntityType.exists"];
-        put?: never;
-        post?: never;
-        delete?: never;
-        options?: never;
-        head?: never;
-        patch?: never;
-        trace?: never;
-    };
-    "/entityurl": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        get: operations["EntityUrl.count"];
-        put?: never;
-        post: operations["EntityUrl.group_by"];
-        delete?: never;
-        options?: never;
-        head?: never;
-        patch?: never;
-        trace?: never;
-    };
-    "/entityurl/{item_id}": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        get: operations["EntityUrl.exists"];
+        get: operations["CatalogEntry.read"];
         put?: never;
         post?: never;
         delete?: never;
@@ -665,38 +48,6 @@ export interface paths {
         patch?: never;
         trace?: never;
     };
-    "/limitation": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        get: operations["Limitation.count"];
-        put?: never;
-        post: operations["Limitation.group_by"];
-        delete?: never;
-        options?: never;
-        head?: never;
-        patch?: never;
-        trace?: never;
-    };
-    "/limitation/{item_id}": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        get: operations["Limitation.exists"];
-        put?: never;
-        post?: never;
-        delete?: never;
-        options?: never;
-        head?: never;
-        patch?: never;
-        trace?: never;
-    };
     "/organization": {
         parameters: {
             query?: never;
@@ -704,9 +55,9 @@ export interface paths {
             path?: never;
             cookie?: never;
         };
-        get: operations["Organization.count"];
+        get: operations["Organization.list"];
         put?: never;
-        post: operations["Organization.group_by"];
+        post?: never;
         delete?: never;
         options?: never;
         head?: never;
@@ -720,7 +71,7 @@ export interface paths {
             path?: never;
             cookie?: never;
         };
-        get: operations["Organization.exists"];
+        get: operations["Organization.read"];
         put?: never;
         post?: never;
         delete?: never;
@@ -736,9 +87,9 @@ export interface paths {
             path?: never;
             cookie?: never;
         };
-        get: operations["Package.count"];
+        get: operations["Package.list"];
         put?: never;
-        post: operations["Package.group_by"];
+        post?: never;
         delete?: never;
         options?: never;
         head?: never;
@@ -752,7 +103,7 @@ export interface paths {
             path?: never;
             cookie?: never;
         };
-        get: operations["Package.exists"];
+        get: operations["Package.read"];
         put?: never;
         post?: never;
         delete?: never;
@@ -761,30 +112,14 @@ export interface paths {
         patch?: never;
         trace?: never;
     };
-    "/packagerepository": {
+    "/packagetechnology": {
         parameters: {
             query?: never;
             header?: never;
             path?: never;
             cookie?: never;
         };
-        get: operations["PackageRepository.count"];
-        put?: never;
-        post: operations["PackageRepository.group_by"];
-        delete?: never;
-        options?: never;
-        head?: never;
-        patch?: never;
-        trace?: never;
-    };
-    "/packagerepository/{item_id}": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        get: operations["PackageRepository.exists"];
+        get: operations["PackageTechnology.list"];
         put?: never;
         post?: never;
         delete?: never;
@@ -793,30 +128,14 @@ export interface paths {
         patch?: never;
         trace?: never;
     };
-    "/packagetaxonomy": {
+    "/packagetechnology/{item_id}": {
         parameters: {
             query?: never;
             header?: never;
             path?: never;
             cookie?: never;
         };
-        get: operations["PackageTaxonomy.count"];
-        put?: never;
-        post: operations["PackageTaxonomy.group_by"];
-        delete?: never;
-        options?: never;
-        head?: never;
-        patch?: never;
-        trace?: never;
-    };
-    "/packagetaxonomy/{item_id}": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        get: operations["PackageTaxonomy.exists"];
+        get: operations["PackageTechnology.read"];
         put?: never;
         post?: never;
         delete?: never;
@@ -825,30 +144,14 @@ export interface paths {
         patch?: never;
         trace?: never;
     };
-    "/person": {
+    "/portfolio": {
         parameters: {
             query?: never;
             header?: never;
             path?: never;
             cookie?: never;
         };
-        get: operations["Person.count"];
-        put?: never;
-        post: operations["Person.group_by"];
-        delete?: never;
-        options?: never;
-        head?: never;
-        patch?: never;
-        trace?: never;
-    };
-    "/person/{item_id}": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        get: operations["Person.exists"];
+        get: operations["Portfolio.list"];
         put?: never;
         post?: never;
         delete?: never;
@@ -857,30 +160,14 @@ export interface paths {
         patch?: never;
         trace?: never;
     };
-    "/record": {
+    "/portfolio/{item_id}": {
         parameters: {
             query?: never;
             header?: never;
             path?: never;
             cookie?: never;
         };
-        get: operations["Record.count"];
-        put?: never;
-        post: operations["Record.group_by"];
-        delete?: never;
-        options?: never;
-        head?: never;
-        patch?: never;
-        trace?: never;
-    };
-    "/record/{item_id}": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        get: operations["Record.exists"];
+        get: operations["Portfolio.read"];
         put?: never;
         post?: never;
         delete?: never;
@@ -889,30 +176,14 @@ export interface paths {
         patch?: never;
         trace?: never;
     };
-    "/recordalias": {
+    "/portfolioproduct": {
         parameters: {
             query?: never;
             header?: never;
             path?: never;
             cookie?: never;
         };
-        get: operations["RecordAlias.count"];
-        put?: never;
-        post: operations["RecordAlias.group_by"];
-        delete?: never;
-        options?: never;
-        head?: never;
-        patch?: never;
-        trace?: never;
-    };
-    "/recordalias/{item_id}": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        get: operations["RecordAlias.exists"];
+        get: operations["PortfolioProduct.list"];
         put?: never;
         post?: never;
         delete?: never;
@@ -921,30 +192,14 @@ export interface paths {
         patch?: never;
         trace?: never;
     };
-    "/recordauthor": {
+    "/portfolioproduct/{item_id}": {
         parameters: {
             query?: never;
             header?: never;
             path?: never;
             cookie?: never;
         };
-        get: operations["RecordAuthor.count"];
-        put?: never;
-        post: operations["RecordAuthor.group_by"];
-        delete?: never;
-        options?: never;
-        head?: never;
-        patch?: never;
-        trace?: never;
-    };
-    "/recordauthor/{item_id}": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        get: operations["RecordAuthor.exists"];
+        get: operations["PortfolioProduct.read"];
         put?: never;
         post?: never;
         delete?: never;
@@ -953,30 +208,14 @@ export interface paths {
         patch?: never;
         trace?: never;
     };
-    "/recordpackage": {
+    "/portfoliorepository": {
         parameters: {
             query?: never;
             header?: never;
             path?: never;
             cookie?: never;
         };
-        get: operations["RecordPackage.count"];
-        put?: never;
-        post: operations["RecordPackage.group_by"];
-        delete?: never;
-        options?: never;
-        head?: never;
-        patch?: never;
-        trace?: never;
-    };
-    "/recordpackage/{item_id}": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        get: operations["RecordPackage.exists"];
+        get: operations["PortfolioRepository.list"];
         put?: never;
         post?: never;
         delete?: never;
@@ -985,30 +224,14 @@ export interface paths {
         patch?: never;
         trace?: never;
     };
-    "/recordrelation": {
+    "/portfoliorepository/{item_id}": {
         parameters: {
             query?: never;
             header?: never;
             path?: never;
             cookie?: never;
         };
-        get: operations["RecordRelation.count"];
-        put?: never;
-        post: operations["RecordRelation.group_by"];
-        delete?: never;
-        options?: never;
-        head?: never;
-        patch?: never;
-        trace?: never;
-    };
-    "/recordrelation/{item_id}": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        get: operations["RecordRelation.exists"];
+        get: operations["PortfolioRepository.read"];
         put?: never;
         post?: never;
         delete?: never;
@@ -1017,30 +240,14 @@ export interface paths {
         patch?: never;
         trace?: never;
     };
-    "/recordrepository": {
+    "/product": {
         parameters: {
             query?: never;
             header?: never;
             path?: never;
             cookie?: never;
         };
-        get: operations["RecordRepository.count"];
-        put?: never;
-        post: operations["RecordRepository.group_by"];
-        delete?: never;
-        options?: never;
-        head?: never;
-        patch?: never;
-        trace?: never;
-    };
-    "/recordrepository/{item_id}": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        get: operations["RecordRepository.exists"];
+        get: operations["Product.list"];
         put?: never;
         post?: never;
         delete?: never;
@@ -1049,30 +256,14 @@ export interface paths {
         patch?: never;
         trace?: never;
     };
-    "/recordresource": {
+    "/product/{item_id}": {
         parameters: {
             query?: never;
             header?: never;
             path?: never;
             cookie?: never;
         };
-        get: operations["RecordResource.count"];
-        put?: never;
-        post: operations["RecordResource.group_by"];
-        delete?: never;
-        options?: never;
-        head?: never;
-        patch?: never;
-        trace?: never;
-    };
-    "/recordresource/{item_id}": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        get: operations["RecordResource.exists"];
+        get: operations["Product.read"];
         put?: never;
         post?: never;
         delete?: never;
@@ -1081,30 +272,14 @@ export interface paths {
         patch?: never;
         trace?: never;
     };
-    "/recordtaxonomy": {
+    "/productpackage": {
         parameters: {
             query?: never;
             header?: never;
             path?: never;
             cookie?: never;
         };
-        get: operations["RecordTaxonomy.count"];
-        put?: never;
-        post: operations["RecordTaxonomy.group_by"];
-        delete?: never;
-        options?: never;
-        head?: never;
-        patch?: never;
-        trace?: never;
-    };
-    "/recordtaxonomy/{item_id}": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        get: operations["RecordTaxonomy.exists"];
+        get: operations["ProductPackage.list"];
         put?: never;
         post?: never;
         delete?: never;
@@ -1113,30 +288,78 @@ export interface paths {
         patch?: never;
         trace?: never;
     };
-    "/release": {
+    "/productpackage/{item_id}": {
         parameters: {
             query?: never;
             header?: never;
             path?: never;
             cookie?: never;
         };
-        get: operations["Release.count"];
+        get: operations["ProductPackage.read"];
         put?: never;
-        post: operations["Release.group_by"];
+        post?: never;
         delete?: never;
         options?: never;
         head?: never;
         patch?: never;
         trace?: never;
     };
-    "/release/{item_id}": {
+    "/productrepository": {
         parameters: {
             query?: never;
             header?: never;
             path?: never;
             cookie?: never;
         };
-        get: operations["Release.exists"];
+        get: operations["ProductRepository.list"];
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/productrepository/{item_id}": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get: operations["ProductRepository.read"];
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/productresource": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get: operations["ProductResource.list"];
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/productresource/{item_id}": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get: operations["ProductResource.read"];
         put?: never;
         post?: never;
         delete?: never;
@@ -1152,9 +375,9 @@ export interface paths {
             path?: never;
             cookie?: never;
         };
-        get: operations["Repository.count"];
+        get: operations["Repository.list"];
         put?: never;
-        post: operations["Repository.group_by"];
+        post?: never;
         delete?: never;
         options?: never;
         head?: never;
@@ -1168,7 +391,7 @@ export interface paths {
             path?: never;
             cookie?: never;
         };
-        get: operations["Repository.exists"];
+        get: operations["Repository.read"];
         put?: never;
         post?: never;
         delete?: never;
@@ -1177,30 +400,14 @@ export interface paths {
         patch?: never;
         trace?: never;
     };
-    "/repositorycontributor": {
+    "/repositorypackage": {
         parameters: {
             query?: never;
             header?: never;
             path?: never;
             cookie?: never;
         };
-        get: operations["RepositoryContributor.count"];
-        put?: never;
-        post: operations["RepositoryContributor.group_by"];
-        delete?: never;
-        options?: never;
-        head?: never;
-        patch?: never;
-        trace?: never;
-    };
-    "/repositorycontributor/{item_id}": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        get: operations["RepositoryContributor.exists"];
+        get: operations["RepositoryPackage.list"];
         put?: never;
         post?: never;
         delete?: never;
@@ -1209,30 +416,14 @@ export interface paths {
         patch?: never;
         trace?: never;
     };
-    "/repositorylanguage": {
+    "/repositorypackage/{item_id}": {
         parameters: {
             query?: never;
             header?: never;
             path?: never;
             cookie?: never;
         };
-        get: operations["RepositoryLanguage.count"];
-        put?: never;
-        post: operations["RepositoryLanguage.group_by"];
-        delete?: never;
-        options?: never;
-        head?: never;
-        patch?: never;
-        trace?: never;
-    };
-    "/repositorylanguage/{item_id}": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        get: operations["RepositoryLanguage.exists"];
+        get: operations["RepositoryPackage.read"];
         put?: never;
         post?: never;
         delete?: never;
@@ -1241,30 +432,62 @@ export interface paths {
         patch?: never;
         trace?: never;
     };
-    "/repositoryssotinventory": {
+    "/repositoryresource": {
         parameters: {
             query?: never;
             header?: never;
             path?: never;
             cookie?: never;
         };
-        get: operations["RepositorySsotInventory.count"];
+        get: operations["RepositoryResource.list"];
         put?: never;
-        post: operations["RepositorySsotInventory.group_by"];
+        post?: never;
         delete?: never;
         options?: never;
         head?: never;
         patch?: never;
         trace?: never;
     };
-    "/repositoryssotinventory/{item_id}": {
+    "/repositoryresource/{item_id}": {
         parameters: {
             query?: never;
             header?: never;
             path?: never;
             cookie?: never;
         };
-        get: operations["RepositorySsotInventory.exists"];
+        get: operations["RepositoryResource.read"];
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/repositoryssotitem": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get: operations["RepositorySsotItem.list"];
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/repositoryssotitem/{item_id}": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get: operations["RepositorySsotItem.read"];
         put?: never;
         post?: never;
         delete?: never;
@@ -1280,9 +503,9 @@ export interface paths {
             path?: never;
             cookie?: never;
         };
-        get: operations["RepositorySsotRegistry.count"];
+        get: operations["RepositorySsotRegistry.list"];
         put?: never;
-        post: operations["RepositorySsotRegistry.group_by"];
+        post?: never;
         delete?: never;
         options?: never;
         head?: never;
@@ -1296,7 +519,7 @@ export interface paths {
             path?: never;
             cookie?: never;
         };
-        get: operations["RepositorySsotRegistry.exists"];
+        get: operations["RepositorySsotRegistry.read"];
         put?: never;
         post?: never;
         delete?: never;
@@ -1305,30 +528,14 @@ export interface paths {
         patch?: never;
         trace?: never;
     };
-    "/resource": {
+    "/repositorytechnology": {
         parameters: {
             query?: never;
             header?: never;
             path?: never;
             cookie?: never;
         };
-        get: operations["Resource.count"];
-        put?: never;
-        post: operations["Resource.group_by"];
-        delete?: never;
-        options?: never;
-        head?: never;
-        patch?: never;
-        trace?: never;
-    };
-    "/resource/{item_id}": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        get: operations["Resource.exists"];
+        get: operations["RepositoryTechnology.list"];
         put?: never;
         post?: never;
         delete?: never;
@@ -1337,30 +544,14 @@ export interface paths {
         patch?: never;
         trace?: never;
     };
-    "/resourcerepository": {
+    "/repositorytechnology/{item_id}": {
         parameters: {
             query?: never;
             header?: never;
             path?: never;
             cookie?: never;
         };
-        get: operations["ResourceRepository.count"];
-        put?: never;
-        post: operations["ResourceRepository.group_by"];
-        delete?: never;
-        options?: never;
-        head?: never;
-        patch?: never;
-        trace?: never;
-    };
-    "/resourcerepository/{item_id}": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        get: operations["ResourceRepository.exists"];
+        get: operations["RepositoryTechnology.read"];
         put?: never;
         post?: never;
         delete?: never;
@@ -1369,30 +560,14 @@ export interface paths {
         patch?: never;
         trace?: never;
     };
-    "/resourcetaxonomy": {
+    "/technology": {
         parameters: {
             query?: never;
             header?: never;
             path?: never;
             cookie?: never;
         };
-        get: operations["ResourceTaxonomy.count"];
-        put?: never;
-        post: operations["ResourceTaxonomy.group_by"];
-        delete?: never;
-        options?: never;
-        head?: never;
-        patch?: never;
-        trace?: never;
-    };
-    "/resourcetaxonomy/{item_id}": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        get: operations["ResourceTaxonomy.exists"];
+        get: operations["Technology.list"];
         put?: never;
         post?: never;
         delete?: never;
@@ -1401,30 +576,14 @@ export interface paths {
         patch?: never;
         trace?: never;
     };
-    "/resourcetype": {
+    "/technology/{item_id}": {
         parameters: {
             query?: never;
             header?: never;
             path?: never;
             cookie?: never;
         };
-        get: operations["ResourceType.count"];
-        put?: never;
-        post: operations["ResourceType.group_by"];
-        delete?: never;
-        options?: never;
-        head?: never;
-        patch?: never;
-        trace?: never;
-    };
-    "/resourcetype/{item_id}": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        get: operations["ResourceType.exists"];
+        get: operations["Technology.read"];
         put?: never;
         post?: never;
         delete?: never;
@@ -1433,30 +592,30 @@ export interface paths {
         patch?: never;
         trace?: never;
     };
-    "/taxonomy": {
+    "/typedresource": {
         parameters: {
             query?: never;
             header?: never;
             path?: never;
             cookie?: never;
         };
-        get: operations["Taxonomy.count"];
+        get: operations["TypedResource.list"];
         put?: never;
-        post: operations["Taxonomy.group_by"];
+        post?: never;
         delete?: never;
         options?: never;
         head?: never;
         patch?: never;
         trace?: never;
     };
-    "/taxonomy/{item_id}": {
+    "/typedresource/{item_id}": {
         parameters: {
             query?: never;
             header?: never;
             path?: never;
             cookie?: never;
         };
-        get: operations["Taxonomy.exists"];
+        get: operations["TypedResource.read"];
         put?: never;
         post?: never;
         delete?: never;
@@ -1469,66 +628,29 @@ export interface paths {
 export type webhooks = Record<string, never>;
 export interface components {
     schemas: {
-        /** CatalogCollection */
-        CatalogCollection: {
-            /** Count */
-            count: number;
-            /** Facets */
-            facets?: {
-                [key: string]: {
-                    [key: string]: number;
-                };
-            };
+        /**
+         * CatalogEntryListResponse
+         * @description Tigrbl v3 CatalogEntry list schema
+         */
+        CatalogEntryListResponse: {
             /**
-             * Generated At
+             * Canonical Url
              * @default null
              */
-            generated_at: string | null;
+            canonical_url: string | null;
+            /**
+             * Icon Key
+             * @default null
+             */
+            icon_key: string | null;
+            /**
+             * Id
+             * @default null
+             */
+            id: string;
             /** Kind */
             kind: string;
             /**
-             * Page
-             * @default 1
-             */
-            page: number;
-            /**
-             * Page Count
-             * @default 1
-             */
-            page_count: number;
-            /**
-             * Page Size
-             * @default 50
-             */
-            page_size: number;
-            /** Records */
-            records: (components["schemas"]["RepositorySummary"] | components["schemas"]["PackageSummary"] | components["schemas"]["TypedResourceSummary"] | components["schemas"]["TechnologySummary"])[];
-            /**
-             * Resource Kind
-             * @enum {string}
-             */
-            resource_kind: "repository" | "package" | "resource" | "technology";
-        } & {
-            [key: string]: unknown;
-        };
-        /**
-         * CatalogEntityCountResponse
-         * @description Tigrbl v3 CatalogEntity count schema
-         */
-        CatalogEntityCountResponse: {
-            /**
-             * Canonical Url
-             * @default null
-             */
-            canonical_url: string | null;
-            /** Entity Type Id */
-            entity_type_id: string;
-            /**
-             * Id
-             * @default null
-             */
-            id: string;
-            /**
              * Maturity
              * @default null
              */
@@ -1549,8 +671,6 @@ export interface components {
             slug: string;
             /** Source Id */
             source_id: string;
-            /** Source Table */
-            source_table: string;
             /**
              * Summary
              * @default null
@@ -1563,467 +683,32 @@ export interface components {
             visibility: string;
         };
         /**
-         * CatalogEntityExistsResponse
-         * @description Tigrbl v3 CatalogEntity exists schema
+         * CatalogEntryReadResponse
+         * @description Tigrbl v3 CatalogEntry read schema
          */
-        CatalogEntityExistsResponse: {
+        CatalogEntryReadResponse: {
             /**
              * Canonical Url
              * @default null
              */
             canonical_url: string | null;
-            /** Entity Type Id */
-            entity_type_id: string;
+            /**
+             * Icon Key
+             * @default null
+             */
+            icon_key: string | null;
             /**
              * Id
              * @default null
              */
             id: string;
-            /**
-             * Maturity
-             * @default null
-             */
-            maturity: string | null;
-            /** Name */
-            name: string;
-            /**
-             * Observed At
-             * @default null
-             */
-            observed_at: string | null;
-            /**
-             * Organization Id
-             * @default null
-             */
-            organization_id: string | null;
-            /** Slug */
-            slug: string;
-            /** Source Id */
-            source_id: string;
-            /** Source Table */
-            source_table: string;
-            /**
-             * Summary
-             * @default null
-             */
-            summary: string | null;
-            /**
-             * Visibility
-             * @default null
-             */
-            visibility: string;
-        };
-        /**
-         * CatalogEntityGroupByRequest
-         * @description Tigrbl v3 CatalogEntity group_by schema
-         */
-        CatalogEntityGroupByRequest: {
-            /**
-             * Canonical Url
-             * @default null
-             */
-            canonical_url: string | null;
-            /** Entity Type Id */
-            entity_type_id: string;
-            /**
-             * Id
-             * @default null
-             */
-            id: string;
-            /**
-             * Maturity
-             * @default null
-             */
-            maturity: string | null;
-            /** Name */
-            name: string;
-            /**
-             * Observed At
-             * @default null
-             */
-            observed_at: string | null;
-            /**
-             * Organization Id
-             * @default null
-             */
-            organization_id: string | null;
-            /** Slug */
-            slug: string;
-            /** Source Id */
-            source_id: string;
-            /** Source Table */
-            source_table: string;
-            /**
-             * Summary
-             * @default null
-             */
-            summary: string | null;
-            /**
-             * Visibility
-             * @default null
-             */
-            visibility: string;
-        };
-        /**
-         * CatalogEntityGroupByResponse
-         * @description Tigrbl v3 CatalogEntity group_by schema
-         */
-        CatalogEntityGroupByResponse: {
-            /**
-             * Canonical Url
-             * @default null
-             */
-            canonical_url: string | null;
-            /** Entity Type Id */
-            entity_type_id: string;
-            /**
-             * Id
-             * @default null
-             */
-            id: string;
-            /**
-             * Maturity
-             * @default null
-             */
-            maturity: string | null;
-            /** Name */
-            name: string;
-            /**
-             * Observed At
-             * @default null
-             */
-            observed_at: string | null;
-            /**
-             * Organization Id
-             * @default null
-             */
-            organization_id: string | null;
-            /** Slug */
-            slug: string;
-            /** Source Id */
-            source_id: string;
-            /** Source Table */
-            source_table: string;
-            /**
-             * Summary
-             * @default null
-             */
-            summary: string | null;
-            /**
-             * Visibility
-             * @default null
-             */
-            visibility: string;
-        };
-        /** CatalogMember */
-        CatalogMember: {
-            /** Governance */
-            governance?: {
-                [key: string]: unknown;
-            };
-            /**
-             * Graph
-             * @default null
-             */
-            graph: {
-                [key: string]: unknown;
-            } | null;
-            /** Implementation */
-            implementation?: {
-                [key: string]: unknown;
-            };
-            /** Item */
-            item: {
-                [key: string]: unknown;
-            };
             /** Kind */
             kind: string;
-            /** Legal */
-            legal?: {
-                [key: string]: unknown;
-            };
-            /** Linked Sections */
-            linked_sections?: {
-                [key: string]: unknown;
-            }[];
             /**
-             * Parent
+             * Maturity
              * @default null
              */
-            parent: {
-                [key: string]: unknown;
-            } | null;
-            /** Related Records */
-            related_records?: {
-                [key: string]: unknown;
-            }[];
-            /**
-             * Resource Type
-             * @default null
-             */
-            resource_type: string | null;
-        } & {
-            [key: string]: unknown;
-        };
-        /** CatalogOverview */
-        CatalogOverview: {
-            /** Counts */
-            counts: {
-                [key: string]: number;
-            };
-            /**
-             * Generated At
-             * @default null
-             */
-            generated_at: string | null;
-            /**
-             * Kind
-             * @constant
-             */
-            kind: "catalog_overview";
-        } & {
-            [key: string]: unknown;
-        };
-        /** CommitPoint */
-        CommitPoint: {
-            /** Count */
-            count: number;
-            /** Date */
-            date: string;
-        } & {
-            [key: string]: unknown;
-        };
-        /**
-         * DependencyCountResponse
-         * @description Tigrbl v3 Dependency count schema
-         */
-        DependencyCountResponse: {
-            /**
-             * Completeness
-             * @default null
-             */
-            completeness: string;
-            /**
-             * Evidence Type
-             * @default null
-             */
-            evidence_type: string;
-            /**
-             * Id
-             * @default null
-             */
-            id: string;
-            /**
-             * Observed At
-             * @default null
-             */
-            observed_at: string | null;
-            /**
-             * Origin Kind
-             * @default null
-             */
-            origin_kind: string;
-            /**
-             * Requirement
-             * @default null
-             */
-            requirement: string | null;
-            /**
-             * Scope
-             * @default null
-             */
-            scope: string | null;
-            /** Source Id */
-            source_id: string;
-            /** Source Kind */
-            source_kind: string;
-            /**
-             * Source Url
-             * @default null
-             */
-            source_url: string | null;
-            /** Target Id */
-            target_id: string;
-            /** Target Kind */
-            target_kind: string;
-        };
-        /**
-         * DependencyExistsResponse
-         * @description Tigrbl v3 Dependency exists schema
-         */
-        DependencyExistsResponse: {
-            /**
-             * Completeness
-             * @default null
-             */
-            completeness: string;
-            /**
-             * Evidence Type
-             * @default null
-             */
-            evidence_type: string;
-            /**
-             * Id
-             * @default null
-             */
-            id: string;
-            /**
-             * Observed At
-             * @default null
-             */
-            observed_at: string | null;
-            /**
-             * Origin Kind
-             * @default null
-             */
-            origin_kind: string;
-            /**
-             * Requirement
-             * @default null
-             */
-            requirement: string | null;
-            /**
-             * Scope
-             * @default null
-             */
-            scope: string | null;
-            /** Source Id */
-            source_id: string;
-            /** Source Kind */
-            source_kind: string;
-            /**
-             * Source Url
-             * @default null
-             */
-            source_url: string | null;
-            /** Target Id */
-            target_id: string;
-            /** Target Kind */
-            target_kind: string;
-        };
-        /**
-         * DependencyGroupByRequest
-         * @description Tigrbl v3 Dependency group_by schema
-         */
-        DependencyGroupByRequest: {
-            /**
-             * Completeness
-             * @default null
-             */
-            completeness: string;
-            /**
-             * Evidence Type
-             * @default null
-             */
-            evidence_type: string;
-            /**
-             * Id
-             * @default null
-             */
-            id: string;
-            /**
-             * Observed At
-             * @default null
-             */
-            observed_at: string | null;
-            /**
-             * Origin Kind
-             * @default null
-             */
-            origin_kind: string;
-            /**
-             * Requirement
-             * @default null
-             */
-            requirement: string | null;
-            /**
-             * Scope
-             * @default null
-             */
-            scope: string | null;
-            /** Source Id */
-            source_id: string;
-            /** Source Kind */
-            source_kind: string;
-            /**
-             * Source Url
-             * @default null
-             */
-            source_url: string | null;
-            /** Target Id */
-            target_id: string;
-            /** Target Kind */
-            target_kind: string;
-        };
-        /**
-         * DependencyGroupByResponse
-         * @description Tigrbl v3 Dependency group_by schema
-         */
-        DependencyGroupByResponse: {
-            /**
-             * Completeness
-             * @default null
-             */
-            completeness: string;
-            /**
-             * Evidence Type
-             * @default null
-             */
-            evidence_type: string;
-            /**
-             * Id
-             * @default null
-             */
-            id: string;
-            /**
-             * Observed At
-             * @default null
-             */
-            observed_at: string | null;
-            /**
-             * Origin Kind
-             * @default null
-             */
-            origin_kind: string;
-            /**
-             * Requirement
-             * @default null
-             */
-            requirement: string | null;
-            /**
-             * Scope
-             * @default null
-             */
-            scope: string | null;
-            /** Source Id */
-            source_id: string;
-            /** Source Kind */
-            source_kind: string;
-            /**
-             * Source Url
-             * @default null
-             */
-            source_url: string | null;
-            /** Target Id */
-            target_id: string;
-            /** Target Kind */
-            target_kind: string;
-        };
-        /**
-         * DeploymentCountResponse
-         * @description Tigrbl v3 Deployment count schema
-         */
-        DeploymentCountResponse: {
-            /**
-             * Environment
-             * @default null
-             */
-            environment: string | null;
-            /**
-             * Id
-             * @default null
-             */
-            id: string;
+            maturity: string | null;
             /** Name */
             name: string;
             /**
@@ -2032,856 +717,30 @@ export interface components {
              */
             observed_at: string | null;
             /**
-             * Reachability
+             * Organization Id
              * @default null
              */
-            reachability: string;
-            /** Record Id */
-            record_id: string;
-            /** Url */
-            url: string;
+            organization_id: string | null;
+            /** Slug */
+            slug: string;
+            /** Source Id */
+            source_id: string;
+            /**
+             * Summary
+             * @default null
+             */
+            summary: string | null;
+            /**
+             * Visibility
+             * @default null
+             */
+            visibility: string;
         };
         /**
-         * DeploymentExistsResponse
-         * @description Tigrbl v3 Deployment exists schema
+         * OrganizationListResponse
+         * @description Tigrbl v3 Organization list schema
          */
-        DeploymentExistsResponse: {
-            /**
-             * Environment
-             * @default null
-             */
-            environment: string | null;
-            /**
-             * Id
-             * @default null
-             */
-            id: string;
-            /** Name */
-            name: string;
-            /**
-             * Observed At
-             * @default null
-             */
-            observed_at: string | null;
-            /**
-             * Reachability
-             * @default null
-             */
-            reachability: string;
-            /** Record Id */
-            record_id: string;
-            /** Url */
-            url: string;
-        };
-        /**
-         * DeploymentGroupByRequest
-         * @description Tigrbl v3 Deployment group_by schema
-         */
-        DeploymentGroupByRequest: {
-            /**
-             * Environment
-             * @default null
-             */
-            environment: string | null;
-            /**
-             * Id
-             * @default null
-             */
-            id: string;
-            /** Name */
-            name: string;
-            /**
-             * Observed At
-             * @default null
-             */
-            observed_at: string | null;
-            /**
-             * Reachability
-             * @default null
-             */
-            reachability: string;
-            /** Record Id */
-            record_id: string;
-            /** Url */
-            url: string;
-        };
-        /**
-         * DeploymentGroupByResponse
-         * @description Tigrbl v3 Deployment group_by schema
-         */
-        DeploymentGroupByResponse: {
-            /**
-             * Environment
-             * @default null
-             */
-            environment: string | null;
-            /**
-             * Id
-             * @default null
-             */
-            id: string;
-            /** Name */
-            name: string;
-            /**
-             * Observed At
-             * @default null
-             */
-            observed_at: string | null;
-            /**
-             * Reachability
-             * @default null
-             */
-            reachability: string;
-            /** Record Id */
-            record_id: string;
-            /** Url */
-            url: string;
-        };
-        /**
-         * EntityAliasCountResponse
-         * @description Tigrbl v3 EntityAlias count schema
-         */
-        EntityAliasCountResponse: {
-            /** Alias */
-            alias: string;
-            /** Alias Kind */
-            alias_kind: string;
-            /** Entity Id */
-            entity_id: string;
-            /**
-             * Id
-             * @default null
-             */
-            id: string;
-        };
-        /**
-         * EntityAliasExistsResponse
-         * @description Tigrbl v3 EntityAlias exists schema
-         */
-        EntityAliasExistsResponse: {
-            /** Alias */
-            alias: string;
-            /** Alias Kind */
-            alias_kind: string;
-            /** Entity Id */
-            entity_id: string;
-            /**
-             * Id
-             * @default null
-             */
-            id: string;
-        };
-        /**
-         * EntityAliasGroupByRequest
-         * @description Tigrbl v3 EntityAlias group_by schema
-         */
-        EntityAliasGroupByRequest: {
-            /** Alias */
-            alias: string;
-            /** Alias Kind */
-            alias_kind: string;
-            /** Entity Id */
-            entity_id: string;
-            /**
-             * Id
-             * @default null
-             */
-            id: string;
-        };
-        /**
-         * EntityAliasGroupByResponse
-         * @description Tigrbl v3 EntityAlias group_by schema
-         */
-        EntityAliasGroupByResponse: {
-            /** Alias */
-            alias: string;
-            /** Alias Kind */
-            alias_kind: string;
-            /** Entity Id */
-            entity_id: string;
-            /**
-             * Id
-             * @default null
-             */
-            id: string;
-        };
-        /**
-         * EntityRelationshipCountResponse
-         * @description Tigrbl v3 EntityRelationship count schema
-         */
-        EntityRelationshipCountResponse: {
-            /**
-             * Confidence
-             * @default null
-             */
-            confidence: string;
-            /** Evidence Type */
-            evidence_type: string;
-            /**
-             * Id
-             * @default null
-             */
-            id: string;
-            /**
-             * Observation Id
-             * @default null
-             */
-            observation_id: string | null;
-            /**
-             * Observed At
-             * @default null
-             */
-            observed_at: string | null;
-            /**
-             * Origin Kind
-             * @default null
-             */
-            origin_kind: string;
-            /** Relationship Type */
-            relationship_type: string;
-            /**
-             * Role
-             * @default null
-             */
-            role: string | null;
-            /** Source Entity Id */
-            source_entity_id: string;
-            /**
-             * Source Url
-             * @default null
-             */
-            source_url: string | null;
-            /**
-             * Ssot Entity Id
-             * @default null
-             */
-            ssot_entity_id: string | null;
-            /**
-             * Status
-             * @default null
-             */
-            status: string;
-            /** Target Entity Id */
-            target_entity_id: string;
-        };
-        /**
-         * EntityRelationshipExistsResponse
-         * @description Tigrbl v3 EntityRelationship exists schema
-         */
-        EntityRelationshipExistsResponse: {
-            /**
-             * Confidence
-             * @default null
-             */
-            confidence: string;
-            /** Evidence Type */
-            evidence_type: string;
-            /**
-             * Id
-             * @default null
-             */
-            id: string;
-            /**
-             * Observation Id
-             * @default null
-             */
-            observation_id: string | null;
-            /**
-             * Observed At
-             * @default null
-             */
-            observed_at: string | null;
-            /**
-             * Origin Kind
-             * @default null
-             */
-            origin_kind: string;
-            /** Relationship Type */
-            relationship_type: string;
-            /**
-             * Role
-             * @default null
-             */
-            role: string | null;
-            /** Source Entity Id */
-            source_entity_id: string;
-            /**
-             * Source Url
-             * @default null
-             */
-            source_url: string | null;
-            /**
-             * Ssot Entity Id
-             * @default null
-             */
-            ssot_entity_id: string | null;
-            /**
-             * Status
-             * @default null
-             */
-            status: string;
-            /** Target Entity Id */
-            target_entity_id: string;
-        };
-        /**
-         * EntityRelationshipGroupByRequest
-         * @description Tigrbl v3 EntityRelationship group_by schema
-         */
-        EntityRelationshipGroupByRequest: {
-            /**
-             * Confidence
-             * @default null
-             */
-            confidence: string;
-            /** Evidence Type */
-            evidence_type: string;
-            /**
-             * Id
-             * @default null
-             */
-            id: string;
-            /**
-             * Observation Id
-             * @default null
-             */
-            observation_id: string | null;
-            /**
-             * Observed At
-             * @default null
-             */
-            observed_at: string | null;
-            /**
-             * Origin Kind
-             * @default null
-             */
-            origin_kind: string;
-            /** Relationship Type */
-            relationship_type: string;
-            /**
-             * Role
-             * @default null
-             */
-            role: string | null;
-            /** Source Entity Id */
-            source_entity_id: string;
-            /**
-             * Source Url
-             * @default null
-             */
-            source_url: string | null;
-            /**
-             * Ssot Entity Id
-             * @default null
-             */
-            ssot_entity_id: string | null;
-            /**
-             * Status
-             * @default null
-             */
-            status: string;
-            /** Target Entity Id */
-            target_entity_id: string;
-        };
-        /**
-         * EntityRelationshipGroupByResponse
-         * @description Tigrbl v3 EntityRelationship group_by schema
-         */
-        EntityRelationshipGroupByResponse: {
-            /**
-             * Confidence
-             * @default null
-             */
-            confidence: string;
-            /** Evidence Type */
-            evidence_type: string;
-            /**
-             * Id
-             * @default null
-             */
-            id: string;
-            /**
-             * Observation Id
-             * @default null
-             */
-            observation_id: string | null;
-            /**
-             * Observed At
-             * @default null
-             */
-            observed_at: string | null;
-            /**
-             * Origin Kind
-             * @default null
-             */
-            origin_kind: string;
-            /** Relationship Type */
-            relationship_type: string;
-            /**
-             * Role
-             * @default null
-             */
-            role: string | null;
-            /** Source Entity Id */
-            source_entity_id: string;
-            /**
-             * Source Url
-             * @default null
-             */
-            source_url: string | null;
-            /**
-             * Ssot Entity Id
-             * @default null
-             */
-            ssot_entity_id: string | null;
-            /**
-             * Status
-             * @default null
-             */
-            status: string;
-            /** Target Entity Id */
-            target_entity_id: string;
-        };
-        /**
-         * EntityTypeCountResponse
-         * @description Tigrbl v3 EntityType count schema
-         */
-        EntityTypeCountResponse: {
-            /**
-             * Description
-             * @default null
-             */
-            description: string | null;
-            /**
-             * Detail Schema Key
-             * @default null
-             */
-            detail_schema_key: string | null;
-            /**
-             * Icon Key
-             * @default null
-             */
-            icon_key: string | null;
-            /**
-             * Id
-             * @default null
-             */
-            id: string;
-            /** Label */
-            label: string;
-            /**
-             * Parent Type Id
-             * @default null
-             */
-            parent_type_id: string | null;
-            /** Semantic Class */
-            semantic_class: string;
-        };
-        /**
-         * EntityTypeExistsResponse
-         * @description Tigrbl v3 EntityType exists schema
-         */
-        EntityTypeExistsResponse: {
-            /**
-             * Description
-             * @default null
-             */
-            description: string | null;
-            /**
-             * Detail Schema Key
-             * @default null
-             */
-            detail_schema_key: string | null;
-            /**
-             * Icon Key
-             * @default null
-             */
-            icon_key: string | null;
-            /**
-             * Id
-             * @default null
-             */
-            id: string;
-            /** Label */
-            label: string;
-            /**
-             * Parent Type Id
-             * @default null
-             */
-            parent_type_id: string | null;
-            /** Semantic Class */
-            semantic_class: string;
-        };
-        /**
-         * EntityTypeGroupByRequest
-         * @description Tigrbl v3 EntityType group_by schema
-         */
-        EntityTypeGroupByRequest: {
-            /**
-             * Description
-             * @default null
-             */
-            description: string | null;
-            /**
-             * Detail Schema Key
-             * @default null
-             */
-            detail_schema_key: string | null;
-            /**
-             * Icon Key
-             * @default null
-             */
-            icon_key: string | null;
-            /**
-             * Id
-             * @default null
-             */
-            id: string;
-            /** Label */
-            label: string;
-            /**
-             * Parent Type Id
-             * @default null
-             */
-            parent_type_id: string | null;
-            /** Semantic Class */
-            semantic_class: string;
-        };
-        /**
-         * EntityTypeGroupByResponse
-         * @description Tigrbl v3 EntityType group_by schema
-         */
-        EntityTypeGroupByResponse: {
-            /**
-             * Description
-             * @default null
-             */
-            description: string | null;
-            /**
-             * Detail Schema Key
-             * @default null
-             */
-            detail_schema_key: string | null;
-            /**
-             * Icon Key
-             * @default null
-             */
-            icon_key: string | null;
-            /**
-             * Id
-             * @default null
-             */
-            id: string;
-            /** Label */
-            label: string;
-            /**
-             * Parent Type Id
-             * @default null
-             */
-            parent_type_id: string | null;
-            /** Semantic Class */
-            semantic_class: string;
-        };
-        /**
-         * EntityUrlCountResponse
-         * @description Tigrbl v3 EntityUrl count schema
-         */
-        EntityUrlCountResponse: {
-            /** Entity Id */
-            entity_id: string;
-            /** Evidence Type */
-            evidence_type: string;
-            /**
-             * Id
-             * @default null
-             */
-            id: string;
-            /**
-             * Label
-             * @default null
-             */
-            label: string | null;
-            /**
-             * Observation Id
-             * @default null
-             */
-            observation_id: string | null;
-            /**
-             * Observed At
-             * @default null
-             */
-            observed_at: string | null;
-            /**
-             * Origin Kind
-             * @default null
-             */
-            origin_kind: string;
-            /** Url */
-            url: string;
-            /** Url Role */
-            url_role: string;
-        };
-        /**
-         * EntityUrlExistsResponse
-         * @description Tigrbl v3 EntityUrl exists schema
-         */
-        EntityUrlExistsResponse: {
-            /** Entity Id */
-            entity_id: string;
-            /** Evidence Type */
-            evidence_type: string;
-            /**
-             * Id
-             * @default null
-             */
-            id: string;
-            /**
-             * Label
-             * @default null
-             */
-            label: string | null;
-            /**
-             * Observation Id
-             * @default null
-             */
-            observation_id: string | null;
-            /**
-             * Observed At
-             * @default null
-             */
-            observed_at: string | null;
-            /**
-             * Origin Kind
-             * @default null
-             */
-            origin_kind: string;
-            /** Url */
-            url: string;
-            /** Url Role */
-            url_role: string;
-        };
-        /**
-         * EntityUrlGroupByRequest
-         * @description Tigrbl v3 EntityUrl group_by schema
-         */
-        EntityUrlGroupByRequest: {
-            /** Entity Id */
-            entity_id: string;
-            /** Evidence Type */
-            evidence_type: string;
-            /**
-             * Id
-             * @default null
-             */
-            id: string;
-            /**
-             * Label
-             * @default null
-             */
-            label: string | null;
-            /**
-             * Observation Id
-             * @default null
-             */
-            observation_id: string | null;
-            /**
-             * Observed At
-             * @default null
-             */
-            observed_at: string | null;
-            /**
-             * Origin Kind
-             * @default null
-             */
-            origin_kind: string;
-            /** Url */
-            url: string;
-            /** Url Role */
-            url_role: string;
-        };
-        /**
-         * EntityUrlGroupByResponse
-         * @description Tigrbl v3 EntityUrl group_by schema
-         */
-        EntityUrlGroupByResponse: {
-            /** Entity Id */
-            entity_id: string;
-            /** Evidence Type */
-            evidence_type: string;
-            /**
-             * Id
-             * @default null
-             */
-            id: string;
-            /**
-             * Label
-             * @default null
-             */
-            label: string | null;
-            /**
-             * Observation Id
-             * @default null
-             */
-            observation_id: string | null;
-            /**
-             * Observed At
-             * @default null
-             */
-            observed_at: string | null;
-            /**
-             * Origin Kind
-             * @default null
-             */
-            origin_kind: string;
-            /** Url */
-            url: string;
-            /** Url Role */
-            url_role: string;
-        };
-        /**
-         * LimitationCountResponse
-         * @description Tigrbl v3 Limitation count schema
-         */
-        LimitationCountResponse: {
-            /** Description */
-            description: string;
-            /**
-             * Evidence Id
-             * @default null
-             */
-            evidence_id: string | null;
-            /**
-             * Id
-             * @default null
-             */
-            id: string;
-            /** Record Id */
-            record_id: string;
-            /**
-             * Reviewed At
-             * @default null
-             */
-            reviewed_at: string | null;
-            /**
-             * Severity
-             * @default null
-             */
-            severity: string | null;
-            /** Title */
-            title: string;
-        };
-        /**
-         * LimitationExistsResponse
-         * @description Tigrbl v3 Limitation exists schema
-         */
-        LimitationExistsResponse: {
-            /** Description */
-            description: string;
-            /**
-             * Evidence Id
-             * @default null
-             */
-            evidence_id: string | null;
-            /**
-             * Id
-             * @default null
-             */
-            id: string;
-            /** Record Id */
-            record_id: string;
-            /**
-             * Reviewed At
-             * @default null
-             */
-            reviewed_at: string | null;
-            /**
-             * Severity
-             * @default null
-             */
-            severity: string | null;
-            /** Title */
-            title: string;
-        };
-        /**
-         * LimitationGroupByRequest
-         * @description Tigrbl v3 Limitation group_by schema
-         */
-        LimitationGroupByRequest: {
-            /** Description */
-            description: string;
-            /**
-             * Evidence Id
-             * @default null
-             */
-            evidence_id: string | null;
-            /**
-             * Id
-             * @default null
-             */
-            id: string;
-            /** Record Id */
-            record_id: string;
-            /**
-             * Reviewed At
-             * @default null
-             */
-            reviewed_at: string | null;
-            /**
-             * Severity
-             * @default null
-             */
-            severity: string | null;
-            /** Title */
-            title: string;
-        };
-        /**
-         * LimitationGroupByResponse
-         * @description Tigrbl v3 Limitation group_by schema
-         */
-        LimitationGroupByResponse: {
-            /** Description */
-            description: string;
-            /**
-             * Evidence Id
-             * @default null
-             */
-            evidence_id: string | null;
-            /**
-             * Id
-             * @default null
-             */
-            id: string;
-            /** Record Id */
-            record_id: string;
-            /**
-             * Reviewed At
-             * @default null
-             */
-            reviewed_at: string | null;
-            /**
-             * Severity
-             * @default null
-             */
-            severity: string | null;
-            /** Title */
-            title: string;
-        };
-        /** MetricPoint */
-        MetricPoint: {
-            /**
-             * Observed At
-             * @default null
-             */
-            observed_at: string | null;
-            /** Value */
-            value: number;
-        } & {
-            [key: string]: unknown;
-        };
-        /**
-         * OrganizationCountResponse
-         * @description Tigrbl v3 Organization count schema
-         */
-        OrganizationCountResponse: {
+        OrganizationListResponse: {
             /**
              * Id
              * @default null
@@ -2913,10 +772,10 @@ export interface components {
             website_url: string | null;
         };
         /**
-         * OrganizationExistsResponse
-         * @description Tigrbl v3 Organization exists schema
+         * OrganizationReadResponse
+         * @description Tigrbl v3 Organization read schema
          */
-        OrganizationExistsResponse: {
+        OrganizationReadResponse: {
             /**
              * Id
              * @default null
@@ -2948,80 +807,10 @@ export interface components {
             website_url: string | null;
         };
         /**
-         * OrganizationGroupByRequest
-         * @description Tigrbl v3 Organization group_by schema
+         * PackageListResponse
+         * @description Tigrbl v3 Package list schema
          */
-        OrganizationGroupByRequest: {
-            /**
-             * Id
-             * @default null
-             */
-            id: string;
-            /** Name */
-            name: string;
-            /**
-             * Observed At
-             * @default null
-             */
-            observed_at: string | null;
-            /** Slug */
-            slug: string;
-            /**
-             * Source Url
-             * @default null
-             */
-            source_url: string | null;
-            /**
-             * Summary
-             * @default null
-             */
-            summary: string | null;
-            /**
-             * Website Url
-             * @default null
-             */
-            website_url: string | null;
-        };
-        /**
-         * OrganizationGroupByResponse
-         * @description Tigrbl v3 Organization group_by schema
-         */
-        OrganizationGroupByResponse: {
-            /**
-             * Id
-             * @default null
-             */
-            id: string;
-            /** Name */
-            name: string;
-            /**
-             * Observed At
-             * @default null
-             */
-            observed_at: string | null;
-            /** Slug */
-            slug: string;
-            /**
-             * Source Url
-             * @default null
-             */
-            source_url: string | null;
-            /**
-             * Summary
-             * @default null
-             */
-            summary: string | null;
-            /**
-             * Website Url
-             * @default null
-             */
-            website_url: string | null;
-        };
-        /**
-         * PackageCountResponse
-         * @description Tigrbl v3 Package count schema
-         */
-        PackageCountResponse: {
+        PackageListResponse: {
             /**
              * Description
              * @default null
@@ -3086,8 +875,11 @@ export interface components {
              * @default null
              */
             published_at: string | null;
-            /** Registry Url */
-            registry_url: string;
+            /**
+             * Registry Url
+             * @default null
+             */
+            registry_url: string | null;
             /**
              * Route Key
              * @default null
@@ -3100,10 +892,10 @@ export interface components {
             source_url: string | null;
         };
         /**
-         * PackageExistsResponse
-         * @description Tigrbl v3 Package exists schema
+         * PackageReadResponse
+         * @description Tigrbl v3 Package read schema
          */
-        PackageExistsResponse: {
+        PackageReadResponse: {
             /**
              * Description
              * @default null
@@ -3168,8 +960,11 @@ export interface components {
              * @default null
              */
             published_at: string | null;
-            /** Registry Url */
-            registry_url: string;
+            /**
+             * Registry Url
+             * @default null
+             */
+            registry_url: string | null;
             /**
              * Route Key
              * @default null
@@ -3182,606 +977,60 @@ export interface components {
             source_url: string | null;
         };
         /**
-         * PackageGroupByRequest
-         * @description Tigrbl v3 Package group_by schema
+         * PackageTechnologyListResponse
+         * @description Tigrbl v3 PackageTechnology list schema
          */
-        PackageGroupByRequest: {
-            /**
-             * Description
-             * @default null
-             */
-            description: string | null;
-            /** Ecosystem */
-            ecosystem: string;
+        PackageTechnologyListResponse: {
             /**
              * Id
              * @default null
              */
             id: string;
-            /**
-             * Latest Version
-             * @default null
-             */
-            latest_version: string | null;
-            /**
-             * License Expression
-             * @default null
-             */
-            license_expression: string | null;
-            /**
-             * License Status
-             * @default null
-             */
-            license_status: string | null;
-            /**
-             * Manifest Path
-             * @default null
-             */
-            manifest_path: string | null;
-            /** Name */
-            name: string;
             /**
              * Observed At
              * @default null
              */
             observed_at: string | null;
+            /** Package Id */
+            package_id: string;
             /**
-             * Package Kind
+             * Role
              * @default null
              */
-            package_kind: string;
-            /**
-             * Private
-             * @default null
-             */
-            private: boolean;
-            /**
-             * Publication Status
-             * @default null
-             */
-            publication_status: string | null;
-            /**
-             * Published
-             * @default null
-             */
-            published: boolean | null;
-            /**
-             * Published At
-             * @default null
-             */
-            published_at: string | null;
-            /** Registry Url */
-            registry_url: string;
-            /**
-             * Route Key
-             * @default null
-             */
-            route_key: string | null;
-            /**
-             * Source Url
-             * @default null
-             */
-            source_url: string | null;
+            role: string;
+            /** Technology Id */
+            technology_id: string;
         };
         /**
-         * PackageGroupByResponse
-         * @description Tigrbl v3 Package group_by schema
+         * PackageTechnologyReadResponse
+         * @description Tigrbl v3 PackageTechnology read schema
          */
-        PackageGroupByResponse: {
-            /**
-             * Description
-             * @default null
-             */
-            description: string | null;
-            /** Ecosystem */
-            ecosystem: string;
+        PackageTechnologyReadResponse: {
             /**
              * Id
              * @default null
              */
             id: string;
-            /**
-             * Latest Version
-             * @default null
-             */
-            latest_version: string | null;
-            /**
-             * License Expression
-             * @default null
-             */
-            license_expression: string | null;
-            /**
-             * License Status
-             * @default null
-             */
-            license_status: string | null;
-            /**
-             * Manifest Path
-             * @default null
-             */
-            manifest_path: string | null;
-            /** Name */
-            name: string;
             /**
              * Observed At
              * @default null
              */
             observed_at: string | null;
-            /**
-             * Package Kind
-             * @default null
-             */
-            package_kind: string;
-            /**
-             * Private
-             * @default null
-             */
-            private: boolean;
-            /**
-             * Publication Status
-             * @default null
-             */
-            publication_status: string | null;
-            /**
-             * Published
-             * @default null
-             */
-            published: boolean | null;
-            /**
-             * Published At
-             * @default null
-             */
-            published_at: string | null;
-            /** Registry Url */
-            registry_url: string;
-            /**
-             * Route Key
-             * @default null
-             */
-            route_key: string | null;
-            /**
-             * Source Url
-             * @default null
-             */
-            source_url: string | null;
-        };
-        /**
-         * PackageRepositoryCountResponse
-         * @description Tigrbl v3 PackageRepository count schema
-         */
-        PackageRepositoryCountResponse: {
-            /**
-             * Id
-             * @default null
-             */
-            id: string;
             /** Package Id */
             package_id: string;
-            /**
-             * Path
-             * @default null
-             */
-            path: string | null;
-            /** Repository Id */
-            repository_id: string;
-        };
-        /**
-         * PackageRepositoryExistsResponse
-         * @description Tigrbl v3 PackageRepository exists schema
-         */
-        PackageRepositoryExistsResponse: {
-            /**
-             * Id
-             * @default null
-             */
-            id: string;
-            /** Package Id */
-            package_id: string;
-            /**
-             * Path
-             * @default null
-             */
-            path: string | null;
-            /** Repository Id */
-            repository_id: string;
-        };
-        /**
-         * PackageRepositoryGroupByRequest
-         * @description Tigrbl v3 PackageRepository group_by schema
-         */
-        PackageRepositoryGroupByRequest: {
-            /**
-             * Id
-             * @default null
-             */
-            id: string;
-            /** Package Id */
-            package_id: string;
-            /**
-             * Path
-             * @default null
-             */
-            path: string | null;
-            /** Repository Id */
-            repository_id: string;
-        };
-        /**
-         * PackageRepositoryGroupByResponse
-         * @description Tigrbl v3 PackageRepository group_by schema
-         */
-        PackageRepositoryGroupByResponse: {
-            /**
-             * Id
-             * @default null
-             */
-            id: string;
-            /** Package Id */
-            package_id: string;
-            /**
-             * Path
-             * @default null
-             */
-            path: string | null;
-            /** Repository Id */
-            repository_id: string;
-        };
-        /** PackageSummary */
-        PackageSummary: {
-            /**
-             * Dependency Count
-             * @default 0
-             */
-            dependency_count: number;
-            /**
-             * Dependent Count
-             * @default 0
-             */
-            dependent_count: number;
-            /** Ecosystem */
-            ecosystem: string;
-            /** Id */
-            id: string;
-            /**
-             * Latest Version
-             * @default null
-             */
-            latest_version: string | null;
-            /** Name */
-            name: string;
-            /**
-             * Observed At
-             * @default null
-             */
-            observed_at: string | null;
-            /** Package Kind */
-            package_kind: string;
-            /**
-             * Publication Status
-             * @default null
-             */
-            publication_status: string | null;
-            /** Registry Url */
-            registry_url: string;
-            /**
-             * Release Count
-             * @default 0
-             */
-            release_count: number;
-            /** Route */
-            route: string;
-            /**
-             * Route Key
-             * @default null
-             */
-            route_key: string | null;
-        } & {
-            [key: string]: unknown;
-        };
-        /**
-         * PackageTaxonomyCountResponse
-         * @description Tigrbl v3 PackageTaxonomy count schema
-         */
-        PackageTaxonomyCountResponse: {
-            /**
-             * Id
-             * @default null
-             */
-            id: string;
-            /** Package Id */
-            package_id: string;
-            /** Taxonomy Id */
-            taxonomy_id: string;
-        };
-        /**
-         * PackageTaxonomyExistsResponse
-         * @description Tigrbl v3 PackageTaxonomy exists schema
-         */
-        PackageTaxonomyExistsResponse: {
-            /**
-             * Id
-             * @default null
-             */
-            id: string;
-            /** Package Id */
-            package_id: string;
-            /** Taxonomy Id */
-            taxonomy_id: string;
-        };
-        /**
-         * PackageTaxonomyGroupByRequest
-         * @description Tigrbl v3 PackageTaxonomy group_by schema
-         */
-        PackageTaxonomyGroupByRequest: {
-            /**
-             * Id
-             * @default null
-             */
-            id: string;
-            /** Package Id */
-            package_id: string;
-            /** Taxonomy Id */
-            taxonomy_id: string;
-        };
-        /**
-         * PackageTaxonomyGroupByResponse
-         * @description Tigrbl v3 PackageTaxonomy group_by schema
-         */
-        PackageTaxonomyGroupByResponse: {
-            /**
-             * Id
-             * @default null
-             */
-            id: string;
-            /** Package Id */
-            package_id: string;
-            /** Taxonomy Id */
-            taxonomy_id: string;
-        };
-        /**
-         * PersonCountResponse
-         * @description Tigrbl v3 Person count schema
-         */
-        PersonCountResponse: {
-            /**
-             * Handle
-             * @default null
-             */
-            handle: string | null;
-            /**
-             * Id
-             * @default null
-             */
-            id: string;
-            /** Name */
-            name: string;
-            /**
-             * Profile Url
-             * @default null
-             */
-            profile_url: string | null;
-        };
-        /**
-         * PersonExistsResponse
-         * @description Tigrbl v3 Person exists schema
-         */
-        PersonExistsResponse: {
-            /**
-             * Handle
-             * @default null
-             */
-            handle: string | null;
-            /**
-             * Id
-             * @default null
-             */
-            id: string;
-            /** Name */
-            name: string;
-            /**
-             * Profile Url
-             * @default null
-             */
-            profile_url: string | null;
-        };
-        /**
-         * PersonGroupByRequest
-         * @description Tigrbl v3 Person group_by schema
-         */
-        PersonGroupByRequest: {
-            /**
-             * Handle
-             * @default null
-             */
-            handle: string | null;
-            /**
-             * Id
-             * @default null
-             */
-            id: string;
-            /** Name */
-            name: string;
-            /**
-             * Profile Url
-             * @default null
-             */
-            profile_url: string | null;
-        };
-        /**
-         * PersonGroupByResponse
-         * @description Tigrbl v3 Person group_by schema
-         */
-        PersonGroupByResponse: {
-            /**
-             * Handle
-             * @default null
-             */
-            handle: string | null;
-            /**
-             * Id
-             * @default null
-             */
-            id: string;
-            /** Name */
-            name: string;
-            /**
-             * Profile Url
-             * @default null
-             */
-            profile_url: string | null;
-        };
-        /**
-         * RecordAliasCountResponse
-         * @description Tigrbl v3 RecordAlias count schema
-         */
-        RecordAliasCountResponse: {
-            /** Alias */
-            alias: string;
-            /** Alias Kind */
-            alias_kind: string;
-            /**
-             * Id
-             * @default null
-             */
-            id: string;
-            /** Record Id */
-            record_id: string;
-        };
-        /**
-         * RecordAliasExistsResponse
-         * @description Tigrbl v3 RecordAlias exists schema
-         */
-        RecordAliasExistsResponse: {
-            /** Alias */
-            alias: string;
-            /** Alias Kind */
-            alias_kind: string;
-            /**
-             * Id
-             * @default null
-             */
-            id: string;
-            /** Record Id */
-            record_id: string;
-        };
-        /**
-         * RecordAliasGroupByRequest
-         * @description Tigrbl v3 RecordAlias group_by schema
-         */
-        RecordAliasGroupByRequest: {
-            /** Alias */
-            alias: string;
-            /** Alias Kind */
-            alias_kind: string;
-            /**
-             * Id
-             * @default null
-             */
-            id: string;
-            /** Record Id */
-            record_id: string;
-        };
-        /**
-         * RecordAliasGroupByResponse
-         * @description Tigrbl v3 RecordAlias group_by schema
-         */
-        RecordAliasGroupByResponse: {
-            /** Alias */
-            alias: string;
-            /** Alias Kind */
-            alias_kind: string;
-            /**
-             * Id
-             * @default null
-             */
-            id: string;
-            /** Record Id */
-            record_id: string;
-        };
-        /**
-         * RecordAuthorCountResponse
-         * @description Tigrbl v3 RecordAuthor count schema
-         */
-        RecordAuthorCountResponse: {
-            /**
-             * Id
-             * @default null
-             */
-            id: string;
-            /** Person Id */
-            person_id: string;
-            /** Record Id */
-            record_id: string;
             /**
              * Role
              * @default null
              */
             role: string;
+            /** Technology Id */
+            technology_id: string;
         };
         /**
-         * RecordAuthorExistsResponse
-         * @description Tigrbl v3 RecordAuthor exists schema
+         * PortfolioListResponse
+         * @description Tigrbl v3 Portfolio list schema
          */
-        RecordAuthorExistsResponse: {
-            /**
-             * Id
-             * @default null
-             */
-            id: string;
-            /** Person Id */
-            person_id: string;
-            /** Record Id */
-            record_id: string;
-            /**
-             * Role
-             * @default null
-             */
-            role: string;
-        };
-        /**
-         * RecordAuthorGroupByRequest
-         * @description Tigrbl v3 RecordAuthor group_by schema
-         */
-        RecordAuthorGroupByRequest: {
-            /**
-             * Id
-             * @default null
-             */
-            id: string;
-            /** Person Id */
-            person_id: string;
-            /** Record Id */
-            record_id: string;
-            /**
-             * Role
-             * @default null
-             */
-            role: string;
-        };
-        /**
-         * RecordAuthorGroupByResponse
-         * @description Tigrbl v3 RecordAuthor group_by schema
-         */
-        RecordAuthorGroupByResponse: {
-            /**
-             * Id
-             * @default null
-             */
-            id: string;
-            /** Person Id */
-            person_id: string;
-            /** Record Id */
-            record_id: string;
-            /**
-             * Role
-             * @default null
-             */
-            role: string;
-        };
-        /**
-         * RecordCountResponse
-         * @description Tigrbl v3 Record count schema
-         */
-        RecordCountResponse: {
+        PortfolioListResponse: {
             /**
              * Body Markdown
              * @default null
@@ -3793,12 +1042,273 @@ export interface components {
              */
             canonical_url: string | null;
             /**
-             * Content
+             * Content Revision
              * @default null
              */
-            content: {
-                [key: string]: unknown;
-            } | null;
+            content_revision: number;
+            /**
+             * Eyebrow
+             * @default null
+             */
+            eyebrow: string | null;
+            /**
+             * Featured
+             * @default null
+             */
+            featured: boolean;
+            /**
+             * Focus
+             * @default null
+             */
+            focus: string | null;
+            /**
+             * Id
+             * @default null
+             */
+            id: string;
+            /**
+             * Maturity
+             * @default null
+             */
+            maturity: string | null;
+            /** Name */
+            name: string;
+            /** Organization Id */
+            organization_id: string;
+            /**
+             * Published At
+             * @default null
+             */
+            published_at: string | null;
+            /** Slug */
+            slug: string;
+            /**
+             * Source Url
+             * @default null
+             */
+            source_url: string | null;
+            /** Summary */
+            summary: string;
+            /**
+             * Updated At
+             * @default null
+             */
+            updated_at: string | null;
+            /**
+             * Visibility
+             * @default null
+             */
+            visibility: string;
+        };
+        /**
+         * PortfolioProductListResponse
+         * @description Tigrbl v3 PortfolioProduct list schema
+         */
+        PortfolioProductListResponse: {
+            /**
+             * Id
+             * @default null
+             */
+            id: string;
+            /**
+             * Observed At
+             * @default null
+             */
+            observed_at: string | null;
+            /** Portfolio Id */
+            portfolio_id: string;
+            /** Product Id */
+            product_id: string;
+            /**
+             * Role
+             * @default null
+             */
+            role: string;
+            /**
+             * Sort Order
+             * @default null
+             */
+            sort_order: number;
+        };
+        /**
+         * PortfolioProductReadResponse
+         * @description Tigrbl v3 PortfolioProduct read schema
+         */
+        PortfolioProductReadResponse: {
+            /**
+             * Id
+             * @default null
+             */
+            id: string;
+            /**
+             * Observed At
+             * @default null
+             */
+            observed_at: string | null;
+            /** Portfolio Id */
+            portfolio_id: string;
+            /** Product Id */
+            product_id: string;
+            /**
+             * Role
+             * @default null
+             */
+            role: string;
+            /**
+             * Sort Order
+             * @default null
+             */
+            sort_order: number;
+        };
+        /**
+         * PortfolioReadResponse
+         * @description Tigrbl v3 Portfolio read schema
+         */
+        PortfolioReadResponse: {
+            /**
+             * Body Markdown
+             * @default null
+             */
+            body_markdown: string | null;
+            /**
+             * Canonical Url
+             * @default null
+             */
+            canonical_url: string | null;
+            /**
+             * Content Revision
+             * @default null
+             */
+            content_revision: number;
+            /**
+             * Eyebrow
+             * @default null
+             */
+            eyebrow: string | null;
+            /**
+             * Featured
+             * @default null
+             */
+            featured: boolean;
+            /**
+             * Focus
+             * @default null
+             */
+            focus: string | null;
+            /**
+             * Id
+             * @default null
+             */
+            id: string;
+            /**
+             * Maturity
+             * @default null
+             */
+            maturity: string | null;
+            /** Name */
+            name: string;
+            /** Organization Id */
+            organization_id: string;
+            /**
+             * Published At
+             * @default null
+             */
+            published_at: string | null;
+            /** Slug */
+            slug: string;
+            /**
+             * Source Url
+             * @default null
+             */
+            source_url: string | null;
+            /** Summary */
+            summary: string;
+            /**
+             * Updated At
+             * @default null
+             */
+            updated_at: string | null;
+            /**
+             * Visibility
+             * @default null
+             */
+            visibility: string;
+        };
+        /**
+         * PortfolioRepositoryListResponse
+         * @description Tigrbl v3 PortfolioRepository list schema
+         */
+        PortfolioRepositoryListResponse: {
+            /**
+             * Id
+             * @default null
+             */
+            id: string;
+            /**
+             * Observed At
+             * @default null
+             */
+            observed_at: string | null;
+            /** Portfolio Id */
+            portfolio_id: string;
+            /** Repository Id */
+            repository_id: string;
+            /**
+             * Role
+             * @default null
+             */
+            role: string;
+            /**
+             * Sort Order
+             * @default null
+             */
+            sort_order: number;
+        };
+        /**
+         * PortfolioRepositoryReadResponse
+         * @description Tigrbl v3 PortfolioRepository read schema
+         */
+        PortfolioRepositoryReadResponse: {
+            /**
+             * Id
+             * @default null
+             */
+            id: string;
+            /**
+             * Observed At
+             * @default null
+             */
+            observed_at: string | null;
+            /** Portfolio Id */
+            portfolio_id: string;
+            /** Repository Id */
+            repository_id: string;
+            /**
+             * Role
+             * @default null
+             */
+            role: string;
+            /**
+             * Sort Order
+             * @default null
+             */
+            sort_order: number;
+        };
+        /**
+         * ProductListResponse
+         * @description Tigrbl v3 Product list schema
+         */
+        ProductListResponse: {
+            /**
+             * Body Markdown
+             * @default null
+             */
+            body_markdown: string | null;
+            /**
+             * Canonical Url
+             * @default null
+             */
+            canonical_url: string | null;
             /**
              * Content Revision
              * @default null
@@ -3824,6 +1334,8 @@ export interface components {
              * @default null
              */
             maturity: string | null;
+            /** Name */
+            name: string;
             /** Organization Id */
             organization_id: string;
             /**
@@ -3831,8 +1343,6 @@ export interface components {
              * @default null
              */
             published_at: string | null;
-            /** Record Type */
-            record_type: string;
             /** Slug */
             slug: string;
             /**
@@ -3842,8 +1352,6 @@ export interface components {
             source_url: string | null;
             /** Summary */
             summary: string;
-            /** Title */
-            title: string;
             /**
              * Updated At
              * @default null
@@ -3856,10 +1364,70 @@ export interface components {
             visibility: string;
         };
         /**
-         * RecordExistsResponse
-         * @description Tigrbl v3 Record exists schema
+         * ProductPackageListResponse
+         * @description Tigrbl v3 ProductPackage list schema
          */
-        RecordExistsResponse: {
+        ProductPackageListResponse: {
+            /**
+             * Id
+             * @default null
+             */
+            id: string;
+            /**
+             * Observed At
+             * @default null
+             */
+            observed_at: string | null;
+            /** Package Id */
+            package_id: string;
+            /** Product Id */
+            product_id: string;
+            /**
+             * Role
+             * @default null
+             */
+            role: string;
+            /**
+             * Sort Order
+             * @default null
+             */
+            sort_order: number;
+        };
+        /**
+         * ProductPackageReadResponse
+         * @description Tigrbl v3 ProductPackage read schema
+         */
+        ProductPackageReadResponse: {
+            /**
+             * Id
+             * @default null
+             */
+            id: string;
+            /**
+             * Observed At
+             * @default null
+             */
+            observed_at: string | null;
+            /** Package Id */
+            package_id: string;
+            /** Product Id */
+            product_id: string;
+            /**
+             * Role
+             * @default null
+             */
+            role: string;
+            /**
+             * Sort Order
+             * @default null
+             */
+            sort_order: number;
+        };
+        /**
+         * ProductReadResponse
+         * @description Tigrbl v3 Product read schema
+         */
+        ProductReadResponse: {
             /**
              * Body Markdown
              * @default null
@@ -3870,13 +1438,6 @@ export interface components {
              * @default null
              */
             canonical_url: string | null;
-            /**
-             * Content
-             * @default null
-             */
-            content: {
-                [key: string]: unknown;
-            } | null;
             /**
              * Content Revision
              * @default null
@@ -3902,6 +1463,8 @@ export interface components {
              * @default null
              */
             maturity: string | null;
+            /** Name */
+            name: string;
             /** Organization Id */
             organization_id: string;
             /**
@@ -3909,8 +1472,6 @@ export interface components {
              * @default null
              */
             published_at: string | null;
-            /** Record Type */
-            record_type: string;
             /** Slug */
             slug: string;
             /**
@@ -3920,8 +1481,6 @@ export interface components {
             source_url: string | null;
             /** Summary */
             summary: string;
-            /** Title */
-            title: string;
             /**
              * Updated At
              * @default null
@@ -3934,572 +1493,10 @@ export interface components {
             visibility: string;
         };
         /**
-         * RecordGroupByRequest
-         * @description Tigrbl v3 Record group_by schema
+         * ProductRepositoryListResponse
+         * @description Tigrbl v3 ProductRepository list schema
          */
-        RecordGroupByRequest: {
-            /**
-             * Body Markdown
-             * @default null
-             */
-            body_markdown: string | null;
-            /**
-             * Canonical Url
-             * @default null
-             */
-            canonical_url: string | null;
-            /**
-             * Content
-             * @default null
-             */
-            content: {
-                [key: string]: unknown;
-            } | null;
-            /**
-             * Content Revision
-             * @default null
-             */
-            content_revision: number;
-            /**
-             * Eyebrow
-             * @default null
-             */
-            eyebrow: string | null;
-            /**
-             * Featured
-             * @default null
-             */
-            featured: boolean;
-            /**
-             * Id
-             * @default null
-             */
-            id: string;
-            /**
-             * Maturity
-             * @default null
-             */
-            maturity: string | null;
-            /** Organization Id */
-            organization_id: string;
-            /**
-             * Published At
-             * @default null
-             */
-            published_at: string | null;
-            /** Record Type */
-            record_type: string;
-            /** Slug */
-            slug: string;
-            /**
-             * Source Url
-             * @default null
-             */
-            source_url: string | null;
-            /** Summary */
-            summary: string;
-            /** Title */
-            title: string;
-            /**
-             * Updated At
-             * @default null
-             */
-            updated_at: string | null;
-            /**
-             * Visibility
-             * @default null
-             */
-            visibility: string;
-        };
-        /**
-         * RecordGroupByResponse
-         * @description Tigrbl v3 Record group_by schema
-         */
-        RecordGroupByResponse: {
-            /**
-             * Body Markdown
-             * @default null
-             */
-            body_markdown: string | null;
-            /**
-             * Canonical Url
-             * @default null
-             */
-            canonical_url: string | null;
-            /**
-             * Content
-             * @default null
-             */
-            content: {
-                [key: string]: unknown;
-            } | null;
-            /**
-             * Content Revision
-             * @default null
-             */
-            content_revision: number;
-            /**
-             * Eyebrow
-             * @default null
-             */
-            eyebrow: string | null;
-            /**
-             * Featured
-             * @default null
-             */
-            featured: boolean;
-            /**
-             * Id
-             * @default null
-             */
-            id: string;
-            /**
-             * Maturity
-             * @default null
-             */
-            maturity: string | null;
-            /** Organization Id */
-            organization_id: string;
-            /**
-             * Published At
-             * @default null
-             */
-            published_at: string | null;
-            /** Record Type */
-            record_type: string;
-            /** Slug */
-            slug: string;
-            /**
-             * Source Url
-             * @default null
-             */
-            source_url: string | null;
-            /** Summary */
-            summary: string;
-            /** Title */
-            title: string;
-            /**
-             * Updated At
-             * @default null
-             */
-            updated_at: string | null;
-            /**
-             * Visibility
-             * @default null
-             */
-            visibility: string;
-        };
-        /**
-         * RecordPackageCountResponse
-         * @description Tigrbl v3 RecordPackage count schema
-         */
-        RecordPackageCountResponse: {
-            /**
-             * Id
-             * @default null
-             */
-            id: string;
-            /** Package Id */
-            package_id: string;
-            /** Record Id */
-            record_id: string;
-            /**
-             * Role
-             * @default null
-             */
-            role: string;
-        };
-        /**
-         * RecordPackageExistsResponse
-         * @description Tigrbl v3 RecordPackage exists schema
-         */
-        RecordPackageExistsResponse: {
-            /**
-             * Id
-             * @default null
-             */
-            id: string;
-            /** Package Id */
-            package_id: string;
-            /** Record Id */
-            record_id: string;
-            /**
-             * Role
-             * @default null
-             */
-            role: string;
-        };
-        /**
-         * RecordPackageGroupByRequest
-         * @description Tigrbl v3 RecordPackage group_by schema
-         */
-        RecordPackageGroupByRequest: {
-            /**
-             * Id
-             * @default null
-             */
-            id: string;
-            /** Package Id */
-            package_id: string;
-            /** Record Id */
-            record_id: string;
-            /**
-             * Role
-             * @default null
-             */
-            role: string;
-        };
-        /**
-         * RecordPackageGroupByResponse
-         * @description Tigrbl v3 RecordPackage group_by schema
-         */
-        RecordPackageGroupByResponse: {
-            /**
-             * Id
-             * @default null
-             */
-            id: string;
-            /** Package Id */
-            package_id: string;
-            /** Record Id */
-            record_id: string;
-            /**
-             * Role
-             * @default null
-             */
-            role: string;
-        };
-        /**
-         * RecordRelationCountResponse
-         * @description Tigrbl v3 RecordRelation count schema
-         */
-        RecordRelationCountResponse: {
-            /**
-             * Id
-             * @default null
-             */
-            id: string;
-            /**
-             * Note
-             * @default null
-             */
-            note: string | null;
-            /** Relation Type */
-            relation_type: string;
-            /** Source Record Id */
-            source_record_id: string;
-            /** Target Record Id */
-            target_record_id: string;
-        };
-        /**
-         * RecordRelationExistsResponse
-         * @description Tigrbl v3 RecordRelation exists schema
-         */
-        RecordRelationExistsResponse: {
-            /**
-             * Id
-             * @default null
-             */
-            id: string;
-            /**
-             * Note
-             * @default null
-             */
-            note: string | null;
-            /** Relation Type */
-            relation_type: string;
-            /** Source Record Id */
-            source_record_id: string;
-            /** Target Record Id */
-            target_record_id: string;
-        };
-        /**
-         * RecordRelationGroupByRequest
-         * @description Tigrbl v3 RecordRelation group_by schema
-         */
-        RecordRelationGroupByRequest: {
-            /**
-             * Id
-             * @default null
-             */
-            id: string;
-            /**
-             * Note
-             * @default null
-             */
-            note: string | null;
-            /** Relation Type */
-            relation_type: string;
-            /** Source Record Id */
-            source_record_id: string;
-            /** Target Record Id */
-            target_record_id: string;
-        };
-        /**
-         * RecordRelationGroupByResponse
-         * @description Tigrbl v3 RecordRelation group_by schema
-         */
-        RecordRelationGroupByResponse: {
-            /**
-             * Id
-             * @default null
-             */
-            id: string;
-            /**
-             * Note
-             * @default null
-             */
-            note: string | null;
-            /** Relation Type */
-            relation_type: string;
-            /** Source Record Id */
-            source_record_id: string;
-            /** Target Record Id */
-            target_record_id: string;
-        };
-        /**
-         * RecordRepositoryCountResponse
-         * @description Tigrbl v3 RecordRepository count schema
-         */
-        RecordRepositoryCountResponse: {
-            /**
-             * Id
-             * @default null
-             */
-            id: string;
-            /** Record Id */
-            record_id: string;
-            /** Repository Id */
-            repository_id: string;
-            /**
-             * Role
-             * @default null
-             */
-            role: string;
-        };
-        /**
-         * RecordRepositoryExistsResponse
-         * @description Tigrbl v3 RecordRepository exists schema
-         */
-        RecordRepositoryExistsResponse: {
-            /**
-             * Id
-             * @default null
-             */
-            id: string;
-            /** Record Id */
-            record_id: string;
-            /** Repository Id */
-            repository_id: string;
-            /**
-             * Role
-             * @default null
-             */
-            role: string;
-        };
-        /**
-         * RecordRepositoryGroupByRequest
-         * @description Tigrbl v3 RecordRepository group_by schema
-         */
-        RecordRepositoryGroupByRequest: {
-            /**
-             * Id
-             * @default null
-             */
-            id: string;
-            /** Record Id */
-            record_id: string;
-            /** Repository Id */
-            repository_id: string;
-            /**
-             * Role
-             * @default null
-             */
-            role: string;
-        };
-        /**
-         * RecordRepositoryGroupByResponse
-         * @description Tigrbl v3 RecordRepository group_by schema
-         */
-        RecordRepositoryGroupByResponse: {
-            /**
-             * Id
-             * @default null
-             */
-            id: string;
-            /** Record Id */
-            record_id: string;
-            /** Repository Id */
-            repository_id: string;
-            /**
-             * Role
-             * @default null
-             */
-            role: string;
-        };
-        /**
-         * RecordResourceCountResponse
-         * @description Tigrbl v3 RecordResource count schema
-         */
-        RecordResourceCountResponse: {
-            /**
-             * Id
-             * @default null
-             */
-            id: string;
-            /** Record Id */
-            record_id: string;
-            /** Resource Id */
-            resource_id: string;
-            /** Role */
-            role: string;
-            /**
-             * Sort Order
-             * @default null
-             */
-            sort_order: number;
-        };
-        /**
-         * RecordResourceExistsResponse
-         * @description Tigrbl v3 RecordResource exists schema
-         */
-        RecordResourceExistsResponse: {
-            /**
-             * Id
-             * @default null
-             */
-            id: string;
-            /** Record Id */
-            record_id: string;
-            /** Resource Id */
-            resource_id: string;
-            /** Role */
-            role: string;
-            /**
-             * Sort Order
-             * @default null
-             */
-            sort_order: number;
-        };
-        /**
-         * RecordResourceGroupByRequest
-         * @description Tigrbl v3 RecordResource group_by schema
-         */
-        RecordResourceGroupByRequest: {
-            /**
-             * Id
-             * @default null
-             */
-            id: string;
-            /** Record Id */
-            record_id: string;
-            /** Resource Id */
-            resource_id: string;
-            /** Role */
-            role: string;
-            /**
-             * Sort Order
-             * @default null
-             */
-            sort_order: number;
-        };
-        /**
-         * RecordResourceGroupByResponse
-         * @description Tigrbl v3 RecordResource group_by schema
-         */
-        RecordResourceGroupByResponse: {
-            /**
-             * Id
-             * @default null
-             */
-            id: string;
-            /** Record Id */
-            record_id: string;
-            /** Resource Id */
-            resource_id: string;
-            /** Role */
-            role: string;
-            /**
-             * Sort Order
-             * @default null
-             */
-            sort_order: number;
-        };
-        /**
-         * RecordTaxonomyCountResponse
-         * @description Tigrbl v3 RecordTaxonomy count schema
-         */
-        RecordTaxonomyCountResponse: {
-            /**
-             * Id
-             * @default null
-             */
-            id: string;
-            /** Record Id */
-            record_id: string;
-            /** Taxonomy Id */
-            taxonomy_id: string;
-        };
-        /**
-         * RecordTaxonomyExistsResponse
-         * @description Tigrbl v3 RecordTaxonomy exists schema
-         */
-        RecordTaxonomyExistsResponse: {
-            /**
-             * Id
-             * @default null
-             */
-            id: string;
-            /** Record Id */
-            record_id: string;
-            /** Taxonomy Id */
-            taxonomy_id: string;
-        };
-        /**
-         * RecordTaxonomyGroupByRequest
-         * @description Tigrbl v3 RecordTaxonomy group_by schema
-         */
-        RecordTaxonomyGroupByRequest: {
-            /**
-             * Id
-             * @default null
-             */
-            id: string;
-            /** Record Id */
-            record_id: string;
-            /** Taxonomy Id */
-            taxonomy_id: string;
-        };
-        /**
-         * RecordTaxonomyGroupByResponse
-         * @description Tigrbl v3 RecordTaxonomy group_by schema
-         */
-        RecordTaxonomyGroupByResponse: {
-            /**
-             * Id
-             * @default null
-             */
-            id: string;
-            /** Record Id */
-            record_id: string;
-            /** Taxonomy Id */
-            taxonomy_id: string;
-        };
-        /**
-         * ReleaseCountResponse
-         * @description Tigrbl v3 Release count schema
-         */
-        ReleaseCountResponse: {
-            /**
-             * Downloads
-             * @default null
-             */
-            downloads: number | string | null;
-            /**
-             * Draft
-             * @default null
-             */
-            draft: boolean;
+        ProductRepositoryListResponse: {
             /**
              * Id
              * @default null
@@ -4510,53 +1507,26 @@ export interface components {
              * @default null
              */
             observed_at: string | null;
+            /** Product Id */
+            product_id: string;
+            /** Repository Id */
+            repository_id: string;
             /**
-             * Package Id
+             * Role
              * @default null
              */
-            package_id: string | null;
+            role: string;
             /**
-             * Prerelease
+             * Sort Order
              * @default null
              */
-            prerelease: boolean;
-            /**
-             * Published At
-             * @default null
-             */
-            published_at: string | null;
-            /** Release Kind */
-            release_kind: string;
-            /**
-             * Repository Id
-             * @default null
-             */
-            repository_id: string | null;
-            /**
-             * Route Key
-             * @default null
-             */
-            route_key: string | null;
-            /** Url */
-            url: string;
-            /** Version */
-            version: string;
+            sort_order: number;
         };
         /**
-         * ReleaseExistsResponse
-         * @description Tigrbl v3 Release exists schema
+         * ProductRepositoryReadResponse
+         * @description Tigrbl v3 ProductRepository read schema
          */
-        ReleaseExistsResponse: {
-            /**
-             * Downloads
-             * @default null
-             */
-            downloads: number | string | null;
-            /**
-             * Draft
-             * @default null
-             */
-            draft: boolean;
+        ProductRepositoryReadResponse: {
             /**
              * Id
              * @default null
@@ -4567,53 +1537,26 @@ export interface components {
              * @default null
              */
             observed_at: string | null;
+            /** Product Id */
+            product_id: string;
+            /** Repository Id */
+            repository_id: string;
             /**
-             * Package Id
+             * Role
              * @default null
              */
-            package_id: string | null;
+            role: string;
             /**
-             * Prerelease
+             * Sort Order
              * @default null
              */
-            prerelease: boolean;
-            /**
-             * Published At
-             * @default null
-             */
-            published_at: string | null;
-            /** Release Kind */
-            release_kind: string;
-            /**
-             * Repository Id
-             * @default null
-             */
-            repository_id: string | null;
-            /**
-             * Route Key
-             * @default null
-             */
-            route_key: string | null;
-            /** Url */
-            url: string;
-            /** Version */
-            version: string;
+            sort_order: number;
         };
         /**
-         * ReleaseGroupByRequest
-         * @description Tigrbl v3 Release group_by schema
+         * ProductResourceListResponse
+         * @description Tigrbl v3 ProductResource list schema
          */
-        ReleaseGroupByRequest: {
-            /**
-             * Downloads
-             * @default null
-             */
-            downloads: number | string | null;
-            /**
-             * Draft
-             * @default null
-             */
-            draft: boolean;
+        ProductResourceListResponse: {
             /**
              * Id
              * @default null
@@ -4624,53 +1567,26 @@ export interface components {
              * @default null
              */
             observed_at: string | null;
+            /** Product Id */
+            product_id: string;
+            /** Resource Id */
+            resource_id: string;
             /**
-             * Package Id
+             * Role
              * @default null
              */
-            package_id: string | null;
+            role: string;
             /**
-             * Prerelease
+             * Sort Order
              * @default null
              */
-            prerelease: boolean;
-            /**
-             * Published At
-             * @default null
-             */
-            published_at: string | null;
-            /** Release Kind */
-            release_kind: string;
-            /**
-             * Repository Id
-             * @default null
-             */
-            repository_id: string | null;
-            /**
-             * Route Key
-             * @default null
-             */
-            route_key: string | null;
-            /** Url */
-            url: string;
-            /** Version */
-            version: string;
+            sort_order: number;
         };
         /**
-         * ReleaseGroupByResponse
-         * @description Tigrbl v3 Release group_by schema
+         * ProductResourceReadResponse
+         * @description Tigrbl v3 ProductResource read schema
          */
-        ReleaseGroupByResponse: {
-            /**
-             * Downloads
-             * @default null
-             */
-            downloads: number | string | null;
-            /**
-             * Draft
-             * @default null
-             */
-            draft: boolean;
+        ProductResourceReadResponse: {
             /**
              * Id
              * @default null
@@ -4681,163 +1597,26 @@ export interface components {
              * @default null
              */
             observed_at: string | null;
+            /** Product Id */
+            product_id: string;
+            /** Resource Id */
+            resource_id: string;
             /**
-             * Package Id
+             * Role
              * @default null
              */
-            package_id: string | null;
+            role: string;
             /**
-             * Prerelease
+             * Sort Order
              * @default null
              */
-            prerelease: boolean;
-            /**
-             * Published At
-             * @default null
-             */
-            published_at: string | null;
-            /** Release Kind */
-            release_kind: string;
-            /**
-             * Repository Id
-             * @default null
-             */
-            repository_id: string | null;
-            /**
-             * Route Key
-             * @default null
-             */
-            route_key: string | null;
-            /** Url */
-            url: string;
-            /** Version */
-            version: string;
+            sort_order: number;
         };
         /**
-         * RepositoryContributorCountResponse
-         * @description Tigrbl v3 RepositoryContributor count schema
+         * RepositoryListResponse
+         * @description Tigrbl v3 Repository list schema
          */
-        RepositoryContributorCountResponse: {
-            /**
-             * Contributions
-             * @default null
-             */
-            contributions: number;
-            /**
-             * Id
-             * @default null
-             */
-            id: string;
-            /** Login */
-            login: string;
-            /**
-             * Observed At
-             * Format: date-time
-             */
-            observed_at: string;
-            /**
-             * Profile Url
-             * @default null
-             */
-            profile_url: string | null;
-            /** Repository Id */
-            repository_id: string;
-        };
-        /**
-         * RepositoryContributorExistsResponse
-         * @description Tigrbl v3 RepositoryContributor exists schema
-         */
-        RepositoryContributorExistsResponse: {
-            /**
-             * Contributions
-             * @default null
-             */
-            contributions: number;
-            /**
-             * Id
-             * @default null
-             */
-            id: string;
-            /** Login */
-            login: string;
-            /**
-             * Observed At
-             * Format: date-time
-             */
-            observed_at: string;
-            /**
-             * Profile Url
-             * @default null
-             */
-            profile_url: string | null;
-            /** Repository Id */
-            repository_id: string;
-        };
-        /**
-         * RepositoryContributorGroupByRequest
-         * @description Tigrbl v3 RepositoryContributor group_by schema
-         */
-        RepositoryContributorGroupByRequest: {
-            /**
-             * Contributions
-             * @default null
-             */
-            contributions: number;
-            /**
-             * Id
-             * @default null
-             */
-            id: string;
-            /** Login */
-            login: string;
-            /**
-             * Observed At
-             * Format: date-time
-             */
-            observed_at: string;
-            /**
-             * Profile Url
-             * @default null
-             */
-            profile_url: string | null;
-            /** Repository Id */
-            repository_id: string;
-        };
-        /**
-         * RepositoryContributorGroupByResponse
-         * @description Tigrbl v3 RepositoryContributor group_by schema
-         */
-        RepositoryContributorGroupByResponse: {
-            /**
-             * Contributions
-             * @default null
-             */
-            contributions: number;
-            /**
-             * Id
-             * @default null
-             */
-            id: string;
-            /** Login */
-            login: string;
-            /**
-             * Observed At
-             * Format: date-time
-             */
-            observed_at: string;
-            /**
-             * Profile Url
-             * @default null
-             */
-            profile_url: string | null;
-            /** Repository Id */
-            repository_id: string;
-        };
-        /**
-         * RepositoryCountResponse
-         * @description Tigrbl v3 Repository count schema
-         */
-        RepositoryCountResponse: {
+        RepositoryListResponse: {
             /**
              * Default Branch
              * @default null
@@ -4920,10 +1699,80 @@ export interface components {
             url: string;
         };
         /**
-         * RepositoryExistsResponse
-         * @description Tigrbl v3 Repository exists schema
+         * RepositoryPackageListResponse
+         * @description Tigrbl v3 RepositoryPackage list schema
          */
-        RepositoryExistsResponse: {
+        RepositoryPackageListResponse: {
+            /**
+             * Id
+             * @default null
+             */
+            id: string;
+            /**
+             * Observed At
+             * @default null
+             */
+            observed_at: string | null;
+            /** Package Id */
+            package_id: string;
+            /** Repository Id */
+            repository_id: string;
+            /**
+             * Repository Path
+             * @default null
+             */
+            repository_path: string | null;
+            /**
+             * Role
+             * @default null
+             */
+            role: string;
+            /**
+             * Sort Order
+             * @default null
+             */
+            sort_order: number;
+        };
+        /**
+         * RepositoryPackageReadResponse
+         * @description Tigrbl v3 RepositoryPackage read schema
+         */
+        RepositoryPackageReadResponse: {
+            /**
+             * Id
+             * @default null
+             */
+            id: string;
+            /**
+             * Observed At
+             * @default null
+             */
+            observed_at: string | null;
+            /** Package Id */
+            package_id: string;
+            /** Repository Id */
+            repository_id: string;
+            /**
+             * Repository Path
+             * @default null
+             */
+            repository_path: string | null;
+            /**
+             * Role
+             * @default null
+             */
+            role: string;
+            /**
+             * Sort Order
+             * @default null
+             */
+            sort_order: number;
+        };
+        /**
+         * RepositoryReadResponse
+         * @description Tigrbl v3 Repository read schema
+         */
+        RepositoryReadResponse: {
             /**
              * Default Branch
              * @default null
@@ -5006,42 +1855,402 @@ export interface components {
             url: string;
         };
         /**
-         * RepositoryGroupByRequest
-         * @description Tigrbl v3 Repository group_by schema
+         * RepositoryResourceListResponse
+         * @description Tigrbl v3 RepositoryResource list schema
          */
-        RepositoryGroupByRequest: {
-            /**
-             * Default Branch
-             * @default null
-             */
-            default_branch: string | null;
-            /**
-             * Description
-             * @default null
-             */
-            description: string | null;
+        RepositoryResourceListResponse: {
             /**
              * Id
              * @default null
              */
             id: string;
             /**
-             * Is Archived
+             * Observed At
              * @default null
              */
-            is_archived: boolean;
+            observed_at: string | null;
+            /** Repository Id */
+            repository_id: string;
             /**
-             * Is Fork
+             * Repository Path
              * @default null
              */
-            is_fork: boolean;
+            repository_path: string | null;
+            /** Resource Id */
+            resource_id: string;
             /**
-             * License Expression
+             * Role
              * @default null
              */
-            license_expression: string | null;
+            role: string;
+            /**
+             * Sort Order
+             * @default null
+             */
+            sort_order: number;
+        };
+        /**
+         * RepositoryResourceReadResponse
+         * @description Tigrbl v3 RepositoryResource read schema
+         */
+        RepositoryResourceReadResponse: {
+            /**
+             * Id
+             * @default null
+             */
+            id: string;
+            /**
+             * Observed At
+             * @default null
+             */
+            observed_at: string | null;
+            /** Repository Id */
+            repository_id: string;
+            /**
+             * Repository Path
+             * @default null
+             */
+            repository_path: string | null;
+            /** Resource Id */
+            resource_id: string;
+            /**
+             * Role
+             * @default null
+             */
+            role: string;
+            /**
+             * Sort Order
+             * @default null
+             */
+            sort_order: number;
+        };
+        /**
+         * RepositorySsotItemListResponse
+         * @description Tigrbl v3 RepositorySsotItem list schema
+         */
+        RepositorySsotItemListResponse: {
+            /** Entity Id */
+            entity_id: string;
+            /** Entity Kind */
+            entity_kind: string;
+            /**
+             * Id
+             * @default null
+             */
+            id: string;
+            /**
+             * Implementation Status
+             * @default null
+             */
+            implementation_status: string | null;
+            /**
+             * Payload
+             * @default null
+             */
+            payload: {
+                [key: string]: unknown;
+            } | null;
+            /** Registry Id */
+            registry_id: string;
+            /**
+             * Status
+             * @default null
+             */
+            status: string | null;
+            /**
+             * Title
+             * @default null
+             */
+            title: string | null;
+        };
+        /**
+         * RepositorySsotItemReadResponse
+         * @description Tigrbl v3 RepositorySsotItem read schema
+         */
+        RepositorySsotItemReadResponse: {
+            /** Entity Id */
+            entity_id: string;
+            /** Entity Kind */
+            entity_kind: string;
+            /**
+             * Id
+             * @default null
+             */
+            id: string;
+            /**
+             * Implementation Status
+             * @default null
+             */
+            implementation_status: string | null;
+            /**
+             * Payload
+             * @default null
+             */
+            payload: {
+                [key: string]: unknown;
+            } | null;
+            /** Registry Id */
+            registry_id: string;
+            /**
+             * Status
+             * @default null
+             */
+            status: string | null;
+            /**
+             * Title
+             * @default null
+             */
+            title: string | null;
+        };
+        /**
+         * RepositorySsotRegistryListResponse
+         * @description Tigrbl v3 RepositorySsotRegistry list schema
+         */
+        RepositorySsotRegistryListResponse: {
+            /**
+             * Id
+             * @default null
+             */
+            id: string;
+            /**
+             * Observed At
+             * Format: date-time
+             */
+            observed_at: string;
+            /** Registry Url */
+            registry_url: string;
+            /** Repository Id */
+            repository_id: string;
+            /**
+             * Schema Version
+             * @default null
+             */
+            schema_version: string | null;
+            /**
+             * Source Sha256
+             * @default null
+             */
+            source_sha256: string | null;
+            /**
+             * Valid
+             * @default null
+             */
+            valid: boolean;
+        };
+        /**
+         * RepositorySsotRegistryReadResponse
+         * @description Tigrbl v3 RepositorySsotRegistry read schema
+         */
+        RepositorySsotRegistryReadResponse: {
+            /**
+             * Id
+             * @default null
+             */
+            id: string;
+            /**
+             * Observed At
+             * Format: date-time
+             */
+            observed_at: string;
+            /** Registry Url */
+            registry_url: string;
+            /** Repository Id */
+            repository_id: string;
+            /**
+             * Schema Version
+             * @default null
+             */
+            schema_version: string | null;
+            /**
+             * Source Sha256
+             * @default null
+             */
+            source_sha256: string | null;
+            /**
+             * Valid
+             * @default null
+             */
+            valid: boolean;
+        };
+        /**
+         * RepositoryTechnologyListResponse
+         * @description Tigrbl v3 RepositoryTechnology list schema
+         */
+        RepositoryTechnologyListResponse: {
+            /**
+             * Bytes
+             * @default null
+             */
+            bytes: number | null;
+            /**
+             * Id
+             * @default null
+             */
+            id: string;
+            /**
+             * Observed At
+             * @default null
+             */
+            observed_at: string | null;
+            /**
+             * Percentage
+             * @default null
+             */
+            percentage: number | string | null;
+            /** Repository Id */
+            repository_id: string;
+            /**
+             * Role
+             * @default null
+             */
+            role: string;
+            /** Technology Id */
+            technology_id: string;
+        };
+        /**
+         * RepositoryTechnologyReadResponse
+         * @description Tigrbl v3 RepositoryTechnology read schema
+         */
+        RepositoryTechnologyReadResponse: {
+            /**
+             * Bytes
+             * @default null
+             */
+            bytes: number | null;
+            /**
+             * Id
+             * @default null
+             */
+            id: string;
+            /**
+             * Observed At
+             * @default null
+             */
+            observed_at: string | null;
+            /**
+             * Percentage
+             * @default null
+             */
+            percentage: number | string | null;
+            /** Repository Id */
+            repository_id: string;
+            /**
+             * Role
+             * @default null
+             */
+            role: string;
+            /** Technology Id */
+            technology_id: string;
+        };
+        /**
+         * TechnologyListResponse
+         * @description Tigrbl v3 Technology list schema
+         */
+        TechnologyListResponse: {
+            /** Category */
+            category: string;
+            /**
+             * Description
+             * @default null
+             */
+            description: string | null;
+            /**
+             * Icon Key
+             * @default null
+             */
+            icon_key: string | null;
+            /**
+             * Id
+             * @default null
+             */
+            id: string;
             /** Name */
             name: string;
+            /**
+             * Observed At
+             * @default null
+             */
+            observed_at: string | null;
+            /** Slug */
+            slug: string;
+            /**
+             * Source Url
+             * @default null
+             */
+            source_url: string | null;
+            /**
+             * Website Url
+             * @default null
+             */
+            website_url: string | null;
+        };
+        /**
+         * TechnologyReadResponse
+         * @description Tigrbl v3 Technology read schema
+         */
+        TechnologyReadResponse: {
+            /** Category */
+            category: string;
+            /**
+             * Description
+             * @default null
+             */
+            description: string | null;
+            /**
+             * Icon Key
+             * @default null
+             */
+            icon_key: string | null;
+            /**
+             * Id
+             * @default null
+             */
+            id: string;
+            /** Name */
+            name: string;
+            /**
+             * Observed At
+             * @default null
+             */
+            observed_at: string | null;
+            /** Slug */
+            slug: string;
+            /**
+             * Source Url
+             * @default null
+             */
+            source_url: string | null;
+            /**
+             * Website Url
+             * @default null
+             */
+            website_url: string | null;
+        };
+        /**
+         * TypedResourceListResponse
+         * @description Tigrbl v3 TypedResource list schema
+         */
+        TypedResourceListResponse: {
+            /**
+             * Canonical Path
+             * @default null
+             */
+            canonical_path: string | null;
+            /**
+             * Http Status
+             * @default null
+             */
+            http_status: number | null;
+            /**
+             * Id
+             * @default null
+             */
+            id: string;
+            /**
+             * Last Checked At
+             * @default null
+             */
+            last_checked_at: string | null;
             /**
              * Observed At
              * @default null
@@ -5052,82 +2261,63 @@ export interface components {
              * @default null
              */
             organization_id: string | null;
-            /** Owner */
-            owner: string;
-            /** Provider */
-            provider: string;
             /**
-             * Ssot Governed
+             * Reachability
              * @default null
              */
-            ssot_governed: boolean;
+            reachability: string;
             /**
-             * Ssot Observed At
+             * Repository Id
              * @default null
              */
-            ssot_observed_at: string | null;
+            repository_id: string | null;
             /**
-             * Ssot Registry Sha256
+             * Repository Path
              * @default null
              */
-            ssot_registry_sha256: string | null;
+            repository_path: string | null;
+            /** Resource Type */
+            resource_type: string;
             /**
-             * Ssot Registry Url
+             * Source Url
              * @default null
              */
-            ssot_registry_url: string | null;
+            source_url: string | null;
             /**
-             * Ssot Schema Version
+             * Summary
              * @default null
              */
-            ssot_schema_version: string | null;
-            /**
-             * Ssot Summary
-             * @default null
-             */
-            ssot_summary: {
-                [key: string]: unknown;
-            } | null;
+            summary: string | null;
+            /** Title */
+            title: string;
             /** Url */
             url: string;
         };
         /**
-         * RepositoryGroupByResponse
-         * @description Tigrbl v3 Repository group_by schema
+         * TypedResourceReadResponse
+         * @description Tigrbl v3 TypedResource read schema
          */
-        RepositoryGroupByResponse: {
+        TypedResourceReadResponse: {
             /**
-             * Default Branch
+             * Canonical Path
              * @default null
              */
-            default_branch: string | null;
+            canonical_path: string | null;
             /**
-             * Description
+             * Http Status
              * @default null
              */
-            description: string | null;
+            http_status: number | null;
             /**
              * Id
              * @default null
              */
             id: string;
             /**
-             * Is Archived
+             * Last Checked At
              * @default null
              */
-            is_archived: boolean;
-            /**
-             * Is Fork
-             * @default null
-             */
-            is_fork: boolean;
-            /**
-             * License Expression
-             * @default null
-             */
-            license_expression: string | null;
-            /** Name */
-            name: string;
+            last_checked_at: string | null;
             /**
              * Observed At
              * @default null
@@ -5138,543 +2328,23 @@ export interface components {
              * @default null
              */
             organization_id: string | null;
-            /** Owner */
-            owner: string;
-            /** Provider */
-            provider: string;
             /**
-             * Ssot Governed
+             * Reachability
              * @default null
              */
-            ssot_governed: boolean;
-            /**
-             * Ssot Observed At
-             * @default null
-             */
-            ssot_observed_at: string | null;
-            /**
-             * Ssot Registry Sha256
-             * @default null
-             */
-            ssot_registry_sha256: string | null;
-            /**
-             * Ssot Registry Url
-             * @default null
-             */
-            ssot_registry_url: string | null;
-            /**
-             * Ssot Schema Version
-             * @default null
-             */
-            ssot_schema_version: string | null;
-            /**
-             * Ssot Summary
-             * @default null
-             */
-            ssot_summary: {
-                [key: string]: unknown;
-            } | null;
-            /** Url */
-            url: string;
-        };
-        /**
-         * RepositoryLanguageCountResponse
-         * @description Tigrbl v3 RepositoryLanguage count schema
-         */
-        RepositoryLanguageCountResponse: {
-            /**
-             * Bytes
-             * @default null
-             */
-            bytes: number;
-            /**
-             * Id
-             * @default null
-             */
-            id: string;
-            /** Language */
-            language: string;
-            /**
-             * Observed At
-             * Format: date-time
-             */
-            observed_at: string;
-            /**
-             * Percentage
-             * @default null
-             */
-            percentage: number | string;
-            /** Repository Id */
-            repository_id: string;
-        };
-        /**
-         * RepositoryLanguageExistsResponse
-         * @description Tigrbl v3 RepositoryLanguage exists schema
-         */
-        RepositoryLanguageExistsResponse: {
-            /**
-             * Bytes
-             * @default null
-             */
-            bytes: number;
-            /**
-             * Id
-             * @default null
-             */
-            id: string;
-            /** Language */
-            language: string;
-            /**
-             * Observed At
-             * Format: date-time
-             */
-            observed_at: string;
-            /**
-             * Percentage
-             * @default null
-             */
-            percentage: number | string;
-            /** Repository Id */
-            repository_id: string;
-        };
-        /**
-         * RepositoryLanguageGroupByRequest
-         * @description Tigrbl v3 RepositoryLanguage group_by schema
-         */
-        RepositoryLanguageGroupByRequest: {
-            /**
-             * Bytes
-             * @default null
-             */
-            bytes: number;
-            /**
-             * Id
-             * @default null
-             */
-            id: string;
-            /** Language */
-            language: string;
-            /**
-             * Observed At
-             * Format: date-time
-             */
-            observed_at: string;
-            /**
-             * Percentage
-             * @default null
-             */
-            percentage: number | string;
-            /** Repository Id */
-            repository_id: string;
-        };
-        /**
-         * RepositoryLanguageGroupByResponse
-         * @description Tigrbl v3 RepositoryLanguage group_by schema
-         */
-        RepositoryLanguageGroupByResponse: {
-            /**
-             * Bytes
-             * @default null
-             */
-            bytes: number;
-            /**
-             * Id
-             * @default null
-             */
-            id: string;
-            /** Language */
-            language: string;
-            /**
-             * Observed At
-             * Format: date-time
-             */
-            observed_at: string;
-            /**
-             * Percentage
-             * @default null
-             */
-            percentage: number | string;
-            /** Repository Id */
-            repository_id: string;
-        };
-        /**
-         * RepositorySsotInventoryCountResponse
-         * @description Tigrbl v3 RepositorySsotInventory count schema
-         */
-        RepositorySsotInventoryCountResponse: {
-            /** Entity Id */
-            entity_id: string;
-            /** Entity Kind */
-            entity_kind: string;
-            /**
-             * Id
-             * @default null
-             */
-            id: string;
-            /**
-             * Implementation Status
-             * @default null
-             */
-            implementation_status: string | null;
-            /**
-             * Payload
-             * @default null
-             */
-            payload: {
-                [key: string]: unknown;
-            } | null;
-            /** Registry Id */
-            registry_id: string;
-            /**
-             * Status
-             * @default null
-             */
-            status: string | null;
-            /**
-             * Title
-             * @default null
-             */
-            title: string | null;
-        };
-        /**
-         * RepositorySsotInventoryExistsResponse
-         * @description Tigrbl v3 RepositorySsotInventory exists schema
-         */
-        RepositorySsotInventoryExistsResponse: {
-            /** Entity Id */
-            entity_id: string;
-            /** Entity Kind */
-            entity_kind: string;
-            /**
-             * Id
-             * @default null
-             */
-            id: string;
-            /**
-             * Implementation Status
-             * @default null
-             */
-            implementation_status: string | null;
-            /**
-             * Payload
-             * @default null
-             */
-            payload: {
-                [key: string]: unknown;
-            } | null;
-            /** Registry Id */
-            registry_id: string;
-            /**
-             * Status
-             * @default null
-             */
-            status: string | null;
-            /**
-             * Title
-             * @default null
-             */
-            title: string | null;
-        };
-        /**
-         * RepositorySsotInventoryGroupByRequest
-         * @description Tigrbl v3 RepositorySsotInventory group_by schema
-         */
-        RepositorySsotInventoryGroupByRequest: {
-            /** Entity Id */
-            entity_id: string;
-            /** Entity Kind */
-            entity_kind: string;
-            /**
-             * Id
-             * @default null
-             */
-            id: string;
-            /**
-             * Implementation Status
-             * @default null
-             */
-            implementation_status: string | null;
-            /**
-             * Payload
-             * @default null
-             */
-            payload: {
-                [key: string]: unknown;
-            } | null;
-            /** Registry Id */
-            registry_id: string;
-            /**
-             * Status
-             * @default null
-             */
-            status: string | null;
-            /**
-             * Title
-             * @default null
-             */
-            title: string | null;
-        };
-        /**
-         * RepositorySsotInventoryGroupByResponse
-         * @description Tigrbl v3 RepositorySsotInventory group_by schema
-         */
-        RepositorySsotInventoryGroupByResponse: {
-            /** Entity Id */
-            entity_id: string;
-            /** Entity Kind */
-            entity_kind: string;
-            /**
-             * Id
-             * @default null
-             */
-            id: string;
-            /**
-             * Implementation Status
-             * @default null
-             */
-            implementation_status: string | null;
-            /**
-             * Payload
-             * @default null
-             */
-            payload: {
-                [key: string]: unknown;
-            } | null;
-            /** Registry Id */
-            registry_id: string;
-            /**
-             * Status
-             * @default null
-             */
-            status: string | null;
-            /**
-             * Title
-             * @default null
-             */
-            title: string | null;
-        };
-        /**
-         * RepositorySsotRegistryCountResponse
-         * @description Tigrbl v3 RepositorySsotRegistry count schema
-         */
-        RepositorySsotRegistryCountResponse: {
-            /**
-             * Id
-             * @default null
-             */
-            id: string;
-            /**
-             * Observed At
-             * Format: date-time
-             */
-            observed_at: string;
-            /** Registry Url */
-            registry_url: string;
-            /** Repository Id */
-            repository_id: string;
-            /**
-             * Schema Version
-             * @default null
-             */
-            schema_version: string | null;
-            /**
-             * Source Sha256
-             * @default null
-             */
-            source_sha256: string | null;
-            /**
-             * Valid
-             * @default null
-             */
-            valid: boolean;
-        };
-        /**
-         * RepositorySsotRegistryExistsResponse
-         * @description Tigrbl v3 RepositorySsotRegistry exists schema
-         */
-        RepositorySsotRegistryExistsResponse: {
-            /**
-             * Id
-             * @default null
-             */
-            id: string;
-            /**
-             * Observed At
-             * Format: date-time
-             */
-            observed_at: string;
-            /** Registry Url */
-            registry_url: string;
-            /** Repository Id */
-            repository_id: string;
-            /**
-             * Schema Version
-             * @default null
-             */
-            schema_version: string | null;
-            /**
-             * Source Sha256
-             * @default null
-             */
-            source_sha256: string | null;
-            /**
-             * Valid
-             * @default null
-             */
-            valid: boolean;
-        };
-        /**
-         * RepositorySsotRegistryGroupByRequest
-         * @description Tigrbl v3 RepositorySsotRegistry group_by schema
-         */
-        RepositorySsotRegistryGroupByRequest: {
-            /**
-             * Id
-             * @default null
-             */
-            id: string;
-            /**
-             * Observed At
-             * Format: date-time
-             */
-            observed_at: string;
-            /** Registry Url */
-            registry_url: string;
-            /** Repository Id */
-            repository_id: string;
-            /**
-             * Schema Version
-             * @default null
-             */
-            schema_version: string | null;
-            /**
-             * Source Sha256
-             * @default null
-             */
-            source_sha256: string | null;
-            /**
-             * Valid
-             * @default null
-             */
-            valid: boolean;
-        };
-        /**
-         * RepositorySsotRegistryGroupByResponse
-         * @description Tigrbl v3 RepositorySsotRegistry group_by schema
-         */
-        RepositorySsotRegistryGroupByResponse: {
-            /**
-             * Id
-             * @default null
-             */
-            id: string;
-            /**
-             * Observed At
-             * Format: date-time
-             */
-            observed_at: string;
-            /** Registry Url */
-            registry_url: string;
-            /** Repository Id */
-            repository_id: string;
-            /**
-             * Schema Version
-             * @default null
-             */
-            schema_version: string | null;
-            /**
-             * Source Sha256
-             * @default null
-             */
-            source_sha256: string | null;
-            /**
-             * Valid
-             * @default null
-             */
-            valid: boolean;
-        };
-        /** RepositorySummary */
-        RepositorySummary: {
-            /** Commit Activity */
-            commit_activity?: components["schemas"]["CommitPoint"][];
-            /**
-             * Description
-             * @default null
-             */
-            description: string | null;
-            /** History */
-            history?: {
-                [key: string]: components["schemas"]["MetricPoint"][];
-            };
-            /** Id */
-            id: string;
-            /** Metrics */
-            metrics?: {
-                [key: string]: number;
-            };
-            /** Name */
-            name: string;
-            /**
-             * Observed At
-             * @default null
-             */
-            observed_at: string | null;
-            /** Owner */
-            owner: string;
-            /**
-             * Package Count
-             * @default 0
-             */
-            package_count: number;
-            /**
-             * Release Count
-             * @default 0
-             */
-            release_count: number;
-            /**
-             * Resource Count
-             * @default 0
-             */
-            resource_count: number;
-            /** Route */
-            route: string;
-            /** Url */
-            url: string;
-        } & {
-            [key: string]: unknown;
-        };
-        /**
-         * ResourceCountResponse
-         * @description Tigrbl v3 Resource count schema
-         */
-        ResourceCountResponse: {
-            /**
-             * Id
-             * @default null
-             */
-            id: string;
-            /**
-             * Observed At
-             * @default null
-             */
-            observed_at: string | null;
-            /**
-             * Path
-             * @default null
-             */
-            path: string | null;
+            reachability: string;
             /**
              * Repository Id
              * @default null
              */
             repository_id: string | null;
-            /** Resource Type */
-            resource_type: string;
             /**
-             * Route Key
+             * Repository Path
              * @default null
              */
-            route_key: string | null;
+            repository_path: string | null;
+            /** Resource Type */
+            resource_type: string;
             /**
              * Source Url
              * @default null
@@ -5689,638 +2359,6 @@ export interface components {
             title: string;
             /** Url */
             url: string;
-        };
-        /**
-         * ResourceExistsResponse
-         * @description Tigrbl v3 Resource exists schema
-         */
-        ResourceExistsResponse: {
-            /**
-             * Id
-             * @default null
-             */
-            id: string;
-            /**
-             * Observed At
-             * @default null
-             */
-            observed_at: string | null;
-            /**
-             * Path
-             * @default null
-             */
-            path: string | null;
-            /**
-             * Repository Id
-             * @default null
-             */
-            repository_id: string | null;
-            /** Resource Type */
-            resource_type: string;
-            /**
-             * Route Key
-             * @default null
-             */
-            route_key: string | null;
-            /**
-             * Source Url
-             * @default null
-             */
-            source_url: string | null;
-            /**
-             * Summary
-             * @default null
-             */
-            summary: string | null;
-            /** Title */
-            title: string;
-            /** Url */
-            url: string;
-        };
-        /**
-         * ResourceGroupByRequest
-         * @description Tigrbl v3 Resource group_by schema
-         */
-        ResourceGroupByRequest: {
-            /**
-             * Id
-             * @default null
-             */
-            id: string;
-            /**
-             * Observed At
-             * @default null
-             */
-            observed_at: string | null;
-            /**
-             * Path
-             * @default null
-             */
-            path: string | null;
-            /**
-             * Repository Id
-             * @default null
-             */
-            repository_id: string | null;
-            /** Resource Type */
-            resource_type: string;
-            /**
-             * Route Key
-             * @default null
-             */
-            route_key: string | null;
-            /**
-             * Source Url
-             * @default null
-             */
-            source_url: string | null;
-            /**
-             * Summary
-             * @default null
-             */
-            summary: string | null;
-            /** Title */
-            title: string;
-            /** Url */
-            url: string;
-        };
-        /**
-         * ResourceGroupByResponse
-         * @description Tigrbl v3 Resource group_by schema
-         */
-        ResourceGroupByResponse: {
-            /**
-             * Id
-             * @default null
-             */
-            id: string;
-            /**
-             * Observed At
-             * @default null
-             */
-            observed_at: string | null;
-            /**
-             * Path
-             * @default null
-             */
-            path: string | null;
-            /**
-             * Repository Id
-             * @default null
-             */
-            repository_id: string | null;
-            /** Resource Type */
-            resource_type: string;
-            /**
-             * Route Key
-             * @default null
-             */
-            route_key: string | null;
-            /**
-             * Source Url
-             * @default null
-             */
-            source_url: string | null;
-            /**
-             * Summary
-             * @default null
-             */
-            summary: string | null;
-            /** Title */
-            title: string;
-            /** Url */
-            url: string;
-        };
-        /**
-         * ResourceRepositoryCountResponse
-         * @description Tigrbl v3 ResourceRepository count schema
-         */
-        ResourceRepositoryCountResponse: {
-            /**
-             * Id
-             * @default null
-             */
-            id: string;
-            /**
-             * Observed At
-             * @default null
-             */
-            observed_at: string | null;
-            /**
-             * Path
-             * @default null
-             */
-            path: string | null;
-            /** Repository Id */
-            repository_id: string;
-            /** Resource Id */
-            resource_id: string;
-            /**
-             * Role
-             * @default null
-             */
-            role: string;
-        };
-        /**
-         * ResourceRepositoryExistsResponse
-         * @description Tigrbl v3 ResourceRepository exists schema
-         */
-        ResourceRepositoryExistsResponse: {
-            /**
-             * Id
-             * @default null
-             */
-            id: string;
-            /**
-             * Observed At
-             * @default null
-             */
-            observed_at: string | null;
-            /**
-             * Path
-             * @default null
-             */
-            path: string | null;
-            /** Repository Id */
-            repository_id: string;
-            /** Resource Id */
-            resource_id: string;
-            /**
-             * Role
-             * @default null
-             */
-            role: string;
-        };
-        /**
-         * ResourceRepositoryGroupByRequest
-         * @description Tigrbl v3 ResourceRepository group_by schema
-         */
-        ResourceRepositoryGroupByRequest: {
-            /**
-             * Id
-             * @default null
-             */
-            id: string;
-            /**
-             * Observed At
-             * @default null
-             */
-            observed_at: string | null;
-            /**
-             * Path
-             * @default null
-             */
-            path: string | null;
-            /** Repository Id */
-            repository_id: string;
-            /** Resource Id */
-            resource_id: string;
-            /**
-             * Role
-             * @default null
-             */
-            role: string;
-        };
-        /**
-         * ResourceRepositoryGroupByResponse
-         * @description Tigrbl v3 ResourceRepository group_by schema
-         */
-        ResourceRepositoryGroupByResponse: {
-            /**
-             * Id
-             * @default null
-             */
-            id: string;
-            /**
-             * Observed At
-             * @default null
-             */
-            observed_at: string | null;
-            /**
-             * Path
-             * @default null
-             */
-            path: string | null;
-            /** Repository Id */
-            repository_id: string;
-            /** Resource Id */
-            resource_id: string;
-            /**
-             * Role
-             * @default null
-             */
-            role: string;
-        };
-        /**
-         * ResourceTaxonomyCountResponse
-         * @description Tigrbl v3 ResourceTaxonomy count schema
-         */
-        ResourceTaxonomyCountResponse: {
-            /**
-             * Id
-             * @default null
-             */
-            id: string;
-            /** Resource Id */
-            resource_id: string;
-            /** Taxonomy Id */
-            taxonomy_id: string;
-        };
-        /**
-         * ResourceTaxonomyExistsResponse
-         * @description Tigrbl v3 ResourceTaxonomy exists schema
-         */
-        ResourceTaxonomyExistsResponse: {
-            /**
-             * Id
-             * @default null
-             */
-            id: string;
-            /** Resource Id */
-            resource_id: string;
-            /** Taxonomy Id */
-            taxonomy_id: string;
-        };
-        /**
-         * ResourceTaxonomyGroupByRequest
-         * @description Tigrbl v3 ResourceTaxonomy group_by schema
-         */
-        ResourceTaxonomyGroupByRequest: {
-            /**
-             * Id
-             * @default null
-             */
-            id: string;
-            /** Resource Id */
-            resource_id: string;
-            /** Taxonomy Id */
-            taxonomy_id: string;
-        };
-        /**
-         * ResourceTaxonomyGroupByResponse
-         * @description Tigrbl v3 ResourceTaxonomy group_by schema
-         */
-        ResourceTaxonomyGroupByResponse: {
-            /**
-             * Id
-             * @default null
-             */
-            id: string;
-            /** Resource Id */
-            resource_id: string;
-            /** Taxonomy Id */
-            taxonomy_id: string;
-        };
-        /**
-         * ResourceTypeCountResponse
-         * @description Tigrbl v3 ResourceType count schema
-         */
-        ResourceTypeCountResponse: {
-            /** Category */
-            category: string;
-            /**
-             * Description
-             * @default null
-             */
-            description: string | null;
-            /**
-             * Detail Schema Key
-             * @default null
-             */
-            detail_schema_key: string | null;
-            /**
-             * Icon Key
-             * @default null
-             */
-            icon_key: string | null;
-            /**
-             * Id
-             * @default null
-             */
-            id: string;
-            /** Label */
-            label: string;
-        };
-        /**
-         * ResourceTypeExistsResponse
-         * @description Tigrbl v3 ResourceType exists schema
-         */
-        ResourceTypeExistsResponse: {
-            /** Category */
-            category: string;
-            /**
-             * Description
-             * @default null
-             */
-            description: string | null;
-            /**
-             * Detail Schema Key
-             * @default null
-             */
-            detail_schema_key: string | null;
-            /**
-             * Icon Key
-             * @default null
-             */
-            icon_key: string | null;
-            /**
-             * Id
-             * @default null
-             */
-            id: string;
-            /** Label */
-            label: string;
-        };
-        /**
-         * ResourceTypeGroupByRequest
-         * @description Tigrbl v3 ResourceType group_by schema
-         */
-        ResourceTypeGroupByRequest: {
-            /** Category */
-            category: string;
-            /**
-             * Description
-             * @default null
-             */
-            description: string | null;
-            /**
-             * Detail Schema Key
-             * @default null
-             */
-            detail_schema_key: string | null;
-            /**
-             * Icon Key
-             * @default null
-             */
-            icon_key: string | null;
-            /**
-             * Id
-             * @default null
-             */
-            id: string;
-            /** Label */
-            label: string;
-        };
-        /**
-         * ResourceTypeGroupByResponse
-         * @description Tigrbl v3 ResourceType group_by schema
-         */
-        ResourceTypeGroupByResponse: {
-            /** Category */
-            category: string;
-            /**
-             * Description
-             * @default null
-             */
-            description: string | null;
-            /**
-             * Detail Schema Key
-             * @default null
-             */
-            detail_schema_key: string | null;
-            /**
-             * Icon Key
-             * @default null
-             */
-            icon_key: string | null;
-            /**
-             * Id
-             * @default null
-             */
-            id: string;
-            /** Label */
-            label: string;
-        };
-        /**
-         * TaxonomyCountResponse
-         * @description Tigrbl v3 Taxonomy count schema
-         */
-        TaxonomyCountResponse: {
-            /**
-             * Category
-             * @default null
-             */
-            category: string | null;
-            /**
-             * Description
-             * @default null
-             */
-            description: string | null;
-            /**
-             * Id
-             * @default null
-             */
-            id: string;
-            /** Label */
-            label: string;
-            /** Slug */
-            slug: string;
-            /** Taxonomy Type */
-            taxonomy_type: string;
-        };
-        /**
-         * TaxonomyExistsResponse
-         * @description Tigrbl v3 Taxonomy exists schema
-         */
-        TaxonomyExistsResponse: {
-            /**
-             * Category
-             * @default null
-             */
-            category: string | null;
-            /**
-             * Description
-             * @default null
-             */
-            description: string | null;
-            /**
-             * Id
-             * @default null
-             */
-            id: string;
-            /** Label */
-            label: string;
-            /** Slug */
-            slug: string;
-            /** Taxonomy Type */
-            taxonomy_type: string;
-        };
-        /**
-         * TaxonomyGroupByRequest
-         * @description Tigrbl v3 Taxonomy group_by schema
-         */
-        TaxonomyGroupByRequest: {
-            /**
-             * Category
-             * @default null
-             */
-            category: string | null;
-            /**
-             * Description
-             * @default null
-             */
-            description: string | null;
-            /**
-             * Id
-             * @default null
-             */
-            id: string;
-            /** Label */
-            label: string;
-            /** Slug */
-            slug: string;
-            /** Taxonomy Type */
-            taxonomy_type: string;
-        };
-        /**
-         * TaxonomyGroupByResponse
-         * @description Tigrbl v3 Taxonomy group_by schema
-         */
-        TaxonomyGroupByResponse: {
-            /**
-             * Category
-             * @default null
-             */
-            category: string | null;
-            /**
-             * Description
-             * @default null
-             */
-            description: string | null;
-            /**
-             * Id
-             * @default null
-             */
-            id: string;
-            /** Label */
-            label: string;
-            /** Slug */
-            slug: string;
-            /** Taxonomy Type */
-            taxonomy_type: string;
-        };
-        /** TechnologySummary */
-        TechnologySummary: {
-            /**
-             * Category
-             * @default null
-             */
-            category: string | null;
-            /**
-             * Description
-             * @default null
-             */
-            description: string | null;
-            /** Id */
-            id: string;
-            /** Name */
-            name: string;
-            /**
-             * Record Count
-             * @default 0
-             */
-            record_count: number;
-            /** Route */
-            route: string;
-            /** Slug */
-            slug: string;
-        } & {
-            [key: string]: unknown;
-        };
-        /** TypedResourceSummary */
-        TypedResourceSummary: {
-            /**
-             * Icon Key
-             * @default null
-             */
-            icon_key: string | null;
-            /** Id */
-            id: string;
-            /**
-             * Observed At
-             * @default null
-             */
-            observed_at: string | null;
-            /**
-             * Repository Name
-             * @default null
-             */
-            repository_name: string | null;
-            /**
-             * Repository Owner
-             * @default null
-             */
-            repository_owner: string | null;
-            /**
-             * Resource Family
-             * @default null
-             */
-            resource_family: string | null;
-            /** Resource Type */
-            resource_type: string;
-            /** Route */
-            route: string;
-            /**
-             * Route Key
-             * @default null
-             */
-            route_key: string | null;
-            /**
-             * Summary
-             * @default null
-             */
-            summary: string | null;
-            /** Title */
-            title: string;
-            /**
-             * Type Label
-             * @default null
-             */
-            type_label: string | null;
-            /** Url */
-            url: string;
-        } & {
-            [key: string]: unknown;
         };
     };
     responses: never;
@@ -6331,543 +2369,18 @@ export interface components {
 }
 export type $defs = Record<string, never>;
 export interface operations {
-    catalog: {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        requestBody?: never;
-        responses: {
-            /** @description Successful Response */
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json": components["schemas"]["CatalogOverview"];
-                };
-            };
-        };
-    };
-    catalog_packages: {
-        parameters: {
-            query?: {
-                page?: number;
-                page_size?: number;
-                q?: string;
-                ecosystem?: string;
-                publication_status?: string;
-                sort?: string;
-            };
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        requestBody?: never;
-        responses: {
-            /** @description Successful Response */
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json": components["schemas"]["CatalogCollection"];
-                };
-            };
-        };
-    };
-    catalog_package: {
-        parameters: {
-            query?: never;
-            header?: never;
-            path: {
-                route_key: string;
-            };
-            cookie?: never;
-        };
-        requestBody?: never;
-        responses: {
-            /** @description Successful Response */
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json": components["schemas"]["CatalogMember"];
-                };
-            };
-        };
-    };
-    catalog_release: {
-        parameters: {
-            query?: never;
-            header?: never;
-            path: {
-                route_key: string;
-            };
-            cookie?: never;
-        };
-        requestBody?: never;
-        responses: {
-            /** @description Successful Response */
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json": components["schemas"]["CatalogMember"];
-                };
-            };
-        };
-    };
-    catalog_repositories: {
-        parameters: {
-            query?: {
-                page?: number;
-                page_size?: number;
-                q?: string;
-                owner?: string;
-                sort?: string;
-            };
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        requestBody?: never;
-        responses: {
-            /** @description Successful Response */
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json": components["schemas"]["CatalogCollection"];
-                };
-            };
-        };
-    };
-    catalog_repository: {
-        parameters: {
-            query?: never;
-            header?: never;
-            path: {
-                owner: string;
-                repository: string;
-            };
-            cookie?: never;
-        };
-        requestBody?: never;
-        responses: {
-            /** @description Successful Response */
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json": components["schemas"]["CatalogMember"];
-                };
-            };
-        };
-    };
-    catalog_resources: {
-        parameters: {
-            query?: {
-                page?: number;
-                page_size?: number;
-                q?: string;
-                resource_type?: string;
-                repository_owner?: string;
-                sort?: string;
-            };
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        requestBody?: never;
-        responses: {
-            /** @description Successful Response */
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json": components["schemas"]["CatalogCollection"];
-                };
-            };
-        };
-    };
-    typed_catalog_resource: {
-        parameters: {
-            query?: never;
-            header?: never;
-            path: {
-                resource_type: string;
-                route_key: string;
-            };
-            cookie?: never;
-        };
-        requestBody?: never;
-        responses: {
-            /** @description Successful Response */
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json": components["schemas"]["CatalogMember"];
-                };
-            };
-        };
-    };
-    catalog_resource: {
-        parameters: {
-            query?: never;
-            header?: never;
-            path: {
-                route_key: string;
-            };
-            cookie?: never;
-        };
-        requestBody?: never;
-        responses: {
-            /** @description Successful Response */
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json": components["schemas"]["CatalogMember"];
-                };
-            };
-        };
-    };
-    catalog_technologies: {
-        parameters: {
-            query?: {
-                page?: number;
-                page_size?: number;
-                q?: string;
-                sort?: string;
-            };
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        requestBody?: never;
-        responses: {
-            /** @description Successful Response */
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json": components["schemas"]["CatalogCollection"];
-                };
-            };
-        };
-    };
-    catalog_technology: {
-        parameters: {
-            query?: never;
-            header?: never;
-            path: {
-                slug: string;
-            };
-            cookie?: never;
-        };
-        requestBody?: never;
-        responses: {
-            /** @description Successful Response */
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json": components["schemas"]["CatalogMember"];
-                };
-            };
-        };
-    };
-    entities: {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        requestBody?: never;
-        responses: {
-            /** @description Successful Response */
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content?: never;
-            };
-        };
-    };
-    entity: {
-        parameters: {
-            query?: never;
-            header?: never;
-            path: {
-                entity_id: string;
-            };
-            cookie?: never;
-        };
-        requestBody?: never;
-        responses: {
-            /** @description Successful Response */
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content?: never;
-            };
-        };
-    };
-    insights: {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        requestBody?: never;
-        responses: {
-            /** @description Successful Response */
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content?: never;
-            };
-        };
-    };
-    insight: {
-        parameters: {
-            query?: never;
-            header?: never;
-            path: {
-                slug: string;
-            };
-            cookie?: never;
-        };
-        requestBody?: never;
-        responses: {
-            /** @description Successful Response */
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content?: never;
-            };
-        };
-    };
-    organization: {
-        parameters: {
-            query?: never;
-            header?: never;
-            path: {
-                slug: string;
-            };
-            cookie?: never;
-        };
-        requestBody?: never;
-        responses: {
-            /** @description Successful Response */
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content?: never;
-            };
-        };
-    };
-    portfolio: {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        requestBody?: never;
-        responses: {
-            /** @description Successful Response */
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content?: never;
-            };
-        };
-    };
-    portfolio_record: {
-        parameters: {
-            query?: never;
-            header?: never;
-            path: {
-                slug: string;
-            };
-            cookie?: never;
-        };
-        requestBody?: never;
-        responses: {
-            /** @description Successful Response */
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content?: never;
-            };
-        };
-    };
-    products: {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        requestBody?: never;
-        responses: {
-            /** @description Successful Response */
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content?: never;
-            };
-        };
-    };
-    product: {
-        parameters: {
-            query?: never;
-            header?: never;
-            path: {
-                slug: string;
-            };
-            cookie?: never;
-        };
-        requestBody?: never;
-        responses: {
-            /** @description Successful Response */
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content?: never;
-            };
-        };
-    };
-    repository_metrics: {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        requestBody?: never;
-        responses: {
-            /** @description Successful Response */
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content?: never;
-            };
-        };
-    };
-    services: {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        requestBody?: never;
-        responses: {
-            /** @description Successful Response */
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content?: never;
-            };
-        };
-    };
-    service: {
-        parameters: {
-            query?: never;
-            header?: never;
-            path: {
-                slug: string;
-            };
-            cookie?: never;
-        };
-        requestBody?: never;
-        responses: {
-            /** @description Successful Response */
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content?: never;
-            };
-        };
-    };
-    solutions: {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        requestBody?: never;
-        responses: {
-            /** @description Successful Response */
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content?: never;
-            };
-        };
-    };
-    solution: {
-        parameters: {
-            query?: never;
-            header?: never;
-            path: {
-                slug: string;
-            };
-            cookie?: never;
-        };
-        requestBody?: never;
-        responses: {
-            /** @description Successful Response */
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content?: never;
-            };
-        };
-    };
-    "CatalogEntity.count": {
+    "CatalogEntry.list": {
         parameters: {
             query?: {
                 id?: string;
-                entity_type_id?: string;
+                kind?: string;
+                source_id?: string;
                 organization_id?: string;
                 slug?: string;
                 name?: string;
                 summary?: string;
                 canonical_url?: string;
-                source_table?: string;
-                source_id?: string;
+                icon_key?: string;
                 visibility?: string;
                 maturity?: string;
                 observed_at?: string;
@@ -6884,47 +2397,23 @@ export interface operations {
                     [name: string]: unknown;
                 };
                 content: {
-                    "application/json": components["schemas"]["CatalogEntityCountResponse"];
+                    "application/json": components["schemas"]["CatalogEntryListResponse"];
                 };
             };
         };
     };
-    "CatalogEntity.group_by": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        requestBody: {
-            content: {
-                "application/json": components["schemas"]["CatalogEntityGroupByRequest"];
-            };
-        };
-        responses: {
-            /** @description Successful Response */
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json": components["schemas"]["CatalogEntityGroupByResponse"];
-                };
-            };
-        };
-    };
-    "CatalogEntity.exists": {
+    "CatalogEntry.read": {
         parameters: {
             query?: {
                 id?: string;
-                entity_type_id?: string;
+                kind?: string;
+                source_id?: string;
                 organization_id?: string;
                 slug?: string;
                 name?: string;
                 summary?: string;
                 canonical_url?: string;
-                source_table?: string;
-                source_id?: string;
+                icon_key?: string;
                 visibility?: string;
                 maturity?: string;
                 observed_at?: string;
@@ -6943,519 +2432,7 @@ export interface operations {
                     [name: string]: unknown;
                 };
                 content: {
-                    "application/json": components["schemas"]["CatalogEntityExistsResponse"];
-                };
-            };
-        };
-    };
-    "Dependency.count": {
-        parameters: {
-            query?: {
-                id?: string;
-                source_kind?: string;
-                source_id?: string;
-                target_kind?: string;
-                target_id?: string;
-                requirement?: string;
-                scope?: string;
-                origin_kind?: string;
-                evidence_type?: string;
-                source_url?: string;
-                completeness?: string;
-                observed_at?: string;
-            };
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        requestBody?: never;
-        responses: {
-            /** @description Successful Response */
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json": components["schemas"]["DependencyCountResponse"];
-                };
-            };
-        };
-    };
-    "Dependency.group_by": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        requestBody: {
-            content: {
-                "application/json": components["schemas"]["DependencyGroupByRequest"];
-            };
-        };
-        responses: {
-            /** @description Successful Response */
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json": components["schemas"]["DependencyGroupByResponse"];
-                };
-            };
-        };
-    };
-    "Dependency.exists": {
-        parameters: {
-            query?: {
-                id?: string;
-                source_kind?: string;
-                source_id?: string;
-                target_kind?: string;
-                target_id?: string;
-                requirement?: string;
-                scope?: string;
-                origin_kind?: string;
-                evidence_type?: string;
-                source_url?: string;
-                completeness?: string;
-                observed_at?: string;
-            };
-            header?: never;
-            path: {
-                item_id: string;
-            };
-            cookie?: never;
-        };
-        requestBody?: never;
-        responses: {
-            /** @description Successful Response */
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json": components["schemas"]["DependencyExistsResponse"];
-                };
-            };
-        };
-    };
-    "Deployment.count": {
-        parameters: {
-            query?: {
-                id?: string;
-                record_id?: string;
-                name?: string;
-                url?: string;
-                environment?: string;
-                reachability?: string;
-                observed_at?: string;
-            };
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        requestBody?: never;
-        responses: {
-            /** @description Successful Response */
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json": components["schemas"]["DeploymentCountResponse"];
-                };
-            };
-        };
-    };
-    "Deployment.group_by": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        requestBody: {
-            content: {
-                "application/json": components["schemas"]["DeploymentGroupByRequest"];
-            };
-        };
-        responses: {
-            /** @description Successful Response */
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json": components["schemas"]["DeploymentGroupByResponse"];
-                };
-            };
-        };
-    };
-    "Deployment.exists": {
-        parameters: {
-            query?: {
-                id?: string;
-                record_id?: string;
-                name?: string;
-                url?: string;
-                environment?: string;
-                reachability?: string;
-                observed_at?: string;
-            };
-            header?: never;
-            path: {
-                item_id: string;
-            };
-            cookie?: never;
-        };
-        requestBody?: never;
-        responses: {
-            /** @description Successful Response */
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json": components["schemas"]["DeploymentExistsResponse"];
-                };
-            };
-        };
-    };
-    "EntityAlias.count": {
-        parameters: {
-            query?: {
-                id?: string;
-                entity_id?: string;
-                alias_kind?: string;
-                alias?: string;
-            };
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        requestBody?: never;
-        responses: {
-            /** @description Successful Response */
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json": components["schemas"]["EntityAliasCountResponse"];
-                };
-            };
-        };
-    };
-    "EntityAlias.group_by": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        requestBody: {
-            content: {
-                "application/json": components["schemas"]["EntityAliasGroupByRequest"];
-            };
-        };
-        responses: {
-            /** @description Successful Response */
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json": components["schemas"]["EntityAliasGroupByResponse"];
-                };
-            };
-        };
-    };
-    "EntityAlias.exists": {
-        parameters: {
-            query?: {
-                id?: string;
-                entity_id?: string;
-                alias_kind?: string;
-                alias?: string;
-            };
-            header?: never;
-            path: {
-                item_id: string;
-            };
-            cookie?: never;
-        };
-        requestBody?: never;
-        responses: {
-            /** @description Successful Response */
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json": components["schemas"]["EntityAliasExistsResponse"];
-                };
-            };
-        };
-    };
-    "EntityRelationship.count": {
-        parameters: {
-            query?: {
-                id?: string;
-                source_entity_id?: string;
-                target_entity_id?: string;
-                relationship_type?: string;
-                role?: string;
-                evidence_type?: string;
-                origin_kind?: string;
-                observation_id?: string;
-                ssot_entity_id?: string;
-                source_url?: string;
-                confidence?: string;
-                status?: string;
-                observed_at?: string;
-            };
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        requestBody?: never;
-        responses: {
-            /** @description Successful Response */
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json": components["schemas"]["EntityRelationshipCountResponse"];
-                };
-            };
-        };
-    };
-    "EntityRelationship.group_by": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        requestBody: {
-            content: {
-                "application/json": components["schemas"]["EntityRelationshipGroupByRequest"];
-            };
-        };
-        responses: {
-            /** @description Successful Response */
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json": components["schemas"]["EntityRelationshipGroupByResponse"];
-                };
-            };
-        };
-    };
-    "EntityRelationship.exists": {
-        parameters: {
-            query?: {
-                id?: string;
-                source_entity_id?: string;
-                target_entity_id?: string;
-                relationship_type?: string;
-                role?: string;
-                evidence_type?: string;
-                origin_kind?: string;
-                observation_id?: string;
-                ssot_entity_id?: string;
-                source_url?: string;
-                confidence?: string;
-                status?: string;
-                observed_at?: string;
-            };
-            header?: never;
-            path: {
-                item_id: string;
-            };
-            cookie?: never;
-        };
-        requestBody?: never;
-        responses: {
-            /** @description Successful Response */
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json": components["schemas"]["EntityRelationshipExistsResponse"];
-                };
-            };
-        };
-    };
-    "EntityType.count": {
-        parameters: {
-            query?: {
-                id?: string;
-                label?: string;
-                semantic_class?: string;
-                description?: string;
-                parent_type_id?: string;
-                icon_key?: string;
-                detail_schema_key?: string;
-            };
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        requestBody?: never;
-        responses: {
-            /** @description Successful Response */
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json": components["schemas"]["EntityTypeCountResponse"];
-                };
-            };
-        };
-    };
-    "EntityType.group_by": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        requestBody: {
-            content: {
-                "application/json": components["schemas"]["EntityTypeGroupByRequest"];
-            };
-        };
-        responses: {
-            /** @description Successful Response */
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json": components["schemas"]["EntityTypeGroupByResponse"];
-                };
-            };
-        };
-    };
-    "EntityType.exists": {
-        parameters: {
-            query?: {
-                id?: string;
-                label?: string;
-                semantic_class?: string;
-                description?: string;
-                parent_type_id?: string;
-                icon_key?: string;
-                detail_schema_key?: string;
-            };
-            header?: never;
-            path: {
-                item_id: string;
-            };
-            cookie?: never;
-        };
-        requestBody?: never;
-        responses: {
-            /** @description Successful Response */
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json": components["schemas"]["EntityTypeExistsResponse"];
-                };
-            };
-        };
-    };
-    "EntityUrl.count": {
-        parameters: {
-            query?: {
-                id?: string;
-                entity_id?: string;
-                url_role?: string;
-                url?: string;
-                label?: string;
-                evidence_type?: string;
-                origin_kind?: string;
-                observation_id?: string;
-                observed_at?: string;
-            };
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        requestBody?: never;
-        responses: {
-            /** @description Successful Response */
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json": components["schemas"]["EntityUrlCountResponse"];
-                };
-            };
-        };
-    };
-    "EntityUrl.group_by": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        requestBody: {
-            content: {
-                "application/json": components["schemas"]["EntityUrlGroupByRequest"];
-            };
-        };
-        responses: {
-            /** @description Successful Response */
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json": components["schemas"]["EntityUrlGroupByResponse"];
-                };
-            };
-        };
-    };
-    "EntityUrl.exists": {
-        parameters: {
-            query?: {
-                id?: string;
-                entity_id?: string;
-                url_role?: string;
-                url?: string;
-                label?: string;
-                evidence_type?: string;
-                origin_kind?: string;
-                observation_id?: string;
-                observed_at?: string;
-            };
-            header?: never;
-            path: {
-                item_id: string;
-            };
-            cookie?: never;
-        };
-        requestBody?: never;
-        responses: {
-            /** @description Successful Response */
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json": components["schemas"]["EntityUrlExistsResponse"];
+                    "application/json": components["schemas"]["CatalogEntryReadResponse"];
                 };
             };
         };
@@ -7478,89 +2455,7 @@ export interface operations {
             };
         };
     };
-    "Limitation.count": {
-        parameters: {
-            query?: {
-                id?: string;
-                record_id?: string;
-                title?: string;
-                description?: string;
-                severity?: string;
-                evidence_id?: string;
-                reviewed_at?: string;
-            };
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        requestBody?: never;
-        responses: {
-            /** @description Successful Response */
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json": components["schemas"]["LimitationCountResponse"];
-                };
-            };
-        };
-    };
-    "Limitation.group_by": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        requestBody: {
-            content: {
-                "application/json": components["schemas"]["LimitationGroupByRequest"];
-            };
-        };
-        responses: {
-            /** @description Successful Response */
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json": components["schemas"]["LimitationGroupByResponse"];
-                };
-            };
-        };
-    };
-    "Limitation.exists": {
-        parameters: {
-            query?: {
-                id?: string;
-                record_id?: string;
-                title?: string;
-                description?: string;
-                severity?: string;
-                evidence_id?: string;
-                reviewed_at?: string;
-            };
-            header?: never;
-            path: {
-                item_id: string;
-            };
-            cookie?: never;
-        };
-        requestBody?: never;
-        responses: {
-            /** @description Successful Response */
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json": components["schemas"]["LimitationExistsResponse"];
-                };
-            };
-        };
-    };
-    "Organization.count": {
+    "Organization.list": {
         parameters: {
             query?: {
                 id?: string;
@@ -7583,36 +2478,12 @@ export interface operations {
                     [name: string]: unknown;
                 };
                 content: {
-                    "application/json": components["schemas"]["OrganizationCountResponse"];
+                    "application/json": components["schemas"]["OrganizationListResponse"];
                 };
             };
         };
     };
-    "Organization.group_by": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        requestBody: {
-            content: {
-                "application/json": components["schemas"]["OrganizationGroupByRequest"];
-            };
-        };
-        responses: {
-            /** @description Successful Response */
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json": components["schemas"]["OrganizationGroupByResponse"];
-                };
-            };
-        };
-    };
-    "Organization.exists": {
+    "Organization.read": {
         parameters: {
             query?: {
                 id?: string;
@@ -7637,12 +2508,12 @@ export interface operations {
                     [name: string]: unknown;
                 };
                 content: {
-                    "application/json": components["schemas"]["OrganizationExistsResponse"];
+                    "application/json": components["schemas"]["OrganizationReadResponse"];
                 };
             };
         };
     };
-    "Package.count": {
+    "Package.list": {
         parameters: {
             query?: {
                 id?: string;
@@ -7675,36 +2546,12 @@ export interface operations {
                     [name: string]: unknown;
                 };
                 content: {
-                    "application/json": components["schemas"]["PackageCountResponse"];
+                    "application/json": components["schemas"]["PackageListResponse"];
                 };
             };
         };
     };
-    "Package.group_by": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        requestBody: {
-            content: {
-                "application/json": components["schemas"]["PackageGroupByRequest"];
-            };
-        };
-        responses: {
-            /** @description Successful Response */
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json": components["schemas"]["PackageGroupByResponse"];
-                };
-            };
-        };
-    };
-    "Package.exists": {
+    "Package.read": {
         parameters: {
             query?: {
                 id?: string;
@@ -7739,18 +2586,19 @@ export interface operations {
                     [name: string]: unknown;
                 };
                 content: {
-                    "application/json": components["schemas"]["PackageExistsResponse"];
+                    "application/json": components["schemas"]["PackageReadResponse"];
                 };
             };
         };
     };
-    "PackageRepository.count": {
+    "PackageTechnology.list": {
         parameters: {
             query?: {
                 id?: string;
                 package_id?: string;
-                repository_id?: string;
-                path?: string;
+                technology_id?: string;
+                role?: string;
+                observed_at?: string;
             };
             header?: never;
             path?: never;
@@ -7764,42 +2612,19 @@ export interface operations {
                     [name: string]: unknown;
                 };
                 content: {
-                    "application/json": components["schemas"]["PackageRepositoryCountResponse"];
+                    "application/json": components["schemas"]["PackageTechnologyListResponse"];
                 };
             };
         };
     };
-    "PackageRepository.group_by": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        requestBody: {
-            content: {
-                "application/json": components["schemas"]["PackageRepositoryGroupByRequest"];
-            };
-        };
-        responses: {
-            /** @description Successful Response */
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json": components["schemas"]["PackageRepositoryGroupByResponse"];
-                };
-            };
-        };
-    };
-    "PackageRepository.exists": {
+    "PackageTechnology.read": {
         parameters: {
             query?: {
                 id?: string;
                 package_id?: string;
-                repository_id?: string;
-                path?: string;
+                technology_id?: string;
+                role?: string;
+                observed_at?: string;
             };
             header?: never;
             path: {
@@ -7815,173 +2640,22 @@ export interface operations {
                     [name: string]: unknown;
                 };
                 content: {
-                    "application/json": components["schemas"]["PackageRepositoryExistsResponse"];
+                    "application/json": components["schemas"]["PackageTechnologyReadResponse"];
                 };
             };
         };
     };
-    "PackageTaxonomy.count": {
+    "Portfolio.list": {
         parameters: {
             query?: {
                 id?: string;
-                package_id?: string;
-                taxonomy_id?: string;
-            };
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        requestBody?: never;
-        responses: {
-            /** @description Successful Response */
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json": components["schemas"]["PackageTaxonomyCountResponse"];
-                };
-            };
-        };
-    };
-    "PackageTaxonomy.group_by": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        requestBody: {
-            content: {
-                "application/json": components["schemas"]["PackageTaxonomyGroupByRequest"];
-            };
-        };
-        responses: {
-            /** @description Successful Response */
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json": components["schemas"]["PackageTaxonomyGroupByResponse"];
-                };
-            };
-        };
-    };
-    "PackageTaxonomy.exists": {
-        parameters: {
-            query?: {
-                id?: string;
-                package_id?: string;
-                taxonomy_id?: string;
-            };
-            header?: never;
-            path: {
-                item_id: string;
-            };
-            cookie?: never;
-        };
-        requestBody?: never;
-        responses: {
-            /** @description Successful Response */
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json": components["schemas"]["PackageTaxonomyExistsResponse"];
-                };
-            };
-        };
-    };
-    "Person.count": {
-        parameters: {
-            query?: {
-                id?: string;
-                name?: string;
-                handle?: string;
-                profile_url?: string;
-            };
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        requestBody?: never;
-        responses: {
-            /** @description Successful Response */
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json": components["schemas"]["PersonCountResponse"];
-                };
-            };
-        };
-    };
-    "Person.group_by": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        requestBody: {
-            content: {
-                "application/json": components["schemas"]["PersonGroupByRequest"];
-            };
-        };
-        responses: {
-            /** @description Successful Response */
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json": components["schemas"]["PersonGroupByResponse"];
-                };
-            };
-        };
-    };
-    "Person.exists": {
-        parameters: {
-            query?: {
-                id?: string;
-                name?: string;
-                handle?: string;
-                profile_url?: string;
-            };
-            header?: never;
-            path: {
-                item_id: string;
-            };
-            cookie?: never;
-        };
-        requestBody?: never;
-        responses: {
-            /** @description Successful Response */
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json": components["schemas"]["PersonExistsResponse"];
-                };
-            };
-        };
-    };
-    "Record.count": {
-        parameters: {
-            query?: {
-                id?: string;
-                slug?: string;
                 organization_id?: string;
-                record_type?: string;
-                title?: string;
+                slug?: string;
+                name?: string;
                 eyebrow?: string;
                 summary?: string;
                 body_markdown?: string;
-                content?: string;
+                focus?: string;
                 maturity?: string;
                 visibility?: string;
                 featured?: boolean;
@@ -8003,47 +2677,22 @@ export interface operations {
                     [name: string]: unknown;
                 };
                 content: {
-                    "application/json": components["schemas"]["RecordCountResponse"];
+                    "application/json": components["schemas"]["PortfolioListResponse"];
                 };
             };
         };
     };
-    "Record.group_by": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        requestBody: {
-            content: {
-                "application/json": components["schemas"]["RecordGroupByRequest"];
-            };
-        };
-        responses: {
-            /** @description Successful Response */
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json": components["schemas"]["RecordGroupByResponse"];
-                };
-            };
-        };
-    };
-    "Record.exists": {
+    "Portfolio.read": {
         parameters: {
             query?: {
                 id?: string;
-                slug?: string;
                 organization_id?: string;
-                record_type?: string;
-                title?: string;
+                slug?: string;
+                name?: string;
                 eyebrow?: string;
                 summary?: string;
                 body_markdown?: string;
-                content?: string;
+                focus?: string;
                 maturity?: string;
                 visibility?: string;
                 featured?: boolean;
@@ -8067,559 +2716,19 @@ export interface operations {
                     [name: string]: unknown;
                 };
                 content: {
-                    "application/json": components["schemas"]["RecordExistsResponse"];
+                    "application/json": components["schemas"]["PortfolioReadResponse"];
                 };
             };
         };
     };
-    "RecordAlias.count": {
+    "PortfolioProduct.list": {
         parameters: {
             query?: {
                 id?: string;
-                record_id?: string;
-                alias_kind?: string;
-                alias?: string;
-            };
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        requestBody?: never;
-        responses: {
-            /** @description Successful Response */
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json": components["schemas"]["RecordAliasCountResponse"];
-                };
-            };
-        };
-    };
-    "RecordAlias.group_by": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        requestBody: {
-            content: {
-                "application/json": components["schemas"]["RecordAliasGroupByRequest"];
-            };
-        };
-        responses: {
-            /** @description Successful Response */
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json": components["schemas"]["RecordAliasGroupByResponse"];
-                };
-            };
-        };
-    };
-    "RecordAlias.exists": {
-        parameters: {
-            query?: {
-                id?: string;
-                record_id?: string;
-                alias_kind?: string;
-                alias?: string;
-            };
-            header?: never;
-            path: {
-                item_id: string;
-            };
-            cookie?: never;
-        };
-        requestBody?: never;
-        responses: {
-            /** @description Successful Response */
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json": components["schemas"]["RecordAliasExistsResponse"];
-                };
-            };
-        };
-    };
-    "RecordAuthor.count": {
-        parameters: {
-            query?: {
-                id?: string;
-                record_id?: string;
-                person_id?: string;
-                role?: string;
-            };
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        requestBody?: never;
-        responses: {
-            /** @description Successful Response */
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json": components["schemas"]["RecordAuthorCountResponse"];
-                };
-            };
-        };
-    };
-    "RecordAuthor.group_by": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        requestBody: {
-            content: {
-                "application/json": components["schemas"]["RecordAuthorGroupByRequest"];
-            };
-        };
-        responses: {
-            /** @description Successful Response */
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json": components["schemas"]["RecordAuthorGroupByResponse"];
-                };
-            };
-        };
-    };
-    "RecordAuthor.exists": {
-        parameters: {
-            query?: {
-                id?: string;
-                record_id?: string;
-                person_id?: string;
-                role?: string;
-            };
-            header?: never;
-            path: {
-                item_id: string;
-            };
-            cookie?: never;
-        };
-        requestBody?: never;
-        responses: {
-            /** @description Successful Response */
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json": components["schemas"]["RecordAuthorExistsResponse"];
-                };
-            };
-        };
-    };
-    "RecordPackage.count": {
-        parameters: {
-            query?: {
-                id?: string;
-                record_id?: string;
-                package_id?: string;
-                role?: string;
-            };
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        requestBody?: never;
-        responses: {
-            /** @description Successful Response */
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json": components["schemas"]["RecordPackageCountResponse"];
-                };
-            };
-        };
-    };
-    "RecordPackage.group_by": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        requestBody: {
-            content: {
-                "application/json": components["schemas"]["RecordPackageGroupByRequest"];
-            };
-        };
-        responses: {
-            /** @description Successful Response */
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json": components["schemas"]["RecordPackageGroupByResponse"];
-                };
-            };
-        };
-    };
-    "RecordPackage.exists": {
-        parameters: {
-            query?: {
-                id?: string;
-                record_id?: string;
-                package_id?: string;
-                role?: string;
-            };
-            header?: never;
-            path: {
-                item_id: string;
-            };
-            cookie?: never;
-        };
-        requestBody?: never;
-        responses: {
-            /** @description Successful Response */
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json": components["schemas"]["RecordPackageExistsResponse"];
-                };
-            };
-        };
-    };
-    "RecordRelation.count": {
-        parameters: {
-            query?: {
-                id?: string;
-                source_record_id?: string;
-                target_record_id?: string;
-                relation_type?: string;
-                note?: string;
-            };
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        requestBody?: never;
-        responses: {
-            /** @description Successful Response */
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json": components["schemas"]["RecordRelationCountResponse"];
-                };
-            };
-        };
-    };
-    "RecordRelation.group_by": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        requestBody: {
-            content: {
-                "application/json": components["schemas"]["RecordRelationGroupByRequest"];
-            };
-        };
-        responses: {
-            /** @description Successful Response */
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json": components["schemas"]["RecordRelationGroupByResponse"];
-                };
-            };
-        };
-    };
-    "RecordRelation.exists": {
-        parameters: {
-            query?: {
-                id?: string;
-                source_record_id?: string;
-                target_record_id?: string;
-                relation_type?: string;
-                note?: string;
-            };
-            header?: never;
-            path: {
-                item_id: string;
-            };
-            cookie?: never;
-        };
-        requestBody?: never;
-        responses: {
-            /** @description Successful Response */
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json": components["schemas"]["RecordRelationExistsResponse"];
-                };
-            };
-        };
-    };
-    "RecordRepository.count": {
-        parameters: {
-            query?: {
-                id?: string;
-                record_id?: string;
-                repository_id?: string;
-                role?: string;
-            };
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        requestBody?: never;
-        responses: {
-            /** @description Successful Response */
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json": components["schemas"]["RecordRepositoryCountResponse"];
-                };
-            };
-        };
-    };
-    "RecordRepository.group_by": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        requestBody: {
-            content: {
-                "application/json": components["schemas"]["RecordRepositoryGroupByRequest"];
-            };
-        };
-        responses: {
-            /** @description Successful Response */
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json": components["schemas"]["RecordRepositoryGroupByResponse"];
-                };
-            };
-        };
-    };
-    "RecordRepository.exists": {
-        parameters: {
-            query?: {
-                id?: string;
-                record_id?: string;
-                repository_id?: string;
-                role?: string;
-            };
-            header?: never;
-            path: {
-                item_id: string;
-            };
-            cookie?: never;
-        };
-        requestBody?: never;
-        responses: {
-            /** @description Successful Response */
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json": components["schemas"]["RecordRepositoryExistsResponse"];
-                };
-            };
-        };
-    };
-    "RecordResource.count": {
-        parameters: {
-            query?: {
-                id?: string;
-                record_id?: string;
-                resource_id?: string;
+                portfolio_id?: string;
+                product_id?: string;
                 role?: string;
                 sort_order?: number;
-            };
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        requestBody?: never;
-        responses: {
-            /** @description Successful Response */
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json": components["schemas"]["RecordResourceCountResponse"];
-                };
-            };
-        };
-    };
-    "RecordResource.group_by": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        requestBody: {
-            content: {
-                "application/json": components["schemas"]["RecordResourceGroupByRequest"];
-            };
-        };
-        responses: {
-            /** @description Successful Response */
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json": components["schemas"]["RecordResourceGroupByResponse"];
-                };
-            };
-        };
-    };
-    "RecordResource.exists": {
-        parameters: {
-            query?: {
-                id?: string;
-                record_id?: string;
-                resource_id?: string;
-                role?: string;
-                sort_order?: number;
-            };
-            header?: never;
-            path: {
-                item_id: string;
-            };
-            cookie?: never;
-        };
-        requestBody?: never;
-        responses: {
-            /** @description Successful Response */
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json": components["schemas"]["RecordResourceExistsResponse"];
-                };
-            };
-        };
-    };
-    "RecordTaxonomy.count": {
-        parameters: {
-            query?: {
-                id?: string;
-                record_id?: string;
-                taxonomy_id?: string;
-            };
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        requestBody?: never;
-        responses: {
-            /** @description Successful Response */
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json": components["schemas"]["RecordTaxonomyCountResponse"];
-                };
-            };
-        };
-    };
-    "RecordTaxonomy.group_by": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        requestBody: {
-            content: {
-                "application/json": components["schemas"]["RecordTaxonomyGroupByRequest"];
-            };
-        };
-        responses: {
-            /** @description Successful Response */
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json": components["schemas"]["RecordTaxonomyGroupByResponse"];
-                };
-            };
-        };
-    };
-    "RecordTaxonomy.exists": {
-        parameters: {
-            query?: {
-                id?: string;
-                record_id?: string;
-                taxonomy_id?: string;
-            };
-            header?: never;
-            path: {
-                item_id: string;
-            };
-            cookie?: never;
-        };
-        requestBody?: never;
-        responses: {
-            /** @description Successful Response */
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json": components["schemas"]["RecordTaxonomyExistsResponse"];
-                };
-            };
-        };
-    };
-    "Release.count": {
-        parameters: {
-            query?: {
-                id?: string;
-                package_id?: string;
-                repository_id?: string;
-                release_kind?: string;
-                version?: string;
-                route_key?: string;
-                url?: string;
-                published_at?: string;
-                downloads?: string;
-                prerelease?: boolean;
-                draft?: boolean;
                 observed_at?: string;
             };
             header?: never;
@@ -8634,49 +2743,19 @@ export interface operations {
                     [name: string]: unknown;
                 };
                 content: {
-                    "application/json": components["schemas"]["ReleaseCountResponse"];
+                    "application/json": components["schemas"]["PortfolioProductListResponse"];
                 };
             };
         };
     };
-    "Release.group_by": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        requestBody: {
-            content: {
-                "application/json": components["schemas"]["ReleaseGroupByRequest"];
-            };
-        };
-        responses: {
-            /** @description Successful Response */
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json": components["schemas"]["ReleaseGroupByResponse"];
-                };
-            };
-        };
-    };
-    "Release.exists": {
+    "PortfolioProduct.read": {
         parameters: {
             query?: {
                 id?: string;
-                package_id?: string;
-                repository_id?: string;
-                release_kind?: string;
-                version?: string;
-                route_key?: string;
-                url?: string;
-                published_at?: string;
-                downloads?: string;
-                prerelease?: boolean;
-                draft?: boolean;
+                portfolio_id?: string;
+                product_id?: string;
+                role?: string;
+                sort_order?: number;
                 observed_at?: string;
             };
             header?: never;
@@ -8693,12 +2772,310 @@ export interface operations {
                     [name: string]: unknown;
                 };
                 content: {
-                    "application/json": components["schemas"]["ReleaseExistsResponse"];
+                    "application/json": components["schemas"]["PortfolioProductReadResponse"];
                 };
             };
         };
     };
-    "Repository.count": {
+    "PortfolioRepository.list": {
+        parameters: {
+            query?: {
+                id?: string;
+                portfolio_id?: string;
+                repository_id?: string;
+                role?: string;
+                sort_order?: number;
+                observed_at?: string;
+            };
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description Successful Response */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["PortfolioRepositoryListResponse"];
+                };
+            };
+        };
+    };
+    "PortfolioRepository.read": {
+        parameters: {
+            query?: {
+                id?: string;
+                portfolio_id?: string;
+                repository_id?: string;
+                role?: string;
+                sort_order?: number;
+                observed_at?: string;
+            };
+            header?: never;
+            path: {
+                item_id: string;
+            };
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description Successful Response */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["PortfolioRepositoryReadResponse"];
+                };
+            };
+        };
+    };
+    "Product.list": {
+        parameters: {
+            query?: {
+                id?: string;
+                organization_id?: string;
+                slug?: string;
+                name?: string;
+                eyebrow?: string;
+                summary?: string;
+                body_markdown?: string;
+                maturity?: string;
+                visibility?: string;
+                featured?: boolean;
+                canonical_url?: string;
+                source_url?: string;
+                published_at?: string;
+                updated_at?: string;
+                content_revision?: number;
+            };
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description Successful Response */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ProductListResponse"];
+                };
+            };
+        };
+    };
+    "Product.read": {
+        parameters: {
+            query?: {
+                id?: string;
+                organization_id?: string;
+                slug?: string;
+                name?: string;
+                eyebrow?: string;
+                summary?: string;
+                body_markdown?: string;
+                maturity?: string;
+                visibility?: string;
+                featured?: boolean;
+                canonical_url?: string;
+                source_url?: string;
+                published_at?: string;
+                updated_at?: string;
+                content_revision?: number;
+            };
+            header?: never;
+            path: {
+                item_id: string;
+            };
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description Successful Response */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ProductReadResponse"];
+                };
+            };
+        };
+    };
+    "ProductPackage.list": {
+        parameters: {
+            query?: {
+                id?: string;
+                product_id?: string;
+                package_id?: string;
+                role?: string;
+                sort_order?: number;
+                observed_at?: string;
+            };
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description Successful Response */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ProductPackageListResponse"];
+                };
+            };
+        };
+    };
+    "ProductPackage.read": {
+        parameters: {
+            query?: {
+                id?: string;
+                product_id?: string;
+                package_id?: string;
+                role?: string;
+                sort_order?: number;
+                observed_at?: string;
+            };
+            header?: never;
+            path: {
+                item_id: string;
+            };
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description Successful Response */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ProductPackageReadResponse"];
+                };
+            };
+        };
+    };
+    "ProductRepository.list": {
+        parameters: {
+            query?: {
+                id?: string;
+                product_id?: string;
+                repository_id?: string;
+                role?: string;
+                sort_order?: number;
+                observed_at?: string;
+            };
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description Successful Response */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ProductRepositoryListResponse"];
+                };
+            };
+        };
+    };
+    "ProductRepository.read": {
+        parameters: {
+            query?: {
+                id?: string;
+                product_id?: string;
+                repository_id?: string;
+                role?: string;
+                sort_order?: number;
+                observed_at?: string;
+            };
+            header?: never;
+            path: {
+                item_id: string;
+            };
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description Successful Response */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ProductRepositoryReadResponse"];
+                };
+            };
+        };
+    };
+    "ProductResource.list": {
+        parameters: {
+            query?: {
+                id?: string;
+                product_id?: string;
+                resource_id?: string;
+                role?: string;
+                sort_order?: number;
+                observed_at?: string;
+            };
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description Successful Response */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ProductResourceListResponse"];
+                };
+            };
+        };
+    };
+    "ProductResource.read": {
+        parameters: {
+            query?: {
+                id?: string;
+                product_id?: string;
+                resource_id?: string;
+                role?: string;
+                sort_order?: number;
+                observed_at?: string;
+            };
+            header?: never;
+            path: {
+                item_id: string;
+            };
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description Successful Response */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ProductResourceReadResponse"];
+                };
+            };
+        };
+    };
+    "Repository.list": {
         parameters: {
             query?: {
                 id?: string;
@@ -8732,36 +3109,12 @@ export interface operations {
                     [name: string]: unknown;
                 };
                 content: {
-                    "application/json": components["schemas"]["RepositoryCountResponse"];
+                    "application/json": components["schemas"]["RepositoryListResponse"];
                 };
             };
         };
     };
-    "Repository.group_by": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        requestBody: {
-            content: {
-                "application/json": components["schemas"]["RepositoryGroupByRequest"];
-            };
-        };
-        responses: {
-            /** @description Successful Response */
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json": components["schemas"]["RepositoryGroupByResponse"];
-                };
-            };
-        };
-    };
-    "Repository.exists": {
+    "Repository.read": {
         parameters: {
             query?: {
                 id?: string;
@@ -8797,19 +3150,20 @@ export interface operations {
                     [name: string]: unknown;
                 };
                 content: {
-                    "application/json": components["schemas"]["RepositoryExistsResponse"];
+                    "application/json": components["schemas"]["RepositoryReadResponse"];
                 };
             };
         };
     };
-    "RepositoryContributor.count": {
+    "RepositoryPackage.list": {
         parameters: {
             query?: {
                 id?: string;
                 repository_id?: string;
-                login?: string;
-                profile_url?: string;
-                contributions?: number;
+                package_id?: string;
+                role?: string;
+                repository_path?: string;
+                sort_order?: number;
                 observed_at?: string;
             };
             header?: never;
@@ -8824,43 +3178,20 @@ export interface operations {
                     [name: string]: unknown;
                 };
                 content: {
-                    "application/json": components["schemas"]["RepositoryContributorCountResponse"];
+                    "application/json": components["schemas"]["RepositoryPackageListResponse"];
                 };
             };
         };
     };
-    "RepositoryContributor.group_by": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        requestBody: {
-            content: {
-                "application/json": components["schemas"]["RepositoryContributorGroupByRequest"];
-            };
-        };
-        responses: {
-            /** @description Successful Response */
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json": components["schemas"]["RepositoryContributorGroupByResponse"];
-                };
-            };
-        };
-    };
-    "RepositoryContributor.exists": {
+    "RepositoryPackage.read": {
         parameters: {
             query?: {
                 id?: string;
                 repository_id?: string;
-                login?: string;
-                profile_url?: string;
-                contributions?: number;
+                package_id?: string;
+                role?: string;
+                repository_path?: string;
+                sort_order?: number;
                 observed_at?: string;
             };
             header?: never;
@@ -8877,19 +3208,20 @@ export interface operations {
                     [name: string]: unknown;
                 };
                 content: {
-                    "application/json": components["schemas"]["RepositoryContributorExistsResponse"];
+                    "application/json": components["schemas"]["RepositoryPackageReadResponse"];
                 };
             };
         };
     };
-    "RepositoryLanguage.count": {
+    "RepositoryResource.list": {
         parameters: {
             query?: {
                 id?: string;
                 repository_id?: string;
-                language?: string;
-                bytes?: number;
-                percentage?: string;
+                resource_id?: string;
+                role?: string;
+                repository_path?: string;
+                sort_order?: number;
                 observed_at?: string;
             };
             header?: never;
@@ -8904,43 +3236,20 @@ export interface operations {
                     [name: string]: unknown;
                 };
                 content: {
-                    "application/json": components["schemas"]["RepositoryLanguageCountResponse"];
+                    "application/json": components["schemas"]["RepositoryResourceListResponse"];
                 };
             };
         };
     };
-    "RepositoryLanguage.group_by": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        requestBody: {
-            content: {
-                "application/json": components["schemas"]["RepositoryLanguageGroupByRequest"];
-            };
-        };
-        responses: {
-            /** @description Successful Response */
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json": components["schemas"]["RepositoryLanguageGroupByResponse"];
-                };
-            };
-        };
-    };
-    "RepositoryLanguage.exists": {
+    "RepositoryResource.read": {
         parameters: {
             query?: {
                 id?: string;
                 repository_id?: string;
-                language?: string;
-                bytes?: number;
-                percentage?: string;
+                resource_id?: string;
+                role?: string;
+                repository_path?: string;
+                sort_order?: number;
                 observed_at?: string;
             };
             header?: never;
@@ -8957,12 +3266,12 @@ export interface operations {
                     [name: string]: unknown;
                 };
                 content: {
-                    "application/json": components["schemas"]["RepositoryLanguageExistsResponse"];
+                    "application/json": components["schemas"]["RepositoryResourceReadResponse"];
                 };
             };
         };
     };
-    "RepositorySsotInventory.count": {
+    "RepositorySsotItem.list": {
         parameters: {
             query?: {
                 id?: string;
@@ -8986,36 +3295,12 @@ export interface operations {
                     [name: string]: unknown;
                 };
                 content: {
-                    "application/json": components["schemas"]["RepositorySsotInventoryCountResponse"];
+                    "application/json": components["schemas"]["RepositorySsotItemListResponse"];
                 };
             };
         };
     };
-    "RepositorySsotInventory.group_by": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        requestBody: {
-            content: {
-                "application/json": components["schemas"]["RepositorySsotInventoryGroupByRequest"];
-            };
-        };
-        responses: {
-            /** @description Successful Response */
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json": components["schemas"]["RepositorySsotInventoryGroupByResponse"];
-                };
-            };
-        };
-    };
-    "RepositorySsotInventory.exists": {
+    "RepositorySsotItem.read": {
         parameters: {
             query?: {
                 id?: string;
@@ -9041,12 +3326,12 @@ export interface operations {
                     [name: string]: unknown;
                 };
                 content: {
-                    "application/json": components["schemas"]["RepositorySsotInventoryExistsResponse"];
+                    "application/json": components["schemas"]["RepositorySsotItemReadResponse"];
                 };
             };
         };
     };
-    "RepositorySsotRegistry.count": {
+    "RepositorySsotRegistry.list": {
         parameters: {
             query?: {
                 id?: string;
@@ -9069,36 +3354,12 @@ export interface operations {
                     [name: string]: unknown;
                 };
                 content: {
-                    "application/json": components["schemas"]["RepositorySsotRegistryCountResponse"];
+                    "application/json": components["schemas"]["RepositorySsotRegistryListResponse"];
                 };
             };
         };
     };
-    "RepositorySsotRegistry.group_by": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        requestBody: {
-            content: {
-                "application/json": components["schemas"]["RepositorySsotRegistryGroupByRequest"];
-            };
-        };
-        responses: {
-            /** @description Successful Response */
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json": components["schemas"]["RepositorySsotRegistryGroupByResponse"];
-                };
-            };
-        };
-    };
-    "RepositorySsotRegistry.exists": {
+    "RepositorySsotRegistry.read": {
         parameters: {
             query?: {
                 id?: string;
@@ -9123,22 +3384,79 @@ export interface operations {
                     [name: string]: unknown;
                 };
                 content: {
-                    "application/json": components["schemas"]["RepositorySsotRegistryExistsResponse"];
+                    "application/json": components["schemas"]["RepositorySsotRegistryReadResponse"];
                 };
             };
         };
     };
-    "Resource.count": {
+    "RepositoryTechnology.list": {
         parameters: {
             query?: {
                 id?: string;
-                resource_type?: string;
-                route_key?: string;
                 repository_id?: string;
-                path?: string;
-                title?: string;
-                url?: string;
-                summary?: string;
+                technology_id?: string;
+                role?: string;
+                bytes?: string;
+                percentage?: string;
+                observed_at?: string;
+            };
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description Successful Response */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["RepositoryTechnologyListResponse"];
+                };
+            };
+        };
+    };
+    "RepositoryTechnology.read": {
+        parameters: {
+            query?: {
+                id?: string;
+                repository_id?: string;
+                technology_id?: string;
+                role?: string;
+                bytes?: string;
+                percentage?: string;
+                observed_at?: string;
+            };
+            header?: never;
+            path: {
+                item_id: string;
+            };
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description Successful Response */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["RepositoryTechnologyReadResponse"];
+                };
+            };
+        };
+    };
+    "Technology.list": {
+        parameters: {
+            query?: {
+                id?: string;
+                slug?: string;
+                name?: string;
+                category?: string;
+                description?: string;
+                icon_key?: string;
+                website_url?: string;
                 source_url?: string;
                 observed_at?: string;
             };
@@ -9154,46 +3472,21 @@ export interface operations {
                     [name: string]: unknown;
                 };
                 content: {
-                    "application/json": components["schemas"]["ResourceCountResponse"];
+                    "application/json": components["schemas"]["TechnologyListResponse"];
                 };
             };
         };
     };
-    "Resource.group_by": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        requestBody: {
-            content: {
-                "application/json": components["schemas"]["ResourceGroupByRequest"];
-            };
-        };
-        responses: {
-            /** @description Successful Response */
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json": components["schemas"]["ResourceGroupByResponse"];
-                };
-            };
-        };
-    };
-    "Resource.exists": {
+    "Technology.read": {
         parameters: {
             query?: {
                 id?: string;
-                resource_type?: string;
-                route_key?: string;
-                repository_id?: string;
-                path?: string;
-                title?: string;
-                url?: string;
-                summary?: string;
+                slug?: string;
+                name?: string;
+                category?: string;
+                description?: string;
+                icon_key?: string;
+                website_url?: string;
                 source_url?: string;
                 observed_at?: string;
             };
@@ -9211,19 +3504,27 @@ export interface operations {
                     [name: string]: unknown;
                 };
                 content: {
-                    "application/json": components["schemas"]["ResourceExistsResponse"];
+                    "application/json": components["schemas"]["TechnologyReadResponse"];
                 };
             };
         };
     };
-    "ResourceRepository.count": {
+    "TypedResource.list": {
         parameters: {
             query?: {
                 id?: string;
-                resource_id?: string;
+                resource_type?: string;
+                organization_id?: string;
                 repository_id?: string;
-                role?: string;
-                path?: string;
+                title?: string;
+                summary?: string;
+                url?: string;
+                canonical_path?: string;
+                source_url?: string;
+                repository_path?: string;
+                reachability?: string;
+                http_status?: string;
+                last_checked_at?: string;
                 observed_at?: string;
             };
             header?: never;
@@ -9238,43 +3539,27 @@ export interface operations {
                     [name: string]: unknown;
                 };
                 content: {
-                    "application/json": components["schemas"]["ResourceRepositoryCountResponse"];
+                    "application/json": components["schemas"]["TypedResourceListResponse"];
                 };
             };
         };
     };
-    "ResourceRepository.group_by": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        requestBody: {
-            content: {
-                "application/json": components["schemas"]["ResourceRepositoryGroupByRequest"];
-            };
-        };
-        responses: {
-            /** @description Successful Response */
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json": components["schemas"]["ResourceRepositoryGroupByResponse"];
-                };
-            };
-        };
-    };
-    "ResourceRepository.exists": {
+    "TypedResource.read": {
         parameters: {
             query?: {
                 id?: string;
-                resource_id?: string;
+                resource_type?: string;
+                organization_id?: string;
                 repository_id?: string;
-                role?: string;
-                path?: string;
+                title?: string;
+                summary?: string;
+                url?: string;
+                canonical_path?: string;
+                source_url?: string;
+                repository_path?: string;
+                reachability?: string;
+                http_status?: string;
+                last_checked_at?: string;
                 observed_at?: string;
             };
             header?: never;
@@ -9291,241 +3576,7 @@ export interface operations {
                     [name: string]: unknown;
                 };
                 content: {
-                    "application/json": components["schemas"]["ResourceRepositoryExistsResponse"];
-                };
-            };
-        };
-    };
-    "ResourceTaxonomy.count": {
-        parameters: {
-            query?: {
-                id?: string;
-                resource_id?: string;
-                taxonomy_id?: string;
-            };
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        requestBody?: never;
-        responses: {
-            /** @description Successful Response */
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json": components["schemas"]["ResourceTaxonomyCountResponse"];
-                };
-            };
-        };
-    };
-    "ResourceTaxonomy.group_by": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        requestBody: {
-            content: {
-                "application/json": components["schemas"]["ResourceTaxonomyGroupByRequest"];
-            };
-        };
-        responses: {
-            /** @description Successful Response */
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json": components["schemas"]["ResourceTaxonomyGroupByResponse"];
-                };
-            };
-        };
-    };
-    "ResourceTaxonomy.exists": {
-        parameters: {
-            query?: {
-                id?: string;
-                resource_id?: string;
-                taxonomy_id?: string;
-            };
-            header?: never;
-            path: {
-                item_id: string;
-            };
-            cookie?: never;
-        };
-        requestBody?: never;
-        responses: {
-            /** @description Successful Response */
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json": components["schemas"]["ResourceTaxonomyExistsResponse"];
-                };
-            };
-        };
-    };
-    "ResourceType.count": {
-        parameters: {
-            query?: {
-                id?: string;
-                label?: string;
-                category?: string;
-                description?: string;
-                icon_key?: string;
-                detail_schema_key?: string;
-            };
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        requestBody?: never;
-        responses: {
-            /** @description Successful Response */
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json": components["schemas"]["ResourceTypeCountResponse"];
-                };
-            };
-        };
-    };
-    "ResourceType.group_by": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        requestBody: {
-            content: {
-                "application/json": components["schemas"]["ResourceTypeGroupByRequest"];
-            };
-        };
-        responses: {
-            /** @description Successful Response */
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json": components["schemas"]["ResourceTypeGroupByResponse"];
-                };
-            };
-        };
-    };
-    "ResourceType.exists": {
-        parameters: {
-            query?: {
-                id?: string;
-                label?: string;
-                category?: string;
-                description?: string;
-                icon_key?: string;
-                detail_schema_key?: string;
-            };
-            header?: never;
-            path: {
-                item_id: string;
-            };
-            cookie?: never;
-        };
-        requestBody?: never;
-        responses: {
-            /** @description Successful Response */
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json": components["schemas"]["ResourceTypeExistsResponse"];
-                };
-            };
-        };
-    };
-    "Taxonomy.count": {
-        parameters: {
-            query?: {
-                id?: string;
-                taxonomy_type?: string;
-                slug?: string;
-                label?: string;
-                category?: string;
-                description?: string;
-            };
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        requestBody?: never;
-        responses: {
-            /** @description Successful Response */
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json": components["schemas"]["TaxonomyCountResponse"];
-                };
-            };
-        };
-    };
-    "Taxonomy.group_by": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        requestBody: {
-            content: {
-                "application/json": components["schemas"]["TaxonomyGroupByRequest"];
-            };
-        };
-        responses: {
-            /** @description Successful Response */
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json": components["schemas"]["TaxonomyGroupByResponse"];
-                };
-            };
-        };
-    };
-    "Taxonomy.exists": {
-        parameters: {
-            query?: {
-                id?: string;
-                taxonomy_type?: string;
-                slug?: string;
-                label?: string;
-                category?: string;
-                description?: string;
-            };
-            header?: never;
-            path: {
-                item_id: string;
-            };
-            cookie?: never;
-        };
-        requestBody?: never;
-        responses: {
-            /** @description Successful Response */
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json": components["schemas"]["TaxonomyExistsResponse"];
+                    "application/json": components["schemas"]["TypedResourceReadResponse"];
                 };
             };
         };

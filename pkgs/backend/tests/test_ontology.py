@@ -1,4 +1,3 @@
-from groupsum_catalog_api.importer import ensure_universal_resource_columns
 from groupsum_catalog_api.ontology import (
     RELATIONSHIP_TYPES,
     RESOURCE_TYPES,
@@ -37,18 +36,3 @@ def test_relationship_vocabulary_has_no_ambiguous_related_edge() -> None:
     assert "related" not in RELATIONSHIP_TYPES
     assert "related_to" not in RELATIONSHIP_TYPES
     assert {"documents", "depends_on", "claim_has_evidence", "contains"} <= RELATIONSHIP_TYPES
-
-
-def test_postgres_upgrade_allows_observations_without_evidence() -> None:
-    class RecordingConnection:
-        postgres = True
-
-        def __init__(self) -> None:
-            self.queries: list[str] = []
-
-        def execute(self, query: str) -> None:
-            self.queries.append(query)
-
-    connection = RecordingConnection()
-    ensure_universal_resource_columns(connection)  # type: ignore[arg-type]
-    assert "ALTER TABLE observations ALTER COLUMN evidence_type DROP NOT NULL" in connection.queries
