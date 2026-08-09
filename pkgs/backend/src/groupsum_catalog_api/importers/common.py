@@ -11,7 +11,7 @@ from ..domain.resources.relationship_types import RELATIONSHIP_TYPES
 from ..tables.association import Association
 from ..tables.organization import Organization
 from ..tables.portfolio import Portfolio
-from ..tables.registry import ALL_TABLES, ENTITY_TABLES
+from ..tables.registry import CURRENT_PROJECTION_TABLES, ENTITY_TABLES
 
 
 def stable_id(namespace: str, *parts: object) -> str:
@@ -111,7 +111,7 @@ def load_inputs(repo_root: Path) -> tuple[dict[str, Any], list[dict], list[dict]
 
 
 def clear_catalog(session) -> None:
-    for table in reversed(ALL_TABLES):
+    for table in reversed(CURRENT_PROJECTION_TABLES):
         session.query(table).delete(synchronize_session=False)
     session.flush()
 

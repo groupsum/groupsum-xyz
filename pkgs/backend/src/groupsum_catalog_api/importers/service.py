@@ -4,11 +4,14 @@ import json
 from datetime import UTC, datetime
 from pathlib import Path
 
+from ..analytics import delete_snapshot, replace_snapshot_metrics
 from ..domain.resources.ontology import (
     RECORD_RESOURCE_TYPES,
     SSOT_RESOURCE_TYPES,
     normalize_legacy_resource_type,
 )
+from ..tables.catalog_snapshot import CatalogSnapshot
+from ..tables.observation import CatalogObservation
 from ..tables.organization import Organization
 from ..tables.package import Package
 from ..tables.product import Product
@@ -16,6 +19,7 @@ from ..tables.registry import ENTITY_TABLES, RESOURCE_TABLES
 from ..tables.repository import Repository
 from ..tables.repository_ssot_registry import RepositorySsotRegistry
 from ..tables.technology import Technology
+from .analytics import completed_at, rendered_measurements, snapshot_bundle
 from .common import (
     clear_catalog,
     import_editorial,
@@ -292,13 +296,19 @@ def _attach_editorial(
                     )
 
 
-def import_catalog_data(
+async def import_catalog_data(
     database_path: str | Path,
     repo_root: Path,
     analytics_path: Path | None = None,
-) -> dict[str, int]:
-    del database_path, analytics_path
+) -> dict[str, int | str]:
     editorial, repository_rows, package_rows, technology_rows = load_inputs(repo_root)
+    manifest, observation_rows, collected_measurements = snapshot_bundle(repo_root)
+    snapshot_id = str(manifest["snapshot_id"])
+    del database_path, analytics_path
+    measurement_rows = collected_measurements or rendered_measurements(
+        snapshot_id, repository_rows, package_rows, technology_rows
+    )
+    measurement_count = await replace_snapshot_metrics(snapshot_id, measurement_rows)
     observed_at = datetime.now(UTC).replace(microsecond=0)
     session, release = Organization.acquire(op_alias="list")
     try:
@@ -316,8 +326,46 @@ def import_catalog_data(
         resources = _import_resources(session, repository_rows, repositories, observed_at)
         _attach_editorial(session, repo_root, editorial, repositories, packages, observed_at)
         validate_associations(session)
+        session.query(CatalogSnapshot).update({CatalogSnapshot.is_current: False})
+        session.merge(
+            CatalogSnapshot(
+                id=snapshot_id,
+                schema_version=manifest.get("schema_version"),
+                collected_at=parse_datetime(manifest.get("collected_at")) or observed_at,
+                completed_at=completed_at(),
+                status="complete",
+                collector_version=manifest.get("collector_version"),
+                source_digest=manifest["source_digest"],
+                parent_snapshot_id=manifest.get("parent_snapshot_id"),
+                is_current=True,
+                completeness=manifest.get("completeness") or {},
+                observation_count=len(observation_rows),
+                measurement_count=measurement_count,
+                error_count=sum(row.get("status") == "error" for row in observation_rows),
+            )
+        )
+        for row in observation_rows:
+            session.merge(
+                CatalogObservation(
+                    id=row["observation_id"],
+                    snapshot_id=snapshot_id,
+                    subject_type=row["subject_type"],
+                    subject_id=row["subject_id"],
+                    observation_type=row.get("observation_type") or "collection",
+                    source_kind=row.get("source_kind") or "unknown",
+                    source_url=row.get("source_url"),
+                    status=row.get("status") or "unknown",
+                    observed_at=parse_datetime(row.get("observed_at")) or observed_at,
+                    payload=row.get("payload"),
+                    content_hash=row["content_hash"],
+                    confidence=row.get("confidence") or "reported",
+                )
+            )
         session.commit()
         return {
+            "snapshot_id": snapshot_id,
+            "observations": len(observation_rows),
+            "measurements": measurement_count,
             "organizations": organizations,
             "products": int(editorial_counts["products"]),
             "portfolios": int(editorial_counts["portfolios"]),
@@ -328,6 +376,7 @@ def import_catalog_data(
         }
     except Exception:
         session.rollback()
+        await delete_snapshot(snapshot_id)
         raise
     finally:
         release()

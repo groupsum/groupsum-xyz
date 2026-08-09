@@ -43,28 +43,6 @@ services:
         aliases:
           - groupsum-catalog-api
 
-  groupsum-duckdb:
-    build:
-      context: .
-      dockerfile: pkgs/backend/Dockerfile
-    container_name: groupsum-duckdb
-    restart: unless-stopped
-    command: ["python", "-m", "groupsum_catalog_api.duckdb_service"]
-    environment:
-      GROUPSUM_ANALYTICS_PATH: /analytics/groupsum-metrics.duckdb
-    volumes:
-      - groupsum-duckdb-data:/analytics:ro
-    depends_on:
-      groupsum-catalog-api:
-        condition: service_healthy
-    healthcheck:
-      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8001/healthz')"]
-      interval: 10s
-      timeout: 5s
-      retries: 30
-    networks:
-      - dockerwp
-
   groupsum-xyz:
     build:
       context: .
@@ -78,8 +56,6 @@ services:
       - "8082:80"
     depends_on:
       groupsum-catalog-api:
-        condition: service_healthy
-      groupsum-duckdb:
         condition: service_healthy
     networks:
       dockerwp:

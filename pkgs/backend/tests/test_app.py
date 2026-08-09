@@ -5,6 +5,7 @@ from pathlib import Path
 import httpx
 import pytest
 
+from groupsum_catalog_api.analytics import replace_snapshot_metrics
 from groupsum_catalog_api.app import build_app
 from groupsum_catalog_api.domain.resources.ontology import RESOURCE_TYPES
 from groupsum_catalog_api.domain.resources.relationship_types import RELATIONSHIP_TYPES
@@ -20,7 +21,7 @@ from groupsum_catalog_api.tables.technology import Technology
 
 
 def test_every_public_table_exposes_exactly_read_and_list() -> None:
-    assert len(ALL_TABLES) == 158
+    assert len(ALL_TABLES) == 162
     for table in ALL_TABLES:
         assert {operation.target for operation in table.TABLE_PROFILE.ops} == {"read", "list"}
 
@@ -85,6 +86,43 @@ async def test_openapi_is_generated_from_tigrbl_tables(tmp_path: Path) -> None:
         assert "/api/v1/catalog/repositories" in paths
         assert "/api/v1/products" in paths
         assert "/api/v1/entities/{entity_type}/{entity_id}" in paths
+
+
+@pytest.mark.anyio
+async def test_analytics_uses_the_named_tigrbl_duckdb_engine(tmp_path: Path) -> None:
+    analytics_path = tmp_path / "metrics.duckdb"
+    app = build_app(tmp_path / "catalog.sqlite3", analytics_path)
+    measurement = {
+        "measurement_id": "measurement:test",
+        "snapshot_id": "snapshot:test",
+        "subject_type": "source.repository",
+        "subject_id": "repository:test",
+        "metric_key": "stars",
+        "numeric_value": 3.0,
+        "text_value": None,
+        "unit": "count",
+        "dimensions": {},
+        "period_start": None,
+        "period_end": None,
+        "source_url": None,
+        "source_observation_id": None,
+        "observed_at": "2026-08-09T00:00:00Z",
+    }
+
+    assert await replace_snapshot_metrics("snapshot:test", [measurement]) == 1
+
+    transport = httpx.ASGITransport(app=app)
+    async with httpx.AsyncClient(transport=transport, base_url="http://test") as client:
+        response = await client.get("/api/v1/analytics/summary")
+
+    assert response.status_code == 200
+    assert response.json() == {
+        "status": "ok",
+        "engine": "duckdb",
+        "metric_observations": 1,
+        "record_aggregates": 0,
+    }
+    assert analytics_path.is_file()
 
 
 @pytest.mark.anyio
@@ -170,6 +208,35 @@ async def test_importer_populates_native_table_resources(tmp_path: Path) -> None
         assert repository_detail.status_code == 200
         metrics = (await client.get("/api/v1/repository-metrics")).json()
         assert metrics["count"] == counts["repositories"]
+
+        snapshots = (await client.get("/api/v1/snapshots")).json()
+        assert snapshots["count"] == 1
+        assert snapshots["snapshots"][0]["is_current"] is True
+        snapshot_id = snapshots["snapshots"][0]["snapshot_id"]
+        assert (await client.get(f"/api/v1/snapshots/{snapshot_id}")).status_code == 200
+
+        analytics = (await client.get("/api/v1/analytics/overview")).json()
+        assert analytics["snapshot_id"] == snapshot_id
+        assert analytics["count"] > 0
+        entity_metrics = (
+            await client.get(
+                "/api/v1/entities/source.repository/metrics",
+                params={"entity_id": repository["id"]},
+            )
+        ).json()
+        assert entity_metrics["count"] > 0
+        assert entity_metrics["insufficient_history"] is True
+        star_series = await client.get(
+            "/api/v1/entities/source.repository/metrics/stars/series",
+            params={"entity_id": repository["id"]},
+        )
+        assert star_series.status_code == 200
+        observations = await client.get(
+            "/api/v1/entities/source.repository/observations",
+            params={"entity_id": repository["id"]},
+        )
+        assert observations.status_code == 200
+        assert observations.json()["kind"] == "entity_observations"
 
         packages = (await client.get("/api/v1/catalog/packages?page_size=3")).json()
         package = packages["records"][0]

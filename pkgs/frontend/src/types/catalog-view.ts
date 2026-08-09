@@ -9,6 +9,8 @@ export type CatalogViewRecord = {
   description?: string; summary?: string; route?: string; route_key?: string | null;
   url?: string; registry_url?: string; source_url?: string; observed_at?: string | null;
   claim_boundary?: string; metrics?: Record<string, number>; history?: unknown; commit_activity?: unknown;
+  analytics_points?: unknown;
+  catalog_observations?: unknown; selected_snapshot_id?: string;
   evidence?: CatalogSourceObservation[]; legal_observations?: unknown[]; ssot_governance?: Record<string, unknown>;
   entity_graph?: EntityGraph | null; owner?: string; organization?: string; ecosystem?: string;
   publication_status?: string | null; package_kind?: string; resource_type?: string; category?: string | null;

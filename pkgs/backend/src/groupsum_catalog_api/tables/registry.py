@@ -1,8 +1,12 @@
 from .association import Association
+from .catalog_snapshot import CatalogSnapshot
+from .metric_observation import MetricObservation
+from .observation import CatalogObservation
 from .organization import Organization
 from .package import Package
 from .portfolio import Portfolio
 from .product import Product
+from .record_aggregate import RecordAggregate
 from .repository import Repository
 from .repository_ssot_registry import RepositorySsotRegistry
 from .resources import RESOURCE_ENTITY_TABLES, RESOURCE_TABLES
@@ -22,6 +26,16 @@ ALL_TABLES = (
     *CORE_ENTITY_TABLES,
     *RESOURCE_ENTITY_TABLES,
     Association,
+    CatalogSnapshot,
+    CatalogObservation,
+    MetricObservation,
+    RecordAggregate,
+)
+
+CURRENT_PROJECTION_TABLES = (
+    *CORE_ENTITY_TABLES,
+    *RESOURCE_ENTITY_TABLES,
+    Association,
 )
 
 ENTITY_TABLES = {
@@ -35,4 +49,10 @@ ENTITY_TABLES = {
     **RESOURCE_TABLES,
 }
 
-__all__ = ["ALL_TABLES", "CORE_ENTITY_TABLES", "ENTITY_TABLES", "RESOURCE_TABLES"]
+__all__ = [
+    "ALL_TABLES",
+    "CORE_ENTITY_TABLES",
+    "CURRENT_PROJECTION_TABLES",
+    "ENTITY_TABLES",
+    "RESOURCE_TABLES",
+]

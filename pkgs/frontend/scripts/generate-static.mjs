@@ -185,6 +185,15 @@ fs.copyFileSync(
   path.join("pkgs", "backend", "generated", "api-snapshots", "repository-metrics", "index.json"),
   repositoryMetricsTarget,
 );
+for (const [source, target] of [
+  [path.join("snapshots", "index.json"), path.join("snapshots")],
+  [path.join("analytics", "overview.json"), path.join("analytics", "overview")],
+  [path.join("analytics", "summary.json"), path.join("analytics", "summary")],
+]) {
+  const apiTarget = path.join(OUT, "api", "v1", target);
+  fs.mkdirSync(path.dirname(apiTarget), { recursive: true });
+  fs.copyFileSync(path.join("pkgs", "backend", "generated", "api-snapshots", source), apiTarget);
+}
 writeDiscovery();
 writeCleanFullManifest();
 const catalogOut = path.join(OUT, "catalog");

@@ -1,10 +1,31 @@
 // Generated from backend/openapi.json. Do not edit manually.
 import { catalogFetch } from "./client";
 
-export const OPENAPI_SHA256 = "f1a293b89b0f574441c7e29143766e8ba1f75a1c45d3723006e4e08b4bd1ef2f" as const;
+export { OPENAPI_SHA256 } from "./contract.generated";
 
 export type TaxonomyItem = { slug: string; label: string; category: string | null };
 export type MetricPoint = { observed_at: string; value: number };
+export type AnalyticsMetricPoint = {
+  snapshot_id: string; subject_type: string; subject_id: string; metric_key: string;
+  numeric_value?: number | null; text_value?: string | null; unit: string;
+  dimensions: Record<string, unknown>; period_start?: string | null; period_end?: string | null;
+  observed_at: string; source_url?: string | null;
+};
+export type EntityMetrics = {
+  kind: "entity_metrics" | "entity_metric_series"; entity_type: string; entity_id: string;
+  metric_key?: string | null; count: number; points: AnalyticsMetricPoint[];
+  insufficient_history: boolean;
+};
+export type CatalogSnapshot = {
+  snapshot_id: string; schema_version?: string | null; collected_at: string; completed_at?: string | null;
+  status: string; collector_version?: string | null; source_digest: string; is_current: boolean;
+  completeness: Record<string, unknown>; observation_count: number; measurement_count: number; error_count: number;
+};
+export type CatalogObservation = {
+  observation_id: string; snapshot_id: string; observation_type: string; source_kind: string;
+  source_url?: string | null; status: string; observed_at: string;
+  payload?: Record<string, unknown> | null; content_hash: string; confidence: string;
+};
 export type CommitActivityPoint = { date: string; count: number };
 export type SsotGovernanceSummary = {
   present?: boolean; governed?: boolean; valid?: boolean; registry_url?: string | null;
@@ -196,10 +217,40 @@ export async function getRepositoryMetricSnapshot(owner = "", signal?: AbortSign
   return response.json() as Promise<RepositoryMetricSnapshot>;
 }
 
-export async function getEntityPageModel(entityId: string, signal?: AbortSignal): Promise<EntityPageModel> {
-  const response = await catalogFetch(`/api/v1/entities/${encodeURIComponent(entityId)}`, {
+export async function getEntityPageModel(entityType: string, entityId: string, signal?: AbortSignal): Promise<EntityPageModel> {
+  const response = await catalogFetch(`/api/v1/entities/${encodeURIComponent(entityType)}/${encodeURIComponent(entityId)}`, {
     signal, headers: { Accept: "application/json" }, cache: "default",
   });
   if (!response.ok) throw new Error(`Entity API response ${response.status}`);
   return response.json() as Promise<EntityPageModel>;
+}
+
+export async function getEntityMetrics(entityType: string, entityId: string, signal?: AbortSignal): Promise<EntityMetrics> {
+  const response = await catalogFetch(`/api/v1/entities/${encodeURIComponent(entityType)}/metrics?entity_id=${encodeURIComponent(entityId)}`, {
+    signal, headers: { Accept: "application/json" }, cache: "default",
+  });
+  if (!response.ok) throw new Error(`Entity metrics response ${response.status}`);
+  return response.json() as Promise<EntityMetrics>;
+}
+
+export async function getEntityMetricSeries(entityType: string, entityId: string, metricKey: string, signal?: AbortSignal): Promise<EntityMetrics> {
+  const response = await catalogFetch(`/api/v1/entities/${encodeURIComponent(entityType)}/metrics/${encodeURIComponent(metricKey)}/series?entity_id=${encodeURIComponent(entityId)}`, {
+    signal, headers: { Accept: "application/json" }, cache: "default",
+  });
+  if (!response.ok) throw new Error(`Entity metric series response ${response.status}`);
+  return response.json() as Promise<EntityMetrics>;
+}
+
+export async function getCatalogSnapshots(signal?: AbortSignal): Promise<{ kind: string; count: number; snapshots: CatalogSnapshot[] }> {
+  const response = await catalogFetch("/api/v1/snapshots", { signal, headers: { Accept: "application/json" }, cache: "default" });
+  if (!response.ok) throw new Error(`Catalog snapshots response ${response.status}`);
+  return response.json();
+}
+
+export async function getEntityObservations(entityType: string, entityId: string, signal?: AbortSignal): Promise<{ kind: string; entity_type: string; entity_id: string; count: number; observations: CatalogObservation[] }> {
+  const response = await catalogFetch(`/api/v1/entities/${encodeURIComponent(entityType)}/observations?entity_id=${encodeURIComponent(entityId)}`, {
+    signal, headers: { Accept: "application/json" }, cache: "default",
+  });
+  if (!response.ok) throw new Error(`Entity observations response ${response.status}`);
+  return response.json();
 }

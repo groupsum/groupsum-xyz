@@ -25,6 +25,18 @@ from .github_collection import *  # noqa: F403
 from .normalization import *  # noqa: F403
 from .package_collection import *  # noqa: F403
 from .resource_discovery import *  # noqa: F403
+from .snapshots import publish_snapshot
+
+
+def _write_outputs(args, catalog: dict[str, Any], summary: dict[str, Any]) -> dict[str, Any]:
+    for path in (args.output, args.summary, args.typescript):
+        path.parent.mkdir(parents=True, exist_ok=True)
+    args.output.write_text(json.dumps(catalog, indent=2, sort_keys=True) + "\n", encoding="utf-8")
+    manifest = publish_snapshot(catalog, args.output)
+    summary["snapshot_id"] = manifest["snapshot_id"]
+    args.summary.write_text(json.dumps(summary, indent=2, sort_keys=True) + "\n", encoding="utf-8")
+    args.typescript.write_text(typescript_summary(summary), encoding="utf-8")
+    return manifest
 
 def main() -> int:
     parser = argparse.ArgumentParser()
@@ -131,9 +143,7 @@ def main() -> int:
         )
         current["relationships"] = relation_rows(current["repositories"], current["packages"])
         summary = summarize(current)
-        args.output.write_text(json.dumps(current, indent=2, sort_keys=True), encoding="utf-8")
-        args.summary.write_text(json.dumps(summary, indent=2, sort_keys=True), encoding="utf-8")
-        args.typescript.write_text(typescript_summary(summary), encoding="utf-8")
+        _write_outputs(args, current, summary)
         print(json.dumps({"recovered_repositories": sorted(failed), **summary}, indent=2))
         return 0
 
@@ -210,9 +220,7 @@ def main() -> int:
         )
         current["ssot_observed_at"] = ISO_NOW()
         summary = summarize(current)
-        args.output.write_text(json.dumps(current, indent=2, sort_keys=True) + "\n", encoding="utf-8")
-        args.summary.write_text(json.dumps(summary, indent=2, sort_keys=True) + "\n", encoding="utf-8")
-        args.typescript.write_text(typescript_summary(summary), encoding="utf-8")
+        _write_outputs(args, current, summary)
         governed = sum(
             bool(item.get("ssot_governance", {}).get("governed"))
             for item in repositories
@@ -323,11 +331,7 @@ def main() -> int:
         "observations": [item.as_dict() for item in observations + registry_observations],
     }
     summary = summarize(catalog)
-    for path in (args.output, args.summary, args.typescript):
-        path.parent.mkdir(parents=True, exist_ok=True)
-    args.output.write_text(json.dumps(catalog, indent=2, sort_keys=True) + "\n", encoding="utf-8")
-    args.summary.write_text(json.dumps(summary, indent=2, sort_keys=True) + "\n", encoding="utf-8")
-    args.typescript.write_text(typescript_summary(summary), encoding="utf-8")
+    _write_outputs(args, catalog, summary)
     print(json.dumps(summary, indent=2, sort_keys=True))
     return 0
 

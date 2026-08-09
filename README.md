@@ -85,8 +85,9 @@ The evidence-governed catalog pipeline is documented in [`catalog/README.md`](ca
 
 ## Deployment
 
-This repo deploys PostgreSQL, DuckDB, `groupsum-catalog-api`, and the nginx-served
-`groupsum-xyz` frontend. nginx proxies `/api/` and `/openapi.json` to the API.
+This repo deploys PostgreSQL, `groupsum-catalog-api`, and the nginx-served
+`groupsum-xyz` frontend. DuckDB is embedded in the API through
+`tigrbl-engine-duckdb`; nginx proxies `/api/` and `/openapi.json` to the API.
 The deploy workflow persists both data services, runs migrations/import during
 API startup, verifies rendered Peagen relationship markers, checks exact API attachment
 counts, exercises conditional ETag requests, and confirms the deployed OpenAPI contract.

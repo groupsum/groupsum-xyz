@@ -4619,6 +4619,400 @@
         "title": "AutomationWorkflowReadResponse",
         "type": "object"
       },
+      "CatalogObservationListResponse": {
+        "description": "Tigrbl v3 CatalogObservation list schema",
+        "properties": {
+          "confidence": {
+            "title": "Confidence",
+            "type": "string"
+          },
+          "content_hash": {
+            "title": "Content Hash",
+            "type": "string"
+          },
+          "id": {
+            "default": null,
+            "title": "Id",
+            "type": "string"
+          },
+          "observation_type": {
+            "title": "Observation Type",
+            "type": "string"
+          },
+          "observed_at": {
+            "format": "date-time",
+            "title": "Observed At",
+            "type": "string"
+          },
+          "payload": {
+            "anyOf": [
+              {
+                "additionalProperties": true,
+                "type": "object"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Payload"
+          },
+          "snapshot_id": {
+            "title": "Snapshot Id",
+            "type": "string"
+          },
+          "source_kind": {
+            "title": "Source Kind",
+            "type": "string"
+          },
+          "source_url": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Source Url"
+          },
+          "status": {
+            "title": "Status",
+            "type": "string"
+          },
+          "subject_id": {
+            "title": "Subject Id",
+            "type": "string"
+          },
+          "subject_type": {
+            "title": "Subject Type",
+            "type": "string"
+          }
+        },
+        "required": [
+          "snapshot_id",
+          "subject_type",
+          "subject_id",
+          "observation_type",
+          "source_kind",
+          "status",
+          "observed_at",
+          "content_hash",
+          "confidence"
+        ],
+        "title": "CatalogObservationListResponse",
+        "type": "object"
+      },
+      "CatalogObservationReadResponse": {
+        "description": "Tigrbl v3 CatalogObservation read schema",
+        "properties": {
+          "confidence": {
+            "title": "Confidence",
+            "type": "string"
+          },
+          "content_hash": {
+            "title": "Content Hash",
+            "type": "string"
+          },
+          "id": {
+            "default": null,
+            "title": "Id",
+            "type": "string"
+          },
+          "observation_type": {
+            "title": "Observation Type",
+            "type": "string"
+          },
+          "observed_at": {
+            "format": "date-time",
+            "title": "Observed At",
+            "type": "string"
+          },
+          "payload": {
+            "anyOf": [
+              {
+                "additionalProperties": true,
+                "type": "object"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Payload"
+          },
+          "snapshot_id": {
+            "title": "Snapshot Id",
+            "type": "string"
+          },
+          "source_kind": {
+            "title": "Source Kind",
+            "type": "string"
+          },
+          "source_url": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Source Url"
+          },
+          "status": {
+            "title": "Status",
+            "type": "string"
+          },
+          "subject_id": {
+            "title": "Subject Id",
+            "type": "string"
+          },
+          "subject_type": {
+            "title": "Subject Type",
+            "type": "string"
+          }
+        },
+        "required": [
+          "snapshot_id",
+          "subject_type",
+          "subject_id",
+          "observation_type",
+          "source_kind",
+          "status",
+          "observed_at",
+          "content_hash",
+          "confidence"
+        ],
+        "title": "CatalogObservationReadResponse",
+        "type": "object"
+      },
+      "CatalogSnapshotListResponse": {
+        "description": "Tigrbl v3 CatalogSnapshot list schema",
+        "properties": {
+          "collected_at": {
+            "format": "date-time",
+            "title": "Collected At",
+            "type": "string"
+          },
+          "collector_version": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Collector Version"
+          },
+          "completed_at": {
+            "anyOf": [
+              {
+                "format": "date-time",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Completed At"
+          },
+          "completeness": {
+            "anyOf": [
+              {
+                "additionalProperties": true,
+                "type": "object"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Completeness"
+          },
+          "error_count": {
+            "default": null,
+            "title": "Error Count",
+            "type": "integer"
+          },
+          "id": {
+            "default": null,
+            "title": "Id",
+            "type": "string"
+          },
+          "is_current": {
+            "default": null,
+            "title": "Is Current",
+            "type": "boolean"
+          },
+          "measurement_count": {
+            "default": null,
+            "title": "Measurement Count",
+            "type": "integer"
+          },
+          "observation_count": {
+            "default": null,
+            "title": "Observation Count",
+            "type": "integer"
+          },
+          "parent_snapshot_id": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Parent Snapshot Id"
+          },
+          "schema_version": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Schema Version"
+          },
+          "source_digest": {
+            "title": "Source Digest",
+            "type": "string"
+          },
+          "status": {
+            "title": "Status",
+            "type": "string"
+          }
+        },
+        "required": [
+          "collected_at",
+          "status",
+          "source_digest"
+        ],
+        "title": "CatalogSnapshotListResponse",
+        "type": "object"
+      },
+      "CatalogSnapshotReadResponse": {
+        "description": "Tigrbl v3 CatalogSnapshot read schema",
+        "properties": {
+          "collected_at": {
+            "format": "date-time",
+            "title": "Collected At",
+            "type": "string"
+          },
+          "collector_version": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Collector Version"
+          },
+          "completed_at": {
+            "anyOf": [
+              {
+                "format": "date-time",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Completed At"
+          },
+          "completeness": {
+            "anyOf": [
+              {
+                "additionalProperties": true,
+                "type": "object"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Completeness"
+          },
+          "error_count": {
+            "default": null,
+            "title": "Error Count",
+            "type": "integer"
+          },
+          "id": {
+            "default": null,
+            "title": "Id",
+            "type": "string"
+          },
+          "is_current": {
+            "default": null,
+            "title": "Is Current",
+            "type": "boolean"
+          },
+          "measurement_count": {
+            "default": null,
+            "title": "Measurement Count",
+            "type": "integer"
+          },
+          "observation_count": {
+            "default": null,
+            "title": "Observation Count",
+            "type": "integer"
+          },
+          "parent_snapshot_id": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Parent Snapshot Id"
+          },
+          "schema_version": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Schema Version"
+          },
+          "source_digest": {
+            "title": "Source Digest",
+            "type": "string"
+          },
+          "status": {
+            "title": "Status",
+            "type": "string"
+          }
+        },
+        "required": [
+          "collected_at",
+          "status",
+          "source_digest"
+        ],
+        "title": "CatalogSnapshotReadResponse",
+        "type": "object"
+      },
       "CollectionCatalogListResponse": {
         "description": "Tigrbl v3 CollectionCatalog list schema",
         "properties": {
@@ -22939,6 +23333,278 @@
         "title": "LegalTermsReadResponse",
         "type": "object"
       },
+      "MetricObservationListResponse": {
+        "description": "Tigrbl v3 MetricObservation list schema",
+        "properties": {
+          "dimensions": {
+            "anyOf": [
+              {
+                "additionalProperties": true,
+                "type": "object"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Dimensions"
+          },
+          "measurement_id": {
+            "default": null,
+            "title": "Measurement Id",
+            "type": "string"
+          },
+          "metric_key": {
+            "title": "Metric Key",
+            "type": "string"
+          },
+          "numeric_value": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "pattern": "^(?!^[-+.]*$)[+-]?0*\\d*\\.?\\d*$",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Numeric Value"
+          },
+          "observed_at": {
+            "format": "date-time",
+            "title": "Observed At",
+            "type": "string"
+          },
+          "period_end": {
+            "anyOf": [
+              {
+                "format": "date-time",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Period End"
+          },
+          "period_start": {
+            "anyOf": [
+              {
+                "format": "date-time",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Period Start"
+          },
+          "snapshot_id": {
+            "title": "Snapshot Id",
+            "type": "string"
+          },
+          "source_observation_id": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Source Observation Id"
+          },
+          "source_url": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Source Url"
+          },
+          "subject_id": {
+            "title": "Subject Id",
+            "type": "string"
+          },
+          "subject_type": {
+            "title": "Subject Type",
+            "type": "string"
+          },
+          "text_value": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Text Value"
+          },
+          "unit": {
+            "title": "Unit",
+            "type": "string"
+          }
+        },
+        "required": [
+          "snapshot_id",
+          "subject_type",
+          "subject_id",
+          "metric_key",
+          "unit",
+          "observed_at"
+        ],
+        "title": "MetricObservationListResponse",
+        "type": "object"
+      },
+      "MetricObservationReadResponse": {
+        "description": "Tigrbl v3 MetricObservation read schema",
+        "properties": {
+          "dimensions": {
+            "anyOf": [
+              {
+                "additionalProperties": true,
+                "type": "object"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Dimensions"
+          },
+          "measurement_id": {
+            "default": null,
+            "title": "Measurement Id",
+            "type": "string"
+          },
+          "metric_key": {
+            "title": "Metric Key",
+            "type": "string"
+          },
+          "numeric_value": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "pattern": "^(?!^[-+.]*$)[+-]?0*\\d*\\.?\\d*$",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Numeric Value"
+          },
+          "observed_at": {
+            "format": "date-time",
+            "title": "Observed At",
+            "type": "string"
+          },
+          "period_end": {
+            "anyOf": [
+              {
+                "format": "date-time",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Period End"
+          },
+          "period_start": {
+            "anyOf": [
+              {
+                "format": "date-time",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Period Start"
+          },
+          "snapshot_id": {
+            "title": "Snapshot Id",
+            "type": "string"
+          },
+          "source_observation_id": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Source Observation Id"
+          },
+          "source_url": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Source Url"
+          },
+          "subject_id": {
+            "title": "Subject Id",
+            "type": "string"
+          },
+          "subject_type": {
+            "title": "Subject Type",
+            "type": "string"
+          },
+          "text_value": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Text Value"
+          },
+          "unit": {
+            "title": "Unit",
+            "type": "string"
+          }
+        },
+        "required": [
+          "snapshot_id",
+          "subject_type",
+          "subject_id",
+          "metric_key",
+          "unit",
+          "observed_at"
+        ],
+        "title": "MetricObservationReadResponse",
+        "type": "object"
+      },
       "OfferingServiceListResponse": {
         "description": "Tigrbl v3 OfferingService list schema",
         "properties": {
@@ -24965,6 +25631,126 @@
           "summary"
         ],
         "title": "ProductReadResponse",
+        "type": "object"
+      },
+      "RecordAggregateListResponse": {
+        "description": "Tigrbl v3 RecordAggregate list schema",
+        "properties": {
+          "dependency_count": {
+            "default": null,
+            "title": "Dependency Count",
+            "type": "integer"
+          },
+          "dependent_count": {
+            "default": null,
+            "title": "Dependent Count",
+            "type": "integer"
+          },
+          "package_count": {
+            "default": null,
+            "title": "Package Count",
+            "type": "integer"
+          },
+          "record_id": {
+            "default": null,
+            "title": "Record Id",
+            "type": "string"
+          },
+          "record_type": {
+            "default": null,
+            "title": "Record Type",
+            "type": "string"
+          },
+          "refreshed_at": {
+            "format": "date-time",
+            "title": "Refreshed At",
+            "type": "string"
+          },
+          "release_count": {
+            "default": null,
+            "title": "Release Count",
+            "type": "integer"
+          },
+          "repository_count": {
+            "default": null,
+            "title": "Repository Count",
+            "type": "integer"
+          },
+          "resource_count": {
+            "default": null,
+            "title": "Resource Count",
+            "type": "integer"
+          },
+          "snapshot_id": {
+            "default": null,
+            "title": "Snapshot Id",
+            "type": "string"
+          }
+        },
+        "required": [
+          "refreshed_at"
+        ],
+        "title": "RecordAggregateListResponse",
+        "type": "object"
+      },
+      "RecordAggregateReadResponse": {
+        "description": "Tigrbl v3 RecordAggregate read schema",
+        "properties": {
+          "dependency_count": {
+            "default": null,
+            "title": "Dependency Count",
+            "type": "integer"
+          },
+          "dependent_count": {
+            "default": null,
+            "title": "Dependent Count",
+            "type": "integer"
+          },
+          "package_count": {
+            "default": null,
+            "title": "Package Count",
+            "type": "integer"
+          },
+          "record_id": {
+            "default": null,
+            "title": "Record Id",
+            "type": "string"
+          },
+          "record_type": {
+            "default": null,
+            "title": "Record Type",
+            "type": "string"
+          },
+          "refreshed_at": {
+            "format": "date-time",
+            "title": "Refreshed At",
+            "type": "string"
+          },
+          "release_count": {
+            "default": null,
+            "title": "Release Count",
+            "type": "integer"
+          },
+          "repository_count": {
+            "default": null,
+            "title": "Repository Count",
+            "type": "integer"
+          },
+          "resource_count": {
+            "default": null,
+            "title": "Resource Count",
+            "type": "integer"
+          },
+          "snapshot_id": {
+            "default": null,
+            "title": "Snapshot Id",
+            "type": "string"
+          }
+        },
+        "required": [
+          "refreshed_at"
+        ],
+        "title": "RecordAggregateReadResponse",
         "type": "object"
       },
       "ReleaseBinaryListResponse": {
@@ -29908,7 +30694,6 @@
     }
   },
   "info": {
-    "description": "Read-only Tigrbl table API for the Groupsum public catalog.",
     "title": "Groupsum Catalog API",
     "version": "0.3.0"
   },
@@ -31175,6 +31960,64 @@
         }
       }
     },
+    "/api/v1/analytics/overview": {
+      "get": {
+        "operationId": "catalog_analytics",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        },
+        "x-tigrbl-auth": {
+          "policy": "public-by-default",
+          "public": true,
+          "security": []
+        },
+        "x-tigrbl-surface": {
+          "binding": {
+            "exchange": "request_response",
+            "family": "request",
+            "framing": "json",
+            "framingSpec": "JsonFramingSpec",
+            "methods": [
+              "GET"
+            ],
+            "path": "/api/v1/analytics/overview",
+            "proto": "http.rest",
+            "rpcMethod": null
+          }
+        }
+      }
+    },
+    "/api/v1/analytics/summary": {
+      "get": {
+        "operationId": "summary",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        },
+        "x-tigrbl-auth": {
+          "policy": "public-by-default",
+          "public": true,
+          "security": []
+        },
+        "x-tigrbl-surface": {
+          "binding": {
+            "exchange": "request_response",
+            "family": "request",
+            "framing": "json",
+            "framingSpec": "JsonFramingSpec",
+            "methods": [
+              "GET"
+            ],
+            "path": "/api/v1/analytics/summary",
+            "proto": "http.rest",
+            "rpcMethod": null
+          }
+        }
+      }
+    },
     "/api/v1/catalog": {
       "get": {
         "operationId": "catalog",
@@ -31560,6 +32403,131 @@
         }
       }
     },
+    "/api/v1/entities/{entity_type}/metrics": {
+      "get": {
+        "operationId": "metrics",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "entity_type",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        },
+        "x-tigrbl-auth": {
+          "policy": "public-by-default",
+          "public": true,
+          "security": []
+        },
+        "x-tigrbl-surface": {
+          "binding": {
+            "exchange": "request_response",
+            "family": "request",
+            "framing": "json",
+            "framingSpec": "JsonFramingSpec",
+            "methods": [
+              "GET"
+            ],
+            "path": "/api/v1/entities/{entity_type}/metrics",
+            "proto": "http.rest",
+            "rpcMethod": null
+          }
+        }
+      }
+    },
+    "/api/v1/entities/{entity_type}/metrics/{metric_key}/series": {
+      "get": {
+        "operationId": "metric_series",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "entity_type",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "path",
+            "name": "metric_key",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        },
+        "x-tigrbl-auth": {
+          "policy": "public-by-default",
+          "public": true,
+          "security": []
+        },
+        "x-tigrbl-surface": {
+          "binding": {
+            "exchange": "request_response",
+            "family": "request",
+            "framing": "json",
+            "framingSpec": "JsonFramingSpec",
+            "methods": [
+              "GET"
+            ],
+            "path": "/api/v1/entities/{entity_type}/metrics/{metric_key}/series",
+            "proto": "http.rest",
+            "rpcMethod": null
+          }
+        }
+      }
+    },
+    "/api/v1/entities/{entity_type}/observations": {
+      "get": {
+        "operationId": "observations",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "entity_type",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        },
+        "x-tigrbl-auth": {
+          "policy": "public-by-default",
+          "public": true,
+          "security": []
+        },
+        "x-tigrbl-surface": {
+          "binding": {
+            "exchange": "request_response",
+            "family": "request",
+            "framing": "json",
+            "framingSpec": "JsonFramingSpec",
+            "methods": [
+              "GET"
+            ],
+            "path": "/api/v1/entities/{entity_type}/observations",
+            "proto": "http.rest",
+            "rpcMethod": null
+          }
+        }
+      }
+    },
     "/api/v1/entities/{entity_type}/{entity_id}": {
       "get": {
         "operationId": "entity",
@@ -31902,6 +32870,74 @@
               "GET"
             ],
             "path": "/api/v1/services/{slug}",
+            "proto": "http.rest",
+            "rpcMethod": null
+          }
+        }
+      }
+    },
+    "/api/v1/snapshots": {
+      "get": {
+        "operationId": "catalog_snapshots",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        },
+        "x-tigrbl-auth": {
+          "policy": "public-by-default",
+          "public": true,
+          "security": []
+        },
+        "x-tigrbl-surface": {
+          "binding": {
+            "exchange": "request_response",
+            "family": "request",
+            "framing": "json",
+            "framingSpec": "JsonFramingSpec",
+            "methods": [
+              "GET"
+            ],
+            "path": "/api/v1/snapshots",
+            "proto": "http.rest",
+            "rpcMethod": null
+          }
+        }
+      }
+    },
+    "/api/v1/snapshots/{snapshot_id}": {
+      "get": {
+        "operationId": "catalog_snapshot",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "snapshot_id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        },
+        "x-tigrbl-auth": {
+          "policy": "public-by-default",
+          "public": true,
+          "security": []
+        },
+        "x-tigrbl-surface": {
+          "binding": {
+            "exchange": "request_response",
+            "family": "request",
+            "framing": "json",
+            "framingSpec": "JsonFramingSpec",
+            "methods": [
+              "GET"
+            ],
+            "path": "/api/v1/snapshots/{snapshot_id}",
             "proto": "http.rest",
             "rpcMethod": null
           }
@@ -38406,6 +39442,686 @@
               "path": null,
               "proto": "http.jsonrpc",
               "rpcMethod": "AutomationWorkflow.read"
+            }
+          ],
+          "family": "crud"
+        }
+      }
+    },
+    "/catalogobservation": {
+      "get": {
+        "operationId": "CatalogObservation.list",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "id",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "snapshot_id",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "subject_type",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "subject_id",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "observation_type",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "source_kind",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "source_url",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "status",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "observed_at",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "payload",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "content_hash",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "confidence",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CatalogObservationListResponse"
+                }
+              }
+            },
+            "description": "Successful Response"
+          }
+        },
+        "tags": [
+          "CatalogObservation"
+        ],
+        "x-tigrbl-auth": {
+          "policy": "public-by-default",
+          "public": true,
+          "security": []
+        },
+        "x-tigrbl-surface": {
+          "binding": {
+            "exchange": "request_response",
+            "family": "request",
+            "framing": "json",
+            "framingSpec": "JsonFramingSpec",
+            "methods": [
+              "GET"
+            ],
+            "path": "/catalogobservation",
+            "proto": "http.rest",
+            "rpcMethod": null
+          },
+          "bindings": [
+            {
+              "exchange": "request_response",
+              "family": "request",
+              "framing": "json",
+              "framingSpec": "JsonFramingSpec",
+              "methods": [
+                "GET"
+              ],
+              "path": "/catalogobservation",
+              "proto": "http.rest",
+              "rpcMethod": null
+            },
+            {
+              "exchange": "request_response",
+              "family": "request",
+              "framing": "jsonrpc",
+              "framingSpec": "JsonRpcFramingSpec",
+              "methods": null,
+              "path": null,
+              "proto": "http.jsonrpc",
+              "rpcMethod": "CatalogObservation.list"
+            }
+          ],
+          "family": "crud"
+        }
+      }
+    },
+    "/catalogobservation/{item_id}": {
+      "get": {
+        "operationId": "CatalogObservation.read",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "item_id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "id",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "snapshot_id",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "subject_type",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "subject_id",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "observation_type",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "source_kind",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "source_url",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "status",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "observed_at",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "payload",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "content_hash",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "confidence",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CatalogObservationReadResponse"
+                }
+              }
+            },
+            "description": "Successful Response"
+          }
+        },
+        "tags": [
+          "CatalogObservation"
+        ],
+        "x-tigrbl-auth": {
+          "policy": "public-by-default",
+          "public": true,
+          "security": []
+        },
+        "x-tigrbl-surface": {
+          "binding": {
+            "exchange": "request_response",
+            "family": "request",
+            "framing": "json",
+            "framingSpec": "JsonFramingSpec",
+            "methods": [
+              "GET"
+            ],
+            "path": "/catalogobservation/{item_id}",
+            "proto": "http.rest",
+            "rpcMethod": null
+          },
+          "bindings": [
+            {
+              "exchange": "request_response",
+              "family": "request",
+              "framing": "json",
+              "framingSpec": "JsonFramingSpec",
+              "methods": [
+                "GET"
+              ],
+              "path": "/catalogobservation/{item_id}",
+              "proto": "http.rest",
+              "rpcMethod": null
+            },
+            {
+              "exchange": "request_response",
+              "family": "request",
+              "framing": "jsonrpc",
+              "framingSpec": "JsonRpcFramingSpec",
+              "methods": null,
+              "path": null,
+              "proto": "http.jsonrpc",
+              "rpcMethod": "CatalogObservation.read"
+            }
+          ],
+          "family": "crud"
+        }
+      }
+    },
+    "/catalogsnapshot": {
+      "get": {
+        "operationId": "CatalogSnapshot.list",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "id",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "schema_version",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "collected_at",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "completed_at",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "status",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "collector_version",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "source_digest",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "parent_snapshot_id",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "is_current",
+            "required": false,
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
+            "in": "query",
+            "name": "completeness",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "observation_count",
+            "required": false,
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "in": "query",
+            "name": "measurement_count",
+            "required": false,
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "in": "query",
+            "name": "error_count",
+            "required": false,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CatalogSnapshotListResponse"
+                }
+              }
+            },
+            "description": "Successful Response"
+          }
+        },
+        "tags": [
+          "CatalogSnapshot"
+        ],
+        "x-tigrbl-auth": {
+          "policy": "public-by-default",
+          "public": true,
+          "security": []
+        },
+        "x-tigrbl-surface": {
+          "binding": {
+            "exchange": "request_response",
+            "family": "request",
+            "framing": "json",
+            "framingSpec": "JsonFramingSpec",
+            "methods": [
+              "GET"
+            ],
+            "path": "/catalogsnapshot",
+            "proto": "http.rest",
+            "rpcMethod": null
+          },
+          "bindings": [
+            {
+              "exchange": "request_response",
+              "family": "request",
+              "framing": "json",
+              "framingSpec": "JsonFramingSpec",
+              "methods": [
+                "GET"
+              ],
+              "path": "/catalogsnapshot",
+              "proto": "http.rest",
+              "rpcMethod": null
+            },
+            {
+              "exchange": "request_response",
+              "family": "request",
+              "framing": "jsonrpc",
+              "framingSpec": "JsonRpcFramingSpec",
+              "methods": null,
+              "path": null,
+              "proto": "http.jsonrpc",
+              "rpcMethod": "CatalogSnapshot.list"
+            }
+          ],
+          "family": "crud"
+        }
+      }
+    },
+    "/catalogsnapshot/{item_id}": {
+      "get": {
+        "operationId": "CatalogSnapshot.read",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "item_id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "id",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "schema_version",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "collected_at",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "completed_at",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "status",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "collector_version",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "source_digest",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "parent_snapshot_id",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "is_current",
+            "required": false,
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
+            "in": "query",
+            "name": "completeness",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "observation_count",
+            "required": false,
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "in": "query",
+            "name": "measurement_count",
+            "required": false,
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "in": "query",
+            "name": "error_count",
+            "required": false,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CatalogSnapshotReadResponse"
+                }
+              }
+            },
+            "description": "Successful Response"
+          }
+        },
+        "tags": [
+          "CatalogSnapshot"
+        ],
+        "x-tigrbl-auth": {
+          "policy": "public-by-default",
+          "public": true,
+          "security": []
+        },
+        "x-tigrbl-surface": {
+          "binding": {
+            "exchange": "request_response",
+            "family": "request",
+            "framing": "json",
+            "framingSpec": "JsonFramingSpec",
+            "methods": [
+              "GET"
+            ],
+            "path": "/catalogsnapshot/{item_id}",
+            "proto": "http.rest",
+            "rpcMethod": null
+          },
+          "bindings": [
+            {
+              "exchange": "request_response",
+              "family": "request",
+              "framing": "json",
+              "framingSpec": "JsonFramingSpec",
+              "methods": [
+                "GET"
+              ],
+              "path": "/catalogsnapshot/{item_id}",
+              "proto": "http.rest",
+              "rpcMethod": null
+            },
+            {
+              "exchange": "request_response",
+              "family": "request",
+              "framing": "jsonrpc",
+              "framingSpec": "JsonRpcFramingSpec",
+              "methods": null,
+              "path": null,
+              "proto": "http.jsonrpc",
+              "rpcMethod": "CatalogSnapshot.read"
             }
           ],
           "family": "crud"
@@ -54594,7 +56310,7 @@
     },
     "/healthz": {
       "get": {
-        "operationId": "healthz",
+        "operationId": "catalog_healthz",
         "responses": {
           "200": {
             "description": "Successful Response"
@@ -63578,6 +65294,370 @@
         }
       }
     },
+    "/metricobservation": {
+      "get": {
+        "operationId": "MetricObservation.list",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "measurement_id",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "snapshot_id",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "subject_type",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "subject_id",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "metric_key",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "numeric_value",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "text_value",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "unit",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "dimensions",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "period_start",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "period_end",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "source_url",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "source_observation_id",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "observed_at",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MetricObservationListResponse"
+                }
+              }
+            },
+            "description": "Successful Response"
+          }
+        },
+        "tags": [
+          "MetricObservation"
+        ],
+        "x-tigrbl-auth": {
+          "policy": "public-by-default",
+          "public": true,
+          "security": []
+        },
+        "x-tigrbl-surface": {
+          "binding": {
+            "exchange": "request_response",
+            "family": "request",
+            "framing": "json",
+            "framingSpec": "JsonFramingSpec",
+            "methods": [
+              "GET"
+            ],
+            "path": "/metricobservation",
+            "proto": "http.rest",
+            "rpcMethod": null
+          },
+          "bindings": [
+            {
+              "exchange": "request_response",
+              "family": "request",
+              "framing": "json",
+              "framingSpec": "JsonFramingSpec",
+              "methods": [
+                "GET"
+              ],
+              "path": "/metricobservation",
+              "proto": "http.rest",
+              "rpcMethod": null
+            },
+            {
+              "exchange": "request_response",
+              "family": "request",
+              "framing": "jsonrpc",
+              "framingSpec": "JsonRpcFramingSpec",
+              "methods": null,
+              "path": null,
+              "proto": "http.jsonrpc",
+              "rpcMethod": "MetricObservation.list"
+            }
+          ],
+          "family": "crud"
+        }
+      }
+    },
+    "/metricobservation/{item_id}": {
+      "get": {
+        "operationId": "MetricObservation.read",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "item_id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "measurement_id",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "snapshot_id",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "subject_type",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "subject_id",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "metric_key",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "numeric_value",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "text_value",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "unit",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "dimensions",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "period_start",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "period_end",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "source_url",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "source_observation_id",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "observed_at",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MetricObservationReadResponse"
+                }
+              }
+            },
+            "description": "Successful Response"
+          }
+        },
+        "tags": [
+          "MetricObservation"
+        ],
+        "x-tigrbl-auth": {
+          "policy": "public-by-default",
+          "public": true,
+          "security": []
+        },
+        "x-tigrbl-surface": {
+          "binding": {
+            "exchange": "request_response",
+            "family": "request",
+            "framing": "json",
+            "framingSpec": "JsonFramingSpec",
+            "methods": [
+              "GET"
+            ],
+            "path": "/metricobservation/{item_id}",
+            "proto": "http.rest",
+            "rpcMethod": null
+          },
+          "bindings": [
+            {
+              "exchange": "request_response",
+              "family": "request",
+              "framing": "json",
+              "framingSpec": "JsonFramingSpec",
+              "methods": [
+                "GET"
+              ],
+              "path": "/metricobservation/{item_id}",
+              "proto": "http.rest",
+              "rpcMethod": null
+            },
+            {
+              "exchange": "request_response",
+              "family": "request",
+              "framing": "jsonrpc",
+              "framingSpec": "JsonRpcFramingSpec",
+              "methods": null,
+              "path": null,
+              "proto": "http.jsonrpc",
+              "rpcMethod": "MetricObservation.read"
+            }
+          ],
+          "family": "crud"
+        }
+      }
+    },
     "/offeringservice": {
       "get": {
         "operationId": "OfferingService.list",
@@ -66292,6 +68372,306 @@
               "path": null,
               "proto": "http.jsonrpc",
               "rpcMethod": "Product.read"
+            }
+          ],
+          "family": "crud"
+        }
+      }
+    },
+    "/recordaggregate": {
+      "get": {
+        "operationId": "RecordAggregate.list",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "snapshot_id",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "record_type",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "record_id",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "repository_count",
+            "required": false,
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "in": "query",
+            "name": "package_count",
+            "required": false,
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "in": "query",
+            "name": "resource_count",
+            "required": false,
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "in": "query",
+            "name": "release_count",
+            "required": false,
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "in": "query",
+            "name": "dependency_count",
+            "required": false,
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "in": "query",
+            "name": "dependent_count",
+            "required": false,
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "in": "query",
+            "name": "refreshed_at",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RecordAggregateListResponse"
+                }
+              }
+            },
+            "description": "Successful Response"
+          }
+        },
+        "tags": [
+          "RecordAggregate"
+        ],
+        "x-tigrbl-auth": {
+          "policy": "public-by-default",
+          "public": true,
+          "security": []
+        },
+        "x-tigrbl-surface": {
+          "binding": {
+            "exchange": "request_response",
+            "family": "request",
+            "framing": "json",
+            "framingSpec": "JsonFramingSpec",
+            "methods": [
+              "GET"
+            ],
+            "path": "/recordaggregate",
+            "proto": "http.rest",
+            "rpcMethod": null
+          },
+          "bindings": [
+            {
+              "exchange": "request_response",
+              "family": "request",
+              "framing": "json",
+              "framingSpec": "JsonFramingSpec",
+              "methods": [
+                "GET"
+              ],
+              "path": "/recordaggregate",
+              "proto": "http.rest",
+              "rpcMethod": null
+            },
+            {
+              "exchange": "request_response",
+              "family": "request",
+              "framing": "jsonrpc",
+              "framingSpec": "JsonRpcFramingSpec",
+              "methods": null,
+              "path": null,
+              "proto": "http.jsonrpc",
+              "rpcMethod": "RecordAggregate.list"
+            }
+          ],
+          "family": "crud"
+        }
+      }
+    },
+    "/recordaggregate/{item_id}": {
+      "get": {
+        "operationId": "RecordAggregate.read",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "item_id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "snapshot_id",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "record_type",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "record_id",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "repository_count",
+            "required": false,
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "in": "query",
+            "name": "package_count",
+            "required": false,
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "in": "query",
+            "name": "resource_count",
+            "required": false,
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "in": "query",
+            "name": "release_count",
+            "required": false,
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "in": "query",
+            "name": "dependency_count",
+            "required": false,
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "in": "query",
+            "name": "dependent_count",
+            "required": false,
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "in": "query",
+            "name": "refreshed_at",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RecordAggregateReadResponse"
+                }
+              }
+            },
+            "description": "Successful Response"
+          }
+        },
+        "tags": [
+          "RecordAggregate"
+        ],
+        "x-tigrbl-auth": {
+          "policy": "public-by-default",
+          "public": true,
+          "security": []
+        },
+        "x-tigrbl-surface": {
+          "binding": {
+            "exchange": "request_response",
+            "family": "request",
+            "framing": "json",
+            "framingSpec": "JsonFramingSpec",
+            "methods": [
+              "GET"
+            ],
+            "path": "/recordaggregate/{item_id}",
+            "proto": "http.rest",
+            "rpcMethod": null
+          },
+          "bindings": [
+            {
+              "exchange": "request_response",
+              "family": "request",
+              "framing": "json",
+              "framingSpec": "JsonFramingSpec",
+              "methods": [
+                "GET"
+              ],
+              "path": "/recordaggregate/{item_id}",
+              "proto": "http.rest",
+              "rpcMethod": null
+            },
+            {
+              "exchange": "request_response",
+              "family": "request",
+              "framing": "jsonrpc",
+              "framingSpec": "JsonRpcFramingSpec",
+              "methods": null,
+              "path": null,
+              "proto": "http.jsonrpc",
+              "rpcMethod": "RecordAggregate.read"
             }
           ],
           "family": "crud"
@@ -71443,6 +73823,142 @@
             }
           ],
           "family": "crud"
+        }
+      }
+    },
+    "/system/healthz": {
+      "get": {
+        "description": "Database connectivity check.",
+        "operationId": "healthz",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        },
+        "summary": "Health",
+        "tags": [
+          "system"
+        ],
+        "x-tigrbl-auth": {
+          "policy": "public-by-default",
+          "public": true,
+          "security": []
+        },
+        "x-tigrbl-surface": {
+          "binding": {
+            "exchange": "request_response",
+            "family": "request",
+            "framing": "json",
+            "framingSpec": "JsonFramingSpec",
+            "methods": [
+              "GET"
+            ],
+            "path": "/system/healthz",
+            "proto": "http.rest",
+            "rpcMethod": null
+          }
+        }
+      }
+    },
+    "/system/hookz": {
+      "get": {
+        "description": "Expose hook execution order for each method.\n\nPhases appear in runner order; error phases trail.\nWithin each phase, hooks are listed in execution order: global (None) hooks, then method-specific hooks.",
+        "operationId": "hookz",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        },
+        "summary": "Hooks",
+        "tags": [
+          "system"
+        ],
+        "x-tigrbl-auth": {
+          "policy": "public-by-default",
+          "public": true,
+          "security": []
+        },
+        "x-tigrbl-surface": {
+          "binding": {
+            "exchange": "request_response",
+            "family": "request",
+            "framing": "json",
+            "framingSpec": "JsonFramingSpec",
+            "methods": [
+              "GET"
+            ],
+            "path": "/system/hookz",
+            "proto": "http.rest",
+            "rpcMethod": null
+          }
+        }
+      }
+    },
+    "/system/kernelz": {
+      "get": {
+        "description": "Phase-chain plan as built by the kernel per operation.",
+        "operationId": "kernelz",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        },
+        "summary": "Kernel Plan",
+        "tags": [
+          "system"
+        ],
+        "x-tigrbl-auth": {
+          "policy": "public-by-default",
+          "public": true,
+          "security": []
+        },
+        "x-tigrbl-surface": {
+          "binding": {
+            "exchange": "request_response",
+            "family": "request",
+            "framing": "json",
+            "framingSpec": "JsonFramingSpec",
+            "methods": [
+              "GET"
+            ],
+            "path": "/system/kernelz",
+            "proto": "http.rest",
+            "rpcMethod": null
+          }
+        }
+      }
+    },
+    "/system/methodz": {
+      "get": {
+        "description": "Ordered, canonical operation list.",
+        "operationId": "methodz",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        },
+        "summary": "Methods",
+        "tags": [
+          "system"
+        ],
+        "x-tigrbl-auth": {
+          "policy": "public-by-default",
+          "public": true,
+          "security": []
+        },
+        "x-tigrbl-surface": {
+          "binding": {
+            "exchange": "request_response",
+            "family": "request",
+            "framing": "json",
+            "framingSpec": "JsonFramingSpec",
+            "methods": [
+              "GET"
+            ],
+            "path": "/system/methodz",
+            "proto": "http.rest",
+            "rpcMethod": null
+          }
         }
       }
     },

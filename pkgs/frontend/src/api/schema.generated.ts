@@ -159,6 +159,38 @@ export interface paths {
         patch?: never;
         trace?: never;
     };
+    "/api/v1/analytics/overview": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get: operations["catalog_analytics"];
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/api/v1/analytics/summary": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get: operations["summary"];
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
     "/api/v1/catalog": {
         parameters: {
             query?: never;
@@ -335,6 +367,54 @@ export interface paths {
         patch?: never;
         trace?: never;
     };
+    "/api/v1/entities/{entity_type}/metrics": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get: operations["metrics"];
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/api/v1/entities/{entity_type}/metrics/{metric_key}/series": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get: operations["metric_series"];
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/api/v1/entities/{entity_type}/observations": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get: operations["observations"];
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
     "/api/v1/entities/{entity_type}/{entity_id}": {
         parameters: {
             query?: never;
@@ -487,6 +567,38 @@ export interface paths {
             cookie?: never;
         };
         get: operations["service"];
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/api/v1/snapshots": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get: operations["catalog_snapshots"];
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/api/v1/snapshots/{snapshot_id}": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get: operations["catalog_snapshot"];
         put?: never;
         post?: never;
         delete?: never;
@@ -1383,6 +1495,70 @@ export interface paths {
             cookie?: never;
         };
         get: operations["AutomationWorkflow.read"];
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/catalogobservation": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get: operations["CatalogObservation.list"];
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/catalogobservation/{item_id}": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get: operations["CatalogObservation.read"];
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/catalogsnapshot": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get: operations["CatalogSnapshot.list"];
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/catalogsnapshot/{item_id}": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get: operations["CatalogSnapshot.read"];
         put?: never;
         post?: never;
         delete?: never;
@@ -3159,7 +3335,7 @@ export interface paths {
             cookie?: never;
         };
         /** Catalog API health */
-        get: operations["healthz"];
+        get: operations["catalog_healthz"];
         put?: never;
         post?: never;
         delete?: never;
@@ -4096,6 +4272,38 @@ export interface paths {
         patch?: never;
         trace?: never;
     };
+    "/metricobservation": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get: operations["MetricObservation.list"];
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/metricobservation/{item_id}": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get: operations["MetricObservation.read"];
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
     "/offeringservice": {
         parameters: {
             query?: never;
@@ -4344,6 +4552,38 @@ export interface paths {
             cookie?: never;
         };
         get: operations["Product.read"];
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/recordaggregate": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get: operations["RecordAggregate.list"];
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/recordaggregate/{item_id}": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get: operations["RecordAggregate.read"];
         put?: never;
         post?: never;
         delete?: never;
@@ -5016,6 +5256,89 @@ export interface paths {
             cookie?: never;
         };
         get: operations["SourceWorkspace.read"];
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/system/healthz": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        /**
+         * Health
+         * @description Database connectivity check.
+         */
+        get: operations["healthz"];
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/system/hookz": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        /**
+         * Hooks
+         * @description Expose hook execution order for each method.
+         *
+         *     Phases appear in runner order; error phases trail.
+         *     Within each phase, hooks are listed in execution order: global (None) hooks, then method-specific hooks.
+         */
+        get: operations["hookz"];
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/system/kernelz": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        /**
+         * Kernel Plan
+         * @description Phase-chain plan as built by the kernel per operation.
+         */
+        get: operations["kernelz"];
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/system/methodz": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        /**
+         * Methods
+         * @description Ordered, canonical operation list.
+         */
+        get: operations["methodz"];
         put?: never;
         post?: never;
         delete?: never;
@@ -7779,6 +8102,228 @@ export interface components {
              * @default null
              */
             source_url: string | null;
+        };
+        /**
+         * CatalogObservationListResponse
+         * @description Tigrbl v3 CatalogObservation list schema
+         */
+        CatalogObservationListResponse: {
+            /** Confidence */
+            confidence: string;
+            /** Content Hash */
+            content_hash: string;
+            /**
+             * Id
+             * @default null
+             */
+            id: string;
+            /** Observation Type */
+            observation_type: string;
+            /**
+             * Observed At
+             * Format: date-time
+             */
+            observed_at: string;
+            /**
+             * Payload
+             * @default null
+             */
+            payload: {
+                [key: string]: unknown;
+            } | null;
+            /** Snapshot Id */
+            snapshot_id: string;
+            /** Source Kind */
+            source_kind: string;
+            /**
+             * Source Url
+             * @default null
+             */
+            source_url: string | null;
+            /** Status */
+            status: string;
+            /** Subject Id */
+            subject_id: string;
+            /** Subject Type */
+            subject_type: string;
+        };
+        /**
+         * CatalogObservationReadResponse
+         * @description Tigrbl v3 CatalogObservation read schema
+         */
+        CatalogObservationReadResponse: {
+            /** Confidence */
+            confidence: string;
+            /** Content Hash */
+            content_hash: string;
+            /**
+             * Id
+             * @default null
+             */
+            id: string;
+            /** Observation Type */
+            observation_type: string;
+            /**
+             * Observed At
+             * Format: date-time
+             */
+            observed_at: string;
+            /**
+             * Payload
+             * @default null
+             */
+            payload: {
+                [key: string]: unknown;
+            } | null;
+            /** Snapshot Id */
+            snapshot_id: string;
+            /** Source Kind */
+            source_kind: string;
+            /**
+             * Source Url
+             * @default null
+             */
+            source_url: string | null;
+            /** Status */
+            status: string;
+            /** Subject Id */
+            subject_id: string;
+            /** Subject Type */
+            subject_type: string;
+        };
+        /**
+         * CatalogSnapshotListResponse
+         * @description Tigrbl v3 CatalogSnapshot list schema
+         */
+        CatalogSnapshotListResponse: {
+            /**
+             * Collected At
+             * Format: date-time
+             */
+            collected_at: string;
+            /**
+             * Collector Version
+             * @default null
+             */
+            collector_version: string | null;
+            /**
+             * Completed At
+             * @default null
+             */
+            completed_at: string | null;
+            /**
+             * Completeness
+             * @default null
+             */
+            completeness: {
+                [key: string]: unknown;
+            } | null;
+            /**
+             * Error Count
+             * @default null
+             */
+            error_count: number;
+            /**
+             * Id
+             * @default null
+             */
+            id: string;
+            /**
+             * Is Current
+             * @default null
+             */
+            is_current: boolean;
+            /**
+             * Measurement Count
+             * @default null
+             */
+            measurement_count: number;
+            /**
+             * Observation Count
+             * @default null
+             */
+            observation_count: number;
+            /**
+             * Parent Snapshot Id
+             * @default null
+             */
+            parent_snapshot_id: string | null;
+            /**
+             * Schema Version
+             * @default null
+             */
+            schema_version: string | null;
+            /** Source Digest */
+            source_digest: string;
+            /** Status */
+            status: string;
+        };
+        /**
+         * CatalogSnapshotReadResponse
+         * @description Tigrbl v3 CatalogSnapshot read schema
+         */
+        CatalogSnapshotReadResponse: {
+            /**
+             * Collected At
+             * Format: date-time
+             */
+            collected_at: string;
+            /**
+             * Collector Version
+             * @default null
+             */
+            collector_version: string | null;
+            /**
+             * Completed At
+             * @default null
+             */
+            completed_at: string | null;
+            /**
+             * Completeness
+             * @default null
+             */
+            completeness: {
+                [key: string]: unknown;
+            } | null;
+            /**
+             * Error Count
+             * @default null
+             */
+            error_count: number;
+            /**
+             * Id
+             * @default null
+             */
+            id: string;
+            /**
+             * Is Current
+             * @default null
+             */
+            is_current: boolean;
+            /**
+             * Measurement Count
+             * @default null
+             */
+            measurement_count: number;
+            /**
+             * Observation Count
+             * @default null
+             */
+            observation_count: number;
+            /**
+             * Parent Snapshot Id
+             * @default null
+             */
+            parent_snapshot_id: string | null;
+            /**
+             * Schema Version
+             * @default null
+             */
+            schema_version: string | null;
+            /** Source Digest */
+            source_digest: string;
+            /** Status */
+            status: string;
         };
         /**
          * CollectionCatalogListResponse
@@ -16717,6 +17262,132 @@ export interface components {
             source_url: string | null;
         };
         /**
+         * MetricObservationListResponse
+         * @description Tigrbl v3 MetricObservation list schema
+         */
+        MetricObservationListResponse: {
+            /**
+             * Dimensions
+             * @default null
+             */
+            dimensions: {
+                [key: string]: unknown;
+            } | null;
+            /**
+             * Measurement Id
+             * @default null
+             */
+            measurement_id: string;
+            /** Metric Key */
+            metric_key: string;
+            /**
+             * Numeric Value
+             * @default null
+             */
+            numeric_value: number | string | null;
+            /**
+             * Observed At
+             * Format: date-time
+             */
+            observed_at: string;
+            /**
+             * Period End
+             * @default null
+             */
+            period_end: string | null;
+            /**
+             * Period Start
+             * @default null
+             */
+            period_start: string | null;
+            /** Snapshot Id */
+            snapshot_id: string;
+            /**
+             * Source Observation Id
+             * @default null
+             */
+            source_observation_id: string | null;
+            /**
+             * Source Url
+             * @default null
+             */
+            source_url: string | null;
+            /** Subject Id */
+            subject_id: string;
+            /** Subject Type */
+            subject_type: string;
+            /**
+             * Text Value
+             * @default null
+             */
+            text_value: string | null;
+            /** Unit */
+            unit: string;
+        };
+        /**
+         * MetricObservationReadResponse
+         * @description Tigrbl v3 MetricObservation read schema
+         */
+        MetricObservationReadResponse: {
+            /**
+             * Dimensions
+             * @default null
+             */
+            dimensions: {
+                [key: string]: unknown;
+            } | null;
+            /**
+             * Measurement Id
+             * @default null
+             */
+            measurement_id: string;
+            /** Metric Key */
+            metric_key: string;
+            /**
+             * Numeric Value
+             * @default null
+             */
+            numeric_value: number | string | null;
+            /**
+             * Observed At
+             * Format: date-time
+             */
+            observed_at: string;
+            /**
+             * Period End
+             * @default null
+             */
+            period_end: string | null;
+            /**
+             * Period Start
+             * @default null
+             */
+            period_start: string | null;
+            /** Snapshot Id */
+            snapshot_id: string;
+            /**
+             * Source Observation Id
+             * @default null
+             */
+            source_observation_id: string | null;
+            /**
+             * Source Url
+             * @default null
+             */
+            source_url: string | null;
+            /** Subject Id */
+            subject_id: string;
+            /** Subject Type */
+            subject_type: string;
+            /**
+             * Text Value
+             * @default null
+             */
+            text_value: string | null;
+            /** Unit */
+            unit: string;
+        };
+        /**
          * OfferingServiceListResponse
          * @description Tigrbl v3 OfferingService list schema
          */
@@ -17731,6 +18402,118 @@ export interface components {
              * @default null
              */
             visibility: string;
+        };
+        /**
+         * RecordAggregateListResponse
+         * @description Tigrbl v3 RecordAggregate list schema
+         */
+        RecordAggregateListResponse: {
+            /**
+             * Dependency Count
+             * @default null
+             */
+            dependency_count: number;
+            /**
+             * Dependent Count
+             * @default null
+             */
+            dependent_count: number;
+            /**
+             * Package Count
+             * @default null
+             */
+            package_count: number;
+            /**
+             * Record Id
+             * @default null
+             */
+            record_id: string;
+            /**
+             * Record Type
+             * @default null
+             */
+            record_type: string;
+            /**
+             * Refreshed At
+             * Format: date-time
+             */
+            refreshed_at: string;
+            /**
+             * Release Count
+             * @default null
+             */
+            release_count: number;
+            /**
+             * Repository Count
+             * @default null
+             */
+            repository_count: number;
+            /**
+             * Resource Count
+             * @default null
+             */
+            resource_count: number;
+            /**
+             * Snapshot Id
+             * @default null
+             */
+            snapshot_id: string;
+        };
+        /**
+         * RecordAggregateReadResponse
+         * @description Tigrbl v3 RecordAggregate read schema
+         */
+        RecordAggregateReadResponse: {
+            /**
+             * Dependency Count
+             * @default null
+             */
+            dependency_count: number;
+            /**
+             * Dependent Count
+             * @default null
+             */
+            dependent_count: number;
+            /**
+             * Package Count
+             * @default null
+             */
+            package_count: number;
+            /**
+             * Record Id
+             * @default null
+             */
+            record_id: string;
+            /**
+             * Record Type
+             * @default null
+             */
+            record_type: string;
+            /**
+             * Refreshed At
+             * Format: date-time
+             */
+            refreshed_at: string;
+            /**
+             * Release Count
+             * @default null
+             */
+            release_count: number;
+            /**
+             * Repository Count
+             * @default null
+             */
+            repository_count: number;
+            /**
+             * Resource Count
+             * @default null
+             */
+            resource_count: number;
+            /**
+             * Snapshot Id
+             * @default null
+             */
+            snapshot_id: string;
         };
         /**
          * ReleaseBinaryListResponse
@@ -20541,6 +21324,42 @@ export interface operations {
             };
         };
     };
+    catalog_analytics: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description Successful Response */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+        };
+    };
+    summary: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description Successful Response */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+        };
+    };
     catalog: {
         parameters: {
             query?: never;
@@ -20751,6 +21570,67 @@ export interface operations {
             };
         };
     };
+    metrics: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path: {
+                entity_type: string;
+            };
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description Successful Response */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+        };
+    };
+    metric_series: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path: {
+                entity_type: string;
+                metric_key: string;
+            };
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description Successful Response */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+        };
+    };
+    observations: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path: {
+                entity_type: string;
+            };
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description Successful Response */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+        };
+    };
     entity: {
         parameters: {
             query?: never;
@@ -20928,6 +21808,44 @@ export interface operations {
             header?: never;
             path: {
                 slug: string;
+            };
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description Successful Response */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+        };
+    };
+    catalog_snapshots: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description Successful Response */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+        };
+    };
+    catalog_snapshot: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path: {
+                snapshot_id: string;
             };
             cookie?: never;
         };
@@ -22496,6 +23414,144 @@ export interface operations {
                 };
                 content: {
                     "application/json": components["schemas"]["AutomationWorkflowReadResponse"];
+                };
+            };
+        };
+    };
+    "CatalogObservation.list": {
+        parameters: {
+            query?: {
+                id?: string;
+                snapshot_id?: string;
+                subject_type?: string;
+                subject_id?: string;
+                observation_type?: string;
+                source_kind?: string;
+                source_url?: string;
+                status?: string;
+                observed_at?: string;
+                payload?: string;
+                content_hash?: string;
+                confidence?: string;
+            };
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description Successful Response */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["CatalogObservationListResponse"];
+                };
+            };
+        };
+    };
+    "CatalogObservation.read": {
+        parameters: {
+            query?: {
+                id?: string;
+                snapshot_id?: string;
+                subject_type?: string;
+                subject_id?: string;
+                observation_type?: string;
+                source_kind?: string;
+                source_url?: string;
+                status?: string;
+                observed_at?: string;
+                payload?: string;
+                content_hash?: string;
+                confidence?: string;
+            };
+            header?: never;
+            path: {
+                item_id: string;
+            };
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description Successful Response */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["CatalogObservationReadResponse"];
+                };
+            };
+        };
+    };
+    "CatalogSnapshot.list": {
+        parameters: {
+            query?: {
+                id?: string;
+                schema_version?: string;
+                collected_at?: string;
+                completed_at?: string;
+                status?: string;
+                collector_version?: string;
+                source_digest?: string;
+                parent_snapshot_id?: string;
+                is_current?: boolean;
+                completeness?: string;
+                observation_count?: number;
+                measurement_count?: number;
+                error_count?: number;
+            };
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description Successful Response */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["CatalogSnapshotListResponse"];
+                };
+            };
+        };
+    };
+    "CatalogSnapshot.read": {
+        parameters: {
+            query?: {
+                id?: string;
+                schema_version?: string;
+                collected_at?: string;
+                completed_at?: string;
+                status?: string;
+                collector_version?: string;
+                source_digest?: string;
+                parent_snapshot_id?: string;
+                is_current?: boolean;
+                completeness?: string;
+                observation_count?: number;
+                measurement_count?: number;
+                error_count?: number;
+            };
+            header?: never;
+            path: {
+                item_id: string;
+            };
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description Successful Response */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["CatalogSnapshotReadResponse"];
                 };
             };
         };
@@ -25980,7 +27036,7 @@ export interface operations {
             };
         };
     };
-    healthz: {
+    catalog_healthz: {
         parameters: {
             query?: never;
             header?: never;
@@ -27886,6 +28942,78 @@ export interface operations {
             };
         };
     };
+    "MetricObservation.list": {
+        parameters: {
+            query?: {
+                measurement_id?: string;
+                snapshot_id?: string;
+                subject_type?: string;
+                subject_id?: string;
+                metric_key?: string;
+                numeric_value?: string;
+                text_value?: string;
+                unit?: string;
+                dimensions?: string;
+                period_start?: string;
+                period_end?: string;
+                source_url?: string;
+                source_observation_id?: string;
+                observed_at?: string;
+            };
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description Successful Response */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["MetricObservationListResponse"];
+                };
+            };
+        };
+    };
+    "MetricObservation.read": {
+        parameters: {
+            query?: {
+                measurement_id?: string;
+                snapshot_id?: string;
+                subject_type?: string;
+                subject_id?: string;
+                metric_key?: string;
+                numeric_value?: string;
+                text_value?: string;
+                unit?: string;
+                dimensions?: string;
+                period_start?: string;
+                period_end?: string;
+                source_url?: string;
+                source_observation_id?: string;
+                observed_at?: string;
+            };
+            header?: never;
+            path: {
+                item_id: string;
+            };
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description Successful Response */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["MetricObservationReadResponse"];
+                };
+            };
+        };
+    };
     "OfferingService.list": {
         parameters: {
             query?: {
@@ -28434,6 +29562,70 @@ export interface operations {
                 };
                 content: {
                     "application/json": components["schemas"]["ProductReadResponse"];
+                };
+            };
+        };
+    };
+    "RecordAggregate.list": {
+        parameters: {
+            query?: {
+                snapshot_id?: string;
+                record_type?: string;
+                record_id?: string;
+                repository_count?: number;
+                package_count?: number;
+                resource_count?: number;
+                release_count?: number;
+                dependency_count?: number;
+                dependent_count?: number;
+                refreshed_at?: string;
+            };
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description Successful Response */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["RecordAggregateListResponse"];
+                };
+            };
+        };
+    };
+    "RecordAggregate.read": {
+        parameters: {
+            query?: {
+                snapshot_id?: string;
+                record_type?: string;
+                record_id?: string;
+                repository_count?: number;
+                package_count?: number;
+                resource_count?: number;
+                release_count?: number;
+                dependency_count?: number;
+                dependent_count?: number;
+                refreshed_at?: string;
+            };
+            header?: never;
+            path: {
+                item_id: string;
+            };
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description Successful Response */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["RecordAggregateReadResponse"];
                 };
             };
         };
@@ -29635,6 +30827,78 @@ export interface operations {
                 content: {
                     "application/json": components["schemas"]["SourceWorkspaceReadResponse"];
                 };
+            };
+        };
+    };
+    healthz: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description Successful Response */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+        };
+    };
+    hookz: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description Successful Response */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+        };
+    };
+    kernelz: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description Successful Response */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+        };
+    };
+    methodz: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description Successful Response */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
             };
         };
     };

@@ -1,77 +1,148 @@
 from __future__ import annotations
 
-import os
-from collections.abc import Iterator
-from contextlib import contextmanager
-from pathlib import Path
+import json
+from collections.abc import AsyncIterator, Iterable, Sequence
+from contextlib import asynccontextmanager
 from typing import Any
 
-import duckdb
+from .tables.metric_observation import MetricObservation
 
 METRIC_SCHEMA = """
 CREATE TABLE IF NOT EXISTS metric_observations (
-    id VARCHAR PRIMARY KEY,
-    subject_kind VARCHAR NOT NULL,
+    measurement_id VARCHAR PRIMARY KEY,
+    snapshot_id VARCHAR NOT NULL,
+    subject_type VARCHAR NOT NULL,
     subject_id VARCHAR NOT NULL,
-    metric VARCHAR NOT NULL,
-    value DOUBLE NOT NULL,
+    metric_key VARCHAR NOT NULL,
+    numeric_value DOUBLE,
+    text_value VARCHAR,
     unit VARCHAR NOT NULL,
+    dimensions JSON,
     period_start TIMESTAMP,
     period_end TIMESTAMP,
-    source_url VARCHAR NOT NULL,
+    source_url VARCHAR,
+    source_observation_id VARCHAR,
     observed_at TIMESTAMP NOT NULL
 );
 CREATE INDEX IF NOT EXISTS metric_subject_idx
-ON metric_observations(subject_kind, subject_id, metric, observed_at);
+ON metric_observations(subject_type, subject_id, metric_key, observed_at);
+CREATE INDEX IF NOT EXISTS metric_snapshot_idx ON metric_observations(snapshot_id);
 CREATE TABLE IF NOT EXISTS record_aggregates (
-    record_id VARCHAR PRIMARY KEY,
+    snapshot_id VARCHAR NOT NULL,
+    record_type VARCHAR NOT NULL,
+    record_id VARCHAR NOT NULL,
     repository_count BIGINT NOT NULL DEFAULT 0,
     package_count BIGINT NOT NULL DEFAULT 0,
     resource_count BIGINT NOT NULL DEFAULT 0,
     release_count BIGINT NOT NULL DEFAULT 0,
     dependency_count BIGINT NOT NULL DEFAULT 0,
     dependent_count BIGINT NOT NULL DEFAULT 0,
-    refreshed_at TIMESTAMP NOT NULL
+    refreshed_at TIMESTAMP NOT NULL,
+    PRIMARY KEY (snapshot_id, record_type, record_id)
 );
+CREATE OR REPLACE VIEW metric_series AS
+SELECT subject_type, subject_id, metric_key, numeric_value, text_value, unit, dimensions,
+       period_start, period_end, observed_at, snapshot_id, source_url
+FROM metric_observations
+ORDER BY subject_type, subject_id, metric_key, observed_at;
+CREATE OR REPLACE VIEW entity_metric_summary AS
+SELECT subject_type, subject_id, metric_key, unit, count(*) AS point_count,
+       min(observed_at) AS first_observed_at, max(observed_at) AS last_observed_at,
+       arg_max(numeric_value, observed_at) AS latest_value
+FROM metric_observations
+GROUP BY subject_type, subject_id, metric_key, unit;
+CREATE OR REPLACE VIEW catalog_rollups AS
+SELECT snapshot_id, subject_type, metric_key, unit, count(*) AS subject_count,
+       sum(numeric_value) AS total_value, avg(numeric_value) AS average_value,
+       max(observed_at) AS observed_at
+FROM metric_observations
+GROUP BY snapshot_id, subject_type, metric_key, unit;
 """
 
+METRIC_COLUMNS = (
+    "measurement_id", "snapshot_id", "subject_type", "subject_id", "metric_key",
+    "numeric_value", "text_value", "unit", "dimensions", "period_start", "period_end",
+    "source_url", "source_observation_id", "observed_at",
+)
 
-def default_analytics_path(database: str | Path) -> Path:
-    if isinstance(database, Path):
-        return database.with_suffix(".metrics.duckdb")
-    return Path(os.getenv("GROUPSUM_ANALYTICS_PATH", "data/groupsum-metrics.duckdb"))
 
+@asynccontextmanager
+async def analytics_session() -> AsyncIterator[Any]:
+    """Acquire the named DuckDB provider through Tigrbl and ensure its schema."""
 
-@contextmanager
-def connect_analytics(
-    path: Path, *, read_only: bool = False
-) -> Iterator[duckdb.DuckDBPyConnection]:
-    path.parent.mkdir(parents=True, exist_ok=True)
-    connection = duckdb.connect(str(path), read_only=read_only)
+    session, release = MetricObservation.acquire(op_alias="list")
     try:
-        if not read_only:
-            connection.execute(METRIC_SCHEMA)
-        yield connection
+        await session.execute(METRIC_SCHEMA)
+        yield session
     finally:
-        connection.close()
+        release()
 
 
-def upsert_metric(connection: duckdb.DuckDBPyConnection, values: dict[str, Any]) -> None:
-    columns = tuple(values)
-    placeholders = ", ".join("?" for _ in columns)
-    assignments = ", ".join(f"{column}=excluded.{column}" for column in columns if column != "id")
-    connection.execute(
-        f"INSERT INTO metric_observations ({', '.join(columns)}) VALUES ({placeholders}) "
-        f"ON CONFLICT(id) DO UPDATE SET {assignments}",
-        tuple(values[column] for column in columns),
-    )
+async def replace_snapshot_metrics(
+    snapshot_id: str,
+    rows: Iterable[dict[str, Any]],
+) -> int:
+    values = [
+        tuple(
+            json.dumps(row.get(column) or {}) if column == "dimensions" else row.get(column)
+            for column in METRIC_COLUMNS
+        )
+        for row in rows
+    ]
+    async with analytics_session() as session:
+        await session.begin()
+        try:
+            await session.execute(
+                ("DELETE FROM metric_observations WHERE snapshot_id = ?", [snapshot_id])
+            )
+            if values:
+                placeholders = ", ".join("?" for _ in METRIC_COLUMNS)
+                statement = (
+                    f"INSERT INTO metric_observations "
+                    f"({', '.join(METRIC_COLUMNS)}) VALUES ({placeholders})"
+                )
+                for row in values:
+                    await session.execute((statement, row))
+            await session.commit()
+        except Exception:
+            await session.rollback()
+            raise
+    return len(values)
 
 
-def metric_rows(
-    connection: duckdb.DuckDBPyConnection,
+async def delete_snapshot(snapshot_id: str) -> None:
+    async with analytics_session() as session:
+        await session.begin()
+        try:
+            for table in ("metric_observations", "record_aggregates"):
+                await session.execute(
+                    (f"DELETE FROM {table} WHERE snapshot_id = ?", [snapshot_id])
+                )
+            await session.commit()
+        except Exception:
+            await session.rollback()
+            raise
+
+
+async def metric_rows(
     query: str,
-    parameters: tuple[Any, ...] = (),
+    columns: Sequence[str],
+    parameters: tuple[Any, ...] | list[Any] = (),
 ) -> list[dict[str, Any]]:
-    result = connection.execute(query, parameters)
-    names = [item[0] for item in result.description]
-    return [dict(zip(names, row, strict=True)) for row in result.fetchall()]
+    async with analytics_session() as session:
+        result = await session.execute((query, parameters))
+        return [dict(zip(columns, row, strict=True)) for row in result.all()]
+
+
+def serialize_rows(rows: Iterable[dict[str, Any]]) -> list[dict[str, Any]]:
+    return [
+        {
+            key: value.isoformat().replace("+00:00", "Z")
+            if hasattr(value, "isoformat")
+            else json.loads(value)
+            if key == "dimensions" and isinstance(value, str)
+            else value
+            for key, value in row.items()
+        }
+        for row in rows
+    ]

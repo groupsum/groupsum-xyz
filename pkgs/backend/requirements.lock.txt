@@ -105,9 +105,7 @@ duckdb==1.5.5 \
     --hash=sha256:ddfbdb096c11d51ee22492397d342c90a82e62c5d09961477895934d0a25372f \
     --hash=sha256:f0b88535a5d86fdd63dba6ea02ab68c003dfb9e4892b11256ef24c4da208baae \
     --hash=sha256:f316eae2323d9a851883fdf2dee91c1f9efe251ab33e14a2272f82a913422ed6
-    # via
-    #   groupsum-catalog-api
-    #   tigrbl-engine-duckdb
+    # via tigrbl-engine-duckdb
 greenlet==3.5.4 \
     --hash=sha256:0232ae1de90a8e07867bb127d7a6ba2301e859145489f25cda8a6096dabe1d20 \
     --hash=sha256:13b980043cb1b3134e81ea469da1250ddcc6bfe6d245bbaa59168d9cdc8f228f \

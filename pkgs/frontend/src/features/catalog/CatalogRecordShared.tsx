@@ -96,13 +96,25 @@ export function valueRecords(value: unknown): Array<Record<string, unknown>> {
 export function repositorySignals(record: CatalogRecord): RepositorySignals {
   const metrics = valueRecord(record.metrics);
   const history = valueRecord(record.history);
+  const analytics = valueRecords(record.analytics_points);
+  const selected = record.selected_snapshot_id
+    ? analytics.filter((point) => point.snapshot_id === record.selected_snapshot_id)
+    : analytics;
   const metric = (key: string) => Number(metrics[key] || 0);
-  const points = (key: string) => valueRecords(history[key]).map((point) => ({ observed_at: String(point.observed_at || ""), value: Number(point.value || 0) }));
+  const points = (key: string) => {
+    const persisted = analytics.filter((point) => point.metric_key === key && point.numeric_value != null);
+    return (persisted.length ? persisted : valueRecords(history[key])).map((point) => ({ observed_at: String(point.observed_at || ""), value: Number(point.numeric_value ?? point.value ?? 0) }));
+  };
+  const latest = (key: string) => {
+    const selectedPoint = selected.filter((point) => point.metric_key === key && point.numeric_value != null).at(-1);
+    return selectedPoint ? Number(selectedPoint.numeric_value) : points(key).at(-1)?.value ?? metric(key);
+  };
+  const daily = analytics.filter((point) => point.metric_key === "commits_daily");
   return {
     repository_count: 1,
-    metrics: { stars: metric("stars"), forks: metric("forks"), watchers: metric("watchers"), contributors: metric("contributors"), commits: metric("commits") },
+    metrics: { stars: latest("stars"), forks: latest("forks"), watchers: latest("watchers"), contributors: latest("contributors"), commits: latest("commits") },
     history: { stars: points("stars"), forks: points("forks"), watchers: points("watchers"), contributors: points("contributors") },
-    commit_activity: valueRecords(record.commit_activity).map((point) => ({ date: String(point.date || ""), count: Number(point.count || 0) })),
+    commit_activity: (daily.length ? daily : valueRecords(record.commit_activity)).map((point) => ({ date: String(point.period_start || point.date || ""), count: Number(point.numeric_value ?? point.count ?? 0) })),
     observed_at: record.observed_at,
   };
 }

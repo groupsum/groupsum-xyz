@@ -18,6 +18,11 @@ from catalog_collect import (
 )
 from catalog_render import compile_catalog, related_resource_url, repair_text
 from catalog_validate import validate
+from groupsum_catalog_pipeline.snapshots import (
+    normalized_measurements,
+    normalized_observations,
+    publish_snapshot,
+)
 
 
 class CatalogCollectorTests(unittest.TestCase):
@@ -33,6 +38,66 @@ class CatalogCollectorTests(unittest.TestCase):
     def test_next_link(self):
         link = '<https://api.github.com/example?page=2>; rel="next", <https://api.github.com/example?page=9>; rel="last"'
         self.assertEqual(parse_next_link(link), "https://api.github.com/example?page=2")
+
+    def test_snapshot_facts_use_canonical_entity_identity(self):
+        catalog = {
+            "schema_version": "1.0.0",
+            "generated_at": "2026-08-09T12:00:00Z",
+            "completeness": {},
+            "repositories": [{
+                "full_name": "groupsum/example",
+                "url": "https://github.com/groupsum/example",
+                "metrics": {"stars": 3, "size_kb": 10},
+                "activity": {"commit_count": 4, "contributor_count": 2},
+                "technologies": {"languages_bytes": {"Python": 100}},
+            }],
+            "packages": [{
+                "ecosystem": "pypi", "name": "example",
+                "repository": "groupsum/example", "manifest_path": "pyproject.toml",
+                "downloads": 20, "releases": ["1.0.0"], "dependencies": [],
+            }],
+            "observations": [{
+                "source": "github.repository:groupsum/example", "status": "observed",
+                "observed_at": "2026-08-09T12:00:00Z",
+                "url": "https://api.github.com/repos/groupsum/example",
+            }],
+        }
+        measurements = normalized_measurements(catalog, "snapshot:test")
+        identities = {(row["subject_type"], row["subject_id"]) for row in measurements}
+        self.assertIn(("source.repository", "repository:groupsum/example"), identities)
+        self.assertIn(
+            (
+                "distribution.package",
+                "package:pypi:example:groupsum/example:pyproject.toml",
+            ),
+            identities,
+        )
+        observations = normalized_observations(catalog, "snapshot:test")
+        self.assertEqual(observations[0]["snapshot_id"], "snapshot:test")
+        self.assertEqual(observations[0]["subject_type"], "source.repository")
+        self.assertEqual(observations[0]["subject_id"], "repository:groupsum/example")
+        self.assertEqual(len(observations[0]["content_hash"]), 64)
+
+    def test_snapshot_publication_is_immutable_and_updates_latest(self):
+        import tempfile
+
+        catalog = {
+            "schema_version": "1.0.0",
+            "generated_at": "2026-08-09T12:00:00Z",
+            "completeness": {"repositories": "fixture"},
+            "repositories": [], "packages": [], "observations": [],
+        }
+        with tempfile.TemporaryDirectory() as directory:
+            output = Path(directory) / "catalog.json"
+            first = publish_snapshot(catalog, output)
+            second = publish_snapshot(catalog, output)
+            self.assertEqual(first, second)
+            snapshot_dir = output.parent / "snapshots" / first["snapshot_id"].replace(":", "-")
+            self.assertTrue((snapshot_dir / "catalog.json").exists())
+            self.assertTrue((snapshot_dir / "observations.jsonl").exists())
+            self.assertTrue((snapshot_dir / "measurements.jsonl").exists())
+            latest = json.loads((output.parent / "snapshots/latest.json").read_text())
+            self.assertEqual(latest["source_digest"], first["source_digest"])
 
     def test_npm_manifest(self):
         package, dependencies = manifest_package(
