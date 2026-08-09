@@ -21,7 +21,7 @@
     "validate:catalog": "node pkgs/frontend/scripts/validate-catalog-content.mjs",
     "validate:claims": "node pkgs/frontend/scripts/validate-claims.mjs",
     "validate:performance": "node pkgs/frontend/scripts/validate-performance-budget.mjs",
-    "validate:source-layout": "node ops/validate-source-layout.mjs",
+    "validate:source-layout": "node scripts/validate-source-layout.mjs",
     "verify:deployment": "node pkgs/frontend/scripts/verify-deployment.mjs",
     "lighthouse": "lhci autorun --config=pkgs/frontend/lighthouserc.cjs",
     "catalog:collect": "python pkgs/catalog-pipeline/catalog_collect.py --refresh",
@@ -30,10 +30,10 @@
     "catalog:validate": "python pkgs/catalog-pipeline/catalog_validate.py && python pkgs/catalog-pipeline/catalog_site_validate.py",
     "catalog:test": "python -m unittest discover -s pkgs/catalog-pipeline/tests -p test_catalog.py",
     "import:wordpress": "node pkgs/frontend/scripts/import-wordpress.mjs",
-    "deploy:dry-run": "node ops/deploy.mjs --dry-run",
+    "deploy:dry-run": "node scripts/deploy.mjs --dry-run",
     "deploy": "docker compose -f docker-compose.yaml up -d --build --force-recreate --no-deps groupsum-xyz",
     "docker:build": "docker compose build groupsum-xyz",
-    "proxy:target-check": "node ops/validate-proxy-target.mjs"
+    "proxy:target-check": "node scripts/validate-proxy-target.mjs"
   },
   "devDependencies": {
     "@lhci/cli": "^0.15.1",

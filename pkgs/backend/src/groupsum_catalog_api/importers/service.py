@@ -7,15 +7,11 @@ from pathlib import Path
 from ..domain.resources.ontology import normalize_legacy_resource_type
 from ..tables.organization import Organization
 from ..tables.package import Package
-from ..tables.portfolio_repository import PortfolioRepository
-from ..tables.product_package import ProductPackage
-from ..tables.product_repository import ProductRepository
+from ..tables.portfolio import Portfolio
+from ..tables.product import Product
 from ..tables.repository import Repository
-from ..tables.repository_package import RepositoryPackage
-from ..tables.repository_resource import RepositoryResource
 from ..tables.repository_ssot_item import RepositorySsotItem
 from ..tables.repository_ssot_registry import RepositorySsotRegistry
-from ..tables.repository_technology import RepositoryTechnology
 from ..tables.technology import Technology
 from ..tables.typed_resource import TypedResource
 from .common import (
@@ -23,10 +19,12 @@ from .common import (
     import_editorial,
     import_organizations,
     load_inputs,
+    merge_association,
     merge_catalog_entry,
     parse_datetime,
     route_slug,
     stable_id,
+    validate_associations,
 )
 
 
@@ -35,7 +33,6 @@ def _import_repositories(session, rows: list[dict], organizations: set[str], obs
     for row in rows:
         repository = Repository(
             id=row["id"],
-            organization_id=row["owner"] if row["owner"] in organizations else None,
             provider="github",
             owner=row["owner"],
             name=row["name"],
@@ -52,8 +49,19 @@ def _import_repositories(session, rows: list[dict], organizations: set[str], obs
             ssot_summary=row.get("ssot_governance"),
             ssot_observed_at=parse_datetime((row.get("ssot_governance") or {}).get("observed_at")),
             observed_at=parse_datetime(row.get("observed_at")) or observed_at,
+            source_payload=row,
         )
         session.merge(repository)
+        if row["owner"] in organizations:
+            merge_association(
+                session,
+                source_type="repository",
+                source_id=repository.id,
+                relationship_type="owned_by",
+                target_type="organization",
+                target_id=row["owner"],
+                observed_at=repository.observed_at,
+            )
         repository.slug = route_slug(row.get("route"), row["name"])
         repository.summary = repository.description
         merge_catalog_entry(session, kind="repository", item=repository, observed_at=observed_at)
@@ -61,13 +69,10 @@ def _import_repositories(session, rows: list[dict], organizations: set[str], obs
 
         governance = row.get("ssot_governance") or {}
         if governance.get("present"):
-            registry_id = stable_id(
-                "ssot-registry", repository.id, governance.get("source_sha256")
-            )
+            registry_id = stable_id("ssot-registry", repository.id, governance.get("source_sha256"))
             session.merge(
                 RepositorySsotRegistry(
                     id=registry_id,
-                    repository_id=repository.id,
                     registry_url=governance["registry_url"],
                     schema_version=governance.get("schema_version"),
                     source_sha256=governance.get("source_sha256"),
@@ -75,12 +80,21 @@ def _import_repositories(session, rows: list[dict], organizations: set[str], obs
                     observed_at=parse_datetime(governance.get("observed_at")) or observed_at,
                 )
             )
+            merge_association(
+                session,
+                source_type="repository",
+                source_id=repository.id,
+                relationship_type="governed_by",
+                target_type="ssot_registry",
+                target_id=registry_id,
+                observed_at=parse_datetime(governance.get("observed_at")) or observed_at,
+            )
             for kind, items in (governance.get("inventory") or {}).items():
                 for item in items:
+                    item_id = stable_id("ssot-item", registry_id, kind, item["id"])
                     session.merge(
                         RepositorySsotItem(
-                            id=stable_id("ssot-item", registry_id, kind, item["id"]),
-                            registry_id=registry_id,
+                            id=item_id,
                             entity_kind=kind,
                             entity_id=item["id"],
                             title=item.get("title"),
@@ -88,6 +102,15 @@ def _import_repositories(session, rows: list[dict], organizations: set[str], obs
                             implementation_status=item.get("implementation_status"),
                             payload=item,
                         )
+                    )
+                    merge_association(
+                        session,
+                        source_type="ssot_registry",
+                        source_id=registry_id,
+                        relationship_type="contains",
+                        target_type="ssot_item",
+                        target_id=item_id,
+                        observed_at=parse_datetime(governance.get("observed_at")) or observed_at,
                     )
     return by_full_name
 
@@ -112,6 +135,7 @@ def _import_packages(session, rows: list[dict], repositories: dict[str, Reposito
             license_expression=row.get("license_expression"),
             license_status=row.get("license_status"),
             observed_at=parse_datetime(row.get("observed_at")) or observed_at,
+            source_payload=row,
         )
         session.merge(package)
         package.slug = package.route_key
@@ -120,15 +144,16 @@ def _import_packages(session, rows: list[dict], repositories: dict[str, Reposito
         by_id[package.id] = package
         repository = repositories.get(str(row.get("repository", "")))
         if repository:
-            session.merge(
-                RepositoryPackage(
-                    id=stable_id("repository-package", repository.id, package.id),
-                    repository_id=repository.id,
-                    package_id=package.id,
-                    role="source",
-                    repository_path=row.get("manifest_path"),
-                    observed_at=observed_at,
-                )
+            merge_association(
+                session,
+                source_type="repository",
+                source_id=repository.id,
+                relationship_type="source_for",
+                target_type="package",
+                target_id=package.id,
+                role="source",
+                attributes={"repository_path": row.get("manifest_path")},
+                observed_at=observed_at,
             )
     return by_id
 
@@ -144,6 +169,7 @@ def _import_technologies(
             name=row["name"],
             category="language",
             observed_at=parse_datetime(row.get("observed_at")) or observed_at,
+            source_payload=row,
         )
         session.merge(technology)
         merge_catalog_entry(session, kind="technology", item=technology, observed_at=observed_at)
@@ -151,15 +177,16 @@ def _import_technologies(
         for full_name in row.get("repositories", []):
             repository = repositories.get(full_name)
             if repository:
-                session.merge(
-                    RepositoryTechnology(
-                        id=stable_id("repository-technology", repository.id, technology.id),
-                        repository_id=repository.id,
-                        technology_id=technology.id,
-                        role="implementation",
-                        bytes=row.get("bytes"),
-                        observed_at=technology.observed_at,
-                    )
+                merge_association(
+                    session,
+                    source_type="repository",
+                    source_id=repository.id,
+                    relationship_type="uses_technology",
+                    target_type="technology",
+                    target_id=technology.id,
+                    role="implementation",
+                    attributes={"bytes": row.get("bytes")},
+                    observed_at=technology.observed_at,
                 )
     return by_name
 
@@ -178,8 +205,6 @@ def _import_resources(session, rows: list[dict], repositories: dict[str, Reposit
             resource = TypedResource(
                 id=row["id"],
                 resource_type=resource_type,
-                organization_id=repository.organization_id,
-                repository_id=repository.id,
                 title=row.get("name") or row.get("path") or row["url"],
                 summary=None,
                 url=row["url"],
@@ -188,20 +213,22 @@ def _import_resources(session, rows: list[dict], repositories: dict[str, Reposit
                 repository_path=row.get("path"),
                 reachability="unverified",
                 observed_at=parse_datetime(row.get("observed_at")) or observed_at,
+                source_payload=row,
             )
             session.merge(resource)
             resource.slug = route_key
             resource.name = resource.title
             merge_catalog_entry(session, kind="resource", item=resource, observed_at=observed_at)
-            session.merge(
-                RepositoryResource(
-                    id=stable_id("repository-resource", repository.id, resource.id),
-                    repository_id=repository.id,
-                    resource_id=resource.id,
-                    role="owner",
-                    repository_path=row.get("path"),
-                    observed_at=resource.observed_at,
-                )
+            merge_association(
+                session,
+                source_type="typed_resource",
+                source_id=resource.id,
+                relationship_type="owned_by",
+                target_type="repository",
+                target_id=repository.id,
+                role="owner",
+                attributes={"repository_path": row.get("path")},
+                observed_at=resource.observed_at,
             )
             by_id[resource.id] = resource
     return by_id
@@ -222,6 +249,10 @@ def _attach_editorial(
         if not path.exists():
             continue
         bundle = json.loads(path.read_text(encoding="utf-8"))
+        record_table = Product if row["record_type"] == "product" else Portfolio
+        record = session.get(record_table, row["id"])
+        if record is not None:
+            record.source_payload = bundle
         repository_rows = bundle["repository"].get("attached_repositories") or [
             bundle["repository"]
         ]
@@ -229,31 +260,31 @@ def _attach_editorial(
             repository = repositories.get(repository_row.get("full_name"))
             if not repository:
                 continue
-            relation = (
-                PortfolioRepository if row["record_type"] == "portfolio" else ProductRepository
+            merge_association(
+                session,
+                source_type=row["record_type"],
+                source_id=row["id"],
+                relationship_type="implemented_by",
+                target_type="repository",
+                target_id=repository.id,
+                role="implementation",
+                sort_order=position,
+                observed_at=observed_at,
             )
-            values = {
-                "id": stable_id(row["record_type"], row["id"], repository.id),
-                f"{row['record_type']}_id": row["id"],
-                "repository_id": repository.id,
-                "role": "implementation",
-                "sort_order": position,
-                "observed_at": observed_at,
-            }
-            session.merge(relation(**values))
         if row["record_type"] == "product":
             for position, package_row in enumerate(bundle.get("packages", [])):
                 package = packages.get(package_row.get("id"))
                 if package:
-                    session.merge(
-                        ProductPackage(
-                            id=stable_id("product-package", row["id"], package.id),
-                            product_id=row["id"],
-                            package_id=package.id,
-                            role="distribution",
-                            sort_order=position,
-                            observed_at=observed_at,
-                        )
+                    merge_association(
+                        session,
+                        source_type="product",
+                        source_id=row["id"],
+                        relationship_type="distributed_as",
+                        target_type="package",
+                        target_id=package.id,
+                        role="distribution",
+                        sort_order=position,
+                        observed_at=observed_at,
                     )
 
 
@@ -280,6 +311,7 @@ def import_catalog_data(
         technologies = _import_technologies(session, technology_rows, repositories, observed_at)
         resources = _import_resources(session, repository_rows, repositories, observed_at)
         _attach_editorial(session, repo_root, editorial, repositories, packages, observed_at)
+        validate_associations(session)
         session.commit()
         return {
             "organizations": organizations,

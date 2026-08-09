@@ -15,3 +15,22 @@ class Technology(CatalogTable):
     website_url = Column(String(2048), nullable=True)
     source_url = Column(String(2048), nullable=True)
     observed_at = Column(DateTime, nullable=True)
+    source_payload = Column(JSON, nullable=True)
+
+    @op_ctx(
+        alias="technology_collection",
+        target="custom",
+        arity="collection",
+        persist="skip",
+        rest=False,
+    )
+    def technology_collection(cls, ctx):
+        from .views import catalog_collection
+
+        return catalog_collection(cls, ctx, "technology")
+
+    @op_ctx(alias="technology_detail", target="custom", arity="member", persist="skip", rest=False)
+    def technology_detail(cls, ctx):
+        from .views import technology_detail
+
+        return technology_detail(cls, ctx)

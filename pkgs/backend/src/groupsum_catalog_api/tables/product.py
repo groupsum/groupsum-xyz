@@ -7,9 +7,6 @@ class Product(CatalogTable):
     __tablename__ = "products"
 
     id = Column(String(200), primary_key=True)
-    organization_id = Column(
-        String(160), ForeignKey("organizations.id"), nullable=False, index=True
-    )
     slug = Column(String(200), nullable=False, unique=True, index=True)
     name = Column(String(240), nullable=False)
     eyebrow = Column(String(160), nullable=True)
@@ -23,3 +20,18 @@ class Product(CatalogTable):
     published_at = Column(DateTime, nullable=True)
     updated_at = Column(DateTime, nullable=True)
     content_revision = Column(Integer, nullable=False, default=1)
+    source_payload = Column(JSON, nullable=True)
+
+    @op_ctx(
+        alias="record_collection", target="custom", arity="collection", persist="skip", rest=False
+    )
+    def record_collection(cls, ctx):
+        from .views import record_collection
+
+        return record_collection(cls, ctx)
+
+    @op_ctx(alias="record_detail", target="custom", arity="member", persist="skip", rest=False)
+    def record_detail(cls, ctx):
+        from .views import record_detail
+
+        return record_detail(cls, ctx)

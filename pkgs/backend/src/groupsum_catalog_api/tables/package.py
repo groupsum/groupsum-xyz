@@ -23,3 +23,18 @@ class Package(CatalogTable):
     license_status = Column(String(60), nullable=True)
     published_at = Column(DateTime, nullable=True)
     observed_at = Column(DateTime, nullable=True)
+    source_payload = Column(JSON, nullable=True)
+
+    @op_ctx(
+        alias="package_collection", target="custom", arity="collection", persist="skip", rest=False
+    )
+    def package_collection(cls, ctx):
+        from .views import catalog_collection
+
+        return catalog_collection(cls, ctx, "package")
+
+    @op_ctx(alias="package_detail", target="custom", arity="member", persist="skip", rest=False)
+    def package_detail(cls, ctx):
+        from .views import package_detail
+
+        return package_detail(cls, ctx)

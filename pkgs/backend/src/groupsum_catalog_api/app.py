@@ -3,7 +3,7 @@ from __future__ import annotations
 from dataclasses import replace
 from pathlib import Path
 
-from tigrbl import JSONResponse, TigrblApp
+from tigrbl import JSONResponse, Request, TigrblApp
 from tigrbl.factories.app import defineAppSpec
 from tigrbl.factories.engine import sqlitef
 from tigrbl_core._spec import AppSpec, EngineSpec
@@ -11,7 +11,15 @@ from tigrbl_engine_duckdb.plugin import register as register_duckdb_engine
 from tigrbl_engine_postgres.plugin import register as register_postgres_engine
 
 from .config import Settings
+from .tables.catalog_entry import CatalogEntry
+from .tables.organization import Organization
+from .tables.package import Package
+from .tables.portfolio import Portfolio
+from .tables.product import Product
 from .tables.registry import ALL_TABLES
+from .tables.repository import Repository
+from .tables.technology import Technology
+from .tables.typed_resource import TypedResource
 
 
 class CatalogAppSpec(
@@ -99,6 +107,14 @@ def build_app(
     catalog_app.initialize()
     catalog_app.mount_openapi(path="/openapi.json")
 
+    async def invoke(table, operation: str, request: Request, **values):
+        result = await getattr(table.handlers, operation).invoke(
+            {"payload": {"request": request, **values}}
+        )
+        if isinstance(result, dict) and set(result) == {"detail"}:
+            return JSONResponse(result, status_code=404)
+        return result
+
     @catalog_app.get("/healthz", summary="Catalog API health")
     def healthz() -> JSONResponse:
         return JSONResponse(
@@ -110,6 +126,112 @@ def build_app(
             },
             headers={"Cache-Control": "no-store"},
         )
+
+    @catalog_app.get("/api/v1/products")
+    async def products(request: Request):
+        return await invoke(Product, "record_collection", request, record_type="product")
+
+    @catalog_app.get("/api/v1/products/{slug}")
+    async def product(request: Request, slug: str):
+        return await invoke(Product, "record_detail", request, slug=slug, record_type="product")
+
+    @catalog_app.get("/api/v1/portfolio")
+    async def portfolios(request: Request):
+        return await invoke(Portfolio, "record_collection", request, record_type="portfolio")
+
+    @catalog_app.get("/api/v1/portfolio/{slug}")
+    async def portfolio(request: Request, slug: str):
+        return await invoke(Portfolio, "record_detail", request, slug=slug, record_type="portfolio")
+
+    @catalog_app.get("/api/v1/solutions")
+    async def solutions(request: Request):
+        return await invoke(Product, "record_collection", request, record_type="solution")
+
+    @catalog_app.get("/api/v1/solutions/{slug}")
+    async def solution(request: Request, slug: str):
+        return await invoke(Product, "record_detail", request, slug=slug, record_type="solution")
+
+    @catalog_app.get("/api/v1/services")
+    async def services(request: Request):
+        return await invoke(Product, "record_collection", request, record_type="service")
+
+    @catalog_app.get("/api/v1/services/{slug}")
+    async def service(request: Request, slug: str):
+        return await invoke(Product, "record_detail", request, slug=slug, record_type="service")
+
+    @catalog_app.get("/api/v1/insights")
+    async def insights(request: Request):
+        return await invoke(CatalogEntry, "insight_collection", request)
+
+    @catalog_app.get("/api/v1/organizations/{slug}")
+    async def organization(request: Request, slug: str):
+        return await invoke(Organization, "organization_detail", request, slug=slug)
+
+    @catalog_app.get("/api/v1/entities")
+    async def entities(request: Request):
+        return await invoke(CatalogEntry, "entity_collection", request)
+
+    @catalog_app.get("/api/v1/entities/{entity_id}")
+    async def entity(request: Request, entity_id: str):
+        return await invoke(CatalogEntry, "entity_detail", request, entity_id=entity_id)
+
+    @catalog_app.get("/api/v1/repository-metrics")
+    async def repository_metrics(request: Request):
+        return await invoke(Repository, "repository_metrics", request)
+
+    @catalog_app.get("/api/v1/catalog")
+    async def catalog(request: Request):
+        return await invoke(CatalogEntry, "catalog_overview", request)
+
+    @catalog_app.get("/api/v1/catalog/repositories")
+    async def catalog_repositories(request: Request):
+        return await invoke(Repository, "repository_collection", request)
+
+    @catalog_app.get("/api/v1/catalog/repositories/{owner}/{repository}")
+    async def catalog_repository(request: Request, owner: str, repository: str):
+        return await invoke(
+            Repository, "repository_detail", request, owner=owner, repository=repository
+        )
+
+    @catalog_app.get("/api/v1/catalog/packages")
+    async def catalog_packages(request: Request):
+        return await invoke(Package, "package_collection", request)
+
+    @catalog_app.get("/api/v1/catalog/packages/{route_key}")
+    async def catalog_package(request: Request, route_key: str):
+        return await invoke(Package, "package_detail", request, route_key=route_key)
+
+    @catalog_app.get("/api/v1/catalog/releases/{route_key}")
+    async def catalog_release(request: Request, route_key: str):
+        return await invoke(
+            TypedResource, "resource_detail", request, kind="release", route_key=route_key
+        )
+
+    @catalog_app.get("/api/v1/catalog/resources")
+    async def catalog_resources(request: Request):
+        return await invoke(TypedResource, "resource_collection", request)
+
+    @catalog_app.get("/api/v1/catalog/resources/{resource_type}/{route_key}")
+    async def catalog_resource(request: Request, resource_type: str, route_key: str):
+        return await invoke(
+            TypedResource,
+            "resource_detail",
+            request,
+            entity_type=resource_type,
+            route_key=route_key,
+        )
+
+    @catalog_app.get("/api/v1/catalog/resources/{route_key}")
+    async def legacy_catalog_resource(request: Request, route_key: str):
+        return await invoke(TypedResource, "resource_detail", request, route_key=route_key)
+
+    @catalog_app.get("/api/v1/catalog/technologies")
+    async def catalog_technologies(request: Request):
+        return await invoke(Technology, "technology_collection", request)
+
+    @catalog_app.get("/api/v1/catalog/technologies/{slug}")
+    async def catalog_technology(request: Request, slug: str):
+        return await invoke(Technology, "technology_detail", request, slug=slug)
 
     return catalog_app
 

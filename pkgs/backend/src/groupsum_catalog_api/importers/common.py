@@ -6,18 +6,86 @@ from datetime import UTC, datetime
 from pathlib import Path
 from typing import Any
 
+from ..domain.resources.relationship_types import RELATIONSHIP_TYPES
+from ..tables.association import Association
 from ..tables.catalog_entry import CatalogEntry
 from ..tables.organization import Organization
 from ..tables.portfolio import Portfolio
-from ..tables.portfolio_product import PortfolioProduct
 from ..tables.product import Product
-from ..tables.registry import ALL_TABLES
+from ..tables.registry import ALL_TABLES, ENTITY_TABLES
 
 
 def stable_id(namespace: str, *parts: object) -> str:
     material = "\x1f".join(str(part) for part in parts)
     digest = hashlib.sha256(material.encode("utf-8")).hexdigest()[:20]
     return f"{namespace}:{digest}"
+
+
+def merge_association(
+    session,
+    *,
+    source_type: str,
+    source_id: object,
+    relationship_type: str,
+    target_type: str,
+    target_id: object,
+    observed_at: datetime,
+    role: str = "",
+    sort_order: int = 0,
+    attributes: dict[str, Any] | None = None,
+) -> Association:
+    """Create or update one directed edge in the catalog graph."""
+
+    if source_type not in ENTITY_TABLES:
+        raise ValueError(f"Unknown association source type: {source_type}")
+    if target_type not in ENTITY_TABLES:
+        raise ValueError(f"Unknown association target type: {target_type}")
+    if relationship_type not in RELATIONSHIP_TYPES:
+        raise ValueError(f"Unknown relationship type: {relationship_type}")
+    source_id, target_id = str(source_id), str(target_id)
+    edge = Association(
+        id=stable_id(
+            "association",
+            source_type,
+            source_id,
+            relationship_type,
+            target_type,
+            target_id,
+            role,
+        ),
+        source_type=source_type,
+        source_id=source_id,
+        relationship_type=relationship_type,
+        target_type=target_type,
+        target_id=target_id,
+        role=role,
+        sort_order=sort_order,
+        attributes=attributes or None,
+        observed_at=observed_at,
+    )
+    session.merge(edge)
+    return edge
+
+
+def validate_associations(session) -> None:
+    """Enforce polymorphic endpoint integrity before an import is committed."""
+
+    session.flush()
+    ids_by_type = {
+        entity_type: {str(row[0]) for row in session.query(table.id).all()}
+        for entity_type, table in ENTITY_TABLES.items()
+    }
+    for edge in session.query(Association).all():
+        if edge.relationship_type not in RELATIONSHIP_TYPES:
+            raise ValueError(f"Unknown relationship type: {edge.relationship_type}")
+        if edge.source_id not in ids_by_type.get(edge.source_type, set()):
+            raise ValueError(
+                f"Dangling association source: {edge.source_type}:{edge.source_id}"
+            )
+        if edge.target_id not in ids_by_type.get(edge.target_type, set()):
+            raise ValueError(
+                f"Dangling association target: {edge.target_type}:{edge.target_id}"
+            )
 
 
 def parse_datetime(value: object) -> datetime | None:
@@ -51,10 +119,9 @@ def merge_catalog_entry(session, *, kind: str, item: object, observed_at: dateti
     source_id = str(item.id)
     session.merge(
         CatalogEntry(
-            id=f"{kind}:{source_id}",
+            id=stable_id("catalog-entry", kind, source_id),
             kind=kind,
             source_id=source_id,
-            organization_id=getattr(item, "organization_id", None),
             slug=str(getattr(item, "slug", source_id)),
             name=str(getattr(item, "name", source_id)),
             summary=getattr(item, "summary", None) or getattr(item, "description", None),
@@ -99,7 +166,6 @@ def import_editorial(session, editorial: dict, observed_at: datetime) -> dict[st
         table = Product if row["record_type"] == "product" else Portfolio
         item = table(
             id=row["id"],
-            organization_id=row["organization_id"],
             slug=row["slug"],
             name=row["title"],
             eyebrow=row.get("eyebrow"),
@@ -120,6 +186,15 @@ def import_editorial(session, editorial: dict, observed_at: datetime) -> dict[st
             ),
         )
         session.merge(item)
+        merge_association(
+            session,
+            source_type=row["record_type"],
+            source_id=row["id"],
+            relationship_type="owned_by",
+            target_type="organization",
+            target_id=row["organization_id"],
+            observed_at=observed_at,
+        )
         merge_catalog_entry(session, kind=row["record_type"], item=item, observed_at=observed_at)
         counts[f"{row['record_type']}s"] += 1
         by_slug[row["slug"]] = item
@@ -130,14 +205,15 @@ def import_editorial(session, editorial: dict, observed_at: datetime) -> dict[st
         for position, slug in enumerate(row.get("related_slugs", [])):
             target = by_slug.get(slug)
             if isinstance(target, Product):
-                session.merge(
-                    PortfolioProduct(
-                        id=stable_id("portfolio-product", row["id"], target.id),
-                        portfolio_id=row["id"],
-                        product_id=target.id,
-                        role="member",
-                        sort_order=position,
-                        observed_at=observed_at,
-                    )
+                merge_association(
+                    session,
+                    source_type="portfolio",
+                    source_id=row["id"],
+                    relationship_type="contains",
+                    target_type="product",
+                    target_id=target.id,
+                    role="member",
+                    sort_order=position,
+                    observed_at=observed_at,
                 )
     return counts

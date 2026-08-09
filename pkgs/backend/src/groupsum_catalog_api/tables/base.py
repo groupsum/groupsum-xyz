@@ -2,15 +2,13 @@ from __future__ import annotations
 
 from dataclasses import replace
 
-from tigrbl import RestOlapTable
+from tigrbl import RestOlapTable, op_ctx
 from tigrbl.types import (
     JSON,
     Boolean,
     Column,
     DateTime,
-    ForeignKey,
     Integer,
-    Numeric,
     String,
     Text,
     UniqueConstraint,
@@ -42,10 +40,9 @@ __all__ = [
     "CatalogTable",
     "Column",
     "DateTime",
-    "ForeignKey",
     "Integer",
     "JSON",
-    "Numeric",
+    "op_ctx",
     "String",
     "Text",
     "UniqueConstraint",

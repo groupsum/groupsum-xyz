@@ -11,7 +11,6 @@ class CatalogEntry(CatalogTable):
     id = Column(String(360), primary_key=True)
     kind = Column(String(60), nullable=False, index=True)
     source_id = Column(String(320), nullable=False, index=True)
-    organization_id = Column(String(160), ForeignKey("organizations.id"), nullable=True, index=True)
     slug = Column(String(300), nullable=False, index=True)
     name = Column(String(300), nullable=False)
     summary = Column(Text, nullable=True)
@@ -21,3 +20,33 @@ class CatalogEntry(CatalogTable):
     maturity = Column(String(60), nullable=True, index=True)
     observed_at = Column(DateTime, nullable=True)
     __table_args__ = (UniqueConstraint("kind", "source_id", name="uq_catalog_entry_source"),)
+
+    @op_ctx(
+        alias="catalog_overview", target="custom", arity="collection", persist="skip", rest=False
+    )
+    def catalog_overview(cls, ctx):
+        from .views import catalog_overview
+
+        return catalog_overview(cls, ctx)
+
+    @op_ctx(
+        alias="entity_collection", target="custom", arity="collection", persist="skip", rest=False
+    )
+    def entity_collection(cls, ctx):
+        from .views import entity_collection
+
+        return entity_collection(cls, ctx)
+
+    @op_ctx(alias="entity_detail", target="custom", arity="member", persist="skip", rest=False)
+    def entity_detail(cls, ctx):
+        from .views import entity_detail
+
+        return entity_detail(cls, ctx)
+
+    @op_ctx(
+        alias="insight_collection", target="custom", arity="collection", persist="skip", rest=False
+    )
+    def insight_collection(cls, ctx):
+        from .views import insight_collection
+
+        return insight_collection(cls, ctx)
