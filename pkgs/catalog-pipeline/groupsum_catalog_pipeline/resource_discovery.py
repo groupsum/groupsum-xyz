@@ -40,15 +40,16 @@ def discover_related_resources(
     resources: dict[tuple[str, str], dict[str, Any]] = {}
     homepage = str(repo.get("homepage") or "").strip()
     if homepage:
-        resources[("website", homepage)] = {
-            "kind": "website", "name": repo["name"], "url": homepage,
+        resources[("interface.website", homepage)] = {
+            "resource_type": "interface.website", "name": repo["name"], "url": homepage,
             "evidence": "repository.homepage",
         }
     kind_by_marker = {
-        "api": "api_source", "apis": "api_source", "demo": "demo", "demos": "demo",
-        "docs": "documentation", "example": "example", "examples": "example",
-        "showcase": "showcase", "showcases": "showcase", "ui": "ui", "uis": "ui",
-        "website": "website", "websites": "website",
+        "demo": "implementation.demo", "demos": "implementation.demo",
+        "docs": "documentation.collection",
+        "example": "implementation.example", "examples": "implementation.example",
+        "showcase": "implementation.showcase", "showcases": "implementation.showcase",
+        "website": "interface.website", "websites": "interface.website",
     }
     for path in sorted(paths):
         path_parts = list(Path(path).parts)
@@ -64,8 +65,14 @@ def discover_related_resources(
             "asyncapi.json", "asyncapi.yaml", "asyncapi.yml",
         }
         if filename in api_definition_names or Path(path).suffix.lower() == ".proto":
-            resources[("api_definition", path)] = {
-                "kind": "api_definition", "name": path, "path": path,
+            contract_type = (
+                "contract.asyncapi" if "asyncapi" in filename else
+                "contract.openrpc" if "openrpc" in filename else
+                "contract.protobuf" if filename.endswith(".proto") else
+                "contract.openapi"
+            )
+            resources[(contract_type, path)] = {
+                "resource_type": contract_type, "name": path, "path": path,
                 "url": f"{repo['html_url']}/blob/{repo['default_branch']}/{path}",
                 "evidence": "repository.api_definition",
             }
@@ -74,17 +81,21 @@ def discover_related_resources(
             continue
         index = matching_indexes[0]
         marker = lower_parts[index]
+        if marker not in kind_by_marker:
+            continue
         root = "/".join(path_parts[: min(index + 2, len(path_parts))])
-        kind = kind_by_marker.get(marker, marker)
+        resource_type = kind_by_marker[marker]
         route_kind = "blob" if Path(root).suffix else "tree"
-        resources[(kind, root)] = {
-            "kind": kind, "name": root, "path": root,
+        resources[(resource_type, root)] = {
+            "resource_type": resource_type, "name": root, "path": root,
             "url": f"{repo['html_url']}/{route_kind}/{repo['default_branch']}/{root}",
             "evidence": f"repository.{route_kind}",
         }
         if len(resources) >= limit:
             break
-    return sorted(resources.values(), key=lambda item: (item["kind"], item["name"]))[:limit]
+    return sorted(
+        resources.values(), key=lambda item: (item["resource_type"], item["name"])
+    )[:limit]
 
 
 def normalize_license_expression(value: Any) -> str | None:

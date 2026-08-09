@@ -496,7 +496,6 @@
       {
         "evidence_type": "repository.tree",
         "id": "resource:a29d5e956e6c",
-        "kind": "documentation",
         "legal_evidence": [],
         "legal_inherits_from": "repository:groupsum/digital-signature-governance-pack",
         "name": "docs/proposals",
@@ -504,13 +503,13 @@
         "path": "docs/proposals",
         "repository": "groupsum/digital-signature-governance-pack",
         "repository_route": "/catalog/repositories/groupsum/digital-signature-governance-pack",
-        "route": "/catalog/resources/documentation/a29d5e956e6c",
+        "resource_type": "documentation.collection",
+        "route": "/catalog/resources/documentation-collection/a29d5e956e6c",
         "url": "https://github.com/groupsum/digital-signature-governance-pack/tree/master/docs/proposals"
       },
       {
         "evidence_type": "repository.tree",
         "id": "resource:62586b0c0278",
-        "kind": "documentation",
         "legal_evidence": [],
         "legal_inherits_from": "repository:groupsum/digital-signature-governance-pack",
         "name": "docs/standards",
@@ -518,7 +517,8 @@
         "path": "docs/standards",
         "repository": "groupsum/digital-signature-governance-pack",
         "repository_route": "/catalog/repositories/groupsum/digital-signature-governance-pack",
-        "route": "/catalog/resources/documentation/62586b0c0278",
+        "resource_type": "documentation.collection",
+        "route": "/catalog/resources/documentation-collection/62586b0c0278",
         "url": "https://github.com/groupsum/digital-signature-governance-pack/tree/master/docs/standards"
       }
     ],

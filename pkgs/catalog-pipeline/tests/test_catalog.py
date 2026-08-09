@@ -155,8 +155,14 @@ class CatalogCollectorTests(unittest.TestCase):
             {"examples", "docs", "showcases"},
         )
         self.assertEqual(
-            {item["kind"] for item in resources},
-            {"api_definition", "documentation", "example", "showcase", "website"},
+            {item["resource_type"] for item in resources},
+            {
+                "contract.openapi",
+                "documentation.collection",
+                "implementation.example",
+                "implementation.showcase",
+                "interface.website",
+            },
         )
         self.assertFalse(any(str(item.get("path", "")).startswith(".ssot/") for item in resources))
 
@@ -211,7 +217,12 @@ class CatalogCollectorTests(unittest.TestCase):
                 "full_name": "groupsum/example", "name": "example", "owner": "groupsum", "url": "https://github.com/groupsum/example",
                 "description": "Example repository", "visibility": "public", "metrics": {"stars": 2},
                 "activity": {"commit_count": 3, "commit_history": [{"committed_at": now}], "contributor_count": 1, "contributors": [{"login": "dev", "contributions": 3, "url": "https://github.com/dev"}]},
-                "technologies": {"languages_bytes": {"Python": 100}}, "github_releases": [], "deployments": [], "environments": [], "related_resources": [],
+                "technologies": {"languages_bytes": {"Python": 100}}, "github_releases": [], "deployments": [], "environments": [],
+                "related_resources": [
+                    {"kind": "documentation", "name": "docs", "path": "docs", "url": "https://github.com/groupsum/example/tree/master/docs", "evidence": "repository.tree"},
+                    {"kind": "api_definition", "name": "openapi.json", "path": "openapi.json", "url": "https://github.com/groupsum/example/blob/master/openapi.json", "evidence": "repository.api_definition"},
+                    {"kind": "api_source", "name": "api", "path": "src/api", "url": "https://github.com/groupsum/example/tree/master/src/api", "evidence": "repository.tree"},
+                ],
                 "observations": [{"observed_at": now}],
             }],
             "packages": [{
@@ -228,6 +239,10 @@ class CatalogCollectorTests(unittest.TestCase):
         self.assertEqual(
             set(datasets),
             {"organizations", "repositories", "packages", "resources", "technologies"},
+        )
+        self.assertEqual(
+            {item["resource_type"] for item in datasets["resources"]},
+            {"contract.openapi", "documentation.collection"},
         )
         self.assertIn("relationship_counts", datasets["repositories"][0])
         self.assertEqual(datasets["repositories"][0]["language_bytes"], {"Python": 100})

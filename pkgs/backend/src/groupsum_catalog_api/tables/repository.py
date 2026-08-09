@@ -5,6 +5,7 @@ from .base import *  # noqa: F403
 
 class Repository(CatalogTable):
     __tablename__ = "repositories"
+    ENTITY_TYPE = "source.repository"
     __allow_unmapped__ = True
     id = Column(String(240), primary_key=True)
     provider = Column(String(40), nullable=False)

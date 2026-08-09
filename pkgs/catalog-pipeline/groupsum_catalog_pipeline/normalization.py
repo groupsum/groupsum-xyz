@@ -59,7 +59,7 @@ def relation_rows(repositories: list[dict[str, Any]], packages: list[dict[str, A
             }
     for repo in repositories:
         for resource in repo.get("related_resources", []):
-            target = f"{resource.get('kind')}:{resource.get('name')}"
+            target = f"{resource.get('resource_type')}:{resource.get('name')}"
             key = ("repository_contains_related_resource", repo["full_name"], target)
             relations[key] = {
                 "kind": key[0], "source": key[1], "target": key[2],

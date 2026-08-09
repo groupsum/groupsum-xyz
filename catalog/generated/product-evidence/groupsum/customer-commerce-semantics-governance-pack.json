@@ -422,7 +422,6 @@
       {
         "evidence_type": "repository.tree",
         "id": "resource:f4d16349c06b",
-        "kind": "documentation",
         "legal_evidence": [],
         "legal_inherits_from": "repository:groupsum/customer-commerce-semantics-governance-pack",
         "name": "docs/governance",
@@ -430,7 +429,8 @@
         "path": "docs/governance",
         "repository": "groupsum/customer-commerce-semantics-governance-pack",
         "repository_route": "/catalog/repositories/groupsum/customer-commerce-semantics-governance-pack",
-        "route": "/catalog/resources/documentation/f4d16349c06b",
+        "resource_type": "documentation.collection",
+        "route": "/catalog/resources/documentation-collection/f4d16349c06b",
         "url": "https://github.com/groupsum/customer-commerce-semantics-governance-pack/tree/master/docs/governance"
       }
     ],

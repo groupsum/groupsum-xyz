@@ -350,7 +350,6 @@
       {
         "evidence_type": "repository.tree",
         "id": "resource:8181d129e1a2",
-        "kind": "documentation",
         "legal_evidence": [],
         "legal_inherits_from": "repository:groupsum/authnz-policy-governance-pack",
         "name": "docs/governance",
@@ -358,7 +357,8 @@
         "path": "docs/governance",
         "repository": "groupsum/authnz-policy-governance-pack",
         "repository_route": "/catalog/repositories/groupsum/authnz-policy-governance-pack",
-        "route": "/catalog/resources/documentation/8181d129e1a2",
+        "resource_type": "documentation.collection",
+        "route": "/catalog/resources/documentation-collection/8181d129e1a2",
         "url": "https://github.com/groupsum/authnz-policy-governance-pack/tree/master/docs/governance"
       }
     ],

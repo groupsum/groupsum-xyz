@@ -432,7 +432,6 @@
       {
         "evidence_type": "repository.tree",
         "id": "resource:73908081c14a",
-        "kind": "documentation",
         "legal_evidence": [],
         "legal_inherits_from": "repository:groupsum/marketing-attribution-conversion-governance-pack",
         "name": "docs/governance",
@@ -440,7 +439,8 @@
         "path": "docs/governance",
         "repository": "groupsum/marketing-attribution-conversion-governance-pack",
         "repository_route": "/catalog/repositories/groupsum/marketing-attribution-conversion-governance-pack",
-        "route": "/catalog/resources/documentation/73908081c14a",
+        "resource_type": "documentation.collection",
+        "route": "/catalog/resources/documentation-collection/73908081c14a",
         "url": "https://github.com/groupsum/marketing-attribution-conversion-governance-pack/tree/master/docs/governance"
       }
     ],

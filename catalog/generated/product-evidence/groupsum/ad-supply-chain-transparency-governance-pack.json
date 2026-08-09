@@ -422,7 +422,6 @@
       {
         "evidence_type": "repository.tree",
         "id": "resource:53023cee89d1",
-        "kind": "documentation",
         "legal_evidence": [],
         "legal_inherits_from": "repository:groupsum/ad-supply-chain-transparency-governance-pack",
         "name": "docs/governance",
@@ -430,7 +429,8 @@
         "path": "docs/governance",
         "repository": "groupsum/ad-supply-chain-transparency-governance-pack",
         "repository_route": "/catalog/repositories/groupsum/ad-supply-chain-transparency-governance-pack",
-        "route": "/catalog/resources/documentation/53023cee89d1",
+        "resource_type": "documentation.collection",
+        "route": "/catalog/resources/documentation-collection/53023cee89d1",
         "url": "https://github.com/groupsum/ad-supply-chain-transparency-governance-pack/tree/master/docs/governance"
       }
     ],

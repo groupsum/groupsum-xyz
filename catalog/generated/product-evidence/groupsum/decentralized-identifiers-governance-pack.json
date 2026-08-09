@@ -350,7 +350,6 @@
       {
         "evidence_type": "repository.tree",
         "id": "resource:c561b4605e51",
-        "kind": "documentation",
         "legal_evidence": [],
         "legal_inherits_from": "repository:groupsum/decentralized-identifiers-governance-pack",
         "name": "docs/governance",
@@ -358,7 +357,8 @@
         "path": "docs/governance",
         "repository": "groupsum/decentralized-identifiers-governance-pack",
         "repository_route": "/catalog/repositories/groupsum/decentralized-identifiers-governance-pack",
-        "route": "/catalog/resources/documentation/c561b4605e51",
+        "resource_type": "documentation.collection",
+        "route": "/catalog/resources/documentation-collection/c561b4605e51",
         "url": "https://github.com/groupsum/decentralized-identifiers-governance-pack/tree/master/docs/governance"
       }
     ],

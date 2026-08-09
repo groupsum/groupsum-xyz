@@ -836,7 +836,6 @@
       {
         "evidence_type": "repository.blob",
         "id": "resource:0b5d910c6384",
-        "kind": "example",
         "legal_evidence": [],
         "legal_inherits_from": "repository:tigrbl/tigrbl_spiffe",
         "name": "examples/_e2e_shared.py",
@@ -844,13 +843,13 @@
         "path": "examples/_e2e_shared.py",
         "repository": "tigrbl/tigrbl_spiffe",
         "repository_route": "/catalog/repositories/tigrbl/tigrbl_spiffe",
-        "route": "/catalog/resources/example/0b5d910c6384",
+        "resource_type": "implementation.example",
+        "route": "/catalog/resources/implementation-example/0b5d910c6384",
         "url": "https://github.com/tigrbl/tigrbl_spiffe/blob/master/examples/_e2e_shared.py"
       },
       {
         "evidence_type": "repository.blob",
         "id": "resource:3a0b2934fc37",
-        "kind": "example",
         "legal_evidence": [],
         "legal_inherits_from": "repository:tigrbl/tigrbl_spiffe",
         "name": "examples/e2e_uds_multi_client.py",
@@ -858,13 +857,13 @@
         "path": "examples/e2e_uds_multi_client.py",
         "repository": "tigrbl/tigrbl_spiffe",
         "repository_route": "/catalog/repositories/tigrbl/tigrbl_spiffe",
-        "route": "/catalog/resources/example/3a0b2934fc37",
+        "resource_type": "implementation.example",
+        "route": "/catalog/resources/implementation-example/3a0b2934fc37",
         "url": "https://github.com/tigrbl/tigrbl_spiffe/blob/master/examples/e2e_uds_multi_client.py"
       },
       {
         "evidence_type": "repository.blob",
         "id": "resource:7231ef5b9c20",
-        "kind": "example",
         "legal_evidence": [],
         "legal_inherits_from": "repository:tigrbl/tigrbl_spiffe",
         "name": "examples/e2e_uds_one_client.py",
@@ -872,13 +871,13 @@
         "path": "examples/e2e_uds_one_client.py",
         "repository": "tigrbl/tigrbl_spiffe",
         "repository_route": "/catalog/repositories/tigrbl/tigrbl_spiffe",
-        "route": "/catalog/resources/example/7231ef5b9c20",
+        "resource_type": "implementation.example",
+        "route": "/catalog/resources/implementation-example/7231ef5b9c20",
         "url": "https://github.com/tigrbl/tigrbl_spiffe/blob/master/examples/e2e_uds_one_client.py"
       },
       {
         "evidence_type": "repository.blob",
         "id": "resource:768954b0b534",
-        "kind": "example",
         "legal_evidence": [],
         "legal_inherits_from": "repository:tigrbl/tigrbl_spiffe",
         "name": "examples/exchange_jwt_bearer.py",
@@ -886,13 +885,13 @@
         "path": "examples/exchange_jwt_bearer.py",
         "repository": "tigrbl/tigrbl_spiffe",
         "repository_route": "/catalog/repositories/tigrbl/tigrbl_spiffe",
-        "route": "/catalog/resources/example/768954b0b534",
+        "resource_type": "implementation.example",
+        "route": "/catalog/resources/implementation-example/768954b0b534",
         "url": "https://github.com/tigrbl/tigrbl_spiffe/blob/master/examples/exchange_jwt_bearer.py"
       },
       {
         "evidence_type": "repository.blob",
         "id": "resource:2d3aa3fe03da",
-        "kind": "example",
         "legal_evidence": [],
         "legal_inherits_from": "repository:tigrbl/tigrbl_spiffe",
         "name": "examples/exchange_mtls.py",
@@ -900,13 +899,13 @@
         "path": "examples/exchange_mtls.py",
         "repository": "tigrbl/tigrbl_spiffe",
         "repository_route": "/catalog/repositories/tigrbl/tigrbl_spiffe",
-        "route": "/catalog/resources/example/2d3aa3fe03da",
+        "resource_type": "implementation.example",
+        "route": "/catalog/resources/implementation-example/2d3aa3fe03da",
         "url": "https://github.com/tigrbl/tigrbl_spiffe/blob/master/examples/exchange_mtls.py"
       },
       {
         "evidence_type": "repository.blob",
         "id": "resource:36c4d2277da9",
-        "kind": "example",
         "legal_evidence": [],
         "legal_inherits_from": "repository:tigrbl/tigrbl_spiffe",
         "name": "examples/quickstart_agent.py",
@@ -914,13 +913,13 @@
         "path": "examples/quickstart_agent.py",
         "repository": "tigrbl/tigrbl_spiffe",
         "repository_route": "/catalog/repositories/tigrbl/tigrbl_spiffe",
-        "route": "/catalog/resources/example/36c4d2277da9",
+        "resource_type": "implementation.example",
+        "route": "/catalog/resources/implementation-example/36c4d2277da9",
         "url": "https://github.com/tigrbl/tigrbl_spiffe/blob/master/examples/quickstart_agent.py"
       },
       {
         "evidence_type": "repository.blob",
         "id": "resource:a4313b956731",
-        "kind": "example",
         "legal_evidence": [],
         "legal_inherits_from": "repository:tigrbl/tigrbl_spiffe",
         "name": "examples/registrar_merge.py",
@@ -928,13 +927,13 @@
         "path": "examples/registrar_merge.py",
         "repository": "tigrbl/tigrbl_spiffe",
         "repository_route": "/catalog/repositories/tigrbl/tigrbl_spiffe",
-        "route": "/catalog/resources/example/a4313b956731",
+        "resource_type": "implementation.example",
+        "route": "/catalog/resources/implementation-example/a4313b956731",
         "url": "https://github.com/tigrbl/tigrbl_spiffe/blob/master/examples/registrar_merge.py"
       },
       {
         "evidence_type": "repository.blob",
         "id": "resource:68de043856ba",
-        "kind": "example",
         "legal_evidence": [],
         "legal_inherits_from": "repository:tigrbl/tigrbl_spiffe",
         "name": "examples/server_side_bundle_sync.py",
@@ -942,13 +941,13 @@
         "path": "examples/server_side_bundle_sync.py",
         "repository": "tigrbl/tigrbl_spiffe",
         "repository_route": "/catalog/repositories/tigrbl/tigrbl_spiffe",
-        "route": "/catalog/resources/example/68de043856ba",
+        "resource_type": "implementation.example",
+        "route": "/catalog/resources/implementation-example/68de043856ba",
         "url": "https://github.com/tigrbl/tigrbl_spiffe/blob/master/examples/server_side_bundle_sync.py"
       },
       {
         "evidence_type": "repository.blob",
         "id": "resource:e5819cc11495",
-        "kind": "example",
         "legal_evidence": [],
         "legal_inherits_from": "repository:tigrbl/tigrbl_spiffe",
         "name": "examples/server_side_registrar_admin.py",
@@ -956,13 +955,13 @@
         "path": "examples/server_side_registrar_admin.py",
         "repository": "tigrbl/tigrbl_spiffe",
         "repository_route": "/catalog/repositories/tigrbl/tigrbl_spiffe",
-        "route": "/catalog/resources/example/e5819cc11495",
+        "resource_type": "implementation.example",
+        "route": "/catalog/resources/implementation-example/e5819cc11495",
         "url": "https://github.com/tigrbl/tigrbl_spiffe/blob/master/examples/server_side_registrar_admin.py"
       },
       {
         "evidence_type": "repository.blob",
         "id": "resource:6fa7337dcbda",
-        "kind": "example",
         "legal_evidence": [],
         "legal_inherits_from": "repository:tigrbl/tigrbl_spiffe",
         "name": "examples/tls_client.py",
@@ -970,7 +969,8 @@
         "path": "examples/tls_client.py",
         "repository": "tigrbl/tigrbl_spiffe",
         "repository_route": "/catalog/repositories/tigrbl/tigrbl_spiffe",
-        "route": "/catalog/resources/example/6fa7337dcbda",
+        "resource_type": "implementation.example",
+        "route": "/catalog/resources/implementation-example/6fa7337dcbda",
         "url": "https://github.com/tigrbl/tigrbl_spiffe/blob/master/examples/tls_client.py"
       }
     ],

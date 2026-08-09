@@ -35,3 +35,51 @@ class Association(CatalogTable):
             name="uq_association_edge",
         ),
     )
+
+    @op_ctx(
+        alias="catalog_overview", target="custom", arity="collection", persist="skip", rest=False
+    )
+    def catalog_overview(cls, ctx):
+        from .views import catalog_overview
+
+        return catalog_overview(cls, ctx)
+
+    @op_ctx(
+        alias="entity_collection", target="custom", arity="collection", persist="skip", rest=False
+    )
+    def entity_collection(cls, ctx):
+        from .views import entity_collection
+
+        return entity_collection(cls, ctx)
+
+    @op_ctx(alias="entity_detail", target="custom", arity="member", persist="skip", rest=False)
+    def entity_detail(cls, ctx):
+        from .views import entity_detail
+
+        return entity_detail(cls, ctx)
+
+    @op_ctx(
+        alias="resource_collection",
+        target="custom",
+        arity="collection",
+        persist="skip",
+        rest=False,
+    )
+    def resource_collection(cls, ctx):
+        from .views import resource_collection
+
+        return resource_collection(cls, ctx)
+
+    @op_ctx(alias="resource_detail", target="custom", arity="member", persist="skip", rest=False)
+    def resource_detail(cls, ctx):
+        from .views import resource_detail
+
+        return resource_detail(cls, ctx)
+
+    @op_ctx(
+        alias="insight_collection", target="custom", arity="collection", persist="skip", rest=False
+    )
+    def insight_collection(cls, ctx):
+        from .views import insight_collection
+
+        return insight_collection(cls, ctx)

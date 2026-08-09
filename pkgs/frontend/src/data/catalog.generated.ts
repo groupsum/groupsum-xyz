@@ -111,7 +111,7 @@ export const catalogOrganizations = [
           "github_releases": 447,
           "open_issues": 0,
           "packages": 14,
-          "related_resources": 35,
+          "related_resources": 10,
           "size_kb": 77017,
           "stars": 5,
           "watchers": 0
@@ -131,7 +131,7 @@ export const catalogOrganizations = [
           "github_releases": 6,
           "open_issues": 0,
           "packages": 45,
-          "related_resources": 76,
+          "related_resources": 73,
           "size_kb": 1133214,
           "stars": 3,
           "watchers": 0
@@ -251,7 +251,7 @@ export const catalogOrganizations = [
           "github_releases": 5,
           "open_issues": 0,
           "packages": 3,
-          "related_resources": 15,
+          "related_resources": 7,
           "size_kb": 2170,
           "stars": 0,
           "watchers": 0
@@ -313,7 +313,7 @@ export const catalogOrganizations = [
           "github_releases": 5742,
           "open_issues": 176,
           "packages": 366,
-          "related_resources": 111,
+          "related_resources": 109,
           "size_kb": 77235,
           "stars": 103,
           "watchers": 5
@@ -714,7 +714,7 @@ export const catalogFeaturedRepositories = [
       "github_releases": 5742,
       "open_issues": 176,
       "packages": 366,
-      "related_resources": 111,
+      "related_resources": 109,
       "size_kb": 77235,
       "stars": 103,
       "watchers": 5
@@ -854,7 +854,7 @@ export const catalogFeaturedRepositories = [
       "github_releases": 447,
       "open_issues": 0,
       "packages": 14,
-      "related_resources": 35,
+      "related_resources": 10,
       "size_kb": 77017,
       "stars": 5,
       "watchers": 0
@@ -912,7 +912,7 @@ export const catalogFeaturedRepositories = [
       "github_releases": 6,
       "open_issues": 0,
       "packages": 45,
-      "related_resources": 76,
+      "related_resources": 73,
       "size_kb": 1133214,
       "stars": 3,
       "watchers": 0
@@ -1565,16 +1565,16 @@ export const catalogDatasetManifest = {
     "organizations": 4,
     "packages": 1129,
     "repositories": 69,
-    "resources": 582,
+    "resources": 502,
     "technologies": 18
   },
   "files": [
     {
-      "bytes": 19628,
+      "bytes": 19627,
       "dataset": "organizations",
       "path": "organizations.json",
       "records": 4,
-      "sha256": "9324d4c9b656230a4fae3722a4d686dba07c1f83dfb51850ef53b2cd0c8c9497"
+      "sha256": "ab7b152b2d7495f96f7beec537a58ae82ac6aa4f6ec5ed737dedb1d5bee713d1"
     },
     {
       "bytes": 13138275,
@@ -1584,18 +1584,18 @@ export const catalogDatasetManifest = {
       "sha256": "22337a7083c401c65b7d26f69d59cc93971a2980e3ec64b9f7cc79c4daea0f86"
     },
     {
-      "bytes": 9237528,
+      "bytes": 9198972,
       "dataset": "repositories",
       "path": "repositories.json",
       "records": 69,
-      "sha256": "99ccd9ea35ea56980fb001afb9ca562242232721b25d93b724486e8ecb0e008f"
+      "sha256": "e14602d2322cd945b997b6adc267611db38dd1a2c4ed3dd805901652d332936b"
     },
     {
-      "bytes": 715041,
+      "bytes": 635279,
       "dataset": "resources",
       "path": "resources.json",
-      "records": 582,
-      "sha256": "92f8b988c81851a31fc7a23611b0505e3f01f8df1f2a7e3c86ecec534ce055e5"
+      "records": 502,
+      "sha256": "8d30e0a553b2f4f52aa32d1a6717a8ed7d1060309ad99b19e0bcfd0b890f1fe4"
     },
     {
       "bytes": 13831,

@@ -1315,7 +1315,6 @@
       {
         "evidence_type": "repository.homepage",
         "id": "resource:39984854789a",
-        "kind": "website",
         "legal_evidence": [],
         "legal_inherits_from": "repository:swarmauri/soliloquy",
         "name": "soliloquy",
@@ -1323,7 +1322,8 @@
         "path": null,
         "repository": "swarmauri/soliloquy",
         "repository_route": "/catalog/repositories/swarmauri/soliloquy",
-        "route": "/catalog/resources/website/39984854789a",
+        "resource_type": "interface.website",
+        "route": "/catalog/resources/interface-website/39984854789a",
         "url": "https://swarmauri.com"
       }
     ],

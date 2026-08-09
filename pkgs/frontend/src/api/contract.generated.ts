@@ -1,2 +1,2 @@
 // Generated from pkgs/backend/openapi.json. Do not edit manually.
-export const OPENAPI_SHA256 = "f9f182bd7f5740fc7c77c16c6fd0c8df0fc90792e7a05c4094804f0ca7976bd3" as const;
+export const OPENAPI_SHA256 = "6213d09264c44a4b57ecd03be042161035c6ea2c3009c6ad2275ffdef34e5b4a" as const;

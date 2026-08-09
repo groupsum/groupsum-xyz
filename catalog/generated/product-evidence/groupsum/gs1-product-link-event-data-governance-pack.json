@@ -422,7 +422,6 @@
       {
         "evidence_type": "repository.tree",
         "id": "resource:edd2f052d770",
-        "kind": "documentation",
         "legal_evidence": [],
         "legal_inherits_from": "repository:groupsum/gs1-product-link-event-data-governance-pack",
         "name": "docs/governance",
@@ -430,7 +429,8 @@
         "path": "docs/governance",
         "repository": "groupsum/gs1-product-link-event-data-governance-pack",
         "repository_route": "/catalog/repositories/groupsum/gs1-product-link-event-data-governance-pack",
-        "route": "/catalog/resources/documentation/edd2f052d770",
+        "resource_type": "documentation.collection",
+        "route": "/catalog/resources/documentation-collection/edd2f052d770",
         "url": "https://github.com/groupsum/gs1-product-link-event-data-governance-pack/tree/master/docs/governance"
       }
     ],

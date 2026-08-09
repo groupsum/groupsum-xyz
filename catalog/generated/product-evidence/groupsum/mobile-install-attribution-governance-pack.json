@@ -422,7 +422,6 @@
       {
         "evidence_type": "repository.tree",
         "id": "resource:19df8c95b8b6",
-        "kind": "documentation",
         "legal_evidence": [],
         "legal_inherits_from": "repository:groupsum/mobile-install-attribution-governance-pack",
         "name": "docs/governance",
@@ -430,7 +429,8 @@
         "path": "docs/governance",
         "repository": "groupsum/mobile-install-attribution-governance-pack",
         "repository_route": "/catalog/repositories/groupsum/mobile-install-attribution-governance-pack",
-        "route": "/catalog/resources/documentation/19df8c95b8b6",
+        "resource_type": "documentation.collection",
+        "route": "/catalog/resources/documentation-collection/19df8c95b8b6",
         "url": "https://github.com/groupsum/mobile-install-attribution-governance-pack/tree/master/docs/governance"
       }
     ],

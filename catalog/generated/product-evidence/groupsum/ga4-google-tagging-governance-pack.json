@@ -422,7 +422,6 @@
       {
         "evidence_type": "repository.tree",
         "id": "resource:f8d13842e5b5",
-        "kind": "documentation",
         "legal_evidence": [],
         "legal_inherits_from": "repository:groupsum/ga4-google-tagging-governance-pack",
         "name": "docs/governance",
@@ -430,7 +429,8 @@
         "path": "docs/governance",
         "repository": "groupsum/ga4-google-tagging-governance-pack",
         "repository_route": "/catalog/repositories/groupsum/ga4-google-tagging-governance-pack",
-        "route": "/catalog/resources/documentation/f8d13842e5b5",
+        "resource_type": "documentation.collection",
+        "route": "/catalog/resources/documentation-collection/f8d13842e5b5",
         "url": "https://github.com/groupsum/ga4-google-tagging-governance-pack/tree/master/docs/governance"
       }
     ],

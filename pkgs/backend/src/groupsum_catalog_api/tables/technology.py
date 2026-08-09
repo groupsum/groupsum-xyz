@@ -5,6 +5,7 @@ from .base import *  # noqa: F403
 
 class Technology(CatalogTable):
     __tablename__ = "technologies"
+    ENTITY_TYPE = "taxonomy.technology"
 
     id = Column(String(200), primary_key=True)
     slug = Column(String(200), nullable=False, unique=True, index=True)

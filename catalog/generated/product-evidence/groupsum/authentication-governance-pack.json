@@ -350,7 +350,6 @@
       {
         "evidence_type": "repository.tree",
         "id": "resource:3b6fa2fe87e8",
-        "kind": "documentation",
         "legal_evidence": [],
         "legal_inherits_from": "repository:groupsum/authentication-governance-pack",
         "name": "docs/governance",
@@ -358,7 +357,8 @@
         "path": "docs/governance",
         "repository": "groupsum/authentication-governance-pack",
         "repository_route": "/catalog/repositories/groupsum/authentication-governance-pack",
-        "route": "/catalog/resources/documentation/3b6fa2fe87e8",
+        "resource_type": "documentation.collection",
+        "route": "/catalog/resources/documentation-collection/3b6fa2fe87e8",
         "url": "https://github.com/groupsum/authentication-governance-pack/tree/master/docs/governance"
       }
     ],

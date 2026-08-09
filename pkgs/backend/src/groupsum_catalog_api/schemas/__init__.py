@@ -1,17 +1,17 @@
 from .catalog import (
     CatalogCollection,
     CatalogOverview,
+    CatalogResourceSummary,
     PackageSummary,
     RepositorySummary,
     TechnologySummary,
-    TypedResourceSummary,
 )
 
 __all__ = (
     "CatalogCollection",
     "CatalogOverview",
+    "CatalogResourceSummary",
     "PackageSummary",
     "RepositorySummary",
     "TechnologySummary",
-    "TypedResourceSummary",
 )

@@ -444,7 +444,6 @@
       {
         "evidence_type": "repository.tree",
         "id": "resource:bd9ad818da8d",
-        "kind": "documentation",
         "legal_evidence": [],
         "legal_inherits_from": "repository:swarmauri/docs-peagen-com",
         "name": "docs/assets",
@@ -452,13 +451,13 @@
         "path": "docs/assets",
         "repository": "swarmauri/docs-peagen-com",
         "repository_route": "/catalog/repositories/swarmauri/docs-peagen-com",
-        "route": "/catalog/resources/documentation/bd9ad818da8d",
+        "resource_type": "documentation.collection",
+        "route": "/catalog/resources/documentation-collection/bd9ad818da8d",
         "url": "https://github.com/swarmauri/docs-peagen-com/tree/master/docs/assets"
       },
       {
         "evidence_type": "repository.tree",
         "id": "resource:3a7b248f3231",
-        "kind": "documentation",
         "legal_evidence": [],
         "legal_inherits_from": "repository:swarmauri/docs-peagen-com",
         "name": "docs/guide",
@@ -466,13 +465,13 @@
         "path": "docs/guide",
         "repository": "swarmauri/docs-peagen-com",
         "repository_route": "/catalog/repositories/swarmauri/docs-peagen-com",
-        "route": "/catalog/resources/documentation/3a7b248f3231",
+        "resource_type": "documentation.collection",
+        "route": "/catalog/resources/documentation-collection/3a7b248f3231",
         "url": "https://github.com/swarmauri/docs-peagen-com/tree/master/docs/guide"
       },
       {
         "evidence_type": "repository.tree",
         "id": "resource:5bb1be36ac30",
-        "kind": "documentation",
         "legal_evidence": [],
         "legal_inherits_from": "repository:swarmauri/docs-peagen-com",
         "name": "docs/home",
@@ -480,13 +479,13 @@
         "path": "docs/home",
         "repository": "swarmauri/docs-peagen-com",
         "repository_route": "/catalog/repositories/swarmauri/docs-peagen-com",
-        "route": "/catalog/resources/documentation/5bb1be36ac30",
+        "resource_type": "documentation.collection",
+        "route": "/catalog/resources/documentation-collection/5bb1be36ac30",
         "url": "https://github.com/swarmauri/docs-peagen-com/tree/master/docs/home"
       },
       {
         "evidence_type": "repository.blob",
         "id": "resource:a81fd45655a3",
-        "kind": "documentation",
         "legal_evidence": [],
         "legal_inherits_from": "repository:swarmauri/docs-peagen-com",
         "name": "docs/index.md",
@@ -494,13 +493,13 @@
         "path": "docs/index.md",
         "repository": "swarmauri/docs-peagen-com",
         "repository_route": "/catalog/repositories/swarmauri/docs-peagen-com",
-        "route": "/catalog/resources/documentation/a81fd45655a3",
+        "resource_type": "documentation.collection",
+        "route": "/catalog/resources/documentation-collection/a81fd45655a3",
         "url": "https://github.com/swarmauri/docs-peagen-com/blob/master/docs/index.md"
       },
       {
         "evidence_type": "repository.tree",
         "id": "resource:32aee68489b3",
-        "kind": "documentation",
         "legal_evidence": [],
         "legal_inherits_from": "repository:swarmauri/docs-peagen-com",
         "name": "docs/news",
@@ -508,7 +507,8 @@
         "path": "docs/news",
         "repository": "swarmauri/docs-peagen-com",
         "repository_route": "/catalog/repositories/swarmauri/docs-peagen-com",
-        "route": "/catalog/resources/documentation/32aee68489b3",
+        "resource_type": "documentation.collection",
+        "route": "/catalog/resources/documentation-collection/32aee68489b3",
         "url": "https://github.com/swarmauri/docs-peagen-com/tree/master/docs/news"
       }
     ],

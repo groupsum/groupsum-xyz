@@ -6,37 +6,28 @@ import httpx
 import pytest
 
 from groupsum_catalog_api.app import build_app
+from groupsum_catalog_api.domain.resources.ontology import RESOURCE_TYPES
 from groupsum_catalog_api.domain.resources.relationship_types import RELATIONSHIP_TYPES
 from groupsum_catalog_api.importer import import_catalog
 from groupsum_catalog_api.tables.association import Association
-from groupsum_catalog_api.tables.catalog_entry import CatalogEntry
 from groupsum_catalog_api.tables.organization import Organization
 from groupsum_catalog_api.tables.package import Package
 from groupsum_catalog_api.tables.portfolio import Portfolio
 from groupsum_catalog_api.tables.product import Product
-from groupsum_catalog_api.tables.registry import ALL_TABLES, ENTITY_TABLES
+from groupsum_catalog_api.tables.registry import ALL_TABLES, ENTITY_TABLES, RESOURCE_TABLES
 from groupsum_catalog_api.tables.repository import Repository
 from groupsum_catalog_api.tables.technology import Technology
-from groupsum_catalog_api.tables.typed_resource import TypedResource
 
 
 def test_every_public_table_exposes_exactly_read_and_list() -> None:
-    assert len(ALL_TABLES) == 11
+    assert len(ALL_TABLES) == 158
     for table in ALL_TABLES:
         assert {operation.target for operation in table.TABLE_PROFILE.ops} == {"read", "list"}
 
 
 def test_entity_tables_have_no_foreign_keys_and_use_one_association_table() -> None:
     assert set(ENTITY_TABLES) == {
-        "organization",
-        "product",
-        "portfolio",
-        "repository",
-        "package",
-        "typed_resource",
-        "technology",
-        "ssot_registry",
-        "ssot_item",
+        *RESOURCE_TYPES,
     }
     assert all(not table.__table__.foreign_keys for table in ENTITY_TABLES.values())
     assert not Association.__table__.foreign_keys
@@ -47,22 +38,28 @@ def test_entity_tables_have_no_foreign_keys_and_use_one_association_table() -> N
         "target_type",
         "target_id",
     } <= {column.name for column in Association.__table__.columns}
+    assert set(ENTITY_TABLES) == set(RESOURCE_TYPES)
+    assert len(RESOURCE_TABLES) == 150
+    assert {table.__tablename__ for table in ALL_TABLES}.isdisjoint(
+        {"catalog_entries", "typed_resources", "repository_ssot_items"}
+    )
 
 
 def test_former_read_operations_are_bound_to_their_owning_tables() -> None:
     expected = {
-        CatalogEntry: {
+        Association: {
             "catalog_overview",
             "entity_collection",
             "entity_detail",
             "insight_collection",
+            "resource_collection",
+            "resource_detail",
         },
         Product: {"record_collection", "record_detail"},
         Portfolio: {"record_collection", "record_detail"},
         Organization: {"organization_detail"},
         Repository: {"repository_collection", "repository_detail", "repository_metrics"},
         Package: {"package_collection", "package_detail"},
-        TypedResource: {"resource_collection", "resource_detail"},
         Technology: {"technology_collection", "technology_detail"},
     }
     for table, aliases in expected.items():
@@ -87,7 +84,7 @@ async def test_openapi_is_generated_from_tigrbl_tables(tmp_path: Path) -> None:
 
         assert "/api/v1/catalog/repositories" in paths
         assert "/api/v1/products" in paths
-        assert "/api/v1/entities/{entity_id}" in paths
+        assert "/api/v1/entities/{entity_type}/{entity_id}" in paths
 
 
 @pytest.mark.anyio
@@ -111,8 +108,12 @@ async def test_importer_populates_native_table_resources(tmp_path: Path) -> None
             "portfolio",
             "repository",
             "package",
-            "typedresource",
             "association",
+            "contractopenapi",
+            "documentationcollection",
+            "implementationdemo",
+            "implementationexample",
+            "interfacewebsite",
         ):
             response = await client.get(f"/{resource}")
             assert response.status_code == 200
@@ -122,16 +123,17 @@ async def test_importer_populates_native_table_resources(tmp_path: Path) -> None
         assert product.status_code == 200
         assert product.json()["slug"] == "ssot-registry"
 
-        typed_resources = (await client.get("/typedresource")).json()
-        assert all("." in item["resource_type"] for item in typed_resources)
-
         associations = (await client.get("/association")).json()
         assert associations
         assert all(edge["relationship_type"] in RELATIONSHIP_TYPES for edge in associations)
-        entity_ids = {}
-        for entity_type, table in ENTITY_TABLES.items():
-            response = await client.get(f"/{table.__name__.lower()}")
-            entity_ids[entity_type] = {item["id"] for item in response.json()}
+        session, release = Association.acquire(op_alias="list")
+        try:
+            entity_ids = {
+                entity_type: {row[0] for row in session.query(table.id).all()}
+                for entity_type, table in ENTITY_TABLES.items()
+            }
+        finally:
+            release()
         assert all(
             edge["source_id"] in entity_ids[edge["source_type"]]
             and edge["target_id"] in entity_ids[edge["target_type"]]
@@ -139,6 +141,7 @@ async def test_importer_populates_native_table_resources(tmp_path: Path) -> None
         )
 
         overview = (await client.get("/api/v1/catalog")).json()
+        assert "counts" in overview, overview
         assert overview["counts"]["repositories"] == counts["repositories"]
 
         products = (await client.get("/api/v1/products")).json()
@@ -151,9 +154,7 @@ async def test_importer_populates_native_table_resources(tmp_path: Path) -> None
         portfolios = (await client.get("/api/v1/portfolio")).json()
         assert portfolios["count"] == len(public_portfolios)
         if public_portfolios:
-            portfolio_detail = await client.get(
-                f"/api/v1/portfolio/{public_portfolios[0]['slug']}"
-            )
+            portfolio_detail = await client.get(f"/api/v1/portfolio/{public_portfolios[0]['slug']}")
             assert portfolio_detail.status_code == 200
 
         organizations = (await client.get("/organization")).json()
@@ -187,8 +188,15 @@ async def test_importer_populates_native_table_resources(tmp_path: Path) -> None
         technology_detail = await client.get(f"/api/v1/catalog/technologies/{technology['slug']}")
         assert technology_detail.status_code == 200
 
-        entities = (await client.get("/api/v1/entities?page_size=3")).json()
-        entity = await client.get(f"/api/v1/entities/{entities['entities'][0]['id']}")
+        entities = (await client.get("/api/v1/entities?page_size=250")).json()
+        entity_row = next(
+            item
+            for item in entities["entities"]
+            if "/" not in item["id"] and item["relationship_count"] > 0
+        )
+        entity = await client.get(
+            f"/api/v1/entities/{entity_row['entity_type_id']}/{entity_row['id']}"
+        )
         assert entity.status_code == 200
         assert entity.json()["graph"]["relationships"]
         assert (await client.get("/api/v1/insights")).status_code == 200

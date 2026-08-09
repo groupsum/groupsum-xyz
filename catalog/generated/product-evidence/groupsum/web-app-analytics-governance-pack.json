@@ -422,7 +422,6 @@
       {
         "evidence_type": "repository.tree",
         "id": "resource:4c5788e27a8f",
-        "kind": "documentation",
         "legal_evidence": [],
         "legal_inherits_from": "repository:groupsum/web-app-analytics-governance-pack",
         "name": "docs/governance",
@@ -430,7 +429,8 @@
         "path": "docs/governance",
         "repository": "groupsum/web-app-analytics-governance-pack",
         "repository_route": "/catalog/repositories/groupsum/web-app-analytics-governance-pack",
-        "route": "/catalog/resources/documentation/4c5788e27a8f",
+        "resource_type": "documentation.collection",
+        "route": "/catalog/resources/documentation-collection/4c5788e27a8f",
         "url": "https://github.com/groupsum/web-app-analytics-governance-pack/tree/master/docs/governance"
       }
     ],

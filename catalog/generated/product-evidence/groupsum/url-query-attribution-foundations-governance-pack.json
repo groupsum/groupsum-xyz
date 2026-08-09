@@ -466,7 +466,6 @@
       {
         "evidence_type": "repository.tree",
         "id": "resource:8741a81f742b",
-        "kind": "documentation",
         "legal_evidence": [],
         "legal_inherits_from": "repository:groupsum/url-query-attribution-foundations-governance-pack",
         "name": "docs/governance",
@@ -474,7 +473,8 @@
         "path": "docs/governance",
         "repository": "groupsum/url-query-attribution-foundations-governance-pack",
         "repository_route": "/catalog/repositories/groupsum/url-query-attribution-foundations-governance-pack",
-        "route": "/catalog/resources/documentation/8741a81f742b",
+        "resource_type": "documentation.collection",
+        "route": "/catalog/resources/documentation-collection/8741a81f742b",
         "url": "https://github.com/groupsum/url-query-attribution-foundations-governance-pack/tree/master/docs/governance"
       }
     ],

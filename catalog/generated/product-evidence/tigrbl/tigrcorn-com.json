@@ -683,7 +683,6 @@
       {
         "evidence_type": "repository.blob",
         "id": "resource:b90a9a252352",
-        "kind": "documentation",
         "legal_evidence": [],
         "legal_inherits_from": "repository:tigrbl/tigrcorn-com",
         "name": "docs/FRONTEND_APP_BRIEF.md",
@@ -691,7 +690,8 @@
         "path": "docs/FRONTEND_APP_BRIEF.md",
         "repository": "tigrbl/tigrcorn-com",
         "repository_route": "/catalog/repositories/tigrbl/tigrcorn-com",
-        "route": "/catalog/resources/documentation/b90a9a252352",
+        "resource_type": "documentation.collection",
+        "route": "/catalog/resources/documentation-collection/b90a9a252352",
         "url": "https://github.com/tigrbl/tigrcorn-com/blob/master/docs/FRONTEND_APP_BRIEF.md"
       }
     ],

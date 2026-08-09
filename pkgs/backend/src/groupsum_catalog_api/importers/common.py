@@ -6,12 +6,11 @@ from datetime import UTC, datetime
 from pathlib import Path
 from typing import Any
 
+from ..domain.resources.ontology import RECORD_RESOURCE_TYPES
 from ..domain.resources.relationship_types import RELATIONSHIP_TYPES
 from ..tables.association import Association
-from ..tables.catalog_entry import CatalogEntry
 from ..tables.organization import Organization
 from ..tables.portfolio import Portfolio
-from ..tables.product import Product
 from ..tables.registry import ALL_TABLES, ENTITY_TABLES
 
 
@@ -79,13 +78,9 @@ def validate_associations(session) -> None:
         if edge.relationship_type not in RELATIONSHIP_TYPES:
             raise ValueError(f"Unknown relationship type: {edge.relationship_type}")
         if edge.source_id not in ids_by_type.get(edge.source_type, set()):
-            raise ValueError(
-                f"Dangling association source: {edge.source_type}:{edge.source_id}"
-            )
+            raise ValueError(f"Dangling association source: {edge.source_type}:{edge.source_id}")
         if edge.target_id not in ids_by_type.get(edge.target_type, set()):
-            raise ValueError(
-                f"Dangling association target: {edge.target_type}:{edge.target_id}"
-            )
+            raise ValueError(f"Dangling association target: {edge.target_type}:{edge.target_id}")
 
 
 def parse_datetime(value: object) -> datetime | None:
@@ -115,26 +110,6 @@ def load_inputs(repo_root: Path) -> tuple[dict[str, Any], list[dict], list[dict]
     return editorial, repositories, packages, technologies
 
 
-def merge_catalog_entry(session, *, kind: str, item: object, observed_at: datetime) -> None:
-    source_id = str(item.id)
-    session.merge(
-        CatalogEntry(
-            id=stable_id("catalog-entry", kind, source_id),
-            kind=kind,
-            source_id=source_id,
-            slug=str(getattr(item, "slug", source_id)),
-            name=str(getattr(item, "name", source_id)),
-            summary=getattr(item, "summary", None) or getattr(item, "description", None),
-            canonical_url=getattr(item, "canonical_url", None)
-            or getattr(item, "url", None)
-            or getattr(item, "registry_url", None),
-            visibility=getattr(item, "visibility", "public") or "public",
-            maturity=getattr(item, "maturity", None),
-            observed_at=observed_at,
-        )
-    )
-
-
 def clear_catalog(session) -> None:
     for table in reversed(ALL_TABLES):
         session.query(table).delete(synchronize_session=False)
@@ -158,60 +133,83 @@ def import_organizations(session, editorial: dict, observed_at: datetime) -> int
 
 
 def import_editorial(session, editorial: dict, observed_at: datetime) -> dict[str, int]:
-    counts = {"products": 0, "portfolios": 0}
-    by_slug: dict[str, object] = {}
+    counts = {
+        "products": 0,
+        "portfolios": 0,
+        "solutions": 0,
+        "services": 0,
+        "insights": 0,
+    }
+    by_slug: dict[str, tuple[str, object]] = {}
     for row in editorial.get("records", []):
-        if row.get("record_type") not in {"product", "portfolio"}:
+        record_type = row.get("record_type")
+        entity_type = RECORD_RESOURCE_TYPES.get(str(record_type))
+        if entity_type not in ENTITY_TABLES:
             continue
-        table = Product if row["record_type"] == "product" else Portfolio
-        item = table(
-            id=row["id"],
-            slug=row["slug"],
-            name=row["title"],
-            eyebrow=row.get("eyebrow"),
-            summary=row["summary"],
-            body_markdown=row.get("body_markdown"),
-            maturity=row.get("maturity"),
-            visibility=row.get("visibility", "public"),
-            featured=bool(row.get("featured")),
-            canonical_url=row.get("canonical_url"),
-            source_url=row.get("source_url"),
-            published_at=parse_datetime(row.get("published_at")),
-            updated_at=parse_datetime(row.get("updated_at")),
-            content_revision=int(row.get("content_revision", 1)),
-            **(
-                {"focus": row.get("focus") or row.get("claim_boundary")}
-                if table is Portfolio
-                else {}
-            ),
-        )
+        table = ENTITY_TABLES[entity_type]
+        if record_type == "insight":
+            item = table(
+                id=row["id"],
+                slug=row["slug"],
+                title=row["title"],
+                summary=row.get("summary"),
+                body_url=row.get("canonical_url"),
+                author=row.get("author"),
+                visibility=row.get("visibility", "public"),
+                published_at=parse_datetime(row.get("published_at")),
+                observed_at=observed_at,
+                source_payload=row,
+            )
+        else:
+            item = table(
+                id=row["id"],
+                slug=row["slug"],
+                name=row["title"],
+                eyebrow=row.get("eyebrow"),
+                summary=row["summary"],
+                body_markdown=row.get("body_markdown"),
+                maturity=row.get("maturity"),
+                visibility=row.get("visibility", "public"),
+                featured=bool(row.get("featured")),
+                canonical_url=row.get("canonical_url"),
+                source_url=row.get("source_url"),
+                published_at=parse_datetime(row.get("published_at")),
+                updated_at=parse_datetime(row.get("updated_at")),
+                content_revision=int(row.get("content_revision", 1)),
+                **(
+                    {"focus": row.get("focus") or row.get("claim_boundary")}
+                    if table is Portfolio
+                    else {}
+                ),
+            )
         session.merge(item)
         merge_association(
             session,
-            source_type=row["record_type"],
+            source_type=entity_type,
             source_id=row["id"],
             relationship_type="owned_by",
-            target_type="organization",
+            target_type=Organization.ENTITY_TYPE,
             target_id=row["organization_id"],
             observed_at=observed_at,
         )
-        merge_catalog_entry(session, kind=row["record_type"], item=item, observed_at=observed_at)
-        counts[f"{row['record_type']}s"] += 1
-        by_slug[row["slug"]] = item
+        count_key = "portfolios" if record_type == "portfolio" else f"{record_type}s"
+        counts[count_key] += 1
+        by_slug[row["slug"]] = (entity_type, item)
 
     for row in editorial.get("records", []):
         if row.get("record_type") != "portfolio":
             continue
         for position, slug in enumerate(row.get("related_slugs", [])):
             target = by_slug.get(slug)
-            if isinstance(target, Product):
+            if target is not None:
+                target_type, target_item = target
                 merge_association(
                     session,
-                    source_type="portfolio",
+                    source_type=Portfolio.ENTITY_TYPE,
                     source_id=row["id"],
                     relationship_type="contains",
-                    target_type="product",
-                    target_id=target.id,
+                    target_type=target_type,
+                    target_id=target_item.id,
                     role="member",
                     sort_order=position,
                     observed_at=observed_at,

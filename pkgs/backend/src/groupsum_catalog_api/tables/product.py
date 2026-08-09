@@ -5,6 +5,7 @@ from .base import *  # noqa: F403
 
 class Product(CatalogTable):
     __tablename__ = "products"
+    ENTITY_TYPE = "offering.product"
 
     id = Column(String(200), primary_key=True)
     slug = Column(String(200), nullable=False, unique=True, index=True)

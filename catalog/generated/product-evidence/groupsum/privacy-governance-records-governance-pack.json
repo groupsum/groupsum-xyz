@@ -422,7 +422,6 @@
       {
         "evidence_type": "repository.tree",
         "id": "resource:3bcea206904a",
-        "kind": "documentation",
         "legal_evidence": [],
         "legal_inherits_from": "repository:groupsum/privacy-governance-records-governance-pack",
         "name": "docs/governance",
@@ -430,7 +429,8 @@
         "path": "docs/governance",
         "repository": "groupsum/privacy-governance-records-governance-pack",
         "repository_route": "/catalog/repositories/groupsum/privacy-governance-records-governance-pack",
-        "route": "/catalog/resources/documentation/3bcea206904a",
+        "resource_type": "documentation.collection",
+        "route": "/catalog/resources/documentation-collection/3bcea206904a",
         "url": "https://github.com/groupsum/privacy-governance-records-governance-pack/tree/master/docs/governance"
       }
     ],

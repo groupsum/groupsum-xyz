@@ -59,9 +59,11 @@ def _finalize(
     resources = list({resource["id"]: {
         **resource,
         "kind": "resource",
-        "resource_type": resource["kind"],
-        "display_name": resource.get("name") or resource["kind"],
-        "description": f"Observed {resource['kind']} resource from {resource['repository']}.",
+        "resource_type": resource["resource_type"],
+        "display_name": resource.get("name") or resource["resource_type"],
+        "description": (
+            f"Observed {resource['resource_type']} resource from {resource['repository']}."
+        ),
         "description_source": "generated-factual",
         "evidence": evidence(resource.get("evidence_type") or "source", resource.get("url"), resource["observed_at"]),
         "claim_boundary": "The catalog confirms a public source location; runtime availability and completeness are not inferred.",

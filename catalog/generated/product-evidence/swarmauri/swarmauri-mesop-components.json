@@ -216,7 +216,6 @@
       {
         "evidence_type": "repository.homepage",
         "id": "resource:39984854789a",
-        "kind": "website",
         "legal_evidence": [],
         "legal_inherits_from": "repository:swarmauri/swarmauri-mesop-components",
         "name": "swarmauri-mesop-components",
@@ -224,7 +223,8 @@
         "path": null,
         "repository": "swarmauri/swarmauri-mesop-components",
         "repository_route": "/catalog/repositories/swarmauri/swarmauri-mesop-components",
-        "route": "/catalog/resources/website/39984854789a",
+        "resource_type": "interface.website",
+        "route": "/catalog/resources/interface-website/39984854789a",
         "url": "https://swarmauri.com"
       }
     ],

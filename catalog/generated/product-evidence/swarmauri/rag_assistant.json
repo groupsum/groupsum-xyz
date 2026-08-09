@@ -993,7 +993,6 @@
       {
         "evidence_type": "repository.homepage",
         "id": "resource:39984854789a",
-        "kind": "website",
         "legal_evidence": [],
         "legal_inherits_from": "repository:swarmauri/rag_assistant",
         "name": "rag_assistant",
@@ -1001,7 +1000,8 @@
         "path": null,
         "repository": "swarmauri/rag_assistant",
         "repository_route": "/catalog/repositories/swarmauri/rag_assistant",
-        "route": "/catalog/resources/website/39984854789a",
+        "resource_type": "interface.website",
+        "route": "/catalog/resources/interface-website/39984854789a",
         "url": "https://swarmauri.com"
       }
     ],

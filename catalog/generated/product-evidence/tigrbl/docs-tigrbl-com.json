@@ -444,7 +444,6 @@
       {
         "evidence_type": "repository.tree",
         "id": "resource:646a67188ea8",
-        "kind": "documentation",
         "legal_evidence": [],
         "legal_inherits_from": "repository:tigrbl/docs-tigrbl-com",
         "name": "docs/assets",
@@ -452,13 +451,13 @@
         "path": "docs/assets",
         "repository": "tigrbl/docs-tigrbl-com",
         "repository_route": "/catalog/repositories/tigrbl/docs-tigrbl-com",
-        "route": "/catalog/resources/documentation/646a67188ea8",
+        "resource_type": "documentation.collection",
+        "route": "/catalog/resources/documentation-collection/646a67188ea8",
         "url": "https://github.com/tigrbl/docs-tigrbl-com/tree/master/docs/assets"
       },
       {
         "evidence_type": "repository.tree",
         "id": "resource:b855ebca907a",
-        "kind": "documentation",
         "legal_evidence": [],
         "legal_inherits_from": "repository:tigrbl/docs-tigrbl-com",
         "name": "docs/guide",
@@ -466,13 +465,13 @@
         "path": "docs/guide",
         "repository": "tigrbl/docs-tigrbl-com",
         "repository_route": "/catalog/repositories/tigrbl/docs-tigrbl-com",
-        "route": "/catalog/resources/documentation/b855ebca907a",
+        "resource_type": "documentation.collection",
+        "route": "/catalog/resources/documentation-collection/b855ebca907a",
         "url": "https://github.com/tigrbl/docs-tigrbl-com/tree/master/docs/guide"
       },
       {
         "evidence_type": "repository.tree",
         "id": "resource:6454e31b1229",
-        "kind": "documentation",
         "legal_evidence": [],
         "legal_inherits_from": "repository:tigrbl/docs-tigrbl-com",
         "name": "docs/home",
@@ -480,13 +479,13 @@
         "path": "docs/home",
         "repository": "tigrbl/docs-tigrbl-com",
         "repository_route": "/catalog/repositories/tigrbl/docs-tigrbl-com",
-        "route": "/catalog/resources/documentation/6454e31b1229",
+        "resource_type": "documentation.collection",
+        "route": "/catalog/resources/documentation-collection/6454e31b1229",
         "url": "https://github.com/tigrbl/docs-tigrbl-com/tree/master/docs/home"
       },
       {
         "evidence_type": "repository.blob",
         "id": "resource:07869802cea1",
-        "kind": "documentation",
         "legal_evidence": [],
         "legal_inherits_from": "repository:tigrbl/docs-tigrbl-com",
         "name": "docs/index.md",
@@ -494,13 +493,13 @@
         "path": "docs/index.md",
         "repository": "tigrbl/docs-tigrbl-com",
         "repository_route": "/catalog/repositories/tigrbl/docs-tigrbl-com",
-        "route": "/catalog/resources/documentation/07869802cea1",
+        "resource_type": "documentation.collection",
+        "route": "/catalog/resources/documentation-collection/07869802cea1",
         "url": "https://github.com/tigrbl/docs-tigrbl-com/blob/master/docs/index.md"
       },
       {
         "evidence_type": "repository.tree",
         "id": "resource:105a72be76f0",
-        "kind": "documentation",
         "legal_evidence": [],
         "legal_inherits_from": "repository:tigrbl/docs-tigrbl-com",
         "name": "docs/news",
@@ -508,13 +507,13 @@
         "path": "docs/news",
         "repository": "tigrbl/docs-tigrbl-com",
         "repository_route": "/catalog/repositories/tigrbl/docs-tigrbl-com",
-        "route": "/catalog/resources/documentation/105a72be76f0",
+        "resource_type": "documentation.collection",
+        "route": "/catalog/resources/documentation-collection/105a72be76f0",
         "url": "https://github.com/tigrbl/docs-tigrbl-com/tree/master/docs/news"
       },
       {
         "evidence_type": "repository.blob",
         "id": "resource:02718715ac60",
-        "kind": "documentation",
         "legal_evidence": [],
         "legal_inherits_from": "repository:tigrbl/docs-tigrbl-com",
         "name": "docs/tigrbl_auth_overview.md",
@@ -522,7 +521,8 @@
         "path": "docs/tigrbl_auth_overview.md",
         "repository": "tigrbl/docs-tigrbl-com",
         "repository_route": "/catalog/repositories/tigrbl/docs-tigrbl-com",
-        "route": "/catalog/resources/documentation/02718715ac60",
+        "resource_type": "documentation.collection",
+        "route": "/catalog/resources/documentation-collection/02718715ac60",
         "url": "https://github.com/tigrbl/docs-tigrbl-com/blob/master/docs/tigrbl_auth_overview.md"
       }
     ],

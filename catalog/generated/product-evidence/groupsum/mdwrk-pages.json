@@ -4499,7 +4499,6 @@
       {
         "evidence_type": "repository.blob",
         "id": "resource:592d79cbfa45",
-        "kind": "documentation",
         "legal_evidence": [],
         "legal_inherits_from": "repository:groupsum/mdwrk-pages",
         "name": "docs/AGENTS.md",
@@ -4507,13 +4506,13 @@
         "path": "docs/AGENTS.md",
         "repository": "groupsum/mdwrk-pages",
         "repository_route": "/catalog/repositories/groupsum/mdwrk-pages",
-        "route": "/catalog/resources/documentation/592d79cbfa45",
+        "resource_type": "documentation.collection",
+        "route": "/catalog/resources/documentation-collection/592d79cbfa45",
         "url": "https://github.com/groupsum/mdwrk-pages/blob/master/docs/AGENTS.md"
       },
       {
         "evidence_type": "repository.blob",
         "id": "resource:e60b5c11c19b",
-        "kind": "documentation",
         "legal_evidence": [],
         "legal_inherits_from": "repository:groupsum/mdwrk-pages",
         "name": "docs/README.md",
@@ -4521,13 +4520,13 @@
         "path": "docs/README.md",
         "repository": "groupsum/mdwrk-pages",
         "repository_route": "/catalog/repositories/groupsum/mdwrk-pages",
-        "route": "/catalog/resources/documentation/e60b5c11c19b",
+        "resource_type": "documentation.collection",
+        "route": "/catalog/resources/documentation-collection/e60b5c11c19b",
         "url": "https://github.com/groupsum/mdwrk-pages/blob/master/docs/README.md"
       },
       {
         "evidence_type": "repository.tree",
         "id": "resource:120941e2f362",
-        "kind": "documentation",
         "legal_evidence": [],
         "legal_inherits_from": "repository:groupsum/mdwrk-pages",
         "name": "docs/assets",
@@ -4535,13 +4534,13 @@
         "path": "docs/assets",
         "repository": "groupsum/mdwrk-pages",
         "repository_route": "/catalog/repositories/groupsum/mdwrk-pages",
-        "route": "/catalog/resources/documentation/120941e2f362",
+        "resource_type": "documentation.collection",
+        "route": "/catalog/resources/documentation-collection/120941e2f362",
         "url": "https://github.com/groupsum/mdwrk-pages/tree/master/docs/assets"
       },
       {
         "evidence_type": "repository.blob",
         "id": "resource:37cf7e0716dd",
-        "kind": "documentation",
         "legal_evidence": [],
         "legal_inherits_from": "repository:groupsum/mdwrk-pages",
         "name": "docs/generated-schemaorg-page-family-presence.csv",
@@ -4549,13 +4548,13 @@
         "path": "docs/generated-schemaorg-page-family-presence.csv",
         "repository": "groupsum/mdwrk-pages",
         "repository_route": "/catalog/repositories/groupsum/mdwrk-pages",
-        "route": "/catalog/resources/documentation/37cf7e0716dd",
+        "resource_type": "documentation.collection",
+        "route": "/catalog/resources/documentation-collection/37cf7e0716dd",
         "url": "https://github.com/groupsum/mdwrk-pages/blob/master/docs/generated-schemaorg-page-family-presence.csv"
       },
       {
         "evidence_type": "repository.blob",
         "id": "resource:9ae99d870b09",
-        "kind": "documentation",
         "legal_evidence": [],
         "legal_inherits_from": "repository:groupsum/mdwrk-pages",
         "name": "docs/structured-data-presence.csv",
@@ -4563,13 +4562,13 @@
         "path": "docs/structured-data-presence.csv",
         "repository": "groupsum/mdwrk-pages",
         "repository_route": "/catalog/repositories/groupsum/mdwrk-pages",
-        "route": "/catalog/resources/documentation/9ae99d870b09",
+        "resource_type": "documentation.collection",
+        "route": "/catalog/resources/documentation-collection/9ae99d870b09",
         "url": "https://github.com/groupsum/mdwrk-pages/blob/master/docs/structured-data-presence.csv"
       },
       {
         "evidence_type": "repository.blob",
         "id": "resource:f7aa871469c7",
-        "kind": "documentation",
         "legal_evidence": [],
         "legal_inherits_from": "repository:groupsum/mdwrk-pages",
         "name": "docs/structured-data-semantic-component-matrix.md",
@@ -4577,13 +4576,13 @@
         "path": "docs/structured-data-semantic-component-matrix.md",
         "repository": "groupsum/mdwrk-pages",
         "repository_route": "/catalog/repositories/groupsum/mdwrk-pages",
-        "route": "/catalog/resources/documentation/f7aa871469c7",
+        "resource_type": "documentation.collection",
+        "route": "/catalog/resources/documentation-collection/f7aa871469c7",
         "url": "https://github.com/groupsum/mdwrk-pages/blob/master/docs/structured-data-semantic-component-matrix.md"
       },
       {
         "evidence_type": "repository.blob",
         "id": "resource:e2889138bbce",
-        "kind": "documentation",
         "legal_evidence": [],
         "legal_inherits_from": "repository:groupsum/mdwrk-pages",
         "name": "docs/structured-data-type-support-matrix.md",
@@ -4591,13 +4590,13 @@
         "path": "docs/structured-data-type-support-matrix.md",
         "repository": "groupsum/mdwrk-pages",
         "repository_route": "/catalog/repositories/groupsum/mdwrk-pages",
-        "route": "/catalog/resources/documentation/e2889138bbce",
+        "resource_type": "documentation.collection",
+        "route": "/catalog/resources/documentation-collection/e2889138bbce",
         "url": "https://github.com/groupsum/mdwrk-pages/blob/master/docs/structured-data-type-support-matrix.md"
       },
       {
         "evidence_type": "repository.blob",
         "id": "resource:2a906b2ff569",
-        "kind": "documentation",
         "legal_evidence": [],
         "legal_inherits_from": "repository:groupsum/mdwrk-pages",
         "name": "docs/typography-overflow-text-fit-matrix.md",
@@ -4605,13 +4604,13 @@
         "path": "docs/typography-overflow-text-fit-matrix.md",
         "repository": "groupsum/mdwrk-pages",
         "repository_route": "/catalog/repositories/groupsum/mdwrk-pages",
-        "route": "/catalog/resources/documentation/2a906b2ff569",
+        "resource_type": "documentation.collection",
+        "route": "/catalog/resources/documentation-collection/2a906b2ff569",
         "url": "https://github.com/groupsum/mdwrk-pages/blob/master/docs/typography-overflow-text-fit-matrix.md"
       },
       {
         "evidence_type": "repository.blob",
         "id": "resource:e92b74497e7a",
-        "kind": "example",
         "legal_evidence": [],
         "legal_inherits_from": "repository:groupsum/mdwrk-pages",
         "name": "packages/20-page-systems/lander-page-templates/src/examples/education.ts",
@@ -4619,13 +4618,13 @@
         "path": "packages/20-page-systems/lander-page-templates/src/examples/education.ts",
         "repository": "groupsum/mdwrk-pages",
         "repository_route": "/catalog/repositories/groupsum/mdwrk-pages",
-        "route": "/catalog/resources/example/e92b74497e7a",
+        "resource_type": "implementation.example",
+        "route": "/catalog/resources/implementation-example/e92b74497e7a",
         "url": "https://github.com/groupsum/mdwrk-pages/blob/master/packages/20-page-systems/lander-page-templates/src/examples/education.ts"
       },
       {
         "evidence_type": "repository.blob",
         "id": "resource:7c4d4c050200",
-        "kind": "example",
         "legal_evidence": [],
         "legal_inherits_from": "repository:groupsum/mdwrk-pages",
         "name": "packages/20-page-systems/lander-page-templates/src/examples/generic.ts",
@@ -4633,13 +4632,13 @@
         "path": "packages/20-page-systems/lander-page-templates/src/examples/generic.ts",
         "repository": "groupsum/mdwrk-pages",
         "repository_route": "/catalog/repositories/groupsum/mdwrk-pages",
-        "route": "/catalog/resources/example/7c4d4c050200",
+        "resource_type": "implementation.example",
+        "route": "/catalog/resources/implementation-example/7c4d4c050200",
         "url": "https://github.com/groupsum/mdwrk-pages/blob/master/packages/20-page-systems/lander-page-templates/src/examples/generic.ts"
       },
       {
         "evidence_type": "repository.blob",
         "id": "resource:fe25fc52f5d5",
-        "kind": "example",
         "legal_evidence": [],
         "legal_inherits_from": "repository:groupsum/mdwrk-pages",
         "name": "packages/20-page-systems/lander-page-templates/src/examples/product.ts",
@@ -4647,13 +4646,13 @@
         "path": "packages/20-page-systems/lander-page-templates/src/examples/product.ts",
         "repository": "groupsum/mdwrk-pages",
         "repository_route": "/catalog/repositories/groupsum/mdwrk-pages",
-        "route": "/catalog/resources/example/fe25fc52f5d5",
+        "resource_type": "implementation.example",
+        "route": "/catalog/resources/implementation-example/fe25fc52f5d5",
         "url": "https://github.com/groupsum/mdwrk-pages/blob/master/packages/20-page-systems/lander-page-templates/src/examples/product.ts"
       },
       {
         "evidence_type": "repository.blob",
         "id": "resource:f94fe5dbf635",
-        "kind": "example",
         "legal_evidence": [],
         "legal_inherits_from": "repository:groupsum/mdwrk-pages",
         "name": "packages/20-page-systems/lander-page-templates/src/examples/support.ts",
@@ -4661,7 +4660,8 @@
         "path": "packages/20-page-systems/lander-page-templates/src/examples/support.ts",
         "repository": "groupsum/mdwrk-pages",
         "repository_route": "/catalog/repositories/groupsum/mdwrk-pages",
-        "route": "/catalog/resources/example/f94fe5dbf635",
+        "resource_type": "implementation.example",
+        "route": "/catalog/resources/implementation-example/f94fe5dbf635",
         "url": "https://github.com/groupsum/mdwrk-pages/blob/master/packages/20-page-systems/lander-page-templates/src/examples/support.ts"
       }
     ],

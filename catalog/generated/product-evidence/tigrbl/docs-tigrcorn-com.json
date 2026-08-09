@@ -444,7 +444,6 @@
       {
         "evidence_type": "repository.blob",
         "id": "resource:0f3378bed572",
-        "kind": "documentation",
         "legal_evidence": [],
         "legal_inherits_from": "repository:tigrbl/docs-tigrcorn-com",
         "name": "docs/getting-started.md",
@@ -452,13 +451,13 @@
         "path": "docs/getting-started.md",
         "repository": "tigrbl/docs-tigrcorn-com",
         "repository_route": "/catalog/repositories/tigrbl/docs-tigrcorn-com",
-        "route": "/catalog/resources/documentation/0f3378bed572",
+        "resource_type": "documentation.collection",
+        "route": "/catalog/resources/documentation-collection/0f3378bed572",
         "url": "https://github.com/tigrbl/docs-tigrcorn-com/blob/master/docs/getting-started.md"
       },
       {
         "evidence_type": "repository.tree",
         "id": "resource:ba55289b8c55",
-        "kind": "documentation",
         "legal_evidence": [],
         "legal_inherits_from": "repository:tigrbl/docs-tigrcorn-com",
         "name": "docs/guides",
@@ -466,13 +465,13 @@
         "path": "docs/guides",
         "repository": "tigrbl/docs-tigrcorn-com",
         "repository_route": "/catalog/repositories/tigrbl/docs-tigrcorn-com",
-        "route": "/catalog/resources/documentation/ba55289b8c55",
+        "resource_type": "documentation.collection",
+        "route": "/catalog/resources/documentation-collection/ba55289b8c55",
         "url": "https://github.com/tigrbl/docs-tigrcorn-com/tree/master/docs/guides"
       },
       {
         "evidence_type": "repository.blob",
         "id": "resource:215121bc568e",
-        "kind": "documentation",
         "legal_evidence": [],
         "legal_inherits_from": "repository:tigrbl/docs-tigrcorn-com",
         "name": "docs/index.md",
@@ -480,13 +479,13 @@
         "path": "docs/index.md",
         "repository": "tigrbl/docs-tigrcorn-com",
         "repository_route": "/catalog/repositories/tigrbl/docs-tigrcorn-com",
-        "route": "/catalog/resources/documentation/215121bc568e",
+        "resource_type": "documentation.collection",
+        "route": "/catalog/resources/documentation-collection/215121bc568e",
         "url": "https://github.com/tigrbl/docs-tigrcorn-com/blob/master/docs/index.md"
       },
       {
         "evidence_type": "repository.tree",
         "id": "resource:24ab138a417e",
-        "kind": "documentation",
         "legal_evidence": [],
         "legal_inherits_from": "repository:tigrbl/docs-tigrcorn-com",
         "name": "docs/reference",
@@ -494,7 +493,8 @@
         "path": "docs/reference",
         "repository": "tigrbl/docs-tigrcorn-com",
         "repository_route": "/catalog/repositories/tigrbl/docs-tigrcorn-com",
-        "route": "/catalog/resources/documentation/24ab138a417e",
+        "resource_type": "documentation.collection",
+        "route": "/catalog/resources/documentation-collection/24ab138a417e",
         "url": "https://github.com/tigrbl/docs-tigrcorn-com/tree/master/docs/reference"
       }
     ],

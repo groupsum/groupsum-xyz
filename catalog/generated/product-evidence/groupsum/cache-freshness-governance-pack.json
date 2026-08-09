@@ -556,7 +556,6 @@
       {
         "evidence_type": "repository.tree",
         "id": "resource:c34e606db931",
-        "kind": "documentation",
         "legal_evidence": [],
         "legal_inherits_from": "repository:groupsum/cache-freshness-governance-pack",
         "name": "docs/standards",
@@ -564,7 +563,8 @@
         "path": "docs/standards",
         "repository": "groupsum/cache-freshness-governance-pack",
         "repository_route": "/catalog/repositories/groupsum/cache-freshness-governance-pack",
-        "route": "/catalog/resources/documentation/c34e606db931",
+        "resource_type": "documentation.collection",
+        "route": "/catalog/resources/documentation-collection/c34e606db931",
         "url": "https://github.com/groupsum/cache-freshness-governance-pack/tree/master/docs/standards"
       }
     ],

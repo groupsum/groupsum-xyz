@@ -5,6 +5,32 @@ from typing import Any
 
 from .common import *  # noqa: F403
 
+
+def _resource_type(item: dict[str, Any]) -> str | None:
+    current = str(item.get("resource_type") or "").strip()
+    if current:
+        return current
+    legacy = str(item.get("kind") or "").strip()
+    if legacy in {"api_source", "ui"}:
+        return None
+    if legacy == "api_definition":
+        path = str(item.get("path") or item.get("name") or "").casefold()
+        if "asyncapi" in path:
+            return "contract.asyncapi"
+        if "openrpc" in path:
+            return "contract.openrpc"
+        if path.endswith(".proto"):
+            return "contract.protobuf"
+        return "contract.openapi"
+    return {
+        "demo": "implementation.demo",
+        "documentation": "documentation.collection",
+        "example": "implementation.example",
+        "showcase": "implementation.showcase",
+        "website": "interface.website",
+    }.get(legacy)
+
+
 def compile_repositories(catalog: dict[str, Any], generated_at: str, overrides: dict[str, Any], relationship_counts: dict[str, Counter[str]], package_records: list[dict[str, Any]], packages_by_repo: dict[str, list[str]]) -> tuple[list[dict[str, Any]], dict[str, set[str]], Counter[str]]:
     repository_records: list[dict[str, Any]] = []
     technology_repositories: dict[str, set[str]] = defaultdict(set)
@@ -28,14 +54,14 @@ def compile_repositories(catalog: dict[str, Any], generated_at: str, overrides: 
         related_resources = []
         for item in repo.get("related_resources") or []:
             resource_url = related_resource_url(item)
-            if not resource_url:
+            resource_kind = _resource_type(item)
+            if not resource_url or resource_kind is None:
                 continue
-            resource_kind = str(item.get("kind") or "resource")
             resource_key = stable_hash(resource_url, 12)
             related_resources.append(
                 {
                     "id": f"resource:{resource_key}",
-                    "kind": resource_kind,
+                    "resource_type": resource_kind,
                     "name": item.get("name"),
                     "url": resource_url,
                     "path": item.get("path"),

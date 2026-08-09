@@ -371,7 +371,6 @@
       {
         "evidence_type": "repository.blob",
         "id": "resource:5c104bcb63f2",
-        "kind": "documentation",
         "legal_evidence": [],
         "legal_inherits_from": "repository:tigrbl/attribution-campaign-context",
         "name": "docs/attribution-keys.md",
@@ -379,13 +378,13 @@
         "path": "docs/attribution-keys.md",
         "repository": "tigrbl/attribution-campaign-context",
         "repository_route": "/catalog/repositories/tigrbl/attribution-campaign-context",
-        "route": "/catalog/resources/documentation/5c104bcb63f2",
+        "resource_type": "documentation.collection",
+        "route": "/catalog/resources/documentation-collection/5c104bcb63f2",
         "url": "https://github.com/tigrbl/attribution-campaign-context/blob/master/docs/attribution-keys.md"
       },
       {
         "evidence_type": "repository.blob",
         "id": "resource:8fcff256fb60",
-        "kind": "documentation",
         "legal_evidence": [],
         "legal_inherits_from": "repository:tigrbl/attribution-campaign-context",
         "name": "docs/public-operator-surfaces.md",
@@ -393,13 +392,13 @@
         "path": "docs/public-operator-surfaces.md",
         "repository": "tigrbl/attribution-campaign-context",
         "repository_route": "/catalog/repositories/tigrbl/attribution-campaign-context",
-        "route": "/catalog/resources/documentation/8fcff256fb60",
+        "resource_type": "documentation.collection",
+        "route": "/catalog/resources/documentation-collection/8fcff256fb60",
         "url": "https://github.com/tigrbl/attribution-campaign-context/blob/master/docs/public-operator-surfaces.md"
       },
       {
         "evidence_type": "repository.blob",
         "id": "resource:c27a8b88d5b7",
-        "kind": "documentation",
         "legal_evidence": [],
         "legal_inherits_from": "repository:tigrbl/attribution-campaign-context",
         "name": "docs/ssot-governance-packs.md",
@@ -407,7 +406,8 @@
         "path": "docs/ssot-governance-packs.md",
         "repository": "tigrbl/attribution-campaign-context",
         "repository_route": "/catalog/repositories/tigrbl/attribution-campaign-context",
-        "route": "/catalog/resources/documentation/c27a8b88d5b7",
+        "resource_type": "documentation.collection",
+        "route": "/catalog/resources/documentation-collection/c27a8b88d5b7",
         "url": "https://github.com/tigrbl/attribution-campaign-context/blob/master/docs/ssot-governance-packs.md"
       }
     ],

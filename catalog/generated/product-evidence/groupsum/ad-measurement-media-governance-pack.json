@@ -438,7 +438,6 @@
       {
         "evidence_type": "repository.tree",
         "id": "resource:722050c04ebb",
-        "kind": "documentation",
         "legal_evidence": [],
         "legal_inherits_from": "repository:groupsum/ad-measurement-media-governance-pack",
         "name": "docs/governance",
@@ -446,7 +445,8 @@
         "path": "docs/governance",
         "repository": "groupsum/ad-measurement-media-governance-pack",
         "repository_route": "/catalog/repositories/groupsum/ad-measurement-media-governance-pack",
-        "route": "/catalog/resources/documentation/722050c04ebb",
+        "resource_type": "documentation.collection",
+        "route": "/catalog/resources/documentation-collection/722050c04ebb",
         "url": "https://github.com/groupsum/ad-measurement-media-governance-pack/tree/master/docs/governance"
       }
     ],

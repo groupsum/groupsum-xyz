@@ -210,7 +210,6 @@
       {
         "evidence_type": "repository.homepage",
         "id": "resource:39984854789a",
-        "kind": "website",
         "legal_evidence": [],
         "legal_inherits_from": "repository:swarmauri/crouton-boilerplate",
         "name": "crouton-boilerplate",
@@ -218,7 +217,8 @@
         "path": null,
         "repository": "swarmauri/crouton-boilerplate",
         "repository_route": "/catalog/repositories/swarmauri/crouton-boilerplate",
-        "route": "/catalog/resources/website/39984854789a",
+        "resource_type": "interface.website",
+        "route": "/catalog/resources/interface-website/39984854789a",
         "url": "https://swarmauri.com"
       }
     ],

@@ -422,7 +422,6 @@
       {
         "evidence_type": "repository.tree",
         "id": "resource:f0c19968f906",
-        "kind": "documentation",
         "legal_evidence": [],
         "legal_inherits_from": "repository:groupsum/event-behavioral-telemetry-governance-pack",
         "name": "docs/governance",
@@ -430,7 +429,8 @@
         "path": "docs/governance",
         "repository": "groupsum/event-behavioral-telemetry-governance-pack",
         "repository_route": "/catalog/repositories/groupsum/event-behavioral-telemetry-governance-pack",
-        "route": "/catalog/resources/documentation/f0c19968f906",
+        "resource_type": "documentation.collection",
+        "route": "/catalog/resources/documentation-collection/f0c19968f906",
         "url": "https://github.com/groupsum/event-behavioral-telemetry-governance-pack/tree/master/docs/governance"
       }
     ],

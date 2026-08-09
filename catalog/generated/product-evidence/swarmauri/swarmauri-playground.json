@@ -226,7 +226,6 @@
       {
         "evidence_type": "repository.homepage",
         "id": "resource:39984854789a",
-        "kind": "website",
         "legal_evidence": [],
         "legal_inherits_from": "repository:swarmauri/swarmauri-playground",
         "name": "swarmauri-playground",
@@ -234,7 +233,8 @@
         "path": null,
         "repository": "swarmauri/swarmauri-playground",
         "repository_route": "/catalog/repositories/swarmauri/swarmauri-playground",
-        "route": "/catalog/resources/website/39984854789a",
+        "resource_type": "interface.website",
+        "route": "/catalog/resources/interface-website/39984854789a",
         "url": "https://swarmauri.com"
       }
     ],

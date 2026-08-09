@@ -11,7 +11,7 @@ from tigrbl_engine_duckdb.plugin import register as register_duckdb_engine
 from tigrbl_engine_postgres.plugin import register as register_postgres_engine
 
 from .config import Settings
-from .tables.catalog_entry import CatalogEntry
+from .tables.association import Association
 from .tables.organization import Organization
 from .tables.package import Package
 from .tables.portfolio import Portfolio
@@ -19,7 +19,6 @@ from .tables.product import Product
 from .tables.registry import ALL_TABLES
 from .tables.repository import Repository
 from .tables.technology import Technology
-from .tables.typed_resource import TypedResource
 
 
 class CatalogAppSpec(
@@ -161,7 +160,7 @@ def build_app(
 
     @catalog_app.get("/api/v1/insights")
     async def insights(request: Request):
-        return await invoke(CatalogEntry, "insight_collection", request)
+        return await invoke(Association, "insight_collection", request)
 
     @catalog_app.get("/api/v1/organizations/{slug}")
     async def organization(request: Request, slug: str):
@@ -169,11 +168,17 @@ def build_app(
 
     @catalog_app.get("/api/v1/entities")
     async def entities(request: Request):
-        return await invoke(CatalogEntry, "entity_collection", request)
+        return await invoke(Association, "entity_collection", request)
 
-    @catalog_app.get("/api/v1/entities/{entity_id}")
-    async def entity(request: Request, entity_id: str):
-        return await invoke(CatalogEntry, "entity_detail", request, entity_id=entity_id)
+    @catalog_app.get("/api/v1/entities/{entity_type}/{entity_id}")
+    async def entity(request: Request, entity_type: str, entity_id: str):
+        return await invoke(
+            Association,
+            "entity_detail",
+            request,
+            entity_type=entity_type,
+            entity_id=entity_id,
+        )
 
     @catalog_app.get("/api/v1/repository-metrics")
     async def repository_metrics(request: Request):
@@ -181,7 +186,7 @@ def build_app(
 
     @catalog_app.get("/api/v1/catalog")
     async def catalog(request: Request):
-        return await invoke(CatalogEntry, "catalog_overview", request)
+        return await invoke(Association, "catalog_overview", request)
 
     @catalog_app.get("/api/v1/catalog/repositories")
     async def catalog_repositories(request: Request):
@@ -204,26 +209,22 @@ def build_app(
     @catalog_app.get("/api/v1/catalog/releases/{route_key}")
     async def catalog_release(request: Request, route_key: str):
         return await invoke(
-            TypedResource, "resource_detail", request, kind="release", route_key=route_key
+            Association, "resource_detail", request, kind="release", route_key=route_key
         )
 
     @catalog_app.get("/api/v1/catalog/resources")
     async def catalog_resources(request: Request):
-        return await invoke(TypedResource, "resource_collection", request)
+        return await invoke(Association, "resource_collection", request)
 
     @catalog_app.get("/api/v1/catalog/resources/{resource_type}/{route_key}")
     async def catalog_resource(request: Request, resource_type: str, route_key: str):
         return await invoke(
-            TypedResource,
+            Association,
             "resource_detail",
             request,
             entity_type=resource_type,
             route_key=route_key,
         )
-
-    @catalog_app.get("/api/v1/catalog/resources/{route_key}")
-    async def legacy_catalog_resource(request: Request, route_key: str):
-        return await invoke(TypedResource, "resource_detail", request, route_key=route_key)
 
     @catalog_app.get("/api/v1/catalog/technologies")
     async def catalog_technologies(request: Request):

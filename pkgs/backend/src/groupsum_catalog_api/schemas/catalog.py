@@ -58,7 +58,7 @@ class PackageSummary(ApiModel):
     observed_at: datetime | None = None
 
 
-class TypedResourceSummary(ApiModel):
+class CatalogResourceSummary(ApiModel):
     id: str
     resource_type: str
     route_key: str | None = None
@@ -93,7 +93,7 @@ class CatalogCollection(ApiModel):
     page_count: int = 1
     facets: dict[str, dict[str, int]] = Field(default_factory=dict)
     generated_at: datetime | None = None
-    records: list[RepositorySummary | PackageSummary | TypedResourceSummary | TechnologySummary]
+    records: list[RepositorySummary | PackageSummary | CatalogResourceSummary | TechnologySummary]
 
 
 class CatalogMember(ApiModel):

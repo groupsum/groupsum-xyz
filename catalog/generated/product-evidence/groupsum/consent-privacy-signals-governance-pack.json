@@ -422,7 +422,6 @@
       {
         "evidence_type": "repository.tree",
         "id": "resource:d7849dd824d0",
-        "kind": "documentation",
         "legal_evidence": [],
         "legal_inherits_from": "repository:groupsum/consent-privacy-signals-governance-pack",
         "name": "docs/governance",
@@ -430,7 +429,8 @@
         "path": "docs/governance",
         "repository": "groupsum/consent-privacy-signals-governance-pack",
         "repository_route": "/catalog/repositories/groupsum/consent-privacy-signals-governance-pack",
-        "route": "/catalog/resources/documentation/d7849dd824d0",
+        "resource_type": "documentation.collection",
+        "route": "/catalog/resources/documentation-collection/d7849dd824d0",
         "url": "https://github.com/groupsum/consent-privacy-signals-governance-pack/tree/master/docs/governance"
       }
     ],

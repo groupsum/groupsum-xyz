@@ -422,7 +422,6 @@
       {
         "evidence_type": "repository.tree",
         "id": "resource:432243efdec4",
-        "kind": "documentation",
         "legal_evidence": [],
         "legal_inherits_from": "repository:groupsum/web-performance-rum-governance-pack",
         "name": "docs/governance",
@@ -430,7 +429,8 @@
         "path": "docs/governance",
         "repository": "groupsum/web-performance-rum-governance-pack",
         "repository_route": "/catalog/repositories/groupsum/web-performance-rum-governance-pack",
-        "route": "/catalog/resources/documentation/432243efdec4",
+        "resource_type": "documentation.collection",
+        "route": "/catalog/resources/documentation-collection/432243efdec4",
         "url": "https://github.com/groupsum/web-performance-rum-governance-pack/tree/master/docs/governance"
       }
     ],

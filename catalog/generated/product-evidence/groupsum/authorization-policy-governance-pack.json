@@ -350,7 +350,6 @@
       {
         "evidence_type": "repository.tree",
         "id": "resource:7601b5478d32",
-        "kind": "documentation",
         "legal_evidence": [],
         "legal_inherits_from": "repository:groupsum/authorization-policy-governance-pack",
         "name": "docs/governance",
@@ -358,7 +357,8 @@
         "path": "docs/governance",
         "repository": "groupsum/authorization-policy-governance-pack",
         "repository_route": "/catalog/repositories/groupsum/authorization-policy-governance-pack",
-        "route": "/catalog/resources/documentation/7601b5478d32",
+        "resource_type": "documentation.collection",
+        "route": "/catalog/resources/documentation-collection/7601b5478d32",
         "url": "https://github.com/groupsum/authorization-policy-governance-pack/tree/master/docs/governance"
       }
     ],

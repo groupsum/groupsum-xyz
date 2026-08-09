@@ -5,6 +5,7 @@ from .base import *  # noqa: F403
 
 class Portfolio(CatalogTable):
     __tablename__ = "portfolios"
+    ENTITY_TYPE = "collection.portfolio"
 
     id = Column(String(200), primary_key=True)
     slug = Column(String(200), nullable=False, unique=True, index=True)

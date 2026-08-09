@@ -473,7 +473,6 @@
       {
         "evidence_type": "repository.blob",
         "id": "resource:9039878ee7e6",
-        "kind": "documentation",
         "legal_evidence": [],
         "legal_inherits_from": "repository:groupsum/mdwrkcom-content-pack",
         "name": "packages/content/mdwrkcom-content-pack/content/pages/docs/extensions.md",
@@ -481,13 +480,13 @@
         "path": "packages/content/mdwrkcom-content-pack/content/pages/docs/extensions.md",
         "repository": "groupsum/mdwrkcom-content-pack",
         "repository_route": "/catalog/repositories/groupsum/mdwrkcom-content-pack",
-        "route": "/catalog/resources/documentation/9039878ee7e6",
+        "resource_type": "documentation.collection",
+        "route": "/catalog/resources/documentation-collection/9039878ee7e6",
         "url": "https://github.com/groupsum/mdwrkcom-content-pack/blob/master/packages/content/mdwrkcom-content-pack/content/pages/docs/extensions.md"
       },
       {
         "evidence_type": "repository.blob",
         "id": "resource:2fb0267540ac",
-        "kind": "documentation",
         "legal_evidence": [],
         "legal_inherits_from": "repository:groupsum/mdwrkcom-content-pack",
         "name": "packages/content/mdwrkcom-content-pack/content/pages/docs/quickstart.md",
@@ -495,13 +494,13 @@
         "path": "packages/content/mdwrkcom-content-pack/content/pages/docs/quickstart.md",
         "repository": "groupsum/mdwrkcom-content-pack",
         "repository_route": "/catalog/repositories/groupsum/mdwrkcom-content-pack",
-        "route": "/catalog/resources/documentation/2fb0267540ac",
+        "resource_type": "documentation.collection",
+        "route": "/catalog/resources/documentation-collection/2fb0267540ac",
         "url": "https://github.com/groupsum/mdwrkcom-content-pack/blob/master/packages/content/mdwrkcom-content-pack/content/pages/docs/quickstart.md"
       },
       {
         "evidence_type": "repository.blob",
         "id": "resource:e5e1352efc57",
-        "kind": "documentation",
         "legal_evidence": [],
         "legal_inherits_from": "repository:groupsum/mdwrkcom-content-pack",
         "name": "packages/content/mdwrkcom-content-pack/content/pages/docs/theme-packs.md",
@@ -509,13 +508,13 @@
         "path": "packages/content/mdwrkcom-content-pack/content/pages/docs/theme-packs.md",
         "repository": "groupsum/mdwrkcom-content-pack",
         "repository_route": "/catalog/repositories/groupsum/mdwrkcom-content-pack",
-        "route": "/catalog/resources/documentation/e5e1352efc57",
+        "resource_type": "documentation.collection",
+        "route": "/catalog/resources/documentation-collection/e5e1352efc57",
         "url": "https://github.com/groupsum/mdwrkcom-content-pack/blob/master/packages/content/mdwrkcom-content-pack/content/pages/docs/theme-packs.md"
       },
       {
         "evidence_type": "repository.blob",
         "id": "resource:b4656725bec6",
-        "kind": "documentation",
         "legal_evidence": [],
         "legal_inherits_from": "repository:groupsum/mdwrkcom-content-pack",
         "name": "packages/content/mdwrkcom-content-pack/content/pages/es/docs/quickstart.md",
@@ -523,13 +522,13 @@
         "path": "packages/content/mdwrkcom-content-pack/content/pages/es/docs/quickstart.md",
         "repository": "groupsum/mdwrkcom-content-pack",
         "repository_route": "/catalog/repositories/groupsum/mdwrkcom-content-pack",
-        "route": "/catalog/resources/documentation/b4656725bec6",
+        "resource_type": "documentation.collection",
+        "route": "/catalog/resources/documentation-collection/b4656725bec6",
         "url": "https://github.com/groupsum/mdwrkcom-content-pack/blob/master/packages/content/mdwrkcom-content-pack/content/pages/es/docs/quickstart.md"
       },
       {
         "evidence_type": "repository.tree",
         "id": "resource:feb3400b7e00",
-        "kind": "documentation",
         "legal_evidence": [],
         "legal_inherits_from": "repository:groupsum/mdwrkcom-content-pack",
         "name": "packages/content/mdwrkcom-content-pack/data/markdown/docs/authoring",
@@ -537,13 +536,13 @@
         "path": "packages/content/mdwrkcom-content-pack/data/markdown/docs/authoring",
         "repository": "groupsum/mdwrkcom-content-pack",
         "repository_route": "/catalog/repositories/groupsum/mdwrkcom-content-pack",
-        "route": "/catalog/resources/documentation/feb3400b7e00",
+        "resource_type": "documentation.collection",
+        "route": "/catalog/resources/documentation-collection/feb3400b7e00",
         "url": "https://github.com/groupsum/mdwrkcom-content-pack/tree/master/packages/content/mdwrkcom-content-pack/data/markdown/docs/authoring"
       },
       {
         "evidence_type": "repository.tree",
         "id": "resource:245f37dfb024",
-        "kind": "documentation",
         "legal_evidence": [],
         "legal_inherits_from": "repository:groupsum/mdwrkcom-content-pack",
         "name": "packages/content/mdwrkcom-content-pack/data/markdown/docs/comparisons",
@@ -551,13 +550,13 @@
         "path": "packages/content/mdwrkcom-content-pack/data/markdown/docs/comparisons",
         "repository": "groupsum/mdwrkcom-content-pack",
         "repository_route": "/catalog/repositories/groupsum/mdwrkcom-content-pack",
-        "route": "/catalog/resources/documentation/245f37dfb024",
+        "resource_type": "documentation.collection",
+        "route": "/catalog/resources/documentation-collection/245f37dfb024",
         "url": "https://github.com/groupsum/mdwrkcom-content-pack/tree/master/packages/content/mdwrkcom-content-pack/data/markdown/docs/comparisons"
       },
       {
         "evidence_type": "repository.tree",
         "id": "resource:39d941144408",
-        "kind": "documentation",
         "legal_evidence": [],
         "legal_inherits_from": "repository:groupsum/mdwrkcom-content-pack",
         "name": "packages/content/mdwrkcom-content-pack/data/markdown/docs/extensions",
@@ -565,13 +564,13 @@
         "path": "packages/content/mdwrkcom-content-pack/data/markdown/docs/extensions",
         "repository": "groupsum/mdwrkcom-content-pack",
         "repository_route": "/catalog/repositories/groupsum/mdwrkcom-content-pack",
-        "route": "/catalog/resources/documentation/39d941144408",
+        "resource_type": "documentation.collection",
+        "route": "/catalog/resources/documentation-collection/39d941144408",
         "url": "https://github.com/groupsum/mdwrkcom-content-pack/tree/master/packages/content/mdwrkcom-content-pack/data/markdown/docs/extensions"
       },
       {
         "evidence_type": "repository.tree",
         "id": "resource:9f5f53f45fbb",
-        "kind": "documentation",
         "legal_evidence": [],
         "legal_inherits_from": "repository:groupsum/mdwrkcom-content-pack",
         "name": "packages/content/mdwrkcom-content-pack/data/markdown/docs/getting-started",
@@ -579,13 +578,13 @@
         "path": "packages/content/mdwrkcom-content-pack/data/markdown/docs/getting-started",
         "repository": "groupsum/mdwrkcom-content-pack",
         "repository_route": "/catalog/repositories/groupsum/mdwrkcom-content-pack",
-        "route": "/catalog/resources/documentation/9f5f53f45fbb",
+        "resource_type": "documentation.collection",
+        "route": "/catalog/resources/documentation-collection/9f5f53f45fbb",
         "url": "https://github.com/groupsum/mdwrkcom-content-pack/tree/master/packages/content/mdwrkcom-content-pack/data/markdown/docs/getting-started"
       },
       {
         "evidence_type": "repository.blob",
         "id": "resource:a7aee40e840e",
-        "kind": "documentation",
         "legal_evidence": [],
         "legal_inherits_from": "repository:groupsum/mdwrkcom-content-pack",
         "name": "packages/content/mdwrkcom-content-pack/data/markdown/docs/github-sync.md",
@@ -593,13 +592,13 @@
         "path": "packages/content/mdwrkcom-content-pack/data/markdown/docs/github-sync.md",
         "repository": "groupsum/mdwrkcom-content-pack",
         "repository_route": "/catalog/repositories/groupsum/mdwrkcom-content-pack",
-        "route": "/catalog/resources/documentation/a7aee40e840e",
+        "resource_type": "documentation.collection",
+        "route": "/catalog/resources/documentation-collection/a7aee40e840e",
         "url": "https://github.com/groupsum/mdwrkcom-content-pack/blob/master/packages/content/mdwrkcom-content-pack/data/markdown/docs/github-sync.md"
       },
       {
         "evidence_type": "repository.tree",
         "id": "resource:ee38add9cb0f",
-        "kind": "documentation",
         "legal_evidence": [],
         "legal_inherits_from": "repository:groupsum/mdwrkcom-content-pack",
         "name": "packages/content/mdwrkcom-content-pack/data/markdown/docs/product",
@@ -607,13 +606,13 @@
         "path": "packages/content/mdwrkcom-content-pack/data/markdown/docs/product",
         "repository": "groupsum/mdwrkcom-content-pack",
         "repository_route": "/catalog/repositories/groupsum/mdwrkcom-content-pack",
-        "route": "/catalog/resources/documentation/ee38add9cb0f",
+        "resource_type": "documentation.collection",
+        "route": "/catalog/resources/documentation-collection/ee38add9cb0f",
         "url": "https://github.com/groupsum/mdwrkcom-content-pack/tree/master/packages/content/mdwrkcom-content-pack/data/markdown/docs/product"
       },
       {
         "evidence_type": "repository.tree",
         "id": "resource:55948055ae9e",
-        "kind": "documentation",
         "legal_evidence": [],
         "legal_inherits_from": "repository:groupsum/mdwrkcom-content-pack",
         "name": "packages/content/mdwrkcom-content-pack/data/markdown/docs/usage",
@@ -621,13 +620,13 @@
         "path": "packages/content/mdwrkcom-content-pack/data/markdown/docs/usage",
         "repository": "groupsum/mdwrkcom-content-pack",
         "repository_route": "/catalog/repositories/groupsum/mdwrkcom-content-pack",
-        "route": "/catalog/resources/documentation/55948055ae9e",
+        "resource_type": "documentation.collection",
+        "route": "/catalog/resources/documentation-collection/55948055ae9e",
         "url": "https://github.com/groupsum/mdwrkcom-content-pack/tree/master/packages/content/mdwrkcom-content-pack/data/markdown/docs/usage"
       },
       {
         "evidence_type": "repository.homepage",
         "id": "resource:b2a4f6827bcf",
-        "kind": "website",
         "legal_evidence": [],
         "legal_inherits_from": "repository:groupsum/mdwrkcom-content-pack",
         "name": "mdwrkcom-content-pack",
@@ -635,7 +634,8 @@
         "path": null,
         "repository": "groupsum/mdwrkcom-content-pack",
         "repository_route": "/catalog/repositories/groupsum/mdwrkcom-content-pack",
-        "route": "/catalog/resources/website/b2a4f6827bcf",
+        "resource_type": "interface.website",
+        "route": "/catalog/resources/interface-website/b2a4f6827bcf",
         "url": "https://mdwrk.com"
       }
     ],

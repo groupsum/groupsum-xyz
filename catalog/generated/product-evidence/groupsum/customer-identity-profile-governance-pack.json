@@ -422,7 +422,6 @@
       {
         "evidence_type": "repository.tree",
         "id": "resource:5acd549b917f",
-        "kind": "documentation",
         "legal_evidence": [],
         "legal_inherits_from": "repository:groupsum/customer-identity-profile-governance-pack",
         "name": "docs/governance",
@@ -430,7 +429,8 @@
         "path": "docs/governance",
         "repository": "groupsum/customer-identity-profile-governance-pack",
         "repository_route": "/catalog/repositories/groupsum/customer-identity-profile-governance-pack",
-        "route": "/catalog/resources/documentation/5acd549b917f",
+        "resource_type": "documentation.collection",
+        "route": "/catalog/resources/documentation-collection/5acd549b917f",
         "url": "https://github.com/groupsum/customer-identity-profile-governance-pack/tree/master/docs/governance"
       }
     ],

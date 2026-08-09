@@ -581,7 +581,6 @@
       {
         "evidence_type": "repository.blob",
         "id": "resource:1953363ebfe6",
-        "kind": "documentation",
         "legal_evidence": [],
         "legal_inherits_from": "repository:swarmauri/swarmauri-com",
         "name": "docs/unified_swarmauri_company_portfolio_brief.md",
@@ -589,7 +588,8 @@
         "path": "docs/unified_swarmauri_company_portfolio_brief.md",
         "repository": "swarmauri/swarmauri-com",
         "repository_route": "/catalog/repositories/swarmauri/swarmauri-com",
-        "route": "/catalog/resources/documentation/1953363ebfe6",
+        "resource_type": "documentation.collection",
+        "route": "/catalog/resources/documentation-collection/1953363ebfe6",
         "url": "https://github.com/swarmauri/swarmauri-com/blob/master/docs/unified_swarmauri_company_portfolio_brief.md"
       }
     ],

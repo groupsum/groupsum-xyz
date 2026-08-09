@@ -3,7 +3,7 @@ import { catalogFetch } from "./client";
 export type CatalogRecord = Record<string, unknown> & { id: string };
 export type RepositorySummary = CatalogRecord;
 export type PackageSummary = CatalogRecord;
-export type TypedResourceSummary = CatalogRecord;
+export type CatalogResourceSummary = CatalogRecord;
 export type TechnologySummary = CatalogRecord;
 export type CatalogCollection = {
   count: number;
@@ -38,10 +38,9 @@ export type CatalogQuery = {
   sort?: string;
 };
 
-const nativeResources: Record<CatalogDataset, string> = {
+const nativeResources: Record<Exclude<CatalogDataset, "resources">, string> = {
   repositories: "repository",
   packages: "package",
-  resources: "typedresource",
   technologies: "technology",
 };
 
@@ -79,13 +78,24 @@ function basicMember(item: CatalogRecord, resourceType?: string): CatalogMember 
   };
 }
 
-async function findMember(dataset: CatalogDataset, predicate: (record: CatalogRecord) => boolean, signal?: AbortSignal): Promise<CatalogRecord> {
+async function findMember(dataset: Exclude<CatalogDataset, "resources">, predicate: (record: CatalogRecord) => boolean, signal?: AbortSignal): Promise<CatalogRecord> {
   const record = (await listNative(nativeResources[dataset], signal)).map((item) => routeRecord(dataset, item)).find(predicate);
   if (!record) throw new Error(`${dataset} member response 404`);
   return record;
 }
 
 export async function listCatalog(dataset: CatalogDataset, query: CatalogQuery, signal?: AbortSignal): Promise<CatalogCollection> {
+  if (dataset === "resources") {
+    const params = new URLSearchParams();
+    Object.entries(query).forEach(([key, value]) => {
+      if (value !== undefined && value !== "") params.set(key, String(value));
+    });
+    const response = await catalogFetch(`/api/v1/catalog/resources?${params}`, { signal, headers: { Accept: "application/json" }, cache: "default" });
+    if (!response.ok) throw new Error(`resources list response ${response.status}`);
+    const payload = await response.json() as CatalogCollection;
+    if (!Array.isArray(payload.records)) throw new Error("resources list response did not contain records");
+    return { ...payload, records: payload.records.map((record) => routeRecord(dataset, record)) };
+  }
   let records = (await listNative(nativeResources[dataset], signal)).map((record) => routeRecord(dataset, record));
   const q = query.q?.trim().toLocaleLowerCase();
   if (q) records = records.filter((record) => [record.name, record.title, record.description, record.summary, record.owner].some((value) => String(value || "").toLocaleLowerCase().includes(q)));
@@ -129,8 +139,9 @@ export async function getCatalogPackageMember(routeKey: string, signal?: AbortSi
 }
 
 export async function getCatalogResourceMember(resourceType: string, routeKey: string, signal?: AbortSignal) {
-  const item = await findMember("resources", (record) => record.id === routeKey || String(record.canonical_path || "").endsWith(`/${routeKey}`), signal);
-  return basicMember(item, String(item.resource_type || resourceType));
+  const response = await catalogFetch(`/api/v1/catalog/resources/${encodeURIComponent(resourceType)}/${encodeURIComponent(routeKey)}`, { signal, headers: { Accept: "application/json" }, cache: "default" });
+  if (!response.ok) throw new Error(`resources member response ${response.status}`);
+  return await response.json() as CatalogMember;
 }
 
 export async function getCatalogReleaseMember(routeKey: string, _signal?: AbortSignal): Promise<CatalogMember> {

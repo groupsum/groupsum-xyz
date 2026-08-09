@@ -514,7 +514,6 @@
       {
         "evidence_type": "repository.blob",
         "id": "resource:a3b25bd71f78",
-        "kind": "demo",
         "legal_evidence": [],
         "legal_inherits_from": "repository:swarmauri/swarmauri-aucplot",
         "name": "aucplot/demo/__init__.py",
@@ -522,13 +521,13 @@
         "path": "aucplot/demo/__init__.py",
         "repository": "swarmauri/swarmauri-aucplot",
         "repository_route": "/catalog/repositories/swarmauri/swarmauri-aucplot",
-        "route": "/catalog/resources/demo/a3b25bd71f78",
+        "resource_type": "implementation.demo",
+        "route": "/catalog/resources/implementation-demo/a3b25bd71f78",
         "url": "https://github.com/swarmauri/swarmauri-aucplot/blob/master/aucplot/demo/__init__.py"
       },
       {
         "evidence_type": "repository.blob",
         "id": "resource:3a1b4c9bda05",
-        "kind": "demo",
         "legal_evidence": [],
         "legal_inherits_from": "repository:swarmauri/swarmauri-aucplot",
         "name": "aucplot/demo/app.py",
@@ -536,13 +535,13 @@
         "path": "aucplot/demo/app.py",
         "repository": "swarmauri/swarmauri-aucplot",
         "repository_route": "/catalog/repositories/swarmauri/swarmauri-aucplot",
-        "route": "/catalog/resources/demo/3a1b4c9bda05",
+        "resource_type": "implementation.demo",
+        "route": "/catalog/resources/implementation-demo/3a1b4c9bda05",
         "url": "https://github.com/swarmauri/swarmauri-aucplot/blob/master/aucplot/demo/app.py"
       },
       {
         "evidence_type": "repository.blob",
         "id": "resource:29a0afedf1cb",
-        "kind": "demo",
         "legal_evidence": [],
         "legal_inherits_from": "repository:swarmauri/swarmauri-aucplot",
         "name": "aucplot/demo/requirements.txt",
@@ -550,7 +549,8 @@
         "path": "aucplot/demo/requirements.txt",
         "repository": "swarmauri/swarmauri-aucplot",
         "repository_route": "/catalog/repositories/swarmauri/swarmauri-aucplot",
-        "route": "/catalog/resources/demo/29a0afedf1cb",
+        "resource_type": "implementation.demo",
+        "route": "/catalog/resources/implementation-demo/29a0afedf1cb",
         "url": "https://github.com/swarmauri/swarmauri-aucplot/blob/master/aucplot/demo/requirements.txt"
       }
     ],

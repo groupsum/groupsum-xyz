@@ -422,7 +422,6 @@
       {
         "evidence_type": "repository.tree",
         "id": "resource:f5c5f18c9e27",
-        "kind": "documentation",
         "legal_evidence": [],
         "legal_inherits_from": "repository:groupsum/data-catalog-lineage-contracts-governance-pack",
         "name": "docs/governance",
@@ -430,7 +429,8 @@
         "path": "docs/governance",
         "repository": "groupsum/data-catalog-lineage-contracts-governance-pack",
         "repository_route": "/catalog/repositories/groupsum/data-catalog-lineage-contracts-governance-pack",
-        "route": "/catalog/resources/documentation/f5c5f18c9e27",
+        "resource_type": "documentation.collection",
+        "route": "/catalog/resources/documentation-collection/f5c5f18c9e27",
         "url": "https://github.com/groupsum/data-catalog-lineage-contracts-governance-pack/tree/master/docs/governance"
       }
     ],
