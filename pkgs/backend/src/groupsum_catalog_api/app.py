@@ -11,7 +11,7 @@ from tigrbl_core._spec import AppSpec, EngineSpec
 from .config import Settings
 from .internal_api import INTERNAL_API_ROUTER
 from .public_api import PUBLIC_API_ROUTER, analytics_readiness
-from .schema_migrations import reconcile_legacy_catalog_schema
+from .schema_migrations import reconcile_legacy_analytics_schema, reconcile_legacy_catalog_schema
 from .tables.registry import ALL_TABLES
 
 APP_TITLE = "Groupsum Catalog API"
@@ -55,7 +55,7 @@ def _analytics_engine(
     )
 
 
-def _initialize(catalog_app: TigrblApp, analytics_dsn: str) -> None:
+def _initialize(catalog_app: TigrblApp, analytics_dsn: str) -> bool:
     try:
         catalog_app.initialize()
     except Exception as exc:
@@ -72,6 +72,8 @@ def _initialize(catalog_app: TigrblApp, analytics_dsn: str) -> None:
         router_values = routers.values() if isinstance(routers, dict) else routers
         for router in router_values:
             router._ddl_executed = True
+        return True
+    return False
 
 
 def build_app(
@@ -122,9 +124,11 @@ def build_app(
             routers=(PUBLIC_API_ROUTER, INTERNAL_API_ROUTER),
         )
     )
-    _initialize(catalog_app, analytics)
+    legacy_analytics_schema = _initialize(catalog_app, analytics)
     if database_kind == "postgres":
         reconcile_legacy_catalog_schema()
+    if legacy_analytics_schema:
+        catalog_app.add_event_handler("startup", reconcile_legacy_analytics_schema)
     catalog_app.mount_openapi(path="/openapi.json")
 
     async def catalog_healthz():
