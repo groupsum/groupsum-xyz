@@ -9,6 +9,7 @@ from typing import Any
 from pydantic import BaseModel, Field
 from sqlalchemy import DateTime as SqlDateTime
 from sqlalchemy import func, select, update
+from sqlalchemy.exc import DBAPIError
 from tigrbl import JSONResponse, post
 from tigrbl.factories.router import defineRouterSpec
 from tigrbl_core._spec import PathSpec, RouterSpec, TableSpec
@@ -86,6 +87,14 @@ async def _maybe_await(value: Any) -> Any:
     return await value if inspect.isawaitable(value) else value
 
 
+def _database_error(exc: DBAPIError) -> JSONResponse:
+    cause = exc.orig if exc.orig is not None else exc
+    return JSONResponse(
+        {"detail": f"{type(cause).__name__}: {cause}"},
+        status_code=409 if exc.__class__.__name__ == "IntegrityError" else 500,
+    )
+
+
 def _coerce_row(table: type, row: dict[str, Any]) -> dict[str, Any]:
     columns = {column.name: column for column in table.__table__.columns}
     unknown = set(row).difference(columns)
@@ -159,6 +168,8 @@ def _bind_batch(path: str, *, table: type, alias: str, append_only: bool) -> Non
             )
         except (KeyError, TypeError, ValueError) as exc:
             return JSONResponse({"detail": str(exc)}, status_code=422)
+        except DBAPIError as exc:
+            return _database_error(exc)
 
     endpoint.__name__ = alias
     endpoint.__qualname__ = alias
@@ -192,6 +203,8 @@ async def publish_entities(_cls: type, ctx: dict[str, Any]) -> Any:
         )
     except (KeyError, TypeError, ValueError) as exc:
         return JSONResponse({"detail": str(exc)}, status_code=422)
+    except DBAPIError as exc:
+        return _database_error(exc)
 
 
 publish_entities.__name__ = "publish_entities"

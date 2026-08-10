@@ -4,8 +4,19 @@ from pathlib import Path
 
 import httpx
 import pytest
+from sqlalchemy.exc import IntegrityError
 
 from groupsum_catalog_api.app import build_app
+from groupsum_catalog_api.internal_api import _database_error
+
+
+def test_authenticated_database_errors_report_only_the_driver_cause() -> None:
+    response = _database_error(
+        IntegrityError("INSERT secret", {"token": "secret"}, ValueError("duplicate route key"))
+    )
+
+    assert response.status_code == 409
+    assert response.body == b'{"detail":"ValueError: duplicate route key"}'
 
 
 @pytest.mark.anyio
