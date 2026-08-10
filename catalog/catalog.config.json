@@ -10,6 +10,8 @@
   "include_forks": true,
   "include_commit_history": true,
   "include_deployments": true,
+  "max_deployments_per_repository": 30,
+  "max_deployment_statuses_per_deployment": 20,
   "include_github_packages": true,
   "excluded_repository_names": [".github"],
   "manifest_names": ["package.json", "pyproject.toml", "Cargo.toml"],

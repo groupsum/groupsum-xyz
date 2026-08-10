@@ -40,10 +40,21 @@ def collect_repository(client: ApiClient, repo: dict[str, Any], config: dict[str
     deployments: list[dict[str, Any]] = []
     environments: list[dict[str, Any]] = []
     if config.get("include_deployments", True):
-        raw_deployments, deployment_obs = client.github_pages(f"repos/{full_name}/deployments?per_page=100")
+        deployment_limit = max(
+            0, int(config.get("max_deployments_per_repository", 30))
+        )
+        status_limit = max(
+            0, int(config.get("max_deployment_statuses_per_deployment", 20))
+        )
+        raw_deployments, deployment_obs = client.github_pages(
+            f"repos/{full_name}/deployments?per_page=100", limit=deployment_limit
+        )
         observations.extend(deployment_obs)
         for item in raw_deployments:
-            statuses, status_obs = client.github_pages(f"repos/{full_name}/deployments/{item.get('id')}/statuses?per_page=100")
+            statuses, status_obs = client.github_pages(
+                f"repos/{full_name}/deployments/{item.get('id')}/statuses?per_page=100",
+                limit=status_limit,
+            )
             observations.extend(status_obs)
             deployments.append({
                 "id": str(item.get("id")), "environment": item.get("environment"),

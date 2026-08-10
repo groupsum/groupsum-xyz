@@ -154,18 +154,20 @@ class ApiClient:
         except (urllib.error.URLError, TimeoutError, OSError) as exc:
             return None, Observation(url, "error", ISO_NOW(), str(exc), url)
 
-    def github_pages(self, path: str) -> tuple[list[Any], list[Observation]]:
+    def github_pages(
+        self, path: str, *, limit: int | None = None
+    ) -> tuple[list[Any], list[Observation]]:
         url = f"https://api.github.com/{path.lstrip('/')}"
         items: list[Any] = []
         observations: list[Observation] = []
-        while url:
+        while url and (limit is None or len(items) < limit):
             body, headers, observation = self.request_json(url, github=True)
             observations.append(observation)
             if not isinstance(body, list):
                 break
             items.extend(body)
             url = parse_next_link(headers.get("link"))
-        return items, observations
+        return items if limit is None else items[:limit], observations
 
 
 def parse_next_link(link: str | None) -> str | None:

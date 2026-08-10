@@ -323,7 +323,10 @@ def main() -> int:
             "registries": "direct PyPI, npm, crates.io, GitHub Releases, and GitHub Packages observations",
             "technologies": "GitHub language byte counts; no technology is inferred from marketing copy",
             "related_resources": "repository homepages and source paths for APIs, demos, documentation, examples, showcases, UIs, and websites; reachability is not implied",
-            "deployments": "GitHub deployment records attached to repositories; live health is not implied",
+            "deployments": (
+                "most recent GitHub deployment records and statuses within the configured "
+                "per-repository observation window; live health is not implied"
+            ),
             "downstream": "crates.io reverse dependencies where available; GitHub code search disabled by default; npm and PyPI have no complete authoritative public dependents API",
         },
         "repositories": repositories, "packages": packages,

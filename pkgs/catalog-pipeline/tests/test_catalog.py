@@ -19,6 +19,7 @@ from catalog_collect import (
 from catalog_render import compile_catalog, related_resource_url, repair_text
 from catalog_validate import validate
 from groupsum_catalog_pipeline.api_records import publish_catalog
+from groupsum_catalog_pipeline.collector_common import ApiClient
 from groupsum_catalog_pipeline.snapshots import (
     normalized_measurements,
     normalized_observations,
@@ -39,6 +40,24 @@ class CatalogCollectorTests(unittest.TestCase):
     def test_next_link(self):
         link = '<https://api.github.com/example?page=2>; rel="next", <https://api.github.com/example?page=9>; rel="last"'
         self.assertEqual(parse_next_link(link), "https://api.github.com/example?page=2")
+
+    def test_github_pages_stops_at_observation_limit(self):
+        client = object.__new__(ApiClient)
+        calls = []
+
+        def request_json(url, **_kwargs):
+            calls.append(url)
+            return (
+                [{"id": 1}, {"id": 2}, {"id": 3}],
+                {"link": '<https://api.github.com/example?page=2>; rel="next"'},
+                Observation(url, "observed", "2026-08-09T12:00:00Z"),
+            )
+
+        client.request_json = request_json
+        rows, observations = client.github_pages("example?per_page=100", limit=2)
+        self.assertEqual(rows, [{"id": 1}, {"id": 2}])
+        self.assertEqual(len(observations), 1)
+        self.assertEqual(calls, ["https://api.github.com/example?per_page=100"])
 
     def test_snapshot_facts_use_canonical_entity_identity(self):
         catalog = {
