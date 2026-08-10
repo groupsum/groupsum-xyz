@@ -17,6 +17,9 @@ from .tables.registry import ALL_TABLES
 APP_TITLE = "Groupsum Catalog API"
 APP_VERSION = "0.4.0"
 APP_DESCRIPTION = "Tigrbl catalog API with curated public reads and internal append-only writes."
+QUACK_EXISTING_ANALYTICS_TABLE = (
+    'Table with name "catalog_metric_observations" already exists!'
+)
 
 
 class CatalogAppSpec(
@@ -54,8 +57,22 @@ def _analytics_engine(
     )
 
 
-def _initialize(catalog_app: TigrblApp) -> None:
-    catalog_app.initialize()
+def _initialize(catalog_app: TigrblApp, analytics_dsn: str) -> None:
+    try:
+        catalog_app.initialize()
+    except Exception as exc:
+        # Quack attachments currently evade DuckDB SQLAlchemy reflection, so
+        # checkfirst reissues DDL for a table that is already remote and durable.
+        if not (
+            analytics_dsn.lower().startswith("quack:")
+            and QUACK_EXISTING_ANALYTICS_TABLE in str(exc)
+        ):
+            raise
+        catalog_app._ddl_executed = True
+        routers = getattr(catalog_app, "routers", ())
+        router_values = routers.values() if isinstance(routers, dict) else routers
+        for router in router_values:
+            router._ddl_executed = True
 
 
 def build_app(
@@ -106,7 +123,7 @@ def build_app(
             routers=(PUBLIC_API_ROUTER, INTERNAL_API_ROUTER),
         )
     )
-    _initialize(catalog_app)
+    _initialize(catalog_app, analytics)
     if database_kind == "postgres":
         reconcile_legacy_catalog_schema()
     catalog_app.mount_openapi(path="/openapi.json")

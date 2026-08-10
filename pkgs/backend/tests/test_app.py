@@ -50,7 +50,28 @@ def test_initialize_propagates_engine_errors() -> None:
             raise RuntimeError("remote unavailable")
 
     with pytest.raises(RuntimeError, match="remote unavailable"):
-        _initialize(BrokenApp())
+        _initialize(BrokenApp(), "quack://groupsum-duckdb:9494")
+
+
+def test_quack_initialization_tolerates_only_current_table_idempotency() -> None:
+    class Router:
+        pass
+
+    class ExistingRemoteTable:
+        routers = {"public": Router(), "internal": Router()}
+
+        def initialize(self) -> None:
+            raise RuntimeError(
+                'Table with name "catalog_metric_observations" already exists!'
+            )
+
+    app = ExistingRemoteTable()
+    _initialize(app, "quack://groupsum-duckdb:9494")
+    assert app._ddl_executed is True
+    assert all(router._ddl_executed is True for router in app.routers.values())
+
+    with pytest.raises(RuntimeError, match="catalog_metric_observations"):
+        _initialize(ExistingRemoteTable(), "metrics.duckdb")
 
 
 def test_metrics_use_a_tigrbl_owned_append_only_table() -> None:
