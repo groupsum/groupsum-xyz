@@ -66,6 +66,11 @@ def _initialize(catalog_app: TigrblApp, analytics_dsn: str) -> None:
             and QUACK_EXISTING_TABLE_ERROR in str(exc)
         ):
             raise
+        catalog_app._ddl_executed = True
+        routers = getattr(catalog_app, "routers", ())
+        router_values = routers.values() if isinstance(routers, dict) else routers
+        for router in router_values:
+            router._ddl_executed = True
 
 
 def build_app(

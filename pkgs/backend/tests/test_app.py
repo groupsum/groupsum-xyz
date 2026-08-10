@@ -44,11 +44,19 @@ def test_analytics_engine_uses_a_terse_quack_dsn() -> None:
 
 
 def test_quack_initialization_tolerates_only_the_remote_existing_table_error() -> None:
+    class Router:
+        pass
+
     class ExistingRemoteTable:
+        routers = {"public": Router(), "internal": Router()}
+
         def initialize(self) -> None:
             raise RuntimeError('Table with name "metric_observations" already exists!')
 
-    _initialize(ExistingRemoteTable(), "quack://groupsum-duckdb:9494")
+    app = ExistingRemoteTable()
+    _initialize(app, "quack://groupsum-duckdb:9494")
+    assert app._ddl_executed is True
+    assert all(router._ddl_executed is True for router in app.routers.values())
 
     with pytest.raises(RuntimeError, match="metric_observations"):
         _initialize(ExistingRemoteTable(), "analytics.duckdb")
