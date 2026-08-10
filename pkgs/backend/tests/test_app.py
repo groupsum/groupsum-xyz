@@ -55,6 +55,7 @@ def test_initialize_propagates_engine_errors() -> None:
 
 def test_metrics_use_a_tigrbl_owned_append_only_table() -> None:
     assert MetricObservation.__tablename__ == "catalog_metric_observations"
+    assert not MetricObservation.__table__.indexes
 
 
 def test_entity_tables_have_no_foreign_keys_and_use_one_association_table() -> None:
