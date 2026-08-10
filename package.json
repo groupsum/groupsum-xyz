@@ -29,7 +29,7 @@
     "catalog:refresh": "npm run catalog:collect && npm run catalog:render && npm run catalog:validate",
     "catalog:publish": "uv run --project pkgs/backend --locked python pkgs/backend/scripts/publish_catalog.py",
     "catalog:validate": "python pkgs/catalog-pipeline/catalog_validate.py && python pkgs/catalog-pipeline/catalog_site_validate.py",
-    "catalog:test": "python -m unittest discover -s pkgs/catalog-pipeline/tests -p test_catalog.py",
+    "catalog:test": "python -m unittest discover -s pkgs/catalog-pipeline/tests -p test_*.py",
     "import:wordpress": "node pkgs/frontend/scripts/import-wordpress.mjs",
     "deploy:dry-run": "node scripts/deploy.mjs --dry-run",
     "deploy": "docker compose -f docker-compose.yaml up -d --build --force-recreate --no-deps groupsum-xyz",
