@@ -34,7 +34,7 @@ def catalog_overview(table, ctx):
             "counts": counts,
         }
 
-    return with_session(table, ctx, build)
+    return build(ctx["db"])
 
 
 def entity_collection(table, ctx):
@@ -80,7 +80,7 @@ def entity_collection(table, ctx):
             "entities": page_values,
         }
 
-    return with_session(table, ctx, build)
+    return build(ctx["db"])
 
 
 def entity_detail(table, ctx):
@@ -120,7 +120,7 @@ def entity_detail(table, ctx):
             },
         }
 
-    return with_session(table, ctx, build)
+    return build(ctx["db"])
 
 
 def insight_collection(table, ctx):
@@ -145,4 +145,4 @@ def insight_collection(table, ctx):
             "records": page_values,
         }
 
-    return with_session(table, ctx, build)
+    return build(ctx["db"])

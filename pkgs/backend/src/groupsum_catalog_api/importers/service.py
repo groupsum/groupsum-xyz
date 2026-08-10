@@ -4,13 +4,13 @@ import json
 from datetime import UTC, datetime
 from pathlib import Path
 
-from ..analytics import delete_snapshot, replace_snapshot_metrics
 from ..domain.resources.ontology import (
     RECORD_RESOURCE_TYPES,
     SSOT_RESOURCE_TYPES,
     normalize_legacy_resource_type,
 )
 from ..tables.catalog_snapshot import CatalogSnapshot
+from ..tables.metric_observation import delete_snapshot_metrics, replace_snapshot_metrics
 from ..tables.observation import CatalogObservation
 from ..tables.organization import Organization
 from ..tables.package import Package
@@ -373,7 +373,7 @@ async def import_catalog_data(
         }
     except Exception:
         session.rollback()
-        await delete_snapshot(snapshot_id)
+        await delete_snapshot_metrics(snapshot_id)
         raise
     finally:
         release()

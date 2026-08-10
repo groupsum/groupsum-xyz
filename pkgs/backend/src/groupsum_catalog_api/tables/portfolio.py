@@ -23,17 +23,3 @@ class Portfolio(CatalogTable):
     updated_at = Column(DateTime, nullable=True)
     content_revision = Column(Integer, nullable=False, default=1)
     source_payload = Column(JSON, nullable=True)
-
-    @op_ctx(
-        alias="record_collection", target="custom", arity="collection", persist="skip", rest=False
-    )
-    def record_collection(cls, ctx):
-        from .views import record_collection
-
-        return record_collection(cls, ctx)
-
-    @op_ctx(alias="record_detail", target="custom", arity="member", persist="skip", rest=False)
-    def record_detail(cls, ctx):
-        from .views import record_detail
-
-        return record_detail(cls, ctx)

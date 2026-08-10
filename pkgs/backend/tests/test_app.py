@@ -5,12 +5,12 @@ from pathlib import Path
 import httpx
 import pytest
 
-from groupsum_catalog_api.analytics import replace_snapshot_metrics
 from groupsum_catalog_api.app import _analytics_engine, build_app
 from groupsum_catalog_api.domain.resources.ontology import RESOURCE_TYPES
 from groupsum_catalog_api.domain.resources.relationship_types import RELATIONSHIP_TYPES
 from groupsum_catalog_api.importer import import_catalog
 from groupsum_catalog_api.tables.association import Association
+from groupsum_catalog_api.tables.metric_observation import replace_snapshot_metrics
 from groupsum_catalog_api.tables.organization import Organization
 from groupsum_catalog_api.tables.package import Package
 from groupsum_catalog_api.tables.portfolio import Portfolio
@@ -21,7 +21,7 @@ from groupsum_catalog_api.tables.technology import Technology
 
 
 def test_every_public_table_exposes_exactly_read_and_list() -> None:
-    assert len(ALL_TABLES) == 162
+    assert len(ALL_TABLES) == 161
     for table in ALL_TABLES:
         assert {operation.target for operation in table.TABLE_PROFILE.ops} == {"read", "list"}
         assert all(not operation.expose_routes for operation in table.TABLE_PROFILE.ops)
@@ -62,25 +62,28 @@ def test_entity_tables_have_no_foreign_keys_and_use_one_association_table() -> N
     )
 
 
-def test_former_read_operations_are_bound_to_their_owning_tables() -> None:
+def test_public_operations_are_native_and_bound_to_their_owning_tables() -> None:
     expected = {
         Association: {
-            "catalog_overview",
-            "entity_collection",
-            "entity_detail",
-            "insight_collection",
-            "resource_collection",
-            "resource_detail",
+            "catalog",
+            "entities",
+            "entity",
+            "insights",
+            "catalog_resources",
+            "catalog_release",
+            "catalog_resource",
         },
-        Product: {"record_collection", "record_detail"},
-        Portfolio: {"record_collection", "record_detail"},
-        Organization: {"organization_detail"},
-        Repository: {"repository_collection", "repository_detail", "repository_metrics"},
-        Package: {"package_collection", "package_detail"},
-        Technology: {"technology_collection", "technology_detail"},
+        Product: {"products", "product", "solutions", "solution", "services", "service"},
+        Portfolio: {"portfolios", "portfolio"},
+        Organization: {"organization"},
+        Repository: {"catalog_repositories", "catalog_repository", "repository_metrics"},
+        Package: {"catalog_packages", "catalog_package"},
+        Technology: {"catalog_technologies", "catalog_technology"},
     }
     for table, aliases in expected.items():
         assert aliases <= set(vars(table.handlers))
+        operations = {operation.alias: operation for operation in table.__tigrbl_ops__}
+        assert all(operations[alias].target in {"list", "read"} for alias in aliases)
 
 
 @pytest.mark.anyio
@@ -93,6 +96,7 @@ async def test_openapi_is_generated_from_tigrbl_tables(tmp_path: Path) -> None:
         assert health.json()["schema_tables"] == len(ALL_TABLES)
 
         document = (await client.get("/openapi.json")).json()
+        assert "paths" in document, document
         paths = document["paths"]
         assert not any(f"/{table.__name__.lower()}" in paths for table in ALL_TABLES)
 
@@ -127,14 +131,15 @@ async def test_analytics_uses_the_named_tigrbl_duckdb_engine(tmp_path: Path) -> 
     transport = httpx.ASGITransport(app=app)
     async with httpx.AsyncClient(transport=transport, base_url="http://test") as client:
         response = await client.get("/api/v1/analytics/summary")
+        overview = await client.get("/api/v1/analytics/overview")
 
     assert response.status_code == 200
     assert response.json() == {
         "status": "ok",
         "engine": "duckdb",
         "metric_observations": 1,
-        "record_aggregates": 0,
     }
+    assert overview.json().get("snapshot_id") == "snapshot:test", overview.json()
     assert analytics_path.is_file()
 
 
@@ -181,7 +186,7 @@ async def test_importer_populates_native_table_resources(tmp_path: Path) -> None
         products = (await client.get("/api/v1/products")).json()
         assert products["count"] == counts["products"]
         product_detail = await client.get(f"/api/v1/products/{products['records'][0]['slug']}")
-        assert product_detail.status_code == 200
+        assert product_detail.status_code == 200, product_detail.json()
 
         session, release = Portfolio.acquire(op_alias="list")
         try:
@@ -223,7 +228,7 @@ async def test_importer_populates_native_table_resources(tmp_path: Path) -> None
         assert (await client.get(f"/api/v1/snapshots/{snapshot_id}")).status_code == 200
 
         analytics = (await client.get("/api/v1/analytics/overview")).json()
-        assert analytics["snapshot_id"] == snapshot_id
+        assert analytics.get("snapshot_id") == snapshot_id, analytics
         assert analytics["count"] > 0
         entity_metrics = (
             await client.get(
@@ -231,7 +236,7 @@ async def test_importer_populates_native_table_resources(tmp_path: Path) -> None
                 params={"entity_id": repository["id"]},
             )
         ).json()
-        assert entity_metrics["count"] > 0
+        assert entity_metrics.get("count", 0) > 0, entity_metrics
         assert entity_metrics["insufficient_history"] is True
         star_series = await client.get(
             "/api/v1/entities/source.repository/metrics/stars/series",

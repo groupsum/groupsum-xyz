@@ -6,7 +6,6 @@ from .organization import Organization
 from .package import Package
 from .portfolio import Portfolio
 from .product import Product
-from .record_aggregate import RecordAggregate
 from .repository import Repository
 from .repository_ssot_registry import RepositorySsotRegistry
 from .resources import RESOURCE_ENTITY_TABLES, RESOURCE_TABLES
@@ -29,7 +28,6 @@ ALL_TABLES = (
     CatalogSnapshot,
     CatalogObservation,
     MetricObservation,
-    RecordAggregate,
 )
 
 CURRENT_PROJECTION_TABLES = (

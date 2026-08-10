@@ -2,7 +2,6 @@ from __future__ import annotations
 
 import math
 from collections import Counter
-from collections.abc import Callable
 from typing import Any
 
 
@@ -20,17 +19,6 @@ def query_params(ctx: Any) -> Any:
         return direct
     request = payload(ctx).get("request")
     return request.query_params if request is not None else {}
-
-
-def with_session(table, ctx: Any, callback: Callable[[Any], Any]):
-    session = ctx.get("db") if hasattr(ctx, "get") else getattr(ctx, "db", None)
-    if session is not None:
-        return callback(session)
-    session, release = table.acquire(op_alias="list")
-    try:
-        return callback(session)
-    finally:
-        release()
 
 
 def row_dict(row) -> dict[str, Any]:
@@ -128,5 +116,4 @@ __all__ = [
     "query_params",
     "row_dict",
     "source_record",
-    "with_session",
 ]

@@ -51,7 +51,7 @@ def catalog_collection(table, ctx, resource_kind: str):
             "records": page_values,
         }
 
-    return with_session(table, ctx, build)
+    return build(ctx["db"])
 
 
 def repository_detail(table, ctx):
@@ -88,7 +88,7 @@ def repository_detail(table, ctx):
             },
         }
 
-    return with_session(table, ctx, build)
+    return build(ctx["db"])
 
 
 def repository_metrics(table, ctx):
@@ -115,7 +115,7 @@ def repository_metrics(table, ctx):
             "repositories": records,
         }
 
-    return with_session(table, ctx, build)
+    return build(ctx["db"])
 
 
 def package_detail(table, ctx):
@@ -147,7 +147,7 @@ def package_detail(table, ctx):
             },
         }
 
-    return with_session(table, ctx, build)
+    return build(ctx["db"])
 
 
 def resource_collection(table, ctx):
@@ -193,7 +193,7 @@ def resource_collection(table, ctx):
             "records": page_values,
         }
 
-    return with_session(table, ctx, build)
+    return build(ctx["db"])
 
 
 def resource_detail(table, ctx):
@@ -236,7 +236,7 @@ def resource_detail(table, ctx):
             "legal": {"status": "not-observed", "observations": []},
         }
 
-    return with_session(table, ctx, build)
+    return build(ctx["db"])
 
 
 def release_detail(table, ctx):
@@ -266,7 +266,7 @@ def release_detail(table, ctx):
                         }
         return {"detail": "Release not found"}
 
-    return with_session(table, ctx, build)
+    return build(ctx["db"])
 
 
 def technology_detail(table, ctx):
@@ -282,4 +282,4 @@ def technology_detail(table, ctx):
             "related_records": [],
         }
 
-    return with_session(table, ctx, build)
+    return build(ctx["db"])

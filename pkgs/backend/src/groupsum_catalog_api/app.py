@@ -9,7 +9,7 @@ from tigrbl.factories.app import defineAppSpec
 from tigrbl_core._spec import AppSpec, EngineSpec
 
 from .config import Settings
-from .routes import mount_public_routes
+from .public_api import PUBLIC_API_ROUTER, analytics_readiness
 from .tables.registry import ALL_TABLES
 
 APP_TITLE = "Groupsum Catalog API"
@@ -97,20 +97,43 @@ def build_app(
                     disable_ssl=settings.analytics_disable_ssl,
                 ),
             ),
+            routers=(PUBLIC_API_ROUTER,),
         )
     )
-
-    for table in ALL_TABLES:
-        catalog_app.include_table(table)
-        engine_name = getattr(table, "ENGINE_NAME", None)
-        if engine_name:
-            engine_resolver.register_table_engine_name(table, engine_name)
     catalog_app.initialize()
     catalog_app.mount_openapi(path="/openapi.json")
-    mount_public_routes(
-        catalog_app,
-        database_kind=database_kind,
-        schema_table_count=len(ALL_TABLES),
+
+    async def catalog_healthz():
+        from tigrbl import JSONResponse
+
+        try:
+            analytics_status = await analytics_readiness()
+        except Exception as exc:  # pragma: no cover - deployment readiness boundary
+            return JSONResponse(
+                {
+                    "status": "starting",
+                    "database": database_kind,
+                    "analytics": {"status": "starting", "detail": str(exc)},
+                    "schema_tables": len(ALL_TABLES),
+                },
+                status_code=503,
+                headers={"Cache-Control": "no-store"},
+            )
+        return JSONResponse(
+            {
+                "status": "ok",
+                "database": database_kind,
+                "analytics": analytics_status,
+                "schema_tables": len(ALL_TABLES),
+            },
+            headers={"Cache-Control": "no-store"},
+        )
+
+    catalog_app.add_route(
+        "/healthz",
+        catalog_healthz,
+        methods=["GET"],
+        summary="Catalog API health",
     )
 
     return catalog_app

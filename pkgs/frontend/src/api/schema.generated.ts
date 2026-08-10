@@ -6,7 +6,7 @@ export interface paths {
             path?: never;
             cookie?: never;
         };
-        get: operations["catalog_analytics"];
+        get: operations["MetricObservation.catalog_analytics"];
         put?: never;
         post?: never;
         delete?: never;
@@ -22,7 +22,7 @@ export interface paths {
             path?: never;
             cookie?: never;
         };
-        get: operations["summary"];
+        get: operations["MetricObservation.analytics_summary"];
         put?: never;
         post?: never;
         delete?: never;
@@ -38,7 +38,7 @@ export interface paths {
             path?: never;
             cookie?: never;
         };
-        get: operations["catalog"];
+        get: operations["Association.catalog"];
         put?: never;
         post?: never;
         delete?: never;
@@ -54,7 +54,7 @@ export interface paths {
             path?: never;
             cookie?: never;
         };
-        get: operations["catalog_packages"];
+        get: operations["Package.catalog_packages"];
         put?: never;
         post?: never;
         delete?: never;
@@ -70,7 +70,7 @@ export interface paths {
             path?: never;
             cookie?: never;
         };
-        get: operations["catalog_package"];
+        get: operations["Package.catalog_package"];
         put?: never;
         post?: never;
         delete?: never;
@@ -86,7 +86,7 @@ export interface paths {
             path?: never;
             cookie?: never;
         };
-        get: operations["catalog_release"];
+        get: operations["Association.catalog_release"];
         put?: never;
         post?: never;
         delete?: never;
@@ -102,7 +102,7 @@ export interface paths {
             path?: never;
             cookie?: never;
         };
-        get: operations["catalog_repositories"];
+        get: operations["Repository.catalog_repositories"];
         put?: never;
         post?: never;
         delete?: never;
@@ -118,7 +118,7 @@ export interface paths {
             path?: never;
             cookie?: never;
         };
-        get: operations["catalog_repository"];
+        get: operations["Repository.catalog_repository"];
         put?: never;
         post?: never;
         delete?: never;
@@ -134,7 +134,7 @@ export interface paths {
             path?: never;
             cookie?: never;
         };
-        get: operations["catalog_resources"];
+        get: operations["Association.catalog_resources"];
         put?: never;
         post?: never;
         delete?: never;
@@ -150,7 +150,7 @@ export interface paths {
             path?: never;
             cookie?: never;
         };
-        get: operations["catalog_resource"];
+        get: operations["Association.catalog_resource"];
         put?: never;
         post?: never;
         delete?: never;
@@ -166,7 +166,7 @@ export interface paths {
             path?: never;
             cookie?: never;
         };
-        get: operations["catalog_technologies"];
+        get: operations["Technology.catalog_technologies"];
         put?: never;
         post?: never;
         delete?: never;
@@ -182,7 +182,7 @@ export interface paths {
             path?: never;
             cookie?: never;
         };
-        get: operations["catalog_technology"];
+        get: operations["Technology.catalog_technology"];
         put?: never;
         post?: never;
         delete?: never;
@@ -198,7 +198,7 @@ export interface paths {
             path?: never;
             cookie?: never;
         };
-        get: operations["entities"];
+        get: operations["Association.entities"];
         put?: never;
         post?: never;
         delete?: never;
@@ -214,7 +214,7 @@ export interface paths {
             path?: never;
             cookie?: never;
         };
-        get: operations["metrics"];
+        get: operations["MetricObservation.metrics"];
         put?: never;
         post?: never;
         delete?: never;
@@ -230,7 +230,7 @@ export interface paths {
             path?: never;
             cookie?: never;
         };
-        get: operations["metric_series"];
+        get: operations["MetricObservation.metric_series"];
         put?: never;
         post?: never;
         delete?: never;
@@ -246,7 +246,7 @@ export interface paths {
             path?: never;
             cookie?: never;
         };
-        get: operations["observations"];
+        get: operations["CatalogObservation.observations"];
         put?: never;
         post?: never;
         delete?: never;
@@ -262,7 +262,7 @@ export interface paths {
             path?: never;
             cookie?: never;
         };
-        get: operations["entity"];
+        get: operations["Association.entity"];
         put?: never;
         post?: never;
         delete?: never;
@@ -278,7 +278,7 @@ export interface paths {
             path?: never;
             cookie?: never;
         };
-        get: operations["insights"];
+        get: operations["Association.insights"];
         put?: never;
         post?: never;
         delete?: never;
@@ -294,7 +294,7 @@ export interface paths {
             path?: never;
             cookie?: never;
         };
-        get: operations["organization"];
+        get: operations["Organization.organization"];
         put?: never;
         post?: never;
         delete?: never;
@@ -310,7 +310,7 @@ export interface paths {
             path?: never;
             cookie?: never;
         };
-        get: operations["portfolios"];
+        get: operations["Portfolio.portfolios"];
         put?: never;
         post?: never;
         delete?: never;
@@ -326,7 +326,7 @@ export interface paths {
             path?: never;
             cookie?: never;
         };
-        get: operations["portfolio"];
+        get: operations["Portfolio.portfolio"];
         put?: never;
         post?: never;
         delete?: never;
@@ -342,7 +342,7 @@ export interface paths {
             path?: never;
             cookie?: never;
         };
-        get: operations["products"];
+        get: operations["Product.products"];
         put?: never;
         post?: never;
         delete?: never;
@@ -358,7 +358,7 @@ export interface paths {
             path?: never;
             cookie?: never;
         };
-        get: operations["product"];
+        get: operations["Product.product"];
         put?: never;
         post?: never;
         delete?: never;
@@ -374,7 +374,7 @@ export interface paths {
             path?: never;
             cookie?: never;
         };
-        get: operations["repository_metrics"];
+        get: operations["Repository.repository_metrics"];
         put?: never;
         post?: never;
         delete?: never;
@@ -390,7 +390,7 @@ export interface paths {
             path?: never;
             cookie?: never;
         };
-        get: operations["services"];
+        get: operations["Product.services"];
         put?: never;
         post?: never;
         delete?: never;
@@ -406,7 +406,7 @@ export interface paths {
             path?: never;
             cookie?: never;
         };
-        get: operations["service"];
+        get: operations["Product.service"];
         put?: never;
         post?: never;
         delete?: never;
@@ -422,7 +422,7 @@ export interface paths {
             path?: never;
             cookie?: never;
         };
-        get: operations["catalog_snapshots"];
+        get: operations["CatalogSnapshot.catalog_snapshots"];
         put?: never;
         post?: never;
         delete?: never;
@@ -438,7 +438,7 @@ export interface paths {
             path?: never;
             cookie?: never;
         };
-        get: operations["catalog_snapshot"];
+        get: operations["CatalogSnapshot.catalog_snapshot"];
         put?: never;
         post?: never;
         delete?: never;
@@ -454,7 +454,7 @@ export interface paths {
             path?: never;
             cookie?: never;
         };
-        get: operations["solutions"];
+        get: operations["Product.solutions"];
         put?: never;
         post?: never;
         delete?: never;
@@ -470,7 +470,7 @@ export interface paths {
             path?: never;
             cookie?: never;
         };
-        get: operations["solution"];
+        get: operations["Product.solution"];
         put?: never;
         post?: never;
         delete?: never;
@@ -582,7 +582,10 @@ export interface paths {
 }
 export type webhooks = Record<string, never>;
 export interface components {
-    schemas: never;
+    schemas: {
+        /** PublicResponse */
+        PublicResponse: unknown;
+    };
     responses: never;
     parameters: never;
     requestBodies: never;
@@ -591,9 +594,24 @@ export interface components {
 }
 export type $defs = Record<string, never>;
 export interface operations {
-    catalog_analytics: {
+    "MetricObservation.catalog_analytics": {
         parameters: {
-            query?: never;
+            query?: {
+                measurement_id?: string;
+                snapshot_id?: string;
+                subject_type?: string;
+                subject_id?: string;
+                metric_key?: string;
+                numeric_value?: string;
+                text_value?: string;
+                unit?: string;
+                dimensions?: string;
+                period_start?: string;
+                period_end?: string;
+                source_url?: string;
+                source_observation_id?: string;
+                observed_at?: string;
+            };
             header?: never;
             path?: never;
             cookie?: never;
@@ -605,13 +623,30 @@ export interface operations {
                 headers: {
                     [name: string]: unknown;
                 };
-                content?: never;
+                content: {
+                    "application/json": components["schemas"]["PublicResponse"][];
+                };
             };
         };
     };
-    summary: {
+    "MetricObservation.analytics_summary": {
         parameters: {
-            query?: never;
+            query?: {
+                measurement_id?: string;
+                snapshot_id?: string;
+                subject_type?: string;
+                subject_id?: string;
+                metric_key?: string;
+                numeric_value?: string;
+                text_value?: string;
+                unit?: string;
+                dimensions?: string;
+                period_start?: string;
+                period_end?: string;
+                source_url?: string;
+                source_observation_id?: string;
+                observed_at?: string;
+            };
             header?: never;
             path?: never;
             cookie?: never;
@@ -623,13 +658,26 @@ export interface operations {
                 headers: {
                     [name: string]: unknown;
                 };
-                content?: never;
+                content: {
+                    "application/json": components["schemas"]["PublicResponse"][];
+                };
             };
         };
     };
-    catalog: {
+    "Association.catalog": {
         parameters: {
-            query?: never;
+            query?: {
+                id?: string;
+                source_type?: string;
+                source_id?: string;
+                relationship_type?: string;
+                target_type?: string;
+                target_id?: string;
+                role?: string;
+                sort_order?: number;
+                attributes?: string;
+                observed_at?: string;
+            };
             header?: never;
             path?: never;
             cookie?: never;
@@ -641,13 +689,34 @@ export interface operations {
                 headers: {
                     [name: string]: unknown;
                 };
-                content?: never;
+                content: {
+                    "application/json": components["schemas"]["PublicResponse"][];
+                };
             };
         };
     };
-    catalog_packages: {
+    "Package.catalog_packages": {
         parameters: {
-            query?: never;
+            query?: {
+                id?: string;
+                ecosystem?: string;
+                name?: string;
+                registry_url?: string;
+                source_url?: string;
+                manifest_path?: string;
+                package_kind?: string;
+                private?: boolean;
+                description?: string;
+                latest_version?: string;
+                published?: string;
+                publication_status?: string;
+                route_key?: string;
+                license_expression?: string;
+                license_status?: string;
+                published_at?: string;
+                observed_at?: string;
+                source_payload?: string;
+            };
             header?: never;
             path?: never;
             cookie?: never;
@@ -659,13 +728,34 @@ export interface operations {
                 headers: {
                     [name: string]: unknown;
                 };
-                content?: never;
+                content: {
+                    "application/json": components["schemas"]["PublicResponse"][];
+                };
             };
         };
     };
-    catalog_package: {
+    "Package.catalog_package": {
         parameters: {
-            query?: never;
+            query?: {
+                id?: string;
+                ecosystem?: string;
+                name?: string;
+                registry_url?: string;
+                source_url?: string;
+                manifest_path?: string;
+                package_kind?: string;
+                private?: boolean;
+                description?: string;
+                latest_version?: string;
+                published?: string;
+                publication_status?: string;
+                route_key?: string;
+                license_expression?: string;
+                license_status?: string;
+                published_at?: string;
+                observed_at?: string;
+                source_payload?: string;
+            };
             header?: never;
             path: {
                 route_key: string;
@@ -679,13 +769,26 @@ export interface operations {
                 headers: {
                     [name: string]: unknown;
                 };
-                content?: never;
+                content: {
+                    "application/json": components["schemas"]["PublicResponse"][];
+                };
             };
         };
     };
-    catalog_release: {
+    "Association.catalog_release": {
         parameters: {
-            query?: never;
+            query?: {
+                id?: string;
+                source_type?: string;
+                source_id?: string;
+                relationship_type?: string;
+                target_type?: string;
+                target_id?: string;
+                role?: string;
+                sort_order?: number;
+                attributes?: string;
+                observed_at?: string;
+            };
             header?: never;
             path: {
                 route_key: string;
@@ -699,13 +802,34 @@ export interface operations {
                 headers: {
                     [name: string]: unknown;
                 };
-                content?: never;
+                content: {
+                    "application/json": components["schemas"]["PublicResponse"][];
+                };
             };
         };
     };
-    catalog_repositories: {
+    "Repository.catalog_repositories": {
         parameters: {
-            query?: never;
+            query?: {
+                id?: string;
+                provider?: string;
+                owner?: string;
+                name?: string;
+                url?: string;
+                description?: string;
+                default_branch?: string;
+                is_archived?: boolean;
+                is_fork?: boolean;
+                license_expression?: string;
+                ssot_governed?: boolean;
+                ssot_registry_url?: string;
+                ssot_registry_sha256?: string;
+                ssot_schema_version?: string;
+                ssot_summary?: string;
+                ssot_observed_at?: string;
+                observed_at?: string;
+                source_payload?: string;
+            };
             header?: never;
             path?: never;
             cookie?: never;
@@ -717,13 +841,34 @@ export interface operations {
                 headers: {
                     [name: string]: unknown;
                 };
-                content?: never;
+                content: {
+                    "application/json": components["schemas"]["PublicResponse"][];
+                };
             };
         };
     };
-    catalog_repository: {
+    "Repository.catalog_repository": {
         parameters: {
-            query?: never;
+            query?: {
+                id?: string;
+                provider?: string;
+                owner?: string;
+                name?: string;
+                url?: string;
+                description?: string;
+                default_branch?: string;
+                is_archived?: boolean;
+                is_fork?: boolean;
+                license_expression?: string;
+                ssot_governed?: boolean;
+                ssot_registry_url?: string;
+                ssot_registry_sha256?: string;
+                ssot_schema_version?: string;
+                ssot_summary?: string;
+                ssot_observed_at?: string;
+                observed_at?: string;
+                source_payload?: string;
+            };
             header?: never;
             path: {
                 owner: string;
@@ -738,13 +883,26 @@ export interface operations {
                 headers: {
                     [name: string]: unknown;
                 };
-                content?: never;
+                content: {
+                    "application/json": components["schemas"]["PublicResponse"][];
+                };
             };
         };
     };
-    catalog_resources: {
+    "Association.catalog_resources": {
         parameters: {
-            query?: never;
+            query?: {
+                id?: string;
+                source_type?: string;
+                source_id?: string;
+                relationship_type?: string;
+                target_type?: string;
+                target_id?: string;
+                role?: string;
+                sort_order?: number;
+                attributes?: string;
+                observed_at?: string;
+            };
             header?: never;
             path?: never;
             cookie?: never;
@@ -756,13 +914,26 @@ export interface operations {
                 headers: {
                     [name: string]: unknown;
                 };
-                content?: never;
+                content: {
+                    "application/json": components["schemas"]["PublicResponse"][];
+                };
             };
         };
     };
-    catalog_resource: {
+    "Association.catalog_resource": {
         parameters: {
-            query?: never;
+            query?: {
+                id?: string;
+                source_type?: string;
+                source_id?: string;
+                relationship_type?: string;
+                target_type?: string;
+                target_id?: string;
+                role?: string;
+                sort_order?: number;
+                attributes?: string;
+                observed_at?: string;
+            };
             header?: never;
             path: {
                 resource_type: string;
@@ -777,13 +948,26 @@ export interface operations {
                 headers: {
                     [name: string]: unknown;
                 };
-                content?: never;
+                content: {
+                    "application/json": components["schemas"]["PublicResponse"][];
+                };
             };
         };
     };
-    catalog_technologies: {
+    "Technology.catalog_technologies": {
         parameters: {
-            query?: never;
+            query?: {
+                id?: string;
+                slug?: string;
+                name?: string;
+                category?: string;
+                description?: string;
+                icon_key?: string;
+                website_url?: string;
+                source_url?: string;
+                observed_at?: string;
+                source_payload?: string;
+            };
             header?: never;
             path?: never;
             cookie?: never;
@@ -795,13 +979,26 @@ export interface operations {
                 headers: {
                     [name: string]: unknown;
                 };
-                content?: never;
+                content: {
+                    "application/json": components["schemas"]["PublicResponse"][];
+                };
             };
         };
     };
-    catalog_technology: {
+    "Technology.catalog_technology": {
         parameters: {
-            query?: never;
+            query?: {
+                id?: string;
+                slug?: string;
+                name?: string;
+                category?: string;
+                description?: string;
+                icon_key?: string;
+                website_url?: string;
+                source_url?: string;
+                observed_at?: string;
+                source_payload?: string;
+            };
             header?: never;
             path: {
                 slug: string;
@@ -815,13 +1012,26 @@ export interface operations {
                 headers: {
                     [name: string]: unknown;
                 };
-                content?: never;
+                content: {
+                    "application/json": components["schemas"]["PublicResponse"][];
+                };
             };
         };
     };
-    entities: {
+    "Association.entities": {
         parameters: {
-            query?: never;
+            query?: {
+                id?: string;
+                source_type?: string;
+                source_id?: string;
+                relationship_type?: string;
+                target_type?: string;
+                target_id?: string;
+                role?: string;
+                sort_order?: number;
+                attributes?: string;
+                observed_at?: string;
+            };
             header?: never;
             path?: never;
             cookie?: never;
@@ -833,13 +1043,30 @@ export interface operations {
                 headers: {
                     [name: string]: unknown;
                 };
-                content?: never;
+                content: {
+                    "application/json": components["schemas"]["PublicResponse"][];
+                };
             };
         };
     };
-    metrics: {
+    "MetricObservation.metrics": {
         parameters: {
-            query?: never;
+            query?: {
+                measurement_id?: string;
+                snapshot_id?: string;
+                subject_type?: string;
+                subject_id?: string;
+                metric_key?: string;
+                numeric_value?: string;
+                text_value?: string;
+                unit?: string;
+                dimensions?: string;
+                period_start?: string;
+                period_end?: string;
+                source_url?: string;
+                source_observation_id?: string;
+                observed_at?: string;
+            };
             header?: never;
             path: {
                 entity_type: string;
@@ -853,13 +1080,30 @@ export interface operations {
                 headers: {
                     [name: string]: unknown;
                 };
-                content?: never;
+                content: {
+                    "application/json": components["schemas"]["PublicResponse"][];
+                };
             };
         };
     };
-    metric_series: {
+    "MetricObservation.metric_series": {
         parameters: {
-            query?: never;
+            query?: {
+                measurement_id?: string;
+                snapshot_id?: string;
+                subject_type?: string;
+                subject_id?: string;
+                metric_key?: string;
+                numeric_value?: string;
+                text_value?: string;
+                unit?: string;
+                dimensions?: string;
+                period_start?: string;
+                period_end?: string;
+                source_url?: string;
+                source_observation_id?: string;
+                observed_at?: string;
+            };
             header?: never;
             path: {
                 entity_type: string;
@@ -874,13 +1118,28 @@ export interface operations {
                 headers: {
                     [name: string]: unknown;
                 };
-                content?: never;
+                content: {
+                    "application/json": components["schemas"]["PublicResponse"][];
+                };
             };
         };
     };
-    observations: {
+    "CatalogObservation.observations": {
         parameters: {
-            query?: never;
+            query?: {
+                id?: string;
+                snapshot_id?: string;
+                subject_type?: string;
+                subject_id?: string;
+                observation_type?: string;
+                source_kind?: string;
+                source_url?: string;
+                status?: string;
+                observed_at?: string;
+                payload?: string;
+                content_hash?: string;
+                confidence?: string;
+            };
             header?: never;
             path: {
                 entity_type: string;
@@ -894,13 +1153,26 @@ export interface operations {
                 headers: {
                     [name: string]: unknown;
                 };
-                content?: never;
+                content: {
+                    "application/json": components["schemas"]["PublicResponse"][];
+                };
             };
         };
     };
-    entity: {
+    "Association.entity": {
         parameters: {
-            query?: never;
+            query?: {
+                id?: string;
+                source_type?: string;
+                source_id?: string;
+                relationship_type?: string;
+                target_type?: string;
+                target_id?: string;
+                role?: string;
+                sort_order?: number;
+                attributes?: string;
+                observed_at?: string;
+            };
             header?: never;
             path: {
                 entity_type: string;
@@ -915,13 +1187,26 @@ export interface operations {
                 headers: {
                     [name: string]: unknown;
                 };
-                content?: never;
+                content: {
+                    "application/json": components["schemas"]["PublicResponse"][];
+                };
             };
         };
     };
-    insights: {
+    "Association.insights": {
         parameters: {
-            query?: never;
+            query?: {
+                id?: string;
+                source_type?: string;
+                source_id?: string;
+                relationship_type?: string;
+                target_type?: string;
+                target_id?: string;
+                role?: string;
+                sort_order?: number;
+                attributes?: string;
+                observed_at?: string;
+            };
             header?: never;
             path?: never;
             cookie?: never;
@@ -933,13 +1218,23 @@ export interface operations {
                 headers: {
                     [name: string]: unknown;
                 };
-                content?: never;
+                content: {
+                    "application/json": components["schemas"]["PublicResponse"][];
+                };
             };
         };
     };
-    organization: {
+    "Organization.organization": {
         parameters: {
-            query?: never;
+            query?: {
+                id?: string;
+                slug?: string;
+                name?: string;
+                summary?: string;
+                website_url?: string;
+                source_url?: string;
+                observed_at?: string;
+            };
             header?: never;
             path: {
                 slug: string;
@@ -953,13 +1248,32 @@ export interface operations {
                 headers: {
                     [name: string]: unknown;
                 };
-                content?: never;
+                content: {
+                    "application/json": components["schemas"]["PublicResponse"][];
+                };
             };
         };
     };
-    portfolios: {
+    "Portfolio.portfolios": {
         parameters: {
-            query?: never;
+            query?: {
+                id?: string;
+                slug?: string;
+                name?: string;
+                eyebrow?: string;
+                summary?: string;
+                body_markdown?: string;
+                focus?: string;
+                maturity?: string;
+                visibility?: string;
+                featured?: boolean;
+                canonical_url?: string;
+                source_url?: string;
+                published_at?: string;
+                updated_at?: string;
+                content_revision?: number;
+                source_payload?: string;
+            };
             header?: never;
             path?: never;
             cookie?: never;
@@ -971,13 +1285,32 @@ export interface operations {
                 headers: {
                     [name: string]: unknown;
                 };
-                content?: never;
+                content: {
+                    "application/json": components["schemas"]["PublicResponse"][];
+                };
             };
         };
     };
-    portfolio: {
+    "Portfolio.portfolio": {
         parameters: {
-            query?: never;
+            query?: {
+                id?: string;
+                slug?: string;
+                name?: string;
+                eyebrow?: string;
+                summary?: string;
+                body_markdown?: string;
+                focus?: string;
+                maturity?: string;
+                visibility?: string;
+                featured?: boolean;
+                canonical_url?: string;
+                source_url?: string;
+                published_at?: string;
+                updated_at?: string;
+                content_revision?: number;
+                source_payload?: string;
+            };
             header?: never;
             path: {
                 slug: string;
@@ -991,13 +1324,31 @@ export interface operations {
                 headers: {
                     [name: string]: unknown;
                 };
-                content?: never;
+                content: {
+                    "application/json": components["schemas"]["PublicResponse"][];
+                };
             };
         };
     };
-    products: {
+    "Product.products": {
         parameters: {
-            query?: never;
+            query?: {
+                id?: string;
+                slug?: string;
+                name?: string;
+                eyebrow?: string;
+                summary?: string;
+                body_markdown?: string;
+                maturity?: string;
+                visibility?: string;
+                featured?: boolean;
+                canonical_url?: string;
+                source_url?: string;
+                published_at?: string;
+                updated_at?: string;
+                content_revision?: number;
+                source_payload?: string;
+            };
             header?: never;
             path?: never;
             cookie?: never;
@@ -1009,13 +1360,31 @@ export interface operations {
                 headers: {
                     [name: string]: unknown;
                 };
-                content?: never;
+                content: {
+                    "application/json": components["schemas"]["PublicResponse"][];
+                };
             };
         };
     };
-    product: {
+    "Product.product": {
         parameters: {
-            query?: never;
+            query?: {
+                id?: string;
+                slug?: string;
+                name?: string;
+                eyebrow?: string;
+                summary?: string;
+                body_markdown?: string;
+                maturity?: string;
+                visibility?: string;
+                featured?: boolean;
+                canonical_url?: string;
+                source_url?: string;
+                published_at?: string;
+                updated_at?: string;
+                content_revision?: number;
+                source_payload?: string;
+            };
             header?: never;
             path: {
                 slug: string;
@@ -1029,13 +1398,34 @@ export interface operations {
                 headers: {
                     [name: string]: unknown;
                 };
-                content?: never;
+                content: {
+                    "application/json": components["schemas"]["PublicResponse"][];
+                };
             };
         };
     };
-    repository_metrics: {
+    "Repository.repository_metrics": {
         parameters: {
-            query?: never;
+            query?: {
+                id?: string;
+                provider?: string;
+                owner?: string;
+                name?: string;
+                url?: string;
+                description?: string;
+                default_branch?: string;
+                is_archived?: boolean;
+                is_fork?: boolean;
+                license_expression?: string;
+                ssot_governed?: boolean;
+                ssot_registry_url?: string;
+                ssot_registry_sha256?: string;
+                ssot_schema_version?: string;
+                ssot_summary?: string;
+                ssot_observed_at?: string;
+                observed_at?: string;
+                source_payload?: string;
+            };
             header?: never;
             path?: never;
             cookie?: never;
@@ -1047,13 +1437,31 @@ export interface operations {
                 headers: {
                     [name: string]: unknown;
                 };
-                content?: never;
+                content: {
+                    "application/json": components["schemas"]["PublicResponse"][];
+                };
             };
         };
     };
-    services: {
+    "Product.services": {
         parameters: {
-            query?: never;
+            query?: {
+                id?: string;
+                slug?: string;
+                name?: string;
+                eyebrow?: string;
+                summary?: string;
+                body_markdown?: string;
+                maturity?: string;
+                visibility?: string;
+                featured?: boolean;
+                canonical_url?: string;
+                source_url?: string;
+                published_at?: string;
+                updated_at?: string;
+                content_revision?: number;
+                source_payload?: string;
+            };
             header?: never;
             path?: never;
             cookie?: never;
@@ -1065,13 +1473,31 @@ export interface operations {
                 headers: {
                     [name: string]: unknown;
                 };
-                content?: never;
+                content: {
+                    "application/json": components["schemas"]["PublicResponse"][];
+                };
             };
         };
     };
-    service: {
+    "Product.service": {
         parameters: {
-            query?: never;
+            query?: {
+                id?: string;
+                slug?: string;
+                name?: string;
+                eyebrow?: string;
+                summary?: string;
+                body_markdown?: string;
+                maturity?: string;
+                visibility?: string;
+                featured?: boolean;
+                canonical_url?: string;
+                source_url?: string;
+                published_at?: string;
+                updated_at?: string;
+                content_revision?: number;
+                source_payload?: string;
+            };
             header?: never;
             path: {
                 slug: string;
@@ -1085,13 +1511,29 @@ export interface operations {
                 headers: {
                     [name: string]: unknown;
                 };
-                content?: never;
+                content: {
+                    "application/json": components["schemas"]["PublicResponse"][];
+                };
             };
         };
     };
-    catalog_snapshots: {
+    "CatalogSnapshot.catalog_snapshots": {
         parameters: {
-            query?: never;
+            query?: {
+                id?: string;
+                schema_version?: string;
+                collected_at?: string;
+                completed_at?: string;
+                status?: string;
+                collector_version?: string;
+                source_digest?: string;
+                parent_snapshot_id?: string;
+                is_current?: boolean;
+                completeness?: string;
+                observation_count?: number;
+                measurement_count?: number;
+                error_count?: number;
+            };
             header?: never;
             path?: never;
             cookie?: never;
@@ -1103,13 +1545,29 @@ export interface operations {
                 headers: {
                     [name: string]: unknown;
                 };
-                content?: never;
+                content: {
+                    "application/json": components["schemas"]["PublicResponse"][];
+                };
             };
         };
     };
-    catalog_snapshot: {
+    "CatalogSnapshot.catalog_snapshot": {
         parameters: {
-            query?: never;
+            query?: {
+                id?: string;
+                schema_version?: string;
+                collected_at?: string;
+                completed_at?: string;
+                status?: string;
+                collector_version?: string;
+                source_digest?: string;
+                parent_snapshot_id?: string;
+                is_current?: boolean;
+                completeness?: string;
+                observation_count?: number;
+                measurement_count?: number;
+                error_count?: number;
+            };
             header?: never;
             path: {
                 snapshot_id: string;
@@ -1123,13 +1581,31 @@ export interface operations {
                 headers: {
                     [name: string]: unknown;
                 };
-                content?: never;
+                content: {
+                    "application/json": components["schemas"]["PublicResponse"][];
+                };
             };
         };
     };
-    solutions: {
+    "Product.solutions": {
         parameters: {
-            query?: never;
+            query?: {
+                id?: string;
+                slug?: string;
+                name?: string;
+                eyebrow?: string;
+                summary?: string;
+                body_markdown?: string;
+                maturity?: string;
+                visibility?: string;
+                featured?: boolean;
+                canonical_url?: string;
+                source_url?: string;
+                published_at?: string;
+                updated_at?: string;
+                content_revision?: number;
+                source_payload?: string;
+            };
             header?: never;
             path?: never;
             cookie?: never;
@@ -1141,13 +1617,31 @@ export interface operations {
                 headers: {
                     [name: string]: unknown;
                 };
-                content?: never;
+                content: {
+                    "application/json": components["schemas"]["PublicResponse"][];
+                };
             };
         };
     };
-    solution: {
+    "Product.solution": {
         parameters: {
-            query?: never;
+            query?: {
+                id?: string;
+                slug?: string;
+                name?: string;
+                eyebrow?: string;
+                summary?: string;
+                body_markdown?: string;
+                maturity?: string;
+                visibility?: string;
+                featured?: boolean;
+                canonical_url?: string;
+                source_url?: string;
+                published_at?: string;
+                updated_at?: string;
+                content_revision?: number;
+                source_payload?: string;
+            };
             header?: never;
             path: {
                 slug: string;
@@ -1161,7 +1655,9 @@ export interface operations {
                 headers: {
                     [name: string]: unknown;
                 };
-                content?: never;
+                content: {
+                    "application/json": components["schemas"]["PublicResponse"][];
+                };
             };
         };
     };

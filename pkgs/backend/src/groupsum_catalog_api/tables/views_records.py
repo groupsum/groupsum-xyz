@@ -73,7 +73,7 @@ def record_collection(table, ctx):
             "records": records,
         }
 
-    return with_session(table, ctx, build)
+    return build(ctx["db"])
 
 
 def record_detail(table, ctx):
@@ -131,7 +131,7 @@ def record_detail(table, ctx):
             "linked_sections": [],
         }
 
-    return with_session(table, ctx, build)
+    return build(ctx["db"])
 
 
 def organization_detail(table, ctx):
@@ -172,4 +172,4 @@ def organization_detail(table, ctx):
             "records": records,
         }
 
-    return with_session(table, ctx, build)
+    return build(ctx["db"])

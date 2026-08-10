@@ -1,6 +1,10 @@
 {
   "components": {
-    "schemas": {}
+    "schemas": {
+      "PublicResponse": {
+        "title": "PublicResponse"
+      }
+    }
   },
   "info": {
     "title": "Groupsum Catalog API",
@@ -11,12 +15,139 @@
   "paths": {
     "/api/v1/analytics/overview": {
       "get": {
-        "operationId": "catalog_analytics",
+        "operationId": "MetricObservation.catalog_analytics",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "measurement_id",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "snapshot_id",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "subject_type",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "subject_id",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "metric_key",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "numeric_value",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "text_value",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "unit",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "dimensions",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "period_start",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "period_end",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "source_url",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "source_observation_id",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "observed_at",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
         "responses": {
           "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "items": {
+                    "$ref": "#/components/schemas/PublicResponse"
+                  },
+                  "type": "array"
+                }
+              }
+            },
             "description": "Successful Response"
           }
         },
+        "tags": [
+          "MetricObservation"
+        ],
         "x-tigrbl-auth": {
           "policy": "public-by-default",
           "public": true,
@@ -34,18 +165,160 @@
             "path": "/api/v1/analytics/overview",
             "proto": "http.rest",
             "rpcMethod": null
-          }
+          },
+          "bindings": [
+            {
+              "exchange": "request_response",
+              "family": "request",
+              "framing": "json",
+              "framingSpec": "JsonFramingSpec",
+              "methods": [
+                "GET"
+              ],
+              "path": "/api/v1/analytics/overview",
+              "proto": "http.rest",
+              "rpcMethod": null
+            }
+          ],
+          "family": "crud"
         }
       }
     },
     "/api/v1/analytics/summary": {
       "get": {
-        "operationId": "summary",
+        "operationId": "MetricObservation.analytics_summary",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "measurement_id",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "snapshot_id",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "subject_type",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "subject_id",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "metric_key",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "numeric_value",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "text_value",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "unit",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "dimensions",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "period_start",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "period_end",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "source_url",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "source_observation_id",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "observed_at",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
         "responses": {
           "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "items": {
+                    "$ref": "#/components/schemas/PublicResponse"
+                  },
+                  "type": "array"
+                }
+              }
+            },
             "description": "Successful Response"
           }
         },
+        "tags": [
+          "MetricObservation"
+        ],
         "x-tigrbl-auth": {
           "policy": "public-by-default",
           "public": true,
@@ -63,18 +336,128 @@
             "path": "/api/v1/analytics/summary",
             "proto": "http.rest",
             "rpcMethod": null
-          }
+          },
+          "bindings": [
+            {
+              "exchange": "request_response",
+              "family": "request",
+              "framing": "json",
+              "framingSpec": "JsonFramingSpec",
+              "methods": [
+                "GET"
+              ],
+              "path": "/api/v1/analytics/summary",
+              "proto": "http.rest",
+              "rpcMethod": null
+            }
+          ],
+          "family": "crud"
         }
       }
     },
     "/api/v1/catalog": {
       "get": {
-        "operationId": "catalog",
+        "operationId": "Association.catalog",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "id",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "source_type",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "source_id",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "relationship_type",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "target_type",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "target_id",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "role",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "sort_order",
+            "required": false,
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "in": "query",
+            "name": "attributes",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "observed_at",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
         "responses": {
           "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "items": {
+                    "$ref": "#/components/schemas/PublicResponse"
+                  },
+                  "type": "array"
+                }
+              }
+            },
             "description": "Successful Response"
           }
         },
+        "tags": [
+          "Association"
+        ],
         "x-tigrbl-auth": {
           "policy": "public-by-default",
           "public": true,
@@ -92,18 +475,192 @@
             "path": "/api/v1/catalog",
             "proto": "http.rest",
             "rpcMethod": null
-          }
+          },
+          "bindings": [
+            {
+              "exchange": "request_response",
+              "family": "request",
+              "framing": "json",
+              "framingSpec": "JsonFramingSpec",
+              "methods": [
+                "GET"
+              ],
+              "path": "/api/v1/catalog",
+              "proto": "http.rest",
+              "rpcMethod": null
+            }
+          ],
+          "family": "crud"
         }
       }
     },
     "/api/v1/catalog/packages": {
       "get": {
-        "operationId": "catalog_packages",
+        "operationId": "Package.catalog_packages",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "id",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "ecosystem",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "name",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "registry_url",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "source_url",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "manifest_path",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "package_kind",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "private",
+            "required": false,
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
+            "in": "query",
+            "name": "description",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "latest_version",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "published",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "publication_status",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "route_key",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "license_expression",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "license_status",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "published_at",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "observed_at",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "source_payload",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
         "responses": {
           "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "items": {
+                    "$ref": "#/components/schemas/PublicResponse"
+                  },
+                  "type": "array"
+                }
+              }
+            },
             "description": "Successful Response"
           }
         },
+        "tags": [
+          "Package"
+        ],
         "x-tigrbl-auth": {
           "policy": "public-by-default",
           "public": true,
@@ -121,13 +678,28 @@
             "path": "/api/v1/catalog/packages",
             "proto": "http.rest",
             "rpcMethod": null
-          }
+          },
+          "bindings": [
+            {
+              "exchange": "request_response",
+              "family": "request",
+              "framing": "json",
+              "framingSpec": "JsonFramingSpec",
+              "methods": [
+                "GET"
+              ],
+              "path": "/api/v1/catalog/packages",
+              "proto": "http.rest",
+              "rpcMethod": null
+            }
+          ],
+          "family": "crud"
         }
       }
     },
     "/api/v1/catalog/packages/{route_key}": {
       "get": {
-        "operationId": "catalog_package",
+        "operationId": "Package.catalog_package",
         "parameters": [
           {
             "in": "path",
@@ -136,13 +708,170 @@
             "schema": {
               "type": "string"
             }
+          },
+          {
+            "in": "query",
+            "name": "id",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "ecosystem",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "name",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "registry_url",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "source_url",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "manifest_path",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "package_kind",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "private",
+            "required": false,
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
+            "in": "query",
+            "name": "description",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "latest_version",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "published",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "publication_status",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "route_key",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "license_expression",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "license_status",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "published_at",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "observed_at",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "source_payload",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "responses": {
           "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "items": {
+                    "$ref": "#/components/schemas/PublicResponse"
+                  },
+                  "type": "array"
+                }
+              }
+            },
             "description": "Successful Response"
           }
         },
+        "tags": [
+          "Package"
+        ],
         "x-tigrbl-auth": {
           "policy": "public-by-default",
           "public": true,
@@ -160,13 +889,28 @@
             "path": "/api/v1/catalog/packages/{route_key}",
             "proto": "http.rest",
             "rpcMethod": null
-          }
+          },
+          "bindings": [
+            {
+              "exchange": "request_response",
+              "family": "request",
+              "framing": "json",
+              "framingSpec": "JsonFramingSpec",
+              "methods": [
+                "GET"
+              ],
+              "path": "/api/v1/catalog/packages/{route_key}",
+              "proto": "http.rest",
+              "rpcMethod": null
+            }
+          ],
+          "family": "crud"
         }
       }
     },
     "/api/v1/catalog/releases/{route_key}": {
       "get": {
-        "operationId": "catalog_release",
+        "operationId": "Association.catalog_release",
         "parameters": [
           {
             "in": "path",
@@ -175,13 +919,106 @@
             "schema": {
               "type": "string"
             }
+          },
+          {
+            "in": "query",
+            "name": "id",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "source_type",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "source_id",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "relationship_type",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "target_type",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "target_id",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "role",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "sort_order",
+            "required": false,
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "in": "query",
+            "name": "attributes",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "observed_at",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "responses": {
           "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "items": {
+                    "$ref": "#/components/schemas/PublicResponse"
+                  },
+                  "type": "array"
+                }
+              }
+            },
             "description": "Successful Response"
           }
         },
+        "tags": [
+          "Association"
+        ],
         "x-tigrbl-auth": {
           "policy": "public-by-default",
           "public": true,
@@ -199,18 +1036,192 @@
             "path": "/api/v1/catalog/releases/{route_key}",
             "proto": "http.rest",
             "rpcMethod": null
-          }
+          },
+          "bindings": [
+            {
+              "exchange": "request_response",
+              "family": "request",
+              "framing": "json",
+              "framingSpec": "JsonFramingSpec",
+              "methods": [
+                "GET"
+              ],
+              "path": "/api/v1/catalog/releases/{route_key}",
+              "proto": "http.rest",
+              "rpcMethod": null
+            }
+          ],
+          "family": "crud"
         }
       }
     },
     "/api/v1/catalog/repositories": {
       "get": {
-        "operationId": "catalog_repositories",
+        "operationId": "Repository.catalog_repositories",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "id",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "provider",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "owner",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "name",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "url",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "description",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "default_branch",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "is_archived",
+            "required": false,
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
+            "in": "query",
+            "name": "is_fork",
+            "required": false,
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
+            "in": "query",
+            "name": "license_expression",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "ssot_governed",
+            "required": false,
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
+            "in": "query",
+            "name": "ssot_registry_url",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "ssot_registry_sha256",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "ssot_schema_version",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "ssot_summary",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "ssot_observed_at",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "observed_at",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "source_payload",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
         "responses": {
           "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "items": {
+                    "$ref": "#/components/schemas/PublicResponse"
+                  },
+                  "type": "array"
+                }
+              }
+            },
             "description": "Successful Response"
           }
         },
+        "tags": [
+          "Repository"
+        ],
         "x-tigrbl-auth": {
           "policy": "public-by-default",
           "public": true,
@@ -228,13 +1239,28 @@
             "path": "/api/v1/catalog/repositories",
             "proto": "http.rest",
             "rpcMethod": null
-          }
+          },
+          "bindings": [
+            {
+              "exchange": "request_response",
+              "family": "request",
+              "framing": "json",
+              "framingSpec": "JsonFramingSpec",
+              "methods": [
+                "GET"
+              ],
+              "path": "/api/v1/catalog/repositories",
+              "proto": "http.rest",
+              "rpcMethod": null
+            }
+          ],
+          "family": "crud"
         }
       }
     },
     "/api/v1/catalog/repositories/{owner}/{repository}": {
       "get": {
-        "operationId": "catalog_repository",
+        "operationId": "Repository.catalog_repository",
         "parameters": [
           {
             "in": "path",
@@ -251,13 +1277,170 @@
             "schema": {
               "type": "string"
             }
+          },
+          {
+            "in": "query",
+            "name": "id",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "provider",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "owner",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "name",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "url",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "description",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "default_branch",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "is_archived",
+            "required": false,
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
+            "in": "query",
+            "name": "is_fork",
+            "required": false,
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
+            "in": "query",
+            "name": "license_expression",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "ssot_governed",
+            "required": false,
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
+            "in": "query",
+            "name": "ssot_registry_url",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "ssot_registry_sha256",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "ssot_schema_version",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "ssot_summary",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "ssot_observed_at",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "observed_at",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "source_payload",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "responses": {
           "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "items": {
+                    "$ref": "#/components/schemas/PublicResponse"
+                  },
+                  "type": "array"
+                }
+              }
+            },
             "description": "Successful Response"
           }
         },
+        "tags": [
+          "Repository"
+        ],
         "x-tigrbl-auth": {
           "policy": "public-by-default",
           "public": true,
@@ -275,18 +1458,128 @@
             "path": "/api/v1/catalog/repositories/{owner}/{repository}",
             "proto": "http.rest",
             "rpcMethod": null
-          }
+          },
+          "bindings": [
+            {
+              "exchange": "request_response",
+              "family": "request",
+              "framing": "json",
+              "framingSpec": "JsonFramingSpec",
+              "methods": [
+                "GET"
+              ],
+              "path": "/api/v1/catalog/repositories/{owner}/{repository}",
+              "proto": "http.rest",
+              "rpcMethod": null
+            }
+          ],
+          "family": "crud"
         }
       }
     },
     "/api/v1/catalog/resources": {
       "get": {
-        "operationId": "catalog_resources",
+        "operationId": "Association.catalog_resources",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "id",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "source_type",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "source_id",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "relationship_type",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "target_type",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "target_id",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "role",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "sort_order",
+            "required": false,
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "in": "query",
+            "name": "attributes",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "observed_at",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
         "responses": {
           "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "items": {
+                    "$ref": "#/components/schemas/PublicResponse"
+                  },
+                  "type": "array"
+                }
+              }
+            },
             "description": "Successful Response"
           }
         },
+        "tags": [
+          "Association"
+        ],
         "x-tigrbl-auth": {
           "policy": "public-by-default",
           "public": true,
@@ -304,13 +1597,28 @@
             "path": "/api/v1/catalog/resources",
             "proto": "http.rest",
             "rpcMethod": null
-          }
+          },
+          "bindings": [
+            {
+              "exchange": "request_response",
+              "family": "request",
+              "framing": "json",
+              "framingSpec": "JsonFramingSpec",
+              "methods": [
+                "GET"
+              ],
+              "path": "/api/v1/catalog/resources",
+              "proto": "http.rest",
+              "rpcMethod": null
+            }
+          ],
+          "family": "crud"
         }
       }
     },
     "/api/v1/catalog/resources/{resource_type}/{route_key}": {
       "get": {
-        "operationId": "catalog_resource",
+        "operationId": "Association.catalog_resource",
         "parameters": [
           {
             "in": "path",
@@ -327,13 +1635,106 @@
             "schema": {
               "type": "string"
             }
+          },
+          {
+            "in": "query",
+            "name": "id",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "source_type",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "source_id",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "relationship_type",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "target_type",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "target_id",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "role",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "sort_order",
+            "required": false,
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "in": "query",
+            "name": "attributes",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "observed_at",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "responses": {
           "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "items": {
+                    "$ref": "#/components/schemas/PublicResponse"
+                  },
+                  "type": "array"
+                }
+              }
+            },
             "description": "Successful Response"
           }
         },
+        "tags": [
+          "Association"
+        ],
         "x-tigrbl-auth": {
           "policy": "public-by-default",
           "public": true,
@@ -351,18 +1752,128 @@
             "path": "/api/v1/catalog/resources/{resource_type}/{route_key}",
             "proto": "http.rest",
             "rpcMethod": null
-          }
+          },
+          "bindings": [
+            {
+              "exchange": "request_response",
+              "family": "request",
+              "framing": "json",
+              "framingSpec": "JsonFramingSpec",
+              "methods": [
+                "GET"
+              ],
+              "path": "/api/v1/catalog/resources/{resource_type}/{route_key}",
+              "proto": "http.rest",
+              "rpcMethod": null
+            }
+          ],
+          "family": "crud"
         }
       }
     },
     "/api/v1/catalog/technologies": {
       "get": {
-        "operationId": "catalog_technologies",
+        "operationId": "Technology.catalog_technologies",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "id",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "slug",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "name",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "category",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "description",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "icon_key",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "website_url",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "source_url",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "observed_at",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "source_payload",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
         "responses": {
           "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "items": {
+                    "$ref": "#/components/schemas/PublicResponse"
+                  },
+                  "type": "array"
+                }
+              }
+            },
             "description": "Successful Response"
           }
         },
+        "tags": [
+          "Technology"
+        ],
         "x-tigrbl-auth": {
           "policy": "public-by-default",
           "public": true,
@@ -380,13 +1891,28 @@
             "path": "/api/v1/catalog/technologies",
             "proto": "http.rest",
             "rpcMethod": null
-          }
+          },
+          "bindings": [
+            {
+              "exchange": "request_response",
+              "family": "request",
+              "framing": "json",
+              "framingSpec": "JsonFramingSpec",
+              "methods": [
+                "GET"
+              ],
+              "path": "/api/v1/catalog/technologies",
+              "proto": "http.rest",
+              "rpcMethod": null
+            }
+          ],
+          "family": "crud"
         }
       }
     },
     "/api/v1/catalog/technologies/{slug}": {
       "get": {
-        "operationId": "catalog_technology",
+        "operationId": "Technology.catalog_technology",
         "parameters": [
           {
             "in": "path",
@@ -395,13 +1921,106 @@
             "schema": {
               "type": "string"
             }
+          },
+          {
+            "in": "query",
+            "name": "id",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "slug",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "name",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "category",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "description",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "icon_key",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "website_url",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "source_url",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "observed_at",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "source_payload",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "responses": {
           "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "items": {
+                    "$ref": "#/components/schemas/PublicResponse"
+                  },
+                  "type": "array"
+                }
+              }
+            },
             "description": "Successful Response"
           }
         },
+        "tags": [
+          "Technology"
+        ],
         "x-tigrbl-auth": {
           "policy": "public-by-default",
           "public": true,
@@ -419,18 +2038,128 @@
             "path": "/api/v1/catalog/technologies/{slug}",
             "proto": "http.rest",
             "rpcMethod": null
-          }
+          },
+          "bindings": [
+            {
+              "exchange": "request_response",
+              "family": "request",
+              "framing": "json",
+              "framingSpec": "JsonFramingSpec",
+              "methods": [
+                "GET"
+              ],
+              "path": "/api/v1/catalog/technologies/{slug}",
+              "proto": "http.rest",
+              "rpcMethod": null
+            }
+          ],
+          "family": "crud"
         }
       }
     },
     "/api/v1/entities": {
       "get": {
-        "operationId": "entities",
+        "operationId": "Association.entities",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "id",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "source_type",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "source_id",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "relationship_type",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "target_type",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "target_id",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "role",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "sort_order",
+            "required": false,
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "in": "query",
+            "name": "attributes",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "observed_at",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
         "responses": {
           "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "items": {
+                    "$ref": "#/components/schemas/PublicResponse"
+                  },
+                  "type": "array"
+                }
+              }
+            },
             "description": "Successful Response"
           }
         },
+        "tags": [
+          "Association"
+        ],
         "x-tigrbl-auth": {
           "policy": "public-by-default",
           "public": true,
@@ -448,13 +2177,28 @@
             "path": "/api/v1/entities",
             "proto": "http.rest",
             "rpcMethod": null
-          }
+          },
+          "bindings": [
+            {
+              "exchange": "request_response",
+              "family": "request",
+              "framing": "json",
+              "framingSpec": "JsonFramingSpec",
+              "methods": [
+                "GET"
+              ],
+              "path": "/api/v1/entities",
+              "proto": "http.rest",
+              "rpcMethod": null
+            }
+          ],
+          "family": "crud"
         }
       }
     },
     "/api/v1/entities/{entity_type}/metrics": {
       "get": {
-        "operationId": "metrics",
+        "operationId": "MetricObservation.metrics",
         "parameters": [
           {
             "in": "path",
@@ -463,13 +2207,138 @@
             "schema": {
               "type": "string"
             }
+          },
+          {
+            "in": "query",
+            "name": "measurement_id",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "snapshot_id",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "subject_type",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "subject_id",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "metric_key",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "numeric_value",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "text_value",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "unit",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "dimensions",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "period_start",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "period_end",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "source_url",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "source_observation_id",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "observed_at",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "responses": {
           "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "items": {
+                    "$ref": "#/components/schemas/PublicResponse"
+                  },
+                  "type": "array"
+                }
+              }
+            },
             "description": "Successful Response"
           }
         },
+        "tags": [
+          "MetricObservation"
+        ],
         "x-tigrbl-auth": {
           "policy": "public-by-default",
           "public": true,
@@ -487,13 +2356,28 @@
             "path": "/api/v1/entities/{entity_type}/metrics",
             "proto": "http.rest",
             "rpcMethod": null
-          }
+          },
+          "bindings": [
+            {
+              "exchange": "request_response",
+              "family": "request",
+              "framing": "json",
+              "framingSpec": "JsonFramingSpec",
+              "methods": [
+                "GET"
+              ],
+              "path": "/api/v1/entities/{entity_type}/metrics",
+              "proto": "http.rest",
+              "rpcMethod": null
+            }
+          ],
+          "family": "crud"
         }
       }
     },
     "/api/v1/entities/{entity_type}/metrics/{metric_key}/series": {
       "get": {
-        "operationId": "metric_series",
+        "operationId": "MetricObservation.metric_series",
         "parameters": [
           {
             "in": "path",
@@ -510,13 +2394,138 @@
             "schema": {
               "type": "string"
             }
+          },
+          {
+            "in": "query",
+            "name": "measurement_id",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "snapshot_id",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "subject_type",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "subject_id",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "metric_key",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "numeric_value",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "text_value",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "unit",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "dimensions",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "period_start",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "period_end",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "source_url",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "source_observation_id",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "observed_at",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "responses": {
           "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "items": {
+                    "$ref": "#/components/schemas/PublicResponse"
+                  },
+                  "type": "array"
+                }
+              }
+            },
             "description": "Successful Response"
           }
         },
+        "tags": [
+          "MetricObservation"
+        ],
         "x-tigrbl-auth": {
           "policy": "public-by-default",
           "public": true,
@@ -534,13 +2543,28 @@
             "path": "/api/v1/entities/{entity_type}/metrics/{metric_key}/series",
             "proto": "http.rest",
             "rpcMethod": null
-          }
+          },
+          "bindings": [
+            {
+              "exchange": "request_response",
+              "family": "request",
+              "framing": "json",
+              "framingSpec": "JsonFramingSpec",
+              "methods": [
+                "GET"
+              ],
+              "path": "/api/v1/entities/{entity_type}/metrics/{metric_key}/series",
+              "proto": "http.rest",
+              "rpcMethod": null
+            }
+          ],
+          "family": "crud"
         }
       }
     },
     "/api/v1/entities/{entity_type}/observations": {
       "get": {
-        "operationId": "observations",
+        "operationId": "CatalogObservation.observations",
         "parameters": [
           {
             "in": "path",
@@ -549,13 +2573,122 @@
             "schema": {
               "type": "string"
             }
+          },
+          {
+            "in": "query",
+            "name": "id",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "snapshot_id",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "subject_type",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "subject_id",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "observation_type",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "source_kind",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "source_url",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "status",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "observed_at",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "payload",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "content_hash",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "confidence",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "responses": {
           "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "items": {
+                    "$ref": "#/components/schemas/PublicResponse"
+                  },
+                  "type": "array"
+                }
+              }
+            },
             "description": "Successful Response"
           }
         },
+        "tags": [
+          "CatalogObservation"
+        ],
         "x-tigrbl-auth": {
           "policy": "public-by-default",
           "public": true,
@@ -573,13 +2706,28 @@
             "path": "/api/v1/entities/{entity_type}/observations",
             "proto": "http.rest",
             "rpcMethod": null
-          }
+          },
+          "bindings": [
+            {
+              "exchange": "request_response",
+              "family": "request",
+              "framing": "json",
+              "framingSpec": "JsonFramingSpec",
+              "methods": [
+                "GET"
+              ],
+              "path": "/api/v1/entities/{entity_type}/observations",
+              "proto": "http.rest",
+              "rpcMethod": null
+            }
+          ],
+          "family": "crud"
         }
       }
     },
     "/api/v1/entities/{entity_type}/{entity_id}": {
       "get": {
-        "operationId": "entity",
+        "operationId": "Association.entity",
         "parameters": [
           {
             "in": "path",
@@ -596,13 +2744,106 @@
             "schema": {
               "type": "string"
             }
+          },
+          {
+            "in": "query",
+            "name": "id",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "source_type",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "source_id",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "relationship_type",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "target_type",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "target_id",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "role",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "sort_order",
+            "required": false,
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "in": "query",
+            "name": "attributes",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "observed_at",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "responses": {
           "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "items": {
+                    "$ref": "#/components/schemas/PublicResponse"
+                  },
+                  "type": "array"
+                }
+              }
+            },
             "description": "Successful Response"
           }
         },
+        "tags": [
+          "Association"
+        ],
         "x-tigrbl-auth": {
           "policy": "public-by-default",
           "public": true,
@@ -620,18 +2861,128 @@
             "path": "/api/v1/entities/{entity_type}/{entity_id}",
             "proto": "http.rest",
             "rpcMethod": null
-          }
+          },
+          "bindings": [
+            {
+              "exchange": "request_response",
+              "family": "request",
+              "framing": "json",
+              "framingSpec": "JsonFramingSpec",
+              "methods": [
+                "GET"
+              ],
+              "path": "/api/v1/entities/{entity_type}/{entity_id}",
+              "proto": "http.rest",
+              "rpcMethod": null
+            }
+          ],
+          "family": "crud"
         }
       }
     },
     "/api/v1/insights": {
       "get": {
-        "operationId": "insights",
+        "operationId": "Association.insights",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "id",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "source_type",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "source_id",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "relationship_type",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "target_type",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "target_id",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "role",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "sort_order",
+            "required": false,
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "in": "query",
+            "name": "attributes",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "observed_at",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
         "responses": {
           "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "items": {
+                    "$ref": "#/components/schemas/PublicResponse"
+                  },
+                  "type": "array"
+                }
+              }
+            },
             "description": "Successful Response"
           }
         },
+        "tags": [
+          "Association"
+        ],
         "x-tigrbl-auth": {
           "policy": "public-by-default",
           "public": true,
@@ -649,13 +3000,28 @@
             "path": "/api/v1/insights",
             "proto": "http.rest",
             "rpcMethod": null
-          }
+          },
+          "bindings": [
+            {
+              "exchange": "request_response",
+              "family": "request",
+              "framing": "json",
+              "framingSpec": "JsonFramingSpec",
+              "methods": [
+                "GET"
+              ],
+              "path": "/api/v1/insights",
+              "proto": "http.rest",
+              "rpcMethod": null
+            }
+          ],
+          "family": "crud"
         }
       }
     },
     "/api/v1/organizations/{slug}": {
       "get": {
-        "operationId": "organization",
+        "operationId": "Organization.organization",
         "parameters": [
           {
             "in": "path",
@@ -664,13 +3030,82 @@
             "schema": {
               "type": "string"
             }
+          },
+          {
+            "in": "query",
+            "name": "id",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "slug",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "name",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "summary",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "website_url",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "source_url",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "observed_at",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "responses": {
           "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "items": {
+                    "$ref": "#/components/schemas/PublicResponse"
+                  },
+                  "type": "array"
+                }
+              }
+            },
             "description": "Successful Response"
           }
         },
+        "tags": [
+          "Organization"
+        ],
         "x-tigrbl-auth": {
           "policy": "public-by-default",
           "public": true,
@@ -688,18 +3123,176 @@
             "path": "/api/v1/organizations/{slug}",
             "proto": "http.rest",
             "rpcMethod": null
-          }
+          },
+          "bindings": [
+            {
+              "exchange": "request_response",
+              "family": "request",
+              "framing": "json",
+              "framingSpec": "JsonFramingSpec",
+              "methods": [
+                "GET"
+              ],
+              "path": "/api/v1/organizations/{slug}",
+              "proto": "http.rest",
+              "rpcMethod": null
+            }
+          ],
+          "family": "crud"
         }
       }
     },
     "/api/v1/portfolio": {
       "get": {
-        "operationId": "portfolios",
+        "operationId": "Portfolio.portfolios",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "id",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "slug",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "name",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "eyebrow",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "summary",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "body_markdown",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "focus",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "maturity",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "visibility",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "featured",
+            "required": false,
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
+            "in": "query",
+            "name": "canonical_url",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "source_url",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "published_at",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "updated_at",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "content_revision",
+            "required": false,
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "in": "query",
+            "name": "source_payload",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
         "responses": {
           "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "items": {
+                    "$ref": "#/components/schemas/PublicResponse"
+                  },
+                  "type": "array"
+                }
+              }
+            },
             "description": "Successful Response"
           }
         },
+        "tags": [
+          "Portfolio"
+        ],
         "x-tigrbl-auth": {
           "policy": "public-by-default",
           "public": true,
@@ -717,13 +3310,28 @@
             "path": "/api/v1/portfolio",
             "proto": "http.rest",
             "rpcMethod": null
-          }
+          },
+          "bindings": [
+            {
+              "exchange": "request_response",
+              "family": "request",
+              "framing": "json",
+              "framingSpec": "JsonFramingSpec",
+              "methods": [
+                "GET"
+              ],
+              "path": "/api/v1/portfolio",
+              "proto": "http.rest",
+              "rpcMethod": null
+            }
+          ],
+          "family": "crud"
         }
       }
     },
     "/api/v1/portfolio/{slug}": {
       "get": {
-        "operationId": "portfolio",
+        "operationId": "Portfolio.portfolio",
         "parameters": [
           {
             "in": "path",
@@ -732,13 +3340,154 @@
             "schema": {
               "type": "string"
             }
+          },
+          {
+            "in": "query",
+            "name": "id",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "slug",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "name",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "eyebrow",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "summary",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "body_markdown",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "focus",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "maturity",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "visibility",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "featured",
+            "required": false,
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
+            "in": "query",
+            "name": "canonical_url",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "source_url",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "published_at",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "updated_at",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "content_revision",
+            "required": false,
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "in": "query",
+            "name": "source_payload",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "responses": {
           "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "items": {
+                    "$ref": "#/components/schemas/PublicResponse"
+                  },
+                  "type": "array"
+                }
+              }
+            },
             "description": "Successful Response"
           }
         },
+        "tags": [
+          "Portfolio"
+        ],
         "x-tigrbl-auth": {
           "policy": "public-by-default",
           "public": true,
@@ -756,18 +3505,168 @@
             "path": "/api/v1/portfolio/{slug}",
             "proto": "http.rest",
             "rpcMethod": null
-          }
+          },
+          "bindings": [
+            {
+              "exchange": "request_response",
+              "family": "request",
+              "framing": "json",
+              "framingSpec": "JsonFramingSpec",
+              "methods": [
+                "GET"
+              ],
+              "path": "/api/v1/portfolio/{slug}",
+              "proto": "http.rest",
+              "rpcMethod": null
+            }
+          ],
+          "family": "crud"
         }
       }
     },
     "/api/v1/products": {
       "get": {
-        "operationId": "products",
+        "operationId": "Product.products",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "id",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "slug",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "name",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "eyebrow",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "summary",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "body_markdown",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "maturity",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "visibility",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "featured",
+            "required": false,
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
+            "in": "query",
+            "name": "canonical_url",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "source_url",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "published_at",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "updated_at",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "content_revision",
+            "required": false,
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "in": "query",
+            "name": "source_payload",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
         "responses": {
           "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "items": {
+                    "$ref": "#/components/schemas/PublicResponse"
+                  },
+                  "type": "array"
+                }
+              }
+            },
             "description": "Successful Response"
           }
         },
+        "tags": [
+          "Product"
+        ],
         "x-tigrbl-auth": {
           "policy": "public-by-default",
           "public": true,
@@ -785,13 +3684,28 @@
             "path": "/api/v1/products",
             "proto": "http.rest",
             "rpcMethod": null
-          }
+          },
+          "bindings": [
+            {
+              "exchange": "request_response",
+              "family": "request",
+              "framing": "json",
+              "framingSpec": "JsonFramingSpec",
+              "methods": [
+                "GET"
+              ],
+              "path": "/api/v1/products",
+              "proto": "http.rest",
+              "rpcMethod": null
+            }
+          ],
+          "family": "crud"
         }
       }
     },
     "/api/v1/products/{slug}": {
       "get": {
-        "operationId": "product",
+        "operationId": "Product.product",
         "parameters": [
           {
             "in": "path",
@@ -800,13 +3714,146 @@
             "schema": {
               "type": "string"
             }
+          },
+          {
+            "in": "query",
+            "name": "id",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "slug",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "name",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "eyebrow",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "summary",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "body_markdown",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "maturity",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "visibility",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "featured",
+            "required": false,
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
+            "in": "query",
+            "name": "canonical_url",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "source_url",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "published_at",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "updated_at",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "content_revision",
+            "required": false,
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "in": "query",
+            "name": "source_payload",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "responses": {
           "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "items": {
+                    "$ref": "#/components/schemas/PublicResponse"
+                  },
+                  "type": "array"
+                }
+              }
+            },
             "description": "Successful Response"
           }
         },
+        "tags": [
+          "Product"
+        ],
         "x-tigrbl-auth": {
           "policy": "public-by-default",
           "public": true,
@@ -824,18 +3871,192 @@
             "path": "/api/v1/products/{slug}",
             "proto": "http.rest",
             "rpcMethod": null
-          }
+          },
+          "bindings": [
+            {
+              "exchange": "request_response",
+              "family": "request",
+              "framing": "json",
+              "framingSpec": "JsonFramingSpec",
+              "methods": [
+                "GET"
+              ],
+              "path": "/api/v1/products/{slug}",
+              "proto": "http.rest",
+              "rpcMethod": null
+            }
+          ],
+          "family": "crud"
         }
       }
     },
     "/api/v1/repository-metrics": {
       "get": {
-        "operationId": "repository_metrics",
+        "operationId": "Repository.repository_metrics",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "id",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "provider",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "owner",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "name",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "url",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "description",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "default_branch",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "is_archived",
+            "required": false,
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
+            "in": "query",
+            "name": "is_fork",
+            "required": false,
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
+            "in": "query",
+            "name": "license_expression",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "ssot_governed",
+            "required": false,
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
+            "in": "query",
+            "name": "ssot_registry_url",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "ssot_registry_sha256",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "ssot_schema_version",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "ssot_summary",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "ssot_observed_at",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "observed_at",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "source_payload",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
         "responses": {
           "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "items": {
+                    "$ref": "#/components/schemas/PublicResponse"
+                  },
+                  "type": "array"
+                }
+              }
+            },
             "description": "Successful Response"
           }
         },
+        "tags": [
+          "Repository"
+        ],
         "x-tigrbl-auth": {
           "policy": "public-by-default",
           "public": true,
@@ -853,18 +4074,168 @@
             "path": "/api/v1/repository-metrics",
             "proto": "http.rest",
             "rpcMethod": null
-          }
+          },
+          "bindings": [
+            {
+              "exchange": "request_response",
+              "family": "request",
+              "framing": "json",
+              "framingSpec": "JsonFramingSpec",
+              "methods": [
+                "GET"
+              ],
+              "path": "/api/v1/repository-metrics",
+              "proto": "http.rest",
+              "rpcMethod": null
+            }
+          ],
+          "family": "crud"
         }
       }
     },
     "/api/v1/services": {
       "get": {
-        "operationId": "services",
+        "operationId": "Product.services",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "id",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "slug",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "name",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "eyebrow",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "summary",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "body_markdown",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "maturity",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "visibility",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "featured",
+            "required": false,
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
+            "in": "query",
+            "name": "canonical_url",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "source_url",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "published_at",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "updated_at",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "content_revision",
+            "required": false,
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "in": "query",
+            "name": "source_payload",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
         "responses": {
           "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "items": {
+                    "$ref": "#/components/schemas/PublicResponse"
+                  },
+                  "type": "array"
+                }
+              }
+            },
             "description": "Successful Response"
           }
         },
+        "tags": [
+          "Product"
+        ],
         "x-tigrbl-auth": {
           "policy": "public-by-default",
           "public": true,
@@ -882,13 +4253,28 @@
             "path": "/api/v1/services",
             "proto": "http.rest",
             "rpcMethod": null
-          }
+          },
+          "bindings": [
+            {
+              "exchange": "request_response",
+              "family": "request",
+              "framing": "json",
+              "framingSpec": "JsonFramingSpec",
+              "methods": [
+                "GET"
+              ],
+              "path": "/api/v1/services",
+              "proto": "http.rest",
+              "rpcMethod": null
+            }
+          ],
+          "family": "crud"
         }
       }
     },
     "/api/v1/services/{slug}": {
       "get": {
-        "operationId": "service",
+        "operationId": "Product.service",
         "parameters": [
           {
             "in": "path",
@@ -897,13 +4283,146 @@
             "schema": {
               "type": "string"
             }
+          },
+          {
+            "in": "query",
+            "name": "id",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "slug",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "name",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "eyebrow",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "summary",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "body_markdown",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "maturity",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "visibility",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "featured",
+            "required": false,
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
+            "in": "query",
+            "name": "canonical_url",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "source_url",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "published_at",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "updated_at",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "content_revision",
+            "required": false,
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "in": "query",
+            "name": "source_payload",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "responses": {
           "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "items": {
+                    "$ref": "#/components/schemas/PublicResponse"
+                  },
+                  "type": "array"
+                }
+              }
+            },
             "description": "Successful Response"
           }
         },
+        "tags": [
+          "Product"
+        ],
         "x-tigrbl-auth": {
           "policy": "public-by-default",
           "public": true,
@@ -921,18 +4440,152 @@
             "path": "/api/v1/services/{slug}",
             "proto": "http.rest",
             "rpcMethod": null
-          }
+          },
+          "bindings": [
+            {
+              "exchange": "request_response",
+              "family": "request",
+              "framing": "json",
+              "framingSpec": "JsonFramingSpec",
+              "methods": [
+                "GET"
+              ],
+              "path": "/api/v1/services/{slug}",
+              "proto": "http.rest",
+              "rpcMethod": null
+            }
+          ],
+          "family": "crud"
         }
       }
     },
     "/api/v1/snapshots": {
       "get": {
-        "operationId": "catalog_snapshots",
+        "operationId": "CatalogSnapshot.catalog_snapshots",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "id",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "schema_version",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "collected_at",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "completed_at",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "status",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "collector_version",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "source_digest",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "parent_snapshot_id",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "is_current",
+            "required": false,
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
+            "in": "query",
+            "name": "completeness",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "observation_count",
+            "required": false,
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "in": "query",
+            "name": "measurement_count",
+            "required": false,
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "in": "query",
+            "name": "error_count",
+            "required": false,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
         "responses": {
           "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "items": {
+                    "$ref": "#/components/schemas/PublicResponse"
+                  },
+                  "type": "array"
+                }
+              }
+            },
             "description": "Successful Response"
           }
         },
+        "tags": [
+          "CatalogSnapshot"
+        ],
         "x-tigrbl-auth": {
           "policy": "public-by-default",
           "public": true,
@@ -950,13 +4603,28 @@
             "path": "/api/v1/snapshots",
             "proto": "http.rest",
             "rpcMethod": null
-          }
+          },
+          "bindings": [
+            {
+              "exchange": "request_response",
+              "family": "request",
+              "framing": "json",
+              "framingSpec": "JsonFramingSpec",
+              "methods": [
+                "GET"
+              ],
+              "path": "/api/v1/snapshots",
+              "proto": "http.rest",
+              "rpcMethod": null
+            }
+          ],
+          "family": "crud"
         }
       }
     },
     "/api/v1/snapshots/{snapshot_id}": {
       "get": {
-        "operationId": "catalog_snapshot",
+        "operationId": "CatalogSnapshot.catalog_snapshot",
         "parameters": [
           {
             "in": "path",
@@ -965,13 +4633,130 @@
             "schema": {
               "type": "string"
             }
+          },
+          {
+            "in": "query",
+            "name": "id",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "schema_version",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "collected_at",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "completed_at",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "status",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "collector_version",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "source_digest",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "parent_snapshot_id",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "is_current",
+            "required": false,
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
+            "in": "query",
+            "name": "completeness",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "observation_count",
+            "required": false,
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "in": "query",
+            "name": "measurement_count",
+            "required": false,
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "in": "query",
+            "name": "error_count",
+            "required": false,
+            "schema": {
+              "type": "integer"
+            }
           }
         ],
         "responses": {
           "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "items": {
+                    "$ref": "#/components/schemas/PublicResponse"
+                  },
+                  "type": "array"
+                }
+              }
+            },
             "description": "Successful Response"
           }
         },
+        "tags": [
+          "CatalogSnapshot"
+        ],
         "x-tigrbl-auth": {
           "policy": "public-by-default",
           "public": true,
@@ -989,18 +4774,168 @@
             "path": "/api/v1/snapshots/{snapshot_id}",
             "proto": "http.rest",
             "rpcMethod": null
-          }
+          },
+          "bindings": [
+            {
+              "exchange": "request_response",
+              "family": "request",
+              "framing": "json",
+              "framingSpec": "JsonFramingSpec",
+              "methods": [
+                "GET"
+              ],
+              "path": "/api/v1/snapshots/{snapshot_id}",
+              "proto": "http.rest",
+              "rpcMethod": null
+            }
+          ],
+          "family": "crud"
         }
       }
     },
     "/api/v1/solutions": {
       "get": {
-        "operationId": "solutions",
+        "operationId": "Product.solutions",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "id",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "slug",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "name",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "eyebrow",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "summary",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "body_markdown",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "maturity",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "visibility",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "featured",
+            "required": false,
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
+            "in": "query",
+            "name": "canonical_url",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "source_url",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "published_at",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "updated_at",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "content_revision",
+            "required": false,
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "in": "query",
+            "name": "source_payload",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
         "responses": {
           "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "items": {
+                    "$ref": "#/components/schemas/PublicResponse"
+                  },
+                  "type": "array"
+                }
+              }
+            },
             "description": "Successful Response"
           }
         },
+        "tags": [
+          "Product"
+        ],
         "x-tigrbl-auth": {
           "policy": "public-by-default",
           "public": true,
@@ -1018,13 +4953,28 @@
             "path": "/api/v1/solutions",
             "proto": "http.rest",
             "rpcMethod": null
-          }
+          },
+          "bindings": [
+            {
+              "exchange": "request_response",
+              "family": "request",
+              "framing": "json",
+              "framingSpec": "JsonFramingSpec",
+              "methods": [
+                "GET"
+              ],
+              "path": "/api/v1/solutions",
+              "proto": "http.rest",
+              "rpcMethod": null
+            }
+          ],
+          "family": "crud"
         }
       }
     },
     "/api/v1/solutions/{slug}": {
       "get": {
-        "operationId": "solution",
+        "operationId": "Product.solution",
         "parameters": [
           {
             "in": "path",
@@ -1033,13 +4983,146 @@
             "schema": {
               "type": "string"
             }
+          },
+          {
+            "in": "query",
+            "name": "id",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "slug",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "name",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "eyebrow",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "summary",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "body_markdown",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "maturity",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "visibility",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "featured",
+            "required": false,
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
+            "in": "query",
+            "name": "canonical_url",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "source_url",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "published_at",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "updated_at",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "content_revision",
+            "required": false,
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "in": "query",
+            "name": "source_payload",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "responses": {
           "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "items": {
+                    "$ref": "#/components/schemas/PublicResponse"
+                  },
+                  "type": "array"
+                }
+              }
+            },
             "description": "Successful Response"
           }
         },
+        "tags": [
+          "Product"
+        ],
         "x-tigrbl-auth": {
           "policy": "public-by-default",
           "public": true,
@@ -1057,7 +5140,22 @@
             "path": "/api/v1/solutions/{slug}",
             "proto": "http.rest",
             "rpcMethod": null
-          }
+          },
+          "bindings": [
+            {
+              "exchange": "request_response",
+              "family": "request",
+              "framing": "json",
+              "framingSpec": "JsonFramingSpec",
+              "methods": [
+                "GET"
+              ],
+              "path": "/api/v1/solutions/{slug}",
+              "proto": "http.rest",
+              "rpcMethod": null
+            }
+          ],
+          "family": "crud"
         }
       }
     },

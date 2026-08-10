@@ -29,6 +29,7 @@ jobs:
       - run: npm ci
       - run: npm run build:content
       - run: npm run build:insights
+      - run: npm run catalog:refresh
       - run: node pkgs/catalog-pipeline/export-editorial-records.mjs
       - run: python -m pip install uv==0.11.28
       - run: uv sync --locked --all-groups
@@ -59,7 +60,7 @@ jobs:
           docker compose -f docker-compose.yaml up -d groupsum-postgres
           docker compose -f docker-compose.yaml run --rm --no-deps \
             -e GROUPSUM_ANALYTICS_DSN=/tmp/groupsum-preflight.duckdb groupsum-catalog-api \
-            python -c "import asyncio; from pathlib import Path; from groupsum_catalog_api.config import Settings; from groupsum_catalog_api.importer import import_catalog; settings = Settings.from_environment(); print(asyncio.run(import_catalog(settings.database_url, Path('/app'), settings.analytics_dsn)))"
+            python -c "import asyncio; from pathlib import Path; from groupsum_catalog_api.importer import import_catalog; print(asyncio.run(import_catalog(Path('/app'))))"
       - name: Replace site and catalog API containers
         run: |
           docker compose -f docker-compose.yaml up -d --no-build \

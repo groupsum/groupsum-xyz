@@ -24,29 +24,3 @@ class Repository(CatalogTable):
     ssot_observed_at = Column(DateTime, nullable=True)
     observed_at = Column(DateTime, nullable=True)
     source_payload = Column(JSON, nullable=True)
-
-    @op_ctx(
-        alias="repository_collection",
-        target="custom",
-        arity="collection",
-        persist="skip",
-        rest=False,
-    )
-    def repository_collection(cls, ctx):
-        from .views import catalog_collection
-
-        return catalog_collection(cls, ctx, "repository")
-
-    @op_ctx(alias="repository_detail", target="custom", arity="member", persist="skip", rest=False)
-    def repository_detail(cls, ctx):
-        from .views import repository_detail
-
-        return repository_detail(cls, ctx)
-
-    @op_ctx(
-        alias="repository_metrics", target="custom", arity="collection", persist="skip", rest=False
-    )
-    def repository_metrics(cls, ctx):
-        from .views import repository_metrics
-
-        return repository_metrics(cls, ctx)
