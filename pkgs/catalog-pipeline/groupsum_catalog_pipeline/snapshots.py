@@ -42,7 +42,13 @@ def _measurement(
 ) -> dict[str, Any]:
     return {
         "measurement_id": _stable_id(
-            "measurement", snapshot_id, subject_type, subject_id, metric_key, period_start or ""
+            "measurement",
+            snapshot_id,
+            subject_type,
+            subject_id,
+            metric_key,
+            period_start or "",
+            _canonical(dimensions or {}),
         ),
         "snapshot_id": snapshot_id,
         "subject_type": subject_type,

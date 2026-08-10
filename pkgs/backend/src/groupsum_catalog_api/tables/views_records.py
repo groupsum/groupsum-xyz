@@ -91,10 +91,11 @@ def record_detail(table, ctx):
             return {"detail": f"{record_type.title()} not found"}
         bundle = row.source_payload or {}
         repository = bundle.get("repository") or {}
-        repositories = repository.get("attached_repositories") or (
+        repository_rows = repository.get("attached_repositories") or (
             [repository] if repository else []
         )
-        packages = bundle.get("packages") or []
+        repositories = [repository_resource(item) for item in repository_rows]
+        packages = [package_resource(item) for item in bundle.get("packages") or []]
         record = row_dict(row) | {"title": row.name, "record_type": record_type}
         outgoing, incoming = _entity_edges(session, entity_type, row.id)
         owner_edge = next((edge for edge in outgoing if edge.relationship_type == "owned_by"), None)

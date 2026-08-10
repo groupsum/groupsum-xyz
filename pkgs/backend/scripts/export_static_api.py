@@ -38,6 +38,18 @@ async def export() -> None:
                 target.write_text(json.dumps(payload, indent=2, sort_keys=True) + "\n")
                 return payload
 
+            for family, endpoint in (
+                ("product", "/api/v1/products"),
+                ("portfolio", "/api/v1/portfolio"),
+            ):
+                collection = await write_endpoint(endpoint, output / family / "index.json")
+                for record in collection.get("records", []):
+                    slug = str(record["slug"])
+                    await write_endpoint(
+                        f"{endpoint}/{quote(slug, safe='')}",
+                        output / family / f"{slug}.json",
+                    )
+
             snapshot_collection = await write_endpoint(
                 "/api/v1/snapshots", output / "snapshots" / "index.json"
             )
@@ -63,6 +75,8 @@ async def export() -> None:
                         "snapshot_id": analytics_overview.get("snapshot_id"),
                         "snapshots": snapshot_collection.get("count", 0),
                         "exports": [
+                            "/api/v1/products",
+                            "/api/v1/portfolio",
                             "/api/v1/snapshots",
                             "/api/v1/analytics/overview",
                             "/api/v1/analytics/summary",

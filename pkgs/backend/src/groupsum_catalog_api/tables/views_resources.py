@@ -11,14 +11,14 @@ def catalog_collection(table, ctx, resource_kind: str):
         for row in session.query(table).all():
             item = source_record(row)
             if resource_kind == "repository":
-                item |= {
+                item = repository_resource(item) | {
                     "route": f"/catalog/repositories/{row.owner}/{row.name}",
                     "package_count": len(item.get("package_ids", [])),
                     "resource_count": len(item.get("related_resources", [])),
                     "release_count": len(item.get("github_releases", [])),
                 }
             elif resource_kind == "package":
-                item |= {
+                item = package_resource(item) | {
                     "route_key": row.route_key,
                     "route": item.get("route")
                     or f"/catalog/packages/{row.ecosystem}/{row.route_key}",
@@ -61,7 +61,7 @@ def repository_detail(table, ctx):
         row = session.query(table).filter(table.owner == owner, table.name == name).first()
         if row is None:
             return {"detail": "Repository not found"}
-        item = source_record(row)
+        item = repository_resource(source_record(row))
         governance = item.get("ssot_governance") or row.ssot_summary or {}
         return {
             "kind": "catalog_repository_record",
@@ -101,7 +101,8 @@ def repository_metrics(table, ctx):
             else session.query(table).all()
         )
         records = [
-            source_record(row) | {"route": f"/catalog/repositories/{row.owner}/{row.name}"}
+            repository_resource(source_record(row))
+            | {"route": f"/catalog/repositories/{row.owner}/{row.name}"}
             for row in rows
         ]
         return {
@@ -125,7 +126,7 @@ def package_detail(table, ctx):
         row = session.query(table).filter(table.route_key == route_key).first()
         if row is None:
             return {"detail": "Package not found"}
-        item = source_record(row)
+        item = package_resource(source_record(row))
         return {
             "kind": "catalog_package_record",
             "item": item,

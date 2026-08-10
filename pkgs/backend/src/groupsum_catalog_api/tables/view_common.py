@@ -30,6 +30,140 @@ def source_record(row) -> dict[str, Any]:
     return dict(source) if isinstance(source, dict) else row_dict(row)
 
 
+def repository_resource(value: dict[str, Any]) -> dict[str, Any]:
+    item = dict(value)
+    full_name = str(item.get("full_name") or "")
+    owner, separator, name = full_name.partition("/")
+    activity = item.get("activity") or {}
+    commit_activity = item.get("commit_activity") or []
+    metrics = dict(item.get("metrics") or {})
+    metrics |= {
+        "stars": metrics.get("stars", item.get("stars") or 0),
+        "forks": metrics.get("forks", item.get("forks") or 0),
+        "watchers": metrics.get("watchers", item.get("watchers") or 0),
+        "contributors": metrics.get("contributors", len(item.get("contributors") or [])),
+        "commits": metrics.get(
+            "commits",
+            activity.get("commit_count", sum(point.get("count", 0) for point in commit_activity)),
+        ),
+    }
+    governance = item.get("governance") or item.get("ssot_governance") or {}
+    if "summary" not in governance:
+        governance = {
+            "governed": bool(governance.get("governed")),
+            "registry_url": governance.get("registry_url"),
+            "registry_sha256": governance.get("source_sha256"),
+            "schema_version": governance.get("schema_version"),
+            "observed_at": governance.get("observed_at"),
+            "summary": governance,
+        }
+    releases = item.get("releases") or item.get("github_releases") or []
+    item |= {
+        "owner": item.get("owner") or (owner if separator else ""),
+        "name": item.get("name") or (name if separator else full_name),
+        "is_archived": bool(item.get("is_archived", item.get("archived", False))),
+        "is_fork": bool(item.get("is_fork", item.get("fork", False))),
+        "role": item.get("role") or "implementation",
+        "metrics": metrics,
+        "history": item.get("history")
+        or {key: [] for key in ("stars", "forks", "watchers", "contributors")},
+        "commit_activity": commit_activity,
+        "releases": releases,
+        "release_count": len(releases),
+        "governance": governance,
+    }
+    return item
+
+
+def package_resource(value: dict[str, Any]) -> dict[str, Any]:
+    item = dict(value)
+    package_id = str(item.get("id") or "package:unknown")
+    dependencies = []
+    for index, raw in enumerate(item.get("dependencies") or []):
+        dependency = dict(raw)
+        target_id = str(
+            dependency.get("target_id")
+            or dependency.get("package_key")
+            or dependency.get("name")
+            or "unknown"
+        )
+        dependency |= {
+            "id": dependency.get("id") or f"{package_id}:dependency:{index}:{target_id}",
+            "source_id": dependency.get("source_id") or package_id,
+            "target_id": target_id,
+            "target_kind": dependency.get("target_kind")
+            or ("package" if dependency.get("internal") else "external-package"),
+            "completeness": dependency.get("completeness") or "catalog-observed",
+        }
+        dependencies.append(dependency)
+
+    dependents = []
+    for index, raw in enumerate(item.get("dependents") or []):
+        dependent = dict(raw)
+        source_id = str(
+            dependent.get("source_id")
+            or dependent.get("package_key")
+            or dependent.get("name")
+            or "unknown"
+        )
+        dependent |= {
+            "id": dependent.get("id") or f"{package_id}:dependent:{index}:{source_id}",
+            "source_id": source_id,
+            "source_name": dependent.get("source_name") or dependent.get("name") or source_id,
+            "target_id": dependent.get("target_id") or package_id,
+            "completeness": dependent.get("completeness") or "catalog-observed",
+        }
+        dependents.append(dependent)
+
+    scope_counts = Counter(str(row.get("scope") or "dependencies") for row in dependencies)
+    completeness_counts = Counter(
+        str(row.get("completeness") or "catalog-observed") for row in dependents
+    )
+    repository = str(item.get("repository") or "")
+    owner, separator, name = repository.partition("/")
+    repositories = item.get("repositories") or []
+    if not repositories and separator:
+        repositories = [
+            {
+                "id": f"repository:{repository}",
+                "owner": owner,
+                "name": name,
+                "url": f"https://github.com/{repository}",
+                "path": item.get("manifest_path"),
+            }
+        ]
+    route = str(item.get("route") or "")
+    item |= {
+        "role": item.get("role") or item.get("attachment_role") or "distribution",
+        "route_key": item.get("route_key") or route.rstrip("/").rsplit("/", 1)[-1] or None,
+        "repositories": repositories,
+        "releases": item.get("releases") or [],
+        "release_count": len(item.get("releases") or []),
+        "dependencies": dependencies,
+        "dependents": dependents,
+        "dependency_count": len(dependencies),
+        "dependent_count": len(dependents),
+        "dependency_summary": {
+            "edge_count": len(dependencies),
+            "unique_target_count": len({row["target_id"] for row in dependencies}),
+            "internal_edge_count": sum(row["target_kind"] == "package" for row in dependencies),
+            "external_edge_count": sum(
+                row["target_kind"] == "external-package" for row in dependencies
+            ),
+            "by_scope": dict(sorted(scope_counts.items())),
+        },
+        "dependent_summary": {
+            "edge_count": len(dependents),
+            "unique_source_count": len({row["source_id"] for row in dependents}),
+            "by_completeness": dict(sorted(completeness_counts.items())),
+            "coverage": (
+                "All reverse edges within this collected catalog; not a complete global count."
+            ),
+        },
+    }
+    return item
+
+
 def _edge_dict(edge) -> dict[str, Any]:
     return row_dict(edge)
 
@@ -113,7 +247,9 @@ __all__ = [
     "_filter",
     "_page",
     "payload",
+    "package_resource",
     "query_params",
+    "repository_resource",
     "row_dict",
     "source_record",
 ]

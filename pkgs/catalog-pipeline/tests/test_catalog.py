@@ -49,7 +49,7 @@ class CatalogCollectorTests(unittest.TestCase):
                 "url": "https://github.com/groupsum/example",
                 "metrics": {"stars": 3, "size_kb": 10},
                 "activity": {"commit_count": 4, "contributor_count": 2},
-                "technologies": {"languages_bytes": {"Python": 100}},
+                "technologies": {"languages_bytes": {"JavaScript": 50, "Python": 100}},
             }],
             "packages": [{
                 "ecosystem": "pypi", "name": "example",
@@ -71,6 +71,16 @@ class CatalogCollectorTests(unittest.TestCase):
                 "package:pypi:example:groupsum/example:pyproject.toml",
             ),
             identities,
+        )
+        measurement_ids = [row["measurement_id"] for row in measurements]
+        self.assertEqual(len(measurement_ids), len(set(measurement_ids)))
+        language_measurements = [
+            row for row in measurements if row["metric_key"] == "language_bytes"
+        ]
+        self.assertEqual(len(language_measurements), 2)
+        self.assertNotEqual(
+            language_measurements[0]["measurement_id"],
+            language_measurements[1]["measurement_id"],
         )
         observations = normalized_observations(catalog, "snapshot:test")
         self.assertEqual(observations[0]["snapshot_id"], "snapshot:test")

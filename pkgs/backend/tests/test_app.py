@@ -187,6 +187,20 @@ async def test_importer_populates_native_table_resources(tmp_path: Path) -> None
         assert products["count"] == counts["products"]
         product_detail = await client.get(f"/api/v1/products/{products['records'][0]['slug']}")
         assert product_detail.status_code == 200, product_detail.json()
+        packaged_product = next(record for record in products["records"] if record["package_count"])
+        packaged_detail = (
+            await client.get(f"/api/v1/products/{packaged_product['slug']}")
+        ).json()
+        package = packaged_detail["implementation"]["packages"][0]
+        assert package["route_key"]
+        assert package["repositories"]
+        assert package["dependency_summary"]["edge_count"] == len(package["dependencies"])
+        assert package["dependent_summary"]["edge_count"] == len(package["dependents"])
+        repository = packaged_detail["implementation"]["repositories"][0]
+        assert repository["owner"]
+        assert repository["name"]
+        assert repository["role"]
+        assert repository["governance"]["summary"] is not None
 
         session, release = Portfolio.acquire(op_alias="list")
         try:
