@@ -15,6 +15,7 @@ def test_postgres_compatibility_migration_covers_legacy_catalog_columns(monkeypa
         "technologies",
     )
     assert LEGACY_NULLABLE_COLUMNS == (
+        ("packages", "registry_url"),
         ("portfolios", "organization_id"),
         ("products", "organization_id"),
         ("repository_ssot_registries", "repository_id"),

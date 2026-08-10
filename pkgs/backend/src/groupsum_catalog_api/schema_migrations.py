@@ -13,6 +13,7 @@ SOURCE_PAYLOAD_TABLES = (
 )
 
 LEGACY_NULLABLE_COLUMNS = (
+    ("packages", "registry_url"),
     ("portfolios", "organization_id"),
     ("products", "organization_id"),
     ("repository_ssot_registries", "repository_id"),
