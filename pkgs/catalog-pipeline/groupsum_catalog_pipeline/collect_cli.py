@@ -38,6 +38,29 @@ def _write_outputs(args, catalog: dict[str, Any], summary: dict[str, Any]) -> di
     args.typescript.write_text(typescript_summary(summary), encoding="utf-8")
     return manifest
 
+
+def retained_owner_repositories(
+    previous_repositories: dict[str, dict[str, Any]],
+    owner: str,
+    observed_names: set[str],
+    detail: str,
+) -> list[dict[str, Any]]:
+    retained = []
+    for full_name, repository in previous_repositories.items():
+        repository_owner = repository.get("owner")
+        if isinstance(repository_owner, dict):
+            repository_owner = repository_owner.get("login")
+        if repository_owner != owner or full_name in observed_names:
+            continue
+        retained.append(
+            {
+                **repository,
+                "collection_status": "retained-after-owner-error",
+                "collection_error": detail,
+            }
+        )
+    return retained
+
 def main() -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("--config", type=Path, default=DEFAULT_CONFIG)
@@ -234,14 +257,27 @@ def main() -> int:
     observed_at = ISO_NOW()
     observations: list[Observation] = []
     raw_repos: list[dict[str, Any]] = []
+    repositories: list[dict[str, Any]] = []
+    failed_repositories: set[str] = set()
     for owner in owners:
         rows, obs = client.github_pages(f"orgs/{owner}/repos?type=public&per_page=100&sort=full_name")
         observations.extend(obs)
+        errors = [item for item in obs if item.status == "error"]
+        if errors:
+            detail = errors[-1].detail or "GitHub owner repository listing failed"
+            observed_names = {str(item.get("full_name")) for item in rows}
+            retained = retained_owner_repositories(
+                previous_repositories, owner, observed_names, detail
+            )
+            repositories.extend(retained)
+            failed_repositories.update(item["full_name"] for item in retained)
+            print(
+                f"owner {owner} listing error: {detail}; retained {len(retained)} records",
+                file=sys.stderr,
+            )
         raw_repos.extend(rows)
     raw_repos = filter_repositories(raw_repos, config)
 
-    repositories: list[dict[str, Any]] = []
-    failed_repositories: set[str] = set()
     workers = int(config.get("request_concurrency", 8))
     with concurrent.futures.ThreadPoolExecutor(max_workers=workers) as executor:
         futures = {executor.submit(collect_repository, client, repo, config): repo["full_name"] for repo in raw_repos}

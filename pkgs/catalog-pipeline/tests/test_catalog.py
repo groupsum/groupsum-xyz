@@ -19,6 +19,7 @@ from catalog_collect import (
 from catalog_render import compile_catalog, related_resource_url, repair_text
 from catalog_validate import validate
 from groupsum_catalog_pipeline.api_records import publish_catalog
+from groupsum_catalog_pipeline.collect_cli import retained_owner_repositories
 from groupsum_catalog_pipeline.collector_common import ApiClient
 from groupsum_catalog_pipeline.snapshots import (
     normalized_measurements,
@@ -58,6 +59,19 @@ class CatalogCollectorTests(unittest.TestCase):
         self.assertEqual(rows, [{"id": 1}, {"id": 2}])
         self.assertEqual(len(observations), 1)
         self.assertEqual(calls, ["https://api.github.com/example?per_page=100"])
+
+    def test_owner_listing_error_retains_unobserved_baseline_records(self):
+        previous = {
+            "groupsum/current": {"full_name": "groupsum/current", "owner": "groupsum"},
+            "groupsum/missing": {"full_name": "groupsum/missing", "owner": "groupsum"},
+            "tigrbl/example": {"full_name": "tigrbl/example", "owner": "tigrbl"},
+        }
+        retained = retained_owner_repositories(
+            previous, "groupsum", {"groupsum/current"}, "HTTP 403"
+        )
+        self.assertEqual([item["full_name"] for item in retained], ["groupsum/missing"])
+        self.assertEqual(retained[0]["collection_status"], "retained-after-owner-error")
+        self.assertEqual(retained[0]["collection_error"], "HTTP 403")
 
     def test_snapshot_facts_use_canonical_entity_identity(self):
         catalog = {

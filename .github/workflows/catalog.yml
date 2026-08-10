@@ -33,7 +33,7 @@ jobs:
       - name: Collect public catalog
         timeout-minutes: 20
         env:
-          GITHUB_TOKEN: ${{ github.token }}
+          GITHUB_TOKEN: ${{ secrets.GROUPSUM_CATALOG_GITHUB_TOKEN || github.token }}
         run: npm run catalog:collect
       - name: Compile display-safe catalog datasets
         run: npm run catalog:render

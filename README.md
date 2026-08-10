@@ -85,7 +85,7 @@ resources appear as cohesive record sections rather than standalone card catalog
 
 ## Public catalog
 
-The evidence-governed catalog pipeline is documented in [`catalog/README.md`](catalog/README.md). It collects public repositories (excluding organization `.github` repositories), complete default-branch commit histories, contributors, releases, deployments, manifests, registry packages and versions, verified language data, dependencies, and observed relationships for the configured Groupsum ecosystem owners. Release, deployment, and relationship evidence is aggregated onto its parent repository, package, or organization for the website. A scheduled workflow refreshes the snapshot and opens a pull request when tracked facts change.
+The evidence-governed catalog pipeline is documented in [`catalog/README.md`](catalog/README.md). It collects public repositories (excluding organization `.github` repositories), complete default-branch commit histories, contributors, releases, a bounded recent deployment observation window, manifests, registry packages and versions, verified language data, dependencies, and observed relationships for the configured Groupsum ecosystem owners. Release, deployment, and relationship evidence is aggregated onto its parent repository, package, or organization for the website. A scheduled workflow refreshes the snapshot and opens a pull request when tracked facts change. Cross-repository collection uses `GROUPSUM_CATALOG_GITHUB_TOKEN` when configured; an owner-listing failure retains checked-in records with explicit error evidence instead of publishing an empty catalog.
 
 ## Deployment
 
