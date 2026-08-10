@@ -56,8 +56,9 @@ uv run --project pkgs/backend tigrcorn groupsum_catalog_api.app:app --app-dir pk
 ```
 
 The default development database is `pkgs/backend/data/groupsum-catalog.sqlite3`.
-Production sets `GROUPSUM_DATABASE_URL` for PostgreSQL and `GROUPSUM_ANALYTICS_PATH` for
-the DuckDB metric store. Schema changes are applied by numbered, idempotent
+Production sets `GROUPSUM_DATABASE_URL` for PostgreSQL and a terse
+`GROUPSUM_ANALYTICS_DSN` such as `quack://groupsum-duckdb:9494` for the DuckDB
+metric store. Schema changes are applied by numbered, idempotent
 migrations before import. Create an online, integrity-checked backup with:
 
 ```powershell
@@ -85,9 +86,10 @@ The evidence-governed catalog pipeline is documented in [`catalog/README.md`](ca
 
 ## Deployment
 
-This repo deploys PostgreSQL, `groupsum-catalog-api`, and the nginx-served
-`groupsum-xyz` frontend. DuckDB is embedded in the API through
-`tigrbl-engine-duckdb`; nginx proxies `/api/` and `/openapi.json` to the API.
+This repo deploys PostgreSQL and a DuckDB Quack service as the database tier,
+followed by `groupsum-catalog-api` and the nginx-served `groupsum-xyz` frontend.
+The API reaches DuckDB only through the named `tigrbl-engine-duckdb` engine;
+nginx proxies `/api/` and `/openapi.json` to the API.
 The deploy workflow persists both data services, runs migrations/import during
 API startup, verifies rendered Peagen relationship markers, checks exact API attachment
 counts, exercises conditional ETag requests, and confirms the deployed OpenAPI contract.

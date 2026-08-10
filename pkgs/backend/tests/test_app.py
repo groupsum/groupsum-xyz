@@ -6,7 +6,7 @@ import httpx
 import pytest
 
 from groupsum_catalog_api.analytics import replace_snapshot_metrics
-from groupsum_catalog_api.app import build_app
+from groupsum_catalog_api.app import _analytics_engine, build_app
 from groupsum_catalog_api.domain.resources.ontology import RESOURCE_TYPES
 from groupsum_catalog_api.domain.resources.relationship_types import RELATIONSHIP_TYPES
 from groupsum_catalog_api.importer import import_catalog
@@ -24,6 +24,22 @@ def test_every_public_table_exposes_exactly_read_and_list() -> None:
     assert len(ALL_TABLES) == 162
     for table in ALL_TABLES:
         assert {operation.target for operation in table.TABLE_PROFILE.ops} == {"read", "list"}
+
+
+def test_analytics_engine_uses_a_terse_quack_dsn() -> None:
+    engine = _analytics_engine(
+        "quack://groupsum-duckdb:9494",
+        token="test-token",
+        disable_ssl=True,
+    )
+
+    assert engine.dsn == "quack://groupsum-duckdb:9494"
+    assert engine.mapping == {
+        "mode": "native",
+        "catalog": "analytics",
+        "disable_ssl": True,
+        "token": "test-token",
+    }
 
 
 def test_entity_tables_have_no_foreign_keys_and_use_one_association_table() -> None:

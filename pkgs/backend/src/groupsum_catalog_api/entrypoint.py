@@ -13,7 +13,7 @@ from .importer import import_catalog
 
 def main() -> None:
     settings = Settings.from_environment()
-    asyncio.run(import_catalog(settings.database_url, Path("/app"), settings.analytics_path))
+    asyncio.run(import_catalog(settings.database_url, Path("/app"), settings.analytics_dsn))
     config = build_config(
         host="0.0.0.0",
         port=8000,

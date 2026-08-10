@@ -174,6 +174,20 @@ wheels = [
 ]
 
 [[package]]
+name = "duckdb-engine"
+version = "0.17.0"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "duckdb" },
+    { name = "packaging" },
+    { name = "sqlalchemy" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/89/d5/c0d8d0a4ca3ffea92266f33d92a375e2794820ad89f9be97cf0c9a9697d0/duckdb_engine-0.17.0.tar.gz", hash = "sha256:396b23869754e536aa80881a92622b8b488015cf711c5a40032d05d2cf08f3cf", size = 48054, upload-time = "2025-03-29T09:49:17.663Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/2a/a2/e90242f53f7ae41554419b1695b4820b364df87c8350aa420b60b20cab92/duckdb_engine-0.17.0-py3-none-any.whl", hash = "sha256:3aa72085e536b43faab635f487baf77ddc5750069c16a2f8d9c6c3cb6083e979", size = 49676, upload-time = "2025-03-29T09:49:15.564Z" },
+]
+
+[[package]]
 name = "greenlet"
 version = "3.5.4"
 source = { registry = "https://pypi.org/simple" }
@@ -198,6 +212,7 @@ source = { editable = "." }
 dependencies = [
     { name = "pydantic" },
     { name = "tigrbl" },
+    { name = "tigrbl-concrete" },
     { name = "tigrbl-engine-duckdb" },
     { name = "tigrbl-engine-postgres" },
     { name = "tigrbl-engine-sqlite" },
@@ -215,7 +230,8 @@ dev = [
 requires-dist = [
     { name = "pydantic", specifier = ">=2.11,<3" },
     { name = "tigrbl", specifier = "==0.4.5.dev4" },
-    { name = "tigrbl-engine-duckdb", specifier = "==0.4.5.dev4" },
+    { name = "tigrbl-concrete", specifier = "==0.4.4" },
+    { name = "tigrbl-engine-duckdb", url = "https://github.com/tigrbl/tigrbl/archive/b92dcf4ae0418a3147aa722e7c8f1d0cad81533c.zip", subdirectory = "pkgs/90_engines/tigrbl_engine_duckdb" },
     { name = "tigrbl-engine-postgres", specifier = "==0.4.5.dev4" },
     { name = "tigrbl-engine-sqlite", specifier = "==0.4.5.dev4" },
     { name = "tigrcorn", specifier = "==0.3.17" },
@@ -854,14 +870,19 @@ wheels = [
 [[package]]
 name = "tigrbl-engine-duckdb"
 version = "0.4.5.dev4"
-source = { registry = "https://pypi.org/simple" }
+source = { url = "https://github.com/tigrbl/tigrbl/archive/b92dcf4ae0418a3147aa722e7c8f1d0cad81533c.zip", subdirectory = "pkgs/90_engines/tigrbl_engine_duckdb" }
 dependencies = [
     { name = "duckdb" },
+    { name = "duckdb-engine" },
     { name = "tigrbl" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/49/73/bf5873338e99db0fd71063892779ad3c2ef059dd82695f8f2425a6b90dd5/tigrbl_engine_duckdb-0.4.5.dev4.tar.gz", hash = "sha256:aa9389d4c996712c069ce6e022e2948dbdb17d65b0ecf33794cca19dc5a5744f", size = 11440, upload-time = "2026-06-27T11:07:24.661Z" }
-wheels = [
-    { url = "https://files.pythonhosted.org/packages/71/fd/4717d8122d5952e8c09072f4a3175b6183851009b8bf9e71a391c7f55916/tigrbl_engine_duckdb-0.4.5.dev4-py3-none-any.whl", hash = "sha256:ffe5a8db19868ba3e87559fe553602fa9484038ddf61344bf0c4861ea1965061", size = 15813, upload-time = "2026-06-27T11:07:23.482Z" },
+sdist = { hash = "sha256:d9d990531675be09388af50a32b7b9b7c9c0f5ef148629709e9beaf09a7cd92f" }
+
+[package.metadata]
+requires-dist = [
+    { name = "duckdb", specifier = ">=1.5.3" },
+    { name = "duckdb-engine", specifier = ">=0.17.0" },
+    { name = "tigrbl", specifier = ">=0.3.0.dev4" },
 ]
 
 [[package]]

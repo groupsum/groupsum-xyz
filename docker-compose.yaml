@@ -17,6 +17,46 @@ services:
     networks:
       - dockerwp
 
+  groupsum-duckdb:
+    image: duckdb/duckdb:1.5.4
+    container_name: groupsum-duckdb
+    restart: unless-stopped
+    entrypoint: ["/duckdb"]
+    command:
+      - /analytics/groupsum-metrics.duckdb
+      - -light-mode
+      - -cmd
+      - .output /dev/null
+      - -cmd
+      - >-
+        INSTALL quack; LOAD quack;
+        CALL quack_serve('quack:0.0.0.0:9494',
+        token => getenv('GROUPSUM_DUCKDB_TOKEN'),
+        allow_other_hostname => true, disable_ssl => true);
+    environment:
+      GROUPSUM_DUCKDB_TOKEN: ${GROUPSUM_DUCKDB_TOKEN:-groupsum-local-token}
+    volumes:
+      - groupsum-duckdb-data:/analytics
+    stdin_open: true
+    tty: true
+    expose:
+      - "9494"
+    healthcheck:
+      test:
+        - CMD
+        - /duckdb
+        - -c
+        - >-
+          LOAD quack;
+          FROM quack_query('quack:localhost:9494', 'SELECT 1',
+          token => getenv('GROUPSUM_DUCKDB_TOKEN'), disable_ssl => true);
+      start_period: 60s
+      interval: 10s
+      timeout: 5s
+      retries: 30
+    networks:
+      - dockerwp
+
   groupsum-catalog-api:
     build:
       context: .
@@ -25,12 +65,14 @@ services:
     restart: unless-stopped
     environment:
       GROUPSUM_DATABASE_URL: postgresql+psycopg://groupsum:${GROUPSUM_POSTGRES_PASSWORD:-groupsum}@groupsum-postgres:5432/groupsum
-      GROUPSUM_ANALYTICS_PATH: /analytics/groupsum-metrics.duckdb
+      GROUPSUM_ANALYTICS_DSN: quack://groupsum-duckdb:9494
+      GROUPSUM_ANALYTICS_TOKEN: ${GROUPSUM_DUCKDB_TOKEN:-groupsum-local-token}
+      GROUPSUM_ANALYTICS_DISABLE_SSL: "true"
       GROUPSUM_PUBLIC_BASE_URL: https://groupsum.xyz
-    volumes:
-      - groupsum-duckdb-data:/analytics
     depends_on:
       groupsum-postgres:
+        condition: service_healthy
+      groupsum-duckdb:
         condition: service_healthy
     healthcheck:
       test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8000/healthz')"]

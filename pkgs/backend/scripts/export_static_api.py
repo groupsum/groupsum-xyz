@@ -17,10 +17,10 @@ async def export() -> None:
     backend_root = Path(__file__).resolve().parents[1]
     repo_root = backend_root.parents[1]
     database_path = backend_root / "data" / "static-api-export.sqlite3"
-    analytics_path = backend_root / "data" / "static-api-export.duckdb"
+    analytics_dsn = backend_root / "data" / "static-api-export.duckdb"
     output = backend_root / "generated" / "api-snapshots"
-    app = build_app(database_path, analytics_path)
-    await import_catalog(database_path, repo_root, analytics_path)
+    app = build_app(database_path, analytics_dsn)
+    await import_catalog(database_path, repo_root, analytics_dsn)
     if output.exists():
         shutil.rmtree(output)
     transport = httpx.ASGITransport(app=app)

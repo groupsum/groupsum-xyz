@@ -8,7 +8,9 @@ from pathlib import Path
 @dataclass(frozen=True, slots=True)
 class Settings:
     database_url: str
-    analytics_path: Path
+    analytics_dsn: str
+    analytics_token: str | None
+    analytics_disable_ssl: bool
     public_base_url: str
 
     @classmethod
@@ -19,9 +21,15 @@ class Settings:
                 "GROUPSUM_DATABASE_URL",
                 f"sqlite:///{data_root / 'groupsum-catalog.sqlite3'}",
             ),
-            analytics_path=Path(
-                os.getenv("GROUPSUM_ANALYTICS_PATH", data_root / "groupsum-metrics.duckdb")
+            analytics_dsn=os.getenv(
+                "GROUPSUM_ANALYTICS_DSN",
+                str(data_root / "groupsum-metrics.duckdb"),
             ),
+            analytics_token=os.getenv("GROUPSUM_ANALYTICS_TOKEN") or None,
+            analytics_disable_ssl=os.getenv(
+                "GROUPSUM_ANALYTICS_DISABLE_SSL", "false"
+            ).lower()
+            in {"1", "true", "yes", "on"},
             public_base_url=os.getenv("GROUPSUM_PUBLIC_BASE_URL", "https://groupsum.xyz").rstrip(
                 "/"
             ),

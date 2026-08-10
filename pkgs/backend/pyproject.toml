@@ -5,7 +5,8 @@ description = "Durable Tigrbl-backed catalog and resource API for groupsum.xyz"
 requires-python = ">=3.12,<3.13"
 dependencies = [
   "tigrbl==0.4.5.dev4",
-  "tigrbl-engine-duckdb==0.4.5.dev4",
+  "tigrbl-concrete==0.4.4",
+  "tigrbl-engine-duckdb @ https://github.com/tigrbl/tigrbl/archive/b92dcf4ae0418a3147aa722e7c8f1d0cad81533c.zip#subdirectory=pkgs/90_engines/tigrbl_engine_duckdb",
   "tigrbl-engine-postgres==0.4.5.dev4",
   "tigrbl-engine-sqlite==0.4.5.dev4",
   "tigrcorn==0.3.17",
@@ -25,6 +26,9 @@ build-backend = "hatchling.build"
 
 [tool.hatch.build.targets.wheel]
 packages = ["src/groupsum_catalog_api"]
+
+[tool.hatch.metadata]
+allow-direct-references = true
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]

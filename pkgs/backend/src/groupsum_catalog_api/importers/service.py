@@ -299,12 +299,12 @@ def _attach_editorial(
 async def import_catalog_data(
     database_path: str | Path,
     repo_root: Path,
-    analytics_path: Path | None = None,
+    analytics_dsn: str | Path | None = None,
 ) -> dict[str, int | str]:
     editorial, repository_rows, package_rows, technology_rows = load_inputs(repo_root)
     manifest, observation_rows, collected_measurements = snapshot_bundle(repo_root)
     snapshot_id = str(manifest["snapshot_id"])
-    del database_path, analytics_path
+    del database_path, analytics_dsn
     measurement_rows = collected_measurements or rendered_measurements(
         snapshot_id, repository_rows, package_rows, technology_rows
     )
