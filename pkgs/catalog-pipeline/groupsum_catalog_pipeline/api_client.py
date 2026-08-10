@@ -61,14 +61,31 @@ class CatalogApiClient:
         rows: Iterable[dict[str, Any]],
         *,
         chunk_size: int = 250,
+        max_payload_bytes: int = 8 * 1024 * 1024,
     ) -> dict[str, int]:
         records = list(rows)
         totals = {"accepted": 0, "created": 0, "existing": 0}
-        for offset in range(0, len(records), chunk_size):
+        batches: list[list[dict[str, Any]]] = []
+        batch: list[dict[str, Any]] = []
+        batch_bytes = len(snapshot_id.encode()) + 64
+        for record in records:
+            record_bytes = len(json.dumps(record, separators=(",", ":")).encode()) + 1
+            if batch and (
+                len(batch) >= chunk_size
+                or batch_bytes + record_bytes > max_payload_bytes
+            ):
+                batches.append(batch)
+                batch = []
+                batch_bytes = len(snapshot_id.encode()) + 64
+            batch.append(record)
+            batch_bytes += record_bytes
+        if batch:
+            batches.append(batch)
+        for batch in batches:
             response = self._request(
                 "POST",
                 path,
-                {"snapshot_id": snapshot_id, "records": records[offset : offset + chunk_size]},
+                {"snapshot_id": snapshot_id, "records": batch},
             )
             for key in totals:
                 totals[key] += int(response.get(key, 0))

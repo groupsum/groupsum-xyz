@@ -18,6 +18,7 @@ from catalog_collect import (
 )
 from catalog_render import compile_catalog, related_resource_url, repair_text
 from catalog_validate import validate
+from groupsum_catalog_pipeline.api_client import CatalogApiClient
 from groupsum_catalog_pipeline.api_records import publish_catalog
 from groupsum_catalog_pipeline.collect_cli import retained_owner_repositories
 from groupsum_catalog_pipeline.collector_common import ApiClient
@@ -72,6 +73,24 @@ class CatalogCollectorTests(unittest.TestCase):
         self.assertEqual([item["full_name"] for item in retained], ["groupsum/missing"])
         self.assertEqual(retained[0]["collection_status"], "retained-after-owner-error")
         self.assertEqual(retained[0]["collection_error"], "HTTP 403")
+
+    def test_api_publication_batches_records_by_encoded_size(self):
+        client = object.__new__(CatalogApiClient)
+        requests = []
+
+        def request(method, path, body):
+            requests.append((method, path, body))
+            return {"accepted": len(body["records"]), "created": 0, "existing": 0}
+
+        client._request = request
+        totals = client.publish_records(
+            "/internal/v1/catalog/entities/source.repository",
+            "snapshot:test",
+            [{"id": str(index), "payload": "x" * 100} for index in range(3)],
+            max_payload_bytes=200,
+        )
+        self.assertEqual(totals["accepted"], 3)
+        self.assertEqual([len(item[2]["records"]) for item in requests], [1, 1, 1])
 
     def test_snapshot_facts_use_canonical_entity_identity(self):
         catalog = {
