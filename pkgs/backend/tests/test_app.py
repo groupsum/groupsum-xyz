@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+from datetime import UTC, datetime
 from pathlib import Path
 
 import httpx
@@ -16,6 +17,7 @@ from groupsum_catalog_api.tables.product import Product
 from groupsum_catalog_api.tables.registry import ALL_TABLES, ENTITY_TABLES, RESOURCE_TABLES
 from groupsum_catalog_api.tables.repository import Repository
 from groupsum_catalog_api.tables.technology import Technology
+from groupsum_catalog_api.tables.view_common import latest_timestamp
 
 
 def test_every_table_exposes_only_hidden_create_read_and_list() -> None:
@@ -77,6 +79,13 @@ def test_quack_initialization_tolerates_only_current_table_idempotency() -> None
 def test_metrics_use_a_tigrbl_owned_append_only_table() -> None:
     assert MetricObservation.__tablename__ == "catalog_metric_observations"
     assert not MetricObservation.__table__.indexes
+
+
+def test_latest_timestamp_accepts_database_and_source_payload_values() -> None:
+    database_value = datetime(2026, 8, 9, tzinfo=UTC)
+    source_value = "2026-08-10T00:00:00Z"
+
+    assert latest_timestamp((database_value, source_value)) == source_value
 
 
 def test_entity_tables_have_no_foreign_keys_and_use_one_association_table() -> None:

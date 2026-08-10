@@ -30,6 +30,11 @@ def source_record(row) -> dict[str, Any]:
     return dict(source) if isinstance(source, dict) else row_dict(row)
 
 
+def latest_timestamp(values) -> Any:
+    candidates = [value for value in values if value]
+    return max(candidates, key=lambda value: str(value), default=None)
+
+
 def repository_resource(value: dict[str, Any]) -> dict[str, Any]:
     item = dict(value)
     full_name = str(item.get("full_name") or "")
@@ -247,6 +252,7 @@ __all__ = [
     "_filter",
     "_page",
     "payload",
+    "latest_timestamp",
     "package_resource",
     "query_params",
     "repository_resource",

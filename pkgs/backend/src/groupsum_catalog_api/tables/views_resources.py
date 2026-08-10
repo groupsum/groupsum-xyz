@@ -36,9 +36,7 @@ def catalog_collection(table, ctx, resource_kind: str):
         values = _filter(values, params)
         facets = _facets(values)
         page_values, page, page_size, page_count = _page(values, params)
-        observed = max(
-            (item.get("observed_at") for item in values if item.get("observed_at")), default=None
-        )
+        observed = latest_timestamp(item.get("observed_at") for item in values)
         return {
             "kind": f"catalog_{resource_kind}_collection",
             "resource_kind": resource_kind,
@@ -108,10 +106,7 @@ def repository_metrics(table, ctx):
         return {
             "kind": "repository_metric_snapshot",
             "owner": owner or None,
-            "generated_at": max(
-                (item.get("observed_at") for item in records if item.get("observed_at")),
-                default=None,
-            ),
+            "generated_at": latest_timestamp(item.get("observed_at") for item in records),
             "count": len(records),
             "repositories": records,
         }
@@ -187,10 +182,7 @@ def resource_collection(table, ctx):
             "page_size": page_size,
             "page_count": page_count,
             "facets": facets,
-            "generated_at": max(
-                (item.get("observed_at") for item in values if item.get("observed_at")),
-                default=None,
-            ),
+            "generated_at": latest_timestamp(item.get("observed_at") for item in values),
             "records": page_values,
         }
 
