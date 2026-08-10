@@ -101,7 +101,7 @@ export const SiteHeader: React.FC<SiteHeaderProps> = ({ currentPath, onNavigate 
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex h-16 items-center justify-between gap-4">
           <div className="flex min-w-0 items-center gap-3">
-          <a href="/catalog" onClick={(event) => navigate("/catalog", event)} className="flex min-w-0 shrink-0 items-center gap-2 rounded-lg p-1 focus-visible:outline-3">
+          <a href="/" onClick={(event) => navigate("/", event)} className="flex min-w-0 shrink-0 items-center gap-2 rounded-lg p-1 focus-visible:outline-3">
             <span className="grid h-8 w-8 shrink-0 place-items-center rounded-lg bg-ink font-serif text-lg font-bold text-white shadow-sm" aria-hidden="true">G</span>
             <span className="min-w-0">
               <span className="block font-serif text-lg font-bold leading-none tracking-tight text-ink">GroupSum</span>

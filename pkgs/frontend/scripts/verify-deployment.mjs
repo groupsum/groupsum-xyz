@@ -37,6 +37,13 @@ async function verify() {
   await requirePageAssetMarker(repositoryCollectionHtml, "Repository catalog records", "repository collection table");
   const packageCollectionHtml = await fetchText("/catalog/packages/");
   await requirePageAssetMarker(packageCollectionHtml, "Package catalog records", "package collection table");
+  await requirePageAssetMarker(packageCollectionHtml, "/api/v1/catalog/", "curated Tigrbl catalog API");
+  for (const dataset of ["repositories", "packages", "resources", "technologies"]) {
+    const collection = JSON.parse(await fetchText(`/api/v1/catalog/${dataset}?page=1&page_size=1`));
+    if (!Array.isArray(collection.records) || collection.count < 1) {
+      throw new Error(`${dataset} Tigrbl collection is empty or malformed`);
+    }
+  }
   const portwyrmEvidence = JSON.parse(await fetchText("/catalog/product-evidence/groupsum/portwyrm.json"));
   if (portwyrmEvidence.repository?.full_name !== "groupsum/portwyrm") throw new Error("Portwyrm product evidence has the wrong repository");
   if (!portwyrmEvidence.packages?.length) throw new Error("Portwyrm product evidence is missing packages");
