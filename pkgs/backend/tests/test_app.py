@@ -8,6 +8,7 @@ import pytest
 from groupsum_catalog_api.app import _analytics_engine, _initialize, build_app
 from groupsum_catalog_api.domain.resources.ontology import RESOURCE_TYPES
 from groupsum_catalog_api.tables.association import Association
+from groupsum_catalog_api.tables.metric_observation import MetricObservation
 from groupsum_catalog_api.tables.organization import Organization
 from groupsum_catalog_api.tables.package import Package
 from groupsum_catalog_api.tables.portfolio import Portfolio
@@ -43,32 +44,17 @@ def test_analytics_engine_uses_a_terse_quack_dsn() -> None:
     }
 
 
-def test_quack_initialization_tolerates_only_the_remote_existing_table_error() -> None:
-    class Router:
-        pass
-
-    class ExistingRemoteTable:
-        routers = {"public": Router(), "internal": Router()}
-
-        def initialize(self) -> None:
-            raise RuntimeError('Table with name "metric_observations" already exists!')
-
-    app = ExistingRemoteTable()
-    _initialize(app, "quack://groupsum-duckdb:9494")
-    assert app._ddl_executed is True
-    assert all(router._ddl_executed is True for router in app.routers.values())
-
-    with pytest.raises(RuntimeError, match="metric_observations"):
-        _initialize(ExistingRemoteTable(), "analytics.duckdb")
-
-
-def test_quack_initialization_propagates_other_errors() -> None:
+def test_initialize_propagates_engine_errors() -> None:
     class BrokenApp:
         def initialize(self) -> None:
             raise RuntimeError("remote unavailable")
 
     with pytest.raises(RuntimeError, match="remote unavailable"):
-        _initialize(BrokenApp(), "quack://groupsum-duckdb:9494")
+        _initialize(BrokenApp())
+
+
+def test_metrics_use_a_tigrbl_owned_append_only_table() -> None:
+    assert MetricObservation.__tablename__ == "catalog_metric_observations"
 
 
 def test_entity_tables_have_no_foreign_keys_and_use_one_association_table() -> None:

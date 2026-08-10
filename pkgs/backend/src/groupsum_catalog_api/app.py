@@ -11,13 +11,12 @@ from tigrbl_core._spec import AppSpec, EngineSpec
 from .config import Settings
 from .internal_api import INTERNAL_API_ROUTER
 from .public_api import PUBLIC_API_ROUTER, analytics_readiness
-from .schema_migrations import reconcile_legacy_analytics_schema, reconcile_legacy_catalog_schema
+from .schema_migrations import reconcile_legacy_catalog_schema
 from .tables.registry import ALL_TABLES
 
 APP_TITLE = "Groupsum Catalog API"
 APP_VERSION = "0.4.0"
 APP_DESCRIPTION = "Tigrbl catalog API with curated public reads and internal append-only writes."
-QUACK_EXISTING_TABLE_ERROR = 'Table with name "metric_observations" already exists!'
 
 
 class CatalogAppSpec(
@@ -55,25 +54,8 @@ def _analytics_engine(
     )
 
 
-def _initialize(catalog_app: TigrblApp, analytics_dsn: str) -> bool:
-    try:
-        catalog_app.initialize()
-    except Exception as exc:
-        # duckdb-engine checkfirst currently inspects only the local in-memory
-        # catalog, so it cannot see tables attached through Quack. The remote
-        # table is already durable; tolerate only that exact idempotent DDL case.
-        if not (
-            analytics_dsn.lower().startswith("quack:")
-            and QUACK_EXISTING_TABLE_ERROR in str(exc)
-        ):
-            raise
-        catalog_app._ddl_executed = True
-        routers = getattr(catalog_app, "routers", ())
-        router_values = routers.values() if isinstance(routers, dict) else routers
-        for router in router_values:
-            router._ddl_executed = True
-        return True
-    return False
+def _initialize(catalog_app: TigrblApp) -> None:
+    catalog_app.initialize()
 
 
 def build_app(
@@ -124,11 +106,9 @@ def build_app(
             routers=(PUBLIC_API_ROUTER, INTERNAL_API_ROUTER),
         )
     )
-    legacy_analytics_schema = _initialize(catalog_app, analytics)
+    _initialize(catalog_app)
     if database_kind == "postgres":
         reconcile_legacy_catalog_schema()
-    if legacy_analytics_schema:
-        catalog_app.add_event_handler("startup", reconcile_legacy_analytics_schema)
     catalog_app.mount_openapi(path="/openapi.json")
 
     async def catalog_healthz():

@@ -6,7 +6,7 @@ from .base import *  # noqa: F403
 class MetricObservation(CatalogTable):
     """One immutable analytical measurement stored by the named DuckDB engine."""
 
-    __tablename__ = "metric_observations"
+    __tablename__ = "catalog_metric_observations"
     ENGINE_NAME = "analytics"
 
     measurement_id = Column(String(160), primary_key=True)
