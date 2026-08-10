@@ -61,16 +61,16 @@ const productRecordsFrom = (file) => {
     .map((match) => ({ slug: match[1], name: match[2], summary: match[3] }));
 };
 const productMetadataRecords = productRecordsFrom("pkgs/frontend/src/data/entities.ts");
-const readApiSnapshot = (family, name) => JSON.parse(fs.readFileSync(`pkgs/backend/generated/api-snapshots/${family}/${name}.json`, "utf8"));
 const readOptionalApiSnapshot = (family, name) => {
   const target = `pkgs/backend/generated/api-snapshots/${family}/${name}.json`;
   return fs.existsSync(target) ? JSON.parse(fs.readFileSync(target, "utf8")) : null;
 };
-const generatedPortfolioCollection = readApiSnapshot("portfolio", "index");
-const generatedPortfolioRecords = generatedPortfolioCollection.records.map((item) => {
-  const model = readApiSnapshot("portfolio", item.slug);
+const generatedPortfolioCollection = readOptionalApiSnapshot("portfolio", "index");
+const generatedPortfolioRecords = (generatedPortfolioCollection?.records || []).flatMap((item) => {
+  const model = readOptionalApiSnapshot("portfolio", item.slug);
+  if (!model) return [];
   const signals = model.implementation?.signals?.metrics || {};
-  return {
+  return [{
     route: `/portfolio/records/${item.slug}/`,
     url: absolute(`/portfolio/records/${item.slug}/`),
     title: `${item.title} | GroupSum portfolio`,
@@ -92,7 +92,7 @@ const generatedPortfolioRecords = generatedPortfolioCollection.records.map((item
     organizationName: model.record.organization_name,
     organizationUrl: model.record.organization_url,
     organizationId: `${root}/products/${model.record.organization_slug}/#organization`,
-  };
+  }];
 });
 const detailRecords = [
   ...slugsFrom("pkgs/frontend/src/data/portfolio.ts").flatMap((slug) => ["", "projects/", "packages/", "specifications/"].map((prefix) => ({ route: `/portfolio/${prefix}${slug}/`, url: absolute(`/portfolio/${prefix}${slug}/`), title: `${slug.replace(/[-_]/g, " ")} | GroupSum portfolio`, description: `Portfolio record for ${slug.replace(/[-_]/g, " ")}.`, type: "website" }))),
@@ -169,31 +169,6 @@ function writeCleanFullManifest() {
 fs.mkdirSync(OUT, { recursive: true }); const shellHtml = fs.readFileSync(path.join(OUT, "index.html"), "utf8");
 for (const record of inventory) { if (record.route === "/") continue; const outputDir = path.join(OUT, record.route); fs.mkdirSync(outputDir, { recursive: true }); fs.writeFileSync(path.join(outputDir, "index.html"), injectRenderedApp(injectHeadMeta(shellHtml, record), record)); }
 fs.writeFileSync(path.join(OUT, "index.html"), injectRenderedApp(injectHeadMeta(shellHtml, pages[0]), pages[0]));
-for (const [family, apiFamily] of [["product", "products"], ["portfolio", "portfolio"]]) {
-  const modelDir = path.join("pkgs", "backend", "generated", "api-snapshots", family);
-  for (const filename of fs.readdirSync(modelDir).filter((name) => name.endsWith(".json"))) {
-    if (filename === "index.json") continue;
-    const apiName = filename.replace(/\.json$/, "");
-    const apiTarget = path.join(OUT, "api", "v1", apiFamily, apiName);
-    fs.mkdirSync(path.dirname(apiTarget), { recursive: true });
-    fs.writeFileSync(apiTarget, fs.readFileSync(path.join(modelDir, filename)));
-  }
-}
-const repositoryMetricsTarget = path.join(OUT, "api", "v1", "repository-metrics");
-fs.mkdirSync(path.dirname(repositoryMetricsTarget), { recursive: true });
-fs.copyFileSync(
-  path.join("pkgs", "backend", "generated", "api-snapshots", "repository-metrics", "index.json"),
-  repositoryMetricsTarget,
-);
-for (const [source, target] of [
-  [path.join("snapshots", "index.json"), path.join("snapshots")],
-  [path.join("analytics", "overview.json"), path.join("analytics", "overview")],
-  [path.join("analytics", "summary.json"), path.join("analytics", "summary")],
-]) {
-  const apiTarget = path.join(OUT, "api", "v1", target);
-  fs.mkdirSync(path.dirname(apiTarget), { recursive: true });
-  fs.copyFileSync(path.join("pkgs", "backend", "generated", "api-snapshots", source), apiTarget);
-}
 writeDiscovery();
 writeCleanFullManifest();
 const catalogOut = path.join(OUT, "catalog");
