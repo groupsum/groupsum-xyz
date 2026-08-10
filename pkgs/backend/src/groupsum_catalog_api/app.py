@@ -16,6 +16,7 @@ from .tables.registry import ALL_TABLES
 APP_TITLE = "Groupsum Catalog API"
 APP_VERSION = "0.4.0"
 APP_DESCRIPTION = "Tigrbl catalog API with curated public reads and internal append-only writes."
+QUACK_EXISTING_TABLE_ERROR = 'Table with name "metric_observations" already exists!'
 
 
 class CatalogAppSpec(
@@ -51,6 +52,20 @@ def _analytics_engine(
         dsn=analytics_dsn,
         mapping=mapping,
     )
+
+
+def _initialize(catalog_app: TigrblApp, analytics_dsn: str) -> None:
+    try:
+        catalog_app.initialize()
+    except Exception as exc:
+        # duckdb-engine checkfirst currently inspects only the local in-memory
+        # catalog, so it cannot see tables attached through Quack. The remote
+        # table is already durable; tolerate only that exact idempotent DDL case.
+        if not (
+            analytics_dsn.lower().startswith("quack:")
+            and QUACK_EXISTING_TABLE_ERROR in str(exc)
+        ):
+            raise
 
 
 def build_app(
@@ -101,7 +116,7 @@ def build_app(
             routers=(PUBLIC_API_ROUTER, INTERNAL_API_ROUTER),
         )
     )
-    catalog_app.initialize()
+    _initialize(catalog_app, analytics)
     catalog_app.mount_openapi(path="/openapi.json")
 
     async def catalog_healthz():
