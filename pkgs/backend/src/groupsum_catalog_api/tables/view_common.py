@@ -73,6 +73,7 @@ def repository_resource(value: dict[str, Any]) -> dict[str, Any]:
         "history": item.get("history")
         or {key: [] for key in ("stars", "forks", "watchers", "contributors")},
         "commit_activity": commit_activity,
+        "contributors": item.get("contributors") or activity.get("contributors") or [],
         "releases": releases,
         "release_count": len(releases),
         "governance": governance,

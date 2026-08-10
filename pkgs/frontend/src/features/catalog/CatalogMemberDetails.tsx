@@ -5,7 +5,7 @@ import {
   catalogSummary,
 } from "../../data/catalog.generated";
 import type { RepositorySignals } from "../../api/catalog";
-import { Activity, ArrowLeft, ArrowRight, BadgeCheck, BookOpen, Boxes, Braces, CalendarDays, Code2, ExternalLink, FileCode2, GitBranch, Globe2, Package, Scale, ServerCog, ShieldCheck } from "lucide-react";
+import { Activity, ArrowLeft, ArrowRight, BadgeCheck, BookOpen, Boxes, Braces, CalendarDays, Code2, ExternalLink, FileCode2, GitBranch, Globe2, Package, Scale, ServerCog, ShieldCheck, Users } from "lucide-react";
 import { RepositorySignalStrip } from "./RepositorySignals";
 import { EntityOwnership } from "./EntityIdentity";
 import { CatalogPill, CollectionHeader, ContextRailCard, FactPanel, MemberRowCard, RecordIdentityCard, SurfaceCard, factIcons, MetricBand, metricIcons, type MetricItem } from "./CatalogVisuals";
@@ -23,6 +23,9 @@ export function RepositoryDetail({ record, onNavigate }: { record: CatalogRecord
   const deployment = valueRecord(record.latest_deployment);
   const packages = valueRecords(record.packages);
   const githubReleases = valueRecords(record.github_releases);
+  const contributors = valueRecords(record.contributors).sort(
+    (left, right) => Number(right.contributions || 0) - Number(left.contributions || 0),
+  );
   const packageReleasePoints = new Map<string, number>();
   for (const pkg of packages) for (const point of valueRecords(pkg.release_activity)) {
     const month = String(point.month || "");
@@ -47,6 +50,20 @@ export function RepositoryDetail({ record, onNavigate }: { record: CatalogRecord
       <DetailSection title="Observed activity" intro="Repository-owned counts and persisted activity. A single observation is never presented as a trend.">
         <RepositorySignalStrip signals={repositorySignals(record)} />
         <MetricBand label="Additional repository metrics" items={Object.entries(valueRecord(record.metrics)).filter(([key]) => !["stars", "forks", "watchers", "contributors", "commits", "relationships"].includes(key)).map(([key, value]) => ({ label: humanLabel(key), value: Number(value || 0), icon: metricIcons[key] }))} />
+      </DetailSection>
+      <DetailSection title="Contributors" intro="Specific contributor identities and repository-scoped contribution totals observed from GitHub's contributors API.">
+        {contributors.length > 0 ? <ol className="grid gap-3 sm:grid-cols-2 xl:grid-cols-3" aria-label={`Contributors to ${recordTitle(record)}`}>
+          {contributors.map((contributor, index) => {
+            const login = String(contributor.login || contributor.name || `Contributor ${index + 1}`);
+            const displayName = String(contributor.name || contributor.login || login);
+            const href = String(contributor.url || "");
+            return <li key={String(contributor.id || contributor.login || contributor.name || index)} className="flex min-w-0 items-center gap-3 rounded-[var(--radius-md)] border border-[var(--color-border-soft)] bg-[var(--color-surface-raised)] p-3">
+              <span className="grid h-9 w-9 shrink-0 place-items-center rounded-full border border-[var(--color-border-soft)] bg-canvas text-ink-muted"><Users className="h-4 w-4" /></span>
+              <div className="min-w-0 flex-1"><p className="truncate text-sm font-semibold text-ink" title={displayName}>{displayName}</p><p className="truncate text-[10px] font-mono text-ink-muted">{contributor.login ? `@${login}` : "Anonymous Git contributor"}</p><p className="mt-1 text-[10px] font-mono tabular-nums text-ink-muted">{Number(contributor.contributions || 0).toLocaleString()} contributions</p></div>
+              {href && <a href={href} target="_blank" rel="noreferrer" aria-label={`Open ${displayName}'s GitHub profile`} className="grid min-h-11 min-w-11 place-items-center text-accent hover:text-ink"><ExternalLink className="h-4 w-4" /></a>}
+            </li>;
+          })}
+        </ol> : <p className="text-sm text-ink-muted">No contributor identities were reported by the available GitHub observation.</p>}
       </DetailSection>
       <RepositoryLanguagePanel languagesValue={record.languages} technologiesValue={record.technologies} />
       <DetailSection title="Release activity" intro="Repository analytics aggregate its GitHub releases and the registry releases owned by contained packages. Individual package histories remain on their package records.">

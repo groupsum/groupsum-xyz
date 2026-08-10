@@ -13,7 +13,7 @@ import { datasetOrder, formatDate, humanLabel, isCurrentPageLink, metricItems, r
 function MemberSectionNav({ record }: { record: CatalogRecord }) {
   const kind = String(record.kind || "record");
   const linkedSectionLabels = valueRecords(record.linked_sections).map((section) => String(section.label || humanLabel(String(section.type_key || "resource"))));
-  const sections = kind === "repository" ? ["Repository overview", "Observed activity", "Release activity", ...(record.ssot_governance && Boolean(record.ssot_governance.governed) ? ["SSOT governance"] : []), "Latest observed events", "Contained packages", ...linkedSectionLabels]
+  const sections = kind === "repository" ? ["Repository overview", "Observed activity", "Contributors", "Release activity", ...(record.ssot_governance && Boolean(record.ssot_governance.governed) ? ["SSOT governance"] : []), "Latest observed events", "Contained packages", ...linkedSectionLabels]
     : kind === "package" ? ["Package overview", "Dependencies", "Dependents", "Release history"]
       : kind === "resource" ? [`${String(record.type_label || humanLabel(String(record.resource_type || "resource")))} overview`, ...linkedSectionLabels]
         : ["Overview", "Connected resources", "Source observations"];

@@ -55,7 +55,7 @@ export function ExplorerFilterToolbar({ filters, onChange, owners = [], ecosyste
       </div>}
     <div className="flex flex-wrap items-center justify-between gap-2 border-b border-[var(--color-border-soft)] pb-2 font-mono text-xs text-ink-muted">
       <span>Showing <strong className="text-ink">{total.toLocaleString()}</strong> matching records</span>
-      <span className="hidden text-[#7A827C] sm:inline">{statusDetail}</span>
+      <span className="hidden text-[#7A827C] sm:inline" aria-live="polite">{statusDetail}</span>
     </div>
   </div>;
 }

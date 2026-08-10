@@ -138,3 +138,71 @@ async def test_records_are_created_before_snapshot_finalization(
             "delete" in methods for path, methods in document["paths"].items()
             if path.startswith("/internal/")
         )
+
+
+@pytest.mark.anyio
+async def test_catalog_aggregates_are_stable_across_pages(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch
+) -> None:
+    monkeypatch.setenv("GROUPSUM_CATALOG_INTERNAL_TOKEN", "test-token")
+    app = build_app(tmp_path / "catalog.sqlite3", tmp_path / "metrics.duckdb")
+    transport = httpx.ASGITransport(app=app)
+    headers = {"Authorization": "Bearer test-token"}
+    records = []
+    for index, (stars, packages, governed) in enumerate(
+        ((10, 1, True), (20, 2, False), (30, 3, True)), start=1
+    ):
+        source = {
+            "id": f"repository:test-{index}",
+            "owner": "test",
+            "name": f"repository-{index}",
+            "url": f"https://github.com/test/repository-{index}",
+            "metrics": {"stars": stars},
+            "contributors": [
+                {
+                    "id": str(index),
+                    "login": f"contributor-{index}",
+                    "contributions": index,
+                    "url": f"https://github.com/contributor-{index}",
+                }
+            ],
+            "package_ids": [f"package:{index}-{offset}" for offset in range(packages)],
+            "ssot_governed": governed,
+            "observed_at": "2026-08-10T00:00:00Z",
+        }
+        records.append(
+            {
+                "id": source["id"],
+                "provider": "github",
+                "owner": source["owner"],
+                "name": source["name"],
+                "url": source["url"],
+                "is_archived": False,
+                "is_fork": False,
+                "ssot_governed": governed,
+                "observed_at": source["observed_at"],
+                "source_payload": source,
+            }
+        )
+
+    async with httpx.AsyncClient(transport=transport, base_url="http://test") as client:
+        published = await client.post(
+            "/internal/v1/catalog/entities/source.repository",
+            headers=headers,
+            json={"snapshot_id": "snapshot:aggregate-test", "records": records},
+        )
+        assert published.status_code == 200, published.text
+
+        first = (
+            await client.get("/api/v1/catalog/repositories", params={"page": 1, "page_size": 2})
+        ).json()
+        second = (
+            await client.get("/api/v1/catalog/repositories", params={"page": 2, "page_size": 2})
+        ).json()
+
+    expected = {"stars": 60, "ssot_governed": 2, "contained_packages": 6}
+    assert first["count"] == second["count"] == 3
+    assert first["aggregates"] == second["aggregates"] == expected
+    assert first["page"] == 1 and len(first["records"]) == 2
+    assert second["page"] == 2 and len(second["records"]) == 1
+    assert first["records"][0]["contributors"][0]["login"].startswith("contributor-")

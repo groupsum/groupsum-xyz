@@ -15,6 +15,7 @@ export type CatalogCollection = {
   page_size: number;
   records: CatalogRecord[];
   facets: Record<string, Record<string, number>>;
+  aggregates: Record<string, number>;
 };
 export type CatalogMember = {
   item: CatalogRecord;

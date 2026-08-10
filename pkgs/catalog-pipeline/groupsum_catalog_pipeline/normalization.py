@@ -1,26 +1,8 @@
 from __future__ import annotations
 
-
-import argparse
-import concurrent.futures
-import dataclasses
-import datetime as dt
-import hashlib
 import json
-import os
-import re
-import subprocess
-import sys
-import threading
-import time
-import tomllib
-import urllib.error
-import urllib.parse
-import urllib.request
-from pathlib import Path
-from typing import Any, Iterable
+from typing import Any
 
-from .collector_common import *  # noqa: F403
 
 def relation_rows(repositories: list[dict[str, Any]], packages: list[dict[str, Any]]) -> list[dict[str, Any]]:
     relations: dict[tuple[str, ...], dict[str, Any]] = {}
@@ -80,7 +62,14 @@ def summarize(catalog: dict[str, Any]) -> dict[str, Any]:
         "fork_repositories": sum(1 for repo in repos if repo["fork"]),
         "stars": sum(repo["metrics"]["stars"] for repo in repos), "watchers": sum(repo["metrics"]["watchers"] for repo in repos),
         "forks": sum(repo["metrics"]["forks"] for repo in repos), "commits": sum(repo["activity"]["commit_count"] or 0 for repo in repos),
-        "contributors_unique": len({row["login"] for repo in repos for row in repo["activity"]["contributors"]}),
+        "contributors_unique": len(
+            {
+                row.get("login") or row.get("name")
+                for repo in repos
+                for row in repo["activity"]["contributors"]
+                if row.get("login") or row.get("name")
+            }
+        ),
         "github_releases": sum(len(repo["github_releases"]) for repo in repos),
         "registry_release_versions": sum(len(package.get("releases", [])) for package in packages),
         "github_package_versions": sum(len(package.get("versions", [])) for package in packages if package.get("ecosystem") in {"ghcr", "github-npm"}),

@@ -26,6 +26,17 @@ class CommitPoint(ApiModel):
     count: int
 
 
+class ContributorSummary(ApiModel):
+    id: str | None = None
+    login: str | None = None
+    name: str | None = None
+    contributions: int = 0
+    url: str | None = None
+    avatar_url: str | None = None
+    account_type: str | None = None
+    anonymous: bool = False
+
+
 class RepositorySummary(ApiModel):
     id: str
     owner: str
@@ -36,9 +47,11 @@ class RepositorySummary(ApiModel):
     package_count: int = 0
     resource_count: int = 0
     release_count: int = 0
+    latest_release: dict[str, Any] | str | None = None
     metrics: dict[str, float] = Field(default_factory=dict)
     history: dict[str, list[MetricPoint]] = Field(default_factory=dict)
     commit_activity: list[CommitPoint] = Field(default_factory=list)
+    contributors: list[ContributorSummary] = Field(default_factory=list)
     observed_at: datetime | None = None
 
 
@@ -92,6 +105,7 @@ class CatalogCollection(ApiModel):
     page_size: int = 50
     page_count: int = 1
     facets: dict[str, dict[str, int]] = Field(default_factory=dict)
+    aggregates: dict[str, int] = Field(default_factory=dict)
     generated_at: datetime | None = None
     records: list[RepositorySummary | PackageSummary | CatalogResourceSummary | TechnologySummary]
 

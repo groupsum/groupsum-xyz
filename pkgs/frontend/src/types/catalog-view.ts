@@ -17,6 +17,7 @@ export type CatalogViewRecord = {
   repository_owner?: string | null; repository_name?: string | null; repository_id?: string;
   repository_route?: string; repository?: unknown; repositories?: unknown; packages?: unknown;
   related_resources?: unknown; related_records?: unknown; releases?: unknown; dependencies?: unknown;
+  contributors?: unknown;
   dependents?: unknown; parent?: unknown; technologies?: unknown; release_count?: number;
   languages?: unknown; dependency_count?: number; dependent_count?: number; downstream_count?: number;
   repository_count?: number; package_count?: number; resource_count?: number; ssot_governed?: boolean;

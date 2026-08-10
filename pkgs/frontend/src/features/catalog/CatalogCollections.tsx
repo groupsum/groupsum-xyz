@@ -224,11 +224,18 @@ export function PublicCatalogExplorer({ onNavigate, compact = false, fixedDatase
     repository_owner: dataset === "resources" ? filters.owner || undefined : undefined,
     sort: filters.sort,
   });
+  useEffect(() => {
+    const responsePage = Number(collection.data?.page || 0);
+    if (!collection.isFetching && responsePage > 0 && responsePage !== page) {
+      setPage(responsePage);
+    }
+  }, [collection.data?.page, collection.isFetching, page]);
   const records = useMemo(() => {
     const kind = dataset === "technologies" ? "technology" : dataset.slice(0, -1);
     return (collection.data?.records || []).map((record) => ({ ...record, kind })) as CatalogRecord[];
   }, [collection.data?.records, dataset]);
   const state = collection.isPending ? "loading" : collection.isError ? "error" : "ready";
+  const aggregates = collection.data?.aggregates || {};
 
   const facetValues = (name: string) => Object.keys(collection.data?.facets?.[name] || {}).sort();
   const filterOptions = {
@@ -240,29 +247,30 @@ export function PublicCatalogExplorer({ onNavigate, compact = false, fixedDatase
   const summaryFacts = useMemo<MetricItem[]>(() => {
     if (dataset === "repositories") return [
       { label: "Repositories", value: Number(collection.data?.count || 0), icon: FolderGit2, color: "text-[#166534]" },
-      { label: "Total Stars Observed", value: records.reduce((total, record) => total + Number(valueRecord(record.metrics).stars || 0), 0), icon: Star, color: "text-[#B45309]" },
-      { label: "SSOT Governed", value: records.filter((record) => Boolean(record.ssot_governed)).length, icon: ShieldCheck, color: "text-indigo-600" },
-      { label: "Contained Packages", value: records.reduce((total, record) => total + Number(record.package_count || 0), 0), icon: CheckCircle2, color: "text-[#2E6B9E]" },
+      { label: "Total Stars Observed", value: Number(aggregates.stars || 0), icon: Star, color: "text-[#B45309]" },
+      { label: "SSOT Governed", value: Number(aggregates.ssot_governed || 0), icon: ShieldCheck, color: "text-indigo-600" },
+      { label: "Contained Packages", value: Number(aggregates.contained_packages || 0), icon: CheckCircle2, color: "text-[#2E6B9E]" },
     ];
     if (dataset === "packages") return [
       { label: "Packages", value: Number(collection.data?.count || 0), icon: Package, color: "text-orange-600" },
-      { label: "Published Registry", value: records.filter((record) => Boolean(record.published) || record.publication_status === "published").length, icon: CheckCircle2, color: "text-[#0D47A1]" },
-      { label: "Private / Candidates", value: records.filter((record) => !record.published && record.publication_status !== "published").length, icon: AlertTriangle, color: "text-[#92400E]", note: "Unpublished or candidate" },
-      { label: "Ecosystems", value: filterOptions.ecosystems.length, icon: ShieldCheck, color: "text-[#166534]" },
+      { label: "Published Registry", value: Number(aggregates.published || 0), icon: CheckCircle2, color: "text-[#0D47A1]" },
+      { label: "Private / Candidates", value: Number(aggregates.unpublished || 0), icon: AlertTriangle, color: "text-[#92400E]", note: "Unpublished or candidate" },
+      { label: "Ecosystems", value: Number(aggregates.ecosystems || 0), icon: ShieldCheck, color: "text-[#166534]" },
     ];
     if (dataset === "resources") return [
-      { label: "Typed Resources", value: records.length, icon: FileCode, color: "text-[#0369A1]" },
-      { label: "Websites & Docs", value: records.filter((record) => ["website", "documentation"].includes(String(record.resource_type))).length, icon: Globe, color: "text-[#2E6B9E]" },
-      { label: "APIs & Endpoints", value: records.filter((record) => String(record.resource_type).includes("api")).length, icon: Terminal, color: "text-[#9D174D]" },
-      { label: "Demos & Showcases", value: records.filter((record) => ["demo", "example", "showcase"].includes(String(record.resource_type))).length, icon: Sparkles, color: "text-[#B45309]" },
+      { label: "Typed Resources", value: Number(collection.data?.count || 0), icon: FileCode, color: "text-[#0369A1]" },
+      { label: "Websites & Docs", value: Number(aggregates.websites_and_docs || 0), icon: Globe, color: "text-[#2E6B9E]" },
+      { label: "APIs & Endpoints", value: Number(aggregates.apis_and_endpoints || 0), icon: Terminal, color: "text-[#9D174D]" },
+      { label: "Demos & Showcases", value: Number(aggregates.demos_and_showcases || 0), icon: Sparkles, color: "text-[#B45309]" },
     ];
-    return [{ label: "Categorical Technologies", value: records.length, icon: Cpu, color: "text-[#B45309]" }, { label: "Technology Categories", value: new Set(records.map((record) => String(record.category || "Uncategorized"))).size, icon: Layers, color: "text-[#2E6B9E]" }, { label: "Language Distinction", value: "Strictly Separate", icon: ShieldCheck, color: "text-[#166534]", note: "Languages kept in language composition" }];
-  }, [collection.data?.count, dataset, filterOptions, records]);
+    return [{ label: "Categorical Technologies", value: Number(collection.data?.count || 0), icon: Cpu, color: "text-[#B45309]" }, { label: "Technology Categories", value: Number(aggregates.categories || 0), icon: Layers, color: "text-[#2E6B9E]" }, { label: "Language Distinction", value: "Strictly Separate", icon: ShieldCheck, color: "text-[#166534]", note: "Languages kept in language composition" }];
+  }, [aggregates, collection.data?.count, dataset]);
   const pages = Number(collection.data?.page_count || 1);
+  const currentPage = Number(collection.data?.page || 1);
   const visible = records;
 
   return (
-    <section className="catalog-explorer mx-auto max-w-7xl space-y-6 px-4 py-8 sm:px-6 lg:px-8">
+    <section aria-busy={collection.isFetching} className="catalog-explorer mx-auto max-w-7xl space-y-6 px-4 py-8 sm:px-6 lg:px-8">
       {!compact && (
         <div>
           <CollectionHeader eyebrow={`${labels[dataset]} collection`} title={labels[dataset]} description={datasetDetails[dataset].description} observedAt={formatDate(catalogSummary.generated_at)} exportHref={`/catalog/site/${dataset}.json`} facts={summaryFacts} />
@@ -270,20 +278,20 @@ export function PublicCatalogExplorer({ onNavigate, compact = false, fixedDatase
       )}
       {!fixedDataset && <div className="flex flex-wrap gap-2" aria-label="Catalog datasets" role="tablist">
         {datasetOrder.map((name) => (
-          <button key={name} type="button" role="tab" onClick={() => setDataset(name)} aria-selected={dataset === name} className={`min-h-20 min-w-0 flex-[1_1_16rem] rounded-[var(--radius-md)] border px-4 py-3 text-left cursor-pointer transition-colors ${dataset === name ? "bg-accent text-white border-accent" : "bg-[var(--color-surface)] text-ink-muted border-[var(--color-border-soft)] hover:border-[var(--color-border-accent-soft)]"}`}>
+          <button key={name} type="button" role="tab" onClick={() => { setDataset(name); setPage(1); }} aria-selected={dataset === name} className={`min-h-20 min-w-0 flex-[1_1_16rem] rounded-[var(--radius-md)] border px-4 py-3 text-left cursor-pointer transition-colors ${dataset === name ? "bg-accent text-white border-accent" : "bg-[var(--color-surface)] text-ink-muted border-[var(--color-border-soft)] hover:border-[var(--color-border-accent-soft)]"}`}>
             <span className="flex items-center justify-between gap-3"><span className="inline-flex items-center gap-2 text-xs font-mono font-semibold">{React.createElement(datasetDetails[name].Icon, { className: "h-4 w-4", "aria-hidden": true })}{labels[name]}</span><strong className="font-serif text-lg tabular-nums">{Number(catalogDatasetManifest.counts[name]).toLocaleString()}</strong></span>
             <span className={`mt-1 block text-[10px] leading-snug ${dataset === name ? "text-white/75" : "text-ink-muted"}`}>{datasetDetails[name].description}</span>
           </button>
         ))}
       </div>}
-      <ExplorerFilterToolbar filters={filters} onChange={(next) => { setFilters(next); setPage(1); }} owners={dataset === "repositories" ? Object.keys(collection.data?.facets?.owner || {}) : []} ecosystems={dataset === "packages" ? Object.keys(collection.data?.facets?.ecosystem || {}) : []} publications={dataset === "packages" ? Object.keys(collection.data?.facets?.publication_status || {}) : []} resourceTypes={dataset === "resources" ? Object.keys(collection.data?.facets?.resource_type || {}) : []} sortOptions={[{ label: "Name (A–Z)", value: "name" }, { label: "Most activity", value: "activity" }, { label: "Recently observed", value: "recent" }]} total={Number(collection.data?.count || 0)} statusDetail={`Page ${page.toLocaleString()} of ${pages.toLocaleString()}`} />
+      <ExplorerFilterToolbar filters={filters} onChange={(next) => { setFilters(next); setPage(1); }} owners={dataset === "repositories" ? Object.keys(collection.data?.facets?.owner || {}) : []} ecosystems={dataset === "packages" ? Object.keys(collection.data?.facets?.ecosystem || {}) : []} publications={dataset === "packages" ? Object.keys(collection.data?.facets?.publication_status || {}) : []} resourceTypes={dataset === "resources" ? Object.keys(collection.data?.facets?.resource_type || {}) : []} sortOptions={[{ label: "Name (A–Z)", value: "name" }, { label: "Most activity", value: "activity" }, { label: "Recently observed", value: "recent" }]} total={Number(collection.data?.count || 0)} statusDetail={collection.isFetching && !collection.isPending ? `Updating to page ${page.toLocaleString()} of ${pages.toLocaleString()}…` : `Page ${currentPage.toLocaleString()} of ${pages.toLocaleString()}`} />
       {state === "loading" && <div className="p-10 text-center text-sm text-ink-muted" role="status">Loading {labels[dataset].toLowerCase()}…</div>}
       {state === "error" && <div className="p-6 border border-red-500/20 bg-red-500/5 text-sm text-red-700 rounded-[var(--radius-sm)]" role="alert">The generated dataset could not be loaded. The normalized JSON remains available from the download links below.</div>}
       {state === "ready" && (
         <>
           {dataset === "repositories" ? <RepositoryCollectionTable records={visible} onNavigate={onNavigate} /> : dataset === "packages" ? <PackageCollectionTable records={visible} onNavigate={onNavigate} /> : <div className="space-y-3">{visible.map((record) => <CollectionRow key={record.id} record={record} dataset={dataset} onNavigate={onNavigate} />)}</div>}
           {visible.length === 0 && <div className="p-10 text-center border border-[var(--color-border-soft)] rounded-[var(--radius-md)] text-sm text-ink-muted">No generated records match this search.</div>}
-          {pages > 1 && <div className="flex items-center justify-between gap-4"><button disabled={page === 1} onClick={() => setPage((value) => Math.max(1, value - 1))} className="px-3 py-2 text-xs font-mono border border-[var(--color-border-soft)] rounded disabled:opacity-40 cursor-pointer">Previous</button><button disabled={page === pages} onClick={() => setPage((value) => Math.min(pages, value + 1))} className="px-3 py-2 text-xs font-mono border border-[var(--color-border-soft)] rounded disabled:opacity-40 cursor-pointer">Next</button></div>}
+          {pages > 1 && <div className="flex items-center justify-between gap-4"><button disabled={currentPage === 1 || collection.isFetching} onClick={() => setPage(Math.max(1, currentPage - 1))} className="px-3 py-2 text-xs font-mono border border-[var(--color-border-soft)] rounded disabled:opacity-40 cursor-pointer">Previous</button><button disabled={currentPage === pages || collection.isFetching} onClick={() => setPage(Math.min(pages, currentPage + 1))} className="px-3 py-2 text-xs font-mono border border-[var(--color-border-soft)] rounded disabled:opacity-40 cursor-pointer">Next</button></div>}
         </>
       )}
       <div className="flex flex-wrap gap-4 text-xs font-mono">

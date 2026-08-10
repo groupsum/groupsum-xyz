@@ -1,28 +1,16 @@
 from __future__ import annotations
 
-
-import argparse
-import concurrent.futures
-import dataclasses
-import datetime as dt
-import hashlib
-import json
-import os
 import re
-import subprocess
-import sys
-import threading
 import time
-import tomllib
 import urllib.error
 import urllib.parse
-import urllib.request
 from pathlib import Path
-from typing import Any, Iterable
+from typing import Any
 
-from .collector_common import *  # noqa: F403
-from .package_collection import *  # noqa: F403
-from .resource_discovery import *  # noqa: F403
+from .collector_common import *
+from .package_collection import *
+from .resource_discovery import *
+
 
 def collect_repository(client: ApiClient, repo: dict[str, Any], config: dict[str, Any]) -> dict[str, Any]:
     full_name = repo["full_name"]
@@ -153,8 +141,18 @@ def collect_repository(client: ApiClient, repo: dict[str, Any], config: dict[str
                 manifests.append({"path": path, "kind": Path(path).name, "parsed": False})
 
     contributor_rows = [
-        {"login": item.get("login") or item.get("name") or "anonymous", "contributions": item.get("contributions", 0), "url": item.get("html_url")}
+        {
+            "id": str(item.get("id")) if item.get("id") is not None else None,
+            "login": item.get("login"),
+            "name": item.get("name"),
+            "contributions": int(item.get("contributions") or 0),
+            "url": item.get("html_url"),
+            "avatar_url": item.get("avatar_url"),
+            "account_type": item.get("type"),
+            "anonymous": item.get("login") is None,
+        }
         for item in contributors
+        if item.get("login") or item.get("name")
     ]
     github_releases = [
         {

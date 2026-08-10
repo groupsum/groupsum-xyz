@@ -49,7 +49,14 @@ class CatalogCollectorTests(unittest.TestCase):
                 "full_name": "groupsum/example",
                 "url": "https://github.com/groupsum/example",
                 "metrics": {"stars": 3, "size_kb": 10},
-                "activity": {"commit_count": 4, "contributor_count": 2},
+                "activity": {
+                    "commit_count": 4,
+                    "contributor_count": 2,
+                    "contributors": [
+                        {"id": "42", "login": "dev", "contributions": 3},
+                        {"id": "84", "login": "maintainer", "contributions": 1},
+                    ],
+                },
                 "technologies": {"languages_bytes": {"JavaScript": 50, "Python": 100}},
             }],
             "packages": [{
@@ -82,6 +89,14 @@ class CatalogCollectorTests(unittest.TestCase):
         self.assertNotEqual(
             language_measurements[0]["measurement_id"],
             language_measurements[1]["measurement_id"],
+        )
+        contributor_measurements = [
+            row for row in measurements if row["metric_key"] == "contributor_contributions"
+        ]
+        self.assertEqual(len(contributor_measurements), 2)
+        self.assertEqual(
+            {row["dimensions"]["login"] for row in contributor_measurements},
+            {"dev", "maintainer"},
         )
         observations = normalized_observations(catalog, "snapshot:test")
         self.assertEqual(observations[0]["snapshot_id"], "snapshot:test")
@@ -317,7 +332,7 @@ class CatalogCollectorTests(unittest.TestCase):
             "repositories": [{
                 "full_name": "groupsum/example", "name": "example", "owner": "groupsum", "url": "https://github.com/groupsum/example",
                 "description": "Example repository", "visibility": "public", "metrics": {"stars": 2},
-                "activity": {"commit_count": 3, "commit_history": [{"committed_at": now}], "contributor_count": 1, "contributors": [{"login": "dev", "contributions": 3, "url": "https://github.com/dev"}]},
+                "activity": {"commit_count": 3, "commit_history": [{"committed_at": now}], "contributor_count": 1, "contributors": [{"id": "42", "login": "dev", "name": "Dev Example", "contributions": 3, "url": "https://github.com/dev", "avatar_url": "https://avatars.githubusercontent.com/u/42", "account_type": "User", "anonymous": False}]},
                 "technologies": {"languages_bytes": {"Python": 100}}, "github_releases": [], "deployments": [], "environments": [],
                 "related_resources": [
                     {"kind": "documentation", "name": "docs", "path": "docs", "url": "https://github.com/groupsum/example/tree/master/docs", "evidence": "repository.tree"},
@@ -335,6 +350,11 @@ class CatalogCollectorTests(unittest.TestCase):
         datasets = compile_catalog(catalog, {"entities": {}, "organizations": {}})
         self.assertEqual(datasets["repositories"][0]["metrics"]["packages"], 1)
         self.assertEqual(datasets["repositories"][0]["contributors"][0]["login"], "dev")
+        self.assertEqual(datasets["repositories"][0]["contributors"][0]["id"], "42")
+        self.assertEqual(
+            datasets["repositories"][0]["contributors"][0]["avatar_url"],
+            "https://avatars.githubusercontent.com/u/42",
+        )
         self.assertEqual(len(datasets["repositories"][0]["commit_activity"]), 30)
         self.assertEqual(datasets["repositories"][0]["commit_activity"][-1]["count"], 1)
         self.assertEqual(

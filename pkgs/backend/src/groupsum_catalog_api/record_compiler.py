@@ -6,6 +6,7 @@ from datetime import UTC, datetime
 from pathlib import Path
 from typing import Any
 
+from .contributor_compiler import import_contributors
 from .domain.resources.ontology import (
     RECORD_RESOURCE_TYPES,
     SSOT_RESOURCE_TYPES,
@@ -331,6 +332,7 @@ def compile_catalog_records(repo_root: Path) -> tuple[dict[str, list[dict]], lis
         {row["id"] for row in editorial.get("organizations", [])},
         observed_at,
     )
+    import_contributors(collector, repository_rows, repositories, observed_at)
     packages = _import_packages(collector, package_rows, repositories, observed_at)
     _import_technologies(collector, technology_rows, repositories, observed_at)
     _import_resources(collector, repository_rows, repositories, observed_at)

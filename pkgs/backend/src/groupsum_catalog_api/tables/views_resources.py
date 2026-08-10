@@ -3,6 +3,49 @@ from __future__ import annotations
 from .view_common import *  # noqa: F403
 
 
+def _collection_aggregates(values: list[dict], resource_kind: str) -> dict[str, int]:
+    if resource_kind == "repository":
+        return {
+            "stars": sum(int((item.get("metrics") or {}).get("stars") or 0) for item in values),
+            "ssot_governed": sum(
+                bool(item.get("ssot_governed") or (item.get("governance") or {}).get("governed"))
+                for item in values
+            ),
+            "contained_packages": sum(int(item.get("package_count") or 0) for item in values),
+        }
+    if resource_kind == "package":
+        published = sum(
+            bool(item.get("published") or item.get("publication_status") == "published")
+            for item in values
+        )
+        return {
+            "published": published,
+            "unpublished": len(values) - published,
+            "ecosystems": len({str(item["ecosystem"]) for item in values if item.get("ecosystem")}),
+        }
+    if resource_kind == "resource":
+        resource_types = [str(item.get("resource_type") or "").casefold() for item in values]
+        return {
+            "websites_and_docs": sum(
+                value in {"website", "documentation", "interface.website"}
+                or value.startswith("documentation.")
+                for value in resource_types
+            ),
+            "apis_and_endpoints": sum(
+                "api" in value or value.endswith(".endpoint") for value in resource_types
+            ),
+            "demos_and_showcases": sum(
+                value.rsplit(".", 1)[-1] in {"demo", "example", "showcase"}
+                for value in resource_types
+            ),
+        }
+    if resource_kind == "technology":
+        return {
+            "categories": len({str(item["category"]) for item in values if item.get("category")}),
+        }
+    return {}
+
+
 def catalog_collection(table, ctx, resource_kind: str):
     params = query_params(ctx)
 
@@ -45,6 +88,7 @@ def catalog_collection(table, ctx, resource_kind: str):
             "page_size": page_size,
             "page_count": page_count,
             "facets": facets,
+            "aggregates": _collection_aggregates(values, resource_kind),
             "generated_at": observed,
             "records": page_values,
         }
@@ -182,6 +226,7 @@ def resource_collection(table, ctx):
             "page_size": page_size,
             "page_count": page_count,
             "facets": facets,
+            "aggregates": _collection_aggregates(values, "resource"),
             "generated_at": latest_timestamp(item.get("observed_at") for item in values),
             "records": page_values,
         }

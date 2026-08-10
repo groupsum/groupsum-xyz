@@ -3,7 +3,7 @@ from __future__ import annotations
 from collections import Counter, defaultdict
 from typing import Any
 
-from .common import *  # noqa: F403
+from .common import *
 
 
 def _resource_type(item: dict[str, Any]) -> str | None:
@@ -159,12 +159,17 @@ def compile_repositories(catalog: dict[str, Any], generated_at: str, overrides: 
             },
             "contributors": [
                 {
+                    "id": contributor.get("id"),
                     "login": contributor.get("login"),
+                    "name": contributor.get("name"),
                     "contributions": int(contributor.get("contributions") or 0),
                     "url": contributor.get("url"),
+                    "avatar_url": contributor.get("avatar_url"),
+                    "account_type": contributor.get("account_type"),
+                    "anonymous": bool(contributor.get("anonymous")),
                 }
                 for contributor in activity.get("contributors") or []
-                if contributor.get("login")
+                if contributor.get("login") or contributor.get("name")
             ],
             "commit_activity": daily_commit_activity(activity, checked_at),
             "technologies": sorted(languages),

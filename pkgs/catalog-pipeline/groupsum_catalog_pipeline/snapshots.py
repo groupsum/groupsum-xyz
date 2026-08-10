@@ -93,6 +93,27 @@ def normalized_measurements(catalog: dict[str, Any], snapshot_id: str) -> list[d
                     dimensions={"language": language},
                 )
             )
+        for contributor in (repository.get("activity") or {}).get("contributors") or []:
+            identity = contributor.get("id") or contributor.get("login") or contributor.get("name")
+            if not identity:
+                continue
+            rows.append(
+                _measurement(
+                    snapshot_id,
+                    "source.repository",
+                    subject_id,
+                    "contributor_contributions",
+                    int(contributor.get("contributions") or 0),
+                    observed_at,
+                    unit="commit",
+                    source_url=contributor.get("url") or source_url,
+                    dimensions={
+                        "contributor_id": str(identity),
+                        "login": contributor.get("login"),
+                        "name": contributor.get("name"),
+                    },
+                )
+            )
     for package in catalog.get("packages", []):
         subject_id = _package_id(package)
         observed_at = str(package.get("updated_at") or package.get("observed_at") or generated_at)

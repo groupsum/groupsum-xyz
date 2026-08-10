@@ -18,6 +18,7 @@ from groupsum_catalog_api.tables.registry import ALL_TABLES, ENTITY_TABLES, RESO
 from groupsum_catalog_api.tables.repository import Repository
 from groupsum_catalog_api.tables.technology import Technology
 from groupsum_catalog_api.tables.view_common import latest_timestamp
+from groupsum_catalog_api.tables.views_resources import _collection_aggregates
 
 
 def test_every_table_exposes_only_hidden_create_read_and_list() -> None:
@@ -86,6 +87,43 @@ def test_latest_timestamp_accepts_database_and_source_payload_values() -> None:
     source_value = "2026-08-10T00:00:00Z"
 
     assert latest_timestamp((database_value, source_value)) == source_value
+
+
+def test_collection_aggregates_cover_every_catalog_resource_kind() -> None:
+    assert _collection_aggregates(
+        [
+            {
+                "metrics": {"stars": 3},
+                "ssot_governed": True,
+                "package_count": 2,
+            },
+            {
+                "metrics": {"stars": 5},
+                "governance": {"governed": True},
+                "package_count": 4,
+            },
+        ],
+        "repository",
+    ) == {"stars": 8, "ssot_governed": 2, "contained_packages": 6}
+    assert _collection_aggregates(
+        [
+            {"published": True, "ecosystem": "pypi"},
+            {"publication_status": "candidate", "ecosystem": "npm"},
+        ],
+        "package",
+    ) == {"published": 1, "unpublished": 1, "ecosystems": 2}
+    assert _collection_aggregates(
+        [
+            {"resource_type": "documentation.guide"},
+            {"resource_type": "runtime.endpoint"},
+            {"resource_type": "implementation.demo"},
+        ],
+        "resource",
+    ) == {"websites_and_docs": 1, "apis_and_endpoints": 1, "demos_and_showcases": 1}
+    assert _collection_aggregates(
+        [{"category": "database"}, {"category": "database"}, {"category": "runtime"}],
+        "technology",
+    ) == {"categories": 2}
 
 
 def test_entity_tables_have_no_foreign_keys_and_use_one_association_table() -> None:
