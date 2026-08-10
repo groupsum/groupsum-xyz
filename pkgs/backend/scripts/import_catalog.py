@@ -19,7 +19,7 @@ def main() -> None:
     args = parser.parse_args()
     build_app(args.database)
     print(
-        json.dumps(asyncio.run(import_catalog(args.database, repo_root)), indent=2, sort_keys=True)
+        json.dumps(asyncio.run(import_catalog(repo_root)), indent=2, sort_keys=True)
     )
 
 

@@ -11,7 +11,6 @@ class Settings:
     analytics_dsn: str
     analytics_token: str | None
     analytics_disable_ssl: bool
-    public_base_url: str
 
     @classmethod
     def from_environment(cls) -> Settings:
@@ -30,7 +29,4 @@ class Settings:
                 "GROUPSUM_ANALYTICS_DISABLE_SSL", "false"
             ).lower()
             in {"1", "true", "yes", "on"},
-            public_base_url=os.getenv("GROUPSUM_PUBLIC_BASE_URL", "https://groupsum.xyz").rstrip(
-                "/"
-            ),
         )

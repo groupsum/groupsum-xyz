@@ -19,7 +19,7 @@ READ_LIST_PROFILE = replace(
     RestOlapTable.TABLE_PROFILE,
     kind="groupsum.catalog.read_list",
     ops=tuple(
-        operation
+        replace(operation, expose_routes=False)
         for operation in RestOlapTable.TABLE_PROFILE.ops
         if operation.target in {"read", "list"}
     ),

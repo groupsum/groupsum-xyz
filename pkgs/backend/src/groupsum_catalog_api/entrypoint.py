@@ -7,13 +7,11 @@ from tigrcorn import run
 from tigrcorn.config import build_config
 
 from .app import app
-from .config import Settings
 from .importer import import_catalog
 
 
 def main() -> None:
-    settings = Settings.from_environment()
-    asyncio.run(import_catalog(settings.database_url, Path("/app"), settings.analytics_dsn))
+    asyncio.run(import_catalog(Path("/app")))
     config = build_config(
         host="0.0.0.0",
         port=8000,

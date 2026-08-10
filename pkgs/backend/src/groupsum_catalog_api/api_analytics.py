@@ -2,9 +2,13 @@ from __future__ import annotations
 
 from typing import Any
 
-from .analytics import metric_rows, serialize_rows
+from sqlalchemy import func, select
+
+from .analytics import metric_count, metric_rows, serialize_rows
 from .tables.catalog_snapshot import CatalogSnapshot
+from .tables.metric_observation import MetricObservation
 from .tables.observation import CatalogObservation
+from .tables.record_aggregate import RecordAggregate
 from .tables.registry import ENTITY_TABLES
 
 
@@ -89,28 +93,27 @@ async def entity_metrics(
 ) -> dict[str, Any]:
     if not _entity_exists(entity_type, entity_id):
         return {"detail": "Entity not found"}
-    filters, parameters = "subject_type = ? AND subject_id = ?", [entity_type, entity_id]
-    if metric_key:
-        filters += " AND metric_key = ?"
-        parameters.append(metric_key)
-    columns = (
-        "subject_type",
-        "subject_id",
-        "metric_key",
-        "numeric_value",
-        "text_value",
-        "unit",
-        "dimensions",
-        "period_start",
-        "period_end",
-        "observed_at",
-        "snapshot_id",
-        "source_url",
+    statement = select(
+        MetricObservation.subject_type,
+        MetricObservation.subject_id,
+        MetricObservation.metric_key,
+        MetricObservation.numeric_value,
+        MetricObservation.text_value,
+        MetricObservation.unit,
+        MetricObservation.dimensions,
+        MetricObservation.period_start,
+        MetricObservation.period_end,
+        MetricObservation.observed_at,
+        MetricObservation.snapshot_id,
+        MetricObservation.source_url,
+    ).where(
+        MetricObservation.subject_type == entity_type,
+        MetricObservation.subject_id == entity_id,
     )
+    if metric_key:
+        statement = statement.where(MetricObservation.metric_key == metric_key)
     rows = await metric_rows(
-        f"SELECT * FROM metric_series WHERE {filters} ORDER BY observed_at, period_start",
-        columns,
-        parameters,
+        statement.order_by(MetricObservation.observed_at, MetricObservation.period_start)
     )
     points = serialize_rows(rows)
     return {
@@ -124,26 +127,32 @@ async def entity_metrics(
 async def analytics_overview(snapshot_id: str | None = None) -> dict[str, Any]:
     if snapshot_id is None:
         current = await metric_rows(
-            "SELECT snapshot_id FROM metric_observations ORDER BY observed_at DESC LIMIT 1",
-            ("snapshot_id",),
+            select(MetricObservation.snapshot_id)
+            .order_by(MetricObservation.observed_at.desc())
+            .limit(1)
         )
         snapshot_id = current[0]["snapshot_id"] if current else None
-    rows = await metric_rows(
-        "SELECT * FROM catalog_rollups WHERE snapshot_id = ? ORDER BY subject_type, metric_key"
-        if snapshot_id
-        else "SELECT * FROM catalog_rollups WHERE false",
-        (
-            "snapshot_id",
-            "subject_type",
-            "metric_key",
-            "unit",
-            "subject_count",
-            "total_value",
-            "average_value",
-            "observed_at",
-        ),
-        [snapshot_id] if snapshot_id else [],
+    statement = (
+        select(
+            MetricObservation.snapshot_id,
+            MetricObservation.subject_type,
+            MetricObservation.metric_key,
+            MetricObservation.unit,
+            func.count().label("subject_count"),
+            func.sum(MetricObservation.numeric_value).label("total_value"),
+            func.avg(MetricObservation.numeric_value).label("average_value"),
+            func.max(MetricObservation.observed_at).label("observed_at"),
+        )
+        .where(MetricObservation.snapshot_id == snapshot_id)
+        .group_by(
+            MetricObservation.snapshot_id,
+            MetricObservation.subject_type,
+            MetricObservation.metric_key,
+            MetricObservation.unit,
+        )
+        .order_by(MetricObservation.subject_type, MetricObservation.metric_key)
     )
+    rows = await metric_rows(statement) if snapshot_id else []
     return {
         "kind": "catalog_analytics_overview",
         "snapshot_id": snapshot_id,
@@ -153,12 +162,12 @@ async def analytics_overview(snapshot_id: str | None = None) -> dict[str, Any]:
 
 
 async def summary() -> dict[str, Any]:
-    rows = await metric_rows(
-        "SELECT (SELECT count(*) FROM metric_observations) AS metric_observations, "
-        "(SELECT count(*) FROM record_aggregates) AS record_aggregates",
-        ("metric_observations", "record_aggregates"),
-    )
-    return {"status": "ok", "engine": "duckdb", **rows[0]}
+    return {
+        "status": "ok",
+        "engine": "duckdb",
+        "metric_observations": await metric_count(MetricObservation),
+        "record_aggregates": await metric_count(RecordAggregate),
+    }
 
 
 __all__ = [

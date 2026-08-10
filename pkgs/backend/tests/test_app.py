@@ -24,6 +24,7 @@ def test_every_public_table_exposes_exactly_read_and_list() -> None:
     assert len(ALL_TABLES) == 162
     for table in ALL_TABLES:
         assert {operation.target for operation in table.TABLE_PROFILE.ops} == {"read", "list"}
+        assert all(not operation.expose_routes for operation in table.TABLE_PROFILE.ops)
 
 
 def test_analytics_engine_uses_a_terse_quack_dsn() -> None:
@@ -35,7 +36,6 @@ def test_analytics_engine_uses_a_terse_quack_dsn() -> None:
 
     assert engine.dsn == "quack://groupsum-duckdb:9494"
     assert engine.mapping == {
-        "mode": "native",
         "catalog": "analytics",
         "disable_ssl": True,
         "token": "test-token",
@@ -94,10 +94,7 @@ async def test_openapi_is_generated_from_tigrbl_tables(tmp_path: Path) -> None:
 
         document = (await client.get("/openapi.json")).json()
         paths = document["paths"]
-        for table in ALL_TABLES:
-            resource = table.__name__.lower()
-            assert f"/{resource}" in paths
-            assert f"/{resource}/{{item_id}}" in paths
+        assert not any(f"/{table.__name__.lower()}" in paths for table in ALL_TABLES)
 
         assert "/api/v1/catalog/repositories" in paths
         assert "/api/v1/products" in paths
@@ -146,7 +143,7 @@ async def test_importer_populates_native_table_resources(tmp_path: Path) -> None
     repo_root = Path(__file__).resolve().parents[3]
     database = tmp_path / "catalog.sqlite3"
     app = build_app(database, tmp_path / "metrics.duckdb")
-    counts = await import_catalog(database, repo_root)
+    counts = await import_catalog(repo_root)
 
     assert counts["products"] == 12
     assert counts["portfolios"] == 6
@@ -157,37 +154,20 @@ async def test_importer_populates_native_table_resources(tmp_path: Path) -> None
 
     transport = httpx.ASGITransport(app=app)
     async with httpx.AsyncClient(transport=transport, base_url="http://test") as client:
-        for resource in (
-            "product",
-            "portfolio",
-            "repository",
-            "package",
-            "association",
-            "contractopenapi",
-            "documentationcollection",
-            "implementationdemo",
-            "implementationexample",
-            "interfacewebsite",
-        ):
-            response = await client.get(f"/{resource}")
-            assert response.status_code == 200
-            assert response.json()
-
-        product = await client.get("/product/groupsum-ssot-registry")
-        assert product.status_code == 200
-        assert product.json()["slug"] == "ssot-registry"
-
-        associations = (await client.get("/association")).json()
-        assert associations
-        assert all(edge["relationship_type"] in RELATIONSHIP_TYPES for edge in associations)
         session, release = Association.acquire(op_alias="list")
         try:
+            associations = [
+                {column.name: getattr(edge, column.name) for column in edge.__table__.columns}
+                for edge in session.query(Association).all()
+            ]
             entity_ids = {
                 entity_type: {row[0] for row in session.query(table.id).all()}
                 for entity_type, table in ENTITY_TABLES.items()
             }
         finally:
             release()
+        assert associations
+        assert all(edge["relationship_type"] in RELATIONSHIP_TYPES for edge in associations)
         assert all(
             edge["source_id"] in entity_ids[edge["source_type"]]
             and edge["target_id"] in entity_ids[edge["target_type"]]
@@ -203,7 +183,14 @@ async def test_importer_populates_native_table_resources(tmp_path: Path) -> None
         product_detail = await client.get(f"/api/v1/products/{products['records'][0]['slug']}")
         assert product_detail.status_code == 200
 
-        portfolio_rows = (await client.get("/portfolio")).json()
+        session, release = Portfolio.acquire(op_alias="list")
+        try:
+            portfolio_rows = [
+                {column.name: getattr(row, column.name) for column in row.__table__.columns}
+                for row in session.query(Portfolio).all()
+            ]
+        finally:
+            release()
         public_portfolios = [row for row in portfolio_rows if row["visibility"] == "public"]
         portfolios = (await client.get("/api/v1/portfolio")).json()
         assert portfolios["count"] == len(public_portfolios)
@@ -211,8 +198,12 @@ async def test_importer_populates_native_table_resources(tmp_path: Path) -> None
             portfolio_detail = await client.get(f"/api/v1/portfolio/{public_portfolios[0]['slug']}")
             assert portfolio_detail.status_code == 200
 
-        organizations = (await client.get("/organization")).json()
-        organization = await client.get(f"/api/v1/organizations/{organizations[0]['slug']}")
+        session, release = Organization.acquire(op_alias="list")
+        try:
+            organization_slug = session.query(Organization.slug).first()[0]
+        finally:
+            release()
+        organization = await client.get(f"/api/v1/organizations/{organization_slug}")
         assert organization.status_code == 200
 
         repositories = (await client.get("/api/v1/catalog/repositories?page_size=3")).json()

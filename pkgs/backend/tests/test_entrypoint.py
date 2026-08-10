@@ -9,8 +9,8 @@ def test_main_imports_catalog_before_starting_tigrcorn(monkeypatch) -> None:
     events: list[tuple[str, object]] = []
     server_config = object()
 
-    async def fake_import_catalog(database_url, repo_root, analytics_dsn):
-        events.append(("import", (database_url, repo_root, analytics_dsn)))
+    async def fake_import_catalog(repo_root):
+        events.append(("import", repo_root))
 
     def fake_build_config(**kwargs):
         events.append(("config", kwargs))
@@ -26,7 +26,7 @@ def test_main_imports_catalog_before_starting_tigrcorn(monkeypatch) -> None:
     entrypoint.main()
 
     assert [event[0] for event in events] == ["import", "config", "run"]
-    assert events[0][1][1] == Path("/app")
+    assert events[0][1] == Path("/app")
     assert events[1][1] == {
         "host": "0.0.0.0",
         "port": 8000,

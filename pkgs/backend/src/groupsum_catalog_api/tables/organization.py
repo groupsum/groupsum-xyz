@@ -6,7 +6,6 @@ from .base import *  # noqa: F403
 class Organization(CatalogTable):
     __tablename__ = "organizations"
     ENTITY_TYPE = "party.organization"
-    __allow_unmapped__ = True
     id = Column(String(160), primary_key=True)
     slug = Column(String(160), nullable=False, unique=True, index=True)
     name = Column(String(240), nullable=False)

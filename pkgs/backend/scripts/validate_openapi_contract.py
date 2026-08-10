@@ -4,11 +4,17 @@ import json
 from pathlib import Path
 
 OPENAPI_PATH = Path(__file__).resolve().parents[1] / "openapi.json"
-EXPECTED_TABLE_COUNT = 158
-REMOVED_TABLES = (
-    "catalogentry",
-    "repositoryssotitem",
-    "typedresource",
+REQUIRED_PATHS = (
+    "/api/v1/catalog",
+    "/api/v1/catalog/repositories",
+    "/api/v1/catalog/packages",
+    "/api/v1/catalog/resources",
+    "/api/v1/catalog/technologies",
+    "/api/v1/products",
+    "/api/v1/portfolio",
+    "/api/v1/entities",
+    "/api/v1/analytics/overview",
+    "/api/v1/analytics/summary",
 )
 
 
@@ -16,30 +22,20 @@ def main() -> None:
     document = json.loads(OPENAPI_PATH.read_text(encoding="utf-8"))
     paths = document.get("paths", {})
     failures: list[str] = []
-    native_paths = {
-        path: operations
-        for path, operations in paths.items()
-        if not path.startswith("/api/") and path not in {"/healthz", "/openapi.json"}
-    }
-    table_names = sorted(path.removeprefix("/") for path in native_paths if path.count("/") == 1)
-    if len(table_names) != EXPECTED_TABLE_COUNT:
-        failures.append(f"expected {EXPECTED_TABLE_COUNT} native tables, found {len(table_names)}")
-    for table in table_names:
-        collection = native_paths.get(f"/{table}", {})
-        member = native_paths.get(f"/{table}/{{item_id}}", {})
-        if set(collection) != {"get"}:
-            failures.append(f"/{table} must expose only list GET")
-        if set(member) != {"get"}:
-            failures.append(f"/{table}/{{item_id}} must expose only read GET")
-    for table in REMOVED_TABLES:
-        if f"/{table}" in paths or f"/{table}/{{item_id}}" in paths:
-            failures.append(f"removed table /{table} must not be exposed")
-    for required in ("association", "contentinsight", "contractopenapi"):
-        if required not in table_names:
-            failures.append(f"required concrete table /{required} is missing")
+    native_paths = [
+        path
+        for path in paths
+        if not path.startswith(("/api/", "/system/"))
+        and path not in {"/healthz", "/openapi.json"}
+    ]
+    if native_paths:
+        failures.append(f"storage-table routes must not be public: {', '.join(native_paths)}")
+    for required in REQUIRED_PATHS:
+        if set(paths.get(required, {})) != {"get"}:
+            failures.append(f"{required} must expose GET")
     if failures:
         raise SystemExit("OpenAPI table contract validation failed:\n- " + "\n- ".join(failures))
-    print(f"validated native read/list contracts for {len(table_names)} Tigrbl tables")
+    print(f"validated {len(REQUIRED_PATHS)} curated API contracts")
 
 
 if __name__ == "__main__":

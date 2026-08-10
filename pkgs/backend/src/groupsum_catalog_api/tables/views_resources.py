@@ -51,7 +51,7 @@ def catalog_collection(table, ctx, resource_kind: str):
             "records": page_values,
         }
 
-    return with_session(table, build)
+    return with_session(table, ctx, build)
 
 
 def repository_detail(table, ctx):
@@ -88,7 +88,7 @@ def repository_detail(table, ctx):
             },
         }
 
-    return with_session(table, build)
+    return with_session(table, ctx, build)
 
 
 def repository_metrics(table, ctx):
@@ -115,7 +115,7 @@ def repository_metrics(table, ctx):
             "repositories": records,
         }
 
-    return with_session(table, build)
+    return with_session(table, ctx, build)
 
 
 def package_detail(table, ctx):
@@ -147,7 +147,7 @@ def package_detail(table, ctx):
             },
         }
 
-    return with_session(table, build)
+    return with_session(table, ctx, build)
 
 
 def resource_collection(table, ctx):
@@ -193,7 +193,7 @@ def resource_collection(table, ctx):
             "records": page_values,
         }
 
-    return with_session(table, build)
+    return with_session(table, ctx, build)
 
 
 def resource_detail(table, ctx):
@@ -202,7 +202,7 @@ def resource_detail(table, ctx):
     kind = str(data.get("kind", "resource"))
     entity_type = str(data.get("entity_type", ""))
     if kind == "release":
-        return release_detail(table, route_key)
+        return release_detail(table, ctx)
 
     def build(session):
         from .registry import RESOURCE_TABLES
@@ -236,12 +236,14 @@ def resource_detail(table, ctx):
             "legal": {"status": "not-observed", "observations": []},
         }
 
-    return with_session(table, build)
+    return with_session(table, ctx, build)
 
 
-def release_detail(table, route_key: str):
+def release_detail(table, ctx):
     from .package import Package
     from .repository import Repository
+
+    route_key = str(payload(ctx).get("route_key", ""))
 
     def build(session):
         for model, key in ((Package, "releases"), (Repository, "github_releases")):
@@ -264,7 +266,7 @@ def release_detail(table, route_key: str):
                         }
         return {"detail": "Release not found"}
 
-    return with_session(table, build)
+    return with_session(table, ctx, build)
 
 
 def technology_detail(table, ctx):
@@ -280,4 +282,4 @@ def technology_detail(table, ctx):
             "related_records": [],
         }
 
-    return with_session(table, build)
+    return with_session(table, ctx, build)

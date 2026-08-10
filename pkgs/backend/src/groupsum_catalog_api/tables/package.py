@@ -6,7 +6,6 @@ from .base import *  # noqa: F403
 class Package(CatalogTable):
     __tablename__ = "packages"
     ENTITY_TYPE = "distribution.package"
-    __allow_unmapped__ = True
     id = Column(String(260), primary_key=True)
     ecosystem = Column(String(60), nullable=False, index=True)
     name = Column(String(300), nullable=False)

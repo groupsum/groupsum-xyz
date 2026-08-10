@@ -7,15 +7,25 @@ from typing import Any
 
 
 def payload(ctx: Any) -> dict[str, Any]:
-    return ctx.get("payload", {}) if hasattr(ctx, "get") else ctx.payload
+    values = dict(ctx.get("payload", {}) or {}) if hasattr(ctx, "get") else dict(ctx.payload)
+    if hasattr(ctx, "get"):
+        values.update(ctx.get("query_params", {}) or {})
+        values.update(ctx.get("path_params", {}) or {})
+    return values
 
 
 def query_params(ctx: Any) -> Any:
+    direct = ctx.get("query_params") if hasattr(ctx, "get") else None
+    if direct is not None:
+        return direct
     request = payload(ctx).get("request")
     return request.query_params if request is not None else {}
 
 
-def with_session(table, callback: Callable[[Any], Any]):
+def with_session(table, ctx: Any, callback: Callable[[Any], Any]):
+    session = ctx.get("db") if hasattr(ctx, "get") else getattr(ctx, "db", None)
+    if session is not None:
+        return callback(session)
     session, release = table.acquire(op_alias="list")
     try:
         return callback(session)
