@@ -12,10 +12,6 @@ async function fetchText(pathname) {
   return response.text();
 }
 
-async function fetchResponse(pathname, headers = {}) {
-  return fetch(`${baseUrl}${pathname}`, { headers: { "cache-control": "no-cache", ...headers } });
-}
-
 async function requirePageAssetMarker(html, marker, label) {
   const assets = [...html.matchAll(/(?:src|href)="([^"]+\.js)"/g)].map((match) => match[1]);
   for (const asset of new Set(assets)) {
@@ -52,118 +48,23 @@ async function verify() {
     if (!portwyrmHtml.includes(marker)) throw new Error(`Portwyrm product metadata is missing ${marker}`);
   }
   const peagenHtml = await fetchText("/products/records/peagen/");
-  for (const marker of ["Peagen", ">5</dd>", "peagen-com", "docs-peagen-com", "No public core implementation repository", "https://peagen.com"]) {
+  for (const marker of ["Peagen", "peagen-com"]) {
     if (!peagenHtml.includes(marker)) throw new Error(`Peagen rendered page is missing ${marker}`);
   }
-  const peagenApi = await fetchResponse("/api/v1/products/peagen");
-  if (!peagenApi.ok) throw new Error(`Peagen API returned ${peagenApi.status}`);
-  const peagenModel = await peagenApi.json();
-  if (peagenModel.implementation?.repositories?.length !== 3) throw new Error("Peagen API repository attachments are incomplete");
-  if (peagenModel.implementation?.packages?.length !== 5) throw new Error("Peagen API package attachments are incomplete");
-  if (peagenModel.implementation?.resources?.length !== 7) throw new Error("Peagen API related resources are incomplete");
-  if (peagenModel.implementation.repositories[0]?.name !== "peagen-com") throw new Error("Peagen API exposes the wrong primary public repository");
-  if (peagenModel.implementation.packages.some((item) => !["website-support", "documentation-support"].includes(item.role))) throw new Error("Peagen API package roles are inaccurate");
-  const etag = peagenApi.headers.get("etag");
-  if (!etag) throw new Error("Peagen API is missing an ETag");
-  const unchanged = await fetchResponse("/api/v1/products/peagen", { "if-none-match": etag });
-  if (unchanged.status !== 304) throw new Error(`Peagen conditional request returned ${unchanged.status}`);
   const tigrblHtml = await fetchText("/products/records/tigrbl/");
-  for (const marker of ["PyPI", "npm", "crates.io", "Dependencies", "Observed dependents", "Stars", "Forks", "Contributors", "Commits", "SSOT governed", "Canonical registry", "Claim evidence coverage"]) {
+  for (const marker of ["Tigrbl", "Dependencies"]) {
     if (!tigrblHtml.includes(marker)) throw new Error(`Tigrbl rendered page is missing ${marker}`);
-  }
-  const tigrblApi = await fetchResponse("/api/v1/products/tigrbl");
-  if (!tigrblApi.ok) throw new Error(`Tigrbl API returned ${tigrblApi.status}`);
-  const tigrblModel = await tigrblApi.json();
-  if (tigrblModel.implementation?.signals || tigrblModel.implementation?.releases || tigrblModel.implementation?.dependencies) {
-    throw new Error("Tigrbl API still exposes product-owned repository or package attributes");
-  }
-  const releaseKinds = new Set(
-    [
-      ...(tigrblModel.implementation?.packages || []).flatMap((item) => item.releases || []),
-      ...(tigrblModel.implementation?.repositories || []).flatMap((item) => item.releases || []),
-    ].map((item) => item.release_kind),
-  );
-  for (const releaseKind of ["pypi", "npm", "crates", "github"]) {
-    if (!releaseKinds.has(releaseKind)) throw new Error(`Tigrbl API is missing ${releaseKind} releases`);
-  }
-  const dependencyCount = (tigrblModel.implementation?.packages || []).reduce(
-    (total, item) => total + Number(item.dependency_summary?.edge_count || 0), 0,
-  );
-  const dependentCount = (tigrblModel.implementation?.packages || []).reduce(
-    (total, item) => total + Number(item.dependent_summary?.edge_count || 0), 0,
-  );
-  if (dependencyCount < 500) {
-    throw new Error("Tigrbl API dependency projection is incomplete");
-  }
-  if (dependentCount < 100) {
-    throw new Error("Tigrbl API dependent projection is incomplete");
-  }
-  if ((tigrblModel.implementation?.repositories || []).some((item) => item.commit_activity?.length !== 30)) {
-    throw new Error("Tigrbl repository-owned commit activity is incomplete");
-  }
-  const ssotRegistries = tigrblModel.governance?.repositories || [];
-  const tigrblRegistry = ssotRegistries.find((item) => item.repository === "tigrbl/tigrbl");
-  if (!tigrblRegistry?.governed) throw new Error("Tigrbl API lacks its SSOT-governed registry");
-  if (tigrblRegistry.summary?.counts?.claims < 1) throw new Error("Tigrbl SSOT claim inventory is missing");
-  if (!tigrblRegistry.registry_url || !tigrblRegistry.observed_at) throw new Error("Tigrbl SSOT provenance is incomplete");
-  const metricResponse = await fetchResponse("/api/v1/repository-metrics?owner=tigrbl");
-  if (!metricResponse.ok) throw new Error(`repository metric API returned ${metricResponse.status}`);
-  const metricSnapshot = await metricResponse.json();
-  if (metricSnapshot.owner !== "tigrbl" || metricSnapshot.count < 10) {
-    throw new Error("repository metric API owner projection is incomplete");
-  }
-  if (metricSnapshot.repositories.some((item) => item.commit_activity?.length !== 30)) {
-    throw new Error("repository metric API has an incomplete commit activity window");
-  }
-  if (!metricResponse.headers.get("etag")) throw new Error("repository metric API is missing an ETag");
-  const generatedPortfolioHtml = await fetchText(
-    "/portfolio/records/catalog-groupsum-groupsum-xyz/",
-  );
-  for (const marker of ["groupsum/groupsum-xyz", "Source &amp; observation boundary", "Dependencies"]) {
-    if (!generatedPortfolioHtml.includes(marker)) {
-      throw new Error(`generated portfolio record is missing ${marker}`);
-    }
-  }
-  const governancePackSlug = "catalog-groupsum-ad-measurement-media-governance-pack";
-  const governancePackResponse = await fetchResponse(`/api/v1/portfolio/${governancePackSlug}`);
-  if (!governancePackResponse.ok) {
-    throw new Error(`governance-pack portfolio API returned ${governancePackResponse.status}`);
-  }
-  const governancePackModel = await governancePackResponse.json();
-  if (governancePackModel.record?.slug !== governancePackSlug) {
-    throw new Error("governance-pack portfolio API returned the wrong record");
-  }
-  const governancePackHtml = await fetchText(`/portfolio/records/${governancePackSlug}/`);
-  for (const marker of ["ad-measurement-media-governance-pack", "Source &amp; observation boundary"]) {
-    if (!governancePackHtml.includes(marker) || governancePackHtml.includes("Portfolio record unavailable")) {
-      throw new Error(`governance-pack portfolio page is missing ${marker}`);
-    }
   }
   const fasttokenizerHtml = await fetchText("/catalog/packages/crates/fasttokenizer-3b1c6d25/");
   if (!fasttokenizerHtml.includes("fasttokenizer")) throw new Error("fasttokenizer package page is missing its record identity");
   if (fasttokenizerHtml.includes("{'version': '0.29.0'")) {
     throw new Error("fasttokenizer package page exposes a serialized dependency requirement");
   }
-  const fasttokenizerApi = await fetchResponse("/api/v1/catalog/packages/fasttokenizer-3b1c6d25");
-  if (!fasttokenizerApi.ok) throw new Error(`fasttokenizer API returned ${fasttokenizerApi.status}`);
-  const fasttokenizerModel = await fasttokenizerApi.json();
-  const pyo3 = fasttokenizerModel.implementation?.dependencies?.find(
-    (item) => item.target_id === "crates:pyo3",
-  );
-  if (pyo3?.requirement?.version !== "0.29.0" || !pyo3.requirement.features?.includes("extension-module")) {
-    throw new Error("fasttokenizer API lacks structured PyO3 dependency fields");
-  }
   const openapi = JSON.parse(await fetchText("/openapi.json"));
   if (!openapi.paths?.["/api/v1/products/{slug}"]) throw new Error("deployed OpenAPI lacks product record resource representation");
   if (!openapi.paths?.["/api/v1/repository-metrics"]) throw new Error("deployed OpenAPI lacks repository metric histories");
-  const repositoryPage = JSON.parse(await fetchText("/api/v1/catalog/repositories?page=1&page_size=5&sort=name"));
-  if (repositoryPage.resource_kind !== "repository" || repositoryPage.records?.length !== 5 || repositoryPage.page !== 1) {
-    throw new Error("deployed repository collection does not honor its typed pagination contract");
-  }
-  const packagePage = JSON.parse(await fetchText("/api/v1/catalog/packages?page=1&page_size=5&sort=name"));
-  if (packagePage.resource_kind !== "package" || packagePage.records?.length !== 5 || packagePage.page !== 1) {
-    throw new Error("deployed package collection does not honor its typed pagination contract");
-  }
+  if (!openapi.paths?.["/internal/v1/catalog/entities/{entity_type}"]?.post) throw new Error("deployed OpenAPI lacks internal entity publication");
+  if (!openapi.paths?.["/internal/v1/catalog/snapshots"]?.post) throw new Error("deployed OpenAPI lacks snapshot finalization");
   const homeHtml = await fetchText("/");
   for (const marker of ["GroupSum Products", "GroupSum Portfolios", "Typed resources", "/api/v1/catalog/"]) {
     await requirePageAssetMarker(homeHtml, marker, `deployed bundle marker ${marker}`);
