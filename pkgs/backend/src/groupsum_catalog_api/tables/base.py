@@ -2,7 +2,7 @@ from __future__ import annotations
 
 from dataclasses import replace
 
-from tigrbl import RestOlapTable, op_ctx
+from tigrbl import RestOltpTable, op_ctx
 from tigrbl.types import (
     JSON,
     Boolean,
@@ -15,25 +15,25 @@ from tigrbl.types import (
     UniqueConstraint,
 )
 
-READ_LIST_PROFILE = replace(
-    RestOlapTable.TABLE_PROFILE,
-    kind="groupsum.catalog.read_list",
+CREATE_READ_LIST_PROFILE = replace(
+    RestOltpTable.TABLE_PROFILE,
+    kind="groupsum.catalog.create_read_list",
     ops=tuple(
         replace(operation, expose_routes=False)
-        for operation in RestOlapTable.TABLE_PROFILE.ops
-        if operation.target in {"read", "list"}
+        for operation in RestOltpTable.TABLE_PROFILE.ops
+        if operation.target in {"create", "read", "list"}
     ),
     custom=True,
     namespace="groupsum.catalog",
 )
 
 
-class CatalogTable(RestOlapTable):
-    """Public catalog table exposing only Tigrbl's native read and list operations."""
+class CatalogTable(RestOltpTable):
+    """Catalog table with hidden create/read/list operations bound by explicit routers."""
 
     __abstract__ = True
     __allow_unmapped__ = True
-    TABLE_PROFILE = READ_LIST_PROFILE
+    TABLE_PROFILE = CREATE_READ_LIST_PROFILE
 
 
 __all__ = [

@@ -2,32 +2,31 @@
 
 export const catalogSummary = {
   "archived_repositories": 0,
-  "commits": 23546,
+  "commits": 23875,
   "contributors_unique": 42,
-  "deployments": 4037,
-  "environments": 125,
+  "deployments": 4100,
+  "environments": 132,
   "fork_repositories": 0,
-  "forks": 108,
-  "generated_at": "2026-08-06T02:54:46Z",
+  "forks": 107,
+  "generated_at": "2026-08-10T13:12:47Z",
   "github_package_versions": 0,
-  "github_releases": 7538,
+  "github_releases": 7555,
   "observations_by_status": {
-    "error": 44,
-    "not_found": 585,
-    "observed": 6790
+    "cached": 6959,
+    "error": 8,
+    "not_found": 570
   },
-  "observations_with_errors": 44,
+  "observations_with_errors": 8,
   "owners": 4,
   "package_ecosystems": {
     "crates": 5,
-    "ghcr": 1,
-    "npm": 165,
-    "pypi": 958
+    "npm": 167,
+    "pypi": 971
   },
-  "packages": 1129,
-  "published_packages": 474,
-  "registry_release_versions": 9609,
-  "relationships": 10285,
+  "packages": 1143,
+  "published_packages": 502,
+  "registry_release_versions": 9779,
+  "relationships": 10337,
   "repositories": 69,
   "schema_version": "1.0.0",
   "stars": 197,
@@ -64,7 +63,7 @@ export const catalogOrganizations = [
     "evidence": [
       {
         "kind": "organization",
-        "observed_at": "2026-08-06T02:54:46Z",
+        "observed_at": "2026-08-10T13:12:47Z",
         "url": "https://github.com/bucketwarden"
       }
     ],
@@ -74,7 +73,7 @@ export const catalogOrganizations = [
     "id": "organization:bucketwarden",
     "kind": "organization",
     "login": "bucketwarden",
-    "observed_at": "2026-08-06T02:54:46Z",
+    "observed_at": "2026-08-10T13:12:47Z",
     "package_count": 0,
     "package_releases": 0,
     "relationships": 0,
@@ -86,15 +85,15 @@ export const catalogOrganizations = [
     "watchers": 0
   },
   {
-    "commits": 2345,
+    "commits": 2379,
     "contributors": 2,
-    "deployments": 616,
+    "deployments": 637,
     "description": "Public source, packages, and delivery records maintained by Groupsum.",
     "display_name": "Groupsum",
     "evidence": [
       {
         "kind": "organization",
-        "observed_at": "2026-08-06T02:54:46Z",
+        "observed_at": "2026-08-10T13:12:47Z",
         "url": "https://github.com/groupsum"
       }
     ],
@@ -103,7 +102,7 @@ export const catalogOrganizations = [
         "description": "Repository-agnostic Python CLI for single-source-of-truth traceability from features to evidence-backed releases.",
         "id": "repository:groupsum/ssot-registry",
         "metrics": {
-          "commits": 485,
+          "commits": 486,
           "contributors": 2,
           "deployments": 528,
           "environments": 1,
@@ -112,7 +111,7 @@ export const catalogOrganizations = [
           "open_issues": 0,
           "packages": 14,
           "related_resources": 10,
-          "size_kb": 77017,
+          "size_kb": 77019,
           "stars": 5,
           "watchers": 0
         },
@@ -220,39 +219,39 @@ export const catalogOrganizations = [
         "route": "/catalog/repositories/groupsum/digital-signature-governance-pack"
       },
       {
-        "description": "Portwyrm CLI helper and provider foundation",
-        "id": "repository:groupsum/wyrmctl",
+        "description": "MdWrk lander website for groupsum.xyz.",
+        "id": "repository:groupsum/groupsum-xyz",
         "metrics": {
-          "commits": 101,
-          "contributors": 2,
-          "deployments": 4,
+          "commits": 121,
+          "contributors": 1,
+          "deployments": 58,
           "environments": 1,
           "forks": 0,
           "github_releases": 0,
-          "open_issues": 5,
-          "packages": 7,
-          "related_resources": 39,
-          "size_kb": 11210,
+          "open_issues": 0,
+          "packages": 4,
+          "related_resources": 1,
+          "size_kb": 25289,
           "stars": 0,
           "watchers": 0
         },
-        "name": "wyrmctl",
-        "route": "/catalog/repositories/groupsum/wyrmctl"
+        "name": "groupsum-xyz",
+        "route": "/catalog/repositories/groupsum/groupsum-xyz"
       },
       {
         "description": "A self-hosted, API-compatible reverse proxy control plane and UI for npmctl.",
         "id": "repository:groupsum/portwyrm",
         "metrics": {
-          "commits": 98,
+          "commits": 102,
           "contributors": 1,
-          "deployments": 9,
+          "deployments": 12,
           "environments": 1,
           "forks": 0,
-          "github_releases": 5,
+          "github_releases": 8,
           "open_issues": 0,
-          "packages": 3,
+          "packages": 2,
           "related_resources": 7,
-          "size_kb": 2170,
+          "size_kb": 2534,
           "stars": 0,
           "watchers": 0
         },
@@ -261,14 +260,14 @@ export const catalogOrganizations = [
       }
     ],
     "forks": 1,
-    "github_releases": 509,
+    "github_releases": 512,
     "id": "organization:groupsum",
     "kind": "organization",
     "login": "groupsum",
-    "observed_at": "2026-08-06T02:54:46Z",
-    "package_count": 160,
-    "package_releases": 556,
-    "relationships": 434,
+    "observed_at": "2026-08-10T13:12:47Z",
+    "package_count": 159,
+    "package_releases": 559,
+    "relationships": 392,
     "repository_count": 38,
     "role": "primary",
     "route": "/products/groupsum",
@@ -288,15 +287,15 @@ export const catalogOrganizations = [
     "watchers": 0
   },
   {
-    "commits": 19262,
+    "commits": 19278,
     "contributors": 40,
-    "deployments": 831,
+    "deployments": 872,
     "description": "Public SDK, package, application, and developer-tooling records maintained by Swarmauri.",
     "display_name": "Swarmauri",
     "evidence": [
       {
         "kind": "organization",
-        "observed_at": "2026-08-06T02:54:46Z",
+        "observed_at": "2026-08-10T13:12:47Z",
         "url": "https://github.com/swarmauri"
       }
     ],
@@ -305,16 +304,16 @@ export const catalogOrganizations = [
         "description": "Modular Python SDK and monorepo for AI agents, LLM integrations, tools, parsers, embeddings, vector stores, and extensible application workflows.",
         "id": "repository:swarmauri/swarmauri-sdk",
         "metrics": {
-          "commits": 17469,
+          "commits": 17485,
           "contributors": 20,
-          "deployments": 802,
-          "environments": 91,
-          "forks": 51,
-          "github_releases": 5742,
+          "deployments": 843,
+          "environments": 92,
+          "forks": 50,
+          "github_releases": 5756,
           "open_issues": 176,
-          "packages": 366,
+          "packages": 365,
           "related_resources": 109,
-          "size_kb": 77235,
+          "size_kb": 77325,
           "stars": 103,
           "watchers": 5
         },
@@ -462,15 +461,15 @@ export const catalogOrganizations = [
         "route": "/catalog/repositories/swarmauri/soliloquy"
       }
     ],
-    "forks": 105,
-    "github_releases": 5747,
+    "forks": 104,
+    "github_releases": 5761,
     "id": "organization:swarmauri",
     "kind": "organization",
     "login": "swarmauri",
-    "observed_at": "2026-08-06T02:54:46Z",
-    "package_count": 389,
-    "package_releases": 7372,
-    "relationships": 528,
+    "observed_at": "2026-08-10T13:12:47Z",
+    "package_count": 388,
+    "package_releases": 7387,
+    "relationships": 525,
     "repository_count": 16,
     "role": "ecosystem",
     "route": "/products/swarmauri",
@@ -497,15 +496,15 @@ export const catalogOrganizations = [
     "watchers": 10
   },
   {
-    "commits": 1939,
+    "commits": 2218,
     "contributors": 5,
-    "deployments": 2590,
+    "deployments": 2591,
     "description": "Public API, ASGI, identity, transport, package, and example records maintained by Tigrbl.",
     "display_name": "Tigrbl",
     "evidence": [
       {
         "kind": "organization",
-        "observed_at": "2026-08-06T02:54:46Z",
+        "observed_at": "2026-08-10T13:12:47Z",
         "url": "https://github.com/tigrbl"
       }
     ],
@@ -514,7 +513,7 @@ export const catalogOrganizations = [
         "description": "Schema-first Python and Rust workspace for REST and JSON-RPC APIs with typed validation, SQLAlchemy models, and engine-backed execution.",
         "id": "repository:tigrbl/tigrbl",
         "metrics": {
-          "commits": 640,
+          "commits": 643,
           "contributors": 2,
           "deployments": 0,
           "environments": 0,
@@ -523,7 +522,7 @@ export const catalogOrganizations = [
           "open_issues": 2,
           "packages": 55,
           "related_resources": 31,
-          "size_kb": 73673,
+          "size_kb": 73731,
           "stars": 3,
           "watchers": 0
         },
@@ -534,15 +533,15 @@ export const catalogOrganizations = [
         "description": "ASGI3 server with built-in HTTP/1.1, HTTP/2, HTTP/3, QUIC, WebSocket, TLS, static delivery, and release validation.",
         "id": "repository:tigrbl/tigrcorn",
         "metrics": {
-          "commits": 0,
+          "commits": 274,
           "contributors": 4,
-          "deployments": 2454,
-          "environments": 0,
+          "deployments": 2455,
+          "environments": 6,
           "forks": 2,
           "github_releases": 40,
           "open_issues": 15,
-          "packages": 0,
-          "related_resources": 1,
+          "packages": 16,
+          "related_resources": 37,
           "size_kb": 18970,
           "stars": 3,
           "watchers": 1
@@ -554,7 +553,7 @@ export const catalogOrganizations = [
         "description": "Tigrbl-native multi-tenant OpenID Connect / OAuth 2.0 identity provider with ASGI runtime profiles, JWKS/JWT support, operator controls, and SSOT-backed compliance evidence.",
         "id": "repository:tigrbl/tigrbl_auth",
         "metrics": {
-          "commits": 921,
+          "commits": 923,
           "contributors": 2,
           "deployments": 121,
           "environments": 1,
@@ -563,7 +562,7 @@ export const catalogOrganizations = [
           "open_issues": 13,
           "packages": 500,
           "related_resources": 56,
-          "size_kb": 25828,
+          "size_kb": 26293,
           "stars": 2,
           "watchers": 0
         },
@@ -676,10 +675,10 @@ export const catalogOrganizations = [
     "id": "organization:tigrbl",
     "kind": "organization",
     "login": "tigrbl",
-    "observed_at": "2026-08-06T02:54:46Z",
-    "package_count": 580,
-    "package_releases": 1681,
-    "relationships": 716,
+    "observed_at": "2026-08-10T13:12:47Z",
+    "package_count": 596,
+    "package_releases": 1833,
+    "relationships": 731,
     "repository_count": 15,
     "role": "ecosystem",
     "route": "/products/tigrbl",
@@ -706,20 +705,20 @@ export const catalogFeaturedRepositories = [
     "display_name": "swarmauri-sdk",
     "id": "repository:swarmauri/swarmauri-sdk",
     "metrics": {
-      "commits": 17469,
+      "commits": 17485,
       "contributors": 20,
-      "deployments": 802,
-      "environments": 91,
-      "forks": 51,
-      "github_releases": 5742,
+      "deployments": 843,
+      "environments": 92,
+      "forks": 50,
+      "github_releases": 5756,
       "open_issues": 176,
-      "packages": 366,
+      "packages": 365,
       "related_resources": 109,
-      "size_kb": 77235,
+      "size_kb": 77325,
       "stars": 103,
       "watchers": 5
     },
-    "observed_at": "2026-08-06T02:55:52Z",
+    "observed_at": "2026-08-10T13:12:48Z",
     "owner": "swarmauri",
     "route": "/catalog/repositories/swarmauri/swarmauri-sdk",
     "technologies": [
@@ -753,7 +752,7 @@ export const catalogFeaturedRepositories = [
       "stars": 25,
       "watchers": 0
     },
-    "observed_at": "2026-08-06T02:55:37Z",
+    "observed_at": "2026-08-10T13:12:48Z",
     "owner": "swarmauri",
     "route": "/catalog/repositories/swarmauri/swarmakit",
     "technologies": [
@@ -784,7 +783,7 @@ export const catalogFeaturedRepositories = [
       "stars": 18,
       "watchers": 4
     },
-    "observed_at": "2026-08-06T02:55:45Z",
+    "observed_at": "2026-08-10T13:12:48Z",
     "owner": "swarmauri",
     "route": "/catalog/repositories/swarmauri/swarmauri-notebooks",
     "technologies": [
@@ -809,7 +808,7 @@ export const catalogFeaturedRepositories = [
       "stars": 10,
       "watchers": 0
     },
-    "observed_at": "2026-08-06T02:55:28Z",
+    "observed_at": "2026-08-10T13:12:48Z",
     "owner": "swarmauri",
     "route": "/catalog/repositories/swarmauri/crouton",
     "technologies": [
@@ -834,7 +833,7 @@ export const catalogFeaturedRepositories = [
       "stars": 7,
       "watchers": 0
     },
-    "observed_at": "2026-08-06T02:55:35Z",
+    "observed_at": "2026-08-10T13:12:48Z",
     "owner": "swarmauri",
     "route": "/catalog/repositories/swarmauri/rag_assistant",
     "technologies": [
@@ -846,7 +845,7 @@ export const catalogFeaturedRepositories = [
     "display_name": "ssot-registry",
     "id": "repository:groupsum/ssot-registry",
     "metrics": {
-      "commits": 485,
+      "commits": 486,
       "contributors": 2,
       "deployments": 528,
       "environments": 1,
@@ -855,11 +854,11 @@ export const catalogFeaturedRepositories = [
       "open_issues": 0,
       "packages": 14,
       "related_resources": 10,
-      "size_kb": 77017,
+      "size_kb": 77019,
       "stars": 5,
       "watchers": 0
     },
-    "observed_at": "2026-08-06T02:55:08Z",
+    "observed_at": "2026-08-10T13:12:47Z",
     "owner": "groupsum",
     "route": "/catalog/repositories/groupsum/ssot-registry",
     "technologies": [
@@ -891,7 +890,7 @@ export const catalogFeaturedRepositories = [
       "stars": 5,
       "watchers": 1
     },
-    "observed_at": "2026-08-06T02:55:50Z",
+    "observed_at": "2026-08-10T13:12:48Z",
     "owner": "swarmauri",
     "route": "/catalog/repositories/swarmauri/swarmauri-playground",
     "technologies": [
@@ -917,7 +916,7 @@ export const catalogFeaturedRepositories = [
       "stars": 3,
       "watchers": 0
     },
-    "observed_at": "2026-08-06T02:54:57Z",
+    "observed_at": "2026-08-10T13:12:47Z",
     "owner": "groupsum",
     "route": "/catalog/repositories/groupsum/markdown_workspace",
     "technologies": [
@@ -936,7 +935,7 @@ export const catalogFeaturedRepositories = [
     "display_name": "tigrbl",
     "id": "repository:tigrbl/tigrbl",
     "metrics": {
-      "commits": 640,
+      "commits": 643,
       "contributors": 2,
       "deployments": 0,
       "environments": 0,
@@ -945,16 +944,45 @@ export const catalogFeaturedRepositories = [
       "open_issues": 2,
       "packages": 55,
       "related_resources": 31,
-      "size_kb": 73673,
+      "size_kb": 73731,
       "stars": 3,
       "watchers": 0
     },
-    "observed_at": "2026-08-06T02:55:17Z",
+    "observed_at": "2026-08-10T13:12:47Z",
     "owner": "tigrbl",
     "route": "/catalog/repositories/tigrbl/tigrbl",
     "technologies": [
       "Jupyter Notebook",
       "Python"
+    ]
+  },
+  {
+    "description": "ASGI3 server with built-in HTTP/1.1, HTTP/2, HTTP/3, QUIC, WebSocket, TLS, static delivery, and release validation.",
+    "display_name": "tigrcorn",
+    "id": "repository:tigrbl/tigrcorn",
+    "metrics": {
+      "commits": 274,
+      "contributors": 4,
+      "deployments": 2455,
+      "environments": 6,
+      "forks": 2,
+      "github_releases": 40,
+      "open_issues": 15,
+      "packages": 16,
+      "related_resources": 37,
+      "size_kb": 18970,
+      "stars": 3,
+      "watchers": 1
+    },
+    "observed_at": "2026-08-10T13:12:48Z",
+    "owner": "tigrbl",
+    "route": "/catalog/repositories/tigrbl/tigrcorn",
+    "technologies": [
+      "HTML",
+      "Makefile",
+      "Python",
+      "Shell",
+      "TypeScript"
     ]
   },
   {
@@ -975,7 +1003,7 @@ export const catalogFeaturedRepositories = [
       "stars": 3,
       "watchers": 0
     },
-    "observed_at": "2026-08-06T02:55:44Z",
+    "observed_at": "2026-08-10T13:12:48Z",
     "owner": "swarmauri",
     "route": "/catalog/repositories/swarmauri/swarmauri-mesop-components",
     "technologies": [
@@ -984,40 +1012,11 @@ export const catalogFeaturedRepositories = [
     ]
   },
   {
-    "description": "ASGI3 server with built-in HTTP/1.1, HTTP/2, HTTP/3, QUIC, WebSocket, TLS, static delivery, and release validation.",
-    "display_name": "tigrcorn",
-    "id": "repository:tigrbl/tigrcorn",
-    "metrics": {
-      "commits": 0,
-      "contributors": 4,
-      "deployments": 2454,
-      "environments": 0,
-      "forks": 2,
-      "github_releases": 40,
-      "open_issues": 15,
-      "packages": 0,
-      "related_resources": 1,
-      "size_kb": 18970,
-      "stars": 3,
-      "watchers": 1
-    },
-    "observed_at": "2026-08-06T02:55:27Z",
-    "owner": "tigrbl",
-    "route": "/catalog/repositories/tigrbl/tigrcorn",
-    "technologies": [
-      "HTML",
-      "Makefile",
-      "Python",
-      "Shell",
-      "TypeScript"
-    ]
-  },
-  {
     "description": "Tigrbl-native multi-tenant OpenID Connect / OAuth 2.0 identity provider with ASGI runtime profiles, JWKS/JWT support, operator controls, and SSOT-backed compliance evidence.",
     "display_name": "tigrbl_auth",
     "id": "repository:tigrbl/tigrbl_auth",
     "metrics": {
-      "commits": 921,
+      "commits": 923,
       "contributors": 2,
       "deployments": 121,
       "environments": 1,
@@ -1026,11 +1025,11 @@ export const catalogFeaturedRepositories = [
       "open_issues": 13,
       "packages": 500,
       "related_resources": 56,
-      "size_kb": 25828,
+      "size_kb": 26293,
       "stars": 2,
       "watchers": 0
     },
-    "observed_at": "2026-08-06T02:55:23Z",
+    "observed_at": "2026-08-10T13:12:48Z",
     "owner": "tigrbl",
     "route": "/catalog/repositories/tigrbl/tigrbl_auth",
     "technologies": [
@@ -1047,23 +1046,22 @@ export const catalogFeaturedRepositories = [
 
 export const catalogTechnologies = [
   {
-    "bytes": 33804986,
+    "bytes": 33887121,
     "evidence": [
       {
         "kind": "github-languages",
-        "observed_at": "2026-08-06T02:54:46Z"
+        "observed_at": "2026-08-10T13:12:47Z"
       }
     ],
     "id": "technology:python:18885f27",
     "kind": "technology",
     "name": "Python",
-    "observed_at": "2026-08-06T02:54:46Z",
+    "observed_at": "2026-08-10T13:12:47Z",
     "repositories": [
       "groupsum/ad-measurement-media-governance-pack",
       "groupsum/ad-supply-chain-transparency-governance-pack",
       "groupsum/audience-data-transparency-governance-pack",
       "groupsum/authentication-governance-pack",
-      "groupsum/authnz-policy-governance-pack",
       "groupsum/authorization-policy-governance-pack",
       "groupsum/cache-freshness-governance-pack",
       "groupsum/consent-privacy-signals-governance-pack",
@@ -1083,6 +1081,7 @@ export const catalogTechnologies = [
       "groupsum/mobile-install-attribution-governance-pack",
       "groupsum/npmctl",
       "groupsum/npmctl-com",
+      "groupsum/oidc-authn-authz-boundary-governance-pack",
       "groupsum/portwyrm",
       "groupsum/privacy-governance-records-governance-pack",
       "groupsum/seo-aeo-aieo-governance-pack",
@@ -1126,17 +1125,17 @@ export const catalogTechnologies = [
     "route": "/catalog/technologies/python-18885f27"
   },
   {
-    "bytes": 4188634,
+    "bytes": 4194434,
     "evidence": [
       {
         "kind": "github-languages",
-        "observed_at": "2026-08-06T02:54:46Z"
+        "observed_at": "2026-08-10T13:12:47Z"
       }
     ],
     "id": "technology:javascript:b27ad06d",
     "kind": "technology",
     "name": "JavaScript",
-    "observed_at": "2026-08-06T02:54:46Z",
+    "observed_at": "2026-08-10T13:12:47Z",
     "repositories": [
       "groupsum/groupsum-xyz",
       "groupsum/markdown_workspace",
@@ -1168,17 +1167,17 @@ export const catalogTechnologies = [
     "route": "/catalog/technologies/javascript-b27ad06d"
   },
   {
-    "bytes": 48013840,
+    "bytes": 47553378,
     "evidence": [
       {
         "kind": "github-languages",
-        "observed_at": "2026-08-06T02:54:46Z"
+        "observed_at": "2026-08-10T13:12:47Z"
       }
     ],
     "id": "technology:typescript:ed0504f7",
     "kind": "technology",
     "name": "TypeScript",
-    "observed_at": "2026-08-06T02:54:46Z",
+    "observed_at": "2026-08-10T13:12:47Z",
     "repositories": [
       "groupsum/document-studio",
       "groupsum/document-viewer",
@@ -1205,17 +1204,17 @@ export const catalogTechnologies = [
     "route": "/catalog/technologies/typescript-ed0504f7"
   },
   {
-    "bytes": 21209118,
+    "bytes": 21208259,
     "evidence": [
       {
         "kind": "github-languages",
-        "observed_at": "2026-08-06T02:54:46Z"
+        "observed_at": "2026-08-10T13:12:47Z"
       }
     ],
     "id": "technology:html:07239dbd",
     "kind": "technology",
     "name": "HTML",
-    "observed_at": "2026-08-06T02:54:46Z",
+    "observed_at": "2026-08-10T13:12:47Z",
     "repositories": [
       "groupsum/document-studio",
       "groupsum/document-viewer",
@@ -1242,17 +1241,17 @@ export const catalogTechnologies = [
     "route": "/catalog/technologies/html-07239dbd"
   },
   {
-    "bytes": 12283,
+    "bytes": 12498,
     "evidence": [
       {
         "kind": "github-languages",
-        "observed_at": "2026-08-06T02:54:46Z"
+        "observed_at": "2026-08-10T13:12:47Z"
       }
     ],
     "id": "technology:dockerfile:dd2c0eb6",
     "kind": "technology",
     "name": "Dockerfile",
-    "observed_at": "2026-08-06T02:54:46Z",
+    "observed_at": "2026-08-10T13:12:47Z",
     "repositories": [
       "groupsum/groupsum-xyz",
       "groupsum/markdown_workspace",
@@ -1278,17 +1277,17 @@ export const catalogTechnologies = [
     "route": "/catalog/technologies/dockerfile-dd2c0eb6"
   },
   {
-    "bytes": 10360494,
+    "bytes": 10360919,
     "evidence": [
       {
         "kind": "github-languages",
-        "observed_at": "2026-08-06T02:54:46Z"
+        "observed_at": "2026-08-10T13:12:47Z"
       }
     ],
     "id": "technology:css:b581e460",
     "kind": "technology",
     "name": "CSS",
-    "observed_at": "2026-08-06T02:54:46Z",
+    "observed_at": "2026-08-10T13:12:47Z",
     "repositories": [
       "groupsum/document-studio",
       "groupsum/document-viewer",
@@ -1317,13 +1316,13 @@ export const catalogTechnologies = [
     "evidence": [
       {
         "kind": "github-languages",
-        "observed_at": "2026-08-06T02:54:46Z"
+        "observed_at": "2026-08-10T13:12:47Z"
       }
     ],
     "id": "technology:shell:a7332854",
     "kind": "technology",
     "name": "Shell",
-    "observed_at": "2026-08-06T02:54:46Z",
+    "observed_at": "2026-08-10T13:12:47Z",
     "repositories": [
       "groupsum/markdown_workspace",
       "groupsum/mdwrk",
@@ -1342,13 +1341,13 @@ export const catalogTechnologies = [
     "evidence": [
       {
         "kind": "github-languages",
-        "observed_at": "2026-08-06T02:54:46Z"
+        "observed_at": "2026-08-10T13:12:47Z"
       }
     ],
     "id": "technology:svelte:0073bfca",
     "kind": "technology",
     "name": "Svelte",
-    "observed_at": "2026-08-06T02:54:46Z",
+    "observed_at": "2026-08-10T13:12:47Z",
     "repositories": [
       "swarmauri/swarmakit",
       "swarmauri/swarmauri-aucplot",
@@ -1363,13 +1362,13 @@ export const catalogTechnologies = [
     "evidence": [
       {
         "kind": "github-languages",
-        "observed_at": "2026-08-06T02:54:46Z"
+        "observed_at": "2026-08-10T13:12:47Z"
       }
     ],
     "id": "technology:xslt:1370c71d",
     "kind": "technology",
     "name": "XSLT",
-    "observed_at": "2026-08-06T02:54:46Z",
+    "observed_at": "2026-08-10T13:12:47Z",
     "repositories": [
       "groupsum/markdown_workspace",
       "groupsum/mdwrkcom-content-pack",
@@ -1384,13 +1383,13 @@ export const catalogTechnologies = [
     "evidence": [
       {
         "kind": "github-languages",
-        "observed_at": "2026-08-06T02:54:46Z"
+        "observed_at": "2026-08-10T13:12:47Z"
       }
     ],
     "id": "technology:jupyter-notebook:c98b6019",
     "kind": "technology",
     "name": "Jupyter Notebook",
-    "observed_at": "2026-08-06T02:54:46Z",
+    "observed_at": "2026-08-10T13:12:47Z",
     "repositories": [
       "swarmauri/swarmauri-notebooks",
       "swarmauri/swarmauri-playground",
@@ -1404,13 +1403,13 @@ export const catalogTechnologies = [
     "evidence": [
       {
         "kind": "github-languages",
-        "observed_at": "2026-08-06T02:54:46Z"
+        "observed_at": "2026-08-10T13:12:47Z"
       }
     ],
     "id": "technology:rust:d9aa89fd",
     "kind": "technology",
     "name": "Rust",
-    "observed_at": "2026-08-06T02:54:46Z",
+    "observed_at": "2026-08-10T13:12:47Z",
     "repositories": [
       "groupsum/ssot-registry",
       "swarmauri/swarmauri-sdk",
@@ -1424,13 +1423,13 @@ export const catalogTechnologies = [
     "evidence": [
       {
         "kind": "github-languages",
-        "observed_at": "2026-08-06T02:54:46Z"
+        "observed_at": "2026-08-10T13:12:47Z"
       }
     ],
     "id": "technology:makefile:76ed074a",
     "kind": "technology",
     "name": "Makefile",
-    "observed_at": "2026-08-06T02:54:46Z",
+    "observed_at": "2026-08-10T13:12:47Z",
     "repositories": [
       "groupsum/ssot-registry",
       "tigrbl/tigrcorn"
@@ -1443,13 +1442,13 @@ export const catalogTechnologies = [
     "evidence": [
       {
         "kind": "github-languages",
-        "observed_at": "2026-08-06T02:54:46Z"
+        "observed_at": "2026-08-10T13:12:47Z"
       }
     ],
     "id": "technology:vue:b111a2a2",
     "kind": "technology",
     "name": "Vue",
-    "observed_at": "2026-08-06T02:54:46Z",
+    "observed_at": "2026-08-10T13:12:47Z",
     "repositories": [
       "swarmauri/swarmakit"
     ],
@@ -1461,13 +1460,13 @@ export const catalogTechnologies = [
     "evidence": [
       {
         "kind": "github-languages",
-        "observed_at": "2026-08-06T02:54:46Z"
+        "observed_at": "2026-08-10T13:12:47Z"
       }
     ],
     "id": "technology:c:f1deb75f",
     "kind": "technology",
     "name": "C++",
-    "observed_at": "2026-08-06T02:54:46Z",
+    "observed_at": "2026-08-10T13:12:47Z",
     "repositories": [
       "swarmauri/swarmauri-sdk"
     ],
@@ -1479,13 +1478,13 @@ export const catalogTechnologies = [
     "evidence": [
       {
         "kind": "github-languages",
-        "observed_at": "2026-08-06T02:54:46Z"
+        "observed_at": "2026-08-10T13:12:47Z"
       }
     ],
     "id": "technology:jinja:7c43eabf",
     "kind": "technology",
     "name": "Jinja",
-    "observed_at": "2026-08-06T02:54:46Z",
+    "observed_at": "2026-08-10T13:12:47Z",
     "repositories": [
       "swarmauri/swarmauri-sdk"
     ],
@@ -1497,13 +1496,13 @@ export const catalogTechnologies = [
     "evidence": [
       {
         "kind": "github-languages",
-        "observed_at": "2026-08-06T02:54:46Z"
+        "observed_at": "2026-08-10T13:12:47Z"
       }
     ],
     "id": "technology:mdx:d434e4eb",
     "kind": "technology",
     "name": "MDX",
-    "observed_at": "2026-08-06T02:54:46Z",
+    "observed_at": "2026-08-10T13:12:47Z",
     "repositories": [
       "swarmauri/swarmakit"
     ],
@@ -1515,13 +1514,13 @@ export const catalogTechnologies = [
     "evidence": [
       {
         "kind": "github-languages",
-        "observed_at": "2026-08-06T02:54:46Z"
+        "observed_at": "2026-08-10T13:12:47Z"
       }
     ],
     "id": "technology:meson:33742f46",
     "kind": "technology",
     "name": "Meson",
-    "observed_at": "2026-08-06T02:54:46Z",
+    "observed_at": "2026-08-10T13:12:47Z",
     "repositories": [
       "swarmauri/swarmauri-sdk"
     ],
@@ -1533,13 +1532,13 @@ export const catalogTechnologies = [
     "evidence": [
       {
         "kind": "github-languages",
-        "observed_at": "2026-08-06T02:54:46Z"
+        "observed_at": "2026-08-10T13:12:47Z"
       }
     ],
     "id": "technology:c:6b23c0d5",
     "kind": "technology",
     "name": "C",
-    "observed_at": "2026-08-06T02:54:46Z",
+    "observed_at": "2026-08-10T13:12:47Z",
     "repositories": [
       "swarmauri/swarmauri-sdk"
     ],
@@ -1563,49 +1562,49 @@ export const catalogDatasetManifest = {
   },
   "counts": {
     "organizations": 4,
-    "packages": 1129,
+    "packages": 1143,
     "repositories": 69,
-    "resources": 502,
+    "resources": 538,
     "technologies": 18
   },
   "files": [
     {
-      "bytes": 19627,
+      "bytes": 19643,
       "dataset": "organizations",
       "path": "organizations.json",
       "records": 4,
-      "sha256": "ab7b152b2d7495f96f7beec537a58ae82ac6aa4f6ec5ed737dedb1d5bee713d1"
+      "sha256": "aacbc9d4403a9041582f8ea11d215785035ba234b935f421cbcaa77b3ce606a3"
     },
     {
-      "bytes": 13138275,
+      "bytes": 13316651,
       "dataset": "packages",
       "path": "packages.json",
-      "records": 1129,
-      "sha256": "22337a7083c401c65b7d26f69d59cc93971a2980e3ec64b9f7cc79c4daea0f86"
+      "records": 1143,
+      "sha256": "de3177b477f38fdac768af5cc88972af7d129b507570ee34b805e333c6721bf3"
     },
     {
-      "bytes": 9198972,
+      "bytes": 9251190,
       "dataset": "repositories",
       "path": "repositories.json",
       "records": 69,
-      "sha256": "e14602d2322cd945b997b6adc267611db38dd1a2c4ed3dd805901652d332936b"
+      "sha256": "665647c01d64c333c6a16ce2482c2716bdd3b2ec24a257c37a680d6921d7b9f5"
     },
     {
-      "bytes": 635279,
+      "bytes": 675806,
       "dataset": "resources",
       "path": "resources.json",
-      "records": 502,
-      "sha256": "8d30e0a553b2f4f52aa32d1a6717a8ed7d1060309ad99b19e0bcfd0b890f1fe4"
+      "records": 538,
+      "sha256": "84918732fc893d40d42cb5269cd7e2e2466f2cc606db3c408a9ae919428f7584"
     },
     {
-      "bytes": 13831,
+      "bytes": 13843,
       "dataset": "technologies",
       "path": "technologies.json",
       "records": 18,
-      "sha256": "8c3dcfbd33cd82b187e716bb610aed198aadae648cd581f4133009a964e9bc60"
+      "sha256": "4fa50cd7108a6ec23edf1a19a6e8a71cf4268599ce4a87d19ed93ec47975bd9c"
     }
   ],
-  "generated_at": "2026-08-06T02:54:46Z",
+  "generated_at": "2026-08-10T13:12:47Z",
   "product_evidence": {
     "path": "/catalog/product-evidence/",
     "records": 70
@@ -1613,8 +1612,8 @@ export const catalogDatasetManifest = {
   "schema_version": "1.0.0",
   "source": "/catalog/catalog.json",
   "source_counts": {
-    "deployments": 4037,
-    "relationships": 10285,
-    "releases": 17147
+    "deployments": 4100,
+    "relationships": 10337,
+    "releases": 17334
   }
 } as const;

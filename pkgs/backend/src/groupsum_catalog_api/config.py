@@ -11,6 +11,7 @@ class Settings:
     analytics_dsn: str
     analytics_token: str | None
     analytics_disable_ssl: bool
+    catalog_internal_token: str | None
 
     @classmethod
     def from_environment(cls) -> Settings:
@@ -29,4 +30,5 @@ class Settings:
                 "GROUPSUM_ANALYTICS_DISABLE_SSL", "false"
             ).lower()
             in {"1", "true", "yes", "on"},
+            catalog_internal_token=os.getenv("GROUPSUM_CATALOG_INTERNAL_TOKEN") or None,
         )

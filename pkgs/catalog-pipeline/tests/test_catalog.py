@@ -18,10 +18,11 @@ from catalog_collect import (
 )
 from catalog_render import compile_catalog, related_resource_url, repair_text
 from catalog_validate import validate
+from groupsum_catalog_pipeline.api_records import publish_catalog
 from groupsum_catalog_pipeline.snapshots import (
     normalized_measurements,
     normalized_observations,
-    publish_snapshot,
+    snapshot_descriptor,
 )
 
 
@@ -88,26 +89,51 @@ class CatalogCollectorTests(unittest.TestCase):
         self.assertEqual(observations[0]["subject_id"], "repository:groupsum/example")
         self.assertEqual(len(observations[0]["content_hash"]), 64)
 
-    def test_snapshot_publication_is_immutable_and_updates_latest(self):
-        import tempfile
-
+    def test_snapshot_descriptor_is_deterministic_and_has_no_filesystem_side_effects(self):
         catalog = {
             "schema_version": "1.0.0",
             "generated_at": "2026-08-09T12:00:00Z",
             "completeness": {"repositories": "fixture"},
             "repositories": [], "packages": [], "observations": [],
         }
-        with tempfile.TemporaryDirectory() as directory:
-            output = Path(directory) / "catalog.json"
-            first = publish_snapshot(catalog, output)
-            second = publish_snapshot(catalog, output)
-            self.assertEqual(first, second)
-            snapshot_dir = output.parent / "snapshots" / first["snapshot_id"].replace(":", "-")
-            self.assertTrue((snapshot_dir / "catalog.json").exists())
-            self.assertTrue((snapshot_dir / "observations.jsonl").exists())
-            self.assertTrue((snapshot_dir / "measurements.jsonl").exists())
-            latest = json.loads((output.parent / "snapshots/latest.json").read_text())
-            self.assertEqual(latest["source_digest"], first["source_digest"])
+        first = snapshot_descriptor(catalog)
+        second = snapshot_descriptor(catalog)
+        self.assertEqual(first, second)
+        self.assertEqual(first["observation_count"], 0)
+        self.assertEqual(first["measurement_count"], 0)
+        self.assertNotIn("status", first)
+
+    def test_snapshot_finalizer_is_last_and_not_called_after_record_failure(self):
+        class Client:
+            def __init__(self, fail_at=None):
+                self.calls = []
+                self.fail_at = fail_at
+
+            def publish_entities(self, snapshot_id, records):
+                self.calls.append("entities")
+                return {}
+
+            def publish_records(self, path, snapshot_id, records):
+                name = path.rsplit("/", 1)[-1]
+                self.calls.append(name)
+                if name == self.fail_at:
+                    raise RuntimeError(name)
+                return {}
+
+            def create_snapshot(self, descriptor):
+                self.calls.append("snapshot")
+                return {}
+
+        descriptor = {"snapshot_id": "snapshot:test"}
+        client = Client()
+        publish_catalog(client, descriptor, {}, [], [], [])
+        self.assertEqual(
+            client.calls, ["entities", "associations", "observations", "metrics", "snapshot"]
+        )
+        failing = Client("metrics")
+        with self.assertRaises(RuntimeError):
+            publish_catalog(failing, descriptor, {}, [], [], [])
+        self.assertNotIn("snapshot", failing.calls)
 
     def test_npm_manifest(self):
         package, dependencies = manifest_package(

@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-06T02:54:46Z",
+  "generated_at": "2026-08-10T13:12:47Z",
   "packages": [
     {
       "claim_boundary": "Publication is reported only when confirmed by the named public registry.",
@@ -63,7 +63,7 @@
       "evidence": [
         {
           "kind": "registry",
-          "observed_at": "2026-08-06T02:54:46Z",
+          "observed_at": "2026-08-10T13:12:47Z",
           "url": "https://pypi.org/project/ad-supply-chain-transparency-governance-pack/"
         }
       ],
@@ -95,7 +95,7 @@
       "license_status": "observed",
       "manifest_path": "pyproject.toml",
       "name": "ad-supply-chain-transparency-governance-pack",
-      "observed_at": "2026-08-06T02:54:46Z",
+      "observed_at": "2026-08-10T13:12:47Z",
       "owner": "groupsum",
       "package_kind": "published-package",
       "private": false,
@@ -117,7 +117,7 @@
           "legal_inherits_from": "package:pypi:ad-supply-chain-transparency-governance-pack:groupsum/ad-supply-chain-transparency-governance-pack:pyproject.toml",
           "license_expression": "Apache-2.0",
           "license_status": "observed",
-          "observed_at": "2026-08-06T02:54:46Z",
+          "observed_at": "2026-08-10T13:12:47Z",
           "published_at": "2026-05-18T06:05:00.185135Z",
           "release_kind": "pypi",
           "route": "/catalog/releases/pypi/ad-supply-chain-transparency-governance-pack-98d564bfe4",
@@ -139,22 +139,6 @@
     "archived": false,
     "claim_boundary": "SSOT artifact counts and coverage are registry-reported observations; they do not by themselves prove that every public product claim is supported.",
     "commit_activity": [
-      {
-        "count": 0,
-        "date": "2026-07-08"
-      },
-      {
-        "count": 0,
-        "date": "2026-07-09"
-      },
-      {
-        "count": 0,
-        "date": "2026-07-10"
-      },
-      {
-        "count": 0,
-        "date": "2026-07-11"
-      },
       {
         "count": 0,
         "date": "2026-07-12"
@@ -258,6 +242,22 @@
       {
         "count": 0,
         "date": "2026-08-06"
+      },
+      {
+        "count": 0,
+        "date": "2026-08-07"
+      },
+      {
+        "count": 0,
+        "date": "2026-08-08"
+      },
+      {
+        "count": 0,
+        "date": "2026-08-09"
+      },
+      {
+        "count": 0,
+        "date": "2026-08-10"
       }
     ],
     "contributors": [
@@ -280,12 +280,12 @@
     "evidence": [
       {
         "kind": "ssot-registry",
-        "observed_at": "2026-08-06T02:54:53Z",
+        "observed_at": "2026-08-10T13:12:47Z",
         "url": "https://github.com/groupsum/ad-supply-chain-transparency-governance-pack/blob/master/.ssot/registry.json"
       },
       {
         "kind": "source",
-        "observed_at": "2026-08-06T02:54:49Z",
+        "observed_at": "2026-08-10T13:12:47Z",
         "url": "https://github.com/groupsum/ad-supply-chain-transparency-governance-pack"
       }
     ],
@@ -300,7 +300,7 @@
         "legal_inherits_from": "repository:groupsum/ad-supply-chain-transparency-governance-pack",
         "license_expression": "Apache-2.0",
         "license_status": "observed",
-        "observed_at": "2026-08-06T02:54:49Z",
+        "observed_at": "2026-08-10T13:12:47Z",
         "prerelease": false,
         "published_at": "2026-05-18T06:04:54Z",
         "release_kind": "github",
@@ -387,7 +387,7 @@
       "watchers": 0
     },
     "name": "ad-supply-chain-transparency-governance-pack",
-    "observed_at": "2026-08-06T02:54:49Z",
+    "observed_at": "2026-08-10T13:12:47Z",
     "owner": "groupsum",
     "package_ids": [
       "package:pypi:ad-supply-chain-transparency-governance-pack:groupsum/ad-supply-chain-transparency-governance-pack:pyproject.toml"
@@ -425,7 +425,7 @@
         "legal_evidence": [],
         "legal_inherits_from": "repository:groupsum/ad-supply-chain-transparency-governance-pack",
         "name": "docs/governance",
-        "observed_at": "2026-08-06T02:54:49Z",
+        "observed_at": "2026-08-10T13:12:47Z",
         "path": "docs/governance",
         "repository": "groupsum/ad-supply-chain-transparency-governance-pack",
         "repository_route": "/catalog/repositories/groupsum/ad-supply-chain-transparency-governance-pack",
@@ -697,7 +697,7 @@
         "specs": 0,
         "tests": 0
       },
-      "observed_at": "2026-08-06T02:54:53Z",
+      "observed_at": "2026-08-10T13:12:47Z",
       "present": true,
       "raw_url": "https://raw.githubusercontent.com/groupsum/ad-supply-chain-transparency-governance-pack/master/.ssot/registry.json",
       "registry_url": "https://github.com/groupsum/ad-supply-chain-transparency-governance-pack/blob/master/.ssot/registry.json",

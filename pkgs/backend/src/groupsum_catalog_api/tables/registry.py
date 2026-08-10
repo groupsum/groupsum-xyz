@@ -30,11 +30,13 @@ ALL_TABLES = (
     MetricObservation,
 )
 
-CURRENT_PROJECTION_TABLES = (
+COLLECTIBLE_ENTITY_TABLES = (
     *CORE_ENTITY_TABLES,
     *RESOURCE_ENTITY_TABLES,
-    Association,
 )
+
+COLLECTION_FACT_TABLES = (Association, CatalogObservation, MetricObservation)
+SNAPSHOT_TABLES = (CatalogSnapshot,)
 
 ENTITY_TABLES = {
     Organization.ENTITY_TYPE: Organization,
@@ -49,8 +51,10 @@ ENTITY_TABLES = {
 
 __all__ = [
     "ALL_TABLES",
+    "COLLECTIBLE_ENTITY_TABLES",
+    "COLLECTION_FACT_TABLES",
     "CORE_ENTITY_TABLES",
-    "CURRENT_PROJECTION_TABLES",
     "ENTITY_TABLES",
     "RESOURCE_TABLES",
+    "SNAPSHOT_TABLES",
 ]

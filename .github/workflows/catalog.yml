@@ -37,6 +37,16 @@ jobs:
         run: npm run catalog:render
       - run: npm run check
       - run: npm run build
+      - name: Install backend publisher
+        run: |
+          python -m pip install uv==0.11.28
+          uv sync --locked --all-groups
+        working-directory: pkgs/backend
+      - name: Publish records and finalize snapshot
+        env:
+          GROUPSUM_CATALOG_API_URL: ${{ vars.GROUPSUM_CATALOG_API_URL || 'https://groupsum.xyz' }}
+          GROUPSUM_CATALOG_INTERNAL_TOKEN: ${{ secrets.GROUPSUM_CATALOG_INTERNAL_TOKEN }}
+        run: npm run catalog:publish
       - name: Create or update catalog refresh pull request
         env:
           GH_TOKEN: ${{ github.token }}

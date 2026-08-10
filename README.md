@@ -48,7 +48,7 @@ Languages and ecosystem classifications are intentionally separate.
 ```powershell
 uv sync --project pkgs/backend --locked
 uv run --project pkgs/backend python pkgs/backend/scripts/migrate.py
-uv run --project pkgs/backend python pkgs/backend/scripts/import_catalog.py
+uv run --project pkgs/backend python pkgs/backend/scripts/publish_catalog.py --dry-run
 uv run --project pkgs/backend python pkgs/backend/scripts/export_openapi.py
 uv run --project pkgs/backend python pkgs/backend/scripts/export_static_api.py
 uv run --project pkgs/backend pytest pkgs/backend/tests
@@ -56,10 +56,13 @@ uv run --project pkgs/backend tigrcorn groupsum_catalog_api.app:app --app-dir pk
 ```
 
 The default development database is `pkgs/backend/data/groupsum-catalog.sqlite3`.
-Production sets `GROUPSUM_DATABASE_URL` for PostgreSQL and a terse
+Production sets `GROUPSUM_DATABASE_URL` for PostgreSQL, a bearer token in
+`GROUPSUM_CATALOG_INTERNAL_TOKEN`, and a terse
 `GROUPSUM_ANALYTICS_DSN` such as `quack://groupsum-duckdb:9494` for the DuckDB
-metric store. Schema changes are applied by numbered, idempotent
-migrations before import. Create an online, integrity-checked backup with:
+metric store. The scheduled catalog workflow creates entity and fact records through
+`POST /internal/v1/catalog/*`, then finalizes them with
+`POST /internal/v1/catalog/snapshots`. The snapshot endpoint never ingests a bundle,
+and metric observations are append-only. Create an online, integrity-checked backup with:
 
 ```powershell
 uv run --project pkgs/backend python pkgs/backend/scripts/backup.py

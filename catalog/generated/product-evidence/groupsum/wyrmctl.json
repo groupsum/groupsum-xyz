@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-06T02:54:46Z",
+  "generated_at": "2026-08-10T13:12:47Z",
   "packages": [
     {
       "claim_boundary": "Publication is reported only when confirmed by the named public registry.",
@@ -118,7 +118,7 @@
       "evidence": [
         {
           "kind": "registry",
-          "observed_at": "2026-08-06T02:54:46Z",
+          "observed_at": "2026-08-10T13:12:47Z",
           "url": "https://pypi.org/project/wyrmctl/"
         }
       ],
@@ -159,7 +159,7 @@
       "license_status": "observed",
       "manifest_path": "packages/wyrmctl/pyproject.toml",
       "name": "wyrmctl",
-      "observed_at": "2026-08-06T02:54:46Z",
+      "observed_at": "2026-08-10T13:12:47Z",
       "owner": "groupsum",
       "package_kind": "published-package",
       "private": false,
@@ -181,7 +181,7 @@
           "legal_inherits_from": "package:pypi:wyrmctl:groupsum/wyrmctl:packages/wyrmctl/pyproject.toml",
           "license_expression": "Apache-2.0",
           "license_status": "observed",
-          "observed_at": "2026-08-06T02:54:46Z",
+          "observed_at": "2026-08-10T13:12:47Z",
           "published_at": "2026-08-04T16:52:37.412229Z",
           "release_kind": "pypi",
           "route": "/catalog/releases/pypi/wyrmctl-83d1c8d690",
@@ -195,7 +195,7 @@
           "legal_inherits_from": "package:pypi:wyrmctl:groupsum/wyrmctl:packages/wyrmctl/pyproject.toml",
           "license_expression": "Apache-2.0",
           "license_status": "observed",
-          "observed_at": "2026-08-06T02:54:46Z",
+          "observed_at": "2026-08-10T13:12:47Z",
           "published_at": "2026-07-21T23:59:27.647274Z",
           "release_kind": "pypi",
           "route": "/catalog/releases/pypi/wyrmctl-d5e8e3fc67",
@@ -268,7 +268,7 @@
       "evidence": [
         {
           "kind": "source",
-          "observed_at": "2026-08-06T02:54:46Z",
+          "observed_at": "2026-08-10T13:12:47Z",
           "url": "https://github.com/groupsum/wyrmctl/blob/master/packages/wyrmctl-cloudflare/pyproject.toml"
         }
       ],
@@ -309,7 +309,7 @@
       "license_status": "observed",
       "manifest_path": "packages/wyrmctl-cloudflare/pyproject.toml",
       "name": "wyrmctl-cloudflare",
-      "observed_at": "2026-08-06T02:54:46Z",
+      "observed_at": "2026-08-10T13:12:47Z",
       "owner": "groupsum",
       "package_kind": "package-candidate",
       "private": false,
@@ -389,7 +389,7 @@
       "evidence": [
         {
           "kind": "source",
-          "observed_at": "2026-08-06T02:54:46Z",
+          "observed_at": "2026-08-10T13:12:47Z",
           "url": "https://github.com/groupsum/wyrmctl/blob/master/packages/wyrmctl-digitalocean/pyproject.toml"
         }
       ],
@@ -430,7 +430,7 @@
       "license_status": "observed",
       "manifest_path": "packages/wyrmctl-digitalocean/pyproject.toml",
       "name": "wyrmctl-digitalocean",
-      "observed_at": "2026-08-06T02:54:46Z",
+      "observed_at": "2026-08-10T13:12:47Z",
       "owner": "groupsum",
       "package_kind": "package-candidate",
       "private": false,
@@ -510,7 +510,7 @@
       "evidence": [
         {
           "kind": "source",
-          "observed_at": "2026-08-06T02:54:46Z",
+          "observed_at": "2026-08-10T13:12:47Z",
           "url": "https://github.com/groupsum/wyrmctl/blob/master/packages/wyrmctl-godaddy/pyproject.toml"
         }
       ],
@@ -551,7 +551,7 @@
       "license_status": "observed",
       "manifest_path": "packages/wyrmctl-godaddy/pyproject.toml",
       "name": "wyrmctl-godaddy",
-      "observed_at": "2026-08-06T02:54:46Z",
+      "observed_at": "2026-08-10T13:12:47Z",
       "owner": "groupsum",
       "package_kind": "package-candidate",
       "private": false,
@@ -631,7 +631,7 @@
       "evidence": [
         {
           "kind": "source",
-          "observed_at": "2026-08-06T02:54:46Z",
+          "observed_at": "2026-08-10T13:12:47Z",
           "url": "https://github.com/groupsum/wyrmctl/blob/master/packages/wyrmctl-namecheap/pyproject.toml"
         }
       ],
@@ -672,7 +672,7 @@
       "license_status": "observed",
       "manifest_path": "packages/wyrmctl-namecheap/pyproject.toml",
       "name": "wyrmctl-namecheap",
-      "observed_at": "2026-08-06T02:54:46Z",
+      "observed_at": "2026-08-10T13:12:47Z",
       "owner": "groupsum",
       "package_kind": "package-candidate",
       "private": false,
@@ -752,7 +752,7 @@
       "evidence": [
         {
           "kind": "source",
-          "observed_at": "2026-08-06T02:54:46Z",
+          "observed_at": "2026-08-10T13:12:47Z",
           "url": "https://github.com/groupsum/wyrmctl/blob/master/packages/wyrmctl-route53/pyproject.toml"
         }
       ],
@@ -793,7 +793,7 @@
       "license_status": "observed",
       "manifest_path": "packages/wyrmctl-route53/pyproject.toml",
       "name": "wyrmctl-route53",
-      "observed_at": "2026-08-06T02:54:46Z",
+      "observed_at": "2026-08-10T13:12:47Z",
       "owner": "groupsum",
       "package_kind": "package-candidate",
       "private": false,
@@ -935,7 +935,7 @@
       "evidence": [
         {
           "kind": "source",
-          "observed_at": "2026-08-06T02:54:46Z",
+          "observed_at": "2026-08-10T13:12:47Z",
           "url": "https://github.com/groupsum/wyrmctl/blob/master/pyproject.toml"
         }
       ],
@@ -967,7 +967,7 @@
       "license_status": "observed",
       "manifest_path": "pyproject.toml",
       "name": "wyrmctl-workspace",
-      "observed_at": "2026-08-06T02:54:46Z",
+      "observed_at": "2026-08-10T13:12:47Z",
       "owner": "groupsum",
       "package_kind": "package-candidate",
       "private": false,
@@ -998,22 +998,6 @@
     "archived": false,
     "claim_boundary": "SSOT artifact counts and coverage are registry-reported observations; they do not by themselves prove that every public product claim is supported.",
     "commit_activity": [
-      {
-        "count": 0,
-        "date": "2026-07-08"
-      },
-      {
-        "count": 0,
-        "date": "2026-07-09"
-      },
-      {
-        "count": 0,
-        "date": "2026-07-10"
-      },
-      {
-        "count": 0,
-        "date": "2026-07-11"
-      },
       {
         "count": 0,
         "date": "2026-07-12"
@@ -1117,6 +1101,22 @@
       {
         "count": 0,
         "date": "2026-08-06"
+      },
+      {
+        "count": 0,
+        "date": "2026-08-07"
+      },
+      {
+        "count": 0,
+        "date": "2026-08-08"
+      },
+      {
+        "count": 0,
+        "date": "2026-08-09"
+      },
+      {
+        "count": 0,
+        "date": "2026-08-10"
       }
     ],
     "contributors": [
@@ -1139,12 +1139,12 @@
     "evidence": [
       {
         "kind": "ssot-registry",
-        "observed_at": "2026-08-06T02:55:20Z",
+        "observed_at": "2026-08-10T13:12:47Z",
         "url": "https://github.com/groupsum/wyrmctl/blob/master/.ssot/registry.json"
       },
       {
         "kind": "source",
-        "observed_at": "2026-08-06T02:55:15Z",
+        "observed_at": "2026-08-10T13:12:47Z",
         "url": "https://github.com/groupsum/wyrmctl"
       }
     ],
@@ -1212,7 +1212,7 @@
       "watchers": 0
     },
     "name": "wyrmctl",
-    "observed_at": "2026-08-06T02:55:15Z",
+    "observed_at": "2026-08-10T13:12:47Z",
     "owner": "groupsum",
     "package_ids": [
       "package:pypi:wyrmctl-cloudflare:groupsum/wyrmctl:packages/wyrmctl-cloudflare/pyproject.toml",
@@ -1368,7 +1368,7 @@
         "legal_evidence": [],
         "legal_inherits_from": "repository:groupsum/wyrmctl",
         "name": "schemas/npm/2.10.4/openapi.json",
-        "observed_at": "2026-08-06T02:55:15Z",
+        "observed_at": "2026-08-10T13:12:47Z",
         "path": "schemas/npm/2.10.4/openapi.json",
         "repository": "groupsum/wyrmctl",
         "repository_route": "/catalog/repositories/groupsum/wyrmctl",
@@ -1382,7 +1382,7 @@
         "legal_evidence": [],
         "legal_inherits_from": "repository:groupsum/wyrmctl",
         "name": "docs/AGENTS.md",
-        "observed_at": "2026-08-06T02:55:15Z",
+        "observed_at": "2026-08-10T13:12:47Z",
         "path": "docs/AGENTS.md",
         "repository": "groupsum/wyrmctl",
         "repository_route": "/catalog/repositories/groupsum/wyrmctl",
@@ -1396,7 +1396,7 @@
         "legal_evidence": [],
         "legal_inherits_from": "repository:groupsum/wyrmctl",
         "name": "docs/access-lists.md",
-        "observed_at": "2026-08-06T02:55:15Z",
+        "observed_at": "2026-08-10T13:12:47Z",
         "path": "docs/access-lists.md",
         "repository": "groupsum/wyrmctl",
         "repository_route": "/catalog/repositories/groupsum/wyrmctl",
@@ -1410,7 +1410,7 @@
         "legal_evidence": [],
         "legal_inherits_from": "repository:groupsum/wyrmctl",
         "name": "docs/adoption.md",
-        "observed_at": "2026-08-06T02:55:15Z",
+        "observed_at": "2026-08-10T13:12:47Z",
         "path": "docs/adoption.md",
         "repository": "groupsum/wyrmctl",
         "repository_route": "/catalog/repositories/groupsum/wyrmctl",
@@ -1424,7 +1424,7 @@
         "legal_evidence": [],
         "legal_inherits_from": "repository:groupsum/wyrmctl",
         "name": "docs/adrs",
-        "observed_at": "2026-08-06T02:55:15Z",
+        "observed_at": "2026-08-10T13:12:47Z",
         "path": "docs/adrs",
         "repository": "groupsum/wyrmctl",
         "repository_route": "/catalog/repositories/groupsum/wyrmctl",
@@ -1438,7 +1438,7 @@
         "legal_evidence": [],
         "legal_inherits_from": "repository:groupsum/wyrmctl",
         "name": "docs/artifact-trust.md",
-        "observed_at": "2026-08-06T02:55:15Z",
+        "observed_at": "2026-08-10T13:12:47Z",
         "path": "docs/artifact-trust.md",
         "repository": "groupsum/wyrmctl",
         "repository_route": "/catalog/repositories/groupsum/wyrmctl",
@@ -1452,7 +1452,7 @@
         "legal_evidence": [],
         "legal_inherits_from": "repository:groupsum/wyrmctl",
         "name": "docs/brand",
-        "observed_at": "2026-08-06T02:55:15Z",
+        "observed_at": "2026-08-10T13:12:47Z",
         "path": "docs/brand",
         "repository": "groupsum/wyrmctl",
         "repository_route": "/catalog/repositories/groupsum/wyrmctl",
@@ -1466,7 +1466,7 @@
         "legal_evidence": [],
         "legal_inherits_from": "repository:groupsum/wyrmctl",
         "name": "docs/cli.md",
-        "observed_at": "2026-08-06T02:55:15Z",
+        "observed_at": "2026-08-10T13:12:47Z",
         "path": "docs/cli.md",
         "repository": "groupsum/wyrmctl",
         "repository_route": "/catalog/repositories/groupsum/wyrmctl",
@@ -1480,7 +1480,7 @@
         "legal_evidence": [],
         "legal_inherits_from": "repository:groupsum/wyrmctl",
         "name": "docs/compliance.md",
-        "observed_at": "2026-08-06T02:55:15Z",
+        "observed_at": "2026-08-10T13:12:47Z",
         "path": "docs/compliance.md",
         "repository": "groupsum/wyrmctl",
         "repository_route": "/catalog/repositories/groupsum/wyrmctl",
@@ -1494,7 +1494,7 @@
         "legal_evidence": [],
         "legal_inherits_from": "repository:groupsum/wyrmctl",
         "name": "docs/contracts.md",
-        "observed_at": "2026-08-06T02:55:15Z",
+        "observed_at": "2026-08-10T13:12:47Z",
         "path": "docs/contracts.md",
         "repository": "groupsum/wyrmctl",
         "repository_route": "/catalog/repositories/groupsum/wyrmctl",
@@ -1508,7 +1508,7 @@
         "legal_evidence": [],
         "legal_inherits_from": "repository:groupsum/wyrmctl",
         "name": "docs/desired-state.md",
-        "observed_at": "2026-08-06T02:55:15Z",
+        "observed_at": "2026-08-10T13:12:47Z",
         "path": "docs/desired-state.md",
         "repository": "groupsum/wyrmctl",
         "repository_route": "/catalog/repositories/groupsum/wyrmctl",
@@ -1522,7 +1522,7 @@
         "legal_evidence": [],
         "legal_inherits_from": "repository:groupsum/wyrmctl",
         "name": "docs/dns-providers.md",
-        "observed_at": "2026-08-06T02:55:15Z",
+        "observed_at": "2026-08-10T13:12:47Z",
         "path": "docs/dns-providers.md",
         "repository": "groupsum/wyrmctl",
         "repository_route": "/catalog/repositories/groupsum/wyrmctl",
@@ -1536,7 +1536,7 @@
         "legal_evidence": [],
         "legal_inherits_from": "repository:groupsum/wyrmctl",
         "name": "docs/dns.md",
-        "observed_at": "2026-08-06T02:55:15Z",
+        "observed_at": "2026-08-10T13:12:47Z",
         "path": "docs/dns.md",
         "repository": "groupsum/wyrmctl",
         "repository_route": "/catalog/repositories/groupsum/wyrmctl",
@@ -1550,7 +1550,7 @@
         "legal_evidence": [],
         "legal_inherits_from": "repository:groupsum/wyrmctl",
         "name": "docs/evidence",
-        "observed_at": "2026-08-06T02:55:15Z",
+        "observed_at": "2026-08-10T13:12:47Z",
         "path": "docs/evidence",
         "repository": "groupsum/wyrmctl",
         "repository_route": "/catalog/repositories/groupsum/wyrmctl",
@@ -1564,7 +1564,7 @@
         "legal_evidence": [],
         "legal_inherits_from": "repository:groupsum/wyrmctl",
         "name": "docs/examples",
-        "observed_at": "2026-08-06T02:55:15Z",
+        "observed_at": "2026-08-10T13:12:47Z",
         "path": "docs/examples",
         "repository": "groupsum/wyrmctl",
         "repository_route": "/catalog/repositories/groupsum/wyrmctl",
@@ -1578,7 +1578,7 @@
         "legal_evidence": [],
         "legal_inherits_from": "repository:groupsum/wyrmctl",
         "name": "docs/extensions.md",
-        "observed_at": "2026-08-06T02:55:15Z",
+        "observed_at": "2026-08-10T13:12:47Z",
         "path": "docs/extensions.md",
         "repository": "groupsum/wyrmctl",
         "repository_route": "/catalog/repositories/groupsum/wyrmctl",
@@ -1592,7 +1592,7 @@
         "legal_evidence": [],
         "legal_inherits_from": "repository:groupsum/wyrmctl",
         "name": "docs/fragments",
-        "observed_at": "2026-08-06T02:55:15Z",
+        "observed_at": "2026-08-10T13:12:47Z",
         "path": "docs/fragments",
         "repository": "groupsum/wyrmctl",
         "repository_route": "/catalog/repositories/groupsum/wyrmctl",
@@ -1606,7 +1606,7 @@
         "legal_evidence": [],
         "legal_inherits_from": "repository:groupsum/wyrmctl",
         "name": "docs/github-actions.md",
-        "observed_at": "2026-08-06T02:55:15Z",
+        "observed_at": "2026-08-10T13:12:47Z",
         "path": "docs/github-actions.md",
         "repository": "groupsum/wyrmctl",
         "repository_route": "/catalog/repositories/groupsum/wyrmctl",
@@ -1620,7 +1620,7 @@
         "legal_evidence": [],
         "legal_inherits_from": "repository:groupsum/wyrmctl",
         "name": "docs/images",
-        "observed_at": "2026-08-06T02:55:15Z",
+        "observed_at": "2026-08-10T13:12:47Z",
         "path": "docs/images",
         "repository": "groupsum/wyrmctl",
         "repository_route": "/catalog/repositories/groupsum/wyrmctl",
@@ -1634,7 +1634,7 @@
         "legal_evidence": [],
         "legal_inherits_from": "repository:groupsum/wyrmctl",
         "name": "docs/index.md",
-        "observed_at": "2026-08-06T02:55:15Z",
+        "observed_at": "2026-08-10T13:12:47Z",
         "path": "docs/index.md",
         "repository": "groupsum/wyrmctl",
         "repository_route": "/catalog/repositories/groupsum/wyrmctl",
@@ -1648,7 +1648,7 @@
         "legal_evidence": [],
         "legal_inherits_from": "repository:groupsum/wyrmctl",
         "name": "docs/migration-manifests.md",
-        "observed_at": "2026-08-06T02:55:15Z",
+        "observed_at": "2026-08-10T13:12:47Z",
         "path": "docs/migration-manifests.md",
         "repository": "groupsum/wyrmctl",
         "repository_route": "/catalog/repositories/groupsum/wyrmctl",
@@ -1662,7 +1662,7 @@
         "legal_evidence": [],
         "legal_inherits_from": "repository:groupsum/wyrmctl",
         "name": "docs/migration-recovery.md",
-        "observed_at": "2026-08-06T02:55:15Z",
+        "observed_at": "2026-08-10T13:12:47Z",
         "path": "docs/migration-recovery.md",
         "repository": "groupsum/wyrmctl",
         "repository_route": "/catalog/repositories/groupsum/wyrmctl",
@@ -1676,7 +1676,7 @@
         "legal_evidence": [],
         "legal_inherits_from": "repository:groupsum/wyrmctl",
         "name": "docs/namecheap.md",
-        "observed_at": "2026-08-06T02:55:15Z",
+        "observed_at": "2026-08-10T13:12:47Z",
         "path": "docs/namecheap.md",
         "repository": "groupsum/wyrmctl",
         "repository_route": "/catalog/repositories/groupsum/wyrmctl",
@@ -1690,7 +1690,7 @@
         "legal_evidence": [],
         "legal_inherits_from": "repository:groupsum/wyrmctl",
         "name": "docs/npm-api-compatibility.md",
-        "observed_at": "2026-08-06T02:55:15Z",
+        "observed_at": "2026-08-10T13:12:47Z",
         "path": "docs/npm-api-compatibility.md",
         "repository": "groupsum/wyrmctl",
         "repository_route": "/catalog/repositories/groupsum/wyrmctl",
@@ -1704,7 +1704,7 @@
         "legal_evidence": [],
         "legal_inherits_from": "repository:groupsum/wyrmctl",
         "name": "docs/operational-hardening.md",
-        "observed_at": "2026-08-06T02:55:15Z",
+        "observed_at": "2026-08-10T13:12:47Z",
         "path": "docs/operational-hardening.md",
         "repository": "groupsum/wyrmctl",
         "repository_route": "/catalog/repositories/groupsum/wyrmctl",
@@ -1718,7 +1718,7 @@
         "legal_evidence": [],
         "legal_inherits_from": "repository:groupsum/wyrmctl",
         "name": "docs/owner-scoped-reconcile.md",
-        "observed_at": "2026-08-06T02:55:15Z",
+        "observed_at": "2026-08-10T13:12:47Z",
         "path": "docs/owner-scoped-reconcile.md",
         "repository": "groupsum/wyrmctl",
         "repository_route": "/catalog/repositories/groupsum/wyrmctl",
@@ -1732,7 +1732,7 @@
         "legal_evidence": [],
         "legal_inherits_from": "repository:groupsum/wyrmctl",
         "name": "docs/plan-artifacts.md",
-        "observed_at": "2026-08-06T02:55:15Z",
+        "observed_at": "2026-08-10T13:12:47Z",
         "path": "docs/plan-artifacts.md",
         "repository": "groupsum/wyrmctl",
         "repository_route": "/catalog/repositories/groupsum/wyrmctl",
@@ -1746,7 +1746,7 @@
         "legal_evidence": [],
         "legal_inherits_from": "repository:groupsum/wyrmctl",
         "name": "docs/plans",
-        "observed_at": "2026-08-06T02:55:15Z",
+        "observed_at": "2026-08-10T13:12:47Z",
         "path": "docs/plans",
         "repository": "groupsum/wyrmctl",
         "repository_route": "/catalog/repositories/groupsum/wyrmctl",
@@ -1760,7 +1760,7 @@
         "legal_evidence": [],
         "legal_inherits_from": "repository:groupsum/wyrmctl",
         "name": "docs/provider-capabilities.md",
-        "observed_at": "2026-08-06T02:55:15Z",
+        "observed_at": "2026-08-10T13:12:47Z",
         "path": "docs/provider-capabilities.md",
         "repository": "groupsum/wyrmctl",
         "repository_route": "/catalog/repositories/groupsum/wyrmctl",
@@ -1774,7 +1774,7 @@
         "legal_evidence": [],
         "legal_inherits_from": "repository:groupsum/wyrmctl",
         "name": "docs/repository-manifest.md",
-        "observed_at": "2026-08-06T02:55:15Z",
+        "observed_at": "2026-08-10T13:12:47Z",
         "path": "docs/repository-manifest.md",
         "repository": "groupsum/wyrmctl",
         "repository_route": "/catalog/repositories/groupsum/wyrmctl",
@@ -1788,7 +1788,7 @@
         "legal_evidence": [],
         "legal_inherits_from": "repository:groupsum/wyrmctl",
         "name": "docs/schema-migrations.md",
-        "observed_at": "2026-08-06T02:55:15Z",
+        "observed_at": "2026-08-10T13:12:47Z",
         "path": "docs/schema-migrations.md",
         "repository": "groupsum/wyrmctl",
         "repository_route": "/catalog/repositories/groupsum/wyrmctl",
@@ -1802,7 +1802,7 @@
         "legal_evidence": [],
         "legal_inherits_from": "repository:groupsum/wyrmctl",
         "name": "docs/security.md",
-        "observed_at": "2026-08-06T02:55:15Z",
+        "observed_at": "2026-08-10T13:12:47Z",
         "path": "docs/security.md",
         "repository": "groupsum/wyrmctl",
         "repository_route": "/catalog/repositories/groupsum/wyrmctl",
@@ -1816,7 +1816,7 @@
         "legal_evidence": [],
         "legal_inherits_from": "repository:groupsum/wyrmctl",
         "name": "docs/seo",
-        "observed_at": "2026-08-06T02:55:15Z",
+        "observed_at": "2026-08-10T13:12:47Z",
         "path": "docs/seo",
         "repository": "groupsum/wyrmctl",
         "repository_route": "/catalog/repositories/groupsum/wyrmctl",
@@ -1830,7 +1830,7 @@
         "legal_evidence": [],
         "legal_inherits_from": "repository:groupsum/wyrmctl",
         "name": "docs/seo-aeo-aieo.md",
-        "observed_at": "2026-08-06T02:55:15Z",
+        "observed_at": "2026-08-10T13:12:47Z",
         "path": "docs/seo-aeo-aieo.md",
         "repository": "groupsum/wyrmctl",
         "repository_route": "/catalog/repositories/groupsum/wyrmctl",
@@ -1844,7 +1844,7 @@
         "legal_evidence": [],
         "legal_inherits_from": "repository:groupsum/wyrmctl",
         "name": "docs/specs",
-        "observed_at": "2026-08-06T02:55:15Z",
+        "observed_at": "2026-08-10T13:12:47Z",
         "path": "docs/specs",
         "repository": "groupsum/wyrmctl",
         "repository_route": "/catalog/repositories/groupsum/wyrmctl",
@@ -1858,7 +1858,7 @@
         "legal_evidence": [],
         "legal_inherits_from": "repository:groupsum/wyrmctl",
         "name": "docs/ssl-certificates.md",
-        "observed_at": "2026-08-06T02:55:15Z",
+        "observed_at": "2026-08-10T13:12:47Z",
         "path": "docs/ssl-certificates.md",
         "repository": "groupsum/wyrmctl",
         "repository_route": "/catalog/repositories/groupsum/wyrmctl",
@@ -1872,7 +1872,7 @@
         "legal_evidence": [],
         "legal_inherits_from": "repository:groupsum/wyrmctl",
         "name": "docs/ssot",
-        "observed_at": "2026-08-06T02:55:15Z",
+        "observed_at": "2026-08-10T13:12:47Z",
         "path": "docs/ssot",
         "repository": "groupsum/wyrmctl",
         "repository_route": "/catalog/repositories/groupsum/wyrmctl",
@@ -1886,7 +1886,7 @@
         "legal_evidence": [],
         "legal_inherits_from": "repository:groupsum/wyrmctl",
         "name": "examples/desired-state",
-        "observed_at": "2026-08-06T02:55:15Z",
+        "observed_at": "2026-08-10T13:12:47Z",
         "path": "examples/desired-state",
         "repository": "groupsum/wyrmctl",
         "repository_route": "/catalog/repositories/groupsum/wyrmctl",
@@ -1900,7 +1900,7 @@
         "legal_evidence": [],
         "legal_inherits_from": "repository:groupsum/wyrmctl",
         "name": "examples/github-actions",
-        "observed_at": "2026-08-06T02:55:15Z",
+        "observed_at": "2026-08-10T13:12:47Z",
         "path": "examples/github-actions",
         "repository": "groupsum/wyrmctl",
         "repository_route": "/catalog/repositories/groupsum/wyrmctl",
@@ -4388,7 +4388,7 @@
         "specs": 17,
         "tests": 141
       },
-      "observed_at": "2026-08-06T02:55:20Z",
+      "observed_at": "2026-08-10T13:12:47Z",
       "present": true,
       "raw_url": "https://raw.githubusercontent.com/groupsum/wyrmctl/master/.ssot/registry.json",
       "registry_url": "https://github.com/groupsum/wyrmctl/blob/master/.ssot/registry.json",

@@ -2,10 +2,6 @@ from __future__ import annotations
 
 import hashlib
 import json
-import os
-import shutil
-from collections.abc import Iterable
-from pathlib import Path
 from typing import Any
 
 
@@ -153,80 +149,23 @@ def normalized_observations(catalog: dict[str, Any], snapshot_id: str) -> list[d
     return list({row["observation_id"]: row for row in rows}.values())
 
 
-def _write_jsonl(path: Path, rows: Iterable[dict[str, Any]]) -> None:
-    path.write_text("".join(_canonical(row) + "\n" for row in rows), encoding="utf-8")
+def snapshot_descriptor(catalog: dict[str, Any]) -> dict[str, Any]:
+    """Describe a future snapshot without publishing or persisting any facts."""
 
-
-def publish_snapshot(catalog: dict[str, Any], output_path: Path) -> dict[str, Any]:
     digest = hashlib.sha256(_canonical(catalog).encode()).hexdigest()
     snapshot_id = f"snapshot:{str(catalog['generated_at']).replace(':', '').replace('-', '')}:{digest[:12]}"
     observations = normalized_observations(catalog, snapshot_id)
     measurements = normalized_measurements(catalog, snapshot_id)
-    snapshots_root = output_path.parent / "snapshots"
-    latest_path = snapshots_root / "latest.json"
-    previous = None
-    if latest_path.exists():
-        try:
-            previous = json.loads(latest_path.read_text(encoding="utf-8"))
-        except (OSError, json.JSONDecodeError):
-            previous = None
-    final_dir = snapshots_root / snapshot_id.replace(":", "-")
-    staging = snapshots_root / f".{final_dir.name}.tmp"
-    snapshots_root.mkdir(parents=True, exist_ok=True)
-    if staging.exists():
-        shutil.rmtree(staging)
-    staging.mkdir()
-    (staging / "catalog.json").write_text(
-        json.dumps(catalog, indent=2, sort_keys=True) + "\n", encoding="utf-8"
-    )
-    _write_jsonl(staging / "observations.jsonl", observations)
-    _write_jsonl(staging / "measurements.jsonl", measurements)
-    formats = ["jsonl"]
-    parquet_error = None
-    try:
-        import duckdb
-
-        connection = duckdb.connect()
-        try:
-            connection.read_json(str(staging / "measurements.jsonl")).write_parquet(
-                str(staging / "measurements.parquet")
-            )
-            formats.append("parquet")
-        finally:
-            connection.close()
-    except ImportError:
-        parquet_error = "duckdb-not-installed"
-    except duckdb.Error as exc:
-        parquet_error = str(exc)
-    manifest = {
+    return {
         "snapshot_id": snapshot_id,
         "schema_version": catalog.get("schema_version"),
         "collected_at": catalog["generated_at"],
         "source_digest": digest,
         "collector_version": "groupsum-catalog/2",
-        "parent_snapshot_id": (
-            previous.get("snapshot_id")
-            if previous and previous.get("snapshot_id") != snapshot_id
-            else previous.get("parent_snapshot_id") if previous else None
-        ),
-        "status": "complete",
         "observation_count": len(observations),
         "measurement_count": len(measurements),
-        "measurement_formats": formats,
-        "parquet_error": parquet_error,
         "completeness": catalog.get("completeness") or {},
     }
-    (staging / "manifest.json").write_text(
-        json.dumps(manifest, indent=2, sort_keys=True) + "\n", encoding="utf-8"
-    )
-    if final_dir.exists():
-        shutil.rmtree(staging)
-    else:
-        staging.replace(final_dir)
-    latest_tmp = snapshots_root / ".latest.json.tmp"
-    latest_tmp.write_text(json.dumps(manifest, indent=2, sort_keys=True) + "\n", encoding="utf-8")
-    os.replace(latest_tmp, snapshots_root / "latest.json")
-    return manifest
 
 
-__all__ = ["normalized_measurements", "normalized_observations", "publish_snapshot"]
+__all__ = ["normalized_measurements", "normalized_observations", "snapshot_descriptor"]

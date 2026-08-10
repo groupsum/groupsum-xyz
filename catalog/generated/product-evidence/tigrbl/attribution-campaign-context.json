@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-06T02:54:46Z",
+  "generated_at": "2026-08-10T13:12:47Z",
   "packages": [
     {
       "claim_boundary": "Publication is reported only when confirmed by the named public registry.",
@@ -81,7 +81,7 @@
       "evidence": [
         {
           "kind": "registry",
-          "observed_at": "2026-08-06T02:54:46Z",
+          "observed_at": "2026-08-10T13:12:47Z",
           "url": "https://pypi.org/project/attribution-campaign-context/"
         }
       ],
@@ -104,7 +104,7 @@
       "license_status": "observed",
       "manifest_path": "pyproject.toml",
       "name": "attribution-campaign-context",
-      "observed_at": "2026-08-06T02:54:46Z",
+      "observed_at": "2026-08-10T13:12:47Z",
       "owner": "tigrbl",
       "package_kind": "published-package",
       "private": false,
@@ -126,7 +126,7 @@
           "legal_inherits_from": "package:pypi:attribution-campaign-context:tigrbl/attribution-campaign-context:pyproject.toml",
           "license_expression": "Apache-2.0",
           "license_status": "observed",
-          "observed_at": "2026-08-06T02:54:46Z",
+          "observed_at": "2026-08-10T13:12:47Z",
           "published_at": "2026-06-14T10:49:53.870015Z",
           "release_kind": "pypi",
           "route": "/catalog/releases/pypi/attribution-campaign-context-53f9747af0",
@@ -148,22 +148,6 @@
     "archived": false,
     "claim_boundary": "SSOT artifact counts and coverage are registry-reported observations; they do not by themselves prove that every public product claim is supported.",
     "commit_activity": [
-      {
-        "count": 0,
-        "date": "2026-07-08"
-      },
-      {
-        "count": 0,
-        "date": "2026-07-09"
-      },
-      {
-        "count": 0,
-        "date": "2026-07-10"
-      },
-      {
-        "count": 0,
-        "date": "2026-07-11"
-      },
       {
         "count": 0,
         "date": "2026-07-12"
@@ -267,6 +251,22 @@
       {
         "count": 0,
         "date": "2026-08-06"
+      },
+      {
+        "count": 0,
+        "date": "2026-08-07"
+      },
+      {
+        "count": 0,
+        "date": "2026-08-08"
+      },
+      {
+        "count": 0,
+        "date": "2026-08-09"
+      },
+      {
+        "count": 0,
+        "date": "2026-08-10"
       }
     ],
     "contributors": [
@@ -284,12 +284,12 @@
     "evidence": [
       {
         "kind": "ssot-registry",
-        "observed_at": "2026-08-06T02:55:18Z",
+        "observed_at": "2026-08-10T13:12:47Z",
         "url": "https://github.com/tigrbl/attribution-campaign-context/blob/master/.ssot/registry.json"
       },
       {
         "kind": "source",
-        "observed_at": "2026-08-06T02:55:15Z",
+        "observed_at": "2026-08-10T13:12:47Z",
         "url": "https://github.com/tigrbl/attribution-campaign-context"
       }
     ],
@@ -336,7 +336,7 @@
       "watchers": 0
     },
     "name": "attribution-campaign-context",
-    "observed_at": "2026-08-06T02:55:15Z",
+    "observed_at": "2026-08-10T13:12:47Z",
     "owner": "tigrbl",
     "package_ids": [
       "package:pypi:attribution-campaign-context:tigrbl/attribution-campaign-context:pyproject.toml"
@@ -374,7 +374,7 @@
         "legal_evidence": [],
         "legal_inherits_from": "repository:tigrbl/attribution-campaign-context",
         "name": "docs/attribution-keys.md",
-        "observed_at": "2026-08-06T02:55:15Z",
+        "observed_at": "2026-08-10T13:12:47Z",
         "path": "docs/attribution-keys.md",
         "repository": "tigrbl/attribution-campaign-context",
         "repository_route": "/catalog/repositories/tigrbl/attribution-campaign-context",
@@ -388,7 +388,7 @@
         "legal_evidence": [],
         "legal_inherits_from": "repository:tigrbl/attribution-campaign-context",
         "name": "docs/public-operator-surfaces.md",
-        "observed_at": "2026-08-06T02:55:15Z",
+        "observed_at": "2026-08-10T13:12:47Z",
         "path": "docs/public-operator-surfaces.md",
         "repository": "tigrbl/attribution-campaign-context",
         "repository_route": "/catalog/repositories/tigrbl/attribution-campaign-context",
@@ -402,7 +402,7 @@
         "legal_evidence": [],
         "legal_inherits_from": "repository:tigrbl/attribution-campaign-context",
         "name": "docs/ssot-governance-packs.md",
-        "observed_at": "2026-08-06T02:55:15Z",
+        "observed_at": "2026-08-10T13:12:47Z",
         "path": "docs/ssot-governance-packs.md",
         "repository": "tigrbl/attribution-campaign-context",
         "repository_route": "/catalog/repositories/tigrbl/attribution-campaign-context",
@@ -1585,7 +1585,7 @@
         "specs": 51,
         "tests": 0
       },
-      "observed_at": "2026-08-06T02:55:18Z",
+      "observed_at": "2026-08-10T13:12:47Z",
       "present": true,
       "raw_url": "https://raw.githubusercontent.com/tigrbl/attribution-campaign-context/master/.ssot/registry.json",
       "registry_url": "https://github.com/tigrbl/attribution-campaign-context/blob/master/.ssot/registry.json",

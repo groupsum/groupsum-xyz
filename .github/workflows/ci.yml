@@ -33,8 +33,6 @@ jobs:
         working-directory: pkgs/backend
       - run: uv run --locked python scripts/validate_openapi_contract.py
         working-directory: pkgs/backend
-      - run: uv run --locked python scripts/export_static_api.py
-        working-directory: pkgs/backend
       - run: npm run generate:api-client
       - name: Verify generated backend and frontend contracts are current
         run: git diff --exit-code -- catalog/content/records.json pkgs/backend/openapi.json pkgs/frontend/src/api/catalog.generated.ts pkgs/frontend/src/api/schema.generated.ts pkgs/frontend/src/api/contract.generated.ts

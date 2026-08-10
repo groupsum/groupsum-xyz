@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-06T02:54:46Z",
+  "generated_at": "2026-08-10T13:12:47Z",
   "packages": [
     {
       "claim_boundary": "Publication is reported only when confirmed by the named public registry.",
@@ -17,7 +17,7 @@
       "evidence": [
         {
           "kind": "source",
-          "observed_at": "2026-08-06T02:54:46Z",
+          "observed_at": "2026-08-10T13:12:47Z",
           "url": "https://github.com/tigrbl/docs-tigrbl-com/blob/master/package.json"
         }
       ],
@@ -31,7 +31,7 @@
       "license_status": "not-observed",
       "manifest_path": "package.json",
       "name": "docs-tigrbl-com",
-      "observed_at": "2026-08-06T02:54:46Z",
+      "observed_at": "2026-08-10T13:12:47Z",
       "owner": "tigrbl",
       "package_kind": "workspace-project",
       "private": true,
@@ -171,7 +171,7 @@
       "evidence": [
         {
           "kind": "source",
-          "observed_at": "2026-08-06T02:54:46Z",
+          "observed_at": "2026-08-10T13:12:47Z",
           "url": "https://github.com/tigrbl/docs-tigrbl-com/blob/master/pyproject.toml"
         }
       ],
@@ -185,7 +185,7 @@
       "license_status": "not-observed",
       "manifest_path": "pyproject.toml",
       "name": "docs-tigrbl-com",
-      "observed_at": "2026-08-06T02:54:46Z",
+      "observed_at": "2026-08-10T13:12:47Z",
       "owner": "tigrbl",
       "package_kind": "package-candidate",
       "private": false,
@@ -216,22 +216,6 @@
     "archived": false,
     "claim_boundary": "No canonical .ssot/registry.json was observed; repository, release, deployment, and live-service states are reported separately.",
     "commit_activity": [
-      {
-        "count": 0,
-        "date": "2026-07-08"
-      },
-      {
-        "count": 0,
-        "date": "2026-07-09"
-      },
-      {
-        "count": 0,
-        "date": "2026-07-10"
-      },
-      {
-        "count": 0,
-        "date": "2026-07-11"
-      },
       {
         "count": 0,
         "date": "2026-07-12"
@@ -335,6 +319,22 @@
       {
         "count": 0,
         "date": "2026-08-06"
+      },
+      {
+        "count": 0,
+        "date": "2026-08-07"
+      },
+      {
+        "count": 0,
+        "date": "2026-08-08"
+      },
+      {
+        "count": 0,
+        "date": "2026-08-09"
+      },
+      {
+        "count": 0,
+        "date": "2026-08-10"
       }
     ],
     "contributors": [
@@ -352,7 +352,7 @@
     "evidence": [
       {
         "kind": "source",
-        "observed_at": "2026-08-06T02:55:15Z",
+        "observed_at": "2026-08-10T13:12:47Z",
         "url": "https://github.com/tigrbl/docs-tigrbl-com"
       }
     ],
@@ -395,7 +395,7 @@
       "watchers": 0
     },
     "name": "docs-tigrbl-com",
-    "observed_at": "2026-08-06T02:55:15Z",
+    "observed_at": "2026-08-10T13:12:47Z",
     "owner": "tigrbl",
     "package_ids": [
       "package:npm:docs-tigrbl-com:tigrbl/docs-tigrbl-com:package.json",
@@ -447,7 +447,7 @@
         "legal_evidence": [],
         "legal_inherits_from": "repository:tigrbl/docs-tigrbl-com",
         "name": "docs/assets",
-        "observed_at": "2026-08-06T02:55:15Z",
+        "observed_at": "2026-08-10T13:12:47Z",
         "path": "docs/assets",
         "repository": "tigrbl/docs-tigrbl-com",
         "repository_route": "/catalog/repositories/tigrbl/docs-tigrbl-com",
@@ -461,7 +461,7 @@
         "legal_evidence": [],
         "legal_inherits_from": "repository:tigrbl/docs-tigrbl-com",
         "name": "docs/guide",
-        "observed_at": "2026-08-06T02:55:15Z",
+        "observed_at": "2026-08-10T13:12:47Z",
         "path": "docs/guide",
         "repository": "tigrbl/docs-tigrbl-com",
         "repository_route": "/catalog/repositories/tigrbl/docs-tigrbl-com",
@@ -475,7 +475,7 @@
         "legal_evidence": [],
         "legal_inherits_from": "repository:tigrbl/docs-tigrbl-com",
         "name": "docs/home",
-        "observed_at": "2026-08-06T02:55:15Z",
+        "observed_at": "2026-08-10T13:12:47Z",
         "path": "docs/home",
         "repository": "tigrbl/docs-tigrbl-com",
         "repository_route": "/catalog/repositories/tigrbl/docs-tigrbl-com",
@@ -489,7 +489,7 @@
         "legal_evidence": [],
         "legal_inherits_from": "repository:tigrbl/docs-tigrbl-com",
         "name": "docs/index.md",
-        "observed_at": "2026-08-06T02:55:15Z",
+        "observed_at": "2026-08-10T13:12:47Z",
         "path": "docs/index.md",
         "repository": "tigrbl/docs-tigrbl-com",
         "repository_route": "/catalog/repositories/tigrbl/docs-tigrbl-com",
@@ -503,7 +503,7 @@
         "legal_evidence": [],
         "legal_inherits_from": "repository:tigrbl/docs-tigrbl-com",
         "name": "docs/news",
-        "observed_at": "2026-08-06T02:55:15Z",
+        "observed_at": "2026-08-10T13:12:47Z",
         "path": "docs/news",
         "repository": "tigrbl/docs-tigrbl-com",
         "repository_route": "/catalog/repositories/tigrbl/docs-tigrbl-com",
@@ -517,7 +517,7 @@
         "legal_evidence": [],
         "legal_inherits_from": "repository:tigrbl/docs-tigrbl-com",
         "name": "docs/tigrbl_auth_overview.md",
-        "observed_at": "2026-08-06T02:55:15Z",
+        "observed_at": "2026-08-10T13:12:47Z",
         "path": "docs/tigrbl_auth_overview.md",
         "repository": "tigrbl/docs-tigrbl-com",
         "repository_route": "/catalog/repositories/tigrbl/docs-tigrbl-com",
@@ -537,7 +537,7 @@
       "coverage": {},
       "governed": false,
       "observation_status": "not_found",
-      "observed_at": "2026-08-06T02:55:18Z",
+      "observed_at": "2026-08-10T13:12:48Z",
       "present": false,
       "registry_url": null,
       "status_counts": {},

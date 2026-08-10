@@ -1,16 +1,11 @@
 from __future__ import annotations
 
-from pathlib import Path
-
 from groupsum_catalog_api import entrypoint
 
 
-def test_main_imports_catalog_before_starting_tigrcorn(monkeypatch) -> None:
+def test_main_starts_tigrcorn_without_importing_catalog(monkeypatch) -> None:
     events: list[tuple[str, object]] = []
     server_config = object()
-
-    async def fake_import_catalog(repo_root):
-        events.append(("import", repo_root))
 
     def fake_build_config(**kwargs):
         events.append(("config", kwargs))
@@ -19,15 +14,13 @@ def test_main_imports_catalog_before_starting_tigrcorn(monkeypatch) -> None:
     def fake_run(app, *, config):
         events.append(("run", (app, config)))
 
-    monkeypatch.setattr(entrypoint, "import_catalog", fake_import_catalog)
     monkeypatch.setattr(entrypoint, "build_config", fake_build_config)
     monkeypatch.setattr(entrypoint, "run", fake_run)
 
     entrypoint.main()
 
-    assert [event[0] for event in events] == ["import", "config", "run"]
-    assert events[0][1] == Path("/app")
-    assert events[1][1] == {
+    assert [event[0] for event in events] == ["config", "run"]
+    assert events[0][1] == {
         "host": "0.0.0.0",
         "port": 8000,
         "config": {
@@ -37,4 +30,4 @@ def test_main_imports_catalog_before_starting_tigrcorn(monkeypatch) -> None:
             }
         },
     }
-    assert events[2][1] == (entrypoint.app, server_config)
+    assert events[1][1] == (entrypoint.app, server_config)

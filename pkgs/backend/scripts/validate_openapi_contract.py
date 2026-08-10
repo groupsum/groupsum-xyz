@@ -25,7 +25,7 @@ def main() -> None:
     native_paths = [
         path
         for path in paths
-        if not path.startswith(("/api/", "/system/"))
+        if not path.startswith(("/api/", "/internal/", "/system/"))
         and path not in {"/healthz", "/openapi.json"}
     ]
     if native_paths:
@@ -33,6 +33,19 @@ def main() -> None:
     for required in REQUIRED_PATHS:
         if set(paths.get(required, {})) != {"get"}:
             failures.append(f"{required} must expose GET")
+    required_internal_paths = (
+        "/internal/v1/catalog/entities/{entity_type}",
+        "/internal/v1/catalog/associations",
+        "/internal/v1/catalog/observations",
+        "/internal/v1/catalog/metrics",
+        "/internal/v1/catalog/snapshots",
+    )
+    for required in required_internal_paths:
+        if set(paths.get(required, {})) != {"post"}:
+            failures.append(f"{required} must expose POST")
+    for path, methods in paths.items():
+        if path.startswith("/internal/") and set(methods) != {"post"}:
+            failures.append(f"{path} must expose only POST")
     if failures:
         raise SystemExit("OpenAPI table contract validation failed:\n- " + "\n- ".join(failures))
     print(f"validated {len(REQUIRED_PATHS)} curated API contracts")

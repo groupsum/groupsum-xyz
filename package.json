@@ -27,6 +27,7 @@
     "catalog:collect": "python pkgs/catalog-pipeline/catalog_collect.py --refresh",
     "catalog:render": "python pkgs/catalog-pipeline/catalog_render.py",
     "catalog:refresh": "npm run catalog:collect && npm run catalog:render && npm run catalog:validate",
+    "catalog:publish": "uv run --project pkgs/backend --locked python pkgs/backend/scripts/publish_catalog.py",
     "catalog:validate": "python pkgs/catalog-pipeline/catalog_validate.py && python pkgs/catalog-pipeline/catalog_site_validate.py",
     "catalog:test": "python -m unittest discover -s pkgs/catalog-pipeline/tests -p test_catalog.py",
     "import:wordpress": "node pkgs/frontend/scripts/import-wordpress.mjs",

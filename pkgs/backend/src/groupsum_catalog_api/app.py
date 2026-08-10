@@ -9,12 +9,13 @@ from tigrbl.factories.app import defineAppSpec
 from tigrbl_core._spec import AppSpec, EngineSpec
 
 from .config import Settings
+from .internal_api import INTERNAL_API_ROUTER
 from .public_api import PUBLIC_API_ROUTER, analytics_readiness
 from .tables.registry import ALL_TABLES
 
 APP_TITLE = "Groupsum Catalog API"
-APP_VERSION = "0.3.0"
-APP_DESCRIPTION = "Read-only Tigrbl table API for the Groupsum public catalog."
+APP_VERSION = "0.4.0"
+APP_DESCRIPTION = "Tigrbl catalog API with curated public reads and internal append-only writes."
 
 
 class CatalogAppSpec(
@@ -97,7 +98,7 @@ def build_app(
                     disable_ssl=settings.analytics_disable_ssl,
                 ),
             ),
-            routers=(PUBLIC_API_ROUTER,),
+            routers=(PUBLIC_API_ROUTER, INTERNAL_API_ROUTER),
         )
     )
     catalog_app.initialize()

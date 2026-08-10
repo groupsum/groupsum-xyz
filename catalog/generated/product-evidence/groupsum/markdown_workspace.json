@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-06T02:54:46Z",
+  "generated_at": "2026-08-10T13:12:47Z",
   "packages": [
     {
       "claim_boundary": "Publication is reported only when confirmed by the named public registry.",
@@ -90,7 +90,7 @@
       "evidence": [
         {
           "kind": "source",
-          "observed_at": "2026-08-06T02:54:46Z",
+          "observed_at": "2026-08-10T13:12:47Z",
           "url": "https://github.com/groupsum/markdown_workspace/blob/master/apps/desktop/package.json"
         }
       ],
@@ -122,7 +122,7 @@
       "license_status": "observed",
       "manifest_path": "apps/desktop/package.json",
       "name": "@mdwrk/desktop",
-      "observed_at": "2026-08-06T02:54:46Z",
+      "observed_at": "2026-08-10T13:12:47Z",
       "owner": "groupsum",
       "package_kind": "package-candidate",
       "private": true,
@@ -259,7 +259,7 @@
       "evidence": [
         {
           "kind": "source",
-          "observed_at": "2026-08-06T02:54:46Z",
+          "observed_at": "2026-08-10T13:12:47Z",
           "url": "https://github.com/groupsum/markdown_workspace/blob/master/examples/editor-basic/package.json"
         }
       ],
@@ -291,7 +291,7 @@
       "license_status": "observed",
       "manifest_path": "examples/editor-basic/package.json",
       "name": "@mdwrk/example-editor-basic",
-      "observed_at": "2026-08-06T02:54:46Z",
+      "observed_at": "2026-08-10T13:12:47Z",
       "owner": "groupsum",
       "package_kind": "package-candidate",
       "private": true,
@@ -429,7 +429,7 @@
       "evidence": [
         {
           "kind": "source",
-          "observed_at": "2026-08-06T02:54:46Z",
+          "observed_at": "2026-08-10T13:12:47Z",
           "url": "https://github.com/groupsum/markdown_workspace/blob/master/examples/page-template-demo/package.json"
         }
       ],
@@ -461,7 +461,7 @@
       "license_status": "observed",
       "manifest_path": "examples/page-template-demo/package.json",
       "name": "@mdwrk/example-page-template-demo",
-      "observed_at": "2026-08-06T02:54:46Z",
+      "observed_at": "2026-08-10T13:12:47Z",
       "owner": "groupsum",
       "package_kind": "package-candidate",
       "private": true,
@@ -590,7 +590,7 @@
       "evidence": [
         {
           "kind": "source",
-          "observed_at": "2026-08-06T02:54:46Z",
+          "observed_at": "2026-08-10T13:12:47Z",
           "url": "https://github.com/groupsum/markdown_workspace/blob/master/examples/renderer-basic/package.json"
         }
       ],
@@ -622,7 +622,7 @@
       "license_status": "observed",
       "manifest_path": "examples/renderer-basic/package.json",
       "name": "@mdwrk/example-renderer-basic",
-      "observed_at": "2026-08-06T02:54:46Z",
+      "observed_at": "2026-08-10T13:12:47Z",
       "owner": "groupsum",
       "package_kind": "package-candidate",
       "private": true,
@@ -688,7 +688,7 @@
       "evidence": [
         {
           "kind": "registry",
-          "observed_at": "2026-08-06T02:54:46Z",
+          "observed_at": "2026-08-10T13:12:47Z",
           "url": "https://www.npmjs.com/package/@mdwrk/extension-catalog-hello"
         }
       ],
@@ -729,7 +729,7 @@
       "license_status": "observed",
       "manifest_path": "artifacts/extensions/external.catalog-hello/1.1.2/package.json",
       "name": "@mdwrk/extension-catalog-hello",
-      "observed_at": "2026-08-06T02:54:46Z",
+      "observed_at": "2026-08-10T13:12:47Z",
       "owner": "groupsum",
       "package_kind": "published-package",
       "private": false,
@@ -750,7 +750,7 @@
           "legal_inherits_from": "package:npm:@mdwrk/extension-catalog-hello:groupsum/markdown_workspace:artifacts/extensions/external.catalog-hello/1.1.2/package.json",
           "license_expression": "Apache-2.0",
           "license_status": "observed",
-          "observed_at": "2026-08-06T02:54:46Z",
+          "observed_at": "2026-08-10T13:12:47Z",
           "published_at": "2026-05-16T07:19:55.353Z",
           "release_kind": "npm",
           "route": "/catalog/releases/npm/mdwrk-extension-catalog-hello-7a32222c3e",
@@ -764,7 +764,7 @@
           "legal_inherits_from": "package:npm:@mdwrk/extension-catalog-hello:groupsum/markdown_workspace:artifacts/extensions/external.catalog-hello/1.1.2/package.json",
           "license_expression": "Apache-2.0",
           "license_status": "observed",
-          "observed_at": "2026-08-06T02:54:46Z",
+          "observed_at": "2026-08-10T13:12:47Z",
           "published_at": "2026-04-13T02:00:39.636Z",
           "release_kind": "npm",
           "route": "/catalog/releases/npm/mdwrk-extension-catalog-hello-0a700e4daa",
@@ -778,7 +778,7 @@
           "legal_inherits_from": "package:npm:@mdwrk/extension-catalog-hello:groupsum/markdown_workspace:artifacts/extensions/external.catalog-hello/1.1.2/package.json",
           "license_expression": "Apache-2.0",
           "license_status": "observed",
-          "observed_at": "2026-08-06T02:54:46Z",
+          "observed_at": "2026-08-10T13:12:47Z",
           "published_at": "2026-04-02T05:01:02.283Z",
           "release_kind": "npm",
           "route": "/catalog/releases/npm/mdwrk-extension-catalog-hello-688c3108fe",
@@ -792,7 +792,7 @@
           "legal_inherits_from": "package:npm:@mdwrk/extension-catalog-hello:groupsum/markdown_workspace:artifacts/extensions/external.catalog-hello/1.1.2/package.json",
           "license_expression": "Apache-2.0",
           "license_status": "observed",
-          "observed_at": "2026-08-06T02:54:46Z",
+          "observed_at": "2026-08-10T13:12:47Z",
           "published_at": "2026-04-01T01:09:04.168Z",
           "release_kind": "npm",
           "route": "/catalog/releases/npm/mdwrk-extension-catalog-hello-36c9f396a0",
@@ -806,7 +806,7 @@
           "legal_inherits_from": "package:npm:@mdwrk/extension-catalog-hello:groupsum/markdown_workspace:artifacts/extensions/external.catalog-hello/1.1.2/package.json",
           "license_expression": "Apache-2.0",
           "license_status": "observed",
-          "observed_at": "2026-08-06T02:54:46Z",
+          "observed_at": "2026-08-10T13:12:47Z",
           "published_at": "2026-03-26T10:14:39.586Z",
           "release_kind": "npm",
           "route": "/catalog/releases/npm/mdwrk-extension-catalog-hello-e28e0dbb3b",
@@ -865,7 +865,7 @@
       "evidence": [
         {
           "kind": "source",
-          "observed_at": "2026-08-06T02:54:46Z",
+          "observed_at": "2026-08-10T13:12:47Z",
           "url": "https://github.com/groupsum/markdown_workspace/blob/master/packages/extensions/extension-catalog-hello/package.json"
         }
       ],
@@ -897,7 +897,7 @@
       "license_status": "observed",
       "manifest_path": "packages/extensions/extension-catalog-hello/package.json",
       "name": "@mdwrk/extension-catalog-hello",
-      "observed_at": "2026-08-06T02:54:46Z",
+      "observed_at": "2026-08-10T13:12:47Z",
       "owner": "groupsum",
       "package_kind": "private-package",
       "private": true,
@@ -1008,7 +1008,7 @@
       "evidence": [
         {
           "kind": "registry",
-          "observed_at": "2026-08-06T02:54:46Z",
+          "observed_at": "2026-08-10T13:12:47Z",
           "url": "https://www.npmjs.com/package/@mdwrk/extension-gemini-agent"
         }
       ],
@@ -1049,7 +1049,7 @@
       "license_status": "observed",
       "manifest_path": "artifacts/extensions/core.gemini-agent/1.2.1/package.json",
       "name": "@mdwrk/extension-gemini-agent",
-      "observed_at": "2026-08-06T02:54:46Z",
+      "observed_at": "2026-08-10T13:12:47Z",
       "owner": "groupsum",
       "package_kind": "published-package",
       "private": false,
@@ -1071,7 +1071,7 @@
           "legal_inherits_from": "package:npm:@mdwrk/extension-gemini-agent:groupsum/markdown_workspace:artifacts/extensions/core.gemini-agent/1.2.1/package.json",
           "license_expression": "Apache-2.0",
           "license_status": "observed",
-          "observed_at": "2026-08-06T02:54:46Z",
+          "observed_at": "2026-08-10T13:12:47Z",
           "published_at": "2026-05-16T07:21:42.382Z",
           "release_kind": "npm",
           "route": "/catalog/releases/npm/mdwrk-extension-gemini-agent-6ba78834a1",
@@ -1085,7 +1085,7 @@
           "legal_inherits_from": "package:npm:@mdwrk/extension-gemini-agent:groupsum/markdown_workspace:artifacts/extensions/core.gemini-agent/1.2.1/package.json",
           "license_expression": "Apache-2.0",
           "license_status": "observed",
-          "observed_at": "2026-08-06T02:54:46Z",
+          "observed_at": "2026-08-10T13:12:47Z",
           "published_at": "2026-04-13T02:00:58.489Z",
           "release_kind": "npm",
           "route": "/catalog/releases/npm/mdwrk-extension-gemini-agent-348a76ef9d",
@@ -1099,7 +1099,7 @@
           "legal_inherits_from": "package:npm:@mdwrk/extension-gemini-agent:groupsum/markdown_workspace:artifacts/extensions/core.gemini-agent/1.2.1/package.json",
           "license_expression": "Apache-2.0",
           "license_status": "observed",
-          "observed_at": "2026-08-06T02:54:46Z",
+          "observed_at": "2026-08-10T13:12:47Z",
           "published_at": "2026-04-04T11:47:03.911Z",
           "release_kind": "npm",
           "route": "/catalog/releases/npm/mdwrk-extension-gemini-agent-203d284efe",
@@ -1113,7 +1113,7 @@
           "legal_inherits_from": "package:npm:@mdwrk/extension-gemini-agent:groupsum/markdown_workspace:artifacts/extensions/core.gemini-agent/1.2.1/package.json",
           "license_expression": "Apache-2.0",
           "license_status": "observed",
-          "observed_at": "2026-08-06T02:54:46Z",
+          "observed_at": "2026-08-10T13:12:47Z",
           "published_at": "2026-04-02T05:01:19.849Z",
           "release_kind": "npm",
           "route": "/catalog/releases/npm/mdwrk-extension-gemini-agent-db4616ec9b",
@@ -1127,7 +1127,7 @@
           "legal_inherits_from": "package:npm:@mdwrk/extension-gemini-agent:groupsum/markdown_workspace:artifacts/extensions/core.gemini-agent/1.2.1/package.json",
           "license_expression": "Apache-2.0",
           "license_status": "observed",
-          "observed_at": "2026-08-06T02:54:46Z",
+          "observed_at": "2026-08-10T13:12:47Z",
           "published_at": "2026-04-01T01:09:22.678Z",
           "release_kind": "npm",
           "route": "/catalog/releases/npm/mdwrk-extension-gemini-agent-f054e05c4e",
@@ -1141,7 +1141,7 @@
           "legal_inherits_from": "package:npm:@mdwrk/extension-gemini-agent:groupsum/markdown_workspace:artifacts/extensions/core.gemini-agent/1.2.1/package.json",
           "license_expression": "Apache-2.0",
           "license_status": "observed",
-          "observed_at": "2026-08-06T02:54:46Z",
+          "observed_at": "2026-08-10T13:12:47Z",
           "published_at": "2026-03-26T10:14:56.903Z",
           "release_kind": "npm",
           "route": "/catalog/releases/npm/mdwrk-extension-gemini-agent-bc21007226",
@@ -1246,7 +1246,7 @@
       "evidence": [
         {
           "kind": "source",
-          "observed_at": "2026-08-06T02:54:46Z",
+          "observed_at": "2026-08-10T13:12:47Z",
           "url": "https://github.com/groupsum/markdown_workspace/blob/master/packages/extensions/extension-gemini-agent/package.json"
         }
       ],
@@ -1278,7 +1278,7 @@
       "license_status": "observed",
       "manifest_path": "packages/extensions/extension-gemini-agent/package.json",
       "name": "@mdwrk/extension-gemini-agent",
-      "observed_at": "2026-08-06T02:54:46Z",
+      "observed_at": "2026-08-10T13:12:47Z",
       "owner": "groupsum",
       "package_kind": "private-package",
       "private": true,
@@ -1390,7 +1390,7 @@
       "evidence": [
         {
           "kind": "registry",
-          "observed_at": "2026-08-06T02:54:46Z",
+          "observed_at": "2026-08-10T13:12:47Z",
           "url": "https://www.npmjs.com/package/@mdwrk/extension-git-ops"
         }
       ],
@@ -1431,7 +1431,7 @@
       "license_status": "observed",
       "manifest_path": "artifacts/extensions/core.git-ops/1.0.1/package.json",
       "name": "@mdwrk/extension-git-ops",
-      "observed_at": "2026-08-06T02:54:46Z",
+      "observed_at": "2026-08-10T13:12:47Z",
       "owner": "groupsum",
       "package_kind": "published-package",
       "private": false,
@@ -1453,7 +1453,7 @@
           "legal_inherits_from": "package:npm:@mdwrk/extension-git-ops:groupsum/markdown_workspace:artifacts/extensions/core.git-ops/1.0.1/package.json",
           "license_expression": "Apache-2.0",
           "license_status": "observed",
-          "observed_at": "2026-08-06T02:54:46Z",
+          "observed_at": "2026-08-10T13:12:47Z",
           "published_at": "2026-05-18T16:40:47.494Z",
           "release_kind": "npm",
           "route": "/catalog/releases/npm/mdwrk-extension-git-ops-15944b50f0",
@@ -1467,7 +1467,7 @@
           "legal_inherits_from": "package:npm:@mdwrk/extension-git-ops:groupsum/markdown_workspace:artifacts/extensions/core.git-ops/1.0.1/package.json",
           "license_expression": "Apache-2.0",
           "license_status": "observed",
-          "observed_at": "2026-08-06T02:54:46Z",
+          "observed_at": "2026-08-10T13:12:47Z",
           "published_at": "2026-05-16T07:21:15.261Z",
           "release_kind": "npm",
           "route": "/catalog/releases/npm/mdwrk-extension-git-ops-cd234d18bc",
@@ -1572,7 +1572,7 @@
       "evidence": [
         {
           "kind": "source",
-          "observed_at": "2026-08-06T02:54:46Z",
+          "observed_at": "2026-08-10T13:12:47Z",
           "url": "https://github.com/groupsum/markdown_workspace/blob/master/packages/extensions/extension-git-ops/package.json"
         }
       ],
@@ -1604,7 +1604,7 @@
       "license_status": "observed",
       "manifest_path": "packages/extensions/extension-git-ops/package.json",
       "name": "@mdwrk/extension-git-ops",
-      "observed_at": "2026-08-06T02:54:46Z",
+      "observed_at": "2026-08-10T13:12:47Z",
       "owner": "groupsum",
       "package_kind": "private-package",
       "private": true,
@@ -1666,7 +1666,7 @@
           "evidence": "repository.manifest",
           "name": "@mdwrk/extension-catalog-hello",
           "package_key": "npm:@mdwrk/extension-catalog-hello",
-          "requirement": "^1.0.7",
+          "requirement": "^1.0.2",
           "scope": "dependencies"
         },
         {
@@ -1675,15 +1675,6 @@
           "evidence": "repository.manifest",
           "name": "@mdwrk/extension-catalog-hello",
           "package_key": "npm:@mdwrk/extension-catalog-hello",
-          "requirement": "^1.0.2",
-          "scope": "dependencies"
-        },
-        {
-          "completeness": "catalog-observed",
-          "ecosystem": "npm",
-          "evidence": "repository.manifest",
-          "name": "@mdwrk/extension-gemini-agent",
-          "package_key": "npm:@mdwrk/extension-gemini-agent",
           "requirement": "^1.0.7",
           "scope": "dependencies"
         },
@@ -1700,8 +1691,8 @@
           "completeness": "catalog-observed",
           "ecosystem": "npm",
           "evidence": "repository.manifest",
-          "name": "@mdwrk/extension-git-ops",
-          "package_key": "npm:@mdwrk/extension-git-ops",
+          "name": "@mdwrk/extension-gemini-agent",
+          "package_key": "npm:@mdwrk/extension-gemini-agent",
           "requirement": "^1.0.7",
           "scope": "dependencies"
         },
@@ -1718,8 +1709,8 @@
           "completeness": "catalog-observed",
           "ecosystem": "npm",
           "evidence": "repository.manifest",
-          "name": "@mdwrk/extension-language-pack-studio",
-          "package_key": "npm:@mdwrk/extension-language-pack-studio",
+          "name": "@mdwrk/extension-git-ops",
+          "package_key": "npm:@mdwrk/extension-git-ops",
           "requirement": "^1.0.7",
           "scope": "dependencies"
         },
@@ -1730,6 +1721,15 @@
           "name": "@mdwrk/extension-language-pack-studio",
           "package_key": "npm:@mdwrk/extension-language-pack-studio",
           "requirement": "^1.0.2",
+          "scope": "dependencies"
+        },
+        {
+          "completeness": "catalog-observed",
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "name": "@mdwrk/extension-language-pack-studio",
+          "package_key": "npm:@mdwrk/extension-language-pack-studio",
+          "requirement": "^1.0.7",
           "scope": "dependencies"
         },
         {
@@ -1765,7 +1765,7 @@
           "evidence": "repository.manifest",
           "name": "@mdwrk/extension-theme-studio",
           "package_key": "npm:@mdwrk/extension-theme-studio",
-          "requirement": "^1.0.7",
+          "requirement": "^1.0.2",
           "scope": "dependencies"
         },
         {
@@ -1774,15 +1774,6 @@
           "evidence": "repository.manifest",
           "name": "@mdwrk/extension-theme-studio",
           "package_key": "npm:@mdwrk/extension-theme-studio",
-          "requirement": "^1.0.2",
-          "scope": "dependencies"
-        },
-        {
-          "completeness": "catalog-observed",
-          "ecosystem": "npm",
-          "evidence": "repository.manifest",
-          "name": "@mdwrk/extension-workspace-files",
-          "package_key": "npm:@mdwrk/extension-workspace-files",
           "requirement": "^1.0.7",
           "scope": "dependencies"
         },
@@ -1793,6 +1784,15 @@
           "name": "@mdwrk/extension-workspace-files",
           "package_key": "npm:@mdwrk/extension-workspace-files",
           "requirement": "^1.0.2",
+          "scope": "dependencies"
+        },
+        {
+          "completeness": "catalog-observed",
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "name": "@mdwrk/extension-workspace-files",
+          "package_key": "npm:@mdwrk/extension-workspace-files",
+          "requirement": "^1.0.7",
           "scope": "dependencies"
         },
         {
@@ -1815,7 +1815,7 @@
       "evidence": [
         {
           "kind": "source",
-          "observed_at": "2026-08-06T02:54:46Z",
+          "observed_at": "2026-08-10T13:12:47Z",
           "url": "https://github.com/groupsum/markdown_workspace/blob/master/packages/contracts/extension-host/package.json"
         }
       ],
@@ -1847,7 +1847,7 @@
       "license_status": "observed",
       "manifest_path": "packages/contracts/extension-host/package.json",
       "name": "@mdwrk/extension-host",
-      "observed_at": "2026-08-06T02:54:46Z",
+      "observed_at": "2026-08-10T13:12:47Z",
       "owner": "groupsum",
       "package_kind": "private-package",
       "private": true,
@@ -2012,7 +2012,7 @@
       "evidence": [
         {
           "kind": "registry",
-          "observed_at": "2026-08-06T02:54:46Z",
+          "observed_at": "2026-08-10T13:12:47Z",
           "url": "https://www.npmjs.com/package/@mdwrk/extension-language-pack-studio"
         }
       ],
@@ -2053,7 +2053,7 @@
       "license_status": "observed",
       "manifest_path": "artifacts/extensions/core.language-pack-studio/1.0.5/package.json",
       "name": "@mdwrk/extension-language-pack-studio",
-      "observed_at": "2026-08-06T02:54:46Z",
+      "observed_at": "2026-08-10T13:12:47Z",
       "owner": "groupsum",
       "package_kind": "published-package",
       "private": false,
@@ -2075,7 +2075,7 @@
           "legal_inherits_from": "package:npm:@mdwrk/extension-language-pack-studio:groupsum/markdown_workspace:artifacts/extensions/core.language-pack-studio/1.0.5/package.json",
           "license_expression": "Apache-2.0",
           "license_status": "observed",
-          "observed_at": "2026-08-06T02:54:46Z",
+          "observed_at": "2026-08-10T13:12:47Z",
           "published_at": "2026-05-18T16:40:49.706Z",
           "release_kind": "npm",
           "route": "/catalog/releases/npm/mdwrk-extension-language-pack-studio-2a9322c20f",
@@ -2089,7 +2089,7 @@
           "legal_inherits_from": "package:npm:@mdwrk/extension-language-pack-studio:groupsum/markdown_workspace:artifacts/extensions/core.language-pack-studio/1.0.5/package.json",
           "license_expression": "Apache-2.0",
           "license_status": "observed",
-          "observed_at": "2026-08-06T02:54:46Z",
+          "observed_at": "2026-08-10T13:12:47Z",
           "published_at": "2026-05-18T16:04:45.571Z",
           "release_kind": "npm",
           "route": "/catalog/releases/npm/mdwrk-extension-language-pack-studio-0846e3f7be",
@@ -2103,7 +2103,7 @@
           "legal_inherits_from": "package:npm:@mdwrk/extension-language-pack-studio:groupsum/markdown_workspace:artifacts/extensions/core.language-pack-studio/1.0.5/package.json",
           "license_expression": "Apache-2.0",
           "license_status": "observed",
-          "observed_at": "2026-08-06T02:54:46Z",
+          "observed_at": "2026-08-10T13:12:47Z",
           "published_at": "2026-05-16T07:20:16.546Z",
           "release_kind": "npm",
           "route": "/catalog/releases/npm/mdwrk-extension-language-pack-studio-6281ad35c7",
@@ -2117,7 +2117,7 @@
           "legal_inherits_from": "package:npm:@mdwrk/extension-language-pack-studio:groupsum/markdown_workspace:artifacts/extensions/core.language-pack-studio/1.0.5/package.json",
           "license_expression": "Apache-2.0",
           "license_status": "observed",
-          "observed_at": "2026-08-06T02:54:46Z",
+          "observed_at": "2026-08-10T13:12:47Z",
           "published_at": "2026-04-13T02:00:14.204Z",
           "release_kind": "npm",
           "route": "/catalog/releases/npm/mdwrk-extension-language-pack-studio-86b21f2fb0",
@@ -2131,7 +2131,7 @@
           "legal_inherits_from": "package:npm:@mdwrk/extension-language-pack-studio:groupsum/markdown_workspace:artifacts/extensions/core.language-pack-studio/1.0.5/package.json",
           "license_expression": "Apache-2.0",
           "license_status": "observed",
-          "observed_at": "2026-08-06T02:54:46Z",
+          "observed_at": "2026-08-10T13:12:47Z",
           "published_at": "2026-04-04T08:32:24.497Z",
           "release_kind": "npm",
           "route": "/catalog/releases/npm/mdwrk-extension-language-pack-studio-fe61b9eb05",
@@ -2299,7 +2299,7 @@
       "evidence": [
         {
           "kind": "source",
-          "observed_at": "2026-08-06T02:54:46Z",
+          "observed_at": "2026-08-10T13:12:47Z",
           "url": "https://github.com/groupsum/markdown_workspace/blob/master/packages/extensions/extension-language-pack-studio/package.json"
         }
       ],
@@ -2331,7 +2331,7 @@
       "license_status": "observed",
       "manifest_path": "packages/extensions/extension-language-pack-studio/package.json",
       "name": "@mdwrk/extension-language-pack-studio",
-      "observed_at": "2026-08-06T02:54:46Z",
+      "observed_at": "2026-08-10T13:12:47Z",
       "owner": "groupsum",
       "package_kind": "private-package",
       "private": true,
@@ -2506,7 +2506,7 @@
       "evidence": [
         {
           "kind": "registry",
-          "observed_at": "2026-08-06T02:54:46Z",
+          "observed_at": "2026-08-10T13:12:47Z",
           "url": "https://www.npmjs.com/package/@mdwrk/extension-manager"
         }
       ],
@@ -2547,7 +2547,7 @@
       "license_status": "observed",
       "manifest_path": "artifacts/extensions/core.extension-manager/1.1.8/package.json",
       "name": "@mdwrk/extension-manager",
-      "observed_at": "2026-08-06T02:54:46Z",
+      "observed_at": "2026-08-10T13:12:47Z",
       "owner": "groupsum",
       "package_kind": "published-package",
       "private": false,
@@ -2569,7 +2569,7 @@
           "legal_inherits_from": "package:npm:@mdwrk/extension-manager:groupsum/markdown_workspace:artifacts/extensions/core.extension-manager/1.1.8/package.json",
           "license_expression": "Apache-2.0",
           "license_status": "observed",
-          "observed_at": "2026-08-06T02:54:46Z",
+          "observed_at": "2026-08-10T13:12:47Z",
           "published_at": "2026-05-16T07:21:21.702Z",
           "release_kind": "npm",
           "route": "/catalog/releases/npm/mdwrk-extension-manager-7d56aea541",
@@ -2583,7 +2583,7 @@
           "legal_inherits_from": "package:npm:@mdwrk/extension-manager:groupsum/markdown_workspace:artifacts/extensions/core.extension-manager/1.1.8/package.json",
           "license_expression": "Apache-2.0",
           "license_status": "observed",
-          "observed_at": "2026-08-06T02:54:46Z",
+          "observed_at": "2026-08-10T13:12:47Z",
           "published_at": "2026-04-13T02:00:58.586Z",
           "release_kind": "npm",
           "route": "/catalog/releases/npm/mdwrk-extension-manager-ce0db10e94",
@@ -2597,7 +2597,7 @@
           "legal_inherits_from": "package:npm:@mdwrk/extension-manager:groupsum/markdown_workspace:artifacts/extensions/core.extension-manager/1.1.8/package.json",
           "license_expression": "Apache-2.0",
           "license_status": "observed",
-          "observed_at": "2026-08-06T02:54:46Z",
+          "observed_at": "2026-08-10T13:12:47Z",
           "published_at": "2026-04-11T07:53:45.278Z",
           "release_kind": "npm",
           "route": "/catalog/releases/npm/mdwrk-extension-manager-de2aa3cc2c",
@@ -2611,7 +2611,7 @@
           "legal_inherits_from": "package:npm:@mdwrk/extension-manager:groupsum/markdown_workspace:artifacts/extensions/core.extension-manager/1.1.8/package.json",
           "license_expression": "Apache-2.0",
           "license_status": "observed",
-          "observed_at": "2026-08-06T02:54:46Z",
+          "observed_at": "2026-08-10T13:12:47Z",
           "published_at": "2026-04-04T08:32:50.560Z",
           "release_kind": "npm",
           "route": "/catalog/releases/npm/mdwrk-extension-manager-4519061f5d",
@@ -2625,7 +2625,7 @@
           "legal_inherits_from": "package:npm:@mdwrk/extension-manager:groupsum/markdown_workspace:artifacts/extensions/core.extension-manager/1.1.8/package.json",
           "license_expression": "Apache-2.0",
           "license_status": "observed",
-          "observed_at": "2026-08-06T02:54:46Z",
+          "observed_at": "2026-08-10T13:12:47Z",
           "published_at": "2026-04-02T05:01:20.635Z",
           "release_kind": "npm",
           "route": "/catalog/releases/npm/mdwrk-extension-manager-babafb1cee",
@@ -2639,7 +2639,7 @@
           "legal_inherits_from": "package:npm:@mdwrk/extension-manager:groupsum/markdown_workspace:artifacts/extensions/core.extension-manager/1.1.8/package.json",
           "license_expression": "Apache-2.0",
           "license_status": "observed",
-          "observed_at": "2026-08-06T02:54:46Z",
+          "observed_at": "2026-08-10T13:12:47Z",
           "published_at": "2026-04-01T01:09:23.311Z",
           "release_kind": "npm",
           "route": "/catalog/releases/npm/mdwrk-extension-manager-46bdd8845d",
@@ -2653,7 +2653,7 @@
           "legal_inherits_from": "package:npm:@mdwrk/extension-manager:groupsum/markdown_workspace:artifacts/extensions/core.extension-manager/1.1.8/package.json",
           "license_expression": "Apache-2.0",
           "license_status": "observed",
-          "observed_at": "2026-08-06T02:54:46Z",
+          "observed_at": "2026-08-10T13:12:47Z",
           "published_at": "2026-03-26T10:14:57.774Z",
           "release_kind": "npm",
           "route": "/catalog/releases/npm/mdwrk-extension-manager-64df2172fa",
@@ -2821,7 +2821,7 @@
       "evidence": [
         {
           "kind": "source",
-          "observed_at": "2026-08-06T02:54:46Z",
+          "observed_at": "2026-08-10T13:12:47Z",
           "url": "https://github.com/groupsum/markdown_workspace/blob/master/packages/extensions/extension-manager/package.json"
         }
       ],
@@ -2853,7 +2853,7 @@
       "license_status": "observed",
       "manifest_path": "packages/extensions/extension-manager/package.json",
       "name": "@mdwrk/extension-manager",
-      "observed_at": "2026-08-06T02:54:46Z",
+      "observed_at": "2026-08-10T13:12:47Z",
       "owner": "groupsum",
       "package_kind": "private-package",
       "private": true,
@@ -2896,7 +2896,7 @@
           "evidence": "repository.manifest",
           "name": "@mdwrk/extension-catalog-hello",
           "package_key": "npm:@mdwrk/extension-catalog-hello",
-          "requirement": "^1.0.5",
+          "requirement": "^1.0.1",
           "scope": "dependencies"
         },
         {
@@ -2905,15 +2905,6 @@
           "evidence": "repository.manifest",
           "name": "@mdwrk/extension-catalog-hello",
           "package_key": "npm:@mdwrk/extension-catalog-hello",
-          "requirement": "^1.0.1",
-          "scope": "dependencies"
-        },
-        {
-          "completeness": "catalog-observed",
-          "ecosystem": "npm",
-          "evidence": "repository.manifest",
-          "name": "@mdwrk/extension-gemini-agent",
-          "package_key": "npm:@mdwrk/extension-gemini-agent",
           "requirement": "^1.0.5",
           "scope": "dependencies"
         },
@@ -2930,8 +2921,8 @@
           "completeness": "catalog-observed",
           "ecosystem": "npm",
           "evidence": "repository.manifest",
-          "name": "@mdwrk/extension-git-ops",
-          "package_key": "npm:@mdwrk/extension-git-ops",
+          "name": "@mdwrk/extension-gemini-agent",
+          "package_key": "npm:@mdwrk/extension-gemini-agent",
           "requirement": "^1.0.5",
           "scope": "dependencies"
         },
@@ -2942,6 +2933,15 @@
           "name": "@mdwrk/extension-git-ops",
           "package_key": "npm:@mdwrk/extension-git-ops",
           "requirement": "^1.0.1",
+          "scope": "dependencies"
+        },
+        {
+          "completeness": "catalog-observed",
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "name": "@mdwrk/extension-git-ops",
+          "package_key": "npm:@mdwrk/extension-git-ops",
+          "requirement": "^1.0.5",
           "scope": "dependencies"
         },
         {
@@ -2959,7 +2959,7 @@
           "evidence": "repository.manifest",
           "name": "@mdwrk/extension-language-pack-studio",
           "package_key": "npm:@mdwrk/extension-language-pack-studio",
-          "requirement": "^1.0.5",
+          "requirement": "^1.0.1",
           "scope": "dependencies"
         },
         {
@@ -2968,7 +2968,7 @@
           "evidence": "repository.manifest",
           "name": "@mdwrk/extension-language-pack-studio",
           "package_key": "npm:@mdwrk/extension-language-pack-studio",
-          "requirement": "^1.0.1",
+          "requirement": "^1.0.5",
           "scope": "dependencies"
         },
         {
@@ -3004,7 +3004,7 @@
           "evidence": "repository.manifest",
           "name": "@mdwrk/extension-theme-studio",
           "package_key": "npm:@mdwrk/extension-theme-studio",
-          "requirement": "^1.0.5",
+          "requirement": "^1.0.1",
           "scope": "dependencies"
         },
         {
@@ -3013,15 +3013,6 @@
           "evidence": "repository.manifest",
           "name": "@mdwrk/extension-theme-studio",
           "package_key": "npm:@mdwrk/extension-theme-studio",
-          "requirement": "^1.0.1",
-          "scope": "dependencies"
-        },
-        {
-          "completeness": "catalog-observed",
-          "ecosystem": "npm",
-          "evidence": "repository.manifest",
-          "name": "@mdwrk/extension-workspace-files",
-          "package_key": "npm:@mdwrk/extension-workspace-files",
           "requirement": "^1.0.5",
           "scope": "dependencies"
         },
@@ -3032,6 +3023,15 @@
           "name": "@mdwrk/extension-workspace-files",
           "package_key": "npm:@mdwrk/extension-workspace-files",
           "requirement": "^1.0.1",
+          "scope": "dependencies"
+        },
+        {
+          "completeness": "catalog-observed",
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "name": "@mdwrk/extension-workspace-files",
+          "package_key": "npm:@mdwrk/extension-workspace-files",
+          "requirement": "^1.0.5",
           "scope": "dependencies"
         },
         {
@@ -3054,7 +3054,7 @@
       "evidence": [
         {
           "kind": "source",
-          "observed_at": "2026-08-06T02:54:46Z",
+          "observed_at": "2026-08-10T13:12:47Z",
           "url": "https://github.com/groupsum/markdown_workspace/blob/master/packages/contracts/extension-manifest/package.json"
         }
       ],
@@ -3086,7 +3086,7 @@
       "license_status": "observed",
       "manifest_path": "packages/contracts/extension-manifest/package.json",
       "name": "@mdwrk/extension-manifest",
-      "observed_at": "2026-08-06T02:54:46Z",
+      "observed_at": "2026-08-10T13:12:47Z",
       "owner": "groupsum",
       "package_kind": "private-package",
       "private": true,
@@ -3156,7 +3156,7 @@
           "evidence": "repository.manifest",
           "name": "@mdwrk/extension-gemini-agent",
           "package_key": "npm:@mdwrk/extension-gemini-agent",
-          "requirement": "^1.2.4",
+          "requirement": "^1.1.1",
           "scope": "dependencies"
         },
         {
@@ -3165,15 +3165,6 @@
           "evidence": "repository.manifest",
           "name": "@mdwrk/extension-gemini-agent",
           "package_key": "npm:@mdwrk/extension-gemini-agent",
-          "requirement": "^1.1.1",
-          "scope": "dependencies"
-        },
-        {
-          "completeness": "catalog-observed",
-          "ecosystem": "npm",
-          "evidence": "repository.manifest",
-          "name": "@mdwrk/extension-git-ops",
-          "package_key": "npm:@mdwrk/extension-git-ops",
           "requirement": "^1.2.4",
           "scope": "dependencies"
         },
@@ -3184,6 +3175,15 @@
           "name": "@mdwrk/extension-git-ops",
           "package_key": "npm:@mdwrk/extension-git-ops",
           "requirement": "^1.1.3",
+          "scope": "dependencies"
+        },
+        {
+          "completeness": "catalog-observed",
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "name": "@mdwrk/extension-git-ops",
+          "package_key": "npm:@mdwrk/extension-git-ops",
+          "requirement": "^1.2.4",
           "scope": "dependencies"
         },
         {
@@ -3219,7 +3219,7 @@
           "evidence": "repository.manifest",
           "name": "@mdwrk/extension-theme-studio",
           "package_key": "npm:@mdwrk/extension-theme-studio",
-          "requirement": "^1.2.4",
+          "requirement": "^1.1.3",
           "scope": "dependencies"
         },
         {
@@ -3228,15 +3228,6 @@
           "evidence": "repository.manifest",
           "name": "@mdwrk/extension-theme-studio",
           "package_key": "npm:@mdwrk/extension-theme-studio",
-          "requirement": "^1.1.3",
-          "scope": "dependencies"
-        },
-        {
-          "completeness": "catalog-observed",
-          "ecosystem": "npm",
-          "evidence": "repository.manifest",
-          "name": "@mdwrk/extension-workspace-files",
-          "package_key": "npm:@mdwrk/extension-workspace-files",
           "requirement": "^1.2.4",
           "scope": "dependencies"
         },
@@ -3247,6 +3238,15 @@
           "name": "@mdwrk/extension-workspace-files",
           "package_key": "npm:@mdwrk/extension-workspace-files",
           "requirement": "^1.1.3",
+          "scope": "dependencies"
+        },
+        {
+          "completeness": "catalog-observed",
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "name": "@mdwrk/extension-workspace-files",
+          "package_key": "npm:@mdwrk/extension-workspace-files",
+          "requirement": "^1.2.4",
           "scope": "dependencies"
         },
         {
@@ -3269,7 +3269,7 @@
       "evidence": [
         {
           "kind": "source",
-          "observed_at": "2026-08-06T02:54:46Z",
+          "observed_at": "2026-08-10T13:12:47Z",
           "url": "https://github.com/groupsum/markdown_workspace/blob/master/packages/extensions/extension-runtime/package.json"
         }
       ],
@@ -3301,7 +3301,7 @@
       "license_status": "observed",
       "manifest_path": "packages/extensions/extension-runtime/package.json",
       "name": "@mdwrk/extension-runtime",
-      "observed_at": "2026-08-06T02:54:46Z",
+      "observed_at": "2026-08-10T13:12:47Z",
       "owner": "groupsum",
       "package_kind": "private-package",
       "private": true,
@@ -3520,7 +3520,7 @@
       "evidence": [
         {
           "kind": "registry",
-          "observed_at": "2026-08-06T02:54:46Z",
+          "observed_at": "2026-08-10T13:12:47Z",
           "url": "https://www.npmjs.com/package/@mdwrk/extension-theme-studio"
         }
       ],
@@ -3561,7 +3561,7 @@
       "license_status": "observed",
       "manifest_path": "artifacts/extensions/core.theme-studio/1.1.6/package.json",
       "name": "@mdwrk/extension-theme-studio",
-      "observed_at": "2026-08-06T02:54:46Z",
+      "observed_at": "2026-08-10T13:12:47Z",
       "owner": "groupsum",
       "package_kind": "published-package",
       "private": false,
@@ -3583,7 +3583,7 @@
           "legal_inherits_from": "package:npm:@mdwrk/extension-theme-studio:groupsum/markdown_workspace:artifacts/extensions/core.theme-studio/1.1.6/package.json",
           "license_expression": "Apache-2.0",
           "license_status": "observed",
-          "observed_at": "2026-08-06T02:54:46Z",
+          "observed_at": "2026-08-10T13:12:47Z",
           "published_at": "2026-05-16T07:22:07.195Z",
           "release_kind": "npm",
           "route": "/catalog/releases/npm/mdwrk-extension-theme-studio-d1f611676f",
@@ -3597,7 +3597,7 @@
           "legal_inherits_from": "package:npm:@mdwrk/extension-theme-studio:groupsum/markdown_workspace:artifacts/extensions/core.theme-studio/1.1.6/package.json",
           "license_expression": "Apache-2.0",
           "license_status": "observed",
-          "observed_at": "2026-08-06T02:54:46Z",
+          "observed_at": "2026-08-10T13:12:47Z",
           "published_at": "2026-04-13T02:01:04.283Z",
           "release_kind": "npm",
           "route": "/catalog/releases/npm/mdwrk-extension-theme-studio-696f14c6e0",
@@ -3611,7 +3611,7 @@
           "legal_inherits_from": "package:npm:@mdwrk/extension-theme-studio:groupsum/markdown_workspace:artifacts/extensions/core.theme-studio/1.1.6/package.json",
           "license_expression": "Apache-2.0",
           "license_status": "observed",
-          "observed_at": "2026-08-06T02:54:46Z",
+          "observed_at": "2026-08-10T13:12:47Z",
           "published_at": "2026-04-04T08:32:55.305Z",
           "release_kind": "npm",
           "route": "/catalog/releases/npm/mdwrk-extension-theme-studio-25e85453fc",
@@ -3625,7 +3625,7 @@
           "legal_inherits_from": "package:npm:@mdwrk/extension-theme-studio:groupsum/markdown_workspace:artifacts/extensions/core.theme-studio/1.1.6/package.json",
           "license_expression": "Apache-2.0",
           "license_status": "observed",
-          "observed_at": "2026-08-06T02:54:46Z",
+          "observed_at": "2026-08-10T13:12:47Z",
           "published_at": "2026-04-02T05:01:27.481Z",
           "release_kind": "npm",
           "route": "/catalog/releases/npm/mdwrk-extension-theme-studio-20ebdbdad0",
@@ -3639,7 +3639,7 @@
           "legal_inherits_from": "package:npm:@mdwrk/extension-theme-studio:groupsum/markdown_workspace:artifacts/extensions/core.theme-studio/1.1.6/package.json",
           "license_expression": "Apache-2.0",
           "license_status": "observed",
-          "observed_at": "2026-08-06T02:54:46Z",
+          "observed_at": "2026-08-10T13:12:47Z",
           "published_at": "2026-04-01T01:09:27.715Z",
           "release_kind": "npm",
           "route": "/catalog/releases/npm/mdwrk-extension-theme-studio-f0766107c1",
@@ -3653,7 +3653,7 @@
           "legal_inherits_from": "package:npm:@mdwrk/extension-theme-studio:groupsum/markdown_workspace:artifacts/extensions/core.theme-studio/1.1.6/package.json",
           "license_expression": "Apache-2.0",
           "license_status": "observed",
-          "observed_at": "2026-08-06T02:54:46Z",
+          "observed_at": "2026-08-10T13:12:47Z",
           "published_at": "2026-03-26T10:15:07.979Z",
           "release_kind": "npm",
           "route": "/catalog/releases/npm/mdwrk-extension-theme-studio-a4841e77ed",
@@ -3866,7 +3866,7 @@
       "evidence": [
         {
           "kind": "source",
-          "observed_at": "2026-08-06T02:54:46Z",
+          "observed_at": "2026-08-10T13:12:47Z",
           "url": "https://github.com/groupsum/markdown_workspace/blob/master/packages/extensions/extension-theme-studio/package.json"
         }
       ],
@@ -3898,7 +3898,7 @@
       "license_status": "observed",
       "manifest_path": "packages/extensions/extension-theme-studio/package.json",
       "name": "@mdwrk/extension-theme-studio",
-      "observed_at": "2026-08-06T02:54:46Z",
+      "observed_at": "2026-08-10T13:12:47Z",
       "owner": "groupsum",
       "package_kind": "private-package",
       "private": true,
@@ -4010,7 +4010,7 @@
       "evidence": [
         {
           "kind": "registry",
-          "observed_at": "2026-08-06T02:54:46Z",
+          "observed_at": "2026-08-10T13:12:47Z",
           "url": "https://www.npmjs.com/package/@mdwrk/extension-workspace-files"
         }
       ],
@@ -4051,7 +4051,7 @@
       "license_status": "observed",
       "manifest_path": "artifacts/extensions/core.workspace-files/1.0.1/package.json",
       "name": "@mdwrk/extension-workspace-files",
-      "observed_at": "2026-08-06T02:54:46Z",
+      "observed_at": "2026-08-10T13:12:47Z",
       "owner": "groupsum",
       "package_kind": "published-package",
       "private": false,
@@ -4073,7 +4073,7 @@
           "legal_inherits_from": "package:npm:@mdwrk/extension-workspace-files:groupsum/markdown_workspace:artifacts/extensions/core.workspace-files/1.0.1/package.json",
           "license_expression": "Apache-2.0",
           "license_status": "observed",
-          "observed_at": "2026-08-06T02:54:46Z",
+          "observed_at": "2026-08-10T13:12:47Z",
           "published_at": "2026-05-18T16:40:48.703Z",
           "release_kind": "npm",
           "route": "/catalog/releases/npm/mdwrk-extension-workspace-files-f5a9f2014e",
@@ -4087,7 +4087,7 @@
           "legal_inherits_from": "package:npm:@mdwrk/extension-workspace-files:groupsum/markdown_workspace:artifacts/extensions/core.workspace-files/1.0.1/package.json",
           "license_expression": "Apache-2.0",
           "license_status": "observed",
-          "observed_at": "2026-08-06T02:54:46Z",
+          "observed_at": "2026-08-10T13:12:47Z",
           "published_at": "2026-05-16T07:21:44.137Z",
           "release_kind": "npm",
           "route": "/catalog/releases/npm/mdwrk-extension-workspace-files-69b7260e97",
@@ -4192,7 +4192,7 @@
       "evidence": [
         {
           "kind": "source",
-          "observed_at": "2026-08-06T02:54:46Z",
+          "observed_at": "2026-08-10T13:12:47Z",
           "url": "https://github.com/groupsum/markdown_workspace/blob/master/packages/extensions/extension-workspace-files/package.json"
         }
       ],
@@ -4224,7 +4224,7 @@
       "license_status": "observed",
       "manifest_path": "packages/extensions/extension-workspace-files/package.json",
       "name": "@mdwrk/extension-workspace-files",
-      "observed_at": "2026-08-06T02:54:46Z",
+      "observed_at": "2026-08-10T13:12:47Z",
       "owner": "groupsum",
       "package_kind": "private-package",
       "private": true,
@@ -4281,7 +4281,7 @@
       "evidence": [
         {
           "kind": "source",
-          "observed_at": "2026-08-06T02:54:46Z",
+          "observed_at": "2026-08-10T13:12:47Z",
           "url": "https://github.com/groupsum/markdown_workspace/blob/master/packages/shared/i18n/package.json"
         }
       ],
@@ -4313,7 +4313,7 @@
       "license_status": "observed",
       "manifest_path": "packages/shared/i18n/package.json",
       "name": "@mdwrk/i18n",
-      "observed_at": "2026-08-06T02:54:46Z",
+      "observed_at": "2026-08-10T13:12:47Z",
       "owner": "groupsum",
       "package_kind": "private-package",
       "private": true,
@@ -4369,7 +4369,7 @@
       "evidence": [
         {
           "kind": "source",
-          "observed_at": "2026-08-06T02:54:46Z",
+          "observed_at": "2026-08-10T13:12:47Z",
           "url": "https://github.com/groupsum/markdown_workspace/blob/master/packages/shared/icons/package.json"
         }
       ],
@@ -4401,7 +4401,7 @@
       "license_status": "observed",
       "manifest_path": "packages/shared/icons/package.json",
       "name": "@mdwrk/icons",
-      "observed_at": "2026-08-06T02:54:46Z",
+      "observed_at": "2026-08-10T13:12:47Z",
       "owner": "groupsum",
       "package_kind": "private-package",
       "private": true,
@@ -4664,7 +4664,7 @@
       "evidence": [
         {
           "kind": "source",
-          "observed_at": "2026-08-06T02:54:46Z",
+          "observed_at": "2026-08-10T13:12:47Z",
           "url": "https://github.com/groupsum/markdown_workspace/blob/master/packages/lander/lander-content-contract/package.json"
         }
       ],
@@ -4696,7 +4696,7 @@
       "license_status": "observed",
       "manifest_path": "packages/lander/lander-content-contract/package.json",
       "name": "@mdwrk/lander-content-contract",
-      "observed_at": "2026-08-06T02:54:46Z",
+      "observed_at": "2026-08-10T13:12:47Z",
       "owner": "groupsum",
       "package_kind": "private-package",
       "private": true,
@@ -4748,6 +4748,15 @@
           "evidence": "repository.manifest",
           "name": "@groupsum/groupsum-xyz-content-pack",
           "package_key": "npm:@groupsum/groupsum-xyz-content-pack",
+          "requirement": "^0.1.2",
+          "scope": "dependencies"
+        },
+        {
+          "completeness": "catalog-observed",
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "name": "@groupsum/groupsum-xyz-frontend",
+          "package_key": "npm:@groupsum/groupsum-xyz-frontend",
           "requirement": "^0.1.2",
           "scope": "dependencies"
         },
@@ -4872,15 +4881,6 @@
           "completeness": "catalog-observed",
           "ecosystem": "npm",
           "evidence": "repository.manifest",
-          "name": "groupsum-xyz",
-          "package_key": "npm:groupsum-xyz",
-          "requirement": "^0.1.2",
-          "scope": "dependencies"
-        },
-        {
-          "completeness": "catalog-observed",
-          "ecosystem": "npm",
-          "evidence": "repository.manifest",
           "name": "peagen-com",
           "package_key": "npm:peagen-com",
           "requirement": "^0.1.2",
@@ -4906,7 +4906,7 @@
       "evidence": [
         {
           "kind": "source",
-          "observed_at": "2026-08-06T02:54:46Z",
+          "observed_at": "2026-08-10T13:12:47Z",
           "url": "https://github.com/groupsum/markdown_workspace/blob/master/packages/lander/lander-core/package.json"
         }
       ],
@@ -4938,7 +4938,7 @@
       "license_status": "observed",
       "manifest_path": "packages/lander/lander-core/package.json",
       "name": "@mdwrk/lander-core",
-      "observed_at": "2026-08-06T02:54:46Z",
+      "observed_at": "2026-08-10T13:12:47Z",
       "owner": "groupsum",
       "package_kind": "private-package",
       "private": true,
@@ -5003,7 +5003,7 @@
       "evidence": [
         {
           "kind": "source",
-          "observed_at": "2026-08-06T02:54:46Z",
+          "observed_at": "2026-08-10T13:12:47Z",
           "url": "https://github.com/groupsum/markdown_workspace/blob/master/packages/lander/lander-markdown-content-adapter/package.json"
         }
       ],
@@ -5035,7 +5035,7 @@
       "license_status": "observed",
       "manifest_path": "packages/lander/lander-markdown-content-adapter/package.json",
       "name": "@mdwrk/lander-markdown-content-adapter",
-      "observed_at": "2026-08-06T02:54:46Z",
+      "observed_at": "2026-08-10T13:12:47Z",
       "owner": "groupsum",
       "package_kind": "private-package",
       "private": true,
@@ -5137,7 +5137,7 @@
       "evidence": [
         {
           "kind": "source",
-          "observed_at": "2026-08-06T02:54:46Z",
+          "observed_at": "2026-08-10T13:12:47Z",
           "url": "https://github.com/groupsum/markdown_workspace/blob/master/packages/lander/lander-page-template-presets/package.json"
         }
       ],
@@ -5169,7 +5169,7 @@
       "license_status": "observed",
       "manifest_path": "packages/lander/lander-page-template-presets/package.json",
       "name": "@mdwrk/lander-page-template-presets",
-      "observed_at": "2026-08-06T02:54:46Z",
+      "observed_at": "2026-08-10T13:12:47Z",
       "owner": "groupsum",
       "package_kind": "private-package",
       "private": true,
@@ -5271,7 +5271,7 @@
       "evidence": [
         {
           "kind": "source",
-          "observed_at": "2026-08-06T02:54:46Z",
+          "observed_at": "2026-08-10T13:12:47Z",
           "url": "https://github.com/groupsum/markdown_workspace/blob/master/packages/lander/lander-page-templates/package.json"
         }
       ],
@@ -5303,7 +5303,7 @@
       "license_status": "observed",
       "manifest_path": "packages/lander/lander-page-templates/package.json",
       "name": "@mdwrk/lander-page-templates",
-      "observed_at": "2026-08-06T02:54:46Z",
+      "observed_at": "2026-08-10T13:12:47Z",
       "owner": "groupsum",
       "package_kind": "private-package",
       "private": true,
@@ -5407,6 +5407,15 @@
           "completeness": "catalog-observed",
           "ecosystem": "npm",
           "evidence": "repository.manifest",
+          "name": "@groupsum/groupsum-xyz-frontend",
+          "package_key": "npm:@groupsum/groupsum-xyz-frontend",
+          "requirement": "^0.1.2",
+          "scope": "dependencies"
+        },
+        {
+          "completeness": "catalog-observed",
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
           "name": "@mdwrk/example-learning-path-demo",
           "package_key": "npm:@mdwrk/example-learning-path-demo",
           "requirement": "^0.1.0",
@@ -5452,15 +5461,6 @@
           "completeness": "catalog-observed",
           "ecosystem": "npm",
           "evidence": "repository.manifest",
-          "name": "groupsum-xyz",
-          "package_key": "npm:groupsum-xyz",
-          "requirement": "^0.1.2",
-          "scope": "dependencies"
-        },
-        {
-          "completeness": "catalog-observed",
-          "ecosystem": "npm",
-          "evidence": "repository.manifest",
           "name": "peagen-com",
           "package_key": "npm:peagen-com",
           "requirement": "^0.1.2",
@@ -5486,7 +5486,7 @@
       "evidence": [
         {
           "kind": "source",
-          "observed_at": "2026-08-06T02:54:46Z",
+          "observed_at": "2026-08-10T13:12:47Z",
           "url": "https://github.com/groupsum/markdown_workspace/blob/master/packages/lander/lander-react/package.json"
         }
       ],
@@ -5518,7 +5518,7 @@
       "license_status": "observed",
       "manifest_path": "packages/lander/lander-react/package.json",
       "name": "@mdwrk/lander-react",
-      "observed_at": "2026-08-06T02:54:46Z",
+      "observed_at": "2026-08-10T13:12:47Z",
       "owner": "groupsum",
       "package_kind": "private-package",
       "private": true,
@@ -5585,7 +5585,7 @@
       "evidence": [
         {
           "kind": "source",
-          "observed_at": "2026-08-06T02:54:46Z",
+          "observed_at": "2026-08-10T13:12:47Z",
           "url": "https://github.com/groupsum/markdown_workspace/blob/master/packages/lander/lander-seo/package.json"
         }
       ],
@@ -5617,7 +5617,7 @@
       "license_status": "observed",
       "manifest_path": "packages/lander/lander-seo/package.json",
       "name": "@mdwrk/lander-seo",
-      "observed_at": "2026-08-06T02:54:46Z",
+      "observed_at": "2026-08-10T13:12:47Z",
       "owner": "groupsum",
       "package_kind": "private-package",
       "private": true,
@@ -5657,18 +5657,18 @@
           "completeness": "catalog-observed",
           "ecosystem": "npm",
           "evidence": "repository.manifest",
-          "name": "@mdwrk/mdwrkcom",
-          "package_key": "npm:@mdwrk/mdwrkcom",
-          "requirement": "^0.1.2",
+          "name": "@groupsum/groupsum-xyz-frontend",
+          "package_key": "npm:@groupsum/groupsum-xyz-frontend",
+          "requirement": "^0.1.4",
           "scope": "dependencies"
         },
         {
           "completeness": "catalog-observed",
           "ecosystem": "npm",
           "evidence": "repository.manifest",
-          "name": "groupsum-xyz",
-          "package_key": "npm:groupsum-xyz",
-          "requirement": "^0.1.4",
+          "name": "@mdwrk/mdwrkcom",
+          "package_key": "npm:@mdwrk/mdwrkcom",
+          "requirement": "^0.1.2",
           "scope": "dependencies"
         },
         {
@@ -5700,7 +5700,7 @@
       "evidence": [
         {
           "kind": "source",
-          "observed_at": "2026-08-06T02:54:46Z",
+          "observed_at": "2026-08-10T13:12:47Z",
           "url": "https://github.com/groupsum/markdown_workspace/blob/master/packages/lander/lander-theme/package.json"
         }
       ],
@@ -5732,7 +5732,7 @@
       "license_status": "observed",
       "manifest_path": "packages/lander/lander-theme/package.json",
       "name": "@mdwrk/lander-theme",
-      "observed_at": "2026-08-06T02:54:46Z",
+      "observed_at": "2026-08-10T13:12:47Z",
       "owner": "groupsum",
       "package_kind": "private-package",
       "private": true,
@@ -5924,7 +5924,7 @@
       "evidence": [
         {
           "kind": "source",
-          "observed_at": "2026-08-06T02:54:46Z",
+          "observed_at": "2026-08-10T13:12:47Z",
           "url": "https://github.com/groupsum/markdown_workspace/blob/master/packages/editor/markdown-edit-in-renderer-react/package.json"
         }
       ],
@@ -5956,7 +5956,7 @@
       "license_status": "observed",
       "manifest_path": "packages/editor/markdown-edit-in-renderer-react/package.json",
       "name": "@mdwrk/markdown-edit-in-renderer-react",
-      "observed_at": "2026-08-06T02:54:46Z",
+      "observed_at": "2026-08-10T13:12:47Z",
       "owner": "groupsum",
       "package_kind": "private-package",
       "private": true,
@@ -6068,7 +6068,7 @@
       "evidence": [
         {
           "kind": "source",
-          "observed_at": "2026-08-06T02:54:46Z",
+          "observed_at": "2026-08-10T13:12:47Z",
           "url": "https://github.com/groupsum/markdown_workspace/blob/master/packages/editor/markdown-editor-core/package.json"
         }
       ],
@@ -6100,7 +6100,7 @@
       "license_status": "observed",
       "manifest_path": "packages/editor/markdown-editor-core/package.json",
       "name": "@mdwrk/markdown-editor-core",
-      "observed_at": "2026-08-06T02:54:46Z",
+      "observed_at": "2026-08-10T13:12:47Z",
       "owner": "groupsum",
       "package_kind": "private-package",
       "private": true,
@@ -6297,7 +6297,7 @@
           "evidence": "repository.manifest",
           "name": "@mdwrk/extension-theme-studio",
           "package_key": "npm:@mdwrk/extension-theme-studio",
-          "requirement": "^1.1.8",
+          "requirement": "^1.1.1",
           "scope": "dependencies"
         },
         {
@@ -6306,7 +6306,7 @@
           "evidence": "repository.manifest",
           "name": "@mdwrk/extension-theme-studio",
           "package_key": "npm:@mdwrk/extension-theme-studio",
-          "requirement": "^1.1.1",
+          "requirement": "^1.1.8",
           "scope": "dependencies"
         },
         {
@@ -6356,7 +6356,7 @@
       "evidence": [
         {
           "kind": "source",
-          "observed_at": "2026-08-06T02:54:46Z",
+          "observed_at": "2026-08-10T13:12:47Z",
           "url": "https://github.com/groupsum/markdown_workspace/blob/master/packages/editor/markdown-editor-react/package.json"
         }
       ],
@@ -6388,7 +6388,7 @@
       "license_status": "observed",
       "manifest_path": "packages/editor/markdown-editor-react/package.json",
       "name": "@mdwrk/markdown-editor-react",
-      "observed_at": "2026-08-06T02:54:46Z",
+      "observed_at": "2026-08-10T13:12:47Z",
       "owner": "groupsum",
       "package_kind": "private-package",
       "private": true,
@@ -6517,7 +6517,7 @@
       "evidence": [
         {
           "kind": "source",
-          "observed_at": "2026-08-06T02:54:46Z",
+          "observed_at": "2026-08-10T13:12:47Z",
           "url": "https://github.com/groupsum/markdown_workspace/blob/master/packages/renderer/markdown-renderer-core/package.json"
         }
       ],
@@ -6549,7 +6549,7 @@
       "license_status": "observed",
       "manifest_path": "packages/renderer/markdown-renderer-core/package.json",
       "name": "@mdwrk/markdown-renderer-core",
-      "observed_at": "2026-08-06T02:54:46Z",
+      "observed_at": "2026-08-10T13:12:47Z",
       "owner": "groupsum",
       "package_kind": "private-package",
       "private": true,
@@ -6754,7 +6754,7 @@
           "evidence": "repository.manifest",
           "name": "@mdwrk/extension-gemini-agent",
           "package_key": "npm:@mdwrk/extension-gemini-agent",
-          "requirement": "^1.1.7",
+          "requirement": "^1.1.1",
           "scope": "dependencies"
         },
         {
@@ -6763,15 +6763,6 @@
           "evidence": "repository.manifest",
           "name": "@mdwrk/extension-gemini-agent",
           "package_key": "npm:@mdwrk/extension-gemini-agent",
-          "requirement": "^1.1.1",
-          "scope": "dependencies"
-        },
-        {
-          "completeness": "catalog-observed",
-          "ecosystem": "npm",
-          "evidence": "repository.manifest",
-          "name": "@mdwrk/extension-theme-studio",
-          "package_key": "npm:@mdwrk/extension-theme-studio",
           "requirement": "^1.1.7",
           "scope": "dependencies"
         },
@@ -6782,6 +6773,15 @@
           "name": "@mdwrk/extension-theme-studio",
           "package_key": "npm:@mdwrk/extension-theme-studio",
           "requirement": "^1.1.1",
+          "scope": "dependencies"
+        },
+        {
+          "completeness": "catalog-observed",
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "name": "@mdwrk/extension-theme-studio",
+          "package_key": "npm:@mdwrk/extension-theme-studio",
+          "requirement": "^1.1.7",
           "scope": "dependencies"
         },
         {
@@ -6849,7 +6849,7 @@
       "evidence": [
         {
           "kind": "source",
-          "observed_at": "2026-08-06T02:54:46Z",
+          "observed_at": "2026-08-10T13:12:47Z",
           "url": "https://github.com/groupsum/markdown_workspace/blob/master/packages/renderer/markdown-renderer-react/package.json"
         }
       ],
@@ -6881,7 +6881,7 @@
       "license_status": "observed",
       "manifest_path": "packages/renderer/markdown-renderer-react/package.json",
       "name": "@mdwrk/markdown-renderer-react",
-      "observed_at": "2026-08-06T02:54:46Z",
+      "observed_at": "2026-08-10T13:12:47Z",
       "owner": "groupsum",
       "package_kind": "private-package",
       "private": true,
@@ -7136,7 +7136,7 @@
       "evidence": [
         {
           "kind": "source",
-          "observed_at": "2026-08-06T02:54:46Z",
+          "observed_at": "2026-08-10T13:12:47Z",
           "url": "https://github.com/groupsum/markdown_workspace/blob/master/apps/mdwrkcom/package.json"
         }
       ],
@@ -7168,7 +7168,7 @@
       "license_status": "observed",
       "manifest_path": "apps/mdwrkcom/package.json",
       "name": "@mdwrk/mdwrkcom",
-      "observed_at": "2026-08-06T02:54:46Z",
+      "observed_at": "2026-08-10T13:12:47Z",
       "owner": "groupsum",
       "package_kind": "package-candidate",
       "private": true,
@@ -7558,7 +7558,7 @@
       "evidence": [
         {
           "kind": "source",
-          "observed_at": "2026-08-06T02:54:46Z",
+          "observed_at": "2026-08-10T13:12:47Z",
           "url": "https://github.com/groupsum/markdown_workspace/blob/master/apps/client/package.json"
         }
       ],
@@ -7590,7 +7590,7 @@
       "license_status": "observed",
       "manifest_path": "apps/client/package.json",
       "name": "@mdwrk/mdwrkspace",
-      "observed_at": "2026-08-06T02:54:46Z",
+      "observed_at": "2026-08-10T13:12:47Z",
       "owner": "groupsum",
       "package_kind": "package-candidate",
       "private": true,
@@ -7675,7 +7675,7 @@
       "evidence": [
         {
           "kind": "source",
-          "observed_at": "2026-08-06T02:54:46Z",
+          "observed_at": "2026-08-10T13:12:47Z",
           "url": "https://github.com/groupsum/markdown_workspace/blob/master/packages/content/page-template-demo-content-pack/package.json"
         }
       ],
@@ -7707,7 +7707,7 @@
       "license_status": "observed",
       "manifest_path": "packages/content/page-template-demo-content-pack/package.json",
       "name": "@mdwrk/page-template-demo-content-pack",
-      "observed_at": "2026-08-06T02:54:46Z",
+      "observed_at": "2026-08-10T13:12:47Z",
       "owner": "groupsum",
       "package_kind": "private-package",
       "private": true,
@@ -7743,6 +7743,15 @@
       "dependency_count": 0,
       "dependent_count": 7,
       "dependents": [
+        {
+          "completeness": "catalog-observed",
+          "ecosystem": "npm",
+          "evidence": "repository.manifest",
+          "name": "@groupsum/groupsum-xyz-frontend",
+          "package_key": "npm:@groupsum/groupsum-xyz-frontend",
+          "requirement": "^0.1.4",
+          "scope": "dependencies"
+        },
         {
           "completeness": "catalog-observed",
           "ecosystem": "npm",
@@ -7783,15 +7792,6 @@
           "completeness": "catalog-observed",
           "ecosystem": "npm",
           "evidence": "repository.manifest",
-          "name": "groupsum-xyz",
-          "package_key": "npm:groupsum-xyz",
-          "requirement": "^0.1.4",
-          "scope": "dependencies"
-        },
-        {
-          "completeness": "catalog-observed",
-          "ecosystem": "npm",
-          "evidence": "repository.manifest",
           "name": "ssot-registry-com",
           "package_key": "npm:ssot-registry-com",
           "requirement": "^0.2.0",
@@ -7817,7 +7817,7 @@
       "evidence": [
         {
           "kind": "source",
-          "observed_at": "2026-08-06T02:54:46Z",
+          "observed_at": "2026-08-10T13:12:47Z",
           "url": "https://github.com/groupsum/markdown_workspace/blob/master/packages/shared/structured-data/package.json"
         }
       ],
@@ -7849,7 +7849,7 @@
       "license_status": "observed",
       "manifest_path": "packages/shared/structured-data/package.json",
       "name": "@mdwrk/structured-data",
-      "observed_at": "2026-08-06T02:54:46Z",
+      "observed_at": "2026-08-10T13:12:47Z",
       "owner": "groupsum",
       "package_kind": "private-package",
       "private": true,
@@ -7936,7 +7936,7 @@
           "evidence": "repository.manifest",
           "name": "@mdwrk/extension-language-pack-studio",
           "package_key": "npm:@mdwrk/extension-language-pack-studio",
-          "requirement": "^1.0.4",
+          "requirement": "^1.0.1",
           "scope": "devDependencies"
         },
         {
@@ -7945,7 +7945,7 @@
           "evidence": "repository.manifest",
           "name": "@mdwrk/extension-language-pack-studio",
           "package_key": "npm:@mdwrk/extension-language-pack-studio",
-          "requirement": "^1.0.1",
+          "requirement": "^1.0.4",
           "scope": "devDependencies"
         },
         {
@@ -7972,7 +7972,7 @@
           "evidence": "repository.manifest",
           "name": "@mdwrk/extension-theme-studio",
           "package_key": "npm:@mdwrk/extension-theme-studio",
-          "requirement": "^1.0.4",
+          "requirement": "^1.0.1",
           "scope": "devDependencies"
         },
         {
@@ -7981,7 +7981,7 @@
           "evidence": "repository.manifest",
           "name": "@mdwrk/extension-theme-studio",
           "package_key": "npm:@mdwrk/extension-theme-studio",
-          "requirement": "^1.0.1",
+          "requirement": "^1.0.4",
           "scope": "devDependencies"
         },
         {
@@ -8022,7 +8022,7 @@
       "evidence": [
         {
           "kind": "source",
-          "observed_at": "2026-08-06T02:54:46Z",
+          "observed_at": "2026-08-10T13:12:47Z",
           "url": "https://github.com/groupsum/markdown_workspace/blob/master/packages/shared/testing/package.json"
         }
       ],
@@ -8054,7 +8054,7 @@
       "license_status": "observed",
       "manifest_path": "packages/shared/testing/package.json",
       "name": "@mdwrk/testing",
-      "observed_at": "2026-08-06T02:54:46Z",
+      "observed_at": "2026-08-10T13:12:47Z",
       "owner": "groupsum",
       "package_kind": "private-package",
       "private": true,
@@ -8114,7 +8114,7 @@
           "evidence": "repository.manifest",
           "name": "@mdwrk/extension-theme-studio",
           "package_key": "npm:@mdwrk/extension-theme-studio",
-          "requirement": "^1.1.5",
+          "requirement": "^1.1.1",
           "scope": "dependencies"
         },
         {
@@ -8123,7 +8123,7 @@
           "evidence": "repository.manifest",
           "name": "@mdwrk/extension-theme-studio",
           "package_key": "npm:@mdwrk/extension-theme-studio",
-          "requirement": "^1.1.1",
+          "requirement": "^1.1.5",
           "scope": "dependencies"
         },
         {
@@ -8155,7 +8155,7 @@
       "evidence": [
         {
           "kind": "source",
-          "observed_at": "2026-08-06T02:54:46Z",
+          "observed_at": "2026-08-10T13:12:47Z",
           "url": "https://github.com/groupsum/markdown_workspace/blob/master/packages/contracts/theme-contract/package.json"
         }
       ],
@@ -8187,7 +8187,7 @@
       "license_status": "observed",
       "manifest_path": "packages/contracts/theme-contract/package.json",
       "name": "@mdwrk/theme-contract",
-      "observed_at": "2026-08-06T02:54:46Z",
+      "observed_at": "2026-08-10T13:12:47Z",
       "owner": "groupsum",
       "package_kind": "private-package",
       "private": true,
@@ -8320,7 +8320,7 @@
           "evidence": "repository.manifest",
           "name": "@mdwrk/extension-theme-studio",
           "package_key": "npm:@mdwrk/extension-theme-studio",
-          "requirement": "^1.2.6",
+          "requirement": "^1.2.1",
           "scope": "dependencies"
         },
         {
@@ -8329,7 +8329,7 @@
           "evidence": "repository.manifest",
           "name": "@mdwrk/extension-theme-studio",
           "package_key": "npm:@mdwrk/extension-theme-studio",
-          "requirement": "^1.2.1",
+          "requirement": "^1.2.6",
           "scope": "dependencies"
         },
         {
@@ -8415,7 +8415,7 @@
       "evidence": [
         {
           "kind": "source",
-          "observed_at": "2026-08-06T02:54:46Z",
+          "observed_at": "2026-08-10T13:12:47Z",
           "url": "https://github.com/groupsum/markdown_workspace/blob/master/packages/shared/ui-tokens/package.json"
         }
       ],
@@ -8447,7 +8447,7 @@
       "license_status": "observed",
       "manifest_path": "packages/shared/ui-tokens/package.json",
       "name": "@mdwrk/ui-tokens",
-      "observed_at": "2026-08-06T02:54:46Z",
+      "observed_at": "2026-08-10T13:12:47Z",
       "owner": "groupsum",
       "package_kind": "private-package",
       "private": true,
@@ -8539,7 +8539,7 @@
       "evidence": [
         {
           "kind": "source",
-          "observed_at": "2026-08-06T02:54:46Z",
+          "observed_at": "2026-08-10T13:12:47Z",
           "url": "https://github.com/groupsum/markdown_workspace/blob/master/package.json"
         }
       ],
@@ -8571,7 +8571,7 @@
       "license_status": "observed",
       "manifest_path": "package.json",
       "name": "markdown_workspace",
-      "observed_at": "2026-08-06T02:54:46Z",
+      "observed_at": "2026-08-10T13:12:47Z",
       "owner": "groupsum",
       "package_kind": "workspace-project",
       "private": true,
@@ -8636,7 +8636,7 @@
       "evidence": [
         {
           "kind": "source",
-          "observed_at": "2026-08-06T02:54:46Z",
+          "observed_at": "2026-08-10T13:12:47Z",
           "url": "https://github.com/groupsum/markdown_workspace/blob/master/pyproject.toml"
         }
       ],
@@ -8669,7 +8669,7 @@
       "license_status": "observed",
       "manifest_path": "pyproject.toml",
       "name": "markdown-workspace",
-      "observed_at": "2026-08-06T02:54:46Z",
+      "observed_at": "2026-08-10T13:12:47Z",
       "owner": "groupsum",
       "package_kind": "package-candidate",
       "private": false,
@@ -8705,22 +8705,6 @@
     "archived": false,
     "claim_boundary": "SSOT artifact counts and coverage are registry-reported observations; they do not by themselves prove that every public product claim is supported.",
     "commit_activity": [
-      {
-        "count": 0,
-        "date": "2026-07-08"
-      },
-      {
-        "count": 0,
-        "date": "2026-07-09"
-      },
-      {
-        "count": 0,
-        "date": "2026-07-10"
-      },
-      {
-        "count": 0,
-        "date": "2026-07-11"
-      },
       {
         "count": 0,
         "date": "2026-07-12"
@@ -8824,6 +8808,22 @@
       {
         "count": 0,
         "date": "2026-08-06"
+      },
+      {
+        "count": 0,
+        "date": "2026-08-07"
+      },
+      {
+        "count": 0,
+        "date": "2026-08-08"
+      },
+      {
+        "count": 0,
+        "date": "2026-08-09"
+      },
+      {
+        "count": 0,
+        "date": "2026-08-10"
       }
     ],
     "contributors": [
@@ -8846,12 +8846,12 @@
     "evidence": [
       {
         "kind": "ssot-registry",
-        "observed_at": "2026-08-06T02:55:12Z",
+        "observed_at": "2026-08-10T13:12:47Z",
         "url": "https://github.com/groupsum/markdown_workspace/blob/master/.ssot/registry.json"
       },
       {
         "kind": "source",
-        "observed_at": "2026-08-06T02:54:57Z",
+        "observed_at": "2026-08-10T13:12:47Z",
         "url": "https://github.com/groupsum/markdown_workspace"
       }
     ],
@@ -8866,7 +8866,7 @@
         "legal_inherits_from": "repository:groupsum/markdown_workspace",
         "license_expression": "Apache-2.0",
         "license_status": "observed",
-        "observed_at": "2026-08-06T02:54:57Z",
+        "observed_at": "2026-08-10T13:12:47Z",
         "prerelease": false,
         "published_at": null,
         "release_kind": "github",
@@ -8882,7 +8882,7 @@
         "legal_inherits_from": "repository:groupsum/markdown_workspace",
         "license_expression": "Apache-2.0",
         "license_status": "observed",
-        "observed_at": "2026-08-06T02:54:57Z",
+        "observed_at": "2026-08-10T13:12:47Z",
         "prerelease": false,
         "published_at": "2026-05-16T08:14:47Z",
         "release_kind": "github",
@@ -8898,7 +8898,7 @@
         "legal_inherits_from": "repository:groupsum/markdown_workspace",
         "license_expression": "Apache-2.0",
         "license_status": "observed",
-        "observed_at": "2026-08-06T02:54:57Z",
+        "observed_at": "2026-08-10T13:12:47Z",
         "prerelease": false,
         "published_at": "2026-05-16T02:55:24Z",
         "release_kind": "github",
@@ -8914,7 +8914,7 @@
         "legal_inherits_from": "repository:groupsum/markdown_workspace",
         "license_expression": "Apache-2.0",
         "license_status": "observed",
-        "observed_at": "2026-08-06T02:54:57Z",
+        "observed_at": "2026-08-10T13:12:47Z",
         "prerelease": false,
         "published_at": "2026-04-14T13:52:54Z",
         "release_kind": "github",
@@ -8930,7 +8930,7 @@
         "legal_inherits_from": "repository:groupsum/markdown_workspace",
         "license_expression": "Apache-2.0",
         "license_status": "observed",
-        "observed_at": "2026-08-06T02:54:57Z",
+        "observed_at": "2026-08-10T13:12:47Z",
         "prerelease": false,
         "published_at": "2026-04-14T12:05:45Z",
         "release_kind": "github",
@@ -8946,7 +8946,7 @@
         "legal_inherits_from": "repository:groupsum/markdown_workspace",
         "license_expression": "Apache-2.0",
         "license_status": "observed",
-        "observed_at": "2026-08-06T02:54:57Z",
+        "observed_at": "2026-08-10T13:12:47Z",
         "prerelease": false,
         "published_at": "2026-04-14T11:37:39Z",
         "release_kind": "github",
@@ -9589,7 +9589,7 @@
       "watchers": 0
     },
     "name": "markdown_workspace",
-    "observed_at": "2026-08-06T02:54:57Z",
+    "observed_at": "2026-08-10T13:12:47Z",
     "owner": "groupsum",
     "package_ids": [
       "package:npm:@mdwrk/desktop:groupsum/markdown_workspace:apps/desktop/package.json",
@@ -10525,25 +10525,11 @@
     "related_resources": [
       {
         "evidence_type": "repository.blob",
-        "id": "resource:612eec596df2",
-        "legal_evidence": [],
-        "legal_inherits_from": "repository:groupsum/markdown_workspace",
-        "name": "apps/client/src/demos/EditInRendererPackageDemo.tsx",
-        "observed_at": "2026-08-06T02:54:57Z",
-        "path": "apps/client/src/demos/EditInRendererPackageDemo.tsx",
-        "repository": "groupsum/markdown_workspace",
-        "repository_route": "/catalog/repositories/groupsum/markdown_workspace",
-        "resource_type": "implementation.demo",
-        "route": "/catalog/resources/implementation-demo/612eec596df2",
-        "url": "https://github.com/groupsum/markdown_workspace/blob/master/apps/client/src/demos/EditInRendererPackageDemo.tsx"
-      },
-      {
-        "evidence_type": "repository.blob",
         "id": "resource:cd36dfed3a35",
         "legal_evidence": [],
         "legal_inherits_from": "repository:groupsum/markdown_workspace",
         "name": "apps/mdwrkcom/content/pages/docs/extensions.md",
-        "observed_at": "2026-08-06T02:54:57Z",
+        "observed_at": "2026-08-10T13:12:47Z",
         "path": "apps/mdwrkcom/content/pages/docs/extensions.md",
         "repository": "groupsum/markdown_workspace",
         "repository_route": "/catalog/repositories/groupsum/markdown_workspace",
@@ -10557,7 +10543,7 @@
         "legal_evidence": [],
         "legal_inherits_from": "repository:groupsum/markdown_workspace",
         "name": "apps/mdwrkcom/content/pages/docs/quickstart.md",
-        "observed_at": "2026-08-06T02:54:57Z",
+        "observed_at": "2026-08-10T13:12:47Z",
         "path": "apps/mdwrkcom/content/pages/docs/quickstart.md",
         "repository": "groupsum/markdown_workspace",
         "repository_route": "/catalog/repositories/groupsum/markdown_workspace",
@@ -10571,7 +10557,7 @@
         "legal_evidence": [],
         "legal_inherits_from": "repository:groupsum/markdown_workspace",
         "name": "apps/mdwrkcom/content/pages/docs/theme-packs.md",
-        "observed_at": "2026-08-06T02:54:57Z",
+        "observed_at": "2026-08-10T13:12:47Z",
         "path": "apps/mdwrkcom/content/pages/docs/theme-packs.md",
         "repository": "groupsum/markdown_workspace",
         "repository_route": "/catalog/repositories/groupsum/markdown_workspace",
@@ -10585,7 +10571,7 @@
         "legal_evidence": [],
         "legal_inherits_from": "repository:groupsum/markdown_workspace",
         "name": "apps/mdwrkcom/content/pages/es/docs/quickstart.md",
-        "observed_at": "2026-08-06T02:54:57Z",
+        "observed_at": "2026-08-10T13:12:47Z",
         "path": "apps/mdwrkcom/content/pages/es/docs/quickstart.md",
         "repository": "groupsum/markdown_workspace",
         "repository_route": "/catalog/repositories/groupsum/markdown_workspace",
@@ -10599,7 +10585,7 @@
         "legal_evidence": [],
         "legal_inherits_from": "repository:groupsum/markdown_workspace",
         "name": "apps/mdwrkcom/data/markdown/docs/authoring",
-        "observed_at": "2026-08-06T02:54:57Z",
+        "observed_at": "2026-08-10T13:12:47Z",
         "path": "apps/mdwrkcom/data/markdown/docs/authoring",
         "repository": "groupsum/markdown_workspace",
         "repository_route": "/catalog/repositories/groupsum/markdown_workspace",
@@ -10613,7 +10599,7 @@
         "legal_evidence": [],
         "legal_inherits_from": "repository:groupsum/markdown_workspace",
         "name": "apps/mdwrkcom/data/markdown/docs/comparisons",
-        "observed_at": "2026-08-06T02:54:57Z",
+        "observed_at": "2026-08-10T13:12:47Z",
         "path": "apps/mdwrkcom/data/markdown/docs/comparisons",
         "repository": "groupsum/markdown_workspace",
         "repository_route": "/catalog/repositories/groupsum/markdown_workspace",
@@ -10627,7 +10613,7 @@
         "legal_evidence": [],
         "legal_inherits_from": "repository:groupsum/markdown_workspace",
         "name": "apps/mdwrkcom/data/markdown/docs/extensions",
-        "observed_at": "2026-08-06T02:54:57Z",
+        "observed_at": "2026-08-10T13:12:47Z",
         "path": "apps/mdwrkcom/data/markdown/docs/extensions",
         "repository": "groupsum/markdown_workspace",
         "repository_route": "/catalog/repositories/groupsum/markdown_workspace",
@@ -10641,7 +10627,7 @@
         "legal_evidence": [],
         "legal_inherits_from": "repository:groupsum/markdown_workspace",
         "name": "apps/mdwrkcom/data/markdown/docs/getting-started",
-        "observed_at": "2026-08-06T02:54:57Z",
+        "observed_at": "2026-08-10T13:12:47Z",
         "path": "apps/mdwrkcom/data/markdown/docs/getting-started",
         "repository": "groupsum/markdown_workspace",
         "repository_route": "/catalog/repositories/groupsum/markdown_workspace",
@@ -10655,7 +10641,7 @@
         "legal_evidence": [],
         "legal_inherits_from": "repository:groupsum/markdown_workspace",
         "name": "apps/mdwrkcom/data/markdown/docs/github-sync.md",
-        "observed_at": "2026-08-06T02:54:57Z",
+        "observed_at": "2026-08-10T13:12:47Z",
         "path": "apps/mdwrkcom/data/markdown/docs/github-sync.md",
         "repository": "groupsum/markdown_workspace",
         "repository_route": "/catalog/repositories/groupsum/markdown_workspace",
@@ -10669,7 +10655,7 @@
         "legal_evidence": [],
         "legal_inherits_from": "repository:groupsum/markdown_workspace",
         "name": "apps/mdwrkcom/data/markdown/docs/product",
-        "observed_at": "2026-08-06T02:54:57Z",
+        "observed_at": "2026-08-10T13:12:47Z",
         "path": "apps/mdwrkcom/data/markdown/docs/product",
         "repository": "groupsum/markdown_workspace",
         "repository_route": "/catalog/repositories/groupsum/markdown_workspace",
@@ -10683,7 +10669,7 @@
         "legal_evidence": [],
         "legal_inherits_from": "repository:groupsum/markdown_workspace",
         "name": "apps/mdwrkcom/data/markdown/docs/usage",
-        "observed_at": "2026-08-06T02:54:57Z",
+        "observed_at": "2026-08-10T13:12:47Z",
         "path": "apps/mdwrkcom/data/markdown/docs/usage",
         "repository": "groupsum/markdown_workspace",
         "repository_route": "/catalog/repositories/groupsum/markdown_workspace",
@@ -10697,7 +10683,7 @@
         "legal_evidence": [],
         "legal_inherits_from": "repository:groupsum/markdown_workspace",
         "name": "apps/mdwrkcom/dist-static/docs/archive",
-        "observed_at": "2026-08-06T02:54:57Z",
+        "observed_at": "2026-08-10T13:12:47Z",
         "path": "apps/mdwrkcom/dist-static/docs/archive",
         "repository": "groupsum/markdown_workspace",
         "repository_route": "/catalog/repositories/groupsum/markdown_workspace",
@@ -10711,7 +10697,7 @@
         "legal_evidence": [],
         "legal_inherits_from": "repository:groupsum/markdown_workspace",
         "name": "apps/mdwrkcom/dist-static/docs/authoring",
-        "observed_at": "2026-08-06T02:54:57Z",
+        "observed_at": "2026-08-10T13:12:47Z",
         "path": "apps/mdwrkcom/dist-static/docs/authoring",
         "repository": "groupsum/markdown_workspace",
         "repository_route": "/catalog/repositories/groupsum/markdown_workspace",
@@ -10725,7 +10711,7 @@
         "legal_evidence": [],
         "legal_inherits_from": "repository:groupsum/markdown_workspace",
         "name": "apps/mdwrkcom/dist-static/docs/extensions",
-        "observed_at": "2026-08-06T02:54:57Z",
+        "observed_at": "2026-08-10T13:12:47Z",
         "path": "apps/mdwrkcom/dist-static/docs/extensions",
         "repository": "groupsum/markdown_workspace",
         "repository_route": "/catalog/repositories/groupsum/markdown_workspace",
@@ -10739,7 +10725,7 @@
         "legal_evidence": [],
         "legal_inherits_from": "repository:groupsum/markdown_workspace",
         "name": "apps/mdwrkcom/dist-static/docs/getting-started",
-        "observed_at": "2026-08-06T02:54:57Z",
+        "observed_at": "2026-08-10T13:12:47Z",
         "path": "apps/mdwrkcom/dist-static/docs/getting-started",
         "repository": "groupsum/markdown_workspace",
         "repository_route": "/catalog/repositories/groupsum/markdown_workspace",
@@ -10753,7 +10739,7 @@
         "legal_evidence": [],
         "legal_inherits_from": "repository:groupsum/markdown_workspace",
         "name": "apps/mdwrkcom/dist-static/docs/github-sync",
-        "observed_at": "2026-08-06T02:54:57Z",
+        "observed_at": "2026-08-10T13:12:47Z",
         "path": "apps/mdwrkcom/dist-static/docs/github-sync",
         "repository": "groupsum/markdown_workspace",
         "repository_route": "/catalog/repositories/groupsum/markdown_workspace",
@@ -10767,7 +10753,7 @@
         "legal_evidence": [],
         "legal_inherits_from": "repository:groupsum/markdown_workspace",
         "name": "apps/mdwrkcom/dist-static/docs/index.html",
-        "observed_at": "2026-08-06T02:54:57Z",
+        "observed_at": "2026-08-10T13:12:47Z",
         "path": "apps/mdwrkcom/dist-static/docs/index.html",
         "repository": "groupsum/markdown_workspace",
         "repository_route": "/catalog/repositories/groupsum/markdown_workspace",
@@ -10781,7 +10767,7 @@
         "legal_evidence": [],
         "legal_inherits_from": "repository:groupsum/markdown_workspace",
         "name": "apps/mdwrkcom/dist-static/docs/index.md",
-        "observed_at": "2026-08-06T02:54:57Z",
+        "observed_at": "2026-08-10T13:12:47Z",
         "path": "apps/mdwrkcom/dist-static/docs/index.md",
         "repository": "groupsum/markdown_workspace",
         "repository_route": "/catalog/repositories/groupsum/markdown_workspace",
@@ -10795,7 +10781,7 @@
         "legal_evidence": [],
         "legal_inherits_from": "repository:groupsum/markdown_workspace",
         "name": "apps/mdwrkcom/dist-static/docs/quickstart",
-        "observed_at": "2026-08-06T02:54:57Z",
+        "observed_at": "2026-08-10T13:12:47Z",
         "path": "apps/mdwrkcom/dist-static/docs/quickstart",
         "repository": "groupsum/markdown_workspace",
         "repository_route": "/catalog/repositories/groupsum/markdown_workspace",
@@ -10809,7 +10795,7 @@
         "legal_evidence": [],
         "legal_inherits_from": "repository:groupsum/markdown_workspace",
         "name": "apps/mdwrkcom/dist-static/docs/theme-packs",
-        "observed_at": "2026-08-06T02:54:57Z",
+        "observed_at": "2026-08-10T13:12:47Z",
         "path": "apps/mdwrkcom/dist-static/docs/theme-packs",
         "repository": "groupsum/markdown_workspace",
         "repository_route": "/catalog/repositories/groupsum/markdown_workspace",
@@ -10823,7 +10809,7 @@
         "legal_evidence": [],
         "legal_inherits_from": "repository:groupsum/markdown_workspace",
         "name": "apps/mdwrkcom/dist-static/es/docs/quickstart",
-        "observed_at": "2026-08-06T02:54:57Z",
+        "observed_at": "2026-08-10T13:12:47Z",
         "path": "apps/mdwrkcom/dist-static/es/docs/quickstart",
         "repository": "groupsum/markdown_workspace",
         "repository_route": "/catalog/repositories/groupsum/markdown_workspace",
@@ -10837,7 +10823,7 @@
         "legal_evidence": [],
         "legal_inherits_from": "repository:groupsum/markdown_workspace",
         "name": "docs/AGENTS.md",
-        "observed_at": "2026-08-06T02:54:57Z",
+        "observed_at": "2026-08-10T13:12:47Z",
         "path": "docs/AGENTS.md",
         "repository": "groupsum/markdown_workspace",
         "repository_route": "/catalog/repositories/groupsum/markdown_workspace",
@@ -10851,7 +10837,7 @@
         "legal_evidence": [],
         "legal_inherits_from": "repository:groupsum/markdown_workspace",
         "name": "docs/README.md",
-        "observed_at": "2026-08-06T02:54:57Z",
+        "observed_at": "2026-08-10T13:12:47Z",
         "path": "docs/README.md",
         "repository": "groupsum/markdown_workspace",
         "repository_route": "/catalog/repositories/groupsum/markdown_workspace",
@@ -10865,7 +10851,7 @@
         "legal_evidence": [],
         "legal_inherits_from": "repository:groupsum/markdown_workspace",
         "name": "docs/adr",
-        "observed_at": "2026-08-06T02:54:57Z",
+        "observed_at": "2026-08-10T13:12:47Z",
         "path": "docs/adr",
         "repository": "groupsum/markdown_workspace",
         "repository_route": "/catalog/repositories/groupsum/markdown_workspace",
@@ -10879,7 +10865,7 @@
         "legal_evidence": [],
         "legal_inherits_from": "repository:groupsum/markdown_workspace",
         "name": "docs/apps",
-        "observed_at": "2026-08-06T02:54:57Z",
+        "observed_at": "2026-08-10T13:12:47Z",
         "path": "docs/apps",
         "repository": "groupsum/markdown_workspace",
         "repository_route": "/catalog/repositories/groupsum/markdown_workspace",
@@ -10893,7 +10879,7 @@
         "legal_evidence": [],
         "legal_inherits_from": "repository:groupsum/markdown_workspace",
         "name": "docs/architecture",
-        "observed_at": "2026-08-06T02:54:57Z",
+        "observed_at": "2026-08-10T13:12:47Z",
         "path": "docs/architecture",
         "repository": "groupsum/markdown_workspace",
         "repository_route": "/catalog/repositories/groupsum/markdown_workspace",
@@ -10907,7 +10893,7 @@
         "legal_evidence": [],
         "legal_inherits_from": "repository:groupsum/markdown_workspace",
         "name": "docs/client-version-delivery.md",
-        "observed_at": "2026-08-06T02:54:57Z",
+        "observed_at": "2026-08-10T13:12:47Z",
         "path": "docs/client-version-delivery.md",
         "repository": "groupsum/markdown_workspace",
         "repository_route": "/catalog/repositories/groupsum/markdown_workspace",
@@ -10921,7 +10907,7 @@
         "legal_evidence": [],
         "legal_inherits_from": "repository:groupsum/markdown_workspace",
         "name": "docs/conformance",
-        "observed_at": "2026-08-06T02:54:57Z",
+        "observed_at": "2026-08-10T13:12:47Z",
         "path": "docs/conformance",
         "repository": "groupsum/markdown_workspace",
         "repository_route": "/catalog/repositories/groupsum/markdown_workspace",
@@ -10935,7 +10921,7 @@
         "legal_evidence": [],
         "legal_inherits_from": "repository:groupsum/markdown_workspace",
         "name": "docs/current-state",
-        "observed_at": "2026-08-06T02:54:57Z",
+        "observed_at": "2026-08-10T13:12:47Z",
         "path": "docs/current-state",
         "repository": "groupsum/markdown_workspace",
         "repository_route": "/catalog/repositories/groupsum/markdown_workspace",
@@ -10949,7 +10935,7 @@
         "legal_evidence": [],
         "legal_inherits_from": "repository:groupsum/markdown_workspace",
         "name": "docs/examples",
-        "observed_at": "2026-08-06T02:54:57Z",
+        "observed_at": "2026-08-10T13:12:47Z",
         "path": "docs/examples",
         "repository": "groupsum/markdown_workspace",
         "repository_route": "/catalog/repositories/groupsum/markdown_workspace",
@@ -10963,7 +10949,7 @@
         "legal_evidence": [],
         "legal_inherits_from": "repository:groupsum/markdown_workspace",
         "name": "docs/operations",
-        "observed_at": "2026-08-06T02:54:57Z",
+        "observed_at": "2026-08-10T13:12:47Z",
         "path": "docs/operations",
         "repository": "groupsum/markdown_workspace",
         "repository_route": "/catalog/repositories/groupsum/markdown_workspace",
@@ -10977,7 +10963,7 @@
         "legal_evidence": [],
         "legal_inherits_from": "repository:groupsum/markdown_workspace",
         "name": "docs/reference",
-        "observed_at": "2026-08-06T02:54:57Z",
+        "observed_at": "2026-08-10T13:12:47Z",
         "path": "docs/reference",
         "repository": "groupsum/markdown_workspace",
         "repository_route": "/catalog/repositories/groupsum/markdown_workspace",
@@ -10991,7 +10977,7 @@
         "legal_evidence": [],
         "legal_inherits_from": "repository:groupsum/markdown_workspace",
         "name": "tools/docs/generate-readmes.mjs",
-        "observed_at": "2026-08-06T02:54:57Z",
+        "observed_at": "2026-08-10T13:12:47Z",
         "path": "tools/docs/generate-readmes.mjs",
         "repository": "groupsum/markdown_workspace",
         "repository_route": "/catalog/repositories/groupsum/markdown_workspace",
@@ -11001,11 +10987,25 @@
       },
       {
         "evidence_type": "repository.blob",
+        "id": "resource:612eec596df2",
+        "legal_evidence": [],
+        "legal_inherits_from": "repository:groupsum/markdown_workspace",
+        "name": "apps/client/src/demos/EditInRendererPackageDemo.tsx",
+        "observed_at": "2026-08-10T13:12:47Z",
+        "path": "apps/client/src/demos/EditInRendererPackageDemo.tsx",
+        "repository": "groupsum/markdown_workspace",
+        "repository_route": "/catalog/repositories/groupsum/markdown_workspace",
+        "resource_type": "implementation.demo",
+        "route": "/catalog/resources/implementation-demo/612eec596df2",
+        "url": "https://github.com/groupsum/markdown_workspace/blob/master/apps/client/src/demos/EditInRendererPackageDemo.tsx"
+      },
+      {
+        "evidence_type": "repository.blob",
         "id": "resource:67e23bb8ab2a",
         "legal_evidence": [],
         "legal_inherits_from": "repository:groupsum/markdown_workspace",
         "name": "apps/mdwrkcom/dist-static/markdown/local-first-markdown-workspace/examples/index.html",
-        "observed_at": "2026-08-06T02:54:57Z",
+        "observed_at": "2026-08-10T13:12:47Z",
         "path": "apps/mdwrkcom/dist-static/markdown/local-first-markdown-workspace/examples/index.html",
         "repository": "groupsum/markdown_workspace",
         "repository_route": "/catalog/repositories/groupsum/markdown_workspace",
@@ -11019,7 +11019,7 @@
         "legal_evidence": [],
         "legal_inherits_from": "repository:groupsum/markdown_workspace",
         "name": "apps/mdwrkcom/dist-static/markdown/local-first-markdown-workspace/examples/index.md",
-        "observed_at": "2026-08-06T02:54:57Z",
+        "observed_at": "2026-08-10T13:12:47Z",
         "path": "apps/mdwrkcom/dist-static/markdown/local-first-markdown-workspace/examples/index.md",
         "repository": "groupsum/markdown_workspace",
         "repository_route": "/catalog/repositories/groupsum/markdown_workspace",
@@ -11033,7 +11033,7 @@
         "legal_evidence": [],
         "legal_inherits_from": "repository:groupsum/markdown_workspace",
         "name": "apps/mdwrkcom/dist-static/markdown/markdown-blogging/examples/index.html",
-        "observed_at": "2026-08-06T02:54:57Z",
+        "observed_at": "2026-08-10T13:12:47Z",
         "path": "apps/mdwrkcom/dist-static/markdown/markdown-blogging/examples/index.html",
         "repository": "groupsum/markdown_workspace",
         "repository_route": "/catalog/repositories/groupsum/markdown_workspace",
@@ -11047,7 +11047,7 @@
         "legal_evidence": [],
         "legal_inherits_from": "repository:groupsum/markdown_workspace",
         "name": "apps/mdwrkcom/dist-static/markdown/markdown-blogging/examples/index.md",
-        "observed_at": "2026-08-06T02:54:57Z",
+        "observed_at": "2026-08-10T13:12:47Z",
         "path": "apps/mdwrkcom/dist-static/markdown/markdown-blogging/examples/index.md",
         "repository": "groupsum/markdown_workspace",
         "repository_route": "/catalog/repositories/groupsum/markdown_workspace",
@@ -11061,7 +11061,7 @@
         "legal_evidence": [],
         "legal_inherits_from": "repository:groupsum/markdown_workspace",
         "name": "apps/mdwrkcom/dist-static/markdown/markdown-documentation/examples/index.html",
-        "observed_at": "2026-08-06T02:54:57Z",
+        "observed_at": "2026-08-10T13:12:47Z",
         "path": "apps/mdwrkcom/dist-static/markdown/markdown-documentation/examples/index.html",
         "repository": "groupsum/markdown_workspace",
         "repository_route": "/catalog/repositories/groupsum/markdown_workspace",
@@ -11075,7 +11075,7 @@
         "legal_evidence": [],
         "legal_inherits_from": "repository:groupsum/markdown_workspace",
         "name": "apps/mdwrkcom/dist-static/markdown/markdown-documentation/examples/index.md",
-        "observed_at": "2026-08-06T02:54:57Z",
+        "observed_at": "2026-08-10T13:12:47Z",
         "path": "apps/mdwrkcom/dist-static/markdown/markdown-documentation/examples/index.md",
         "repository": "groupsum/markdown_workspace",
         "repository_route": "/catalog/repositories/groupsum/markdown_workspace",
@@ -11089,7 +11089,7 @@
         "legal_evidence": [],
         "legal_inherits_from": "repository:groupsum/markdown_workspace",
         "name": "apps/mdwrkcom/dist-static/markdown/markdown-editor/examples/index.html",
-        "observed_at": "2026-08-06T02:54:57Z",
+        "observed_at": "2026-08-10T13:12:47Z",
         "path": "apps/mdwrkcom/dist-static/markdown/markdown-editor/examples/index.html",
         "repository": "groupsum/markdown_workspace",
         "repository_route": "/catalog/repositories/groupsum/markdown_workspace",
@@ -11103,7 +11103,7 @@
         "legal_evidence": [],
         "legal_inherits_from": "repository:groupsum/markdown_workspace",
         "name": "apps/mdwrkcom/dist-static/markdown/markdown-editor/examples/index.md",
-        "observed_at": "2026-08-06T02:54:57Z",
+        "observed_at": "2026-08-10T13:12:47Z",
         "path": "apps/mdwrkcom/dist-static/markdown/markdown-editor/examples/index.md",
         "repository": "groupsum/markdown_workspace",
         "repository_route": "/catalog/repositories/groupsum/markdown_workspace",
@@ -11117,7 +11117,7 @@
         "legal_evidence": [],
         "legal_inherits_from": "repository:groupsum/markdown_workspace",
         "name": "apps/mdwrkcom/dist-static/markdown/markdown-extension-workflows/examples/index.html",
-        "observed_at": "2026-08-06T02:54:57Z",
+        "observed_at": "2026-08-10T13:12:47Z",
         "path": "apps/mdwrkcom/dist-static/markdown/markdown-extension-workflows/examples/index.html",
         "repository": "groupsum/markdown_workspace",
         "repository_route": "/catalog/repositories/groupsum/markdown_workspace",
@@ -11131,7 +11131,7 @@
         "legal_evidence": [],
         "legal_inherits_from": "repository:groupsum/markdown_workspace",
         "name": "apps/mdwrkcom/dist-static/markdown/markdown-extension-workflows/examples/index.md",
-        "observed_at": "2026-08-06T02:54:57Z",
+        "observed_at": "2026-08-10T13:12:47Z",
         "path": "apps/mdwrkcom/dist-static/markdown/markdown-extension-workflows/examples/index.md",
         "repository": "groupsum/markdown_workspace",
         "repository_route": "/catalog/repositories/groupsum/markdown_workspace",
@@ -11145,7 +11145,7 @@
         "legal_evidence": [],
         "legal_inherits_from": "repository:groupsum/markdown_workspace",
         "name": "apps/mdwrkcom/dist-static/markdown/markdown-for-developers/examples/index.html",
-        "observed_at": "2026-08-06T02:54:57Z",
+        "observed_at": "2026-08-10T13:12:47Z",
         "path": "apps/mdwrkcom/dist-static/markdown/markdown-for-developers/examples/index.html",
         "repository": "groupsum/markdown_workspace",
         "repository_route": "/catalog/repositories/groupsum/markdown_workspace",
@@ -11159,7 +11159,7 @@
         "legal_evidence": [],
         "legal_inherits_from": "repository:groupsum/markdown_workspace",
         "name": "apps/mdwrkcom/dist-static/markdown/markdown-for-developers/examples/index.md",
-        "observed_at": "2026-08-06T02:54:57Z",
+        "observed_at": "2026-08-10T13:12:47Z",
         "path": "apps/mdwrkcom/dist-static/markdown/markdown-for-developers/examples/index.md",
         "repository": "groupsum/markdown_workspace",
         "repository_route": "/catalog/repositories/groupsum/markdown_workspace",
@@ -11173,7 +11173,7 @@
         "legal_evidence": [],
         "legal_inherits_from": "repository:groupsum/markdown_workspace",
         "name": "apps/mdwrkcom/dist-static/markdown/markdown-for-teams/examples/index.html",
-        "observed_at": "2026-08-06T02:54:57Z",
+        "observed_at": "2026-08-10T13:12:47Z",
         "path": "apps/mdwrkcom/dist-static/markdown/markdown-for-teams/examples/index.html",
         "repository": "groupsum/markdown_workspace",
         "repository_route": "/catalog/repositories/groupsum/markdown_workspace",
@@ -11187,7 +11187,7 @@
         "legal_evidence": [],
         "legal_inherits_from": "repository:groupsum/markdown_workspace",
         "name": "apps/mdwrkcom/dist-static/markdown/markdown-for-teams/examples/index.md",
-        "observed_at": "2026-08-06T02:54:57Z",
+        "observed_at": "2026-08-10T13:12:47Z",
         "path": "apps/mdwrkcom/dist-static/markdown/markdown-for-teams/examples/index.md",
         "repository": "groupsum/markdown_workspace",
         "repository_route": "/catalog/repositories/groupsum/markdown_workspace",
@@ -11201,7 +11201,7 @@
         "legal_evidence": [],
         "legal_inherits_from": "repository:groupsum/markdown_workspace",
         "name": "apps/mdwrkcom/dist-static/markdown/markdown-knowledge-base/examples/index.html",
-        "observed_at": "2026-08-06T02:54:57Z",
+        "observed_at": "2026-08-10T13:12:47Z",
         "path": "apps/mdwrkcom/dist-static/markdown/markdown-knowledge-base/examples/index.html",
         "repository": "groupsum/markdown_workspace",
         "repository_route": "/catalog/repositories/groupsum/markdown_workspace",
@@ -11215,7 +11215,7 @@
         "legal_evidence": [],
         "legal_inherits_from": "repository:groupsum/markdown_workspace",
         "name": "apps/mdwrkcom/dist-static/markdown/markdown-knowledge-base/examples/index.md",
-        "observed_at": "2026-08-06T02:54:57Z",
+        "observed_at": "2026-08-10T13:12:47Z",
         "path": "apps/mdwrkcom/dist-static/markdown/markdown-knowledge-base/examples/index.md",
         "repository": "groupsum/markdown_workspace",
         "repository_route": "/catalog/repositories/groupsum/markdown_workspace",
@@ -11229,7 +11229,7 @@
         "legal_evidence": [],
         "legal_inherits_from": "repository:groupsum/markdown_workspace",
         "name": "apps/mdwrkcom/dist-static/markdown/markdown-notes/examples/index.html",
-        "observed_at": "2026-08-06T02:54:57Z",
+        "observed_at": "2026-08-10T13:12:47Z",
         "path": "apps/mdwrkcom/dist-static/markdown/markdown-notes/examples/index.html",
         "repository": "groupsum/markdown_workspace",
         "repository_route": "/catalog/repositories/groupsum/markdown_workspace",
@@ -11243,7 +11243,7 @@
         "legal_evidence": [],
         "legal_inherits_from": "repository:groupsum/markdown_workspace",
         "name": "apps/mdwrkcom/dist-static/markdown/markdown-notes/examples/index.md",
-        "observed_at": "2026-08-06T02:54:57Z",
+        "observed_at": "2026-08-10T13:12:47Z",
         "path": "apps/mdwrkcom/dist-static/markdown/markdown-notes/examples/index.md",
         "repository": "groupsum/markdown_workspace",
         "repository_route": "/catalog/repositories/groupsum/markdown_workspace",
@@ -11257,7 +11257,7 @@
         "legal_evidence": [],
         "legal_inherits_from": "repository:groupsum/markdown_workspace",
         "name": "apps/mdwrkcom/dist-static/markdown/markdown-preview/examples/index.html",
-        "observed_at": "2026-08-06T02:54:57Z",
+        "observed_at": "2026-08-10T13:12:47Z",
         "path": "apps/mdwrkcom/dist-static/markdown/markdown-preview/examples/index.html",
         "repository": "groupsum/markdown_workspace",
         "repository_route": "/catalog/repositories/groupsum/markdown_workspace",
@@ -11271,7 +11271,7 @@
         "legal_evidence": [],
         "legal_inherits_from": "repository:groupsum/markdown_workspace",
         "name": "apps/mdwrkcom/dist-static/markdown/markdown-preview/examples/index.md",
-        "observed_at": "2026-08-06T02:54:57Z",
+        "observed_at": "2026-08-10T13:12:47Z",
         "path": "apps/mdwrkcom/dist-static/markdown/markdown-preview/examples/index.md",
         "repository": "groupsum/markdown_workspace",
         "repository_route": "/catalog/repositories/groupsum/markdown_workspace",
@@ -11285,7 +11285,7 @@
         "legal_evidence": [],
         "legal_inherits_from": "repository:groupsum/markdown_workspace",
         "name": "apps/mdwrkcom/dist-static/markdown/markdown-project-docs/examples/index.html",
-        "observed_at": "2026-08-06T02:54:57Z",
+        "observed_at": "2026-08-10T13:12:47Z",
         "path": "apps/mdwrkcom/dist-static/markdown/markdown-project-docs/examples/index.html",
         "repository": "groupsum/markdown_workspace",
         "repository_route": "/catalog/repositories/groupsum/markdown_workspace",
@@ -11299,7 +11299,7 @@
         "legal_evidence": [],
         "legal_inherits_from": "repository:groupsum/markdown_workspace",
         "name": "apps/mdwrkcom/dist-static/markdown/markdown-project-docs/examples/index.md",
-        "observed_at": "2026-08-06T02:54:57Z",
+        "observed_at": "2026-08-10T13:12:47Z",
         "path": "apps/mdwrkcom/dist-static/markdown/markdown-project-docs/examples/index.md",
         "repository": "groupsum/markdown_workspace",
         "repository_route": "/catalog/repositories/groupsum/markdown_workspace",
@@ -11313,7 +11313,7 @@
         "legal_evidence": [],
         "legal_inherits_from": "repository:groupsum/markdown_workspace",
         "name": "apps/mdwrkcom/dist-static/markdown/markdown-readme/examples/index.html",
-        "observed_at": "2026-08-06T02:54:57Z",
+        "observed_at": "2026-08-10T13:12:47Z",
         "path": "apps/mdwrkcom/dist-static/markdown/markdown-readme/examples/index.html",
         "repository": "groupsum/markdown_workspace",
         "repository_route": "/catalog/repositories/groupsum/markdown_workspace",
@@ -11327,7 +11327,7 @@
         "legal_evidence": [],
         "legal_inherits_from": "repository:groupsum/markdown_workspace",
         "name": "apps/mdwrkcom/dist-static/markdown/markdown-readme/examples/index.md",
-        "observed_at": "2026-08-06T02:54:57Z",
+        "observed_at": "2026-08-10T13:12:47Z",
         "path": "apps/mdwrkcom/dist-static/markdown/markdown-readme/examples/index.md",
         "repository": "groupsum/markdown_workspace",
         "repository_route": "/catalog/repositories/groupsum/markdown_workspace",
@@ -11341,7 +11341,7 @@
         "legal_evidence": [],
         "legal_inherits_from": "repository:groupsum/markdown_workspace",
         "name": "apps/mdwrkcom/dist-static/markdown/markdown-theme-packs/examples/index.html",
-        "observed_at": "2026-08-06T02:54:57Z",
+        "observed_at": "2026-08-10T13:12:47Z",
         "path": "apps/mdwrkcom/dist-static/markdown/markdown-theme-packs/examples/index.html",
         "repository": "groupsum/markdown_workspace",
         "repository_route": "/catalog/repositories/groupsum/markdown_workspace",
@@ -11355,7 +11355,7 @@
         "legal_evidence": [],
         "legal_inherits_from": "repository:groupsum/markdown_workspace",
         "name": "apps/mdwrkcom/dist-static/markdown/markdown-theme-packs/examples/index.md",
-        "observed_at": "2026-08-06T02:54:57Z",
+        "observed_at": "2026-08-10T13:12:47Z",
         "path": "apps/mdwrkcom/dist-static/markdown/markdown-theme-packs/examples/index.md",
         "repository": "groupsum/markdown_workspace",
         "repository_route": "/catalog/repositories/groupsum/markdown_workspace",
@@ -11369,7 +11369,7 @@
         "legal_evidence": [],
         "legal_inherits_from": "repository:groupsum/markdown_workspace",
         "name": "apps/mdwrkcom/dist-static/markdown/markdown-writing-workflow/examples/index.html",
-        "observed_at": "2026-08-06T02:54:57Z",
+        "observed_at": "2026-08-10T13:12:47Z",
         "path": "apps/mdwrkcom/dist-static/markdown/markdown-writing-workflow/examples/index.html",
         "repository": "groupsum/markdown_workspace",
         "repository_route": "/catalog/repositories/groupsum/markdown_workspace",
@@ -11383,7 +11383,7 @@
         "legal_evidence": [],
         "legal_inherits_from": "repository:groupsum/markdown_workspace",
         "name": "apps/mdwrkcom/dist-static/markdown/markdown-writing-workflow/examples/index.md",
-        "observed_at": "2026-08-06T02:54:57Z",
+        "observed_at": "2026-08-10T13:12:47Z",
         "path": "apps/mdwrkcom/dist-static/markdown/markdown-writing-workflow/examples/index.md",
         "repository": "groupsum/markdown_workspace",
         "repository_route": "/catalog/repositories/groupsum/markdown_workspace",
@@ -11397,7 +11397,7 @@
         "legal_evidence": [],
         "legal_inherits_from": "repository:groupsum/markdown_workspace",
         "name": "apps/mdwrkcom/dist-static/markdown/offline-markdown-editor/examples/index.html",
-        "observed_at": "2026-08-06T02:54:57Z",
+        "observed_at": "2026-08-10T13:12:47Z",
         "path": "apps/mdwrkcom/dist-static/markdown/offline-markdown-editor/examples/index.html",
         "repository": "groupsum/markdown_workspace",
         "repository_route": "/catalog/repositories/groupsum/markdown_workspace",
@@ -11411,7 +11411,7 @@
         "legal_evidence": [],
         "legal_inherits_from": "repository:groupsum/markdown_workspace",
         "name": "apps/mdwrkcom/dist-static/markdown/offline-markdown-editor/examples/index.md",
-        "observed_at": "2026-08-06T02:54:57Z",
+        "observed_at": "2026-08-10T13:12:47Z",
         "path": "apps/mdwrkcom/dist-static/markdown/offline-markdown-editor/examples/index.md",
         "repository": "groupsum/markdown_workspace",
         "repository_route": "/catalog/repositories/groupsum/markdown_workspace",
@@ -11425,7 +11425,7 @@
         "legal_evidence": [],
         "legal_inherits_from": "repository:groupsum/markdown_workspace",
         "name": "examples/README.md",
-        "observed_at": "2026-08-06T02:54:57Z",
+        "observed_at": "2026-08-10T13:12:47Z",
         "path": "examples/README.md",
         "repository": "groupsum/markdown_workspace",
         "repository_route": "/catalog/repositories/groupsum/markdown_workspace",
@@ -11439,7 +11439,7 @@
         "legal_evidence": [],
         "legal_inherits_from": "repository:groupsum/markdown_workspace",
         "name": "examples/editor-basic",
-        "observed_at": "2026-08-06T02:54:57Z",
+        "observed_at": "2026-08-10T13:12:47Z",
         "path": "examples/editor-basic",
         "repository": "groupsum/markdown_workspace",
         "repository_route": "/catalog/repositories/groupsum/markdown_workspace",
@@ -11453,7 +11453,7 @@
         "legal_evidence": [],
         "legal_inherits_from": "repository:groupsum/markdown_workspace",
         "name": "examples/page-template-demo",
-        "observed_at": "2026-08-06T02:54:57Z",
+        "observed_at": "2026-08-10T13:12:47Z",
         "path": "examples/page-template-demo",
         "repository": "groupsum/markdown_workspace",
         "repository_route": "/catalog/repositories/groupsum/markdown_workspace",
@@ -11467,7 +11467,7 @@
         "legal_evidence": [],
         "legal_inherits_from": "repository:groupsum/markdown_workspace",
         "name": "examples/renderer-basic",
-        "observed_at": "2026-08-06T02:54:57Z",
+        "observed_at": "2026-08-10T13:12:47Z",
         "path": "examples/renderer-basic",
         "repository": "groupsum/markdown_workspace",
         "repository_route": "/catalog/repositories/groupsum/markdown_workspace",
@@ -11481,7 +11481,7 @@
         "legal_evidence": [],
         "legal_inherits_from": "repository:groupsum/markdown_workspace",
         "name": "packages/lander/lander-page-templates/src/examples/education.ts",
-        "observed_at": "2026-08-06T02:54:57Z",
+        "observed_at": "2026-08-10T13:12:47Z",
         "path": "packages/lander/lander-page-templates/src/examples/education.ts",
         "repository": "groupsum/markdown_workspace",
         "repository_route": "/catalog/repositories/groupsum/markdown_workspace",
@@ -11495,7 +11495,7 @@
         "legal_evidence": [],
         "legal_inherits_from": "repository:groupsum/markdown_workspace",
         "name": "packages/lander/lander-page-templates/src/examples/generic.ts",
-        "observed_at": "2026-08-06T02:54:57Z",
+        "observed_at": "2026-08-10T13:12:47Z",
         "path": "packages/lander/lander-page-templates/src/examples/generic.ts",
         "repository": "groupsum/markdown_workspace",
         "repository_route": "/catalog/repositories/groupsum/markdown_workspace",
@@ -11509,7 +11509,7 @@
         "legal_evidence": [],
         "legal_inherits_from": "repository:groupsum/markdown_workspace",
         "name": "packages/lander/lander-page-templates/src/examples/product.ts",
-        "observed_at": "2026-08-06T02:54:57Z",
+        "observed_at": "2026-08-10T13:12:47Z",
         "path": "packages/lander/lander-page-templates/src/examples/product.ts",
         "repository": "groupsum/markdown_workspace",
         "repository_route": "/catalog/repositories/groupsum/markdown_workspace",
@@ -11523,7 +11523,7 @@
         "legal_evidence": [],
         "legal_inherits_from": "repository:groupsum/markdown_workspace",
         "name": "packages/lander/lander-page-templates/src/examples/support.ts",
-        "observed_at": "2026-08-06T02:54:57Z",
+        "observed_at": "2026-08-10T13:12:47Z",
         "path": "packages/lander/lander-page-templates/src/examples/support.ts",
         "repository": "groupsum/markdown_workspace",
         "repository_route": "/catalog/repositories/groupsum/markdown_workspace",
@@ -11537,7 +11537,7 @@
         "legal_evidence": [],
         "legal_inherits_from": "repository:groupsum/markdown_workspace",
         "name": "markdown_workspace",
-        "observed_at": "2026-08-06T02:54:57Z",
+        "observed_at": "2026-08-10T13:12:47Z",
         "path": null,
         "repository": "groupsum/markdown_workspace",
         "repository_route": "/catalog/repositories/groupsum/markdown_workspace",
@@ -11548,7 +11548,7 @@
     ],
     "relationship_counts": {
       "repository_contains_package": 38,
-      "repository_contains_related_resource": 76
+      "repository_contains_related_resource": 73
     },
     "reviewed": false,
     "route": "/catalog/repositories/groupsum/markdown_workspace",
@@ -14794,7 +14794,7 @@
         "specs": 110,
         "tests": 157
       },
-      "observed_at": "2026-08-06T02:55:12Z",
+      "observed_at": "2026-08-10T13:12:47Z",
       "present": true,
       "raw_url": "https://raw.githubusercontent.com/groupsum/markdown_workspace/master/.ssot/registry.json",
       "registry_url": "https://github.com/groupsum/markdown_workspace/blob/master/.ssot/registry.json",

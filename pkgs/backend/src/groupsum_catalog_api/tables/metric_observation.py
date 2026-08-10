@@ -1,10 +1,5 @@
 from __future__ import annotations
 
-from collections.abc import Iterable
-from typing import Any
-
-from sqlalchemy import delete
-
 from .base import *  # noqa: F403
 
 
@@ -28,45 +23,4 @@ class MetricObservation(CatalogTable):
     source_url = Column(Text, nullable=True)
     source_observation_id = Column(String(160), nullable=True)
     observed_at = Column(DateTime, nullable=False, index=True)
-
-
-async def replace_snapshot_metrics(
-    snapshot_id: str,
-    rows: Iterable[dict[str, Any]],
-) -> int:
-    values = list(rows)
-    session, release = MetricObservation.acquire(op_alias="list")
-    try:
-        await session.begin()
-        try:
-            await session.execute(
-                delete(MetricObservation).where(MetricObservation.snapshot_id == snapshot_id)
-            )
-            for row in values:
-                session.add(MetricObservation(**row))
-            await session.commit()
-        except Exception:
-            await session.rollback()
-            raise
-    finally:
-        release()
-    return len(values)
-
-
-async def delete_snapshot_metrics(snapshot_id: str) -> None:
-    session, release = MetricObservation.acquire(op_alias="list")
-    try:
-        await session.begin()
-        try:
-            await session.execute(
-                delete(MetricObservation).where(MetricObservation.snapshot_id == snapshot_id)
-            )
-            await session.commit()
-        except Exception:
-            await session.rollback()
-            raise
-    finally:
-        release()
-
-
-__all__ = ["MetricObservation", "delete_snapshot_metrics", "replace_snapshot_metrics"]
+__all__ = ["MetricObservation"]

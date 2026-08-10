@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-06T02:54:46Z",
+  "generated_at": "2026-08-10T13:12:47Z",
   "packages": [
     {
       "claim_boundary": "Publication is reported only when confirmed by the named public registry.",
@@ -279,7 +279,7 @@
       "evidence": [
         {
           "kind": "registry",
-          "observed_at": "2026-08-06T02:54:46Z",
+          "observed_at": "2026-08-10T13:12:47Z",
           "url": "https://www.npmjs.com/package/@groupsum/document-studio"
         }
       ],
@@ -320,7 +320,7 @@
       "license_status": "observed",
       "manifest_path": "packages/document-studio/package.json",
       "name": "@groupsum/document-studio",
-      "observed_at": "2026-08-06T02:54:46Z",
+      "observed_at": "2026-08-10T13:12:47Z",
       "owner": "groupsum",
       "package_kind": "published-package",
       "private": false,
@@ -341,7 +341,7 @@
           "legal_inherits_from": "package:npm:@groupsum/document-studio:groupsum/document-studio:packages/document-studio/package.json",
           "license_expression": "UNLICENSED",
           "license_status": "observed",
-          "observed_at": "2026-08-06T02:54:46Z",
+          "observed_at": "2026-08-10T13:12:47Z",
           "published_at": "2026-06-16T20:50:58.043Z",
           "release_kind": "npm",
           "route": "/catalog/releases/npm/groupsum-document-studio-6251d5bba4",
@@ -376,7 +376,7 @@
       "evidence": [
         {
           "kind": "source",
-          "observed_at": "2026-08-06T02:54:46Z",
+          "observed_at": "2026-08-10T13:12:47Z",
           "url": "https://github.com/groupsum/document-studio/blob/master/package.json"
         }
       ],
@@ -409,7 +409,7 @@
       "license_status": "observed",
       "manifest_path": "package.json",
       "name": "document-studio-workspace",
-      "observed_at": "2026-08-06T02:54:46Z",
+      "observed_at": "2026-08-10T13:12:47Z",
       "owner": "groupsum",
       "package_kind": "workspace-project",
       "private": true,
@@ -459,7 +459,7 @@
       "evidence": [
         {
           "kind": "source",
-          "observed_at": "2026-08-06T02:54:46Z",
+          "observed_at": "2026-08-10T13:12:47Z",
           "url": "https://github.com/groupsum/document-studio/blob/master/pyproject.toml"
         }
       ],
@@ -492,7 +492,7 @@
       "license_status": "observed",
       "manifest_path": "pyproject.toml",
       "name": "document-studio-workspace",
-      "observed_at": "2026-08-06T02:54:46Z",
+      "observed_at": "2026-08-10T13:12:47Z",
       "owner": "groupsum",
       "package_kind": "package-candidate",
       "private": false,
@@ -522,22 +522,6 @@
     "archived": false,
     "claim_boundary": "SSOT artifact counts and coverage are registry-reported observations; they do not by themselves prove that every public product claim is supported.",
     "commit_activity": [
-      {
-        "count": 0,
-        "date": "2026-07-08"
-      },
-      {
-        "count": 0,
-        "date": "2026-07-09"
-      },
-      {
-        "count": 0,
-        "date": "2026-07-10"
-      },
-      {
-        "count": 0,
-        "date": "2026-07-11"
-      },
       {
         "count": 0,
         "date": "2026-07-12"
@@ -641,6 +625,22 @@
       {
         "count": 0,
         "date": "2026-08-06"
+      },
+      {
+        "count": 0,
+        "date": "2026-08-07"
+      },
+      {
+        "count": 0,
+        "date": "2026-08-08"
+      },
+      {
+        "count": 0,
+        "date": "2026-08-09"
+      },
+      {
+        "count": 0,
+        "date": "2026-08-10"
       }
     ],
     "contributors": [
@@ -658,12 +658,12 @@
     "evidence": [
       {
         "kind": "ssot-registry",
-        "observed_at": "2026-08-06T02:54:56Z",
+        "observed_at": "2026-08-10T13:12:47Z",
         "url": "https://github.com/groupsum/document-studio/blob/master/.ssot/registry.json"
       },
       {
         "kind": "source",
-        "observed_at": "2026-08-06T02:54:53Z",
+        "observed_at": "2026-08-10T13:12:47Z",
         "url": "https://github.com/groupsum/document-studio"
       }
     ],
@@ -678,7 +678,7 @@
         "legal_inherits_from": "repository:groupsum/document-studio",
         "license_expression": "NOASSERTION",
         "license_status": "observed",
-        "observed_at": "2026-08-06T02:54:53Z",
+        "observed_at": "2026-08-10T13:12:47Z",
         "prerelease": false,
         "published_at": "2026-06-16T20:50:39Z",
         "release_kind": "github",
@@ -750,7 +750,7 @@
       "watchers": 0
     },
     "name": "document-studio",
-    "observed_at": "2026-08-06T02:54:53Z",
+    "observed_at": "2026-08-10T13:12:47Z",
     "owner": "groupsum",
     "package_ids": [
       "package:npm:@groupsum/document-studio:groupsum/document-studio:packages/document-studio/package.json",
@@ -1087,7 +1087,7 @@
         "specs": 21,
         "tests": 0
       },
-      "observed_at": "2026-08-06T02:54:56Z",
+      "observed_at": "2026-08-10T13:12:47Z",
       "present": true,
       "raw_url": "https://raw.githubusercontent.com/groupsum/document-studio/master/.ssot/registry.json",
       "registry_url": "https://github.com/groupsum/document-studio/blob/master/.ssot/registry.json",

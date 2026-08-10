@@ -68,6 +68,7 @@ services:
       GROUPSUM_ANALYTICS_DSN: quack://groupsum-duckdb:9494
       GROUPSUM_ANALYTICS_TOKEN: ${GROUPSUM_DUCKDB_TOKEN:-groupsum-local-token}
       GROUPSUM_ANALYTICS_DISABLE_SSL: "true"
+      GROUPSUM_CATALOG_INTERNAL_TOKEN: ${GROUPSUM_CATALOG_INTERNAL_TOKEN:-groupsum-local-catalog-token}
     depends_on:
       groupsum-postgres:
         condition: service_healthy
