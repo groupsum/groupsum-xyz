@@ -4,11 +4,9 @@ import {
   PackageResource,
   RecordCollectionPageModel,
   RecordPageModel,
-  RecordSummary,
   RepositoryResource,
   RepositorySignals,
-  getRecordPageModel,
-} from "../../api/catalog.generated";
+} from "../../api/catalog";
 import { portfolioEntities } from "../../data/entities";
 import { PortfolioEntity } from "../../types";
 import { RepositorySignalStrip } from "../catalog/RepositorySignals";

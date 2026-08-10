@@ -1,4 +1,4 @@
-import type { EntityGraph } from "../api/catalog.generated";
+import type { EntityGraph } from "../api/catalog";
 
 export type CatalogSourceObservation = { kind?: string; url?: string; observed_at?: string };
 

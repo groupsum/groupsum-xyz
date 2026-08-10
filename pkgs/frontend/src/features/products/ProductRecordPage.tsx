@@ -8,7 +8,8 @@ import {
   RepositoryResource,
   RepositorySignals,
   getRecordPageModel,
-} from "../../api/catalog.generated";
+} from "../../api/catalog";
+import { getProductEvidence } from "../../api/content";
 import { portfolioEntities } from "../../data/entities";
 import { PortfolioEntity } from "../../types";
 import { RepositorySignalStrip } from "../catalog/RepositorySignals";
@@ -99,9 +100,8 @@ export function ProductRecordPage({
           setCatalogState(error.message.includes("404") ? "unavailable" : "error");
           return;
         }
-        fetch(`/catalog/product-evidence/${entity.organization}/${entity.sourceName}.json`, { signal: controller.signal })
-          .then((response) => response.ok ? response.json() : Promise.reject(new Error("fallback unavailable")))
-          .then((value: ProductCatalogBundle) => { setBundle(value); setCatalogState("ready"); })
+        getProductEvidence<ProductCatalogBundle>(entity.organization, entity.sourceName, controller.signal)
+          .then((value) => { setBundle(value); setCatalogState("ready"); })
           .catch((fallbackError: Error) => { if (fallbackError.name !== "AbortError") setCatalogState("error"); });
       });
     return () => controller.abort();

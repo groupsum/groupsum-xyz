@@ -1,6 +1,3 @@
-import createClient from "openapi-fetch";
-import type { paths } from "./schema.generated";
-
 type CachedResponse = {
   etag: string;
   body: ArrayBuffer;
@@ -44,5 +41,3 @@ export async function catalogFetch(input: RequestInfo | URL, init?: RequestInit)
   }
   return response;
 }
-
-export const catalogApi = createClient<paths>({ baseUrl: "", fetch: catalogFetch });

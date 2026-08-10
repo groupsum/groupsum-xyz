@@ -1,6 +1,6 @@
 import React from "react";
 import { ArrowRight, ExternalLink } from "lucide-react";
-import { EntityGraph, EntityRelationship } from "../../api/catalog.generated";
+import { EntityGraph, EntityRelationship } from "../../api/catalog";
 
 type Navigate = (path: string) => void;
 

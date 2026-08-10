@@ -1,4 +1,5 @@
 import type { BlogPost } from "../types";
+import { getInsightContent, getInsightsIndex } from "../api/content";
 
 type LegacyPostIndexEntry = {
   slug: string;
@@ -112,10 +113,7 @@ const metadataPost = (article: LegacyPostIndexEntry): BlogPost => ({
 let indexPromise: Promise<LegacyPostIndexEntry[]> | undefined;
 
 async function loadIndex(): Promise<LegacyPostIndexEntry[]> {
-  indexPromise ||= fetch("/insights-index.json").then((response) => {
-    if (!response.ok) throw new Error(`Insights index response ${response.status}`);
-    return response.json() as Promise<LegacyPostIndexEntry[]>;
-  });
+  indexPromise ||= getInsightsIndex<LegacyPostIndexEntry[]>();
   return indexPromise;
 }
 
@@ -128,9 +126,7 @@ export async function loadBlogPost(legacyPath: string): Promise<BlogPost | null>
   const index = await loadIndex();
   const metadata = index.find((candidate) => candidate.legacyPath === legacyPath);
   if (!metadata) return null;
-  const response = await fetch(metadata.contentPath);
-  if (!response.ok) throw new Error(`Article response ${response.status}`);
-  const article = await response.json() as LegacyPostIndexEntry & { contentHtml: string };
+  const article = await getInsightContent<LegacyPostIndexEntry & { contentHtml: string }>(metadata.contentPath);
 
   return {
     slug: article.slug,

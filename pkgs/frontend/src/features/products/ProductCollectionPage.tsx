@@ -1,14 +1,11 @@
 import React, { useEffect, useMemo, useState } from "react";
 import { ArrowLeft, ArrowRight, Box, Building2, CheckCircle2, ExternalLink, FileCode2, GitBranch, Info, Layers, Package, Search, ShieldCheck } from "lucide-react";
 import {
-  PackageResource,
   RecordCollectionPageModel,
-  RecordPageModel,
   RecordSummary,
-  RepositoryResource,
   RepositorySignals,
-  getRecordPageModel,
-} from "../../api/catalog.generated";
+  getRecordCollectionPageModel,
+} from "../../api/catalog";
 import { portfolioEntities } from "../../data/entities";
 import { PortfolioEntity } from "../../types";
 import { RepositorySignalStrip } from "../catalog/RepositorySignals";
@@ -94,12 +91,8 @@ export function ProductCollectionPage({
   useEffect(() => {
     if (collectionModel) return;
     const controller = new AbortController();
-    fetch(`/api/v1/${mode}`, {
-      signal: controller.signal,
-      headers: { Accept: "application/json" },
-    })
-      .then((response) => response.ok ? response.json() : Promise.reject(new Error("collection unavailable")))
-      .then((value: RecordCollectionPageModel) => setCollectionModel(value))
+    getRecordCollectionPageModel(mode, controller.signal)
+      .then((value) => setCollectionModel(value))
       .catch((error: Error) => { if (error.name !== "AbortError") setCollectionModel((value) => value); });
     return () => controller.abort();
   }, [mode, collectionModel]);

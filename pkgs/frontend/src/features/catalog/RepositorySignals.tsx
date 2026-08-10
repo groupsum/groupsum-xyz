@@ -1,6 +1,6 @@
 import React from "react";
 import { Eye, GitCommitHorizontal, GitFork, Star, Users } from "lucide-react";
-import type { CommitActivityPoint, MetricPoint, RepositorySignals } from "../../api/catalog.generated";
+import type { CommitActivityPoint, MetricPoint, RepositorySignals } from "../../api/catalog";
 
 function compactNumber(value: number): string {
   return new Intl.NumberFormat("en", { notation: "compact", maximumFractionDigits: 1 }).format(value);

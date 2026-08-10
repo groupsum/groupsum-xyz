@@ -4,8 +4,7 @@ import {
   catalogOrganizations,
   catalogSummary,
 } from "../../data/catalog.generated";
-import { EntityGraph, getCatalogOverview, getRepositoryMetricSnapshot, RepositoryMetricRecord, type RepositorySignals } from "../../api/catalog.generated";
-import { getCatalogPackageMember, getCatalogReleaseMember, getCatalogRepositoryMember, getCatalogResourceMember, getCatalogTechnologyMember } from "../../api/catalog";
+import { getCatalogOverview, getRepositoryMetricSnapshot, RepositoryMetricRecord, type RepositorySignals } from "../../api/catalog";
 import { AlertTriangle, ArrowRight, Box, Calendar, CheckCircle2, Cpu, ExternalLink, FileCode, FolderGit2, GitBranch, Globe, Layers, Package, ShieldCheck, Sparkles, Star, Terminal } from "lucide-react";
 import { RepositorySignalStrip } from "./RepositorySignals";
 import { EntityOwnership } from "./EntityIdentity";

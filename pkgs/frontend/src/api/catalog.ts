@@ -1,4 +1,7 @@
 import { catalogFetch } from "./client";
+import type { RecordCollectionPageModel } from "./catalog.generated";
+
+export * from "./catalog.generated";
 
 export type CatalogRecord = Record<string, unknown> & { id: string };
 export type RepositorySummary = CatalogRecord;
@@ -37,6 +40,19 @@ export type CatalogQuery = {
   repository_owner?: string;
   sort?: string;
 };
+
+export async function getRecordCollectionPageModel(
+  collection: "products" | "portfolio",
+  signal?: AbortSignal,
+): Promise<RecordCollectionPageModel> {
+  const response = await catalogFetch(`/api/v1/${collection}`, {
+    signal,
+    headers: { Accept: "application/json" },
+    cache: "default",
+  });
+  if (!response.ok) throw new Error(`${collection} collection response ${response.status}`);
+  return response.json() as Promise<RecordCollectionPageModel>;
+}
 
 function routeRecord(dataset: CatalogDataset, record: CatalogRecord): CatalogRecord {
   if (dataset === "repositories") return { ...record, kind: "repository", route: String(record.route || `/catalog/repositories/${encodeURIComponent(String(record.owner || ""))}/${encodeURIComponent(String(record.name || record.id))}`) };
@@ -79,8 +95,8 @@ export async function getCatalogResourceMember(resourceType: string, routeKey: s
   return await response.json() as CatalogMember;
 }
 
-export async function getCatalogReleaseMember(routeKey: string, _signal?: AbortSignal): Promise<CatalogMember> {
-  throw new Error(`releases member response 404: ${routeKey}`);
+export async function getCatalogReleaseMember(routeKey: string, signal?: AbortSignal): Promise<CatalogMember> {
+  return getCatalogMember(`/api/v1/catalog/releases/${encodeURIComponent(routeKey)}`, "releases", signal);
 }
 
 export async function getCatalogTechnologyMember(slug: string, signal?: AbortSignal) {

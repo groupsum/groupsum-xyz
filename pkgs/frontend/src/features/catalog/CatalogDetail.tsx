@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
-import { getCatalogSnapshots, getEntityMetrics, getEntityObservations, type CatalogSnapshot, type EntityGraph } from "../../api/catalog.generated";
-import { getCatalogPackageMember, getCatalogReleaseMember, getCatalogRepositoryMember, getCatalogResourceMember, getCatalogTechnologyMember } from "../../api/catalog";
+import { getCatalogSnapshots, getEntityMetrics, getEntityObservations, type CatalogSnapshot, type EntityGraph, getCatalogPackageMember, getCatalogReleaseMember, getCatalogRepositoryMember, getCatalogResourceMember, getCatalogTechnologyMember } from "../../api/catalog";
 import { BadgeCheck, Code2, ExternalLink, FileCode2, GitBranch, Package, ShieldCheck } from "lucide-react";
 import { EntityOwnership } from "./EntityIdentity";
 import { ContextRailCard, RecordIdentityCard } from "./CatalogVisuals";
