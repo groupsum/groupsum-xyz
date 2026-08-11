@@ -6,10 +6,25 @@ import httpx
 import pytest
 
 from groupsum_catalog_api.app import build_app
+from groupsum_catalog_api.public_api import _binding_parameters
 from groupsum_catalog_api.tables.resources.documentation.collection import (
     DocumentationCollection,
 )
 from groupsum_catalog_api.tables.resources.governance.boundary import GovernanceBoundary
+
+
+def test_binding_parameters_decode_existing_tigrbl_path_parameters() -> None:
+    params = _binding_parameters(
+        {
+            "path_params": {
+                "resource_type": "governance.boundary",
+                "route_key": "ssot-item%3Aboundary-test",
+            }
+        },
+        "/api/v1/catalog/resources/{resource_type}/{route_key}",
+    )
+
+    assert params["route_key"] == "ssot-item:boundary-test"
 
 
 @pytest.mark.anyio

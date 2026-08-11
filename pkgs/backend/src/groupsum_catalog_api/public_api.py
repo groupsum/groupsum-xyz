@@ -4,13 +4,14 @@ import inspect
 from collections.abc import Callable
 from dataclasses import replace
 from typing import Any
-from urllib.parse import parse_qsl, unquote
+from urllib.parse import parse_qsl
 
 from pydantic import RootModel
 from tigrbl import JSONResponse, get, hook_ctx
 from tigrbl.factories.router import defineRouterSpec
 from tigrbl_core._spec import PathSpec, RouterSpec, TableSpec
 
+from .route_parameters import decode_path_parameters
 from .tables import views_analytics, views_catalog, views_records, views_resources
 from .tables.association import Association
 from .tables.catalog_snapshot import CatalogSnapshot
@@ -83,8 +84,8 @@ def _binding_parameters(ctx: dict[str, Any], template: str) -> dict[str, Any]:
     if len(expected_parts) == len(actual_parts):
         for expected, value in zip(expected_parts, actual_parts, strict=True):
             if expected.startswith("{") and expected.endswith("}"):
-                params.setdefault(expected[1:-1], unquote(value))
-    return params
+                params.setdefault(expected[1:-1], value)
+    return decode_path_parameters(params, expected_parts)
 
 
 def _bind_get(
@@ -100,7 +101,6 @@ def _bind_get(
 
     def capture_params(_cls: type, ctx: dict[str, Any]) -> None:
         ctx.setdefault("temp", {})[params_key] = _binding_parameters(ctx, path)
-
     capture_params.__name__ = f"capture_{alias}_params"
     capture_params.__qualname__ = capture_params.__name__
     setattr(
