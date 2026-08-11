@@ -95,7 +95,6 @@ def catalog_collection(table, ctx, resource_kind: str):
 
     return build(ctx["db"])
 
-
 def contributor_collection(table, ctx):
     params = query_params(ctx)
 
@@ -210,7 +209,6 @@ def repository_detail(table, ctx):
 
     return build(ctx["db"])
 
-
 def repository_metrics(table, ctx):
     owner = str(query_params(ctx).get("owner", ""))
 
@@ -234,7 +232,6 @@ def repository_metrics(table, ctx):
         }
 
     return build(ctx["db"])
-
 
 def package_detail(table, ctx):
     route_key = str(payload(ctx).get("route_key", ""))

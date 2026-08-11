@@ -81,13 +81,11 @@ def test_metrics_use_a_tigrbl_owned_append_only_table() -> None:
     assert MetricObservation.__tablename__ == "catalog_metric_observations"
     assert not MetricObservation.__table__.indexes
 
-
 def test_latest_timestamp_accepts_database_and_source_payload_values() -> None:
     database_value = datetime(2026, 8, 9, tzinfo=UTC)
     source_value = "2026-08-10T00:00:00Z"
 
     assert latest_timestamp((database_value, source_value)) == source_value
-
 
 def test_collection_aggregates_cover_every_catalog_resource_kind() -> None:
     assert _collection_aggregates(
@@ -125,7 +123,6 @@ def test_collection_aggregates_cover_every_catalog_resource_kind() -> None:
         "technology",
     ) == {"categories": 2}
 
-
 def test_entity_tables_have_no_foreign_keys_and_use_one_association_table() -> None:
     assert set(ENTITY_TABLES) == {
         *RESOURCE_TYPES,
@@ -144,7 +141,6 @@ def test_entity_tables_have_no_foreign_keys_and_use_one_association_table() -> N
     assert {table.__tablename__ for table in ALL_TABLES}.isdisjoint(
         {"catalog_entries", "typed_resources", "repository_ssot_items"}
     )
-
 
 def test_public_operations_are_native_and_bound_to_their_owning_tables() -> None:
     expected = {
@@ -167,8 +163,7 @@ def test_public_operations_are_native_and_bound_to_their_owning_tables() -> None
     for table, aliases in expected.items():
         assert aliases <= set(vars(table.handlers))
         operations = {operation.alias: operation for operation in table.__tigrbl_ops__}
-        assert all(operations[alias].target in {"list", "read"} for alias in aliases)
-
+    assert all(operations[alias].target in {"list", "read"} for alias in aliases)
 
 @pytest.mark.anyio
 async def test_openapi_is_generated_from_tigrbl_tables(tmp_path: Path) -> None:
@@ -187,7 +182,6 @@ async def test_openapi_is_generated_from_tigrbl_tables(tmp_path: Path) -> None:
         assert "/api/v1/catalog/repositories" in paths
         assert "/api/v1/products" in paths
         assert "/api/v1/entities/{entity_type}/{entity_id}" in paths
-
 
 @pytest.mark.anyio
 async def _legacy_analytics_import_test(tmp_path: Path) -> None:
