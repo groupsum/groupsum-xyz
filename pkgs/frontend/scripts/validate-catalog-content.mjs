@@ -21,7 +21,7 @@ const requireMarkers = (markers, concern) => {
 };
 
 requireMarkers(
-  ["CatalogToolbar", "CatalogGroup", "CatalogRow", "useCatalogFilters", "products, applications, packages", "Public packages attached"],
+  ["CatalogToolbar", "CatalogGroup", "CatalogRow", "useCatalogFilters", "ExplorerProductPortfolioCollection", "Reviewed records", "Public packages attached"],
   "catalog implementation",
 );
 requireMarkers(
@@ -59,6 +59,7 @@ if (source.includes("border-b border-r")) throw new Error("metric summaries draw
 if (/[ÃÂâ�]/u.test(source)) throw new Error("catalog frontend source contains mojibake");
 if ((collectionTables.match(/<table className="[^"]*text-xs"/g) || []).length !== 2) throw new Error("repository and package tables must use text-xs body typography");
 if ((collectionTables.match(/<thead className="[^"]*text-\[11px\]/g) || []).length !== 2) throw new Error("repository and package table headers must match the 11px prototype scale");
+if (!collectionTables.includes("function HyphenBreakText") || !collectionTables.includes("<wbr />")) throw new Error("repository names lack explicit hyphen-aware wrapping");
 if (source.includes('aria-label="Ownership hierarchy" className="overflow-x-auto')) throw new Error("record breadcrumbs must wrap instead of scrolling");
 
 console.log(`catalog content ok: ${sourceFiles.length} modular source files checked`);
