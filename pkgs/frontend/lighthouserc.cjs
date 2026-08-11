@@ -9,7 +9,7 @@ module.exports = {
         "http://localhost/products/records/peagen/",
         "http://localhost/products/records/tigrbl/",
         "http://localhost/portfolio/",
-        "http://localhost/portfolio/portwyrm/",
+        "http://localhost/portfolio/bucketwarden/",
         "http://localhost/solutions/",
         "http://localhost/insights/",
       ],
