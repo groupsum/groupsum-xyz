@@ -8,6 +8,8 @@ from sqlalchemy.exc import IntegrityError
 
 from groupsum_catalog_api.app import build_app
 from groupsum_catalog_api.internal_api import _database_error
+from groupsum_catalog_api.record_compiler import compile_catalog_records
+from groupsum_catalog_api.tables.portfolio import Portfolio
 
 
 def test_authenticated_database_errors_report_only_the_driver_cause() -> None:
@@ -17,6 +19,35 @@ def test_authenticated_database_errors_report_only_the_driver_cause() -> None:
 
     assert response.status_code == 409
     assert response.body == b'{"detail":"ValueError: duplicate route key"}'
+
+
+@pytest.mark.anyio
+async def test_compiled_portfolios_are_visible_through_the_public_collection(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch
+) -> None:
+    monkeypatch.setenv("GROUPSUM_CATALOG_INTERNAL_TOKEN", "test-token")
+    app = build_app(tmp_path / "catalog.sqlite3", tmp_path / "metrics.duckdb")
+    transport = httpx.ASGITransport(app=app)
+    repo_root = Path(__file__).resolve().parents[3]
+    entities, _ = compile_catalog_records(repo_root)
+    portfolios = entities[Portfolio.ENTITY_TYPE]
+
+    async with httpx.AsyncClient(transport=transport, base_url="http://test") as client:
+        published = await client.post(
+            f"/internal/v1/catalog/entities/{Portfolio.ENTITY_TYPE}",
+            headers={"Authorization": "Bearer test-token"},
+            json={"snapshot_id": "snapshot:portfolio-test", "records": portfolios},
+        )
+        assert published.status_code == 200, published.text
+
+        collection = (await client.get("/api/v1/portfolio")).json()
+
+    assert collection["count"] == len(portfolios) == 6
+    assert collection["generated_at"] is not None
+    assert all(
+        record["canonical_url"].find("/portfolio/records/") > 0
+        for record in collection["records"]
+    )
 
 
 @pytest.mark.anyio

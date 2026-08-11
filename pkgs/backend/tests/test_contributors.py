@@ -4,6 +4,7 @@ from pathlib import Path
 from groupsum_catalog_api.contributor_compiler import import_contributors
 from groupsum_catalog_api.record_compiler import RecordAccumulator, compile_catalog_records
 from groupsum_catalog_api.tables.association import Association
+from groupsum_catalog_api.tables.portfolio import Portfolio
 from groupsum_catalog_api.tables.repository import Repository
 from groupsum_catalog_api.tables.resources.party.person import PartyPerson
 
@@ -72,3 +73,14 @@ def test_current_catalog_compiles_contributor_people_and_repository_edges() -> N
     assert {row["target_id"] for row in contributor_edges} <= {
         row["id"] for row in people
     }
+
+
+def test_current_catalog_compiles_approved_portfolios_as_public_records() -> None:
+    repo_root = Path(__file__).resolve().parents[3]
+    entities, _ = compile_catalog_records(repo_root)
+
+    portfolios = entities[Portfolio.ENTITY_TYPE]
+    assert len(portfolios) == 6
+    assert all(row["visibility"] == "public" for row in portfolios)
+    assert all("/portfolio/records/" in row["canonical_url"] for row in portfolios)
+    assert all(row["updated_at"] is not None for row in portfolios)
