@@ -112,7 +112,10 @@ def contributor_collection(table, ctx):
             item = row_dict(row) | {
                 "url": row.profile_url or row.source_url,
                 "repository_count": len(contributions),
-                "contributions": sum(int((edge.attributes or {}).get("contributions") or 0) for edge in contributions),
+                "contributions": sum(
+                    int((edge.attributes or {}).get("contributions") or 0)
+                    for edge in contributions
+                ),
                 "route": f"/contributors/{row.provider or 'unknown'}/{row.login or row.id}",
             }
             values.append(item)
@@ -162,7 +165,10 @@ def contributor_detail(table, ctx):
         return {
             "kind": "contributor_record",
             "item": row_dict(row) | {"url": row.profile_url or row.source_url},
-            "repositories": sorted(repositories, key=lambda item: (-item["contributions"], item["name"])),
+            "repositories": sorted(
+                repositories,
+                key=lambda item: (-item["contributions"], item["name"]),
+            ),
         }
 
     return build(ctx["db"])
