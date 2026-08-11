@@ -90,7 +90,7 @@ export const SiteHeader: React.FC<SiteHeaderProps> = ({ currentPath, onNavigate 
           ? `inline-flex min-h-11 items-center gap-3 rounded-lg border px-4 py-2.5 font-mono text-xs font-medium ${active ? "border-ink bg-ink text-white" : "border-[var(--color-border-soft)] bg-white text-ink"}`
           : `inline-flex min-h-8 items-center gap-1.5 whitespace-nowrap rounded-md px-3 py-1.5 font-mono text-xs transition-all focus:outline-none focus:ring-1 focus:ring-[#1A73E8] ${active ? "bg-ink font-semibold text-white shadow-sm" : "text-ink-muted hover:bg-surface hover:text-ink"}`}
       >
-        <Icon className={`h-3.5 w-3.5 ${active ? "text-white" : "text-[#7A827C]"}`} aria-hidden="true" />
+        <Icon className={`h-3.5 w-3.5 ${active ? "text-white" : "text-[#5C635E]"}`} aria-hidden="true" />
         <span>{item.label}</span>
       </a>
     );
@@ -114,7 +114,7 @@ export const SiteHeader: React.FC<SiteHeaderProps> = ({ currentPath, onNavigate 
 
           <div className="hidden min-w-0 items-center justify-end gap-3 md:flex">
             <div className="flex items-center gap-1 rounded-lg border border-[var(--color-border-soft)] bg-surface p-1 font-mono text-xs" aria-label="Catalog row density">
-              {(["comfortable", "compact"] as const).map((value) => <button key={value} type="button" onClick={() => setDensity(value)} aria-pressed={density === value} className={`rounded px-2 py-0.5 capitalize transition-all ${density === value ? "bg-white font-semibold text-ink shadow-sm" : "text-[#7A827C] hover:text-ink"}`}>{value}</button>)}
+              {(["comfortable", "compact"] as const).map((value) => <button key={value} type="button" onClick={() => setDensity(value)} aria-pressed={density === value} className={`rounded px-2 py-0.5 capitalize transition-all ${density === value ? "bg-white font-semibold text-ink shadow-sm" : "text-[#5C635E] hover:text-ink"}`}>{value}</button>)}
             </div>
             <form onSubmit={searchCatalog} role="search" className="relative w-36 sm:w-48">
               <label htmlFor="catalog-search" className="sr-only">Search the public catalog</label>

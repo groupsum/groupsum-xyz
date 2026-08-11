@@ -126,7 +126,7 @@ export function CollectionHeader({
         <p className="max-w-3xl text-sm leading-relaxed text-ink-muted sm:text-base">{description}</p>
       </div>
       <div className="flex flex-col items-start space-y-2 font-mono text-xs md:items-end">
-        {observedLabel && <span className="inline-flex items-center gap-1.5 rounded-md border border-[var(--color-border-soft)] bg-surface px-2.5 py-1 text-[#7A827C]"><CalendarDays className="h-3.5 w-3.5 text-accent" aria-hidden="true" />Observed: {observedLabel}</span>}
+        {observedLabel && <span className="inline-flex items-center gap-1.5 rounded-md border border-[var(--color-border-soft)] bg-surface px-2.5 py-1 text-[#5C635E]"><CalendarDays className="h-3.5 w-3.5 text-accent" aria-hidden="true" />Observed: {observedLabel}</span>}
         {exportHref && <a href={exportHref} className="inline-flex min-h-9 items-center gap-1.5 rounded-lg border border-[var(--color-border-soft)] bg-white px-3 py-1.5 font-medium text-ink shadow-sm transition-all hover:bg-surface focus:outline-none focus:ring-2 focus:ring-accent"><Download className="h-3.5 w-3.5 text-accent" aria-hidden="true" />Export JSON Dataset</a>}
       </div>
     </div>
@@ -167,7 +167,7 @@ export function MemberRowCard({
           {pills.map((pill) => <CatalogPill key={pill}>{pill}</CatalogPill>)}
         </div>
         <p className="mt-1 line-clamp-2 text-xs leading-relaxed text-ink-muted">{summary}</p>
-        <span className="mt-2 inline-flex items-center gap-1 font-mono text-xs text-[#7A827C]"><Building2 className="h-3 w-3" aria-hidden="true" />{owner}</span>
+        <span className="mt-2 inline-flex items-center gap-1 font-mono text-xs text-[#5C635E]"><Building2 className="h-3 w-3" aria-hidden="true" />{owner}</span>
       </div>
     </div>
     {facts.length > 0 && <dl className="flex min-w-0 flex-[1_1_16rem] flex-wrap gap-x-6 gap-y-3">{facts.map((fact) => <div key={fact.label} className="min-w-[5rem]"><dt className="text-[9px] font-mono uppercase tracking-wide text-ink-muted">{fact.label}</dt><dd className="mt-1 font-serif text-lg font-bold tabular-nums text-ink">{compactNumber(fact.value)}</dd></div>)}</dl>}

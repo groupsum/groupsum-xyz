@@ -48,14 +48,14 @@ export function ExplorerFilterToolbar({ filters, onChange, owners = [], ecosyste
       </label>
     </div>
     {(filters.search || active.length > 0) && <div className="flex flex-wrap items-center gap-1.5 pt-1 font-mono text-xs">
-        <span className="font-medium text-[#7A827C]">Active Filters:</span>
+        <span className="font-medium text-[#5C635E]">Active Filters:</span>
         {filters.search && <CatalogPill>Query: {filters.search}</CatalogPill>}
         {active.map((value) => <CatalogPill key={value}>{value}</CatalogPill>)}
         <button type="button" onClick={() => onChange({ ...filters, search: "", owner: "", ecosystem: "", publication: "", resourceType: "" })} className="min-h-7 cursor-pointer px-2 font-semibold text-accent hover:underline">Clear all</button>
       </div>}
     <div className="flex flex-wrap items-center justify-between gap-2 border-b border-[var(--color-border-soft)] pb-2 font-mono text-xs text-ink-muted">
       <span>Showing <strong className="text-ink">{total.toLocaleString()}</strong> matching records</span>
-      <span className="hidden text-[#7A827C] sm:inline" aria-live="polite">{statusDetail}</span>
+      <span className="hidden text-[#5C635E] sm:inline" aria-live="polite">{statusDetail}</span>
     </div>
   </div>;
 }
