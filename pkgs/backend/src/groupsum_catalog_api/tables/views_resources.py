@@ -270,7 +270,6 @@ def resource_collection(table, ctx):
 
     def build(session):
         from .registry import RESOURCE_TABLES
-
         requested_type = str(params.get("resource_type") or "")
         values = []
         for entity_type, model in RESOURCE_TABLES.items():
@@ -279,14 +278,15 @@ def resource_collection(table, ctx):
             for row in session.query(model).all():
                 item = source_record(row)
                 canonical_path = getattr(row, "canonical_path", None)
+                route_key = str(canonical_path or row.id).rstrip("/").rsplit("/", 1)[-1]
                 item |= {
                     "id": row.id,
                     "resource_type": entity_type,
                     "title": getattr(row, "title", None)
                     or getattr(row, "name", None)
                     or getattr(row, "source_key", row.id),
-                    "route": canonical_path,
-                    "route_key": str(canonical_path or row.id).rsplit("/", 1)[-1],
+                    "route": canonical_path or f"/catalog/resources/{entity_type}/{route_key}",
+                    "route_key": route_key,
                     "observed_at": getattr(row, "observed_at", None),
                 }
                 values.append(item)
@@ -326,6 +326,7 @@ def resource_detail(table, ctx):
         query = session.query(model)
         if "canonical_path" in model.__table__.columns:
             row = query.filter(model.canonical_path.like(f"%/{route_key}")).first()
+            row = row or session.get(model, route_key)
         else:
             row = session.get(model, route_key)
         if row is None:

@@ -4,7 +4,7 @@ import inspect
 from collections.abc import Callable
 from dataclasses import replace
 from typing import Any
-from urllib.parse import parse_qsl
+from urllib.parse import parse_qsl, unquote
 
 from pydantic import RootModel
 from tigrbl import JSONResponse, get, hook_ctx
@@ -83,7 +83,7 @@ def _binding_parameters(ctx: dict[str, Any], template: str) -> dict[str, Any]:
     if len(expected_parts) == len(actual_parts):
         for expected, value in zip(expected_parts, actual_parts, strict=True):
             if expected.startswith("{") and expected.endswith("}"):
-                params.setdefault(expected[1:-1], value)
+                params.setdefault(expected[1:-1], unquote(value))
     return params
 
 
