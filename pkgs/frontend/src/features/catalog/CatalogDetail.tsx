@@ -9,6 +9,7 @@ import { CatalogRecordNavigation } from "./CatalogRecordNavigation";
 import { PackageDetail, ReleaseDetail, RepositoryDetail, ResourceDetail, TechnologyDetail } from "./CatalogMemberDetails";
 import { PackageIdentityCard } from "./PackageIdentityCard";
 import { datasetOrder, formatDate, humanLabel, isCurrentPageLink, metricItems, recordDescription, recordTitle, resourceIcon, valueRecord, valueRecords, type CatalogRecord, type DatasetName, type DetailDatasetName } from "./CatalogRecordShared";
+import { catalogDetailSegments } from "./catalog-detail-route.mjs";
 
 function MemberSectionNav({ record }: { record: CatalogRecord }) {
   const kind = String(record.kind || "record");
@@ -23,7 +24,7 @@ function MemberSectionNav({ record }: { record: CatalogRecord }) {
 }
 
 export function PublicCatalogDetail({ path, onNavigate }: { path: string; onNavigate: (path: string) => void }) {
-  const segments = path.split(/[?#]/)[0].split("/").filter(Boolean);
+  const segments = catalogDetailSegments(path);
   const dataset = segments[1] as DetailDatasetName;
   const [record, setRecord] = useState<CatalogRecord | null>(null);
   const [snapshots, setSnapshots] = useState<CatalogSnapshot[]>([]);

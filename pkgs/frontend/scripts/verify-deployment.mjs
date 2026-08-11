@@ -44,6 +44,17 @@ async function verify() {
       throw new Error(`${dataset} Tigrbl collection is empty or malformed`);
     }
   }
+  const governedResources = JSON.parse(await fetchText(
+    "/api/v1/catalog/resources?resource_type=governance.boundary&page=1&page_size=1",
+  ));
+  const governedResource = governedResources.records?.[0];
+  if (!governedResource?.route_key) throw new Error("governance boundary route key is missing");
+  const governedDetail = JSON.parse(await fetchText(
+    `/api/v1/catalog/resources/governance.boundary/${encodeURIComponent(governedResource.route_key)}`,
+  ));
+  if (governedDetail.item?.id !== governedResource.id) {
+    throw new Error("encoded governance boundary route does not resolve its collection member");
+  }
   const portwyrmEvidence = JSON.parse(await fetchText("/catalog/product-evidence/groupsum/portwyrm.json"));
   if (portwyrmEvidence.repository?.full_name !== "groupsum/portwyrm") throw new Error("Portwyrm product evidence has the wrong repository");
   if (!portwyrmEvidence.packages?.length) throw new Error("Portwyrm product evidence is missing packages");
