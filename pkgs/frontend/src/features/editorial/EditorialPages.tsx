@@ -16,7 +16,6 @@ import {
 import { StructuredData } from "mdwrk/structured-data";
 import { solutionsData } from "../../data/solutions";
 import { servicesData } from "../../data/services";
-import { catalogSummary } from "../../data/catalog.generated";
 import type { BlogPost } from "../../types";
 import { InquiryForm } from "../../components/InquiryForm";
 import { CollectionHeader, MemberRowCard, RecordIdentityCard, SurfaceCard } from "../catalog/CatalogVisuals";
@@ -26,7 +25,7 @@ type Navigate = (path: string) => void;
 export function ExplorerSolutionsPage({ onNavigate }: { onNavigate: Navigate }) {
   const linkedEvidence = new Set(solutionsData.flatMap((solution) => solution.suites));
   return <div className="mx-auto max-w-[var(--content-max)] space-y-8 px-4 py-10 sm:px-6 lg:px-8">
-    <CollectionHeader eyebrow="Solutions collection" title="Outcome-led systems engineering" description="Solution records organize specific operating frictions, evidence-backed capabilities, intended audiences, and explicit limitations. Each member opens into its own scoped record." observedAt={catalogSummary.generated_at} facts={[
+    <CollectionHeader eyebrow="Solutions collection" title="Outcome-led systems engineering" description="Solution records organize specific operating frictions, evidence-backed capabilities, intended audiences, and explicit limitations. Each member opens into its own scoped record." facts={[
       { label: "Solutions", value: solutionsData.length, icon: Layers },
       { label: "Evidence links", value: linkedEvidence.size, icon: ShieldCheck },
       { label: "Audiences", value: new Set(solutionsData.map((item) => item.audience)).size, icon: User },
@@ -56,7 +55,7 @@ export function ExplorerSolutionDetailPage({ slug, onNavigate }: { slug: string;
 export function ExplorerServicesPage({ onNavigate }: { onNavigate: Navigate }) {
   const relatedWork = new Set(servicesData.flatMap((service) => service.relatedWorkSlugs));
   return <div className="mx-auto max-w-[var(--content-max)] space-y-8 px-4 py-10 sm:px-6 lg:px-8">
-    <CollectionHeader eyebrow="Services collection" title="How we partner and deliver" description="Service records define when an engagement is useful, the usual inputs and outputs, the scope boundary, and what is explicitly excluded. Schedule and commercial terms follow discovery." observedAt={catalogSummary.generated_at} facts={[
+    <CollectionHeader eyebrow="Services collection" title="How we partner and deliver" description="Service records define when an engagement is useful, the usual inputs and outputs, the scope boundary, and what is explicitly excluded. Schedule and commercial terms follow discovery." facts={[
       { label: "Services", value: servicesData.length, icon: Sliders },
       { label: "Related systems", value: relatedWork.size, icon: Layers },
       { label: "Typical outputs", value: servicesData.reduce((total, item) => total + item.typicalOutputs.length, 0), icon: CheckCircle },
@@ -92,7 +91,7 @@ function MissingEditorialRecord({ kind, onNavigate }: { kind: string; onNavigate
 
 export function ExplorerInsightsCollection({ posts, matchingCount, legacyCount, searchQuery, onSearch, currentPage, totalPages, onPage, onNavigate }: { posts: BlogPost[]; matchingCount: number; legacyCount: number; searchQuery: string; onSearch: (value: string) => void; currentPage: number; totalPages: number; onPage: (page: number) => void; onNavigate: Navigate }) {
   return <div className="mx-auto max-w-[var(--content-max)] space-y-8 px-4 py-10 sm:px-6 lg:px-8">
-    <CollectionHeader eyebrow="Insights collection" title="Research notes and historical papers" description="The archive preserves historical articles and URLs. Entries are labeled as historical material and are not treated as current package, API, security, or product evidence." observedAt={catalogSummary.generated_at} facts={[
+    <CollectionHeader eyebrow="Insights collection" title="Research notes and historical papers" description="The archive preserves historical articles and URLs. Entries are labeled as historical material and are not treated as current package, API, security, or product evidence." facts={[
       { label: "Matching posts", value: matchingCount, icon: BookOpen },
       { label: "Historical", value: legacyCount, icon: CalendarDays },
       { label: "Current guidance", value: Math.max(0, matchingCount - legacyCount), icon: CheckCircle },

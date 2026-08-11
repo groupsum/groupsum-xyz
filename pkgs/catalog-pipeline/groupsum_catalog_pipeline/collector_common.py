@@ -31,7 +31,6 @@ ROOT = Path(__file__).resolve().parents[3]
 DEFAULT_CONFIG = ROOT / "catalog" / "catalog.config.json"
 DEFAULT_OUTPUT = ROOT / "catalog" / "generated" / "catalog.json"
 DEFAULT_SUMMARY = ROOT / "catalog" / "generated" / "summary.json"
-DEFAULT_TYPESCRIPT = ROOT / "pkgs" / "frontend" / "src" / "data" / "catalog.generated.ts"
 USER_AGENT = "groupsum-xyz-catalog/1.0 (+https://groupsum.xyz)"
 ISO_NOW = lambda: dt.datetime.now(dt.timezone.utc).replace(microsecond=0).isoformat().replace("+00:00", "Z")
 

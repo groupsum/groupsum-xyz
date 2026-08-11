@@ -5,7 +5,7 @@
 
 import React from "react";
 import { ShieldCheck } from "lucide-react";
-import { catalogSummary } from "../data/catalog.generated";
+import { useCatalogOverview } from "../hooks/useCatalogOverview";
 
 interface SiteFooterProps { onNavigate: (path: string) => void; }
 
@@ -22,6 +22,7 @@ const footerLinks = [
 ] as const;
 
 export const SiteFooter: React.FC<SiteFooterProps> = ({ onNavigate }) => {
+  const overview = useCatalogOverview();
   const navigate = (path: string, event: React.MouseEvent) => {
     if (path.endsWith(".json")) return;
     event.preventDefault();
@@ -57,7 +58,7 @@ export const SiteFooter: React.FC<SiteFooterProps> = ({ onNavigate }) => {
 
         <div className="flex flex-col justify-between gap-2 text-[10px] sm:flex-row sm:items-center">
           <span>&copy; {new Date().getFullYear()} GroupSum LLC</span>
-          <span className="flex flex-wrap gap-x-5 gap-y-1"><span>Observation Window: 30-Day Rolling</span><span>Refreshed: {catalogSummary.generated_at.slice(0, 10)}</span></span>
+          <span className="flex flex-wrap gap-x-5 gap-y-1"><span>Observation Window: 30-Day Rolling</span>{overview.data?.generated_at && <span>Refreshed: {overview.data.generated_at.slice(0, 10)}</span>}</span>
         </div>
       </div>
     </footer>

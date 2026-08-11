@@ -20,7 +20,6 @@ import { CapabilityBand } from "../components/CapabilityBand";
 import { CatalogSnapshotBand, PublicCatalogDetail, PublicCatalogExplorer, PublicCatalogOverview } from "../features/catalog/PublicCatalog";
 import { ProductCollectionPage, ProductRecordPage, productRecordPath } from "../features/products/ProductPortfolio";
 import { groupSumVision, horizontalCapabilities } from "../data/vision";
-import { catalogDatasetManifest, catalogSummary } from "../data/catalog.generated";
 import { useCatalogFilters } from "../hooks/useCatalogFilters";
 import { CatalogToolbar } from "../features/catalog/CatalogToolbar";
 import { CatalogGroup } from "../features/catalog/CatalogGroup";

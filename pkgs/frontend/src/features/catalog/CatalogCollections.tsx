@@ -1,10 +1,5 @@
 import React, { useEffect, useMemo, useState } from "react";
-import {
-  catalogDatasetManifest,
-  catalogOrganizations,
-  catalogSummary,
-} from "../../data/catalog.generated";
-import { getCatalogOverview, getRepositoryMetricSnapshot, RepositoryMetricRecord, type RepositorySignals } from "../../api/catalog";
+import { getRepositoryMetricSnapshot, RepositoryMetricRecord, type RepositorySignals } from "../../api/catalog";
 import { AlertTriangle, ArrowRight, Box, Calendar, CheckCircle2, Cpu, ExternalLink, FileCode, FolderGit2, GitBranch, Globe, Layers, Package, ShieldCheck, Sparkles, Star, Terminal } from "lucide-react";
 import { RepositorySignalStrip } from "./RepositorySignals";
 import { EntityOwnership } from "./EntityIdentity";
@@ -12,6 +7,7 @@ import { CatalogPill, CollectionHeader, ContextRailCard, FactPanel, MemberRowCar
 import { ExplorerFilterToolbar, TypeBadge, type ExplorerFilters } from "./CatalogExplorerUI";
 import { PackageCollectionTable, RepositoryCollectionTable } from "./CatalogCollectionTables";
 import { useCatalogCollection } from "../../hooks/useCatalogCollection";
+import { useCatalogOverview } from "../../hooks/useCatalogOverview";
 import type { CatalogViewRecord } from "../../types/catalog-view";
 
 import { datasetDetails, datasetOrder, DetailSection, formatDate, humanLabel, isCurrentPageLink, labels, recordDescription, recordTitle, resourceIcon, valueRecord, valueRecords, valueStrings, type CatalogRecord, type DatasetName } from "./CatalogRecordShared";
@@ -19,24 +15,34 @@ import { datasetDetails, datasetOrder, DetailSection, formatDate, humanLabel, is
 export function CatalogSnapshotBand({
   onNavigate,
   owner,
-  title = "Generated public ecosystem",
+  title = "Current public ecosystem",
 }: {
   onNavigate: (path: string) => void;
   owner?: string;
   title?: string;
 }) {
-  const organization = catalogOrganizations.find((item) => item.login === owner);
+  const overview = useCatalogOverview();
   const [repositories, setRepositories] = useState<RepositoryMetricRecord[]>([]);
+  const [repositorySummary, setRepositorySummary] = useState({ count: 0, stars: 0, commits: 0, contributors: 0 });
+  const [metricsGeneratedAt, setMetricsGeneratedAt] = useState<string | null>(null);
   const [metricState, setMetricState] = useState<"loading" | "ready" | "error">("loading");
   useEffect(() => {
     const controller = new AbortController();
     setMetricState("loading");
-    getRepositoryMetricSnapshot("", controller.signal)
+    getRepositoryMetricSnapshot(owner || "", controller.signal)
       .then((snapshot) => {
-        const scoped = owner
-          ? snapshot.repositories.filter((repository) => repository.owner === owner)
-          : snapshot.repositories;
+        const scoped = snapshot.repositories;
         setRepositories(scoped.slice(0, 4));
+        setRepositorySummary(scoped.reduce(
+          (totals, repository) => ({
+            count: totals.count + 1,
+            stars: totals.stars + Number(repository.metrics.stars || 0),
+            commits: totals.commits + Number(repository.metrics.commits || 0),
+            contributors: totals.contributors + Number(repository.metrics.contributors || 0),
+          }),
+          { count: 0, stars: 0, commits: 0, contributors: 0 },
+        ));
+        setMetricsGeneratedAt(snapshot.generated_at || null);
         setMetricState("ready");
       })
       .catch((error: Error) => {
@@ -44,29 +50,30 @@ export function CatalogSnapshotBand({
       });
     return () => controller.abort();
   }, [owner]);
-  const metrics = organization
+  const metrics: Array<[string, number | undefined]> = owner
     ? [
-        ["Repositories", organization.repository_count],
-        ["Package records", organization.package_count],
-        ["Commits", organization.commits],
-        ["Contributors", organization.contributors],
+        ["Repositories", metricState === "ready" ? repositorySummary.count : undefined],
+        ["Stars", metricState === "ready" ? repositorySummary.stars : undefined],
+        ["Commits", metricState === "ready" ? repositorySummary.commits : undefined],
+        ["Contributors", metricState === "ready" ? repositorySummary.contributors : undefined],
       ]
     : [
-        ["Repositories", catalogSummary.repositories],
-        ["Package records", catalogSummary.packages],
-        ["Release records", catalogDatasetManifest.source_counts.releases],
-        ["Typed resources", catalogDatasetManifest.counts.resources],
+        ["Repositories", overview.data?.counts.repositories],
+        ["Package records", overview.data?.counts.packages],
+        ["Typed resources", overview.data?.counts.resources],
+        ["Technologies", overview.data?.counts.technologies],
       ];
+  const observedAt = overview.data?.generated_at || metricsGeneratedAt;
 
   return (
     <section className="border-y border-[var(--color-border-soft)] bg-[var(--color-surface)]">
       <div className="max-w-[var(--content-max)] mx-auto px-4 sm:px-6 lg:px-8 py-9 space-y-6">
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-4">
           <div className="max-w-3xl space-y-2">
-            <span className="text-[10px] font-mono uppercase tracking-[0.2em] text-accent font-bold">Observed data · {formatDate(catalogSummary.generated_at)}</span>
+            <span className="text-[10px] font-mono uppercase tracking-[0.2em] text-accent font-bold">Observed data · {observedAt ? formatDate(observedAt) : "Loading current observation"}</span>
             <h2 className="font-serif text-2xl md:text-3xl font-bold tracking-tight text-ink">{title}</h2>
             <p className="text-sm text-ink-muted leading-relaxed">
-              {organization?.description || "Public records compiled from GitHub, repository manifests, PyPI, npm, crates.io, and GitHub Packages. Releases and deployments are summarized on their repository or package records; live availability remains a separate evidence state."}
+              Public records served by the catalog API from GitHub, repository manifests, PyPI, npm, crates.io, and GitHub Packages. Releases and deployments are summarized on their repository or package records; live availability remains a separate evidence state.
             </p>
           </div>
           <button onClick={() => onNavigate("/catalog")} className="text-xs font-mono text-accent font-semibold inline-flex items-center gap-1 hover:underline cursor-pointer">
@@ -76,7 +83,7 @@ export function CatalogSnapshotBand({
         <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
           {metrics.map(([label, value]) => (
             <div key={String(label)} className="p-4 bg-canvas border border-[var(--color-border-soft)] rounded-[var(--radius-sm)]">
-              <strong className="font-serif text-xl text-ink block">{Number(value).toLocaleString()}</strong>
+              <strong className="font-serif text-xl text-ink block">{value === undefined ? "—" : value.toLocaleString()}</strong>
               <span className="text-[10px] font-mono uppercase tracking-wide text-ink-muted">{label}</span>
             </div>
           ))}
@@ -154,16 +161,7 @@ export function LinkedResourceSections({ sections, onNavigate }: { sections: unk
 }
 
 export function PublicCatalogOverview({ onNavigate }: { onNavigate: (path: string) => void }) {
-  const [counts, setCounts] = useState<Record<DatasetName, number>>(() => Object.fromEntries(datasetOrder.map((name) => [name, Number(catalogDatasetManifest.counts[name] || 0)])) as Record<DatasetName, number>);
-  const [primaryCounts, setPrimaryCounts] = useState({ products: 0, portfolio: 0 });
-  useEffect(() => {
-    const controller = new AbortController();
-    getCatalogOverview(controller.signal).then((model) => {
-      setCounts(Object.fromEntries(datasetOrder.map((name) => [name, Number(model.counts[name] || 0)])) as Record<DatasetName, number>);
-      setPrimaryCounts({ products: Number(model.counts.products || 0), portfolio: Number(model.counts.portfolio || 0) });
-    }).catch(() => undefined);
-    return () => controller.abort();
-  }, []);
+  const overview = useCatalogOverview();
   const collectionPresentation = {
     products: { Icon: Box, iconClass: "text-[#2E6B9E]", iconBackground: "bg-[#EBF3FA]" },
     portfolio: { Icon: Layers, iconClass: "text-[#5B4699]", iconBackground: "bg-[#F3E8FF]" },
@@ -173,9 +171,9 @@ export function PublicCatalogOverview({ onNavigate }: { onNavigate: (path: strin
     technologies: { Icon: Cpu, iconClass: "text-[#B45309]", iconBackground: "bg-[#FFEDD5]" },
   } as const;
   const collections = [
-    { key: "products", label: "Products", route: "/products", value: primaryCounts.products, description: "Reviewed public products with purpose, audience, maturity, and implementation evidence.", ...collectionPresentation.products },
-    { key: "portfolio", label: "Portfolios", route: "/portfolio", value: primaryCounts.portfolio, description: "Strategic portfolio records grouping related products and implementation resources.", ...collectionPresentation.portfolio },
-    ...datasetOrder.map((name) => ({ key: name, label: labels[name], route: `/catalog/${name}`, value: counts[name], description: datasetDetails[name].description, ...collectionPresentation[name] })),
+    { key: "products", label: "Products", route: "/products", value: overview.data?.counts.products, description: "Reviewed public products with purpose, audience, maturity, and implementation evidence.", ...collectionPresentation.products },
+    { key: "portfolio", label: "Portfolios", route: "/portfolio", value: overview.data?.counts.portfolio, description: "Strategic portfolio records grouping related products and implementation resources.", ...collectionPresentation.portfolio },
+    ...datasetOrder.map((name) => ({ key: name, label: labels[name], route: `/catalog/${name}`, value: overview.data?.counts[name], description: datasetDetails[name].description, ...collectionPresentation[name] })),
   ];
   return <section className="catalog-explorer mx-auto max-w-7xl space-y-8 px-4 py-8 sm:px-6 lg:px-8">
     <div className="rounded-2xl border border-[var(--color-border-soft)] bg-white p-8 shadow-sm">
@@ -183,14 +181,15 @@ export function PublicCatalogOverview({ onNavigate }: { onNavigate: (path: strin
         <span className="inline-flex items-center gap-2 font-mono text-xs font-semibold uppercase tracking-wider text-accent"><ShieldCheck className="h-4 w-4" aria-hidden="true" />Supporting evidence &amp; public catalog explorer</span>
         <h1 className="font-serif text-3xl font-bold tracking-tight text-ink sm:text-4xl">GroupSum Ecosystem Catalog</h1>
         <p className="max-w-3xl text-sm leading-relaxed text-ink-muted sm:text-base">Traverse reviewed products and portfolio records into repositories, contained packages, typed resources, and observed stack evidence without losing ownership context.</p>
-        <p className="flex flex-wrap items-center gap-2 pt-2 font-mono text-xs text-[#7A827C]"><Calendar className="h-3.5 w-3.5" aria-hidden="true" />Active Observation Period: 30-Day Window <span aria-hidden="true">&bull;</span> Refreshed {formatDate(catalogSummary.generated_at)}</p>
+        <p className="flex flex-wrap items-center gap-2 pt-2 font-mono text-xs text-[#7A827C]"><Calendar className="h-3.5 w-3.5" aria-hidden="true" />Active Observation Period: 30-Day Window <span aria-hidden="true">&bull;</span> {overview.data?.generated_at ? `Refreshed ${formatDate(overview.data.generated_at)}` : overview.isError ? "Current observation unavailable" : "Loading current observation"}</p>
       </div>
     </div>
+    {overview.isError && <div className="rounded-[var(--radius-sm)] border border-red-500/20 bg-red-500/5 p-4 text-sm text-red-700" role="alert">Current catalog totals are temporarily unavailable. Stale generated totals are not shown.</div>}
     <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
       {collections.map((collection) => {
         const Icon = collection.Icon;
         return <article key={collection.key} className="group relative flex min-w-0 flex-col justify-between space-y-4 rounded-xl border border-[var(--color-border-soft)] bg-white p-6 shadow-sm transition-all duration-200 hover:border-accent-hover hover:bg-canvas">
-          <div className="flex items-center justify-between gap-3"><div className={`grid h-12 w-12 shrink-0 place-items-center rounded-lg ${collection.iconBackground} ${collection.iconClass}`}><Icon className="h-6 w-6" aria-hidden="true" /></div><strong className="rounded-full border border-[var(--color-border-soft)] bg-surface px-3 py-1 font-mono text-xl font-bold tabular-nums text-ink">{collection.value.toLocaleString()}</strong></div>
+          <div className="flex items-center justify-between gap-3"><div className={`grid h-12 w-12 shrink-0 place-items-center rounded-lg ${collection.iconBackground} ${collection.iconClass}`}><Icon className="h-6 w-6" aria-hidden="true" /></div><strong className="rounded-full border border-[var(--color-border-soft)] bg-surface px-3 py-1 font-mono text-xl font-bold tabular-nums text-ink">{collection.value === undefined ? "—" : collection.value.toLocaleString()}</strong></div>
           <div className="min-w-0 flex-1"><h2 className="font-serif text-2xl font-bold text-ink transition-colors group-hover:text-accent-hover"><a href={collection.route} onClick={(event) => { event.preventDefault(); onNavigate(collection.route); }} className="before:absolute before:inset-0 before:content-['']">{collection.label}</a></h2><p className="mt-3 text-xs leading-relaxed text-ink-muted">{collection.description}</p></div><span className="flex items-center justify-between border-t border-[var(--color-border-soft)] pt-3 font-mono text-xs font-semibold text-accent-hover">Browse Collection <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" /></span>
         </article>;
       })}
@@ -202,6 +201,7 @@ export function PublicCatalogOverview({ onNavigate }: { onNavigate: (path: strin
 }
 
 export function PublicCatalogExplorer({ onNavigate, compact = false, fixedDataset, initialQuery = "" }: { onNavigate: (path: string) => void; compact?: boolean; fixedDataset?: DatasetName; initialQuery?: string }) {
+  const overview = useCatalogOverview();
   const [dataset, setDataset] = useState<DatasetName>(fixedDataset || "repositories");
   const [filters, setFilters] = useState<ExplorerFilters>({ search: initialQuery, owner: "", ecosystem: "", publication: "", resourceType: "", sort: "name" });
   const [page, setPage] = useState(1);
@@ -273,24 +273,24 @@ export function PublicCatalogExplorer({ onNavigate, compact = false, fixedDatase
     <section aria-busy={collection.isFetching} className="catalog-explorer mx-auto max-w-7xl space-y-6 px-4 py-8 sm:px-6 lg:px-8">
       {!compact && (
         <div>
-          <CollectionHeader eyebrow={`${labels[dataset]} collection`} title={labels[dataset]} description={datasetDetails[dataset].description} observedAt={formatDate(catalogSummary.generated_at)} exportHref={`/catalog/site/${dataset}.json`} facts={summaryFacts} />
+          <CollectionHeader eyebrow={`${labels[dataset]} collection`} title={labels[dataset]} description={datasetDetails[dataset].description} observedAt={collection.data?.generated_at ? formatDate(collection.data.generated_at) : undefined} exportHref={`/catalog/site/${dataset}.json`} facts={summaryFacts} />
         </div>
       )}
       {!fixedDataset && <div className="flex flex-wrap gap-2" aria-label="Catalog datasets" role="tablist">
         {datasetOrder.map((name) => (
           <button key={name} type="button" role="tab" onClick={() => { setDataset(name); setPage(1); }} aria-selected={dataset === name} className={`min-h-20 min-w-0 flex-[1_1_16rem] rounded-[var(--radius-md)] border px-4 py-3 text-left cursor-pointer transition-colors ${dataset === name ? "bg-accent text-white border-accent" : "bg-[var(--color-surface)] text-ink-muted border-[var(--color-border-soft)] hover:border-[var(--color-border-accent-soft)]"}`}>
-            <span className="flex items-center justify-between gap-3"><span className="inline-flex items-center gap-2 text-xs font-mono font-semibold">{React.createElement(datasetDetails[name].Icon, { className: "h-4 w-4", "aria-hidden": true })}{labels[name]}</span><strong className="font-serif text-lg tabular-nums">{Number(catalogDatasetManifest.counts[name]).toLocaleString()}</strong></span>
+            <span className="flex items-center justify-between gap-3"><span className="inline-flex items-center gap-2 text-xs font-mono font-semibold">{React.createElement(datasetDetails[name].Icon, { className: "h-4 w-4", "aria-hidden": true })}{labels[name]}</span><strong className="font-serif text-lg tabular-nums">{overview.data?.counts[name] === undefined ? "—" : overview.data.counts[name].toLocaleString()}</strong></span>
             <span className={`mt-1 block text-[10px] leading-snug ${dataset === name ? "text-white/75" : "text-ink-muted"}`}>{datasetDetails[name].description}</span>
           </button>
         ))}
       </div>}
       <ExplorerFilterToolbar filters={filters} onChange={(next) => { setFilters(next); setPage(1); }} owners={dataset === "repositories" ? Object.keys(collection.data?.facets?.owner || {}) : []} ecosystems={dataset === "packages" ? Object.keys(collection.data?.facets?.ecosystem || {}) : []} publications={dataset === "packages" ? Object.keys(collection.data?.facets?.publication_status || {}) : []} resourceTypes={dataset === "resources" ? Object.keys(collection.data?.facets?.resource_type || {}) : []} sortOptions={[{ label: "Name (A–Z)", value: "name" }, { label: "Most activity", value: "activity" }, { label: "Recently observed", value: "recent" }]} total={Number(collection.data?.count || 0)} statusDetail={collection.isFetching && !collection.isPending ? `Updating to page ${page.toLocaleString()} of ${pages.toLocaleString()}…` : `Page ${currentPage.toLocaleString()} of ${pages.toLocaleString()}`} />
       {state === "loading" && <div className="p-10 text-center text-sm text-ink-muted" role="status">Loading {labels[dataset].toLowerCase()}…</div>}
-      {state === "error" && <div className="p-6 border border-red-500/20 bg-red-500/5 text-sm text-red-700 rounded-[var(--radius-sm)]" role="alert">The generated dataset could not be loaded. The normalized JSON remains available from the download links below.</div>}
+      {state === "error" && <div className="p-6 border border-red-500/20 bg-red-500/5 text-sm text-red-700 rounded-[var(--radius-sm)]" role="alert">The catalog API could not be loaded. Try again shortly or use the downloadable normalized JSON below.</div>}
       {state === "ready" && (
         <>
           {dataset === "repositories" ? <RepositoryCollectionTable records={visible} onNavigate={onNavigate} /> : dataset === "packages" ? <PackageCollectionTable records={visible} onNavigate={onNavigate} /> : <div className="space-y-3">{visible.map((record) => <CollectionRow key={record.id} record={record} dataset={dataset} onNavigate={onNavigate} />)}</div>}
-          {visible.length === 0 && <div className="p-10 text-center border border-[var(--color-border-soft)] rounded-[var(--radius-md)] text-sm text-ink-muted">No generated records match this search.</div>}
+          {visible.length === 0 && <div className="p-10 text-center border border-[var(--color-border-soft)] rounded-[var(--radius-md)] text-sm text-ink-muted">No catalog records match this search.</div>}
           {pages > 1 && <div className="flex items-center justify-between gap-4"><button disabled={currentPage === 1 || collection.isFetching} onClick={() => setPage(Math.max(1, currentPage - 1))} className="px-3 py-2 text-xs font-mono border border-[var(--color-border-soft)] rounded disabled:opacity-40 cursor-pointer">Previous</button><button disabled={currentPage === pages || collection.isFetching} onClick={() => setPage(Math.min(pages, currentPage + 1))} className="px-3 py-2 text-xs font-mono border border-[var(--color-border-soft)] rounded disabled:opacity-40 cursor-pointer">Next</button></div>}
         </>
       )}

@@ -20,7 +20,7 @@ def load_json(path: Path) -> Any:
     return json.loads(path.read_text(encoding="utf-8"))
 
 
-def validate_site(site_dir: Path, typescript: Path) -> list[str]:
+def validate_site(site_dir: Path) -> list[str]:
     errors: list[str] = []
     manifest_path = site_dir / "manifest.json"
     if not manifest_path.exists():
@@ -148,23 +148,14 @@ def validate_site(site_dir: Path, typescript: Path) -> list[str]:
                         errors.append(f"API definition lacks a canonical contract filename: {identity}")
             if name == "organizations" and not {"github_releases", "package_releases", "deployments", "relationships"} <= record.keys():
                 errors.append(f"organization missing child aggregates: {identity}")
-    if not typescript.exists():
-        errors.append("missing generated TypeScript summary")
-    elif typescript.stat().st_size > 262_144:
-        errors.append(f"generated TypeScript exceeds 256 KiB: {typescript.stat().st_size} bytes")
     return errors
 
 
 def main() -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("--site-dir", type=Path, default=ROOT / "catalog" / "generated" / "site")
-    parser.add_argument(
-        "--typescript",
-        type=Path,
-        default=ROOT / "pkgs" / "frontend" / "src" / "data" / "catalog.generated.ts",
-    )
     args = parser.parse_args()
-    errors = validate_site(args.site_dir, args.typescript)
+    errors = validate_site(args.site_dir)
     if errors:
         for error in errors:
             print(f"catalog site validation failed: {error}")

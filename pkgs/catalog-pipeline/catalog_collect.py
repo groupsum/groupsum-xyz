@@ -13,7 +13,7 @@ from groupsum_catalog_pipeline.github_collection import (
     collect_repository,
     discover_github_downstream,
 )
-from groupsum_catalog_pipeline.normalization import relation_rows, summarize, typescript_summary
+from groupsum_catalog_pipeline.normalization import relation_rows, summarize
 from groupsum_catalog_pipeline.package_collection import manifest_package, registry_record
 from groupsum_catalog_pipeline.resource_discovery import (
     collect_ssot_governance,
@@ -30,7 +30,6 @@ __all__ = [
     "filter_repositories", "last_page_count", "manifest_package",
     "normalize_license_expression", "parse_next_link", "registry_record",
     "relation_rows", "repository_legal_evidence", "summarize", "summarize_ssot_registry",
-    "typescript_summary",
 ]
 
 if __name__ == "__main__":

@@ -1,9 +1,4 @@
 import React, { useEffect, useMemo, useState } from "react";
-import {
-  catalogDatasetManifest,
-  catalogOrganizations,
-  catalogSummary,
-} from "../../data/catalog.generated";
 import type { RepositorySignals } from "../../api/catalog";
 import { Activity, ArrowLeft, ArrowRight, BadgeCheck, BookOpen, Boxes, Braces, CalendarDays, Code2, ExternalLink, FileCode2, GitBranch, Globe2, Package, Scale, ServerCog, ShieldCheck, Sparkles } from "lucide-react";
 import { RepositorySignalStrip } from "./RepositorySignals";

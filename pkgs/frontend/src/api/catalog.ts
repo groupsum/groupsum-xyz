@@ -9,6 +9,7 @@ export type PackageSummary = CatalogRecord;
 export type CatalogResourceSummary = CatalogRecord;
 export type TechnologySummary = CatalogRecord;
 export type CatalogCollection = {
+  generated_at?: string | null;
   count: number;
   page: number;
   page_count: number;

@@ -29,13 +29,12 @@ from .snapshots import snapshot_descriptor
 
 
 def _write_outputs(args, catalog: dict[str, Any], summary: dict[str, Any]) -> dict[str, Any]:
-    for path in (args.output, args.summary, args.typescript):
+    for path in (args.output, args.summary):
         path.parent.mkdir(parents=True, exist_ok=True)
     args.output.write_text(json.dumps(catalog, indent=2, sort_keys=True) + "\n", encoding="utf-8")
     manifest = snapshot_descriptor(catalog)
     summary["snapshot_id"] = manifest["snapshot_id"]
     args.summary.write_text(json.dumps(summary, indent=2, sort_keys=True) + "\n", encoding="utf-8")
-    args.typescript.write_text(typescript_summary(summary), encoding="utf-8")
     return manifest
 
 
@@ -66,7 +65,6 @@ def main() -> int:
     parser.add_argument("--config", type=Path, default=DEFAULT_CONFIG)
     parser.add_argument("--output", type=Path, default=DEFAULT_OUTPUT)
     parser.add_argument("--summary", type=Path, default=DEFAULT_SUMMARY)
-    parser.add_argument("--typescript", type=Path, default=DEFAULT_TYPESCRIPT)
     parser.add_argument("--cache-dir", type=Path, default=ROOT / ".catalog-cache")
     parser.add_argument("--refresh", action="store_true")
     parser.add_argument(
