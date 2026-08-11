@@ -5,6 +5,15 @@ from typing import Any
 
 from .common import *  # noqa: F403
 
+PACKAGE_ROUTE_KEY_MAX_LENGTH = 80
+
+
+def package_route_key(name: str, package_id: str) -> str:
+    suffix = f"-{stable_hash(package_id, 8)}"
+    prefix = slug(name)[: PACKAGE_ROUTE_KEY_MAX_LENGTH - len(suffix)].rstrip("-")
+    return f"{prefix}{suffix}"
+
+
 def compile_packages(catalog: dict[str, Any], generated_at: str, overrides: dict[str, Any], source_repositories: dict[str, Any], relationship_counts: dict[str, Counter[str]], dependents_by_key: dict[str, list[dict[str, Any]]], known_package_keys: set[str]) -> tuple[list[dict[str, Any]], dict[str, list[str]]]:
     package_records: list[dict[str, Any]] = []
     packages_by_repo: dict[str, list[str]] = defaultdict(list)
@@ -19,7 +28,7 @@ def compile_packages(catalog: dict[str, Any], generated_at: str, overrides: dict
         legal_repository = repository
         package_identity = f"{ecosystem}:{name}:{repository or package.get('owner') or 'registry'}:{package.get('manifest_path') or 'package'}"
         package_id = f"package:{package_identity}"
-        package_slug = f"{slug(name)}-{stable_hash(package_id, 8)}"
+        package_slug = package_route_key(name, package_id)
         checked_at = package.get("updated_at") or observed_at(package, generated_at)
         override = overrides.get(package_id, {})
         registry_url = package.get("registry_url") or package.get("url")

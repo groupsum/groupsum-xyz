@@ -129,6 +129,8 @@ def validate_site(site_dir: Path) -> list[str]:
                 errors.append(f"package missing child aggregates: {identity}")
             if name == "packages" and not record.get("package_kind"):
                 errors.append(f"package missing manifest classification: {identity}")
+            if name == "packages" and route and len(route.rsplit("/", 1)[-1]) > 80:
+                errors.append(f"package route key exceeds 80 characters: {identity}")
             if name == "packages" and not record.get("repository"):
                 errors.append(f"package missing repository ownership: {identity}")
             if name == "packages" and "technologies" not in record:

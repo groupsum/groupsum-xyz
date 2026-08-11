@@ -49,6 +49,12 @@ def _serialized(value: object) -> dict[str, Any]:
     row: dict[str, Any] = {}
     for column in value.__table__.columns:
         item = getattr(value, column.name)
+        max_length = getattr(column.type, "length", None)
+        if isinstance(item, str) and max_length is not None and len(item) > max_length:
+            raise ValueError(
+                f"{value.ENTITY_TYPE} {value.id} column {column.name} "
+                f"has {len(item)} characters; maximum is {max_length}"
+            )
         if isinstance(item, datetime):
             item = item.isoformat().replace("+00:00", "Z")
         row[column.name] = item
