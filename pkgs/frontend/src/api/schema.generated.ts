@@ -191,6 +191,38 @@ export interface paths {
         patch?: never;
         trace?: never;
     };
+    "/api/v1/contributors": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get: operations["PartyPerson.contributors"];
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/api/v1/contributors/{provider}/{login}": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get: operations["PartyPerson.contributor_detail"];
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
     "/api/v1/entities": {
         parameters: {
             query?: never;
@@ -1165,6 +1197,77 @@ export interface operations {
                 };
                 content: {
                     "application/json": components["schemas"]["PublicResponse"][];
+                };
+            };
+        };
+    };
+    "PartyPerson.contributors": {
+        parameters: {
+            query?: {
+                id?: string;
+                name?: string;
+                description?: string;
+                provider?: string;
+                provider_id?: string;
+                login?: string;
+                profile_url?: string;
+                avatar_url?: string;
+                account_type?: string;
+                anonymous?: boolean;
+                source_url?: string;
+                observed_at?: string;
+                source_payload?: string;
+            };
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description Successful Response */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["PublicResponse"][];
+                };
+            };
+        };
+    };
+    "PartyPerson.contributor_detail": {
+        parameters: {
+            query?: {
+                id?: string;
+                name?: string;
+                description?: string;
+                provider?: string;
+                provider_id?: string;
+                login?: string;
+                profile_url?: string;
+                avatar_url?: string;
+                account_type?: string;
+                anonymous?: boolean;
+                source_url?: string;
+                observed_at?: string;
+                source_payload?: string;
+            };
+            header?: never;
+            path: {
+                provider: string;
+                login: string;
+            };
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description Successful Response */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": unknown;
                 };
             };
         };

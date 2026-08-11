@@ -22,6 +22,7 @@ from .tables.portfolio import Portfolio
 from .tables.product import Product
 from .tables.registry import ALL_TABLES
 from .tables.repository import Repository
+from .tables.resources.party.person import PartyPerson
 from .tables.technology import Technology
 
 Operation = Callable[[type, dict[str, Any]], Any]
@@ -152,6 +153,21 @@ def _bind_get(
 
 
 analytics_readiness = views_analytics.analytics_readiness
+
+_bind_get(
+    "/api/v1/contributors",
+    table=PartyPerson,
+    alias="contributors",
+    target="list",
+    operation=views_resources.contributor_collection,
+)
+_bind_get(
+    "/api/v1/contributors/{provider}/{login}",
+    table=PartyPerson,
+    alias="contributor_detail",
+    target="read",
+    operation=views_resources.contributor_detail,
+)
 
 
 for path, alias, table, record_type in (

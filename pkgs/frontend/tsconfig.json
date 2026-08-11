@@ -21,9 +21,6 @@
       ],
       "mdwrk/renderer-core": [
         "./src/mdwrk/renderer-core/index.tsx"
-      ],
-      "mdwrk/structured-data": [
-        "./src/mdwrk/structured-data/index.tsx"
       ]
     },
     "allowImportingTsExtensions": true,

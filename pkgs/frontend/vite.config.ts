@@ -18,7 +18,6 @@ export default defineConfig({
     alias: {
       "@": path.resolve(frontendDir, "."),
       "mdwrk/renderer-core": path.resolve(frontendDir, "./src/mdwrk/renderer-core/index.tsx"),
-      "mdwrk/structured-data": path.resolve(frontendDir, "./src/mdwrk/structured-data/index.tsx"),
     },
   },
   build: {

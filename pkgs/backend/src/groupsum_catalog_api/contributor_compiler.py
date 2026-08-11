@@ -30,6 +30,13 @@ def import_contributors(
                 id=person_id,
                 name=str(display_name),
                 description="GitHub contributor observed in the public repository history.",
+                provider="github",
+                provider_id=str(contributor.get("id")) if contributor.get("id") else None,
+                login=contributor.get("login"),
+                profile_url=contributor.get("url"),
+                avatar_url=contributor.get("avatar_url"),
+                account_type=contributor.get("account_type"),
+                anonymous=bool(contributor.get("anonymous")),
                 source_url=contributor.get("url"),
                 observed_at=parse_datetime(repository_row.get("observed_at")) or observed_at,
                 source_payload={

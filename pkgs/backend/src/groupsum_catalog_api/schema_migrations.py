@@ -19,6 +19,18 @@ LEGACY_NULLABLE_COLUMNS = (
     ("repository_ssot_registries", "repository_id"),
 )
 
+LEGACY_ADDITIVE_COLUMNS = {
+    "resource_party_person": (
+        "provider VARCHAR(60)",
+        "provider_id VARCHAR(200)",
+        "login VARCHAR(240)",
+        "profile_url VARCHAR(2048)",
+        "avatar_url VARCHAR(2048)",
+        "account_type VARCHAR(80)",
+        "anonymous BOOLEAN NOT NULL DEFAULT FALSE",
+    ),
+}
+
 
 def reconcile_legacy_catalog_schema() -> None:
     """Bring the pre-graph PostgreSQL schema forward without discarding records."""
@@ -29,6 +41,9 @@ def reconcile_legacy_catalog_schema() -> None:
             session.execute(
                 text(f"ALTER TABLE {table_name} ADD COLUMN IF NOT EXISTS source_payload JSON")
             )
+        for table_name, columns in LEGACY_ADDITIVE_COLUMNS.items():
+            for column in columns:
+                session.execute(text(f"ALTER TABLE {table_name} ADD COLUMN IF NOT EXISTS {column}"))
         for table_name, column_name in LEGACY_NULLABLE_COLUMNS:
             exists = session.execute(
                 text(
@@ -52,6 +67,7 @@ def reconcile_legacy_catalog_schema() -> None:
 
 __all__ = [
     "LEGACY_NULLABLE_COLUMNS",
+    "LEGACY_ADDITIVE_COLUMNS",
     "SOURCE_PAYLOAD_TABLES",
     "reconcile_legacy_catalog_schema",
 ]

@@ -7,6 +7,7 @@ import { HomePage } from "../pages/HomePage";
 import { InsightsPage } from "../pages/OfferingCollections";
 import { PortfolioDetailPage } from "../pages/PortfolioPages";
 import { NotFoundPage } from "../pages/StaticPages";
+import { ContributorProfile } from "../features/catalog/ContributorProfile";
 
 export function RouteSwitcher({ path, onNavigate }: { path: string; onNavigate: (path: string) => void }) {
   const cleanPath = path.split("?")[0].split("#")[0];
@@ -38,6 +39,7 @@ export function RouteSwitcher({ path, onNavigate }: { path: string; onNavigate: 
     if (segments.length === 2 && ["repositories", "packages", "resources", "technologies"].includes(dataset)) return <PublicCatalogExplorer onNavigate={onNavigate} fixedDataset={dataset as "repositories" | "packages" | "resources" | "technologies"} initialQuery={query} />;
     return <PublicCatalogDetail path={cleanPath} onNavigate={onNavigate} />;
   }
+  if (primary === "contributors" && segments[1] && segments[2]) return <ContributorProfile provider={segments[1]} login={decodeURIComponent(segments[2])} onNavigate={onNavigate} />;
   if (primary === "solutions") return segments.length === 1 ? <ExplorerSolutionsPage onNavigate={onNavigate} /> : <ExplorerSolutionDetailPage slug={segments[1]} onNavigate={onNavigate} />;
   if (primary === "services") return segments.length === 1 ? <ExplorerServicesPage onNavigate={onNavigate} /> : <ExplorerServiceDetailPage slug={segments[1]} onNavigate={onNavigate} />;
   if (primary === "insights") return <InsightsPage onNavigate={onNavigate} />;

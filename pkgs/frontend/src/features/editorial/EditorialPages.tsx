@@ -13,7 +13,7 @@ import {
   Sliders,
   User,
 } from "lucide-react";
-import { StructuredData } from "mdwrk/structured-data";
+import { StructuredData } from "../../discovery/StructuredData";
 import { solutionsData } from "../../data/solutions";
 import { servicesData } from "../../data/services";
 import type { BlogPost } from "../../types";

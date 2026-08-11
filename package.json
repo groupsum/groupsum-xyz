@@ -21,6 +21,7 @@
     "validate:catalog": "node pkgs/frontend/scripts/validate-catalog-content.mjs",
     "validate:claims": "node pkgs/frontend/scripts/validate-claims.mjs",
     "validate:performance": "node pkgs/frontend/scripts/validate-performance-budget.mjs",
+    "test:structured-data": "node --test pkgs/frontend/tests/page-jsonld.test.mjs",
     "validate:source-layout": "node scripts/validate-source-layout.mjs",
     "verify:deployment": "node pkgs/frontend/scripts/verify-deployment.mjs",
     "lighthouse": "lhci autorun --config=pkgs/frontend/lighthouserc.cjs",

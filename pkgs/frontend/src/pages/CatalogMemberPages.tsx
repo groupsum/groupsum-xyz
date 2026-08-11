@@ -24,7 +24,7 @@ import { useCatalogFilters } from "../hooks/useCatalogFilters";
 import { CatalogToolbar } from "../features/catalog/CatalogToolbar";
 import { CatalogGroup } from "../features/catalog/CatalogGroup";
 import { ExplorerAboutPage, ExplorerContactPage, ExplorerInsightsCollection, ExplorerPolicyPage, ExplorerServiceDetailPage, ExplorerServicesPage, ExplorerSolutionDetailPage, ExplorerSolutionsPage } from "../features/editorial/EditorialPages";
-import { StructuredData } from "mdwrk/structured-data";
+import { StructuredData } from "../discovery/StructuredData";
 import { PortfolioDetailPage } from "./PortfolioPages";
 import {
   ArrowRight,

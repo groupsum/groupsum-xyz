@@ -326,6 +326,16 @@ async def _legacy_filesystem_import_test(tmp_path: Path) -> None:
         metrics = (await client.get("/api/v1/repository-metrics")).json()
         assert metrics["count"] == counts["repositories"]
 
+        contributors = (await client.get("/api/v1/contributors?page_size=3")).json()
+        assert contributors["count"] > 0
+        contributor = contributors["records"][0]
+        assert contributor["provider"] == "github"
+        contributor_detail = await client.get(
+            f"/api/v1/contributors/{contributor['provider']}/{contributor['login']}"
+        )
+        assert contributor_detail.status_code == 200
+        assert contributor_detail.json()["repositories"]
+
         snapshots = (await client.get("/api/v1/snapshots")).json()
         assert snapshots["count"] == 1
         assert snapshots["snapshots"][0]["is_current"] is True

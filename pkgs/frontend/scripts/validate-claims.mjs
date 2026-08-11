@@ -8,7 +8,7 @@ const activeContentFiles = [
   "pkgs/frontend/src/data/services.ts",
   "pkgs/frontend/src/data/solutions.ts",
   "pkgs/frontend/src/data/vision.ts",
-  "pkgs/frontend/src/mdwrk/structured-data/index.tsx",
+  "pkgs/frontend/src/discovery/page-jsonld.mjs",
 ];
 
 const text = activeContentFiles

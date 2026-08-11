@@ -96,6 +96,78 @@ def catalog_collection(table, ctx, resource_kind: str):
     return build(ctx["db"])
 
 
+def contributor_collection(table, ctx):
+    params = query_params(ctx)
+
+    def build(session):
+        from .association import Association
+
+        values = []
+        for row in session.query(table).all():
+            contributions = session.query(Association).filter(
+                Association.target_type == table.ENTITY_TYPE,
+                Association.target_id == row.id,
+                Association.relationship_type == "contributed_by",
+            ).all()
+            item = row_dict(row) | {
+                "url": row.profile_url or row.source_url,
+                "repository_count": len(contributions),
+                "contributions": sum(int((edge.attributes or {}).get("contributions") or 0) for edge in contributions),
+                "route": f"/contributors/{row.provider or 'unknown'}/{row.login or row.id}",
+            }
+            values.append(item)
+        values = _filter(values, params)
+        page_values, page, page_size, page_count = _page(values, params)
+        return {
+            "kind": "contributor_collection",
+            "resource_kind": "contributor",
+            "count": len(values),
+            "page": page,
+            "page_size": page_size,
+            "page_count": page_count,
+            "generated_at": latest_timestamp(item.get("observed_at") for item in values),
+            "records": page_values,
+        }
+
+    return build(ctx["db"])
+
+
+def contributor_detail(table, ctx):
+    data = payload(ctx)
+    provider = str(data.get("provider", ""))
+    login = str(data.get("login", ""))
+
+    def build(session):
+        from .association import Association
+        from .repository import Repository
+
+        row = session.query(table).filter(table.provider == provider, table.login == login).first()
+        if row is None:
+            return {"detail": "Contributor not found"}
+        edges = session.query(Association).filter(
+            Association.target_type == table.ENTITY_TYPE,
+            Association.target_id == row.id,
+            Association.relationship_type == "contributed_by",
+        ).all()
+        repositories = []
+        for edge in edges:
+            repository = session.get(Repository, edge.source_id)
+            if repository is not None:
+                repositories.append({
+                    "id": repository.id,
+                    "name": f"{repository.owner}/{repository.name}",
+                    "route": f"/catalog/repositories/{repository.owner}/{repository.name}",
+                    "contributions": int((edge.attributes or {}).get("contributions") or 0),
+                })
+        return {
+            "kind": "contributor_record",
+            "item": row_dict(row) | {"url": row.profile_url or row.source_url},
+            "repositories": sorted(repositories, key=lambda item: (-item["contributions"], item["name"])),
+        }
+
+    return build(ctx["db"])
+
+
 def repository_detail(table, ctx):
     owner, name = str(payload(ctx).get("owner", "")), str(payload(ctx).get("repository", ""))
 

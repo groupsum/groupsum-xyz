@@ -26,7 +26,7 @@ if (initialGzipBytes > 154_000) {
 }
 
 const peagen = fs.readFileSync(path.join(dist, "products/records/peagen/index.html"), "utf8");
-for (const marker of ["Peagen", "peagen-com", "Related resources"]) {
+for (const marker of ["Peagen", "SoftwareApplication", "groupsum-page-jsonld"]) {
   if (!peagen.includes(marker)) throw new Error(`Server-rendered Peagen page missing ${marker}`);
 }
 console.log(

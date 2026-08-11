@@ -1,4 +1,5 @@
 from groupsum_catalog_api.schema_migrations import (
+    LEGACY_ADDITIVE_COLUMNS,
     LEGACY_NULLABLE_COLUMNS,
     SOURCE_PAYLOAD_TABLES,
     reconcile_legacy_catalog_schema,
@@ -20,6 +21,7 @@ def test_postgres_compatibility_migration_covers_legacy_catalog_columns(monkeypa
         ("products", "organization_id"),
         ("repository_ssot_registries", "repository_id"),
     )
+    assert "resource_party_person" in LEGACY_ADDITIVE_COLUMNS
 
     class Result:
         @staticmethod
@@ -55,6 +57,10 @@ def test_postgres_compatibility_migration_covers_legacy_catalog_columns(monkeypa
     assert all(
         f"ALTER TABLE {table_name} ADD COLUMN IF NOT EXISTS source_payload JSON" in ddl
         for table_name in SOURCE_PAYLOAD_TABLES
+    )
+    assert all(
+        f"ALTER TABLE resource_party_person ADD COLUMN IF NOT EXISTS {column}" in ddl
+        for column in LEGACY_ADDITIVE_COLUMNS["resource_party_person"]
     )
     assert all(
         f"ALTER TABLE {table_name} ALTER COLUMN {column_name} DROP NOT NULL" in ddl

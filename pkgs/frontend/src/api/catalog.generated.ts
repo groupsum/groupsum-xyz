@@ -121,6 +121,11 @@ export type CatalogOverviewPageModel = {
 export type CatalogCollectionPageModel = {
   kind: string; resource_kind: string; count: number; records: Array<Record<string, unknown>>;
 };
+export type ContributorPageModel = {
+  kind: "contributor_record";
+  item: Record<string, unknown> & { name: string; login?: string; provider?: string; url?: string; avatar_url?: string };
+  repositories: Array<{ id: string; name: string; route: string; contributions: number }>;
+};
 export type CatalogEntity = {
   id: string; entity_type_id: string; type_label: string; semantic_class: string;
   organization_id?: string | null; slug: string; name: string; summary?: string | null;
@@ -204,6 +209,12 @@ export async function getCatalogTechnology(slug: string, signal?: AbortSignal): 
   const response = await catalogFetch(`/api/v1/catalog/technologies/${encodeURIComponent(slug)}`, { signal, headers: { Accept: "application/json" }, cache: "default" });
   if (!response.ok) throw new Error(`Catalog technology response ${response.status}`);
   return response.json() as Promise<Record<string, unknown>>;
+}
+
+export async function getContributor(provider: string, login: string, signal?: AbortSignal): Promise<ContributorPageModel> {
+  const response = await catalogFetch(`/api/v1/contributors/${encodeURIComponent(provider)}/${encodeURIComponent(login)}`, { signal, headers: { Accept: "application/json" }, cache: "default" });
+  if (!response.ok) throw new Error(`Contributor response ${response.status}`);
+  return response.json() as Promise<ContributorPageModel>;
 }
 
 export async function getRepositoryMetricSnapshot(owner = "", signal?: AbortSignal): Promise<RepositoryMetricSnapshot> {

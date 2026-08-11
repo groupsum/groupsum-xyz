@@ -51,6 +51,13 @@ def test_contributors_are_tigrbl_entities_associated_to_each_repository() -> Non
     person = next(iter(people.values()))
     assert isinstance(person, PartyPerson)
     assert person.name == "dev"
+    assert person.provider == "github"
+    assert person.provider_id == "42"
+    assert person.login == "dev"
+    assert person.profile_url == "https://github.com/dev"
+    assert person.avatar_url == "https://avatars.githubusercontent.com/u/42"
+    assert person.account_type == "User"
+    assert person.anonymous is False
     assert person.source_payload["provider_id"] == "42"
     association = next(iter(collector.records[Association].values()))
     assert association.source_id == repository.id

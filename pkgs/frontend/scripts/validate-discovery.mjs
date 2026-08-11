@@ -34,7 +34,7 @@ if (article) {
   }
 }
 const jsonLdSamples = [path.join(dist, "index.html"), path.join(dist, "products/records/ssot-registry/index.html")];
-for (const file of jsonLdSamples) { const html = fs.readFileSync(file, "utf8"); const match = html.match(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/); if (!match) fail(`${file} missing JSON-LD`); else { try { const graph = JSON.parse(match[1]); if (graph["@context"] !== "https://schema.org" || !Array.isArray(graph["@graph"])) fail(`${file} has invalid JSON-LD graph`); } catch { fail(`${file} has unparsable JSON-LD`); } } }
+for (const file of jsonLdSamples) { const html = fs.readFileSync(file, "utf8"); const match = html.match(/<script[^>]*type="application\/ld\+json"[^>]*>([\s\S]*?)<\/script>/); if (!match) fail(`${file} missing JSON-LD`); else { try { const graph = JSON.parse(match[1]); if (graph["@context"] !== "https://schema.org" || !Array.isArray(graph["@graph"])) fail(`${file} has invalid JSON-LD graph`); } catch { fail(`${file} has unparsable JSON-LD`); } } }
 const manifest = JSON.parse(fs.readFileSync(path.join(dist, "catalog/site/manifest.json"), "utf8"));
 for (const dataset of ["repositories", "packages", "resources", "technologies"]) if (!manifest.counts[dataset]) fail(`catalog manifest missing ${dataset} count`);
 for (const dataset of ["releases", "deployments", "relationships"]) if (manifest.source_counts?.[dataset] === undefined) fail(`catalog manifest missing ${dataset} source count`);
@@ -47,4 +47,18 @@ for (const collection of ["repositories", "packages", "resources", "technologies
   const html = fs.readFileSync(path.join(dist, "catalog", collection, "index.html"), "utf8");
   for (const marker of ["DataCatalog", "ItemList", `og:url\" content=\"https://groupsum.xyz/catalog/${collection}/`]) if (!html.includes(marker)) fail(`${collection} collection metadata missing ${marker}`);
 }
+const graphTypes = (file) => {
+  const html = fs.readFileSync(file, "utf8");
+  const match = html.match(/<script[^>]*type="application\/ld\+json"[^>]*>([\s\S]*?)<\/script>/);
+  if (!match) return [];
+  return JSON.parse(match[1])["@graph"].map((node) => node["@type"]);
+};
+const repositoryRoot = path.join(dist, "catalog", "repositories");
+const repositoryDetail = fs.readdirSync(repositoryRoot, { recursive: true }).find((entry) => String(entry).endsWith("index.html") && String(entry) !== "index.html");
+if (!repositoryDetail) fail("no generated repository detail page");
+else for (const marker of ["SoftwareSourceCode", "Person", "ComputerLanguage"]) if (!graphTypes(path.join(repositoryRoot, repositoryDetail)).includes(marker)) fail(`repository detail JSON-LD missing ${marker}`);
+const contributorRoot = path.join(dist, "contributors");
+const contributorDetail = fs.existsSync(contributorRoot) ? fs.readdirSync(contributorRoot, { recursive: true }).find((entry) => String(entry).endsWith("index.html")) : null;
+if (!contributorDetail) fail("no generated contributor profile page");
+else for (const marker of ["ProfilePage", "Person"]) if (!graphTypes(path.join(contributorRoot, contributorDetail)).includes(marker)) fail(`contributor JSON-LD missing ${marker}`);
 if (!process.exitCode) console.log(`discovery ok: ${childFiles.length} child sitemaps, ${fs.readFileSync(path.join(dist, "llms-full.txt"), "utf8").split("\n").length} full-index lines`);
