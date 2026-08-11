@@ -44,20 +44,27 @@ function MiniLine({ points, label }: { points: Array<Record<string, unknown>>; l
 
 function LatestRelease({ value }: { value: unknown }) {
   const release = valueRecord(value);
-  const scalar = typeof value === "string" || typeof value === "number" ? String(value) : "";
-  const label = String(
-    release.tag
-    || release.version
-    || release.name
-    || release.title
-    || (scalar && scalar !== "[object Object]" ? scalar : "")
-    || (Object.keys(release).length ? "Release observed" : "Not observed"),
+  const scalar = typeof value === "string" ? value : "";
+  const observedDate = String(
+    release.published_at
+    || release.publishedAt
+    || release.released_at
+    || release.release_date
+    || release.created_at
+    || release.createdAt
+    || scalar,
   );
+  const date = new Date(observedDate);
+  const hasDate = observedDate.length > 0 && !Number.isNaN(date.valueOf());
+  const label = hasDate
+    ? new Intl.DateTimeFormat("en-US", { dateStyle: "medium", timeZone: "UTC" }).format(date)
+    : "Not observed";
   const href = String(release.url || release.html_url || "");
   const className = "inline-flex max-w-full items-center break-words whitespace-normal rounded border border-[var(--color-border-soft)] bg-surface px-2 py-0.5 text-[11px]";
-  return href
-    ? <a href={href} target="_blank" rel="noreferrer" title={label} className={`${className} text-accent hover:underline`}>{label}</a>
-    : <span title={label} className={className}>{label}</span>;
+  const content = hasDate ? <time dateTime={date.toISOString()}>{label}</time> : label;
+  return href && hasDate
+    ? <a href={href} target="_blank" rel="noreferrer" title={`Released ${label}`} className={`${className} text-accent hover:underline`}>{content}</a>
+    : <span title={label} className={className}>{content}</span>;
 }
 
 function ContributorLinks({ value, limit = 2 }: { value: unknown; limit?: number }) {
