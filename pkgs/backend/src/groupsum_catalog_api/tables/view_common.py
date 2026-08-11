@@ -228,14 +228,50 @@ def _filter(values: list[dict], params: Any) -> list[dict]:
         ):
             continue
         filtered.append(item)
-    sort = str(params.get("sort", "name"))
+    sort = str(params.get("sort", "recent"))
     if sort == "recent":
-        filtered.sort(key=lambda item: str(item.get("observed_at") or ""), reverse=True)
+        filtered.sort(key=_recent_activity_key, reverse=True)
     elif sort == "activity":
-        filtered.sort(key=lambda item: sum((item.get("metrics") or {}).values()), reverse=True)
+        filtered.sort(key=_activity_score, reverse=True)
     else:
         filtered.sort(key=lambda item: str(item.get("name") or item.get("title") or "").casefold())
     return filtered
+
+
+def _recent_activity_key(item: dict[str, Any]) -> str:
+    """Return the newest known product activity, not the collection observation time."""
+    timestamps = [
+        item.get(key)
+        for key in ("pushed_at", "published_at", "released_at", "updated_at")
+    ]
+    for nested_key in ("latest_release", "latest_deployment"):
+        nested = item.get(nested_key)
+        if isinstance(nested, dict):
+            timestamps.extend(
+                nested.get(key)
+                for key in ("published_at", "released_at", "deployed_at", "updated_at")
+            )
+    for point in item.get("commit_activity") or []:
+        if isinstance(point, dict) and float(point.get("count") or 0) > 0:
+            timestamps.append(point.get("date") or point.get("period_start"))
+    for release in item.get("releases") or item.get("github_releases") or []:
+        if isinstance(release, dict):
+            timestamps.append(release.get("published_at") or release.get("released_at"))
+    activity_at = latest_timestamp(timestamps)
+    return str(activity_at or item.get("observed_at") or "")
+
+
+def _activity_score(item: dict[str, Any]) -> float:
+    """Return cumulative activity volume independently of when it happened."""
+    metrics = item.get("metrics") or {}
+    score = sum(float(value) for value in metrics.values() if isinstance(value, int | float))
+    if not metrics.get("commits"):
+        score += sum(
+            float(point.get("count") or 0)
+            for point in item.get("commit_activity") or []
+            if isinstance(point, dict)
+        )
+    return score
 
 
 def _facets(values: list[dict]) -> dict[str, dict[str, int]]:

@@ -1,0 +1,94 @@
+/* Catalog records wrap into additional grid rows instead of widening the viewport. */
+.catalog-wrap-table,
+.catalog-wrap-table thead,
+.catalog-wrap-table tbody {
+  display: block;
+  width: 100%;
+  min-width: 0;
+}
+
+.catalog-wrap-table thead {
+  display: none;
+}
+
+.catalog-wrap-table tr {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  width: 100%;
+  min-width: 0;
+}
+
+.catalog-wrap-table tbody tr + tr {
+  border-top: 1px solid var(--color-border-soft);
+}
+
+.catalog-wrap-table th,
+.catalog-wrap-table td {
+  display: block;
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+.catalog-wrap-table td::before {
+  content: attr(data-label);
+  display: block;
+  margin-bottom: 0.35rem;
+  color: var(--color-ink-muted);
+  font-family: var(--font-mono);
+  font-size: 0.5625rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  line-height: 1rem;
+  text-transform: uppercase;
+}
+
+.catalog-wrap-table tbody td:first-child {
+  grid-column: 1 / -1;
+}
+
+@media (min-width: 64rem) and (max-width: 79.999rem) {
+  .catalog-wrap-table tr {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 80rem) {
+  .catalog-wrap-table thead {
+    display: block;
+  }
+
+  .catalog-wrap-table td::before {
+    display: none;
+  }
+
+  .catalog-wrap-table tbody td:first-child {
+    grid-column: auto;
+  }
+
+  .catalog-repository-table tr {
+    grid-template-columns:
+      minmax(8rem, 1.5fr)
+      minmax(5rem, 0.75fr)
+      minmax(6rem, 0.85fr)
+      minmax(3.5rem, 0.45fr)
+      minmax(7rem, 1fr)
+      minmax(6rem, 0.85fr)
+      minmax(4rem, 0.5fr)
+      minmax(6rem, 0.9fr)
+      minmax(5rem, 0.7fr)
+      2.5rem;
+  }
+
+  .catalog-package-table tr {
+    grid-template-columns:
+      minmax(8rem, 1.25fr)
+      minmax(5rem, 0.65fr)
+      minmax(8rem, 1.2fr)
+      minmax(6rem, 0.85fr)
+      minmax(6rem, 0.8fr)
+      minmax(5rem, 0.65fr)
+      minmax(5rem, 0.65fr)
+      minmax(6rem, 0.8fr)
+      2.5rem;
+  }
+}
