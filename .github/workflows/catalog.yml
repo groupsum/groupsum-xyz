@@ -59,12 +59,11 @@ jobs:
           if-no-files-found: error
           retention-days: 14
 
-  dispatch-deploy:
+  deploy-finalized-snapshot:
     needs: refresh
-    runs-on: ubuntu-latest
     if: github.ref == 'refs/heads/master'
-    steps:
-      - name: Deploy the finalized catalog snapshot
-        env:
-          GH_TOKEN: ${{ github.token }}
-        run: gh workflow run deploy.yml --repo "${{ github.repository }}" --ref master -f catalog_run_id="${{ github.run_id }}"
+    uses: ./.github/workflows/deploy.yml
+    with:
+      catalog_run_id: ${{ github.run_id }}
+    secrets:
+      GROUPSUM_CATALOG_INTERNAL_TOKEN: ${{ secrets.GROUPSUM_CATALOG_INTERNAL_TOKEN }}

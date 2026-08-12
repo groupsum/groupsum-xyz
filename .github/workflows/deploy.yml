@@ -1,11 +1,21 @@
 name: Deploy
 
 on:
+  workflow_call:
+    inputs:
+      catalog_run_id:
+        description: Successful catalog workflow run containing the immutable snapshot artifact
+        required: true
+        type: string
+    secrets:
+      GROUPSUM_CATALOG_INTERNAL_TOKEN:
+        description: Token used to publish and verify internal catalog operations
+        required: true
   workflow_dispatch:
     inputs:
       catalog_run_id:
         description: Successful catalog workflow run containing the immutable snapshot artifact
-        required: false
+        required: true
         type: string
 
 permissions:
@@ -26,28 +36,13 @@ jobs:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
         with:
           fetch-depth: 0
-      - name: Resolve catalog snapshot artifact
-        id: catalog
-        env:
-          GH_TOKEN: ${{ github.token }}
-          REQUESTED_RUN_ID: ${{ inputs.catalog_run_id }}
-        run: |
-          run_id="$REQUESTED_RUN_ID"
-          if [ -z "$run_id" ]; then
-            run_id="$(gh run list --workflow catalog.yml --branch master --status success --limit 1 --json databaseId --jq '.[0].databaseId')"
-          fi
-          if [ -z "$run_id" ]; then
-            echo "No successful catalog refresh artifact is available." >&2
-            exit 1
-          fi
-          echo "run_id=$run_id" >> "$GITHUB_OUTPUT"
       - name: Materialize finalized catalog snapshot
         uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093 # v4
         with:
           name: public-catalog-snapshot
           path: catalog/generated
           github-token: ${{ github.token }}
-          run-id: ${{ steps.catalog.outputs.run_id }}
+          run-id: ${{ inputs.catalog_run_id }}
       - name: Reclaim disposable Docker build space
         run: |
           docker system prune --all --force
