@@ -67,4 +67,4 @@ jobs:
       - name: Deploy the finalized catalog snapshot
         env:
           GH_TOKEN: ${{ github.token }}
-        run: gh workflow run deploy.yml --ref master -f catalog_run_id="${{ github.run_id }}"
+        run: gh workflow run deploy.yml --repo "${{ github.repository }}" --ref master -f catalog_run_id="${{ github.run_id }}"
