@@ -15,17 +15,24 @@ def catalog_overview(table, ctx):
 
     def build(session):
         counts = {
-            "products": session.query(Product).filter(Product.visibility == "public").count(),
-            "portfolio": session.query(Portfolio).filter(Portfolio.visibility == "public").count(),
-            "repositories": session.query(Repository).count(),
-            "packages": session.query(Package).count(),
-            "resources": sum(session.query(model).count() for model in RESOURCE_TABLES.values()),
-            "technologies": session.query(Technology).count(),
+            "products": current_entity_query(session, Product)
+            .filter(Product.visibility == "public")
+            .count(),
+            "portfolio": current_entity_query(session, Portfolio)
+            .filter(Portfolio.visibility == "public")
+            .count(),
+            "repositories": current_entity_query(session, Repository).count(),
+            "packages": current_entity_query(session, Package).count(),
+            "resources": sum(
+                current_entity_query(session, model, entity_type).count()
+                for entity_type, model in RESOURCE_TABLES.items()
+            ),
+            "technologies": current_entity_query(session, Technology).count(),
         }
         observed = [
             row[0]
             for model in (Repository, Package, Technology, *RESOURCE_TABLES.values())
-            for row in session.query(model.observed_at).all()
+            for row in current_entity_query(session, model).with_entities(model.observed_at).all()
             if row[0]
         ]
         return {

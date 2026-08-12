@@ -53,7 +53,7 @@ def catalog_collection(table, ctx, resource_kind: str):
 
     def build(session):
         values = []
-        for row in session.query(table).all():
+        for row in current_entity_query(session, table).all():
             item = source_record(row)
             if resource_kind == "repository":
                 item = repository_resource(item) | {
@@ -189,7 +189,11 @@ def repository_detail(table, ctx):
     owner, name = str(payload(ctx).get("owner", "")), str(payload(ctx).get("repository", ""))
 
     def build(session):
-        row = session.query(table).filter(table.owner == owner, table.name == name).first()
+        row = (
+            current_entity_query(session, table)
+            .filter(table.owner == owner, table.name == name)
+            .first()
+        )
         if row is None:
             return {"detail": "Repository not found"}
         item = repository_resource(source_record(row))
@@ -227,9 +231,9 @@ def repository_metrics(table, ctx):
 
     def build(session):
         rows = (
-            session.query(table).filter(table.owner == owner).all()
+            current_entity_query(session, table).filter(table.owner == owner).all()
             if owner
-            else session.query(table).all()
+            else current_entity_query(session, table).all()
         )
         records = [
             repository_resource(source_record(row))
@@ -251,7 +255,7 @@ def package_detail(table, ctx):
     route_key = str(payload(ctx).get("route_key", ""))
 
     def build(session):
-        row = session.query(table).filter(table.route_key == route_key).first()
+        row = current_entity_query(session, table).filter(table.route_key == route_key).first()
         if row is None:
             return {"detail": "Package not found"}
         item = package_resource(source_record(row))
@@ -290,7 +294,7 @@ def resource_collection(table, ctx):
         for entity_type, model in RESOURCE_TABLES.items():
             if requested_type and entity_type != requested_type:
                 continue
-            for row in session.query(model).all():
+            for row in current_entity_query(session, model, entity_type).all():
                 values.append(public_resource_record(entity_type, row_dict(row)))
         values = _filter(values, params)
         facets = _facets(values)

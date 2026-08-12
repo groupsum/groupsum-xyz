@@ -1,6 +1,6 @@
 from __future__ import annotations
 
-from .view_common import _entity_edges, source_record
+from .view_common import _entity_edges, current_entity_query, source_record
 
 
 def _resource_route(entity_type: str, row) -> str | None:
@@ -95,12 +95,12 @@ def resource_detail_model(session, entity_type: str, route_key: str) -> dict:
     )
     if model is None:
         return {"detail": "Resource type not found"}
-    query = session.query(model)
+    query = current_entity_query(session, model, entity_type)
     if "canonical_path" in model.__table__.columns:
         row = query.filter(model.canonical_path.like(f"%/{route_key}")).first()
-        row = row or session.get(model, route_key)
+        row = row or query.filter(model.id == route_key).first()
     else:
-        row = session.get(model, route_key)
+        row = query.filter(model.id == route_key).first()
     if row is None:
         return {"detail": "Resource not found"}
     item = source_record(row) | {

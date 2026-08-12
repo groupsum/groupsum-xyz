@@ -111,12 +111,12 @@ async def test_resource_collection_routes_round_trip_encoded_primary_keys(
             )
             assert published.status_code == 200, published.text
 
-            collection = (
-                await client.get(
-                    "/api/v1/catalog/resources",
-                    params={"resource_type": resource_type},
-                )
-            ).json()
+            response = await client.get(
+                "/api/v1/catalog/resources",
+                params={"resource_type": resource_type},
+            )
+            assert response.status_code == 200, response.text
+            collection = response.json()
             member = collection["records"][0]
             encoded_route_key = member["route_key"].replace(":", "%3A")
             assert member["route"] == (

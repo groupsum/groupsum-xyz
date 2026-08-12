@@ -35,6 +35,27 @@ def latest_timestamp(values) -> Any:
     return max(candidates, key=lambda value: str(value), default=None)
 
 
+def current_entity_query(session, table, entity_type: str | None = None):
+    """Return the entity projection represented by the finalized current snapshot."""
+    from .catalog_snapshot import CatalogSnapshot
+    from .observation import CatalogObservation
+
+    query = session.query(table)
+    snapshot_id = (
+        session.query(CatalogSnapshot.id)
+        .filter(CatalogSnapshot.is_current.is_(True))
+        .scalar()
+    )
+    if snapshot_id is None:
+        return query
+    present_ids = session.query(CatalogObservation.subject_id).filter(
+        CatalogObservation.snapshot_id == snapshot_id,
+        CatalogObservation.observation_type == "entity_presence",
+        CatalogObservation.subject_type == (entity_type or table.ENTITY_TYPE),
+    )
+    return query.filter(table.id.in_(present_ids))
+
+
 def repository_resource(value: dict[str, Any]) -> dict[str, Any]:
     item = dict(value)
     full_name = str(item.get("full_name") or "")
@@ -288,6 +309,7 @@ __all__ = [
     "_facets",
     "_filter",
     "_page",
+    "current_entity_query",
     "payload",
     "latest_timestamp",
     "package_resource",
