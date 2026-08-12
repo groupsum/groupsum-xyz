@@ -2,7 +2,7 @@ from __future__ import annotations
 
 import json
 from collections import defaultdict
-from datetime import UTC, datetime
+from datetime import datetime
 from pathlib import Path
 from typing import Any
 
@@ -13,6 +13,7 @@ from .domain.resources.ontology import (
     normalize_legacy_resource_type,
 )
 from .record_compiler_common import (
+    catalog_observed_at,
     import_editorial,
     import_organizations,
     load_inputs,
@@ -360,12 +361,7 @@ def compile_catalog_records(repo_root: Path) -> tuple[dict[str, list[dict]], lis
     """Compile catalog source files into table-shaped records without opening a database."""
 
     editorial, repository_rows, package_rows, technology_rows = load_inputs(repo_root)
-    catalog = json.loads(
-        (repo_root / "catalog/generated/catalog.json").read_text(encoding="utf-8")
-    )
-    observed_at = parse_datetime(catalog.get("generated_at"))
-    if observed_at is None:
-        observed_at = datetime.now(UTC).replace(microsecond=0)
+    observed_at = catalog_observed_at(repo_root)
     collector = RecordAccumulator()
     import_organizations(collector, editorial, observed_at)
     import_editorial(collector, editorial, observed_at)

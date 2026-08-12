@@ -79,6 +79,13 @@ def parse_datetime(value: object) -> datetime | None:
     return parsed if parsed.tzinfo else parsed.replace(tzinfo=UTC)
 
 
+def catalog_observed_at(repo_root: Path) -> datetime:
+    catalog = json.loads(
+        (repo_root / "catalog/generated/catalog.json").read_text(encoding="utf-8")
+    )
+    return parse_datetime(catalog.get("generated_at")) or datetime.now(UTC).replace(microsecond=0)
+
+
 def route_slug(route: object, fallback: str) -> str:
     value = str(route or "").strip("/").rsplit("/", 1)[-1]
     return value or fallback
