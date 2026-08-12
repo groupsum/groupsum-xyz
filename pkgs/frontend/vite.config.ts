@@ -29,6 +29,7 @@ export default defineConfig({
           if (id.includes("node_modules/@tanstack/react-query") || id.includes("node_modules/@tanstack/query-core")) return "query-runtime";
           if (id.includes("node_modules/lucide-react")) return "icons";
           if (id.includes("/src/mdwrk/")) return "mdwrk-runtime";
+          if (id.includes("/src/features/catalog/SsotEntityDetail")) return "ssot-detail";
           if (id.includes("/src/features/catalog/")) return "catalog-ui";
           return undefined;
         },

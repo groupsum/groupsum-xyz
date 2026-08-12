@@ -96,6 +96,25 @@ function packageNodes(record) {
 function resourceNode(record) {
   const type = String(record.resource_type || "").toLowerCase();
   const common = { id: stableId(record.url, "resource"), name: record.display_name || pageName(record), description: record.description, url: record.sourceUrl || record.url };
+  if (type.startsWith("governance.")) {
+    const payload = record.payload && typeof record.payload === "object" ? record.payload : {};
+    const article = withoutContext(techArticleNode({
+      ...common,
+      headline: common.name,
+      dateModified: record.observed_at,
+      mainEntityOfPage: ref(stableId(record.url, "page")),
+    }));
+    article.identifier = payload.id || record.source_key || record.id;
+    article.additionalType = `https://groupsum.xyz/ns/ssot/${type.replace("governance.", "")}`;
+    const relationships = record.relationships || record.entity_graph?.relationships || [];
+    article.about = relationships.filter((item) => item.route || item.url).map((item) => ({
+      "@type": "Thing",
+      "@id": stableId(`${SITE_ROOT}${item.route || item.url}`, "resource"),
+      name: item.name,
+      url: item.route ? `${SITE_ROOT}${item.route}` : item.url,
+    }));
+    return article;
+  }
   if (type === "data.dataset") return withoutContext(datasetNode({ ...common, creator: ref(organization["@id"]), license: record.license_expression }));
   if (type.includes("faq") && Array.isArray(record.faq_items) && record.faq_items.length) return withoutContext(faqPageSchema({ id: common.id, url: common.url, items: record.faq_items }));
   if ((type.includes("how_to") || type.includes("tutorial")) && Array.isArray(record.steps) && record.steps.length) return withoutContext(howToNode({ ...common, steps: record.steps }));

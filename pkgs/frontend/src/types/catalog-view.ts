@@ -28,5 +28,11 @@ export type CatalogViewRecord = {
   description_source?: string; downstream_completeness?: string; created_at?: string; pushed_at?: string;
   published_at?: string; published?: boolean | null; prerelease?: boolean; draft?: boolean; bytes?: number;
   linked_sections?: unknown; resource_family?: string; type_label?: string; icon_key?: string;
-  ssot?: unknown;
+  ssot?: unknown; payload?: unknown; registry?: unknown;
+  source_key?: string; statement?: string; body?: string; status?: string;
+  implementation_status?: string; kind_name?: string; tier?: string; severity?: string;
+  origin?: string; managed?: boolean; immutable?: boolean; package_version?: string;
+  content_sha256?: string; status_notes?: string; release_blocking?: boolean; frozen?: boolean;
+  plan?: unknown; lifecycle?: unknown; evaluation?: unknown; execution?: unknown;
+  claim_tier?: string; boundary_id?: string; supersedes?: unknown; superseded_by?: unknown;
 };

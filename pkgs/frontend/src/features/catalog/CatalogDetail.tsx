@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { lazy, Suspense, useEffect, useState } from "react";
 import { getCatalogSnapshots, getEntityMetrics, getEntityObservations, type CatalogSnapshot, type EntityGraph, getCatalogPackageMember, getCatalogReleaseMember, getCatalogRepositoryMember, getCatalogResourceMember, getCatalogTechnologyMember } from "../../api/catalog";
 import { BadgeCheck, Code2, ExternalLink, FileCode2, GitBranch, Package, ShieldCheck } from "lucide-react";
 import { EntityOwnership } from "./EntityIdentity";
@@ -10,6 +10,8 @@ import { PackageDetail, ReleaseDetail, RepositoryDetail, ResourceDetail, Technol
 import { PackageIdentityCard } from "./PackageIdentityCard";
 import { datasetOrder, formatDate, humanLabel, isCurrentPageLink, metricItems, recordDescription, recordTitle, resourceIcon, valueRecord, valueRecords, type CatalogRecord, type DatasetName, type DetailDatasetName } from "./CatalogRecordShared";
 import { catalogDetailSegments } from "./catalog-detail-route.mjs";
+
+const SsotEntityDetail = lazy(() => import("./SsotEntityDetail"));
 
 function MemberSectionNav({ record }: { record: CatalogRecord }) {
   const kind = String(record.kind || "record");
@@ -109,8 +111,8 @@ export function PublicCatalogDetail({ path, onNavigate }: { path: string; onNavi
     return () => controller.abort();
   }, [dataset, path]);
 
-  if (state === "loading") return <div className="max-w-3xl mx-auto px-4 py-20 text-sm text-ink-muted" role="status">Loading generated catalog record…</div>;
-  if (state !== "ready" || !record) return <div className="max-w-3xl mx-auto px-4 py-20 space-y-4"><h1 className="font-serif text-3xl font-bold text-ink">Catalog record unavailable</h1><p className="text-sm text-ink-muted">{state === "error" ? "The generated catalog could not be loaded. Please try again shortly." : "The route is not present in the current generated public dataset."}</p><button onClick={() => onNavigate("/catalog")} className="text-xs font-mono text-accent hover:underline cursor-pointer">Return to public catalog</button></div>;
+  if (state === "loading") return <div className="max-w-3xl mx-auto px-4 py-20 text-sm text-ink-muted" role="status">Loading catalog record…</div>;
+  if (state !== "ready" || !record) return <div className="max-w-3xl mx-auto px-4 py-20 space-y-4"><h1 className="font-serif text-3xl font-bold text-ink">Record unavailable</h1><p className="text-sm text-ink-muted">{state === "error" ? "The catalog could not be loaded." : "This route is not in the public catalog."}</p><button onClick={() => onNavigate("/catalog")} className="text-xs font-mono text-accent hover:underline cursor-pointer">Return to public catalog</button></div>;
 
   const primaryCandidate = record.url || record.registry_url || record.source_url;
   const primaryUrl = isCurrentPageLink(primaryCandidate) ? undefined : primaryCandidate;
@@ -123,6 +125,8 @@ export function PublicCatalogDetail({ path, onNavigate }: { path: string; onNavi
     })),
   ].filter((item) => !isCurrentPageLink(item.url));
   const RecordIcon = record.kind === "repository" ? Code2 : record.kind === "package" ? Package : record.kind === "resource" ? resourceIcon(String(record.resource_type || "resource")) : FileCode2;
+  const ssot = String(record.resource_type || "").startsWith("governance.");
+  const selectedSnapshot = snapshots.find((snapshot) => snapshot.snapshot_id === record.selected_snapshot_id);
   return (
     <article className="max-w-[var(--content-max)] mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-12 space-y-8 sm:space-y-10">
       <CatalogRecordNavigation dataset={dataset} record={record} onNavigate={onNavigate} />
@@ -134,12 +138,12 @@ export function PublicCatalogDetail({ path, onNavigate }: { path: string; onNavi
       <main className="space-y-6 lg:col-span-8">
       {record.kind === "repository" && <RepositoryDetail record={record} onNavigate={onNavigate} />}
       {record.kind === "package" && <PackageDetail record={record} onNavigate={onNavigate} />}
-      {record.kind === "resource" && <ResourceDetail record={record} onNavigate={onNavigate} />}
+      {record.kind === "resource" && (ssot ? <Suspense fallback={null}><SsotEntityDetail record={record} onNavigate={onNavigate} /></Suspense> : <ResourceDetail record={record} onNavigate={onNavigate} />)}
       {record.kind === "release" && <ReleaseDetail record={record} onNavigate={onNavigate} />}
       {record.kind === "technology" && <TechnologyDetail record={record} onNavigate={onNavigate} />}
       </main>
       <aside className="space-y-6 lg:col-span-4 lg:sticky lg:top-32">
-        {record.kind === "repository" && snapshots.length > 0 && <ContextRailCard title="Analytics snapshot" Icon={BadgeCheck}><div className="space-y-3 text-xs text-ink-muted"><label className="block"><span className="mb-1 block font-mono text-[9px] uppercase tracking-wide">Point-in-time view</span><select value={String(record.selected_snapshot_id || "")} onChange={(event) => setRecord((current) => current ? { ...current, selected_snapshot_id: event.target.value } : current)} className="w-full rounded border border-[var(--color-border-soft)] bg-surface px-2 py-2 font-mono text-xs text-ink">{snapshots.map((snapshot) => <option key={snapshot.snapshot_id} value={snapshot.snapshot_id}>{formatDate(snapshot.collected_at)}{snapshot.is_current ? " · current" : ""}</option>)}</select></label><p>{snapshots.find((snapshot) => snapshot.snapshot_id === record.selected_snapshot_id)?.measurement_count.toLocaleString() || "0"} measurements · {snapshots.find((snapshot) => snapshot.snapshot_id === record.selected_snapshot_id)?.observation_count.toLocaleString() || "0"} observations</p><p>{snapshots.find((snapshot) => snapshot.snapshot_id === record.selected_snapshot_id)?.error_count ? `${snapshots.find((snapshot) => snapshot.snapshot_id === record.selected_snapshot_id)?.error_count} collection errors reported` : "No collection errors reported for this snapshot"}</p></div></ContextRailCard>}
+        {record.kind === "repository" && snapshots.length > 0 && <ContextRailCard title="Analytics snapshot" Icon={BadgeCheck}><div className="space-y-3 text-xs text-ink-muted"><label className="block"><span className="mb-1 block font-mono text-[9px] uppercase tracking-wide">Point-in-time view</span><select value={String(record.selected_snapshot_id || "")} onChange={(event) => setRecord((current) => current ? { ...current, selected_snapshot_id: event.target.value } : current)} className="w-full rounded border border-[var(--color-border-soft)] bg-surface px-2 py-2 font-mono text-xs text-ink">{snapshots.map((snapshot) => <option key={snapshot.snapshot_id} value={snapshot.snapshot_id}>{formatDate(snapshot.collected_at)}{snapshot.is_current ? " · current" : ""}</option>)}</select></label><p>{selectedSnapshot?.measurement_count.toLocaleString() || "0"} measurements · {selectedSnapshot?.observation_count.toLocaleString() || "0"} observations</p><p>{selectedSnapshot?.error_count ? `${selectedSnapshot.error_count} collection errors reported` : "No collection errors reported for this snapshot"}</p></div></ContextRailCard>}
         <ContextRailCard title="Source & observation boundary" Icon={ShieldCheck}><div className="space-y-3 text-xs leading-relaxed text-ink-muted"><p><strong className="text-ink">Observed:</strong> {formatDate(record.observed_at)}</p>{record.claim_boundary && <div className="rounded-[var(--radius-sm)] border border-[var(--color-border-soft)] bg-canvas p-3"><strong className="mb-1 block text-ink">Explicit source boundary</strong>{String(record.claim_boundary)}</div>}{primaryUrl && <a href={String(primaryUrl)} target="_blank" rel="noreferrer" className="inline-flex min-h-10 items-center gap-1 font-mono font-semibold text-accent hover:underline">Primary source <ExternalLink className="h-3.5 w-3.5" /></a>}</div></ContextRailCard>
         <ContextRailCard title="Ownership & canonical path" Icon={GitBranch}><EntityOwnership graph={record.entity_graph} onNavigate={onNavigate} /></ContextRailCard>
         {sourceObservations.length > 0 && <ContextRailCard title="Source observations" Icon={BadgeCheck}><ul className="divide-y divide-[var(--color-border-soft)]">{sourceObservations.map((item, index) => <li key={`${item.url || item.kind}-${index}`} className="py-3 text-xs">{item.url ? <a href={item.url} target="_blank" rel="noreferrer" className="inline-flex items-center gap-1 break-words font-mono font-semibold text-accent hover:underline">{humanLabel(item.kind || "source")}<ExternalLink className="h-3.5 w-3.5" /></a> : <span className="text-ink-muted">{humanLabel(item.kind || "source")} · observed {formatDate(item.observed_at)}</span>}</li>)}</ul></ContextRailCard>}

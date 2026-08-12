@@ -21,6 +21,7 @@ from .record_compiler_common import (
     route_slug,
     stable_id,
 )
+from .ssot_relationships import SSOT_RELATIONSHIPS, reference_values
 from .tables.association import Association
 from .tables.organization import Organization
 from .tables.package import Package
@@ -121,6 +122,8 @@ def _import_repositories(session, rows: list[dict], organizations: set[str], obs
                 target_id=registry_id,
                 observed_at=parse_datetime(governance.get("observed_at")) or observed_at,
             )
+            ssot_items: dict[tuple[str, str], object] = {}
+            ssot_payloads: list[tuple[str, str, dict]] = []
             for kind, items in (governance.get("inventory") or {}).items():
                 entity_type = SSOT_RESOURCE_TYPES.get(kind)
                 if entity_type is None:
@@ -129,18 +132,21 @@ def _import_repositories(session, rows: list[dict], organizations: set[str], obs
                 for item in items:
                     item_id = stable_id("ssot-item", registry_id, kind, item["id"])
                     session.merge(
-                        table(
+                        resource := table(
                             id=item_id,
                             source_key=item["id"],
                             title=item.get("title"),
                             statement=item.get("statement"),
                             status=item.get("status"),
                             implementation_status=item.get("implementation_status"),
+                            source_url=governance.get("registry_url"),
                             payload=item,
                             observed_at=parse_datetime(governance.get("observed_at"))
                             or observed_at,
                         )
                     )
+                    ssot_items[(kind, str(item["id"]))] = resource
+                    ssot_payloads.append((kind, entity_type, item))
                     merge_association(
                         session,
                         source_type=RepositorySsotRegistry.ENTITY_TYPE,
@@ -150,6 +156,32 @@ def _import_repositories(session, rows: list[dict], organizations: set[str], obs
                         target_id=item_id,
                         observed_at=parse_datetime(governance.get("observed_at")) or observed_at,
                     )
+            for kind, entity_type, item in ssot_payloads:
+                resource = ssot_items[(kind, str(item["id"]))]
+                for field, (target_kind, relationship, reverse) in SSOT_RELATIONSHIPS.get(
+                    kind, {}
+                ).items():
+                    for position, reference in enumerate(reference_values(item.get(field))):
+                        target = ssot_items.get((target_kind, reference))
+                        if target is None:
+                            continue
+                        source_type, source_id = entity_type, resource.id
+                        target_type, target_id = SSOT_RESOURCE_TYPES[target_kind], target.id
+                        if reverse:
+                            source_type, target_type = target_type, source_type
+                            source_id, target_id = target_id, source_id
+                        merge_association(
+                            session,
+                            source_type=source_type,
+                            source_id=source_id,
+                            relationship_type=relationship,
+                            target_type=target_type,
+                            target_id=target_id,
+                            role=field,
+                            sort_order=position,
+                            observed_at=parse_datetime(governance.get("observed_at"))
+                            or observed_at,
+                        )
     return by_full_name
 
 
@@ -351,9 +383,7 @@ def compile_catalog_records(repo_root: Path) -> tuple[dict[str, list[dict]], lis
     }
     associations = [_serialized(value) for value in collector.records[Association].values()]
     known = {
-        (entity_type, str(row["id"]))
-        for entity_type, rows in entity_rows.items()
-        for row in rows
+        (entity_type, str(row["id"])) for entity_type, rows in entity_rows.items() for row in rows
     }
     for edge in associations:
         source = (edge["source_type"], str(edge["source_id"]))

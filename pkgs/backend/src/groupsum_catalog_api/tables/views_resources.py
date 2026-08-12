@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 from .view_common import *  # noqa: F403
+from .view_resource_detail import resource_detail_model
 
 
 def _collection_aggregates(values: list[dict], resource_kind: str) -> dict[str, int]:
@@ -95,6 +96,7 @@ def catalog_collection(table, ctx, resource_kind: str):
 
     return build(ctx["db"])
 
+
 def contributor_collection(table, ctx):
     params = query_params(ctx)
 
@@ -103,17 +105,20 @@ def contributor_collection(table, ctx):
 
         values = []
         for row in session.query(table).all():
-            contributions = session.query(Association).filter(
-                Association.target_type == table.ENTITY_TYPE,
-                Association.target_id == row.id,
-                Association.relationship_type == "contributed_by",
-            ).all()
+            contributions = (
+                session.query(Association)
+                .filter(
+                    Association.target_type == table.ENTITY_TYPE,
+                    Association.target_id == row.id,
+                    Association.relationship_type == "contributed_by",
+                )
+                .all()
+            )
             item = row_dict(row) | {
                 "url": row.profile_url or row.source_url,
                 "repository_count": len(contributions),
                 "contributions": sum(
-                    int((edge.attributes or {}).get("contributions") or 0)
-                    for edge in contributions
+                    int((edge.attributes or {}).get("contributions") or 0) for edge in contributions
                 ),
                 "route": f"/contributors/{row.provider or 'unknown'}/{row.login or row.id}",
             }
@@ -146,21 +151,27 @@ def contributor_detail(table, ctx):
         row = session.query(table).filter(table.provider == provider, table.login == login).first()
         if row is None:
             return {"detail": "Contributor not found"}
-        edges = session.query(Association).filter(
-            Association.target_type == table.ENTITY_TYPE,
-            Association.target_id == row.id,
-            Association.relationship_type == "contributed_by",
-        ).all()
+        edges = (
+            session.query(Association)
+            .filter(
+                Association.target_type == table.ENTITY_TYPE,
+                Association.target_id == row.id,
+                Association.relationship_type == "contributed_by",
+            )
+            .all()
+        )
         repositories = []
         for edge in edges:
             repository = session.get(Repository, edge.source_id)
             if repository is not None:
-                repositories.append({
-                    "id": repository.id,
-                    "name": f"{repository.owner}/{repository.name}",
-                    "route": f"/catalog/repositories/{repository.owner}/{repository.name}",
-                    "contributions": int((edge.attributes or {}).get("contributions") or 0),
-                })
+                repositories.append(
+                    {
+                        "id": repository.id,
+                        "name": f"{repository.owner}/{repository.name}",
+                        "route": f"/catalog/repositories/{repository.owner}/{repository.name}",
+                        "contributions": int((edge.attributes or {}).get("contributions") or 0),
+                    }
+                )
         return {
             "kind": "contributor_record",
             "item": row_dict(row) | {"url": row.profile_url or row.source_url},
@@ -209,6 +220,7 @@ def repository_detail(table, ctx):
 
     return build(ctx["db"])
 
+
 def repository_metrics(table, ctx):
     owner = str(query_params(ctx).get("owner", ""))
 
@@ -232,6 +244,7 @@ def repository_metrics(table, ctx):
         }
 
     return build(ctx["db"])
+
 
 def package_detail(table, ctx):
     route_key = str(payload(ctx).get("route_key", ""))
@@ -270,6 +283,7 @@ def resource_collection(table, ctx):
 
     def build(session):
         from .registry import RESOURCE_TABLES
+
         requested_type = str(params.get("resource_type") or "")
         values = []
         for entity_type, model in RESOURCE_TABLES.items():
@@ -318,37 +332,7 @@ def resource_detail(table, ctx):
         return release_detail(table, ctx)
 
     def build(session):
-        from .registry import RESOURCE_TABLES
-
-        model = RESOURCE_TABLES.get(entity_type)
-        if model is None:
-            return {"detail": "Resource type not found"}
-        query = session.query(model)
-        if "canonical_path" in model.__table__.columns:
-            row = query.filter(model.canonical_path.like(f"%/{route_key}")).first()
-            row = row or session.get(model, route_key)
-        else:
-            row = session.get(model, route_key)
-        if row is None:
-            return {"detail": "Resource not found"}
-        item = source_record(row) | {
-            "resource_type": entity_type,
-            "title": getattr(row, "title", None) or getattr(row, "name", None),
-        }
-        outgoing, _incoming = _entity_edges(session, entity_type, row.id)
-        repository_edge = next(
-            (edge for edge in outgoing if edge.target_type == "source.repository"), None
-        )
-        return {
-            "kind": "catalog_resource_record",
-            "resource_type": entity_type,
-            "item": item,
-            "graph": None,
-            "linked_sections": [],
-            "parent": {"repository_id": repository_edge.target_id if repository_edge else None},
-            "implementation": {},
-            "legal": {"status": "not-observed", "observations": []},
-        }
+        return resource_detail_model(session, entity_type, route_key)
 
     return build(ctx["db"])
 

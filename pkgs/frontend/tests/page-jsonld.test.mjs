@@ -35,3 +35,19 @@ test("resource and contributor pages select evidence-backed page-family types", 
   assert.ok(types(product).includes("SoftwareApplication"));
   assert.ok(types(product).includes("Product"));
 });
+
+test("SSOT resource graphs preserve the visible entity identity and links", () => {
+  const graph = buildPageJsonLd({
+    ...base,
+    schemaFamily: "catalog-resource",
+    resource_type: "governance.claim",
+    source_key: "clm:public-proof",
+    observed_at: "2026-08-11T00:00:00Z",
+    relationships: [{ name: "Passing test", route: "/catalog/resources/governance.test/ssot-item:test" }],
+  });
+  const article = graph["@graph"].find((node) => node["@type"] === "TechArticle");
+  assert.equal(article.identifier, "clm:public-proof");
+  assert.equal(article.additionalType, "https://groupsum.xyz/ns/ssot/claim");
+  assert.equal(article.about[0].name, "Passing test");
+  assert.equal(article.mainEntityOfPage["@id"], "https://groupsum.xyz/catalog/example#page");
+});
