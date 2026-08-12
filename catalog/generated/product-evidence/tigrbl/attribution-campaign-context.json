@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-10T13:12:47Z",
+  "generated_at": "2026-08-12T08:39:07Z",
   "packages": [
     {
       "claim_boundary": "Publication is reported only when confirmed by the named public registry.",
@@ -81,7 +81,7 @@
       "evidence": [
         {
           "kind": "registry",
-          "observed_at": "2026-08-10T13:12:47Z",
+          "observed_at": "2026-08-12T08:39:07Z",
           "url": "https://pypi.org/project/attribution-campaign-context/"
         }
       ],
@@ -104,7 +104,7 @@
       "license_status": "observed",
       "manifest_path": "pyproject.toml",
       "name": "attribution-campaign-context",
-      "observed_at": "2026-08-10T13:12:47Z",
+      "observed_at": "2026-08-12T08:39:07Z",
       "owner": "tigrbl",
       "package_kind": "published-package",
       "private": false,
@@ -126,7 +126,7 @@
           "legal_inherits_from": "package:pypi:attribution-campaign-context:tigrbl/attribution-campaign-context:pyproject.toml",
           "license_expression": "Apache-2.0",
           "license_status": "observed",
-          "observed_at": "2026-08-10T13:12:47Z",
+          "observed_at": "2026-08-12T08:39:07Z",
           "published_at": "2026-06-14T10:49:53.870015Z",
           "release_kind": "pypi",
           "route": "/catalog/releases/pypi/attribution-campaign-context-53f9747af0",
@@ -148,14 +148,6 @@
     "archived": false,
     "claim_boundary": "SSOT artifact counts and coverage are registry-reported observations; they do not by themselves prove that every public product claim is supported.",
     "commit_activity": [
-      {
-        "count": 0,
-        "date": "2026-07-12"
-      },
-      {
-        "count": 0,
-        "date": "2026-07-13"
-      },
       {
         "count": 0,
         "date": "2026-07-14"
@@ -267,12 +259,25 @@
       {
         "count": 0,
         "date": "2026-08-10"
+      },
+      {
+        "count": 0,
+        "date": "2026-08-11"
+      },
+      {
+        "count": 0,
+        "date": "2026-08-12"
       }
     ],
     "contributors": [
       {
+        "account_type": "User",
+        "anonymous": false,
+        "avatar_url": "https://avatars.githubusercontent.com/u/25079070?v=4",
         "contributions": 18,
+        "id": "25079070",
         "login": "cobycloud",
+        "name": null,
         "url": "https://github.com/cobycloud"
       }
     ],
@@ -284,12 +289,12 @@
     "evidence": [
       {
         "kind": "ssot-registry",
-        "observed_at": "2026-08-10T13:12:47Z",
+        "observed_at": "2026-08-12T08:39:27Z",
         "url": "https://github.com/tigrbl/attribution-campaign-context/blob/master/.ssot/registry.json"
       },
       {
         "kind": "source",
-        "observed_at": "2026-08-10T13:12:47Z",
+        "observed_at": "2026-08-12T08:39:26Z",
         "url": "https://github.com/tigrbl/attribution-campaign-context"
       }
     ],
@@ -336,7 +341,7 @@
       "watchers": 0
     },
     "name": "attribution-campaign-context",
-    "observed_at": "2026-08-10T13:12:47Z",
+    "observed_at": "2026-08-12T08:39:26Z",
     "owner": "tigrbl",
     "package_ids": [
       "package:pypi:attribution-campaign-context:tigrbl/attribution-campaign-context:pyproject.toml"
@@ -374,7 +379,7 @@
         "legal_evidence": [],
         "legal_inherits_from": "repository:tigrbl/attribution-campaign-context",
         "name": "docs/attribution-keys.md",
-        "observed_at": "2026-08-10T13:12:47Z",
+        "observed_at": "2026-08-12T08:39:26Z",
         "path": "docs/attribution-keys.md",
         "repository": "tigrbl/attribution-campaign-context",
         "repository_route": "/catalog/repositories/tigrbl/attribution-campaign-context",
@@ -388,7 +393,7 @@
         "legal_evidence": [],
         "legal_inherits_from": "repository:tigrbl/attribution-campaign-context",
         "name": "docs/public-operator-surfaces.md",
-        "observed_at": "2026-08-10T13:12:47Z",
+        "observed_at": "2026-08-12T08:39:26Z",
         "path": "docs/public-operator-surfaces.md",
         "repository": "tigrbl/attribution-campaign-context",
         "repository_route": "/catalog/repositories/tigrbl/attribution-campaign-context",
@@ -402,7 +407,7 @@
         "legal_evidence": [],
         "legal_inherits_from": "repository:tigrbl/attribution-campaign-context",
         "name": "docs/ssot-governance-packs.md",
-        "observed_at": "2026-08-10T13:12:47Z",
+        "observed_at": "2026-08-12T08:39:26Z",
         "path": "docs/ssot-governance-packs.md",
         "repository": "tigrbl/attribution-campaign-context",
         "repository_route": "/catalog/repositories/tigrbl/attribution-campaign-context",
@@ -427,6 +432,8 @@
         "issues": 0,
         "profiles": 0,
         "releases": 1,
+        "risks": 0,
+        "scopes": 0,
         "specs": 71,
         "tests": 19
       },
@@ -442,104 +449,1011 @@
       "inventory": {
         "adrs": [
           {
+            "content_sha256": "26115483cdf39e6e4ccbe67789d6cfd2f8fb699f61953a860e3301b7ead71621",
             "id": "adr:0600",
+            "immutable": true,
+            "managed": true,
+            "number": 600,
+            "origin": "ssot-origin",
+            "package_version": "0.2.22",
+            "relationship_integrity": {
+              "reference_count": 0,
+              "resolved_reference_count": 0,
+              "unresolved_reference_count": 0,
+              "unresolved_references": []
+            },
             "status": "draft",
+            "superseded_by": [],
+            "supersedes": [],
             "title": "Canonical registry is a single JSON document"
           },
           {
+            "content_sha256": "68c5ec6b68a2ae0c8b2523ac388bded26b3865843ffbb27d120f696573a67e11",
             "id": "adr:0601",
+            "immutable": true,
+            "managed": true,
+            "number": 601,
+            "origin": "ssot-origin",
+            "package_version": "0.2.22",
+            "relationship_integrity": {
+              "reference_count": 0,
+              "resolved_reference_count": 0,
+              "unresolved_reference_count": 0,
+              "unresolved_references": []
+            },
             "status": "draft",
+            "superseded_by": [],
+            "supersedes": [],
             "title": "Features are the targetable units"
           },
           {
+            "content_sha256": "8e526f57b296bb5f9c86a3dd18ed37f48873df02b5ff616c0597d0a4ccbfc3f7",
             "id": "adr:0602",
+            "immutable": true,
+            "managed": true,
+            "number": 602,
+            "origin": "ssot-origin",
+            "package_version": "0.2.22",
+            "relationship_integrity": {
+              "reference_count": 0,
+              "resolved_reference_count": 0,
+              "unresolved_reference_count": 0,
+              "unresolved_references": []
+            },
             "status": "draft",
+            "superseded_by": [],
+            "supersedes": [],
             "title": "Issues are plannable work items"
           },
           {
+            "content_sha256": "33ecf372f83569f28272b6f60b99c4f1562d9231ecec7d46a4fae23d45a0aed6",
             "id": "adr:0603",
+            "immutable": true,
+            "managed": true,
+            "number": 603,
+            "origin": "ssot-origin",
+            "package_version": "0.2.22",
+            "relationship_integrity": {
+              "reference_count": 0,
+              "resolved_reference_count": 0,
+              "unresolved_reference_count": 0,
+              "unresolved_references": []
+            },
             "status": "draft",
+            "superseded_by": [],
+            "supersedes": [],
             "title": "Entity-centric registry with a derived graph export"
           },
           {
+            "content_sha256": "b16e20bb737eb3b08082c043d18b27696d67182a30094752e0a3f3111b61c5aa",
             "id": "adr:0604",
+            "immutable": true,
+            "managed": true,
+            "number": 604,
+            "origin": "ssot-origin",
+            "package_version": "0.2.22",
+            "relationship_integrity": {
+              "reference_count": 0,
+              "resolved_reference_count": 0,
+              "unresolved_reference_count": 0,
+              "unresolved_references": []
+            },
             "status": "draft",
+            "superseded_by": [],
+            "supersedes": [],
             "title": "Normalized prefixed IDs"
           },
           {
+            "content_sha256": "78df076fed7b7b4e5f5f0131bf62365b30d9fba111f79512c9fdfbb180a59e2e",
             "id": "adr:0605",
+            "immutable": true,
+            "managed": true,
+            "number": 605,
+            "origin": "ssot-origin",
+            "package_version": "0.2.22",
+            "relationship_integrity": {
+              "reference_count": 0,
+              "resolved_reference_count": 0,
+              "unresolved_reference_count": 0,
+              "unresolved_references": []
+            },
             "status": "draft",
+            "superseded_by": [],
+            "supersedes": [],
             "title": "Claim status and claim tier are orthogonal"
           },
           {
+            "content_sha256": "0d4e2147a8ec40fd262b3291945701f260f36d82a09fc49ef291c7279577fe2f",
             "id": "adr:0606",
+            "immutable": true,
+            "managed": true,
+            "number": 606,
+            "origin": "ssot-origin",
+            "package_version": "0.2.22",
+            "relationship_integrity": {
+              "reference_count": 0,
+              "resolved_reference_count": 0,
+              "unresolved_reference_count": 0,
+              "unresolved_references": []
+            },
             "status": "draft",
+            "superseded_by": [],
+            "supersedes": [],
             "title": "Feature implementation state is separate from lifecycle state"
           },
           {
+            "content_sha256": "745356687a258a3583622475446674eab514042ed4d7610b688e35a6cc420b72",
             "id": "adr:0607",
+            "immutable": true,
+            "managed": true,
+            "number": 607,
+            "origin": "ssot-origin",
+            "package_version": "0.2.22",
+            "relationship_integrity": {
+              "reference_count": 0,
+              "resolved_reference_count": 0,
+              "unresolved_reference_count": 0,
+              "unresolved_references": []
+            },
             "status": "draft",
+            "superseded_by": [],
+            "supersedes": [],
             "title": "Immutable boundary and release snapshots"
           },
           {
+            "content_sha256": "c0fd162b5b1e43459926fc4c3720f6756d497a94dd4ef4963e9a5378b55c0bc0",
             "id": "adr:0608",
+            "immutable": true,
+            "managed": true,
+            "number": 608,
+            "origin": "ssot-origin",
+            "package_version": "0.2.22",
+            "relationship_integrity": {
+              "reference_count": 0,
+              "resolved_reference_count": 0,
+              "unresolved_reference_count": 0,
+              "unresolved_references": []
+            },
             "status": "draft",
+            "superseded_by": [],
+            "supersedes": [],
             "title": "Fail-closed guards"
           },
           {
+            "content_sha256": "b631ea5fcfc9a9d355b8ba6add0827338c45e0e5a8325fd51b93a0c10ca258cb",
             "id": "adr:0609",
+            "immutable": true,
+            "managed": true,
+            "number": 609,
+            "origin": "ssot-origin",
+            "package_version": "0.2.22",
+            "relationship_integrity": {
+              "reference_count": 0,
+              "resolved_reference_count": 0,
+              "unresolved_reference_count": 0,
+              "unresolved_references": []
+            },
             "status": "draft",
+            "superseded_by": [],
+            "supersedes": [],
             "title": "Generated projections are non-canonical"
           },
           {
+            "content_sha256": "1e424fa40917d42d538b062a087fa0a283a99fe4c5bc142555a2b5f4b08c9981",
             "id": "adr:0610",
+            "immutable": true,
+            "managed": true,
+            "number": 610,
+            "origin": "ssot-origin",
+            "package_version": "0.2.22",
+            "relationship_integrity": {
+              "reference_count": 0,
+              "resolved_reference_count": 0,
+              "unresolved_reference_count": 0,
+              "unresolved_references": []
+            },
             "status": "draft",
+            "superseded_by": [],
+            "supersedes": [],
             "title": "Explicit schema versioning"
           },
           {
+            "content_sha256": "e4a21bbcb6073b2dcf0dcba0e8348a7423b6307eea905c1c325e6b339e77c9b3",
             "id": "adr:0611",
+            "immutable": true,
+            "managed": true,
+            "number": 611,
+            "origin": "ssot-origin",
+            "package_version": "0.2.22",
+            "relationship_integrity": {
+              "reference_count": 0,
+              "resolved_reference_count": 0,
+              "unresolved_reference_count": 0,
+              "unresolved_references": []
+            },
             "status": "draft",
+            "superseded_by": [],
+            "supersedes": [],
             "title": "Portable SSOT core with repo-specific evidence adapters"
           },
           {
+            "content_sha256": "d6a211c83a1e2860c1b1b941bd32549b760b3cd9b9aae039941a4ecba576b0db",
             "id": "adr:0612",
+            "immutable": true,
+            "managed": true,
+            "number": 612,
+            "origin": "ssot-origin",
+            "package_version": "0.2.22",
+            "relationship_integrity": {
+              "reference_count": 0,
+              "resolved_reference_count": 0,
+              "unresolved_reference_count": 0,
+              "unresolved_references": []
+            },
             "status": "draft",
+            "superseded_by": [],
+            "supersedes": [],
             "title": "Enforce max path and filename lengths under `.ssot`"
           },
           {
+            "content_sha256": "660702084c94ffdffbed60029d5ffd36bd8f3357004fbcd462b8dd53a29d37ab",
             "id": "adr:0613",
+            "immutable": true,
+            "managed": true,
+            "number": 613,
+            "origin": "ssot-origin",
+            "package_version": "0.2.22",
+            "relationship_integrity": {
+              "reference_count": 0,
+              "resolved_reference_count": 0,
+              "unresolved_reference_count": 0,
+              "unresolved_references": []
+            },
             "status": "accepted",
+            "superseded_by": [],
+            "supersedes": [],
             "title": "Profiles are reusable feature bundles with derived pass status"
           },
           {
+            "content_sha256": "4777becde9cd85b17852fb602ffa58a88833147fda46beaf2bca1da6b1187c69",
             "id": "adr:0614",
+            "immutable": true,
+            "managed": true,
+            "number": 614,
+            "origin": "ssot-origin",
+            "package_version": "0.2.22",
+            "relationship_integrity": {
+              "reference_count": 0,
+              "resolved_reference_count": 0,
+              "unresolved_reference_count": 0,
+              "unresolved_references": []
+            },
             "status": "accepted",
+            "superseded_by": [],
+            "supersedes": [],
             "title": "SPECs own typed ADR links"
           },
           {
+            "content_sha256": "2f0333cf9c866104b1d4e874404fdc6424bd1af57666de9f197a6699861d8039",
             "id": "adr:0615",
+            "immutable": true,
+            "managed": true,
+            "number": 615,
+            "origin": "ssot-origin",
+            "package_version": "0.2.22",
+            "relationship_integrity": {
+              "reference_count": 0,
+              "resolved_reference_count": 0,
+              "unresolved_reference_count": 0,
+              "unresolved_references": []
+            },
             "status": "accepted",
+            "superseded_by": [],
+            "supersedes": [],
             "title": "Downstream assurance-language ceilings for feature target claim tiers"
           },
           {
+            "content_sha256": "d993423b0a9627f086d3d6313099f4a8ddfe69a4156dbd4b1bd02c75d7bc2918",
             "id": "adr:0616",
+            "immutable": true,
+            "managed": true,
+            "number": 616,
+            "origin": "ssot-origin",
+            "package_version": "0.2.22",
+            "relationship_integrity": {
+              "reference_count": 0,
+              "resolved_reference_count": 0,
+              "unresolved_reference_count": 0,
+              "unresolved_references": []
+            },
             "status": "accepted",
+            "superseded_by": [],
+            "supersedes": [],
             "title": "Out-of-bounds implementation disposition is explicit"
           },
           {
+            "content_sha256": "0c5bed916fa990906a0f81e87c925eff828b79af92f2c124eaaba89e627704da",
             "id": "adr:0617",
+            "immutable": true,
+            "managed": true,
+            "number": 617,
+            "origin": "ssot-origin",
+            "package_version": "0.2.22",
+            "relationship_integrity": {
+              "reference_count": 0,
+              "resolved_reference_count": 0,
+              "unresolved_reference_count": 0,
+              "unresolved_references": []
+            },
             "status": "accepted",
+            "superseded_by": [],
+            "supersedes": [],
             "title": "Feature implementation is capped by active required claims"
           },
           {
+            "content_sha256": "22262f8c4f890306be5a334ba8b90f66f0eb444fdfb968f5753a651830140ef7",
             "id": "adr:0618",
+            "immutable": true,
+            "managed": true,
+            "number": 618,
+            "origin": "ssot-origin",
+            "package_version": "0.2.22",
+            "relationship_integrity": {
+              "reference_count": 0,
+              "resolved_reference_count": 0,
+              "unresolved_reference_count": 0,
+              "unresolved_references": []
+            },
             "status": "draft",
+            "superseded_by": [],
+            "supersedes": [],
             "title": "Local Release Assurance Remains SSOT Native"
           },
           {
+            "content_sha256": "c6213df5db7ee265d5a78e4cec2be9866218a711973aa4a556eddff0ed705875",
             "id": "adr:0619",
+            "immutable": true,
+            "managed": true,
+            "number": 619,
+            "origin": "ssot-origin",
+            "package_version": "0.2.22",
+            "relationship_integrity": {
+              "reference_count": 0,
+              "resolved_reference_count": 0,
+              "unresolved_reference_count": 0,
+              "unresolved_references": []
+            },
             "status": "draft",
+            "superseded_by": [],
+            "supersedes": [],
             "title": "Content Addressed Governed Source Snapshots"
+          },
+          {
+            "content_sha256": "1bcb2461f8736f27f47b8b6d05ebf31e1acd479f4149ba92c50b96fccc8fac66",
+            "id": "adr:0620",
+            "immutable": true,
+            "managed": true,
+            "number": 620,
+            "origin": "ssot-origin",
+            "package_version": "0.2.22",
+            "relationship_integrity": {
+              "reference_count": 0,
+              "resolved_reference_count": 0,
+              "unresolved_reference_count": 0,
+              "unresolved_references": []
+            },
+            "status": "draft",
+            "superseded_by": [],
+            "supersedes": [],
+            "title": "Local Evidence Bundles Are Derived Release Artifacts"
+          },
+          {
+            "content_sha256": "6855a0d34eabcd1bac1c67ffefcd7a231d376f874b1c57fa6ab3270d9f123e2c",
+            "id": "adr:0621",
+            "immutable": true,
+            "managed": true,
+            "number": 621,
+            "origin": "ssot-origin",
+            "package_version": "0.2.22",
+            "relationship_integrity": {
+              "reference_count": 0,
+              "resolved_reference_count": 0,
+              "unresolved_reference_count": 0,
+              "unresolved_references": []
+            },
+            "status": "draft",
+            "superseded_by": [],
+            "supersedes": [],
+            "title": "General rules of interpretation govern SSOT meaning"
+          },
+          {
+            "content_sha256": "1172e88c6c407394cada3ced519ed6e8dd1937b6754e841ccb029f8b43ab4876",
+            "id": "adr:0622",
+            "immutable": true,
+            "managed": true,
+            "number": 622,
+            "origin": "ssot-origin",
+            "package_version": "0.2.22",
+            "relationship_integrity": {
+              "reference_count": 0,
+              "resolved_reference_count": 0,
+              "unresolved_reference_count": 0,
+              "unresolved_references": []
+            },
+            "status": "draft",
+            "superseded_by": [],
+            "supersedes": [],
+            "title": "Definitions govern SSOT vocabulary"
+          },
+          {
+            "content_sha256": "a20f944fe399eb5f54db0e27cf5338867d917dc03aee6f4d3cfecd41c6664791",
+            "id": "adr:0625",
+            "immutable": true,
+            "managed": true,
+            "number": 625,
+            "origin": "ssot-origin",
+            "package_version": "0.2.22",
+            "relationship_integrity": {
+              "reference_count": 0,
+              "resolved_reference_count": 0,
+              "unresolved_reference_count": 0,
+              "unresolved_references": []
+            },
+            "status": "draft",
+            "superseded_by": [],
+            "supersedes": [],
+            "title": "Claim Tier Gates Govern Core Promotion"
+          },
+          {
+            "content_sha256": "8ff682bf5815f3c95b6a1cf36b52799eb1a64794b74bcf16f6b85debf0c3f5a6",
+            "id": "adr:0626",
+            "immutable": true,
+            "managed": true,
+            "number": 626,
+            "origin": "ssot-origin",
+            "package_version": "0.2.22",
+            "relationship_integrity": {
+              "reference_count": 0,
+              "resolved_reference_count": 0,
+              "unresolved_reference_count": 0,
+              "unresolved_references": []
+            },
+            "status": "draft",
+            "superseded_by": [],
+            "supersedes": [],
+            "title": "Externally Authored Validation Can Satisfy T4"
+          },
+          {
+            "content_sha256": "f737baf8e7ef3131d02c9bd74cf698894438e7136dcb77a488c40a9b9c138eda",
+            "id": "adr:0627",
+            "immutable": true,
+            "managed": true,
+            "number": 627,
+            "origin": "ssot-origin",
+            "package_version": "0.2.22",
+            "relationship_integrity": {
+              "reference_count": 0,
+              "resolved_reference_count": 0,
+              "unresolved_reference_count": 0,
+              "unresolved_references": []
+            },
+            "status": "accepted",
+            "superseded_by": [],
+            "supersedes": [],
+            "title": "Feature parent links are inventory composition"
+          },
+          {
+            "content_sha256": "1edad31c42d535f7241e1f06042f666780be0e04b95413626838460933bdd99b",
+            "id": "adr:0628",
+            "immutable": true,
+            "managed": true,
+            "number": 628,
+            "origin": "ssot-origin",
+            "package_version": "0.2.22",
+            "relationship_integrity": {
+              "reference_count": 0,
+              "resolved_reference_count": 0,
+              "unresolved_reference_count": 0,
+              "unresolved_references": []
+            },
+            "status": "draft",
+            "superseded_by": [],
+            "supersedes": [],
+            "title": "SSOT MCP and CLI surfaces stay in parity"
+          },
+          {
+            "content_sha256": "7a50f1f00fe10d69905bc64738d503418a475bbc9382d81126098c23e7df9d20",
+            "id": "adr:0629",
+            "immutable": true,
+            "managed": true,
+            "number": 629,
+            "origin": "ssot-origin",
+            "package_version": "0.2.22",
+            "relationship_integrity": {
+              "reference_count": 0,
+              "resolved_reference_count": 0,
+              "unresolved_reference_count": 0,
+              "unresolved_references": []
+            },
+            "status": "draft",
+            "superseded_by": [],
+            "supersedes": [],
+            "title": "SSOT MCP workers may request registry repair authority"
+          },
+          {
+            "content_sha256": "2dbccde7b17e9fa99a1ad22dd23ad7e947e3e7c86325a83e18bbea8e0131983b",
+            "id": "adr:0630",
+            "immutable": true,
+            "managed": true,
+            "number": 630,
+            "origin": "ssot-origin",
+            "package_version": "0.2.22",
+            "relationship_integrity": {
+              "reference_count": 0,
+              "resolved_reference_count": 0,
+              "unresolved_reference_count": 0,
+              "unresolved_references": []
+            },
+            "status": "draft",
+            "superseded_by": [],
+            "supersedes": [],
+            "title": "Scoped maturation claims ignore unrelated blockers"
+          },
+          {
+            "content_sha256": "51e1080c9a032d41b9d5e1269b8cc3d83048a6b7e5a1732a158f07920d7480d1",
+            "id": "adr:0631",
+            "immutable": true,
+            "managed": true,
+            "number": 631,
+            "origin": "ssot-origin",
+            "package_version": "0.2.22",
+            "relationship_integrity": {
+              "reference_count": 0,
+              "resolved_reference_count": 0,
+              "unresolved_reference_count": 0,
+              "unresolved_references": []
+            },
+            "status": "draft",
+            "superseded_by": [],
+            "supersedes": [],
+            "title": "MCP mediated upgrade uses the current runtime"
+          },
+          {
+            "content_sha256": "ac049f5bbe6671897b81ef100c2b2acdcc8c34bcfd203aa2a5820d0c54493d8e",
+            "id": "adr:0632",
+            "immutable": true,
+            "managed": true,
+            "number": 632,
+            "origin": "ssot-origin",
+            "package_version": "0.2.22",
+            "relationship_integrity": {
+              "reference_count": 0,
+              "resolved_reference_count": 0,
+              "unresolved_reference_count": 0,
+              "unresolved_references": []
+            },
+            "status": "draft",
+            "superseded_by": [],
+            "supersedes": [],
+            "title": "Targeted repair can proceed with unrelated baseline drift"
+          },
+          {
+            "content_sha256": "7df0543232c6e0f3a076d7c8475153650acd4cbfa18fd9a53644e0e295834b6c",
+            "id": "adr:0633",
+            "immutable": true,
+            "managed": true,
+            "number": 633,
+            "origin": "ssot-origin",
+            "package_version": "0.2.22",
+            "relationship_integrity": {
+              "reference_count": 0,
+              "resolved_reference_count": 0,
+              "unresolved_reference_count": 0,
+              "unresolved_references": []
+            },
+            "status": "accepted",
+            "superseded_by": [],
+            "supersedes": [],
+            "title": "Public registry save validates before write"
+          },
+          {
+            "content_sha256": "a8a4d82cfbf651384501bf7f958a3429683607c4eec65626453354c9a83bf5fc",
+            "id": "adr:0634",
+            "immutable": true,
+            "managed": true,
+            "number": 634,
+            "origin": "ssot-origin",
+            "package_version": "0.2.22",
+            "relationship_integrity": {
+              "reference_count": 0,
+              "resolved_reference_count": 0,
+              "unresolved_reference_count": 0,
+              "unresolved_references": []
+            },
+            "status": "draft",
+            "superseded_by": [],
+            "supersedes": [],
+            "title": "Proof Graph Is The Canonical Assurance Unit"
+          },
+          {
+            "content_sha256": "d228b642bc6c3c84e293c821c480099b5256e62a7048c73830a62d34c36e8012",
+            "id": "adr:0635",
+            "immutable": true,
+            "managed": true,
+            "number": 635,
+            "origin": "ssot-origin",
+            "package_version": "0.2.22",
+            "relationship_integrity": {
+              "reference_count": 0,
+              "resolved_reference_count": 0,
+              "unresolved_reference_count": 0,
+              "unresolved_references": []
+            },
+            "status": "draft",
+            "superseded_by": [],
+            "supersedes": [],
+            "title": "Proof Graph Materialization And Certification Closure"
+          },
+          {
+            "content_sha256": "81b2744237e8f72d62cabc1ebf695c7fe2d39dd639d1e65d192c8668293d72bf",
+            "id": "adr:0636",
+            "immutable": true,
+            "managed": true,
+            "number": 636,
+            "origin": "ssot-origin",
+            "package_version": "0.2.22",
+            "relationship_integrity": {
+              "reference_count": 0,
+              "resolved_reference_count": 0,
+              "unresolved_reference_count": 0,
+              "unresolved_references": []
+            },
+            "status": "draft",
+            "superseded_by": [],
+            "supersedes": [],
+            "title": "Feature create defaults to proof-graph scaffolding"
+          },
+          {
+            "content_sha256": "b936e606f1c048e4fae8cbe2683fbcf3dd09db965cf5a031f2e62a403b890f1b",
+            "id": "adr:0637",
+            "immutable": true,
+            "managed": true,
+            "number": 637,
+            "origin": "ssot-origin",
+            "package_version": "0.2.22",
+            "relationship_integrity": {
+              "reference_count": 0,
+              "resolved_reference_count": 0,
+              "unresolved_reference_count": 0,
+              "unresolved_references": []
+            },
+            "status": "draft",
+            "superseded_by": [],
+            "supersedes": [],
+            "title": "Pack schema compatibility is forward-only"
+          },
+          {
+            "content_sha256": "16cea3a14330d578abec96c5d49d6c3a80dfd68a4a4c689dccd763279e6ef560",
+            "id": "adr:1000",
+            "immutable": false,
+            "managed": false,
+            "number": 1000,
+            "origin": "repo-local",
+            "package_version": "0.2.22",
+            "relationship_integrity": {
+              "reference_count": 0,
+              "resolved_reference_count": 0,
+              "unresolved_reference_count": 0,
+              "unresolved_references": []
+            },
+            "status": "accepted",
+            "superseded_by": [],
+            "supersedes": [],
+            "title": "Attribution campaign context surfaces stay generic"
+          },
+          {
+            "content_sha256": "7a961dc3cc2e1cf8ecbbeb2880b281b436a1b8a694735ba0ec2f33554c2b1219",
+            "id": "adr:pack.marketing-attribution-conversion.browser-attribution-reporting-policy",
+            "immutable": true,
+            "managed": true,
+            "number": 20222851,
+            "origin": "extension-pack",
+            "package_version": "0.1.1",
+            "relationship_integrity": {
+              "reference_count": 0,
+              "resolved_reference_count": 0,
+              "unresolved_reference_count": 0,
+              "unresolved_references": []
+            },
+            "status": "accepted",
+            "superseded_by": [],
+            "supersedes": [],
+            "title": "Browser Attribution Reporting Policy"
+          },
+          {
+            "content_sha256": "0f1f8100d402b8ee8fee7b5d6ed9780107107a9489fed7ab068f27747f61153b",
+            "id": "adr:pack.marketing-attribution-conversion.tracking-template-parameter-policy",
+            "immutable": true,
+            "managed": true,
+            "number": 50028530,
+            "origin": "extension-pack",
+            "package_version": "0.1.1",
+            "relationship_integrity": {
+              "reference_count": 0,
+              "resolved_reference_count": 0,
+              "unresolved_reference_count": 0,
+              "unresolved_references": []
+            },
+            "status": "accepted",
+            "superseded_by": [],
+            "supersedes": [],
+            "title": "Tracking Template Parameter Policy"
+          },
+          {
+            "content_sha256": "e11b3ef41c5eda2546c1f822912f5f32ebd07c9f414de6fd2aa9646de35b56bd",
+            "id": "adr:pack.marketing-attribution-conversion.clean-room-attribution-protocol-policy",
+            "immutable": true,
+            "managed": true,
+            "number": 169076658,
+            "origin": "extension-pack",
+            "package_version": "0.1.1",
+            "relationship_integrity": {
+              "reference_count": 0,
+              "resolved_reference_count": 0,
+              "unresolved_reference_count": 0,
+              "unresolved_references": []
+            },
+            "status": "accepted",
+            "superseded_by": [],
+            "supersedes": [],
+            "title": "Clean Room Attribution Protocol Policy"
+          },
+          {
+            "content_sha256": "ae25fa0e3cc8408a14c60d985d73861a133de3ef8d5c5807b80d2176d14d568e",
+            "id": "adr:pack.marketing-attribution-conversion.enhanced-conversion-identifier-policy",
+            "immutable": true,
+            "managed": true,
+            "number": 309069435,
+            "origin": "extension-pack",
+            "package_version": "0.1.1",
+            "relationship_integrity": {
+              "reference_count": 0,
+              "resolved_reference_count": 0,
+              "unresolved_reference_count": 0,
+              "unresolved_references": []
+            },
+            "status": "accepted",
+            "superseded_by": [],
+            "supersedes": [],
+            "title": "Enhanced Conversion Identifier Policy"
+          },
+          {
+            "content_sha256": "d820b8d016c4821777b08c59859827689136788d7c303938d863b90f9b90099d",
+            "id": "adr:pack.url-query-attribution-foundations.attribution-state-context-policy",
+            "immutable": true,
+            "managed": true,
+            "number": 362483338,
+            "origin": "extension-pack",
+            "package_version": "0.1.1",
+            "relationship_integrity": {
+              "reference_count": 0,
+              "resolved_reference_count": 0,
+              "unresolved_reference_count": 0,
+              "unresolved_references": []
+            },
+            "status": "accepted",
+            "superseded_by": [],
+            "supersedes": [],
+            "title": "Attribution State Context Policy"
+          },
+          {
+            "content_sha256": "72f5c94053e7e08ea2dd90a051786c7af94d6464a1064ecb4dd2f86c523e2d21",
+            "id": "adr:pack.url-query-attribution-foundations.http-metadata-discovery-policy",
+            "immutable": true,
+            "managed": true,
+            "number": 372529914,
+            "origin": "extension-pack",
+            "package_version": "0.1.1",
+            "relationship_integrity": {
+              "reference_count": 0,
+              "resolved_reference_count": 0,
+              "unresolved_reference_count": 0,
+              "unresolved_references": []
+            },
+            "status": "accepted",
+            "superseded_by": [],
+            "supersedes": [],
+            "title": "HTTP Metadata Discovery Policy"
+          },
+          {
+            "content_sha256": "7e79ac64ee68f6d60f98bb97ab6659b9db673bb6af1d28e1c473a844d16ead14",
+            "id": "adr:pack.url-query-attribution-foundations.traffic-source-classification-policy",
+            "immutable": true,
+            "managed": true,
+            "number": 389551517,
+            "origin": "extension-pack",
+            "package_version": "0.1.1",
+            "relationship_integrity": {
+              "reference_count": 0,
+              "resolved_reference_count": 0,
+              "unresolved_reference_count": 0,
+              "unresolved_references": []
+            },
+            "status": "accepted",
+            "superseded_by": [],
+            "supersedes": [],
+            "title": "Traffic Source Classification Policy"
+          },
+          {
+            "content_sha256": "cd8b2017d76fc707ed15eb86b2121d6d9ffd1a79a1b8817a5fb7d91f346aa674",
+            "id": "adr:pack.marketing-attribution-conversion.conversion-consent-and-privacy-policy",
+            "immutable": true,
+            "managed": true,
+            "number": 390576476,
+            "origin": "extension-pack",
+            "package_version": "0.1.1",
+            "relationship_integrity": {
+              "reference_count": 0,
+              "resolved_reference_count": 0,
+              "unresolved_reference_count": 0,
+              "unresolved_references": []
+            },
+            "status": "accepted",
+            "superseded_by": [],
+            "supersedes": [],
+            "title": "Conversion Consent And Privacy Policy"
+          },
+          {
+            "content_sha256": "fb74aeafaf306f6a18a20f2b83dccc412d807cf39845cca49483833c5a13aa01",
+            "id": "adr:pack.url-query-attribution-foundations.referrer-observability-policy",
+            "immutable": true,
+            "managed": true,
+            "number": 428907250,
+            "origin": "extension-pack",
+            "package_version": "0.1.1",
+            "relationship_integrity": {
+              "reference_count": 0,
+              "resolved_reference_count": 0,
+              "unresolved_reference_count": 0,
+              "unresolved_references": []
+            },
+            "status": "accepted",
+            "superseded_by": [],
+            "supersedes": [],
+            "title": "Referrer Observability Policy"
+          },
+          {
+            "content_sha256": "b034ffef86e2d10e9affd72ab4aa3a1eabc94cb3ba7826d491bb7b32f15bfaba",
+            "id": "adr:pack.marketing-attribution-conversion.industry-conversion-event-protocol-policy",
+            "immutable": true,
+            "managed": true,
+            "number": 526958646,
+            "origin": "extension-pack",
+            "package_version": "0.1.1",
+            "relationship_integrity": {
+              "reference_count": 0,
+              "resolved_reference_count": 0,
+              "unresolved_reference_count": 0,
+              "unresolved_references": []
+            },
+            "status": "accepted",
+            "superseded_by": [],
+            "supersedes": [],
+            "title": "Industry Conversion Event Protocol Policy"
+          },
+          {
+            "content_sha256": "25d56a9bac2b67e91f8640381c986bf04fe539f9822576b7729abb15c80b7f83",
+            "id": "adr:pack.marketing-attribution-conversion.click-measurement-quality-policy",
+            "immutable": true,
+            "managed": true,
+            "number": 535745349,
+            "origin": "extension-pack",
+            "package_version": "0.1.1",
+            "relationship_integrity": {
+              "reference_count": 0,
+              "resolved_reference_count": 0,
+              "unresolved_reference_count": 0,
+              "unresolved_references": []
+            },
+            "status": "accepted",
+            "superseded_by": [],
+            "supersedes": [],
+            "title": "Click Measurement Quality Policy"
+          },
+          {
+            "content_sha256": "89b6c461efb0a74e9b6fc20a2991c669c8bd13242158a23acf8641a2428b559c",
+            "id": "adr:pack.marketing-attribution-conversion.offline-conversion-upload-policy",
+            "immutable": true,
+            "managed": true,
+            "number": 554483863,
+            "origin": "extension-pack",
+            "package_version": "0.1.1",
+            "relationship_integrity": {
+              "reference_count": 0,
+              "resolved_reference_count": 0,
+              "unresolved_reference_count": 0,
+              "unresolved_references": []
+            },
+            "status": "accepted",
+            "superseded_by": [],
+            "supersedes": [],
+            "title": "Offline Conversion Upload Policy"
+          },
+          {
+            "content_sha256": "8452983d04c58956f0b367375bca3b9012f056e1b6e9cea1734e500823fb28bc",
+            "id": "adr:pack.marketing-attribution-conversion.server-conversion-api-policy",
+            "immutable": true,
+            "managed": true,
+            "number": 554732146,
+            "origin": "extension-pack",
+            "package_version": "0.1.1",
+            "relationship_integrity": {
+              "reference_count": 0,
+              "resolved_reference_count": 0,
+              "unresolved_reference_count": 0,
+              "unresolved_references": []
+            },
+            "status": "accepted",
+            "superseded_by": [],
+            "supersedes": [],
+            "title": "Server Conversion API Policy"
+          },
+          {
+            "content_sha256": "99029abc91a86b76b3db29a4ac3e304b3d2c04ea709ceb58fe3c32edeff3b313",
+            "id": "adr:pack.url-query-attribution-foundations.uri-query-attribution-boundary",
+            "immutable": true,
+            "managed": true,
+            "number": 646644831,
+            "origin": "extension-pack",
+            "package_version": "0.1.1",
+            "relationship_integrity": {
+              "reference_count": 0,
+              "resolved_reference_count": 0,
+              "unresolved_reference_count": 0,
+              "unresolved_references": []
+            },
+            "status": "accepted",
+            "superseded_by": [],
+            "supersedes": [],
+            "title": "URI Query Attribution Boundary"
+          },
+          {
+            "content_sha256": "a0f4cb22a8660d3263cafe863a8c8fed7874d97c8543c4b552a666671c70811c",
+            "id": "adr:pack.url-query-attribution-foundations.campaign-parameter-semantics-authority",
+            "immutable": true,
+            "managed": true,
+            "number": 784165129,
+            "origin": "extension-pack",
+            "package_version": "0.1.1",
+            "relationship_integrity": {
+              "reference_count": 0,
+              "resolved_reference_count": 0,
+              "unresolved_reference_count": 0,
+              "unresolved_references": []
+            },
+            "status": "accepted",
+            "superseded_by": [],
+            "supersedes": [],
+            "title": "Campaign Parameter Semantics Authority"
+          },
+          {
+            "content_sha256": "a9c18ce6657746dcf85f73fa79a05c1c568a896eee33f87a0e09884c45b16fa2",
+            "id": "adr:pack.marketing-attribution-conversion.click-id-capture-and-retention-policy",
+            "immutable": true,
+            "managed": true,
+            "number": 813582157,
+            "origin": "extension-pack",
+            "package_version": "0.1.1",
+            "relationship_integrity": {
+              "reference_count": 0,
+              "resolved_reference_count": 0,
+              "unresolved_reference_count": 0,
+              "unresolved_references": []
+            },
+            "status": "accepted",
+            "superseded_by": [],
+            "supersedes": [],
+            "title": "Click ID Capture And Retention Policy"
           }
         ],
         "boundaries": [
@@ -557,13 +1471,22 @@
               "feat:attribution.touch-ledger",
               "feat:attribution.touch-lifecycle-policy"
             ],
+            "frozen": true,
             "id": "bnd:default",
+            "profile_ids": [],
+            "relationship_integrity": {
+              "reference_count": 11,
+              "resolved_reference_count": 11,
+              "unresolved_reference_count": 0,
+              "unresolved_references": []
+            },
             "status": "frozen",
             "title": "Attribution campaign context full runtime T2 closure boundary"
           }
         ],
         "claims": [
           {
+            "depends_on_claim_ids": [],
             "evidence_ids": [
               "evd:t0.attribution.public-operator-surfaces.proof-graph",
               "evd:t0.attribution-campaign-context.runtime"
@@ -572,14 +1495,26 @@
               "feat:attribution.public-operator-surfaces"
             ],
             "id": "clm:attribution.public-operator-surfaces.t0",
+            "kind": "runtime",
+            "origin": "repo-local",
+            "relationship_integrity": {
+              "reference_count": 5,
+              "resolved_reference_count": 5,
+              "unresolved_reference_count": 0,
+              "unresolved_references": []
+            },
             "status": "published",
             "test_ids": [
               "tst:pytest.attribution.public-operator-surfaces.t0.proof-graph",
               "tst:pytest.attribution.public-surfaces.t0"
             ],
+            "tier": "T0",
             "title": "Attribution public operator surfaces T0 claim"
           },
           {
+            "depends_on_claim_ids": [
+              "clm:attribution.public-operator-surfaces.t0"
+            ],
             "evidence_ids": [
               "evd:t1.attribution-campaign-context.runtime"
             ],
@@ -587,15 +1522,27 @@
               "feat:attribution.public-operator-surfaces"
             ],
             "id": "clm:attribution.public-operator-surfaces.t1",
+            "kind": "runtime",
+            "origin": "repo-local",
+            "relationship_integrity": {
+              "reference_count": 6,
+              "resolved_reference_count": 6,
+              "unresolved_reference_count": 0,
+              "unresolved_references": []
+            },
             "status": "published",
             "test_ids": [
               "tst:pytest.attribution.association-hooks.t1",
               "tst:pytest.attribution.extract-context.t1",
               "tst:pytest.attribution.middleware.t1"
             ],
+            "tier": "T1",
             "title": "Attribution public operator surfaces T1 happy-path runtime proof"
           },
           {
+            "depends_on_claim_ids": [
+              "clm:attribution.public-operator-surfaces.t1"
+            ],
             "evidence_ids": [
               "evd:t2.attribution-campaign-context.runtime"
             ],
@@ -603,13 +1550,23 @@
               "feat:attribution.public-operator-surfaces"
             ],
             "id": "clm:attribution.public-operator-surfaces.t2",
+            "kind": "runtime",
+            "origin": "repo-local",
+            "relationship_integrity": {
+              "reference_count": 4,
+              "resolved_reference_count": 4,
+              "unresolved_reference_count": 0,
+              "unresolved_references": []
+            },
             "status": "published",
             "test_ids": [
               "tst:pytest.attribution.public-contract.t2"
             ],
+            "tier": "T2",
             "title": "Attribution public operator surfaces T2 robustness proof"
           },
           {
+            "depends_on_claim_ids": [],
             "evidence_ids": [
               "evd:t0.attribution-campaign-context.runtime"
             ],
@@ -617,13 +1574,25 @@
               "feat:attribution.extract-context"
             ],
             "id": "clm:attribution.extract-context.t0",
+            "kind": "runtime",
+            "origin": "repo-local",
+            "relationship_integrity": {
+              "reference_count": 3,
+              "resolved_reference_count": 3,
+              "unresolved_reference_count": 0,
+              "unresolved_references": []
+            },
             "status": "published",
             "test_ids": [
               "tst:pytest.attribution.constants.t0"
             ],
+            "tier": "T0",
             "title": "Attribution request context extraction T0 import and surface proof"
           },
           {
+            "depends_on_claim_ids": [
+              "clm:attribution.extract-context.t0"
+            ],
             "evidence_ids": [
               "evd:t1.attribution-campaign-context.runtime"
             ],
@@ -631,13 +1600,25 @@
               "feat:attribution.extract-context"
             ],
             "id": "clm:attribution.extract-context.t1",
+            "kind": "runtime",
+            "origin": "repo-local",
+            "relationship_integrity": {
+              "reference_count": 4,
+              "resolved_reference_count": 4,
+              "unresolved_reference_count": 0,
+              "unresolved_references": []
+            },
             "status": "published",
             "test_ids": [
               "tst:pytest.attribution.extract-context.t1"
             ],
+            "tier": "T1",
             "title": "Attribution request context extraction T1 happy-path runtime proof"
           },
           {
+            "depends_on_claim_ids": [
+              "clm:attribution.extract-context.t1"
+            ],
             "evidence_ids": [
               "evd:t2.attribution-campaign-context.runtime"
             ],
@@ -645,15 +1626,25 @@
               "feat:attribution.extract-context"
             ],
             "id": "clm:attribution.extract-context.t2",
+            "kind": "runtime",
+            "origin": "repo-local",
+            "relationship_integrity": {
+              "reference_count": 6,
+              "resolved_reference_count": 6,
+              "unresolved_reference_count": 0,
+              "unresolved_references": []
+            },
             "status": "published",
             "test_ids": [
               "tst:pytest.attribution.adoption-levels.t2",
               "tst:pytest.attribution.extract-edge-cases.t2",
               "tst:pytest.attribution.runtime-robustness.t2"
             ],
+            "tier": "T2",
             "title": "Attribution request context extraction T2 robustness proof"
           },
           {
+            "depends_on_claim_ids": [],
             "evidence_ids": [
               "evd:t0.attribution-campaign-context.runtime"
             ],
@@ -661,13 +1652,25 @@
               "feat:attribution.touch-ledger"
             ],
             "id": "clm:attribution.touch-ledger.t0",
+            "kind": "runtime",
+            "origin": "repo-local",
+            "relationship_integrity": {
+              "reference_count": 3,
+              "resolved_reference_count": 3,
+              "unresolved_reference_count": 0,
+              "unresolved_references": []
+            },
             "status": "published",
             "test_ids": [
               "tst:pytest.attribution.association-helpers.t0"
             ],
+            "tier": "T0",
             "title": "Attribution touch ledger model T0 import and surface proof"
           },
           {
+            "depends_on_claim_ids": [
+              "clm:attribution.touch-ledger.t0"
+            ],
             "evidence_ids": [
               "evd:t1.attribution-campaign-context.runtime"
             ],
@@ -675,13 +1678,25 @@
               "feat:attribution.touch-ledger"
             ],
             "id": "clm:attribution.touch-ledger.t1",
+            "kind": "runtime",
+            "origin": "repo-local",
+            "relationship_integrity": {
+              "reference_count": 4,
+              "resolved_reference_count": 4,
+              "unresolved_reference_count": 0,
+              "unresolved_references": []
+            },
             "status": "published",
             "test_ids": [
               "tst:pytest.attribution.association-hooks.t1"
             ],
+            "tier": "T1",
             "title": "Attribution touch ledger model T1 happy-path runtime proof"
           },
           {
+            "depends_on_claim_ids": [
+              "clm:attribution.touch-ledger.t1"
+            ],
             "evidence_ids": [
               "evd:t2.attribution-campaign-context.runtime"
             ],
@@ -689,14 +1704,24 @@
               "feat:attribution.touch-ledger"
             ],
             "id": "clm:attribution.touch-ledger.t2",
+            "kind": "runtime",
+            "origin": "repo-local",
+            "relationship_integrity": {
+              "reference_count": 5,
+              "resolved_reference_count": 5,
+              "unresolved_reference_count": 0,
+              "unresolved_references": []
+            },
             "status": "published",
             "test_ids": [
               "tst:pytest.attribution.adoption-levels.t2",
               "tst:pytest.attribution.table-contracts.t2"
             ],
+            "tier": "T2",
             "title": "Attribution touch ledger model T2 robustness proof"
           },
           {
+            "depends_on_claim_ids": [],
             "evidence_ids": [
               "evd:t0.attribution-campaign-context.runtime"
             ],
@@ -704,13 +1729,25 @@
               "feat:attribution.subject-association"
             ],
             "id": "clm:attribution.subject-association.t0",
+            "kind": "runtime",
+            "origin": "repo-local",
+            "relationship_integrity": {
+              "reference_count": 3,
+              "resolved_reference_count": 3,
+              "unresolved_reference_count": 0,
+              "unresolved_references": []
+            },
             "status": "published",
             "test_ids": [
               "tst:pytest.attribution.association-helpers.t0"
             ],
+            "tier": "T0",
             "title": "Attribution subject association table T0 import and surface proof"
           },
           {
+            "depends_on_claim_ids": [
+              "clm:attribution.subject-association.t0"
+            ],
             "evidence_ids": [
               "evd:t1.attribution-campaign-context.runtime"
             ],
@@ -718,13 +1755,25 @@
               "feat:attribution.subject-association"
             ],
             "id": "clm:attribution.subject-association.t1",
+            "kind": "runtime",
+            "origin": "repo-local",
+            "relationship_integrity": {
+              "reference_count": 4,
+              "resolved_reference_count": 4,
+              "unresolved_reference_count": 0,
+              "unresolved_references": []
+            },
             "status": "published",
             "test_ids": [
               "tst:pytest.attribution.association-hooks.t1"
             ],
+            "tier": "T1",
             "title": "Attribution subject association table T1 happy-path runtime proof"
           },
           {
+            "depends_on_claim_ids": [
+              "clm:attribution.subject-association.t1"
+            ],
             "evidence_ids": [
               "evd:t2.attribution-campaign-context.runtime"
             ],
@@ -732,6 +1781,14 @@
               "feat:attribution.subject-association"
             ],
             "id": "clm:attribution.subject-association.t2",
+            "kind": "runtime",
+            "origin": "repo-local",
+            "relationship_integrity": {
+              "reference_count": 9,
+              "resolved_reference_count": 9,
+              "unresolved_reference_count": 0,
+              "unresolved_references": []
+            },
             "status": "published",
             "test_ids": [
               "tst:pytest.attribution.adoption-levels.t2",
@@ -741,9 +1798,11 @@
               "tst:pytest.attribution.table-contracts.t2",
               "tst:pytest.attribution.touch-lifecycle.t2"
             ],
+            "tier": "T2",
             "title": "Attribution subject association table T2 robustness proof"
           },
           {
+            "depends_on_claim_ids": [],
             "evidence_ids": [
               "evd:t0.attribution-campaign-context.runtime"
             ],
@@ -751,13 +1810,25 @@
               "feat:attribution.resolver-validation-modes"
             ],
             "id": "clm:attribution.resolver-validation-modes.t0",
+            "kind": "runtime",
+            "origin": "repo-local",
+            "relationship_integrity": {
+              "reference_count": 3,
+              "resolved_reference_count": 3,
+              "unresolved_reference_count": 0,
+              "unresolved_references": []
+            },
             "status": "published",
             "test_ids": [
               "tst:pytest.attribution.association-helpers.t0"
             ],
+            "tier": "T0",
             "title": "Attribution subject resolver validation modes T0 import and surface proof"
           },
           {
+            "depends_on_claim_ids": [
+              "clm:attribution.resolver-validation-modes.t0"
+            ],
             "evidence_ids": [
               "evd:t1.attribution-campaign-context.runtime"
             ],
@@ -765,13 +1836,25 @@
               "feat:attribution.resolver-validation-modes"
             ],
             "id": "clm:attribution.resolver-validation-modes.t1",
+            "kind": "runtime",
+            "origin": "repo-local",
+            "relationship_integrity": {
+              "reference_count": 4,
+              "resolved_reference_count": 4,
+              "unresolved_reference_count": 0,
+              "unresolved_references": []
+            },
             "status": "published",
             "test_ids": [
               "tst:pytest.attribution.association-hooks.t1"
             ],
+            "tier": "T1",
             "title": "Attribution subject resolver validation modes T1 happy-path runtime proof"
           },
           {
+            "depends_on_claim_ids": [
+              "clm:attribution.resolver-validation-modes.t1"
+            ],
             "evidence_ids": [
               "evd:t2.attribution-campaign-context.runtime"
             ],
@@ -779,6 +1862,14 @@
               "feat:attribution.resolver-validation-modes"
             ],
             "id": "clm:attribution.resolver-validation-modes.t2",
+            "kind": "runtime",
+            "origin": "repo-local",
+            "relationship_integrity": {
+              "reference_count": 9,
+              "resolved_reference_count": 9,
+              "unresolved_reference_count": 0,
+              "unresolved_references": []
+            },
             "status": "published",
             "test_ids": [
               "tst:pytest.attribution.adoption-levels.t2",
@@ -788,9 +1879,11 @@
               "tst:pytest.attribution.resolver-validation.t2",
               "tst:pytest.attribution.runtime-robustness.t2"
             ],
+            "tier": "T2",
             "title": "Attribution subject resolver validation modes T2 robustness proof"
           },
           {
+            "depends_on_claim_ids": [],
             "evidence_ids": [
               "evd:t0.attribution-campaign-context.runtime"
             ],
@@ -798,13 +1891,25 @@
               "feat:attribution.middleware-hook-flow"
             ],
             "id": "clm:attribution.middleware-hook-flow.t0",
+            "kind": "runtime",
+            "origin": "repo-local",
+            "relationship_integrity": {
+              "reference_count": 3,
+              "resolved_reference_count": 3,
+              "unresolved_reference_count": 0,
+              "unresolved_references": []
+            },
             "status": "published",
             "test_ids": [
               "tst:pytest.attribution.public-surfaces.t0"
             ],
+            "tier": "T0",
             "title": "Attribution middleware and hook flow T0 import and surface proof"
           },
           {
+            "depends_on_claim_ids": [
+              "clm:attribution.middleware-hook-flow.t0"
+            ],
             "evidence_ids": [
               "evd:t1.attribution-campaign-context.runtime"
             ],
@@ -812,13 +1917,25 @@
               "feat:attribution.middleware-hook-flow"
             ],
             "id": "clm:attribution.middleware-hook-flow.t1",
+            "kind": "runtime",
+            "origin": "repo-local",
+            "relationship_integrity": {
+              "reference_count": 4,
+              "resolved_reference_count": 4,
+              "unresolved_reference_count": 0,
+              "unresolved_references": []
+            },
             "status": "published",
             "test_ids": [
               "tst:pytest.attribution.middleware.t1"
             ],
+            "tier": "T1",
             "title": "Attribution middleware and hook flow T1 happy-path runtime proof"
           },
           {
+            "depends_on_claim_ids": [
+              "clm:attribution.middleware-hook-flow.t1"
+            ],
             "evidence_ids": [
               "evd:t2.attribution-campaign-context.runtime"
             ],
@@ -826,6 +1943,14 @@
               "feat:attribution.middleware-hook-flow"
             ],
             "id": "clm:attribution.middleware-hook-flow.t2",
+            "kind": "runtime",
+            "origin": "repo-local",
+            "relationship_integrity": {
+              "reference_count": 8,
+              "resolved_reference_count": 8,
+              "unresolved_reference_count": 0,
+              "unresolved_references": []
+            },
             "status": "published",
             "test_ids": [
               "tst:pytest.attribution.adoption-modes.t2",
@@ -834,9 +1959,11 @@
               "tst:pytest.attribution.middleware-robustness.t2",
               "tst:pytest.attribution.runtime-robustness.t2"
             ],
+            "tier": "T2",
             "title": "Attribution middleware and hook flow T2 robustness proof"
           },
           {
+            "depends_on_claim_ids": [],
             "evidence_ids": [
               "evd:t2.attribution-campaign-context.runtime"
             ],
@@ -844,13 +1971,23 @@
               "feat:attribution.touch-lifecycle-policy"
             ],
             "id": "clm:attribution.touch-lifecycle-policy.t2",
+            "kind": "runtime",
+            "origin": "repo-local",
+            "relationship_integrity": {
+              "reference_count": 3,
+              "resolved_reference_count": 3,
+              "unresolved_reference_count": 0,
+              "unresolved_references": []
+            },
             "status": "published",
             "test_ids": [
               "tst:pytest.attribution.touch-lifecycle.t2"
             ],
+            "tier": "T2",
             "title": "Attribution first and subsequent touch policy T2 robustness claim"
           },
           {
+            "depends_on_claim_ids": [],
             "evidence_ids": [
               "evd:t2.attribution-campaign-context.runtime"
             ],
@@ -858,11 +1995,92 @@
               "feat:attribution.table-model-contracts"
             ],
             "id": "clm:attribution.table-model-contracts.t2",
+            "kind": "runtime",
+            "origin": "repo-local",
+            "relationship_integrity": {
+              "reference_count": 3,
+              "resolved_reference_count": 3,
+              "unresolved_reference_count": 0,
+              "unresolved_references": []
+            },
             "status": "published",
             "test_ids": [
               "tst:pytest.attribution.table-contracts.t2"
             ],
+            "tier": "T2",
             "title": "Attribution touch and subject link table contracts T2 robustness claim"
+          },
+          {
+            "depends_on_claim_ids": [],
+            "evidence_ids": [
+              "evd:t2.attribution-campaign-context.runtime"
+            ],
+            "feature_ids": [
+              "feat:attribution.level1-telemetry-only"
+            ],
+            "id": "clm:attribution.level1-telemetry-only.t2",
+            "kind": "runtime",
+            "origin": "repo-local",
+            "relationship_integrity": {
+              "reference_count": 3,
+              "resolved_reference_count": 3,
+              "unresolved_reference_count": 0,
+              "unresolved_references": []
+            },
+            "status": "published",
+            "test_ids": [
+              "tst:pytest.attribution.adoption-levels.t2"
+            ],
+            "tier": "T2",
+            "title": "Level 1 telemetry-only adoption T2 robustness claim"
+          },
+          {
+            "depends_on_claim_ids": [],
+            "evidence_ids": [
+              "evd:t2.attribution-campaign-context.runtime"
+            ],
+            "feature_ids": [
+              "feat:attribution.level2-generic-conversion-linkage"
+            ],
+            "id": "clm:attribution.level2-generic-conversion-linkage.t2",
+            "kind": "runtime",
+            "origin": "repo-local",
+            "relationship_integrity": {
+              "reference_count": 3,
+              "resolved_reference_count": 3,
+              "unresolved_reference_count": 0,
+              "unresolved_references": []
+            },
+            "status": "published",
+            "test_ids": [
+              "tst:pytest.attribution.adoption-levels.t2"
+            ],
+            "tier": "T2",
+            "title": "Level 2 generic conversion linkage adoption T2 robustness claim"
+          },
+          {
+            "depends_on_claim_ids": [],
+            "evidence_ids": [
+              "evd:t2.attribution-campaign-context.runtime"
+            ],
+            "feature_ids": [
+              "feat:attribution.level3-app-relational-integrity"
+            ],
+            "id": "clm:attribution.level3-app-relational-integrity.t2",
+            "kind": "runtime",
+            "origin": "repo-local",
+            "relationship_integrity": {
+              "reference_count": 3,
+              "resolved_reference_count": 3,
+              "unresolved_reference_count": 0,
+              "unresolved_references": []
+            },
+            "status": "published",
+            "test_ids": [
+              "tst:pytest.attribution.adoption-levels.t2"
+            ],
+            "tier": "T2",
+            "title": "Level 3 app-specific relational integrity adoption T2 robustness claim"
           }
         ],
         "evidence": [
@@ -871,10 +2089,19 @@
               "clm:attribution.public-operator-surfaces.t0"
             ],
             "id": "evd:t0.attribution.public-operator-surfaces.proof-graph",
+            "kind": "scaffold",
+            "origin": "repo-local",
+            "relationship_integrity": {
+              "reference_count": 2,
+              "resolved_reference_count": 2,
+              "unresolved_reference_count": 0,
+              "unresolved_references": []
+            },
             "status": "passed",
             "test_ids": [
               "tst:pytest.attribution.public-operator-surfaces.t0.proof-graph"
             ],
+            "tier": "T0",
             "title": "Attribution public operator surfaces proof-graph scaffold evidence"
           },
           {
@@ -887,6 +2114,14 @@
               "clm:attribution.touch-ledger.t0"
             ],
             "id": "evd:t0.attribution-campaign-context.runtime",
+            "kind": "pytest-run",
+            "origin": "repo-local",
+            "relationship_integrity": {
+              "reference_count": 10,
+              "resolved_reference_count": 10,
+              "unresolved_reference_count": 0,
+              "unresolved_references": []
+            },
             "status": "passed",
             "test_ids": [
               "tst:pytest.attribution.association-helpers.t0",
@@ -894,6 +2129,7 @@
               "tst:pytest.attribution.public-operator-surfaces.t0.proof-graph",
               "tst:pytest.attribution.public-surfaces.t0"
             ],
+            "tier": "T0",
             "title": "Attribution campaign context runtime T0 pytest evidence"
           },
           {
@@ -906,12 +2142,21 @@
               "clm:attribution.touch-ledger.t1"
             ],
             "id": "evd:t1.attribution-campaign-context.runtime",
+            "kind": "pytest-run",
+            "origin": "repo-local",
+            "relationship_integrity": {
+              "reference_count": 9,
+              "resolved_reference_count": 9,
+              "unresolved_reference_count": 0,
+              "unresolved_references": []
+            },
             "status": "passed",
             "test_ids": [
               "tst:pytest.attribution.association-hooks.t1",
               "tst:pytest.attribution.extract-context.t1",
               "tst:pytest.attribution.middleware.t1"
             ],
+            "tier": "T1",
             "title": "Attribution campaign context runtime T1 pytest evidence"
           },
           {
@@ -929,6 +2174,14 @@
               "clm:attribution.touch-lifecycle-policy.t2"
             ],
             "id": "evd:t2.attribution-campaign-context.runtime",
+            "kind": "pytest-run",
+            "origin": "repo-local",
+            "relationship_integrity": {
+              "reference_count": 23,
+              "resolved_reference_count": 23,
+              "unresolved_reference_count": 0,
+              "unresolved_references": []
+            },
             "status": "passed",
             "test_ids": [
               "tst:pytest.attribution.adoption-levels.t2",
@@ -944,6 +2197,7 @@
               "tst:pytest.attribution.table-contracts.t2",
               "tst:pytest.attribution.touch-lifecycle.t2"
             ],
+            "tier": "T2",
             "title": "Attribution campaign context runtime T2 pytest evidence"
           }
         ],
@@ -956,6 +2210,18 @@
             ],
             "id": "feat:attribution.public-operator-surfaces",
             "implementation_status": "implemented",
+            "origin": "repo-local",
+            "parent_feature_ids": [],
+            "relationship_integrity": {
+              "reference_count": 10,
+              "resolved_reference_count": 10,
+              "unresolved_reference_count": 0,
+              "unresolved_references": []
+            },
+            "requires": [],
+            "spec_ids": [
+              "spc:1000"
+            ],
             "test_ids": [
               "tst:pytest.attribution.association-hooks.t1",
               "tst:pytest.attribution.extract-context.t1",
@@ -974,6 +2240,18 @@
             ],
             "id": "feat:attribution.extract-context",
             "implementation_status": "implemented",
+            "origin": "repo-local",
+            "parent_feature_ids": [],
+            "relationship_integrity": {
+              "reference_count": 9,
+              "resolved_reference_count": 9,
+              "unresolved_reference_count": 0,
+              "unresolved_references": []
+            },
+            "requires": [],
+            "spec_ids": [
+              "spc:1000"
+            ],
             "test_ids": [
               "tst:pytest.attribution.adoption-levels.t2",
               "tst:pytest.attribution.constants.t0",
@@ -991,6 +2269,18 @@
             ],
             "id": "feat:attribution.touch-ledger",
             "implementation_status": "implemented",
+            "origin": "repo-local",
+            "parent_feature_ids": [],
+            "relationship_integrity": {
+              "reference_count": 8,
+              "resolved_reference_count": 8,
+              "unresolved_reference_count": 0,
+              "unresolved_references": []
+            },
+            "requires": [],
+            "spec_ids": [
+              "spc:1000"
+            ],
             "test_ids": [
               "tst:pytest.attribution.adoption-levels.t2",
               "tst:pytest.attribution.association-helpers.t0",
@@ -1007,6 +2297,18 @@
             ],
             "id": "feat:attribution.subject-association",
             "implementation_status": "implemented",
+            "origin": "repo-local",
+            "parent_feature_ids": [],
+            "relationship_integrity": {
+              "reference_count": 12,
+              "resolved_reference_count": 12,
+              "unresolved_reference_count": 0,
+              "unresolved_references": []
+            },
+            "requires": [],
+            "spec_ids": [
+              "spc:1000"
+            ],
             "test_ids": [
               "tst:pytest.attribution.adoption-levels.t2",
               "tst:pytest.attribution.adoption-modes.t2",
@@ -1027,6 +2329,18 @@
             ],
             "id": "feat:attribution.resolver-validation-modes",
             "implementation_status": "implemented",
+            "origin": "repo-local",
+            "parent_feature_ids": [],
+            "relationship_integrity": {
+              "reference_count": 12,
+              "resolved_reference_count": 12,
+              "unresolved_reference_count": 0,
+              "unresolved_references": []
+            },
+            "requires": [],
+            "spec_ids": [
+              "spc:1000"
+            ],
             "test_ids": [
               "tst:pytest.attribution.adoption-levels.t2",
               "tst:pytest.attribution.adoption-modes.t2",
@@ -1047,6 +2361,18 @@
             ],
             "id": "feat:attribution.middleware-hook-flow",
             "implementation_status": "implemented",
+            "origin": "repo-local",
+            "parent_feature_ids": [],
+            "relationship_integrity": {
+              "reference_count": 11,
+              "resolved_reference_count": 11,
+              "unresolved_reference_count": 0,
+              "unresolved_references": []
+            },
+            "requires": [],
+            "spec_ids": [
+              "spc:1000"
+            ],
             "test_ids": [
               "tst:pytest.attribution.adoption-modes.t2",
               "tst:pytest.attribution.hook-robustness.t2",
@@ -1064,6 +2390,18 @@
             ],
             "id": "feat:attribution.touch-lifecycle-policy",
             "implementation_status": "implemented",
+            "origin": "repo-local",
+            "parent_feature_ids": [],
+            "relationship_integrity": {
+              "reference_count": 3,
+              "resolved_reference_count": 3,
+              "unresolved_reference_count": 0,
+              "unresolved_references": []
+            },
+            "requires": [],
+            "spec_ids": [
+              "spc:1000"
+            ],
             "test_ids": [
               "tst:pytest.attribution.touch-lifecycle.t2"
             ],
@@ -1075,6 +2413,18 @@
             ],
             "id": "feat:attribution.table-model-contracts",
             "implementation_status": "implemented",
+            "origin": "repo-local",
+            "parent_feature_ids": [],
+            "relationship_integrity": {
+              "reference_count": 3,
+              "resolved_reference_count": 3,
+              "unresolved_reference_count": 0,
+              "unresolved_references": []
+            },
+            "requires": [],
+            "spec_ids": [
+              "spc:1000"
+            ],
             "test_ids": [
               "tst:pytest.attribution.table-contracts.t2"
             ],
@@ -1086,6 +2436,18 @@
             ],
             "id": "feat:attribution.level1-telemetry-only",
             "implementation_status": "implemented",
+            "origin": "repo-local",
+            "parent_feature_ids": [],
+            "relationship_integrity": {
+              "reference_count": 3,
+              "resolved_reference_count": 3,
+              "unresolved_reference_count": 0,
+              "unresolved_references": []
+            },
+            "requires": [],
+            "spec_ids": [
+              "spc:1000"
+            ],
             "test_ids": [
               "tst:pytest.attribution.adoption-levels.t2"
             ],
@@ -1097,6 +2459,18 @@
             ],
             "id": "feat:attribution.level2-generic-conversion-linkage",
             "implementation_status": "implemented",
+            "origin": "repo-local",
+            "parent_feature_ids": [],
+            "relationship_integrity": {
+              "reference_count": 3,
+              "resolved_reference_count": 3,
+              "unresolved_reference_count": 0,
+              "unresolved_references": []
+            },
+            "requires": [],
+            "spec_ids": [
+              "spc:1000"
+            ],
             "test_ids": [
               "tst:pytest.attribution.adoption-levels.t2"
             ],
@@ -1108,6 +2482,18 @@
             ],
             "id": "feat:attribution.level3-app-relational-integrity",
             "implementation_status": "implemented",
+            "origin": "repo-local",
+            "parent_feature_ids": [],
+            "relationship_integrity": {
+              "reference_count": 3,
+              "resolved_reference_count": 3,
+              "unresolved_reference_count": 0,
+              "unresolved_references": []
+            },
+            "requires": [],
+            "spec_ids": [
+              "spc:1000"
+            ],
             "test_ids": [
               "tst:pytest.attribution.adoption-levels.t2"
             ],
@@ -1118,6 +2504,10 @@
         "profiles": [],
         "releases": [
           {
+            "boundary_id": "bnd:default",
+            "boundary_ids": [
+              "bnd:default"
+            ],
             "claim_ids": [
               "clm:attribution.extract-context.t0",
               "clm:attribution.extract-context.t1",
@@ -1150,109 +2540,1443 @@
               "evd:t2.attribution-campaign-context.runtime"
             ],
             "id": "rel:0.1.0",
-            "status": "published"
+            "relationship_integrity": {
+              "reference_count": 29,
+              "resolved_reference_count": 29,
+              "unresolved_reference_count": 0,
+              "unresolved_references": []
+            },
+            "status": "published",
+            "version": "0.1.0"
           }
         ],
+        "risks": [],
+        "scopes": [],
         "specs": [
           {
+            "adr_ids": [],
+            "content_sha256": "c79f0b978890f6171499b54d52c57bb729aba326161f4082970078c4644a7eb5",
             "id": "spc:0600",
+            "immutable": true,
+            "kind": "normative",
+            "managed": true,
+            "number": 600,
+            "origin": "ssot-origin",
+            "package_version": "0.2.22",
+            "relationship_integrity": {
+              "reference_count": 0,
+              "resolved_reference_count": 0,
+              "unresolved_reference_count": 0,
+              "unresolved_references": []
+            },
             "status": "draft",
             "title": "Registry core"
           },
           {
+            "adr_ids": [],
+            "content_sha256": "76877b7d828fb5afaed77ff6192b87c9c85b14bf52aef64e4266a05ddcc3d450",
             "id": "spc:0601",
+            "immutable": true,
+            "kind": "operational",
+            "managed": true,
+            "number": 601,
+            "origin": "ssot-origin",
+            "package_version": "0.2.22",
+            "relationship_integrity": {
+              "reference_count": 0,
+              "resolved_reference_count": 0,
+              "unresolved_reference_count": 0,
+              "unresolved_references": []
+            },
             "status": "draft",
             "title": "CLI"
           },
           {
+            "adr_ids": [],
+            "content_sha256": "7f3cec23e9ef35987abed2425761403846ff12107f09275d208a34b18877691a",
             "id": "spc:0602",
+            "immutable": true,
+            "kind": "normative",
+            "managed": true,
+            "number": 602,
+            "origin": "ssot-origin",
+            "package_version": "0.2.22",
+            "relationship_integrity": {
+              "reference_count": 0,
+              "resolved_reference_count": 0,
+              "unresolved_reference_count": 0,
+              "unresolved_references": []
+            },
             "status": "draft",
             "title": "Graph model"
           },
           {
+            "adr_ids": [],
+            "content_sha256": "95a2d80dfc288f98004c38fe7ae351fd2e9a34fa4c01a85438261e9dfb645a28",
             "id": "spc:0603",
+            "immutable": true,
+            "kind": "normative",
+            "managed": true,
+            "number": 603,
+            "origin": "ssot-origin",
+            "package_version": "0.2.22",
+            "relationship_integrity": {
+              "reference_count": 0,
+              "resolved_reference_count": 0,
+              "unresolved_reference_count": 0,
+              "unresolved_references": []
+            },
             "status": "draft",
             "title": "Feature lifecycle"
           },
           {
+            "adr_ids": [],
+            "content_sha256": "66c7c37854e0aba1c870ed540cc16f0731a0a02d20cf7dda32a5ae4c1485493e",
             "id": "spc:0604",
+            "immutable": true,
+            "kind": "normative",
+            "managed": true,
+            "number": 604,
+            "origin": "ssot-origin",
+            "package_version": "0.2.22",
+            "relationship_integrity": {
+              "reference_count": 0,
+              "resolved_reference_count": 0,
+              "unresolved_reference_count": 0,
+              "unresolved_references": []
+            },
             "status": "draft",
             "title": "Claim statuses"
           },
           {
+            "adr_ids": [
+              "adr:0605",
+              "adr:0625"
+            ],
+            "content_sha256": "701944adf0241f2a2500deef79865cb456d49c0d1294867c16babed16f6f55a3",
             "id": "spc:0605",
+            "immutable": true,
+            "kind": "normative",
+            "managed": true,
+            "number": 605,
+            "origin": "ssot-origin",
+            "package_version": "0.2.22",
+            "relationship_integrity": {
+              "reference_count": 2,
+              "resolved_reference_count": 2,
+              "unresolved_reference_count": 0,
+              "unresolved_references": []
+            },
             "status": "draft",
             "title": "Claim tiers"
           },
           {
+            "adr_ids": [],
+            "content_sha256": "a5f248f3e87188e5b9581737897617e7037fd409329cf4e9c969e5796841af1b",
             "id": "spc:0606",
+            "immutable": true,
+            "kind": "operational",
+            "managed": true,
+            "number": 606,
+            "origin": "ssot-origin",
+            "package_version": "0.2.22",
+            "relationship_integrity": {
+              "reference_count": 0,
+              "resolved_reference_count": 0,
+              "unresolved_reference_count": 0,
+              "unresolved_references": []
+            },
             "status": "draft",
             "title": "Snapshots and reports"
           },
           {
+            "adr_ids": [],
+            "content_sha256": "eb9a8b0e31af1039fd50a68aee09852952841e0c41d409998b5666b019935d84",
             "id": "spc:0607",
+            "immutable": true,
+            "kind": "operational",
+            "managed": true,
+            "number": 607,
+            "origin": "ssot-origin",
+            "package_version": "0.2.22",
+            "relationship_integrity": {
+              "reference_count": 0,
+              "resolved_reference_count": 0,
+              "unresolved_reference_count": 0,
+              "unresolved_references": []
+            },
             "status": "draft",
             "title": "Repository policy"
           },
           {
+            "adr_ids": [
+              "adr:0608",
+              "adr:0625"
+            ],
+            "content_sha256": "beb4ef7c4c5b23b4e2584f48ebd76031a5a2912274a1f57d8e1c66dc4517a5e5",
             "id": "spc:0608",
+            "immutable": true,
+            "kind": "normative",
+            "managed": true,
+            "number": 608,
+            "origin": "ssot-origin",
+            "package_version": "0.2.22",
+            "relationship_integrity": {
+              "reference_count": 2,
+              "resolved_reference_count": 2,
+              "unresolved_reference_count": 0,
+              "unresolved_references": []
+            },
             "status": "draft",
             "title": "Gates and fences"
           },
           {
+            "adr_ids": [],
+            "content_sha256": "c455d87054c8bbf1b55c40a251fd9922f8e95f65eeabcf3e2987785e16854abc",
             "id": "spc:0609",
+            "immutable": true,
+            "kind": "normative",
+            "managed": true,
+            "number": 609,
+            "origin": "ssot-origin",
+            "package_version": "0.2.22",
+            "relationship_integrity": {
+              "reference_count": 0,
+              "resolved_reference_count": 0,
+              "unresolved_reference_count": 0,
+              "unresolved_references": []
+            },
             "status": "draft",
             "title": "ID normalization"
           },
           {
+            "adr_ids": [],
+            "content_sha256": "71a8e7258bc6e8c8d63845728be37b41436217384d27588eac7920315484c275",
             "id": "spc:0610",
+            "immutable": true,
+            "kind": "normative",
+            "managed": true,
+            "number": 610,
+            "origin": "ssot-origin",
+            "package_version": "0.2.22",
+            "relationship_integrity": {
+              "reference_count": 0,
+              "resolved_reference_count": 0,
+              "unresolved_reference_count": 0,
+              "unresolved_references": []
+            },
             "status": "draft",
             "title": "File tree"
           },
           {
+            "adr_ids": [],
+            "content_sha256": "3a8a981fc8d95929a7c937c718c166d4cce7ed4885b65708e0be1ef97e1b237c",
             "id": "spc:0611",
+            "immutable": true,
+            "kind": "normative",
+            "managed": true,
+            "number": 611,
+            "origin": "ssot-origin",
+            "package_version": "0.2.22",
+            "relationship_integrity": {
+              "reference_count": 0,
+              "resolved_reference_count": 0,
+              "unresolved_reference_count": 0,
+              "unresolved_references": []
+            },
             "status": "draft",
             "title": "Planning horizons"
           },
           {
+            "adr_ids": [],
+            "content_sha256": "fd6a1047fa709d327ca7269a27c1a8b6f791e47f6142ec312f928ecc0cfe60d0",
             "id": "spc:0612",
+            "immutable": true,
+            "kind": "operational",
+            "managed": true,
+            "number": 612,
+            "origin": "ssot-origin",
+            "package_version": "0.2.22",
+            "relationship_integrity": {
+              "reference_count": 0,
+              "resolved_reference_count": 0,
+              "unresolved_reference_count": 0,
+              "unresolved_references": []
+            },
             "status": "draft",
             "title": "Python API"
           },
           {
+            "adr_ids": [],
+            "content_sha256": "02335c693367079a28bb0507d7e002b3648b7e5c1e1d07e028ee2a4387eb61b2",
             "id": "spc:0613",
+            "immutable": true,
+            "kind": "normative",
+            "managed": true,
+            "number": 613,
+            "origin": "ssot-origin",
+            "package_version": "0.2.22",
+            "relationship_integrity": {
+              "reference_count": 0,
+              "resolved_reference_count": 0,
+              "unresolved_reference_count": 0,
+              "unresolved_references": []
+            },
             "status": "draft",
             "title": "SSOT path-length policy"
           },
           {
+            "adr_ids": [],
+            "content_sha256": "7c54a7f2f79278e82a68662c958b0c51fa2329d797be17261c13958b38d27e1f",
             "id": "spc:0614",
+            "immutable": true,
+            "kind": "normative",
+            "managed": true,
+            "number": 614,
+            "origin": "ssot-origin",
+            "package_version": "0.2.22",
+            "relationship_integrity": {
+              "reference_count": 0,
+              "resolved_reference_count": 0,
+              "unresolved_reference_count": 0,
+              "unresolved_references": []
+            },
             "status": "draft",
             "title": "Profile evaluation and boundary resolution"
           },
           {
+            "adr_ids": [
+              "adr:0614"
+            ],
+            "content_sha256": "9d87ea9bc60ac4b53994f60ed3df460d1420cf433740e0142cb99c0f881e83fc",
             "id": "spc:0615",
+            "immutable": true,
+            "kind": "normative",
+            "managed": true,
+            "number": 615,
+            "origin": "ssot-origin",
+            "package_version": "0.2.22",
+            "relationship_integrity": {
+              "reference_count": 1,
+              "resolved_reference_count": 1,
+              "unresolved_reference_count": 0,
+              "unresolved_references": []
+            },
             "status": "accepted",
             "title": "Typed SPEC-to-ADR linking"
           },
           {
+            "adr_ids": [
+              "adr:0616"
+            ],
+            "content_sha256": "30c7c4d6bd9d5f78fbaeb929bc52f97dec20e7dd29cbd544cf35e328619bf5a3",
             "id": "spc:0616",
+            "immutable": true,
+            "kind": "normative",
+            "managed": true,
+            "number": 616,
+            "origin": "ssot-origin",
+            "package_version": "0.2.22",
+            "relationship_integrity": {
+              "reference_count": 1,
+              "resolved_reference_count": 1,
+              "unresolved_reference_count": 0,
+              "unresolved_references": []
+            },
             "status": "accepted",
             "title": "Out-of-bounds implementation disposition"
           },
           {
+            "adr_ids": [
+              "adr:0617",
+              "adr:0625"
+            ],
+            "content_sha256": "bb254b8c05f2c113a42d25f6222d6e5cddaaa9dab5ad28ff904d99c02cb5147b",
             "id": "spc:0617",
+            "immutable": true,
+            "kind": "normative",
+            "managed": true,
+            "number": 617,
+            "origin": "ssot-origin",
+            "package_version": "0.2.22",
+            "relationship_integrity": {
+              "reference_count": 2,
+              "resolved_reference_count": 2,
+              "unresolved_reference_count": 0,
+              "unresolved_references": []
+            },
             "status": "accepted",
             "title": "Feature implementation claim ceilings"
           },
           {
+            "adr_ids": [
+              "adr:0618",
+              "adr:0625"
+            ],
+            "content_sha256": "1f56291a8f6cfe0c554fa6afb7c767f104a39c861c3a5888654fb6dd81faffda",
             "id": "spc:0618",
+            "immutable": true,
+            "kind": "governance",
+            "managed": true,
+            "number": 618,
+            "origin": "ssot-origin",
+            "package_version": "0.2.22",
+            "relationship_integrity": {
+              "reference_count": 2,
+              "resolved_reference_count": 2,
+              "unresolved_reference_count": 0,
+              "unresolved_references": []
+            },
             "status": "draft",
             "title": "Local Release Assurance Candidate Scope"
           },
           {
+            "adr_ids": [
+              "adr:0618",
+              "adr:0619"
+            ],
+            "content_sha256": "a24347c777cb78924c5e34ecee47cf115a1f567e5732a9a8aad76868b97ff38b",
             "id": "spc:0619",
+            "immutable": true,
+            "kind": "operational",
+            "managed": true,
+            "number": 619,
+            "origin": "ssot-origin",
+            "package_version": "0.2.22",
+            "relationship_integrity": {
+              "reference_count": 2,
+              "resolved_reference_count": 2,
+              "unresolved_reference_count": 0,
+              "unresolved_references": []
+            },
             "status": "draft",
             "title": "Governed Source Snapshot Contract"
+          },
+          {
+            "adr_ids": [
+              "adr:0618",
+              "adr:0620"
+            ],
+            "content_sha256": "8fb31bedeb0a2acebbc1455c2cbd40f15ed318cf848c7a4eadf38a85a1fbce55",
+            "id": "spc:0620",
+            "immutable": true,
+            "kind": "operational",
+            "managed": true,
+            "number": 620,
+            "origin": "ssot-origin",
+            "package_version": "0.2.22",
+            "relationship_integrity": {
+              "reference_count": 2,
+              "resolved_reference_count": 2,
+              "unresolved_reference_count": 0,
+              "unresolved_references": []
+            },
+            "status": "draft",
+            "title": "Local Evidence Bundle Contract"
+          },
+          {
+            "adr_ids": [
+              "adr:0618",
+              "adr:0620"
+            ],
+            "content_sha256": "b8af0f9cd37b930dc011bb4a916a80526a853c0f5643a9193e8606418e71f3ca",
+            "id": "spc:0621",
+            "immutable": true,
+            "kind": "operational",
+            "managed": true,
+            "number": 621,
+            "origin": "ssot-origin",
+            "package_version": "0.2.22",
+            "relationship_integrity": {
+              "reference_count": 2,
+              "resolved_reference_count": 2,
+              "unresolved_reference_count": 0,
+              "unresolved_references": []
+            },
+            "status": "draft",
+            "title": "Output Artifact Manifest Contract"
+          },
+          {
+            "adr_ids": [
+              "adr:0618",
+              "adr:0619",
+              "adr:0620",
+              "adr:0625"
+            ],
+            "content_sha256": "a4f13a8dd9dfa97c448430cfdfd4f01478efd56a67beab81f277b4fc58f6fac8",
+            "id": "spc:0622",
+            "immutable": true,
+            "kind": "governance",
+            "managed": true,
+            "number": 622,
+            "origin": "ssot-origin",
+            "package_version": "0.2.22",
+            "relationship_integrity": {
+              "reference_count": 4,
+              "resolved_reference_count": 4,
+              "unresolved_reference_count": 0,
+              "unresolved_references": []
+            },
+            "status": "draft",
+            "title": "Local Release Verification And Gate Contract"
+          },
+          {
+            "adr_ids": [
+              "adr:0621"
+            ],
+            "content_sha256": "26a356f57380b0d717e2f9f6effda2b0d17eef615530cfba2b3c314d10a3e7c7",
+            "id": "spc:0623",
+            "immutable": true,
+            "kind": "normative",
+            "managed": true,
+            "number": 623,
+            "origin": "ssot-origin",
+            "package_version": "0.2.22",
+            "relationship_integrity": {
+              "reference_count": 1,
+              "resolved_reference_count": 1,
+              "unresolved_reference_count": 0,
+              "unresolved_references": []
+            },
+            "status": "draft",
+            "title": "General rules of interpretation"
+          },
+          {
+            "adr_ids": [
+              "adr:0622"
+            ],
+            "content_sha256": "c05d38e2d9a76463f1e01bd238acf21dc8e15a2bec2d94c4959572a06fe44d8b",
+            "id": "spc:0624",
+            "immutable": true,
+            "kind": "normative",
+            "managed": true,
+            "number": 624,
+            "origin": "ssot-origin",
+            "package_version": "0.2.22",
+            "relationship_integrity": {
+              "reference_count": 1,
+              "resolved_reference_count": 1,
+              "unresolved_reference_count": 0,
+              "unresolved_references": []
+            },
+            "status": "draft",
+            "title": "SSOT definitions"
+          },
+          {
+            "adr_ids": [
+              "adr:0625",
+              "adr:0626"
+            ],
+            "content_sha256": "b5c184dc6536c2137921841ed7f1098f5131a8e4aa53c920baeb704b45782d39",
+            "id": "spc:0625",
+            "immutable": true,
+            "kind": "normative",
+            "managed": true,
+            "number": 625,
+            "origin": "ssot-origin",
+            "package_version": "0.2.22",
+            "relationship_integrity": {
+              "reference_count": 2,
+              "resolved_reference_count": 2,
+              "unresolved_reference_count": 0,
+              "unresolved_references": []
+            },
+            "status": "draft",
+            "title": "Claim Tier Gates"
+          },
+          {
+            "adr_ids": [
+              "adr:0626"
+            ],
+            "content_sha256": "2ba8a6fa6e29b7b41efac87c3a8e6a6210a37ae31f20749469bbbc81571faaff",
+            "id": "spc:0626",
+            "immutable": true,
+            "kind": "normative",
+            "managed": true,
+            "number": 626,
+            "origin": "ssot-origin",
+            "package_version": "0.2.22",
+            "relationship_integrity": {
+              "reference_count": 1,
+              "resolved_reference_count": 1,
+              "unresolved_reference_count": 0,
+              "unresolved_references": []
+            },
+            "status": "draft",
+            "title": "External Validation Evidence"
+          },
+          {
+            "adr_ids": [
+              "adr:0627"
+            ],
+            "content_sha256": "6a48b3fe42433487657312d62bac6067de4b120fce1e16c92828023056b25d9f",
+            "id": "spc:0627",
+            "immutable": true,
+            "kind": "normative",
+            "managed": true,
+            "number": 627,
+            "origin": "ssot-origin",
+            "package_version": "0.2.22",
+            "relationship_integrity": {
+              "reference_count": 1,
+              "resolved_reference_count": 1,
+              "unresolved_reference_count": 0,
+              "unresolved_references": []
+            },
+            "status": "accepted",
+            "title": "Feature parent link contract"
+          },
+          {
+            "adr_ids": [
+              "adr:0627"
+            ],
+            "content_sha256": "d0c715b100fba7641d94513dd67e0eb3df32b3a0724bab8431dc9f94f9ac0de0",
+            "id": "spc:0628",
+            "immutable": true,
+            "kind": "normative",
+            "managed": true,
+            "number": 628,
+            "origin": "ssot-origin",
+            "package_version": "0.2.22",
+            "relationship_integrity": {
+              "reference_count": 1,
+              "resolved_reference_count": 1,
+              "unresolved_reference_count": 0,
+              "unresolved_references": []
+            },
+            "status": "accepted",
+            "title": "Feature parent CLI contract"
+          },
+          {
+            "adr_ids": [
+              "adr:0628"
+            ],
+            "content_sha256": "96c0a26e9ef42dc8ed28990593417d9fc82e7b4612ee37c26119c9307251dc57",
+            "id": "spc:0629",
+            "immutable": true,
+            "kind": "operational",
+            "managed": true,
+            "number": 629,
+            "origin": "ssot-origin",
+            "package_version": "0.2.22",
+            "relationship_integrity": {
+              "reference_count": 1,
+              "resolved_reference_count": 1,
+              "unresolved_reference_count": 0,
+              "unresolved_references": []
+            },
+            "status": "draft",
+            "title": "SSOT MCP and CLI surface parity contract"
+          },
+          {
+            "adr_ids": [
+              "adr:0629"
+            ],
+            "content_sha256": "43f21b80234ffe6d46bec68bb2ce15796c60ddfb840b3c6eac30d0fb5f2ada1c",
+            "id": "spc:0630",
+            "immutable": true,
+            "kind": "operational",
+            "managed": true,
+            "number": 630,
+            "origin": "ssot-origin",
+            "package_version": "0.2.22",
+            "relationship_integrity": {
+              "reference_count": 1,
+              "resolved_reference_count": 1,
+              "unresolved_reference_count": 0,
+              "unresolved_references": []
+            },
+            "status": "draft",
+            "title": "SSOT MCP registry repair authority"
+          },
+          {
+            "adr_ids": [
+              "adr:0630"
+            ],
+            "content_sha256": "92368411abea05efb9011796b3237757a7a7951b2514e1c397735cbb6db58761",
+            "id": "spc:0631",
+            "immutable": true,
+            "kind": "operational",
+            "managed": true,
+            "number": 631,
+            "origin": "ssot-origin",
+            "package_version": "0.2.22",
+            "relationship_integrity": {
+              "reference_count": 1,
+              "resolved_reference_count": 1,
+              "unresolved_reference_count": 0,
+              "unresolved_references": []
+            },
+            "status": "draft",
+            "title": "Scoped maturation blocker contract"
+          },
+          {
+            "adr_ids": [
+              "adr:0631",
+              "adr:0628"
+            ],
+            "content_sha256": "1ececb1679b93253cc1b74c69be9b2aa4a6c1f024122dd509e06e9f4460ebe0f",
+            "id": "spc:0632",
+            "immutable": true,
+            "kind": "operational",
+            "managed": true,
+            "number": 632,
+            "origin": "ssot-origin",
+            "package_version": "0.2.22",
+            "relationship_integrity": {
+              "reference_count": 2,
+              "resolved_reference_count": 2,
+              "unresolved_reference_count": 0,
+              "unresolved_references": []
+            },
+            "status": "draft",
+            "title": "MCP upgrade delegation contract"
+          },
+          {
+            "adr_ids": [
+              "adr:0632",
+              "adr:0635",
+              "adr:0636"
+            ],
+            "content_sha256": "431eafa5fc9855cffa52ea104fc5e4844af43e0d9d9d68322088510b3fafa68b",
+            "id": "spc:0633",
+            "immutable": true,
+            "kind": "operational",
+            "managed": true,
+            "number": 633,
+            "origin": "ssot-origin",
+            "package_version": "0.2.22",
+            "relationship_integrity": {
+              "reference_count": 3,
+              "resolved_reference_count": 3,
+              "unresolved_reference_count": 0,
+              "unresolved_references": []
+            },
+            "status": "draft",
+            "title": "Targeted scaffold repair contract"
+          },
+          {
+            "adr_ids": [
+              "adr:0629",
+              "adr:0630",
+              "adr:0632"
+            ],
+            "content_sha256": "907cae7c9507fa38ef15289797da24834ea29655ac4e9701e499a159c3fd2973",
+            "id": "spc:0634",
+            "immutable": true,
+            "kind": "operational",
+            "managed": true,
+            "number": 634,
+            "origin": "ssot-origin",
+            "package_version": "0.2.22",
+            "relationship_integrity": {
+              "reference_count": 3,
+              "resolved_reference_count": 3,
+              "unresolved_reference_count": 0,
+              "unresolved_references": []
+            },
+            "status": "draft",
+            "title": "Worker actionability and repair loop"
+          },
+          {
+            "adr_ids": [
+              "adr:0633"
+            ],
+            "content_sha256": "7eb90a861c39f042c4f85afc354d4bf91848ac080f9f303ccf38bd8697bcc3af",
+            "id": "spc:0635",
+            "immutable": true,
+            "kind": "operational",
+            "managed": true,
+            "number": 635,
+            "origin": "ssot-origin",
+            "package_version": "0.2.22",
+            "relationship_integrity": {
+              "reference_count": 1,
+              "resolved_reference_count": 1,
+              "unresolved_reference_count": 0,
+              "unresolved_references": []
+            },
+            "status": "accepted",
+            "title": "Registry save validation contract"
+          },
+          {
+            "adr_ids": [
+              "adr:0634",
+              "adr:0635"
+            ],
+            "content_sha256": "b8b4c192ad444c94f5598a50ea99328501bd38c086c9a700ea36acff50f79290",
+            "id": "spc:0636",
+            "immutable": true,
+            "kind": "normative",
+            "managed": true,
+            "number": 636,
+            "origin": "ssot-origin",
+            "package_version": "0.2.22",
+            "relationship_integrity": {
+              "reference_count": 2,
+              "resolved_reference_count": 2,
+              "unresolved_reference_count": 0,
+              "unresolved_references": []
+            },
+            "status": "draft",
+            "title": "Proof Graph Assurance Contract"
+          },
+          {
+            "adr_ids": [
+              "adr:0635"
+            ],
+            "content_sha256": "7406c7010d0721873e1523862c85f827dff2b025d14409e0556365ea30baac68",
+            "id": "spc:0637",
+            "immutable": true,
+            "kind": "operational",
+            "managed": true,
+            "number": 637,
+            "origin": "ssot-origin",
+            "package_version": "0.2.22",
+            "relationship_integrity": {
+              "reference_count": 1,
+              "resolved_reference_count": 1,
+              "unresolved_reference_count": 0,
+              "unresolved_references": []
+            },
+            "status": "draft",
+            "title": "Proof Graph Materialization And Certification Flow"
+          },
+          {
+            "adr_ids": [
+              "adr:0601",
+              "adr:0627",
+              "adr:0636"
+            ],
+            "content_sha256": "a21078a9495e4a3ea591d5c8cfcc09628021d6a6c5e228e426568ceb064c2078",
+            "id": "spc:0638",
+            "immutable": true,
+            "kind": "operational",
+            "managed": true,
+            "number": 638,
+            "origin": "ssot-origin",
+            "package_version": "0.2.22",
+            "relationship_integrity": {
+              "reference_count": 3,
+              "resolved_reference_count": 3,
+              "unresolved_reference_count": 0,
+              "unresolved_references": []
+            },
+            "status": "draft",
+            "title": "Feature create default proof scaffold contract"
+          },
+          {
+            "adr_ids": [
+              "adr:0637",
+              "adr:0610"
+            ],
+            "content_sha256": "bac0d4578d55c117fa614c9d4211d19af5cf18e2ece70d8790490b40da2d6584",
+            "id": "spc:0639",
+            "immutable": true,
+            "kind": "normative",
+            "managed": true,
+            "number": 639,
+            "origin": "ssot-origin",
+            "package_version": "0.2.22",
+            "relationship_integrity": {
+              "reference_count": 2,
+              "resolved_reference_count": 2,
+              "unresolved_reference_count": 0,
+              "unresolved_references": []
+            },
+            "status": "draft",
+            "title": "Forward-only pack schema compatibility contract"
+          },
+          {
+            "adr_ids": [
+              "adr:1000"
+            ],
+            "content_sha256": "1910331d8694769521fbed5e24bbd366485e52dbd7e9eba9f50bc161af56c145",
+            "id": "spc:1000",
+            "immutable": false,
+            "kind": "governance",
+            "managed": false,
+            "number": 1000,
+            "origin": "repo-local",
+            "package_version": "0.2.22",
+            "relationship_integrity": {
+              "reference_count": 1,
+              "resolved_reference_count": 1,
+              "unresolved_reference_count": 0,
+              "unresolved_references": []
+            },
+            "status": "accepted",
+            "title": "Attribution public operator surfaces"
+          },
+          {
+            "adr_ids": [],
+            "content_sha256": "d5e671b19839e4df018390eeb61a43f71e166c6e33fc2918145f4ed967cd1530",
+            "id": "spc:pack.marketing-attribution-conversion.iab-video-ad-measurement-requirements",
+            "immutable": true,
+            "kind": "governance",
+            "managed": true,
+            "number": 57742836,
+            "origin": "extension-pack",
+            "package_version": "0.1.1",
+            "relationship_integrity": {
+              "reference_count": 0,
+              "resolved_reference_count": 0,
+              "unresolved_reference_count": 0,
+              "unresolved_references": []
+            },
+            "status": "accepted",
+            "title": "IAB Video Ad Measurement Requirements"
+          },
+          {
+            "adr_ids": [],
+            "content_sha256": "07d52ff83a21a5b3e537b34fdc5d67c464c99f3b245cc4dd706a67f1f99fb46a",
+            "id": "spc:pack.url-query-attribution-foundations.fetch-navigation-attribution-context-requirements",
+            "immutable": true,
+            "kind": "governance",
+            "managed": true,
+            "number": 60542381,
+            "origin": "extension-pack",
+            "package_version": "0.1.1",
+            "relationship_integrity": {
+              "reference_count": 0,
+              "resolved_reference_count": 0,
+              "unresolved_reference_count": 0,
+              "unresolved_references": []
+            },
+            "status": "accepted",
+            "title": "Fetch And Navigation Attribution Context Requirements"
+          },
+          {
+            "adr_ids": [],
+            "content_sha256": "85dc89ed960a49ce223fa7674d00e8a5fdf0213d0c5fe99d9030d9cca4a3ecf9",
+            "id": "spc:pack.marketing-attribution-conversion.meta-conversions-api-requirements",
+            "immutable": true,
+            "kind": "governance",
+            "managed": true,
+            "number": 134619984,
+            "origin": "extension-pack",
+            "package_version": "0.1.1",
+            "relationship_integrity": {
+              "reference_count": 0,
+              "resolved_reference_count": 0,
+              "unresolved_reference_count": 0,
+              "unresolved_references": []
+            },
+            "status": "accepted",
+            "title": "Meta Conversions API Requirements"
+          },
+          {
+            "adr_ids": [],
+            "content_sha256": "8504a46f070b4f4a88c2fae162cad98b37f903b9c83c0bed6d450c773dc1ad2e",
+            "id": "spc:pack.marketing-attribution-conversion.microsoft-url-tracking-requirements",
+            "immutable": true,
+            "kind": "governance",
+            "managed": true,
+            "number": 157179633,
+            "origin": "extension-pack",
+            "package_version": "0.1.1",
+            "relationship_integrity": {
+              "reference_count": 0,
+              "resolved_reference_count": 0,
+              "unresolved_reference_count": 0,
+              "unresolved_references": []
+            },
+            "status": "accepted",
+            "title": "Microsoft URL Tracking Requirements"
+          },
+          {
+            "adr_ids": [],
+            "content_sha256": "0da2790d21f72e911172bde7c26a82a17ce166c21f2052a3a5290bdf507a7ac8",
+            "id": "spc:pack.marketing-attribution-conversion.microsoft-uet-capi-requirements",
+            "immutable": true,
+            "kind": "governance",
+            "managed": true,
+            "number": 180547209,
+            "origin": "extension-pack",
+            "package_version": "0.1.1",
+            "relationship_integrity": {
+              "reference_count": 0,
+              "resolved_reference_count": 0,
+              "unresolved_reference_count": 0,
+              "unresolved_references": []
+            },
+            "status": "accepted",
+            "title": "Microsoft UET CAPI Requirements"
+          },
+          {
+            "adr_ids": [],
+            "content_sha256": "168100c2927fad956e4d6d7565e237d7edd8b4a53e24575551bdaa3759a9c0b3",
+            "id": "spc:pack.marketing-attribution-conversion.google-ads-valuetrack-parameter-requirements",
+            "immutable": true,
+            "kind": "governance",
+            "managed": true,
+            "number": 247858143,
+            "origin": "extension-pack",
+            "package_version": "0.1.1",
+            "relationship_integrity": {
+              "reference_count": 0,
+              "resolved_reference_count": 0,
+              "unresolved_reference_count": 0,
+              "unresolved_references": []
+            },
+            "status": "accepted",
+            "title": "Google Ads ValueTrack Parameter Requirements"
+          },
+          {
+            "adr_ids": [],
+            "content_sha256": "95a6448e534505525d07577bef821baa343ad1fe057fe8b67ebfef2c033251ba",
+            "id": "spc:pack.marketing-attribution-conversion.meta-pixel-conversion-event-requirements",
+            "immutable": true,
+            "kind": "governance",
+            "managed": true,
+            "number": 277029913,
+            "origin": "extension-pack",
+            "package_version": "0.1.1",
+            "relationship_integrity": {
+              "reference_count": 0,
+              "resolved_reference_count": 0,
+              "unresolved_reference_count": 0,
+              "unresolved_references": []
+            },
+            "status": "accepted",
+            "title": "Meta Pixel Conversion Event Requirements"
+          },
+          {
+            "adr_ids": [],
+            "content_sha256": "bc0702b7be63e77441357e3ea34116e80698600b34777cf48684decb3f981a75",
+            "id": "spc:pack.url-query-attribution-foundations.uri-query-syntax-requirements",
+            "immutable": true,
+            "kind": "governance",
+            "managed": true,
+            "number": 372570155,
+            "origin": "extension-pack",
+            "package_version": "0.1.1",
+            "relationship_integrity": {
+              "reference_count": 0,
+              "resolved_reference_count": 0,
+              "unresolved_reference_count": 0,
+              "unresolved_references": []
+            },
+            "status": "accepted",
+            "title": "URI Query Syntax Requirements"
+          },
+          {
+            "adr_ids": [],
+            "content_sha256": "40babd5717eeacf0f417400269aeb29e54267ecb51213dcdd4ed3c66564ba8e8",
+            "id": "spc:pack.marketing-attribution-conversion.linkedin-conversions-api-requirements",
+            "immutable": true,
+            "kind": "governance",
+            "managed": true,
+            "number": 382982351,
+            "origin": "extension-pack",
+            "package_version": "0.1.1",
+            "relationship_integrity": {
+              "reference_count": 0,
+              "resolved_reference_count": 0,
+              "unresolved_reference_count": 0,
+              "unresolved_references": []
+            },
+            "status": "accepted",
+            "title": "LinkedIn Conversions API Requirements"
+          },
+          {
+            "adr_ids": [],
+            "content_sha256": "2b36bed00871f249cad3659cd58e3ba462beaee660d717d78fda01157a6941dc",
+            "id": "spc:pack.url-query-attribution-foundations.campaign-query-parameter-requirements",
+            "immutable": true,
+            "kind": "governance",
+            "managed": true,
+            "number": 395382193,
+            "origin": "extension-pack",
+            "package_version": "0.1.1",
+            "relationship_integrity": {
+              "reference_count": 0,
+              "resolved_reference_count": 0,
+              "unresolved_reference_count": 0,
+              "unresolved_references": []
+            },
+            "status": "accepted",
+            "title": "Campaign Query Parameter Requirements"
+          },
+          {
+            "adr_ids": [],
+            "content_sha256": "26343f9321585a68503c90ebaf6a7561910a17fbb1e584485be38fe4772244f6",
+            "id": "spc:pack.marketing-attribution-conversion.iab-click-measurement-quality-requirements",
+            "immutable": true,
+            "kind": "governance",
+            "managed": true,
+            "number": 422230747,
+            "origin": "extension-pack",
+            "package_version": "0.1.1",
+            "relationship_integrity": {
+              "reference_count": 0,
+              "resolved_reference_count": 0,
+              "unresolved_reference_count": 0,
+              "unresolved_references": []
+            },
+            "status": "accepted",
+            "title": "IAB Click Measurement Quality Requirements"
+          },
+          {
+            "adr_ids": [],
+            "content_sha256": "9bea976a1f4bfd2c2d1cbbd8d9f0a69c9307a98a0772d080e93a7619375a633e",
+            "id": "spc:pack.marketing-attribution-conversion.w3c-attribution-reporting-requirements",
+            "immutable": true,
+            "kind": "governance",
+            "managed": true,
+            "number": 437451167,
+            "origin": "extension-pack",
+            "package_version": "0.1.1",
+            "relationship_integrity": {
+              "reference_count": 0,
+              "resolved_reference_count": 0,
+              "unresolved_reference_count": 0,
+              "unresolved_references": []
+            },
+            "status": "accepted",
+            "title": "W3C Attribution Reporting Requirements"
+          },
+          {
+            "adr_ids": [],
+            "content_sha256": "d0093df77362f0f678cd3c518bdc9509ecc33aa87fa582c56f45201ed7bd0a3f",
+            "id": "spc:pack.url-query-attribution-foundations.http-request-attribution-context-requirements",
+            "immutable": true,
+            "kind": "governance",
+            "managed": true,
+            "number": 470440808,
+            "origin": "extension-pack",
+            "package_version": "0.1.1",
+            "relationship_integrity": {
+              "reference_count": 0,
+              "resolved_reference_count": 0,
+              "unresolved_reference_count": 0,
+              "unresolved_references": []
+            },
+            "status": "accepted",
+            "title": "HTTP Request Attribution Context Requirements"
+          },
+          {
+            "adr_ids": [],
+            "content_sha256": "8ac6a7e94de12d1561effe696c0939c7af2ccafd10a6bbd880a10e94783dcc16",
+            "id": "spc:pack.marketing-attribution-conversion.tiktok-events-api-requirements",
+            "immutable": true,
+            "kind": "governance",
+            "managed": true,
+            "number": 487444199,
+            "origin": "extension-pack",
+            "package_version": "0.1.1",
+            "relationship_integrity": {
+              "reference_count": 0,
+              "resolved_reference_count": 0,
+              "unresolved_reference_count": 0,
+              "unresolved_references": []
+            },
+            "status": "accepted",
+            "title": "TikTok Events API Requirements"
+          },
+          {
+            "adr_ids": [],
+            "content_sha256": "3a556346a675f73cb84c9c005cba28f3b29b96074158524bfe43a8a7a931a714",
+            "id": "spc:pack.marketing-attribution-conversion.google-ads-auto-tagging-click-id-requirements",
+            "immutable": true,
+            "kind": "governance",
+            "managed": true,
+            "number": 521270895,
+            "origin": "extension-pack",
+            "package_version": "0.1.1",
+            "relationship_integrity": {
+              "reference_count": 0,
+              "resolved_reference_count": 0,
+              "unresolved_reference_count": 0,
+              "unresolved_references": []
+            },
+            "status": "accepted",
+            "title": "Google Ads Auto-Tagging Click ID Requirements"
+          },
+          {
+            "adr_ids": [],
+            "content_sha256": "3afca9a3715d340b9aea353974793bf40a3d0df30bf2d3f06866d2c83f9106ce",
+            "id": "spc:pack.marketing-attribution-conversion.iab-ecapi-conversion-event-requirements",
+            "immutable": true,
+            "kind": "governance",
+            "managed": true,
+            "number": 607244927,
+            "origin": "extension-pack",
+            "package_version": "0.1.1",
+            "relationship_integrity": {
+              "reference_count": 0,
+              "resolved_reference_count": 0,
+              "unresolved_reference_count": 0,
+              "unresolved_references": []
+            },
+            "status": "accepted",
+            "title": "IAB ECAPI Conversion Event Requirements"
+          },
+          {
+            "adr_ids": [],
+            "content_sha256": "a1ec5fd248c7543945a5adf5d7f14b3a38bef132b0b8d846a916b5aa96111b92",
+            "id": "spc:pack.url-query-attribution-foundations.referrer-policy-observability-requirements",
+            "immutable": true,
+            "kind": "governance",
+            "managed": true,
+            "number": 698811276,
+            "origin": "extension-pack",
+            "package_version": "0.1.1",
+            "relationship_integrity": {
+              "reference_count": 0,
+              "resolved_reference_count": 0,
+              "unresolved_reference_count": 0,
+              "unresolved_references": []
+            },
+            "status": "accepted",
+            "title": "Referrer Policy Observability Requirements"
+          },
+          {
+            "adr_ids": [],
+            "content_sha256": "9cbb3c83c3eaf251ed5b468f2040ffad070e4b31114acec6fbf2c15ef8303eb2",
+            "id": "spc:pack.url-query-attribution-foundations.ga4-traffic-source-mapping-requirements",
+            "immutable": true,
+            "kind": "governance",
+            "managed": true,
+            "number": 702516726,
+            "origin": "extension-pack",
+            "package_version": "0.1.1",
+            "relationship_integrity": {
+              "reference_count": 0,
+              "resolved_reference_count": 0,
+              "unresolved_reference_count": 0,
+              "unresolved_references": []
+            },
+            "status": "accepted",
+            "title": "GA4 Traffic Source Mapping Requirements"
+          },
+          {
+            "adr_ids": [],
+            "content_sha256": "e56cb1d1998fed5aaf0b6ceaca32e7a794ccbf46b9e29f77d1d40e6d1b19a0cc",
+            "id": "spc:pack.marketing-attribution-conversion.microsoft-offline-conversion-requirements",
+            "immutable": true,
+            "kind": "governance",
+            "managed": true,
+            "number": 716760398,
+            "origin": "extension-pack",
+            "package_version": "0.1.1",
+            "relationship_integrity": {
+              "reference_count": 0,
+              "resolved_reference_count": 0,
+              "unresolved_reference_count": 0,
+              "unresolved_references": []
+            },
+            "status": "accepted",
+            "title": "Microsoft Offline Conversion Requirements"
+          },
+          {
+            "adr_ids": [],
+            "content_sha256": "ba595152ced495127947c2ca903206c7222f5d1b2676de2f6973783ee2b3f70f",
+            "id": "spc:pack.url-query-attribution-foundations.structured-field-attribution-metadata-requirements",
+            "immutable": true,
+            "kind": "governance",
+            "managed": true,
+            "number": 732649409,
+            "origin": "extension-pack",
+            "package_version": "0.1.1",
+            "relationship_integrity": {
+              "reference_count": 0,
+              "resolved_reference_count": 0,
+              "unresolved_reference_count": 0,
+              "unresolved_references": []
+            },
+            "status": "accepted",
+            "title": "Structured Field Attribution Metadata Requirements"
+          },
+          {
+            "adr_ids": [],
+            "content_sha256": "009eb1df60e6e3df41648e378b1855ab03e62603689f8700cbbf946561c6e66d",
+            "id": "spc:pack.marketing-attribution-conversion.google-ads-enhanced-conversion-lead-requirements",
+            "immutable": true,
+            "kind": "governance",
+            "managed": true,
+            "number": 768676948,
+            "origin": "extension-pack",
+            "package_version": "0.1.1",
+            "relationship_integrity": {
+              "reference_count": 0,
+              "resolved_reference_count": 0,
+              "unresolved_reference_count": 0,
+              "unresolved_references": []
+            },
+            "status": "accepted",
+            "title": "Google Ads Enhanced Conversion Lead Requirements"
+          },
+          {
+            "adr_ids": [],
+            "content_sha256": "5ff87ffd96b6a28b28ee411563ae47081062aca50f8d81728713a056bd9c64cf",
+            "id": "spc:pack.url-query-attribution-foundations.http-caching-attribution-observability-requirements",
+            "immutable": true,
+            "kind": "governance",
+            "managed": true,
+            "number": 769529942,
+            "origin": "extension-pack",
+            "package_version": "0.1.1",
+            "relationship_integrity": {
+              "reference_count": 0,
+              "resolved_reference_count": 0,
+              "unresolved_reference_count": 0,
+              "unresolved_references": []
+            },
+            "status": "accepted",
+            "title": "HTTP Caching Attribution Observability Requirements"
+          },
+          {
+            "adr_ids": [],
+            "content_sha256": "0af6b7713c656730c86c760c7f8b8f491f3fae9e6abf9d65a25e811f8afbf93e",
+            "id": "spc:pack.url-query-attribution-foundations.cookie-attribution-state-requirements",
+            "immutable": true,
+            "kind": "governance",
+            "managed": true,
+            "number": 782116126,
+            "origin": "extension-pack",
+            "package_version": "0.1.1",
+            "relationship_integrity": {
+              "reference_count": 0,
+              "resolved_reference_count": 0,
+              "unresolved_reference_count": 0,
+              "unresolved_references": []
+            },
+            "status": "accepted",
+            "title": "Cookie Attribution State Requirements"
+          },
+          {
+            "adr_ids": [],
+            "content_sha256": "2efffd62de455e27434ecefaa4fdda8a925a29a8cb3d03fe1bf144f0e878e420",
+            "id": "spc:pack.marketing-attribution-conversion.mrc-measurement-quality-reference-requirements",
+            "immutable": true,
+            "kind": "governance",
+            "managed": true,
+            "number": 785128655,
+            "origin": "extension-pack",
+            "package_version": "0.1.1",
+            "relationship_integrity": {
+              "reference_count": 0,
+              "resolved_reference_count": 0,
+              "unresolved_reference_count": 0,
+              "unresolved_references": []
+            },
+            "status": "accepted",
+            "title": "MRC Measurement Quality Reference Requirements"
+          },
+          {
+            "adr_ids": [],
+            "content_sha256": "09f41d0b3b0a2077feb0a894f81d4b73a978c6000e7657a0344a09e96a2a4de9",
+            "id": "spc:pack.marketing-attribution-conversion.google-ads-click-conversion-upload-requirements",
+            "immutable": true,
+            "kind": "governance",
+            "managed": true,
+            "number": 797284788,
+            "origin": "extension-pack",
+            "package_version": "0.1.1",
+            "relationship_integrity": {
+              "reference_count": 0,
+              "resolved_reference_count": 0,
+              "unresolved_reference_count": 0,
+              "unresolved_references": []
+            },
+            "status": "accepted",
+            "title": "Google Ads Click Conversion Upload Requirements"
+          },
+          {
+            "adr_ids": [],
+            "content_sha256": "9ecb483d860f99561a1c2a108ca1aaa3cc2dfc2ff9a458009fb077f3bcf099cc",
+            "id": "spc:pack.marketing-attribution-conversion.linkedin-conversion-source-requirements",
+            "immutable": true,
+            "kind": "governance",
+            "managed": true,
+            "number": 851677841,
+            "origin": "extension-pack",
+            "package_version": "0.1.1",
+            "relationship_integrity": {
+              "reference_count": 0,
+              "resolved_reference_count": 0,
+              "unresolved_reference_count": 0,
+              "unresolved_references": []
+            },
+            "status": "accepted",
+            "title": "LinkedIn Conversion Source Requirements"
+          },
+          {
+            "adr_ids": [],
+            "content_sha256": "0ef231b660fcab5e227a9303844a125d4b0f98ae0b33155b42d6574446316676",
+            "id": "spc:pack.url-query-attribution-foundations.default-channel-classification-requirements",
+            "immutable": true,
+            "kind": "governance",
+            "managed": true,
+            "number": 852149576,
+            "origin": "extension-pack",
+            "package_version": "0.1.1",
+            "relationship_integrity": {
+              "reference_count": 0,
+              "resolved_reference_count": 0,
+              "unresolved_reference_count": 0,
+              "unresolved_references": []
+            },
+            "status": "accepted",
+            "title": "Default Channel Classification Requirements"
+          },
+          {
+            "adr_ids": [],
+            "content_sha256": "a2ccd4e0abc550f15c5f916084fe7054df1955f5ec70fb67c6bb5b0609e938fb",
+            "id": "spc:pack.url-query-attribution-foundations.well-known-attribution-metadata-requirements",
+            "immutable": true,
+            "kind": "governance",
+            "managed": true,
+            "number": 863918177,
+            "origin": "extension-pack",
+            "package_version": "0.1.1",
+            "relationship_integrity": {
+              "reference_count": 0,
+              "resolved_reference_count": 0,
+              "unresolved_reference_count": 0,
+              "unresolved_references": []
+            },
+            "status": "accepted",
+            "title": "Well-Known Attribution Metadata Requirements"
+          },
+          {
+            "adr_ids": [],
+            "content_sha256": "9498c363174ee249933c25356ce15eb2b1235facf4183d3bcedec17014fbbb05",
+            "id": "spc:pack.url-query-attribution-foundations.web-storage-attribution-state-requirements",
+            "immutable": true,
+            "kind": "governance",
+            "managed": true,
+            "number": 878582376,
+            "origin": "extension-pack",
+            "package_version": "0.1.1",
+            "relationship_integrity": {
+              "reference_count": 0,
+              "resolved_reference_count": 0,
+              "unresolved_reference_count": 0,
+              "unresolved_references": []
+            },
+            "status": "accepted",
+            "title": "Web Storage Attribution State Requirements"
+          },
+          {
+            "adr_ids": [],
+            "content_sha256": "76e5304fdb8b52933448fff11fb3dbad31c0beb2425ad525f94ce2cb08d718c0",
+            "id": "spc:pack.marketing-attribution-conversion.iab-admap-clean-room-attribution-requirements",
+            "immutable": true,
+            "kind": "governance",
+            "managed": true,
+            "number": 878757952,
+            "origin": "extension-pack",
+            "package_version": "0.1.1",
+            "relationship_integrity": {
+              "reference_count": 0,
+              "resolved_reference_count": 0,
+              "unresolved_reference_count": 0,
+              "unresolved_references": []
+            },
+            "status": "accepted",
+            "title": "IAB ADMaP Clean Room Attribution Requirements"
           }
         ],
         "tests": [
@@ -1268,6 +3992,14 @@
               "feat:attribution.public-operator-surfaces"
             ],
             "id": "tst:pytest.attribution.public-operator-surfaces.t0.proof-graph",
+            "kind": "pytest",
+            "origin": "repo-local",
+            "relationship_integrity": {
+              "reference_count": 4,
+              "resolved_reference_count": 4,
+              "unresolved_reference_count": 0,
+              "unresolved_references": []
+            },
             "status": "passing",
             "title": "Attribution public operator surfaces T0 proof-graph scaffold test"
           },
@@ -1282,6 +4014,14 @@
               "feat:attribution.extract-context"
             ],
             "id": "tst:pytest.attribution.constants.t0",
+            "kind": "pytest",
+            "origin": "repo-local",
+            "relationship_integrity": {
+              "reference_count": 3,
+              "resolved_reference_count": 3,
+              "unresolved_reference_count": 0,
+              "unresolved_references": []
+            },
             "status": "passing",
             "title": "Attribution constants T0 test"
           },
@@ -1298,6 +4038,14 @@
               "feat:attribution.public-operator-surfaces"
             ],
             "id": "tst:pytest.attribution.public-surfaces.t0",
+            "kind": "pytest",
+            "origin": "repo-local",
+            "relationship_integrity": {
+              "reference_count": 5,
+              "resolved_reference_count": 5,
+              "unresolved_reference_count": 0,
+              "unresolved_references": []
+            },
             "status": "passing",
             "title": "Attribution public surfaces T0 test"
           },
@@ -1316,6 +4064,14 @@
               "feat:attribution.touch-ledger"
             ],
             "id": "tst:pytest.attribution.association-helpers.t0",
+            "kind": "pytest",
+            "origin": "repo-local",
+            "relationship_integrity": {
+              "reference_count": 7,
+              "resolved_reference_count": 7,
+              "unresolved_reference_count": 0,
+              "unresolved_references": []
+            },
             "status": "passing",
             "title": "Attribution association helper T0 test"
           },
@@ -1332,6 +4088,14 @@
               "feat:attribution.public-operator-surfaces"
             ],
             "id": "tst:pytest.attribution.extract-context.t1",
+            "kind": "pytest",
+            "origin": "repo-local",
+            "relationship_integrity": {
+              "reference_count": 5,
+              "resolved_reference_count": 5,
+              "unresolved_reference_count": 0,
+              "unresolved_references": []
+            },
             "status": "passing",
             "title": "Attribution extraction T1 test"
           },
@@ -1352,6 +4116,14 @@
               "feat:attribution.touch-ledger"
             ],
             "id": "tst:pytest.attribution.association-hooks.t1",
+            "kind": "pytest",
+            "origin": "repo-local",
+            "relationship_integrity": {
+              "reference_count": 9,
+              "resolved_reference_count": 9,
+              "unresolved_reference_count": 0,
+              "unresolved_references": []
+            },
             "status": "passing",
             "title": "Attribution association and hook T1 test"
           },
@@ -1368,6 +4140,14 @@
               "feat:attribution.public-operator-surfaces"
             ],
             "id": "tst:pytest.attribution.middleware.t1",
+            "kind": "pytest",
+            "origin": "repo-local",
+            "relationship_integrity": {
+              "reference_count": 5,
+              "resolved_reference_count": 5,
+              "unresolved_reference_count": 0,
+              "unresolved_references": []
+            },
             "status": "passing",
             "title": "Attribution middleware T1 test"
           },
@@ -1382,6 +4162,14 @@
               "feat:attribution.resolver-validation-modes"
             ],
             "id": "tst:pytest.attribution.resolver-validation.t2",
+            "kind": "pytest",
+            "origin": "repo-local",
+            "relationship_integrity": {
+              "reference_count": 3,
+              "resolved_reference_count": 3,
+              "unresolved_reference_count": 0,
+              "unresolved_references": []
+            },
             "status": "passing",
             "title": "Attribution resolver validation T2 test"
           },
@@ -1396,6 +4184,14 @@
               "feat:attribution.middleware-hook-flow"
             ],
             "id": "tst:pytest.attribution.middleware-no-signal.t2",
+            "kind": "pytest",
+            "origin": "repo-local",
+            "relationship_integrity": {
+              "reference_count": 3,
+              "resolved_reference_count": 3,
+              "unresolved_reference_count": 0,
+              "unresolved_references": []
+            },
             "status": "passing",
             "title": "Attribution middleware no-signal T2 test"
           },
@@ -1414,6 +4210,14 @@
               "feat:attribution.middleware-hook-flow"
             ],
             "id": "tst:pytest.attribution.runtime-robustness.t2",
+            "kind": "pytest",
+            "origin": "repo-local",
+            "relationship_integrity": {
+              "reference_count": 7,
+              "resolved_reference_count": 7,
+              "unresolved_reference_count": 0,
+              "unresolved_references": []
+            },
             "status": "passing",
             "title": "Attribution runtime robustness T2 test"
           },
@@ -1428,6 +4232,14 @@
               "feat:attribution.extract-context"
             ],
             "id": "tst:pytest.attribution.extract-edge-cases.t2",
+            "kind": "pytest",
+            "origin": "repo-local",
+            "relationship_integrity": {
+              "reference_count": 3,
+              "resolved_reference_count": 3,
+              "unresolved_reference_count": 0,
+              "unresolved_references": []
+            },
             "status": "passing",
             "title": "Attribution extraction edge cases T2 test"
           },
@@ -1444,6 +4256,14 @@
               "feat:attribution.resolver-validation-modes"
             ],
             "id": "tst:pytest.attribution.association-validation.t2",
+            "kind": "pytest",
+            "origin": "repo-local",
+            "relationship_integrity": {
+              "reference_count": 5,
+              "resolved_reference_count": 5,
+              "unresolved_reference_count": 0,
+              "unresolved_references": []
+            },
             "status": "passing",
             "title": "Attribution association validation T2 test"
           },
@@ -1462,6 +4282,14 @@
               "feat:attribution.resolver-validation-modes"
             ],
             "id": "tst:pytest.attribution.hook-robustness.t2",
+            "kind": "pytest",
+            "origin": "repo-local",
+            "relationship_integrity": {
+              "reference_count": 7,
+              "resolved_reference_count": 7,
+              "unresolved_reference_count": 0,
+              "unresolved_references": []
+            },
             "status": "passing",
             "title": "Attribution hook robustness T2 test"
           },
@@ -1476,6 +4304,14 @@
               "feat:attribution.middleware-hook-flow"
             ],
             "id": "tst:pytest.attribution.middleware-robustness.t2",
+            "kind": "pytest",
+            "origin": "repo-local",
+            "relationship_integrity": {
+              "reference_count": 3,
+              "resolved_reference_count": 3,
+              "unresolved_reference_count": 0,
+              "unresolved_references": []
+            },
             "status": "passing",
             "title": "Attribution middleware robustness T2 test"
           },
@@ -1490,6 +4326,14 @@
               "feat:attribution.public-operator-surfaces"
             ],
             "id": "tst:pytest.attribution.public-contract.t2",
+            "kind": "pytest",
+            "origin": "repo-local",
+            "relationship_integrity": {
+              "reference_count": 3,
+              "resolved_reference_count": 3,
+              "unresolved_reference_count": 0,
+              "unresolved_references": []
+            },
             "status": "passing",
             "title": "Attribution public contract T2 test"
           },
@@ -1508,6 +4352,14 @@
               "feat:attribution.middleware-hook-flow"
             ],
             "id": "tst:pytest.attribution.adoption-modes.t2",
+            "kind": "pytest",
+            "origin": "repo-local",
+            "relationship_integrity": {
+              "reference_count": 7,
+              "resolved_reference_count": 7,
+              "unresolved_reference_count": 0,
+              "unresolved_references": []
+            },
             "status": "passing",
             "title": "Attribution adoption modes T2 test"
           },
@@ -1524,6 +4376,14 @@
               "feat:attribution.subject-association"
             ],
             "id": "tst:pytest.attribution.touch-lifecycle.t2",
+            "kind": "pytest",
+            "origin": "repo-local",
+            "relationship_integrity": {
+              "reference_count": 5,
+              "resolved_reference_count": 5,
+              "unresolved_reference_count": 0,
+              "unresolved_references": []
+            },
             "status": "passing",
             "title": "Attribution first and subsequent touch lifecycle T2 test"
           },
@@ -1542,6 +4402,14 @@
               "feat:attribution.subject-association"
             ],
             "id": "tst:pytest.attribution.table-contracts.t2",
+            "kind": "pytest",
+            "origin": "repo-local",
+            "relationship_integrity": {
+              "reference_count": 7,
+              "resolved_reference_count": 7,
+              "unresolved_reference_count": 0,
+              "unresolved_references": []
+            },
             "status": "passing",
             "title": "Attribution table model contracts T2 test"
           },
@@ -1568,27 +4436,45 @@
               "feat:attribution.resolver-validation-modes"
             ],
             "id": "tst:pytest.attribution.adoption-levels.t2",
+            "kind": "pytest",
+            "origin": "repo-local",
+            "relationship_integrity": {
+              "reference_count": 15,
+              "resolved_reference_count": 15,
+              "unresolved_reference_count": 0,
+              "unresolved_references": []
+            },
             "status": "passing",
             "title": "Attribution adoption levels T2 test"
           }
         ]
       },
       "inventory_truncated": {
-        "adrs": 33,
+        "adrs": 0,
         "boundaries": 0,
-        "claims": 3,
+        "claims": 0,
         "evidence": 0,
         "features": 0,
         "issues": 0,
         "profiles": 0,
         "releases": 0,
-        "specs": 51,
+        "risks": 0,
+        "scopes": 0,
+        "specs": 0,
         "tests": 0
       },
-      "observed_at": "2026-08-10T13:12:47Z",
+      "observed_at": "2026-08-12T08:39:27Z",
       "present": true,
       "raw_url": "https://raw.githubusercontent.com/tigrbl/attribution-campaign-context/master/.ssot/registry.json",
       "registry_url": "https://github.com/tigrbl/attribution-campaign-context/blob/master/.ssot/registry.json",
+      "relationship_integrity": {
+        "reference_count": 417,
+        "relationship_closed": true,
+        "resolved_reference_count": 417,
+        "unresolved_reference_count": 0,
+        "unresolved_references": [],
+        "unresolved_references_omitted": 0
+      },
       "schema_version": "0.7.0",
       "source_sha256": "25472f6ea17e5e787569c018cb95457639233edad187a84bd0d9e5cdbd898a5f",
       "status_counts": {
@@ -1613,6 +4499,8 @@
         "releases": {
           "published": 1
         },
+        "risks": {},
+        "scopes": {},
         "specs": {
           "accepted": 37,
           "draft": 34

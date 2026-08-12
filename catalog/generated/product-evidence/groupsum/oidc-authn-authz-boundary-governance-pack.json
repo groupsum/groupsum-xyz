@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-10T13:12:47Z",
+  "generated_at": "2026-08-12T08:39:07Z",
   "packages": [
     {
       "claim_boundary": "Publication is reported only when confirmed by the named public registry.",
@@ -63,13 +63,13 @@
       "evidence": [
         {
           "kind": "source",
-          "observed_at": "2026-08-10T13:12:47Z",
+          "observed_at": "2026-08-12T08:39:07Z",
           "url": "https://github.com/groupsum/oidc-authn-authz-boundary-governance-pack/blob/master/pyproject.toml"
         }
       ],
       "id": "package:pypi:oidc-authn-authz-boundary-governance-pack:groupsum/oidc-authn-authz-boundary-governance-pack:pyproject.toml",
       "kind": "package",
-      "latest_version": "0.1.1.dev1",
+      "latest_version": "0.2.0.dev1",
       "legal_evidence": [
         {
           "evidence_type": "repository.manifest",
@@ -95,7 +95,7 @@
       "license_status": "observed",
       "manifest_path": "pyproject.toml",
       "name": "oidc-authn-authz-boundary-governance-pack",
-      "observed_at": "2026-08-10T13:12:47Z",
+      "observed_at": "2026-08-12T08:39:07Z",
       "owner": "groupsum",
       "package_kind": "package-candidate",
       "private": false,
@@ -117,21 +117,13 @@
       "technologies": [
         "Python"
       ],
-      "version_declared": "0.1.1.dev1"
+      "version_declared": "0.2.0.dev1"
     }
   ],
   "repository": {
     "archived": false,
     "claim_boundary": "No canonical .ssot/registry.json was observed; repository, release, deployment, and live-service states are reported separately.",
     "commit_activity": [
-      {
-        "count": 0,
-        "date": "2026-07-12"
-      },
-      {
-        "count": 0,
-        "date": "2026-07-13"
-      },
       {
         "count": 0,
         "date": "2026-07-14"
@@ -241,14 +233,27 @@
         "date": "2026-08-09"
       },
       {
-        "count": 0,
+        "count": 1,
         "date": "2026-08-10"
+      },
+      {
+        "count": 0,
+        "date": "2026-08-11"
+      },
+      {
+        "count": 0,
+        "date": "2026-08-12"
       }
     ],
     "contributors": [
       {
-        "contributions": 4,
+        "account_type": "User",
+        "anonymous": false,
+        "avatar_url": "https://avatars.githubusercontent.com/u/25079070?v=4",
+        "contributions": 5,
+        "id": "25079070",
         "login": "cobycloud",
+        "name": null,
         "url": "https://github.com/cobycloud"
       }
     ],
@@ -260,7 +265,7 @@
     "evidence": [
       {
         "kind": "source",
-        "observed_at": "2026-08-10T13:12:47Z",
+        "observed_at": "2026-08-12T08:39:19Z",
         "url": "https://github.com/groupsum/oidc-authn-authz-boundary-governance-pack"
       }
     ],
@@ -275,12 +280,12 @@
     },
     "latest_commit": {
       "author": "cobycloud",
-      "authored_at": "2026-08-09T11:33:30Z",
-      "committed_at": "2026-08-09T11:33:30Z",
+      "authored_at": "2026-08-10T13:09:35Z",
+      "committed_at": "2026-08-10T13:09:35Z",
       "committer": "cobycloud",
-      "message": "Restore OIDC claim boundary governance",
-      "sha": "538f8bf1dd3b6e5bf8b2d1d2d6ce042896161207",
-      "url": "https://github.com/groupsum/oidc-authn-authz-boundary-governance-pack/commit/538f8bf1dd3b6e5bf8b2d1d2d6ce042896161207"
+      "message": "Refine governance document ownership",
+      "sha": "67129f4c9ed6c0f38f677bccc5bfa6cbb6fec075",
+      "url": "https://github.com/groupsum/oidc-authn-authz-boundary-governance-pack/commit/67129f4c9ed6c0f38f677bccc5bfa6cbb6fec075"
     },
     "latest_deployment": null,
     "latest_release": null,
@@ -306,7 +311,7 @@
     ],
     "license": "Apache-2.0",
     "metrics": {
-      "commits": 4,
+      "commits": 5,
       "contributors": 1,
       "deployments": 0,
       "environments": 0,
@@ -315,12 +320,12 @@
       "open_issues": 0,
       "packages": 1,
       "related_resources": 1,
-      "size_kb": 60,
+      "size_kb": 64,
       "stars": 0,
       "watchers": 0
     },
     "name": "oidc-authn-authz-boundary-governance-pack",
-    "observed_at": "2026-08-10T13:12:47Z",
+    "observed_at": "2026-08-12T08:39:19Z",
     "owner": "groupsum",
     "package_ids": [
       "package:pypi:oidc-authn-authz-boundary-governance-pack:groupsum/oidc-authn-authz-boundary-governance-pack:pyproject.toml"
@@ -330,7 +335,7 @@
         "ecosystem": "pypi",
         "id": "package:pypi:oidc-authn-authz-boundary-governance-pack:groupsum/oidc-authn-authz-boundary-governance-pack:pyproject.toml",
         "last_published_at": null,
-        "latest_version": "0.1.1.dev1",
+        "latest_version": "0.2.0.dev1",
         "license_expression": "Apache-2.0",
         "license_status": "observed",
         "license_url": "https://github.com/groupsum/oidc-authn-authz-boundary-governance-pack/blob/master/LICENSE",
@@ -345,7 +350,7 @@
         "route": "/catalog/packages/pypi/oidc-authn-authz-boundary-governance-pack-3d19bc7d"
       }
     ],
-    "pushed_at": "2026-08-09T11:33:30Z",
+    "pushed_at": "2026-08-10T13:09:55Z",
     "related_resources": [
       {
         "evidence_type": "repository.tree",
@@ -353,7 +358,7 @@
         "legal_evidence": [],
         "legal_inherits_from": "repository:groupsum/oidc-authn-authz-boundary-governance-pack",
         "name": "docs/governance",
-        "observed_at": "2026-08-10T13:12:47Z",
+        "observed_at": "2026-08-12T08:39:19Z",
         "path": "docs/governance",
         "repository": "groupsum/oidc-authn-authz-boundary-governance-pack",
         "repository_route": "/catalog/repositories/groupsum/oidc-authn-authz-boundary-governance-pack",
@@ -373,7 +378,7 @@
       "coverage": {},
       "governed": false,
       "observation_status": "not_found",
-      "observed_at": "2026-08-10T13:12:47Z",
+      "observed_at": "2026-08-12T08:39:20Z",
       "present": false,
       "registry_url": null,
       "status_counts": {},
@@ -384,7 +389,7 @@
     ],
     "template": false,
     "topics": [],
-    "updated_at": "2026-08-09T11:33:50Z",
+    "updated_at": "2026-08-10T13:10:39Z",
     "url": "https://github.com/groupsum/oidc-authn-authz-boundary-governance-pack",
     "visibility": "public"
   },

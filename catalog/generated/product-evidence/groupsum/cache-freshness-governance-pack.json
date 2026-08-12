@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-10T13:12:47Z",
+  "generated_at": "2026-08-12T08:39:07Z",
   "packages": [
     {
       "claim_boundary": "Publication is reported only when confirmed by the named public registry.",
@@ -54,7 +54,7 @@
       "evidence": [
         {
           "kind": "registry",
-          "observed_at": "2026-08-10T13:12:47Z",
+          "observed_at": "2026-08-12T08:39:07Z",
           "url": "https://pypi.org/project/cache-freshness-governance-pack/"
         }
       ],
@@ -86,7 +86,7 @@
       "license_status": "observed",
       "manifest_path": "pyproject.toml",
       "name": "cache-freshness-governance-pack",
-      "observed_at": "2026-08-10T13:12:47Z",
+      "observed_at": "2026-08-12T08:39:07Z",
       "owner": "groupsum",
       "package_kind": "published-package",
       "private": false,
@@ -108,7 +108,7 @@
           "legal_inherits_from": "package:pypi:cache-freshness-governance-pack:groupsum/cache-freshness-governance-pack:pyproject.toml",
           "license_expression": "Apache-2.0",
           "license_status": "observed",
-          "observed_at": "2026-08-10T13:12:47Z",
+          "observed_at": "2026-08-12T08:39:07Z",
           "published_at": "2026-06-02T00:58:30.429310Z",
           "release_kind": "pypi",
           "route": "/catalog/releases/pypi/cache-freshness-governance-pack-ec1941ef6f",
@@ -122,7 +122,7 @@
           "legal_inherits_from": "package:pypi:cache-freshness-governance-pack:groupsum/cache-freshness-governance-pack:pyproject.toml",
           "license_expression": "Apache-2.0",
           "license_status": "observed",
-          "observed_at": "2026-08-10T13:12:47Z",
+          "observed_at": "2026-08-12T08:39:07Z",
           "published_at": "2026-05-16T16:54:45.169496Z",
           "release_kind": "pypi",
           "route": "/catalog/releases/pypi/cache-freshness-governance-pack-2772e948f3",
@@ -136,7 +136,7 @@
           "legal_inherits_from": "package:pypi:cache-freshness-governance-pack:groupsum/cache-freshness-governance-pack:pyproject.toml",
           "license_expression": "Apache-2.0",
           "license_status": "observed",
-          "observed_at": "2026-08-10T13:12:47Z",
+          "observed_at": "2026-08-12T08:39:07Z",
           "published_at": "2026-05-16T16:07:43.539374Z",
           "release_kind": "pypi",
           "route": "/catalog/releases/pypi/cache-freshness-governance-pack-76d5cb261c",
@@ -150,7 +150,7 @@
           "legal_inherits_from": "package:pypi:cache-freshness-governance-pack:groupsum/cache-freshness-governance-pack:pyproject.toml",
           "license_expression": "Apache-2.0",
           "license_status": "observed",
-          "observed_at": "2026-08-10T13:12:47Z",
+          "observed_at": "2026-08-12T08:39:07Z",
           "published_at": "2026-05-08T05:39:12.261152Z",
           "release_kind": "pypi",
           "route": "/catalog/releases/pypi/cache-freshness-governance-pack-a75d350d94",
@@ -164,7 +164,7 @@
           "legal_inherits_from": "package:pypi:cache-freshness-governance-pack:groupsum/cache-freshness-governance-pack:pyproject.toml",
           "license_expression": "Apache-2.0",
           "license_status": "observed",
-          "observed_at": "2026-08-10T13:12:47Z",
+          "observed_at": "2026-08-12T08:39:07Z",
           "published_at": "2026-05-08T05:34:16.675800Z",
           "release_kind": "pypi",
           "route": "/catalog/releases/pypi/cache-freshness-governance-pack-7e5b44b5dd",
@@ -178,7 +178,7 @@
           "legal_inherits_from": "package:pypi:cache-freshness-governance-pack:groupsum/cache-freshness-governance-pack:pyproject.toml",
           "license_expression": "Apache-2.0",
           "license_status": "observed",
-          "observed_at": "2026-08-10T13:12:47Z",
+          "observed_at": "2026-08-12T08:39:07Z",
           "published_at": "2026-05-08T03:07:28.774764Z",
           "release_kind": "pypi",
           "route": "/catalog/releases/pypi/cache-freshness-governance-pack-7182f06a6e",
@@ -193,21 +193,13 @@
       "technologies": [
         "Python"
       ],
-      "version_declared": "0.1.4"
+      "version_declared": "0.2.0.dev1"
     }
   ],
   "repository": {
     "archived": false,
     "claim_boundary": "No canonical .ssot/registry.json was observed; repository, release, deployment, and live-service states are reported separately.",
     "commit_activity": [
-      {
-        "count": 0,
-        "date": "2026-07-12"
-      },
-      {
-        "count": 0,
-        "date": "2026-07-13"
-      },
       {
         "count": 0,
         "date": "2026-07-14"
@@ -317,19 +309,37 @@
         "date": "2026-08-09"
       },
       {
-        "count": 0,
+        "count": 1,
         "date": "2026-08-10"
+      },
+      {
+        "count": 0,
+        "date": "2026-08-11"
+      },
+      {
+        "count": 0,
+        "date": "2026-08-12"
       }
     ],
     "contributors": [
       {
-        "contributions": 14,
+        "account_type": "User",
+        "anonymous": false,
+        "avatar_url": "https://avatars.githubusercontent.com/u/25079070?v=4",
+        "contributions": 15,
+        "id": "25079070",
         "login": "cobycloud",
+        "name": null,
         "url": "https://github.com/cobycloud"
       },
       {
+        "account_type": "Bot",
+        "anonymous": false,
+        "avatar_url": "https://avatars.githubusercontent.com/in/15368?v=4",
         "contributions": 7,
+        "id": "41898282",
         "login": "github-actions[bot]",
+        "name": null,
         "url": "https://github.com/apps/github-actions"
       }
     ],
@@ -341,7 +351,7 @@
     "evidence": [
       {
         "kind": "source",
-        "observed_at": "2026-08-10T13:12:47Z",
+        "observed_at": "2026-08-12T08:39:11Z",
         "url": "https://github.com/groupsum/cache-freshness-governance-pack"
       }
     ],
@@ -356,7 +366,7 @@
         "legal_inherits_from": "repository:groupsum/cache-freshness-governance-pack",
         "license_expression": "Apache-2.0",
         "license_status": "observed",
-        "observed_at": "2026-08-10T13:12:47Z",
+        "observed_at": "2026-08-12T08:39:11Z",
         "prerelease": false,
         "published_at": "2026-06-02T00:58:30Z",
         "release_kind": "github",
@@ -372,7 +382,7 @@
         "legal_inherits_from": "repository:groupsum/cache-freshness-governance-pack",
         "license_expression": "Apache-2.0",
         "license_status": "observed",
-        "observed_at": "2026-08-10T13:12:47Z",
+        "observed_at": "2026-08-12T08:39:11Z",
         "prerelease": false,
         "published_at": "2026-05-16T16:07:38Z",
         "release_kind": "github",
@@ -388,7 +398,7 @@
         "legal_inherits_from": "repository:groupsum/cache-freshness-governance-pack",
         "license_expression": "Apache-2.0",
         "license_status": "observed",
-        "observed_at": "2026-08-10T13:12:47Z",
+        "observed_at": "2026-08-12T08:39:11Z",
         "prerelease": false,
         "published_at": "2026-05-16T16:54:43Z",
         "release_kind": "github",
@@ -404,7 +414,7 @@
         "legal_inherits_from": "repository:groupsum/cache-freshness-governance-pack",
         "license_expression": "Apache-2.0",
         "license_status": "observed",
-        "observed_at": "2026-08-10T13:12:47Z",
+        "observed_at": "2026-08-12T08:39:11Z",
         "prerelease": false,
         "published_at": "2026-05-08T05:34:04Z",
         "release_kind": "github",
@@ -420,7 +430,7 @@
         "legal_inherits_from": "repository:groupsum/cache-freshness-governance-pack",
         "license_expression": "Apache-2.0",
         "license_status": "observed",
-        "observed_at": "2026-08-10T13:12:47Z",
+        "observed_at": "2026-08-12T08:39:11Z",
         "prerelease": false,
         "published_at": "2026-05-08T05:39:11Z",
         "release_kind": "github",
@@ -436,7 +446,7 @@
         "legal_inherits_from": "repository:groupsum/cache-freshness-governance-pack",
         "license_expression": "Apache-2.0",
         "license_status": "observed",
-        "observed_at": "2026-08-10T13:12:47Z",
+        "observed_at": "2026-08-12T08:39:11Z",
         "prerelease": false,
         "published_at": "2026-05-08T03:07:17Z",
         "release_kind": "github",
@@ -449,16 +459,16 @@
     "id": "repository:groupsum/cache-freshness-governance-pack",
     "kind": "repository",
     "language_bytes": {
-      "Python": 18489
+      "Python": 18817
     },
     "latest_commit": {
-      "author": "github-actions[bot]",
-      "authored_at": "2026-06-02T00:57:34Z",
-      "committed_at": "2026-06-02T00:57:34Z",
-      "committer": "github-actions[bot]",
-      "message": "chore(release): bump version to 0.1.4",
-      "sha": "97d59ecba133c41872e719c8e2ebc8405fc84863",
-      "url": "https://github.com/groupsum/cache-freshness-governance-pack/commit/97d59ecba133c41872e719c8e2ebc8405fc84863"
+      "author": "cobycloud",
+      "authored_at": "2026-08-10T13:09:34Z",
+      "committed_at": "2026-08-10T13:09:34Z",
+      "committer": "cobycloud",
+      "message": "Refine governance document ownership",
+      "sha": "2e9e760094873d0f80925a1b01c952a27baf7b68",
+      "url": "https://github.com/groupsum/cache-freshness-governance-pack/commit/2e9e760094873d0f80925a1b01c952a27baf7b68"
     },
     "latest_deployment": null,
     "latest_release": {
@@ -503,7 +513,7 @@
     ],
     "license": "Apache-2.0",
     "metrics": {
-      "commits": 21,
+      "commits": 22,
       "contributors": 2,
       "deployments": 0,
       "environments": 0,
@@ -512,12 +522,12 @@
       "open_issues": 0,
       "packages": 1,
       "related_resources": 1,
-      "size_kb": 75,
+      "size_kb": 89,
       "stars": 1,
       "watchers": 0
     },
     "name": "cache-freshness-governance-pack",
-    "observed_at": "2026-08-10T13:12:47Z",
+    "observed_at": "2026-08-12T08:39:11Z",
     "owner": "groupsum",
     "package_ids": [
       "package:pypi:cache-freshness-governance-pack:groupsum/cache-freshness-governance-pack:pyproject.toml"
@@ -551,7 +561,7 @@
         "route": "/catalog/packages/pypi/cache-freshness-governance-pack-99a2fe12"
       }
     ],
-    "pushed_at": "2026-06-02T00:58:14Z",
+    "pushed_at": "2026-08-10T13:10:23Z",
     "related_resources": [
       {
         "evidence_type": "repository.tree",
@@ -559,7 +569,7 @@
         "legal_evidence": [],
         "legal_inherits_from": "repository:groupsum/cache-freshness-governance-pack",
         "name": "docs/standards",
-        "observed_at": "2026-08-10T13:12:47Z",
+        "observed_at": "2026-08-12T08:39:11Z",
         "path": "docs/standards",
         "repository": "groupsum/cache-freshness-governance-pack",
         "repository_route": "/catalog/repositories/groupsum/cache-freshness-governance-pack",
@@ -579,7 +589,7 @@
       "coverage": {},
       "governed": false,
       "observation_status": "not_found",
-      "observed_at": "2026-08-10T13:12:47Z",
+      "observed_at": "2026-08-12T08:39:13Z",
       "present": false,
       "registry_url": null,
       "status_counts": {},
@@ -590,7 +600,7 @@
     ],
     "template": false,
     "topics": [],
-    "updated_at": "2026-06-02T00:57:41Z",
+    "updated_at": "2026-08-10T13:13:58Z",
     "url": "https://github.com/groupsum/cache-freshness-governance-pack",
     "visibility": "public"
   },

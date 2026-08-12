@@ -1,18 +1,10 @@
 {
-  "generated_at": "2026-08-10T13:12:47Z",
+  "generated_at": "2026-08-12T08:39:07Z",
   "packages": [],
   "repository": {
     "archived": false,
     "claim_boundary": "No canonical .ssot/registry.json was observed; repository, release, deployment, and live-service states are reported separately.",
     "commit_activity": [
-      {
-        "count": 0,
-        "date": "2026-07-12"
-      },
-      {
-        "count": 0,
-        "date": "2026-07-13"
-      },
       {
         "count": 0,
         "date": "2026-07-14"
@@ -124,17 +116,35 @@
       {
         "count": 0,
         "date": "2026-08-10"
+      },
+      {
+        "count": 0,
+        "date": "2026-08-11"
+      },
+      {
+        "count": 0,
+        "date": "2026-08-12"
       }
     ],
     "contributors": [
       {
+        "account_type": "Anonymous",
+        "anonymous": true,
+        "avatar_url": null,
         "contributions": 7,
-        "login": "Sanidhya Kumar Verma",
+        "id": null,
+        "login": null,
+        "name": "Sanidhya Kumar Verma",
         "url": null
       },
       {
+        "account_type": "User",
+        "anonymous": false,
+        "avatar_url": "https://avatars.githubusercontent.com/u/25079070?v=4",
         "contributions": 4,
+        "id": "25079070",
         "login": "cobycloud",
+        "name": null,
         "url": "https://github.com/cobycloud"
       }
     ],
@@ -146,7 +156,7 @@
     "evidence": [
       {
         "kind": "source",
-        "observed_at": "2026-08-10T13:12:48Z",
+        "observed_at": "2026-08-12T08:39:38Z",
         "url": "https://github.com/swarmauri/swarmauri-mesop-components"
       }
     ],
@@ -207,7 +217,7 @@
       "watchers": 0
     },
     "name": "swarmauri-mesop-components",
-    "observed_at": "2026-08-10T13:12:48Z",
+    "observed_at": "2026-08-12T08:39:38Z",
     "owner": "swarmauri",
     "package_ids": [],
     "packages": [],
@@ -219,7 +229,7 @@
         "legal_evidence": [],
         "legal_inherits_from": "repository:swarmauri/swarmauri-mesop-components",
         "name": "swarmauri-mesop-components",
-        "observed_at": "2026-08-10T13:12:48Z",
+        "observed_at": "2026-08-12T08:39:38Z",
         "path": null,
         "repository": "swarmauri/swarmauri-mesop-components",
         "repository_route": "/catalog/repositories/swarmauri/swarmauri-mesop-components",
@@ -238,7 +248,7 @@
       "coverage": {},
       "governed": false,
       "observation_status": "not_found",
-      "observed_at": "2026-08-10T13:12:48Z",
+      "observed_at": "2026-08-12T08:39:39Z",
       "present": false,
       "registry_url": null,
       "status_counts": {},

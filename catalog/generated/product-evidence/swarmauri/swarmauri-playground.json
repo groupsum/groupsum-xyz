@@ -1,18 +1,10 @@
 {
-  "generated_at": "2026-08-10T13:12:47Z",
+  "generated_at": "2026-08-12T08:39:07Z",
   "packages": [],
   "repository": {
     "archived": false,
     "claim_boundary": "No canonical .ssot/registry.json was observed; repository, release, deployment, and live-service states are reported separately.",
     "commit_activity": [
-      {
-        "count": 0,
-        "date": "2026-07-12"
-      },
-      {
-        "count": 0,
-        "date": "2026-07-13"
-      },
       {
         "count": 0,
         "date": "2026-07-14"
@@ -124,27 +116,55 @@
       {
         "count": 0,
         "date": "2026-08-10"
+      },
+      {
+        "count": 0,
+        "date": "2026-08-11"
+      },
+      {
+        "count": 0,
+        "date": "2026-08-12"
       }
     ],
     "contributors": [
       {
+        "account_type": "User",
+        "anonymous": false,
+        "avatar_url": "https://avatars.githubusercontent.com/u/25079070?v=4",
         "contributions": 19,
+        "id": "25079070",
         "login": "cobycloud",
+        "name": null,
         "url": "https://github.com/cobycloud"
       },
       {
+        "account_type": "User",
+        "anonymous": false,
+        "avatar_url": "https://avatars.githubusercontent.com/u/120080390?v=4",
         "contributions": 12,
+        "id": "120080390",
         "login": "JustusOmbok",
+        "name": null,
         "url": "https://github.com/JustusOmbok"
       },
       {
+        "account_type": "User",
+        "anonymous": false,
+        "avatar_url": "https://avatars.githubusercontent.com/u/125447154?v=4",
         "contributions": 5,
+        "id": "125447154",
         "login": "RafaelJohn9",
+        "name": null,
         "url": "https://github.com/RafaelJohn9"
       },
       {
+        "account_type": "User",
+        "anonymous": false,
+        "avatar_url": "https://avatars.githubusercontent.com/u/116895781?v=4",
         "contributions": 1,
+        "id": "116895781",
         "login": "Techie-John",
+        "name": null,
         "url": "https://github.com/Techie-John"
       }
     ],
@@ -156,7 +176,7 @@
     "evidence": [
       {
         "kind": "source",
-        "observed_at": "2026-08-10T13:12:48Z",
+        "observed_at": "2026-08-12T08:39:39Z",
         "url": "https://github.com/swarmauri/swarmauri-playground"
       }
     ],
@@ -217,7 +237,7 @@
       "watchers": 1
     },
     "name": "swarmauri-playground",
-    "observed_at": "2026-08-10T13:12:48Z",
+    "observed_at": "2026-08-12T08:39:39Z",
     "owner": "swarmauri",
     "package_ids": [],
     "packages": [],
@@ -229,7 +249,7 @@
         "legal_evidence": [],
         "legal_inherits_from": "repository:swarmauri/swarmauri-playground",
         "name": "swarmauri-playground",
-        "observed_at": "2026-08-10T13:12:48Z",
+        "observed_at": "2026-08-12T08:39:39Z",
         "path": null,
         "repository": "swarmauri/swarmauri-playground",
         "repository_route": "/catalog/repositories/swarmauri/swarmauri-playground",
@@ -248,7 +268,7 @@
       "coverage": {},
       "governed": false,
       "observation_status": "not_found",
-      "observed_at": "2026-08-10T13:12:48Z",
+      "observed_at": "2026-08-12T08:39:41Z",
       "present": false,
       "registry_url": null,
       "status_counts": {},

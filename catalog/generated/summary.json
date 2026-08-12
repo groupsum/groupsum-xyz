@@ -1,31 +1,31 @@
 {
   "archived_repositories": 0,
-  "commits": 23875,
+  "commits": 24009,
   "contributors_unique": 42,
-  "deployments": 4100,
-  "environments": 132,
+  "deployments": 254,
+  "environments": 133,
   "fork_repositories": 0,
   "forks": 107,
-  "generated_at": "2026-08-10T13:12:47Z",
+  "generated_at": "2026-08-12T08:39:07Z",
   "github_package_versions": 0,
-  "github_releases": 7555,
+  "github_releases": 7528,
   "observations_by_status": {
-    "cached": 6959,
-    "error": 8,
-    "not_found": 570
+    "error": 4,
+    "not_found": 598,
+    "observed": 3216
   },
-  "observations_with_errors": 8,
+  "observations_with_errors": 4,
   "owners": 4,
   "package_ecosystems": {
     "crates": 5,
     "npm": 167,
-    "pypi": 971
+    "pypi": 986
   },
-  "packages": 1143,
-  "published_packages": 502,
-  "registry_release_versions": 9779,
-  "relationships": 10337,
-  "repositories": 69,
+  "packages": 1158,
+  "published_packages": 501,
+  "registry_release_versions": 9787,
+  "relationships": 11107,
+  "repositories": 81,
   "schema_version": "1.0.0",
   "stars": 197,
   "verified_languages": [

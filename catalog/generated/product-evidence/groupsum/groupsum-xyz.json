@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-10T13:12:47Z",
+  "generated_at": "2026-08-12T08:39:07Z",
   "packages": [
     {
       "claim_boundary": "Publication is reported only when confirmed by the named public registry.",
@@ -45,7 +45,7 @@
       "evidence": [
         {
           "kind": "source",
-          "observed_at": "2026-08-10T13:12:47Z",
+          "observed_at": "2026-08-12T08:39:07Z",
           "url": "https://github.com/groupsum/groupsum-xyz/blob/master/pkgs/site-content-pack/package.json"
         }
       ],
@@ -68,7 +68,7 @@
       "license_status": "observed",
       "manifest_path": "pkgs/site-content-pack/package.json",
       "name": "@groupsum/groupsum-xyz-content-pack",
-      "observed_at": "2026-08-10T13:12:47Z",
+      "observed_at": "2026-08-12T08:39:07Z",
       "owner": "groupsum",
       "package_kind": "private-package",
       "private": true,
@@ -133,7 +133,7 @@
           "internal": true,
           "name": "@mdwrk/structured-data",
           "package_key": "npm:@mdwrk/structured-data",
-          "requirement": "^0.1.4",
+          "requirement": "^0.2.1",
           "scope": "dependencies"
         },
         {
@@ -170,15 +170,6 @@
           "name": "lucide-react",
           "package_key": "npm:lucide-react",
           "requirement": "^0.546.0",
-          "scope": "dependencies"
-        },
-        {
-          "ecosystem": "npm",
-          "evidence": "repository.manifest",
-          "internal": false,
-          "name": "openapi-fetch",
-          "package_key": "npm:openapi-fetch",
-          "requirement": "^0.17.0",
           "scope": "dependencies"
         },
         {
@@ -263,7 +254,7 @@
           "scope": "devDependencies"
         }
       ],
-      "dependency_count": 18,
+      "dependency_count": 17,
       "dependent_count": 0,
       "dependents": [],
       "description": "Observed npm package record for @groupsum/groupsum-xyz-frontend.",
@@ -276,7 +267,7 @@
       "evidence": [
         {
           "kind": "source",
-          "observed_at": "2026-08-10T13:12:47Z",
+          "observed_at": "2026-08-12T08:39:07Z",
           "url": "https://github.com/groupsum/groupsum-xyz/blob/master/pkgs/frontend/package.json"
         }
       ],
@@ -290,16 +281,16 @@
       "license_status": "not-observed",
       "manifest_path": "pkgs/frontend/package.json",
       "name": "@groupsum/groupsum-xyz-frontend",
-      "observed_at": "2026-08-10T13:12:47Z",
+      "observed_at": "2026-08-12T08:39:07Z",
       "owner": "groupsum",
       "package_kind": "private-package",
       "private": true,
       "publication_status": "manifest_private",
       "published": false,
       "registry_url": null,
-      "relationship_count": 19,
+      "relationship_count": 18,
       "relationship_counts": {
-        "package_depends_on_external": 14,
+        "package_depends_on_external": 13,
         "package_depends_on_package": 4,
         "repository_contains_package": 1
       },
@@ -372,7 +363,7 @@
       "evidence": [
         {
           "kind": "source",
-          "observed_at": "2026-08-10T13:12:47Z",
+          "observed_at": "2026-08-12T08:39:07Z",
           "url": "https://github.com/groupsum/groupsum-xyz/blob/master/package.json"
         }
       ],
@@ -386,7 +377,7 @@
       "license_status": "not-observed",
       "manifest_path": "package.json",
       "name": "groupsum-xyz-workspace",
-      "observed_at": "2026-08-10T13:12:47Z",
+      "observed_at": "2026-08-12T08:39:07Z",
       "owner": "groupsum",
       "package_kind": "workspace-project",
       "private": true,
@@ -548,7 +539,7 @@
       "evidence": [
         {
           "kind": "source",
-          "observed_at": "2026-08-10T13:12:47Z",
+          "observed_at": "2026-08-12T08:39:07Z",
           "url": "https://github.com/groupsum/groupsum-xyz/blob/master/pkgs/backend/pyproject.toml"
         }
       ],
@@ -581,7 +572,7 @@
       "license_status": "not-observed",
       "manifest_path": "pkgs/backend/pyproject.toml",
       "name": "groupsum-catalog-api",
-      "observed_at": "2026-08-10T13:12:47Z",
+      "observed_at": "2026-08-12T08:39:07Z",
       "owner": "groupsum",
       "package_kind": "package-candidate",
       "private": false,
@@ -615,14 +606,6 @@
     "archived": false,
     "claim_boundary": "No canonical .ssot/registry.json was observed; repository, release, deployment, and live-service states are reported separately.",
     "commit_activity": [
-      {
-        "count": 0,
-        "date": "2026-07-12"
-      },
-      {
-        "count": 1,
-        "date": "2026-07-13"
-      },
       {
         "count": 0,
         "date": "2026-07-14"
@@ -732,14 +715,27 @@
         "date": "2026-08-09"
       },
       {
-        "count": 4,
+        "count": 25,
         "date": "2026-08-10"
+      },
+      {
+        "count": 16,
+        "date": "2026-08-11"
+      },
+      {
+        "count": 4,
+        "date": "2026-08-12"
       }
     ],
     "contributors": [
       {
-        "contributions": 121,
+        "account_type": "User",
+        "anonymous": false,
+        "avatar_url": "https://avatars.githubusercontent.com/u/25079070?v=4",
+        "contributions": 162,
+        "id": "25079070",
         "login": "cobycloud",
+        "name": null,
         "url": "https://github.com/cobycloud"
       }
     ],
@@ -751,7 +747,7 @@
     "evidence": [
       {
         "kind": "source",
-        "observed_at": "2026-08-10T13:12:47Z",
+        "observed_at": "2026-08-12T08:39:14Z",
         "url": "https://github.com/groupsum/groupsum-xyz"
       }
     ],
@@ -762,48 +758,48 @@
     "id": "repository:groupsum/groupsum-xyz",
     "kind": "repository",
     "language_bytes": {
-      "CSS": 13748,
+      "CSS": 15702,
       "Dockerfile": 1150,
       "HTML": 786,
-      "JavaScript": 74023,
-      "Python": 412037,
-      "TypeScript": 15802124
+      "JavaScript": 82250,
+      "Python": 495416,
+      "TypeScript": 15771795
     },
     "latest_commit": {
       "author": "cobycloud",
-      "authored_at": "2026-08-10T11:48:04Z",
-      "committed_at": "2026-08-10T11:48:04Z",
+      "authored_at": "2026-08-12T06:52:54Z",
+      "committed_at": "2026-08-12T06:52:54Z",
       "committer": "cobycloud",
-      "message": "Repair catalog deployment data contracts",
-      "sha": "1df37c08a129aea0238ac47f4b9b337578d506f8",
-      "url": "https://github.com/groupsum/groupsum-xyz/commit/1df37c08a129aea0238ac47f4b9b337578d506f8"
+      "message": "perf(frontend): trim structured data bundle",
+      "sha": "1c4f44a68c6b1d65100f0143238eaec2fe734c79",
+      "url": "https://github.com/groupsum/groupsum-xyz/commit/1c4f44a68c6b1d65100f0143238eaec2fe734c79"
     },
     "latest_deployment": {
       "environment": "deployment",
       "environment_url": "",
-      "log_url": "https://github.com/groupsum/groupsum-xyz/actions/runs/31385123628/job/93443727040",
-      "state": "failure",
-      "updated_at": "2026-08-10T11:53:00Z"
+      "log_url": "https://github.com/groupsum/groupsum-xyz/actions/runs/31571712498/job/94034922141",
+      "state": "success",
+      "updated_at": "2026-08-12T06:56:10Z"
     },
     "latest_release": null,
     "legal_evidence": [],
     "license": null,
     "metrics": {
-      "commits": 121,
+      "commits": 162,
       "contributors": 1,
-      "deployments": 58,
+      "deployments": 30,
       "environments": 1,
       "forks": 0,
       "github_releases": 0,
       "open_issues": 0,
       "packages": 4,
       "related_resources": 1,
-      "size_kb": 25289,
+      "size_kb": 28391,
       "stars": 0,
       "watchers": 0
     },
     "name": "groupsum-xyz",
-    "observed_at": "2026-08-10T13:12:47Z",
+    "observed_at": "2026-08-12T08:39:14Z",
     "owner": "groupsum",
     "package_ids": [
       "package:npm:@groupsum/groupsum-xyz-content-pack:groupsum/groupsum-xyz:pkgs/site-content-pack/package.json",
@@ -885,7 +881,7 @@
         "route": "/catalog/packages/pypi/groupsum-catalog-api-799d6bff"
       }
     ],
-    "pushed_at": "2026-08-10T11:48:12Z",
+    "pushed_at": "2026-08-12T06:52:55Z",
     "related_resources": [
       {
         "evidence_type": "repository.api_definition",
@@ -893,7 +889,7 @@
         "legal_evidence": [],
         "legal_inherits_from": "repository:groupsum/groupsum-xyz",
         "name": "pkgs/backend/openapi.json",
-        "observed_at": "2026-08-10T13:12:47Z",
+        "observed_at": "2026-08-12T08:39:14Z",
         "path": "pkgs/backend/openapi.json",
         "repository": "groupsum/groupsum-xyz",
         "repository_route": "/catalog/repositories/groupsum/groupsum-xyz",
@@ -913,7 +909,7 @@
       "coverage": {},
       "governed": false,
       "observation_status": "not_found",
-      "observed_at": "2026-08-10T13:12:47Z",
+      "observed_at": "2026-08-12T08:39:22Z",
       "present": false,
       "registry_url": null,
       "status_counts": {},
@@ -939,7 +935,7 @@
       "npmctl",
       "static-site"
     ],
-    "updated_at": "2026-08-10T11:48:21Z",
+    "updated_at": "2026-08-12T06:53:02Z",
     "url": "https://github.com/groupsum/groupsum-xyz",
     "visibility": "public"
   },

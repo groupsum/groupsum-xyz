@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-10T13:12:47Z",
+  "generated_at": "2026-08-12T08:39:07Z",
   "packages": [
     {
       "claim_boundary": "Publication is reported only when confirmed by the named public registry.",
@@ -63,13 +63,13 @@
       "evidence": [
         {
           "kind": "source",
-          "observed_at": "2026-08-10T13:12:47Z",
+          "observed_at": "2026-08-12T08:39:07Z",
           "url": "https://github.com/groupsum/authentication-governance-pack/blob/master/pyproject.toml"
         }
       ],
       "id": "package:pypi:authentication-governance-pack:groupsum/authentication-governance-pack:pyproject.toml",
       "kind": "package",
-      "latest_version": "0.1.1.dev1",
+      "latest_version": "0.2.0.dev1",
       "legal_evidence": [
         {
           "evidence_type": "repository.manifest",
@@ -95,7 +95,7 @@
       "license_status": "observed",
       "manifest_path": "pyproject.toml",
       "name": "authentication-governance-pack",
-      "observed_at": "2026-08-10T13:12:47Z",
+      "observed_at": "2026-08-12T08:39:07Z",
       "owner": "groupsum",
       "package_kind": "package-candidate",
       "private": false,
@@ -117,21 +117,13 @@
       "technologies": [
         "Python"
       ],
-      "version_declared": "0.1.1.dev1"
+      "version_declared": "0.2.0.dev1"
     }
   ],
   "repository": {
     "archived": false,
     "claim_boundary": "No canonical .ssot/registry.json was observed; repository, release, deployment, and live-service states are reported separately.",
     "commit_activity": [
-      {
-        "count": 0,
-        "date": "2026-07-12"
-      },
-      {
-        "count": 0,
-        "date": "2026-07-13"
-      },
       {
         "count": 0,
         "date": "2026-07-14"
@@ -241,14 +233,27 @@
         "date": "2026-08-09"
       },
       {
-        "count": 0,
+        "count": 1,
         "date": "2026-08-10"
+      },
+      {
+        "count": 0,
+        "date": "2026-08-11"
+      },
+      {
+        "count": 0,
+        "date": "2026-08-12"
       }
     ],
     "contributors": [
       {
-        "contributions": 1,
+        "account_type": "User",
+        "anonymous": false,
+        "avatar_url": "https://avatars.githubusercontent.com/u/25079070?v=4",
+        "contributions": 2,
+        "id": "25079070",
         "login": "cobycloud",
+        "name": null,
         "url": "https://github.com/cobycloud"
       }
     ],
@@ -260,7 +265,7 @@
     "evidence": [
       {
         "kind": "source",
-        "observed_at": "2026-08-10T13:12:47Z",
+        "observed_at": "2026-08-12T08:39:10Z",
         "url": "https://github.com/groupsum/authentication-governance-pack"
       }
     ],
@@ -271,16 +276,16 @@
     "id": "repository:groupsum/authentication-governance-pack",
     "kind": "repository",
     "language_bytes": {
-      "Python": 16629
+      "Python": 16933
     },
     "latest_commit": {
       "author": "cobycloud",
-      "authored_at": "2026-06-02T10:56:38Z",
-      "committed_at": "2026-06-02T10:56:38Z",
+      "authored_at": "2026-08-10T13:09:34Z",
+      "committed_at": "2026-08-10T13:09:34Z",
       "committer": "cobycloud",
-      "message": "Initial authentication governance pack",
-      "sha": "c43fc1ce8cf10a55b4705793d1130e7a2fddba3a",
-      "url": "https://github.com/groupsum/authentication-governance-pack/commit/c43fc1ce8cf10a55b4705793d1130e7a2fddba3a"
+      "message": "Supersede broad governance pack",
+      "sha": "e7b0e08c70adc44dc1120c0daf1d97b729cbad2e",
+      "url": "https://github.com/groupsum/authentication-governance-pack/commit/e7b0e08c70adc44dc1120c0daf1d97b729cbad2e"
     },
     "latest_deployment": null,
     "latest_release": null,
@@ -306,7 +311,7 @@
     ],
     "license": "Apache-2.0",
     "metrics": {
-      "commits": 1,
+      "commits": 2,
       "contributors": 1,
       "deployments": 0,
       "environments": 0,
@@ -315,12 +320,12 @@
       "open_issues": 0,
       "packages": 1,
       "related_resources": 1,
-      "size_kb": 36,
+      "size_kb": 48,
       "stars": 0,
       "watchers": 0
     },
     "name": "authentication-governance-pack",
-    "observed_at": "2026-08-10T13:12:47Z",
+    "observed_at": "2026-08-12T08:39:10Z",
     "owner": "groupsum",
     "package_ids": [
       "package:pypi:authentication-governance-pack:groupsum/authentication-governance-pack:pyproject.toml"
@@ -330,7 +335,7 @@
         "ecosystem": "pypi",
         "id": "package:pypi:authentication-governance-pack:groupsum/authentication-governance-pack:pyproject.toml",
         "last_published_at": null,
-        "latest_version": "0.1.1.dev1",
+        "latest_version": "0.2.0.dev1",
         "license_expression": "Apache-2.0",
         "license_status": "observed",
         "license_url": "https://github.com/groupsum/authentication-governance-pack/blob/master/LICENSE",
@@ -345,7 +350,7 @@
         "route": "/catalog/packages/pypi/authentication-governance-pack-5019935a"
       }
     ],
-    "pushed_at": "2026-06-02T10:57:17Z",
+    "pushed_at": "2026-08-10T13:10:18Z",
     "related_resources": [
       {
         "evidence_type": "repository.tree",
@@ -353,7 +358,7 @@
         "legal_evidence": [],
         "legal_inherits_from": "repository:groupsum/authentication-governance-pack",
         "name": "docs/governance",
-        "observed_at": "2026-08-10T13:12:47Z",
+        "observed_at": "2026-08-12T08:39:10Z",
         "path": "docs/governance",
         "repository": "groupsum/authentication-governance-pack",
         "repository_route": "/catalog/repositories/groupsum/authentication-governance-pack",
@@ -373,7 +378,7 @@
       "coverage": {},
       "governed": false,
       "observation_status": "not_found",
-      "observed_at": "2026-08-10T13:12:47Z",
+      "observed_at": "2026-08-12T08:39:11Z",
       "present": false,
       "registry_url": null,
       "status_counts": {},
@@ -384,7 +389,7 @@
     ],
     "template": false,
     "topics": [],
-    "updated_at": "2026-06-02T10:57:31Z",
+    "updated_at": "2026-08-10T13:12:13Z",
     "url": "https://github.com/groupsum/authentication-governance-pack",
     "visibility": "public"
   },

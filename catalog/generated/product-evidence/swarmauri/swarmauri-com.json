@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-10T13:12:47Z",
+  "generated_at": "2026-08-12T08:39:07Z",
   "packages": [
     {
       "claim_boundary": "Publication is reported only when confirmed by the named public registry.",
@@ -207,7 +207,7 @@
       "evidence": [
         {
           "kind": "source",
-          "observed_at": "2026-08-10T13:12:47Z",
+          "observed_at": "2026-08-12T08:39:07Z",
           "url": "https://github.com/swarmauri/swarmauri-com/blob/master/package.json"
         }
       ],
@@ -221,7 +221,7 @@
       "license_status": "not-observed",
       "manifest_path": "package.json",
       "name": "swarmauri-com",
-      "observed_at": "2026-08-10T13:12:47Z",
+      "observed_at": "2026-08-12T08:39:07Z",
       "owner": "swarmauri",
       "package_kind": "workspace-project",
       "private": true,
@@ -295,7 +295,7 @@
       "evidence": [
         {
           "kind": "source",
-          "observed_at": "2026-08-10T13:12:47Z",
+          "observed_at": "2026-08-12T08:39:07Z",
           "url": "https://github.com/swarmauri/swarmauri-com/blob/master/pyproject.toml"
         }
       ],
@@ -309,7 +309,7 @@
       "license_status": "not-observed",
       "manifest_path": "pyproject.toml",
       "name": "swarmauri-com",
-      "observed_at": "2026-08-10T13:12:47Z",
+      "observed_at": "2026-08-12T08:39:07Z",
       "owner": "swarmauri",
       "package_kind": "package-candidate",
       "private": false,
@@ -343,14 +343,6 @@
     "archived": false,
     "claim_boundary": "No canonical .ssot/registry.json was observed; repository, release, deployment, and live-service states are reported separately.",
     "commit_activity": [
-      {
-        "count": 0,
-        "date": "2026-07-12"
-      },
-      {
-        "count": 2,
-        "date": "2026-07-13"
-      },
       {
         "count": 0,
         "date": "2026-07-14"
@@ -462,12 +454,25 @@
       {
         "count": 0,
         "date": "2026-08-10"
+      },
+      {
+        "count": 0,
+        "date": "2026-08-11"
+      },
+      {
+        "count": 0,
+        "date": "2026-08-12"
       }
     ],
     "contributors": [
       {
+        "account_type": "User",
+        "anonymous": false,
+        "avatar_url": "https://avatars.githubusercontent.com/u/25079070?v=4",
         "contributions": 69,
+        "id": "25079070",
         "login": "cobycloud",
+        "name": null,
         "url": "https://github.com/cobycloud"
       }
     ],
@@ -479,7 +484,7 @@
     "evidence": [
       {
         "kind": "source",
-        "observed_at": "2026-08-10T13:12:48Z",
+        "observed_at": "2026-08-12T08:39:37Z",
         "url": "https://github.com/swarmauri/swarmauri-com"
       }
     ],
@@ -532,7 +537,7 @@
       "watchers": 0
     },
     "name": "swarmauri-com",
-    "observed_at": "2026-08-10T13:12:48Z",
+    "observed_at": "2026-08-12T08:39:37Z",
     "owner": "swarmauri",
     "package_ids": [
       "package:npm:swarmauri-com:swarmauri/swarmauri-com:package.json",
@@ -584,7 +589,7 @@
         "legal_evidence": [],
         "legal_inherits_from": "repository:swarmauri/swarmauri-com",
         "name": "docs/unified_swarmauri_company_portfolio_brief.md",
-        "observed_at": "2026-08-10T13:12:48Z",
+        "observed_at": "2026-08-12T08:39:37Z",
         "path": "docs/unified_swarmauri_company_portfolio_brief.md",
         "repository": "swarmauri/swarmauri-com",
         "repository_route": "/catalog/repositories/swarmauri/swarmauri-com",
@@ -604,7 +609,7 @@
       "coverage": {},
       "governed": false,
       "observation_status": "not_found",
-      "observed_at": "2026-08-10T13:12:48Z",
+      "observed_at": "2026-08-12T08:39:42Z",
       "present": false,
       "registry_url": null,
       "status_counts": {},

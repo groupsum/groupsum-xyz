@@ -1,18 +1,10 @@
 {
-  "generated_at": "2026-08-10T13:12:47Z",
+  "generated_at": "2026-08-12T08:39:07Z",
   "packages": [],
   "repository": {
     "archived": false,
     "claim_boundary": "No canonical .ssot/registry.json was observed; repository, release, deployment, and live-service states are reported separately.",
     "commit_activity": [
-      {
-        "count": 0,
-        "date": "2026-07-12"
-      },
-      {
-        "count": 0,
-        "date": "2026-07-13"
-      },
       {
         "count": 0,
         "date": "2026-07-14"
@@ -124,107 +116,215 @@
       {
         "count": 0,
         "date": "2026-08-10"
+      },
+      {
+        "count": 0,
+        "date": "2026-08-11"
+      },
+      {
+        "count": 0,
+        "date": "2026-08-12"
       }
     ],
     "contributors": [
       {
+        "account_type": "User",
+        "anonymous": false,
+        "avatar_url": "https://avatars.githubusercontent.com/u/25079070?v=4",
         "contributions": 170,
+        "id": "25079070",
         "login": "cobycloud",
+        "name": null,
         "url": "https://github.com/cobycloud"
       },
       {
+        "account_type": "User",
+        "anonymous": false,
+        "avatar_url": "https://avatars.githubusercontent.com/u/119686378?v=4",
         "contributions": 60,
+        "id": "119686378",
         "login": "DOMINION-JOHN1",
+        "name": null,
         "url": "https://github.com/DOMINION-JOHN1"
       },
       {
+        "account_type": "User",
+        "anonymous": false,
+        "avatar_url": "https://avatars.githubusercontent.com/u/114964638?v=4",
         "contributions": 39,
+        "id": "114964638",
         "login": "3rdsonx",
+        "name": null,
         "url": "https://github.com/3rdsonx"
       },
       {
+        "account_type": "Anonymous",
+        "anonymous": true,
+        "avatar_url": null,
         "contributions": 32,
-        "login": "irshadhuzaifa",
+        "id": null,
+        "login": null,
+        "name": "irshadhuzaifa",
         "url": null
       },
       {
+        "account_type": "User",
+        "anonymous": false,
+        "avatar_url": "https://avatars.githubusercontent.com/u/111002205?v=4",
         "contributions": 21,
+        "id": "111002205",
         "login": "MichaelDecent",
+        "name": null,
         "url": "https://github.com/MichaelDecent"
       },
       {
+        "account_type": "User",
+        "anonymous": false,
+        "avatar_url": "https://avatars.githubusercontent.com/u/46817346?v=4",
         "contributions": 15,
+        "id": "46817346",
         "login": "faizan2700",
+        "name": null,
         "url": "https://github.com/faizan2700"
       },
       {
+        "account_type": "User",
+        "anonymous": false,
+        "avatar_url": "https://avatars.githubusercontent.com/u/128773932?v=4",
         "contributions": 7,
+        "id": "128773932",
         "login": "Jugrajsinghbali",
+        "name": null,
         "url": "https://github.com/Jugrajsinghbali"
       },
       {
+        "account_type": "User",
+        "anonymous": false,
+        "avatar_url": "https://avatars.githubusercontent.com/u/125447154?v=4",
         "contributions": 6,
+        "id": "125447154",
         "login": "RafaelJohn9",
+        "name": null,
         "url": "https://github.com/RafaelJohn9"
       },
       {
+        "account_type": "User",
+        "anonymous": false,
+        "avatar_url": "https://avatars.githubusercontent.com/u/54754895?v=4",
         "contributions": 4,
+        "id": "54754895",
         "login": "abdulsamodazeez",
+        "name": null,
         "url": "https://github.com/abdulsamodazeez"
       },
       {
+        "account_type": "User",
+        "anonymous": false,
+        "avatar_url": "https://avatars.githubusercontent.com/u/120080390?v=4",
         "contributions": 3,
+        "id": "120080390",
         "login": "JustusOmbok",
+        "name": null,
         "url": "https://github.com/JustusOmbok"
       },
       {
+        "account_type": "User",
+        "anonymous": false,
+        "avatar_url": "https://avatars.githubusercontent.com/u/116895781?v=4",
         "contributions": 3,
+        "id": "116895781",
         "login": "Techie-John",
+        "name": null,
         "url": "https://github.com/Techie-John"
       },
       {
+        "account_type": "Anonymous",
+        "anonymous": true,
+        "avatar_url": null,
         "contributions": 2,
-        "login": "admin",
+        "id": null,
+        "login": null,
+        "name": "admin",
         "url": null
       },
       {
+        "account_type": "Anonymous",
+        "anonymous": true,
+        "avatar_url": null,
         "contributions": 2,
-        "login": "Sanidhya Kumar Verma",
+        "id": null,
+        "login": null,
+        "name": "Sanidhya Kumar Verma",
         "url": null
       },
       {
+        "account_type": "User",
+        "anonymous": false,
+        "avatar_url": "https://avatars.githubusercontent.com/u/142247482?v=4",
         "contributions": 2,
+        "id": "142247482",
         "login": "irshadhuzaifa",
+        "name": null,
         "url": "https://github.com/irshadhuzaifa"
       },
       {
+        "account_type": "User",
+        "anonymous": false,
+        "avatar_url": "https://avatars.githubusercontent.com/u/101133020?v=4",
         "contributions": 2,
+        "id": "101133020",
         "login": "AbdulrahmanElshafie",
+        "name": null,
         "url": "https://github.com/AbdulrahmanElshafie"
       },
       {
+        "account_type": "Anonymous",
+        "anonymous": true,
+        "avatar_url": null,
         "contributions": 1,
-        "login": "Mallick",
+        "id": null,
+        "login": null,
+        "name": "Mallick",
         "url": null
       },
       {
+        "account_type": "User",
+        "anonymous": false,
+        "avatar_url": "https://avatars.githubusercontent.com/u/88669140?v=4",
         "contributions": 1,
+        "id": "88669140",
         "login": "Niraj12chaudhary",
+        "name": null,
         "url": "https://github.com/Niraj12chaudhary"
       },
       {
+        "account_type": "User",
+        "anonymous": false,
+        "avatar_url": "https://avatars.githubusercontent.com/u/85289805?v=4",
         "contributions": 1,
+        "id": "85289805",
         "login": "RominGujarati",
+        "name": null,
         "url": "https://github.com/RominGujarati"
       },
       {
+        "account_type": "User",
+        "anonymous": false,
+        "avatar_url": "https://avatars.githubusercontent.com/u/104895714?v=4",
         "contributions": 1,
+        "id": "104895714",
         "login": "ashiksherbin",
+        "name": null,
         "url": "https://github.com/ashiksherbin"
       },
       {
+        "account_type": "User",
+        "anonymous": false,
+        "avatar_url": "https://avatars.githubusercontent.com/u/105554286?v=4",
         "contributions": 1,
+        "id": "105554286",
         "login": "oreoluwa212",
+        "name": null,
         "url": "https://github.com/oreoluwa212"
       }
     ],
@@ -236,7 +336,7 @@
     "evidence": [
       {
         "kind": "source",
-        "observed_at": "2026-08-10T13:12:48Z",
+        "observed_at": "2026-08-12T08:39:38Z",
         "url": "https://github.com/swarmauri/swarmauri-notebooks"
       }
     ],
@@ -251,7 +351,7 @@
         "legal_inherits_from": "repository:swarmauri/swarmauri-notebooks",
         "license_expression": "Apache-2.0",
         "license_status": "observed",
-        "observed_at": "2026-08-10T13:12:48Z",
+        "observed_at": "2026-08-12T08:39:38Z",
         "prerelease": true,
         "published_at": "2024-09-01T16:48:46Z",
         "release_kind": "github",
@@ -321,7 +421,7 @@
       "watchers": 4
     },
     "name": "swarmauri-notebooks",
-    "observed_at": "2026-08-10T13:12:48Z",
+    "observed_at": "2026-08-12T08:39:38Z",
     "owner": "swarmauri",
     "package_ids": [],
     "packages": [],
@@ -333,7 +433,7 @@
         "legal_evidence": [],
         "legal_inherits_from": "repository:swarmauri/swarmauri-notebooks",
         "name": "swarmauri-notebooks",
-        "observed_at": "2026-08-10T13:12:48Z",
+        "observed_at": "2026-08-12T08:39:38Z",
         "path": null,
         "repository": "swarmauri/swarmauri-notebooks",
         "repository_route": "/catalog/repositories/swarmauri/swarmauri-notebooks",
@@ -352,7 +452,7 @@
       "coverage": {},
       "governed": false,
       "observation_status": "not_found",
-      "observed_at": "2026-08-10T13:12:48Z",
+      "observed_at": "2026-08-12T08:39:42Z",
       "present": false,
       "registry_url": null,
       "status_counts": {},

@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-10T13:12:47Z",
+  "generated_at": "2026-08-12T08:39:07Z",
   "packages": [
     {
       "claim_boundary": "Publication is reported only when confirmed by the named public registry.",
@@ -162,7 +162,7 @@
       "evidence": [
         {
           "kind": "registry",
-          "observed_at": "2026-08-10T13:12:47Z",
+          "observed_at": "2026-08-12T08:39:07Z",
           "url": "https://www.npmjs.com/package/@groupsum/file-browser"
         }
       ],
@@ -203,7 +203,7 @@
       "license_status": "observed",
       "manifest_path": "packages/file-browser/package.json",
       "name": "@groupsum/file-browser",
-      "observed_at": "2026-08-10T13:12:47Z",
+      "observed_at": "2026-08-12T08:39:07Z",
       "owner": "groupsum",
       "package_kind": "published-package",
       "private": false,
@@ -224,7 +224,7 @@
           "legal_inherits_from": "package:npm:@groupsum/file-browser:groupsum/file-browser:packages/file-browser/package.json",
           "license_expression": "UNLICENSED",
           "license_status": "observed",
-          "observed_at": "2026-08-10T13:12:47Z",
+          "observed_at": "2026-08-12T08:39:07Z",
           "published_at": "2026-06-15T10:49:52.263Z",
           "release_kind": "npm",
           "route": "/catalog/releases/npm/groupsum-file-browser-7c3baa16fc",
@@ -259,7 +259,7 @@
       "evidence": [
         {
           "kind": "source",
-          "observed_at": "2026-08-10T13:12:47Z",
+          "observed_at": "2026-08-12T08:39:07Z",
           "url": "https://github.com/groupsum/file-browser/blob/master/package.json"
         }
       ],
@@ -292,7 +292,7 @@
       "license_status": "observed",
       "manifest_path": "package.json",
       "name": "file-browser-workspace",
-      "observed_at": "2026-08-10T13:12:47Z",
+      "observed_at": "2026-08-12T08:39:07Z",
       "owner": "groupsum",
       "package_kind": "workspace-project",
       "private": true,
@@ -342,7 +342,7 @@
       "evidence": [
         {
           "kind": "source",
-          "observed_at": "2026-08-10T13:12:47Z",
+          "observed_at": "2026-08-12T08:39:07Z",
           "url": "https://github.com/groupsum/file-browser/blob/master/pyproject.toml"
         }
       ],
@@ -375,7 +375,7 @@
       "license_status": "observed",
       "manifest_path": "pyproject.toml",
       "name": "file-browser-workspace",
-      "observed_at": "2026-08-10T13:12:47Z",
+      "observed_at": "2026-08-12T08:39:07Z",
       "owner": "groupsum",
       "package_kind": "package-candidate",
       "private": false,
@@ -405,14 +405,6 @@
     "archived": false,
     "claim_boundary": "SSOT artifact counts and coverage are registry-reported observations; they do not by themselves prove that every public product claim is supported.",
     "commit_activity": [
-      {
-        "count": 0,
-        "date": "2026-07-12"
-      },
-      {
-        "count": 0,
-        "date": "2026-07-13"
-      },
       {
         "count": 0,
         "date": "2026-07-14"
@@ -524,12 +516,25 @@
       {
         "count": 0,
         "date": "2026-08-10"
+      },
+      {
+        "count": 0,
+        "date": "2026-08-11"
+      },
+      {
+        "count": 0,
+        "date": "2026-08-12"
       }
     ],
     "contributors": [
       {
+        "account_type": "User",
+        "anonymous": false,
+        "avatar_url": "https://avatars.githubusercontent.com/u/25079070?v=4",
         "contributions": 7,
+        "id": "25079070",
         "login": "cobycloud",
+        "name": null,
         "url": "https://github.com/cobycloud"
       }
     ],
@@ -541,12 +546,12 @@
     "evidence": [
       {
         "kind": "ssot-registry",
-        "observed_at": "2026-08-10T13:12:47Z",
+        "observed_at": "2026-08-12T08:39:15Z",
         "url": "https://github.com/groupsum/file-browser/blob/master/.ssot/registry.json"
       },
       {
         "kind": "source",
-        "observed_at": "2026-08-10T13:12:47Z",
+        "observed_at": "2026-08-12T08:39:14Z",
         "url": "https://github.com/groupsum/file-browser"
       }
     ],
@@ -561,7 +566,7 @@
         "legal_inherits_from": "repository:groupsum/file-browser",
         "license_expression": "NOASSERTION",
         "license_status": "observed",
-        "observed_at": "2026-08-10T13:12:47Z",
+        "observed_at": "2026-08-12T08:39:14Z",
         "prerelease": false,
         "published_at": "2026-06-15T10:49:40Z",
         "release_kind": "github",
@@ -633,7 +638,7 @@
       "watchers": 0
     },
     "name": "file-browser",
-    "observed_at": "2026-08-10T13:12:47Z",
+    "observed_at": "2026-08-12T08:39:14Z",
     "owner": "groupsum",
     "package_ids": [
       "package:npm:@groupsum/file-browser:groupsum/file-browser:packages/file-browser/package.json",
@@ -718,6 +723,8 @@
         "issues": 0,
         "profiles": 0,
         "releases": 1,
+        "risks": 0,
+        "scopes": 0,
         "specs": 41,
         "tests": 0
       },
@@ -733,110 +740,721 @@
       "inventory": {
         "adrs": [
           {
+            "content_sha256": "df1c5e95e275fe46a2dba61eb81c6b699a80b739b32ab6db91ac0e8070bef0ee",
             "id": "adr:0600",
+            "immutable": true,
+            "managed": true,
+            "number": 600,
+            "origin": "ssot-origin",
+            "package_version": "0.2.24",
+            "relationship_integrity": {
+              "reference_count": 0,
+              "resolved_reference_count": 0,
+              "unresolved_reference_count": 0,
+              "unresolved_references": []
+            },
             "status": "draft",
+            "superseded_by": [],
+            "supersedes": [],
             "title": "Canonical registry is a single JSON document"
           },
           {
+            "content_sha256": "4093b435772170085b35cca4429af53678affce5b26d27f0be0de25fdca79557",
             "id": "adr:0601",
+            "immutable": true,
+            "managed": true,
+            "number": 601,
+            "origin": "ssot-origin",
+            "package_version": "0.2.24",
+            "relationship_integrity": {
+              "reference_count": 0,
+              "resolved_reference_count": 0,
+              "unresolved_reference_count": 0,
+              "unresolved_references": []
+            },
             "status": "draft",
+            "superseded_by": [],
+            "supersedes": [],
             "title": "Features are the targetable units"
           },
           {
+            "content_sha256": "eb5340ab8bb35a8c66600f9fb19c8e92193d40e4f884f783f834f795ce66b559",
             "id": "adr:0602",
+            "immutable": true,
+            "managed": true,
+            "number": 602,
+            "origin": "ssot-origin",
+            "package_version": "0.2.24",
+            "relationship_integrity": {
+              "reference_count": 0,
+              "resolved_reference_count": 0,
+              "unresolved_reference_count": 0,
+              "unresolved_references": []
+            },
             "status": "draft",
+            "superseded_by": [],
+            "supersedes": [],
             "title": "Issues are plannable work items"
           },
           {
+            "content_sha256": "ca885ef54c3cf6f557dc5ed9e266e1a838c85b07e04ee5dcd7285dbe4997d75c",
             "id": "adr:0603",
+            "immutable": true,
+            "managed": true,
+            "number": 603,
+            "origin": "ssot-origin",
+            "package_version": "0.2.24",
+            "relationship_integrity": {
+              "reference_count": 0,
+              "resolved_reference_count": 0,
+              "unresolved_reference_count": 0,
+              "unresolved_references": []
+            },
             "status": "draft",
+            "superseded_by": [],
+            "supersedes": [],
             "title": "Entity-centric registry with a derived graph export"
           },
           {
+            "content_sha256": "e52d61390b0446f56b67f4dd8f716b7fa82d2a68734e31c95752106936c0509e",
             "id": "adr:0604",
+            "immutable": true,
+            "managed": true,
+            "number": 604,
+            "origin": "ssot-origin",
+            "package_version": "0.2.24",
+            "relationship_integrity": {
+              "reference_count": 0,
+              "resolved_reference_count": 0,
+              "unresolved_reference_count": 0,
+              "unresolved_references": []
+            },
             "status": "draft",
+            "superseded_by": [],
+            "supersedes": [],
             "title": "Normalized prefixed IDs"
           },
           {
+            "content_sha256": "de3919fbc84fc5382d026f053b6acb80afa95231233cd2ef413c5f997fcc9bed",
             "id": "adr:0605",
+            "immutable": true,
+            "managed": true,
+            "number": 605,
+            "origin": "ssot-origin",
+            "package_version": "0.2.24",
+            "relationship_integrity": {
+              "reference_count": 0,
+              "resolved_reference_count": 0,
+              "unresolved_reference_count": 0,
+              "unresolved_references": []
+            },
             "status": "draft",
+            "superseded_by": [],
+            "supersedes": [],
             "title": "Claim status and claim tier are orthogonal"
           },
           {
+            "content_sha256": "8f326281038ffc03a3719ba753252d88bd10508b0f22c0ac8c1062410685038a",
             "id": "adr:0606",
+            "immutable": true,
+            "managed": true,
+            "number": 606,
+            "origin": "ssot-origin",
+            "package_version": "0.2.24",
+            "relationship_integrity": {
+              "reference_count": 0,
+              "resolved_reference_count": 0,
+              "unresolved_reference_count": 0,
+              "unresolved_references": []
+            },
             "status": "draft",
+            "superseded_by": [],
+            "supersedes": [],
             "title": "Feature implementation state is separate from lifecycle state"
           },
           {
+            "content_sha256": "6c43b0bd71e827b6653e141008229718c93e82e7d94ea9fd0edb1f65169e9b3e",
             "id": "adr:0607",
+            "immutable": true,
+            "managed": true,
+            "number": 607,
+            "origin": "ssot-origin",
+            "package_version": "0.2.24",
+            "relationship_integrity": {
+              "reference_count": 0,
+              "resolved_reference_count": 0,
+              "unresolved_reference_count": 0,
+              "unresolved_references": []
+            },
             "status": "draft",
+            "superseded_by": [],
+            "supersedes": [],
             "title": "Immutable boundary and release snapshots"
           },
           {
+            "content_sha256": "d524d80d09530eb6c5b35dd7756efdbd6e8888aed34f06d4063541edd24f8dc7",
             "id": "adr:0608",
+            "immutable": true,
+            "managed": true,
+            "number": 608,
+            "origin": "ssot-origin",
+            "package_version": "0.2.24",
+            "relationship_integrity": {
+              "reference_count": 0,
+              "resolved_reference_count": 0,
+              "unresolved_reference_count": 0,
+              "unresolved_references": []
+            },
             "status": "draft",
+            "superseded_by": [],
+            "supersedes": [],
             "title": "Fail-closed guards"
           },
           {
+            "content_sha256": "d9519d0712bd17010baf1623530620ba4842d578a9d7af799d01dffd38264950",
             "id": "adr:0609",
+            "immutable": true,
+            "managed": true,
+            "number": 609,
+            "origin": "ssot-origin",
+            "package_version": "0.2.24",
+            "relationship_integrity": {
+              "reference_count": 0,
+              "resolved_reference_count": 0,
+              "unresolved_reference_count": 0,
+              "unresolved_references": []
+            },
             "status": "draft",
+            "superseded_by": [],
+            "supersedes": [],
             "title": "Generated projections are non-canonical"
           },
           {
+            "content_sha256": "edd9c6a158c97c47e2d2c642eb7878654541d527bf76593fd41ab19a9210547c",
             "id": "adr:0610",
+            "immutable": true,
+            "managed": true,
+            "number": 610,
+            "origin": "ssot-origin",
+            "package_version": "0.2.24",
+            "relationship_integrity": {
+              "reference_count": 0,
+              "resolved_reference_count": 0,
+              "unresolved_reference_count": 0,
+              "unresolved_references": []
+            },
             "status": "draft",
+            "superseded_by": [],
+            "supersedes": [],
             "title": "Explicit schema versioning"
           },
           {
+            "content_sha256": "8c343ca4db0f908f28b865fac41e2f5681d1483c0f5d9a3c5bdd881923fd2ceb",
             "id": "adr:0611",
+            "immutable": true,
+            "managed": true,
+            "number": 611,
+            "origin": "ssot-origin",
+            "package_version": "0.2.24",
+            "relationship_integrity": {
+              "reference_count": 0,
+              "resolved_reference_count": 0,
+              "unresolved_reference_count": 0,
+              "unresolved_references": []
+            },
             "status": "draft",
+            "superseded_by": [],
+            "supersedes": [],
             "title": "Portable SSOT core with repo-specific evidence adapters"
           },
           {
+            "content_sha256": "2b0a4e913a2f21c92f115a79eb22cd6c602cf14fba7d3b80abf6ce006c122158",
             "id": "adr:0612",
+            "immutable": true,
+            "managed": true,
+            "number": 612,
+            "origin": "ssot-origin",
+            "package_version": "0.2.24",
+            "relationship_integrity": {
+              "reference_count": 0,
+              "resolved_reference_count": 0,
+              "unresolved_reference_count": 0,
+              "unresolved_references": []
+            },
             "status": "draft",
+            "superseded_by": [],
+            "supersedes": [],
             "title": "Enforce max path and filename lengths under `.ssot`"
           },
           {
+            "content_sha256": "6c55fb48dbe7b5ce781e0177171e843cb0a15587a29acdb9cbdad37c241cc2c9",
             "id": "adr:0613",
+            "immutable": true,
+            "managed": true,
+            "number": 613,
+            "origin": "ssot-origin",
+            "package_version": "0.2.24",
+            "relationship_integrity": {
+              "reference_count": 0,
+              "resolved_reference_count": 0,
+              "unresolved_reference_count": 0,
+              "unresolved_references": []
+            },
             "status": "accepted",
+            "superseded_by": [],
+            "supersedes": [],
             "title": "Profiles are reusable feature bundles with derived pass status"
           },
           {
+            "content_sha256": "f4171377392d5be2e264e40f1f6f283946e9c317f38dee5f9497bf941d1984c6",
             "id": "adr:0614",
+            "immutable": true,
+            "managed": true,
+            "number": 614,
+            "origin": "ssot-origin",
+            "package_version": "0.2.24",
+            "relationship_integrity": {
+              "reference_count": 0,
+              "resolved_reference_count": 0,
+              "unresolved_reference_count": 0,
+              "unresolved_references": []
+            },
             "status": "accepted",
+            "superseded_by": [],
+            "supersedes": [],
             "title": "SPECs own typed ADR links"
           },
           {
+            "content_sha256": "65eabedca371a72362329804280fab560760533f7a6f533724b35cccd257bb73",
             "id": "adr:0615",
+            "immutable": true,
+            "managed": true,
+            "number": 615,
+            "origin": "ssot-origin",
+            "package_version": "0.2.24",
+            "relationship_integrity": {
+              "reference_count": 0,
+              "resolved_reference_count": 0,
+              "unresolved_reference_count": 0,
+              "unresolved_references": []
+            },
             "status": "accepted",
+            "superseded_by": [],
+            "supersedes": [],
             "title": "Downstream assurance-language ceilings for feature target claim tiers"
           },
           {
+            "content_sha256": "5b98ac8f16de3b9d01c0e8236f471f3ae221e2ef804ccd97c4744bcc5f0020b4",
             "id": "adr:0616",
+            "immutable": true,
+            "managed": true,
+            "number": 616,
+            "origin": "ssot-origin",
+            "package_version": "0.2.24",
+            "relationship_integrity": {
+              "reference_count": 0,
+              "resolved_reference_count": 0,
+              "unresolved_reference_count": 0,
+              "unresolved_references": []
+            },
             "status": "accepted",
+            "superseded_by": [],
+            "supersedes": [],
             "title": "Out-of-bounds implementation disposition is explicit"
           },
           {
+            "content_sha256": "6313b7055e65270d23d3f257d610ff7c0aae010ef25ad9ad06eb5cd797799606",
             "id": "adr:0617",
+            "immutable": true,
+            "managed": true,
+            "number": 617,
+            "origin": "ssot-origin",
+            "package_version": "0.2.24",
+            "relationship_integrity": {
+              "reference_count": 0,
+              "resolved_reference_count": 0,
+              "unresolved_reference_count": 0,
+              "unresolved_references": []
+            },
             "status": "accepted",
+            "superseded_by": [],
+            "supersedes": [],
             "title": "Feature implementation is capped by active required claims"
           },
           {
+            "content_sha256": "eca5cf2bb287f824481d5c67bbab2252c146369d5d9f7fc9e05fceacb31e351e",
             "id": "adr:0618",
+            "immutable": true,
+            "managed": true,
+            "number": 618,
+            "origin": "ssot-origin",
+            "package_version": "0.2.24",
+            "relationship_integrity": {
+              "reference_count": 0,
+              "resolved_reference_count": 0,
+              "unresolved_reference_count": 0,
+              "unresolved_references": []
+            },
             "status": "draft",
+            "superseded_by": [],
+            "supersedes": [],
             "title": "Local Release Assurance Remains SSOT Native"
           },
           {
+            "content_sha256": "79d20d38e4b3a78221ebb72eebc495d5f1e08d8239a20feb66608018c944fe35",
             "id": "adr:0619",
+            "immutable": true,
+            "managed": true,
+            "number": 619,
+            "origin": "ssot-origin",
+            "package_version": "0.2.24",
+            "relationship_integrity": {
+              "reference_count": 0,
+              "resolved_reference_count": 0,
+              "unresolved_reference_count": 0,
+              "unresolved_references": []
+            },
             "status": "draft",
+            "superseded_by": [],
+            "supersedes": [],
             "title": "Content Addressed Governed Source Snapshots"
+          },
+          {
+            "content_sha256": "c039593574d91b26d60876cd6c4c7be241093a443fe7a905176490996ac20fef",
+            "id": "adr:0620",
+            "immutable": true,
+            "managed": true,
+            "number": 620,
+            "origin": "ssot-origin",
+            "package_version": "0.2.24",
+            "relationship_integrity": {
+              "reference_count": 0,
+              "resolved_reference_count": 0,
+              "unresolved_reference_count": 0,
+              "unresolved_references": []
+            },
+            "status": "draft",
+            "superseded_by": [],
+            "supersedes": [],
+            "title": "Local Evidence Bundles Are Derived Release Artifacts"
+          },
+          {
+            "content_sha256": "1695f8f60776f9cbb439ef61ae4d877d400c943802a9bc40ce5c77f835c34999",
+            "id": "adr:0621",
+            "immutable": true,
+            "managed": true,
+            "number": 621,
+            "origin": "ssot-origin",
+            "package_version": "0.2.24",
+            "relationship_integrity": {
+              "reference_count": 0,
+              "resolved_reference_count": 0,
+              "unresolved_reference_count": 0,
+              "unresolved_references": []
+            },
+            "status": "draft",
+            "superseded_by": [],
+            "supersedes": [],
+            "title": "General rules of interpretation govern SSOT meaning"
+          },
+          {
+            "content_sha256": "80ca7cbe8f1ab9ac9521928641e7b9a085cd2b442d3c06004fce6f0c6a0480d0",
+            "id": "adr:0622",
+            "immutable": true,
+            "managed": true,
+            "number": 622,
+            "origin": "ssot-origin",
+            "package_version": "0.2.24",
+            "relationship_integrity": {
+              "reference_count": 0,
+              "resolved_reference_count": 0,
+              "unresolved_reference_count": 0,
+              "unresolved_references": []
+            },
+            "status": "draft",
+            "superseded_by": [],
+            "supersedes": [],
+            "title": "Definitions govern SSOT vocabulary"
+          },
+          {
+            "content_sha256": "c683d3843c999b9bd7d9982b08d33fcae4e8c6ba613b8ad0fb3f3d48bf402a5d",
+            "id": "adr:0625",
+            "immutable": true,
+            "managed": true,
+            "number": 625,
+            "origin": "ssot-origin",
+            "package_version": "0.2.24",
+            "relationship_integrity": {
+              "reference_count": 0,
+              "resolved_reference_count": 0,
+              "unresolved_reference_count": 0,
+              "unresolved_references": []
+            },
+            "status": "draft",
+            "superseded_by": [],
+            "supersedes": [],
+            "title": "Claim Tier Gates Govern Core Promotion"
+          },
+          {
+            "content_sha256": "e63039894783230b3b3542f7c5b15473e0ee7125e51f03568c1f581d5389fc00",
+            "id": "adr:0626",
+            "immutable": true,
+            "managed": true,
+            "number": 626,
+            "origin": "ssot-origin",
+            "package_version": "0.2.24",
+            "relationship_integrity": {
+              "reference_count": 0,
+              "resolved_reference_count": 0,
+              "unresolved_reference_count": 0,
+              "unresolved_references": []
+            },
+            "status": "draft",
+            "superseded_by": [],
+            "supersedes": [],
+            "title": "Externally Authored Validation Can Satisfy T4"
+          },
+          {
+            "content_sha256": "00df7d3c2c720f49c75c6ec1f2957454162622b8760d4faf6c2330709bb3d22b",
+            "id": "adr:0627",
+            "immutable": true,
+            "managed": true,
+            "number": 627,
+            "origin": "ssot-origin",
+            "package_version": "0.2.24",
+            "relationship_integrity": {
+              "reference_count": 0,
+              "resolved_reference_count": 0,
+              "unresolved_reference_count": 0,
+              "unresolved_references": []
+            },
+            "status": "accepted",
+            "superseded_by": [],
+            "supersedes": [],
+            "title": "Feature parent links are inventory composition"
+          },
+          {
+            "content_sha256": "5f702f3308f9e26c995202e7e93560037c13514f793e845ffef365df018314a6",
+            "id": "adr:0628",
+            "immutable": true,
+            "managed": true,
+            "number": 628,
+            "origin": "ssot-origin",
+            "package_version": "0.2.24",
+            "relationship_integrity": {
+              "reference_count": 0,
+              "resolved_reference_count": 0,
+              "unresolved_reference_count": 0,
+              "unresolved_references": []
+            },
+            "status": "draft",
+            "superseded_by": [],
+            "supersedes": [],
+            "title": "SSOT MCP and CLI surfaces stay in parity"
+          },
+          {
+            "content_sha256": "9b59b4e6cefce7890757d407f2061b97e6cfedea7e7e9a96a9649fbff5fb694e",
+            "id": "adr:0629",
+            "immutable": true,
+            "managed": true,
+            "number": 629,
+            "origin": "ssot-origin",
+            "package_version": "0.2.24",
+            "relationship_integrity": {
+              "reference_count": 0,
+              "resolved_reference_count": 0,
+              "unresolved_reference_count": 0,
+              "unresolved_references": []
+            },
+            "status": "draft",
+            "superseded_by": [],
+            "supersedes": [],
+            "title": "SSOT MCP workers may request registry repair authority"
+          },
+          {
+            "content_sha256": "9636cc1fb629be1f58d61603ef63cfe84a4fc0856c1f2fde5391f27a708dd54b",
+            "id": "adr:0630",
+            "immutable": true,
+            "managed": true,
+            "number": 630,
+            "origin": "ssot-origin",
+            "package_version": "0.2.24",
+            "relationship_integrity": {
+              "reference_count": 0,
+              "resolved_reference_count": 0,
+              "unresolved_reference_count": 0,
+              "unresolved_references": []
+            },
+            "status": "draft",
+            "superseded_by": [],
+            "supersedes": [],
+            "title": "Scoped maturation claims ignore unrelated blockers"
+          },
+          {
+            "content_sha256": "1163502e2d1b1d2f71423c0aff471d9e63873f32f9e2691b67ba3a3ee82f51dd",
+            "id": "adr:0631",
+            "immutable": true,
+            "managed": true,
+            "number": 631,
+            "origin": "ssot-origin",
+            "package_version": "0.2.24",
+            "relationship_integrity": {
+              "reference_count": 0,
+              "resolved_reference_count": 0,
+              "unresolved_reference_count": 0,
+              "unresolved_references": []
+            },
+            "status": "draft",
+            "superseded_by": [],
+            "supersedes": [],
+            "title": "MCP mediated upgrade uses the current runtime"
+          },
+          {
+            "content_sha256": "6917f330e06614b28e57f1e4be8ef39f19ba1c32cef537d068029d32bfde4522",
+            "id": "adr:0632",
+            "immutable": true,
+            "managed": true,
+            "number": 632,
+            "origin": "ssot-origin",
+            "package_version": "0.2.24",
+            "relationship_integrity": {
+              "reference_count": 0,
+              "resolved_reference_count": 0,
+              "unresolved_reference_count": 0,
+              "unresolved_references": []
+            },
+            "status": "draft",
+            "superseded_by": [],
+            "supersedes": [],
+            "title": "Targeted repair can proceed with unrelated baseline drift"
+          },
+          {
+            "content_sha256": "cc8755a0edacc0749550ea027825d5676d0507d2e2047f680dd5418d474a4c16",
+            "id": "adr:0633",
+            "immutable": true,
+            "managed": true,
+            "number": 633,
+            "origin": "ssot-origin",
+            "package_version": "0.2.24",
+            "relationship_integrity": {
+              "reference_count": 0,
+              "resolved_reference_count": 0,
+              "unresolved_reference_count": 0,
+              "unresolved_references": []
+            },
+            "status": "accepted",
+            "superseded_by": [],
+            "supersedes": [],
+            "title": "Public registry save validates before write"
+          },
+          {
+            "content_sha256": "1c79ac44aa9cdf3ef89711b70414957b101540e5628c1f2bcbdfa4fd545579aa",
+            "id": "adr:0634",
+            "immutable": true,
+            "managed": true,
+            "number": 634,
+            "origin": "ssot-origin",
+            "package_version": "0.2.24",
+            "relationship_integrity": {
+              "reference_count": 0,
+              "resolved_reference_count": 0,
+              "unresolved_reference_count": 0,
+              "unresolved_references": []
+            },
+            "status": "draft",
+            "superseded_by": [],
+            "supersedes": [],
+            "title": "Proof Graph Is The Canonical Assurance Unit"
+          },
+          {
+            "content_sha256": "09b7379c130feee4b3c154fbfb66f4c051223c0dc39d1287717607573ecdd68b",
+            "id": "adr:0635",
+            "immutable": true,
+            "managed": true,
+            "number": 635,
+            "origin": "ssot-origin",
+            "package_version": "0.2.24",
+            "relationship_integrity": {
+              "reference_count": 0,
+              "resolved_reference_count": 0,
+              "unresolved_reference_count": 0,
+              "unresolved_references": []
+            },
+            "status": "draft",
+            "superseded_by": [],
+            "supersedes": [],
+            "title": "Proof Graph Materialization And Certification Closure"
+          },
+          {
+            "content_sha256": "1dabd04ce2ec63edfedc4be326b993690956eb2e0f606592ac6d3f4350350967",
+            "id": "adr:0636",
+            "immutable": true,
+            "managed": true,
+            "number": 636,
+            "origin": "ssot-origin",
+            "package_version": "0.2.24",
+            "relationship_integrity": {
+              "reference_count": 0,
+              "resolved_reference_count": 0,
+              "unresolved_reference_count": 0,
+              "unresolved_references": []
+            },
+            "status": "draft",
+            "superseded_by": [],
+            "supersedes": [],
+            "title": "Feature create defaults to proof-graph scaffolding"
+          },
+          {
+            "content_sha256": "87314bbf106e1e848d238ca357ee31b3cbcd684577f436ea187eb8e4a66cdc80",
+            "id": "adr:0637",
+            "immutable": true,
+            "managed": true,
+            "number": 637,
+            "origin": "ssot-origin",
+            "package_version": "0.2.24",
+            "relationship_integrity": {
+              "reference_count": 0,
+              "resolved_reference_count": 0,
+              "unresolved_reference_count": 0,
+              "unresolved_references": []
+            },
+            "status": "draft",
+            "superseded_by": [],
+            "supersedes": [],
+            "title": "Pack schema compatibility is forward-only"
+          },
+          {
+            "content_sha256": "96d084d77996547e2a426761a68a7c73c838bb9a57cc8ff40ce690ecacc652b6",
+            "id": "adr:0640",
+            "immutable": true,
+            "managed": true,
+            "number": 640,
+            "origin": "ssot-origin",
+            "package_version": "0.2.24",
+            "relationship_integrity": {
+              "reference_count": 0,
+              "resolved_reference_count": 0,
+              "unresolved_reference_count": 0,
+              "unresolved_references": []
+            },
+            "status": "draft",
+            "superseded_by": [],
+            "supersedes": [],
+            "title": "Evidence Owns Proof Linkage"
           }
         ],
         "boundaries": [
           {
             "feature_ids": [],
+            "frozen": false,
             "id": "bnd:default",
+            "profile_ids": [],
+            "relationship_integrity": {
+              "reference_count": 0,
+              "resolved_reference_count": 0,
+              "unresolved_reference_count": 0,
+              "unresolved_references": []
+            },
             "status": "draft",
             "title": "Default boundary"
           }
@@ -848,118 +1466,889 @@
         "profiles": [],
         "releases": [
           {
+            "boundary_id": "bnd:default",
+            "boundary_ids": [
+              "bnd:default"
+            ],
             "claim_ids": [],
             "evidence_ids": [],
             "id": "rel:0.1.0",
-            "status": "draft"
+            "relationship_integrity": {
+              "reference_count": 2,
+              "resolved_reference_count": 2,
+              "unresolved_reference_count": 0,
+              "unresolved_references": []
+            },
+            "status": "draft",
+            "version": "0.1.0"
           }
         ],
+        "risks": [],
+        "scopes": [],
         "specs": [
           {
+            "adr_ids": [],
+            "content_sha256": "cefdcaf55ead3c0be3acfae6960df12ead00f04d928ea701ca040da9a5c5b6a6",
             "id": "spc:0600",
+            "immutable": true,
+            "kind": "normative",
+            "managed": true,
+            "number": 600,
+            "origin": "ssot-origin",
+            "package_version": "0.2.24",
+            "relationship_integrity": {
+              "reference_count": 0,
+              "resolved_reference_count": 0,
+              "unresolved_reference_count": 0,
+              "unresolved_references": []
+            },
             "status": "draft",
             "title": "Registry core"
           },
           {
+            "adr_ids": [],
+            "content_sha256": "9f3bdf578655d9ec8e40b6710fe1543a82c74c49527f6cce9c70862be31ed840",
             "id": "spc:0601",
+            "immutable": true,
+            "kind": "operational",
+            "managed": true,
+            "number": 601,
+            "origin": "ssot-origin",
+            "package_version": "0.2.24",
+            "relationship_integrity": {
+              "reference_count": 0,
+              "resolved_reference_count": 0,
+              "unresolved_reference_count": 0,
+              "unresolved_references": []
+            },
             "status": "draft",
             "title": "CLI"
           },
           {
+            "adr_ids": [],
+            "content_sha256": "b57c2b2a2b328829fe45828020f18d41ca360eee8cc2428aa48c45f5cea79842",
             "id": "spc:0602",
+            "immutable": true,
+            "kind": "normative",
+            "managed": true,
+            "number": 602,
+            "origin": "ssot-origin",
+            "package_version": "0.2.24",
+            "relationship_integrity": {
+              "reference_count": 0,
+              "resolved_reference_count": 0,
+              "unresolved_reference_count": 0,
+              "unresolved_references": []
+            },
             "status": "draft",
             "title": "Graph model"
           },
           {
+            "adr_ids": [],
+            "content_sha256": "41ed1fe9f7d2e8afd6be87dadc34347eae6f54225b989b518ba341955e5400fe",
             "id": "spc:0603",
+            "immutable": true,
+            "kind": "normative",
+            "managed": true,
+            "number": 603,
+            "origin": "ssot-origin",
+            "package_version": "0.2.24",
+            "relationship_integrity": {
+              "reference_count": 0,
+              "resolved_reference_count": 0,
+              "unresolved_reference_count": 0,
+              "unresolved_references": []
+            },
             "status": "draft",
             "title": "Feature lifecycle"
           },
           {
+            "adr_ids": [],
+            "content_sha256": "4660f8d811e04d057672c5385fa2c5256eaaf0fd93d5840625dd22ebccfc8249",
             "id": "spc:0604",
+            "immutable": true,
+            "kind": "normative",
+            "managed": true,
+            "number": 604,
+            "origin": "ssot-origin",
+            "package_version": "0.2.24",
+            "relationship_integrity": {
+              "reference_count": 0,
+              "resolved_reference_count": 0,
+              "unresolved_reference_count": 0,
+              "unresolved_references": []
+            },
             "status": "draft",
             "title": "Claim statuses"
           },
           {
+            "adr_ids": [
+              "adr:0605",
+              "adr:0625"
+            ],
+            "content_sha256": "59ac79e739cb3a154a38909d08ab35a50869de2b38dba501631ffdb638dd6681",
             "id": "spc:0605",
+            "immutable": true,
+            "kind": "normative",
+            "managed": true,
+            "number": 605,
+            "origin": "ssot-origin",
+            "package_version": "0.2.24",
+            "relationship_integrity": {
+              "reference_count": 2,
+              "resolved_reference_count": 2,
+              "unresolved_reference_count": 0,
+              "unresolved_references": []
+            },
             "status": "draft",
             "title": "Claim tiers"
           },
           {
+            "adr_ids": [],
+            "content_sha256": "8a84bdc0ec0ab2fa90f2f4e1497fcacfffdc8c498c1b8a5aaa5c8adb4f3c9fb8",
             "id": "spc:0606",
+            "immutable": true,
+            "kind": "operational",
+            "managed": true,
+            "number": 606,
+            "origin": "ssot-origin",
+            "package_version": "0.2.24",
+            "relationship_integrity": {
+              "reference_count": 0,
+              "resolved_reference_count": 0,
+              "unresolved_reference_count": 0,
+              "unresolved_references": []
+            },
             "status": "draft",
             "title": "Snapshots and reports"
           },
           {
+            "adr_ids": [],
+            "content_sha256": "ccc3234d7a8efa2e7aad673be750f2e3e1f061cb9e887c2616a8d23e133df436",
             "id": "spc:0607",
+            "immutable": true,
+            "kind": "operational",
+            "managed": true,
+            "number": 607,
+            "origin": "ssot-origin",
+            "package_version": "0.2.24",
+            "relationship_integrity": {
+              "reference_count": 0,
+              "resolved_reference_count": 0,
+              "unresolved_reference_count": 0,
+              "unresolved_references": []
+            },
             "status": "draft",
             "title": "Repository policy"
           },
           {
+            "adr_ids": [
+              "adr:0608",
+              "adr:0625"
+            ],
+            "content_sha256": "94ff64f8b5aeab7c3a31dfc4388cc3f433fdf88058e8182f91dac8e2a1d5e077",
             "id": "spc:0608",
+            "immutable": true,
+            "kind": "normative",
+            "managed": true,
+            "number": 608,
+            "origin": "ssot-origin",
+            "package_version": "0.2.24",
+            "relationship_integrity": {
+              "reference_count": 2,
+              "resolved_reference_count": 2,
+              "unresolved_reference_count": 0,
+              "unresolved_references": []
+            },
             "status": "draft",
             "title": "Gates and fences"
           },
           {
+            "adr_ids": [],
+            "content_sha256": "795d2d71e91a6392c4aa122aa1bab399c5b45d059269a799f5a3c64307796e65",
             "id": "spc:0609",
+            "immutable": true,
+            "kind": "normative",
+            "managed": true,
+            "number": 609,
+            "origin": "ssot-origin",
+            "package_version": "0.2.24",
+            "relationship_integrity": {
+              "reference_count": 0,
+              "resolved_reference_count": 0,
+              "unresolved_reference_count": 0,
+              "unresolved_references": []
+            },
             "status": "draft",
             "title": "ID normalization"
           },
           {
+            "adr_ids": [],
+            "content_sha256": "570c867ab2cbfa06cb094ed13d71b47775a101b7e2eada97ab7d813e8adea557",
             "id": "spc:0610",
+            "immutable": true,
+            "kind": "normative",
+            "managed": true,
+            "number": 610,
+            "origin": "ssot-origin",
+            "package_version": "0.2.24",
+            "relationship_integrity": {
+              "reference_count": 0,
+              "resolved_reference_count": 0,
+              "unresolved_reference_count": 0,
+              "unresolved_references": []
+            },
             "status": "draft",
             "title": "File tree"
           },
           {
+            "adr_ids": [],
+            "content_sha256": "a95916cf43b4db66ee0f88803741d4bd14dd1b3d7e6f2de8ab49bc82d70366c8",
             "id": "spc:0611",
+            "immutable": true,
+            "kind": "normative",
+            "managed": true,
+            "number": 611,
+            "origin": "ssot-origin",
+            "package_version": "0.2.24",
+            "relationship_integrity": {
+              "reference_count": 0,
+              "resolved_reference_count": 0,
+              "unresolved_reference_count": 0,
+              "unresolved_references": []
+            },
             "status": "draft",
             "title": "Planning horizons"
           },
           {
+            "adr_ids": [],
+            "content_sha256": "4ab72deec24ec1f74fd8ef26bccd5e5ee0825d2ec470ff09df5dc4caae35546b",
             "id": "spc:0612",
+            "immutable": true,
+            "kind": "operational",
+            "managed": true,
+            "number": 612,
+            "origin": "ssot-origin",
+            "package_version": "0.2.24",
+            "relationship_integrity": {
+              "reference_count": 0,
+              "resolved_reference_count": 0,
+              "unresolved_reference_count": 0,
+              "unresolved_references": []
+            },
             "status": "draft",
             "title": "Python API"
           },
           {
+            "adr_ids": [],
+            "content_sha256": "48fdec83e006c58586b86a0ac3b54148aa0cb983dadb19f86b29ea8716a84076",
             "id": "spc:0613",
+            "immutable": true,
+            "kind": "normative",
+            "managed": true,
+            "number": 613,
+            "origin": "ssot-origin",
+            "package_version": "0.2.24",
+            "relationship_integrity": {
+              "reference_count": 0,
+              "resolved_reference_count": 0,
+              "unresolved_reference_count": 0,
+              "unresolved_references": []
+            },
             "status": "draft",
             "title": "SSOT path-length policy"
           },
           {
+            "adr_ids": [],
+            "content_sha256": "afe2be935cd8918f4a37bcf2b5c0f77050a1081cc59ba3de393c0bdb11a17049",
             "id": "spc:0614",
+            "immutable": true,
+            "kind": "normative",
+            "managed": true,
+            "number": 614,
+            "origin": "ssot-origin",
+            "package_version": "0.2.24",
+            "relationship_integrity": {
+              "reference_count": 0,
+              "resolved_reference_count": 0,
+              "unresolved_reference_count": 0,
+              "unresolved_references": []
+            },
             "status": "draft",
             "title": "Profile evaluation and boundary resolution"
           },
           {
+            "adr_ids": [
+              "adr:0614"
+            ],
+            "content_sha256": "9dca08b7cab76e8b61384e8a4ef9d799f6fb638aeea0c2a1ca71ff25f2b00caf",
             "id": "spc:0615",
+            "immutable": true,
+            "kind": "normative",
+            "managed": true,
+            "number": 615,
+            "origin": "ssot-origin",
+            "package_version": "0.2.24",
+            "relationship_integrity": {
+              "reference_count": 1,
+              "resolved_reference_count": 1,
+              "unresolved_reference_count": 0,
+              "unresolved_references": []
+            },
             "status": "accepted",
             "title": "Typed SPEC-to-ADR linking"
           },
           {
+            "adr_ids": [
+              "adr:0616"
+            ],
+            "content_sha256": "88de032b9c4b7c3466001cfa39af1958d7948e8f30abd0484f28b53b97696734",
             "id": "spc:0616",
+            "immutable": true,
+            "kind": "normative",
+            "managed": true,
+            "number": 616,
+            "origin": "ssot-origin",
+            "package_version": "0.2.24",
+            "relationship_integrity": {
+              "reference_count": 1,
+              "resolved_reference_count": 1,
+              "unresolved_reference_count": 0,
+              "unresolved_references": []
+            },
             "status": "accepted",
             "title": "Out-of-bounds implementation disposition"
           },
           {
+            "adr_ids": [
+              "adr:0617",
+              "adr:0625"
+            ],
+            "content_sha256": "b30790f63af7744f4066ee8c7050702d9af381174e81421d4ca378e19eee9be7",
             "id": "spc:0617",
+            "immutable": true,
+            "kind": "normative",
+            "managed": true,
+            "number": 617,
+            "origin": "ssot-origin",
+            "package_version": "0.2.24",
+            "relationship_integrity": {
+              "reference_count": 2,
+              "resolved_reference_count": 2,
+              "unresolved_reference_count": 0,
+              "unresolved_references": []
+            },
             "status": "accepted",
             "title": "Feature implementation claim ceilings"
           },
           {
+            "adr_ids": [
+              "adr:0618",
+              "adr:0625"
+            ],
+            "content_sha256": "57013df83f5566d2aec6338684d2a1c8aa395325f80bf04d78912ddd398adafd",
             "id": "spc:0618",
+            "immutable": true,
+            "kind": "governance",
+            "managed": true,
+            "number": 618,
+            "origin": "ssot-origin",
+            "package_version": "0.2.24",
+            "relationship_integrity": {
+              "reference_count": 2,
+              "resolved_reference_count": 2,
+              "unresolved_reference_count": 0,
+              "unresolved_references": []
+            },
             "status": "draft",
             "title": "Local Release Assurance Candidate Scope"
           },
           {
+            "adr_ids": [
+              "adr:0618",
+              "adr:0619"
+            ],
+            "content_sha256": "03d2e478459ea4897ecb041f8f9fb4ddec343e2fbb8d6427845f21ab355cdd3e",
             "id": "spc:0619",
+            "immutable": true,
+            "kind": "operational",
+            "managed": true,
+            "number": 619,
+            "origin": "ssot-origin",
+            "package_version": "0.2.24",
+            "relationship_integrity": {
+              "reference_count": 2,
+              "resolved_reference_count": 2,
+              "unresolved_reference_count": 0,
+              "unresolved_references": []
+            },
             "status": "draft",
             "title": "Governed Source Snapshot Contract"
+          },
+          {
+            "adr_ids": [
+              "adr:0618",
+              "adr:0620"
+            ],
+            "content_sha256": "ed3d944aa41032fca20a84b0bc5d279ab119485e4083ff6334ac6602031a9009",
+            "id": "spc:0620",
+            "immutable": true,
+            "kind": "operational",
+            "managed": true,
+            "number": 620,
+            "origin": "ssot-origin",
+            "package_version": "0.2.24",
+            "relationship_integrity": {
+              "reference_count": 2,
+              "resolved_reference_count": 2,
+              "unresolved_reference_count": 0,
+              "unresolved_references": []
+            },
+            "status": "draft",
+            "title": "Local Evidence Bundle Contract"
+          },
+          {
+            "adr_ids": [
+              "adr:0618",
+              "adr:0620"
+            ],
+            "content_sha256": "2b4d3ce6a043a5ec473e101c1462bdf5eec3c487faf671b87fedd8727bbf2d2d",
+            "id": "spc:0621",
+            "immutable": true,
+            "kind": "operational",
+            "managed": true,
+            "number": 621,
+            "origin": "ssot-origin",
+            "package_version": "0.2.24",
+            "relationship_integrity": {
+              "reference_count": 2,
+              "resolved_reference_count": 2,
+              "unresolved_reference_count": 0,
+              "unresolved_references": []
+            },
+            "status": "draft",
+            "title": "Output Artifact Manifest Contract"
+          },
+          {
+            "adr_ids": [
+              "adr:0618",
+              "adr:0619",
+              "adr:0620",
+              "adr:0625"
+            ],
+            "content_sha256": "91a819c32671428471f67320a0e4a40b2ac58591faa031be808fbaee062f688d",
+            "id": "spc:0622",
+            "immutable": true,
+            "kind": "governance",
+            "managed": true,
+            "number": 622,
+            "origin": "ssot-origin",
+            "package_version": "0.2.24",
+            "relationship_integrity": {
+              "reference_count": 4,
+              "resolved_reference_count": 4,
+              "unresolved_reference_count": 0,
+              "unresolved_references": []
+            },
+            "status": "draft",
+            "title": "Local Release Verification And Gate Contract"
+          },
+          {
+            "adr_ids": [
+              "adr:0621"
+            ],
+            "content_sha256": "adf20a7da2fe7e01b5ba1f86e1092bae4ca9616bff6dad7a34b36b83d4e2869c",
+            "id": "spc:0623",
+            "immutable": true,
+            "kind": "normative",
+            "managed": true,
+            "number": 623,
+            "origin": "ssot-origin",
+            "package_version": "0.2.24",
+            "relationship_integrity": {
+              "reference_count": 1,
+              "resolved_reference_count": 1,
+              "unresolved_reference_count": 0,
+              "unresolved_references": []
+            },
+            "status": "draft",
+            "title": "General rules of interpretation"
+          },
+          {
+            "adr_ids": [
+              "adr:0622"
+            ],
+            "content_sha256": "c5a54ad3b6fb9120221c44c8076ca2771140e8b0f2e6dade45ab5ef2a23b2c2d",
+            "id": "spc:0624",
+            "immutable": true,
+            "kind": "normative",
+            "managed": true,
+            "number": 624,
+            "origin": "ssot-origin",
+            "package_version": "0.2.24",
+            "relationship_integrity": {
+              "reference_count": 1,
+              "resolved_reference_count": 1,
+              "unresolved_reference_count": 0,
+              "unresolved_references": []
+            },
+            "status": "draft",
+            "title": "SSOT definitions"
+          },
+          {
+            "adr_ids": [
+              "adr:0625",
+              "adr:0626"
+            ],
+            "content_sha256": "e2f61f08aa8a1feca23b31b0e078386889dc0510c5342d48b96221c5c495e38e",
+            "id": "spc:0625",
+            "immutable": true,
+            "kind": "normative",
+            "managed": true,
+            "number": 625,
+            "origin": "ssot-origin",
+            "package_version": "0.2.24",
+            "relationship_integrity": {
+              "reference_count": 2,
+              "resolved_reference_count": 2,
+              "unresolved_reference_count": 0,
+              "unresolved_references": []
+            },
+            "status": "draft",
+            "title": "Claim Tier Gates"
+          },
+          {
+            "adr_ids": [
+              "adr:0626"
+            ],
+            "content_sha256": "aab54e5187fe9d95e55d497d5a487ec346d3f741cb552370eb108ff49eba83b2",
+            "id": "spc:0626",
+            "immutable": true,
+            "kind": "normative",
+            "managed": true,
+            "number": 626,
+            "origin": "ssot-origin",
+            "package_version": "0.2.24",
+            "relationship_integrity": {
+              "reference_count": 1,
+              "resolved_reference_count": 1,
+              "unresolved_reference_count": 0,
+              "unresolved_references": []
+            },
+            "status": "draft",
+            "title": "External Validation Evidence"
+          },
+          {
+            "adr_ids": [
+              "adr:0627"
+            ],
+            "content_sha256": "dbd9bc4f03901aa5cacde38c2b5998e480824a615757c1c75681b0c71ba00b56",
+            "id": "spc:0627",
+            "immutable": true,
+            "kind": "normative",
+            "managed": true,
+            "number": 627,
+            "origin": "ssot-origin",
+            "package_version": "0.2.24",
+            "relationship_integrity": {
+              "reference_count": 1,
+              "resolved_reference_count": 1,
+              "unresolved_reference_count": 0,
+              "unresolved_references": []
+            },
+            "status": "accepted",
+            "title": "Feature parent link contract"
+          },
+          {
+            "adr_ids": [
+              "adr:0627"
+            ],
+            "content_sha256": "57d895b844f5f1036bc7cfc547e1d6649597265af2e9f700808b7293659ad177",
+            "id": "spc:0628",
+            "immutable": true,
+            "kind": "normative",
+            "managed": true,
+            "number": 628,
+            "origin": "ssot-origin",
+            "package_version": "0.2.24",
+            "relationship_integrity": {
+              "reference_count": 1,
+              "resolved_reference_count": 1,
+              "unresolved_reference_count": 0,
+              "unresolved_references": []
+            },
+            "status": "accepted",
+            "title": "Feature parent CLI contract"
+          },
+          {
+            "adr_ids": [
+              "adr:0628"
+            ],
+            "content_sha256": "b7c5d2e676b6303008b5a5f81fbac93c278aa1a834fd9821230a5faced7027ff",
+            "id": "spc:0629",
+            "immutable": true,
+            "kind": "operational",
+            "managed": true,
+            "number": 629,
+            "origin": "ssot-origin",
+            "package_version": "0.2.24",
+            "relationship_integrity": {
+              "reference_count": 1,
+              "resolved_reference_count": 1,
+              "unresolved_reference_count": 0,
+              "unresolved_references": []
+            },
+            "status": "draft",
+            "title": "SSOT MCP and CLI surface parity contract"
+          },
+          {
+            "adr_ids": [
+              "adr:0629"
+            ],
+            "content_sha256": "03539c7a0e2a40a78740b84ae56c6dbe9f566262000cce3c51acb97c069d4c5b",
+            "id": "spc:0630",
+            "immutable": true,
+            "kind": "operational",
+            "managed": true,
+            "number": 630,
+            "origin": "ssot-origin",
+            "package_version": "0.2.24",
+            "relationship_integrity": {
+              "reference_count": 1,
+              "resolved_reference_count": 1,
+              "unresolved_reference_count": 0,
+              "unresolved_references": []
+            },
+            "status": "draft",
+            "title": "SSOT MCP registry repair authority"
+          },
+          {
+            "adr_ids": [
+              "adr:0630"
+            ],
+            "content_sha256": "d2080cf9e7eb967a8252e6f3713c94abbcc2327bd361ece4f218c78496415d43",
+            "id": "spc:0631",
+            "immutable": true,
+            "kind": "operational",
+            "managed": true,
+            "number": 631,
+            "origin": "ssot-origin",
+            "package_version": "0.2.24",
+            "relationship_integrity": {
+              "reference_count": 1,
+              "resolved_reference_count": 1,
+              "unresolved_reference_count": 0,
+              "unresolved_references": []
+            },
+            "status": "draft",
+            "title": "Scoped maturation blocker contract"
+          },
+          {
+            "adr_ids": [
+              "adr:0631",
+              "adr:0628"
+            ],
+            "content_sha256": "2857004f9e840fb81cf5c6c27fdec5dfb0e50fd1260973df42217a8238c4e660",
+            "id": "spc:0632",
+            "immutable": true,
+            "kind": "operational",
+            "managed": true,
+            "number": 632,
+            "origin": "ssot-origin",
+            "package_version": "0.2.24",
+            "relationship_integrity": {
+              "reference_count": 2,
+              "resolved_reference_count": 2,
+              "unresolved_reference_count": 0,
+              "unresolved_references": []
+            },
+            "status": "draft",
+            "title": "MCP upgrade delegation contract"
+          },
+          {
+            "adr_ids": [
+              "adr:0632",
+              "adr:0635",
+              "adr:0636"
+            ],
+            "content_sha256": "916f75d55a24bd6d52e4a896858c00db072e9c3b757609d082fde20849bbf660",
+            "id": "spc:0633",
+            "immutable": true,
+            "kind": "operational",
+            "managed": true,
+            "number": 633,
+            "origin": "ssot-origin",
+            "package_version": "0.2.24",
+            "relationship_integrity": {
+              "reference_count": 3,
+              "resolved_reference_count": 3,
+              "unresolved_reference_count": 0,
+              "unresolved_references": []
+            },
+            "status": "draft",
+            "title": "Targeted scaffold repair contract"
+          },
+          {
+            "adr_ids": [
+              "adr:0629",
+              "adr:0630",
+              "adr:0632"
+            ],
+            "content_sha256": "d9cc4a602daf79e3580edb32ddac65e8f1e8d6f02ecfb03b857d975fd0275cd8",
+            "id": "spc:0634",
+            "immutable": true,
+            "kind": "operational",
+            "managed": true,
+            "number": 634,
+            "origin": "ssot-origin",
+            "package_version": "0.2.24",
+            "relationship_integrity": {
+              "reference_count": 3,
+              "resolved_reference_count": 3,
+              "unresolved_reference_count": 0,
+              "unresolved_references": []
+            },
+            "status": "draft",
+            "title": "Worker actionability and repair loop"
+          },
+          {
+            "adr_ids": [
+              "adr:0633"
+            ],
+            "content_sha256": "310ea19c1b91783458ecd15bb95362aa191796d437a936b32c17248ce9e981f6",
+            "id": "spc:0635",
+            "immutable": true,
+            "kind": "operational",
+            "managed": true,
+            "number": 635,
+            "origin": "ssot-origin",
+            "package_version": "0.2.24",
+            "relationship_integrity": {
+              "reference_count": 1,
+              "resolved_reference_count": 1,
+              "unresolved_reference_count": 0,
+              "unresolved_references": []
+            },
+            "status": "accepted",
+            "title": "Registry save validation contract"
+          },
+          {
+            "adr_ids": [
+              "adr:0634",
+              "adr:0635"
+            ],
+            "content_sha256": "6a3798d999cfaeb868c274b88636fc26976cae20177b3758f8111f2e2e8a932b",
+            "id": "spc:0636",
+            "immutable": true,
+            "kind": "normative",
+            "managed": true,
+            "number": 636,
+            "origin": "ssot-origin",
+            "package_version": "0.2.24",
+            "relationship_integrity": {
+              "reference_count": 2,
+              "resolved_reference_count": 2,
+              "unresolved_reference_count": 0,
+              "unresolved_references": []
+            },
+            "status": "draft",
+            "title": "Proof Graph Assurance Contract"
+          },
+          {
+            "adr_ids": [
+              "adr:0635"
+            ],
+            "content_sha256": "fe1e4dbc52f06bbbce40c683ebf8a8c2b3068475b202e5917c5e74a66cce5267",
+            "id": "spc:0637",
+            "immutable": true,
+            "kind": "operational",
+            "managed": true,
+            "number": 637,
+            "origin": "ssot-origin",
+            "package_version": "0.2.24",
+            "relationship_integrity": {
+              "reference_count": 1,
+              "resolved_reference_count": 1,
+              "unresolved_reference_count": 0,
+              "unresolved_references": []
+            },
+            "status": "draft",
+            "title": "Proof Graph Materialization And Certification Flow"
+          },
+          {
+            "adr_ids": [
+              "adr:0601",
+              "adr:0627",
+              "adr:0636"
+            ],
+            "content_sha256": "cce184a772e129b6e02dff9f38931e6344d2520d1c68485345379ae75ed0f9ae",
+            "id": "spc:0638",
+            "immutable": true,
+            "kind": "operational",
+            "managed": true,
+            "number": 638,
+            "origin": "ssot-origin",
+            "package_version": "0.2.24",
+            "relationship_integrity": {
+              "reference_count": 3,
+              "resolved_reference_count": 3,
+              "unresolved_reference_count": 0,
+              "unresolved_references": []
+            },
+            "status": "draft",
+            "title": "Feature create default proof scaffold contract"
+          },
+          {
+            "adr_ids": [
+              "adr:0637",
+              "adr:0610"
+            ],
+            "content_sha256": "4c239ac107d54a4bebea8f71ea54f5376ff1b668713de7a62f70e59f45ddeebc",
+            "id": "spc:0639",
+            "immutable": true,
+            "kind": "normative",
+            "managed": true,
+            "number": 639,
+            "origin": "ssot-origin",
+            "package_version": "0.2.24",
+            "relationship_integrity": {
+              "reference_count": 2,
+              "resolved_reference_count": 2,
+              "unresolved_reference_count": 0,
+              "unresolved_references": []
+            },
+            "status": "draft",
+            "title": "Forward-only pack schema compatibility contract"
+          },
+          {
+            "adr_ids": [
+              "adr:0640",
+              "adr:0634",
+              "adr:0635",
+              "adr:0603"
+            ],
+            "content_sha256": "4cbe1b58e2099b456f84ab99c0e44d6af563a07407bb10296c1b0ec3c411c504",
+            "id": "spc:0640",
+            "immutable": true,
+            "kind": "normative",
+            "managed": true,
+            "number": 640,
+            "origin": "ssot-origin",
+            "package_version": "0.2.24",
+            "relationship_integrity": {
+              "reference_count": 4,
+              "resolved_reference_count": 4,
+              "unresolved_reference_count": 0,
+              "unresolved_references": []
+            },
+            "status": "draft",
+            "title": "Evidence Centered Proof Link Contract"
           }
         ],
         "tests": []
       },
       "inventory_truncated": {
-        "adrs": 17,
+        "adrs": 0,
         "boundaries": 0,
         "claims": 0,
         "evidence": 0,
@@ -967,13 +2356,23 @@
         "issues": 0,
         "profiles": 0,
         "releases": 0,
-        "specs": 21,
+        "risks": 0,
+        "scopes": 0,
+        "specs": 0,
         "tests": 0
       },
-      "observed_at": "2026-08-10T13:12:47Z",
+      "observed_at": "2026-08-12T08:39:15Z",
       "present": true,
       "raw_url": "https://raw.githubusercontent.com/groupsum/file-browser/master/.ssot/registry.json",
       "registry_url": "https://github.com/groupsum/file-browser/blob/master/.ssot/registry.json",
+      "relationship_integrity": {
+        "reference_count": 53,
+        "relationship_closed": true,
+        "resolved_reference_count": 53,
+        "unresolved_reference_count": 0,
+        "unresolved_references": [],
+        "unresolved_references_omitted": 0
+      },
       "schema_version": "0.8.0",
       "source_sha256": "5d2b514bb578ff4e4e65bed98bc3694831eecd2096e57e37ee078ed4ffb69ec0",
       "status_counts": {
@@ -992,6 +2391,8 @@
         "releases": {
           "draft": 1
         },
+        "risks": {},
+        "scopes": {},
         "specs": {
           "accepted": 6,
           "draft": 35

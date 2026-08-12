@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-10T13:12:47Z",
+  "generated_at": "2026-08-12T08:39:07Z",
   "packages": [
     {
       "claim_boundary": "Publication is reported only when confirmed by the named public registry.",
@@ -17,7 +17,7 @@
       "evidence": [
         {
           "kind": "source",
-          "observed_at": "2026-08-10T13:12:47Z",
+          "observed_at": "2026-08-12T08:39:07Z",
           "url": "https://github.com/swarmauri/docs-swarmauri-com/blob/master/package.json"
         }
       ],
@@ -31,7 +31,7 @@
       "license_status": "not-observed",
       "manifest_path": "package.json",
       "name": "docs-swarmauri-com",
-      "observed_at": "2026-08-10T13:12:47Z",
+      "observed_at": "2026-08-12T08:39:07Z",
       "owner": "swarmauri",
       "package_kind": "workspace-project",
       "private": true,
@@ -171,7 +171,7 @@
       "evidence": [
         {
           "kind": "source",
-          "observed_at": "2026-08-10T13:12:47Z",
+          "observed_at": "2026-08-12T08:39:07Z",
           "url": "https://github.com/swarmauri/docs-swarmauri-com/blob/master/pyproject.toml"
         }
       ],
@@ -185,7 +185,7 @@
       "license_status": "not-observed",
       "manifest_path": "pyproject.toml",
       "name": "docs-swarmauri-com",
-      "observed_at": "2026-08-10T13:12:47Z",
+      "observed_at": "2026-08-12T08:39:07Z",
       "owner": "swarmauri",
       "package_kind": "package-candidate",
       "private": false,
@@ -216,14 +216,6 @@
     "archived": false,
     "claim_boundary": "No canonical .ssot/registry.json was observed; repository, release, deployment, and live-service states are reported separately.",
     "commit_activity": [
-      {
-        "count": 0,
-        "date": "2026-07-12"
-      },
-      {
-        "count": 1,
-        "date": "2026-07-13"
-      },
       {
         "count": 0,
         "date": "2026-07-14"
@@ -335,12 +327,25 @@
       {
         "count": 0,
         "date": "2026-08-10"
+      },
+      {
+        "count": 0,
+        "date": "2026-08-11"
+      },
+      {
+        "count": 0,
+        "date": "2026-08-12"
       }
     ],
     "contributors": [
       {
+        "account_type": "User",
+        "anonymous": false,
+        "avatar_url": "https://avatars.githubusercontent.com/u/25079070?v=4",
         "contributions": 36,
+        "id": "25079070",
         "login": "cobycloud",
+        "name": null,
         "url": "https://github.com/cobycloud"
       }
     ],
@@ -352,7 +357,7 @@
     "evidence": [
       {
         "kind": "source",
-        "observed_at": "2026-08-10T13:12:48Z",
+        "observed_at": "2026-08-12T08:39:34Z",
         "url": "https://github.com/swarmauri/docs-swarmauri-com"
       }
     ],
@@ -395,7 +400,7 @@
       "watchers": 0
     },
     "name": "docs-swarmauri-com",
-    "observed_at": "2026-08-10T13:12:48Z",
+    "observed_at": "2026-08-12T08:39:34Z",
     "owner": "swarmauri",
     "package_ids": [
       "package:npm:docs-swarmauri-com:swarmauri/docs-swarmauri-com:package.json",
@@ -447,7 +452,7 @@
         "legal_evidence": [],
         "legal_inherits_from": "repository:swarmauri/docs-swarmauri-com",
         "name": "docs/api",
-        "observed_at": "2026-08-10T13:12:48Z",
+        "observed_at": "2026-08-12T08:39:34Z",
         "path": "docs/api",
         "repository": "swarmauri/docs-swarmauri-com",
         "repository_route": "/catalog/repositories/swarmauri/docs-swarmauri-com",
@@ -461,7 +466,7 @@
         "legal_evidence": [],
         "legal_inherits_from": "repository:swarmauri/docs-swarmauri-com",
         "name": "docs/assets",
-        "observed_at": "2026-08-10T13:12:48Z",
+        "observed_at": "2026-08-12T08:39:34Z",
         "path": "docs/assets",
         "repository": "swarmauri/docs-swarmauri-com",
         "repository_route": "/catalog/repositories/swarmauri/docs-swarmauri-com",
@@ -475,7 +480,7 @@
         "legal_evidence": [],
         "legal_inherits_from": "repository:swarmauri/docs-swarmauri-com",
         "name": "docs/blog",
-        "observed_at": "2026-08-10T13:12:48Z",
+        "observed_at": "2026-08-12T08:39:34Z",
         "path": "docs/blog",
         "repository": "swarmauri/docs-swarmauri-com",
         "repository_route": "/catalog/repositories/swarmauri/docs-swarmauri-com",
@@ -489,7 +494,7 @@
         "legal_evidence": [],
         "legal_inherits_from": "repository:swarmauri/docs-swarmauri-com",
         "name": "docs/guide",
-        "observed_at": "2026-08-10T13:12:48Z",
+        "observed_at": "2026-08-12T08:39:34Z",
         "path": "docs/guide",
         "repository": "swarmauri/docs-swarmauri-com",
         "repository_route": "/catalog/repositories/swarmauri/docs-swarmauri-com",
@@ -503,7 +508,7 @@
         "legal_evidence": [],
         "legal_inherits_from": "repository:swarmauri/docs-swarmauri-com",
         "name": "docs/home",
-        "observed_at": "2026-08-10T13:12:48Z",
+        "observed_at": "2026-08-12T08:39:34Z",
         "path": "docs/home",
         "repository": "swarmauri/docs-swarmauri-com",
         "repository_route": "/catalog/repositories/swarmauri/docs-swarmauri-com",
@@ -517,7 +522,7 @@
         "legal_evidence": [],
         "legal_inherits_from": "repository:swarmauri/docs-swarmauri-com",
         "name": "docs/index.md",
-        "observed_at": "2026-08-10T13:12:48Z",
+        "observed_at": "2026-08-12T08:39:34Z",
         "path": "docs/index.md",
         "repository": "swarmauri/docs-swarmauri-com",
         "repository_route": "/catalog/repositories/swarmauri/docs-swarmauri-com",
@@ -531,7 +536,7 @@
         "legal_evidence": [],
         "legal_inherits_from": "repository:swarmauri/docs-swarmauri-com",
         "name": "docs/news",
-        "observed_at": "2026-08-10T13:12:48Z",
+        "observed_at": "2026-08-12T08:39:34Z",
         "path": "docs/news",
         "repository": "swarmauri/docs-swarmauri-com",
         "repository_route": "/catalog/repositories/swarmauri/docs-swarmauri-com",
@@ -545,7 +550,7 @@
         "legal_evidence": [],
         "legal_inherits_from": "repository:swarmauri/docs-swarmauri-com",
         "name": "docs/people",
-        "observed_at": "2026-08-10T13:12:48Z",
+        "observed_at": "2026-08-12T08:39:34Z",
         "path": "docs/people",
         "repository": "swarmauri/docs-swarmauri-com",
         "repository_route": "/catalog/repositories/swarmauri/docs-swarmauri-com",
@@ -565,7 +570,7 @@
       "coverage": {},
       "governed": false,
       "observation_status": "not_found",
-      "observed_at": "2026-08-10T13:12:48Z",
+      "observed_at": "2026-08-12T08:39:35Z",
       "present": false,
       "registry_url": null,
       "status_counts": {},

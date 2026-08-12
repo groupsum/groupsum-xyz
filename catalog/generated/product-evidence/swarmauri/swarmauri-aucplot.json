@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-10T13:12:47Z",
+  "generated_at": "2026-08-12T08:39:07Z",
   "packages": [
     {
       "claim_boundary": "Publication is reported only when confirmed by the named public registry.",
@@ -63,7 +63,7 @@
       "evidence": [
         {
           "kind": "source",
-          "observed_at": "2026-08-10T13:12:47Z",
+          "observed_at": "2026-08-12T08:39:07Z",
           "url": "https://github.com/swarmauri/swarmauri-aucplot/blob/master/aucplot/frontend/package.json"
         }
       ],
@@ -104,7 +104,7 @@
       "license_status": "observed",
       "manifest_path": "aucplot/frontend/package.json",
       "name": "gradio_aucplot",
-      "observed_at": "2026-08-10T13:12:47Z",
+      "observed_at": "2026-08-12T08:39:07Z",
       "owner": "swarmauri",
       "package_kind": "package-candidate",
       "private": false,
@@ -200,7 +200,7 @@
       "evidence": [
         {
           "kind": "source",
-          "observed_at": "2026-08-10T13:12:47Z",
+          "observed_at": "2026-08-12T08:39:07Z",
           "url": "https://github.com/swarmauri/swarmauri-aucplot/blob/master/aucplot/pyproject.toml"
         }
       ],
@@ -232,7 +232,7 @@
       "license_status": "observed",
       "manifest_path": "aucplot/pyproject.toml",
       "name": "gradio_aucplot",
-      "observed_at": "2026-08-10T13:12:47Z",
+      "observed_at": "2026-08-12T08:39:07Z",
       "owner": "swarmauri",
       "package_kind": "package-candidate",
       "private": false,
@@ -262,14 +262,6 @@
     "archived": false,
     "claim_boundary": "No canonical .ssot/registry.json was observed; repository, release, deployment, and live-service states are reported separately.",
     "commit_activity": [
-      {
-        "count": 0,
-        "date": "2026-07-12"
-      },
-      {
-        "count": 0,
-        "date": "2026-07-13"
-      },
       {
         "count": 0,
         "date": "2026-07-14"
@@ -381,17 +373,35 @@
       {
         "count": 0,
         "date": "2026-08-10"
+      },
+      {
+        "count": 0,
+        "date": "2026-08-11"
+      },
+      {
+        "count": 0,
+        "date": "2026-08-12"
       }
     ],
     "contributors": [
       {
+        "account_type": "User",
+        "anonymous": false,
+        "avatar_url": "https://avatars.githubusercontent.com/u/25079070?v=4",
         "contributions": 3,
+        "id": "25079070",
         "login": "cobycloud",
+        "name": null,
         "url": "https://github.com/cobycloud"
       },
       {
+        "account_type": "Anonymous",
+        "anonymous": true,
+        "avatar_url": null,
         "contributions": 1,
-        "login": "Sanidhya Kumar Verma",
+        "id": null,
+        "login": null,
+        "name": "Sanidhya Kumar Verma",
         "url": null
       }
     ],
@@ -403,7 +413,7 @@
     "evidence": [
       {
         "kind": "source",
-        "observed_at": "2026-08-10T13:12:48Z",
+        "observed_at": "2026-08-12T08:39:36Z",
         "url": "https://github.com/swarmauri/swarmauri-aucplot"
       }
     ],
@@ -465,7 +475,7 @@
       "watchers": 0
     },
     "name": "swarmauri-aucplot",
-    "observed_at": "2026-08-10T13:12:48Z",
+    "observed_at": "2026-08-12T08:39:36Z",
     "owner": "swarmauri",
     "package_ids": [
       "package:npm:gradio_aucplot:swarmauri/swarmauri-aucplot:aucplot/frontend/package.json",
@@ -517,7 +527,7 @@
         "legal_evidence": [],
         "legal_inherits_from": "repository:swarmauri/swarmauri-aucplot",
         "name": "aucplot/demo/__init__.py",
-        "observed_at": "2026-08-10T13:12:48Z",
+        "observed_at": "2026-08-12T08:39:36Z",
         "path": "aucplot/demo/__init__.py",
         "repository": "swarmauri/swarmauri-aucplot",
         "repository_route": "/catalog/repositories/swarmauri/swarmauri-aucplot",
@@ -531,7 +541,7 @@
         "legal_evidence": [],
         "legal_inherits_from": "repository:swarmauri/swarmauri-aucplot",
         "name": "aucplot/demo/app.py",
-        "observed_at": "2026-08-10T13:12:48Z",
+        "observed_at": "2026-08-12T08:39:36Z",
         "path": "aucplot/demo/app.py",
         "repository": "swarmauri/swarmauri-aucplot",
         "repository_route": "/catalog/repositories/swarmauri/swarmauri-aucplot",
@@ -545,7 +555,7 @@
         "legal_evidence": [],
         "legal_inherits_from": "repository:swarmauri/swarmauri-aucplot",
         "name": "aucplot/demo/requirements.txt",
-        "observed_at": "2026-08-10T13:12:48Z",
+        "observed_at": "2026-08-12T08:39:36Z",
         "path": "aucplot/demo/requirements.txt",
         "repository": "swarmauri/swarmauri-aucplot",
         "repository_route": "/catalog/repositories/swarmauri/swarmauri-aucplot",
@@ -565,7 +575,7 @@
       "coverage": {},
       "governed": false,
       "observation_status": "not_found",
-      "observed_at": "2026-08-10T13:12:48Z",
+      "observed_at": "2026-08-12T08:39:38Z",
       "present": false,
       "registry_url": null,
       "status_counts": {},

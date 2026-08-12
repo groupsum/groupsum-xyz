@@ -1,0 +1,397 @@
+{
+  "generated_at": "2026-08-12T08:39:07Z",
+  "packages": [
+    {
+      "claim_boundary": "Publication is reported only when confirmed by the named public registry.",
+      "dependencies": [
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": true,
+          "name": "ssot-pack-contracts",
+          "package_key": "pypi:ssot-pack-contracts",
+          "requirement": ">=0.2.17,<0.3.0",
+          "scope": "dependencies"
+        },
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "tomli",
+          "package_key": "pypi:tomli",
+          "requirement": ">=2.0.1; python_version < '3.11'",
+          "scope": "dependencies"
+        },
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "setuptools",
+          "package_key": "pypi:setuptools",
+          "requirement": ">=69",
+          "scope": "build-system.requires"
+        },
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "wheel",
+          "package_key": "pypi:wheel",
+          "requirement": "*",
+          "scope": "build-system.requires"
+        },
+        {
+          "ecosystem": "pypi",
+          "evidence": "repository.manifest",
+          "internal": false,
+          "name": "pytest",
+          "package_key": "pypi:pytest",
+          "requirement": ">=8.0",
+          "scope": "dependency-groups.dev"
+        }
+      ],
+      "dependency_count": 5,
+      "dependent_count": 0,
+      "dependents": [],
+      "description": "Observed pypi package record for access-token-validation-governance-pack.",
+      "description_source": "generated-factual",
+      "display_name": "access-token-validation-governance-pack",
+      "downloads": null,
+      "downstream_completeness": "not-observed",
+      "downstream_count": 0,
+      "ecosystem": "pypi",
+      "evidence": [
+        {
+          "kind": "source",
+          "observed_at": "2026-08-12T08:39:07Z",
+          "url": "https://github.com/groupsum/access-token-validation-governance-pack/blob/master/pyproject.toml"
+        }
+      ],
+      "id": "package:pypi:access-token-validation-governance-pack:groupsum/access-token-validation-governance-pack:pyproject.toml",
+      "kind": "package",
+      "latest_version": "0.1.0.dev1",
+      "legal_evidence": [
+        {
+          "evidence_type": "repository.manifest",
+          "expression": "Apache-2.0",
+          "kind": "license-expression",
+          "name": "Package manifest license",
+          "scope": "direct",
+          "url": "https://github.com/groupsum/access-token-validation-governance-pack/blob/master/pyproject.toml"
+        },
+        {
+          "evidence_type": "repository.tree",
+          "expression": null,
+          "kind": "license-file",
+          "name": "LICENSE",
+          "path": "LICENSE",
+          "scope": "inherited",
+          "url": "https://github.com/groupsum/access-token-validation-governance-pack/blob/master/LICENSE"
+        }
+      ],
+      "legal_repository": "groupsum/access-token-validation-governance-pack",
+      "license_classifiers": [],
+      "license_expression": "Apache-2.0",
+      "license_status": "observed",
+      "manifest_path": "pyproject.toml",
+      "name": "access-token-validation-governance-pack",
+      "observed_at": "2026-08-12T08:39:07Z",
+      "owner": "groupsum",
+      "package_kind": "package-candidate",
+      "private": false,
+      "publication_status": "registry_not_found",
+      "published": false,
+      "registry_url": null,
+      "relationship_count": 6,
+      "relationship_counts": {
+        "package_depends_on_external": 4,
+        "package_depends_on_package": 1,
+        "repository_contains_package": 1
+      },
+      "release_count": 0,
+      "releases": [],
+      "repository": "groupsum/access-token-validation-governance-pack",
+      "reviewed": false,
+      "route": "/catalog/packages/pypi/access-token-validation-governance-pack-0c763744",
+      "source_url": "https://github.com/groupsum/access-token-validation-governance-pack/blob/master/pyproject.toml",
+      "technologies": [
+        "Python"
+      ],
+      "version_declared": "0.1.0.dev1"
+    }
+  ],
+  "repository": {
+    "archived": false,
+    "claim_boundary": "No canonical .ssot/registry.json was observed; repository, release, deployment, and live-service states are reported separately.",
+    "commit_activity": [
+      {
+        "count": 0,
+        "date": "2026-07-14"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-15"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-16"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-17"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-18"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-19"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-20"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-21"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-22"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-23"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-24"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-25"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-26"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-27"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-28"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-29"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-30"
+      },
+      {
+        "count": 0,
+        "date": "2026-07-31"
+      },
+      {
+        "count": 0,
+        "date": "2026-08-01"
+      },
+      {
+        "count": 0,
+        "date": "2026-08-02"
+      },
+      {
+        "count": 0,
+        "date": "2026-08-03"
+      },
+      {
+        "count": 0,
+        "date": "2026-08-04"
+      },
+      {
+        "count": 0,
+        "date": "2026-08-05"
+      },
+      {
+        "count": 0,
+        "date": "2026-08-06"
+      },
+      {
+        "count": 0,
+        "date": "2026-08-07"
+      },
+      {
+        "count": 0,
+        "date": "2026-08-08"
+      },
+      {
+        "count": 0,
+        "date": "2026-08-09"
+      },
+      {
+        "count": 2,
+        "date": "2026-08-10"
+      },
+      {
+        "count": 0,
+        "date": "2026-08-11"
+      },
+      {
+        "count": 0,
+        "date": "2026-08-12"
+      }
+    ],
+    "contributors": [
+      {
+        "account_type": "User",
+        "anonymous": false,
+        "avatar_url": "https://avatars.githubusercontent.com/u/25079070?v=4",
+        "contributions": 2,
+        "id": "25079070",
+        "login": "cobycloud",
+        "name": null,
+        "url": "https://github.com/cobycloud"
+      }
+    ],
+    "created_at": "2026-08-10T13:12:01Z",
+    "default_branch": "master",
+    "description": "Public source repository groupsum/access-token-validation-governance-pack.",
+    "description_source": "generated-factual",
+    "display_name": "access-token-validation-governance-pack",
+    "evidence": [
+      {
+        "kind": "source",
+        "observed_at": "2026-08-12T08:39:10Z",
+        "url": "https://github.com/groupsum/access-token-validation-governance-pack"
+      }
+    ],
+    "fork": false,
+    "full_name": "groupsum/access-token-validation-governance-pack",
+    "github_releases": [],
+    "homepage": null,
+    "id": "repository:groupsum/access-token-validation-governance-pack",
+    "kind": "repository",
+    "language_bytes": {
+      "Python": 17029
+    },
+    "latest_commit": {
+      "author": "cobycloud",
+      "authored_at": "2026-08-10T13:27:00Z",
+      "committed_at": "2026-08-10T13:27:00Z",
+      "committer": "cobycloud",
+      "message": "Standardize governance pack README",
+      "sha": "14d88daee6888d547b0a779f9734eaab39af8adc",
+      "url": "https://github.com/groupsum/access-token-validation-governance-pack/commit/14d88daee6888d547b0a779f9734eaab39af8adc"
+    },
+    "latest_deployment": null,
+    "latest_release": null,
+    "legal_evidence": [
+      {
+        "evidence_type": "github.repository.license",
+        "expression": "Apache-2.0",
+        "kind": "license-expression",
+        "name": "GitHub detected license",
+        "path": null,
+        "scope": "direct",
+        "url": "https://github.com/groupsum/access-token-validation-governance-pack"
+      },
+      {
+        "evidence_type": "repository.tree",
+        "expression": null,
+        "kind": "license-file",
+        "name": "LICENSE",
+        "path": "LICENSE",
+        "scope": "direct",
+        "url": "https://github.com/groupsum/access-token-validation-governance-pack/blob/master/LICENSE"
+      }
+    ],
+    "license": "Apache-2.0",
+    "metrics": {
+      "commits": 2,
+      "contributors": 1,
+      "deployments": 0,
+      "environments": 0,
+      "forks": 0,
+      "github_releases": 0,
+      "open_issues": 0,
+      "packages": 1,
+      "related_resources": 1,
+      "size_kb": 30,
+      "stars": 0,
+      "watchers": 0
+    },
+    "name": "access-token-validation-governance-pack",
+    "observed_at": "2026-08-12T08:39:10Z",
+    "owner": "groupsum",
+    "package_ids": [
+      "package:pypi:access-token-validation-governance-pack:groupsum/access-token-validation-governance-pack:pyproject.toml"
+    ],
+    "packages": [
+      {
+        "ecosystem": "pypi",
+        "id": "package:pypi:access-token-validation-governance-pack:groupsum/access-token-validation-governance-pack:pyproject.toml",
+        "last_published_at": null,
+        "latest_version": "0.1.0.dev1",
+        "license_expression": "Apache-2.0",
+        "license_status": "observed",
+        "license_url": "https://github.com/groupsum/access-token-validation-governance-pack/blob/master/LICENSE",
+        "manifest_path": "pyproject.toml",
+        "name": "access-token-validation-governance-pack",
+        "notice_count": 0,
+        "package_kind": "package-candidate",
+        "publication_status": "registry_not_found",
+        "published": false,
+        "release_activity": [],
+        "release_count": 0,
+        "route": "/catalog/packages/pypi/access-token-validation-governance-pack-0c763744"
+      }
+    ],
+    "pushed_at": "2026-08-10T13:27:24Z",
+    "related_resources": [
+      {
+        "evidence_type": "repository.tree",
+        "id": "resource:f454f49b3f10",
+        "legal_evidence": [],
+        "legal_inherits_from": "repository:groupsum/access-token-validation-governance-pack",
+        "name": "docs/governance",
+        "observed_at": "2026-08-12T08:39:10Z",
+        "path": "docs/governance",
+        "repository": "groupsum/access-token-validation-governance-pack",
+        "repository_route": "/catalog/repositories/groupsum/access-token-validation-governance-pack",
+        "resource_type": "documentation.collection",
+        "route": "/catalog/resources/documentation-collection/f454f49b3f10",
+        "url": "https://github.com/groupsum/access-token-validation-governance-pack/tree/master/docs/governance"
+      }
+    ],
+    "relationship_counts": {
+      "repository_contains_package": 1,
+      "repository_contains_related_resource": 1
+    },
+    "reviewed": false,
+    "route": "/catalog/repositories/groupsum/access-token-validation-governance-pack",
+    "ssot_governance": {
+      "counts": {},
+      "coverage": {},
+      "governed": false,
+      "observation_status": "not_found",
+      "observed_at": "2026-08-12T08:39:11Z",
+      "present": false,
+      "registry_url": null,
+      "status_counts": {},
+      "valid": false
+    },
+    "technologies": [
+      "Python"
+    ],
+    "template": false,
+    "topics": [],
+    "updated_at": "2026-08-10T13:28:03Z",
+    "url": "https://github.com/groupsum/access-token-validation-governance-pack",
+    "visibility": "public"
+  },
+  "schema_version": "1.0.0"
+}

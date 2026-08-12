@@ -2,7 +2,7 @@
   "completeness": {
     "commits": "all default-branch commits returned by GitHub REST pagination",
     "contributors": "all contributors returned by GitHub REST, including anonymous rows",
-    "deployments": "GitHub deployment records attached to repositories; live health is not implied",
+    "deployments": "most recent GitHub deployment records and statuses within the configured per-repository observation window; live health is not implied",
     "downstream": "crates.io reverse dependencies where available; GitHub code search disabled by default; npm and PyPI have no complete authoritative public dependents API",
     "github_releases": "all releases returned by GitHub REST",
     "packages": "manifest-discovered packages plus public GitHub packages returned by API",
@@ -13,58 +13,58 @@
   },
   "counts": {
     "organizations": 4,
-    "packages": 1143,
-    "repositories": 69,
-    "resources": 538,
+    "packages": 1158,
+    "repositories": 81,
+    "resources": 559,
     "technologies": 18
   },
   "files": [
     {
-      "bytes": 19643,
+      "bytes": 19599,
       "dataset": "organizations",
       "path": "organizations.json",
       "records": 4,
-      "sha256": "aacbc9d4403a9041582f8ea11d215785035ba234b935f421cbcaa77b3ce606a3"
+      "sha256": "02c200997b698ce27d5adff1b345e5f7b83ccf4868c40d69518e1253981b4a4f"
     },
     {
-      "bytes": 13316651,
+      "bytes": 13413012,
       "dataset": "packages",
       "path": "packages.json",
-      "records": 1143,
-      "sha256": "de3177b477f38fdac768af5cc88972af7d129b507570ee34b805e333c6721bf3"
+      "records": 1158,
+      "sha256": "27696a813e84ea2e1d228ae85caf03706b1c6eba9b9a8cf3d87cb986669bfb19"
     },
     {
-      "bytes": 9251190,
+      "bytes": 32074108,
       "dataset": "repositories",
       "path": "repositories.json",
-      "records": 69,
-      "sha256": "665647c01d64c333c6a16ce2482c2716bdd3b2ec24a257c37a680d6921d7b9f5"
+      "records": 81,
+      "sha256": "8ba0c3def9fc0e392a0fb8f7ab7d5efaf4b8096d0af10350087a11d25ab894b5"
     },
     {
-      "bytes": 675806,
+      "bytes": 702754,
       "dataset": "resources",
       "path": "resources.json",
-      "records": 538,
-      "sha256": "84918732fc893d40d42cb5269cd7e2e2466f2cc606db3c408a9ae919428f7584"
+      "records": 559,
+      "sha256": "3a36ad10599d52b39b5a7e40a44774905c2cc944f1ce46f00a11a87c3f47d5b6"
     },
     {
-      "bytes": 13843,
+      "bytes": 14494,
       "dataset": "technologies",
       "path": "technologies.json",
       "records": 18,
-      "sha256": "4fa50cd7108a6ec23edf1a19a6e8a71cf4268599ce4a87d19ed93ec47975bd9c"
+      "sha256": "c57c32d3d890fa2cde2605918573affde7e0cef6f37d67594ba00df636142004"
     }
   ],
-  "generated_at": "2026-08-10T13:12:47Z",
+  "generated_at": "2026-08-12T08:39:07Z",
   "product_evidence": {
     "path": "/catalog/product-evidence/",
-    "records": 70
+    "records": 82
   },
   "schema_version": "1.0.0",
   "source": "/catalog/catalog.json",
   "source_counts": {
-    "deployments": 4100,
-    "relationships": 10337,
-    "releases": 17334
+    "deployments": 254,
+    "relationships": 11107,
+    "releases": 17315
   }
 }

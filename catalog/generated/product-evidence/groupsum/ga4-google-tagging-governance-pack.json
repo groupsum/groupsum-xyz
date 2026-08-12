@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-10T13:12:47Z",
+  "generated_at": "2026-08-12T08:39:07Z",
   "packages": [
     {
       "claim_boundary": "Publication is reported only when confirmed by the named public registry.",
@@ -63,7 +63,7 @@
       "evidence": [
         {
           "kind": "registry",
-          "observed_at": "2026-08-10T13:12:47Z",
+          "observed_at": "2026-08-12T08:39:07Z",
           "url": "https://pypi.org/project/ga4-google-tagging-governance-pack/"
         }
       ],
@@ -95,7 +95,7 @@
       "license_status": "observed",
       "manifest_path": "pyproject.toml",
       "name": "ga4-google-tagging-governance-pack",
-      "observed_at": "2026-08-10T13:12:47Z",
+      "observed_at": "2026-08-12T08:39:07Z",
       "owner": "groupsum",
       "package_kind": "published-package",
       "private": false,
@@ -117,7 +117,7 @@
           "legal_inherits_from": "package:pypi:ga4-google-tagging-governance-pack:groupsum/ga4-google-tagging-governance-pack:pyproject.toml",
           "license_expression": "Apache-2.0",
           "license_status": "observed",
-          "observed_at": "2026-08-10T13:12:47Z",
+          "observed_at": "2026-08-12T08:39:07Z",
           "published_at": "2026-05-18T09:20:35.962409Z",
           "release_kind": "pypi",
           "route": "/catalog/releases/pypi/ga4-google-tagging-governance-pack-2f9f80a80c",
@@ -132,21 +132,13 @@
       "technologies": [
         "Python"
       ],
-      "version_declared": "0.1.1.dev1"
+      "version_declared": "0.2.0.dev1"
     }
   ],
   "repository": {
     "archived": false,
     "claim_boundary": "SSOT artifact counts and coverage are registry-reported observations; they do not by themselves prove that every public product claim is supported.",
     "commit_activity": [
-      {
-        "count": 0,
-        "date": "2026-07-12"
-      },
-      {
-        "count": 0,
-        "date": "2026-07-13"
-      },
       {
         "count": 0,
         "date": "2026-07-14"
@@ -256,19 +248,37 @@
         "date": "2026-08-09"
       },
       {
-        "count": 0,
+        "count": 1,
         "date": "2026-08-10"
+      },
+      {
+        "count": 0,
+        "date": "2026-08-11"
+      },
+      {
+        "count": 0,
+        "date": "2026-08-12"
       }
     ],
     "contributors": [
       {
-        "contributions": 18,
+        "account_type": "User",
+        "anonymous": false,
+        "avatar_url": "https://avatars.githubusercontent.com/u/25079070?v=4",
+        "contributions": 19,
+        "id": "25079070",
         "login": "cobycloud",
+        "name": null,
         "url": "https://github.com/cobycloud"
       },
       {
+        "account_type": "Bot",
+        "anonymous": false,
+        "avatar_url": "https://avatars.githubusercontent.com/in/15368?v=4",
         "contributions": 1,
+        "id": "41898282",
         "login": "github-actions[bot]",
+        "name": null,
         "url": "https://github.com/apps/github-actions"
       }
     ],
@@ -280,12 +290,12 @@
     "evidence": [
       {
         "kind": "ssot-registry",
-        "observed_at": "2026-08-10T13:12:47Z",
+        "observed_at": "2026-08-12T08:39:16Z",
         "url": "https://github.com/groupsum/ga4-google-tagging-governance-pack/blob/master/.ssot/registry.json"
       },
       {
         "kind": "source",
-        "observed_at": "2026-08-10T13:12:47Z",
+        "observed_at": "2026-08-12T08:39:14Z",
         "url": "https://github.com/groupsum/ga4-google-tagging-governance-pack"
       }
     ],
@@ -300,7 +310,7 @@
         "legal_inherits_from": "repository:groupsum/ga4-google-tagging-governance-pack",
         "license_expression": "Apache-2.0",
         "license_status": "observed",
-        "observed_at": "2026-08-10T13:12:47Z",
+        "observed_at": "2026-08-12T08:39:14Z",
         "prerelease": false,
         "published_at": "2026-05-18T09:20:33Z",
         "release_kind": "github",
@@ -313,16 +323,16 @@
     "id": "repository:groupsum/ga4-google-tagging-governance-pack",
     "kind": "repository",
     "language_bytes": {
-      "Python": 12294
+      "Python": 12323
     },
     "latest_commit": {
       "author": "cobycloud",
-      "authored_at": "2026-05-18T09:39:08Z",
-      "committed_at": "2026-05-18T09:39:08Z",
+      "authored_at": "2026-08-10T13:09:35Z",
+      "committed_at": "2026-08-10T13:09:35Z",
       "committer": "cobycloud",
-      "message": "Link README pack metadata repository",
-      "sha": "96c18f5f98506ebab3cf920f4829140bc402b870",
-      "url": "https://github.com/groupsum/ga4-google-tagging-governance-pack/commit/96c18f5f98506ebab3cf920f4829140bc402b870"
+      "message": "Refine governance document ownership",
+      "sha": "491c3189539f8bb121d5fe6ab933a4fd98568b1f",
+      "url": "https://github.com/groupsum/ga4-google-tagging-governance-pack/commit/491c3189539f8bb121d5fe6ab933a4fd98568b1f"
     },
     "latest_deployment": {
       "environment": "pypi",
@@ -373,7 +383,7 @@
     ],
     "license": "Apache-2.0",
     "metrics": {
-      "commits": 19,
+      "commits": 20,
       "contributors": 2,
       "deployments": 1,
       "environments": 1,
@@ -381,13 +391,13 @@
       "github_releases": 1,
       "open_issues": 0,
       "packages": 1,
-      "related_resources": 1,
-      "size_kb": 105,
+      "related_resources": 2,
+      "size_kb": 113,
       "stars": 0,
       "watchers": 0
     },
     "name": "ga4-google-tagging-governance-pack",
-    "observed_at": "2026-08-10T13:12:47Z",
+    "observed_at": "2026-08-12T08:39:14Z",
     "owner": "groupsum",
     "package_ids": [
       "package:pypi:ga4-google-tagging-governance-pack:groupsum/ga4-google-tagging-governance-pack:pyproject.toml"
@@ -417,7 +427,7 @@
         "route": "/catalog/packages/pypi/ga4-google-tagging-governance-pack-d502c759"
       }
     ],
-    "pushed_at": "2026-05-18T09:39:35Z",
+    "pushed_at": "2026-08-10T13:10:38Z",
     "related_resources": [
       {
         "evidence_type": "repository.tree",
@@ -425,18 +435,32 @@
         "legal_evidence": [],
         "legal_inherits_from": "repository:groupsum/ga4-google-tagging-governance-pack",
         "name": "docs/governance",
-        "observed_at": "2026-08-10T13:12:47Z",
+        "observed_at": "2026-08-12T08:39:14Z",
         "path": "docs/governance",
         "repository": "groupsum/ga4-google-tagging-governance-pack",
         "repository_route": "/catalog/repositories/groupsum/ga4-google-tagging-governance-pack",
         "resource_type": "documentation.collection",
         "route": "/catalog/resources/documentation-collection/f8d13842e5b5",
         "url": "https://github.com/groupsum/ga4-google-tagging-governance-pack/tree/master/docs/governance"
+      },
+      {
+        "evidence_type": "repository.tree",
+        "id": "resource:6544e10c66b4",
+        "legal_evidence": [],
+        "legal_inherits_from": "repository:groupsum/ga4-google-tagging-governance-pack",
+        "name": "docs/history",
+        "observed_at": "2026-08-12T08:39:14Z",
+        "path": "docs/history",
+        "repository": "groupsum/ga4-google-tagging-governance-pack",
+        "repository_route": "/catalog/repositories/groupsum/ga4-google-tagging-governance-pack",
+        "resource_type": "documentation.collection",
+        "route": "/catalog/resources/documentation-collection/6544e10c66b4",
+        "url": "https://github.com/groupsum/ga4-google-tagging-governance-pack/tree/master/docs/history"
       }
     ],
     "relationship_counts": {
       "repository_contains_package": 1,
-      "repository_contains_related_resource": 1
+      "repository_contains_related_resource": 2
     },
     "reviewed": false,
     "route": "/catalog/repositories/groupsum/ga4-google-tagging-governance-pack",
@@ -450,6 +474,8 @@
         "issues": 0,
         "profiles": 0,
         "releases": 1,
+        "risks": 0,
+        "scopes": 0,
         "specs": 20,
         "tests": 0
       },
@@ -465,100 +491,360 @@
       "inventory": {
         "adrs": [
           {
+            "content_sha256": "9d4559fee395ae732dbd6c6d7acd30f60ac2564ab634c465b9f77007b6b8ba2c",
             "id": "adr:0600",
+            "immutable": true,
+            "managed": true,
+            "number": 600,
+            "origin": "ssot-origin",
+            "package_version": "0.2.6",
+            "relationship_integrity": {
+              "reference_count": 0,
+              "resolved_reference_count": 0,
+              "unresolved_reference_count": 0,
+              "unresolved_references": []
+            },
             "status": "draft",
+            "superseded_by": [],
+            "supersedes": [],
             "title": "Canonical registry is a single JSON document"
           },
           {
+            "content_sha256": "d0f88f8b3a56f10a1be402a12c911624bc79b5211399ec33ad6d423bb8c10904",
             "id": "adr:0601",
+            "immutable": true,
+            "managed": true,
+            "number": 601,
+            "origin": "ssot-origin",
+            "package_version": "0.2.6",
+            "relationship_integrity": {
+              "reference_count": 0,
+              "resolved_reference_count": 0,
+              "unresolved_reference_count": 0,
+              "unresolved_references": []
+            },
             "status": "draft",
+            "superseded_by": [],
+            "supersedes": [],
             "title": "Features are the targetable units"
           },
           {
+            "content_sha256": "2e4f2ff23d7494283df650ffb00767f67667dff875899e3d005c5805f8cd1fea",
             "id": "adr:0602",
+            "immutable": true,
+            "managed": true,
+            "number": 602,
+            "origin": "ssot-origin",
+            "package_version": "0.2.6",
+            "relationship_integrity": {
+              "reference_count": 0,
+              "resolved_reference_count": 0,
+              "unresolved_reference_count": 0,
+              "unresolved_references": []
+            },
             "status": "draft",
+            "superseded_by": [],
+            "supersedes": [],
             "title": "Issues are plannable work items"
           },
           {
+            "content_sha256": "e8eb076466f63c19ac1f27a09fc252195b36447cf17f37607c61f262904786d9",
             "id": "adr:0603",
+            "immutable": true,
+            "managed": true,
+            "number": 603,
+            "origin": "ssot-origin",
+            "package_version": "0.2.6",
+            "relationship_integrity": {
+              "reference_count": 0,
+              "resolved_reference_count": 0,
+              "unresolved_reference_count": 0,
+              "unresolved_references": []
+            },
             "status": "draft",
+            "superseded_by": [],
+            "supersedes": [],
             "title": "Entity-centric registry with a derived graph export"
           },
           {
+            "content_sha256": "14e8f2e75b05a2354e444613b10e78ba661bb025fbf70de358345e310c9025f5",
             "id": "adr:0604",
+            "immutable": true,
+            "managed": true,
+            "number": 604,
+            "origin": "ssot-origin",
+            "package_version": "0.2.6",
+            "relationship_integrity": {
+              "reference_count": 0,
+              "resolved_reference_count": 0,
+              "unresolved_reference_count": 0,
+              "unresolved_references": []
+            },
             "status": "draft",
+            "superseded_by": [],
+            "supersedes": [],
             "title": "Normalized prefixed IDs"
           },
           {
+            "content_sha256": "8a9b64d4250cdb1fcb9d965dba156738761d92a0e823d559e3324a274b75bd0f",
             "id": "adr:0605",
+            "immutable": true,
+            "managed": true,
+            "number": 605,
+            "origin": "ssot-origin",
+            "package_version": "0.2.6",
+            "relationship_integrity": {
+              "reference_count": 0,
+              "resolved_reference_count": 0,
+              "unresolved_reference_count": 0,
+              "unresolved_references": []
+            },
             "status": "draft",
+            "superseded_by": [],
+            "supersedes": [],
             "title": "Claim status and claim tier are orthogonal"
           },
           {
+            "content_sha256": "a835cb5afcbad76060e2625ebdadb420d33e373d95f108645e3fabdb58f389f9",
             "id": "adr:0606",
+            "immutable": true,
+            "managed": true,
+            "number": 606,
+            "origin": "ssot-origin",
+            "package_version": "0.2.6",
+            "relationship_integrity": {
+              "reference_count": 0,
+              "resolved_reference_count": 0,
+              "unresolved_reference_count": 0,
+              "unresolved_references": []
+            },
             "status": "draft",
+            "superseded_by": [],
+            "supersedes": [],
             "title": "Feature implementation state is separate from lifecycle state"
           },
           {
+            "content_sha256": "8c9bbfdb99bdac1238ee04832e59f74633af0ff8b4dcf8589aa748d34f5d7d7c",
             "id": "adr:0607",
+            "immutable": true,
+            "managed": true,
+            "number": 607,
+            "origin": "ssot-origin",
+            "package_version": "0.2.6",
+            "relationship_integrity": {
+              "reference_count": 0,
+              "resolved_reference_count": 0,
+              "unresolved_reference_count": 0,
+              "unresolved_references": []
+            },
             "status": "draft",
+            "superseded_by": [],
+            "supersedes": [],
             "title": "Immutable boundary and release snapshots"
           },
           {
+            "content_sha256": "354247cebe6a72d3ff237ed719ef00d7e4420a96f74baaea3dd0e7b7289c9a97",
             "id": "adr:0608",
+            "immutable": true,
+            "managed": true,
+            "number": 608,
+            "origin": "ssot-origin",
+            "package_version": "0.2.6",
+            "relationship_integrity": {
+              "reference_count": 0,
+              "resolved_reference_count": 0,
+              "unresolved_reference_count": 0,
+              "unresolved_references": []
+            },
             "status": "draft",
+            "superseded_by": [],
+            "supersedes": [],
             "title": "Fail-closed guards"
           },
           {
+            "content_sha256": "ae54390825b4ec7d43751c430332aeb7e66654b2f520fa4dc40dd3893bcc18c1",
             "id": "adr:0609",
+            "immutable": true,
+            "managed": true,
+            "number": 609,
+            "origin": "ssot-origin",
+            "package_version": "0.2.6",
+            "relationship_integrity": {
+              "reference_count": 0,
+              "resolved_reference_count": 0,
+              "unresolved_reference_count": 0,
+              "unresolved_references": []
+            },
             "status": "draft",
+            "superseded_by": [],
+            "supersedes": [],
             "title": "Generated projections are non-canonical"
           },
           {
+            "content_sha256": "292c74ed694752c1c030dacfda8823a6e8d560852a10d12aa7d57c6de9b7ce22",
             "id": "adr:0610",
+            "immutable": true,
+            "managed": true,
+            "number": 610,
+            "origin": "ssot-origin",
+            "package_version": "0.2.6",
+            "relationship_integrity": {
+              "reference_count": 0,
+              "resolved_reference_count": 0,
+              "unresolved_reference_count": 0,
+              "unresolved_references": []
+            },
             "status": "draft",
+            "superseded_by": [],
+            "supersedes": [],
             "title": "Explicit schema versioning"
           },
           {
+            "content_sha256": "b4b2edfc60f175e333a654bf806392a480c8625fc86aeec029b9508194feaded",
             "id": "adr:0611",
+            "immutable": true,
+            "managed": true,
+            "number": 611,
+            "origin": "ssot-origin",
+            "package_version": "0.2.6",
+            "relationship_integrity": {
+              "reference_count": 0,
+              "resolved_reference_count": 0,
+              "unresolved_reference_count": 0,
+              "unresolved_references": []
+            },
             "status": "draft",
+            "superseded_by": [],
+            "supersedes": [],
             "title": "Portable SSOT core with repo-specific evidence adapters"
           },
           {
+            "content_sha256": "a6fc0a01e2743d428644a208c2b93ad35184cdac16841097868587e5a0f39052",
             "id": "adr:0612",
+            "immutable": true,
+            "managed": true,
+            "number": 612,
+            "origin": "ssot-origin",
+            "package_version": "0.2.6",
+            "relationship_integrity": {
+              "reference_count": 0,
+              "resolved_reference_count": 0,
+              "unresolved_reference_count": 0,
+              "unresolved_references": []
+            },
             "status": "draft",
+            "superseded_by": [],
+            "supersedes": [],
             "title": "Enforce max path and filename lengths under `.ssot`"
           },
           {
+            "content_sha256": "59ef0b1bd8975e91afc6cfcf8ceebcf9944704f456538fd340c970d915e1bf49",
             "id": "adr:0613",
+            "immutable": true,
+            "managed": true,
+            "number": 613,
+            "origin": "ssot-origin",
+            "package_version": "0.2.6",
+            "relationship_integrity": {
+              "reference_count": 0,
+              "resolved_reference_count": 0,
+              "unresolved_reference_count": 0,
+              "unresolved_references": []
+            },
             "status": "accepted",
+            "superseded_by": [],
+            "supersedes": [],
             "title": "Profiles are reusable feature bundles with derived pass status"
           },
           {
+            "content_sha256": "b5c264faac2bbd0b55f7d24fb55d56ee5f5a5439a99024bb826e35b713a63b65",
             "id": "adr:1001",
+            "immutable": false,
+            "managed": false,
+            "number": 1001,
+            "origin": "repo-local",
+            "package_version": "0.2.6",
+            "relationship_integrity": {
+              "reference_count": 0,
+              "resolved_reference_count": 0,
+              "unresolved_reference_count": 0,
+              "unresolved_references": []
+            },
             "status": "accepted",
+            "superseded_by": [],
+            "supersedes": [],
             "title": "GA4 Google Tagging Domain Boundary"
           },
           {
+            "content_sha256": "9449e6a0de5652a1bbe320886d25355806a0d9f222119684e344d8146af0ad38",
             "id": "adr:1002",
+            "immutable": false,
+            "managed": false,
+            "number": 1002,
+            "origin": "repo-local",
+            "package_version": "0.2.6",
+            "relationship_integrity": {
+              "reference_count": 0,
+              "resolved_reference_count": 0,
+              "unresolved_reference_count": 0,
+              "unresolved_references": []
+            },
             "status": "accepted",
+            "superseded_by": [],
+            "supersedes": [],
             "title": "GA4 Source Authority Stratification"
           },
           {
+            "content_sha256": "a270749b286a9e2ba4c17a637b30348e536759815d7365aa38d13897f8f515a2",
             "id": "adr:1003",
+            "immutable": false,
+            "managed": false,
+            "number": 1003,
+            "origin": "repo-local",
+            "package_version": "0.2.6",
+            "relationship_integrity": {
+              "reference_count": 0,
+              "resolved_reference_count": 0,
+              "unresolved_reference_count": 0,
+              "unresolved_references": []
+            },
             "status": "accepted",
+            "superseded_by": [],
+            "supersedes": [],
             "title": "Google Tagging Runtime Boundary"
           },
           {
+            "content_sha256": "fe2b0e1351f3c8ecea36496417f13d68f90fe36f893b3e18545c5e1c9ac8e164",
             "id": "adr:1005",
+            "immutable": false,
+            "managed": false,
+            "number": 1005,
+            "origin": "repo-local",
+            "package_version": "0.2.6",
+            "relationship_integrity": {
+              "reference_count": 0,
+              "resolved_reference_count": 0,
+              "unresolved_reference_count": 0,
+              "unresolved_references": []
+            },
             "status": "accepted",
+            "superseded_by": [],
+            "supersedes": [],
             "title": "Consent Mode Inclusion Boundary"
           }
         ],
         "boundaries": [
           {
             "feature_ids": [],
+            "frozen": false,
             "id": "bnd:default",
+            "profile_ids": [],
+            "relationship_integrity": {
+              "reference_count": 0,
+              "resolved_reference_count": 0,
+              "unresolved_reference_count": 0,
+              "unresolved_references": []
+            },
             "status": "draft",
             "title": "Default boundary"
           }
@@ -570,110 +856,380 @@
         "profiles": [],
         "releases": [
           {
+            "boundary_id": "bnd:default",
             "claim_ids": [],
             "evidence_ids": [],
             "id": "rel:0.1.0",
-            "status": "draft"
+            "relationship_integrity": {
+              "reference_count": 1,
+              "resolved_reference_count": 1,
+              "unresolved_reference_count": 0,
+              "unresolved_references": []
+            },
+            "status": "draft",
+            "version": "0.1.0"
           }
         ],
+        "risks": [],
+        "scopes": [],
         "specs": [
           {
+            "content_sha256": "ad2dd542956a22663105d8effd21036990b198f911d038e77da499882e67a331",
             "id": "spc:0600",
+            "immutable": true,
+            "kind": "normative",
+            "managed": true,
+            "number": 600,
+            "origin": "ssot-origin",
+            "package_version": "0.2.6",
+            "relationship_integrity": {
+              "reference_count": 0,
+              "resolved_reference_count": 0,
+              "unresolved_reference_count": 0,
+              "unresolved_references": []
+            },
             "status": "draft",
             "title": "Registry core"
           },
           {
+            "content_sha256": "485ff4a815e85fa64742d7e0fcd3acb3ada655fcf0193b8687e4aa6a99c99725",
             "id": "spc:0601",
+            "immutable": true,
+            "kind": "operational",
+            "managed": true,
+            "number": 601,
+            "origin": "ssot-origin",
+            "package_version": "0.2.6",
+            "relationship_integrity": {
+              "reference_count": 0,
+              "resolved_reference_count": 0,
+              "unresolved_reference_count": 0,
+              "unresolved_references": []
+            },
             "status": "draft",
             "title": "CLI"
           },
           {
+            "content_sha256": "c59709574807cbee7a24932f28457d62cad23ff3f9846952b49aa32534779440",
             "id": "spc:0602",
+            "immutable": true,
+            "kind": "normative",
+            "managed": true,
+            "number": 602,
+            "origin": "ssot-origin",
+            "package_version": "0.2.6",
+            "relationship_integrity": {
+              "reference_count": 0,
+              "resolved_reference_count": 0,
+              "unresolved_reference_count": 0,
+              "unresolved_references": []
+            },
             "status": "draft",
             "title": "Graph model"
           },
           {
+            "content_sha256": "59fee673b5e996e8006ba754a9bb3011e80058530113131993cbb2eb3eaf91cc",
             "id": "spc:0603",
+            "immutable": true,
+            "kind": "normative",
+            "managed": true,
+            "number": 603,
+            "origin": "ssot-origin",
+            "package_version": "0.2.6",
+            "relationship_integrity": {
+              "reference_count": 0,
+              "resolved_reference_count": 0,
+              "unresolved_reference_count": 0,
+              "unresolved_references": []
+            },
             "status": "draft",
             "title": "Feature lifecycle"
           },
           {
+            "content_sha256": "5fa31fc6765df3a28da79c2a79828569cb275ecaa2d131fd0034905c330ee7e8",
             "id": "spc:0604",
+            "immutable": true,
+            "kind": "normative",
+            "managed": true,
+            "number": 604,
+            "origin": "ssot-origin",
+            "package_version": "0.2.6",
+            "relationship_integrity": {
+              "reference_count": 0,
+              "resolved_reference_count": 0,
+              "unresolved_reference_count": 0,
+              "unresolved_references": []
+            },
             "status": "draft",
             "title": "Claim statuses"
           },
           {
+            "content_sha256": "2dac3715f16ad5273e7090f543e6b899bf5e9ddf0a6d765c73ea8745fbf148e7",
             "id": "spc:0605",
+            "immutable": true,
+            "kind": "normative",
+            "managed": true,
+            "number": 605,
+            "origin": "ssot-origin",
+            "package_version": "0.2.6",
+            "relationship_integrity": {
+              "reference_count": 0,
+              "resolved_reference_count": 0,
+              "unresolved_reference_count": 0,
+              "unresolved_references": []
+            },
             "status": "draft",
             "title": "Claim tiers"
           },
           {
+            "content_sha256": "10ca43d9005ec80dc8ac0a86aa89cd58b2bf328fca97bec9157321c1d5bdc116",
             "id": "spc:0606",
+            "immutable": true,
+            "kind": "operational",
+            "managed": true,
+            "number": 606,
+            "origin": "ssot-origin",
+            "package_version": "0.2.6",
+            "relationship_integrity": {
+              "reference_count": 0,
+              "resolved_reference_count": 0,
+              "unresolved_reference_count": 0,
+              "unresolved_references": []
+            },
             "status": "draft",
             "title": "Snapshots and reports"
           },
           {
+            "content_sha256": "d8ad7e550a9f9398a681154a61049146e2f82e60c6db35404c1422eb2812fe70",
             "id": "spc:0607",
+            "immutable": true,
+            "kind": "operational",
+            "managed": true,
+            "number": 607,
+            "origin": "ssot-origin",
+            "package_version": "0.2.6",
+            "relationship_integrity": {
+              "reference_count": 0,
+              "resolved_reference_count": 0,
+              "unresolved_reference_count": 0,
+              "unresolved_references": []
+            },
             "status": "draft",
             "title": "Repository policy"
           },
           {
+            "content_sha256": "1d2c6efaecab6c918976cb016f9806987eb4b4b7738d397ab8264ef785c2dea9",
             "id": "spc:0608",
+            "immutable": true,
+            "kind": "normative",
+            "managed": true,
+            "number": 608,
+            "origin": "ssot-origin",
+            "package_version": "0.2.6",
+            "relationship_integrity": {
+              "reference_count": 0,
+              "resolved_reference_count": 0,
+              "unresolved_reference_count": 0,
+              "unresolved_references": []
+            },
             "status": "draft",
             "title": "Gates and fences"
           },
           {
+            "content_sha256": "201fdc85d032123c5ece91ea8bb858de869cd04c404f34075eaa2cf73aa54292",
             "id": "spc:0609",
+            "immutable": true,
+            "kind": "normative",
+            "managed": true,
+            "number": 609,
+            "origin": "ssot-origin",
+            "package_version": "0.2.6",
+            "relationship_integrity": {
+              "reference_count": 0,
+              "resolved_reference_count": 0,
+              "unresolved_reference_count": 0,
+              "unresolved_references": []
+            },
             "status": "draft",
             "title": "ID normalization"
           },
           {
+            "content_sha256": "8719621710b0215429ab31a3677498cc119c4494abeae19c64b95b3dd136f081",
             "id": "spc:0610",
+            "immutable": true,
+            "kind": "normative",
+            "managed": true,
+            "number": 610,
+            "origin": "ssot-origin",
+            "package_version": "0.2.6",
+            "relationship_integrity": {
+              "reference_count": 0,
+              "resolved_reference_count": 0,
+              "unresolved_reference_count": 0,
+              "unresolved_references": []
+            },
             "status": "draft",
             "title": "File tree"
           },
           {
+            "content_sha256": "68d22f3df30273de1d81c096fa0d4d32b5d0fe36780e17d94a9678d64cfb6217",
             "id": "spc:0611",
+            "immutable": true,
+            "kind": "normative",
+            "managed": true,
+            "number": 611,
+            "origin": "ssot-origin",
+            "package_version": "0.2.6",
+            "relationship_integrity": {
+              "reference_count": 0,
+              "resolved_reference_count": 0,
+              "unresolved_reference_count": 0,
+              "unresolved_references": []
+            },
             "status": "draft",
             "title": "Planning horizons"
           },
           {
+            "content_sha256": "e46c5a61e648cd36d7bcaec9d2be62e9ca4020d9fd44fed13b17cc6f177116b6",
             "id": "spc:0612",
+            "immutable": true,
+            "kind": "operational",
+            "managed": true,
+            "number": 612,
+            "origin": "ssot-origin",
+            "package_version": "0.2.6",
+            "relationship_integrity": {
+              "reference_count": 0,
+              "resolved_reference_count": 0,
+              "unresolved_reference_count": 0,
+              "unresolved_references": []
+            },
             "status": "draft",
             "title": "Python API"
           },
           {
+            "content_sha256": "a87f42c91635be8d9cf1f7f0a7c684bc318ba6c92bed23003d3233d9f86ce51b",
             "id": "spc:0613",
+            "immutable": true,
+            "kind": "normative",
+            "managed": true,
+            "number": 613,
+            "origin": "ssot-origin",
+            "package_version": "0.2.6",
+            "relationship_integrity": {
+              "reference_count": 0,
+              "resolved_reference_count": 0,
+              "unresolved_reference_count": 0,
+              "unresolved_references": []
+            },
             "status": "draft",
             "title": "SSOT path-length policy"
           },
           {
+            "content_sha256": "c195c092aa178a076e7bcfaedbda1b047dd6bdb6c722178a7b95bf955a295e9d",
             "id": "spc:0614",
+            "immutable": true,
+            "kind": "normative",
+            "managed": true,
+            "number": 614,
+            "origin": "ssot-origin",
+            "package_version": "0.2.6",
+            "relationship_integrity": {
+              "reference_count": 0,
+              "resolved_reference_count": 0,
+              "unresolved_reference_count": 0,
+              "unresolved_references": []
+            },
             "status": "draft",
             "title": "Profile evaluation and boundary resolution"
           },
           {
+            "content_sha256": "9fc09da53116f4d568c62aa4352ff0de6ecb11f4e8fa161d8e0338243150b5dd",
             "id": "spc:2001",
+            "immutable": false,
+            "kind": "governance",
+            "managed": false,
+            "number": 2001,
+            "origin": "repo-local",
+            "package_version": "0.2.6",
+            "relationship_integrity": {
+              "reference_count": 0,
+              "resolved_reference_count": 0,
+              "unresolved_reference_count": 0,
+              "unresolved_references": []
+            },
             "status": "accepted",
             "title": "GA4 Target Curation Requirements"
           },
           {
+            "content_sha256": "9cde421730eabb69899ea838a8ebe2336a6c878b63bfffcb4dc3abbf0954027c",
             "id": "spc:2002",
+            "immutable": false,
+            "kind": "governance",
+            "managed": false,
+            "number": 2002,
+            "origin": "repo-local",
+            "package_version": "0.2.6",
+            "relationship_integrity": {
+              "reference_count": 0,
+              "resolved_reference_count": 0,
+              "unresolved_reference_count": 0,
+              "unresolved_references": []
+            },
             "status": "accepted",
             "title": "Measurement Protocol Inclusion Requirements"
           },
           {
+            "content_sha256": "80e030d9ed1e151797b2f4858e00d54b730d3319c8a6b3365651e12b4a439ddc",
             "id": "spc:2003",
+            "immutable": false,
+            "kind": "governance",
+            "managed": false,
+            "number": 2003,
+            "origin": "repo-local",
+            "package_version": "0.2.6",
+            "relationship_integrity": {
+              "reference_count": 0,
+              "resolved_reference_count": 0,
+              "unresolved_reference_count": 0,
+              "unresolved_references": []
+            },
             "status": "accepted",
             "title": "Tag Runtime Inclusion Requirements"
           },
           {
+            "content_sha256": "67df2cbda756407709d308cb9ef3857b25e8566714ec41acbaa0278b7664ee24",
             "id": "spc:2004",
+            "immutable": false,
+            "kind": "governance",
+            "managed": false,
+            "number": 2004,
+            "origin": "repo-local",
+            "package_version": "0.2.6",
+            "relationship_integrity": {
+              "reference_count": 0,
+              "resolved_reference_count": 0,
+              "unresolved_reference_count": 0,
+              "unresolved_references": []
+            },
             "status": "accepted",
             "title": "Export Schema Inclusion Requirements"
           },
           {
+            "content_sha256": "3994b5e37e3181318a7756fb4762ff22eae4dc3f86dbe9a66faed821c37d46c2",
             "id": "spc:2005",
+            "immutable": false,
+            "kind": "governance",
+            "managed": false,
+            "number": 2005,
+            "origin": "repo-local",
+            "package_version": "0.2.6",
+            "relationship_integrity": {
+              "reference_count": 0,
+              "resolved_reference_count": 0,
+              "unresolved_reference_count": 0,
+              "unresolved_references": []
+            },
             "status": "accepted",
             "title": "Consent Mode Inclusion Requirements"
           }
@@ -689,13 +1245,23 @@
         "issues": 0,
         "profiles": 0,
         "releases": 0,
+        "risks": 0,
+        "scopes": 0,
         "specs": 0,
         "tests": 0
       },
-      "observed_at": "2026-08-10T13:12:47Z",
+      "observed_at": "2026-08-12T08:39:16Z",
       "present": true,
       "raw_url": "https://raw.githubusercontent.com/groupsum/ga4-google-tagging-governance-pack/master/.ssot/registry.json",
       "registry_url": "https://github.com/groupsum/ga4-google-tagging-governance-pack/blob/master/.ssot/registry.json",
+      "relationship_integrity": {
+        "reference_count": 1,
+        "relationship_closed": true,
+        "resolved_reference_count": 1,
+        "unresolved_reference_count": 0,
+        "unresolved_references": [],
+        "unresolved_references_omitted": 0
+      },
       "schema_version": "9",
       "source_sha256": "0e61e8691f1c4037cad37079a9f9f1f1aa616f0c0463841a01e913aac555c55c",
       "status_counts": {
@@ -714,6 +1280,8 @@
         "releases": {
           "draft": 1
         },
+        "risks": {},
+        "scopes": {},
         "specs": {
           "accepted": 5,
           "draft": 15
@@ -727,7 +1295,7 @@
     ],
     "template": false,
     "topics": [],
-    "updated_at": "2026-05-18T10:27:18Z",
+    "updated_at": "2026-08-10T13:12:24Z",
     "url": "https://github.com/groupsum/ga4-google-tagging-governance-pack",
     "visibility": "public"
   },
