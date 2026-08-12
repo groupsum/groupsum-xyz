@@ -44,10 +44,18 @@ test("SSOT resource graphs preserve the visible entity identity and links", () =
     source_key: "clm:public-proof",
     observed_at: "2026-08-11T00:00:00Z",
     relationships: [{ name: "Passing test", route: "/catalog/resources/governance.test/ssot-item:test" }],
+    entity_graph: {
+      relationships: [],
+      owner: { name: "groupsum", route: "/catalog" },
+    },
+    repositories: [{ name: "groupsum/example", route: "/catalog/repositories/groupsum/example" }],
   });
   const article = graph["@graph"].find((node) => node["@type"] === "TechArticle");
   assert.equal(article.identifier, "clm:public-proof");
   assert.equal(article.additionalType, "https://groupsum.xyz/ns/ssot/claim");
   assert.equal(article.about[0].name, "Passing test");
+  assert.equal(article.about[1].name, "groupsum");
+  assert.equal(article.about[2].name, "groupsum/example");
+  assert.equal(article.about[2].url, "https://groupsum.xyz/catalog/repositories/groupsum/example");
   assert.equal(article.mainEntityOfPage["@id"], "https://groupsum.xyz/catalog/example#page");
 });

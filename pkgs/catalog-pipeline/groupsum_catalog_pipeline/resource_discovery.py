@@ -21,6 +21,7 @@ from pathlib import Path
 from typing import Any, Iterable
 
 from .collector_common import *  # noqa: F403
+from .ssot_projection import SSOT_ENTITY_KEYS, project_ssot_inventory
 
 def filter_repositories(repositories: Iterable[dict[str, Any]], config: dict[str, Any]) -> list[dict[str, Any]]:
     """Apply configured repository scope before any expensive collection work."""
@@ -113,20 +114,6 @@ def normalize_license_expression(value: Any) -> str | None:
     return candidate
 
 
-SSOT_ENTITY_KEYS = (
-    "adrs",
-    "specs",
-    "features",
-    "tests",
-    "claims",
-    "evidence",
-    "issues",
-    "boundaries",
-    "profiles",
-    "releases",
-)
-
-
 def summarize_ssot_registry(
     repo: dict[str, Any], registry: Any, observation: Observation, source_text: str
 ) -> dict[str, Any]:
@@ -166,37 +153,13 @@ def summarize_ssot_registry(
             status = str(item.get("status") or item.get("implementation_status") or "unreported")
             statuses[status] = statuses.get(status, 0) + 1
         result["status_counts"][key] = dict(sorted(statuses.items()))
-    # Preserve a compact, registry-authored inventory so consumers can group
-    # governance by repository without publishing the raw registry payload.
-    # Only identity, status, display text, and explicit linkage fields cross
-    # this boundary; arbitrary registry extensions remain source-only.
-    result["inventory"] = {}
-    result["inventory_truncated"] = {}
-    inventory_limit = 20
-    for key in SSOT_ENTITY_KEYS:
-        values = registry.get(key)
-        rows = values if isinstance(values, list) else []
-        result["inventory"][key] = [
-            {
-                field: item[field]
-                for field in (
-                    "id",
-                    "status",
-                    "implementation_status",
-                    "title",
-                    "name",
-                    "statement",
-                    "evidence_ids",
-                    "test_ids",
-                    "claim_ids",
-                    "feature_ids",
-                )
-                if item.get(field) is not None
-            }
-            for item in rows[:inventory_limit]
-            if isinstance(item, dict) and item.get("id")
-        ]
-        result["inventory_truncated"][key] = max(0, len(rows) - inventory_limit)
+    # Publish every minimal entity envelope so recognized links have targets.
+    # Arbitrary extensions, paths, executable arguments, and environment data
+    # remain source-only; integrity failures are explicit instead of silent.
+    inventory, truncated, relationship_integrity = project_ssot_inventory(registry)
+    result["inventory"] = inventory
+    result["inventory_truncated"] = truncated
+    result["relationship_integrity"] = relationship_integrity
     claims = [item for item in registry.get("claims", []) if isinstance(item, dict)]
     evidence = [item for item in registry.get("evidence", []) if isinstance(item, dict)]
     result["coverage"] = {

@@ -10,6 +10,8 @@ from groupsum_catalog_api.app import build_app
 from groupsum_catalog_api.public_api import _binding_parameters
 from groupsum_catalog_api.record_compiler import RecordAccumulator, _import_repositories
 from groupsum_catalog_api.tables.association import Association
+from groupsum_catalog_api.tables.repository import Repository
+from groupsum_catalog_api.tables.repository_ssot_registry import RepositorySsotRegistry
 from groupsum_catalog_api.tables.resources.documentation.collection import (
     DocumentationCollection,
 )
@@ -58,6 +60,8 @@ def test_compiler_materializes_ssot_reference_edges() -> None:
     assert boundary_edge.source_type == GovernanceBoundary.ENTITY_TYPE
     assert boundary_edge.target_type == GovernanceFeature.ENTITY_TYPE
     assert boundary_edge.role == "feature_ids"
+    boundary = next(iter(collector.records[GovernanceBoundary].values()))
+    assert boundary.source_url.endswith("/.ssot/registry.json")
 
 
 def test_binding_parameters_decode_existing_tigrbl_path_parameters() -> None:
@@ -134,9 +138,34 @@ async def test_governance_detail_exposes_navigable_existing_associations(
     headers = {"Authorization": "Bearer test-token"}
     boundary_id = "ssot-item:boundary-detail"
     feature_id = "ssot-item:feature-detail"
+    repository_id = "repository:test/example"
+    registry_id = "ssot-registry:detail"
 
     async with httpx.AsyncClient(transport=transport, base_url="http://test") as client:
         for entity_type, record in (
+            (
+                Repository.ENTITY_TYPE,
+                {
+                    "id": repository_id,
+                    "provider": "github",
+                    "owner": "test",
+                    "name": "example",
+                    "url": "https://github.com/test/example",
+                    "is_archived": False,
+                    "is_fork": False,
+                    "ssot_governed": True,
+                },
+            ),
+            (
+                RepositorySsotRegistry.ENTITY_TYPE,
+                {
+                    "id": registry_id,
+                    "registry_url": "https://github.com/test/example/blob/main/.ssot/registry.json",
+                    "schema_version": "0.8.0",
+                    "valid": True,
+                    "observed_at": "2026-08-11T00:00:00Z",
+                },
+            ),
             (
                 GovernanceBoundary.ENTITY_TYPE,
                 {
@@ -144,7 +173,22 @@ async def test_governance_detail_exposes_navigable_existing_associations(
                     "source_key": "bnd:detail",
                     "title": "Public boundary",
                     "status": "frozen",
-                    "payload": {"id": "bnd:detail", "frozen": True},
+                    "payload": {
+                        "id": "bnd:detail",
+                        "frozen": True,
+                        "relationship_integrity": {
+                            "reference_count": 2,
+                            "resolved_reference_count": 1,
+                            "unresolved_reference_count": 1,
+                            "unresolved_references": [
+                                {
+                                    "field": "feature_ids",
+                                    "target_kind": "features",
+                                    "target_id": "feat:missing",
+                                }
+                            ],
+                        },
+                    },
                 },
             ),
             (
@@ -165,22 +209,48 @@ async def test_governance_detail_exposes_navigable_existing_associations(
             )
             assert response.status_code == 200, response.text
 
-        edge = {
-            "id": "association:ssot-boundary-feature",
-            "source_type": GovernanceBoundary.ENTITY_TYPE,
-            "source_id": boundary_id,
-            "relationship_type": "boundary_for",
-            "target_type": GovernanceFeature.ENTITY_TYPE,
-            "target_id": feature_id,
-            "role": "feature_ids",
-            "sort_order": 0,
-            "attributes": None,
-            "observed_at": "2026-08-11T00:00:00Z",
-        }
+        edges = [
+            {
+                "id": "association:repository-registry",
+                "source_type": Repository.ENTITY_TYPE,
+                "source_id": repository_id,
+                "relationship_type": "governed_by",
+                "target_type": RepositorySsotRegistry.ENTITY_TYPE,
+                "target_id": registry_id,
+                "role": "",
+                "sort_order": 0,
+                "attributes": None,
+                "observed_at": "2026-08-11T00:00:00Z",
+            },
+            {
+                "id": "association:registry-boundary",
+                "source_type": RepositorySsotRegistry.ENTITY_TYPE,
+                "source_id": registry_id,
+                "relationship_type": "contains",
+                "target_type": GovernanceBoundary.ENTITY_TYPE,
+                "target_id": boundary_id,
+                "role": "",
+                "sort_order": 0,
+                "attributes": None,
+                "observed_at": "2026-08-11T00:00:00Z",
+            },
+            {
+                "id": "association:ssot-boundary-feature",
+                "source_type": GovernanceBoundary.ENTITY_TYPE,
+                "source_id": boundary_id,
+                "relationship_type": "boundary_for",
+                "target_type": GovernanceFeature.ENTITY_TYPE,
+                "target_id": feature_id,
+                "role": "feature_ids",
+                "sort_order": 0,
+                "attributes": None,
+                "observed_at": "2026-08-11T00:00:00Z",
+            },
+        ]
         response = await client.post(
             "/internal/v1/catalog/associations",
             headers=headers,
-            json={"snapshot_id": "snapshot:ssot-detail", "records": [edge]},
+            json={"snapshot_id": "snapshot:ssot-detail", "records": edges},
         )
         assert response.status_code == 200, response.text
 
@@ -191,10 +261,34 @@ async def test_governance_detail_exposes_navigable_existing_associations(
     assert detail.status_code == 200, detail.text
     model = detail.json()
     assert model["implementation"] == {
-        "relationship_count": 1,
+        "repositories": [
+            {
+                "id": repository_id,
+                "name": "test/example",
+                "owner": "test",
+                "repository": "example",
+                "route": "/catalog/repositories/test/example",
+                "url": "https://github.com/test/example",
+            }
+        ],
+        "relationship_count": 2,
         "outgoing_count": 1,
-        "incoming_count": 0,
+        "incoming_count": 1,
+        "reference_count": 2,
+        "resolved_reference_count": 1,
+        "unresolved_reference_count": 1,
     }
     assert model["graph"]["outgoing"][0]["name"] == "Public feature"
     assert model["graph"]["outgoing"][0]["route"].endswith(feature_id)
-    assert model["linked_sections"][0]["members"][0]["relationship"] == "boundary_for"
+    assert model["graph"]["owner"]["entity_type_id"] == "organization"
+    assert model["graph"]["owner"]["name"] == "test"
+    assert model["implementation"]["repositories"][0]["route"] == (
+        "/catalog/repositories/test/example"
+    )
+    assert model["parent"]["repository"]["name"] == "test/example"
+    assert model["relationship_integrity"]["unresolved_reference_count"] == 1
+    assert any(
+        member["relationship"] == "boundary_for"
+        for section in model["linked_sections"]
+        for member in section["members"]
+    )

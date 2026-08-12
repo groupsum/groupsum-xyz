@@ -110,13 +110,30 @@ def resource_detail_model(session, entity_type: str, route_key: str) -> dict:
     outgoing, incoming, relationships, linked_sections = _resource_links(
         session, entity_type, row.id
     )
-    repository_id = next(
-        (edge.target_id for edge in outgoing if edge.target_type == "source.repository"),
+    repository_owner = next(
+        (
+            relationship
+            for relationship in relationships
+            if relationship["entity_type_id"] == "source.repository"
+            and relationship["direction"] == "outgoing"
+        ),
         None,
     )
-    repository_parent = None
-    if repository_id is None and entity_type.startswith("governance."):
-        repository_id, repository_parent = _governance_repository_parent(session, incoming)
+    repository_parent = (
+        _repository_parent(session, repository_owner["entity_id"])
+        if repository_owner is not None
+        else None
+    )
+    if repository_parent is None and entity_type.startswith("governance."):
+        repository_parent = _governance_repository_parent(session, incoming)
+    organization_owner = _derived_organization_owner(repository_parent, item.get("observed_at"))
+    repository_id = repository_parent["id"] if repository_parent else None
+    relationship_integrity = (item.get("payload") or {}).get("relationship_integrity") or {
+        "reference_count": 0,
+        "resolved_reference_count": 0,
+        "unresolved_reference_count": 0,
+        "unresolved_references": [],
+    }
     return {
         "kind": "catalog_resource_record",
         "resource_type": entity_type,
@@ -133,7 +150,7 @@ def resource_detail_model(session, entity_type: str, route_key: str) -> dict:
                 "route": _resource_route(entity_type, row),
                 "observed_at": item.get("observed_at"),
             },
-            "owner": None,
+            "owner": organization_owner,
             "urls": [],
             "relationships": relationships,
             "outgoing": [value for value in relationships if value["direction"] == "outgoing"],
@@ -141,18 +158,61 @@ def resource_detail_model(session, entity_type: str, route_key: str) -> dict:
         },
         "linked_sections": linked_sections,
         "parent": {"repository_id": repository_id, "repository": repository_parent},
+        "relationship_integrity": relationship_integrity,
         "implementation": {
+            "repositories": [repository_parent] if repository_parent else [],
             "relationship_count": len(relationships),
             "outgoing_count": len(outgoing),
             "incoming_count": len(incoming),
+            "reference_count": relationship_integrity.get("reference_count", 0),
+            "resolved_reference_count": relationship_integrity.get("resolved_reference_count", 0),
+            "unresolved_reference_count": relationship_integrity.get(
+                "unresolved_reference_count", 0
+            ),
         },
         "legal": {"status": "not-observed", "observations": []},
     }
 
 
-def _governance_repository_parent(session, incoming) -> tuple[str | None, dict | None]:
-    from .association import Association
+def _repository_parent(session, repository_id: str | None) -> dict | None:
     from .repository import Repository
+
+    repository = session.get(Repository, repository_id) if repository_id else None
+    if repository is None:
+        return None
+    return {
+        "id": repository.id,
+        "name": f"{repository.owner}/{repository.name}",
+        "owner": repository.owner,
+        "repository": repository.name,
+        "route": f"/catalog/repositories/{repository.owner}/{repository.name}",
+        "url": repository.url,
+    }
+
+
+def _derived_organization_owner(repository: dict | None, observed_at) -> dict | None:
+    if repository is None:
+        return None
+    return {
+        "id": f"derived-owner:{repository['owner']}",
+        "relationship_type": "owned_by",
+        "role": "repository_owner",
+        "origin_kind": "derived.ssot.registry",
+        "confidence": "derived",
+        "status": "observed",
+        "observed_at": observed_at,
+        "entity_id": repository["owner"],
+        "entity_type_id": "organization",
+        "type_label": "Organization",
+        "semantic_class": "organization",
+        "name": repository["owner"],
+        "route": "/catalog",
+        "direction": "outgoing",
+    }
+
+
+def _governance_repository_parent(session, incoming) -> dict | None:
+    from .association import Association
 
     registry_edge = next(
         (
@@ -174,11 +234,4 @@ def _governance_repository_parent(session, incoming) -> tuple[str | None, dict |
         else None
     )
     repository_id = repository_edge.source_id if repository_edge is not None else None
-    repository = session.get(Repository, repository_id) if repository_id else None
-    if repository is None:
-        return repository_id, None
-    return repository_id, {
-        "id": repository.id,
-        "name": f"{repository.owner}/{repository.name}",
-        "route": f"/catalog/repositories/{repository.owner}/{repository.name}",
-    }
+    return _repository_parent(session, repository_id)

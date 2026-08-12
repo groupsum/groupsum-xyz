@@ -33,10 +33,20 @@ export type SsotGovernanceSummary = {
   counts?: Record<string, number>; status_counts?: Record<string, Record<string, number>>;
   coverage?: Record<string, number>; limitation?: string | null;
   inventory_truncated?: Record<string, number>;
+  relationship_integrity?: {
+    reference_count: number; resolved_reference_count: number;
+    unresolved_reference_count: number; relationship_closed: boolean;
+    unresolved_references: Array<Record<string, string>>;
+    unresolved_references_omitted: number;
+  };
   inventory?: Record<string, Array<{
     id: string; status?: string; implementation_status?: string; title?: string;
     name?: string; statement?: string; evidence_ids?: string[]; test_ids?: string[];
-    claim_ids?: string[]; feature_ids?: string[];
+    claim_ids?: string[]; feature_ids?: string[]; spec_ids?: string[]; adr_ids?: string[];
+    profile_ids?: string[]; risk_ids?: string[]; issue_ids?: string[];
+    boundary_id?: string; boundary_ids?: string[]; depends_on_claim_ids?: string[];
+    requires?: string[]; parent_feature_ids?: string[]; replacement_feature_ids?: string[];
+    relationship_integrity?: Record<string, unknown>;
   }>>;
 };
 export type RepositoryGovernance = {

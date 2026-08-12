@@ -107,12 +107,20 @@ function resourceNode(record) {
     article.identifier = payload.id || record.source_key || record.id;
     article.additionalType = `https://groupsum.xyz/ns/ssot/${type.replace("governance.", "")}`;
     const relationships = record.relationships || record.entity_graph?.relationships || [];
-    article.about = relationships.filter((item) => item.route || item.url).map((item) => ({
-      "@type": "Thing",
-      "@id": stableId(`${SITE_ROOT}${item.route || item.url}`, "resource"),
-      name: item.name,
-      url: item.route ? `${SITE_ROOT}${item.route}` : item.url,
-    }));
+    const owner = record.entity_graph?.owner;
+    const repositories = record.repositories || [];
+    const related = [...relationships, ...(owner ? [owner] : []), ...repositories]
+      .filter((item) => item.route || item.url || item.canonical_url)
+      .filter((item, index, values) => values.findIndex((candidate) => (candidate.route || candidate.url || candidate.canonical_url) === (item.route || item.url || item.canonical_url)) === index);
+    article.about = related.map((item) => {
+      const url = new URL(item.route || item.url || item.canonical_url, SITE_ROOT).href;
+      return {
+        "@type": "Thing",
+        "@id": stableId(url, "resource"),
+        name: item.name,
+        url,
+      };
+    });
     return article;
   }
   if (type === "data.dataset") return withoutContext(datasetNode({ ...common, creator: ref(organization["@id"]), license: record.license_expression }));
