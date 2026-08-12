@@ -119,7 +119,9 @@ async def test_resource_collection_routes_round_trip_encoded_primary_keys(
             ).json()
             member = collection["records"][0]
             encoded_route_key = member["route_key"].replace(":", "%3A")
-            assert member["route"] == (f"/catalog/resources/{resource_type}/{member['route_key']}")
+            assert member["route"] == (
+                f"/catalog/resources/{resource_type}/{encoded_route_key}"
+            )
 
             detail = await client.get(
                 f"/api/v1/catalog/resources/{resource_type}/{encoded_route_key}"

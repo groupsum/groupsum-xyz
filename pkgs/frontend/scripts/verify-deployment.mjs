@@ -22,6 +22,7 @@ async function requirePageAssetMarker(html, marker, label) {
 
 async function verify() {
   const manifest = JSON.parse(await fetchText("/catalog/site/manifest.json"));
+  if (!manifest.snapshot?.snapshot_id) throw new Error("static catalog is not pinned to a snapshot");
   for (const [name, minimum] of Object.entries(expected)) {
     if (Number(manifest.counts?.[name] || 0) < minimum) throw new Error(`${name} count is below expected minimum ${minimum}`);
   }
@@ -38,10 +39,28 @@ async function verify() {
   const packageCollectionHtml = await fetchText("/catalog/packages/");
   await requirePageAssetMarker(packageCollectionHtml, "Package catalog records", "package collection table");
   await requirePageAssetMarker(packageCollectionHtml, "/api/v1/catalog/", "curated Tigrbl catalog API");
+  const collections = {};
   for (const dataset of ["repositories", "packages", "resources", "technologies"]) {
     const collection = JSON.parse(await fetchText(`/api/v1/catalog/${dataset}?page=1&page_size=1`));
+    collections[dataset] = collection;
     if (!Array.isArray(collection.records) || collection.count < 1) {
       throw new Error(`${dataset} Tigrbl collection is empty or malformed`);
+    }
+    if (Number(manifest.counts?.[dataset]) !== Number(collection.count)) {
+      throw new Error(`${dataset} static/API count mismatch: ${manifest.counts?.[dataset]} != ${collection.count}`);
+    }
+  }
+  const apiResourceTypeCounts = collections.resources.facets?.resource_type || {};
+  if (JSON.stringify(manifest.resource_type_counts) !== JSON.stringify(apiResourceTypeCounts)) {
+    throw new Error("static/API resource-type counts do not match");
+  }
+  for (const resourceType of Object.keys(apiResourceTypeCounts)) {
+    const sample = JSON.parse(await fetchText(`/api/v1/catalog/resources?resource_type=${encodeURIComponent(resourceType)}&page=1&page_size=1`)).records?.[0];
+    if (!sample?.route) throw new Error(`${resourceType} has no representative public resource`);
+    const route = `${String(sample.route).replace(/\/$/, "")}/`;
+    const html = await fetchText(route);
+    if (!html.includes(sample.title) || !html.includes(`og:url\" content=\"${baseUrl}${route}`)) {
+      throw new Error(`${resourceType} representative static page is incomplete`);
     }
   }
   const governedResources = JSON.parse(await fetchText(
@@ -54,6 +73,11 @@ async function verify() {
   ));
   if (governedDetail.item?.id !== governedResource.id) {
     throw new Error("encoded governance boundary route does not resolve its collection member");
+  }
+  const governedRoute = `${String(governedResource.route).replace(/\/$/, "")}/`;
+  const governedHtml = await fetchText(governedRoute);
+  for (const marker of [governedResource.title, "TechArticle", governedRoute]) {
+    if (!governedHtml.includes(marker)) throw new Error(`static governance page is missing ${marker}`);
   }
   const portwyrmEvidence = JSON.parse(await fetchText("/catalog/product-evidence/groupsum/portwyrm.json"));
   if (portwyrmEvidence.repository?.full_name !== "groupsum/portwyrm") throw new Error("Portwyrm product evidence has the wrong repository");

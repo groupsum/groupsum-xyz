@@ -360,7 +360,12 @@ def compile_catalog_records(repo_root: Path) -> tuple[dict[str, list[dict]], lis
     """Compile catalog source files into table-shaped records without opening a database."""
 
     editorial, repository_rows, package_rows, technology_rows = load_inputs(repo_root)
-    observed_at = datetime.now(UTC).replace(microsecond=0)
+    catalog = json.loads(
+        (repo_root / "catalog/generated/catalog.json").read_text(encoding="utf-8")
+    )
+    observed_at = parse_datetime(catalog.get("generated_at"))
+    if observed_at is None:
+        observed_at = datetime.now(UTC).replace(microsecond=0)
     collector = RecordAccumulator()
     import_organizations(collector, editorial, observed_at)
     import_editorial(collector, editorial, observed_at)

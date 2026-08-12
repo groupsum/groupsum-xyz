@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+from ..projections.public_resources import public_resource_record
 from .view_common import *  # noqa: F403
 from .view_resource_detail import resource_detail_model
 
@@ -290,20 +291,7 @@ def resource_collection(table, ctx):
             if requested_type and entity_type != requested_type:
                 continue
             for row in session.query(model).all():
-                item = source_record(row)
-                canonical_path = getattr(row, "canonical_path", None)
-                route_key = str(canonical_path or row.id).rstrip("/").rsplit("/", 1)[-1]
-                item |= {
-                    "id": row.id,
-                    "resource_type": entity_type,
-                    "title": getattr(row, "title", None)
-                    or getattr(row, "name", None)
-                    or getattr(row, "source_key", row.id),
-                    "route": canonical_path or f"/catalog/resources/{entity_type}/{route_key}",
-                    "route_key": route_key,
-                    "observed_at": getattr(row, "observed_at", None),
-                }
-                values.append(item)
+                values.append(public_resource_record(entity_type, row_dict(row)))
         values = _filter(values, params)
         facets = _facets(values)
         page_values, page, page_size, page_count = _page(values, params)

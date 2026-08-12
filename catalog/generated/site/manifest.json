@@ -15,7 +15,7 @@
     "organizations": 4,
     "packages": 1143,
     "repositories": 69,
-    "resources": 538,
+    "resources": 3170,
     "technologies": 18
   },
   "files": [
@@ -41,11 +41,11 @@
       "sha256": "665647c01d64c333c6a16ce2482c2716bdd3b2ec24a257c37a680d6921d7b9f5"
     },
     {
-      "bytes": 675806,
+      "bytes": 4650528,
       "dataset": "resources",
       "path": "resources.json",
-      "records": 538,
-      "sha256": "84918732fc893d40d42cb5269cd7e2e2466f2cc606db3c408a9ae919428f7584"
+      "records": 3170,
+      "sha256": "9dcf4b684f956dbd383eaf8e2900afe20541420f7e68ac6478aa9f08a4f07408"
     },
     {
       "bytes": 13843,
@@ -60,7 +60,33 @@
     "path": "/catalog/product-evidence/",
     "records": 70
   },
+  "resource_type_counts": {
+    "contract.openapi": 3,
+    "documentation.collection": 367,
+    "governance.adr": 597,
+    "governance.boundary": 177,
+    "governance.claim": 236,
+    "governance.evidence": 224,
+    "governance.feature": 231,
+    "governance.issue": 102,
+    "governance.profile": 38,
+    "governance.release": 117,
+    "governance.spec": 615,
+    "governance.test": 239,
+    "implementation.demo": 7,
+    "implementation.example": 157,
+    "interface.website": 4,
+    "offering.service": 6,
+    "offering.solution": 8,
+    "party.person": 42
+  },
   "schema_version": "1.0.0",
+  "snapshot": {
+    "collected_at": "2026-08-10T13:12:47Z",
+    "schema_version": "1.0.0",
+    "snapshot_id": "snapshot:20260810T131247Z:afdc9d2d1fdd",
+    "source_digest": "afdc9d2d1fddfb020e4aaf1c2c24f5027c31c4953b301596a766e9399586f508"
+  },
   "source": "/catalog/catalog.json",
   "source_counts": {
     "deployments": 4100,

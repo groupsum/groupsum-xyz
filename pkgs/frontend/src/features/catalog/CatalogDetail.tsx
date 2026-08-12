@@ -13,6 +13,29 @@ import { catalogDetailSegments } from "./catalog-detail-route.mjs";
 
 const SsotEntityDetail = lazy(() => import("./SsotEntityDetail"));
 
+function resourceRecord(model: Awaited<ReturnType<typeof getCatalogPackageMember>>, routeKey: string, kind: string) {
+  const item = valueRecord(model.item);
+  const legal = valueRecord(model.legal);
+  const implementation = valueRecord(model.implementation);
+  return {
+    ...item,
+    id: String(item.id || routeKey),
+    kind,
+    resource_type: model.resource_type,
+    parent: model.parent,
+    entity_graph: model.graph as EntityGraph | null,
+    linked_sections: model.linked_sections,
+    legal_observations: valueRecords(legal.observations),
+    license_expression: legal.license_expression,
+    license_status: legal.status,
+    repositories: implementation.repositories,
+    releases: implementation.releases,
+    dependencies: implementation.dependencies,
+    dependents: implementation.dependents,
+    downloads: valueRecord(implementation.downloads).value,
+  } as CatalogRecord;
+}
+
 function MemberSectionNav({ record }: { record: CatalogRecord }) {
   const kind = String(record.kind || "record");
   const linkedSectionLabels = valueRecords(record.linked_sections).map((section) => String(section.label || humanLabel(String(section.type_key || "resource"))));
@@ -28,11 +51,17 @@ function MemberSectionNav({ record }: { record: CatalogRecord }) {
 export function PublicCatalogDetail({ path, onNavigate }: { path: string; onNavigate: (path: string) => void }) {
   const segments = catalogDetailSegments(path);
   const dataset = segments[1] as DetailDatasetName;
-  const [record, setRecord] = useState<CatalogRecord | null>(null);
+  const staticModel = globalThis.__GROUPSUM_API_SNAPSHOT__ as (Awaited<ReturnType<typeof getCatalogPackageMember>> & { static_path?: string }) | null | undefined;
+  const normalizedPath = path.replace(/\/$/, "");
+  const staticRecord = staticModel?.static_path === normalizedPath && dataset === "resources"
+    ? resourceRecord(staticModel, segments.at(-1) || "", "resource")
+    : null;
+  const [record, setRecord] = useState<CatalogRecord | null>(staticRecord);
   const [snapshots, setSnapshots] = useState<CatalogSnapshot[]>([]);
-  const [state, setState] = useState<"loading" | "ready" | "missing" | "error">("loading");
+  const [state, setState] = useState<"loading" | "ready" | "missing" | "error">(staticRecord ? "ready" : "loading");
 
   useEffect(() => {
+    if (staticModel?.static_path === normalizedPath && dataset === "resources") return;
     setState("loading");
     setRecord(null);
     setSnapshots([]);
@@ -40,26 +69,7 @@ export function PublicCatalogDetail({ path, onNavigate }: { path: string; onNavi
     const routeKey = segments.at(-1) || "";
 
     const acceptResourceMember = (model: Awaited<ReturnType<typeof getCatalogPackageMember>>, kind: string) => {
-      const item = valueRecord(model.item);
-      const legal = valueRecord(model.legal);
-      const implementation = valueRecord(model.implementation);
-      setRecord({
-        ...item,
-        id: String(item.id || routeKey),
-        kind,
-        resource_type: model.resource_type,
-        parent: model.parent,
-        entity_graph: model.graph as EntityGraph | null,
-        linked_sections: model.linked_sections,
-        legal_observations: valueRecords(legal.observations),
-        license_expression: legal.license_expression,
-        license_status: legal.status,
-        repositories: implementation.repositories,
-        releases: implementation.releases,
-        dependencies: implementation.dependencies,
-        dependents: implementation.dependents,
-        downloads: valueRecord(implementation.downloads).value,
-      } as CatalogRecord);
+      setRecord(resourceRecord(model, routeKey, kind));
       setState("ready");
     };
 
@@ -109,7 +119,7 @@ export function PublicCatalogDetail({ path, onNavigate }: { path: string; onNavi
         });
     request.catch((error: Error) => { if (error.name !== "AbortError") setState(error.message.includes("404") ? "missing" : "error"); });
     return () => controller.abort();
-  }, [dataset, path]);
+  }, [dataset, normalizedPath, path, staticModel]);
 
   if (state === "loading") return <div className="max-w-3xl mx-auto px-4 py-20 text-sm text-ink-muted" role="status">Loading catalog record…</div>;
   if (state !== "ready" || !record) return <div className="max-w-3xl mx-auto px-4 py-20 space-y-4"><h1 className="font-serif text-3xl font-bold text-ink">Record unavailable</h1><p className="text-sm text-ink-muted">{state === "error" ? "The catalog could not be loaded." : "This route is not in the public catalog."}</p><button onClick={() => onNavigate("/catalog")} className="text-xs font-mono text-accent hover:underline cursor-pointer">Return to public catalog</button></div>;

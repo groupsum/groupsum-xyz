@@ -138,7 +138,7 @@ def import_editorial(session, editorial: dict, observed_at: datetime) -> dict[st
                 source_payload=row,
             )
         else:
-            item = table(
+            values = dict(
                 id=row["id"],
                 slug=row["slug"],
                 name=row["title"],
@@ -159,6 +159,9 @@ def import_editorial(session, editorial: dict, observed_at: datetime) -> dict[st
                     else {}
                 ),
             )
+            if hasattr(table, "observed_at"):
+                values["observed_at"] = observed_at
+            item = table(**values)
         session.merge(item)
         merge_association(
             session,

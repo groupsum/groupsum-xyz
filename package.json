@@ -28,6 +28,7 @@
     "lighthouse": "lhci autorun --config=pkgs/frontend/lighthouserc.cjs",
     "catalog:collect": "python pkgs/catalog-pipeline/catalog_collect.py --refresh",
     "catalog:render": "python pkgs/catalog-pipeline/catalog_render.py",
+    "catalog:export-public": "uv run --project pkgs/backend --locked python pkgs/backend/scripts/export_public_catalog.py",
     "catalog:refresh": "npm run catalog:collect && npm run catalog:render && npm run catalog:validate",
     "catalog:publish": "uv run --project pkgs/backend --locked python pkgs/backend/scripts/publish_catalog.py",
     "catalog:validate": "python pkgs/catalog-pipeline/catalog_validate.py && python pkgs/catalog-pipeline/catalog_site_validate.py",

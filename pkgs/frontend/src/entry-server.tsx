@@ -6,8 +6,34 @@ import { StaticRouter } from "./router";
 
 import App from "./App";
 
+let catalogResourceSnapshots: Map<string, unknown> | null = null;
+
+function catalogResourceSnapshot(pathname: string): unknown | null {
+  if (!pathname.startsWith("/catalog/resources/")) return null;
+  if (catalogResourceSnapshots === null) {
+    const source = path.join(process.cwd(), "catalog", "generated", "site", "resources.json");
+    const records = JSON.parse(fs.readFileSync(source, "utf8")) as Array<Record<string, unknown>>;
+    catalogResourceSnapshots = new Map(records.map((item) => {
+      const route = String(item.route || "").replace(/\/$/, "");
+      return [route, {
+        static_path: route,
+        kind: "catalog_resource_record",
+        resource_type: item.resource_type,
+        item,
+        graph: null,
+        linked_sections: [],
+        implementation: {},
+        legal: {},
+      }];
+    }));
+  }
+  return catalogResourceSnapshots.get(pathname) || null;
+}
+
 export function getApiSnapshot(url: string): unknown | null {
   const pathname = url.split(/[?#]/, 1)[0].replace(/\/$/, "") || "/";
+  const resource = catalogResourceSnapshot(pathname);
+  if (resource) return resource;
   const detailMatch = pathname.match(/^\/(products|portfolio)\/records\/([^/]+)$/);
   const collectionMatch = pathname.match(/^\/(products|portfolio)$/);
   const family = detailMatch?.[1] || collectionMatch?.[1];

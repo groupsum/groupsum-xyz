@@ -6,9 +6,9 @@ on:
     - cron: '17 7 * * *'
 
 permissions:
-  contents: write
+  actions: write
+  contents: read
   packages: read
-  pull-requests: write
 
 concurrency:
   group: groupsum-public-catalog
@@ -17,7 +17,7 @@ concurrency:
 jobs:
   refresh:
     runs-on: ubuntu-latest
-    timeout-minutes: 30
+    timeout-minutes: 45
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
         with:
@@ -37,32 +37,34 @@ jobs:
         run: npm run catalog:collect
       - name: Compile display-safe catalog datasets
         run: npm run catalog:render
-      - run: npm run check
-      - run: npm run build
       - name: Install backend publisher
         run: |
           python -m pip install uv==0.11.28
           uv sync --locked --all-groups
         working-directory: pkgs/backend
+      - name: Export the Tigrbl public projection for static generation
+        run: npm run catalog:export-public
+      - run: npm run check
+      - run: npm run build
       - name: Publish records and finalize snapshot
         env:
           GROUPSUM_CATALOG_API_URL: ${{ vars.GROUPSUM_CATALOG_API_URL || 'https://groupsum.xyz' }}
           GROUPSUM_CATALOG_INTERNAL_TOKEN: ${{ secrets.GROUPSUM_CATALOG_INTERNAL_TOKEN }}
         run: npm run catalog:publish
-      - name: Create or update catalog refresh pull request
+      - name: Preserve the exact finalized catalog snapshot for deployment
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        with:
+          name: public-catalog-snapshot
+          path: catalog/generated
+          if-no-files-found: error
+          retention-days: 14
+
+  dispatch-deploy:
+    needs: refresh
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/master'
+    steps:
+      - name: Deploy the finalized catalog snapshot
         env:
           GH_TOKEN: ${{ github.token }}
-        run: |
-          if git diff --quiet -- catalog/generated; then
-            echo "Catalog is current."
-            exit 0
-          fi
-          branch="automation/public-catalog-refresh"
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git fetch origin "$branch:refs/remotes/origin/$branch" || true
-          git checkout -B "$branch"
-          git add catalog/generated
-          git commit -m "Refresh public ecosystem catalog"
-          git push --force-with-lease origin "$branch"
-          gh pr view "$branch" --json url >/dev/null 2>&1 || gh pr create --base master --head "$branch" --title "Refresh public ecosystem catalog" --body "Automated refresh from GitHub, PyPI, npm, crates.io, and repository manifests. Validation and parser tests passed."
+        run: gh workflow run deploy.yml --ref master -f catalog_run_id="${{ github.run_id }}"

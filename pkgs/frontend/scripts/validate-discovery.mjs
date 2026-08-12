@@ -36,6 +36,7 @@ if (article) {
 const jsonLdSamples = [path.join(dist, "index.html"), path.join(dist, "products/records/ssot-registry/index.html")];
 for (const file of jsonLdSamples) { const html = fs.readFileSync(file, "utf8"); const match = html.match(/<script[^>]*type="application\/ld\+json"[^>]*>([\s\S]*?)<\/script>/); if (!match) fail(`${file} missing JSON-LD`); else { try { const graph = JSON.parse(match[1]); if (graph["@context"] !== "https://schema.org" || !Array.isArray(graph["@graph"])) fail(`${file} has invalid JSON-LD graph`); } catch { fail(`${file} has unparsable JSON-LD`); } } }
 const manifest = JSON.parse(fs.readFileSync(path.join(dist, "catalog/site/manifest.json"), "utf8"));
+if (!manifest.snapshot?.snapshot_id) fail("catalog manifest is not pinned to an immutable snapshot");
 for (const dataset of ["repositories", "packages", "resources", "technologies"]) if (!manifest.counts[dataset]) fail(`catalog manifest missing ${dataset} count`);
 for (const dataset of ["releases", "deployments", "relationships"]) if (manifest.source_counts?.[dataset] === undefined) fail(`catalog manifest missing ${dataset} source count`);
 for (const dataset of ["releases", "deployments", "surfaces", "relationships"]) if (fs.existsSync(path.join(dist, "catalog/site", `${dataset}.json`))) fail(`catalog publishes standalone ${dataset} dataset`);
@@ -46,6 +47,25 @@ for (const marker of ["Public ecosystem catalog", "DataCatalog", "og:url\" conte
 for (const collection of ["repositories", "packages", "resources", "technologies"]) {
   const html = fs.readFileSync(path.join(dist, "catalog", collection, "index.html"), "utf8");
   for (const marker of ["DataCatalog", "ItemList", `og:url\" content=\"https://groupsum.xyz/catalog/${collection}/`]) if (!html.includes(marker)) fail(`${collection} collection metadata missing ${marker}`);
+}
+const staticResources = JSON.parse(fs.readFileSync(path.join(dist, "catalog/site/resources.json"), "utf8"));
+if (staticResources.length !== manifest.counts.resources) fail("static resource count does not match manifest");
+const staticResourceTypeCounts = Object.fromEntries(Object.entries(Object.groupBy(staticResources, (item) => item.resource_type)).sort(([left], [right]) => left.localeCompare(right)).map(([key, values]) => [key, values.length]));
+if (JSON.stringify(staticResourceTypeCounts) !== JSON.stringify(manifest.resource_type_counts)) fail("static resource-type counts do not match manifest");
+const resourceSitemap = fs.readFileSync(path.join(dist, "sitemaps/catalog.xml"), "utf8");
+const resourceRoutes = new Set(staticResources.map((item) => `${root}${String(item.route).replace(/\/$/, "")}/`));
+for (const item of staticResources) {
+  const route = `${root}${String(item.route).replace(/\/$/, "")}/`;
+  if (!resourceSitemap.includes(`<loc>${route.replace(/&/g, "&amp;")}</loc>`)) fail(`resource sitemap is missing ${item.id}`);
+}
+if (resourceRoutes.size !== staticResources.length) fail("static resource routes are not unique");
+for (const item of new Map(staticResources.map((record) => [record.resource_type, record])).values()) {
+  const file = path.join(dist, String(item.route).replace(/^\//, ""), "index.html");
+  if (!fs.existsSync(file)) fail(`missing representative ${item.resource_type} static page`);
+  else {
+    const html = fs.readFileSync(file, "utf8");
+    if (!html.includes(item.title) || html.includes("Loading catalog record")) fail(`incomplete representative ${item.resource_type} static page`);
+  }
 }
 const graphTypes = (file) => {
   const html = fs.readFileSync(file, "utf8");
