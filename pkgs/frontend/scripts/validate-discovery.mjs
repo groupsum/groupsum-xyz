@@ -3,7 +3,7 @@ import path from "node:path";
 
 const root = "https://groupsum.xyz";
 const dist = "pkgs/frontend/dist";
-const required = ["robots.txt", "sitemap.xml", "sitemap.xsl", "llms.txt", "llms-full.txt", "full-llms.txt", "social/groupsum-default.svg", "catalog/catalog.json", "catalog/summary.json", "catalog/schema.json", "catalog/site/schema.json", "catalog/site/manifest.json", "catalog/site/repositories.json", "catalog/site/packages.json", "catalog/site/resources.json", "catalog/site/technologies.json"];
+const required = ["robots.txt", "sitemap.xml", "sitemap.xsl", "llms.txt", "llms-full.txt", "full-llms.txt", "social/groupsum-default.svg", "catalog/catalog.json", "catalog/summary.json", "catalog/schema.json", "catalog/site/schema.json", "catalog/site/manifest.json", "catalog/site/repositories.json", "catalog/site/packages.json", "catalog/site/resources.json", "catalog/site/resource-types.json", "catalog/site/technologies.json"];
 const fail = (message) => { console.error(`discovery validation failed: ${message}`); process.exitCode = 1; };
 for (const file of required) if (!fs.existsSync(path.join(dist, file))) fail(`missing ${dist}/${file}`);
 const robots = fs.readFileSync(path.join(dist, "robots.txt"), "utf8");
@@ -49,9 +49,16 @@ for (const collection of ["repositories", "packages", "resources", "technologies
   for (const marker of ["DataCatalog", "ItemList", `og:url\" content=\"https://groupsum.xyz/catalog/${collection}/`]) if (!html.includes(marker)) fail(`${collection} collection metadata missing ${marker}`);
 }
 const staticResources = JSON.parse(fs.readFileSync(path.join(dist, "catalog/site/resources.json"), "utf8"));
+const resourceTypes = JSON.parse(fs.readFileSync(path.join(dist, "catalog/site/resource-types.json"), "utf8"));
 if (staticResources.length !== manifest.counts.resources) fail("static resource count does not match manifest");
+if (resourceTypes.length !== manifest.resource_table_count || resourceTypes.length !== manifest.counts.resource_types) fail("resource type directory count does not match manifest");
+if (resourceTypes.filter((item) => item.populated).length !== manifest.populated_resource_type_count) fail("populated resource type count does not match manifest");
+if (new Set(resourceTypes.map((item) => item.family)).size !== manifest.resource_family_count) fail("resource family count does not match manifest");
 const staticResourceTypeCounts = Object.fromEntries(Object.entries(Object.groupBy(staticResources, (item) => item.resource_type)).sort(([left], [right]) => left.localeCompare(right)).map(([key, values]) => [key, values.length]));
 if (JSON.stringify(staticResourceTypeCounts) !== JSON.stringify(manifest.resource_type_counts)) fail("static resource-type counts do not match manifest");
+for (const descriptor of resourceTypes) if (Number(staticResourceTypeCounts[descriptor.resource_type] || 0) !== descriptor.count) fail(`resource type descriptor count mismatch: ${descriptor.resource_type}`);
+const resourceCollectionHtml = fs.readFileSync(path.join(dist, "catalog/resources/index.html"), "utf8");
+for (const descriptor of resourceTypes) if (!resourceCollectionHtml.includes(descriptor.resource_type)) fail(`resource type card missing from static HTML: ${descriptor.resource_type}`);
 const resourceSitemap = fs.readFileSync(path.join(dist, "sitemaps/catalog.xml"), "utf8");
 const resourceRoutes = new Set(staticResources.map((item) => `${root}${String(item.route).replace(/\/$/, "")}/`));
 for (const item of staticResources) {

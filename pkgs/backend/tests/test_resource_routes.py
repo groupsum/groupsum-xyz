@@ -117,6 +117,16 @@ async def test_resource_collection_routes_round_trip_encoded_primary_keys(
             )
             assert response.status_code == 200, response.text
             collection = response.json()
+            assert len(collection["resource_types"]) == 150
+            assert collection["aggregates"]["registered_types"] == 150
+            selected_type = next(
+                item
+                for item in collection["resource_types"]
+                if item["resource_type"] == resource_type
+            )
+            assert selected_type["count"] == 1
+            assert selected_type["populated"] is True
+            assert any(not item["populated"] for item in collection["resource_types"])
             member = collection["records"][0]
             encoded_route_key = member["route_key"].replace(":", "%3A")
             assert member["route"] == (

@@ -9,6 +9,7 @@ from pathlib import Path
 from typing import Any
 
 from groupsum_catalog_api.projections.public_resources import public_resource_records
+from groupsum_catalog_api.projections.resource_types import resource_type_descriptors
 from groupsum_catalog_api.record_compiler import compile_catalog_records
 from groupsum_catalog_api.tables.registry import RESOURCE_TABLES
 
@@ -36,9 +37,15 @@ def export_public_catalog(repo_root: Path, site_dir: Path) -> dict[str, Any]:
     )
     entity_records, _ = compile_catalog_records(repo_root)
     resources = public_resource_records(entity_records, frozenset(RESOURCE_TABLES))
+    resource_type_counts = Counter(item["resource_type"] for item in resources)
+    resource_types = resource_type_descriptors(resource_type_counts)
     resource_file = {
         "dataset": "resources",
         **_write_json(site_dir / "resources.json", resources),
+    }
+    resource_type_file = {
+        "dataset": "resource_types",
+        **_write_json(site_dir / "resource-types.json", resource_types),
     }
 
     manifest_path = site_dir / "manifest.json"
@@ -49,21 +56,27 @@ def export_public_catalog(repo_root: Path, site_dir: Path) -> dict[str, Any]:
         for key in ("snapshot_id", "collected_at", "source_digest", "schema_version")
     }
     manifest["counts"]["resources"] = len(resources)
-    manifest["resource_type_counts"] = dict(
-        sorted(Counter(item["resource_type"] for item in resources).items())
-    )
+    manifest["counts"]["resource_types"] = len(resource_types)
+    manifest["resource_type_counts"] = dict(sorted(resource_type_counts.items()))
+    manifest["resource_table_count"] = len(resource_types)
+    manifest["resource_family_count"] = len({item["family"] for item in resource_types})
+    manifest["populated_resource_type_count"] = sum(item["populated"] for item in resource_types)
     manifest["files"] = sorted(
         [
             resource_file if item.get("dataset") == "resources" else item
             for item in manifest["files"]
+            if item.get("dataset") != "resource_types"
         ],
         key=lambda item: item["dataset"],
     )
+    manifest["files"].append(resource_type_file)
+    manifest["files"].sort(key=lambda item: item["dataset"])
     _write_json(manifest_path, manifest)
     return {
         "snapshot_id": descriptor["snapshot_id"],
         "resources": len(resources),
-        "resource_types": len({item["resource_type"] for item in resources}),
+        "resource_types": len(resource_types),
+        "populated_resource_types": sum(item["populated"] for item in resource_types),
     }
 
 

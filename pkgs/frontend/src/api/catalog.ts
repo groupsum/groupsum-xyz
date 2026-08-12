@@ -17,6 +17,18 @@ export type CatalogCollection = {
   records: CatalogRecord[];
   facets: Record<string, Record<string, number>>;
   aggregates: Record<string, number>;
+  resource_types?: ResourceTypeDescriptor[];
+};
+export type ResourceTypeDescriptor = {
+  id: string;
+  resource_type: string;
+  label: string;
+  family: string;
+  icon_key: string;
+  detail_schema_key: string;
+  table_name: string;
+  count: number;
+  populated: boolean;
 };
 export type CatalogMember = {
   item: CatalogRecord;

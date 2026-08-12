@@ -1,9 +1,13 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://groupsum.xyz/catalog/site/schema.json",
-  "title": "Groupsum display-safe public catalog record",
+  "title": "Groupsum public catalog record",
   "type": "object",
-  "required": ["id", "observed_at"],
+  "required": ["id"],
+  "anyOf": [
+    { "required": ["observed_at"] },
+    { "required": ["resource_type", "label", "family", "icon_key", "detail_schema_key", "table_name", "count", "populated"] }
+  ],
   "properties": {
     "id": { "type": "string", "minLength": 1 },
     "kind": { "type": "string" },
@@ -12,6 +16,14 @@
     "display_name": { "type": ["string", "null"] },
     "description": { "type": ["string", "null"] },
     "observed_at": { "type": "string", "format": "date-time" },
+    "resource_type": { "type": "string" },
+    "label": { "type": "string" },
+    "family": { "type": "string" },
+    "icon_key": { "type": "string" },
+    "detail_schema_key": { "type": "string" },
+    "table_name": { "type": "string" },
+    "count": { "type": "integer", "minimum": 0 },
+    "populated": { "type": "boolean" },
     "evidence": {
       "type": "array",
       "items": {

@@ -54,6 +54,17 @@ async function verify() {
   if (JSON.stringify(manifest.resource_type_counts) !== JSON.stringify(apiResourceTypeCounts)) {
     throw new Error("static/API resource-type counts do not match");
   }
+  const staticResourceTypes = JSON.parse(await fetchText("/catalog/site/resource-types.json"));
+  const apiResourceTypes = collections.resources.resource_types || [];
+  if (JSON.stringify(staticResourceTypes) !== JSON.stringify(apiResourceTypes)) {
+    throw new Error("static/API resource type directory does not match");
+  }
+  const resourceCollectionHtml = await fetchText("/catalog/resources/");
+  for (const descriptor of staticResourceTypes) {
+    if (!resourceCollectionHtml.includes(descriptor.resource_type)) {
+      throw new Error(`resource type card missing from deployed HTML: ${descriptor.resource_type}`);
+    }
+  }
   for (const resourceType of Object.keys(apiResourceTypeCounts)) {
     const sample = JSON.parse(await fetchText(`/api/v1/catalog/resources?resource_type=${encodeURIComponent(resourceType)}&page=1&page_size=1`)).records?.[0];
     if (!sample?.route) throw new Error(`${resourceType} has no representative public resource`);

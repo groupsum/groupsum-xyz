@@ -1,6 +1,252 @@
 {
   "components": {
     "schemas": {
+      "CatalogResourceSummary": {
+        "additionalProperties": true,
+        "properties": {
+          "icon_key": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Icon Key"
+          },
+          "id": {
+            "title": "Id",
+            "type": "string"
+          },
+          "observed_at": {
+            "anyOf": [
+              {
+                "format": "date-time",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Observed At"
+          },
+          "repository_name": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Repository Name"
+          },
+          "repository_owner": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Repository Owner"
+          },
+          "resource_family": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Resource Family"
+          },
+          "resource_type": {
+            "title": "Resource Type",
+            "type": "string"
+          },
+          "route": {
+            "title": "Route",
+            "type": "string"
+          },
+          "route_key": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Route Key"
+          },
+          "summary": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Summary"
+          },
+          "title": {
+            "title": "Title",
+            "type": "string"
+          },
+          "type_label": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Type Label"
+          },
+          "url": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Url"
+          }
+        },
+        "required": [
+          "id",
+          "resource_type",
+          "title",
+          "route"
+        ],
+        "title": "CatalogResourceSummary",
+        "type": "object"
+      },
+      "CommitPoint": {
+        "additionalProperties": true,
+        "properties": {
+          "count": {
+            "title": "Count",
+            "type": "integer"
+          },
+          "date": {
+            "title": "Date",
+            "type": "string"
+          }
+        },
+        "required": [
+          "date",
+          "count"
+        ],
+        "title": "CommitPoint",
+        "type": "object"
+      },
+      "ContributorSummary": {
+        "additionalProperties": true,
+        "properties": {
+          "account_type": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Account Type"
+          },
+          "anonymous": {
+            "default": false,
+            "title": "Anonymous",
+            "type": "boolean"
+          },
+          "avatar_url": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Avatar Url"
+          },
+          "contributions": {
+            "default": 0,
+            "title": "Contributions",
+            "type": "integer"
+          },
+          "id": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Id"
+          },
+          "login": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Login"
+          },
+          "name": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Name"
+          },
+          "url": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Url"
+          }
+        },
+        "title": "ContributorSummary",
+        "type": "object"
+      },
       "InternalResponse": {
         "properties": {
           "accepted": {
@@ -34,6 +280,136 @@
         "title": "InternalResponse",
         "type": "object"
       },
+      "MetricPoint": {
+        "additionalProperties": true,
+        "properties": {
+          "observed_at": {
+            "anyOf": [
+              {
+                "format": "date-time",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Observed At"
+          },
+          "value": {
+            "title": "Value",
+            "type": "number"
+          }
+        },
+        "required": [
+          "value"
+        ],
+        "title": "MetricPoint",
+        "type": "object"
+      },
+      "PackageSummary": {
+        "additionalProperties": true,
+        "properties": {
+          "dependency_count": {
+            "default": 0,
+            "title": "Dependency Count",
+            "type": "integer"
+          },
+          "dependent_count": {
+            "default": 0,
+            "title": "Dependent Count",
+            "type": "integer"
+          },
+          "ecosystem": {
+            "title": "Ecosystem",
+            "type": "string"
+          },
+          "id": {
+            "title": "Id",
+            "type": "string"
+          },
+          "latest_version": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Latest Version"
+          },
+          "name": {
+            "title": "Name",
+            "type": "string"
+          },
+          "observed_at": {
+            "anyOf": [
+              {
+                "format": "date-time",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Observed At"
+          },
+          "package_kind": {
+            "title": "Package Kind",
+            "type": "string"
+          },
+          "publication_status": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Publication Status"
+          },
+          "registry_url": {
+            "title": "Registry Url",
+            "type": "string"
+          },
+          "release_count": {
+            "default": 0,
+            "title": "Release Count",
+            "type": "integer"
+          },
+          "route": {
+            "title": "Route",
+            "type": "string"
+          },
+          "route_key": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Route Key"
+          }
+        },
+        "required": [
+          "id",
+          "ecosystem",
+          "name",
+          "registry_url",
+          "route",
+          "package_kind"
+        ],
+        "title": "PackageSummary",
+        "type": "object"
+      },
       "PublicResponse": {
         "title": "PublicResponse"
       },
@@ -56,6 +432,279 @@
           "snapshot_id"
         ],
         "title": "RecordBatch",
+        "type": "object"
+      },
+      "RepositorySummary": {
+        "additionalProperties": true,
+        "properties": {
+          "commit_activity": {
+            "items": {
+              "$ref": "#/components/schemas/CommitPoint"
+            },
+            "title": "Commit Activity",
+            "type": "array"
+          },
+          "contributors": {
+            "items": {
+              "$ref": "#/components/schemas/ContributorSummary"
+            },
+            "title": "Contributors",
+            "type": "array"
+          },
+          "description": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Description"
+          },
+          "history": {
+            "additionalProperties": {
+              "items": {
+                "$ref": "#/components/schemas/MetricPoint"
+              },
+              "type": "array"
+            },
+            "title": "History",
+            "type": "object"
+          },
+          "id": {
+            "title": "Id",
+            "type": "string"
+          },
+          "latest_release": {
+            "anyOf": [
+              {
+                "additionalProperties": true,
+                "type": "object"
+              },
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Latest Release"
+          },
+          "metrics": {
+            "additionalProperties": {
+              "type": "number"
+            },
+            "title": "Metrics",
+            "type": "object"
+          },
+          "name": {
+            "title": "Name",
+            "type": "string"
+          },
+          "observed_at": {
+            "anyOf": [
+              {
+                "format": "date-time",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Observed At"
+          },
+          "owner": {
+            "title": "Owner",
+            "type": "string"
+          },
+          "package_count": {
+            "default": 0,
+            "title": "Package Count",
+            "type": "integer"
+          },
+          "release_count": {
+            "default": 0,
+            "title": "Release Count",
+            "type": "integer"
+          },
+          "resource_count": {
+            "default": 0,
+            "title": "Resource Count",
+            "type": "integer"
+          },
+          "route": {
+            "title": "Route",
+            "type": "string"
+          },
+          "url": {
+            "title": "Url",
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "owner",
+          "name",
+          "url",
+          "route"
+        ],
+        "title": "RepositorySummary",
+        "type": "object"
+      },
+      "ResourceCatalogCollection": {
+        "additionalProperties": true,
+        "properties": {
+          "aggregates": {
+            "additionalProperties": {
+              "type": "integer"
+            },
+            "title": "Aggregates",
+            "type": "object"
+          },
+          "count": {
+            "title": "Count",
+            "type": "integer"
+          },
+          "facets": {
+            "additionalProperties": {
+              "additionalProperties": {
+                "type": "integer"
+              },
+              "type": "object"
+            },
+            "title": "Facets",
+            "type": "object"
+          },
+          "generated_at": {
+            "anyOf": [
+              {
+                "format": "date-time",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Generated At"
+          },
+          "kind": {
+            "title": "Kind",
+            "type": "string"
+          },
+          "page": {
+            "default": 1,
+            "title": "Page",
+            "type": "integer"
+          },
+          "page_count": {
+            "default": 1,
+            "title": "Page Count",
+            "type": "integer"
+          },
+          "page_size": {
+            "default": 50,
+            "title": "Page Size",
+            "type": "integer"
+          },
+          "records": {
+            "items": {
+              "anyOf": [
+                {
+                  "$ref": "#/components/schemas/RepositorySummary"
+                },
+                {
+                  "$ref": "#/components/schemas/PackageSummary"
+                },
+                {
+                  "$ref": "#/components/schemas/CatalogResourceSummary"
+                },
+                {
+                  "$ref": "#/components/schemas/TechnologySummary"
+                }
+              ]
+            },
+            "title": "Records",
+            "type": "array"
+          },
+          "resource_kind": {
+            "const": "resource",
+            "title": "Resource Kind",
+            "type": "string"
+          },
+          "resource_types": {
+            "items": {
+              "$ref": "#/components/schemas/ResourceTypeDescriptor"
+            },
+            "title": "Resource Types",
+            "type": "array"
+          }
+        },
+        "required": [
+          "kind",
+          "resource_kind",
+          "count",
+          "records"
+        ],
+        "title": "ResourceCatalogCollection",
+        "type": "object"
+      },
+      "ResourceTypeDescriptor": {
+        "additionalProperties": true,
+        "properties": {
+          "count": {
+            "default": 0,
+            "title": "Count",
+            "type": "integer"
+          },
+          "detail_schema_key": {
+            "title": "Detail Schema Key",
+            "type": "string"
+          },
+          "family": {
+            "title": "Family",
+            "type": "string"
+          },
+          "icon_key": {
+            "title": "Icon Key",
+            "type": "string"
+          },
+          "id": {
+            "title": "Id",
+            "type": "string"
+          },
+          "label": {
+            "title": "Label",
+            "type": "string"
+          },
+          "populated": {
+            "default": false,
+            "title": "Populated",
+            "type": "boolean"
+          },
+          "resource_type": {
+            "title": "Resource Type",
+            "type": "string"
+          },
+          "table_name": {
+            "title": "Table Name",
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "resource_type",
+          "label",
+          "family",
+          "icon_key",
+          "detail_schema_key",
+          "table_name"
+        ],
+        "title": "ResourceTypeDescriptor",
         "type": "object"
       },
       "SnapshotCreate": {
@@ -139,6 +788,64 @@
           "measurement_count"
         ],
         "title": "SnapshotCreate",
+        "type": "object"
+      },
+      "TechnologySummary": {
+        "additionalProperties": true,
+        "properties": {
+          "category": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Category"
+          },
+          "description": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Description"
+          },
+          "id": {
+            "title": "Id",
+            "type": "string"
+          },
+          "name": {
+            "title": "Name",
+            "type": "string"
+          },
+          "record_count": {
+            "default": 0,
+            "title": "Record Count",
+            "type": "integer"
+          },
+          "route": {
+            "title": "Route",
+            "type": "string"
+          },
+          "slug": {
+            "title": "Slug",
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "slug",
+          "name",
+          "route"
+        ],
+        "title": "TechnologySummary",
         "type": "object"
       }
     }
@@ -1705,7 +2412,7 @@
               "application/json": {
                 "schema": {
                   "items": {
-                    "$ref": "#/components/schemas/PublicResponse"
+                    "$ref": "#/components/schemas/ResourceCatalogCollection"
                   },
                   "type": "array"
                 }

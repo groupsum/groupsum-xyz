@@ -12,6 +12,7 @@ from tigrbl.factories.router import defineRouterSpec
 from tigrbl_core._spec import PathSpec, RouterSpec, TableSpec
 
 from .route_parameters import decode_path_parameters
+from .schemas import ResourceCatalogCollection
 from .tables import views_analytics, views_catalog, views_records, views_resources
 from .tables.association import Association
 from .tables.catalog_snapshot import CatalogSnapshot
@@ -96,6 +97,7 @@ def _bind_get(
     target: str,
     operation: Operation,
     fixed: dict[str, Any] | None = None,
+    response_schema: type = PublicResponse,
 ) -> None:
     params_key = f"public_params:{alias}"
 
@@ -148,7 +150,7 @@ def _bind_get(
         target=target,
         arity="collection" if target == "list" else "member",
         persist="skip",
-        response_schema=PublicResponse,
+        response_schema=response_schema,
     )(endpoint)
 
 
@@ -193,42 +195,54 @@ for path, alias, table, record_type in (
         fixed={"record_type": record_type},
     )
 
-for path, alias, table, operation in (
-    ("/api/v1/insights", "insights", Association, views_catalog.insight_collection),
-    ("/api/v1/entities", "entities", Association, views_catalog.entity_collection),
+for path, alias, table, operation, response_schema in (
+    ("/api/v1/insights", "insights", Association, views_catalog.insight_collection, PublicResponse),
+    ("/api/v1/entities", "entities", Association, views_catalog.entity_collection, PublicResponse),
     (
         "/api/v1/repository-metrics",
         "repository_metrics",
         Repository,
         views_resources.repository_metrics,
+        PublicResponse,
     ),
-    ("/api/v1/catalog", "catalog", Association, views_catalog.catalog_overview),
+    ("/api/v1/catalog", "catalog", Association, views_catalog.catalog_overview, PublicResponse),
     (
         "/api/v1/catalog/repositories",
         "catalog_repositories",
         Repository,
         lambda table, ctx: views_resources.catalog_collection(table, ctx, "repository"),
+        PublicResponse,
     ),
     (
         "/api/v1/catalog/packages",
         "catalog_packages",
         Package,
         lambda table, ctx: views_resources.catalog_collection(table, ctx, "package"),
+        PublicResponse,
     ),
     (
         "/api/v1/catalog/resources",
         "catalog_resources",
         Association,
         views_resources.resource_collection,
+        ResourceCatalogCollection,
     ),
     (
         "/api/v1/catalog/technologies",
         "catalog_technologies",
         Technology,
         lambda table, ctx: views_resources.catalog_collection(table, ctx, "technology"),
+        PublicResponse,
     ),
 ):
-    _bind_get(path, table=table, alias=alias, target="list", operation=operation)
+    _bind_get(
+        path,
+        table=table,
+        alias=alias,
+        target="list",
+        operation=operation,
+        response_schema=response_schema,
+    )
 
 for path, alias, table, operation, fixed in (
     (

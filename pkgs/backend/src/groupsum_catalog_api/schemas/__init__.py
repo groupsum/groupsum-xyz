@@ -4,6 +4,8 @@ from .catalog import (
     CatalogResourceSummary,
     PackageSummary,
     RepositorySummary,
+    ResourceCatalogCollection,
+    ResourceTypeDescriptor,
     TechnologySummary,
 )
 
@@ -13,5 +15,7 @@ __all__ = (
     "CatalogResourceSummary",
     "PackageSummary",
     "RepositorySummary",
+    "ResourceCatalogCollection",
+    "ResourceTypeDescriptor",
     "TechnologySummary",
 )

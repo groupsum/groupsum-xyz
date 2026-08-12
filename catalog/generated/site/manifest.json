@@ -15,6 +15,7 @@
     "organizations": 4,
     "packages": 1143,
     "repositories": 69,
+    "resource_types": 150,
     "resources": 3170,
     "technologies": 18
   },
@@ -41,6 +42,13 @@
       "sha256": "665647c01d64c333c6a16ce2482c2716bdd3b2ec24a257c37a680d6921d7b9f5"
     },
     {
+      "bytes": 45310,
+      "dataset": "resource_types",
+      "path": "resource-types.json",
+      "records": 150,
+      "sha256": "1d001135bd2e82b2c85ad9fc81f25021d8bcb2efcb92dc7af7c8a643dedfe3c8"
+    },
+    {
       "bytes": 4650528,
       "dataset": "resources",
       "path": "resources.json",
@@ -56,10 +64,13 @@
     }
   ],
   "generated_at": "2026-08-10T13:12:47Z",
+  "populated_resource_type_count": 18,
   "product_evidence": {
     "path": "/catalog/product-evidence/",
     "records": 70
   },
+  "resource_family_count": 21,
+  "resource_table_count": 150,
   "resource_type_counts": {
     "contract.openapi": 3,
     "documentation.collection": 367,

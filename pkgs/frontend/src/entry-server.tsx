@@ -9,6 +9,28 @@ import App from "./App";
 let catalogResourceSnapshots: Map<string, unknown> | null = null;
 
 function catalogResourceSnapshot(pathname: string): unknown | null {
+  if (pathname === "/catalog/resources") {
+    const siteRoot = path.join(process.cwd(), "catalog", "generated", "site");
+    const resourceTypes = JSON.parse(fs.readFileSync(path.join(siteRoot, "resource-types.json"), "utf8")) as Array<{ count: number; family: string; populated: boolean }>;
+    const manifest = JSON.parse(fs.readFileSync(path.join(siteRoot, "manifest.json"), "utf8")) as { counts?: { resources?: number }; snapshot?: { collected_at?: string } };
+    return {
+      kind: "catalog_collection",
+      resource_kind: "resource",
+      count: Number(manifest.counts?.resources || 0),
+      page: 1,
+      page_size: 50,
+      page_count: 1,
+      records: [],
+      facets: {},
+      aggregates: {
+        registered_types: resourceTypes.length,
+        populated_types: resourceTypes.filter((item) => item.populated).length,
+        families: new Set(resourceTypes.map((item) => item.family)).size,
+      },
+      generated_at: manifest.snapshot?.collected_at || null,
+      resource_types: resourceTypes,
+    };
+  }
   if (!pathname.startsWith("/catalog/resources/")) return null;
   if (catalogResourceSnapshots === null) {
     const source = path.join(process.cwd(), "catalog", "generated", "site", "resources.json");

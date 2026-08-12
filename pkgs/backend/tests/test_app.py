@@ -111,14 +111,6 @@ def test_collection_aggregates_cover_every_catalog_resource_kind() -> None:
         "package",
     ) == {"published": 1, "unpublished": 1, "ecosystems": 2}
     assert _collection_aggregates(
-        [
-            {"resource_type": "documentation.guide"},
-            {"resource_type": "runtime.endpoint"},
-            {"resource_type": "implementation.demo"},
-        ],
-        "resource",
-    ) == {"websites_and_docs": 1, "apis_and_endpoints": 1, "demos_and_showcases": 1}
-    assert _collection_aggregates(
         [{"category": "database"}, {"category": "database"}, {"category": "runtime"}],
         "technology",
     ) == {"categories": 2}

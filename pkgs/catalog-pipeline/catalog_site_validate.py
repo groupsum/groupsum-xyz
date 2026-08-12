@@ -11,7 +11,9 @@ from pathlib import Path
 from typing import Any
 
 ROOT = Path(__file__).resolve().parents[2]
-REQUIRED_DATASETS = {"organizations", "repositories", "packages", "resources", "technologies"}
+REQUIRED_DATASETS = {
+    "organizations", "repositories", "packages", "resources", "resource_types", "technologies"
+}
 DISALLOWED_DATASETS = {"releases", "deployments", "surfaces", "relationships"}
 MOJIBAKE = re.compile(r"(?:Ã.|Â.|â(?:€|€¦)|�)")
 
@@ -37,7 +39,7 @@ def validate_site(site_dir: Path) -> list[str]:
     for name in DISALLOWED_DATASETS:
         if (site_dir / f"{name}.json").exists():
             errors.append(f"standalone child dataset still exists: {name}")
-    for name in {"releases", "deployments", "relationships"}:
+    for name in ("releases", "deployments", "relationships"):
         if name not in manifest.get("source_counts", {}):
             errors.append(f"manifest missing aggregated source count: {name}")
     evidence_files = list(product_evidence_dir.glob("*/*.json")) if product_evidence_dir.exists() else []
@@ -70,7 +72,7 @@ def validate_site(site_dir: Path) -> list[str]:
             elif identity in ids:
                 errors.append(f"duplicate {name} id: {identity}")
             ids.add(identity)
-            if not record.get("observed_at"):
+            if name != "resource_types" and not record.get("observed_at"):
                 errors.append(f"{name} record missing observed_at: {identity}")
             route = record.get("route")
             if route:
@@ -148,6 +150,17 @@ def validate_site(site_dir: Path) -> list[str]:
                     } or filename.endswith(".proto")
                     if not valid_contract:
                         errors.append(f"API definition lacks a canonical contract filename: {identity}")
+            if name == "resource_types":
+                required_type_fields = {
+                    "resource_type", "label", "family", "icon_key", "detail_schema_key",
+                    "table_name", "count", "populated",
+                }
+                missing_type_fields = required_type_fields - record.keys()
+                if missing_type_fields:
+                    errors.append(
+                        f"resource type descriptor missing fields: {identity}: "
+                        + ", ".join(sorted(missing_type_fields))
+                    )
             if name == "organizations" and not {"github_releases", "package_releases", "deployments", "relationships"} <= record.keys():
                 errors.append(f"organization missing child aggregates: {identity}")
     return errors

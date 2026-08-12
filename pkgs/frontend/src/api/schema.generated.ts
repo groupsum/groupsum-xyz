@@ -695,6 +695,118 @@ export interface paths {
 export type webhooks = Record<string, never>;
 export interface components {
     schemas: {
+        /** CatalogResourceSummary */
+        CatalogResourceSummary: {
+            /**
+             * Icon Key
+             * @default null
+             */
+            icon_key: string | null;
+            /** Id */
+            id: string;
+            /**
+             * Observed At
+             * @default null
+             */
+            observed_at: string | null;
+            /**
+             * Repository Name
+             * @default null
+             */
+            repository_name: string | null;
+            /**
+             * Repository Owner
+             * @default null
+             */
+            repository_owner: string | null;
+            /**
+             * Resource Family
+             * @default null
+             */
+            resource_family: string | null;
+            /** Resource Type */
+            resource_type: string;
+            /** Route */
+            route: string;
+            /**
+             * Route Key
+             * @default null
+             */
+            route_key: string | null;
+            /**
+             * Summary
+             * @default null
+             */
+            summary: string | null;
+            /** Title */
+            title: string;
+            /**
+             * Type Label
+             * @default null
+             */
+            type_label: string | null;
+            /**
+             * Url
+             * @default null
+             */
+            url: string | null;
+        } & {
+            [key: string]: unknown;
+        };
+        /** CommitPoint */
+        CommitPoint: {
+            /** Count */
+            count: number;
+            /** Date */
+            date: string;
+        } & {
+            [key: string]: unknown;
+        };
+        /** ContributorSummary */
+        ContributorSummary: {
+            /**
+             * Account Type
+             * @default null
+             */
+            account_type: string | null;
+            /**
+             * Anonymous
+             * @default false
+             */
+            anonymous: boolean;
+            /**
+             * Avatar Url
+             * @default null
+             */
+            avatar_url: string | null;
+            /**
+             * Contributions
+             * @default 0
+             */
+            contributions: number;
+            /**
+             * Id
+             * @default null
+             */
+            id: string | null;
+            /**
+             * Login
+             * @default null
+             */
+            login: string | null;
+            /**
+             * Name
+             * @default null
+             */
+            name: string | null;
+            /**
+             * Url
+             * @default null
+             */
+            url: string | null;
+        } & {
+            [key: string]: unknown;
+        };
         /** InternalResponse */
         InternalResponse: {
             /**
@@ -717,6 +829,70 @@ export interface components {
             /** Status */
             status: string;
         };
+        /** MetricPoint */
+        MetricPoint: {
+            /**
+             * Observed At
+             * @default null
+             */
+            observed_at: string | null;
+            /** Value */
+            value: number;
+        } & {
+            [key: string]: unknown;
+        };
+        /** PackageSummary */
+        PackageSummary: {
+            /**
+             * Dependency Count
+             * @default 0
+             */
+            dependency_count: number;
+            /**
+             * Dependent Count
+             * @default 0
+             */
+            dependent_count: number;
+            /** Ecosystem */
+            ecosystem: string;
+            /** Id */
+            id: string;
+            /**
+             * Latest Version
+             * @default null
+             */
+            latest_version: string | null;
+            /** Name */
+            name: string;
+            /**
+             * Observed At
+             * @default null
+             */
+            observed_at: string | null;
+            /** Package Kind */
+            package_kind: string;
+            /**
+             * Publication Status
+             * @default null
+             */
+            publication_status: string | null;
+            /** Registry Url */
+            registry_url: string;
+            /**
+             * Release Count
+             * @default 0
+             */
+            release_count: number;
+            /** Route */
+            route: string;
+            /**
+             * Route Key
+             * @default null
+             */
+            route_key: string | null;
+        } & {
+            [key: string]: unknown;
+        };
         /** PublicResponse */
         PublicResponse: unknown;
         /** RecordBatch */
@@ -727,6 +903,142 @@ export interface components {
             }[];
             /** Snapshot Id */
             snapshot_id: string;
+        };
+        /** RepositorySummary */
+        RepositorySummary: {
+            /** Commit Activity */
+            commit_activity?: components["schemas"]["CommitPoint"][];
+            /** Contributors */
+            contributors?: components["schemas"]["ContributorSummary"][];
+            /**
+             * Description
+             * @default null
+             */
+            description: string | null;
+            /** History */
+            history?: {
+                [key: string]: components["schemas"]["MetricPoint"][];
+            };
+            /** Id */
+            id: string;
+            /**
+             * Latest Release
+             * @default null
+             */
+            latest_release: {
+                [key: string]: unknown;
+            } | string | null;
+            /** Metrics */
+            metrics?: {
+                [key: string]: number;
+            };
+            /** Name */
+            name: string;
+            /**
+             * Observed At
+             * @default null
+             */
+            observed_at: string | null;
+            /** Owner */
+            owner: string;
+            /**
+             * Package Count
+             * @default 0
+             */
+            package_count: number;
+            /**
+             * Release Count
+             * @default 0
+             */
+            release_count: number;
+            /**
+             * Resource Count
+             * @default 0
+             */
+            resource_count: number;
+            /** Route */
+            route: string;
+            /** Url */
+            url: string;
+        } & {
+            [key: string]: unknown;
+        };
+        /** ResourceCatalogCollection */
+        ResourceCatalogCollection: {
+            /** Aggregates */
+            aggregates?: {
+                [key: string]: number;
+            };
+            /** Count */
+            count: number;
+            /** Facets */
+            facets?: {
+                [key: string]: {
+                    [key: string]: number;
+                };
+            };
+            /**
+             * Generated At
+             * @default null
+             */
+            generated_at: string | null;
+            /** Kind */
+            kind: string;
+            /**
+             * Page
+             * @default 1
+             */
+            page: number;
+            /**
+             * Page Count
+             * @default 1
+             */
+            page_count: number;
+            /**
+             * Page Size
+             * @default 50
+             */
+            page_size: number;
+            /** Records */
+            records: (components["schemas"]["RepositorySummary"] | components["schemas"]["PackageSummary"] | components["schemas"]["CatalogResourceSummary"] | components["schemas"]["TechnologySummary"])[];
+            /**
+             * Resource Kind
+             * @constant
+             */
+            resource_kind: "resource";
+            /** Resource Types */
+            resource_types?: components["schemas"]["ResourceTypeDescriptor"][];
+        } & {
+            [key: string]: unknown;
+        };
+        /** ResourceTypeDescriptor */
+        ResourceTypeDescriptor: {
+            /**
+             * Count
+             * @default 0
+             */
+            count: number;
+            /** Detail Schema Key */
+            detail_schema_key: string;
+            /** Family */
+            family: string;
+            /** Icon Key */
+            icon_key: string;
+            /** Id */
+            id: string;
+            /** Label */
+            label: string;
+            /**
+             * Populated
+             * @default false
+             */
+            populated: boolean;
+            /** Resource Type */
+            resource_type: string;
+            /** Table Name */
+            table_name: string;
+        } & {
+            [key: string]: unknown;
         };
         /** SnapshotCreate */
         SnapshotCreate: {
@@ -767,6 +1079,34 @@ export interface components {
             snapshot_id: string;
             /** Source Digest */
             source_digest: string;
+        };
+        /** TechnologySummary */
+        TechnologySummary: {
+            /**
+             * Category
+             * @default null
+             */
+            category: string | null;
+            /**
+             * Description
+             * @default null
+             */
+            description: string | null;
+            /** Id */
+            id: string;
+            /** Name */
+            name: string;
+            /**
+             * Record Count
+             * @default 0
+             */
+            record_count: number;
+            /** Route */
+            route: string;
+            /** Slug */
+            slug: string;
+        } & {
+            [key: string]: unknown;
         };
     };
     responses: never;
@@ -1098,7 +1438,7 @@ export interface operations {
                     [name: string]: unknown;
                 };
                 content: {
-                    "application/json": components["schemas"]["PublicResponse"][];
+                    "application/json": components["schemas"]["ResourceCatalogCollection"][];
                 };
             };
         };

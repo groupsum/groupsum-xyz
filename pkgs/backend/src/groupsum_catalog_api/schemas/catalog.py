@@ -76,7 +76,7 @@ class CatalogResourceSummary(ApiModel):
     resource_type: str
     route_key: str | None = None
     title: str
-    url: str
+    url: str | None = None
     summary: str | None = None
     route: str
     repository_owner: str | None = None
@@ -108,6 +108,23 @@ class CatalogCollection(ApiModel):
     aggregates: dict[str, int] = Field(default_factory=dict)
     generated_at: datetime | None = None
     records: list[RepositorySummary | PackageSummary | CatalogResourceSummary | TechnologySummary]
+
+
+class ResourceTypeDescriptor(ApiModel):
+    id: str
+    resource_type: str
+    label: str
+    family: str
+    icon_key: str
+    detail_schema_key: str
+    table_name: str
+    count: int = 0
+    populated: bool = False
+
+
+class ResourceCatalogCollection(CatalogCollection):
+    resource_kind: Literal["resource"]
+    resource_types: list[ResourceTypeDescriptor] = Field(default_factory=list)
 
 
 class CatalogMember(ApiModel):

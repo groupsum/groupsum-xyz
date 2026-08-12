@@ -12,6 +12,7 @@ import { ContributorProfile } from "../features/catalog/ContributorProfile";
 export function RouteSwitcher({ path, onNavigate }: { path: string; onNavigate: (path: string) => void }) {
   const cleanPath = path.split("?")[0].split("#")[0];
   const query = new URLSearchParams(path.split("?")[1] || "").get("q") || "";
+  const resourceType = new URLSearchParams(path.split("?")[1] || "").get("resource_type") || "";
   const segments = cleanPath.split("/").filter(Boolean);
   const primary = segments[0];
   if (!primary || primary === "home" || primary === "index.html") return <HomePage onNavigate={onNavigate} />;
@@ -36,7 +37,7 @@ export function RouteSwitcher({ path, onNavigate }: { path: string; onNavigate: 
   if (primary === "catalog") {
     const dataset = segments[1];
     if (!dataset) return query ? <PublicCatalogExplorer onNavigate={onNavigate} initialQuery={query} /> : <PublicCatalogOverview onNavigate={onNavigate} />;
-    if (segments.length === 2 && ["repositories", "packages", "resources", "technologies"].includes(dataset)) return <PublicCatalogExplorer onNavigate={onNavigate} fixedDataset={dataset as "repositories" | "packages" | "resources" | "technologies"} initialQuery={query} />;
+    if (segments.length === 2 && ["repositories", "packages", "resources", "technologies"].includes(dataset)) return <PublicCatalogExplorer onNavigate={onNavigate} fixedDataset={dataset as "repositories" | "packages" | "resources" | "technologies"} initialQuery={query} initialResourceType={resourceType} />;
     return <PublicCatalogDetail path={cleanPath} onNavigate={onNavigate} />;
   }
   if (primary === "contributors" && segments[1] && segments[2]) return <ContributorProfile provider={segments[1]} login={decodeURIComponent(segments[2])} onNavigate={onNavigate} />;

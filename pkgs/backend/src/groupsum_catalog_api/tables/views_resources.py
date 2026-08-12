@@ -1,6 +1,9 @@
 from __future__ import annotations
 
+from collections import Counter
+
 from ..projections.public_resources import public_resource_record
+from ..projections.resource_types import resource_type_descriptors
 from .view_common import *  # noqa: F403
 from .view_resource_detail import resource_detail_model
 
@@ -24,22 +27,6 @@ def _collection_aggregates(values: list[dict], resource_kind: str) -> dict[str, 
             "published": published,
             "unpublished": len(values) - published,
             "ecosystems": len({str(item["ecosystem"]) for item in values if item.get("ecosystem")}),
-        }
-    if resource_kind == "resource":
-        resource_types = [str(item.get("resource_type") or "").casefold() for item in values]
-        return {
-            "websites_and_docs": sum(
-                value in {"website", "documentation", "interface.website"}
-                or value.startswith("documentation.")
-                for value in resource_types
-            ),
-            "apis_and_endpoints": sum(
-                "api" in value or value.endswith(".endpoint") for value in resource_types
-            ),
-            "demos_and_showcases": sum(
-                value.rsplit(".", 1)[-1] in {"demo", "example", "showcase"}
-                for value in resource_types
-            ),
         }
     if resource_kind == "technology":
         return {
@@ -289,15 +276,14 @@ def resource_collection(table, ctx):
     def build(session):
         from .registry import RESOURCE_TABLES
 
-        requested_type = str(params.get("resource_type") or "")
-        values = []
+        all_values = []
         for entity_type, model in RESOURCE_TABLES.items():
-            if requested_type and entity_type != requested_type:
-                continue
             for row in current_entity_query(session, model, entity_type).all():
-                values.append(public_resource_record(entity_type, row_dict(row)))
-        values = _filter(values, params)
-        facets = _facets(values)
+                all_values.append(public_resource_record(entity_type, row_dict(row)))
+        type_counts = Counter(item["resource_type"] for item in all_values)
+        descriptors = resource_type_descriptors(type_counts)
+        values = _filter(all_values, params)
+        facets = _facets(all_values)
         page_values, page, page_size, page_count = _page(values, params)
         return {
             "kind": "catalog_resource_collection",
@@ -307,7 +293,12 @@ def resource_collection(table, ctx):
             "page_size": page_size,
             "page_count": page_count,
             "facets": facets,
-            "aggregates": _collection_aggregates(values, "resource"),
+            "aggregates": {
+                "registered_types": len(descriptors),
+                "populated_types": sum(item["populated"] for item in descriptors),
+                "families": len({item["family"] for item in descriptors}),
+            },
+            "resource_types": descriptors,
             "generated_at": latest_timestamp(item.get("observed_at") for item in values),
             "records": page_values,
         }

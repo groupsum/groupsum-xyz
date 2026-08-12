@@ -1,11 +1,12 @@
 import React, { useEffect, useMemo, useState } from "react";
 import { getRepositoryMetricSnapshot, RepositoryMetricRecord, type RepositorySignals } from "../../api/catalog";
-import { AlertTriangle, ArrowRight, Box, Calendar, CheckCircle2, Cpu, ExternalLink, FileCode, FolderGit2, GitBranch, Globe, Layers, Package, ShieldCheck, Sparkles, Star, Terminal } from "lucide-react";
+import { AlertTriangle, ArrowRight, Box, Calendar, CheckCircle2, Cpu, ExternalLink, FileCode, FolderGit2, GitBranch, Layers, Package, ShieldCheck, Star, Terminal } from "lucide-react";
 import { RepositorySignalStrip } from "./RepositorySignals";
 import { EntityOwnership } from "./EntityIdentity";
 import { CatalogPill, CollectionHeader, ContextRailCard, FactPanel, MemberRowCard, RecordIdentityCard, SurfaceCard, factIcons, MetricBand, type MetricItem } from "./CatalogVisuals";
 import { ExplorerFilterToolbar, TypeBadge, type ExplorerFilters } from "./CatalogExplorerUI";
 import { PackageCollectionTable, RepositoryCollectionTable } from "./CatalogCollectionTables";
+import { ResourceTypeDirectory } from "./ResourceTypeDirectory";
 import { useCatalogCollection } from "../../hooks/useCatalogCollection";
 import { useCatalogOverview } from "../../hooks/useCatalogOverview";
 import type { CatalogViewRecord } from "../../types/catalog-view";
@@ -200,10 +201,10 @@ export function PublicCatalogOverview({ onNavigate }: { onNavigate: (path: strin
   </section>;
 }
 
-export function PublicCatalogExplorer({ onNavigate, compact = false, fixedDataset, initialQuery = "" }: { onNavigate: (path: string) => void; compact?: boolean; fixedDataset?: DatasetName; initialQuery?: string }) {
+export function PublicCatalogExplorer({ onNavigate, compact = false, fixedDataset, initialQuery = "", initialResourceType = "" }: { onNavigate: (path: string) => void; compact?: boolean; fixedDataset?: DatasetName; initialQuery?: string; initialResourceType?: string }) {
   const overview = useCatalogOverview();
   const [dataset, setDataset] = useState<DatasetName>(fixedDataset || "repositories");
-  const [filters, setFilters] = useState<ExplorerFilters>({ search: initialQuery, owner: "", ecosystem: "", publication: "", resourceType: "", sort: "recent" });
+  const [filters, setFilters] = useState<ExplorerFilters>({ search: initialQuery, owner: "", ecosystem: "", publication: "", resourceType: initialResourceType, sort: "recent" });
   const [page, setPage] = useState(1);
   const pageSize = compact ? 24 : 50;
 
@@ -212,6 +213,7 @@ export function PublicCatalogExplorer({ onNavigate, compact = false, fixedDatase
   }, [fixedDataset]);
 
   useEffect(() => setFilters((current) => ({ ...current, search: initialQuery })), [initialQuery]);
+  useEffect(() => setFilters((current) => ({ ...current, resourceType: initialResourceType })), [initialResourceType]);
 
   const collection = useCatalogCollection(dataset, {
     page,
@@ -236,14 +238,9 @@ export function PublicCatalogExplorer({ onNavigate, compact = false, fixedDatase
   }, [collection.data?.records, dataset]);
   const state = collection.isPending ? "loading" : collection.isError ? "error" : "ready";
   const aggregates = collection.data?.aggregates || {};
+  const staticSnapshot = globalThis.__GROUPSUM_API_SNAPSHOT__ as { resource_types?: NonNullable<typeof collection.data>["resource_types"] } | null;
+  const resourceTypes = collection.data?.resource_types || staticSnapshot?.resource_types || [];
 
-  const facetValues = (name: string) => Object.keys(collection.data?.facets?.[name] || {}).sort();
-  const filterOptions = {
-    owners: dataset === "resources" ? facetValues("repository_owner") : facetValues("owner"),
-    ecosystems: facetValues("ecosystem"),
-    publications: facetValues("publication_status"),
-    resourceTypes: facetValues("resource_type"),
-  };
   const summaryFacts = useMemo<MetricItem[]>(() => {
     if (dataset === "repositories") return [
       { label: "Repositories", value: Number(collection.data?.count || 0), icon: FolderGit2, color: "text-[#166534]" },
@@ -259,9 +256,9 @@ export function PublicCatalogExplorer({ onNavigate, compact = false, fixedDatase
     ];
     if (dataset === "resources") return [
       { label: "Typed Resources", value: Number(collection.data?.count || 0), icon: FileCode, color: "text-[#0369A1]" },
-      { label: "Websites & Docs", value: Number(aggregates.websites_and_docs || 0), icon: Globe, color: "text-[#2E6B9E]" },
-      { label: "APIs & Endpoints", value: Number(aggregates.apis_and_endpoints || 0), icon: Terminal, color: "text-[#9D174D]" },
-      { label: "Demos & Showcases", value: Number(aggregates.demos_and_showcases || 0), icon: Sparkles, color: "text-[#B45309]" },
+      { label: "Populated Types", value: Number(aggregates.populated_types || 0), icon: CheckCircle2, color: "text-[#166534]" },
+      { label: "Registered Tables", value: Number(aggregates.registered_types || 0), icon: Terminal, color: "text-[#9D174D]" },
+      { label: "Resource Families", value: Number(aggregates.families || 0), icon: Layers, color: "text-[#B45309]" },
     ];
     return [{ label: "Categorical Technologies", value: Number(collection.data?.count || 0), icon: Cpu, color: "text-[#B45309]" }, { label: "Technology Categories", value: Number(aggregates.categories || 0), icon: Layers, color: "text-[#2E6B9E]" }, { label: "Language Distinction", value: "Strictly Separate", icon: ShieldCheck, color: "text-[#166534]", note: "Languages kept in language composition" }];
   }, [aggregates, collection.data?.count, dataset]);
@@ -287,6 +284,8 @@ export function PublicCatalogExplorer({ onNavigate, compact = false, fixedDatase
       <ExplorerFilterToolbar filters={filters} onChange={(next) => { setFilters(next); setPage(1); }} owners={dataset === "repositories" ? Object.keys(collection.data?.facets?.owner || {}) : []} ecosystems={dataset === "packages" ? Object.keys(collection.data?.facets?.ecosystem || {}) : []} publications={dataset === "packages" ? Object.keys(collection.data?.facets?.publication_status || {}) : []} resourceTypes={dataset === "resources" ? Object.keys(collection.data?.facets?.resource_type || {}) : []} sortOptions={[{ label: "Recent Activity", value: "recent" }, { label: "Most Activity", value: "activity" }, { label: "Name (A–Z)", value: "name" }]} total={Number(collection.data?.count || 0)} statusDetail={collection.isFetching && !collection.isPending ? `Updating to page ${page.toLocaleString()} of ${pages.toLocaleString()}…` : `Page ${currentPage.toLocaleString()} of ${pages.toLocaleString()}`} />
       {state === "loading" && <div className="p-10 text-center text-sm text-ink-muted" role="status">Loading {labels[dataset].toLowerCase()}…</div>}
       {state === "error" && <div className="p-6 border border-red-500/20 bg-red-500/5 text-sm text-red-700 rounded-[var(--radius-sm)]" role="alert">The catalog API could not be loaded. Try again shortly or use the downloadable normalized JSON below.</div>}
+      {dataset === "resources" && resourceTypes.length > 0 && <ResourceTypeDirectory descriptors={resourceTypes} selectedType={filters.resourceType} onSelect={(resourceType) => { setFilters({ ...filters, resourceType }); setPage(1); if (fixedDataset) onNavigate(`/catalog/resources/?resource_type=${encodeURIComponent(resourceType)}`); }} />}
+      {dataset === "resources" && <h2 className="font-serif text-xl font-bold text-ink">{filters.resourceType ? `${resourceTypes.find((descriptor) => descriptor.resource_type === filters.resourceType)?.label || humanLabel(filters.resourceType)} records` : "All typed resource records"}</h2>}
       {state === "ready" && (
         <>
           {dataset === "repositories" ? <RepositoryCollectionTable records={visible} onNavigate={onNavigate} /> : dataset === "packages" ? <PackageCollectionTable records={visible} onNavigate={onNavigate} /> : <div className="space-y-3">{visible.map((record) => <CollectionRow key={record.id} record={record} dataset={dataset} onNavigate={onNavigate} />)}</div>}
