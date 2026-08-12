@@ -6,6 +6,22 @@ const expected = {
 
 const delay = (milliseconds) => new Promise((resolve) => setTimeout(resolve, milliseconds));
 
+function canonicalJson(value) {
+  if (Array.isArray(value)) return value.map(canonicalJson);
+  if (value && typeof value === "object") {
+    return Object.fromEntries(
+      Object.entries(value)
+        .sort(([left], [right]) => left.localeCompare(right))
+        .map(([key, item]) => [key, canonicalJson(item)]),
+    );
+  }
+  return value;
+}
+
+function jsonEqual(left, right) {
+  return JSON.stringify(canonicalJson(left)) === JSON.stringify(canonicalJson(right));
+}
+
 async function fetchText(pathname) {
   const response = await fetch(`${baseUrl}${pathname}`, { headers: { "cache-control": "no-cache" } });
   if (!response.ok) throw new Error(`${pathname} returned ${response.status}`);
@@ -51,12 +67,12 @@ async function verify() {
     }
   }
   const apiResourceTypeCounts = collections.resources.facets?.resource_type || {};
-  if (JSON.stringify(manifest.resource_type_counts) !== JSON.stringify(apiResourceTypeCounts)) {
+  if (!jsonEqual(manifest.resource_type_counts, apiResourceTypeCounts)) {
     throw new Error("static/API resource-type counts do not match");
   }
   const staticResourceTypes = JSON.parse(await fetchText("/catalog/site/resource-types.json"));
   const apiResourceTypes = collections.resources.resource_types || [];
-  if (JSON.stringify(staticResourceTypes) !== JSON.stringify(apiResourceTypes)) {
+  if (!jsonEqual(staticResourceTypes, apiResourceTypes)) {
     throw new Error("static/API resource type directory does not match");
   }
   const resourceCollectionHtml = await fetchText("/catalog/resources/");
