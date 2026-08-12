@@ -4,14 +4,13 @@ import inspect
 from collections.abc import Callable
 from dataclasses import replace
 from typing import Any
-from urllib.parse import parse_qsl
 
 from pydantic import RootModel
 from tigrbl import JSONResponse, get, hook_ctx
 from tigrbl.factories.router import defineRouterSpec
 from tigrbl_core._spec import PathSpec, RouterSpec, TableSpec
 
-from .route_parameters import decode_path_parameters
+from .route_parameters import binding_parameters
 from .schemas import ResourceCatalogCollection
 from .tables import views_analytics, views_catalog, views_records, views_resources
 from .tables.association import Association
@@ -48,47 +47,6 @@ def _not_found(result: Any) -> Any:
     return result
 
 
-def _parameters(ctx: dict[str, Any]) -> dict[str, Any]:
-    params = dict(ctx.get("payload") or {})
-    request = getattr(ctx, "request", None) or ctx.get("request")
-    if request is not None:
-        params.update(request.query_params)
-        params.update(request.path_params)
-        params.update(request.scope.get("path_params", {}))
-    params.update(ctx.get("query_params") or {})
-    params.update(ctx.get("path_params") or {})
-    params.update(getattr(ctx, "path_params", None) or {})
-    temp = ctx.get("temp") or {}
-    for namespace in (temp.get("route"), temp.get("dispatch")):
-        if isinstance(namespace, dict):
-            params.update(namespace.get("path_params") or {})
-    hot = temp.get("hot_ctx")
-    if hot is not None:
-        params.update(getattr(hot, "path_params", None) or {})
-        params.update(getattr(hot, "route_path_params", None) or {})
-        scope = getattr(hot, "raw_scope", None) or {}
-        params.update(scope.get("path_params") or {})
-        query_string = scope.get("query_string", b"")
-        if isinstance(query_string, bytes):
-            query_string = query_string.decode("utf-8")
-        params.update(parse_qsl(str(query_string)))
-    return params
-
-
-def _binding_parameters(ctx: dict[str, Any], template: str) -> dict[str, Any]:
-    params = _parameters(ctx)
-    hot = (ctx.get("temp") or {}).get("hot_ctx")
-    scope = getattr(hot, "raw_scope", None) or {}
-    actual = str(scope.get("path") or "")
-    expected_parts = template.strip("/").split("/")
-    actual_parts = actual.strip("/").split("/")
-    if len(expected_parts) == len(actual_parts):
-        for expected, value in zip(expected_parts, actual_parts, strict=True):
-            if expected.startswith("{") and expected.endswith("}"):
-                params.setdefault(expected[1:-1], value)
-    return decode_path_parameters(params, expected_parts)
-
-
 def _bind_get(
     path: str,
     *,
@@ -102,7 +60,7 @@ def _bind_get(
     params_key = f"public_params:{alias}"
 
     def capture_params(_cls: type, ctx: dict[str, Any]) -> None:
-        ctx.setdefault("temp", {})[params_key] = _binding_parameters(ctx, path)
+        ctx.setdefault("temp", {})[params_key] = binding_parameters(ctx, path)
     capture_params.__name__ = f"capture_{alias}_params"
     capture_params.__qualname__ = capture_params.__name__
     setattr(
@@ -114,7 +72,7 @@ def _bind_get(
     async def project(cls: type, ctx: dict[str, Any]) -> Any:
         scoped = dict(ctx)
         params = dict(ctx.get("temp", {}).get(params_key) or {})
-        params.update(_binding_parameters(ctx, path))
+        params.update(binding_parameters(ctx, path))
         if "resource_type" in params:
             params.setdefault("entity_type", params["resource_type"])
         scoped["payload"] = params

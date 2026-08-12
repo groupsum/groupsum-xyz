@@ -7,8 +7,8 @@ import httpx
 import pytest
 
 from groupsum_catalog_api.app import build_app
-from groupsum_catalog_api.public_api import _binding_parameters
 from groupsum_catalog_api.record_compiler import RecordAccumulator, _import_repositories
+from groupsum_catalog_api.route_parameters import binding_parameters
 from groupsum_catalog_api.tables.association import Association
 from groupsum_catalog_api.tables.repository import Repository
 from groupsum_catalog_api.tables.repository_ssot_registry import RepositorySsotRegistry
@@ -65,7 +65,7 @@ def test_compiler_materializes_ssot_reference_edges() -> None:
 
 
 def test_binding_parameters_decode_existing_tigrbl_path_parameters() -> None:
-    params = _binding_parameters(
+    params = binding_parameters(
         {
             "path_params": {
                 "resource_type": "governance.boundary",
