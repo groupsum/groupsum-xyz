@@ -3,7 +3,7 @@ import { PortfolioEntity } from "../types";
 // Catalog claims are intentionally limited to facts that can be checked in a
 // public repository. Source availability does not imply a hosted service,
 // customer adoption, production readiness, certification, or support terms.
-const checkedAt = "2026-08-02";
+const checkedAt = "2026-10-28";
 
 export const portfolioEntities: PortfolioEntity[] = [
   {
