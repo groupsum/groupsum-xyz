@@ -4,6 +4,7 @@ version = "0.1.0"
 description = "Durable Tigrbl-backed catalog and resource API for groupsum.xyz"
 requires-python = ">=3.12,<3.13"
 dependencies = [
+  "certifi>=2026.10.23",
   "tigrbl==0.4.5.dev4",
   "tigrbl-base @ https://github.com/tigrbl/tigrbl/archive/b92dcf4ae0418a3147aa722e7c8f1d0cad81533c.zip#subdirectory=pkgs/20_base/tigrbl_base",
   "tigrbl-core @ https://github.com/tigrbl/tigrbl/archive/b92dcf4ae0418a3147aa722e7c8f1d0cad81533c.zip#subdirectory=pkgs/10_core/tigrbl_core",
