@@ -46,11 +46,6 @@ jobs:
         run: npm run catalog:export-public
       - run: npm run check
       - run: npm run build
-      - name: Publish records and finalize snapshot
-        env:
-          GROUPSUM_CATALOG_API_URL: ${{ vars.GROUPSUM_CATALOG_API_URL || 'https://groupsum.xyz' }}
-          GROUPSUM_CATALOG_INTERNAL_TOKEN: ${{ secrets.GROUPSUM_CATALOG_INTERNAL_TOKEN }}
-        run: npm run catalog:publish
       - name: Preserve the exact finalized catalog snapshot for deployment
         uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
         with:

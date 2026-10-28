@@ -11,6 +11,12 @@ on:
       GROUPSUM_CATALOG_INTERNAL_TOKEN:
         description: Token used to publish and verify internal catalog operations
         required: true
+      GROUPSUM_POSTGRES_PASSWORD:
+        description: Production PostgreSQL password supplied by the deployment environment
+        required: false
+      GROUPSUM_DUCKDB_TOKEN:
+        description: Production analytics token supplied by the deployment environment
+        required: false
   workflow_dispatch:
     inputs:
       catalog_run_id:
@@ -24,18 +30,85 @@ permissions:
 
 concurrency:
   group: deploy-groupsum-xyz
-  cancel-in-progress: true
+  cancel-in-progress: false
+
+env:
+  COMPOSE_FILE: docker-compose.yaml
+  COMPOSE_PROJECT: groupsum-xyz
+  PUBLIC_HOST: groupsum.xyz
+  PORTWYRM_NETWORK: portwyrm_frontend
+  PORTWYRM_CERT_PATH: /mnt/data/portwyrm/certificates
+  WYRMCTL_CREDENTIAL: /etc/groupsum/portwyrm.env
 
 jobs:
+  plan:
+    runs-on:
+      group: portwyrm-deployment
+      labels: [self-hosted, Linux, X64, vm102]
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v5
+      - uses: cobycloud/actions/actions/wyrmctl-setup@1a8310ba53da69f419f7c1c98cf566441ad7fdef
+      - name: Load protected Portwyrm automation identity
+        id: portwyrm
+        shell: bash
+        run: |
+          set -euo pipefail
+          test -r "$WYRMCTL_CREDENTIAL"
+          base_url="$(sed -n 's/^PORTWYRM_WYRMCTL_BASE_URL=//p' "$WYRMCTL_CREDENTIAL")"
+          identity="$(sed -n 's/^PORTWYRM_WYRMCTL_IDENTITY=//p' "$WYRMCTL_CREDENTIAL")"
+          secret="$(sed -n 's/^PORTWYRM_WYRMCTL_SECRET_B64=//p' "$WYRMCTL_CREDENTIAL" | base64 -d)"
+          echo "::add-mask::$secret"
+          test "$identity" = jacob@swarmauri.com
+          echo "base-url=$base_url" >> "$GITHUB_OUTPUT"
+          echo "identity=$identity" >> "$GITHUB_OUTPUT"
+          echo "secret=$secret" >> "$GITHUB_OUTPUT"
+      - name: Validate VM102 topology
+        shell: bash
+        run: |
+          set -euo pipefail
+          docker inspect portwyrm-portwyrm-1 >/dev/null
+          docker network inspect "$PORTWYRM_NETWORK" >/dev/null
+          test -d "$PORTWYRM_CERT_PATH"
+          mkdir -p deployment-evidence
+      - uses: cobycloud/actions/actions/wyrmctl-plan@1a8310ba53da69f419f7c1c98cf566441ad7fdef
+        with:
+          desired-state: .wyrmctl/desired-state/production/desired-state.yaml
+          owner: groupsum-xyz
+          artifact-out: deployment-evidence/wyrmctl-plan.json
+          repository: ${{ github.repository }}
+          environment: production
+          commit: ${{ github.sha }}
+          base-url: ${{ steps.portwyrm.outputs.base-url }}
+          identity: ${{ steps.portwyrm.outputs.identity }}
+          secret: ${{ steps.portwyrm.outputs.secret }}
+          certificate-mode: create
+      - name: Seal reviewed plan
+        shell: bash
+        run: sha256sum deployment-evidence/wyrmctl-plan.json > deployment-evidence/plan.sha256
+      - uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f # v4
+        with:
+          name: deployment-plan-${{ github.sha }}
+          path: deployment-evidence
+          if-no-files-found: error
+          retention-days: 14
+
   deploy:
-    runs-on: deployment
+    needs: plan
+    runs-on:
+      group: portwyrm-deployment
+      labels: [self-hosted, Linux, X64, vm102]
     environment: deployment
     env:
+      GROUPSUM_POSTGRES_PASSWORD: ${{ secrets.GROUPSUM_POSTGRES_PASSWORD }}
+      GROUPSUM_DUCKDB_TOKEN: ${{ secrets.GROUPSUM_DUCKDB_TOKEN }}
       GROUPSUM_CATALOG_INTERNAL_TOKEN: ${{ secrets.GROUPSUM_CATALOG_INTERNAL_TOKEN }}
     steps:
-      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v5
+      - uses: cobycloud/actions/actions/wyrmctl-setup@1a8310ba53da69f419f7c1c98cf566441ad7fdef
+      - uses: actions/download-artifact@fa0a91b85d4f404e444e00e005971372dc801d16 # v4
         with:
-          fetch-depth: 0
+          name: deployment-plan-${{ github.sha }}
+          path: deployment-evidence
       - name: Materialize finalized catalog snapshot
         uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093 # v4
         with:
@@ -43,17 +116,36 @@ jobs:
           path: catalog/generated
           github-token: ${{ github.token }}
           run-id: ${{ inputs.catalog_run_id }}
-      - name: Reclaim disposable Docker build space
+      - name: Verify reviewed plan and load automation identity
+        id: portwyrm
+        shell: bash
         run: |
-          docker system prune --all --force
-          docker system df
-      - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7
+          set -euo pipefail
+          sha256sum --check deployment-evidence/plan.sha256
+          base_url="$(sed -n 's/^PORTWYRM_WYRMCTL_BASE_URL=//p' "$WYRMCTL_CREDENTIAL")"
+          identity="$(sed -n 's/^PORTWYRM_WYRMCTL_IDENTITY=//p' "$WYRMCTL_CREDENTIAL")"
+          secret="$(sed -n 's/^PORTWYRM_WYRMCTL_SECRET_B64=//p' "$WYRMCTL_CREDENTIAL" | base64 -d)"
+          echo "::add-mask::$secret"
+          test "$identity" = jacob@swarmauri.com
+          echo "base-url=$base_url" >> "$GITHUB_OUTPUT"
+          echo "identity=$identity" >> "$GITHUB_OUTPUT"
+          echo "secret=$secret" >> "$GITHUB_OUTPUT"
+      - name: Validate production secrets and prepare data disk
+        shell: bash
+        run: |
+          set -euo pipefail
+          test -n "$GROUPSUM_POSTGRES_PASSWORD"
+          test -n "$GROUPSUM_DUCKDB_TOKEN"
+          test -n "$GROUPSUM_CATALOG_INTERNAL_TOKEN"
+          sudo install -d -m 0750 -o 999 -g 999 /mnt/data/groupsum-xyz/postgres
+          sudo install -d -m 0750 /mnt/data/groupsum-xyz/duckdb
+      - uses: actions/setup-node@48b55a011bda9f5d6aeb4c2d9c7362e8dae4041e # v6.4.0
         with:
-          node-version: 22
+          node-version: "22"
           cache: npm
-      - uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7
+      - uses: actions/setup-python@a3b4ebd1e074fb654fd52a69213511cf3fe2cf1c # v6
         with:
-          python-version: '3.12'
+          python-version: "3.12"
       - run: npm ci
       - run: npm run build:content
       - run: npm run build:insights
@@ -72,23 +164,88 @@ jobs:
         run: git diff --exit-code -- catalog/content/records.json pkgs/backend/openapi.json pkgs/frontend/src/api/catalog.generated.ts pkgs/frontend/src/api/schema.generated.ts pkgs/frontend/src/api/contract.generated.ts
       - run: npm run check
       - run: npm run build
-      - name: Validate Docker proxy target
-        run: npm run proxy:target-check
-      - name: Build site and catalog API images
+      - run: npm run proxy:target-check
+      - name: Build production images
+        shell: bash
         run: |
-          docker compose version
-          docker compose -f docker-compose.yaml pull groupsum-duckdb
-          docker compose -f docker-compose.yaml build groupsum-catalog-api
-          docker compose -f docker-compose.yaml build groupsum-xyz
-      - name: Replace site and catalog API containers
+          set -euo pipefail
+          docker compose -f "$COMPOSE_FILE" config --quiet
+          docker compose -f "$COMPOSE_FILE" pull groupsum-postgres groupsum-duckdb
+          docker compose -f "$COMPOSE_FILE" build groupsum-catalog-api groupsum-xyz
+      - uses: cobycloud/actions/actions/docker-compose-stack@1a8310ba53da69f419f7c1c98cf566441ad7fdef
+        with:
+          compose-file: ${{ env.COMPOSE_FILE }}
+          project-name: ${{ env.COMPOSE_PROJECT }}
+          operation: deploy
+      - name: Wait for application services
+        shell: bash
         run: |
-          docker compose -f docker-compose.yaml up -d --no-build \
-            groupsum-postgres groupsum-duckdb groupsum-catalog-api groupsum-xyz || {
-            docker compose -f docker-compose.yaml ps
-            docker compose -f docker-compose.yaml logs --tail=200 groupsum-postgres groupsum-catalog-api groupsum-duckdb groupsum-xyz
-            exit 1
-          }
+          set -euo pipefail
+          for attempt in $(seq 1 240); do
+            database="$(docker inspect --format '{{.State.Health.Status}}' groupsum-postgres 2>/dev/null || true)"
+            analytics="$(docker inspect --format '{{.State.Health.Status}}' groupsum-duckdb 2>/dev/null || true)"
+            api="$(docker inspect --format '{{.State.Health.Status}}' groupsum-catalog-api 2>/dev/null || true)"
+            if [[ "$database" == healthy && "$analytics" == healthy && "$api" == healthy ]]; then break; fi
+            sleep 5
+          done
+          test "$(docker inspect --format '{{.State.Health.Status}}' groupsum-postgres)" = healthy
+          test "$(docker inspect --format '{{.State.Health.Status}}' groupsum-duckdb)" = healthy
+          test "$(docker inspect --format '{{.State.Health.Status}}' groupsum-catalog-api)" = healthy
+          test "$(docker inspect --format '{{.State.Status}}' groupsum-xyz)" = running
+          docker inspect --format '{{range $network, $_ := .NetworkSettings.Networks}}{{$network}}{{"\n"}}{{end}}' groupsum-xyz \
+            | grep -Fxq "$PORTWYRM_NETWORK"
+          docker exec groupsum-xyz wget -qO- http://127.0.0.1/ >/dev/null
+      - name: Publish immutable catalog snapshot into the new API
+        env:
+          GROUPSUM_CATALOG_API_URL: http://127.0.0.1:8000
+        run: npm run catalog:publish
+      - uses: cobycloud/actions/actions/wyrmctl-apply@1a8310ba53da69f419f7c1c98cf566441ad7fdef
+        with:
+          artifact: deployment-evidence/wyrmctl-plan.json
+          repository: ${{ github.repository }}
+          environment: production
+          commit: ${{ github.sha }}
+          base-url: ${{ steps.portwyrm.outputs.base-url }}
+          identity: ${{ steps.portwyrm.outputs.identity }}
+          secret: ${{ steps.portwyrm.outputs.secret }}
+          report: deployment-evidence/wyrmctl-apply.json
+          audit-log: deployment-evidence/wyrmctl-audit.json
+          rollback-plan: deployment-evidence/wyrmctl-rollback.json
+      - name: Verify edge certificate
+        shell: bash
+        run: |
+          set -euo pipefail
+          for attempt in $(seq 1 24); do
+            if openssl s_client -connect "$PUBLIC_HOST:443" -servername "$PUBLIC_HOST" </dev/null 2>/dev/null \
+                | openssl x509 -noout -ext subjectAltName | grep -Fq "DNS:$PUBLIC_HOST"; then exit 0; fi
+            sleep 5
+          done
+          exit 1
+      - if: always()
+        uses: cobycloud/actions/actions/docker-compose-stack@1a8310ba53da69f419f7c1c98cf566441ad7fdef
+        with:
+          compose-file: ${{ env.COMPOSE_FILE }}
+          project-name: ${{ env.COMPOSE_PROJECT }}
+          operation: logs
+          logs-output: production-stack.log
+      - if: always()
+        uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f # v4
+        with:
+          name: production-deploy-${{ github.sha }}
+          path: |
+            deployment-evidence
+            production-stack.log
+          if-no-files-found: warn
+          retention-days: 14
+
+  verify-public:
+    needs: deploy
+    runs-on:
+      group: shortlived
+      labels: [self-hosted, Linux, X64, sad-lewin, shortlived]
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v5
       - name: Verify public catalog and rendered page markers
         env:
           DEPLOY_VERIFY_URL: https://groupsum.xyz
-        run: npm run verify:deployment
+        run: node pkgs/frontend/scripts/verify-deployment.mjs

@@ -1,7 +1,7 @@
 import fs from "node:fs";
 
 const compose = fs.readFileSync("docker-compose.yaml", "utf8");
-const proxy = fs.readFileSync(".npmctl/desired-state/production/proxy.yaml", "utf8");
+const proxy = fs.readFileSync(".wyrmctl/desired-state/production/desired-state.yaml", "utf8");
 
 const siteService = compose.match(/^  groupsum-xyz:\s*\r?\n((?:^[ \t]{4,}.*(?:\r?\n|$))*)/m);
 if (!siteService) {
@@ -15,7 +15,7 @@ if (!containerMatch) {
 const containerName = containerMatch[1].trim();
 const forwardMatches = [...proxy.matchAll(/^[ \t]*forward_host:[ \t]*([^\r\n#]+)/gm)].map((match) => match[1].trim());
 if (forwardMatches.length === 0) {
-  throw new Error(".npmctl/desired-state/production/proxy.yaml must define at least one forward_host");
+  throw new Error(".wyrmctl/desired-state/production/desired-state.yaml must define at least one forward_host");
 }
 
 const ipLiteral = /^(?:\d{1,3}\.){3}\d{1,3}$/;

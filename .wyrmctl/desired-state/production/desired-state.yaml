@@ -1,0 +1,51 @@
+apiVersion: wyrmctl.com/v1
+kind: DesiredState
+schemaVersion: 3
+metadata:
+  name: groupsum-xyz-production
+  owner: groupsum-xyz
+  environment: production
+spec:
+  proxyHosts:
+    - domain_names:
+        - groupsum.xyz
+        - www.groupsum.xyz
+      forward_scheme: http
+      forward_host: groupsum-xyz
+      forward_port: 80
+      certificate_ref: cert.groupsum-xyz
+      ssl_forced: 1
+      http2_support: 1
+      hsts_enabled: 1
+      hsts_subdomains: 0
+      allow_websocket_upgrade: 0
+      block_exploits: 1
+      meta:
+        managed_by: wyrmctl
+        owner: groupsum-xyz
+        resource_id: proxy.groupsum-xyz
+  certificates:
+    - name: groupsum.xyz
+      domain_names:
+        - groupsum.xyz
+        - www.groupsum.xyz
+      certificate_type: letsencrypt
+      api_payload:
+        provider: letsencrypt
+        meta:
+          letsencrypt_email: jacob@swarmauri.com
+          letsencrypt_agree: true
+          dns_challenge: false
+      meta:
+        managed_by: wyrmctl
+        owner: groupsum-xyz
+        resource_id: cert.groupsum-xyz
+  accessLists: []
+  redirectionHosts: []
+  deadHosts: []
+  streams: []
+  users: []
+  settings: []
+  dnsRecords: []
+  pluginResources: []
+  externalCertificates: []
