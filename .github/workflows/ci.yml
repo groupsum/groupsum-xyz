@@ -9,6 +9,10 @@ on:
 jobs:
   verify:
     runs-on: ubuntu-latest
+    env:
+      GROUPSUM_POSTGRES_PASSWORD: ci-validation-only
+      GROUPSUM_DUCKDB_TOKEN: ci-validation-only
+      GROUPSUM_CATALOG_INTERNAL_TOKEN: ci-validation-only
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
       - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7
@@ -19,6 +23,12 @@ jobs:
         with:
           python-version: '3.12'
       - run: npm ci
+      - name: Collect current public catalog
+        timeout-minutes: 20
+        env:
+          GITHUB_TOKEN: ${{ github.event_name == 'pull_request' && github.token || secrets.GROUPSUM_CATALOG_GITHUB_TOKEN || github.token }}
+        run: npm run catalog:collect
+      - run: npm run catalog:render
       - run: npm run build:content
       - run: npm run build:insights
       - run: node pkgs/catalog-pipeline/export-editorial-records.mjs
