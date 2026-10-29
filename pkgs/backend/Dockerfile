@@ -9,6 +9,7 @@ RUN python -m pip install --no-cache-dir --require-hashes -r /app/pkgs/backend/r
 RUN python -c "import duckdb; connection = duckdb.connect(); connection.execute('INSTALL httpfs'); connection.execute('INSTALL quack'); connection.close()"
 COPY pkgs/backend /app/pkgs/backend
 RUN python -m pip install --no-cache-dir --no-deps /app/pkgs/backend
+COPY pkgs/catalog-pipeline /app/pkgs/catalog-pipeline
 COPY catalog /app/catalog
 COPY pkgs/frontend/public/insights-index.json /app/pkgs/frontend/public/insights-index.json
 EXPOSE 8000

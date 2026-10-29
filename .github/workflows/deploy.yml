@@ -222,9 +222,11 @@ jobs:
             | grep -Fxq "$PORTWYRM_NETWORK"
           docker exec groupsum-xyz wget -qO- http://127.0.0.1/ >/dev/null
       - name: Publish immutable catalog snapshot into the new API
-        env:
-          GROUPSUM_CATALOG_API_URL: http://127.0.0.1:8000
-        run: npm run catalog:publish
+        run: |
+          docker exec \
+            -e GROUPSUM_CATALOG_API_URL=http://127.0.0.1:8000 \
+            groupsum-catalog-api \
+            python /app/pkgs/backend/scripts/publish_catalog.py
       - uses: cobycloud/actions/actions/wyrmctl-apply@56c4a13434c7ec49453bf109d7d6955158992b5a
         with:
           artifact: deployment-evidence/wyrmctl-plan.json
