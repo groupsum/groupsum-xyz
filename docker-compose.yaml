@@ -52,10 +52,13 @@ services:
           LOAD quack;
           FROM quack_query('quack:localhost:9494', 'SELECT 1',
           token => getenv('GROUPSUM_DUCKDB_TOKEN'), disable_ssl => true);
-      start_period: 60s
+      # Loading the Quack extension can exceed Docker's five-second default
+      # health window on a cold or contended VM. The query remains an
+      # end-to-end readiness probe, but receives enough time to complete.
+      start_period: 2m
       interval: 10s
-      timeout: 5s
-      retries: 30
+      timeout: 30s
+      retries: 20
     networks:
       - private
 

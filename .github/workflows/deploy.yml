@@ -184,11 +184,21 @@ jobs:
             --volume /mnt/data:/mnt/data \
             postgres:17-alpine \
             -c 'install -d -m 0750 -o 999 -g 999 /mnt/data/groupsum-xyz/postgres && install -d -m 0750 /mnt/data/groupsum-xyz/duckdb'
-      - uses: cobycloud/actions/actions/docker-compose-stack@56c4a13434c7ec49453bf109d7d6955158992b5a
+      - id: deploy-stack
+        continue-on-error: true
+        uses: cobycloud/actions/actions/docker-compose-stack@56c4a13434c7ec49453bf109d7d6955158992b5a
         with:
           compose-file: ${{ env.COMPOSE_FILE }}
           project-name: ${{ env.COMPOSE_PROJECT }}
           operation: deploy
+      - name: Capture failed service health evidence
+        if: steps.deploy-stack.outcome == 'failure'
+        shell: bash
+        run: |
+          set -euo pipefail
+          docker inspect --format '{{json .State.Health}}' groupsum-duckdb || true
+          docker logs --tail 200 groupsum-duckdb || true
+          exit 1
       - name: Wait for application services
         shell: bash
         run: |
