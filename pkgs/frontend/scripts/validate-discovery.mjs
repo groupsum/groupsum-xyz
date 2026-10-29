@@ -71,7 +71,8 @@ for (const item of new Map(staticResources.map((record) => [record.resource_type
   if (!fs.existsSync(file)) fail(`missing representative ${item.resource_type} static page`);
   else {
     const html = fs.readFileSync(file, "utf8");
-    if (!html.includes(item.title) || html.includes("Loading catalog record")) fail(`incomplete representative ${item.resource_type} static page`);
+    const displayName = item.title || item.display_name || item.name;
+    if (!displayName || !html.includes(displayName) || html.includes("Loading catalog record")) fail(`incomplete representative ${item.resource_type} static page`);
   }
 }
 const graphTypes = (file) => {

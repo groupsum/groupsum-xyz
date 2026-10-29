@@ -6,6 +6,7 @@ import shutil
 from pathlib import Path
 from typing import Any
 
+from ..snapshots import snapshot_descriptor
 from .common import *  # noqa: F403
 from .compiler import compile_catalog
 
@@ -178,6 +179,15 @@ def main() -> int:
             "relationships": summary["relationships"],
         },
         "product_evidence": {"path": "/catalog/product-evidence/", "records": product_evidence_count},
+        "snapshot": snapshot_descriptor(catalog),
+        "resource_table_count": len(datasets["resource_types"]),
+        "populated_resource_type_count": sum(
+            1 for descriptor in datasets["resource_types"] if descriptor["populated"]
+        ),
+        "resource_family_count": len(
+            {str(descriptor["family"]) for descriptor in datasets["resource_types"]}
+        ),
+        "resource_type_counts": dict(sorted(resource_counts.items())),
         "completeness": catalog.get("completeness", {}),
     }
     write_json(args.site_dir / "manifest.json", manifest)
