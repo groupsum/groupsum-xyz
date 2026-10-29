@@ -47,7 +47,7 @@ jobs:
       labels: [self-hosted, Linux, X64, vm102]
     steps:
       - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v5
-      - uses: cobycloud/actions/actions/wyrmctl-setup@1a8310ba53da69f419f7c1c98cf566441ad7fdef
+      - uses: cobycloud/actions/actions/wyrmctl-setup@56c4a13434c7ec49453bf109d7d6955158992b5a
       - name: Load protected Portwyrm automation identity
         id: portwyrm
         shell: bash
@@ -70,7 +70,7 @@ jobs:
           docker network inspect "$PORTWYRM_NETWORK" >/dev/null
           test -d "$PORTWYRM_CERT_PATH"
           mkdir -p deployment-evidence
-      - uses: cobycloud/actions/actions/wyrmctl-plan@1a8310ba53da69f419f7c1c98cf566441ad7fdef
+      - uses: cobycloud/actions/actions/wyrmctl-plan@56c4a13434c7ec49453bf109d7d6955158992b5a
         with:
           desired-state: .wyrmctl/desired-state/production/desired-state.yaml
           owner: groupsum-xyz
@@ -104,7 +104,7 @@ jobs:
       GROUPSUM_CATALOG_INTERNAL_TOKEN: ${{ secrets.GROUPSUM_CATALOG_INTERNAL_TOKEN }}
     steps:
       - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v5
-      - uses: cobycloud/actions/actions/wyrmctl-setup@1a8310ba53da69f419f7c1c98cf566441ad7fdef
+      - uses: cobycloud/actions/actions/wyrmctl-setup@56c4a13434c7ec49453bf109d7d6955158992b5a
       - uses: actions/download-artifact@fa0a91b85d4f404e444e00e005971372dc801d16 # v4
         with:
           name: deployment-plan-${{ github.sha }}
@@ -131,7 +131,7 @@ jobs:
           echo "identity=$identity" >> "$GITHUB_OUTPUT"
           echo "secret=$secret" >> "$GITHUB_OUTPUT"
       - name: Acquire VM102 mutation lease
-        uses: cobycloud/actions/actions/host-mutation-lock@639d1b66cf5962158aa778473b03c0a649267f05
+        uses: cobycloud/actions/actions/host-mutation-lock@56c4a13434c7ec49453bf109d7d6955158992b5a
         with:
           operation: acquire
           lock-name: vm102
@@ -179,7 +179,7 @@ jobs:
           docker compose -f "$COMPOSE_FILE" config --quiet
           docker compose -f "$COMPOSE_FILE" pull groupsum-postgres
           docker compose -f "$COMPOSE_FILE" build groupsum-duckdb groupsum-catalog-api groupsum-xyz
-      - uses: cobycloud/actions/actions/docker-compose-stack@1a8310ba53da69f419f7c1c98cf566441ad7fdef
+      - uses: cobycloud/actions/actions/docker-compose-stack@56c4a13434c7ec49453bf109d7d6955158992b5a
         with:
           compose-file: ${{ env.COMPOSE_FILE }}
           project-name: ${{ env.COMPOSE_PROJECT }}
@@ -206,7 +206,7 @@ jobs:
         env:
           GROUPSUM_CATALOG_API_URL: http://127.0.0.1:8000
         run: npm run catalog:publish
-      - uses: cobycloud/actions/actions/wyrmctl-apply@1a8310ba53da69f419f7c1c98cf566441ad7fdef
+      - uses: cobycloud/actions/actions/wyrmctl-apply@56c4a13434c7ec49453bf109d7d6955158992b5a
         with:
           artifact: deployment-evidence/wyrmctl-plan.json
           repository: ${{ github.repository }}
@@ -229,7 +229,7 @@ jobs:
           done
           exit 1
       - if: always()
-        uses: cobycloud/actions/actions/docker-compose-stack@1a8310ba53da69f419f7c1c98cf566441ad7fdef
+        uses: cobycloud/actions/actions/docker-compose-stack@56c4a13434c7ec49453bf109d7d6955158992b5a
         with:
           compose-file: ${{ env.COMPOSE_FILE }}
           project-name: ${{ env.COMPOSE_PROJECT }}
@@ -246,7 +246,7 @@ jobs:
           retention-days: 14
       - name: Release VM102 mutation lease
         if: always()
-        uses: cobycloud/actions/actions/host-mutation-lock@639d1b66cf5962158aa778473b03c0a649267f05
+        uses: cobycloud/actions/actions/host-mutation-lock@56c4a13434c7ec49453bf109d7d6955158992b5a
         with:
           operation: release
           lock-name: vm102
