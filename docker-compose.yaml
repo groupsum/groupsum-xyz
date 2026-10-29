@@ -18,7 +18,9 @@ services:
       - app
 
   groupsum-duckdb:
-    image: duckdb/duckdb:1.5.4
+    build:
+      context: .
+      dockerfile: deployments/duckdb/Dockerfile
     container_name: groupsum-duckdb
     restart: unless-stopped
     entrypoint: ["/duckdb"]
@@ -29,7 +31,7 @@ services:
       - .output /dev/null
       - -cmd
       - >-
-        INSTALL quack; LOAD quack;
+        LOAD quack;
         CALL quack_serve('quack:0.0.0.0:9494',
         token => getenv('GROUPSUM_DUCKDB_TOKEN'),
         allow_other_hostname => true, disable_ssl => true);
