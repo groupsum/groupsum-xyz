@@ -15,7 +15,7 @@ services:
       timeout: 5s
       retries: 30
     networks:
-      - app
+      - private
 
   groupsum-duckdb:
     build:
@@ -57,7 +57,7 @@ services:
       timeout: 5s
       retries: 30
     networks:
-      - app
+      - private
 
   groupsum-catalog-api:
     build:
@@ -85,7 +85,7 @@ services:
     ports:
       - "127.0.0.1:8000:8000"
     networks:
-      app:
+      private:
         aliases:
           - groupsum-catalog-api
 
@@ -102,15 +102,15 @@ services:
       groupsum-catalog-api:
         condition: service_healthy
     networks:
-      app:
-      portwyrm:
+      private:
+      edge:
         aliases:
           - groupsum-xyz
 
 networks:
-  app:
-    name: groupsum-xyz-internal
+  private:
+    name: groupsum-xyz-private
     internal: true
-  portwyrm:
-    name: portwyrm_frontend
+  edge:
+    name: portwyrm-edge
     external: true

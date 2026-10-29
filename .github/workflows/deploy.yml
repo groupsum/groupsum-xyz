@@ -36,7 +36,7 @@ env:
   COMPOSE_FILE: docker-compose.yaml
   COMPOSE_PROJECT: groupsum-xyz
   PUBLIC_HOST: groupsum.xyz
-  PORTWYRM_NETWORK: portwyrm_frontend
+  PORTWYRM_NETWORK: portwyrm-edge
   PORTWYRM_CERT_PATH: /mnt/data/portwyrm/certificates
   WYRMCTL_CREDENTIAL: /etc/groupsum/portwyrm.env
 
