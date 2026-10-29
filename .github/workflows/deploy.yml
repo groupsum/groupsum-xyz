@@ -130,6 +130,11 @@ jobs:
           echo "base-url=$base_url" >> "$GITHUB_OUTPUT"
           echo "identity=$identity" >> "$GITHUB_OUTPUT"
           echo "secret=$secret" >> "$GITHUB_OUTPUT"
+      - name: Acquire VM102 mutation lease
+        uses: cobycloud/actions/actions/host-mutation-lock@6b580c87ce2331313c7117de9df136b71af8b01a
+        with:
+          operation: acquire
+          lock-name: vm102
       - name: Validate production secrets and prepare data disk
         shell: bash
         run: |
@@ -239,6 +244,12 @@ jobs:
             production-stack.log
           if-no-files-found: warn
           retention-days: 14
+      - name: Release VM102 mutation lease
+        if: always()
+        uses: cobycloud/actions/actions/host-mutation-lock@6b580c87ce2331313c7117de9df136b71af8b01a
+        with:
+          operation: release
+          lock-name: vm102
 
   verify-public:
     needs: deploy
