@@ -131,7 +131,7 @@ jobs:
           echo "identity=$identity" >> "$GITHUB_OUTPUT"
           echo "secret=$secret" >> "$GITHUB_OUTPUT"
       - name: Acquire VM102 mutation lease
-        uses: cobycloud/actions/actions/host-mutation-lock@6b580c87ce2331313c7117de9df136b71af8b01a
+        uses: cobycloud/actions/actions/host-mutation-lock@639d1b66cf5962158aa778473b03c0a649267f05
         with:
           operation: acquire
           lock-name: vm102
@@ -246,7 +246,7 @@ jobs:
           retention-days: 14
       - name: Release VM102 mutation lease
         if: always()
-        uses: cobycloud/actions/actions/host-mutation-lock@6b580c87ce2331313c7117de9df136b71af8b01a
+        uses: cobycloud/actions/actions/host-mutation-lock@639d1b66cf5962158aa778473b03c0a649267f05
         with:
           operation: release
           lock-name: vm102
