@@ -29,7 +29,7 @@
       "maturity": "maintained",
       "visibility": "public",
       "featured": true,
-      "updated_at": "2026-08-02",
+      "updated_at": "2026-10-28",
       "canonical_url": "https://groupsum.xyz/products/records/ssot-registry",
       "source_name": "ssot-registry",
       "parent_id": null,
@@ -55,7 +55,7 @@
         {
           "kind": "source",
           "label": "Public repository and CLI documentation reviewed",
-          "checkedAt": "2026-08-02"
+          "checkedAt": "2026-10-28"
         }
       ],
       "limitations": [
@@ -83,7 +83,7 @@
       "maturity": "maintained",
       "visibility": "public",
       "featured": true,
-      "updated_at": "2026-08-02",
+      "updated_at": "2026-10-28",
       "canonical_url": "https://groupsum.xyz/products/records/mdwrk",
       "source_name": "mdwrk",
       "parent_id": null,
@@ -110,7 +110,7 @@
         {
           "kind": "source",
           "label": "Public core and Pages repositories reviewed",
-          "checkedAt": "2026-08-02"
+          "checkedAt": "2026-10-28"
         }
       ],
       "limitations": [
@@ -143,7 +143,7 @@
       "maturity": "maintained",
       "visibility": "public",
       "featured": false,
-      "updated_at": "2026-08-02",
+      "updated_at": "2026-10-28",
       "canonical_url": "https://groupsum.xyz/products/records/markdown_workspace",
       "source_name": "markdown_workspace",
       "parent_id": "groupsum-mdwrk",
@@ -170,7 +170,7 @@
         {
           "kind": "source",
           "label": "Public repository description and implementation reviewed",
-          "checkedAt": "2026-08-02"
+          "checkedAt": "2026-10-28"
         }
       ],
       "limitations": [
@@ -200,7 +200,7 @@
       "maturity": "maintained",
       "visibility": "public",
       "featured": true,
-      "updated_at": "2026-08-02",
+      "updated_at": "2026-10-28",
       "canonical_url": "https://groupsum.xyz/products/records/npmctl",
       "source_name": "npmctl",
       "parent_id": null,
@@ -228,7 +228,7 @@
         {
           "kind": "source",
           "label": "Public repository, tests, and desired-state examples reviewed",
-          "checkedAt": "2026-08-02"
+          "checkedAt": "2026-10-28"
         }
       ],
       "limitations": [
@@ -261,7 +261,7 @@
       "maturity": "active-development",
       "visibility": "public",
       "featured": true,
-      "updated_at": "2026-08-02",
+      "updated_at": "2026-10-28",
       "canonical_url": "https://groupsum.xyz/products/records/portwyrm",
       "source_name": "portwyrm",
       "parent_id": null,
@@ -289,7 +289,7 @@
         {
           "kind": "source",
           "label": "Public repository, API surface, and deployment configuration reviewed",
-          "checkedAt": "2026-08-02"
+          "checkedAt": "2026-10-28"
         }
       ],
       "limitations": [
@@ -317,7 +317,7 @@
       "maturity": "active-development",
       "visibility": "public",
       "featured": true,
-      "updated_at": "2026-08-02",
+      "updated_at": "2026-10-28",
       "canonical_url": "https://groupsum.xyz/products/records/bucketwarden",
       "source_name": "bucketwarden-platform",
       "parent_id": null,
@@ -345,7 +345,7 @@
         {
           "kind": "implementation",
           "label": "Local platform source, tests, and deployment profiles reviewed",
-          "checkedAt": "2026-08-02"
+          "checkedAt": "2026-10-28"
         }
       ],
       "limitations": [
@@ -373,7 +373,7 @@
       "maturity": "active-development",
       "visibility": "public",
       "featured": true,
-      "updated_at": "2026-08-02",
+      "updated_at": "2026-10-28",
       "canonical_url": "https://groupsum.xyz/products/records/pdfremed",
       "source_name": "pdfremed",
       "parent_id": null,
@@ -401,7 +401,7 @@
         {
           "kind": "implementation",
           "label": "Local source, schemas, and test plans reviewed",
-          "checkedAt": "2026-08-02"
+          "checkedAt": "2026-10-28"
         }
       ],
       "limitations": [
@@ -423,7 +423,7 @@
       "maturity": "maintained",
       "visibility": "public",
       "featured": true,
-      "updated_at": "2026-08-02",
+      "updated_at": "2026-10-28",
       "canonical_url": "https://groupsum.xyz/products/records/tigrbl",
       "source_name": "tigrbl",
       "parent_id": null,
@@ -449,7 +449,7 @@
         {
           "kind": "source",
           "label": "Public repository description, packages, tests, and examples reviewed",
-          "checkedAt": "2026-08-02"
+          "checkedAt": "2026-10-28"
         }
       ],
       "limitations": [
@@ -477,7 +477,7 @@
       "maturity": "active-development",
       "visibility": "public",
       "featured": true,
-      "updated_at": "2026-08-02",
+      "updated_at": "2026-10-28",
       "canonical_url": "https://groupsum.xyz/products/records/tigrbl-auth",
       "source_name": "tigrbl_auth",
       "parent_id": null,
@@ -505,7 +505,7 @@
         {
           "kind": "source",
           "label": "Public repository and protocol implementation reviewed",
-          "checkedAt": "2026-08-02"
+          "checkedAt": "2026-10-28"
         }
       ],
       "limitations": [
@@ -533,7 +533,7 @@
       "maturity": "active-development",
       "visibility": "public",
       "featured": true,
-      "updated_at": "2026-08-02",
+      "updated_at": "2026-10-28",
       "canonical_url": "https://groupsum.xyz/products/records/tigrcorn",
       "source_name": "tigrcorn",
       "parent_id": null,
@@ -562,7 +562,7 @@
         {
           "kind": "source",
           "label": "Public repository, protocol modules, and validation workflow reviewed",
-          "checkedAt": "2026-08-02"
+          "checkedAt": "2026-10-28"
         }
       ],
       "limitations": [
@@ -590,7 +590,7 @@
       "maturity": "maintained",
       "visibility": "public",
       "featured": true,
-      "updated_at": "2026-08-02",
+      "updated_at": "2026-10-28",
       "canonical_url": "https://groupsum.xyz/products/records/swarmauri-sdk",
       "source_name": "swarmauri-sdk",
       "parent_id": null,
@@ -616,7 +616,7 @@
         {
           "kind": "source",
           "label": "Public monorepo, package layout, and tests reviewed",
-          "checkedAt": "2026-08-02"
+          "checkedAt": "2026-10-28"
         }
       ],
       "limitations": [
@@ -644,7 +644,7 @@
       "maturity": "active-development",
       "visibility": "public",
       "featured": true,
-      "updated_at": "2026-08-02",
+      "updated_at": "2026-10-28",
       "canonical_url": "https://groupsum.xyz/products/records/peagen",
       "source_name": "peagen",
       "parent_id": null,
@@ -672,7 +672,7 @@
         {
           "kind": "source",
           "label": "Public website source, documentation, and SDK integration marker reviewed",
-          "checkedAt": "2026-08-02"
+          "checkedAt": "2026-10-28"
         }
       ],
       "limitations": [
@@ -701,7 +701,7 @@
       "maturity": "active-development",
       "visibility": "public",
       "featured": false,
-      "updated_at": "2026-08-02",
+      "updated_at": "2026-10-28",
       "canonical_url": "https://groupsum.xyz/portfolio/records/voltrack",
       "source_name": "voltrack",
       "parent_id": null,
@@ -727,7 +727,7 @@
         {
           "kind": "implementation",
           "label": "Local repository architecture and runtime modes reviewed",
-          "checkedAt": "2026-08-02"
+          "checkedAt": "2026-10-28"
         }
       ],
       "limitations": [
@@ -749,7 +749,7 @@
       "maturity": "active-development",
       "visibility": "public",
       "featured": false,
-      "updated_at": "2026-08-02",
+      "updated_at": "2026-10-28",
       "canonical_url": "https://groupsum.xyz/portfolio/records/dcim-rack-planner",
       "source_name": "dcim-rack-planner",
       "parent_id": null,
@@ -774,7 +774,7 @@
         {
           "kind": "implementation",
           "label": "Local planning surfaces and schemas reviewed",
-          "checkedAt": "2026-08-02"
+          "checkedAt": "2026-10-28"
         }
       ],
       "limitations": [
@@ -796,7 +796,7 @@
       "maturity": "active-development",
       "visibility": "public",
       "featured": false,
-      "updated_at": "2026-08-02",
+      "updated_at": "2026-10-28",
       "canonical_url": "https://groupsum.xyz/portfolio/records/dcim-fiber-planner",
       "source_name": "dcim-fiber-planner",
       "parent_id": null,
@@ -822,7 +822,7 @@
         {
           "kind": "implementation",
           "label": "Local fiber and optical planning surfaces reviewed",
-          "checkedAt": "2026-08-02"
+          "checkedAt": "2026-10-28"
         }
       ],
       "limitations": [
@@ -844,7 +844,7 @@
       "maturity": "active-development",
       "visibility": "public",
       "featured": false,
-      "updated_at": "2026-08-02",
+      "updated_at": "2026-10-28",
       "canonical_url": "https://groupsum.xyz/portfolio/records/deliverableops",
       "source_name": "deliverableops",
       "parent_id": null,
@@ -871,7 +871,7 @@
         {
           "kind": "implementation",
           "label": "Local runtime, bundle, and validation source reviewed",
-          "checkedAt": "2026-08-02"
+          "checkedAt": "2026-10-28"
         }
       ],
       "limitations": [
@@ -893,7 +893,7 @@
       "maturity": "active-development",
       "visibility": "public",
       "featured": false,
-      "updated_at": "2026-08-02",
+      "updated_at": "2026-10-28",
       "canonical_url": "https://groupsum.xyz/portfolio/records/cc-deliverable-ops",
       "source_name": "confidential-workloads-delivery-ops",
       "parent_id": null,
@@ -921,7 +921,7 @@
         {
           "kind": "implementation",
           "label": "Local implementation, tests, and deployment evidence model reviewed",
-          "checkedAt": "2026-08-02"
+          "checkedAt": "2026-10-28"
         }
       ],
       "limitations": [
@@ -943,7 +943,7 @@
       "maturity": "active-development",
       "visibility": "public",
       "featured": false,
-      "updated_at": "2026-08-02",
+      "updated_at": "2026-10-28",
       "canonical_url": "https://groupsum.xyz/portfolio/records/evidencevault",
       "source_name": "evidencevault",
       "parent_id": null,
@@ -973,7 +973,7 @@
         {
           "kind": "implementation",
           "label": "Local vault, verifier, storage, and UI source reviewed",
-          "checkedAt": "2026-08-02"
+          "checkedAt": "2026-10-28"
         }
       ],
       "limitations": [
@@ -1009,12 +1009,12 @@
         {
           "kind": "reviewed",
           "label": "SSOT Registry public CLI and repository",
-          "checkedAt": "2026-08-02"
+          "checkedAt": "2026-10-28"
         },
         {
           "kind": "reviewed",
           "label": "npmctl public plan/apply workflow",
-          "checkedAt": "2026-08-02"
+          "checkedAt": "2026-10-28"
         }
       ],
       "limitations": [
@@ -1085,12 +1085,12 @@
         {
           "kind": "reviewed",
           "label": "Tigrbl public Python and Rust workspace",
-          "checkedAt": "2026-08-02"
+          "checkedAt": "2026-10-28"
         },
         {
           "kind": "reviewed",
           "label": "Tigrcorn public protocol and release-validation source",
-          "checkedAt": "2026-08-02"
+          "checkedAt": "2026-10-28"
         }
       ],
       "limitations": [
@@ -1161,12 +1161,12 @@
         {
           "kind": "reviewed",
           "label": "Tigrbl Auth public OIDC/OAuth workspace",
-          "checkedAt": "2026-08-02"
+          "checkedAt": "2026-10-28"
         },
         {
           "kind": "reviewed",
           "label": "Public Groupsum authentication governance pack",
-          "checkedAt": "2026-08-02"
+          "checkedAt": "2026-10-28"
         }
       ],
       "limitations": [
@@ -1237,12 +1237,12 @@
         {
           "kind": "reviewed",
           "label": "Swarmauri SDK public monorepo",
-          "checkedAt": "2026-08-02"
+          "checkedAt": "2026-10-28"
         },
         {
           "kind": "reviewed",
           "label": "Peagen public generation workspace",
-          "checkedAt": "2026-08-02"
+          "checkedAt": "2026-10-28"
         }
       ],
       "limitations": [
@@ -1313,12 +1313,12 @@
         {
           "kind": "reviewed",
           "label": "MdWrk public package repositories",
-          "checkedAt": "2026-08-02"
+          "checkedAt": "2026-10-28"
         },
         {
           "kind": "reviewed",
           "label": "PDFRemed implementation and test plans",
-          "checkedAt": "2026-08-02"
+          "checkedAt": "2026-10-28"
         }
       ],
       "limitations": [
@@ -1389,12 +1389,12 @@
         {
           "kind": "reviewed",
           "label": "BucketWarden platform source and deployment profiles",
-          "checkedAt": "2026-08-02"
+          "checkedAt": "2026-10-28"
         },
         {
           "kind": "reviewed",
           "label": "EvidenceVault local implementation source",
-          "checkedAt": "2026-08-02"
+          "checkedAt": "2026-10-28"
         }
       ],
       "limitations": [
@@ -1465,12 +1465,12 @@
         {
           "kind": "reviewed",
           "label": "Tigrcorn public protocol modules",
-          "checkedAt": "2026-08-02"
+          "checkedAt": "2026-10-28"
         },
         {
           "kind": "reviewed",
           "label": "Tigrbl public realtime examples",
-          "checkedAt": "2026-08-02"
+          "checkedAt": "2026-10-28"
         }
       ],
       "limitations": [
@@ -1541,12 +1541,12 @@
         {
           "kind": "reviewed",
           "label": "DCIM planning application source",
-          "checkedAt": "2026-08-02"
+          "checkedAt": "2026-10-28"
         },
         {
           "kind": "reviewed",
           "label": "npmctl and Portwyrm public repositories",
-          "checkedAt": "2026-08-02"
+          "checkedAt": "2026-10-28"
         }
       ],
       "limitations": [
