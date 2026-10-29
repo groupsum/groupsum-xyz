@@ -196,8 +196,12 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
-          docker inspect --format '{{json .State.Health}}' groupsum-duckdb || true
-          docker logs --tail 200 groupsum-duckdb || true
+          for container in groupsum-postgres groupsum-duckdb groupsum-catalog-api groupsum-xyz; do
+            echo "===== ${container}: health ====="
+            docker inspect --format '{{json .State.Health}}' "$container" || true
+            echo "===== ${container}: logs ====="
+            docker logs --tail 200 "$container" || true
+          done
           exit 1
       - name: Wait for application services
         shell: bash

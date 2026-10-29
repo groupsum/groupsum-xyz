@@ -6,6 +6,7 @@ ENV PYTHONDONTWRITEBYTECODE=1 \
     PIP_ROOT_USER_ACTION=ignore
 COPY pkgs/backend/requirements.lock.txt /app/pkgs/backend/requirements.lock.txt
 RUN python -m pip install --no-cache-dir --require-hashes -r /app/pkgs/backend/requirements.lock.txt
+RUN python -c "import duckdb; connection = duckdb.connect(); connection.execute('INSTALL httpfs'); connection.execute('INSTALL quack'); connection.close()"
 COPY pkgs/backend /app/pkgs/backend
 RUN python -m pip install --no-cache-dir --no-deps /app/pkgs/backend
 COPY catalog /app/catalog
