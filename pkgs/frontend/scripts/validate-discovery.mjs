@@ -82,9 +82,13 @@ const graphTypes = (file) => {
   return JSON.parse(match[1])["@graph"].map((node) => node["@type"]);
 };
 const repositoryRoot = path.join(dist, "catalog", "repositories");
-const repositoryDetail = fs.readdirSync(repositoryRoot, { recursive: true }).find((entry) => String(entry).endsWith("index.html") && String(entry) !== "index.html");
-if (!repositoryDetail) fail("no generated repository detail page");
-else for (const marker of ["SoftwareSourceCode", "Person", "ComputerLanguage"]) if (!graphTypes(path.join(repositoryRoot, repositoryDetail)).includes(marker)) fail(`repository detail JSON-LD missing ${marker}`);
+const repositoryDetails = fs.readdirSync(repositoryRoot, { recursive: true }).filter((entry) => String(entry).endsWith("index.html") && String(entry) !== "index.html");
+if (!repositoryDetails.length) fail("no generated repository detail page");
+else {
+  const repositoryGraphs = repositoryDetails.map((entry) => ({ entry, types: graphTypes(path.join(repositoryRoot, entry)) }));
+  for (const graph of repositoryGraphs) if (!graph.types.includes("SoftwareSourceCode")) fail(`repository detail JSON-LD missing SoftwareSourceCode: ${graph.entry}`);
+  for (const marker of ["Person", "ComputerLanguage"]) if (!repositoryGraphs.some((graph) => graph.types.includes(marker))) fail(`repository catalog JSON-LD missing ${marker}`);
+}
 const contributorRoot = path.join(dist, "contributors");
 const contributorDetail = fs.existsSync(contributorRoot) ? fs.readdirSync(contributorRoot, { recursive: true }).find((entry) => String(entry).endsWith("index.html")) : null;
 if (!contributorDetail) fail("no generated contributor profile page");
