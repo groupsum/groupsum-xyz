@@ -138,6 +138,19 @@ def main() -> int:
     editorial = load_editorial(args.editorial)
     summary = summarize(catalog)
     datasets = compile_catalog(catalog, editorial)
+    resource_type_path = args.site_dir / "resource-types.json"
+    resource_types = repair_text(json.loads(resource_type_path.read_text(encoding="utf-8")))
+    resource_counts = Counter(
+        str(resource.get("resource_type") or "unknown") for resource in datasets["resources"]
+    )
+    datasets["resource_types"] = [
+        {
+            **descriptor,
+            "count": resource_counts[str(descriptor["resource_type"])],
+            "populated": resource_counts[str(descriptor["resource_type"])] > 0,
+        }
+        for descriptor in resource_types
+    ]
     args.summary.parent.mkdir(parents=True, exist_ok=True)
     args.site_dir.mkdir(parents=True, exist_ok=True)
     for stale_name in ("releases", "deployments", "relationships", "surfaces"):
@@ -145,7 +158,8 @@ def main() -> int:
     write_json(args.summary, summary)
     files = []
     for name, records in datasets.items():
-        files.append({"dataset": name, **write_json(args.site_dir / f"{name}.json", records)})
+        filename = "resource-types.json" if name == "resource_types" else f"{name}.json"
+        files.append({"dataset": name, **write_json(args.site_dir / filename, records)})
     product_evidence_count = write_product_evidence(
         args.product_evidence_dir,
         catalog,
