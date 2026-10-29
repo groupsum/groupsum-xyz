@@ -130,22 +130,13 @@ jobs:
           echo "base-url=$base_url" >> "$GITHUB_OUTPUT"
           echo "identity=$identity" >> "$GITHUB_OUTPUT"
           echo "secret=$secret" >> "$GITHUB_OUTPUT"
-      - name: Acquire VM102 mutation lease
-        uses: cobycloud/actions/actions/host-mutation-lock@56c4a13434c7ec49453bf109d7d6955158992b5a
-        with:
-          operation: acquire
-          lock-name: vm102
-      - name: Validate production secrets and prepare data disk
+      - name: Validate production secrets
         shell: bash
         run: |
           set -euo pipefail
           test -n "$GROUPSUM_POSTGRES_PASSWORD"
           test -n "$GROUPSUM_DUCKDB_TOKEN"
           test -n "$GROUPSUM_CATALOG_INTERNAL_TOKEN"
-          docker run --rm --entrypoint sh \
-            --volume /mnt/data:/mnt/data \
-            postgres:17-alpine \
-            -c 'install -d -m 0750 -o 999 -g 999 /mnt/data/groupsum-xyz/postgres && install -d -m 0750 /mnt/data/groupsum-xyz/duckdb'
       - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7
         with:
           node-version: "22"
@@ -179,6 +170,20 @@ jobs:
           docker compose -f "$COMPOSE_FILE" config --quiet
           docker compose -f "$COMPOSE_FILE" pull groupsum-postgres
           docker compose -f "$COMPOSE_FILE" build groupsum-duckdb groupsum-catalog-api groupsum-xyz
+      - name: Acquire VM102 mutation lease
+        id: host-lock
+        uses: cobycloud/actions/actions/host-mutation-lock@56c4a13434c7ec49453bf109d7d6955158992b5a
+        with:
+          operation: acquire
+          lock-name: vm102
+      - name: Prepare production data disk
+        shell: bash
+        run: |
+          set -euo pipefail
+          docker run --rm --entrypoint sh \
+            --volume /mnt/data:/mnt/data \
+            postgres:17-alpine \
+            -c 'install -d -m 0750 -o 999 -g 999 /mnt/data/groupsum-xyz/postgres && install -d -m 0750 /mnt/data/groupsum-xyz/duckdb'
       - uses: cobycloud/actions/actions/docker-compose-stack@56c4a13434c7ec49453bf109d7d6955158992b5a
         with:
           compose-file: ${{ env.COMPOSE_FILE }}
@@ -245,7 +250,7 @@ jobs:
           if-no-files-found: warn
           retention-days: 14
       - name: Release VM102 mutation lease
-        if: always()
+        if: ${{ always() && steps.host-lock.outcome == 'success' }}
         uses: cobycloud/actions/actions/host-mutation-lock@56c4a13434c7ec49453bf109d7d6955158992b5a
         with:
           operation: release
