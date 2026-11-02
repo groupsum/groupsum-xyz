@@ -1,0 +1,62 @@
+name: Reconcile catalog deployment
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '47 * * * *'
+
+permissions:
+  actions: write
+  contents: read
+
+concurrency:
+  group: groupsum-catalog-reconcile
+  cancel-in-progress: false
+
+jobs:
+  inspect:
+    runs-on: ubuntu-latest
+    outputs:
+      snapshot_id: ${{ steps.compare.outputs.snapshot_id }}
+      deploy: ${{ steps.compare.outputs.deploy }}
+    steps:
+      - name: Compare finalized API and deployed static snapshots
+        id: compare
+        shell: python
+        run: |
+          import json
+          import os
+          import urllib.request
+
+          def read(path):
+              request = urllib.request.Request(
+                  f"https://groupsum.xyz{path}",
+                  headers={"Cache-Control": "no-cache", "User-Agent": "groupsum-reconciler"},
+              )
+              with urllib.request.urlopen(request, timeout=30) as response:
+                  return json.load(response)
+
+          snapshots = read("/api/v1/snapshots")
+          current = next(
+              (row for row in snapshots.get("snapshots", []) if row.get("is_current")),
+              None,
+          )
+          if current is None:
+              raise SystemExit("The catalog API has no finalized current snapshot")
+          snapshot_id = str(current["snapshot_id"])
+          deployed_id = str(read("/catalog/site/manifest.json").get("snapshot", {}).get("snapshot_id") or "")
+          with open(os.environ["GITHUB_OUTPUT"], "a", encoding="utf-8") as stream:
+              stream.write(f"snapshot_id={snapshot_id}\n")
+              stream.write(f"deploy={'true' if snapshot_id != deployed_id else 'false'}\n")
+          print(f"api={snapshot_id} static={deployed_id or 'missing'}")
+
+  deploy:
+    needs: inspect
+    if: needs.inspect.outputs.deploy == 'true'
+    uses: ./.github/workflows/deploy.yml
+    with:
+      snapshot_id: ${{ needs.inspect.outputs.snapshot_id }}
+    secrets:
+      GROUPSUM_CATALOG_INTERNAL_TOKEN: ${{ secrets.GROUPSUM_CATALOG_INTERNAL_TOKEN }}
+      GROUPSUM_CATALOG_PUBLISH_API_KEY: ${{ secrets.GROUPSUM_CATALOG_PUBLISH_API_KEY || secrets.GROUPSUM_CATALOG_INTERNAL_TOKEN }}
+      GROUPSUM_DEPLOY_GITHUB_TOKEN: ${{ secrets.GROUPSUM_DEPLOY_GITHUB_TOKEN }}

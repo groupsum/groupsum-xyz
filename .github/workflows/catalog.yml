@@ -17,7 +17,10 @@ concurrency:
 jobs:
   refresh:
     runs-on: ubuntu-latest
-    timeout-minutes: 45
+    timeout-minutes: 60
+    outputs:
+      snapshot_id: ${{ steps.publish.outputs.snapshot_id }}
+      deployment_status: ${{ steps.publish.outputs.deployment_status }}
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
         with:
@@ -37,6 +40,8 @@ jobs:
         run: npm run catalog:collect
       - name: Compile display-safe catalog datasets
         run: npm run catalog:render
+      - name: Validate normalized and display-safe catalog datasets
+        run: npm run catalog:validate
       - name: Install backend publisher
         run: |
           python -m pip install uv==0.11.28
@@ -44,21 +49,20 @@ jobs:
         working-directory: pkgs/backend
       - name: Export the Tigrbl public projection for static generation
         run: npm run catalog:export-public
-      - run: npm run check
-      - run: npm run build
-      - name: Preserve the exact finalized catalog snapshot for deployment
-        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
-        with:
-          name: public-catalog-snapshot
-          path: catalog/generated
-          if-no-files-found: error
-          retention-days: 14
+      - name: Publish entity records and finalize the immutable snapshot
+        id: publish
+        env:
+          GROUPSUM_CATALOG_API_URL: ${{ vars.GROUPSUM_CATALOG_API_URL || 'https://groupsum.xyz' }}
+          GROUPSUM_CATALOG_PUBLISH_API_KEY: ${{ secrets.GROUPSUM_CATALOG_PUBLISH_API_KEY || secrets.GROUPSUM_CATALOG_INTERNAL_TOKEN }}
+        run: npm run catalog:publish
 
   deploy-finalized-snapshot:
     needs: refresh
-    if: github.ref == 'refs/heads/master'
+    if: github.ref == 'refs/heads/master' && needs.refresh.outputs.deployment_status != 'dispatched'
     uses: ./.github/workflows/deploy.yml
     with:
-      catalog_run_id: ${{ github.run_id }}
+      snapshot_id: ${{ needs.refresh.outputs.snapshot_id }}
     secrets:
       GROUPSUM_CATALOG_INTERNAL_TOKEN: ${{ secrets.GROUPSUM_CATALOG_INTERNAL_TOKEN }}
+      GROUPSUM_CATALOG_PUBLISH_API_KEY: ${{ secrets.GROUPSUM_CATALOG_PUBLISH_API_KEY || secrets.GROUPSUM_CATALOG_INTERNAL_TOKEN }}
+      GROUPSUM_DEPLOY_GITHUB_TOKEN: ${{ secrets.GROUPSUM_DEPLOY_GITHUB_TOKEN }}

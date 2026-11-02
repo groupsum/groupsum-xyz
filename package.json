@@ -31,6 +31,7 @@
     "catalog:export-public": "uv run --project pkgs/backend --locked python pkgs/backend/scripts/export_public_catalog.py",
     "catalog:refresh": "npm run catalog:collect && npm run catalog:render && npm run catalog:validate",
     "catalog:publish": "uv run --project pkgs/backend --locked python pkgs/backend/scripts/publish_catalog.py",
+    "catalog:materialize": "python pkgs/catalog-pipeline/catalog_materialize.py",
     "catalog:validate": "python pkgs/catalog-pipeline/catalog_validate.py && python pkgs/catalog-pipeline/catalog_site_validate.py",
     "catalog:test": "python -m unittest discover -s pkgs/catalog-pipeline/tests -p test_*.py",
     "import:wordpress": "node pkgs/frontend/scripts/import-wordpress.mjs",

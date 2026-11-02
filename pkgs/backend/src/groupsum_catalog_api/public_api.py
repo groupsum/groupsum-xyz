@@ -12,9 +12,16 @@ from tigrbl_core._spec import PathSpec, RouterSpec, TableSpec
 
 from .route_parameters import binding_parameters
 from .schemas import ResourceCatalogCollection
-from .tables import views_analytics, views_catalog, views_records, views_resources
+from .tables import (
+    views_analytics,
+    views_catalog,
+    views_records,
+    views_resources,
+    views_snapshot_export,
+)
 from .tables.association import Association
 from .tables.catalog_snapshot import CatalogSnapshot
+from .tables.catalog_snapshot_source import CatalogSnapshotSource
 from .tables.metric_observation import MetricObservation
 from .tables.observation import CatalogObservation
 from .tables.organization import Organization
@@ -276,6 +283,20 @@ for path, alias, table, target, operation in (
         CatalogSnapshot,
         "list",
         views_analytics.snapshot_detail,
+    ),
+    (
+        "/api/v1/snapshots/{snapshot_id}/export",
+        "catalog_snapshot_export",
+        CatalogSnapshotSource,
+        "list",
+        views_snapshot_export.snapshot_export_manifest,
+    ),
+    (
+        "/api/v1/snapshots/{snapshot_id}/export/chunks/{chunk_index}",
+        "catalog_snapshot_export_chunk",
+        CatalogSnapshotSource,
+        "list",
+        views_snapshot_export.snapshot_export_chunk,
     ),
     (
         "/api/v1/entities/{entity_type}/observations",

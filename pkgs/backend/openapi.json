@@ -259,10 +259,47 @@
             "title": "Created",
             "type": "integer"
           },
+          "deployment": {
+            "anyOf": [
+              {
+                "additionalProperties": true,
+                "type": "object"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Deployment"
+          },
           "existing": {
             "default": 0,
             "title": "Existing",
             "type": "integer"
+          },
+          "export_manifest_url": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Export Manifest Url"
+          },
+          "publisher_id": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Publisher Id"
           },
           "snapshot_id": {
             "title": "Snapshot Id",
@@ -775,6 +812,11 @@
             "title": "Snapshot Id",
             "type": "string"
           },
+          "source_chunk_count": {
+            "minimum": 1,
+            "title": "Source Chunk Count",
+            "type": "integer"
+          },
           "source_digest": {
             "title": "Source Digest",
             "type": "string"
@@ -785,7 +827,8 @@
           "collected_at",
           "source_digest",
           "observation_count",
-          "measurement_count"
+          "measurement_count",
+          "source_chunk_count"
         ],
         "title": "SnapshotCreate",
         "type": "object"
@@ -5749,6 +5792,14 @@
             "schema": {
               "type": "integer"
             }
+          },
+          {
+            "in": "query",
+            "name": "publisher_id",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "responses": {
@@ -5920,6 +5971,14 @@
             "schema": {
               "type": "integer"
             }
+          },
+          {
+            "in": "query",
+            "name": "publisher_id",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "responses": {
@@ -5968,6 +6027,292 @@
                 "GET"
               ],
               "path": "/api/v1/snapshots/{snapshot_id}",
+              "proto": "http.rest",
+              "rpcMethod": null
+            }
+          ],
+          "family": "crud"
+        }
+      }
+    },
+    "/api/v1/snapshots/{snapshot_id}/export": {
+      "get": {
+        "operationId": "CatalogSnapshotSource.catalog_snapshot_export",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "snapshot_id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "id",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "snapshot_id",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "source_digest",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "chunk_index",
+            "required": false,
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "in": "query",
+            "name": "chunk_count",
+            "required": false,
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "in": "query",
+            "name": "byte_count",
+            "required": false,
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "in": "query",
+            "name": "content_sha256",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "content_base64",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "observed_at",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "items": {
+                    "$ref": "#/components/schemas/PublicResponse"
+                  },
+                  "type": "array"
+                }
+              }
+            },
+            "description": "Successful Response"
+          }
+        },
+        "tags": [
+          "CatalogSnapshotSource"
+        ],
+        "x-tigrbl-auth": {
+          "policy": "public-by-default",
+          "public": true,
+          "security": []
+        },
+        "x-tigrbl-surface": {
+          "binding": {
+            "exchange": "request_response",
+            "family": "request",
+            "framing": "json",
+            "framingSpec": "JsonFramingSpec",
+            "methods": [
+              "GET"
+            ],
+            "path": "/api/v1/snapshots/{snapshot_id}/export",
+            "proto": "http.rest",
+            "rpcMethod": null
+          },
+          "bindings": [
+            {
+              "exchange": "request_response",
+              "family": "request",
+              "framing": "json",
+              "framingSpec": "JsonFramingSpec",
+              "methods": [
+                "GET"
+              ],
+              "path": "/api/v1/snapshots/{snapshot_id}/export",
+              "proto": "http.rest",
+              "rpcMethod": null
+            }
+          ],
+          "family": "crud"
+        }
+      }
+    },
+    "/api/v1/snapshots/{snapshot_id}/export/chunks/{chunk_index}": {
+      "get": {
+        "operationId": "CatalogSnapshotSource.catalog_snapshot_export_chunk",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "snapshot_id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "path",
+            "name": "chunk_index",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "id",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "snapshot_id",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "source_digest",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "chunk_index",
+            "required": false,
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "in": "query",
+            "name": "chunk_count",
+            "required": false,
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "in": "query",
+            "name": "byte_count",
+            "required": false,
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "in": "query",
+            "name": "content_sha256",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "content_base64",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "observed_at",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "items": {
+                    "$ref": "#/components/schemas/PublicResponse"
+                  },
+                  "type": "array"
+                }
+              }
+            },
+            "description": "Successful Response"
+          }
+        },
+        "tags": [
+          "CatalogSnapshotSource"
+        ],
+        "x-tigrbl-auth": {
+          "policy": "public-by-default",
+          "public": true,
+          "security": []
+        },
+        "x-tigrbl-surface": {
+          "binding": {
+            "exchange": "request_response",
+            "family": "request",
+            "framing": "json",
+            "framingSpec": "JsonFramingSpec",
+            "methods": [
+              "GET"
+            ],
+            "path": "/api/v1/snapshots/{snapshot_id}/export/chunks/{chunk_index}",
+            "proto": "http.rest",
+            "rpcMethod": null
+          },
+          "bindings": [
+            {
+              "exchange": "request_response",
+              "family": "request",
+              "framing": "json",
+              "framingSpec": "JsonFramingSpec",
+              "methods": [
+                "GET"
+              ],
+              "path": "/api/v1/snapshots/{snapshot_id}/export/chunks/{chunk_index}",
               "proto": "http.rest",
               "rpcMethod": null
             }

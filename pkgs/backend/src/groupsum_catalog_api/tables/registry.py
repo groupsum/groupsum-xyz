@@ -1,5 +1,7 @@
 from .association import Association
+from .catalog_deployment_request import CatalogDeploymentRequest
 from .catalog_snapshot import CatalogSnapshot
+from .catalog_snapshot_source import CatalogSnapshotSource
 from .metric_observation import MetricObservation
 from .observation import CatalogObservation
 from .organization import Organization
@@ -28,6 +30,8 @@ ALL_TABLES = (
     CatalogSnapshot,
     CatalogObservation,
     MetricObservation,
+    CatalogSnapshotSource,
+    CatalogDeploymentRequest,
 )
 
 COLLECTIBLE_ENTITY_TABLES = (
@@ -36,7 +40,7 @@ COLLECTIBLE_ENTITY_TABLES = (
 )
 
 COLLECTION_FACT_TABLES = (Association, CatalogObservation, MetricObservation)
-SNAPSHOT_TABLES = (CatalogSnapshot,)
+SNAPSHOT_TABLES = (CatalogSnapshot, CatalogSnapshotSource, CatalogDeploymentRequest)
 
 ENTITY_TABLES = {
     Organization.ENTITY_TYPE: Organization,
@@ -49,6 +53,11 @@ ENTITY_TABLES = {
     **RESOURCE_TABLES,
 }
 
+PUBLISH_ENTITY_TABLES = {
+    **ENTITY_TABLES,
+    CatalogSnapshotSource.ENTITY_TYPE: CatalogSnapshotSource,
+}
+
 __all__ = [
     "ALL_TABLES",
     "COLLECTIBLE_ENTITY_TABLES",
@@ -56,5 +65,6 @@ __all__ = [
     "CORE_ENTITY_TABLES",
     "ENTITY_TABLES",
     "RESOURCE_TABLES",
+    "PUBLISH_ENTITY_TABLES",
     "SNAPSHOT_TABLES",
 ]

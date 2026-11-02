@@ -22,7 +22,7 @@ from groupsum_catalog_api.tables.views_resources import _collection_aggregates
 
 
 def test_every_table_exposes_only_hidden_create_read_and_list() -> None:
-    assert len(ALL_TABLES) == 161
+    assert len(ALL_TABLES) == 163
     for table in ALL_TABLES:
         assert {operation.target for operation in table.TABLE_PROFILE.ops} == {
             "create",

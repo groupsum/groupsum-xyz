@@ -1,5 +1,8 @@
 from __future__ import annotations
 
+import base64
+import hashlib
+import json
 from pathlib import Path
 
 import httpx
@@ -59,6 +62,12 @@ async def test_records_are_created_before_snapshot_finalization(
     transport = httpx.ASGITransport(app=app)
     headers = {"Authorization": "Bearer test-token"}
     snapshot_id = "snapshot:test"
+    source_content = json.dumps(
+        {"generated_at": "2026-08-10T00:00:00Z", "repositories": [], "packages": []},
+        sort_keys=True,
+        separators=(",", ":"),
+    ).encode()
+    source_digest = hashlib.sha256(source_content).hexdigest()
     entity = {
         "id": "groupsum",
         "slug": "groupsum",
@@ -103,12 +112,13 @@ async def test_records_are_created_before_snapshot_finalization(
         "schema_version": "1.0.0",
         "collected_at": "2026-08-10T00:00:00Z",
         "collector_version": "test",
-        "source_digest": "b" * 64,
+        "source_digest": source_digest,
         "parent_snapshot_id": None,
         "completeness": {},
         "observation_count": 1,
         "measurement_count": 1,
         "error_count": 0,
+        "source_chunk_count": 1,
     }
 
     async with httpx.AsyncClient(transport=transport, base_url="http://test") as client:
@@ -150,6 +160,33 @@ async def test_records_are_created_before_snapshot_finalization(
         assert repeated_metric.status_code == 200
         assert repeated_metric.json()["existing"] == 1
 
+        incomplete_source = await client.post(
+            "/internal/v1/catalog/snapshots", headers=headers, json=snapshot
+        )
+        assert incomplete_source.status_code == 409
+
+        source_response = await client.post(
+            "/internal/v1/catalog/entities/catalog.snapshot_source",
+            headers=headers,
+            json={
+                "snapshot_id": snapshot_id,
+                "records": [
+                    {
+                        "id": f"{snapshot_id}:source:0",
+                        "snapshot_id": snapshot_id,
+                        "source_digest": source_digest,
+                        "chunk_index": 0,
+                        "chunk_count": 1,
+                        "byte_count": len(source_content),
+                        "content_sha256": source_digest,
+                        "content_base64": base64.b64encode(source_content).decode(),
+                        "observed_at": "2026-08-10T00:00:00Z",
+                    }
+                ],
+            },
+        )
+        assert source_response.status_code == 200, source_response.text
+
         finalized = await client.post(
             "/internal/v1/catalog/snapshots", headers=headers, json=snapshot
         )
@@ -159,6 +196,13 @@ async def test_records_are_created_before_snapshot_finalization(
         snapshots = await client.get("/api/v1/snapshots")
         assert snapshots.status_code == 200
         assert snapshots.json()["snapshots"][0]["snapshot_id"] == snapshot_id
+
+        export = await client.get(f"/api/v1/snapshots/{snapshot_id}/export")
+        assert export.status_code == 200, export.text
+        assert export.json()["source_digest"] == source_digest
+        chunk = await client.get(export.json()["chunks"][0]["url"])
+        assert chunk.status_code == 200
+        assert base64.b64decode(chunk.json()["content_base64"]) == source_content
 
         document = (await client.get("/openapi.json")).json()
         assert set(document["paths"]["/internal/v1/catalog/snapshots"]) == {"post"}

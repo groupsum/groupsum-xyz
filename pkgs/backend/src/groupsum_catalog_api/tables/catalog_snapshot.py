@@ -21,3 +21,4 @@ class CatalogSnapshot(CatalogTable):
     observation_count = Column(Integer, nullable=False, default=0)
     measurement_count = Column(Integer, nullable=False, default=0)
     error_count = Column(Integer, nullable=False, default=0)
+    publisher_id = Column(String(240), nullable=True, index=True)

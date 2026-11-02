@@ -56,13 +56,23 @@ uv run --project pkgs/backend tigrcorn groupsum_catalog_api.app:app --app-dir pk
 ```
 
 The default development database is `pkgs/backend/data/groupsum-catalog.sqlite3`.
-Production sets `GROUPSUM_DATABASE_URL` for PostgreSQL, a bearer token in
-`GROUPSUM_CATALOG_INTERNAL_TOKEN`, and a terse
+Production sets `GROUPSUM_DATABASE_URL` for PostgreSQL, a scoped publisher key in
+`GROUPSUM_CATALOG_PUBLISH_API_KEY` (or a hashed, named keyring in
+`GROUPSUM_CATALOG_PUBLISH_KEYS`), and a terse
 `GROUPSUM_ANALYTICS_DSN` such as `quack://groupsum-duckdb:9494` for the DuckDB
 metric store. The scheduled catalog workflow creates entity and fact records through
 `POST /internal/v1/catalog/*`, then finalizes them with
 `POST /internal/v1/catalog/snapshots`. The snapshot endpoint never ingests a bundle,
-and metric observations are append-only. Create an online, integrity-checked backup with:
+and metric observations are append-only. The normalized catalog is published first as
+chunked `catalog.snapshot_source` entity records. Finalization validates those chunks and
+exposes an immutable, digest-checked export at
+`GET /api/v1/snapshots/{snapshot_id}/export`. Deployment accepts that snapshot ID,
+materializes the source from the API, and regenerates the static site without transporting
+catalog data through a GitHub artifact. `GROUPSUM_DEPLOY_GITHUB_TOKEN` optionally lets the
+backend dispatch `deploy.yml` immediately; an hourly reconciliation workflow repairs any
+missed dispatch. The deployment workflow's explicit `bootstrap_catalog` mode exists only
+to introduce the API-backed snapshot export without retaining artifact or workflow-run-ID
+coupling. Create an online, integrity-checked backup with:
 
 ```powershell
 uv run --project pkgs/backend python pkgs/backend/scripts/backup.py

@@ -479,6 +479,38 @@ export interface paths {
         patch?: never;
         trace?: never;
     };
+    "/api/v1/snapshots/{snapshot_id}/export": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get: operations["CatalogSnapshotSource.catalog_snapshot_export"];
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/api/v1/snapshots/{snapshot_id}/export/chunks/{chunk_index}": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get: operations["CatalogSnapshotSource.catalog_snapshot_export_chunk"];
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
     "/api/v1/solutions": {
         parameters: {
             query?: never;
@@ -820,10 +852,27 @@ export interface components {
              */
             created: number;
             /**
+             * Deployment
+             * @default null
+             */
+            deployment: {
+                [key: string]: unknown;
+            } | null;
+            /**
              * Existing
              * @default 0
              */
             existing: number;
+            /**
+             * Export Manifest Url
+             * @default null
+             */
+            export_manifest_url: string | null;
+            /**
+             * Publisher Id
+             * @default null
+             */
+            publisher_id: string | null;
             /** Snapshot Id */
             snapshot_id: string;
             /** Status */
@@ -1077,6 +1126,8 @@ export interface components {
             schema_version: string | null;
             /** Snapshot Id */
             snapshot_id: string;
+            /** Source Chunk Count */
+            source_chunk_count: number;
             /** Source Digest */
             source_digest: string;
         };
@@ -2127,6 +2178,7 @@ export interface operations {
                 observation_count?: number;
                 measurement_count?: number;
                 error_count?: number;
+                publisher_id?: string;
             };
             header?: never;
             path?: never;
@@ -2161,10 +2213,76 @@ export interface operations {
                 observation_count?: number;
                 measurement_count?: number;
                 error_count?: number;
+                publisher_id?: string;
             };
             header?: never;
             path: {
                 snapshot_id: string;
+            };
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description Successful Response */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["PublicResponse"][];
+                };
+            };
+        };
+    };
+    "CatalogSnapshotSource.catalog_snapshot_export": {
+        parameters: {
+            query?: {
+                id?: string;
+                snapshot_id?: string;
+                source_digest?: string;
+                chunk_index?: number;
+                chunk_count?: number;
+                byte_count?: number;
+                content_sha256?: string;
+                content_base64?: string;
+                observed_at?: string;
+            };
+            header?: never;
+            path: {
+                snapshot_id: string;
+            };
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description Successful Response */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["PublicResponse"][];
+                };
+            };
+        };
+    };
+    "CatalogSnapshotSource.catalog_snapshot_export_chunk": {
+        parameters: {
+            query?: {
+                id?: string;
+                snapshot_id?: string;
+                source_digest?: string;
+                chunk_index?: number;
+                chunk_count?: number;
+                byte_count?: number;
+                content_sha256?: string;
+                content_base64?: string;
+                observed_at?: string;
+            };
+            header?: never;
+            path: {
+                snapshot_id: string;
+                chunk_index: string;
             };
             cookie?: never;
         };

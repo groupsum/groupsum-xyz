@@ -20,6 +20,9 @@ LEGACY_NULLABLE_COLUMNS = (
 )
 
 LEGACY_ADDITIVE_COLUMNS = {
+    "catalog_snapshots": (
+        "publisher_id VARCHAR(240)",
+    ),
     "resource_party_person": (
         "provider VARCHAR(60)",
         "provider_id VARCHAR(200)",

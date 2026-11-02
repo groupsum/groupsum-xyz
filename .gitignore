@@ -12,6 +12,11 @@ coverage/
 npm-debug.log*
 .DS_Store
 .tmp-docker-config/
+.codex-tmp/
+.pytest-ci-temp/
+.tmp/
+.uv-cache-codex/
+.ruff_cache/
 docker-compose.local.yaml
 pkgs/backend/.venv/
 pkgs/backend/data/

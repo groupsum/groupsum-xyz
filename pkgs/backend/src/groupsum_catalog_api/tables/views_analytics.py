@@ -34,6 +34,7 @@ def _snapshot_record(row: CatalogSnapshot) -> dict[str, Any]:
         "observation_count": row.observation_count,
         "measurement_count": row.measurement_count,
         "error_count": row.error_count,
+        "publisher_id": row.publisher_id,
     }
 
 

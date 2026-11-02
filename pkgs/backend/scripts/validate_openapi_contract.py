@@ -15,6 +15,8 @@ REQUIRED_PATHS = (
     "/api/v1/entities",
     "/api/v1/analytics/overview",
     "/api/v1/analytics/summary",
+    "/api/v1/snapshots/{snapshot_id}/export",
+    "/api/v1/snapshots/{snapshot_id}/export/chunks/{chunk_index}",
 )
 
 

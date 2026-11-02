@@ -22,6 +22,7 @@ def test_postgres_compatibility_migration_covers_legacy_catalog_columns(monkeypa
         ("repository_ssot_registries", "repository_id"),
     )
     assert "resource_party_person" in LEGACY_ADDITIVE_COLUMNS
+    assert "catalog_snapshots" in LEGACY_ADDITIVE_COLUMNS
 
     class Result:
         @staticmethod
@@ -57,6 +58,10 @@ def test_postgres_compatibility_migration_covers_legacy_catalog_columns(monkeypa
     assert all(
         f"ALTER TABLE {table_name} ADD COLUMN IF NOT EXISTS source_payload JSON" in ddl
         for table_name in SOURCE_PAYLOAD_TABLES
+    )
+    assert (
+        "ALTER TABLE catalog_snapshots ADD COLUMN IF NOT EXISTS publisher_id VARCHAR(240)"
+        in ddl
     )
     assert all(
         f"ALTER TABLE resource_party_person ADD COLUMN IF NOT EXISTS {column}" in ddl

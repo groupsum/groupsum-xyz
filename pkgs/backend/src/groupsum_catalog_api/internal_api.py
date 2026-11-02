@@ -1,6 +1,5 @@
 from __future__ import annotations
 
-import hmac
 import inspect
 from dataclasses import replace
 from datetime import UTC, datetime
@@ -8,18 +7,19 @@ from typing import Any
 
 from pydantic import BaseModel, Field
 from sqlalchemy import DateTime as SqlDateTime
-from sqlalchemy import func, select, update
 from sqlalchemy.exc import DBAPIError
 from tigrbl import JSONResponse, post
 from tigrbl.factories.router import defineRouterSpec
 from tigrbl_core._spec import PathSpec, RouterSpec, TableSpec
 
-from .config import Settings
+from .catalog_auth import PublisherPrincipal, require_publisher
+from .snapshot_finalization import finalize_snapshot
 from .tables.association import Association
 from .tables.catalog_snapshot import CatalogSnapshot
+from .tables.catalog_snapshot_source import CatalogSnapshotSource
 from .tables.metric_observation import MetricObservation
 from .tables.observation import CatalogObservation
-from .tables.registry import ENTITY_TABLES
+from .tables.registry import PUBLISH_ENTITY_TABLES
 
 
 class RecordBatch(BaseModel):
@@ -38,6 +38,7 @@ class SnapshotCreate(BaseModel):
     observation_count: int = Field(ge=0)
     measurement_count: int = Field(ge=0)
     error_count: int = Field(default=0, ge=0)
+    source_chunk_count: int = Field(ge=1)
 
 
 class InternalResponse(BaseModel):
@@ -46,6 +47,9 @@ class InternalResponse(BaseModel):
     accepted: int = 0
     created: int = 0
     existing: int = 0
+    publisher_id: str | None = None
+    export_manifest_url: str | None = None
+    deployment: dict[str, Any] | None = None
 
 
 def _payload(ctx: dict[str, Any]) -> dict[str, Any]:
@@ -73,14 +77,8 @@ def _path_parameter(ctx: dict[str, Any], name: str) -> str:
     return str(value or "")
 
 
-def _authorized(ctx: dict[str, Any]) -> bool:
-    configured = Settings.from_environment().catalog_internal_token
-    if not configured:
-        return False
-    request = _request(ctx)
-    supplied = request.headers.get("authorization", "") if request is not None else ""
-    prefix = "Bearer "
-    return supplied.startswith(prefix) and hmac.compare_digest(supplied[len(prefix) :], configured)
+def _publisher(ctx: dict[str, Any]) -> PublisherPrincipal | None:
+    return require_publisher(ctx)
 
 
 async def _maybe_await(value: Any) -> Any:
@@ -129,6 +127,8 @@ async def _persist_batch(
     try:
         for raw in records:
             row = _coerce_row(table, raw)
+            if "snapshot_id" in row and str(row["snapshot_id"]) != snapshot_id:
+                raise ValueError("Record snapshot_id does not match batch snapshot_id")
             current = await _maybe_await(session.get(table, row[primary_key]))
             if current is not None and append_only:
                 existing += 1
@@ -156,7 +156,7 @@ async def _persist_batch(
 
 def _bind_batch(path: str, *, table: type, alias: str, append_only: bool) -> None:
     async def endpoint(cls: type, ctx: dict[str, Any]) -> Any:
-        if not _authorized(ctx):
+        if not _publisher(ctx):
             return JSONResponse({"detail": "Unauthorized"}, status_code=401)
         body = RecordBatch.model_validate(_payload(ctx))
         try:
@@ -187,10 +187,10 @@ def _bind_batch(path: str, *, table: type, alias: str, append_only: bool) -> Non
 
 
 async def publish_entities(_cls: type, ctx: dict[str, Any]) -> Any:
-    if not _authorized(ctx):
+    if not _publisher(ctx):
         return JSONResponse({"detail": "Unauthorized"}, status_code=401)
     entity_type = _path_parameter(ctx, "entity_type")
-    table = ENTITY_TABLES.get(entity_type)
+    table = PUBLISH_ENTITY_TABLES.get(entity_type)
     if table is None:
         return JSONResponse({"detail": f"Unknown entity type: {entity_type}"}, status_code=404)
     body = RecordBatch.model_validate(_payload(ctx))
@@ -199,7 +199,7 @@ async def publish_entities(_cls: type, ctx: dict[str, Any]) -> Any:
             table,
             body.snapshot_id,
             body.records,
-            append_only=False,
+            append_only=table is CatalogSnapshotSource,
         )
     except (KeyError, TypeError, ValueError) as exc:
         return JSONResponse({"detail": str(exc)}, status_code=422)
@@ -241,82 +241,11 @@ _bind_batch(
 )
 
 
-async def _count(table: type, snapshot_id: str) -> int:
-    session, release = table.acquire(op_alias="list")
-    try:
-        result = await _maybe_await(
-            session.execute(
-                select(func.count()).select_from(table).where(table.snapshot_id == snapshot_id)
-            )
-        )
-        return int(result.scalar_one())
-    finally:
-        release()
-
-
 async def create_snapshot(_cls: type, ctx: dict[str, Any]) -> Any:
-    if not _authorized(ctx):
+    publisher = _publisher(ctx)
+    if not publisher:
         return JSONResponse({"detail": "Unauthorized"}, status_code=401)
-    body = SnapshotCreate.model_validate(_payload(ctx))
-    actual_observations = await _count(CatalogObservation, body.snapshot_id)
-    actual_measurements = await _count(MetricObservation, body.snapshot_id)
-    expected = (body.observation_count, body.measurement_count)
-    actual = (actual_observations, actual_measurements)
-    if actual != expected:
-        return JSONResponse(
-            {
-                "detail": "Snapshot facts are incomplete",
-                "snapshot_id": body.snapshot_id,
-                "expected": {"observations": expected[0], "measurements": expected[1]},
-                "actual": {"observations": actual[0], "measurements": actual[1]},
-            },
-            status_code=409,
-        )
-
-    session, release = CatalogSnapshot.acquire(op_alias="create")
-    try:
-        existing = await _maybe_await(session.get(CatalogSnapshot, body.snapshot_id))
-        if existing is not None:
-            if existing.source_digest != body.source_digest:
-                return JSONResponse({"detail": "Snapshot id already exists"}, status_code=409)
-            return {
-                "status": "ok",
-                "snapshot_id": body.snapshot_id,
-                "accepted": 1,
-                "created": 0,
-                "existing": 1,
-            }
-        await _maybe_await(session.execute(update(CatalogSnapshot).values(is_current=False)))
-        session.add(
-            CatalogSnapshot(
-                id=body.snapshot_id,
-                schema_version=body.schema_version,
-                collected_at=body.collected_at,
-                completed_at=datetime.now(UTC).replace(microsecond=0),
-                status="complete",
-                collector_version=body.collector_version,
-                source_digest=body.source_digest,
-                parent_snapshot_id=body.parent_snapshot_id,
-                is_current=True,
-                completeness=body.completeness,
-                observation_count=actual_observations,
-                measurement_count=actual_measurements,
-                error_count=body.error_count,
-            )
-        )
-        await _maybe_await(session.commit())
-    except Exception:
-        await _maybe_await(session.rollback())
-        raise
-    finally:
-        release()
-    return {
-        "status": "ok",
-        "snapshot_id": body.snapshot_id,
-        "accepted": 1,
-        "created": 1,
-        "existing": 0,
-    }
+    return await finalize_snapshot(SnapshotCreate.model_validate(_payload(ctx)), publisher)
 
 
 create_snapshot.__name__ = "publish_snapshot"
@@ -349,6 +278,7 @@ def _internal_paths() -> tuple[PathSpec, ...]:
         CatalogObservation,
         MetricObservation,
         CatalogSnapshot,
+        CatalogSnapshotSource,
     )
     for table in route_tables:
         for operation in tuple(getattr(table, "__tigrbl_ops__", ()) or ()):

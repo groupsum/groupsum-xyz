@@ -39,6 +39,18 @@ async function requirePageAssetMarker(html, marker, label) {
 async function verify() {
   const manifest = JSON.parse(await fetchText("/catalog/site/manifest.json"));
   if (!manifest.snapshot?.snapshot_id) throw new Error("static catalog is not pinned to a snapshot");
+  const snapshotCollection = JSON.parse(await fetchText("/api/v1/snapshots"));
+  const currentSnapshot = snapshotCollection.snapshots?.find((snapshot) => snapshot.is_current);
+  if (!currentSnapshot?.snapshot_id) throw new Error("catalog API has no current snapshot");
+  if (currentSnapshot.snapshot_id !== manifest.snapshot.snapshot_id) {
+    throw new Error(`static/API snapshot mismatch: ${manifest.snapshot.snapshot_id} != ${currentSnapshot.snapshot_id}`);
+  }
+  const snapshotExport = JSON.parse(await fetchText(
+    `/api/v1/snapshots/${encodeURIComponent(currentSnapshot.snapshot_id)}/export`,
+  ));
+  if (snapshotExport.source_digest !== manifest.snapshot.source_digest || !snapshotExport.chunk_count) {
+    throw new Error("deployed snapshot export does not match the static manifest");
+  }
   for (const [name, minimum] of Object.entries(expected)) {
     if (Number(manifest.counts?.[name] || 0) < minimum) throw new Error(`${name} count is below expected minimum ${minimum}`);
   }
