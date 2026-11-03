@@ -73,7 +73,6 @@ env:
   PUBLIC_HOST: groupsum.xyz
   PORTWYRM_NETWORK: portwyrm-edge
   PORTWYRM_CERT_PATH: /mnt/data/portwyrm/certificates
-  WYRMCTL_CREDENTIAL: /etc/groupsum/portwyrm.env
   DESIRED_STATE: .wyrmctl/desired-state/production/desired-state.yaml
 
 jobs:
@@ -83,6 +82,10 @@ jobs:
       group: portwyrm-deployment
       labels: [self-hosted, Linux, X64, vm102]
     environment: deployment
+    env:
+      WYRMCTL_BASE_URL: ${{ vars.WYRMCTL_BASE_URL || secrets.WYRMCTL_BASE_URL || secrets.NPM_BASE_URL }}
+      WYRMCTL_IDENTITY: ${{ secrets.WYRMCTL_IDENTITY || secrets.NPM_IDENTITY }}
+      WYRMCTL_SECRET: ${{ secrets.WYRMCTL_SECRET || secrets.NPM_SECRET || secrets.NPM_PASSWORD || secrets.NGINX_PROXY_MANAGER_SECRET }}
     steps:
       - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v5
       - uses: cobycloud/actions/actions/wyrmctl-setup@4733b1d73417b6ce5f43c8993675225ba395aeee
@@ -90,15 +93,11 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
-          test -r "$WYRMCTL_CREDENTIAL"
-          base_url="$(sed -n 's/^PORTWYRM_WYRMCTL_BASE_URL=//p' "$WYRMCTL_CREDENTIAL")"
-          identity="$(sed -n 's/^PORTWYRM_WYRMCTL_IDENTITY=//p' "$WYRMCTL_CREDENTIAL")"
-          secret="$(sed -n 's/^PORTWYRM_WYRMCTL_SECRET_B64=//p' "$WYRMCTL_CREDENTIAL" | base64 -d)"
-          echo "::add-mask::$secret"
-          test -n "$base_url"
-          test -n "$identity"
-          test -n "$secret"
-          NPM_BASE_URL="$base_url" NPM_IDENTITY="$identity" NPM_SECRET="$secret" \
+          test -n "$WYRMCTL_BASE_URL"
+          test -n "$WYRMCTL_IDENTITY"
+          test -n "$WYRMCTL_SECRET"
+          echo "::add-mask::$WYRMCTL_SECRET"
+          NPM_BASE_URL="$WYRMCTL_BASE_URL" NPM_IDENTITY="$WYRMCTL_IDENTITY" NPM_SECRET="$WYRMCTL_SECRET" \
             wyrmctl --output json adopt "$DESIRED_STATE" \
               --owner groupsum-xyz \
               --metadata-only \
@@ -114,7 +113,7 @@ jobs:
       labels: [self-hosted, Linux, X64, sad-lewin, shortlived]
     environment: deployment
     env:
-      WYRMCTL_BASE_URL: ${{ secrets.WYRMCTL_BASE_URL || secrets.NPM_BASE_URL }}
+      WYRMCTL_BASE_URL: ${{ vars.WYRMCTL_BASE_URL || secrets.WYRMCTL_BASE_URL || secrets.NPM_BASE_URL }}
       WYRMCTL_IDENTITY: ${{ secrets.WYRMCTL_IDENTITY || secrets.NPM_IDENTITY }}
       WYRMCTL_SECRET: ${{ secrets.WYRMCTL_SECRET || secrets.NPM_SECRET || secrets.NPM_PASSWORD || secrets.NGINX_PROXY_MANAGER_SECRET }}
     steps:
@@ -175,6 +174,9 @@ jobs:
       GROUPSUM_CATALOG_INTERNAL_TOKEN: ${{ secrets.GROUPSUM_CATALOG_INTERNAL_TOKEN }}
       GROUPSUM_CATALOG_PUBLISH_API_KEY: ${{ secrets.GROUPSUM_CATALOG_PUBLISH_API_KEY || secrets.GROUPSUM_CATALOG_INTERNAL_TOKEN }}
       GROUPSUM_DEPLOY_GITHUB_TOKEN: ${{ secrets.GROUPSUM_DEPLOY_GITHUB_TOKEN }}
+      WYRMCTL_BASE_URL: ${{ vars.WYRMCTL_BASE_URL || secrets.WYRMCTL_BASE_URL || secrets.NPM_BASE_URL }}
+      WYRMCTL_IDENTITY: ${{ secrets.WYRMCTL_IDENTITY || secrets.NPM_IDENTITY }}
+      WYRMCTL_SECRET: ${{ secrets.WYRMCTL_SECRET || secrets.NPM_SECRET || secrets.NPM_PASSWORD || secrets.NGINX_PROXY_MANAGER_SECRET }}
     steps:
       - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v5
       - uses: cobycloud/actions/actions/wyrmctl-setup@4733b1d73417b6ce5f43c8993675225ba395aeee
@@ -189,22 +191,15 @@ jobs:
           docker inspect portwyrm-portwyrm-1 >/dev/null
           docker network inspect "$PORTWYRM_NETWORK" >/dev/null
           test -d "$PORTWYRM_CERT_PATH"
-      - name: Verify reviewed plan and load automation identity
-        id: portwyrm
+      - name: Verify reviewed plan and protected automation identity
         shell: bash
         run: |
           set -euo pipefail
           sha256sum --check deployment-evidence/plan.sha256
-          base_url="$(sed -n 's/^PORTWYRM_WYRMCTL_BASE_URL=//p' "$WYRMCTL_CREDENTIAL")"
-          identity="$(sed -n 's/^PORTWYRM_WYRMCTL_IDENTITY=//p' "$WYRMCTL_CREDENTIAL")"
-          secret="$(sed -n 's/^PORTWYRM_WYRMCTL_SECRET_B64=//p' "$WYRMCTL_CREDENTIAL" | base64 -d)"
-          echo "::add-mask::$secret"
-          test -n "$base_url"
-          test -n "$identity"
-          test -n "$secret"
-          echo "base-url=$base_url" >> "$GITHUB_OUTPUT"
-          echo "identity=$identity" >> "$GITHUB_OUTPUT"
-          echo "secret=$secret" >> "$GITHUB_OUTPUT"
+          test -n "$WYRMCTL_BASE_URL"
+          test -n "$WYRMCTL_IDENTITY"
+          test -n "$WYRMCTL_SECRET"
+          echo "::add-mask::$WYRMCTL_SECRET"
       - name: Validate production secrets
         shell: bash
         run: |
@@ -330,9 +325,9 @@ jobs:
           repository: ${{ github.repository }}
           environment: production
           commit: ${{ github.sha }}
-          base-url: ${{ steps.portwyrm.outputs.base-url }}
-          identity: ${{ steps.portwyrm.outputs.identity }}
-          secret: ${{ steps.portwyrm.outputs.secret }}
+          base-url: ${{ env.WYRMCTL_BASE_URL }}
+          identity: ${{ env.WYRMCTL_IDENTITY }}
+          secret: ${{ env.WYRMCTL_SECRET }}
           report: deployment-evidence/wyrmctl-apply.json
           audit-log: deployment-evidence/wyrmctl-audit.json
           rollback-plan: deployment-evidence/wyrmctl-rollback.json
