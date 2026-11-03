@@ -99,8 +99,13 @@ jobs:
     needs: repair-certificate-ownership
     if: ${{ always() && (needs.repair-certificate-ownership.result == 'success' || needs.repair-certificate-ownership.result == 'skipped') }}
     runs-on:
-      group: portwyrm-deployment
-      labels: [self-hosted, Linux, X64, vm102]
+      group: shortlived
+      labels: [self-hosted, Linux, X64, sad-lewin, shortlived]
+    environment: deployment
+    env:
+      NPM_BASE_URL: ${{ secrets.NPM_BASE_URL }}
+      NPM_IDENTITY: ${{ secrets.NPM_IDENTITY }}
+      NPM_SECRET: ${{ secrets.NPM_SECRET || secrets.NPM_PASSWORD || secrets.NGINX_PROXY_MANAGER_SECRET }}
     steps:
       - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v5
       - name: Validate catalog deployment input
@@ -116,27 +121,14 @@ jobs:
             exit 1
           fi
       - uses: cobycloud/actions/actions/wyrmctl-setup@4733b1d73417b6ce5f43c8993675225ba395aeee
-      - name: Load protected Portwyrm automation identity
-        id: portwyrm
+      - name: Validate protected Portwyrm automation identity
         shell: bash
         run: |
           set -euo pipefail
-          test -r "$WYRMCTL_CREDENTIAL"
-          base_url="$(sed -n 's/^PORTWYRM_WYRMCTL_BASE_URL=//p' "$WYRMCTL_CREDENTIAL")"
-          identity="$(sed -n 's/^PORTWYRM_WYRMCTL_IDENTITY=//p' "$WYRMCTL_CREDENTIAL")"
-          secret="$(sed -n 's/^PORTWYRM_WYRMCTL_SECRET_B64=//p' "$WYRMCTL_CREDENTIAL" | base64 -d)"
-          echo "::add-mask::$secret"
-          test "$identity" = jacob@swarmauri.com
-          echo "base-url=$base_url" >> "$GITHUB_OUTPUT"
-          echo "identity=$identity" >> "$GITHUB_OUTPUT"
-          echo "secret=$secret" >> "$GITHUB_OUTPUT"
-      - name: Validate VM102 topology
-        shell: bash
-        run: |
-          set -euo pipefail
-          docker inspect portwyrm-portwyrm-1 >/dev/null
-          docker network inspect "$PORTWYRM_NETWORK" >/dev/null
-          test -d "$PORTWYRM_CERT_PATH"
+          test -n "$NPM_BASE_URL"
+          test "$NPM_IDENTITY" = jacob@swarmauri.com
+          test -n "$NPM_SECRET"
+          echo "::add-mask::$NPM_SECRET"
           mkdir -p deployment-evidence
       - uses: cobycloud/actions/actions/wyrmctl-plan@56c4a13434c7ec49453bf109d7d6955158992b5a
         with:
@@ -146,9 +138,9 @@ jobs:
           repository: ${{ github.repository }}
           environment: production
           commit: ${{ github.sha }}
-          base-url: ${{ steps.portwyrm.outputs.base-url }}
-          identity: ${{ steps.portwyrm.outputs.identity }}
-          secret: ${{ steps.portwyrm.outputs.secret }}
+          base-url: ${{ env.NPM_BASE_URL }}
+          identity: ${{ env.NPM_IDENTITY }}
+          secret: ${{ env.NPM_SECRET }}
           certificate-mode: create
       - name: Seal reviewed plan
         shell: bash
@@ -179,6 +171,13 @@ jobs:
         with:
           name: deployment-plan-${{ github.sha }}
           path: deployment-evidence
+      - name: Validate VM102 deployment topology
+        shell: bash
+        run: |
+          set -euo pipefail
+          docker inspect portwyrm-portwyrm-1 >/dev/null
+          docker network inspect "$PORTWYRM_NETWORK" >/dev/null
+          test -d "$PORTWYRM_CERT_PATH"
       - name: Verify reviewed plan and load automation identity
         id: portwyrm
         shell: bash
