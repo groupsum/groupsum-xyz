@@ -370,6 +370,7 @@ jobs:
 
   verify-public:
     needs: deploy
+    if: ${{ always() && needs.deploy.result == 'success' }}
     runs-on:
       group: shortlived
       labels: [self-hosted, Linux, X64, sad-lewin, shortlived]
