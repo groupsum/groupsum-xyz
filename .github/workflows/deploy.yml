@@ -27,6 +27,9 @@ on:
       WYRMCTL_SECRET:
         description: Portwyrm automation secret used by short-lived wyrmctl planning
         required: false
+      PORTWYRM_ADMIN_PASSWORD:
+        description: Canonical VM102 Portwyrm automation password
+        required: false
       GROUPSUM_CATALOG_INTERNAL_TOKEN:
         description: Legacy catalog publisher token retained during key migration
         required: false
@@ -84,8 +87,8 @@ jobs:
     environment: deployment
     env:
       WYRMCTL_BASE_URL: ${{ vars.WYRMCTL_BASE_URL || secrets.WYRMCTL_BASE_URL || secrets.NPM_BASE_URL }}
-      WYRMCTL_IDENTITY: ${{ secrets.WYRMCTL_IDENTITY || secrets.NPM_IDENTITY }}
-      WYRMCTL_SECRET: ${{ secrets.WYRMCTL_SECRET || secrets.NPM_SECRET || secrets.NPM_PASSWORD || secrets.NGINX_PROXY_MANAGER_SECRET }}
+      WYRMCTL_IDENTITY: ${{ vars.WYRMCTL_IDENTITY || secrets.WYRMCTL_IDENTITY || secrets.NPM_IDENTITY }}
+      WYRMCTL_SECRET: ${{ secrets.WYRMCTL_SECRET || secrets.PORTWYRM_ADMIN_PASSWORD || secrets.NPM_SECRET || secrets.NPM_PASSWORD || secrets.NGINX_PROXY_MANAGER_SECRET }}
     steps:
       - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v5
       - uses: cobycloud/actions/actions/wyrmctl-setup@4733b1d73417b6ce5f43c8993675225ba395aeee
@@ -114,8 +117,8 @@ jobs:
     environment: deployment
     env:
       WYRMCTL_BASE_URL: ${{ vars.WYRMCTL_BASE_URL || secrets.WYRMCTL_BASE_URL || secrets.NPM_BASE_URL }}
-      WYRMCTL_IDENTITY: ${{ secrets.WYRMCTL_IDENTITY || secrets.NPM_IDENTITY }}
-      WYRMCTL_SECRET: ${{ secrets.WYRMCTL_SECRET || secrets.NPM_SECRET || secrets.NPM_PASSWORD || secrets.NGINX_PROXY_MANAGER_SECRET }}
+      WYRMCTL_IDENTITY: ${{ vars.WYRMCTL_IDENTITY || secrets.WYRMCTL_IDENTITY || secrets.NPM_IDENTITY }}
+      WYRMCTL_SECRET: ${{ secrets.WYRMCTL_SECRET || secrets.PORTWYRM_ADMIN_PASSWORD || secrets.NPM_SECRET || secrets.NPM_PASSWORD || secrets.NGINX_PROXY_MANAGER_SECRET }}
     steps:
       - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v5
       - name: Validate catalog deployment input
@@ -175,8 +178,8 @@ jobs:
       GROUPSUM_CATALOG_PUBLISH_API_KEY: ${{ secrets.GROUPSUM_CATALOG_PUBLISH_API_KEY || secrets.GROUPSUM_CATALOG_INTERNAL_TOKEN }}
       GROUPSUM_DEPLOY_GITHUB_TOKEN: ${{ secrets.GROUPSUM_DEPLOY_GITHUB_TOKEN }}
       WYRMCTL_BASE_URL: ${{ vars.WYRMCTL_BASE_URL || secrets.WYRMCTL_BASE_URL || secrets.NPM_BASE_URL }}
-      WYRMCTL_IDENTITY: ${{ secrets.WYRMCTL_IDENTITY || secrets.NPM_IDENTITY }}
-      WYRMCTL_SECRET: ${{ secrets.WYRMCTL_SECRET || secrets.NPM_SECRET || secrets.NPM_PASSWORD || secrets.NGINX_PROXY_MANAGER_SECRET }}
+      WYRMCTL_IDENTITY: ${{ vars.WYRMCTL_IDENTITY || secrets.WYRMCTL_IDENTITY || secrets.NPM_IDENTITY }}
+      WYRMCTL_SECRET: ${{ secrets.WYRMCTL_SECRET || secrets.PORTWYRM_ADMIN_PASSWORD || secrets.NPM_SECRET || secrets.NPM_PASSWORD || secrets.NGINX_PROXY_MANAGER_SECRET }}
     steps:
       - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v5
       - uses: cobycloud/actions/actions/wyrmctl-setup@4733b1d73417b6ce5f43c8993675225ba395aeee
