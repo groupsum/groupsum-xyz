@@ -24,7 +24,7 @@ function SelectFilter({ label, value, options, onChange }: { label: string; valu
   </label>;
 }
 
-export function ExplorerFilterToolbar({ filters, onChange, owners = [], ecosystems = [], publications = [], resourceTypes = [], sortOptions, total, statusDetail = "Filtered projection" }: { filters: ExplorerFilters; onChange: (next: ExplorerFilters) => void; owners?: string[]; ecosystems?: string[]; publications?: string[]; resourceTypes?: string[]; sortOptions: Option[]; total: number; statusDetail?: string }) {
+export function ExplorerFilterToolbar({ filters, onChange, owners = [], ecosystems = [], publications = [], resourceTypes = [], sortOptions, total, statusDetail = "Filtered projection", statusActions }: { filters: ExplorerFilters; onChange: (next: ExplorerFilters) => void; owners?: string[]; ecosystems?: string[]; publications?: string[]; resourceTypes?: string[]; sortOptions: Option[]; total: number; statusDetail?: string; statusActions?: React.ReactNode }) {
   const update = (patch: Partial<ExplorerFilters>) => onChange({ ...filters, ...patch });
   const active = [filters.owner, filters.ecosystem, filters.publication, filters.resourceType].filter(Boolean);
   return <div className="space-y-3 py-4">
@@ -55,7 +55,7 @@ export function ExplorerFilterToolbar({ filters, onChange, owners = [], ecosyste
       </div>}
     <div className="flex flex-wrap items-center justify-between gap-2 border-b border-[var(--color-border-soft)] pb-2 font-mono text-xs text-ink-muted">
       <span>Showing <strong className="text-ink">{total.toLocaleString()}</strong> matching records</span>
-      <span className="hidden text-[#5C635E] sm:inline" aria-live="polite">{statusDetail}</span>
+      <div className="ml-auto flex items-center gap-2 text-[#5C635E]"><span aria-live="polite">{statusDetail}</span>{statusActions}</div>
     </div>
   </div>;
 }

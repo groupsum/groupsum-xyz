@@ -13,6 +13,15 @@ import type { CatalogViewRecord } from "../../types/catalog-view";
 
 import { datasetDetails, datasetOrder, DetailSection, formatDate, humanLabel, isCurrentPageLink, labels, recordDescription, recordTitle, resourceIcon, valueRecord, valueRecords, valueStrings, type CatalogRecord, type DatasetName } from "./CatalogRecordShared";
 
+function PaginationControls({ currentPage, pages, disabled, onPageChange, label }: { currentPage: number; pages: number; disabled: boolean; onPageChange: (page: number) => void; label: string }) {
+  if (pages <= 1) return null;
+  const buttonClass = "min-h-8 rounded border border-[var(--color-border-soft)] bg-white px-2.5 py-1 font-mono text-[10px] text-ink hover:border-accent hover:text-accent focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent disabled:cursor-not-allowed disabled:opacity-40 disabled:hover:border-[var(--color-border-soft)] disabled:hover:text-ink";
+  return <nav aria-label={label} className="flex shrink-0 items-center gap-1.5">
+    <button type="button" disabled={currentPage === 1 || disabled} onClick={() => onPageChange(Math.max(1, currentPage - 1))} className={buttonClass}>Previous</button>
+    <button type="button" disabled={currentPage === pages || disabled} onClick={() => onPageChange(Math.min(pages, currentPage + 1))} className={buttonClass}>Next</button>
+  </nav>;
+}
+
 export function CatalogSnapshotBand({
   onNavigate,
   owner,
@@ -32,17 +41,8 @@ export function CatalogSnapshotBand({
     setMetricState("loading");
     getRepositoryMetricSnapshot(owner || "", controller.signal)
       .then((snapshot) => {
-        const scoped = snapshot.repositories;
-        setRepositories(scoped.slice(0, 4));
-        setRepositorySummary(scoped.reduce(
-          (totals, repository) => ({
-            count: totals.count + 1,
-            stars: totals.stars + Number(repository.metrics.stars || 0),
-            commits: totals.commits + Number(repository.metrics.commits || 0),
-            contributors: totals.contributors + Number(repository.metrics.contributors || 0),
-          }),
-          { count: 0, stars: 0, commits: 0, contributors: 0 },
-        ));
+        setRepositories(snapshot.repositories);
+        setRepositorySummary(snapshot.summary);
         setMetricsGeneratedAt(snapshot.generated_at || null);
         setMetricState("ready");
       })
@@ -281,7 +281,7 @@ export function PublicCatalogExplorer({ onNavigate, compact = false, fixedDatase
           </button>
         ))}
       </div>}
-      <ExplorerFilterToolbar filters={filters} onChange={(next) => { setFilters(next); setPage(1); }} owners={dataset === "repositories" ? Object.keys(collection.data?.facets?.owner || {}) : []} ecosystems={dataset === "packages" ? Object.keys(collection.data?.facets?.ecosystem || {}) : []} publications={dataset === "packages" ? Object.keys(collection.data?.facets?.publication_status || {}) : []} resourceTypes={dataset === "resources" ? Object.keys(collection.data?.facets?.resource_type || {}) : []} sortOptions={[{ label: "Recent Activity", value: "recent" }, { label: "Most Activity", value: "activity" }, { label: "Name (A–Z)", value: "name" }]} total={Number(collection.data?.count || 0)} statusDetail={collection.isFetching && !collection.isPending ? `Updating to page ${page.toLocaleString()} of ${pages.toLocaleString()}…` : `Page ${currentPage.toLocaleString()} of ${pages.toLocaleString()}`} />
+      <ExplorerFilterToolbar filters={filters} onChange={(next) => { setFilters(next); setPage(1); }} owners={dataset === "repositories" ? Object.keys(collection.data?.facets?.owner || {}) : []} ecosystems={dataset === "packages" ? Object.keys(collection.data?.facets?.ecosystem || {}) : []} publications={dataset === "packages" ? Object.keys(collection.data?.facets?.publication_status || {}) : []} resourceTypes={dataset === "resources" ? Object.keys(collection.data?.facets?.resource_type || {}) : []} sortOptions={[{ label: "Recent Activity", value: "recent" }, { label: "Most Activity", value: "activity" }, { label: "Name (A–Z)", value: "name" }]} total={Number(collection.data?.count || 0)} statusDetail={collection.isFetching && !collection.isPending ? `Updating to page ${page.toLocaleString()} of ${pages.toLocaleString()}…` : `Page ${currentPage.toLocaleString()} of ${pages.toLocaleString()}`} statusActions={<PaginationControls currentPage={currentPage} pages={pages} disabled={collection.isFetching} onPageChange={setPage} label="Pagination above catalog records" />} />
       {state === "loading" && <div className="p-10 text-center text-sm text-ink-muted" role="status">Loading {labels[dataset].toLowerCase()}…</div>}
       {state === "error" && <div className="p-6 border border-red-500/20 bg-red-500/5 text-sm text-red-700 rounded-[var(--radius-sm)]" role="alert">The catalog API could not be loaded. Try again shortly or use the downloadable normalized JSON below.</div>}
       {dataset === "resources" && resourceTypes.length > 0 && <ResourceTypeDirectory descriptors={resourceTypes} selectedType={filters.resourceType} onSelect={(resourceType) => { setFilters({ ...filters, resourceType }); setPage(1); if (fixedDataset) onNavigate(`/catalog/resources/?resource_type=${encodeURIComponent(resourceType)}`); }} />}
@@ -290,7 +290,7 @@ export function PublicCatalogExplorer({ onNavigate, compact = false, fixedDatase
         <>
           {dataset === "repositories" ? <RepositoryCollectionTable records={visible} onNavigate={onNavigate} /> : dataset === "packages" ? <PackageCollectionTable records={visible} onNavigate={onNavigate} /> : <div className="space-y-3">{visible.map((record) => <CollectionRow key={record.id} record={record} dataset={dataset} onNavigate={onNavigate} />)}</div>}
           {visible.length === 0 && <div className="p-10 text-center border border-[var(--color-border-soft)] rounded-[var(--radius-md)] text-sm text-ink-muted">No catalog records match this search.</div>}
-          {pages > 1 && <div className="flex items-center justify-between gap-4"><button disabled={currentPage === 1 || collection.isFetching} onClick={() => setPage(Math.max(1, currentPage - 1))} className="px-3 py-2 text-xs font-mono border border-[var(--color-border-soft)] rounded disabled:opacity-40 cursor-pointer">Previous</button><button disabled={currentPage === pages || collection.isFetching} onClick={() => setPage(Math.min(pages, currentPage + 1))} className="px-3 py-2 text-xs font-mono border border-[var(--color-border-soft)] rounded disabled:opacity-40 cursor-pointer">Next</button></div>}
+          {pages > 1 && <div className="flex justify-end"><PaginationControls currentPage={currentPage} pages={pages} disabled={collection.isFetching} onPageChange={setPage} label="Pagination below catalog records" /></div>}
         </>
       )}
       <div className="flex flex-wrap gap-4 text-xs font-mono">

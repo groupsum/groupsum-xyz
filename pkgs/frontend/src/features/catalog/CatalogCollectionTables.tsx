@@ -1,8 +1,6 @@
 import React from "react";
 import {
-  ArrowRight,
   BadgeCheck,
-  BarChart2,
   Box,
   ChevronRight,
   CircleDot,
@@ -11,11 +9,9 @@ import {
   Package,
   ShieldCheck,
   Star,
-  Table,
-  Users,
 } from "lucide-react";
 import { CatalogPill, compactNumber } from "./CatalogVisuals";
-import { humanLabel, recordDescription, valueRecord, valueRecords, type CatalogRecord } from "./CatalogRecordShared";
+import { humanLabel, valueRecord, valueRecords, type CatalogRecord } from "./CatalogRecordShared";
 
 type Navigate = (path: string) => void;
 
@@ -67,76 +63,78 @@ function LatestRelease({ value }: { value: unknown }) {
     : <span title={label} className={className}>{content}</span>;
 }
 
-function ContributorLinks({ value, limit = 2 }: { value: unknown; limit?: number }) {
+function ContributorLinks({ value, onNavigate, limit = 2 }: { value: unknown; onNavigate: Navigate; limit?: number }) {
   const contributors = valueRecords(value);
   if (!contributors.length) return <span className="text-[10px] text-ink-muted">Not observed</span>;
   const visible = contributors.slice(0, limit);
-  return <div className="min-w-0 space-y-1">
+  const remaining = contributors.slice(limit);
+  const contributorControl = (contributor: Record<string, unknown>, index: number) => {
+    const login = String(contributor.login || contributor.name || `Contributor ${index + 1}`);
+    const label = contributor.login ? `@${login}` : login;
+    const provider = String(contributor.provider || "github");
+    const href = String(contributor.url || "");
+    const className = "block w-full truncate text-left text-[10px] text-accent hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent";
+    return href
+      ? <a href={href} target="_blank" rel="noreferrer" className={className} title={`${label}: ${Number(contributor.contributions || 0).toLocaleString()} contributions`}>{label}</a>
+      : contributor.login
+        ? <button type="button" onClick={() => onNavigate(`/contributors/${encodeURIComponent(provider)}/${encodeURIComponent(login)}`)} className={className} title={`${label}: ${Number(contributor.contributions || 0).toLocaleString()} contributions`}>{label}</button>
+        : <span className="block truncate text-[10px] text-ink-muted" title={label}>{label}</span>;
+  };
+  return <div className="relative min-w-0 space-y-1">
     <ul className="space-y-0.5" aria-label={`${contributors.length} observed contributors`}>
       {visible.map((contributor, index) => {
-        const login = String(contributor.login || contributor.name || `Contributor ${index + 1}`);
-        const label = contributor.login ? `@${login}` : login;
-        const href = String(contributor.url || "");
-        return <li key={String(contributor.id || contributor.login || contributor.name || index)} className="break-all text-[10px]">
-          {href ? <a href={href} target="_blank" rel="noreferrer" className="text-accent hover:underline" title={`${label}: ${Number(contributor.contributions || 0).toLocaleString()} contributions`}>{label}</a> : <span title={label}>{label}</span>}
+        return <li key={String(contributor.id || contributor.login || contributor.name || index)} className="min-w-0">
+          {contributorControl(contributor, index)}
         </li>;
       })}
     </ul>
-    {contributors.length > visible.length && <span className="text-[9px] text-ink-muted">+{(contributors.length - visible.length).toLocaleString()} more</span>}
+    {remaining.length > 0 && <details className="group/contributors relative">
+      <summary className="w-fit cursor-pointer list-none rounded text-[9px] text-accent hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent [&::-webkit-details-marker]:hidden" aria-label={`Show ${remaining.length.toLocaleString()} more contributors`}>+{remaining.length.toLocaleString()} more</summary>
+      <div className="absolute right-0 top-full z-50 mt-1 w-56 rounded-md border border-[var(--color-border-soft)] bg-white p-2 shadow-lg">
+        <p className="mb-1.5 border-b border-[var(--color-border-soft)] pb-1.5 text-[9px] font-semibold uppercase tracking-wide text-ink-muted">Other contributors</p>
+        <ul className="max-h-56 space-y-1 overflow-y-auto py-0.5" aria-label="Other observed contributors">
+          {remaining.map((contributor, index) => <li key={String(contributor.id || contributor.login || contributor.name || index)} className="min-w-0 rounded px-1 py-0.5 hover:bg-canvas">{contributorControl(contributor, visible.length + index)}</li>)}
+        </ul>
+      </div>
+    </details>}
   </div>;
 }
 
 function CommitBars({ points }: { points: Array<Record<string, unknown>> }) {
-  const [showTable, setShowTable] = React.useState(false);
   const visible = points.slice(-30);
   if (!visible.length) return <span className="text-[9px] font-mono text-ink-muted">No activity</span>;
   const max = Math.max(1, ...visible.map((point) => Number(point.count || 0)));
   const total = visible.reduce((sum, point) => sum + Number(point.count || 0), 0);
   const barWidth = 110 / visible.length;
   return <div className="min-w-0 space-y-1">
-    <div className="flex items-start gap-1.5">
-      <div className="min-w-0 flex-1"><svg viewBox="0 0 110 24" className="h-6 w-full max-w-[110px] text-signal" role="img" aria-label={`${total.toLocaleString()} commits over the last ${visible.length} observed days`}>{visible.map((point, index) => { const value = Number(point.count || 0); const height = Math.max(1, value / max * 23); return <rect key={`${String(point.date)}-${index}`} x={index * barWidth} y={24 - height} width={Math.max(1.4, barWidth - 0.8)} height={height} rx="0.5" fill="currentColor" />; })}</svg><span className="text-[9px] text-ink-muted">{total.toLocaleString()} commits / 30d</span></div>
-      <button type="button" onClick={() => setShowTable((current) => !current)} className="grid h-6 w-6 shrink-0 place-items-center rounded-[3px] border border-[var(--color-border-soft)] text-ink-muted hover:border-accent hover:text-accent" aria-expanded={showTable} aria-label="Toggle tabular view of daily commit counts" title="Toggle chart data table">{showTable ? <BarChart2 className="h-3 w-3" /> : <Table className="h-3 w-3" />}</button>
-    </div>
-    {showTable ? <div className="max-h-28 overflow-y-auto rounded border border-[var(--color-border-soft)] bg-canvas p-1.5"><dl className="grid grid-cols-[1fr_auto] gap-x-2 gap-y-0.5 text-[9px]">{visible.map((point, index) => <React.Fragment key={`${String(point.date)}-detail-${index}`}><dt className="text-ink-muted">{String(point.date || `Day ${index + 1}`)}</dt><dd className="font-semibold tabular-nums text-ink">{Number(point.count || 0).toLocaleString()}</dd></React.Fragment>)}</dl></div> : null}
+    <svg viewBox="0 0 110 24" className="h-6 w-full max-w-[110px] text-signal" role="img" aria-label={`${total.toLocaleString()} commits over the last ${visible.length} observed days`}>{visible.map((point, index) => { const value = Number(point.count || 0); const height = Math.max(1, value / max * 23); return <rect key={`${String(point.date)}-${index}`} x={index * barWidth} y={24 - height} width={Math.max(1.4, barWidth - 0.8)} height={height} rx="0.5" fill="currentColor" />; })}</svg>
+    <span className="block truncate text-[9px] text-ink-muted" title={`${total.toLocaleString()} commits over 30 days`}>{total.toLocaleString()} commits / 30d</span>
   </div>;
 }
 
-function RepositoryMobileCard({ record, onNavigate }: { record: CatalogRecord; onNavigate: Navigate }) {
-  const metrics = valueRecord(record.metrics);
-  return <article className="catalog-density-card space-y-3 rounded-xl border border-[var(--color-border-soft)] bg-white p-4 shadow-sm">
-    <div className="flex items-start gap-3"><span className="grid h-9 w-9 shrink-0 place-items-center rounded-[3px] border border-violet-200 bg-violet-50 text-violet-700"><GitBranch className="h-4 w-4" /></span><div className="min-w-0 flex-1"><RecordLink route={String(record.route)} onNavigate={onNavigate}><span className="whitespace-normal leading-snug"><HyphenBreakText value={`${String(record.owner)}/${String(record.name)}`} /></span></RecordLink><p className="mt-1 line-clamp-2 text-[11px] text-ink-muted">{recordDescription(record)}</p></div></div>
-    <dl className="flex flex-wrap gap-x-6 gap-y-2 text-[10px] font-mono"><div><dt className="text-ink-muted">Stars</dt><dd className="font-bold text-ink">{compactNumber(Number(metrics.stars || 0))}</dd></div><div><dt className="text-ink-muted">Forks</dt><dd className="font-bold text-ink">{compactNumber(Number(metrics.forks || 0))}</dd></div><div><dt className="text-ink-muted">Packages</dt><dd className="font-bold text-ink">{Number(record.package_count || 0).toLocaleString()}</dd></div></dl>
-    <div className="flex items-start gap-2 border-t border-[var(--color-border-soft)] pt-3"><Users className="mt-0.5 h-3.5 w-3.5 shrink-0 text-ink-muted" /><div><p className="mb-1 text-[9px] font-mono uppercase tracking-wide text-ink-muted">Contributors</p><ContributorLinks value={record.contributors} limit={3} /></div></div>
-    <div className="flex items-center justify-between">{record.ssot_governed ? <CatalogPill tone="accent" Icon={ShieldCheck}>SSOT governed</CatalogPill> : <span />}<RecordLink route={String(record.route)} onNavigate={onNavigate}><span className="inline-flex items-center gap-1 text-[10px] font-mono text-accent">Inspect <ArrowRight className="h-3 w-3" /></span></RecordLink></div>
-  </article>;
-}
-
 export function RepositoryCollectionTable({ records, onNavigate }: { records: CatalogRecord[]; onNavigate: Navigate }) {
-  return <>
-    <div className="grid gap-3 sm:hidden">{records.map((record) => <RepositoryMobileCard key={record.id} record={record} onNavigate={onNavigate} />)}</div>
-    <div className="hidden min-w-0 overflow-hidden rounded-xl border border-[var(--color-border-soft)] bg-white shadow-sm sm:block">
-      <table className="catalog-density-table catalog-wrap-table catalog-repository-table w-full text-left text-xs" aria-label="Repository catalog records">
-        <thead className="bg-canvas text-[11px] font-mono font-semibold uppercase tracking-wider text-ink-muted"><tr><th className="w-[15rem] px-4 py-3">Repository</th><th className="px-3 py-3">Organization</th><th className="px-3 py-3">Stars &amp; Trend</th><th className="px-3 py-3">Forks</th><th className="px-3 py-3">30-Day Commits</th><th className="px-3 py-3">Contributors</th><th className="px-3 py-3">Packages</th><th className="px-3 py-3">Latest Release</th><th className="px-3 py-3">Governance</th><th className="px-4 py-3 text-right"><span className="sr-only">Action</span></th></tr></thead>
+  return <div className="min-w-0 rounded-xl border border-[var(--color-border-soft)] bg-white shadow-sm">
+      <table className="catalog-density-table catalog-repository-table w-full table-fixed text-left text-xs" aria-label="Repository catalog records">
+        <colgroup><col className="w-[43%] md:w-[28%] lg:w-[20%]" /><col className="hidden w-[10%] lg:table-column" /><col className="w-[24%] md:w-[15%] lg:w-[11%]" /><col className="hidden w-[6%] xl:table-column" /><col className="hidden w-[16%] md:table-column lg:w-[13%]" /><col className="hidden w-[12%] xl:table-column" /><col className="w-[23%] md:w-[12%] lg:w-[8%]" /><col className="hidden w-[11%] lg:table-column" /><col className="hidden w-[9%] lg:table-column" /><col className="w-[10%] md:w-[5%] lg:w-[3%]" /></colgroup>
+        <thead className="bg-canvas text-[11px] font-mono font-semibold uppercase tracking-wider text-ink-muted"><tr><th className="px-3 py-3">Repository</th><th className="hidden px-2 py-3 lg:table-cell">Organization</th><th className="px-2 py-3">Stars</th><th className="hidden px-2 py-3 xl:table-cell">Forks</th><th className="hidden px-2 py-3 md:table-cell">30-Day Commits</th><th className="hidden px-2 py-3 xl:table-cell">Contributors</th><th className="px-2 py-3">Packages</th><th className="hidden px-2 py-3 lg:table-cell">Latest Release</th><th className="hidden px-2 py-3 lg:table-cell">Governance</th><th className="px-2 py-3 text-right"><span className="sr-only">Action</span></th></tr></thead>
         <tbody className="divide-y divide-[var(--color-border-soft)] font-mono">{records.map((record) => {
           const metrics = valueRecord(record.metrics);
           const history = valueRecord(record.history);
-          return <tr key={record.id} className="group hover:bg-canvas">
-            <td data-label="Repository" className="min-w-0 px-4 py-3 align-top"><div className="flex min-w-0 items-start gap-2.5"><GitBranch className="mt-0.5 h-4 w-4 shrink-0 text-violet-700" /><RecordLink route={String(record.route)} onNavigate={onNavigate}><span className="block break-words whitespace-normal leading-snug"><HyphenBreakText value={String(record.name)} /></span></RecordLink></div></td>
-            <td data-label="Organization" className="min-w-0 break-all px-3 py-3 text-ink-muted">{String(record.owner || "Not recorded")}</td>
-            <td data-label="Stars & trend" className="min-w-0 px-3 py-3"><div className="min-w-0 space-y-1"><span className="inline-flex items-center gap-1"><Star className="h-3 w-3 fill-amber-400 text-amber-500" /><strong className="tabular-nums text-ink">{compactNumber(Number(metrics.stars || 0))}</strong></span><div><MiniLine points={valueRecords(history.stars)} label="Stars" /></div></div></td>
-            <td data-label="Forks" className="min-w-0 px-3 py-3"><span className="inline-flex items-center gap-1 font-semibold tabular-nums"><GitFork className="h-3 w-3 text-ink-muted" />{compactNumber(Number(metrics.forks || 0))}</span></td>
-            <td data-label="30-day commits" className="min-w-0 px-3 py-3"><CommitBars points={valueRecords(record.commit_activity)} /></td>
-            <td data-label="Contributors" className="min-w-0 px-3 py-3"><ContributorLinks value={record.contributors} /></td>
-            <td data-label="Packages" className="min-w-0 px-3 py-3 font-semibold text-accent">{Number(record.package_count || 0).toLocaleString()} pkgs</td>
-            <td data-label="Latest release" className="min-w-0 px-3 py-3"><LatestRelease value={record.latest_release} /></td>
-            <td data-label="Governance" className="min-w-0 px-3 py-3">{record.ssot_governed ? <CatalogPill tone="accent" Icon={ShieldCheck}>Governed</CatalogPill> : <span className="text-xs text-ink-muted">Not observed</span>}</td>
-            <td data-label="Open record" className="min-w-0 px-4 py-3 text-right"><RecordLink route={String(record.route)} onNavigate={onNavigate}><ChevronRight className="ml-auto h-4 w-4 text-accent transition-transform group-hover:translate-x-0.5" /></RecordLink></td>
+          return <tr key={record.id} className="group h-[4.5rem] hover:bg-canvas">
+            <td className="min-w-0 px-3 py-2 align-middle"><div className="flex min-w-0 items-center gap-2"><GitBranch className="h-4 w-4 shrink-0 text-violet-700" /><RecordLink route={String(record.route)} onNavigate={onNavigate}><span className="line-clamp-2 break-words leading-snug"><HyphenBreakText value={String(record.name)} /></span></RecordLink></div></td>
+            <td className="hidden min-w-0 truncate px-2 py-2 align-middle text-ink-muted lg:table-cell" title={String(record.owner || "Not recorded")}>{String(record.owner || "Not recorded")}</td>
+            <td className="min-w-0 px-2 py-2 align-middle"><div className="min-w-0 space-y-1"><span className="inline-flex items-center gap-1"><Star className="h-3 w-3 fill-amber-400 text-amber-500" /><strong className="tabular-nums text-ink">{compactNumber(Number(metrics.stars || 0))}</strong></span><div className="hidden lg:block"><MiniLine points={valueRecords(history.stars)} label="Stars" /></div></div></td>
+            <td className="hidden min-w-0 px-2 py-2 align-middle xl:table-cell"><span className="inline-flex items-center gap-1 font-semibold tabular-nums"><GitFork className="h-3 w-3 text-ink-muted" />{compactNumber(Number(metrics.forks || 0))}</span></td>
+            <td className="hidden min-w-0 px-2 py-2 align-middle md:table-cell"><CommitBars points={valueRecords(record.commit_activity)} /></td>
+            <td className="hidden min-w-0 !overflow-visible px-2 py-2 align-middle xl:table-cell"><ContributorLinks value={record.contributors} onNavigate={onNavigate} limit={1} /></td>
+            <td className="min-w-0 truncate px-2 py-2 align-middle font-semibold text-accent" title={`${Number(record.package_count || 0).toLocaleString()} packages`}>{Number(record.package_count || 0).toLocaleString()} <span className="hidden sm:inline">pkgs</span></td>
+            <td className="hidden min-w-0 px-2 py-2 align-middle lg:table-cell"><LatestRelease value={record.latest_release} /></td>
+            <td className="hidden min-w-0 px-2 py-2 align-middle lg:table-cell">{record.ssot_governed ? <CatalogPill tone="accent" Icon={ShieldCheck}>Governed</CatalogPill> : <span className="text-[10px] text-ink-muted">Not observed</span>}</td>
+            <td className="min-w-0 px-2 py-2 text-right align-middle"><RecordLink route={String(record.route)} onNavigate={onNavigate}><ChevronRight className="ml-auto h-4 w-4 text-accent transition-transform group-hover:translate-x-0.5" /></RecordLink></td>
           </tr>;
         })}</tbody>
       </table>
-    </div>
-  </>;
+    </div>;
 }
 
 function PublicationBadge({ record }: { record: CatalogRecord }) {

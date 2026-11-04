@@ -71,7 +71,9 @@ export type RepositoryMetricRecord = RepositorySignals & {
 };
 export type RepositoryMetricSnapshot = {
   kind: "repository_metric_snapshot"; owner?: string | null; generated_at?: string | null;
-  count: number; repositories: RepositoryMetricRecord[];
+  count: number;
+  summary: { count: number; stars: number; commits: number; contributors: number };
+  repositories: RepositoryMetricRecord[];
 };
 export type PackageResource = {
   id: string; ecosystem: string; name: string; registry_url: string;
