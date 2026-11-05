@@ -75,6 +75,6 @@ export function CodeBlock({ code, language }: { code: string; language: string }
         {copied ? <Check className="w-3.5 h-3.5" /> : <Copy className="w-3.5 h-3.5" />}{copied ? "Copied" : "Copy"}
       </button>
     </div>
-    <pre className="mdwrk-code-block !m-0 overflow-x-auto overflow-y-hidden font-mono text-xs text-ink leading-relaxed"><code className="mdwrk-code-content !p-0 !m-0 !bg-transparent !border-none !rounded-none !text-inherit">{tokens.map((token, index) => token.type === "text" ? token.value : <span key={index} className={tokenClass(token.type)}>{token.value}</span>)}</code></pre>
+    <pre className="mdwrk-code-block !m-0 overflow-hidden whitespace-pre-wrap break-words font-mono text-xs text-ink leading-relaxed"><code className="mdwrk-code-content !m-0 !border-none !bg-transparent !p-0 !text-inherit">{tokens.map((token, index) => token.type === "text" ? token.value : <span key={index} className={tokenClass(token.type)}>{token.value}</span>)}</code></pre>
   </div>;
 }

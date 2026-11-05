@@ -128,7 +128,7 @@ export const SiteHeader: React.FC<SiteHeaderProps> = ({ currentPath, onNavigate 
           </button>
         </div>
 
-        <nav className="hidden gap-1 overflow-x-auto border-t border-[var(--color-border-soft)] pb-2 pt-2 md:flex" aria-label="Primary navigation">
+        <nav className="hidden flex-wrap gap-1 border-t border-[var(--color-border-soft)] pb-2 pt-2 md:flex" aria-label="Primary navigation">
           {navItems.map((item) => renderNavItem(item))}
         </nav>
       </div>

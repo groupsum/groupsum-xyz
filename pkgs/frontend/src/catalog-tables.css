@@ -1,92 +1,54 @@
-/* Catalog records wrap into additional grid rows instead of widening the viewport. */
-.catalog-wrap-table,
-.catalog-wrap-table thead,
-.catalog-wrap-table tbody {
-  display: block;
-  width: 100%;
-  min-width: 0;
-}
-
-.catalog-wrap-table thead {
-  display: none;
-}
-
-.catalog-wrap-table tr {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  width: 100%;
-  min-width: 0;
-}
-
-.catalog-wrap-table tbody tr + tr {
-  border-top: 1px solid var(--color-border-soft);
-}
-
-.catalog-wrap-table th,
-.catalog-wrap-table td {
-  display: block;
-  min-width: 0;
-  overflow-wrap: anywhere;
-}
-
-.catalog-wrap-table td::before {
-  content: attr(data-label);
-  display: block;
-  margin-bottom: 0.35rem;
-  color: var(--color-ink-muted);
-  font-family: var(--font-mono);
-  font-size: 0.5625rem;
-  font-weight: 600;
-  letter-spacing: 0.06em;
-  line-height: 1rem;
-  text-transform: uppercase;
-}
-
-.catalog-wrap-table tbody td:first-child {
-  grid-column: 1 / -1;
-}
-
-@media (min-width: 64rem) and (max-width: 79.999rem) {
-  .catalog-wrap-table tr {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-  }
-}
-
-@media (min-width: 80rem) {
-  .catalog-wrap-table thead {
-    display: block;
-  }
-
-  .catalog-wrap-table td::before {
-    display: none;
-  }
-
-  .catalog-wrap-table tbody td:first-child {
-    grid-column: auto;
-  }
-
-  .catalog-package-table tr {
-    grid-template-columns:
-      minmax(8rem, 1.25fr)
-      minmax(5rem, 0.65fr)
-      minmax(8rem, 1.2fr)
-      minmax(6rem, 0.85fr)
-      minmax(6rem, 0.8fr)
-      minmax(5rem, 0.65fr)
-      minmax(5rem, 0.65fr)
-      minmax(6rem, 0.8fr)
-      2.5rem;
-  }
-}
-
-/* Repository records always remain conventional one-record table rows. */
-.catalog-repository-table {
+/* Catalog tables stay within the viewport and preserve one table row per record. */
+.catalog-repository-table,
+.catalog-package-table {
   border-collapse: collapse;
   table-layout: fixed;
+  width: 100%;
 }
 
 .catalog-repository-table th,
-.catalog-repository-table td {
+.catalog-repository-table td,
+.catalog-package-table th,
+.catalog-package-table td {
   max-width: 0;
   overflow: hidden;
+}
+
+.catalog-package-table td {
+  vertical-align: middle;
+}
+
+.catalog-package-table :is(th, td):nth-child(1) { width: 45%; }
+.catalog-package-table :is(th, td):nth-child(2) { width: 20%; }
+.catalog-package-table :is(th, td):nth-child(5) { width: 25%; }
+.catalog-package-table :is(th, td):nth-child(9) { width: 10%; }
+
+@media (min-width: 48rem) {
+  .catalog-package-table :is(th, td):nth-child(1) { width: 38%; }
+  .catalog-package-table :is(th, td):nth-child(2) { width: 16%; }
+  .catalog-package-table :is(th, td):nth-child(5) { width: 18%; }
+  .catalog-package-table :is(th, td):nth-child(6) { width: 14%; }
+  .catalog-package-table :is(th, td):nth-child(9) { width: 6%; }
+}
+
+@media (min-width: 64rem) {
+  .catalog-package-table :is(th, td):nth-child(1) { width: 28%; }
+  .catalog-package-table :is(th, td):nth-child(2) { width: 12%; }
+  .catalog-package-table :is(th, td):nth-child(3) { width: 20%; }
+  .catalog-package-table :is(th, td):nth-child(4) { width: 14%; }
+  .catalog-package-table :is(th, td):nth-child(5) { width: 12%; }
+  .catalog-package-table :is(th, td):nth-child(6) { width: 9%; }
+  .catalog-package-table :is(th, td):nth-child(9) { width: 5%; }
+}
+
+@media (min-width: 80rem) {
+  .catalog-package-table :is(th, td):nth-child(1) { width: 20%; }
+  .catalog-package-table :is(th, td):nth-child(2) { width: 9%; }
+  .catalog-package-table :is(th, td):nth-child(3) { width: 18%; }
+  .catalog-package-table :is(th, td):nth-child(4) { width: 12%; }
+  .catalog-package-table :is(th, td):nth-child(5) { width: 11%; }
+  .catalog-package-table :is(th, td):nth-child(6) { width: 8%; }
+  .catalog-package-table :is(th, td):nth-child(7) { width: 9%; }
+  .catalog-package-table :is(th, td):nth-child(8) { width: 10%; }
+  .catalog-package-table :is(th, td):nth-child(9) { width: 3%; }
 }

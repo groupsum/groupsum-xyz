@@ -97,12 +97,12 @@ export function MarkdownRenderer({ content }: MarkdownRendererProps) {
           const dataRows = activeRows.slice(1);
 
           elements.push(
-            <div key={`table-${key}`} className="my-6 overflow-x-auto border border-[var(--color-border-soft)] rounded-[var(--radius-md)] shadow-[var(--shadow-soft)] bg-[var(--color-surface)]">
-              <table className="w-full text-left border-collapse text-xs">
+            <div key={`table-${key}`} className="my-6 min-w-0 overflow-hidden rounded-[var(--radius-md)] border border-[var(--color-border-soft)] bg-[var(--color-surface)] shadow-[var(--shadow-soft)]">
+              <table className="w-full table-fixed border-collapse text-left text-xs">
                 <thead>
                   <tr className="bg-[var(--color-canvas)] border-b border-[var(--color-border-muted)]">
                     {headers.map((col, i) => (
-                      <th key={i} className="p-3 font-semibold text-ink uppercase tracking-wider">
+                      <th key={i} className="min-w-0 break-words p-3 font-semibold uppercase tracking-wider text-ink">
                         {parseInlineMarkdown(col.trim())}
                       </th>
                     ))}
@@ -112,7 +112,7 @@ export function MarkdownRenderer({ content }: MarkdownRendererProps) {
                   {dataRows.map((row, rIndex) => (
                     <tr key={rIndex} className="hover:bg-[var(--color-canvas)]/30 transition-colors">
                       {row.map((col, cIndex) => (
-                        <td key={cIndex} className="p-3 text-ink-muted leading-relaxed">
+                        <td key={cIndex} className="min-w-0 break-words p-3 leading-relaxed text-ink-muted">
                           {parseInlineMarkdown(col.trim())}
                         </td>
                       ))}
@@ -254,7 +254,7 @@ export function MarkdownRenderer({ content }: MarkdownRendererProps) {
         flushBlock(`${lineIndex}`);
         const mathContent = trimmed.slice(2, -2).trim();
         elements.push(
-          <div key={lineIndex} className="my-6 p-4 rounded-[var(--radius-sm)] border border-[var(--color-border-soft)] bg-[var(--color-surface)] flex items-center justify-center font-mono text-xs overflow-x-auto">
+          <div key={lineIndex} className="my-6 flex min-w-0 items-center justify-center overflow-hidden break-words rounded-[var(--radius-sm)] border border-[var(--color-border-soft)] bg-[var(--color-surface)] p-4 font-mono text-xs">
             {mathContent}
           </div>
         );

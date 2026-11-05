@@ -270,7 +270,7 @@ footer p {
   background: #0f1724;
   border: 1px solid rgba(255, 255, 255, 0.12);
   padding: 16px;
-  overflow-x: auto;
+  overflow-x: clip;
 }
 
 .article-content blockquote {
