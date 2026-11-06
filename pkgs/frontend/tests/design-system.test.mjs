@@ -62,3 +62,10 @@ test("repository rendering is not gated on provenance or snapshot loading", () =
   assert.ok(observations.includes("enabled: open"));
   assert.ok(observations.includes("AbortSignal.timeout(15_000)"));
 });
+
+test("repository identity badges and section headings remain bounded at enlarged text sizes", () => {
+  const visuals = source("src/features/catalog/CatalogVisuals.tsx");
+  assert.ok(visuals.includes("inline-flex min-w-0 max-w-full w-fit"));
+  assert.ok(visuals.includes("flex-[1_1_34rem] flex-wrap"));
+  assert.ok(source("src/features/catalog/RepositoryImplementationPanels.tsx").includes("font-bold text-ink [overflow-wrap:anywhere]"));
+});

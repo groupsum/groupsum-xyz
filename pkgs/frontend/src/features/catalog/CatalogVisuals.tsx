@@ -58,7 +58,7 @@ export function CatalogPill({ children, tone = "neutral", Icon, compact = false 
   const sizing = compact
     ? "min-h-5 max-w-full gap-1 px-1.5 py-0.5 text-[10px] leading-tight"
     : "min-h-6 gap-1.5 px-2.5 py-1 text-[11px]";
-  return <span className={`type-ui-label inline-flex w-fit cursor-default select-none items-center rounded-[3px] border ${sizing} ${tones[tone]}`}>{Icon && <Icon className="h-3 w-3 shrink-0" aria-hidden="true" />}{children}</span>;
+  return <span className={`type-ui-label inline-flex min-w-0 max-w-full w-fit cursor-default select-none items-center whitespace-normal rounded-[3px] border [overflow-wrap:anywhere] ${sizing} ${tones[tone]}`}>{Icon && <Icon className="h-3 w-3 shrink-0" aria-hidden="true" />}{children}</span>;
 }
 
 export type MetricItem = { label: string; value: number | string; icon?: CatalogIcon; note?: string; tone?: "accent" | "signal"; color?: string };
@@ -198,9 +198,9 @@ export function RecordIdentityCard({
 }) {
   return <header className="record-header space-y-4">
     <div className="flex flex-wrap items-start justify-between gap-5">
-      <div className="flex min-w-0 flex-[1_1_34rem] items-start gap-4">
+      <div className="flex min-w-0 flex-[1_1_34rem] flex-wrap items-start gap-4">
         <div className="grid h-14 w-14 shrink-0 place-items-center rounded-[var(--radius-md)] border border-[var(--color-border-accent-soft)] bg-[color-mix(in_srgb,var(--color-accent)_8%,var(--color-surface))] text-accent"><Icon className="h-7 w-7" aria-hidden="true" /></div>
-        <div className="min-w-0 space-y-2">
+        <div className="min-w-0 flex-[1_1_18rem] space-y-2">
           <div className="flex flex-wrap items-center gap-2"><CatalogPill tone="accent">{eyebrow}</CatalogPill>{pills.map((pill) => <CatalogPill key={pill.label} tone={pill.tone}>{pill.label}</CatalogPill>)}</div>
           <PageTitle className="break-words">{title}</PageTitle>
           <p className="type-body-md max-w-4xl text-ink-muted">{summary}</p>
@@ -214,7 +214,7 @@ export function RecordIdentityCard({
 
 export function SurfaceCard({ title, Icon = CircleDot, children, intro, id }: { title: string; Icon?: CatalogIcon; children: React.ReactNode; intro?: string; id?: string }) {
   return <section id={id} className="document-section scroll-mt-28 space-y-3">
-    <div className="space-y-1"><SectionTitle className="flex items-center gap-2"><Icon className="h-4.5 w-4.5 text-accent" aria-hidden="true" />{title}</SectionTitle>{intro && <p className="type-body-sm text-ink-muted">{intro}</p>}</div>
+    <div className="space-y-1"><SectionTitle className="flex min-w-0 items-start gap-2 [overflow-wrap:anywhere]"><Icon className="h-4.5 w-4.5 shrink-0 text-accent" aria-hidden="true" />{title}</SectionTitle>{intro && <p className="type-body-sm text-ink-muted">{intro}</p>}</div>
     {children}
   </section>;
 }
