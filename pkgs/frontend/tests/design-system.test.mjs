@@ -40,3 +40,10 @@ test("remote fonts cannot cause a late layout-changing swap", () => {
   assert.ok(html.includes("display=optional"));
   assert.ok(!html.includes("display=swap"));
 });
+
+test("ownership breadcrumbs constrain long repository names at enlarged text sizes", () => {
+  const navigation = source("src/features/catalog/CatalogRecordNavigation.tsx");
+  assert.ok(navigation.includes('className="flex min-w-0 max-w-full items-center gap-1.5"'));
+  assert.ok(navigation.includes('className="min-w-0 [overflow-wrap:anywhere] font-medium'));
+  assert.ok(navigation.includes('className="min-w-0 [overflow-wrap:anywhere] font-semibold'));
+});

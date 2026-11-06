@@ -122,11 +122,11 @@ export function CatalogRecordNavigation({
       <ol className="flex flex-wrap items-center gap-x-2 gap-y-2">
         {crumbs.map((crumb, index) => <React.Fragment key={`${crumb.label}-${index}`}>
           {index > 0 && <li aria-hidden="true" className="text-[var(--color-border-muted)]"><ChevronRight className="h-3.5 w-3.5" /></li>}
-          <li className="flex min-w-0 items-center gap-1.5">
+          <li className="flex min-w-0 max-w-full items-center gap-1.5">
             <crumb.Icon className={`h-3.5 w-3.5 shrink-0 ${crumb.color}`} aria-hidden="true" />
             {crumb.route
-              ? <a href={crumb.route} onClick={(event) => { event.preventDefault(); onNavigate(crumb.route!); }} className="break-words font-medium hover:text-ink hover:underline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent">{crumb.label}</a>
-              : <span className="break-words font-semibold text-ink" aria-current="page">{crumb.label}{crumb.detail && <span className="font-normal text-ink-muted"> ({crumb.detail})</span>}</span>}
+              ? <a href={crumb.route} onClick={(event) => { if (event.button === 0 && !event.metaKey && !event.ctrlKey && !event.shiftKey && !event.altKey) { event.preventDefault(); onNavigate(crumb.route!); } }} className="min-w-0 [overflow-wrap:anywhere] font-medium hover:text-ink hover:underline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent">{crumb.label}</a>
+              : <span className="min-w-0 [overflow-wrap:anywhere] font-semibold text-ink" aria-current="page">{crumb.label}{crumb.detail && <span className="font-normal text-ink-muted"> ({crumb.detail})</span>}</span>}
           </li>
         </React.Fragment>)}
       </ol>
