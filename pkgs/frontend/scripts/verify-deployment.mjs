@@ -1,3 +1,5 @@
+import { hasPageAssetMarker } from "./page-assets.mjs";
+
 const baseUrl = (process.env.DEPLOY_VERIFY_URL || "https://groupsum.xyz").replace(/\/$/, "");
 const expected = {
   repositories: 68,
@@ -28,11 +30,19 @@ async function fetchText(pathname) {
   return response.text();
 }
 
-async function requirePageAssetMarker(html, marker, label) {
-  const assets = [...html.matchAll(/(?:src|href)="([^"]+\.js)"/g)].map((match) => match[1]);
-  for (const asset of new Set(assets)) {
-    if ((await fetchText(asset)).includes(marker)) return;
+const pageAssetTexts = new Map();
+function fetchPageAsset(pathname) {
+  if (!pageAssetTexts.has(pathname)) {
+    pageAssetTexts.set(pathname, fetchText(pathname).catch((error) => {
+      pageAssetTexts.delete(pathname);
+      throw error;
+    }));
   }
+  return pageAssetTexts.get(pathname);
+}
+
+async function requirePageAssetMarker(html, marker, label) {
+  if (await hasPageAssetMarker(html, marker, baseUrl, fetchPageAsset)) return;
   throw new Error(`${label} component is missing from emitted page assets`);
 }
 

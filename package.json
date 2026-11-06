@@ -25,7 +25,7 @@
     "verify:design": "node pkgs/frontend/scripts/verify-design-system.mjs",
     "verify:packages": "node pkgs/frontend/scripts/verify-package-inspector.mjs",
     "test:structured-data": "node --test pkgs/frontend/tests/page-jsonld.test.mjs",
-    "test:catalog-routes": "node --test pkgs/frontend/tests/catalog-detail-route.test.mjs",
+    "test:catalog-routes": "node --test pkgs/frontend/tests/catalog-detail-route.test.mjs pkgs/frontend/scripts/page-assets.test.mjs",
     "validate:source-layout": "node scripts/validate-source-layout.mjs",
     "verify:deployment": "node pkgs/frontend/scripts/verify-deployment.mjs",
     "lighthouse": "lhci autorun --config=pkgs/frontend/lighthouserc.cjs",
