@@ -47,3 +47,9 @@ test("ownership breadcrumbs constrain long repository names at enlarged text siz
   assert.ok(navigation.includes('className="min-w-0 [overflow-wrap:anywhere] font-medium'));
   assert.ok(navigation.includes('className="min-w-0 [overflow-wrap:anywhere] font-semibold'));
 });
+
+test("catalog sort and filter selects shrink within their wrapping toolbar", () => {
+  const toolbar = source("src/features/catalog/CatalogExplorerUI.tsx");
+  assert.ok(toolbar.includes('className="relative ml-auto flex min-w-0 max-w-full items-center gap-1"'));
+  assert.equal((toolbar.match(/type-control min-w-0 max-w-full w-full rounded-lg/g) || []).length, 2);
+});

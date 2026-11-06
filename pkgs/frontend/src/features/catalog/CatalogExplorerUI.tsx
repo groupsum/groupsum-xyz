@@ -15,9 +15,9 @@ type Option = { label: string; value: string };
 
 function SelectFilter({ label, value, options, onChange }: { label: string; value: string; options: string[]; onChange: (value: string) => void }) {
   if (!options.length) return null;
-  return <label>
+  return <label className="min-w-0 max-w-full">
     <span className="sr-only">{label}</span>
-    <select value={value} onChange={(event) => onChange(event.target.value)} className="type-control w-full rounded-lg border border-[var(--color-border-soft)] bg-surface-raised px-3 py-2 text-ink focus:border-accent focus:outline-none focus:ring-2 focus:ring-accent">
+    <select value={value} onChange={(event) => onChange(event.target.value)} className="type-control min-w-0 max-w-full w-full rounded-lg border border-[var(--color-border-soft)] bg-surface-raised px-3 py-2 text-ink focus:border-accent focus:outline-none focus:ring-2 focus:ring-accent">
       <option value="">{label}</option>
       {options.map((option) => <option key={option} value={option}>{option}</option>)}
     </select>
@@ -39,10 +39,10 @@ export function ExplorerFilterToolbar({ filters, onChange, owners = [], ecosyste
       <SelectFilter label="All Ecosystems" value={filters.ecosystem} options={ecosystems} onChange={(value) => update({ ecosystem: value })} />
       <SelectFilter label="All Publication States" value={filters.publication} options={publications} onChange={(value) => update({ publication: value })} />
       <SelectFilter label="All Resource Types" value={filters.resourceType} options={resourceTypes} onChange={(value) => update({ resourceType: value })} />
-      <label className="relative ml-auto flex items-center gap-1">
-        <ArrowUpDown className="h-3.5 w-3.5 text-ink-muted" aria-hidden="true" />
+      <label className="relative ml-auto flex min-w-0 max-w-full items-center gap-1">
+        <ArrowUpDown className="h-3.5 w-3.5 shrink-0 text-ink-muted" aria-hidden="true" />
         <span className="sr-only">Sort records</span>
-        <select value={filters.sort} onChange={(event) => update({ sort: event.target.value })} className="type-control rounded-lg border border-[var(--color-border-soft)] bg-surface-raised px-3 py-2 text-ink focus:border-accent focus:outline-none focus:ring-2 focus:ring-accent">
+        <select value={filters.sort} onChange={(event) => update({ sort: event.target.value })} className="type-control min-w-0 max-w-full w-full rounded-lg border border-[var(--color-border-soft)] bg-surface-raised px-3 py-2 text-ink focus:border-accent focus:outline-none focus:ring-2 focus:ring-accent">
           {sortOptions.map((option) => <option key={option.value} value={option.value}>Sort: {option.label}</option>)}
         </select>
       </label>
