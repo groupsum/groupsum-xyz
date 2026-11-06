@@ -53,3 +53,12 @@ test("catalog sort and filter selects shrink within their wrapping toolbar", () 
   assert.ok(toolbar.includes('className="relative ml-auto flex min-w-0 max-w-full items-center gap-1"'));
   assert.equal((toolbar.match(/type-control min-w-0 max-w-full w-full rounded-lg/g) || []).length, 2);
 });
+
+test("repository rendering is not gated on provenance or snapshot loading", () => {
+  const detail = source("src/features/catalog/CatalogDetail.tsx");
+  assert.ok(!detail.includes("Promise.all(["));
+  assert.ok(detail.indexOf('setState("ready");', detail.indexOf("const repositoryRecord")) < detail.indexOf('void getEntityMetrics'));
+  const observations = source("src/features/catalog/RepositorySourceObservations.tsx");
+  assert.ok(observations.includes("enabled: open"));
+  assert.ok(observations.includes("AbortSignal.timeout(15_000)"));
+});

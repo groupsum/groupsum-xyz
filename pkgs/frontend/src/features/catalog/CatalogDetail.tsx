@@ -1,5 +1,5 @@
 import { lazy, Suspense, useEffect, useState } from "react";
-import { getCatalogSnapshots, getEntityMetrics, getEntityObservations, type CatalogSnapshot, type EntityGraph, getCatalogPackageMember, getCatalogReleaseMember, getCatalogRepositoryMember, getCatalogResourceMember, getCatalogTechnologyMember } from "../../api/catalog";
+import { getCatalogSnapshots, getEntityMetrics, type CatalogSnapshot, type EntityGraph, getCatalogPackageMember, getCatalogReleaseMember, getCatalogRepositoryMember, getCatalogResourceMember, getCatalogTechnologyMember } from "../../api/catalog";
 import { BadgeCheck, Code2, ExternalLink, FileCode2, GitBranch, Package, ShieldCheck } from "lucide-react";
 import { EntityOwnership } from "./EntityIdentity";
 import { ContextRailCard, RecordIdentityCard } from "./CatalogVisuals";
@@ -9,6 +9,7 @@ import { CatalogRecordNavigation } from "./CatalogRecordNavigation";
 import { PackageDetail, ReleaseDetail, RepositoryDetail, ResourceDetail, TechnologyDetail } from "./CatalogMemberDetails";
 import { PackageIdentityCard } from "./PackageIdentityCard";
 import { CatalogPageMetadata } from "./CatalogPageMetadata";
+import { RepositorySourceObservations } from "./RepositorySourceObservations";
 import { datasetOrder, formatDate, humanLabel, isCurrentPageLink, metricItems, recordDescription, recordTitle, resourceIcon, valueRecord, valueRecords, type CatalogRecord, type DatasetName, type DetailDatasetName } from "./CatalogRecordShared";
 import { catalogDetailSegments } from "./catalog-detail-route.mjs";
 
@@ -104,19 +105,18 @@ export function PublicCatalogDetail({ path, onNavigate }: { path: string; onNavi
           const implementation = valueRecord(model.implementation);
           const legal = valueRecord(model.legal);
           const repositoryRecord = { ...item, id: String(item.id || routeKey), kind: "repository", entity_graph: model.graph as EntityGraph | null, linked_sections: model.linked_sections, packages: implementation.packages, releases: implementation.releases, languages: implementation.languages, technologies: implementation.technologies, ssot_governance: model.governance, legal_observations: valueRecords(legal.observations), license_expression: legal.license_expression, license_status: legal.status } as CatalogRecord;
-          return Promise.all([
-            getEntityMetrics("source.repository", String(repositoryRecord.id), controller.signal),
-            getCatalogSnapshots(controller.signal),
-            getEntityObservations("source.repository", String(repositoryRecord.id), controller.signal),
-          ])
-            .then(([analytics, snapshotCollection, observations]) => {
-              const availableSnapshots = snapshotCollection.snapshots;
-              const selectedSnapshot = availableSnapshots.find((snapshot) => snapshot.is_current) || availableSnapshots[0];
-              setSnapshots(availableSnapshots);
-              setRecord({ ...repositoryRecord, analytics_points: analytics.points, catalog_observations: observations.observations, selected_snapshot_id: selectedSnapshot?.snapshot_id } as CatalogRecord);
-            })
-            .catch(() => setRecord(repositoryRecord))
-            .finally(() => setState("ready"));
+          setRecord(repositoryRecord);
+          setState("ready");
+          void getEntityMetrics("source.repository", String(repositoryRecord.id), controller.signal)
+            .then((analytics) => { if (!controller.signal.aborted) setRecord((current) => current?.id === repositoryRecord.id ? { ...current, analytics_points: analytics.points } : current); })
+            .catch(() => { /* Keep the current source projection visible when analytics are unavailable. */ });
+          void getCatalogSnapshots(controller.signal).then((snapshotCollection) => {
+            if (controller.signal.aborted) return;
+            const availableSnapshots = snapshotCollection.snapshots;
+            const selectedSnapshot = availableSnapshots.find((snapshot) => snapshot.is_current) || availableSnapshots[0];
+            setSnapshots(availableSnapshots);
+            setRecord((current) => current?.id === repositoryRecord.id ? { ...current, selected_snapshot_id: selectedSnapshot?.snapshot_id } : current);
+          }).catch(() => { /* Snapshot metadata is supplementary, not a page-loading prerequisite. */ });
         });
     request.catch((error: Error) => { if (error.name !== "AbortError") setState(error.message.includes("404") ? "missing" : "error"); });
     return () => controller.abort();
@@ -159,6 +159,7 @@ export function PublicCatalogDetail({ path, onNavigate }: { path: string; onNavi
         <ContextRailCard title="Source & observation boundary" Icon={ShieldCheck}><div className="space-y-3 text-xs leading-relaxed text-ink-muted"><p><strong className="text-ink">Observed:</strong> {formatDate(record.observed_at)}</p>{record.claim_boundary && <div className="rounded-[var(--radius-sm)] border border-[var(--color-border-soft)] bg-canvas p-3"><strong className="mb-1 block text-ink">Explicit source boundary</strong>{String(record.claim_boundary)}</div>}{primaryUrl && <a href={String(primaryUrl)} target="_blank" rel="noreferrer" className="inline-flex min-h-10 items-center gap-1 font-mono font-semibold text-accent hover:underline">Primary source <ExternalLink className="h-3.5 w-3.5" /></a>}</div></ContextRailCard>
         <ContextRailCard title="Ownership & canonical path" Icon={GitBranch}><EntityOwnership graph={record.entity_graph} onNavigate={onNavigate} /></ContextRailCard>
         {sourceObservations.length > 0 && <ContextRailCard title="Source observations" Icon={BadgeCheck}><ul className="divide-y divide-[var(--color-border-soft)]">{sourceObservations.map((item, index) => <li key={`${item.url || item.kind}-${index}`} className="py-3 text-xs">{item.url ? <a href={item.url} target="_blank" rel="noreferrer" className="inline-flex items-center gap-1 break-words font-mono font-semibold text-accent hover:underline">{humanLabel(item.kind || "source")}<ExternalLink className="h-3.5 w-3.5" /></a> : <span className="text-ink-muted">{humanLabel(item.kind || "source")} · observed {formatDate(item.observed_at)}</span>}</li>)}</ul></ContextRailCard>}
+        {record.kind === "repository" && <RepositorySourceObservations key={record.id} entityId={record.id} />}
       </aside>}
       </div>
     </article>
