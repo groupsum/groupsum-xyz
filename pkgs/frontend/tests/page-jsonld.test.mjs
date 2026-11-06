@@ -28,6 +28,9 @@ test("resource and contributor pages select evidence-backed page-family types", 
   const contributor = buildPageJsonLd({ ...base, schemaFamily: "contributor-profile", name: "Dev", login: "dev", profileUrl: "https://github.com/dev" });
   assert.ok(types(contributor).includes("ProfilePage"));
   assert.ok(types(contributor).includes("Person"));
+  const bot = buildPageJsonLd({ ...base, schemaFamily: "contributor-profile", name: "Bot", account_type: "Bot" });
+  assert.ok(types(bot).includes("SoftwareApplication"));
+  assert.ok(!types(bot).includes("Person"));
   assert.equal(JSON.stringify(contributor).includes("[object Object]"), false);
   const dataset = buildPageJsonLd({ ...base, schemaFamily: "catalog-resource", resource_type: "data.dataset", sourceUrl: "https://example.test/data.json" });
   assert.ok(types(dataset).includes("Dataset"));

@@ -3,6 +3,21 @@ import type { RecordCollectionPageModel } from "./catalog.generated";
 
 export * from "./catalog.generated";
 
+export type ContributorRecord = CatalogRecord & { name: string; provider: string; login?: string; route: string; account_type: string; repository_count: number; contributions: number; observed_at?: string; avatar_url?: string; url?: string };
+export type ContributorCollection = { kind: "contributor_collection"; count: number; page: number; page_count: number; account_types: string[]; records: ContributorRecord[] };
+export async function getContributors(query: Record<string, string | number>, signal?: AbortSignal): Promise<ContributorCollection> {
+  const response = await catalogFetch(`/api/v1/contributors?${new URLSearchParams(Object.entries(query).map(([key, value]) => [key, String(value)]))}`, { signal });
+  if (!response.ok) throw new Error(`Contributor directory response ${response.status}`);
+  return response.json();
+}
+export type PackageRelationship = Record<string, unknown> & { id: string; name: string; ecosystem: string; scope: string; optional: boolean; resolution: "resolved" | "ambiguous" | "external" | "unresolved"; package?: { id: string; name: string; route: string; repository?: string }; candidates: Array<{ id: string; name: string; route: string; repository?: string }> };
+export type PackageRelationships = { kind: string; count: number; page: number; page_count: number; dependency_count: number; dependent_count: number; facets: { scope: Record<string, number>; resolution: Record<string, number> }; records: PackageRelationship[]; coverage: string };
+export async function getPackageRelationships(routeKey: string, query: Record<string, string | number>, signal?: AbortSignal): Promise<PackageRelationships> {
+  const response = await catalogFetch(`/api/v1/catalog/packages/${encodeURIComponent(routeKey)}/relationships?${new URLSearchParams(Object.entries(query).map(([key, value]) => [key, String(value)]))}`, { signal });
+  if (!response.ok) throw new Error(`Package relationships response ${response.status}`);
+  return response.json();
+}
+
 export type CatalogRecord = Record<string, unknown> & { id: string };
 export type RepositorySummary = CatalogRecord;
 export type PackageSummary = CatalogRecord;

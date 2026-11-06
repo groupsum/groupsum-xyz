@@ -19,6 +19,8 @@ os.environ["GROUPSUM_ANALYTICS_DSN"] = str(directory / "metrics.duckdb")
 from groupsum_catalog_api.app import app  # noqa: E402
 from groupsum_catalog_api.tables.package import Package  # noqa: E402
 from groupsum_catalog_api.tables.repository import Repository  # noqa: E402
+from groupsum_catalog_api.tables.resources.party.person import PartyPerson  # noqa: E402
+from groupsum_catalog_api.tables.association import Association  # noqa: E402
 
 with Session(create_engine(f"sqlite:///{database}")) as session:
     for owner, name, stars, count in [
@@ -40,6 +42,38 @@ with Session(create_engine(f"sqlite:///{database}")) as session:
                 "latest_version": "1.2.3",
                 "publication_status": status,
                 "published": status == "published",
+                "observed_at": "2026-11-06T00:00:00Z",
+                "manifest_path": "pkgs/fixture/pyproject.toml",
+                "license_expression": "MIT",
+                "dependencies": (
+                    [
+                        {
+                            "name": "package-01-with-a-long-name-for-truncation",
+                            "target_id": "package:fixture:1",
+                            "requirement": ">=1",
+                            "scope": "dependencies",
+                        }
+                    ]
+                    + [
+                        {
+                            "name": f"external-{i:03}",
+                            "scope": "dev" if i % 2 else "dependencies",
+                            "requirement": {"version": ">=1", "optional": bool(i % 2)},
+                        }
+                        for i in range(130)
+                    ]
+                )
+                if index == 0
+                else [],
+                "dependents": [
+                    {
+                        "name": "package-00-with-a-long-name-for-truncation",
+                        "source_id": "package:fixture:0",
+                        "requirement": ">=1",
+                    }
+                ]
+                if index == 1
+                else [],
             }
             session.add(
                 Package(
@@ -66,7 +100,53 @@ with Session(create_engine(f"sqlite:///{database}")) as session:
                     "package_ids": ids,
                     "metrics": {"stars": stars},
                     "pushed_at": "2026-11-06T00:00:00Z",
+                    "history": {
+                        "stars": [
+                            {"observed_at": "2026-10-01T00:00:00Z", "value": 5},
+                            {"observed_at": "2026-11-01T00:00:00Z", "value": 0},
+                            {"observed_at": "2026-11-06T00:00:00Z", "value": stars},
+                        ]
+                    },
+                    "commit_activity": [
+                        {"date": "2026-11-01", "count": 0},
+                        {"date": "2026-11-03", "count": 2},
+                        {"date": "2026-11-06", "count": 7},
+                    ],
+                    "contributors": [{"id": "42", "login": "fixture-dev", "contributions": 9}],
                 },
+            )
+        )
+    session.add(
+        PartyPerson(
+            id="person:fixture",
+            name="Fixture Developer",
+            provider="github",
+            login="fixture-dev",
+            account_type="User",
+            anonymous=False,
+        )
+    )
+    session.add(
+        PartyPerson(
+            id="person:bot",
+            name="Fixture Bot",
+            provider="github",
+            login="fixture[bot]",
+            account_type="Bot",
+            anonymous=False,
+        )
+    )
+    for index, identity in enumerate(["person:fixture", "person:bot"]):
+        session.add(
+            Association(
+                id=f"contribution:{index}",
+                source_type="source.repository",
+                source_id="repository:fixture/multi-package",
+                relationship_type="contributed_by",
+                target_type="party.person",
+                target_id=identity,
+                role="contributor",
+                attributes={"contributions": 9 - index},
             )
         )
     session.commit()

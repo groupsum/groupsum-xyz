@@ -28,17 +28,7 @@ const catalogRepositories = readCatalogDataset("repositories");
 const catalogPackages = readCatalogDataset("packages");
 const catalogResources = readCatalogDataset("resources");
 const catalogTechnologies = readCatalogDataset("technologies");
-const catalogContributors = [...catalogRepositories.reduce((people, repository) => {
-  for (const contributor of repository.contributors || []) {
-    const login = contributor.login || contributor.name;
-    if (!login) continue;
-    const key = `github:${String(login).toLowerCase()}`;
-    const current = people.get(key) || { ...contributor, provider: "github", repositories: [] };
-    current.repositories.push({ name: repository.full_name, route: repository.route, contributions: Number(contributor.contributions || 0) });
-    people.set(key, current);
-  }
-  return people;
-}, new Map()).values()];
+const catalogContributors = readCatalogDataset("contributors");
 
 const pages = [
   ["/", "GroupSum | Portfolio, Solutions, and Services", "GroupSum builds structured software, platforms, and services for teams that need clear decisions.", "website"],
@@ -57,6 +47,7 @@ const pages = [
   ["/terms-of-service/", "Terms of service | GroupSum", "GroupSum terms of service.", "website"]
 ].map(([route, title, description, type]) => ({ route, title, description, type, url: absolute(route) }));
 pages.push(
+  { route: "/contributors/", title: "Contributors | GroupSum catalog", description: "People and automation observed contributing to catalog repositories.", type: "website", url: absolute("/contributors/"), schemaFamily: "catalog-collection", itemCount: catalogContributors.length, items: catalogContributors.slice(0, 50), downloadUrl: `${root}/catalog/site/contributors.json` },
   { route: "/catalog/repositories/", title: "Repositories | GroupSum catalog", description: "Public source repositories with repository-owned activity, packages, governance, and typed resources.", type: "website", url: absolute("/catalog/repositories/"), schemaFamily: "catalog-collection", itemCount: catalogRepositories.length, items: catalogRepositories, downloadUrl: `${root}/catalog/site/repositories.json` },
   { route: "/catalog/packages/", title: "Packages | GroupSum catalog", description: "Manifest and registry-backed packages with releases, dependencies, dependents, license, and notice evidence.", type: "website", url: absolute("/catalog/packages/"), schemaFamily: "catalog-collection", itemCount: catalogPackages.length, items: catalogPackages, downloadUrl: `${root}/catalog/site/packages.json` },
   { route: "/catalog/resources/", title: "Typed resources | GroupSum catalog", description: "Public APIs, documentation, demos, examples, websites, showcases, and user interfaces attached to their source owners.", type: "website", url: absolute("/catalog/resources/"), schemaFamily: "catalog-collection", itemCount: catalogResources.length, items: catalogResources, downloadUrl: `${root}/catalog/site/resources.json` },
@@ -121,7 +112,7 @@ const catalogDetailRecords = [
   ...catalogPackages.map((item) => ({ ...item, route: normalizePath(item.route), url: absolute(item.route), title: `${item.display_name} package | GroupSum catalog`, description: cleanTrim(item.description), type: "website", modified: item.observed_at, schemaFamily: "catalog-package", sourceUrl: item.registry_url || item.source_url })),
   ...catalogResources.map((item) => { const displayName = item.display_name || item.title || item.name || item.source_key || item.id; return { ...item, display_name: displayName, route: normalizePath(item.route), url: absolute(item.route), title: `${displayName} ${item.resource_type} | GroupSum catalog`, description: cleanTrim(item.description || item.summary || item.statement || `Observed ${item.resource_type} resource.`), type: "website", modified: item.observed_at, schemaFamily: "catalog-resource", sourceUrl: item.source_url || item.url }; }),
   ...catalogTechnologies.map((item) => ({ ...item, route: normalizePath(item.route), url: absolute(item.route), title: `${item.name} technology evidence | GroupSum catalog`, description: `${item.name} was observed through GitHub language data in ${item.repository_count} public repositories.`, type: "website", modified: item.observed_at, schemaFamily: "catalog-technology" })),
-  ...catalogContributors.map((item) => { const route = `/contributors/github/${encodeURIComponent(item.login || item.name)}/`; return { ...item, route, url: absolute(route), title: `${item.name || item.login} contributor | GroupSum catalog`, description: `GitHub contributor observed across ${item.repositories.length} public GroupSum catalog repositories.`, type: "profile", modified: item.observed_at, schemaFamily: "contributor-profile", profileUrl: item.url }; })
+  ...catalogContributors.map((item) => { const route = normalizePath(item.route); return { ...item, route, url: absolute(route), title: `${item.name || item.login} contributor | GroupSum catalog`, description: `${item.account_type} contributor observed across ${item.repositories.length} public catalog repositories.`, type: "profile", modified: item.observed_at, schemaFamily: "contributor-profile", profileUrl: item.url }; })
 ];
 detailRecords.push(...catalogDetailRecords);
 const articleRecords = articles.map((article) => { const route = normalizePath(article.legacyPath); return { route, url: article.canonicalUrl || absolute(route), title: cleanTrim(article.title, 160), description: cleanTrim(article.excerptHtml || article.contentHtml, 180) || "Legacy GroupSum article.", type: "article", image: article.featuredImage ? { ...defaultImage, url: article.featuredImage } : defaultImage, published: article.date, modified: article.modified, author: article.authorName, section: article.categories?.[0], tags: article.tags || [] }; });

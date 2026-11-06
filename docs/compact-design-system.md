@@ -90,7 +90,21 @@ budgets. Passing a bundle budget is not a field Core Web Vitals measurement.
 
 ## Delivery and rollback
 
-Frontend-only change; no database migration. Run build, tests and browser matrix,
+Contributor pages use the shared PartyPerson/repository-edge projection for API
+and static HTML. Bot profiles are labeled as automation, not people. Package
+relationships are resolved within the current catalog and use canonical routes;
+external and ambiguous requirements remain explicit. No new database tables.
+
+Activity uses timestamp-positioned observation ticks and zero-based daily bars,
+with missing observations preserved. Its lazy inspector supports keyboard/touch
+scrubbing, signed interval changes and exact-value tables. Package detail has one
+identity/legal header and a paginated Dependencies/Dependents tabbed table.
+
+Run `verify:catalog-experience` against the isolated Tigrbl fixture for six-theme,
+four-width contributor, package round-trip, chart and 200% text checks. The
+collection-cell inspectors do not request relationship records while closed.
+
+No database migration. Run build, tests and browser matrix,
 then deploy the committed source with the existing finalized API snapshot via
 Wyrmctl. Wait for public workflow verification. Roll back by deploying the prior
 verified source SHA with that same immutable snapshot; do not roll back data.

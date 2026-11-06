@@ -79,6 +79,22 @@ export interface paths {
         patch?: never;
         trace?: never;
     };
+    "/api/v1/catalog/packages/{route_key}/relationships": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get: operations["Package.package_relationships"];
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
     "/api/v1/catalog/releases/{route_key}": {
         parameters: {
             query?: never;
@@ -1349,6 +1365,47 @@ export interface operations {
             };
         };
     };
+    "Package.package_relationships": {
+        parameters: {
+            query?: {
+                id?: string;
+                ecosystem?: string;
+                name?: string;
+                registry_url?: string;
+                source_url?: string;
+                manifest_path?: string;
+                package_kind?: string;
+                private?: boolean;
+                description?: string;
+                latest_version?: string;
+                published?: string;
+                publication_status?: string;
+                route_key?: string;
+                license_expression?: string;
+                license_status?: string;
+                published_at?: string;
+                observed_at?: string;
+                source_payload?: string;
+            };
+            header?: never;
+            path: {
+                route_key: string;
+            };
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description Successful Response */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["PublicResponse"][];
+                };
+            };
+        };
+    };
     "Association.catalog_release": {
         parameters: {
             query?: {
@@ -1658,7 +1715,7 @@ export interface operations {
                     [name: string]: unknown;
                 };
                 content: {
-                    "application/json": unknown;
+                    "application/json": components["schemas"]["PublicResponse"][];
                 };
             };
         };

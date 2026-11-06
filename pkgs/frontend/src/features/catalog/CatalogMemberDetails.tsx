@@ -1,4 +1,6 @@
-import React, { useEffect, useMemo, useState } from "react";
+import React, { lazy, Suspense, useEffect, useMemo, useState } from "react";
+import { CatalogLink } from "./CatalogLink";
+const PackageRelationships = lazy(() => import("./PackageRelationships"));
 import type { RepositorySignals } from "../../api/catalog";
 import { Activity, ArrowLeft, ArrowRight, BadgeCheck, BookOpen, Boxes, Braces, CalendarDays, CircleDot, Code2, ExternalLink, FileCode2, GitBranch, Globe2, Package, Scale, ServerCog, ShieldCheck, Users } from "lucide-react";
 import { RepositorySignalStrip } from "./RepositorySignals";
@@ -54,7 +56,7 @@ export function RepositoryDetail({ record, onNavigate }: { record: CatalogRecord
             const href = String(contributor.url || "");
             return <li key={String(contributor.id || contributor.login || contributor.name || index)} className="flex min-w-0 items-center gap-3 rounded-[var(--radius-md)] border border-[var(--color-border-soft)] bg-[var(--color-surface-raised)] p-3">
               <span className="grid h-9 w-9 shrink-0 place-items-center rounded-full border border-[var(--color-border-soft)] bg-canvas text-ink-muted"><Users className="h-4 w-4" /></span>
-              <div className="min-w-0 flex-1"><button type="button" onClick={() => onNavigate(`/contributors/github/${encodeURIComponent(login)}`)} className="truncate text-left text-sm font-semibold text-accent hover:underline" title={displayName}>{displayName}</button><p className="truncate text-[10px] font-mono text-ink-muted">{contributor.login ? `@${login}` : "Anonymous Git contributor"}</p><p className="mt-1 text-[10px] font-mono tabular-nums text-ink-muted">{Number(contributor.contributions || 0).toLocaleString()} contributions</p></div>
+              <div className="min-w-0 flex-1"><CatalogLink href={String(contributor.profile_route || `/contributors/github/${encodeURIComponent(login)}`)} className="block truncate text-left text-sm font-semibold text-accent hover:underline" title={displayName}>{displayName}</CatalogLink><p className="truncate text-[10px] font-mono text-ink-muted">{contributor.login ? `@${login}` : "Anonymous Git contributor"}</p><p className="mt-1 text-[10px] font-mono tabular-nums text-ink-muted">{Number(contributor.contributions || 0).toLocaleString()} contributions</p></div>
               {href && <a href={href} target="_blank" rel="noreferrer" aria-label={`Open ${displayName}'s GitHub profile`} className="grid min-h-11 min-w-11 place-items-center text-accent hover:text-ink"><ExternalLink className="h-4 w-4" /></a>}
             </li>;
           })}
@@ -90,117 +92,15 @@ export function RepositoryDetail({ record, onNavigate }: { record: CatalogRecord
   );
 }
 
-function DependencyTable({ records, direction }: { records: Array<Record<string, unknown>>; direction: "dependency" | "dependent" }) {
-  if (!records.length) return <p className="text-sm text-ink-muted">No {direction === "dependency" ? "dependencies" : "dependents"} were reported by the available source.</p>;
-  return <div className="rounded-[var(--radius-md)] border border-[var(--color-border-soft)] bg-[var(--color-surface-raised)]">
-    <table className="w-full table-fixed text-left" aria-label={direction === "dependency" ? "Declared package dependencies" : "Observed package dependents"}>
-      <colgroup><col /><col className="w-16" /><col className="w-[42%] sm:w-[36%]" /></colgroup>
-      <thead className="type-ui-label border-b border-[var(--color-border-soft)] bg-canvas text-ink-muted">
-        <tr><th className="px-3 py-2">Package</th><th className="px-1 py-2 text-center"><span className="sr-only">Relationship type and state</span></th><th className="px-3 py-2">Requirement</th></tr>
-      </thead>
-      <tbody className="type-technical divide-y divide-[var(--color-border-soft)]">
-        {records.slice(0, 100).map((item, index) => {
-          const details = dependencyRequirementDetails(item.requirement);
-          const packageName = String(item.name || item.source_name || item.target_id || item.source_id || "Unknown package").replace(/^[^:]+:/, "");
-          return <tr key={String(item.id || item.package_key || `${direction}-${index}`)} className="align-middle hover:bg-canvas/70">
-            <th scope="row" className="break-words px-3 py-2 font-semibold leading-snug text-ink">{packageName}</th>
-            <td className="px-1 py-2"><DependencySemantics item={item} details={details} direction={direction} /></td>
-            <td className="break-words px-3 py-2 text-ink-muted"><DependencyRequirement details={details} /></td>
-          </tr>;
-        })}
-      </tbody>
-    </table>
-  </div>;
-}
-
-function dependencyRequirementDetails(value: unknown): Record<string, unknown> {
-  if (value && typeof value === "object" && !Array.isArray(value)) return value as Record<string, unknown>;
-  if (typeof value !== "string" || !value.trim()) return {};
-  try {
-    const parsed = JSON.parse(value);
-    if (parsed && typeof parsed === "object" && !Array.isArray(parsed)) return parsed as Record<string, unknown>;
-  } catch {
-    // Legacy catalog snapshots used Python repr for Cargo maps.
-  }
-  if (value.trim().startsWith("{")) {
-    const details: Record<string, unknown> = {};
-    const version = value.match(/["']version["']\s*:\s*["']([^"']+)["']/);
-    const features = value.match(/["']features["']\s*:\s*\[([^\]]*)\]/);
-    if (version) details.version = version[1];
-    if (features) details.features = [...features[1].matchAll(/["']([^"']+)["']/g)].map((match) => match[1]);
-    if (Object.keys(details).length) return details;
-  }
-  return { constraint: value };
-}
-
-function dependencyScope(value: unknown): { label: string; Icon: typeof Package } {
-  const scope = String(value || "dependencies").toLowerCase();
-  if (scope.includes("dev") || scope.includes("test")) return { label: "Development dependency", Icon: Braces };
-  if (scope.includes("peer")) return { label: "Peer dependency", Icon: Users };
-  if (scope.includes("build")) return { label: "Build dependency", Icon: Boxes };
-  return { label: "Runtime dependency", Icon: Package };
-}
-
-function DependencyIcon({ label, Icon }: { label: string; Icon: typeof Package }) {
-  return <span className="inline-grid h-6 w-6 place-items-center rounded-[3px] border border-[var(--color-border-muted)] bg-surface-raised text-accent" title={label} aria-label={label}><Icon className="h-3.5 w-3.5" aria-hidden="true" /></span>;
-}
-
-function DependencySemantics({ item, details, direction }: { item: Record<string, unknown>; details: Record<string, unknown>; direction: "dependency" | "dependent" }) {
-  const scope = dependencyScope(item.scope || item.source_kind);
-  const optional = details.optional === true || String(item.scope || "").toLowerCase().includes("optional");
-  const completeness = humanLabel(String(item.completeness || "not observed"));
-  const stateLabel = direction === "dependent" ? `${completeness} dependent coverage` : optional ? "Optional requirement" : "Required dependency";
-  return <div className="flex items-center justify-center gap-1">
-    <DependencyIcon label={scope.label} Icon={scope.Icon} />
-    <DependencyIcon label={stateLabel} Icon={optional || direction === "dependent" ? CircleDot : BadgeCheck} />
-  </div>;
-}
-
-function DependencyRequirement({ details }: { details: Record<string, unknown> }) {
-  const entries = Object.entries(details).filter(([key]) => key !== "optional");
-  const primary = details.version ?? details.constraint ?? details.git ?? details.path ?? details.package ?? entries[0]?.[1];
-  const title = entries.map(([key, value]) => `${key}: ${Array.isArray(value) ? value.join(", ") : String(value)}`).join("; ") || "No explicit version or source requirement";
-  return <span className="block break-words font-semibold text-ink" title={title}>{primary == null ? "—" : Array.isArray(primary) ? primary.join(", ") : String(primary)}</span>;
-}
-
 export function PackageDetail({ record, onNavigate }: { record: CatalogRecord; onNavigate: (path: string) => void }) {
-  const registryLink = record.registry_url ? <a href={String(record.registry_url)} target="_blank" rel="noreferrer" className="text-accent hover:underline">{String(record.registry_url)}</a> : "Not confirmed";
-  const sourceLink = record.source_url ? <a href={String(record.source_url)} target="_blank" rel="noreferrer" className="text-accent hover:underline">View manifest</a> : "Not recorded";
-  const repositories = valueRecords(record.repositories);
-  const technologies = valueStrings(record.technologies);
   const releases = valueRecords(record.releases);
   const datedReleases = releases.filter((release) => release.published_at);
   const prereleaseCount = releases.filter((release) => release.prerelease || /(?:dev|alpha|beta|rc)/i.test(String(release.version || ""))).length;
   const downloadTotal = releases.reduce((total, release) => total + Number(release.downloads || 0), 0);
   return (
     <>
-      <DetailSection title="Package overview">
-        <div className="flex flex-wrap gap-2"><CatalogPill tone="accent" Icon={Package}>{humanLabel(String(record.ecosystem || "unknown"))}</CatalogPill><CatalogPill Icon={Boxes}>{humanLabel(String(record.package_kind || "package candidate"))}</CatalogPill><CatalogPill tone={record.publication_status === "published" ? "accent" : "neutral"} Icon={BadgeCheck}>{humanLabel(String(record.publication_status || "not confirmed"))}</CatalogPill></div>
-        {technologies.length > 0 && <div><h3 className="mb-2 text-[10px] font-mono font-semibold uppercase tracking-wide text-ink-muted">Tech stack</h3><ul className="flex flex-wrap gap-2" aria-label="Package technology stack">{technologies.map((technology) => <li key={technology}><CatalogPill Icon={FileCode2}>{technology}</CatalogPill></li>)}</ul></div>}
-        <MetricBand label="Package summary" items={[
-          { label: "Releases", value: Number(record.release_count || 0), icon: metricIcons.releases },
-          { label: "Dependencies", value: Number(record.dependency_count || 0), icon: metricIcons.dependencies },
-          { label: "Dependents", value: Number(record.downstream_count || record.dependent_count || 0), icon: metricIcons.dependents },
-          { label: "Downloads", value: typeof record.downloads === "number" ? record.downloads : "Not reported", icon: metricIcons.downloads },
-        ]} />
-        <DetailRows rows={[
-          ["Owner", String(record.owner || "Not recorded")],
-          ["Ecosystem", humanLabel(String(record.ecosystem || "unknown"))],
-          ["Package kind", humanLabel(String(record.package_kind || "package candidate"))],
-          ["Repository", repositories.length > 0 ? repositories.map((repository, index) => <React.Fragment key={String(repository.id)}>{index > 0 ? ", " : ""}<button onClick={() => onNavigate(`/catalog/repositories/${String(repository.owner)}/${String(repository.name)}`)} className="cursor-pointer text-accent hover:underline">{String(repository.owner)}/{String(repository.name)}</button>{repository.path ? <span className="text-ink-muted"> · {String(repository.path)}</span> : null}</React.Fragment>) : String(record.repository || "Not linked")],
-          ["Publication", humanLabel(String(record.publication_status || "not confirmed"))],
-          ["Latest version", String(record.latest_version || "Not recorded")],
-          ["Declared version", String(record.version_declared || "Not recorded")],
-          ["Registry", registryLink],
-          ["Manifest", sourceLink],
-        ]} />
-        <LegalContext record={record} detail />
-      </DetailSection>
-      <DetailSection title="Dependencies" intro="Compact manifest requirements; icons identify relationship type and required or optional state.">
-        <DependencyTable records={valueRecords(record.dependencies)} direction="dependency" />
-      </DetailSection>
-      <DetailSection title="Dependents" intro={`Observed downstream package records · ${humanLabel(String(record.downstream_completeness || "not observed"))} coverage.`}>
-        <DependencyTable records={valueRecords(record.dependents)} direction="dependent" />
+      <DetailSection title="Relationships">
+        <Suspense fallback={<p role="status">Loading relationships…</p>}><PackageRelationships key={record.id} routeKey={String(record.route_key || String(record.route || "").split("/").at(-1))} ecosystem={String(record.ecosystem)} /></Suspense>
       </DetailSection>
       <DetailSection title="Release history" intro="This package member shows its own registry timeline and individual releases in detail; repository-wide aggregation remains on the parent repository.">
         <MetricBand label="Package release statistics" items={[

@@ -71,6 +71,15 @@ async function verify() {
     if (manifest.files?.some((item) => item.dataset === name)) throw new Error(`standalone ${name} dataset is still published`);
   }
   const repositories = JSON.parse(await fetchText("/catalog/site/repositories.json"));
+  const contributors = JSON.parse(await fetchText("/catalog/site/contributors.json"));
+  const contributorCollection = JSON.parse(await fetchText("/api/v1/contributors?page_size=1"));
+  if (contributors.length !== contributorCollection.count || contributors.length !== manifest.counts.contributors) throw new Error("contributor static/API count mismatch");
+  const person = contributors.find((item) => item.login && item.account_type !== "Bot") || contributors[0];
+  if (!person) throw new Error("contributor projection is empty");
+  const contributorHtml = await fetchText(`${person.route}/`);
+  if (!contributorHtml.includes("Contributor repositories") || contributorHtml.includes("Loading contributor profile")) throw new Error("contributor static profile is not populated");
+  const contributor = JSON.parse(await fetchText(`/api/v1/contributors/${encodeURIComponent(person.provider)}/${encodeURIComponent(person.login || person.id)}`));
+  if (contributor.item?.id !== person.id || !jsonEqual(contributor.repositories, person.repositories)) throw new Error("contributor profile differs from immutable static projection");
   if (repositories.some((record) => String(record.name).toLowerCase() === ".github")) throw new Error("excluded .github repository is still published");
   const repositoryCollectionHtml = await fetchText("/catalog/repositories/");
   await requirePageAssetMarker(repositoryCollectionHtml, "Repository catalog records", "repository collection table");

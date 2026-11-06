@@ -32,6 +32,7 @@ from .tables.registry import ALL_TABLES
 from .tables.repository import Repository
 from .tables.resources.party.person import PartyPerson
 from .tables.technology import Technology
+from .tables import view_contributors, view_package_relationships
 
 Operation = Callable[[type, dict[str, Any]], Any]
 
@@ -120,21 +121,14 @@ def _bind_get(
 
 
 analytics_readiness = views_analytics.analytics_readiness
-
-_bind_get(
-    "/api/v1/contributors",
-    table=PartyPerson,
-    alias="contributors",
-    target="list",
-    operation=views_resources.contributor_collection,
-)
-_bind_get(
-    "/api/v1/contributors/{provider}/{login}",
-    table=PartyPerson,
-    alias="contributor_detail",
-    target="read",
-    operation=views_resources.contributor_detail,
-)
+for path, alias, table, operation in (
+    ("/api/v1/contributors", "contributors", PartyPerson, view_contributors.contributor_collection),
+    ("/api/v1/contributors/{provider}/{login}", "contributor_detail",
+     PartyPerson, view_contributors.contributor_detail),
+    ("/api/v1/catalog/packages/{route_key}/relationships", "package_relationships",
+     Package, view_package_relationships.package_relationships),
+):
+    _bind_get(path, table=table, alias=alias, target="list", operation=operation)
 
 
 for path, alias, table, record_type in (

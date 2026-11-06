@@ -1,32 +1,25 @@
-import { useEffect, useState } from "react";
-import { ArrowLeft, ExternalLink, GitCommit, GitFork, UserRound } from "lucide-react";
+import { useQuery } from "@tanstack/react-query";
 import { getContributor, type ContributorPageModel } from "../../api/catalog";
-import { StructuredData } from "../../discovery/StructuredData";
-import { CollectionHeader, SurfaceCard } from "./CatalogVisuals";
+import { CatalogLink } from "./CatalogLink";
+import { CatalogPageMetadata } from "./CatalogPageMetadata";
 
-export function ContributorProfile({ provider, login, onNavigate }: { provider: string; login: string; onNavigate: (path: string) => void }) {
-  const [model, setModel] = useState<ContributorPageModel | null>(null);
-  const [error, setError] = useState("");
-  useEffect(() => {
-    const controller = new AbortController();
-    getContributor(provider, login, controller.signal).then(setModel).catch((reason) => {
-      if (!controller.signal.aborted) setError(reason instanceof Error ? reason.message : "Contributor could not be loaded");
-    });
-    return () => controller.abort();
-  }, [login, provider]);
-  if (error) return <div className="mx-auto max-w-5xl px-6 py-16"><SurfaceCard title="Contributor unavailable" Icon={UserRound}><p className="text-sm text-ink-muted">{error}</p></SurfaceCard></div>;
-  if (!model) return <div className="mx-auto max-w-5xl px-6 py-16 font-mono text-sm text-ink-muted">Loading contributor profile…</div>;
-  const contributor = model.item;
-  const name = String(contributor.name || contributor.login || login);
-  return <div className="mx-auto max-w-5xl space-y-6 px-6 py-10">
-    <button type="button" onClick={() => onNavigate("/catalog/repositories")} className="inline-flex min-h-11 items-center gap-2 text-xs font-semibold text-accent hover:text-ink"><ArrowLeft className="h-4 w-4" /> Repositories</button>
-    <CollectionHeader eyebrow="Contributor profile" title={name} description={String(contributor.description || `Public ${provider} contributor observed in the GroupSum catalog.`)} facts={[{ label: "Repositories", value: model.repositories.length }, { label: "Contributions", value: model.repositories.reduce((total, repository) => total + repository.contributions, 0) }]} />
-    <div className="grid gap-6 lg:grid-cols-[minmax(0,1fr)_18rem]">
-      <SurfaceCard title="Observed repositories" Icon={GitFork}>
-        <ol className="divide-y divide-[var(--color-border-soft)]">{model.repositories.map((repository) => <li key={repository.id} className="flex flex-wrap items-center justify-between gap-3 py-3"><button type="button" onClick={() => onNavigate(repository.route)} className="min-h-11 text-left text-sm font-semibold text-accent hover:underline">{repository.name}</button><span className="inline-flex items-center gap-1 font-mono text-[10px] text-ink-muted"><GitCommit className="h-3.5 w-3.5" /> {repository.contributions.toLocaleString()} contributions</span></li>)}</ol>
-      </SurfaceCard>
-      <SurfaceCard title="Identity" Icon={UserRound}><dl className="space-y-3 text-xs"><div><dt className="font-mono text-[10px] uppercase text-ink-muted">Provider</dt><dd className="mt-1 font-semibold">{provider}</dd></div><div><dt className="font-mono text-[10px] uppercase text-ink-muted">Login</dt><dd className="mt-1 font-semibold">@{String(contributor.login || login)}</dd></div></dl>{contributor.url ? <a href={String(contributor.url)} target="_blank" rel="noreferrer" className="mt-5 inline-flex min-h-11 items-center gap-2 text-xs font-semibold text-accent hover:text-ink">Public profile <ExternalLink className="h-4 w-4" /></a> : null}</SurfaceCard>
-    </div>
-    <StructuredData type="profile" data={{ ...contributor, slug: `contributors/${provider}/${login}`, title: `${name} contributor`, summary: contributor.description }} />
-  </div>;
+export function ContributorProfile({ provider, login }: { provider: string; login: string; onNavigate?: (path: string) => void }) {
+  const snapshot = globalThis.__GROUPSUM_API_SNAPSHOT__ as (ContributorPageModel & { static_path?: string }) | null;
+  const model = useQuery({ queryKey: ["contributor", provider, login], queryFn: ({ signal }) => getContributor(provider, login, signal),
+    initialData: snapshot?.static_path === `/contributors/${encodeURIComponent(provider)}/${encodeURIComponent(login)}` ? snapshot : undefined, staleTime: 60_000, retry: false });
+  return <article className="mx-auto max-w-[var(--content-max)] space-y-4 px-4 py-8 sm:px-6">
+    <CatalogLink href="/contributors" className="type-control text-accent">← Contributors</CatalogLink>
+    {model.isPending ? <p role="status">Loading contributor profile…</p> : model.isError ? <div role="alert"><h1 className="type-display-lg break-words [overflow-wrap:anywhere]">{String(model.error).includes("404") ? "Contributor not found" : "Contributor unavailable"}</h1><p className="type-body-sm">{String(model.error).includes("404") ? "This identity is not in the current catalog." : "The profile could not be loaded."}</p><button onClick={() => model.refetch()} className="type-control text-accent">Retry</button></div> : <>
+      <CatalogPageMetadata record={{ ...model.data.item, route: String(model.data.item.route || `/contributors/${provider}/${encodeURIComponent(login)}`), title: `${model.data.item.name || login} contributor | GroupSum catalog`, description: `${model.data.item.account_type || "Public"} contributor observed across ${model.data.repositories.length} public catalog repositories.`, schemaFamily: "contributor-profile", profileUrl: model.data.item.url }} />
+      <header className="flex min-w-0 flex-wrap items-start gap-3 border-b border-[var(--color-border-soft)] pb-3">
+        {model.data.item.avatar_url && <img src={String(model.data.item.avatar_url)} alt="" width="48" height="48" className="h-12 w-12 shrink-0" />}
+        <div className="min-w-0 flex-1"><h1 className="type-display-lg break-words">{String(model.data.item.name || login)}</h1><p className="type-body-sm text-ink-muted break-words">{provider} · {String(model.data.item.account_type || "Contributor")} · {model.data.item.login ? `@${model.data.item.login}` : "Anonymous identity"}</p></div>
+        {model.data.item.url && <a href={String(model.data.item.url)} target="_blank" rel="noreferrer" className="type-control text-accent">Public profile ↗</a>}
+      </header>
+      <div className="type-body-sm flex flex-wrap gap-x-5 gap-y-2"><span><strong>{model.data.repositories.length}</strong> catalog repositories</span><span><strong>{model.data.repositories.reduce((total, row) => total + row.contributions, 0).toLocaleString()}</strong> source-reported contributions</span><span className="text-ink-muted">Observed {model.data.item.observed_at ? new Date(String(model.data.item.observed_at)).toLocaleDateString("en-US", { timeZone: "UTC" }) : "date unavailable"}</span></div>
+      <p className="type-body-sm text-ink-muted">Repository-scoped totals reported by the source. Not global activity or a verified count of authored commits.</p>
+      <table className="type-technical w-full table-fixed text-left [overflow-wrap:anywhere]" aria-label="Contributor repositories"><thead className="type-ui-label"><tr><th className="py-2">Repository</th><th className="w-[30%] text-right">Contributions</th></tr></thead><tbody className="divide-y divide-[var(--color-border-soft)]">{model.data.repositories.map((row) => <tr key={row.id}><td className="py-2 pr-2"><CatalogLink href={row.route} className="block truncate text-accent" title={row.name}>{row.name}</CatalogLink></td><td className="text-right tabular-nums">{row.contributions.toLocaleString()}</td></tr>)}</tbody></table>
+      {!model.data.repositories.length && <p>No repository relationships were observed.</p>}
+    </>}
+  </article>;
 }

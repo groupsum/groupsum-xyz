@@ -8,6 +8,7 @@ import { LinkedResourceSections } from "./CatalogCollections";
 import { CatalogRecordNavigation } from "./CatalogRecordNavigation";
 import { PackageDetail, ReleaseDetail, RepositoryDetail, ResourceDetail, TechnologyDetail } from "./CatalogMemberDetails";
 import { PackageIdentityCard } from "./PackageIdentityCard";
+import { CatalogPageMetadata } from "./CatalogPageMetadata";
 import { datasetOrder, formatDate, humanLabel, isCurrentPageLink, metricItems, recordDescription, recordTitle, resourceIcon, valueRecord, valueRecords, type CatalogRecord, type DatasetName, type DetailDatasetName } from "./CatalogRecordShared";
 import { catalogDetailSegments } from "./catalog-detail-route.mjs";
 
@@ -40,7 +41,7 @@ function MemberSectionNav({ record }: { record: CatalogRecord }) {
   const kind = String(record.kind || "record");
   const linkedSectionLabels = valueRecords(record.linked_sections).map((section) => String(section.label || humanLabel(String(section.type_key || "resource"))));
   const sections = kind === "repository" ? ["Repository overview", "Observed activity", "Contributors", "Release activity", ...(record.ssot_governance && Boolean(record.ssot_governance.governed) ? ["SSOT governance"] : []), "Latest observed events", "Contained packages", ...linkedSectionLabels]
-    : kind === "package" ? ["Package overview", "Dependencies", "Dependents", "Release history"]
+    : kind === "package" ? ["Package overview", "Relationships", "Release history"]
       : kind === "resource" ? [`${String(record.type_label || humanLabel(String(record.resource_type || "resource")))} overview`, ...linkedSectionLabels]
         : ["Overview", "Connected resources", "Source observations"];
   return <nav aria-label="On this record" className="sticky top-16 z-10 -mx-4 border-y border-[var(--color-border-soft)] bg-[color-mix(in_srgb,var(--color-canvas)_94%,transparent)] px-4 py-2 backdrop-blur sm:mx-0 sm:rounded-[var(--radius-sm)] sm:border sm:px-3">
@@ -139,25 +140,26 @@ export function PublicCatalogDetail({ path, onNavigate }: { path: string; onNavi
   const selectedSnapshot = snapshots.find((snapshot) => snapshot.snapshot_id === record.selected_snapshot_id);
   return (
     <article className="max-w-[var(--content-max)] mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-12 space-y-8 sm:space-y-10">
+      <CatalogPageMetadata record={{ ...record, route: String(record.route || normalizedPath), title: `${recordTitle(record)} ${record.kind} | GroupSum catalog`, description: recordDescription(record), schemaFamily: `catalog-${record.kind}`, sourceUrl: record.source_url || record.url }} />
       <CatalogRecordNavigation dataset={dataset} record={record} onNavigate={onNavigate} />
       {record.kind === "package"
         ? <PackageIdentityCard record={record} primaryUrl={primaryUrl} onNavigate={onNavigate} />
         : <RecordIdentityCard eyebrow={`${humanLabel(String(record.kind || "catalog"))} member`} title={recordTitle(record)} summary={recordDescription(record)} Icon={RecordIcon} pills={[...(record.kind === "repository" && Boolean(record.ssot_governance?.governed) ? [{ label: "SSOT governed", tone: "accent" as const }] : []), { label: record.description_source === "reviewed-editorial" ? "Reviewed description" : "Source-derived description" }]} actions={primaryUrl && <a href={String(primaryUrl)} target="_blank" rel="noreferrer" className="inline-flex min-h-10 items-center gap-1 rounded-[var(--radius-sm)] bg-accent px-4 text-xs font-mono font-semibold text-[var(--color-on-accent)] hover:bg-accent-hover">Open primary source <ExternalLink className="h-3.5 w-3.5" /></a>} facts={metricItems(record, 5)} />}
       <MemberSectionNav record={record} />
-      <div className="grid grid-cols-1 items-start gap-8 lg:grid-cols-12">
-      <main className="space-y-6 lg:col-span-8">
+      <div className={record.kind === "package" ? "min-w-0" : "grid grid-cols-1 items-start gap-8 lg:grid-cols-12"}>
+      <main className={record.kind === "package" ? "min-w-0 space-y-6" : "space-y-6 lg:col-span-8"}>
       {record.kind === "repository" && <RepositoryDetail record={record} onNavigate={onNavigate} />}
       {record.kind === "package" && <PackageDetail record={record} onNavigate={onNavigate} />}
       {record.kind === "resource" && (ssot ? <Suspense fallback={null}><SsotEntityDetail record={record} onNavigate={onNavigate} /></Suspense> : <ResourceDetail record={record} onNavigate={onNavigate} />)}
       {record.kind === "release" && <ReleaseDetail record={record} onNavigate={onNavigate} />}
       {record.kind === "technology" && <TechnologyDetail record={record} onNavigate={onNavigate} />}
       </main>
-      <aside className="space-y-6 lg:col-span-4 lg:sticky lg:top-32">
+      {record.kind !== "package" && <aside className="space-y-6 lg:col-span-4 lg:sticky lg:top-32">
         {record.kind === "repository" && snapshots.length > 0 && <ContextRailCard title="Analytics snapshot" Icon={BadgeCheck}><div className="space-y-3 text-xs text-ink-muted"><label className="block"><span className="mb-1 block font-mono text-[9px] uppercase tracking-wide">Point-in-time view</span><select value={String(record.selected_snapshot_id || "")} onChange={(event) => setRecord((current) => current ? { ...current, selected_snapshot_id: event.target.value } : current)} className="w-full rounded border border-[var(--color-border-soft)] bg-surface px-2 py-2 font-mono text-xs text-ink">{snapshots.map((snapshot) => <option key={snapshot.snapshot_id} value={snapshot.snapshot_id}>{formatDate(snapshot.collected_at)}{snapshot.is_current ? " · current" : ""}</option>)}</select></label><p>{selectedSnapshot?.measurement_count.toLocaleString() || "0"} measurements · {selectedSnapshot?.observation_count.toLocaleString() || "0"} observations</p><p>{selectedSnapshot?.error_count ? `${selectedSnapshot.error_count} collection errors reported` : "No collection errors reported for this snapshot"}</p></div></ContextRailCard>}
         <ContextRailCard title="Source & observation boundary" Icon={ShieldCheck}><div className="space-y-3 text-xs leading-relaxed text-ink-muted"><p><strong className="text-ink">Observed:</strong> {formatDate(record.observed_at)}</p>{record.claim_boundary && <div className="rounded-[var(--radius-sm)] border border-[var(--color-border-soft)] bg-canvas p-3"><strong className="mb-1 block text-ink">Explicit source boundary</strong>{String(record.claim_boundary)}</div>}{primaryUrl && <a href={String(primaryUrl)} target="_blank" rel="noreferrer" className="inline-flex min-h-10 items-center gap-1 font-mono font-semibold text-accent hover:underline">Primary source <ExternalLink className="h-3.5 w-3.5" /></a>}</div></ContextRailCard>
         <ContextRailCard title="Ownership & canonical path" Icon={GitBranch}><EntityOwnership graph={record.entity_graph} onNavigate={onNavigate} /></ContextRailCard>
         {sourceObservations.length > 0 && <ContextRailCard title="Source observations" Icon={BadgeCheck}><ul className="divide-y divide-[var(--color-border-soft)]">{sourceObservations.map((item, index) => <li key={`${item.url || item.kind}-${index}`} className="py-3 text-xs">{item.url ? <a href={item.url} target="_blank" rel="noreferrer" className="inline-flex items-center gap-1 break-words font-mono font-semibold text-accent hover:underline">{humanLabel(item.kind || "source")}<ExternalLink className="h-3.5 w-3.5" /></a> : <span className="text-ink-muted">{humanLabel(item.kind || "source")} · observed {formatDate(item.observed_at)}</span>}</li>)}</ul></ContextRailCard>}
-      </aside>
+      </aside>}
       </div>
     </article>
   );

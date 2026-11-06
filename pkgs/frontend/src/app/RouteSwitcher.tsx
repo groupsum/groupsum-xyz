@@ -8,6 +8,10 @@ import { InsightsPage } from "../pages/OfferingCollections";
 import { PortfolioDetailPage } from "../pages/PortfolioPages";
 import { NotFoundPage } from "../pages/StaticPages";
 import { ContributorProfile } from "../features/catalog/ContributorProfile";
+import { ContributorDirectory } from "../features/catalog/ContributorDirectory";
+import { lazy, Suspense } from "react";
+const Profile = import.meta.env.SSR ? ContributorProfile : lazy(() => import("../features/catalog/ContributorProfile").then((module) => ({ default: module.ContributorProfile })));
+const Directory = import.meta.env.SSR ? ContributorDirectory : lazy(() => import("../features/catalog/ContributorDirectory").then((module) => ({ default: module.ContributorDirectory })));
 
 export function RouteSwitcher({ path, onNavigate }: { path: string; onNavigate: (path: string) => void }) {
   const cleanPath = path.split("?")[0].split("#")[0];
@@ -40,7 +44,7 @@ export function RouteSwitcher({ path, onNavigate }: { path: string; onNavigate: 
     if (segments.length === 2 && ["repositories", "packages", "resources", "technologies"].includes(dataset)) return <PublicCatalogExplorer onNavigate={onNavigate} fixedDataset={dataset as "repositories" | "packages" | "resources" | "technologies"} initialQuery={query} initialResourceType={resourceType} />;
     return <PublicCatalogDetail path={cleanPath} onNavigate={onNavigate} />;
   }
-  if (primary === "contributors" && segments[1] && segments[2]) return <ContributorProfile provider={segments[1]} login={decodeURIComponent(segments[2])} onNavigate={onNavigate} />;
+  if (primary === "contributors") return <Suspense fallback={<p role="status" className="p-4">Loading contributors…</p>}>{segments[1] && segments[2] ? <Profile key={cleanPath} provider={decodeURIComponent(segments[1])} login={decodeURIComponent(segments[2])} onNavigate={onNavigate} /> : <Directory />}</Suspense>;
   if (primary === "solutions") return segments.length === 1 ? <ExplorerSolutionsPage onNavigate={onNavigate} /> : <ExplorerSolutionDetailPage slug={segments[1]} onNavigate={onNavigate} />;
   if (primary === "services") return segments.length === 1 ? <ExplorerServicesPage onNavigate={onNavigate} /> : <ExplorerServiceDetailPage slug={segments[1]} onNavigate={onNavigate} />;
   if (primary === "insights") return <InsightsPage onNavigate={onNavigate} />;

@@ -90,7 +90,14 @@ else {
   for (const marker of ["Person", "ComputerLanguage"]) if (!repositoryGraphs.some((graph) => graph.types.includes(marker))) fail(`repository catalog JSON-LD missing ${marker}`);
 }
 const contributorRoot = path.join(dist, "contributors");
-const contributorDetail = fs.existsSync(contributorRoot) ? fs.readdirSync(contributorRoot, { recursive: true }).find((entry) => String(entry).endsWith("index.html")) : null;
-if (!contributorDetail) fail("no generated contributor profile page");
-else for (const marker of ["ProfilePage", "Person"]) if (!graphTypes(path.join(contributorRoot, contributorDetail)).includes(marker)) fail(`contributor JSON-LD missing ${marker}`);
+const contributors = JSON.parse(fs.readFileSync(path.join(dist, "catalog/site/contributors.json"), "utf8"));
+const contributorFiles = fs.existsSync(contributorRoot) ? fs.readdirSync(contributorRoot, { recursive: true }).filter((entry) => String(entry).endsWith("index.html") && entry !== "index.html") : [];
+if (contributorFiles.length !== contributors.length || manifest.counts.contributors !== contributors.length) fail("contributor static/API projection count mismatch");
+for (const person of contributors) {
+  const target = path.join(dist, person.route, "index.html");
+  if (!fs.existsSync(target)) { fail(`contributor profile missing: ${person.route}`); continue; }
+  const html = fs.readFileSync(target, "utf8");
+  if (!html.includes("Contributor repositories") || html.includes("Loading contributor profile")) fail(`contributor static profile is not populated: ${person.route}`);
+  for (const marker of ["ProfilePage", person.account_type === "Bot" ? "SoftwareApplication" : "Person"]) if (!graphTypes(target).includes(marker)) fail(`contributor JSON-LD missing ${marker}: ${person.route}`);
+}
 if (!process.exitCode) console.log(`discovery ok: ${childFiles.length} child sitemaps, ${fs.readFileSync(path.join(dist, "llms-full.txt"), "utf8").split("\n").length} full-index lines`);

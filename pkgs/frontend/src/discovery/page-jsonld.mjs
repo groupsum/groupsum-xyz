@@ -49,9 +49,9 @@ function breadcrumbNode(record) {
 
 const languageNames = (record) => [...new Set([...Object.keys(record.language_bytes || {}), ...(record.technologies || [])])].filter(Boolean);
 
-const contributorNodes = (record) => (record.contributors || []).map((person) => ({
+const contributorNodes = (record) => (record.contributors || []).filter((person) => person.account_type !== "Bot").map((person) => ({
   "@type": "Person",
-  "@id": stableId(person.url || `${record.url}/contributors/${person.login}`, "person"),
+  "@id": stableId(person.profile_route ? `${SITE_ROOT}${person.profile_route}/` : person.login ? `${SITE_ROOT}/contributors/${person.provider || "github"}/${encodeURIComponent(person.login)}/` : person.url || record.url, "person"),
   name: person.login,
   url: person.url,
 }));
@@ -138,7 +138,7 @@ function detailNodes(record, family) {
     const personId = stableId(record.url, "person");
     return [
       { "@type": "ProfilePage", "@id": stableId(record.url, "profile"), name: record.title, description: record.description, url: record.url, mainEntity: ref(personId) },
-      { "@type": "Person", "@id": personId, name: record.name || record.login, alternateName: record.login ? `@${record.login}` : undefined, url: record.profileUrl || record.url, image: record.avatar_url, subjectOf: ref(stableId(record.url, "profile")) },
+      { "@type": record.account_type === "Bot" ? "SoftwareApplication" : "Person", "@id": personId, name: record.name || record.login, alternateName: record.login ? `@${record.login}` : undefined, url: record.profileUrl || record.url, image: record.avatar_url, subjectOf: ref(stableId(record.url, "profile")) },
     ];
   }
   if (record.type === "article") return [withoutContext(techArticleNode({ id: stableId(record.url, "article"), name: record.title, headline: record.title, description: record.description, url: record.url, datePublished: record.published, dateModified: record.modified, articleSection: record.section, keywords: record.tags, author: { "@type": "Person", name: record.author || "Groupsum LLC" }, mainEntityOfPage: ref(stableId(record.url, "page")) }))];

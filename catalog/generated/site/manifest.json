@@ -12,6 +12,7 @@
     "technologies": "GitHub language byte counts; no technology is inferred from marketing copy"
   },
   "counts": {
+    "contributors": 42,
     "organizations": 4,
     "packages": 1143,
     "repositories": 69,
@@ -20,6 +21,13 @@
     "technologies": 18
   },
   "files": [
+    {
+      "bytes": 61284,
+      "dataset": "contributors",
+      "path": "contributors.json",
+      "records": 42,
+      "sha256": "d6c64da27257b966cacb77682c4689b40587c8fbd0a8c0db78493ade39d17a00"
+    },
     {
       "bytes": 19643,
       "dataset": "organizations",

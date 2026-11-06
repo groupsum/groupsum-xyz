@@ -16,6 +16,7 @@ import {
   Package,
   Search,
   X,
+  Users,
 } from "lucide-react";
 
 interface SiteHeaderProps {
@@ -31,6 +32,7 @@ const navItems = [
   { label: "Packages", path: "/catalog/packages", icon: Package },
   { label: "Typed Resources", path: "/catalog/resources", icon: FileCode2 },
   { label: "Technologies", path: "/catalog/technologies", icon: Cpu },
+  { label: "Contributors", path: "/contributors", icon: Users },
 ];
 
 export const SiteHeader: React.FC<SiteHeaderProps> = ({ currentPath, onNavigate }) => {
@@ -89,13 +91,13 @@ export const SiteHeader: React.FC<SiteHeaderProps> = ({ currentPath, onNavigate 
   return (
     <header className="sticky top-0 z-40 border-b border-[var(--color-border-soft)] bg-canvas/95 backdrop-blur-md">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="flex min-h-12 items-center justify-between gap-2">
-          <div className="flex min-w-0 items-center gap-3">
-          <a href="/" onClick={(event) => navigate("/", event)} className="flex min-w-0 shrink-0 items-center gap-2 rounded-lg p-1 focus-visible:outline-3">
+        <div className="flex min-h-12 flex-wrap items-center justify-between gap-2">
+          <div className="flex min-w-0 flex-[1_1_10rem] items-center gap-3">
+          <a href="/" onClick={(event) => navigate("/", event)} className="flex min-w-0 max-w-full items-center gap-2 rounded-lg p-1 focus-visible:outline-3">
             <span className="grid h-8 w-8 shrink-0 place-items-center rounded-lg bg-ink font-serif text-lg font-bold text-[var(--color-on-accent)] shadow-sm" aria-hidden="true">G</span>
             <span className="min-w-0">
-              <span className="type-heading-sm block leading-none tracking-tight">GroupSum</span>
-              <span className="type-technical mt-1 block text-ink-muted">groupsum.xyz</span>
+              <span className="type-heading-sm block truncate leading-none tracking-tight">GroupSum</span>
+              <span className="type-technical mt-1 block truncate text-ink-muted">groupsum.xyz</span>
             </span>
           </a>
           </div>

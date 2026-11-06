@@ -11,7 +11,7 @@ export function RepositoryPackagesInspector({ repository, ecosystem, onEcosystem
   const [query, setQuery] = useState("");
   const [publication, setPublication] = useState("");
   const [page, setPage] = useState(1);
-  useEffect(() => { const timer = setTimeout(() => { setQuery(search.trim()); setPage(1); }, 250); return () => clearTimeout(timer); }, [search]);
+  useEffect(() => { if (search.trim() === query) return; const timer = setTimeout(() => { setQuery(search.trim()); setPage(1); }, 250); return () => clearTimeout(timer); }, [search, query]);
   useEffect(() => setPage(1), [ecosystem, publication]);
   const params = { repository, ecosystem, publication_status: publication, q: query, page, page_size: 10, sort: "name", projection: "summary" as const };
   const collection = useQuery({ queryKey: ["repository-packages", params], queryFn: ({ signal }) => listCatalog("packages", params, signal), staleTime: 60_000 });

@@ -25,7 +25,7 @@ requireMarkers(
   "catalog implementation",
 );
 requireMarkers(
-  ["MetricBand", "MemberSectionNav", "DependencyTable", "RepositorySignalStrip", "Contained packages"],
+  ["MetricBand", "MemberSectionNav", "PackageRelationships", "RepositorySignalStrip", "Contained packages"],
   "catalog UIX",
 );
 requireMarkers(
@@ -45,7 +45,7 @@ requireMarkers(
   "ownership-aware legal UIX",
 );
 requireMarkers(
-  ["CatalogRecordNavigation", "Ownership hierarchy", "Back to {collection} Collection", "PackageIdentityCard", "Owning repository", "Manifest path"],
+  ["CatalogRecordNavigation", "Ownership hierarchy", "Back to {collection} Collection", "PackageIdentityCard", "Details &amp; evidence", 'id="package-overview"'],
   "member navigation and package identity UIX",
 );
 
@@ -61,8 +61,8 @@ if ((collectionTables.match(/<table className="[^"]*text-xs"/g) || []).length !=
 if ((collectionTables.match(/<thead className="[^"]*type-ui-label/g) || []).length !== 2) throw new Error("repository and package table headers must use the semantic UI label role");
 if (!collectionTables.includes("function HyphenBreakText") || !collectionTables.includes("<wbr />")) throw new Error("repository names lack explicit hyphen-aware wrapping");
 if (source.includes('aria-label="Ownership hierarchy" className="overflow-x-auto')) throw new Error("record breadcrumbs must wrap instead of scrolling");
-if (!source.includes('aria-label={direction === "dependency" ? "Declared package dependencies"')) throw new Error("package dependency detail does not use the compact table contract");
-if (!source.includes("function DependencySemantics") || !source.includes("title={label} aria-label={label}")) throw new Error("dependency relationship icons lack tooltip and accessible labels");
+if (!source.includes('aria-label="Package relationships"') || !source.includes("Relationship pagination ${placement}")) throw new Error("package relationships lack tabs and bounded pagination");
+if (!source.includes("scopeLabel") || !source.includes('aria-label={item.optional ? "Optional requirement" : "Required dependency"}')) throw new Error("dependency relationship icons lack tooltip and accessible labels");
 if (source.includes('>Ecosystem</dt><dd className="mt-1 text-xs text-ink-muted"') || source.includes('>Scope</dt><dd className="mt-1 break-words')) throw new Error("dependency rows still repeat implied ecosystem or scope labels");
 
 console.log(`catalog content ok: ${sourceFiles.length} modular source files checked`);

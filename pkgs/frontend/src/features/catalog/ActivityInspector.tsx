@@ -1,0 +1,19 @@
+import { useState, type RefObject } from "react";
+import InspectorPopover from "./InspectorPopover";
+import { ActivityMarks, type ChartPoint } from "./InlineMetricChart";
+import { observationSeries } from "./activity-series.mjs";
+
+export default function ActivityInspector({ id, anchor, label, points, bars, expanded, initialTime, onClose }: {
+  id: string; anchor: RefObject<HTMLButtonElement | null>; label: string; points: ChartPoint[]; bars: boolean; expanded: boolean; initialTime: number; onClose: () => void;
+}) {
+  const [days, setDays] = useState(30); const [changes, setChanges] = useState(false); const [active, setActive] = useState<number | undefined>(() => Math.max(0, observationSeries(points, 30).findIndex((point) => point.time === initialTime)));
+  const values = observationSeries(points, days, changes && !bars);
+  const selectedIndex = Math.min(active ?? Math.max(0, values.length - 1), Math.max(0, values.length - 1));
+  const selected = values[selectedIndex];
+  return <InspectorPopover id={id} anchor={anchor} title={`${label} observed activity`} onClose={onClose}><div className="min-w-0 space-y-3">
+    <div className="type-body-sm flex flex-wrap items-center gap-3"><label>Range<select value={days} onChange={(event) => { setDays(Number(event.target.value)); setActive(undefined); }} className="ml-2 min-h-8 border border-[var(--color-border-soft)] bg-surface"><option value={30}>30 days</option>{expanded && <option value={90}>90 days</option>}<option value={0}>All available</option></select></label>{!bars && <label><input type="checkbox" checked={changes} onChange={(event) => { setChanges(event.target.checked); setActive(undefined); }} /> Interval changes</label>}</div>
+    {selected ? <><ActivityMarks points={values} bars={bars || changes} large active={selectedIndex} onSelect={setActive} /><label className="type-body-sm block">Select observation<input type="range" min="0" max={values.length - 1} value={selectedIndex} onChange={(event) => setActive(Number(event.target.value))} aria-label={`${label} observation`} aria-valuetext={`${selected.from ? `${selected.from} to ` : ""}${selected.label}: ${selected.value}`} className="block w-full" /></label><output className="type-technical block break-words" aria-live="polite">{selected.from ? `${new Date(selected.from).toLocaleDateString()} → ` : ""}{new Date(selected.time).toLocaleString()}: {changes && selected.value >= 0 ? "+" : ""}{selected.value.toLocaleString()}</output><p className="type-body-sm text-ink-muted">{new Date(values[0].time).toLocaleDateString()} – {new Date(values.at(-1)!.time).toLocaleDateString()} · {values.length} observations</p></> : <p className="type-body-sm">Another persisted observation is needed to calculate interval changes.</p>}
+    <p className="type-body-sm text-ink-muted">{bars ? "Daily buckets; missing days are not zero-filled." : "Sampled totals; intervals are changes between observations, not daily activity."} Scales are independent per repository. Ranges end at the latest available observation.</p>
+    <details><summary className="type-control min-h-8 cursor-pointer text-accent">Exact values</summary><table className="type-technical w-full table-fixed text-left [overflow-wrap:anywhere]" aria-label={`${label} observations`}><thead><tr><th className="py-2">{changes ? "Observed interval" : "Observed"}</th><th className="w-[25%] text-right">Value</th></tr></thead><tbody className="divide-y divide-[var(--color-border-soft)]">{values.map((point) => <tr key={point.time}><td className="break-words py-1">{point.from ? `${new Date(point.from).toLocaleDateString()} → ` : ""}{new Date(point.time).toLocaleString()}</td><td className="text-right tabular-nums">{changes && point.value >= 0 ? "+" : ""}{point.value.toLocaleString()}</td></tr>)}</tbody></table></details>
+  </div></InspectorPopover>;
+}

@@ -5,6 +5,9 @@ from pathlib import Path
 
 OPENAPI_PATH = Path(__file__).resolve().parents[1] / "openapi.json"
 REQUIRED_PATHS = (
+    "/api/v1/contributors",
+    "/api/v1/contributors/{provider}/{login}",
+    "/api/v1/catalog/packages/{route_key}/relationships",
     "/api/v1/catalog",
     "/api/v1/catalog/repositories",
     "/api/v1/catalog/packages",

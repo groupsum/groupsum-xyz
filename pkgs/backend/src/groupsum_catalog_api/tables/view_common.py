@@ -57,6 +57,7 @@ def current_entity_query(session, table, entity_type: str | None = None):
 
 
 def repository_resource(value: dict[str, Any]) -> dict[str, Any]:
+    from ..projections.contributors import observed_contributor_route
     item = dict(value)
     full_name = str(item.get("full_name") or "")
     owner, separator, name = full_name.partition("/")
@@ -94,7 +95,8 @@ def repository_resource(value: dict[str, Any]) -> dict[str, Any]:
         "history": item.get("history")
         or {key: [] for key in ("stars", "forks", "watchers", "contributors")},
         "commit_activity": commit_activity,
-        "contributors": item.get("contributors") or activity.get("contributors") or [],
+        "contributors": [{**person, "profile_route": observed_contributor_route(person)}
+                         for person in (item.get("contributors") or activity.get("contributors") or [])],
         "releases": releases,
         "release_count": len(releases),
         "governance": governance,

@@ -32,5 +32,5 @@ test("document and table primitives do not regress to nested cards or mobile car
   assert.ok(visuals.includes('className="record-header space-y-4"'));
   assert.ok(visuals.includes('className="metric-strip pt-2"'));
   assert.ok(!source("src/features/catalog/CatalogCollectionTables.tsx").includes("PackageMobileCard"));
-  assert.ok(source("src/features/catalog/InlineMetricChart.tsx").includes('type="range"'));
+  assert.ok(source("src/features/catalog/ActivityInspector.tsx").includes('type="range"'));
 });
