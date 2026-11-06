@@ -59,7 +59,7 @@ export function PortfolioDetailPage({ slug, onNavigate }: { slug: string; onNavi
         <p className="text-sm text-ink-muted">The requested portfolio artifact may be unapproved, in drafting stages, or moved.</p>
         <button
           onClick={() => onNavigate("/portfolio")}
-          className="px-4 py-2 bg-accent hover:bg-accent-hover text-white text-xs font-mono font-semibold rounded-[var(--radius-sm)] transition-all"
+          className="px-4 py-2 bg-accent hover:bg-accent-hover text-[var(--color-on-accent)] text-xs font-mono font-semibold rounded-[var(--radius-sm)] transition-all"
         >
           Return to Portfolio
         </button>
@@ -127,7 +127,7 @@ export function PortfolioDetailPage({ slug, onNavigate }: { slug: string; onNavi
                   href={link.href}
                   target={link.href.startsWith("http") ? "_blank" : undefined}
                   rel="noopener noreferrer"
-                  className="w-full text-center px-4 py-2 bg-accent hover:bg-accent-hover text-white text-xs font-mono font-semibold rounded-[var(--radius-sm)] transition-all inline-flex items-center justify-center gap-1"
+                  className="w-full text-center px-4 py-2 bg-accent hover:bg-accent-hover text-[var(--color-on-accent)] text-xs font-mono font-semibold rounded-[var(--radius-sm)] transition-all inline-flex items-center justify-center gap-1"
                 >
                   {link.label}
                   {link.href.startsWith("http") && <ExternalLink className="w-3.5 h-3.5 ml-1" />}

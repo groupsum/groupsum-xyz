@@ -168,7 +168,7 @@ export function HomeEditorial({ onNavigate }: { onNavigate: (path: string) => vo
         <div>
           <button
             onClick={() => onNavigate("/contact")}
-            className="px-6 py-3 bg-accent hover:bg-accent-hover text-white text-sm font-mono font-semibold rounded-[var(--radius-sm)] shadow-sm transition-all inline-flex items-center gap-2 cursor-pointer"
+            className="px-6 py-3 bg-accent hover:bg-accent-hover text-[var(--color-on-accent)] text-sm font-mono font-semibold rounded-[var(--radius-sm)] shadow-sm transition-all inline-flex items-center gap-2 cursor-pointer"
           >
             Discuss a project
             <ArrowRight className="w-4 h-4" />

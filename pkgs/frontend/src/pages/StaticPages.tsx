@@ -49,7 +49,7 @@ export interface RouteProps {
 export function NotFoundPage({ onNavigate }: RouteProps) {
   return (
     <div className="max-w-md mx-auto py-20 px-4 text-center space-y-6">
-      <div className="inline-flex items-center justify-center w-16 h-16 bg-red-500/5 border border-red-500/10 text-red-600 rounded-full font-serif text-3xl font-bold">
+      <div className="inline-flex items-center justify-center w-16 h-16 bg-surface/5 border border-[var(--color-border-soft)]/10 text-danger rounded-full font-serif text-3xl font-bold">
         404
       </div>
       <div className="space-y-2">
@@ -61,7 +61,7 @@ export function NotFoundPage({ onNavigate }: RouteProps) {
       <div className="flex flex-wrap gap-3 justify-center pt-2">
         <button
           onClick={() => onNavigate("/")}
-          className="px-4 py-2 bg-accent hover:bg-accent-hover text-white text-xs font-mono font-semibold rounded-[var(--radius-sm)] transition-all cursor-pointer"
+          className="px-4 py-2 bg-accent hover:bg-accent-hover text-[var(--color-on-accent)] text-xs font-mono font-semibold rounded-[var(--radius-sm)] transition-all cursor-pointer"
         >
           Return Home
         </button>

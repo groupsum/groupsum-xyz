@@ -173,7 +173,7 @@ export function ProductRecordPage({
         summary={summary}
         Icon={recordIcon}
         pills={[{ label: humanize(maturity), tone: "accent" }]}
-        actions={<>{sourceUrl && <a href={sourceUrl} target="_blank" rel="noreferrer" className="inline-flex min-h-10 items-center gap-1 rounded-[var(--radius-sm)] bg-accent px-4 text-xs font-mono font-semibold text-white hover:bg-accent-hover">{primaryLink?.label || "Public source"}<ExternalLink className="h-3.5 w-3.5" /></a>}<button onClick={() => onNavigate("/contact")} className="min-h-10 rounded-[var(--radius-sm)] border border-[var(--color-border-muted)] px-4 text-xs font-mono font-semibold text-ink hover:border-accent cursor-pointer">Discuss this product</button></>}
+        actions={<>{sourceUrl && <a href={sourceUrl} target="_blank" rel="noreferrer" className="inline-flex min-h-10 items-center gap-1 rounded-[var(--radius-sm)] bg-accent px-4 text-xs font-mono font-semibold text-[var(--color-on-accent)] hover:bg-accent-hover">{primaryLink?.label || "Public source"}<ExternalLink className="h-3.5 w-3.5" /></a>}<button onClick={() => onNavigate("/contact")} className="min-h-10 rounded-[var(--radius-sm)] border border-[var(--color-border-muted)] px-4 text-xs font-mono font-semibold text-ink hover:border-accent cursor-pointer">Discuss this product</button></>}
         facts={[
           { label: "Owner org", value: organizationNames[recordOrganization] || humanize(recordOrganization), icon: Building2 },
           { label: "Audience", value: audience.slice(0, 2).join(" / ") || "Not classified", icon: factIcons.owner },
@@ -218,7 +218,7 @@ export function ProductRecordPage({
 
           <ProductSection id="implementation" title="Public implementation inventory" intro="Catalog observations strengthen this product record without replacing reviewed product positioning or becoming SSOT evidence.">
             {catalogState === "loading" && <p className="text-sm text-ink-muted" role="status">Loading repository and package inventory…</p>}
-            {catalogState === "error" && <p className="text-sm text-red-700" role="alert">Public inventory could not be loaded.</p>}
+            {catalogState === "error" && <p className="text-sm text-danger" role="alert">Public inventory could not be loaded.</p>}
             {catalogState === "unavailable" && <p className="text-sm text-ink-muted">No matching public repository is present in the current catalog scope.</p>}
             {bundle && <><InventoryMetrics bundle={bundle} /><DetailRows rows={[
               ["Observed", formatObserved(bundle.generated_at, true)],
@@ -236,7 +236,7 @@ export function ProductRecordPage({
           <ProductSection id="packages" title="Packages" intro="Public packages attached through implementation, website, or documentation repositories. Their role is shown explicitly.">
             {packages.length > 0 ? <div className="space-y-4">
               <div className="flex flex-wrap gap-2" aria-label="Filter packages by registry">
-                {["all", ...packageEcosystems].map((value) => <button key={value} type="button" onClick={() => setPackageEcosystem(value)} aria-pressed={packageEcosystem === value} className={`px-3 py-1.5 text-xs font-mono rounded border cursor-pointer ${packageEcosystem === value ? "bg-accent text-white border-accent" : "bg-surface text-ink-muted border-[var(--color-border-soft)] hover:border-accent"}`}>{value === "all" ? `All (${packages.length})` : `${ecosystemLabel(value)} (${packages.filter((item) => item.ecosystem === value).length})`}</button>)}
+                {["all", ...packageEcosystems].map((value) => <button key={value} type="button" onClick={() => setPackageEcosystem(value)} aria-pressed={packageEcosystem === value} className={`px-3 py-1.5 text-xs font-mono rounded border cursor-pointer ${packageEcosystem === value ? "bg-accent text-[var(--color-on-accent)] border-accent" : "bg-surface text-ink-muted border-[var(--color-border-soft)] hover:border-accent"}`}>{value === "all" ? `All (${packages.length})` : `${ecosystemLabel(value)} (${packages.filter((item) => item.ecosystem === value).length})`}</button>)}
               </div>
               <ul className="grid grid-cols-1 gap-3 sm:grid-cols-2">{filteredPackages.slice(0, 50).map((pkg) => {
                 const packagePath = `/catalog/packages/${pkg.ecosystem}/${pkg.route_key}`;

@@ -36,10 +36,10 @@ export function PackageIdentityCard({
     ["Observed dependents", dependentCount.toLocaleString()],
   ];
 
-  return <header className="space-y-5 rounded-[6px] border border-[var(--color-border-soft)] bg-[var(--color-surface)] p-4 shadow-[var(--shadow-soft)] sm:p-5">
+  return <header className="record-header space-y-4">
     <div className="flex flex-wrap items-start justify-between gap-5">
       <div className="flex min-w-0 flex-[1_1_36rem] items-start gap-4">
-        <div className="grid h-14 w-14 shrink-0 place-items-center rounded-[4px] border border-amber-300 bg-amber-50 text-orange-700"><Package className="h-7 w-7" aria-hidden="true" /></div>
+        <div className="grid h-14 w-14 shrink-0 place-items-center rounded-[4px] border border-[var(--color-border-soft)] bg-surface text-signal"><Package className="h-7 w-7" aria-hidden="true" /></div>
         <div className="min-w-0 space-y-2">
           <div className="flex flex-wrap items-center gap-2">
             <CatalogPill tone="signal">{humanLabel(String(record.ecosystem || "unknown"))} package member</CatalogPill>
@@ -49,16 +49,16 @@ export function PackageIdentityCard({
           <p className="max-w-4xl text-xs leading-relaxed text-ink-muted sm:text-sm">{recordDescription(record)}</p>
         </div>
       </div>
-      {externalUrl && <a href={externalUrl} target="_blank" rel="noreferrer" className="inline-flex min-h-10 items-center gap-1.5 rounded-[4px] bg-ink px-4 text-xs font-mono font-semibold text-white hover:bg-accent focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent">{published && record.registry_url ? "Registry page" : "Source manifest"}<ExternalLink className="h-3.5 w-3.5" aria-hidden="true" /></a>}
+      {externalUrl && <a href={externalUrl} target="_blank" rel="noreferrer" className="inline-flex min-h-10 items-center gap-1.5 rounded-[4px] bg-ink px-4 text-xs font-mono font-semibold text-[var(--color-on-accent)] hover:bg-accent focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent">{published && record.registry_url ? "Registry page" : "Source manifest"}<ExternalLink className="h-3.5 w-3.5" aria-hidden="true" /></a>}
     </div>
 
-    <div className="flex flex-wrap items-center justify-between gap-3 rounded-[4px] border border-[var(--color-border-soft)] bg-canvas px-3 py-2.5 text-xs font-mono">
-      <div className="flex min-w-0 items-center gap-2"><GitBranch className="h-4 w-4 shrink-0 text-violet-700" aria-hidden="true" /><span>Owning repository: {repositoryRoute.startsWith("/") ? <a href={repositoryRoute} onClick={(event) => { event.preventDefault(); onNavigate(repositoryRoute); }} className="break-words font-bold text-ink hover:text-accent hover:underline">{repositoryLabel}</a> : <strong className="text-ink">{repositoryLabel}</strong>}</span></div>
-      <div className="min-w-0 text-ink-muted">Manifest path: <code className="ml-1 break-all rounded-[3px] border border-[var(--color-border-soft)] bg-white px-2 py-1 font-semibold text-ink">{manifestPath}</code></div>
+    <div className="flex flex-wrap items-center justify-between gap-3 border-y border-[var(--color-border-soft)] py-2 text-xs font-mono">
+      <div className="flex min-w-0 items-center gap-2"><GitBranch className="h-4 w-4 shrink-0 text-accent" aria-hidden="true" /><span>Owning repository: {repositoryRoute.startsWith("/") ? <a href={repositoryRoute} onClick={(event) => { event.preventDefault(); onNavigate(repositoryRoute); }} className="break-words font-bold text-ink hover:text-accent hover:underline">{repositoryLabel}</a> : <strong className="text-ink">{repositoryLabel}</strong>}</span></div>
+      <div className="min-w-0 text-ink-muted">Manifest path: <code className="ml-1 break-all rounded-[3px] border border-[var(--color-border-soft)] bg-surface-raised px-2 py-1 font-semibold text-ink">{manifestPath}</code></div>
     </div>
 
     <dl className="grid grid-cols-2 gap-3 border-t border-[var(--color-border-soft)] pt-2 font-mono text-xs sm:grid-cols-4">
-      {facts.map(([label, value], index) => <div key={label} className="rounded-[4px] border border-[var(--color-border-soft)] bg-canvas p-3"><dt className="text-[11px] text-ink-muted">{label}</dt><dd className={`mt-1 font-bold ${index === 3 ? "text-accent" : "text-ink"}`}>{value}</dd></div>)}
+      {facts.map(([label, value], index) => <div key={label} className="min-w-0 py-1"><dt className="text-[11px] text-ink-muted">{label}</dt><dd className={`mt-1 font-bold ${index === 3 ? "text-accent" : "text-ink"}`}>{value}</dd></div>)}
     </dl>
   </header>;
 }

@@ -72,7 +72,7 @@ function repositoryCrumb(record: CatalogRecord): Crumb | null {
     route: internalRoute(repository.route || record.repository_route)
       || (fallbackOwner && fallbackName ? `/catalog/repositories/${fallbackOwner}/${fallbackName}` : undefined),
     Icon: GitBranch,
-    color: "text-violet-700",
+    color: "text-accent",
   };
 }
 
@@ -86,10 +86,10 @@ function currentCrumb(record: CatalogRecord): Crumb {
     release: Box,
   };
   const colorByKind: Record<string, string> = {
-    repository: "text-violet-700",
-    package: "text-orange-700",
-    resource: "text-sky-700",
-    technology: "text-amber-700",
+    repository: "text-accent",
+    package: "text-signal",
+    resource: "text-accent",
+    technology: "text-signal",
     release: "text-accent",
   };
   return {

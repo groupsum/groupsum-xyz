@@ -1,8 +1,8 @@
 :root {
   --type-display-xl-size: clamp(2rem, 1.65rem + 1.45vw, 3rem);
   --type-display-lg-size: clamp(1.875rem, 1.68rem + 0.8vw, 2.25rem);
-  --type-heading-md-size: 1.25rem;
-  --type-heading-sm-size: 1rem;
+  --type-heading-md-size: 1rem;
+  --type-heading-sm-size: 0.875rem;
   --type-body-lg-size: 1rem;
   --type-body-md-size: 0.875rem;
   --type-body-sm-size: 0.75rem;
@@ -45,6 +45,7 @@ nav button {
 }
 
 .type-heading-md {
+  font-family: var(--font-sans);
   font-size: var(--type-heading-md-size);
   font-weight: 700;
   letter-spacing: -0.012em;
@@ -52,6 +53,7 @@ nav button {
 }
 
 .type-heading-sm {
+  font-family: var(--font-sans);
   font-size: var(--type-heading-sm-size);
   font-weight: 700;
   line-height: 1.3;

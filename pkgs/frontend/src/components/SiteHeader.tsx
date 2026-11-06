@@ -4,6 +4,7 @@
  */
 
 import React, { useEffect, useState } from "react";
+import { ThemePicker } from "./ThemePicker";
 import {
   Box,
   Compass,
@@ -76,10 +77,10 @@ export const SiteHeader: React.FC<SiteHeaderProps> = ({ currentPath, onNavigate 
         onClick={(event) => navigate(item.path, event)}
         aria-current={active ? "page" : undefined}
         className={mobile
-          ? `type-control inline-flex min-h-11 items-center gap-3 rounded-lg border px-4 py-2.5 ${active ? "border-ink bg-ink text-white" : "border-[var(--color-border-soft)] bg-white text-ink"}`
-          : `type-control inline-flex min-h-8 items-center gap-1.5 whitespace-nowrap rounded-md px-3 py-1.5 transition-all focus:outline-none focus:ring-1 focus:ring-[#1A73E8] ${active ? "bg-ink text-white shadow-sm" : "text-ink-muted hover:bg-surface hover:text-ink"}`}
+          ? `type-control inline-flex min-h-11 items-center gap-3 rounded-lg border px-4 py-2.5 ${active ? "border-ink bg-ink text-[var(--color-on-accent)]" : "border-[var(--color-border-soft)] bg-surface-raised text-ink"}`
+          : `type-control inline-flex min-h-8 items-center gap-1.5 whitespace-nowrap rounded-md px-3 py-1.5 transition-all focus:outline-none focus:ring-1 focus:ring-accent ${active ? "bg-ink text-[var(--color-on-accent)] shadow-sm" : "text-ink-muted hover:bg-surface hover:text-ink"}`}
       >
-        <Icon className={`h-3.5 w-3.5 ${active ? "text-white" : "text-[#5C635E]"}`} aria-hidden="true" />
+        <Icon className={`h-3.5 w-3.5 ${active ? "text-[var(--color-on-accent)]" : "text-ink-muted"}`} aria-hidden="true" />
         <span>{item.label}</span>
       </a>
     );
@@ -88,10 +89,10 @@ export const SiteHeader: React.FC<SiteHeaderProps> = ({ currentPath, onNavigate 
   return (
     <header className="sticky top-0 z-40 border-b border-[var(--color-border-soft)] bg-canvas/95 backdrop-blur-md">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="flex h-16 items-center justify-between gap-4">
+        <div className="flex min-h-12 items-center justify-between gap-2">
           <div className="flex min-w-0 items-center gap-3">
           <a href="/" onClick={(event) => navigate("/", event)} className="flex min-w-0 shrink-0 items-center gap-2 rounded-lg p-1 focus-visible:outline-3">
-            <span className="grid h-8 w-8 shrink-0 place-items-center rounded-lg bg-ink font-serif text-lg font-bold text-white shadow-sm" aria-hidden="true">G</span>
+            <span className="grid h-8 w-8 shrink-0 place-items-center rounded-lg bg-ink font-serif text-lg font-bold text-[var(--color-on-accent)] shadow-sm" aria-hidden="true">G</span>
             <span className="min-w-0">
               <span className="type-heading-sm block leading-none tracking-tight">GroupSum</span>
               <span className="type-technical mt-1 block text-ink-muted">groupsum.xyz</span>
@@ -103,10 +104,11 @@ export const SiteHeader: React.FC<SiteHeaderProps> = ({ currentPath, onNavigate 
             <form onSubmit={searchCatalog} role="search" className="relative w-36 sm:w-48">
               <label htmlFor="catalog-search" className="sr-only">Search the public catalog</label>
               <Search className="pointer-events-none absolute left-2.5 top-1/2 h-3.5 w-3.5 -translate-y-1/2 text-ink-muted" aria-hidden="true" />
-              <input id="catalog-search" type="search" value={catalogQuery} onChange={(event) => setCatalogQuery(event.target.value)} placeholder="Search catalog..." className="type-control w-full rounded-lg border border-[var(--color-border-soft)] bg-white py-1.5 pl-8 pr-3 text-ink placeholder:font-normal placeholder:text-[#A3A8A2] focus:border-accent focus:outline-none focus:ring-1 focus:ring-accent" />
+              <input id="catalog-search" type="search" value={catalogQuery} onChange={(event) => setCatalogQuery(event.target.value)} placeholder="Search catalog..." className="type-control w-full rounded-lg border border-[var(--color-border-soft)] bg-surface-raised py-1.5 pl-8 pr-3 text-ink placeholder:font-normal placeholder:text-ink-muted focus:border-accent focus:outline-none focus:ring-1 focus:ring-accent" />
             </form>
           </div>
 
+          <ThemePicker />
           <button type="button" onClick={() => setMobileMenuOpen((open) => !open)} aria-expanded={mobileMenuOpen} aria-controls="mobile-navigation" aria-label={mobileMenuOpen ? "Close menu" : "Open menu"} className="rounded-[4px] p-2 text-ink-muted hover:bg-surface hover:text-ink md:hidden">
             {mobileMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
           </button>
@@ -118,13 +120,13 @@ export const SiteHeader: React.FC<SiteHeaderProps> = ({ currentPath, onNavigate 
       </div>
 
       {mobileMenuOpen && (
-        <div id="mobile-navigation" className="fixed inset-x-0 top-16 h-[calc(100dvh-4rem)] overflow-y-auto border-t border-[var(--color-border-soft)] bg-canvas md:hidden">
+        <div id="mobile-navigation" className="fixed inset-x-0 top-12 h-[calc(100dvh-3rem)] overflow-y-auto border-t border-[var(--color-border-soft)] bg-canvas md:hidden">
           <nav className="mx-auto flex min-h-full max-w-[var(--content-max)] flex-col justify-between p-5" aria-label="Mobile navigation">
             <div className="space-y-4">
               <form onSubmit={searchCatalog} role="search" className="relative">
                 <label htmlFor="mobile-catalog-search" className="sr-only">Search the public catalog</label>
                 <Search className="pointer-events-none absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-ink-muted" aria-hidden="true" />
-                <input id="mobile-catalog-search" type="search" value={catalogQuery} onChange={(event) => setCatalogQuery(event.target.value)} placeholder="Search catalog..." className="type-control min-h-11 w-full rounded-[4px] border border-[var(--color-border-soft)] bg-white pl-9 pr-3 text-ink" />
+                <input id="mobile-catalog-search" type="search" value={catalogQuery} onChange={(event) => setCatalogQuery(event.target.value)} placeholder="Search catalog..." className="type-control min-h-11 w-full rounded-[4px] border border-[var(--color-border-soft)] bg-surface-raised pl-9 pr-3 text-ink" />
               </form>
               <div className="grid gap-2">{navItems.map((item) => renderNavItem(item, true))}</div>
             </div>

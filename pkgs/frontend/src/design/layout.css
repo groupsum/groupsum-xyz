@@ -1,0 +1,46 @@
+/* Document surfaces: hierarchy comes from type, alignment and rules. */
+.document-section { min-width: 0; padding-block: 1rem; border-top: 1px solid var(--color-border-soft); }
+.record-header { min-width: 0; padding-block: 1rem; border-bottom: 1px solid var(--color-border-soft); }
+.metric-strip { display: flex; flex-wrap: wrap; gap: .75rem 2rem; }
+.metric-strip > div { min-width: 6rem; padding-block: .25rem; }
+.fact-list { display: grid; gap: .75rem 1.5rem; }
+main { min-width: 0; }
+main :is(section, article, aside, header, dl) { min-width: 0; }
+/* Flatten legacy compositions during their migration to document primitives. */
+main :is(section, article, header, dl)[class*="rounded"] {
+  border-radius: 0; box-shadow: none;
+}
+.document-section > :is(section, article, dl)[class*="border"] {
+  border-inline: 0; background: transparent; padding-inline: 0;
+}
+.catalog-density-card { border-inline: 0; border-radius: 0; box-shadow: none; padding: .75rem 0; }
+.product-portfolio-card { background: transparent; }
+.product-portfolio-card > div:first-child > div:first-child { border: 0; background: transparent; padding: .25rem; }
+.product-portfolio-card > div:first-child > div:nth-child(2) > div:first-child > span:first-child { color: var(--color-ink); }
+.product-portfolio-card > div:last-child { color: var(--color-accent); }
+.product-portfolio-card > div:last-child > span { color: inherit; }
+.document-section :is(.rounded-xl, .rounded-lg, .rounded-md)[class*="border"]:not(button, a, input, select, textarea) { border-inline: 0; border-radius: 0; background: transparent; box-shadow: none; }
+.catalog-density-table :is(th, td) { padding-block: var(--cell-padding-y); padding-inline: var(--cell-padding-x); }
+.catalog-density-table tbody tr { height: auto; min-height: var(--row-min-height); }
+.catalog-density-table tbody tr:hover { background: var(--table-hover); }
+.catalog-density-table a { min-width: 0; }
+.catalog-density-table th { overflow-wrap: anywhere; }
+.catalog-density-table tbody { font-family: var(--font-sans); font-size: .75rem; }
+.catalog-density-table :is(strong, time) { font-variant-numeric: tabular-nums; }
+.theme-picker { font-size: .75rem; }
+button, a, summary { touch-action: manipulation; }
+details > summary { min-height: 24px; }
+input, select, textarea { color: var(--color-ink); accent-color: var(--color-accent); }
+input::placeholder, textarea::placeholder { color: var(--color-ink-muted); opacity: 1; }
+.code-token-comment, .code-token-operator, .code-token-punctuation { color: var(--color-ink-muted); }
+.code-token-string, .code-token-number, .code-token-boolean { color: var(--color-signal); }
+.code-token-keyword, .code-token-property { color: var(--color-success); }
+.code-token-function, .code-token-preprocessor { color: var(--color-info); }
+@media (pointer: coarse) {
+  :is(button, summary, select) { min-height: 36px; }
+}
+@media (max-width: 40rem) {
+  .metric-strip { gap: .5rem 1rem; }
+  .metric-strip > div { min-width: 5rem; }
+  .catalog-density-table :is(th, td) { padding-inline: .375rem; }
+}

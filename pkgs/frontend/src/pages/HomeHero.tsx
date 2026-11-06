@@ -68,7 +68,7 @@ export function HomeHero({ onNavigate }: { onNavigate: (path: string) => void })
               <div className="flex flex-wrap items-center gap-4 pt-4">
                 <button
                   onClick={() => onNavigate("/contact")}
-                  className="px-6 py-3 bg-accent hover:bg-accent-hover text-white text-xs font-bold uppercase tracking-widest rounded-md shadow-sm transition-all inline-flex items-center justify-center gap-2 cursor-pointer"
+                  className="px-6 py-3 bg-accent hover:bg-accent-hover text-[var(--color-on-accent)] text-xs font-bold uppercase tracking-widest rounded-md shadow-sm transition-all inline-flex items-center justify-center gap-2 cursor-pointer"
                 >
                   Discuss a project
                   <ArrowRight className="w-4 h-4" />
@@ -113,11 +113,11 @@ export function HomeHero({ onNavigate }: { onNavigate: (path: string) => void })
                   </div>
                   <div className="p-3 bg-[var(--color-surface)] border border-[var(--color-border-soft)] rounded-[var(--radius-sm)] flex items-center justify-between">
                     <span className="text-xs font-mono font-medium text-ink">Tigrbl ASGI Handshake</span>
-                    <span className="text-[10px] font-mono text-green-800 font-bold">Typed</span>
+                    <span className="text-[10px] font-mono text-success font-bold">Typed</span>
                   </div>
                   <div className="p-3 bg-[var(--color-surface)] border border-[var(--color-border-soft)] rounded-[var(--radius-sm)] flex items-center justify-between">
                     <span className="text-xs font-mono font-medium text-ink">Swarmauri Agent Loop</span>
-                    <span className="text-[10px] font-mono text-blue-600 font-bold">Source</span>
+                    <span className="text-[10px] font-mono text-accent font-bold">Source</span>
                   </div>
                 </div>
 

@@ -116,7 +116,7 @@ export const InquiryForm: React.FC = () => {
           </button>
           <a
             href="mailto:partner@groupsum.xyz"
-            className="inline-flex items-center justify-center px-4 py-2 bg-accent hover:bg-accent-hover text-xs font-mono text-white rounded-[var(--radius-sm)] transition-all"
+            className="inline-flex items-center justify-center px-4 py-2 bg-accent hover:bg-accent-hover text-xs font-mono text-[var(--color-on-accent)] rounded-[var(--radius-sm)] transition-all"
           >
             <Mail className="w-3.5 h-3.5 mr-1.5" /> Direct Email Follow-up
           </a>
@@ -138,8 +138,8 @@ export const InquiryForm: React.FC = () => {
       </p>
 
       {status === "error" && (
-        <div className="mb-6 p-4 bg-red-500/5 border border-red-500/20 text-red-800 rounded-[var(--radius-sm)] flex gap-3 text-sm">
-          <AlertTriangle className="w-5 h-5 text-red-600 shrink-0 mt-0.5" />
+        <div className="mb-6 p-4 bg-surface/5 border border-[var(--color-border-soft)]/20 text-danger rounded-[var(--radius-sm)] flex gap-3 text-sm">
+          <AlertTriangle className="w-5 h-5 text-danger shrink-0 mt-0.5" />
           <div>
             <span className="font-semibold block">Network Ingress Failure</span>
             Unable to establish secure tunnel to submission endpoint. Please try again or fallback to direct email at{" "}
@@ -170,7 +170,7 @@ export const InquiryForm: React.FC = () => {
             className="w-full px-4 py-2.5 bg-canvas border border-[var(--color-border-muted)] rounded-[var(--radius-sm)] text-[14px] text-ink focus:outline-none focus:border-accent focus:ring-2 focus:ring-accent/10 transition-all disabled:opacity-50"
           />
           {errors.name && (
-            <p id="name-error" className="text-xs text-red-600 mt-1 font-mono">
+            <p id="name-error" className="text-xs text-danger mt-1 font-mono">
               {errors.name}
             </p>
           )}
@@ -195,7 +195,7 @@ export const InquiryForm: React.FC = () => {
             className="w-full px-4 py-2.5 bg-canvas border border-[var(--color-border-muted)] rounded-[var(--radius-sm)] text-[14px] text-ink focus:outline-none focus:border-accent focus:ring-2 focus:ring-accent/10 transition-all disabled:opacity-50"
           />
           {errors.email && (
-            <p id="email-error" className="text-xs text-red-600 mt-1 font-mono">
+            <p id="email-error" className="text-xs text-danger mt-1 font-mono">
               {errors.email}
             </p>
           )}
@@ -258,7 +258,7 @@ export const InquiryForm: React.FC = () => {
             className="w-full px-4 py-2.5 bg-canvas border border-[var(--color-border-muted)] rounded-[var(--radius-sm)] text-[14px] text-ink focus:outline-none focus:border-accent focus:ring-2 focus:ring-accent/10 transition-all disabled:opacity-50 resize-y"
           />
           {errors.message && (
-            <p id="message-error" className="text-xs text-red-600 mt-1 font-mono">
+            <p id="message-error" className="text-xs text-danger mt-1 font-mono">
               {errors.message}
             </p>
           )}
@@ -280,11 +280,11 @@ export const InquiryForm: React.FC = () => {
           <button
             type="submit"
             disabled={status === "submitting"}
-            className="inline-flex items-center justify-center px-6 py-3 bg-accent hover:bg-accent-hover disabled:bg-accent/60 text-white text-xs font-bold uppercase tracking-widest rounded-md cursor-pointer select-none transition-all duration-150 focus:outline-none focus:ring-3 focus:ring-accent/20 focus:ring-offset-2"
+            className="inline-flex items-center justify-center px-6 py-3 bg-accent hover:bg-accent-hover disabled:bg-accent/60 text-[var(--color-on-accent)] text-xs font-bold uppercase tracking-widest rounded-md cursor-pointer select-none transition-all duration-150 focus:outline-none focus:ring-3 focus:ring-accent/20 focus:ring-offset-2"
           >
             {status === "submitting" ? (
               <>
-                <svg className="animate-spin -ml-1 mr-2 h-4 w-4 text-white" fill="none" viewBox="0 0 24 24">
+                <svg className="animate-spin -ml-1 mr-2 h-4 w-4 text-[var(--color-on-accent)]" fill="none" viewBox="0 0 24 24">
                   <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
                   <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z" />
                 </svg>

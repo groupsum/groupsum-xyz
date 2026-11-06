@@ -1,0 +1,74 @@
+/* Six complete palettes. Components consume roles, never palette literals. */
+@theme inline {
+  --color-canvas: var(--palette-canvas); --color-surface: var(--palette-surface);
+  --color-surface-raised: var(--palette-raised); --color-ink: var(--palette-ink);
+  --color-ink-muted: var(--palette-muted); --color-accent: var(--palette-accent);
+  --color-accent-hover: var(--palette-hover); --color-on-accent: var(--palette-on-accent);
+  --color-signal: var(--palette-signal); --color-success: var(--palette-success);
+  --color-danger: var(--palette-danger); --color-info: var(--palette-info);
+}
+:root, [data-theme="paper"] {
+  color-scheme: light;
+  --palette-canvas: #f6f2eb; --palette-surface: #eee8df; --palette-raised: #fcfaf6;
+  --palette-ink: #25201f; --palette-muted: #655a56; --palette-border: #d6ccc2;
+  --palette-accent: #972d38; --palette-hover: #76202a; --palette-on-accent: #fff8f5;
+  --palette-signal: #875000; --palette-info: #245c89; --palette-success: #216348; --palette-danger: #ad2530;
+}
+[data-theme="coal"] {
+  color-scheme: dark;
+  --palette-canvas: #171415; --palette-surface: #242022; --palette-raised: #2d2729;
+  --palette-ink: #f2eae5; --palette-muted: #c3b3b3; --palette-border: #4a3e41;
+  --palette-accent: #f28d91; --palette-hover: #ffb1b2; --palette-on-accent: #301518;
+  --palette-signal: #e6b36c; --palette-info: #95c5ed; --palette-success: #8cd1a9; --palette-danger: #ffaaa5;
+}
+[data-theme="mist"] {
+  color-scheme: light;
+  --palette-canvas: #f1f5f9; --palette-surface: #e5ecf4; --palette-raised: #fafcff;
+  --palette-ink: #182333; --palette-muted: #4f6175; --palette-border: #c7d3e0;
+  --palette-accent: #234eae; --palette-hover: #183a87; --palette-on-accent: #ffffff;
+  --palette-signal: #875000; --palette-info: #234eae; --palette-success: #216348; --palette-danger: #ad2530;
+}
+[data-theme="midnight"] {
+  color-scheme: dark;
+  --palette-canvas: #121820; --palette-surface: #1c2632; --palette-raised: #263342;
+  --palette-ink: #edf2fa; --palette-muted: #b4c3d6; --palette-border: #3e5169;
+  --palette-accent: #a2bfff; --palette-hover: #c6d7ff; --palette-on-accent: #142547;
+  --palette-signal: #e6b36c; --palette-info: #95c5ed; --palette-success: #8cd1a9; --palette-danger: #ffaaa5;
+}
+[data-theme="parchment"] {
+  color-scheme: light;
+  --palette-canvas: #f2f0e3; --palette-surface: #e7e6d3; --palette-raised: #faf9ef;
+  --palette-ink: #262b20; --palette-muted: #59634b; --palette-border: #ccd0b9;
+  --palette-accent: #496124; --palette-hover: #344719; --palette-on-accent: #ffffff;
+  --palette-signal: #875000; --palette-info: #245c89; --palette-success: #216348; --palette-danger: #ad2530;
+}
+[data-theme="evergreen"] {
+  color-scheme: dark;
+  --palette-canvas: #121a17; --palette-surface: #1d2a23; --palette-raised: #29392f;
+  --palette-ink: #eef3e7; --palette-muted: #b7c7b2; --palette-border: #435849;
+  --palette-accent: #bed98e; --palette-hover: #dbedba; --palette-on-accent: #233315;
+  --palette-signal: #e6b36c; --palette-info: #95c5ed; --palette-success: #8cd1a9; --palette-danger: #ffaaa5;
+}
+:root {
+  --color-canvas: var(--palette-canvas); --color-surface: var(--palette-surface);
+  --color-surface-raised: var(--palette-raised); --color-ink: var(--palette-ink);
+  --color-ink-muted: var(--palette-muted); --color-accent: var(--palette-accent);
+  --color-accent-hover: var(--palette-hover); --color-on-accent: var(--palette-on-accent);
+  --color-border-soft: var(--palette-border); --color-border-muted: var(--palette-border);
+  --color-border-accent-soft: color-mix(in srgb, var(--palette-accent) 35%, var(--palette-canvas));
+  --color-signal: var(--palette-signal); --color-signal-soft: color-mix(in srgb, var(--palette-signal) 12%, var(--palette-canvas));
+  --color-success: var(--palette-success); --color-danger: var(--palette-danger); --color-info: var(--palette-info);
+  --focus-ring: var(--palette-accent); --color-selection: var(--palette-on-accent);
+  --chart-1: var(--palette-accent); --chart-2: var(--palette-signal); --chart-3: var(--palette-info);
+  --chart-4: var(--palette-success); --chart-track: var(--palette-border);
+  --chart-grid: var(--palette-border); --chart-missing: var(--palette-muted);
+  --table-hover: var(--palette-surface); --table-selected: var(--color-border-accent-soft);
+  --overlay-surface: var(--palette-raised); --overlay-shadow: 0 6px 24px #0003;
+  --color-code-surface: var(--palette-surface); --color-code-header: var(--palette-raised); --color-code-ink: var(--palette-ink);
+  --space-unit: .25rem; --cell-padding-x: .5rem; --cell-padding-y: .375rem;
+  --row-min-height: 2rem; --control-height: 1.875rem; --radius-control: 2px;
+  --motion-fast: 120ms; --shadow-soft: none; --shadow-hover: none;
+  scrollbar-color: var(--palette-muted) var(--palette-canvas);
+  scrollbar-width: thin;
+}
+::selection { background: var(--color-accent); color: var(--color-on-accent); }

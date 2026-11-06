@@ -48,7 +48,7 @@ export const SiteFooter: React.FC<SiteFooterProps> = ({ onNavigate }) => {
             <a href="mailto:partner@groupsum.xyz" className="hover:text-accent hover:underline">Email</a>
             <a href="/insights" onClick={(event) => navigate("/insights", event)} className="hover:text-accent hover:underline">Insights</a>
             <span aria-hidden="true" className="hidden text-[var(--color-border-muted)] sm:inline">|</span>
-            <span className="inline-flex items-center gap-1.5 text-emerald-700"><ShieldCheck className="h-3.5 w-3.5" />Evidence boundaries published</span>
+            <span className="inline-flex items-center gap-1.5 text-success"><ShieldCheck className="h-3.5 w-3.5" />Evidence boundaries published</span>
           </div>
         </div>
 

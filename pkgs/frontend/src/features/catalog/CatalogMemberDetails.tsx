@@ -142,7 +142,7 @@ function dependencyScope(value: unknown): { label: string; Icon: typeof Package 
 }
 
 function DependencyIcon({ label, Icon }: { label: string; Icon: typeof Package }) {
-  return <span className="inline-grid h-6 w-6 place-items-center rounded-[3px] border border-[var(--color-border-muted)] bg-white text-accent" title={label} aria-label={label}><Icon className="h-3.5 w-3.5" aria-hidden="true" /></span>;
+  return <span className="inline-grid h-6 w-6 place-items-center rounded-[3px] border border-[var(--color-border-muted)] bg-surface-raised text-accent" title={label} aria-label={label}><Icon className="h-3.5 w-3.5" aria-hidden="true" /></span>;
 }
 
 function DependencySemantics({ item, details, direction }: { item: Record<string, unknown>; details: Record<string, unknown>; direction: "dependency" | "dependent" }) {

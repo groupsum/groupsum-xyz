@@ -72,7 +72,7 @@ export function PackageDetailPage({ slug, onNavigate }: { slug: string; onNaviga
         <p className="text-sm text-ink-muted">The requested software package is either unapproved, private, or has been relocated.</p>
         <button
           onClick={() => onNavigate("/products")}
-          className="px-4 py-2 bg-accent hover:bg-accent-hover text-white text-xs font-mono font-semibold rounded-[var(--radius-sm)] transition-all"
+          className="px-4 py-2 bg-accent hover:bg-accent-hover text-[var(--color-on-accent)] text-xs font-mono font-semibold rounded-[var(--radius-sm)] transition-all"
         >
           Return to Ecosystems
         </button>
@@ -163,7 +163,7 @@ export function SpecificationDetailPage({ slug, onNavigate }: { slug: string; on
         <p className="text-sm text-ink-muted">The requested specification standard is either unapproved, private, or has been relocated.</p>
         <button
           onClick={() => onNavigate("/portfolio")}
-          className="px-4 py-2 bg-accent hover:bg-accent-hover text-white text-xs font-mono font-semibold rounded-[var(--radius-sm)] transition-all"
+          className="px-4 py-2 bg-accent hover:bg-accent-hover text-[var(--color-on-accent)] text-xs font-mono font-semibold rounded-[var(--radius-sm)] transition-all"
         >
           Return to Portfolio
         </button>
