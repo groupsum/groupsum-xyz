@@ -34,3 +34,9 @@ test("document and table primitives do not regress to nested cards or mobile car
   assert.ok(!source("src/features/catalog/CatalogCollectionTables.tsx").includes("PackageMobileCard"));
   assert.ok(source("src/features/catalog/ActivityInspector.tsx").includes('type="range"'));
 });
+
+test("remote fonts cannot cause a late layout-changing swap", () => {
+  const html = source("index.html");
+  assert.ok(html.includes("display=optional"));
+  assert.ok(!html.includes("display=swap"));
+});
