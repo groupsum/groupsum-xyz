@@ -16,6 +16,8 @@ for operation in plan["operations"]:
     require(operation["action"] == "update" and operation["kind"] == "proxy_host", "Only proxy updates are allowed")
     require(operation["existing"]["identity"] == {"owner": "groupsum-xyz", "resource_id": "proxy.groupsum-xyz"}, "Proxy ownership mismatch")
     require(set(operation["diff"]) <= {"locations"}, "Unrelated proxy fields would change")
+    previous_locations = operation["existing"].get("raw", {}).get("locations") or []
+    require(len(previous_locations) <= 1 and all(item.get("path") == "/internal/v1/catalog/" for item in previous_locations), "Repair must not remove unrelated existing locations")
     require(operation["desired"]["locations"] == [{
         "path": "/internal/v1/catalog/", "forward_scheme": "http",
         "forward_host": "groupsum-xyz", "forward_port": 80,

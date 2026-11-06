@@ -4,6 +4,7 @@ from __future__ import annotations
 import json
 import re
 import subprocess
+from collections import Counter
 
 
 def command(*args):
@@ -17,6 +18,10 @@ def summarize(label, text):
         r"client_max_body_size|server_name.*groupsum\.xyz|location.*/internal|proxy_pass.*groupsum", line
     )]
     print(json.dumps({"source": label, "directives": relevant[:30]}))
+    requests = re.findall(r'"POST (/internal/v1/catalog/[^\s?\"]+) HTTP/[^\"]+" (\d{3})', text)
+    if requests:
+        print(json.dumps({"source": label, "recent_catalog_posts_by_status": dict(Counter(status for _, status in requests)),
+                          "last_catalog_post_path": requests[-1][0], "last_catalog_post_status": requests[-1][1]}))
     for line in lines:
         if "too large body" in line and ("groupsum.xyz" in line or "/internal/v1/catalog/" in line):
             size = re.search(r"too large body:\s*(\d+)", line)
