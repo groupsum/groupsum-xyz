@@ -17,10 +17,10 @@ os.environ["GROUPSUM_DATABASE_URL"] = f"sqlite:///{database}"
 os.environ["GROUPSUM_ANALYTICS_DSN"] = str(directory / "metrics.duckdb")
 
 from groupsum_catalog_api.app import app  # noqa: E402
+from groupsum_catalog_api.tables.association import Association  # noqa: E402
 from groupsum_catalog_api.tables.package import Package  # noqa: E402
 from groupsum_catalog_api.tables.repository import Repository  # noqa: E402
 from groupsum_catalog_api.tables.resources.party.person import PartyPerson  # noqa: E402
-from groupsum_catalog_api.tables.association import Association  # noqa: E402
 
 with Session(create_engine(f"sqlite:///{database}")) as session:
     for owner, name, stars, count in [

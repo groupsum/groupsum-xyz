@@ -1,4 +1,5 @@
 import sys
+import json
 import unittest
 from pathlib import Path
 
@@ -6,12 +7,31 @@ ROOT = Path(__file__).resolve().parents[3]
 sys.path.insert(0, str(ROOT / "pkgs" / "catalog-pipeline"))
 
 from catalog_collect import Observation
-from groupsum_catalog_pipeline.api_client import CatalogApiClient
+from groupsum_catalog_pipeline.api_client import CatalogApiClient, CatalogApiError
 from groupsum_catalog_pipeline.collect_cli import retained_owner_repositories
 from groupsum_catalog_pipeline.collector_common import ApiClient
 
 
 class CatalogClientTests(unittest.TestCase):
+    def test_large_single_records_are_bounded_and_never_silently_exceed_hard_limit(self):
+        client = object.__new__(CatalogApiClient)
+        requests = []
+        client._request = lambda method, path, body: requests.append(body) or {"accepted": len(body["records"])}
+        rows = [{"id": "large", "payload": "x" * 250}, {"id": "small"}]
+        self.assertEqual(client.publish_records("/test", "snapshot:test", rows, max_payload_bytes=100, max_request_bytes=400)["accepted"], 2)
+        self.assertTrue(all(len(json.dumps(body, separators=(",", ":")).encode()) <= 400 for body in requests))
+        requests.clear()
+        with self.assertRaisesRegex(CatalogApiError, "record_id=large.*exceeds"):
+            client.publish_records("/test", "snapshot:test", rows, max_request_bytes=200)
+        self.assertEqual(requests, [])
+
+    def test_encoded_envelope_and_unicode_are_included_in_limit(self):
+        client = object.__new__(CatalogApiClient)
+        requests = []
+        client._request = lambda method, path, body: requests.append(body) or {"accepted": len(body["records"])}
+        client.publish_records("/test", 'snapshot:"\\♥', [{"id": str(i), "value": "♥" * 10} for i in range(6)], max_payload_bytes=200)
+        self.assertTrue(all(len(json.dumps(body, separators=(",", ":")).encode()) <= 200 for body in requests))
+
     def test_github_pages_stops_at_observation_limit(self):
         client = object.__new__(ApiClient)
         calls = []

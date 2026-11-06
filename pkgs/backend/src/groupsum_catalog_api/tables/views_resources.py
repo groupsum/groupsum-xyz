@@ -5,9 +5,9 @@ from collections import Counter
 from ..projections.public_resources import public_resource_record
 from ..projections.resource_types import resource_type_descriptors
 from .view_common import *  # noqa: F403
+from .view_package_summary import package_collection_summary, package_summary
 from .view_repository_metrics import repository_metrics as repository_metrics
 from .view_resource_detail import resource_detail_model
-from .view_package_summary import package_collection_summary, package_summary
 
 
 def _collection_aggregates(values: list[dict], resource_kind: str) -> dict[str, int]:
@@ -45,9 +45,15 @@ def catalog_collection(table, ctx, resource_kind: str):
         package_index = {}
         if resource_kind == "repository":
             from .package import Package
-            package_index = {row.id: row for row in current_entity_query(session, Package).with_entities(
-                Package.id, Package.ecosystem, Package.publication_status, Package.published
-            ).all()}
+
+            package_index = {
+                row.id: row
+                for row in current_entity_query(session, Package)
+                .with_entities(
+                    Package.id, Package.ecosystem, Package.publication_status, Package.published
+                )
+                .all()
+            }
         for row in current_entity_query(session, table).all():
             item = source_record(row)
             if resource_kind == "repository":

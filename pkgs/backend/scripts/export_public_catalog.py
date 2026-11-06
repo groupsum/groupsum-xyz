@@ -8,8 +8,8 @@ from collections import Counter
 from pathlib import Path
 from typing import Any
 
-from groupsum_catalog_api.projections.public_resources import public_resource_records
 from groupsum_catalog_api.projections.contributors import contributor_records
+from groupsum_catalog_api.projections.public_resources import public_resource_records
 from groupsum_catalog_api.projections.resource_types import resource_type_descriptors
 from groupsum_catalog_api.record_compiler import compile_catalog_records
 from groupsum_catalog_api.tables.registry import RESOURCE_TABLES

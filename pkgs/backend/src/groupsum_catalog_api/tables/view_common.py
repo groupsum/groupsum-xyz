@@ -42,9 +42,7 @@ def current_entity_query(session, table, entity_type: str | None = None):
 
     query = session.query(table)
     snapshot_id = (
-        session.query(CatalogSnapshot.id)
-        .filter(CatalogSnapshot.is_current.is_(True))
-        .scalar()
+        session.query(CatalogSnapshot.id).filter(CatalogSnapshot.is_current.is_(True)).scalar()
     )
     if snapshot_id is None:
         return query
@@ -58,6 +56,7 @@ def current_entity_query(session, table, entity_type: str | None = None):
 
 def repository_resource(value: dict[str, Any]) -> dict[str, Any]:
     from ..projections.contributors import observed_contributor_route
+
     item = dict(value)
     full_name = str(item.get("full_name") or "")
     owner, separator, name = full_name.partition("/")
@@ -95,8 +94,10 @@ def repository_resource(value: dict[str, Any]) -> dict[str, Any]:
         "history": item.get("history")
         or {key: [] for key in ("stars", "forks", "watchers", "contributors")},
         "commit_activity": commit_activity,
-        "contributors": [{**person, "profile_route": observed_contributor_route(person)}
-                         for person in (item.get("contributors") or activity.get("contributors") or [])],
+        "contributors": [
+            {**person, "profile_route": observed_contributor_route(person)}
+            for person in (item.get("contributors") or activity.get("contributors") or [])
+        ],
         "releases": releases,
         "release_count": len(releases),
         "governance": governance,
@@ -242,8 +243,11 @@ def _filter(values: list[dict], params: Any) -> list[dict]:
         repository = str(params.get("repository") or "").casefold()
         if repository:
             owners = {str(item.get("repository") or "").casefold()}
-            owners.update(f"{owner.get('owner', '')}/{owner.get('name', '')}".casefold()
-                          for owner in item.get("repositories") or [] if isinstance(owner, dict))
+            owners.update(
+                f"{owner.get('owner', '')}/{owner.get('name', '')}".casefold()
+                for owner in item.get("repositories") or []
+                if isinstance(owner, dict)
+            )
             if repository not in owners:
                 continue
         tests = {
@@ -265,10 +269,13 @@ def _filter(values: list[dict], params: Any) -> list[dict]:
         filtered.sort(key=_activity_score, reverse=True)
     elif sort in ("stars", "stars_asc"):
         direction = 1 if sort == "stars_asc" else -1
-        filtered.sort(key=lambda item: (
-            direction * float((item.get("metrics") or {}).get("stars") or 0),
-            str(item.get("name") or "").casefold(), str(item.get("id") or ""),
-        ))
+        filtered.sort(
+            key=lambda item: (
+                direction * float((item.get("metrics") or {}).get("stars") or 0),
+                str(item.get("name") or "").casefold(),
+                str(item.get("id") or ""),
+            )
+        )
     else:
         filtered.sort(key=lambda item: str(item.get("name") or item.get("title") or "").casefold())
     return filtered
@@ -277,8 +284,7 @@ def _filter(values: list[dict], params: Any) -> list[dict]:
 def _recent_activity_key(item: dict[str, Any]) -> str:
     """Return the newest known product activity, not the collection observation time."""
     timestamps = [
-        item.get(key)
-        for key in ("pushed_at", "published_at", "released_at", "updated_at")
+        item.get(key) for key in ("pushed_at", "published_at", "released_at", "updated_at")
     ]
     for nested_key in ("latest_release", "latest_deployment"):
         nested = item.get(nested_key)

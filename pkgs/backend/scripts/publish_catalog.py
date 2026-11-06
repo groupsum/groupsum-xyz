@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import logging
 import os
 import sys
 from pathlib import Path
@@ -10,6 +11,7 @@ from groupsum_catalog_api.record_compiler import compile_catalog_records
 
 
 def main() -> None:
+    logging.basicConfig(level=logging.INFO, format="%(levelname)s %(message)s")
     backend_root = Path(__file__).resolve().parents[1]
     repo_root = backend_root.parents[1]
     sys.path.insert(0, str(repo_root / "pkgs" / "catalog-pipeline"))

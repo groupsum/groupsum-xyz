@@ -1,12 +1,16 @@
 from __future__ import annotations
 
 import json
+import logging
 import time
 import urllib.error
 import urllib.parse
 import urllib.request
 from collections.abc import Iterable
 from typing import Any
+
+logger = logging.getLogger(__name__)
+MAX_REQUEST_BYTES = 32 * 1024 * 1024
 
 
 class CatalogApiError(RuntimeError):
@@ -22,6 +26,9 @@ class CatalogApiClient:
 
     def _request(self, method: str, path: str, body: dict[str, Any] | None = None) -> Any:
         payload = None if body is None else json.dumps(body, separators=(",", ":")).encode()
+        request_bytes = len(payload or b"")
+        logger.info("catalog request method=%s path=%s bytes=%d records=%d", method, path,
+                    request_bytes, len((body or {}).get("records", [])))
         request = urllib.request.Request(
             f"{self.base_url}{path}",
             data=payload,
@@ -37,9 +44,11 @@ class CatalogApiClient:
                 with urllib.request.urlopen(request, timeout=self.timeout) as response:
                     return json.loads(response.read().decode())
             except urllib.error.HTTPError as exc:
-                detail = exc.read().decode(errors="replace")
+                detail = exc.read(2048).decode(errors="replace")
+                if self.token:
+                    detail = detail.replace(self.token, "[redacted]")
                 if exc.code < 500 or attempt == self.retries - 1:
-                    raise CatalogApiError(f"{method} {path}: HTTP {exc.code}: {detail}") from exc
+                    raise CatalogApiError(f"{method} {path}: HTTP {exc.code}, request_bytes={request_bytes}: {detail}") from exc
             except urllib.error.URLError as exc:
                 if attempt == self.retries - 1:
                     raise CatalogApiError(f"{method} {path}: {exc}") from exc
@@ -62,21 +71,30 @@ class CatalogApiClient:
         *,
         chunk_size: int = 250,
         max_payload_bytes: int = 8 * 1024 * 1024,
+        max_request_bytes: int = MAX_REQUEST_BYTES,
     ) -> dict[str, int]:
+        if chunk_size < 1 or max_payload_bytes < 1 or max_request_bytes < 1:
+            raise ValueError("Publication batch sizes must be positive")
+        max_payload_bytes = min(max_payload_bytes, max_request_bytes)
         records = list(rows)
         totals = {"accepted": 0, "created": 0, "existing": 0}
         batches: list[list[dict[str, Any]]] = []
         batch: list[dict[str, Any]] = []
-        batch_bytes = len(snapshot_id.encode()) + 64
+        envelope_bytes = len(json.dumps({"snapshot_id": snapshot_id, "records": []}, separators=(",", ":")).encode())
+        batch_bytes = envelope_bytes
         for record in records:
-            record_bytes = len(json.dumps(record, separators=(",", ":")).encode()) + 1
+            record_bytes = len(json.dumps(record, separators=(",", ":")).encode())
+            if envelope_bytes + record_bytes > max_request_bytes:
+                raise CatalogApiError(f"{path}: record_id={record.get('id', '<unknown>')} single_record_request_bytes={envelope_bytes + record_bytes} exceeds max_request_bytes={max_request_bytes}; no records published")
             if batch and (
                 len(batch) >= chunk_size
-                or batch_bytes + record_bytes > max_payload_bytes
+                or batch_bytes + record_bytes + 1 > max_payload_bytes
             ):
                 batches.append(batch)
                 batch = []
-                batch_bytes = len(snapshot_id.encode()) + 64
+                batch_bytes = envelope_bytes
+            if batch:
+                batch_bytes += 1
             batch.append(record)
             batch_bytes += record_bytes
         if batch:

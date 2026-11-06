@@ -13,6 +13,8 @@ from tigrbl_core._spec import PathSpec, RouterSpec, TableSpec
 from .route_parameters import binding_parameters
 from .schemas import ResourceCatalogCollection
 from .tables import (
+    view_contributors,
+    view_package_relationships,
     views_analytics,
     views_catalog,
     views_records,
@@ -32,7 +34,6 @@ from .tables.registry import ALL_TABLES
 from .tables.repository import Repository
 from .tables.resources.party.person import PartyPerson
 from .tables.technology import Technology
-from .tables import view_contributors, view_package_relationships
 
 Operation = Callable[[type, dict[str, Any]], Any]
 
