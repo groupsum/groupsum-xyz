@@ -6,6 +6,7 @@ const source = (relativePath) => readFileSync(resolve(root, relativePath), "utf8
 const failures = [];
 
 const indexCss = source("src/index.css");
+const typographyCss = source("src/typography.css");
 const header = source("src/components/SiteHeader.tsx");
 const explorer = source("src/features/catalog/CatalogExplorerUI.tsx");
 const visuals = source("src/features/catalog/CatalogVisuals.tsx");
@@ -23,7 +24,7 @@ for (const role of [
   "type-technical",
   "type-metric",
 ]) {
-  if (!indexCss.includes(`.${role}`)) failures.push(`Missing semantic typography role: ${role}`);
+  if (!typographyCss.includes(`.${role}`)) failures.push(`Missing semantic typography role: ${role}`);
 }
 
 for (const [label, contents] of [["SiteHeader", header], ["index.css", indexCss]]) {
@@ -36,7 +37,7 @@ if (!indexCss.includes(".catalog-density-card") || !indexCss.includes(".catalog-
   failures.push("Compact catalog spacing is not defined unconditionally.");
 }
 
-if (!indexCss.includes("nav button") || !indexCss.includes("font-family: var(--font-sans) !important")) {
+if (!typographyCss.includes("nav button") || !typographyCss.includes("font-family: var(--font-sans) !important")) {
   failures.push("Interactive controls are not globally pinned to the interface typeface.");
 }
 
