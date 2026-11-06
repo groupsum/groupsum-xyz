@@ -3,17 +3,22 @@ import json
 import sys
 from pathlib import Path
 
+def require(condition, message):
+    if not condition:
+        raise SystemExit(message)
+
+
 plan = json.loads(Path(sys.argv[1]).read_text())["spec"]
-assert not plan.get("conflicts") and not plan.get("dns", {}).get("operations")
+require(not plan.get("conflicts") and not plan.get("dns", {}).get("operations"), "Proxy repair cannot include conflicts or DNS changes")
 for operation in plan["operations"]:
     if operation["action"] == "noop":
         continue
-    assert operation["action"] == "update" and operation["kind"] == "proxy_host", operation
-    assert operation["existing"]["identity"] == {"owner": "groupsum-xyz", "resource_id": "proxy.groupsum-xyz"}
-    assert set(operation["diff"]) <= {"locations"}, operation["diff"]
-    assert operation["desired"]["locations"] == [{
+    require(operation["action"] == "update" and operation["kind"] == "proxy_host", "Only proxy updates are allowed")
+    require(operation["existing"]["identity"] == {"owner": "groupsum-xyz", "resource_id": "proxy.groupsum-xyz"}, "Proxy ownership mismatch")
+    require(set(operation["diff"]) <= {"locations"}, "Unrelated proxy fields would change")
+    require(operation["desired"]["locations"] == [{
         "path": "/internal/v1/catalog/", "forward_scheme": "http",
         "forward_host": "groupsum-xyz", "forward_port": 80,
         "advanced_config": "client_max_body_size 32m;",
-    }]
+    }], "Unexpected catalog location configuration")
 print("Validated: only the owned Groupsum catalog publishing location may change")

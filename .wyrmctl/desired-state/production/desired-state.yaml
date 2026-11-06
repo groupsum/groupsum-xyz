@@ -20,6 +20,12 @@ spec:
       hsts_subdomains: 0
       allow_websocket_upgrade: 0
       block_exploits: 1
+      locations:
+        - path: /internal/v1/catalog/
+          forward_scheme: http
+          forward_host: groupsum-xyz
+          forward_port: 80
+          advanced_config: "client_max_body_size 32m;"
       meta:
         managed_by: wyrmctl
         owner: groupsum-xyz
