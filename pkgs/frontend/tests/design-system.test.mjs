@@ -69,3 +69,12 @@ test("repository identity badges and section headings remain bounded at enlarged
   assert.ok(visuals.includes("flex-[1_1_34rem] flex-wrap"));
   assert.ok(source("src/features/catalog/RepositoryImplementationPanels.tsx").includes("font-bold text-ink [overflow-wrap:anywhere]"));
 });
+
+test("static hydration starts from the generated pathname before applying URL filters", () => {
+  const boot = source("src/main.tsx");
+  assert.ok(boot.includes("shouldHydrate ? window.location.pathname : undefined"));
+  assert.ok(boot.includes("<BrowserRouter initialLocation={initialLocation}>"));
+  const router = source("src/router.tsx");
+  assert.ok(router.includes("parseLocation(initialLocation || window.location.href)"));
+  assert.ok(router.includes('update();\n    window.addEventListener("popstate", update)'));
+});

@@ -14,18 +14,22 @@ const queryClient = new QueryClient({
   defaultOptions: { queries: { staleTime: 60_000, refetchOnWindowFocus: false } },
 });
 
+const root = document.getElementById('root')!;
+const shouldHydrate = root.hasChildNodes();
+// Static HTML is generated for the pathname, without visitor-specific filters or fragments.
+const initialLocation = shouldHydrate ? window.location.pathname : undefined;
+
 const application = (
   <StrictMode>
     <QueryClientProvider client={queryClient}>
-      <BrowserRouter>
+      <BrowserRouter initialLocation={initialLocation}>
         <App />
       </BrowserRouter>
     </QueryClientProvider>
   </StrictMode>
 );
 
-const root = document.getElementById('root')!;
-if (root.hasChildNodes()) {
+if (shouldHydrate) {
   hydrateRoot(root, application);
 } else {
   createRoot(root).render(application);

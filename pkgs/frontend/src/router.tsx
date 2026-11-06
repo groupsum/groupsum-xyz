@@ -15,10 +15,14 @@ function parseLocation(value: string): LocationValue {
   return { pathname: url.pathname, search: url.search, hash: url.hash };
 }
 
-export function BrowserRouter({ children }: { children: ReactNode }) {
-  const [location, setLocation] = useState<LocationValue>(() => parseLocation(window.location.href));
+export function BrowserRouter({ children, initialLocation }: { children: ReactNode; initialLocation?: string }) {
+  const [location, setLocation] = useState<LocationValue>(() => parseLocation(initialLocation || window.location.href));
   useEffect(() => {
-    const update = () => setLocation(parseLocation(window.location.href));
+    const update = () => {
+      const next = parseLocation(window.location.href);
+      setLocation((current) => current.pathname === next.pathname && current.search === next.search && current.hash === next.hash ? current : next);
+    };
+    update();
     window.addEventListener("popstate", update);
     window.addEventListener("hashchange", update);
     return () => {
