@@ -9,6 +9,7 @@
   "include_archived_repositories": true,
   "include_forks": true,
   "include_commit_history": true,
+  "commit_history_days": 90,
   "include_deployments": true,
   "max_deployments_per_repository": 30,
   "max_deployment_statuses_per_deployment": 20,

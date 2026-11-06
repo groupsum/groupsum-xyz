@@ -17,6 +17,7 @@ def main() -> None:
     sys.path.insert(0, str(repo_root / "pkgs" / "catalog-pipeline"))
     from groupsum_catalog_pipeline.api_client import CatalogApiClient
     from groupsum_catalog_pipeline.api_records import publication_facts, publish_catalog
+    from groupsum_catalog_pipeline.publication_quality import publication_quality_errors
     from groupsum_catalog_pipeline.snapshot_source import (
         ENTITY_TYPE as SNAPSHOT_SOURCE_ENTITY_TYPE,
     )
@@ -40,6 +41,12 @@ def main() -> None:
         raise SystemExit("GROUPSUM_CATALOG_PUBLISH_API_KEY is required")
 
     catalog = json.loads((repo_root / "catalog/generated/catalog.json").read_text(encoding="utf-8"))
+    quality_errors = publication_quality_errors(catalog)
+    if quality_errors:
+        raise SystemExit(
+            "Catalog source collection is incomplete; no records published:\n"
+            + "\n".join(quality_errors[:20])
+        )
     entity_records, associations = compile_catalog_records(repo_root)
     descriptor, observations, measurements = publication_facts(
         catalog, entity_records, associations

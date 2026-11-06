@@ -9,11 +9,14 @@ import json
 from pathlib import Path
 from typing import Any
 
+from groupsum_catalog_pipeline.publication_quality import publication_quality_errors
+
 ROOT = Path(__file__).resolve().parents[2]
 
 
 def validate(catalog: dict[str, Any], max_age_hours: int = 48) -> list[str]:
     errors: list[str] = []
+    errors.extend(publication_quality_errors(catalog))
     required = {"schema_version", "generated_at", "scope", "completeness", "repositories", "packages", "relationships", "observations"}
     missing = required - catalog.keys()
     if missing:

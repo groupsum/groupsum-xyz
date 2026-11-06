@@ -350,7 +350,7 @@ def main() -> int:
         "scope": {"owners": owners, "owner_definitions": [item for item in config["owners"] if item["login"] in owners], "visibility": "public", "include_archived_repositories": config.get("include_archived_repositories"), "include_forks": config.get("include_forks"), "excluded_repository_names": sorted(config.get("excluded_repository_names", []))},
         "completeness": {
             "repositories": "all public repositories returned by configured GitHub organization APIs after configured name, archive, and fork exclusions",
-            "commits": "all default-branch commits returned by GitHub REST pagination" if config.get("include_commit_history") else "count and latest only",
+            "commits": f"default-branch commits within the last {int(config.get('commit_history_days', 90))} days returned by GitHub REST pagination" if config.get("include_commit_history") else "count and latest only",
             "contributors": "all contributors returned by GitHub REST, including anonymous rows",
             "github_releases": "all releases returned by GitHub REST",
             "packages": "manifest-discovered packages plus public GitHub packages returned by API",

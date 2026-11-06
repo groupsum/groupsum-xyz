@@ -124,7 +124,21 @@ class ApiClient:
                     retry_after = int(exc.headers.get("Retry-After", "2"))
                     time.sleep(min(retry_after * (attempt + 1), 20))
                     continue
-                return None, {}, Observation(url, "error", ISO_NOW(), f"HTTP {exc.code}", url)
+                detail = f"HTTP {exc.code}"
+                if github:
+                    try:
+                        message = json.loads(exc.read(4096)).get("message", "")
+                        if isinstance(message, str):
+                            detail += f": {message[:300]}"
+                    except (ValueError, AttributeError):
+                        pass
+                    for field in ("X-RateLimit-Remaining", "X-RateLimit-Reset", "Retry-After"):
+                        value = exc.headers.get(field)
+                        if value is not None:
+                            detail += f"; {field}={value}"
+                    if self.token:
+                        detail = detail.replace(self.token, "[redacted]")
+                return None, {}, Observation(url, "error", ISO_NOW(), detail, url)
             except (urllib.error.URLError, TimeoutError, json.JSONDecodeError) as exc:
                 if attempt + 1 < retries:
                     time.sleep(2**attempt)

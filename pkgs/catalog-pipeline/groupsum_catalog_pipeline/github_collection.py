@@ -68,7 +68,13 @@ def collect_repository(client: ApiClient, repo: dict[str, Any], config: dict[str
     commit_count: int | None = None
     latest_commit: dict[str, Any] | None = None
     if config.get("include_commit_history", True):
-        raw_commits, commit_obs = client.github_pages(f"repos/{full_name}/commits?per_page=100")
+        history_days = int(config.get("commit_history_days", 90))
+        if history_days < 1:
+            raise ValueError("commit_history_days must be positive")
+        since = (dt.datetime.now(dt.timezone.utc) - dt.timedelta(days=history_days)).isoformat()
+        raw_commits, commit_obs = client.github_pages(
+            f"repos/{full_name}/commits?per_page=100&since={urllib.parse.quote(since, safe='')}"
+        )
         observations.extend(commit_obs)
         for commit in raw_commits:
             normalized = {
