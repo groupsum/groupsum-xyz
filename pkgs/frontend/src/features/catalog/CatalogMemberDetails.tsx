@@ -1,6 +1,6 @@
 import React, { useEffect, useMemo, useState } from "react";
 import type { RepositorySignals } from "../../api/catalog";
-import { Activity, ArrowLeft, ArrowRight, BadgeCheck, BookOpen, Boxes, Braces, CalendarDays, Code2, ExternalLink, FileCode2, GitBranch, Globe2, Package, Scale, ServerCog, ShieldCheck, Users } from "lucide-react";
+import { Activity, ArrowLeft, ArrowRight, BadgeCheck, BookOpen, Boxes, Braces, CalendarDays, CircleDot, Code2, ExternalLink, FileCode2, GitBranch, Globe2, Package, Scale, ServerCog, ShieldCheck, Users } from "lucide-react";
 import { RepositorySignalStrip } from "./RepositorySignals";
 import { EntityOwnership } from "./EntityIdentity";
 import { CatalogPill, CollectionHeader, ContextRailCard, FactPanel, MemberRowCard, RecordIdentityCard, SurfaceCard, factIcons, MetricBand, metricIcons, type MetricItem } from "./CatalogVisuals";
@@ -92,19 +92,26 @@ export function RepositoryDetail({ record, onNavigate }: { record: CatalogRecord
 
 function DependencyTable({ records, direction }: { records: Array<Record<string, unknown>>; direction: "dependency" | "dependent" }) {
   if (!records.length) return <p className="text-sm text-ink-muted">No {direction === "dependency" ? "dependencies" : "dependents"} were reported by the available source.</p>;
-  return <ul className="divide-y divide-[var(--color-border-soft)] rounded-[var(--radius-md)] border border-[var(--color-border-soft)] bg-[var(--color-surface-raised)]">
-    {records.slice(0, 100).map((item, index) => <li key={String(item.id || item.package_key || `${direction}-${index}`)} className="flex flex-wrap gap-x-5 gap-y-3 px-4 py-4">
-      <dl className="flex flex-[1_1_40rem] flex-wrap gap-x-5 gap-y-3">
-        <div className="min-w-0 flex-[2_1_14rem]"><dt className="text-[9px] font-mono uppercase tracking-wide text-ink-muted">Package</dt><dd className="mt-1 break-words text-xs font-semibold text-ink">{String(item.name || item.source_name || item.target_id || item.source_id || "Unknown package")}</dd></div>
-        <div className="min-w-0 flex-[1_1_8rem]"><dt className="text-[9px] font-mono uppercase tracking-wide text-ink-muted">Ecosystem</dt><dd className="mt-1 text-xs text-ink-muted">{humanLabel(String(item.ecosystem || item.source_ecosystem || "not reported"))}</dd></div>
-        <div className="min-w-0 flex-[1_1_8rem]"><dt className="text-[9px] font-mono uppercase tracking-wide text-ink-muted">Scope</dt><dd className="mt-1 break-words text-xs text-ink-muted">{humanLabel(String(item.scope || item.source_kind || "not reported"))}</dd></div>
-        <div className="min-w-0 flex-[1_1_12rem]"><dt className="text-[9px] font-mono uppercase tracking-wide text-ink-muted">{direction === "dependency" ? "Requirement" : "Requirement and coverage"}</dt><dd className="mt-1"><DependencyRequirement details={dependencyRequirementDetails(item.requirement)} completeness={direction === "dependent" ? String(item.completeness || "") : ""} /></dd></div>
-      </dl>
-    </li>)}
-  </ul>;
+  return <div className="rounded-[var(--radius-md)] border border-[var(--color-border-soft)] bg-[var(--color-surface-raised)]">
+    <table className="w-full table-fixed text-left" aria-label={direction === "dependency" ? "Declared package dependencies" : "Observed package dependents"}>
+      <colgroup><col /><col className="w-16" /><col className="w-[42%] sm:w-[36%]" /></colgroup>
+      <thead className="type-ui-label border-b border-[var(--color-border-soft)] bg-canvas text-ink-muted">
+        <tr><th className="px-3 py-2">Package</th><th className="px-1 py-2 text-center"><span className="sr-only">Relationship type and state</span></th><th className="px-3 py-2">Requirement</th></tr>
+      </thead>
+      <tbody className="type-technical divide-y divide-[var(--color-border-soft)]">
+        {records.slice(0, 100).map((item, index) => {
+          const details = dependencyRequirementDetails(item.requirement);
+          const packageName = String(item.name || item.source_name || item.target_id || item.source_id || "Unknown package").replace(/^[^:]+:/, "");
+          return <tr key={String(item.id || item.package_key || `${direction}-${index}`)} className="align-middle hover:bg-canvas/70">
+            <th scope="row" className="break-words px-3 py-2 font-semibold leading-snug text-ink">{packageName}</th>
+            <td className="px-1 py-2"><DependencySemantics item={item} details={details} direction={direction} /></td>
+            <td className="break-words px-3 py-2 text-ink-muted"><DependencyRequirement details={details} /></td>
+          </tr>;
+        })}
+      </tbody>
+    </table>
+  </div>;
 }
-
-const dependencyRequirementOrder = ["version", "constraint", "features", "default-features", "optional", "workspace", "package", "registry", "git", "branch", "tag", "rev", "path"];
 
 function dependencyRequirementDetails(value: unknown): Record<string, unknown> {
   if (value && typeof value === "object" && !Array.isArray(value)) return value as Record<string, unknown>;
@@ -126,17 +133,34 @@ function dependencyRequirementDetails(value: unknown): Record<string, unknown> {
   return { constraint: value };
 }
 
-function DependencyRequirement({ details, completeness }: { details: Record<string, unknown>; completeness?: string }) {
-  const entries = Object.entries(details).sort(([left], [right]) => {
-    const leftIndex = dependencyRequirementOrder.indexOf(left);
-    const rightIndex = dependencyRequirementOrder.indexOf(right);
-    return (leftIndex < 0 ? dependencyRequirementOrder.length : leftIndex) - (rightIndex < 0 ? dependencyRequirementOrder.length : rightIndex) || left.localeCompare(right);
-  });
-  if (!entries.length && !completeness) return <span className="font-mono text-xs text-ink-muted">Not reported</span>;
-  return <dl className="flex flex-wrap gap-x-4 gap-y-2">
-    {entries.map(([key, value]) => <div key={key} className="min-w-0"><dt className="text-[9px] font-mono uppercase tracking-wide text-ink-muted">{humanLabel(key)}</dt><dd className="mt-0.5 break-words text-xs font-semibold text-ink">{Array.isArray(value) ? value.join(", ") : typeof value === "boolean" ? (value ? "Yes" : "No") : String(value)}</dd></div>)}
-    {completeness && <div className="min-w-0"><dt className="text-[9px] font-mono uppercase tracking-wide text-ink-muted">Coverage</dt><dd className="mt-0.5 break-words text-xs text-ink-muted">{humanLabel(completeness)}</dd></div>}
-  </dl>;
+function dependencyScope(value: unknown): { label: string; Icon: typeof Package } {
+  const scope = String(value || "dependencies").toLowerCase();
+  if (scope.includes("dev") || scope.includes("test")) return { label: "Development dependency", Icon: Braces };
+  if (scope.includes("peer")) return { label: "Peer dependency", Icon: Users };
+  if (scope.includes("build")) return { label: "Build dependency", Icon: Boxes };
+  return { label: "Runtime dependency", Icon: Package };
+}
+
+function DependencyIcon({ label, Icon }: { label: string; Icon: typeof Package }) {
+  return <span className="inline-grid h-6 w-6 place-items-center rounded-[3px] border border-[var(--color-border-muted)] bg-white text-accent" title={label} aria-label={label}><Icon className="h-3.5 w-3.5" aria-hidden="true" /></span>;
+}
+
+function DependencySemantics({ item, details, direction }: { item: Record<string, unknown>; details: Record<string, unknown>; direction: "dependency" | "dependent" }) {
+  const scope = dependencyScope(item.scope || item.source_kind);
+  const optional = details.optional === true || String(item.scope || "").toLowerCase().includes("optional");
+  const completeness = humanLabel(String(item.completeness || "not observed"));
+  const stateLabel = direction === "dependent" ? `${completeness} dependent coverage` : optional ? "Optional requirement" : "Required dependency";
+  return <div className="flex items-center justify-center gap-1">
+    <DependencyIcon label={scope.label} Icon={scope.Icon} />
+    <DependencyIcon label={stateLabel} Icon={optional || direction === "dependent" ? CircleDot : BadgeCheck} />
+  </div>;
+}
+
+function DependencyRequirement({ details }: { details: Record<string, unknown> }) {
+  const entries = Object.entries(details).filter(([key]) => key !== "optional");
+  const primary = details.version ?? details.constraint ?? details.git ?? details.path ?? details.package ?? entries[0]?.[1];
+  const title = entries.map(([key, value]) => `${key}: ${Array.isArray(value) ? value.join(", ") : String(value)}`).join("; ") || "No explicit version or source requirement";
+  return <span className="block break-words font-semibold text-ink" title={title}>{primary == null ? "—" : Array.isArray(primary) ? primary.join(", ") : String(primary)}</span>;
 }
 
 export function PackageDetail({ record, onNavigate }: { record: CatalogRecord; onNavigate: (path: string) => void }) {
@@ -172,10 +196,10 @@ export function PackageDetail({ record, onNavigate }: { record: CatalogRecord; o
         ]} />
         <LegalContext record={record} detail />
       </DetailSection>
-      <DetailSection title="Dependencies" intro="Requirements declared by this package, grouped at package scope.">
+      <DetailSection title="Dependencies" intro="Compact manifest requirements; icons identify relationship type and required or optional state.">
         <DependencyTable records={valueRecords(record.dependencies)} direction="dependency" />
       </DetailSection>
-      <DetailSection title="Dependents" intro={`Observed downstream package records. Coverage: ${humanLabel(String(record.downstream_completeness || "not observed"))}.`}>
+      <DetailSection title="Dependents" intro={`Observed downstream package records · ${humanLabel(String(record.downstream_completeness || "not observed"))} coverage.`}>
         <DependencyTable records={valueRecords(record.dependents)} direction="dependent" />
       </DetailSection>
       <DetailSection title="Release history" intro="This package member shows its own registry timeline and individual releases in detail; repository-wide aggregation remains on the parent repository.">

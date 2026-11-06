@@ -15,7 +15,7 @@ import { datasetDetails, datasetOrder, DetailSection, formatDate, humanLabel, is
 
 function PaginationControls({ currentPage, pages, disabled, onPageChange, label }: { currentPage: number; pages: number; disabled: boolean; onPageChange: (page: number) => void; label: string }) {
   if (pages <= 1) return null;
-  const buttonClass = "min-h-8 rounded border border-[var(--color-border-soft)] bg-white px-2.5 py-1 font-mono text-[10px] text-ink hover:border-accent hover:text-accent focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent disabled:cursor-not-allowed disabled:opacity-40 disabled:hover:border-[var(--color-border-soft)] disabled:hover:text-ink";
+  const buttonClass = "type-control min-h-8 rounded border border-[var(--color-border-soft)] bg-white px-2.5 py-1 text-ink hover:border-accent hover:text-accent focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent disabled:cursor-not-allowed disabled:opacity-40 disabled:hover:border-[var(--color-border-soft)] disabled:hover:text-ink";
   return <nav aria-label={label} className="flex shrink-0 items-center gap-1.5">
     <button type="button" disabled={currentPage === 1 || disabled} onClick={() => onPageChange(Math.max(1, currentPage - 1))} className={buttonClass}>Previous</button>
     <button type="button" disabled={currentPage === pages || disabled} onClick={() => onPageChange(Math.min(pages, currentPage + 1))} className={buttonClass}>Next</button>
@@ -71,21 +71,21 @@ export function CatalogSnapshotBand({
       <div className="max-w-[var(--content-max)] mx-auto px-4 sm:px-6 lg:px-8 py-9 space-y-6">
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-4">
           <div className="max-w-3xl space-y-2">
-            <span className="text-[10px] font-mono uppercase tracking-[0.2em] text-accent font-bold">Observed data · {observedAt ? formatDate(observedAt) : "Loading current observation"}</span>
-            <h2 className="font-serif text-2xl md:text-3xl font-bold tracking-tight text-ink">{title}</h2>
-            <p className="text-sm text-ink-muted leading-relaxed">
+            <span className="type-ui-label text-accent">Observed data · {observedAt ? formatDate(observedAt) : "Loading current observation"}</span>
+            <h2 className="type-display-lg">{title}</h2>
+            <p className="type-body-md text-ink-muted">
               Public records served by the catalog API from GitHub, repository manifests, PyPI, npm, crates.io, and GitHub Packages. Releases and deployments are summarized on their repository or package records; live availability remains a separate evidence state.
             </p>
           </div>
-          <button onClick={() => onNavigate("/catalog")} className="text-xs font-mono text-accent font-semibold inline-flex items-center gap-1 hover:underline cursor-pointer">
+          <button onClick={() => onNavigate("/catalog")} className="type-control inline-flex cursor-pointer items-center gap-1 text-accent hover:underline">
             Explore complete catalog <ArrowRight className="w-3.5 h-3.5" />
           </button>
         </div>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
           {metrics.map(([label, value]) => (
             <div key={String(label)} className="p-4 bg-canvas border border-[var(--color-border-soft)] rounded-[var(--radius-sm)]">
-              <strong className="font-serif text-xl text-ink block">{value === undefined ? "—" : value.toLocaleString()}</strong>
-              <span className="text-[10px] font-mono uppercase tracking-wide text-ink-muted">{label}</span>
+              <strong className="type-metric block font-bold text-ink">{value === undefined ? "—" : value.toLocaleString()}</strong>
+              <span className="type-ui-label text-ink-muted">{label}</span>
             </div>
           ))}
         </div>

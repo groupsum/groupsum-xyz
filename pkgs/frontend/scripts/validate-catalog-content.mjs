@@ -58,8 +58,11 @@ if (source.includes("function LegalSection") || source.includes('<DetailSection 
 if (source.includes("border-b border-r")) throw new Error("metric summaries draw unnecessary inner cell borders");
 if (/[ÃÂâ�]/u.test(source)) throw new Error("catalog frontend source contains mojibake");
 if ((collectionTables.match(/<table className="[^"]*text-xs"/g) || []).length !== 2) throw new Error("repository and package tables must use text-xs body typography");
-if ((collectionTables.match(/<thead className="[^"]*text-\[11px\]/g) || []).length !== 2) throw new Error("repository and package table headers must match the 11px prototype scale");
+if ((collectionTables.match(/<thead className="[^"]*type-ui-label/g) || []).length !== 2) throw new Error("repository and package table headers must use the semantic UI label role");
 if (!collectionTables.includes("function HyphenBreakText") || !collectionTables.includes("<wbr />")) throw new Error("repository names lack explicit hyphen-aware wrapping");
 if (source.includes('aria-label="Ownership hierarchy" className="overflow-x-auto')) throw new Error("record breadcrumbs must wrap instead of scrolling");
+if (!source.includes('aria-label={direction === "dependency" ? "Declared package dependencies"')) throw new Error("package dependency detail does not use the compact table contract");
+if (!source.includes("function DependencySemantics") || !source.includes("title={label} aria-label={label}")) throw new Error("dependency relationship icons lack tooltip and accessible labels");
+if (source.includes('>Ecosystem</dt><dd className="mt-1 text-xs text-ink-muted"') || source.includes('>Scope</dt><dd className="mt-1 break-words')) throw new Error("dependency rows still repeat implied ecosystem or scope labels");
 
 console.log(`catalog content ok: ${sourceFiles.length} modular source files checked`);

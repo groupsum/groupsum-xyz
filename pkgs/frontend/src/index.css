@@ -9,7 +9,7 @@
 @theme {
   --font-sans: "Plus Jakarta Sans", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
   --font-serif: "Newsreader", Georgia, Cambria, "Times New Roman", serif;
-  --font-mono: ui-monospace, "SFMono-Regular", Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  --font-mono: "JetBrains Mono", ui-monospace, "Cascadia Code", "SFMono-Regular", Consolas, monospace;
   --font-code: "JetBrains Mono", ui-monospace, "Cascadia Code", "SFMono-Regular", Consolas, monospace;
 
   /* Color mappings */
@@ -48,6 +48,19 @@
   scroll-behavior: smooth;
   --content-max: 76rem;
   --reading-max: 46rem;
+
+  /* Semantic type roles. Components should choose a role, not assemble a font ad hoc. */
+  --type-display-xl-size: clamp(2rem, 1.65rem + 1.45vw, 3rem);
+  --type-display-lg-size: clamp(1.875rem, 1.68rem + 0.8vw, 2.25rem);
+  --type-heading-md-size: 1.25rem;
+  --type-heading-sm-size: 1rem;
+  --type-body-lg-size: 1rem;
+  --type-body-md-size: 0.875rem;
+  --type-body-sm-size: 0.75rem;
+  --type-label-size: 0.6875rem;
+  --type-control-size: 0.75rem;
+  --type-technical-size: 0.75rem;
+  --type-metric-size: 1.25rem;
 }
 
 body {
@@ -58,6 +71,88 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
+/* Interactive language is interface copy everywhere, including legacy page modules. */
+button,
+input,
+select,
+textarea,
+nav a,
+nav button {
+  font-family: var(--font-sans) !important;
+}
+
+/* Typography contract: editorial hierarchy, interface copy, then technical data. */
+.type-display-xl,
+.type-display-lg,
+.type-heading-md,
+.type-heading-sm {
+  color: var(--color-ink);
+  font-family: var(--font-serif);
+  text-wrap: balance;
+}
+
+.type-display-xl {
+  font-size: var(--type-display-xl-size);
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  line-height: 1.05;
+}
+
+.type-display-lg {
+  font-size: var(--type-display-lg-size);
+  font-weight: 700;
+  letter-spacing: -0.022em;
+  line-height: 1.1;
+}
+
+.type-heading-md {
+  font-size: var(--type-heading-md-size);
+  font-weight: 700;
+  letter-spacing: -0.012em;
+  line-height: 1.25;
+}
+
+.type-heading-sm {
+  font-size: var(--type-heading-sm-size);
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+.type-body-lg,
+.type-body-md,
+.type-body-sm,
+.type-ui-label,
+.type-control {
+  font-family: var(--font-sans);
+}
+
+.type-body-lg { font-size: var(--type-body-lg-size); line-height: 1.65; }
+.type-body-md { font-size: var(--type-body-md-size); line-height: 1.6; }
+.type-body-sm { font-size: var(--type-body-sm-size); line-height: 1.5; }
+
+.type-ui-label {
+  font-size: var(--type-label-size);
+  font-weight: 700;
+  letter-spacing: 0.075em;
+  line-height: 1.25;
+  text-transform: uppercase;
+}
+
+.type-control {
+  font-size: var(--type-control-size);
+  font-weight: 600;
+  line-height: 1.25;
+}
+
+.type-technical,
+.type-metric {
+  font-family: var(--font-code);
+  font-variant-numeric: tabular-nums;
+}
+
+.type-technical { font-size: var(--type-technical-size); line-height: 1.35; }
+.type-metric { font-size: var(--type-metric-size); line-height: 1.15; }
 
 /* Hard border constraint: Do NOT use high contrast black/white borders */
 .border-soft {
@@ -183,14 +278,14 @@ body {
   color: var(--color-accent);
 }
 
-/* The catalog shell exposes the prototype's comfortable/compact density contract. */
-:root[data-catalog-density="compact"] .catalog-density-card {
+/* Compact is the catalog's only density; it is stable before hydration. */
+.catalog-density-card {
   padding: 0.875rem;
   gap: 0.75rem;
 }
 
-:root[data-catalog-density="compact"] .catalog-density-table th,
-:root[data-catalog-density="compact"] .catalog-density-table td {
+.catalog-density-table th,
+.catalog-density-table td {
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
 }
@@ -251,7 +346,7 @@ body {
 }
 
 .markdown-body th {
-  font-family: var(--font-mono);
+  font-family: var(--font-sans);
   font-weight: 600;
   color: var(--color-ink);
   background-color: var(--color-surface);

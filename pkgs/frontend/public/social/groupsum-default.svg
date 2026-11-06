@@ -5,6 +5,6 @@
   <path d="M120 470L410 180L650 390L1010 120" stroke="#176b5b" stroke-width="18" stroke-linecap="round" stroke-linejoin="round"/>
   <circle cx="410" cy="180" r="30" fill="#c98232"/>
   <circle cx="1010" cy="120" r="38" fill="#17211e"/>
-  <text x="120" y="150" fill="#17211e" font-family="Georgia, serif" font-size="72" font-weight="700">GroupSum</text>
-  <text x="120" y="550" fill="#17211e" font-family="Arial, sans-serif" font-size="30" letter-spacing="4">STRUCTURED SOFTWARE · CLEAR DECISIONS</text>
+  <text x="120" y="150" fill="#17211e" font-family="Newsreader, Georgia, serif" font-size="72" font-weight="700">GroupSum</text>
+  <text x="120" y="550" fill="#17211e" font-family="Plus Jakarta Sans, Arial, sans-serif" font-size="30" letter-spacing="4">STRUCTURED SOFTWARE · CLEAR DECISIONS</text>
 </svg>
