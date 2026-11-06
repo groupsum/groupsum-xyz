@@ -23,11 +23,34 @@ jobs:
         with:
           python-version: '3.12'
       - run: npm ci
-      - name: Collect current public catalog
-        timeout-minutes: 20
+      - name: Pin the finalized public catalog snapshot
+        id: snapshot
+        shell: python
+        run: |
+          import json
+          import os
+          import urllib.request
+
+          request = urllib.request.Request(
+              "https://groupsum.xyz/api/v1/snapshots",
+              headers={"Cache-Control": "no-cache", "User-Agent": "groupsum-ci"},
+          )
+          with urllib.request.urlopen(request, timeout=30) as response:
+              snapshots = json.load(response)
+          current = next(
+              (row for row in snapshots.get("snapshots", [])
+               if row.get("is_current") and row.get("status") == "complete"),
+              None,
+          )
+          if current is None:
+              raise SystemExit("No finalized public catalog snapshot is available")
+          with open(os.environ["GITHUB_OUTPUT"], "a", encoding="utf-8") as output:
+              output.write(f"snapshot_id={current['snapshot_id']}\n")
+          print(f"Pinned catalog snapshot: {current['snapshot_id']}")
+      - name: Materialize the immutable snapshot without recollecting GitHub
         env:
-          GITHUB_TOKEN: ${{ github.event_name == 'pull_request' && github.token || secrets.GROUPSUM_CATALOG_GITHUB_TOKEN || github.token }}
-        run: npm run catalog:collect
+          CATALOG_SNAPSHOT_ID: ${{ steps.snapshot.outputs.snapshot_id }}
+        run: npm run catalog:materialize -- --snapshot-id "$CATALOG_SNAPSHOT_ID"
       - run: npm run catalog:render
       - run: npm run build:content
       - run: npm run build:insights
