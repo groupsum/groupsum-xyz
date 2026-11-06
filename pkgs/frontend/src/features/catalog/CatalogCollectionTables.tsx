@@ -1,5 +1,6 @@
 import React from "react";
 import { InlineMetricChart } from "./InlineMetricChart";
+import { RepositoryPackagesCell } from "./RepositoryPackagesCell";
 import {
   BadgeCheck,
   ChevronRight,
@@ -96,11 +97,11 @@ function CommitBars({ points }: { points: Array<Record<string, unknown>> }) {
   return <InlineMetricChart bars label="Daily commits" points={points.slice(-30).map((point) => ({ label: String(point.date), value: Number(point.count) }))} />;
 }
 
-export function RepositoryCollectionTable({ records, onNavigate }: { records: CatalogRecord[]; onNavigate: Navigate }) {
+export function RepositoryCollectionTable({ records, onNavigate, sort, onSort }: { records: CatalogRecord[]; onNavigate: Navigate; sort?: string; onSort?: (value: string) => void }) {
   return <div className="min-w-0 border-y border-[var(--color-border-soft)]">
       <table className="catalog-density-table catalog-repository-table w-full table-fixed text-left text-xs" aria-label="Repository catalog records">
         <colgroup><col className="w-[43%] md:w-[28%] lg:w-[20%]" /><col className="hidden w-[10%] lg:table-column" /><col className="w-[24%] md:w-[15%] lg:w-[11%]" /><col className="hidden w-[6%] xl:table-column" /><col className="hidden w-[16%] md:table-column lg:w-[13%]" /><col className="hidden w-[12%] xl:table-column" /><col className="w-[23%] md:w-[12%] lg:w-[8%]" /><col className="hidden w-[11%] lg:table-column" /><col className="hidden w-[9%] lg:table-column" /><col className="w-[10%] md:w-[5%] lg:w-[3%]" /></colgroup>
-        <thead className="type-ui-label bg-canvas text-ink-muted"><tr><th className="px-3 py-3">Repository</th><th className="hidden px-2 py-3 lg:table-cell">Organization</th><th className="px-2 py-3">Stars</th><th className="hidden px-2 py-3 xl:table-cell">Forks</th><th className="hidden px-2 py-3 md:table-cell">30-Day Commits</th><th className="hidden px-2 py-3 xl:table-cell">Contributors</th><th className="px-2 py-3">Packages</th><th className="hidden px-2 py-3 lg:table-cell">Latest Release</th><th className="hidden px-2 py-3 lg:table-cell">Governance</th><th className="px-2 py-3 text-right"><span className="sr-only">Action</span></th></tr></thead>
+        <thead className="type-ui-label bg-canvas text-ink-muted"><tr><th className="px-3 py-3">Repository</th><th className="hidden px-2 py-3 lg:table-cell">Organization</th><th className="px-2 py-3" aria-sort={sort === "stars" ? "descending" : sort === "stars_asc" ? "ascending" : "none"}><button type="button" onClick={() => onSort?.(sort === "stars" ? "stars_asc" : "stars")} aria-label="Sort repositories by star count" className="inline-flex min-h-6 items-center gap-1">Stars <span aria-hidden="true">{sort === "stars" ? "↓" : sort === "stars_asc" ? "↑" : "↕"}</span></button></th><th className="hidden px-2 py-3 xl:table-cell">Forks</th><th className="hidden px-2 py-3 md:table-cell">30-Day Commits</th><th className="hidden px-2 py-3 xl:table-cell">Contributors</th><th className="px-2 py-3">Packages</th><th className="hidden px-2 py-3 lg:table-cell">Latest Release</th><th className="hidden px-2 py-3 lg:table-cell">Governance</th><th className="px-2 py-3 text-right"><span className="sr-only">Action</span></th></tr></thead>
         <tbody className="type-technical divide-y divide-[var(--color-border-soft)]">{records.map((record) => {
           const metrics = valueRecord(record.metrics);
           const history = valueRecord(record.history);
@@ -111,7 +112,7 @@ export function RepositoryCollectionTable({ records, onNavigate }: { records: Ca
             <td className="hidden min-w-0 px-2 py-2 align-middle xl:table-cell"><span className="inline-flex items-center gap-1 font-semibold tabular-nums"><GitFork className="h-3 w-3 text-ink-muted" />{compactNumber(Number(metrics.forks || 0))}</span></td>
             <td className="hidden min-w-0 !overflow-visible px-2 py-2 align-middle md:table-cell"><CommitBars points={valueRecords(record.commit_activity)} /></td>
             <td className="hidden min-w-0 !overflow-visible px-2 py-2 align-middle xl:table-cell"><ContributorLinks value={record.contributors} onNavigate={onNavigate} limit={2} /></td>
-            <td className="min-w-0 truncate px-2 py-2 align-middle font-semibold text-accent" title={`${Number(record.package_count || 0).toLocaleString()} packages`}>{Number(record.package_count || 0).toLocaleString()} <span className="hidden sm:inline">pkgs</span></td>
+            <td className="min-w-0 px-2 py-2 align-middle"><RepositoryPackagesCell record={record} /></td>
             <td className="hidden min-w-0 px-2 py-2 align-middle lg:table-cell"><LatestRelease value={record.latest_release} /></td>
             <td className="hidden min-w-0 px-2 py-2 align-middle lg:table-cell">{record.ssot_governed ? <CatalogPill tone="accent" Icon={ShieldCheck}>Governed</CatalogPill> : <span className="text-[10px] text-ink-muted">Not observed</span>}</td>
             <td className="min-w-0 px-2 py-2 text-right align-middle"><RecordLink route={String(record.route)} onNavigate={onNavigate}><ChevronRight className="ml-auto h-4 w-4 text-accent transition-transform group-hover:translate-x-0.5" /></RecordLink></td>

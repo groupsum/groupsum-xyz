@@ -7,6 +7,7 @@ from ..projections.resource_types import resource_type_descriptors
 from .view_common import *  # noqa: F403
 from .view_repository_metrics import repository_metrics as repository_metrics
 from .view_resource_detail import resource_detail_model
+from .view_package_summary import package_collection_summary, package_summary
 
 
 def _collection_aggregates(values: list[dict], resource_kind: str) -> dict[str, int]:
@@ -41,6 +42,12 @@ def catalog_collection(table, ctx, resource_kind: str):
 
     def build(session):
         values = []
+        package_index = {}
+        if resource_kind == "repository":
+            from .package import Package
+            package_index = {row.id: row for row in current_entity_query(session, Package).with_entities(
+                Package.id, Package.ecosystem, Package.publication_status, Package.published
+            ).all()}
         for row in current_entity_query(session, table).all():
             item = source_record(row)
             if resource_kind == "repository":
@@ -50,6 +57,13 @@ def catalog_collection(table, ctx, resource_kind: str):
                     "resource_count": len(item.get("related_resources", [])),
                     "release_count": len(item.get("github_releases", [])),
                 }
+                if isinstance(item.get("package_ids"), list):
+                    item["package_summary"] = package_summary(item["package_ids"], package_index)
+                    item["package_count"] = item["package_summary"]["total"]
+                else:
+                    item["package_count"] = None
+                item.pop("packages", None)
+                item.pop("package_ids", None)
             elif resource_kind == "package":
                 item = package_resource(item) | {
                     "route_key": row.route_key,
@@ -69,6 +83,8 @@ def catalog_collection(table, ctx, resource_kind: str):
         values = _filter(values, params)
         facets = _facets(values)
         page_values, page, page_size, page_count = _page(values, params)
+        if resource_kind == "package" and params.get("projection") == "summary":
+            page_values = [package_collection_summary(item) for item in page_values]
         observed = latest_timestamp(item.get("observed_at") for item in values)
         return {
             "kind": f"catalog_{resource_kind}_collection",

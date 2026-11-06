@@ -39,6 +39,15 @@ and an optional exact-data table. Tooltips supplement rather than replace it.
 Contributors show at most two identities; `+N more` reveals selectable identities.
 Contribution bars describe share of returned contribution counts, not 30-day work.
 
+Repository package cells expose exact totals and up to two ecosystem shortcuts.
+Their inspector code and ten-row package projection load only when opened.
+Search, ecosystem and publication filters are scoped to the exact owner/repository;
+"View all" carries that scope and filters into the packages collection URL.
+Escape/outside click closes the anchored native popover and returns trigger focus.
+Zero observations, filtered empty results, loading and retryable failures differ.
+Star sorting is global before pagination, descending or ascending, with stable
+name/ID ties. It is available from the toolbar and the accessible Stars header.
+
 No normal page/table X-scrollbars. Shrink, wrap, truncate with full-text access,
 iconize with accessible names, or omit secondary columns before overflowing.
 Prefer one document Y-scrollbar. Contributor pickers may have a bounded list;
@@ -68,6 +77,13 @@ The browser matrix covers six themes, seven routes, 320/360/768/1280/1600 widths
 populated tables, resource categories, dependency detail, disclosure, keyboard
 chart controls, theme persistence and 200% text. JSON evidence and screenshots go
 to `.tmp/design-evidence` by default. Check rendered screenshots, not just assertions.
+
+`npm run verify:packages` tests the package inspector against the isolated Tigrbl
+fixture server in `pkgs/backend/tests/inspector_preview.py` (port 8189). Point the
+local Vite API proxy at that server. These explicitly synthetic test records are
+never used by the deployed application. This matrix covers six themes at four
+widths, no requests while closed, pagination, filters, search, retry, zero results,
+actual filtered-collection navigation, Escape/outside dismissal, stars and zoom.
 
 Build retains generated Schema.org/social metadata/discovery checks and chunk
 budgets. Passing a bundle budget is not a field Core Web Vitals measurement.

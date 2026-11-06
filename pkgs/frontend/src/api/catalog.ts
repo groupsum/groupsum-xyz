@@ -52,6 +52,8 @@ export type CatalogQuery = {
   publication_status?: string;
   resource_type?: string;
   repository_owner?: string;
+  repository?: string;
+  projection?: "summary";
   sort?: string;
 };
 

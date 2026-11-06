@@ -237,11 +237,18 @@ def _filter(values: list[dict], params: Any) -> list[dict]:
         )
         if term and term not in searchable.casefold():
             continue
+        repository = str(params.get("repository") or "").casefold()
+        if repository:
+            owners = {str(item.get("repository") or "").casefold()}
+            owners.update(f"{owner.get('owner', '')}/{owner.get('name', '')}".casefold()
+                          for owner in item.get("repositories") or [] if isinstance(owner, dict))
+            if repository not in owners:
+                continue
         tests = {
             "owner": item.get("owner", item.get("repository_owner")),
             "repository_owner": item.get("repository_owner"),
             "ecosystem": item.get("ecosystem"),
-            "publication_status": item.get("publication_status"),
+            "publication_status": item.get("publication_status") or "not-observed",
             "resource_type": item.get("resource_type"),
         }
         if any(
@@ -254,6 +261,12 @@ def _filter(values: list[dict], params: Any) -> list[dict]:
         filtered.sort(key=_recent_activity_key, reverse=True)
     elif sort == "activity":
         filtered.sort(key=_activity_score, reverse=True)
+    elif sort in ("stars", "stars_asc"):
+        direction = 1 if sort == "stars_asc" else -1
+        filtered.sort(key=lambda item: (
+            direction * float((item.get("metrics") or {}).get("stars") or 0),
+            str(item.get("name") or "").casefold(), str(item.get("id") or ""),
+        ))
     else:
         filtered.sort(key=lambda item: str(item.get("name") or item.get("title") or "").casefold())
     return filtered

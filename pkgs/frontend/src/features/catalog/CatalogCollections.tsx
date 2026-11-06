@@ -1,14 +1,16 @@
-import React, { useEffect, useMemo, useState } from "react";
+import React, { lazy, Suspense, useEffect, useMemo, useState } from "react";
 import { getRepositoryMetricSnapshot, RepositoryMetricRecord, type RepositorySignals } from "../../api/catalog";
 import { AlertTriangle, ArrowRight, Box, Calendar, CheckCircle2, Cpu, ExternalLink, FileCode, FolderGit2, GitBranch, Layers, Package, ShieldCheck, Star, Terminal } from "lucide-react";
 import { RepositorySignalStrip } from "./RepositorySignals";
 import { EntityOwnership } from "./EntityIdentity";
 import { CatalogPill, CollectionHeader, ContextRailCard, FactPanel, MemberRowCard, RecordIdentityCard, SurfaceCard, factIcons, MetricBand, type MetricItem } from "./CatalogVisuals";
 import { ExplorerFilterToolbar, TypeBadge, type ExplorerFilters } from "./CatalogExplorerUI";
-import { PackageCollectionTable, RepositoryCollectionTable } from "./CatalogCollectionTables";
+const RepositoryCollectionTable = lazy(() => import("./CatalogCollectionTables").then((module) => ({ default: module.RepositoryCollectionTable })));
+const PackageCollectionTable = lazy(() => import("./CatalogCollectionTables").then((module) => ({ default: module.PackageCollectionTable })));
 import { ResourceTypeDirectory } from "./ResourceTypeDirectory";
 import { useCatalogCollection } from "../../hooks/useCatalogCollection";
 import { useCatalogOverview } from "../../hooks/useCatalogOverview";
+import { useSearchParams } from "../../router";
 import type { CatalogViewRecord } from "../../types/catalog-view";
 
 import { datasetDetails, datasetOrder, DetailSection, formatDate, humanLabel, isCurrentPageLink, labels, recordDescription, recordTitle, resourceIcon, valueRecord, valueRecords, valueStrings, type CatalogRecord, type DatasetName } from "./CatalogRecordShared";
@@ -202,11 +204,13 @@ export function PublicCatalogOverview({ onNavigate }: { onNavigate: (path: strin
 }
 
 export function PublicCatalogExplorer({ onNavigate, compact = false, fixedDataset, initialQuery = "", initialResourceType = "" }: { onNavigate: (path: string) => void; compact?: boolean; fixedDataset?: DatasetName; initialQuery?: string; initialResourceType?: string }) {
+  const [params, setParams] = useSearchParams();
   const overview = useCatalogOverview();
   const [dataset, setDataset] = useState<DatasetName>(fixedDataset || "repositories");
-  const [filters, setFilters] = useState<ExplorerFilters>({ search: initialQuery, owner: "", ecosystem: "", publication: "", resourceType: initialResourceType, sort: "recent" });
+  const [filters, setFilters] = useState<ExplorerFilters>({ search: initialQuery, owner: "", ecosystem: params.get("ecosystem") || "", publication: params.get("publication_status") || "", resourceType: initialResourceType, sort: params.get("sort") || "recent" });
   const [page, setPage] = useState(1);
   const pageSize = compact ? 24 : 50;
+  useEffect(() => { if (dataset === "repositories" || dataset === "packages") void import("./CatalogCollectionTables"); }, [dataset]);
 
   useEffect(() => {
     if (fixedDataset) setDataset(fixedDataset);
@@ -224,6 +228,7 @@ export function PublicCatalogExplorer({ onNavigate, compact = false, fixedDatase
     publication_status: dataset === "packages" ? filters.publication || undefined : undefined,
     resource_type: dataset === "resources" ? filters.resourceType || undefined : undefined,
     repository_owner: dataset === "resources" ? filters.owner || undefined : undefined,
+    repository: dataset === "packages" ? params.get("repository") || undefined : undefined,
     sort: filters.sort,
   });
   useEffect(() => {
@@ -265,6 +270,10 @@ export function PublicCatalogExplorer({ onNavigate, compact = false, fixedDatase
   const pages = Number(collection.data?.page_count || 1);
   const currentPage = Number(collection.data?.page || 1);
   const visible = records;
+  const changeSort = (sort: string) => {
+    setFilters((current) => ({ ...current, sort })); setPage(1);
+    const next = new URLSearchParams(params); next.set("sort", sort); next.delete("page"); setParams(next, { replace: true });
+  };
 
   return (
     <section aria-busy={collection.isFetching} className="catalog-explorer mx-auto max-w-7xl space-y-6 px-4 py-8 sm:px-6 lg:px-8">
@@ -281,14 +290,15 @@ export function PublicCatalogExplorer({ onNavigate, compact = false, fixedDatase
           </button>
         ))}
       </div>}
-      <ExplorerFilterToolbar filters={filters} onChange={(next) => { setFilters(next); setPage(1); }} owners={dataset === "repositories" ? Object.keys(collection.data?.facets?.owner || {}) : []} ecosystems={dataset === "packages" ? Object.keys(collection.data?.facets?.ecosystem || {}) : []} publications={dataset === "packages" ? Object.keys(collection.data?.facets?.publication_status || {}) : []} resourceTypes={dataset === "resources" ? Object.keys(collection.data?.facets?.resource_type || {}) : []} sortOptions={[{ label: "Recent Activity", value: "recent" }, { label: "Most Activity", value: "activity" }, { label: "Name (A–Z)", value: "name" }]} total={Number(collection.data?.count || 0)} statusDetail={collection.isFetching && !collection.isPending ? `Updating to page ${page.toLocaleString()} of ${pages.toLocaleString()}…` : `Page ${currentPage.toLocaleString()} of ${pages.toLocaleString()}`} statusActions={<PaginationControls currentPage={currentPage} pages={pages} disabled={collection.isFetching} onPageChange={setPage} label="Pagination above catalog records" />} />
+      <ExplorerFilterToolbar filters={filters} onChange={(next) => { setFilters(next); setPage(1); if (next.sort !== filters.sort) changeSort(next.sort); }} owners={dataset === "repositories" ? Object.keys(collection.data?.facets?.owner || {}) : []} ecosystems={dataset === "packages" ? Object.keys(collection.data?.facets?.ecosystem || {}) : []} publications={dataset === "packages" ? Object.keys(collection.data?.facets?.publication_status || {}) : []} resourceTypes={dataset === "resources" ? Object.keys(collection.data?.facets?.resource_type || {}) : []} sortOptions={[{ label: "Recent Activity", value: "recent" }, { label: "Most Activity", value: "activity" }, { label: "Name (A–Z)", value: "name" }, ...(dataset === "repositories" ? [{ label: "Most Stars", value: "stars" }, { label: "Fewest Stars", value: "stars_asc" }] : [])]} total={Number(collection.data?.count || 0)} statusDetail={collection.isFetching && !collection.isPending ? `Updating to page ${page.toLocaleString()} of ${pages.toLocaleString()}…` : `Page ${currentPage.toLocaleString()} of ${pages.toLocaleString()}`} statusActions={<PaginationControls currentPage={currentPage} pages={pages} disabled={collection.isFetching} onPageChange={setPage} label="Pagination above catalog records" />} />
       {state === "loading" && <div className="p-10 text-center text-sm text-ink-muted" role="status">Loading {labels[dataset].toLowerCase()}…</div>}
+      {dataset === "packages" && params.get("repository") && <p className="type-body-sm flex flex-wrap items-center gap-2 text-ink-muted">Repository: <strong className="break-all text-ink">{params.get("repository")}</strong><button type="button" onClick={() => { const next = new URLSearchParams(params); next.delete("repository"); setPage(1); setParams(next); }} className="min-h-6 text-accent hover:underline">Clear repository filter</button></p>}
       {state === "error" && <div className="p-6 border border-[var(--color-border-soft)]/20 bg-surface/5 text-sm text-danger rounded-[var(--radius-sm)]" role="alert">The catalog API could not be loaded. Try again shortly or use the downloadable normalized JSON below.</div>}
       {dataset === "resources" && resourceTypes.length > 0 && <ResourceTypeDirectory descriptors={resourceTypes} selectedType={filters.resourceType} onSelect={(resourceType) => { setFilters({ ...filters, resourceType }); setPage(1); if (fixedDataset) onNavigate(`/catalog/resources/?resource_type=${encodeURIComponent(resourceType)}`); }} />}
       {dataset === "resources" && <h2 className="font-serif text-xl font-bold text-ink">{filters.resourceType ? `${resourceTypes.find((descriptor) => descriptor.resource_type === filters.resourceType)?.label || humanLabel(filters.resourceType)} records` : "All typed resource records"}</h2>}
       {state === "ready" && (
         <>
-          {dataset === "repositories" ? <RepositoryCollectionTable records={visible} onNavigate={onNavigate} /> : dataset === "packages" ? <PackageCollectionTable records={visible} onNavigate={onNavigate} /> : <div className="space-y-3">{visible.map((record) => <CollectionRow key={record.id} record={record} dataset={dataset} onNavigate={onNavigate} />)}</div>}
+          <Suspense fallback={<p role="status" className="type-body-sm text-ink-muted">Loading catalog table…</p>}>{dataset === "repositories" ? <RepositoryCollectionTable records={visible} onNavigate={onNavigate} sort={filters.sort} onSort={changeSort} /> : dataset === "packages" ? <PackageCollectionTable records={visible} onNavigate={onNavigate} /> : <div className="space-y-3">{visible.map((record) => <CollectionRow key={record.id} record={record} dataset={dataset} onNavigate={onNavigate} />)}</div>}</Suspense>
           {visible.length === 0 && <div className="p-10 text-center border border-[var(--color-border-soft)] rounded-[var(--radius-md)] text-sm text-ink-muted">No catalog records match this search.</div>}
           {pages > 1 && <div className="flex justify-end"><PaginationControls currentPage={currentPage} pages={pages} disabled={collection.isFetching} onPageChange={setPage} label="Pagination below catalog records" /></div>}
         </>

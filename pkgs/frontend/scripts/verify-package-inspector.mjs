@@ -1,0 +1,82 @@
+import assert from "node:assert/strict";
+import { createRequire } from "node:module";
+import { mkdir } from "node:fs/promises";
+const require = createRequire(import.meta.url);
+const { chromium } = require(process.env.PLAYWRIGHT_MODULE || "playwright");
+const browser = await chromium.launch({ headless: true, executablePath: process.env.BROWSER_EXECUTABLE });
+const page = await browser.newPage();
+const origin = process.env.DESIGN_VERIFY_URL || "http://127.0.0.1:5174";
+const errors = [], requests = [];
+page.on("pageerror", (error) => errors.push(error.message));
+page.on("request", (request) => { if (request.url().includes("/api/v1/catalog/packages")) requests.push(request.url()); });
+await mkdir(".tmp/inspector-evidence", { recursive: true });
+const dialog = page.getByRole("dialog", { name: "Packages in fixture/multi-package", exact: true });
+try {
+  await page.goto(`${origin}/catalog/repositories`);
+  const trigger = page.getByRole("button", { name: "Inspect packages in fixture/multi-package", exact: true });
+  await trigger.waitFor();
+  assert.equal(requests.length, 0, "closed cells must not fetch packages");
+  let cases = 0;
+  for (const theme of ["paper", "coal", "mist", "midnight", "parchment", "evergreen"]) {
+    await page.getByRole("combobox", { name: "Color theme" }).selectOption(theme);
+    for (const width of [320, 768, 1280, 1600]) {
+      await page.setViewportSize({ width, height: 900 });
+      await trigger.focus(); await page.keyboard.press("Enter");
+      await dialog.getByRole("table").waitFor();
+      assert.equal(await dialog.locator("tbody tr").count(), 10);
+      assert.ok(await dialog.getByRole("status").textContent().then((text) => text.includes("25 matching")));
+      const box = await dialog.boundingBox(); assert.ok(box.x >= 0 && box.x + box.width <= width + 1);
+      if (width === 320 || width === 1600) await page.screenshot({ path: `.tmp/inspector-evidence/${theme}-${width}-populated.png`, animations: "disabled" });
+      assert.ok(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth + 1));
+      await dialog.getByRole("navigation", { name: "Package inspector pagination" }).getByRole("button", { name: "Next", exact: true }).click();
+      await page.waitForFunction(() => document.querySelector('[role="dialog"]')?.textContent.includes("Page 2 of 3"));
+      assert.ok(await dialog.locator("tbody a").first().textContent().then((text) => text.includes("package-10")));
+      await dialog.getByRole("combobox", { name: "Ecosystem", exact: true }).selectOption("npm");
+      await page.waitForFunction(() => document.querySelector('[role="dialog"]')?.textContent.includes("10 matching"));
+      await dialog.getByRole("combobox", { name: "Publication", exact: true }).selectOption("published");
+      await page.waitForFunction(() => document.querySelector('[role="dialog"]')?.textContent.includes("5 matching"));
+      await dialog.getByRole("searchbox", { name: "Search packages", exact: true }).fill("no-match");
+      await dialog.getByText("No packages match these filters.", { exact: false }).waitFor();
+      const all = new URL(await dialog.getByRole("link", { name: "View all repository packages" }).getAttribute("href"), origin);
+      assert.equal(all.searchParams.get("repository"), "fixture/multi-package"); assert.equal(all.searchParams.get("ecosystem"), "npm"); assert.equal(all.searchParams.get("q"), "no-match");
+      if (width === 320) await page.screenshot({ path: `.tmp/inspector-evidence/${theme}-320.png`, animations: "disabled" });
+      await page.keyboard.press("Escape"); await dialog.waitFor({ state: "hidden" });
+      assert.ok(await trigger.evaluate((element) => element === document.activeElement));
+      cases++;
+    }
+    console.log(`${theme}: inspector pagination/filter/search/Escape at four widths passed`);
+  }
+  await page.setViewportSize({ width: 1600, height: 900 });
+  await page.getByRole("button", { name: "Inspect npm packages in fixture/multi-package" }).click();
+  await dialog.getByRole("table").waitFor(); assert.equal(await dialog.getByRole("combobox", { name: "Ecosystem", exact: true }).inputValue(), "npm");
+  await page.mouse.click(8, 8); await dialog.waitFor({ state: "hidden" });
+  const stars = page.getByRole("button", { name: "Sort repositories by star count" });
+  await stars.click(); await page.waitForFunction(() => document.querySelector('table[aria-label="Repository catalog records"] tbody tr')?.textContent.includes("popular"));
+  assert.equal(await page.locator('th[aria-sort="descending"]').count(), 1); assert.ok(page.url().includes("sort=stars"));
+  await stars.click(); await page.waitForFunction(() => document.querySelector('table[aria-label="Repository catalog records"] tbody tr')?.textContent.includes("multi-package"));
+  assert.equal(await page.locator('th[aria-sort="ascending"]').count(), 1);
+  await page.getByRole("button", { name: "Inspect packages in fixture/popular", exact: true }).click();
+  await page.getByRole("dialog", { name: "Packages in fixture/popular", exact: true }).getByText("No packages were observed in this repository.").waitFor();
+  await page.keyboard.press("Escape");
+  // A new query must expose a retryable failure, never masquerade as zero results.
+  const endpoint = (url) => url.pathname === "/api/v1/catalog/packages";
+  await page.route(endpoint, (route) => route.fulfill({ status: 500, contentType: "application/json", body: "{}" }));
+  await trigger.click(); await dialog.getByRole("searchbox", { name: "Search packages", exact: true }).fill("package");
+  await dialog.getByRole("alert").waitFor();
+  await page.unroute(endpoint);
+  await dialog.getByRole("button", { name: "Retry", exact: true }).click(); await dialog.getByRole("table").waitFor();
+  await dialog.getByRole("combobox", { name: "Ecosystem", exact: true }).selectOption("npm");
+  await dialog.getByRole("combobox", { name: "Publication", exact: true }).selectOption("published");
+  await dialog.getByRole("link", { name: "View all repository packages" }).click();
+  await page.getByRole("button", { name: "Clear repository filter" }).waitFor();
+  await page.locator('table[aria-label="Package catalog records"] tbody tr').first().waitFor();
+  assert.equal(await page.locator('table[aria-label="Package catalog records"] tbody tr').count(), 5);
+  assert.ok(page.url().includes("repository=fixture%2Fmulti-package"));
+  await page.goto(`${origin}/catalog/repositories`); await trigger.waitFor();
+  await page.setViewportSize({ width: 768, height: 900 });
+  await page.evaluate(() => { document.documentElement.style.fontSize = "200%"; });
+  await trigger.click(); await dialog.getByRole("table").waitFor();
+  assert.ok(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth + 1));
+  assert.deepEqual(errors, []);
+  console.log(`${cases} theme/viewport interaction cases, on-demand requests, outside-dismiss, zero state, star sorts and 200% text passed.`);
+} finally { await browser.close(); }

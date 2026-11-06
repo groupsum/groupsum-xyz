@@ -23,6 +23,7 @@
     "validate:performance": "node pkgs/frontend/scripts/validate-performance-budget.mjs",
     "validate:typography": "node pkgs/frontend/scripts/validate-typography.mjs && node --test pkgs/frontend/tests/design-system.test.mjs",
     "verify:design": "node pkgs/frontend/scripts/verify-design-system.mjs",
+    "verify:packages": "node pkgs/frontend/scripts/verify-package-inspector.mjs",
     "test:structured-data": "node --test pkgs/frontend/tests/page-jsonld.test.mjs",
     "test:catalog-routes": "node --test pkgs/frontend/tests/catalog-detail-route.test.mjs",
     "validate:source-layout": "node scripts/validate-source-layout.mjs",
