@@ -1,0 +1,21 @@
+schema_version: "0.8.0"
+kind: "adr"
+id: "adr:1000"
+number: 1000
+slug: "snapshot-aware-public-catalog-cache"
+title: "Cache public catalog projections by finalized snapshot"
+status: "accepted"
+origin: "repo-local"
+decision_date: null
+tags: []
+summary: "Govern feat:catalog.snapshot-cache. Freeze shared public read models into the digest-checked source before snapshot finalization. Key caches by snapshot, projection version, route, filters and page; never label mutable rows immutable. Generate populated static details from those models. Use bounded public-only memory and IndexedDB caches, short-lived current-pointer revalidation, stable validators, and anonymous shared proxy caching. Exclude credentials, cookies, writes, health and failures. Verify isolation, 304 responses, warm visits, persistence, freshness transitions, SSR parity and responsive budgets. See docs/catalog-caching.md for the complete decision, contracts, rollout and evidence requirements. No deployment certification is implied."
+supersedes: []
+superseded_by: []
+status_notes:
+  -
+    status: "accepted"
+    note: "User approved snapshot-aware public caching."
+    at: "2026-11-06T23:26:13Z"
+references: []
+body: |-
+  Govern feat:catalog.snapshot-cache. Freeze shared public read models into the digest-checked source before snapshot finalization. Key caches by snapshot, projection version, route, filters and page; never label mutable rows immutable. Generate populated static details from those models. Use bounded public-only memory and IndexedDB caches, short-lived current-pointer revalidation, stable validators, and anonymous shared proxy caching. Exclude credentials, cookies, writes, health and failures. Verify isolation, 304 responses, warm visits, persistence, freshness transitions, SSR parity and responsive budgets. See docs/catalog-caching.md for the complete decision, contracts, rollout and evidence requirements. No deployment certification is implied.

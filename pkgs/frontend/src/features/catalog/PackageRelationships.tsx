@@ -3,6 +3,7 @@ import { useQuery } from "@tanstack/react-query";
 import { BadgeCheck, Braces, CircleDot, Package, Users, Boxes } from "lucide-react";
 import { getPackageRelationships, type PackageRelationship } from "../../api/catalog";
 import { CatalogLink } from "./CatalogLink";
+import { useCatalogVersion } from "../../api/catalog-version";
 
 function requirementDetails(value: unknown): Record<string, unknown> {
   if (value && typeof value === "object" && !Array.isArray(value)) return value as Record<string, unknown>;
@@ -32,13 +33,14 @@ export default function PackageRelationships({ routeKey, ecosystem, initialDirec
   routeKey: string; ecosystem: string; initialDirection?: "dependency" | "dependent"; compact?: boolean;
 }) {
   const id = useId();
+  const version = useCatalogVersion();
   const [direction, setDirection] = useState(initialDirection);
   const [search, setSearch] = useState(""); const [query, setQuery] = useState("");
   const [scope, setScope] = useState(""); const [optional, setOptional] = useState(""); const [resolution, setResolution] = useState(""); const [page, setPage] = useState(1);
   useEffect(() => { if (search.trim() === query) return; const timer = setTimeout(() => { setQuery(search.trim()); setPage(1); }, 250); return () => clearTimeout(timer); }, [search, query]);
   useEffect(() => { if (compact) return; const sync = () => { if (["#dependencies", "#dependents"].includes(location.hash)) { setDirection(location.hash === "#dependents" ? "dependent" : "dependency"); setPage(1); document.getElementById(location.hash === "#dependents" ? "dependents" : "dependencies")?.focus({ preventScroll: true }); } }; sync(); window.addEventListener("hashchange", sync); return () => window.removeEventListener("hashchange", sync); }, [compact, routeKey]);
   const params = { direction, q: query, scope, optional, resolution, page, page_size: compact ? 10 : 25 };
-  const collection = useQuery({ queryKey: ["package-relationships", routeKey, params], queryFn: ({ signal }) => getPackageRelationships(routeKey, params, signal), staleTime: 60_000, retry: false });
+  const collection = useQuery({ queryKey: ["package-relationships", routeKey, params, version.snapshot_id], queryFn: ({ signal }) => getPackageRelationships(routeKey, params, signal), placeholderData: (previous) => previous, staleTime: version.public_projection_available ? Infinity : 60_000, retry: false });
   const tab = (value: typeof direction) => { setDirection(value); setPage(1); setScope(""); setOptional(""); setResolution(""); if (!compact) history.replaceState({}, "", `${location.pathname}${location.search}#${value === "dependency" ? "dependencies" : "dependents"}`); };
   const pagination = (placement: string) => { const data = collection.data; return data ? <nav aria-label={`Relationship pagination ${placement}`} className="flex justify-end gap-3"><button className="type-control min-h-8 disabled:opacity-40" disabled={data.page <= 1 || collection.isFetching} onClick={() => setPage(data.page - 1)}>Previous</button><button className="type-control min-h-8 disabled:opacity-40" disabled={data.page >= data.page_count || collection.isFetching} onClick={() => setPage(data.page + 1)}>Next</button></nav> : null; };
   const control = "min-h-8 min-w-0 w-full border border-[var(--color-border-soft)] bg-surface px-1 text-ink";

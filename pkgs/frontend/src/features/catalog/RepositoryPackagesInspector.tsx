@@ -2,19 +2,21 @@ import { useEffect, useState } from "react";
 import { useQuery } from "@tanstack/react-query";
 import { BadgeCheck, CircleDot } from "lucide-react";
 import { listCatalog } from "../../api/catalog";
+import { useCatalogVersion } from "../../api/catalog-version";
 import type { CatalogViewRecord } from "../../types/catalog-view";
 
 export function RepositoryPackagesInspector({ repository, ecosystem, onEcosystem, summary }: {
   repository: string; ecosystem: string; onEcosystem: (value: string) => void; summary?: CatalogViewRecord["package_summary"];
 }) {
   const [search, setSearch] = useState("");
+  const version = useCatalogVersion();
   const [query, setQuery] = useState("");
   const [publication, setPublication] = useState("");
   const [page, setPage] = useState(1);
   useEffect(() => { if (search.trim() === query) return; const timer = setTimeout(() => { setQuery(search.trim()); setPage(1); }, 250); return () => clearTimeout(timer); }, [search, query]);
   useEffect(() => setPage(1), [ecosystem, publication]);
   const params = { repository, ecosystem, publication_status: publication, q: query, page, page_size: 10, sort: "name", projection: "summary" as const };
-  const collection = useQuery({ queryKey: ["repository-packages", params], queryFn: ({ signal }) => listCatalog("packages", params, signal), staleTime: 60_000 });
+  const collection = useQuery({ queryKey: ["repository-packages", params, version.snapshot_id], queryFn: ({ signal }) => listCatalog("packages", params, signal), staleTime: 60_000 });
   const allParams = new URLSearchParams({ repository, ...(ecosystem ? { ecosystem } : {}), ...(publication ? { publication_status: publication } : {}), ...(query ? { q: query } : {}) });
   return <div className="space-y-3" aria-busy={collection.isFetching}>
     <div className="grid grid-cols-1 gap-2 sm:grid-cols-3">

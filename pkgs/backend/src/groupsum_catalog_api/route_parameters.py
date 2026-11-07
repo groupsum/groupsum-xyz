@@ -9,13 +9,10 @@ def decode_path_parameters(
     params: Mapping[str, Any], expected_parts: Iterable[str]
 ) -> dict[str, Any]:
     path_names = {
-        part[1:-1]
-        for part in expected_parts
-        if part.startswith("{") and part.endswith("}")
+        part[1:-1] for part in expected_parts if part.startswith("{") and part.endswith("}")
     }
     return {
-        key: unquote(str(value)) if key in path_names else value
-        for key, value in params.items()
+        key: unquote(str(value)) if key in path_names else value for key, value in params.items()
     }
 
 
@@ -56,4 +53,14 @@ def binding_parameters(ctx: dict[str, Any], template: str) -> dict[str, Any]:
     return decode_path_parameters(params, expected_parts)
 
 
-__all__ = ["binding_parameters", "decode_path_parameters"]
+def binding_headers(ctx):
+    request = ctx.get("request")
+    headers = getattr(request, "headers", None)
+    if headers is not None:
+        return headers
+    hot = (ctx.get("temp") or {}).get("hot_ctx")
+    scope = getattr(hot, "raw_scope", None) or {}
+    return {key.decode().lower(): value.decode() for key, value in scope.get("headers", [])}
+
+
+__all__ = ["binding_parameters", "decode_path_parameters", "binding_headers"]

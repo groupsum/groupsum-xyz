@@ -2,6 +2,7 @@ from __future__ import annotations
 
 from collections import Counter
 
+from ..projections.detail_models import package_model, repository_model
 from ..projections.public_resources import public_resource_record
 from ..projections.resource_types import resource_type_descriptors
 from .view_common import *  # noqa: F403
@@ -119,32 +120,16 @@ def repository_detail(table, ctx):
         )
         if row is None:
             return {"detail": "Repository not found"}
-        item = repository_resource(source_record(row))
-        governance = item.get("ssot_governance") or row.ssot_summary or {}
-        return {
-            "kind": "catalog_repository_record",
-            "item": item,
-            "graph": None,
-            "linked_sections": [],
-            "implementation": {
-                "packages": item.get("packages", []),
-                "resources": item.get("related_resources", []),
-                "releases": item.get("github_releases", []),
-                "languages": [
-                    {"name": key, "bytes": value}
-                    for key, value in (item.get("language_bytes") or {}).items()
-                ],
-                "technologies": item.get("technologies", []),
-            },
-            "governance": governance | {"governed": bool(row.ssot_governed)},
-            "legal": {
+        return repository_model(
+            source_record(row)
+            | {
+                "ssot_governance": (
+                    source_record(row).get("ssot_governance") or row.ssot_summary or {}
+                )
+                | {"governed": bool(row.ssot_governed)},
                 "license_expression": row.license_expression,
-                "status": "observed"
-                if item.get("legal_evidence") or row.license_expression
-                else "not-observed",
-                "observations": item.get("legal_evidence", []),
-            },
-        }
+            }
+        )
 
     return build(ctx["db"])
 
@@ -156,27 +141,13 @@ def package_detail(table, ctx):
         row = current_entity_query(session, table).filter(table.route_key == route_key).first()
         if row is None:
             return {"detail": "Package not found"}
-        item = package_resource(source_record(row))
-        return {
-            "kind": "catalog_package_record",
-            "item": item,
-            "resource_type": "distribution.package",
-            "graph": None,
-            "linked_sections": [],
-            "parent": {"repository": item.get("repository")},
-            "implementation": {
-                "repositories": item.get("repositories", []),
-                "releases": item.get("releases", []),
-                "dependencies": item.get("dependencies", []),
-                "dependents": item.get("dependents", []),
-                "downloads": {"value": item.get("downloads")},
-            },
-            "legal": {
+        return package_model(
+            source_record(row)
+            | {
                 "license_expression": row.license_expression,
-                "status": row.license_status,
-                "observations": item.get("legal_evidence", []),
-            },
-        }
+                "license_status": row.license_status,
+            }
+        )
 
     return build(ctx["db"])
 

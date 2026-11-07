@@ -35,7 +35,11 @@ def projected_contributors(table, session):
 
 def contributor_collection(table, ctx):
     params = query_params(ctx)
-    values = projected_contributors(table, ctx["db"])
+    values = (
+        ctx["frozen_contributors"]
+        if "frozen_contributors" in ctx
+        else projected_contributors(table, ctx["db"])
+    )
     search = str(params.get("q") or "").strip().casefold()
     if search:
         values = [
@@ -79,7 +83,11 @@ def contributor_detail(table, ctx):
     params = payload(ctx)
     provider, identifier = str(params.get("provider") or ""), str(params.get("login") or "")
     # Match the public compound identity, not the table's unrelated primary-key read op.
-    current = projected_contributors(table, ctx["db"])
+    current = (
+        ctx["frozen_contributors"]
+        if "frozen_contributors" in ctx
+        else projected_contributors(table, ctx["db"])
+    )
     person = next(
         (
             item
@@ -99,3 +107,8 @@ def contributor_detail(table, ctx):
         "item": {key: value for key, value in person.items() if key != "repositories"},
         "repositories": person["repositories"],
     }
+
+
+def contributor_page(values, params, *, detail=False):
+    ctx = {"frozen_contributors": values, "query_params": params, "payload": params}
+    return contributor_detail(None, ctx) if detail else contributor_collection(None, ctx)

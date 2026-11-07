@@ -2,16 +2,17 @@ from __future__ import annotations
 
 import inspect
 from collections.abc import Callable
-from dataclasses import replace
 from typing import Any
 
 from pydantic import RootModel
 from tigrbl import JSONResponse, get, hook_ctx
 from tigrbl.factories.router import defineRouterSpec
-from tigrbl_core._spec import PathSpec, RouterSpec, TableSpec
+from tigrbl_core._spec import RouterSpec
 
-from .route_parameters import binding_parameters
+from .public_router_paths import public_paths
+from .route_parameters import binding_headers, binding_parameters
 from .schemas import ResourceCatalogCollection
+from .snapshot_reads import public_projection
 from .tables import (
     view_contributors,
     view_package_relationships,
@@ -30,7 +31,6 @@ from .tables.organization import Organization
 from .tables.package import Package
 from .tables.portfolio import Portfolio
 from .tables.product import Product
-from .tables.registry import ALL_TABLES
 from .tables.repository import Repository
 from .tables.resources.party.person import PartyPerson
 from .tables.technology import Technology
@@ -70,6 +70,7 @@ def _bind_get(
 
     def capture_params(_cls: type, ctx: dict[str, Any]) -> None:
         ctx.setdefault("temp", {})[params_key] = binding_parameters(ctx, path)
+
     capture_params.__name__ = f"capture_{alias}_params"
     capture_params.__qualname__ = capture_params.__name__
     setattr(
@@ -87,7 +88,9 @@ def _bind_get(
         scoped["payload"] = params
         scoped["query_params"] = params
         scoped["path_params"] = params
-        result = operation(cls, _operation_context(scoped, fixed or {}))
+        result = public_projection(scoped["db"], alias, params, binding_headers(ctx))
+        if result is None:
+            result = operation(cls, _operation_context(scoped, fixed or {}))
         if inspect.isawaitable(result):
             result = await result
         result = _not_found(result)
@@ -124,10 +127,18 @@ def _bind_get(
 analytics_readiness = views_analytics.analytics_readiness
 for path, alias, table, operation in (
     ("/api/v1/contributors", "contributors", PartyPerson, view_contributors.contributor_collection),
-    ("/api/v1/contributors/{provider}/{login}", "contributor_detail",
-     PartyPerson, view_contributors.contributor_detail),
-    ("/api/v1/catalog/packages/{route_key}/relationships", "package_relationships",
-     Package, view_package_relationships.package_relationships),
+    (
+        "/api/v1/contributors/{provider}/{login}",
+        "contributor_detail",
+        PartyPerson,
+        view_contributors.contributor_detail,
+    ),
+    (
+        "/api/v1/catalog/packages/{route_key}/relationships",
+        "package_relationships",
+        Package,
+        view_package_relationships.package_relationships,
+    ),
 ):
     _bind_get(path, table=table, alias=alias, target="list", operation=operation)
 
@@ -266,6 +277,13 @@ for path, alias, table, operation, fixed in (
 
 for path, alias, table, target, operation in (
     (
+        "/api/v1/catalog/version",
+        "catalog_version",
+        CatalogSnapshot,
+        "list",
+        views_snapshot_export.catalog_version,
+    ),
+    (
         "/api/v1/snapshots",
         "catalog_snapshots",
         CatalogSnapshot,
@@ -332,53 +350,8 @@ for path, alias, table, target, operation in (
     _bind_get(path, table=table, alias=alias, target=target, operation=operation)
 
 
-def _table_spec(table: type, *, ops: tuple[Any, ...] = ()) -> TableSpec:
-    return TableSpec(
-        model_ref=f"{table.__module__}:{table.__name__}",
-        engine_name=getattr(table, "ENGINE_NAME", None),
-        ops=ops,
-    )
 
-
-def _public_paths() -> tuple[PathSpec, ...]:
-    route_tables = (
-        CatalogObservation,
-        MetricObservation,
-        CatalogSnapshot,
-        *(
-            table
-            for table in ALL_TABLES
-            if table not in {CatalogObservation, MetricObservation, CatalogSnapshot}
-        ),
-    )
-    paths = [
-        PathSpec(
-            path="/",
-            kind="resource",
-            tables=tuple(_table_spec(table) for table in route_tables),
-        )
-    ]
-    for table in route_tables:
-        for operation in tuple(getattr(table, "__tigrbl_ops__", ()) or ()):
-            for binding in tuple(getattr(operation, "bindings", ()) or ()):
-                if getattr(binding, "proto", None) != "http.rest":
-                    continue
-                paths.append(
-                    PathSpec(
-                        path=binding.path,
-                        kind="resource",
-                        tables=(
-                            _table_spec(
-                                table,
-                                ops=(replace(operation, bindings=(binding,)),),
-                            ),
-                        ),
-                    )
-                )
-    return tuple(paths)
-
-
-class PublicApiRouterSpec(defineRouterSpec(name="public-api", paths=_public_paths())):
+class PublicApiRouterSpec(defineRouterSpec(name="public-api", paths=public_paths())):
     pass
 
 

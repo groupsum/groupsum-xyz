@@ -3,12 +3,14 @@ import { getContributors, type ContributorCollection } from "../../api/catalog";
 import { useSearchParams } from "../../router";
 import { CatalogLink } from "./CatalogLink";
 import { CatalogPageMetadata } from "./CatalogPageMetadata";
+import { useCatalogVersion } from "../../api/catalog-version";
 
 export function ContributorDirectory() {
+  const version = useCatalogVersion();
   const [params, setParams] = useSearchParams();
   const query = { q: params.get("q") || "", account_type: params.get("account_type") || "", sort: params.get("sort") || "contributions", page: Number(params.get("page") || 1), page_size: 50 };
-  const snapshot = globalThis.__GROUPSUM_API_SNAPSHOT__ as (ContributorCollection & { static_path?: string }) | null;
-  const collection = useQuery({ queryKey: ["contributors", query], queryFn: ({ signal }) => getContributors(query, signal), initialData: params.size === 0 && snapshot?.static_path === "/contributors" ? snapshot : undefined, staleTime: 60_000 });
+  const snapshot = globalThis.__GROUPSUM_API_SNAPSHOT__ as (ContributorCollection & { static_path?: string; static_snapshot_id?: string }) | null;
+  const collection = useQuery({ queryKey: ["contributors", query, version.snapshot_id], queryFn: ({ signal }) => getContributors(query, signal), initialData: params.size === 0 && snapshot?.static_path === "/contributors" && version.snapshot_id === snapshot.static_snapshot_id ? snapshot : undefined, staleTime: 60_000 });
   const change = (key: string, value: string) => { const next = new URLSearchParams(params); next.set(key, value); if (key !== "page") next.delete("page"); setParams(next, { replace: key === "q" }); };
   return <article className="mx-auto max-w-[var(--content-max)] space-y-4 px-4 py-8 sm:px-6"><CatalogPageMetadata record={{ route: "/contributors", title: "Contributors | GroupSum catalog", description: "People and automation observed contributing to catalog repositories.", schemaFamily: "catalog-collection", items: collection.data?.records || [], itemCount: collection.data?.count || 0 }} /><header><h1 className="type-display-lg break-words [overflow-wrap:anywhere]">Contributors</h1><p className="type-body-sm text-ink-muted">People and automation observed contributing to catalog repositories.</p></header>
     <div className="flex flex-wrap gap-2"><label className="type-body-sm min-w-0 flex-[1_1_15rem]">Search contributors<input type="search" value={query.q} onChange={(event) => change("q", event.target.value)} className="block min-h-9 w-full border border-[var(--color-border-soft)] bg-surface px-2" /></label><label className="type-body-sm">Account type<select value={query.account_type} onChange={(event) => change("account_type", event.target.value)} className="block min-h-9 border border-[var(--color-border-soft)] bg-surface px-2"><option value="">All accounts</option>{(collection.data?.account_types || ["User", "Bot", "Anonymous"]).map((type) => <option key={type}>{type}</option>)}</select></label><label className="type-body-sm">Sort<select value={query.sort} onChange={(event) => change("sort", event.target.value)} className="block min-h-9 border border-[var(--color-border-soft)] bg-surface px-2"><option value="contributions">Contributions</option><option value="repositories">Repositories</option><option value="name">Name</option></select></label></div>

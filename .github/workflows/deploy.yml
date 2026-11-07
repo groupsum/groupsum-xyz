@@ -326,12 +326,34 @@ jobs:
           docker exec groupsum-xyz wget -qO- http://127.0.0.1/ >/dev/null
       - name: Publish the bootstrap snapshot into the new API
         if: ${{ inputs.bootstrap_catalog }}
+        id: bootstrap-publication
+        shell: bash
         run: |
+          set -euo pipefail
           docker exec \
             -e GROUPSUM_CATALOG_API_URL=http://127.0.0.1:8000 \
             -e GROUPSUM_DEPLOY_GITHUB_TOKEN= \
             groupsum-catalog-api \
-            python /app/pkgs/backend/scripts/publish_catalog.py
+            python /app/pkgs/backend/scripts/publish_catalog.py > deployment-evidence/bootstrap-publication.json
+          python -c 'import json, os; result=json.load(open("deployment-evidence/bootstrap-publication.json")); assert result["results"]["snapshot"]["status"] == "ok"; print("snapshot_id=" + result["snapshot_id"], file=open(os.environ["GITHUB_OUTPUT"], "a"))'
+      - name: Rebuild bootstrap website from the finalized immutable snapshot
+        if: ${{ inputs.bootstrap_catalog }}
+        env:
+          GROUPSUM_CATALOG_API_URL: http://127.0.0.1:8000
+          FINALIZED_SNAPSHOT_ID: ${{ steps.bootstrap-publication.outputs.snapshot_id }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          test -n "$FINALIZED_SNAPSHOT_ID"
+          # Read through the stack network, without exposing the backend on the host.
+          docker exec groupsum-catalog-api python /app/pkgs/catalog-pipeline/catalog_materialize.py --api-url http://127.0.0.1:8000 --snapshot-id "$FINALIZED_SNAPSHOT_ID" --output /tmp/bootstrap-catalog
+          docker cp groupsum-catalog-api:/tmp/bootstrap-catalog/catalog.json catalog/generated/catalog.json
+          docker cp groupsum-catalog-api:/tmp/bootstrap-catalog/snapshot-provenance.json catalog/generated/snapshot-provenance.json
+          npm run catalog:render
+          npm run catalog:export-public
+          npm run build
+          docker compose -f "$COMPOSE_FILE" build groupsum-xyz
+          docker compose -f "$COMPOSE_FILE" up -d --no-deps groupsum-xyz
       - uses: cobycloud/actions/actions/wyrmctl-apply@56c4a13434c7ec49453bf109d7d6955158992b5a
         with:
           artifact: deployment-evidence/wyrmctl-plan.json

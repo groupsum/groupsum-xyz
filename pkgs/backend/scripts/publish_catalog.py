@@ -47,6 +47,15 @@ def main() -> None:
             "Catalog source collection is incomplete; no records published:\n"
             + "\n".join(quality_errors[:20])
         )
+    # Freeze exactly the public projection used by the static generator, before hashing
+    # the source. The immutable export now carries both raw facts and their read model.
+    models = repo_root / "catalog/generated/site/read-models.json"
+    if models.exists():
+        catalog = {**catalog, "_public_read_model": json.loads(models.read_text(encoding="utf-8"))}
+        catalog["completeness"] = {
+            **catalog.get("completeness", {}),
+            "public_projection_version": "1",
+        }
     entity_records, associations = compile_catalog_records(repo_root)
     descriptor, observations, measurements = publication_facts(
         catalog, entity_records, associations

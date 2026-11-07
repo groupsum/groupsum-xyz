@@ -57,7 +57,8 @@ test("catalog sort and filter selects shrink within their wrapping toolbar", () 
 test("repository rendering is not gated on provenance or snapshot loading", () => {
   const detail = source("src/features/catalog/CatalogDetail.tsx");
   assert.ok(!detail.includes("Promise.all(["));
-  assert.ok(detail.indexOf('setState("ready");', detail.indexOf("const repositoryRecord")) < detail.indexOf('void getEntityMetrics'));
+  assert.ok(detail.includes('queryKey: ["catalog-member", dataset, normalizedPath, version.snapshot_id]'));
+  assert.ok(detail.includes('const state = record ? "ready"'));
   const observations = source("src/features/catalog/RepositorySourceObservations.tsx");
   assert.ok(observations.includes("enabled: open"));
   assert.ok(observations.includes("AbortSignal.timeout(15_000)"));

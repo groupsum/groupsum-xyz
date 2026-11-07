@@ -56,10 +56,20 @@ def entity_observations(_table: type, ctx: dict[str, Any]) -> dict[str, Any]:
     params = _params(ctx)
     entity_type = str(params["entity_type"])
     entity_id = str(params.get("entity_id") or "")
-    query = ctx["db"].query(CatalogObservation).filter(
-        CatalogObservation.subject_type == entity_type,
-        CatalogObservation.subject_id == entity_id,
+    query = (
+        ctx["db"]
+        .query(CatalogObservation)
+        .filter(
+            CatalogObservation.subject_type == entity_type,
+            CatalogObservation.subject_id == entity_id,
+        )
     )
+    if ctx["db"].query(CatalogSnapshot.id).first():
+        query = query.filter(
+            CatalogObservation.snapshot_id.in_(
+                ctx["db"].query(CatalogSnapshot.id).filter(CatalogSnapshot.status == "complete")
+            )
+        )
     snapshot_id = str(params.get("snapshot_id") or "")
     if snapshot_id:
         query = query.filter(CatalogObservation.snapshot_id == snapshot_id)
@@ -143,6 +153,19 @@ async def entity_metrics(_table: type, ctx: dict[str, Any]) -> dict[str, Any]:
         MetricObservation.subject_type == entity_type,
         MetricObservation.subject_id == entity_id,
     )
+    # A collector can append metrics before finalization; do not expose those
+    # provisional points through an otherwise finalized catalog view.
+    catalog, release = CatalogSnapshot.acquire(op_alias="list")
+    try:
+        known = catalog.query(CatalogSnapshot.id, CatalogSnapshot.status).all()
+        if known:
+            statement = statement.where(
+                MetricObservation.snapshot_id.in_(
+                    [row.id for row in known if row.status == "complete"]
+                )
+            )
+    finally:
+        release()
     if metric_key:
         statement = statement.where(MetricObservation.metric_key == metric_key)
     points = _serialize(

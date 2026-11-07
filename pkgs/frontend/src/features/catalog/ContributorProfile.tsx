@@ -2,11 +2,13 @@ import { useQuery } from "@tanstack/react-query";
 import { getContributor, type ContributorPageModel } from "../../api/catalog";
 import { CatalogLink } from "./CatalogLink";
 import { CatalogPageMetadata } from "./CatalogPageMetadata";
+import { useCatalogVersion } from "../../api/catalog-version";
 
 export function ContributorProfile({ provider, login }: { provider: string; login: string; onNavigate?: (path: string) => void }) {
-  const snapshot = globalThis.__GROUPSUM_API_SNAPSHOT__ as (ContributorPageModel & { static_path?: string }) | null;
-  const model = useQuery({ queryKey: ["contributor", provider, login], queryFn: ({ signal }) => getContributor(provider, login, signal),
-    initialData: snapshot?.static_path === `/contributors/${encodeURIComponent(provider)}/${encodeURIComponent(login)}` ? snapshot : undefined, staleTime: 60_000, retry: false });
+  const version = useCatalogVersion();
+  const snapshot = globalThis.__GROUPSUM_API_SNAPSHOT__ as (ContributorPageModel & { static_path?: string; static_snapshot_id?: string }) | null;
+  const model = useQuery({ queryKey: ["contributor", provider, login, version.snapshot_id], queryFn: ({ signal }) => getContributor(provider, login, signal),
+    initialData: snapshot?.static_path === `/contributors/${encodeURIComponent(provider)}/${encodeURIComponent(login)}` && version.snapshot_id === snapshot.static_snapshot_id ? snapshot : undefined, placeholderData: (previous, query) => query?.queryKey[2] === login ? previous : undefined, staleTime: 60_000, retry: false });
   return <article className="mx-auto max-w-[var(--content-max)] space-y-4 px-4 py-8 sm:px-6">
     <CatalogLink href="/contributors" className="type-control text-accent">← Contributors</CatalogLink>
     {model.isPending ? <p role="status">Loading contributor profile…</p> : model.isError ? <div role="alert"><h1 className="type-display-lg break-words [overflow-wrap:anywhere]">{String(model.error).includes("404") ? "Contributor not found" : "Contributor unavailable"}</h1><p className="type-body-sm">{String(model.error).includes("404") ? "This identity is not in the current catalog." : "The profile could not be loaded."}</p><button onClick={() => model.refetch()} className="type-control text-accent">Retry</button></div> : <>

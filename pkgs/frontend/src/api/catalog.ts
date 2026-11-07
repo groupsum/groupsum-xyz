@@ -46,6 +46,7 @@ export type ResourceTypeDescriptor = {
   populated: boolean;
 };
 export type CatalogMember = {
+  snapshot_id?: string;
   item: CatalogRecord;
   resource_type?: string;
   parent?: CatalogRecord | null;

@@ -1,12 +1,15 @@
 import fs from "node:fs";
 import path from "node:path";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { renderToString } from "react-dom/server";
+import { renderToPipeableStream } from "react-dom/server";
+import { Writable } from "node:stream";
 import { StaticRouter } from "./router";
 
 import App from "./App";
 
 let catalogResourceSnapshots: Map<string, unknown> | null = null;
+let readModels: { details: Record<string, unknown>; collections: Record<string, unknown> } | undefined;
+let catalogVersion: typeof globalThis.__GROUPSUM_CATALOG_VERSION__;
 
 function catalogResourceSnapshot(pathname: string): unknown | null {
   if (pathname === "/catalog/resources") {
@@ -52,8 +55,17 @@ function catalogResourceSnapshot(pathname: string): unknown | null {
   return catalogResourceSnapshots.get(pathname) || null;
 }
 
-export function getApiSnapshot(url: string): unknown | null {
+function apiSnapshot(url: string): unknown | null {
   const pathname = url.split(/[?#]/, 1)[0].replace(/\/$/, "") || "/";
+  const siteRoot = path.join(process.cwd(), "catalog/generated/site");
+  if (!catalogVersion) catalogVersion = JSON.parse(fs.readFileSync(path.join(siteRoot, "manifest.json"), "utf8")).snapshot;
+  globalThis.__GROUPSUM_CATALOG_VERSION__ = catalogVersion;
+  const source = path.join(siteRoot, "read-models.json");
+  if (!readModels && fs.existsSync(source)) readModels = JSON.parse(fs.readFileSync(source, "utf8"));
+  const member = readModels?.details[pathname];
+  if (member) return { ...(member as object), static_path: pathname };
+  const collection = readModels?.collections[pathname.replace("/catalog/", "")];
+  if (collection) return { ...(collection as object), static_path: pathname };
   if (pathname === "/contributors" || pathname.startsWith("/contributors/")) {
     const people = JSON.parse(fs.readFileSync(path.join(process.cwd(), "catalog/generated/site/contributors.json"), "utf8")) as Array<Record<string, unknown> & { route: string; repositories: unknown[]; account_type: string }>;
     if (pathname === "/contributors") return { static_path: pathname, kind: "contributor_collection", count: people.length, page: 1, page_count: Math.max(1, Math.ceil(people.length / 50)), account_types: [...new Set(people.map((person) => person.account_type))].sort(), records: people.slice(0, 50).map(({ repositories: _repos, ...person }) => person) };
@@ -81,20 +93,37 @@ export function getApiSnapshot(url: string): unknown | null {
   return fs.existsSync(target) ? JSON.parse(fs.readFileSync(target, "utf8")) : null;
 }
 
-export function render(url: string): string {
+export function getApiSnapshot(url: string): unknown | null {
+  const model = apiSnapshot(url);
+  return model ? { ...(model as object), static_snapshot_id: catalogVersion?.snapshot_id } : null;
+}
+
+export async function render(url: string): Promise<string> {
   globalThis.__GROUPSUM_API_SNAPSHOT__ = getApiSnapshot(url);
   const queryClient = new QueryClient({
     defaultOptions: { queries: { retry: false, staleTime: 60_000 } },
   });
   try {
-    return renderToString(
+    const application = (
       <QueryClientProvider client={queryClient}>
         <StaticRouter location={url}>
           <App />
         </StaticRouter>
-      </QueryClientProvider>,
+      </QueryClientProvider>
     );
+    return await new Promise<string>((resolve, reject) => {
+      const chunks: Buffer[] = [];
+      const output = new Writable({ write(chunk, _encoding, next) { chunks.push(Buffer.from(chunk)); next(); } });
+      output.on("finish", () => resolve(Buffer.concat(chunks).toString("utf8")));
+      output.on("error", reject);
+      const stream = renderToPipeableStream(application, {
+        onAllReady() { stream.pipe(output); },
+        onShellError: reject,
+        onError: reject,
+      });
+    });
   } finally {
+    queryClient.clear();
     globalThis.__GROUPSUM_API_SNAPSHOT__ = null;
   }
 }

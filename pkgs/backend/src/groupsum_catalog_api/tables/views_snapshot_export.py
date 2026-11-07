@@ -3,9 +3,31 @@ from __future__ import annotations
 from typing import Any
 from urllib.parse import quote
 
+from tigrbl import JSONResponse
+
 from .catalog_snapshot import CatalogSnapshot
 from .catalog_snapshot_source import CatalogSnapshotSource
 from .view_common import payload
+
+
+def catalog_version(_table, ctx):
+    row = ctx["db"].query(CatalogSnapshot).filter(CatalogSnapshot.is_current.is_(True)).first()
+    if row is None:
+        return JSONResponse(
+            {"detail": "No finalized snapshot"},
+            status_code=503,
+            headers={"Cache-Control": "no-store"},
+        )
+    version = (row.completeness or {}).get("public_projection_version")
+    return JSONResponse(
+        {
+            "snapshot_id": row.id,
+            "collected_at": str(row.collected_at),
+            "projection_version": version,
+            "public_projection_available": version == "1",
+        },
+        headers={"Cache-Control": "public, max-age=15, s-maxage=15, stale-while-revalidate=15"},
+    )
 
 
 def snapshot_export_manifest(_table: type, ctx: dict[str, Any]) -> dict[str, Any]:
@@ -36,9 +58,7 @@ def snapshot_export_manifest(_table: type, ctx: dict[str, Any]) -> dict[str, Any
                 "index": row.chunk_index,
                 "byte_count": row.byte_count,
                 "sha256": row.content_sha256,
-                "url": (
-                    f"/api/v1/snapshots/{encoded_id}/export/chunks/{row.chunk_index}"
-                ),
+                "url": (f"/api/v1/snapshots/{encoded_id}/export/chunks/{row.chunk_index}"),
             }
             for row in rows
         ],
@@ -53,7 +73,8 @@ def snapshot_export_chunk(_table: type, ctx: dict[str, Any]) -> dict[str, Any]:
     except (TypeError, ValueError):
         return {"detail": "Snapshot export chunk not found"}
     row = (
-        ctx["db"].query(CatalogSnapshotSource)
+        ctx["db"]
+        .query(CatalogSnapshotSource)
         .filter(
             CatalogSnapshotSource.snapshot_id == snapshot_id,
             CatalogSnapshotSource.chunk_index == chunk_index,

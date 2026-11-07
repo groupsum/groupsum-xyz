@@ -10,6 +10,7 @@ from typing import Any
 
 from groupsum_catalog_api.projections.contributors import contributor_records
 from groupsum_catalog_api.projections.public_resources import public_resource_records
+from groupsum_catalog_api.projections.read_models import build_read_models
 from groupsum_catalog_api.projections.resource_types import resource_type_descriptors
 from groupsum_catalog_api.record_compiler import compile_catalog_records
 from groupsum_catalog_api.tables.registry import RESOURCE_TABLES
@@ -56,6 +57,14 @@ def export_public_catalog(repo_root: Path, site_dir: Path) -> dict[str, Any]:
         **_write_json(site_dir / "resource-types.json", resource_types),
     }
 
+    read_models = catalog.get("_public_read_model") or build_read_models(
+        json.loads((site_dir / "repositories.json").read_text(encoding="utf-8")),
+        json.loads((site_dir / "packages.json").read_text(encoding="utf-8")),
+        json.loads((site_dir / "technologies.json").read_text(encoding="utf-8")),
+        contributors,
+    )
+    _write_json(site_dir / "read-models.json", read_models)
+
     manifest_path = site_dir / "manifest.json"
     manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
     descriptor = snapshot_descriptor(catalog)
@@ -63,6 +72,8 @@ def export_public_catalog(repo_root: Path, site_dir: Path) -> dict[str, Any]:
         key: descriptor[key]
         for key in ("snapshot_id", "collected_at", "source_digest", "schema_version")
     }
+    manifest["snapshot"]["projection_version"] = read_models["version"]
+    manifest["snapshot"]["public_projection_available"] = "_public_read_model" in catalog
     manifest["counts"]["resources"] = len(resources)
     manifest["counts"]["contributors"] = len(contributors)
     manifest["counts"]["resource_types"] = len(resource_types)

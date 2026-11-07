@@ -11,6 +11,8 @@ def main() -> None:
         host="0.0.0.0",
         port=8000,
         config={
+            # Compress once at Nginx. Avoid encoding-dependent, time-varying server ETags.
+            "http": {"content_coding_policy": "identity-only"},
             "proxy": {
                 "proxy_headers": True,
                 "forwarded_allow_ips": ["*"],

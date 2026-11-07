@@ -1,12 +1,14 @@
 import { useState } from "react";
 import { useQuery } from "@tanstack/react-query";
 import { getEntityObservations } from "../../api/catalog";
+import { useCatalogVersion } from "../../api/catalog-version";
 import { formatDate, humanLabel } from "./CatalogRecordShared";
 
 export function RepositorySourceObservations({ entityId }: { entityId: string }) {
   const [open, setOpen] = useState(false);
+  const version = useCatalogVersion();
   const observations = useQuery({
-    queryKey: ["repository-source-observations", entityId],
+    queryKey: ["repository-source-observations", entityId, version.snapshot_id],
     enabled: open,
     queryFn: ({ signal }) => getEntityObservations("source.repository", entityId,
       AbortSignal.any([signal, AbortSignal.timeout(15_000)])),

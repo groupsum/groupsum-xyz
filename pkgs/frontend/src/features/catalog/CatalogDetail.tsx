@@ -1,4 +1,6 @@
-import { lazy, Suspense, useEffect, useState } from "react";
+import { lazy, Suspense, useState, useRef } from "react";
+import { useQuery } from "@tanstack/react-query";
+import { useCatalogVersion } from "../../api/catalog-version";
 import { getCatalogSnapshots, getEntityMetrics, type CatalogSnapshot, type EntityGraph, getCatalogPackageMember, getCatalogReleaseMember, getCatalogRepositoryMember, getCatalogResourceMember, getCatalogTechnologyMember } from "../../api/catalog";
 import { BadgeCheck, Code2, ExternalLink, FileCode2, GitBranch, Package, ShieldCheck } from "lucide-react";
 import { EntityOwnership } from "./EntityIdentity";
@@ -23,6 +25,7 @@ function resourceRecord(model: Awaited<ReturnType<typeof getCatalogPackageMember
     ...item,
     id: String(item.id || routeKey),
     kind,
+    cache_snapshot_id: model.snapshot_id || globalThis.__GROUPSUM_CATALOG_VERSION__?.snapshot_id,
     resource_type: model.resource_type,
     parent: model.parent,
     entity_graph: model.graph as EntityGraph | null,
@@ -53,74 +56,48 @@ function MemberSectionNav({ record }: { record: CatalogRecord }) {
 export function PublicCatalogDetail({ path, onNavigate }: { path: string; onNavigate: (path: string) => void }) {
   const segments = catalogDetailSegments(path);
   const dataset = segments[1] as DetailDatasetName;
-  const staticModel = globalThis.__GROUPSUM_API_SNAPSHOT__ as (Awaited<ReturnType<typeof getCatalogPackageMember>> & { static_path?: string }) | null | undefined;
+  const staticModel = globalThis.__GROUPSUM_API_SNAPSHOT__ as (Awaited<ReturnType<typeof getCatalogPackageMember>> & { static_path?: string; static_snapshot_id?: string }) | null | undefined;
   const normalizedPath = path.replace(/\/$/, "");
-  const staticRecord = staticModel?.static_path === normalizedPath && dataset === "resources"
-    ? resourceRecord(staticModel, segments.at(-1) || "", "resource")
-    : null;
-  const [record, setRecord] = useState<CatalogRecord | null>(staticRecord);
-  const [snapshots, setSnapshots] = useState<CatalogSnapshot[]>([]);
-  const [state, setState] = useState<"loading" | "ready" | "missing" | "error">(staticRecord ? "ready" : "loading");
-
-  useEffect(() => {
-    if (staticModel?.static_path === normalizedPath && dataset === "resources") return;
-    setState("loading");
-    setRecord(null);
-    setSnapshots([]);
-    const controller = new AbortController();
-    const routeKey = segments.at(-1) || "";
-
-    const acceptResourceMember = (model: Awaited<ReturnType<typeof getCatalogPackageMember>>, kind: string) => {
-      setRecord(resourceRecord(model, routeKey, kind));
-      setState("ready");
-    };
-
-    if (dataset === "releases") {
-      getCatalogReleaseMember(routeKey, controller.signal)
-        .then((model) => acceptResourceMember(model, "release"))
-        .catch((error: Error) => { if (error.name !== "AbortError") setState(error.message.includes("404") ? "missing" : "error"); });
-      return () => controller.abort();
+  const version = useCatalogVersion();
+  const routeKey = segments.at(-1) || "";
+  const kind = ({ repositories: "repository", packages: "package", resources: "resource", technologies: "technology", releases: "release" } as Record<string, string>)[dataset];
+  const mapModel = (model: Awaited<ReturnType<typeof getCatalogPackageMember>>) => {
+    const base = resourceRecord(model, routeKey, kind);
+    if (kind === "repository") {
+      const implementation = valueRecord(model.implementation);
+      return { ...base, packages: implementation.packages, languages: implementation.languages, technologies: implementation.technologies, ssot_governance: model.governance } as CatalogRecord;
     }
-    if (dataset === "technologies") {
-      getCatalogTechnologyMember(routeKey, controller.signal)
-        .then((model) => {
-          const item = valueRecord(model.item);
-          setRecord({ ...item, id: String(item.id || routeKey), kind: "technology", display_name: item.label || item.name, related_records: model.related_records } as CatalogRecord);
-          setState("ready");
-        })
-        .catch((error: Error) => { if (error.name !== "AbortError") setState(error.message.includes("404") ? "missing" : "error"); });
-      return () => controller.abort();
-    }
-    if (!datasetOrder.includes(dataset as DatasetName)) {
-      setState("missing");
-      return;
-    }
-
-    const request = dataset === "packages"
-      ? getCatalogPackageMember(routeKey, controller.signal).then((model) => acceptResourceMember(model, "package"))
-      : dataset === "resources"
-        ? getCatalogResourceMember(segments.at(-2) || "resource", routeKey, controller.signal).then((model) => acceptResourceMember(model, "resource"))
-        : getCatalogRepositoryMember(segments.at(-2) || "", routeKey, controller.signal).then((model) => {
-          const item = valueRecord(model.item);
-          const implementation = valueRecord(model.implementation);
-          const legal = valueRecord(model.legal);
-          const repositoryRecord = { ...item, id: String(item.id || routeKey), kind: "repository", entity_graph: model.graph as EntityGraph | null, linked_sections: model.linked_sections, packages: implementation.packages, releases: implementation.releases, languages: implementation.languages, technologies: implementation.technologies, ssot_governance: model.governance, legal_observations: valueRecords(legal.observations), license_expression: legal.license_expression, license_status: legal.status } as CatalogRecord;
-          setRecord(repositoryRecord);
-          setState("ready");
-          void getEntityMetrics("source.repository", String(repositoryRecord.id), controller.signal)
-            .then((analytics) => { if (!controller.signal.aborted) setRecord((current) => current?.id === repositoryRecord.id ? { ...current, analytics_points: analytics.points } : current); })
-            .catch(() => { /* Keep the current source projection visible when analytics are unavailable. */ });
-          void getCatalogSnapshots(controller.signal).then((snapshotCollection) => {
-            if (controller.signal.aborted) return;
-            const availableSnapshots = snapshotCollection.snapshots;
-            const selectedSnapshot = availableSnapshots.find((snapshot) => snapshot.is_current) || availableSnapshots[0];
-            setSnapshots(availableSnapshots);
-            setRecord((current) => current?.id === repositoryRecord.id ? { ...current, selected_snapshot_id: selectedSnapshot?.snapshot_id } : current);
-          }).catch(() => { /* Snapshot metadata is supplementary, not a page-loading prerequisite. */ });
-        });
-    request.catch((error: Error) => { if (error.name !== "AbortError") setState(error.message.includes("404") ? "missing" : "error"); });
-    return () => controller.abort();
-  }, [dataset, normalizedPath, path, staticModel]);
+    if (kind === "technology") return { ...base, display_name: valueRecord(model.item).label || base.name, related_records: model.related_records } as CatalogRecord;
+    return base;
+  };
+  const staticRecord = staticModel?.static_path === normalizedPath && version.snapshot_id === staticModel.static_snapshot_id ? mapModel(staticModel) : undefined;
+  const member = useQuery({
+    queryKey: ["catalog-member", dataset, normalizedPath, version.snapshot_id],
+    queryFn: async ({ signal }) => {
+      const model = dataset === "packages" ? await getCatalogPackageMember(routeKey, signal)
+        : dataset === "repositories" ? await getCatalogRepositoryMember(segments.at(-2) || "", routeKey, signal)
+          : dataset === "resources" ? await getCatalogResourceMember(segments.at(-2) || "resource", routeKey, signal)
+            : dataset === "releases" ? await getCatalogReleaseMember(routeKey, signal)
+              : await getCatalogTechnologyMember(routeKey, signal);
+      return { ...mapModel(model), cache_snapshot_id: model.snapshot_id || version.snapshot_id };
+    },
+    initialData: staticRecord, staleTime: version.public_projection_available ? Infinity : 60_000,
+    placeholderData: (previous, query) => query?.queryKey[2] === normalizedPath ? previous : undefined,
+    retry: false,
+  });
+  const last = useRef<{ path: string; record: CatalogRecord } | undefined>(undefined);
+  if (member.data && !member.isPlaceholderData) last.current = { path: normalizedPath, record: member.data };
+  const missing = member.isError && String(member.error).includes("404");
+  const visible = member.data || (!missing && last.current?.path === normalizedPath ? last.current.record : undefined);
+  const [selectedSnapshotId, setSelectedSnapshotId] = useState("");
+  const analytics = useQuery({ queryKey: ["repository-metrics", member.data?.id, version.snapshot_id],
+    enabled: member.data?.kind === "repository", queryFn: ({ signal }) => getEntityMetrics("source.repository", String(member.data!.id), signal), staleTime: 60_000, retry: false });
+  const snapshotQuery = useQuery({ queryKey: ["catalog-snapshots", version.snapshot_id],
+    enabled: member.data?.kind === "repository", queryFn: ({ signal }) => getCatalogSnapshots(signal), staleTime: 60_000, retry: false });
+  const snapshots = snapshotQuery.data?.snapshots || [];
+  const record = visible ? { ...visible, analytics_points: visible.cache_snapshot_id === version.snapshot_id ? analytics.data?.points : undefined,
+    selected_snapshot_id: selectedSnapshotId || visible.cache_snapshot_id || snapshots.find((row) => row.is_current)?.snapshot_id } as CatalogRecord : null;
+  const state = record ? "ready" : member.isPending ? "loading" : String(member.error).includes("404") ? "missing" : "error";
 
   if (state === "loading") return <div className="max-w-3xl mx-auto px-4 py-20 text-sm text-ink-muted" role="status">Loading catalog record…</div>;
   if (state !== "ready" || !record) return <div className="max-w-3xl mx-auto px-4 py-20 space-y-4"><h1 className="font-serif text-3xl font-bold text-ink">Record unavailable</h1><p className="text-sm text-ink-muted">{state === "error" ? "The catalog could not be loaded." : "This route is not in the public catalog."}</p><button onClick={() => onNavigate("/catalog")} className="text-xs font-mono text-accent hover:underline cursor-pointer">Return to public catalog</button></div>;
@@ -140,6 +117,8 @@ export function PublicCatalogDetail({ path, onNavigate }: { path: string; onNavi
   const selectedSnapshot = snapshots.find((snapshot) => snapshot.snapshot_id === record.selected_snapshot_id);
   return (
     <article className="max-w-[var(--content-max)] mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-12 space-y-8 sm:space-y-10">
+      {member.isPlaceholderData && <p role="status" className="type-body-sm text-ink-muted">Updating catalog observations…</p>}
+      {member.isError && <p role="status" className="type-body-sm text-ink-muted">Showing saved record. Updates could not be loaded. <button className="text-accent underline" onClick={() => member.refetch()}>Retry</button></p>}
       <CatalogPageMetadata record={{ ...record, route: String(record.route || normalizedPath), title: `${recordTitle(record)} ${record.kind} | GroupSum catalog`, description: recordDescription(record), schemaFamily: `catalog-${record.kind}`, sourceUrl: record.source_url || record.url }} />
       <CatalogRecordNavigation dataset={dataset} record={record} onNavigate={onNavigate} />
       {record.kind === "package"
@@ -155,7 +134,7 @@ export function PublicCatalogDetail({ path, onNavigate }: { path: string; onNavi
       {record.kind === "technology" && <TechnologyDetail record={record} onNavigate={onNavigate} />}
       </main>
       {record.kind !== "package" && <aside className="space-y-6 lg:col-span-4 lg:sticky lg:top-32">
-        {record.kind === "repository" && snapshots.length > 0 && <ContextRailCard title="Analytics snapshot" Icon={BadgeCheck}><div className="space-y-3 text-xs text-ink-muted"><label className="block"><span className="mb-1 block font-mono text-[9px] uppercase tracking-wide">Point-in-time view</span><select value={String(record.selected_snapshot_id || "")} onChange={(event) => setRecord((current) => current ? { ...current, selected_snapshot_id: event.target.value } : current)} className="w-full rounded border border-[var(--color-border-soft)] bg-surface px-2 py-2 font-mono text-xs text-ink">{snapshots.map((snapshot) => <option key={snapshot.snapshot_id} value={snapshot.snapshot_id}>{formatDate(snapshot.collected_at)}{snapshot.is_current ? " · current" : ""}</option>)}</select></label><p>{selectedSnapshot?.measurement_count.toLocaleString() || "0"} measurements · {selectedSnapshot?.observation_count.toLocaleString() || "0"} observations</p><p>{selectedSnapshot?.error_count ? `${selectedSnapshot.error_count} collection errors reported` : "No collection errors reported for this snapshot"}</p></div></ContextRailCard>}
+        {record.kind === "repository" && snapshots.length > 0 && <ContextRailCard title="Analytics snapshot" Icon={BadgeCheck}><div className="space-y-3 text-xs text-ink-muted"><label className="block"><span className="mb-1 block font-mono text-[9px] uppercase tracking-wide">Point-in-time view</span><select value={String(record.selected_snapshot_id || "")} onChange={(event) => setSelectedSnapshotId(event.target.value)} className="w-full rounded border border-[var(--color-border-soft)] bg-surface px-2 py-2 font-mono text-xs text-ink">{snapshots.map((snapshot) => <option key={snapshot.snapshot_id} value={snapshot.snapshot_id}>{formatDate(snapshot.collected_at)}{snapshot.is_current ? " · current" : ""}</option>)}</select></label><p>{selectedSnapshot?.measurement_count.toLocaleString() || "0"} measurements · {selectedSnapshot?.observation_count.toLocaleString() || "0"} observations</p><p>{selectedSnapshot?.error_count ? `${selectedSnapshot.error_count} collection errors reported` : "No collection errors reported for this snapshot"}</p></div></ContextRailCard>}
         <ContextRailCard title="Source & observation boundary" Icon={ShieldCheck}><div className="space-y-3 text-xs leading-relaxed text-ink-muted"><p><strong className="text-ink">Observed:</strong> {formatDate(record.observed_at)}</p>{record.claim_boundary && <div className="rounded-[var(--radius-sm)] border border-[var(--color-border-soft)] bg-canvas p-3"><strong className="mb-1 block text-ink">Explicit source boundary</strong>{String(record.claim_boundary)}</div>}{primaryUrl && <a href={String(primaryUrl)} target="_blank" rel="noreferrer" className="inline-flex min-h-10 items-center gap-1 font-mono font-semibold text-accent hover:underline">Primary source <ExternalLink className="h-3.5 w-3.5" /></a>}</div></ContextRailCard>
         <ContextRailCard title="Ownership & canonical path" Icon={GitBranch}><EntityOwnership graph={record.entity_graph} onNavigate={onNavigate} /></ContextRailCard>
         {sourceObservations.length > 0 && <ContextRailCard title="Source observations" Icon={BadgeCheck}><ul className="divide-y divide-[var(--color-border-soft)]">{sourceObservations.map((item, index) => <li key={`${item.url || item.kind}-${index}`} className="py-3 text-xs">{item.url ? <a href={item.url} target="_blank" rel="noreferrer" className="inline-flex items-center gap-1 break-words font-mono font-semibold text-accent hover:underline">{humanLabel(item.kind || "source")}<ExternalLink className="h-3.5 w-3.5" /></a> : <span className="text-ink-muted">{humanLabel(item.kind || "source")} · observed {formatDate(item.observed_at)}</span>}</li>)}</ul></ContextRailCard>}

@@ -5,6 +5,7 @@ import {
   getRecordCollectionPageModel,
 } from "../../api/catalog";
 import { portfolioEntities } from "../../data/entities";
+import { useCatalogVersion } from "../../api/catalog-version";
 import { PortfolioEntity } from "../../types";
 import { ExplorerProductPortfolioCollection } from "./ExplorerProductPortfolioCollection";
 
@@ -58,17 +59,18 @@ export function ProductCollectionPage({
   onNavigate: Navigate;
 }) {
   const collectionType = mode === "products" ? "product" : "portfolio";
+  const version = useCatalogVersion();
   const [collectionModel, setCollectionModel] = useState<RecordCollectionPageModel | null>(
     () => initialCollectionModel(collectionType),
   );
   useEffect(() => {
-    if (collectionModel) return;
+    if (collectionModel && version.snapshot_id === globalThis.__GROUPSUM_CATALOG_VERSION__?.snapshot_id) return;
     const controller = new AbortController();
     getRecordCollectionPageModel(mode, controller.signal)
       .then((value) => setCollectionModel(value))
       .catch((error: Error) => { if (error.name !== "AbortError") setCollectionModel((value) => value); });
     return () => controller.abort();
-  }, [mode, collectionModel]);
+  }, [mode, version.snapshot_id]);
   const baseRecords = useMemo(() => {
     const staticRecords = portfolioEntities
       .filter((entity) => entity.approved)

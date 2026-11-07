@@ -207,6 +207,22 @@ export interface paths {
         patch?: never;
         trace?: never;
     };
+    "/api/v1/catalog/version": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get: operations["CatalogSnapshot.catalog_version"];
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
     "/api/v1/contributors": {
         parameters: {
             query?: never;
@@ -1634,6 +1650,41 @@ export interface operations {
             path: {
                 slug: string;
             };
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description Successful Response */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["PublicResponse"][];
+                };
+            };
+        };
+    };
+    "CatalogSnapshot.catalog_version": {
+        parameters: {
+            query?: {
+                id?: string;
+                schema_version?: string;
+                collected_at?: string;
+                completed_at?: string;
+                status?: string;
+                collector_version?: string;
+                source_digest?: string;
+                parent_snapshot_id?: string;
+                is_current?: boolean;
+                completeness?: string;
+                observation_count?: number;
+                measurement_count?: number;
+                error_count?: number;
+                publisher_id?: string;
+            };
+            header?: never;
+            path?: never;
             cookie?: never;
         };
         requestBody?: never;

@@ -24,6 +24,7 @@ def test_main_starts_tigrcorn_without_importing_catalog(monkeypatch) -> None:
         "host": "0.0.0.0",
         "port": 8000,
         "config": {
+            "http": {"content_coding_policy": "identity-only"},
             "proxy": {
                 "proxy_headers": True,
                 "forwarded_allow_ips": ["*"],

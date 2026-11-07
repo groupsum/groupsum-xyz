@@ -3,6 +3,7 @@ from __future__ import annotations
 import base64
 import hashlib
 import inspect
+import json
 from datetime import UTC, datetime
 from typing import Any
 from urllib.parse import quote
@@ -12,6 +13,7 @@ from tigrbl import JSONResponse
 
 from .catalog_auth import PublisherPrincipal
 from .deployment_dispatch import dispatch_snapshot
+from .projections.read_models import valid_read_models
 from .tables.catalog_deployment_request import CatalogDeploymentRequest
 from .tables.catalog_snapshot import CatalogSnapshot
 from .tables.catalog_snapshot_source import CatalogSnapshotSource
@@ -63,15 +65,25 @@ async def _validate_source(body: Any) -> JSONResponse | None:
     except ValueError:
         return JSONResponse({"detail": "Snapshot source chunk is invalid"}, status_code=422)
     if any(
-        len(chunk) != row.byte_count
-        or hashlib.sha256(chunk).hexdigest() != row.content_sha256
+        len(chunk) != row.byte_count or hashlib.sha256(chunk).hexdigest() != row.content_sha256
         for row, chunk in zip(rows, chunks, strict=True)
     ):
-        return JSONResponse(
-            {"detail": "Snapshot source chunk digest mismatch"}, status_code=409
-        )
+        return JSONResponse({"detail": "Snapshot source chunk digest mismatch"}, status_code=409)
     if hashlib.sha256(b"".join(chunks)).hexdigest() != body.source_digest:
         return JSONResponse({"detail": "Snapshot source digest mismatch"}, status_code=409)
+    if body.completeness.get("public_projection_version"):
+        try:
+            source = json.loads(b"".join(chunks))
+            models = source.get("_public_read_model")
+        except (ValueError, AttributeError):
+            models = None
+        if (
+            not valid_read_models(models)
+            or models["version"] != body.completeness["public_projection_version"]
+        ):
+            return JSONResponse(
+                {"detail": "Snapshot public projection is incomplete"}, status_code=409
+            )
     return None
 
 
