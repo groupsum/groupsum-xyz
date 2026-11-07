@@ -48,7 +48,11 @@ try {
       await page.getByRole("tab", { name: /^Dependents/ }).click();
       await page.getByRole("table", { name: "Dependents for package" }).getByRole("link", { name: "package-00-with-a-long-name-for-truncation", exact: true }).click();
       await page.getByRole("heading", { name: "package-00-with-a-long-name-for-truncation", exact: true }).waitFor();
-      await page.getByText("Details & evidence", { exact: true }).click();
+      const overview = page.locator("#package-overview");
+      assert.equal(await overview.getByText("Details & evidence", { exact: true }).count(), 0);
+      assert.equal(await overview.getByText("Published Package", { exact: true }).count(), 0);
+      assert.equal(await overview.getByText(/Observed .* package record for /).count(), 0);
+      assert.equal(await overview.getByText(/Last observed:/).count(), 1);
       await noOverflow();
       if ([320, 1600].includes(width)) await page.screenshot({ path: `.tmp/catalog-experience/${theme}-${width}-package.png`, fullPage: true });
     }
