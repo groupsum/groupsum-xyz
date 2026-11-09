@@ -43,20 +43,35 @@ def contributor_collection(table, ctx):
     sort = str(params.get("sort") or "contributions")
     types = sorted({row["account_type"] for row in values})
     account_type = params.get("account_type")
-    if sort == "leaderboard":
+    if sort in {"leaderboard", "leaderboard_recent"}:
         account_type = "Bot" if account_type == "Bot" else "User"
     if account_type:
         values = [row for row in values if row["account_type"] == account_type]
-    if sort == "leaderboard":
+    recent = sort == "leaderboard_recent"
+    window = None
+    metric = "contributions"
+    if recent:
+        from ..projections.contributor_activity import recent_activity_counts
+
+        window, counts = recent_activity_counts(ctx.get("frozen_activity") or {}, values)
+        metric = "recent_commits"
+        values = [{**row, metric: counts.get(row["id"])} for row in values]
+    if sort in {"leaderboard", "leaderboard_recent"}:
         ranked = []
         for position, row in enumerate(
             sorted(
-                values, key=lambda row: (-row["contributions"], row["name"].casefold(), row["id"])
+                values,
+                key=lambda row: (
+                    row[metric] is None,
+                    -(row[metric] or 0),
+                    row["name"].casefold(),
+                    row["id"],
+                ),
             ),
             start=1,
         ):
-            rank = position
-            if ranked and ranked[-1]["contributions"] == row["contributions"]:
+            rank = None if row[metric] is None else position
+            if ranked and ranked[-1][metric] == row[metric]:
                 rank = ranked[-1]["rank"]
             ranked.append({**row, "rank": rank})
         values = ranked
@@ -65,20 +80,21 @@ def contributor_collection(table, ctx):
         values = [
             row for row in values if search in f"{row['name']} {row.get('login') or ''}".casefold()
         ]
-    values = sorted(
-        values,
-        key=lambda row: (
-            (
-                -row["repository_count"]
-                if sort == "repositories"
-                else -row["contributions"]
-                if sort in {"contributions", "leaderboard"}
-                else 0
+    if sort not in {"leaderboard", "leaderboard_recent"}:
+        values = sorted(
+            values,
+            key=lambda row: (
+                (
+                    -row["repository_count"]
+                    if sort == "repositories"
+                    else -row["contributions"]
+                    if sort == "contributions"
+                    else 0
+                ),
+                row["name"].casefold(),
+                row["id"],
             ),
-            row["name"].casefold(),
-            row["id"],
-        ),
-    )
+        )
     key, _, direction = sort.rpartition("_")
     if key in {"name", "type", "repositories", "contributions"} and direction in {"asc", "desc"}:
         field = {
@@ -106,6 +122,7 @@ def contributor_collection(table, ctx):
         "page_count": page_count,
         "account_types": types,
         "generated_at": latest_timestamp(row.get("observed_at") for row in values),
+        **({"activity_window": window} if recent else {}),
         "records": [
             {key: value for key, value in row.items() if key != "repositories"}
             for row in page_values
@@ -143,6 +160,11 @@ def contributor_detail(table, ctx):
     }
 
 
-def contributor_page(values, params, *, detail=False):
-    ctx = {"frozen_contributors": values, "query_params": params, "payload": params}
+def contributor_page(values, params, *, detail=False, activity=None):
+    ctx = {
+        "frozen_contributors": values,
+        "frozen_activity": activity,
+        "query_params": params,
+        "payload": params,
+    }
     return contributor_detail(None, ctx) if detail else contributor_collection(None, ctx)

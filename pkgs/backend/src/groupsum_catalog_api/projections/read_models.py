@@ -111,7 +111,10 @@ def project(models: dict[str, Any], alias: str, params: dict[str, Any]):
         from ..tables.view_contributors import contributor_page
 
         result = contributor_page(
-            models["contributors"], params, detail=alias == "contributor_detail"
+            models["contributors"],
+            params,
+            detail=alias == "contributor_detail",
+            activity=models.get("contributor_activity"),
         )
         if (
             alias == "contributor_detail"

@@ -24,6 +24,39 @@ def _monday(value):
     )
 
 
+def recent_activity_counts(activity, people):
+    """Compare four complete UTC weeks, never scoring incomplete repository coverage."""
+    cutoff = next(
+        (value for row in activity.values() if (value := _date(row.get("through")))), None
+    )
+    if cutoff is None:
+        return None, {}
+    end = _monday(cutoff)
+    start = end - 4 * WEEK
+    weeks = [(start + i * WEEK).date().isoformat() for i in range(4)]
+    counts = {}
+    for person in people:
+        data = activity.get(person["id"])
+        if not person.get("provider_id") or not data or _date(data.get("through")) != cutoff:
+            continue
+        dates = data.get("weeks", [])
+        if not all(week in dates for week in weeks):
+            continue
+        indexes = [dates.index(week) for week in weeks]
+        repos = {row["name"]: row["cells"] for row in data.get("repositories", [])}
+        expected = {row["name"] for row in person.get("repositories", [])}
+        if not expected or repos.keys() != expected:
+            continue
+        if all(
+            len(cells) > max(indexes) and all(cells[i]["complete"] for i in indexes)
+            for cells in repos.values()
+        ):
+            counts[person["id"]] = sum(
+                cells[i]["count"] for cells in repos.values() for i in indexes
+            )
+    return {"start": weeks[0], "end": (end - timedelta(days=1)).date().isoformat()}, counts
+
+
 def build_contributor_activity(catalog, people):
     cutoff = _date(catalog.get("generated_at"))
     if cutoff is None:

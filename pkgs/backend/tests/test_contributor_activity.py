@@ -92,6 +92,61 @@ def test_activity_uses_only_linked_public_commits_and_preserves_coverage():
     assert project(model, "contributor_detail", args)["kind"] == "contributor_record"
 
 
+def test_recent_leaderboard_excludes_partial_weeks_and_preserves_observed_zero():
+    weeks = ["2026-10-12", "2026-10-19", "2026-10-26", "2026-11-02", "2026-11-09"]
+    people = [
+        {
+            "id": name,
+            "name": name,
+            "account_type": "User",
+            "provider_id": name,
+            "contributions": total,
+            "repository_count": 1,
+            "repositories": [{"name": "org/repo"}],
+        }
+        for name, total in [("Active", 3), ("Quiet", 10), ("Partial", 100), ("Missing", 200)]
+    ]
+
+    def activity(count, complete):
+        return {
+            "weeks": weeks,
+            "through": "2026-11-10T10:00:00Z",
+            "repositories": [
+                {
+                    "name": "org/repo",
+                    "cells": [
+                        {"count": count, "complete": complete},
+                        *([{"count": 0, "complete": True}] * 3),
+                        {"count": 999, "complete": False},
+                    ],
+                }
+            ],
+        }
+
+    model = build_read_models([], [], [], people)
+    query = {"sort": "leaderboard_recent"}
+    assert project(model, "contributors", query)["activity_window"] is None
+    model["contributor_activity"] = {
+        "Active": activity(3, True),
+        "Quiet": activity(0, True),
+        "Partial": activity(99, False),
+    }
+    ranked = project(model, "contributors", query)
+    assert ranked["activity_window"] == {"start": "2026-10-12", "end": "2026-11-08"}
+    assert [(row["id"], row["rank"], row["recent_commits"]) for row in ranked["records"]] == [
+        ("Active", 1, 3),
+        ("Quiet", 2, 0),
+        ("Missing", None, None),
+        ("Partial", None, None),
+    ]
+    assert project(model, "contributors", {**query, "q": "quiet"})["records"][0]["rank"] == 2
+    assert (
+        project(model, "contributors", {**query, "page_size": 1, "page": 2})["records"][0]["rank"]
+        == 2
+    )
+    assert project(model, "contributors", {"sort": "leaderboard"})["records"][0]["id"] == "Missing"
+
+
 def test_contributor_headers_sort_before_pagination():
     people = [
         {
