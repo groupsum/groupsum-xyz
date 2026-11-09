@@ -8,6 +8,7 @@ from collections import Counter
 from pathlib import Path
 from typing import Any
 
+from groupsum_catalog_api.projections.contributor_activity import build_contributor_activity
 from groupsum_catalog_api.projections.contributors import contributor_records
 from groupsum_catalog_api.projections.public_resources import public_resource_records
 from groupsum_catalog_api.projections.read_models import build_read_models
@@ -57,12 +58,15 @@ def export_public_catalog(repo_root: Path, site_dir: Path) -> dict[str, Any]:
         **_write_json(site_dir / "resource-types.json", resource_types),
     }
 
-    read_models = catalog.get("_public_read_model") or build_read_models(
+    frozen = catalog.get("_public_read_model")
+    read_models = frozen or build_read_models(
         json.loads((site_dir / "repositories.json").read_text(encoding="utf-8")),
         json.loads((site_dir / "packages.json").read_text(encoding="utf-8")),
         json.loads((site_dir / "technologies.json").read_text(encoding="utf-8")),
         contributors,
     )
+    if not frozen:
+        read_models["contributor_activity"] = build_contributor_activity(catalog, contributors)
     _write_json(site_dir / "read-models.json", read_models)
 
     manifest_path = site_dir / "manifest.json"

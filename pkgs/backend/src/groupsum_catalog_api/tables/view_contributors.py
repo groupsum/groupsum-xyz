@@ -49,7 +49,8 @@ def contributor_collection(table, ctx):
     if params.get("account_type"):
         values = [row for row in values if row["account_type"] == params["account_type"]]
     sort = str(params.get("sort") or "contributions")
-    values.sort(
+    values = sorted(
+        values,
         key=lambda row: (
             (
                 -row["repository_count"]
@@ -60,8 +61,25 @@ def contributor_collection(table, ctx):
             ),
             row["name"].casefold(),
             row["id"],
-        )
+        ),
     )
+    key, _, direction = sort.rpartition("_")
+    if key in {"name", "type", "repositories", "contributions"} and direction in {"asc", "desc"}:
+        field = {
+            "name": "name",
+            "type": "account_type",
+            "repositories": "repository_count",
+            "contributions": "contributions",
+        }[key]
+
+        def sort_value(row):
+            if key == "type":
+                return {"bot": "bot", "user": "individual"}.get(
+                    str(row[field]).casefold(), "unlinked identity"
+                )
+            return str(row[field]).casefold() if key == "name" else row[field]
+
+        values.sort(key=sort_value, reverse=direction == "desc")
     page_values, page, page_size, page_count = _page(values, params)
     return {
         "kind": "contributor_collection",

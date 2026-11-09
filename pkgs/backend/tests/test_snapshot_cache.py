@@ -283,6 +283,66 @@ async def test_pinned_repository_page_reads_only_finalized_star_history(tmp_path
 
 
 @pytest.mark.anyio
+async def test_contributor_activity_and_timeline_share_snapshot_pin(tmp_path):
+    database = tmp_path / "activity.sqlite"
+    app = build_app(database, tmp_path / "metrics.duckdb")
+    models = fixture_models()
+    models["contributors"] = [
+        {
+            "id": "person:42",
+            "provider": "github",
+            "provider_id": "42",
+            "name": "Example",
+            "login": "example",
+            "repositories": [],
+        }
+    ]
+    models["contributor_activity"] = {
+        "person:42": {
+            "weeks": ["2026-11-02"],
+            "repositories": [],
+            "through": "2026-11-08T00:00:00Z",
+            "events": [
+                {
+                    "id": "r:sha",
+                    "repository": "fixture/repo",
+                    "week": "2026-11-02",
+                    "at": "2026-11-07T00:00:00Z",
+                    "url": "https://github.com/fixture/repo/commit/sha",
+                }
+            ],
+        }
+    }
+    with Session(create_engine(f"sqlite:///{database}")) as session:
+        seed(session, "activity-old", models, current=False)
+        seed(session, "activity-current", {**models, "contributor_activity": {}})
+
+    async with httpx.AsyncClient(
+        transport=httpx.ASGITransport(app=app), base_url="http://test"
+    ) as client:
+        path = "/api/v1/contributors/github/example"
+        params = {"snapshot_id": "activity-old", "activity": "1"}
+        summary = await client.get(path, params=params)
+        assert summary.status_code == 200, summary.text
+        assert summary.headers["x-catalog-snapshot"] == "activity-old"
+        assert summary.json()["commit_count"] == 1 and "events" not in summary.json()
+        timeline = await client.get(
+            path,
+            params={
+                **params,
+                "activity": "timeline",
+                "week": "2026-11-02",
+                "repository": "fixture/repo",
+            },
+        )
+        assert timeline.status_code == 200, timeline.text
+        assert timeline.headers["x-catalog-snapshot"] == "activity-old"
+        assert timeline.json()["records"][0]["id"] == "r:sha"
+        current = await client.get(path, params={"activity": "1"})
+        assert current.json()["commit_count"] == 0
+
+
+@pytest.mark.anyio
 async def test_finalizer_rejects_advertised_but_incomplete_public_projection(tmp_path):
     database = tmp_path / "incomplete.sqlite"
     build_app(database, tmp_path / "incomplete.duckdb")

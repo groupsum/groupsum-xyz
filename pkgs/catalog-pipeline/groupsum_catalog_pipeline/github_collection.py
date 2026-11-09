@@ -67,14 +67,18 @@ def collect_repository(client: ApiClient, repo: dict[str, Any], config: dict[str
     commits: list[dict[str, Any]] = []
     commit_count: int | None = None
     latest_commit: dict[str, Any] | None = None
+    commit_coverage = None
     if config.get("include_commit_history", True):
         history_days = int(config.get("commit_history_days", 90))
         if history_days < 1:
             raise ValueError("commit_history_days must be positive")
-        since = (dt.datetime.now(dt.timezone.utc) - dt.timedelta(days=history_days)).isoformat()
+        cutoff = dt.datetime.fromisoformat(config["commit_history_until"]) if config.get("commit_history_until") else dt.datetime.now(dt.timezone.utc)
+        since = (cutoff - dt.timedelta(days=history_days)).isoformat()
         raw_commits, commit_obs = client.github_pages(
-            f"repos/{full_name}/commits?per_page=100&since={urllib.parse.quote(since, safe='')}"
+            f"repos/{full_name}/commits?per_page=100&since={urllib.parse.quote(since, safe='')}&until={urllib.parse.quote(cutoff.isoformat(), safe='')}"
         )
+        if commit_obs and all(item.status in {"observed", "cached"} for item in commit_obs):
+            commit_coverage = {"since": since, "until": cutoff.isoformat()}
         observations.extend(commit_obs)
         for commit in raw_commits:
             normalized = {
@@ -82,6 +86,7 @@ def collect_repository(client: ApiClient, repo: dict[str, Any], config: dict[str
                 "authored_at": commit.get("commit", {}).get("author", {}).get("date"),
                 "committed_at": commit.get("commit", {}).get("committer", {}).get("date"),
                 "author": (commit.get("author") or {}).get("login") or commit.get("commit", {}).get("author", {}).get("name"),
+                "author_id": (commit.get("author") or {}).get("id"),
                 "committer": (commit.get("committer") or {}).get("login") or commit.get("commit", {}).get("committer", {}).get("name"),
                 "message": (commit.get("commit", {}).get("message") or "").splitlines()[0],
             }
@@ -177,7 +182,7 @@ def collect_repository(client: ApiClient, repo: dict[str, Any], config: dict[str
         "created_at": repo.get("created_at"), "updated_at": repo.get("updated_at"), "pushed_at": repo.get("pushed_at"),
         "license": (repo.get("license") or {}).get("spdx_id"), "topics": sorted(repo.get("topics") or []),
         "metrics": {"stars": repo.get("stargazers_count", 0), "watchers": repo.get("subscribers_count", 0), "forks": repo.get("forks_count", 0), "open_issues": repo.get("open_issues_count", 0), "size_kb": repo.get("size", 0)},
-        "activity": {"commit_count": commit_count, "commit_history": commits, "latest_commit": latest_commit, "contributors": contributor_rows, "contributor_count": len(contributor_rows), "contributor_commit_total": sum(row["contributions"] for row in contributor_rows)},
+        "activity": {"commit_count": commit_count, "commit_history": commits, "commit_coverage": commit_coverage, "latest_commit": latest_commit, "contributors": contributor_rows, "contributor_count": len(contributor_rows), "contributor_commit_total": sum(row["contributions"] for row in contributor_rows)},
         "technologies": {"languages_bytes": languages or {}, "verified_from": "github.languages"},
         "manifests": manifests, "packages_discovered": packages, "dependencies_discovered": dependencies,
         "github_releases": github_releases, "ghcr_images_discovered": sorted(ghcr_images),

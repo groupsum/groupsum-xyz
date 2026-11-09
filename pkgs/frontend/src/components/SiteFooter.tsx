@@ -39,7 +39,7 @@ export const SiteFooter: React.FC<SiteFooterProps> = ({ onNavigate }) => {
               <strong className="type-heading-sm">GroupSum Catalog Explorer</strong>
               <span className="type-technical rounded-[3px] border border-[var(--color-border-muted)] bg-canvas px-2 py-0.5 font-semibold text-ink">v0.1.0</span>
             </div>
-            <p className="type-body-sm text-ink-muted">Canonical hierarchy: Organization → Products → Portfolio → Repositories → Packages → Typed Resources → Technologies.</p>
+            <p className="type-body-sm text-ink-muted">Explore what we build, find packages and docs, and meet the contributors behind the work.</p>
           </div>
 
           <div className="type-control flex max-w-xl flex-wrap items-center gap-x-4 gap-y-2">

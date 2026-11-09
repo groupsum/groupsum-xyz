@@ -110,9 +110,20 @@ def project(models: dict[str, Any], alias: str, params: dict[str, Any]):
     if alias in {"contributors", "contributor_detail"}:
         from ..tables.view_contributors import contributor_page
 
-        return contributor_page(
+        result = contributor_page(
             models["contributors"], params, detail=alias == "contributor_detail"
         )
+        if (
+            alias == "contributor_detail"
+            and params.get("activity") in {"1", "timeline"}
+            and "item" in result
+        ):
+            from .contributor_activity import activity_projection
+
+            person = result["item"]
+            activity = models.get("contributor_activity", {}).get(person["id"])
+            return activity_projection(person, result["repositories"], activity, params)
+        return result
     if alias == "catalog_repository":
         route = f"/catalog/repositories/{params.get('owner')}/{params.get('repository')}"
         return models["details"].get(route, {"detail": "Repository not found"})

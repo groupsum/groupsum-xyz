@@ -32,7 +32,7 @@ export default defineConfig({
           if (id.includes("/src/features/catalog/SsotEntityDetail")) return "ssot-detail";
           if (/\/src\/features\/catalog\/RepositoryPackages(Inspector|Panel)/.test(id)) return "package-inspector";
           if (/\/src\/features\/catalog\/(PackageRelationships|ActivityInspector|InspectorPopover)/.test(id)) return "catalog-inspectors";
-          if (/\/src\/features\/catalog\/Contributor(Profile|Directory)/.test(id)) return "contributor-pages";
+          if (/\/src\/features\/catalog\/Contributor(Profile|Directory|TypeBadge|Activity)/.test(id)) return "contributor-pages";
           if (id.includes("/src/features/catalog/CatalogFreshness")) return "catalog-freshness";
           if (/\/src\/features\/catalog\/(CatalogCollectionTables|RepositoryPackagesCell|PackageDependenciesCell)/.test(id)) return "catalog-tables";
           if (id.includes("/src/features/catalog/")) return "catalog-ui";

@@ -253,6 +253,7 @@ def main() -> int:
         }, indent=2))
         return 0
     observed_at = ISO_NOW()
+    config = {**config, "commit_history_until": observed_at}
     observations: list[Observation] = []
     raw_repos: list[dict[str, Any]] = []
     repositories: list[dict[str, Any]] = []
