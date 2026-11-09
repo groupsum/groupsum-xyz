@@ -22,32 +22,34 @@ export function ContributorProfile({ provider, login }: { provider: string; logi
   const peak = Math.max(1, ...Array.from(repoActivity.values()).flatMap((cells) => cells.map((cell) => cell.count)));
   const activityKey = `${version.snapshot_id}:${activity.path}`;
   return <article className="mx-auto max-w-[var(--content-max)] space-y-4 px-4 py-8 sm:px-6">
-    <CatalogLink href="/contributors" className="type-control text-accent">← Contributors</CatalogLink>
+    <nav aria-label="Contributor profile links" className="type-control flex flex-wrap justify-between gap-x-3 gap-y-1 text-accent">
+      <CatalogLink href="/contributors">← Contributors</CatalogLink>
+      {model.data?.item.url && <a href={String(model.data.item.url)} target="_blank" rel="noreferrer" className="ml-auto text-right">{provider === "github" ? "View GitHub profile" : "View public profile"} ↗</a>}
+    </nav>
     {model.isPending ? <p role="status">Loading contributor profile…</p> : model.isError ? <div role="alert"><h1 className="type-display-lg break-words [overflow-wrap:anywhere]">{String(model.error).includes("404") ? "Contributor not found" : "Contributor unavailable"}</h1><p className="type-body-sm">{String(model.error).includes("404") ? "This identity is not in the current catalog." : "The profile could not be loaded."}</p><button onClick={() => model.refetch()} className="type-control text-accent">Retry</button></div> : <>
       <CatalogPageMetadata record={{ ...model.data.item, route: String(model.data.item.route || `/contributors/${provider}/${encodeURIComponent(login)}`), title: `${model.data.item.name || login} contributor | GroupSum catalog`, description: `${model.data.item.account_type || "Public"} contributor observed across ${model.data.repositories.length} public catalog repositories.`, schemaFamily: "contributor-profile", profileUrl: model.data.item.url }} />
       <header className="min-w-0 space-y-3 border-b border-[var(--color-border-soft)] pb-3">
-        <div className="flex min-w-0 flex-wrap items-center gap-x-5 gap-y-2">
-          <div className="flex min-w-0 max-w-full items-start gap-3">
-            {model.data.item.avatar_url && <img src={String(model.data.item.avatar_url)} alt="" width="48" height="48" className="h-12 w-12 shrink-0" />}
-            <div className="min-w-0">
-              <h1 className="type-display-lg [overflow-wrap:anywhere]">{String(model.data.item.name || login)}</h1>
-              <div className="type-body-sm flex flex-wrap items-center gap-2 text-ink-muted">
-                <ContributorTypeBadge value={model.data.item.account_type} />
-                {model.data.item.login && <span className="[overflow-wrap:anywhere]">@{model.data.item.login}</span>}
+        <div className="grid min-w-0 gap-4 sm:grid-cols-[minmax(0,1fr)_minmax(0,15rem)]">
+          <div className="min-w-0 space-y-3">
+            <div className="flex min-w-0 items-start gap-3">
+              {model.data.item.avatar_url && <img src={String(model.data.item.avatar_url)} alt="" width="48" height="48" className="h-12 w-12 shrink-0" />}
+              <div className="min-w-0">
+                <h1 className="type-display-lg [overflow-wrap:anywhere]">{String(model.data.item.name || login)}</h1>
+                <div className="type-body-sm flex flex-wrap items-center gap-2 text-ink-muted">
+                  <ContributorTypeBadge value={model.data.item.account_type} />
+                  {model.data.item.login && <span className="[overflow-wrap:anywhere]">@{model.data.item.login}</span>}
+                </div>
               </div>
             </div>
+            {showActivity && activity.data && <ContributorAchievements model={activity.data} />}
           </div>
-          <p className="flex max-w-full min-w-0 flex-col gap-1 [overflow-wrap:anywhere]">
+          <div className="flex w-full max-w-60 min-w-0 flex-col gap-1 [overflow-wrap:anywhere]" aria-label="Catalog activity summary" role="group">
             <strong className="type-metric text-accent">{repositories.reduce((total, row) => total + row.contributions, 0).toLocaleString()}</strong>
             <span className="type-ui-label text-ink-muted">Source-reported contributions</span>
-          </p>
-          {model.data.item.url && <a href={String(model.data.item.url)} target="_blank" rel="noreferrer" className="type-control text-accent sm:ml-auto sm:self-start">{provider === "github" ? "View GitHub profile" : "View public profile"} ↗</a>}
+            {showActivity && (activity.isPending ? <span role="status" className="type-body-sm text-ink-muted">Loading activity…</span> : activity.isError ? <span role="alert" className="type-body-sm text-ink-muted">Activity could not be loaded. <button type="button" className="text-accent underline" onClick={() => activity.refetch()}>Retry</button></span> : <ContributorCommitSparkline model={activity.data} />)}
+          </div>
         </div>
-        {showActivity && activity.data && <ContributorAchievements model={activity.data} />}
-        <div className="type-body-sm flex min-w-0 flex-wrap items-end gap-x-4 gap-y-1 text-ink-muted" aria-label="Catalog activity summary" role="group">
-          {showActivity && (activity.isPending ? <span role="status">Loading activity…</span> : activity.isError ? <span role="alert">Activity could not be loaded. <button type="button" className="text-accent underline" onClick={() => activity.refetch()}>Retry</button></span> : <ContributorCommitSparkline model={activity.data} />)}
-          <span className="type-control ml-auto text-right">Last updated {version.collected_at || model.data.item.observed_at ? `${String(version.collected_at || model.data.item.observed_at).slice(0, 10)} UTC` : "—"}</span>
-        </div>
+        <p className="type-control text-right text-ink-muted">Last updated {version.collected_at || model.data.item.observed_at ? `${String(version.collected_at || model.data.item.observed_at).slice(0, 10)} UTC` : "—"}</p>
       </header>
       <h2 id="contributor-repositories" className="type-display-sm scroll-mt-24">Repositories <span className="type-control text-ink-muted">({repositories.length.toLocaleString()})</span></h2>
       {!!weeks.length && <p className="type-body-sm text-ink-muted">One block per UTC week. Color intensity shows commit volume, muted blocks mean zero, and dotted outlines mark incomplete coverage. Select a week for details.</p>}

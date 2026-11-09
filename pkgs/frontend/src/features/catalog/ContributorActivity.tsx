@@ -49,16 +49,19 @@ export function ContributorCommitSparkline({ model }: { model: Activity }) {
     complete: repositories.every((repo) => repo.cells[i]?.complete === true),
   }));
   const max = Math.max(1, ...totals.map((cell) => cell.count));
-  return <section aria-label="Weekly commit activity" className="flex min-w-0 flex-wrap items-center gap-x-3 gap-y-1">
-    <svg width={weeks.length * 10} height="24" viewBox={`0 0 ${weeks.length * 10} 24`} role="img"
-      aria-label={weeks.map((week, i) => weekLabel(week, totals[i])).join("; ")} className="max-w-full text-signal">
+  return <section aria-label="Weekly commit activity" className="min-w-0 space-y-1">
+    <svg width="240" height="28" viewBox="0 0 240 28" role="img"
+      aria-label={weeks.map((week, i) => weekLabel(week, totals[i])).join("; ")} className="h-auto w-full text-signal">
+      <line x1="0" x2="240" y1="24" y2="24" stroke="var(--color-border-muted)" />
       {totals.map((cell, i) => {
-        const height = cell.count ? 3 + 19 * cell.count / max : 2;
-        return <rect key={weeks[i]} x={i * 10 + 1} y={23 - height} width="6" height={height} rx="0.5"
-          fill={cell.complete || cell.count ? "currentColor" : "none"} stroke={cell.complete ? "none" : "currentColor"}
-          strokeDasharray={cell.complete ? undefined : "1 2"} opacity={cell.complete ? 1 : 0.6}>
+        if (!cell.complete && !cell.count) return null;
+        const x = (i + 0.5) * 240 / weeks.length;
+        const y = 24 - 20 * cell.count / max;
+        return <g key={weeks[i]}>
           <title>{weekLabel(weeks[i], cell)}</title>
-        </rect>;
+          {cell.count > 0 && <line x1={x} x2={x} y1={y} y2="24" stroke="currentColor" strokeDasharray={cell.complete ? undefined : "2 2"} />}
+          <circle cx={x} cy={y} r="2.5" fill={cell.complete ? "currentColor" : "var(--color-surface)"} stroke="currentColor" />
+        </g>;
       })}
     </svg>
     <p className="type-body-sm text-ink-muted"><strong>{model.commit_count.toLocaleString()} observed commits</strong> · {date(weeks[0])}{model.through && `–${date(model.through)}`} UTC</p>
