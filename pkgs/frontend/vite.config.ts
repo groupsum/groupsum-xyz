@@ -35,6 +35,7 @@ export default defineConfig({
           if (/\/src\/features\/catalog\/Contributor(Profile|Directory|TypeBadge|Activity)/.test(id)) return "contributor-pages";
           if (id.includes("/src/features/catalog/CatalogFreshness")) return "catalog-freshness";
           if (/\/src\/features\/catalog\/(CatalogCollectionTables|RepositoryPackagesCell|PackageDependenciesCell)/.test(id)) return "catalog-tables";
+          if (id.endsWith("/src/features/catalog/TrendDelta.tsx")) return "catalog-trend-delta";
           if (id.includes("/src/features/catalog/")) return "catalog-ui";
           return undefined;
         },

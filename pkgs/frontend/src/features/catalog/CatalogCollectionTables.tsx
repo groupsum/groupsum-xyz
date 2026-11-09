@@ -3,6 +3,7 @@ import { repositoryColumns, packageColumns, columnSortValue } from "./catalog-co
 import { CatalogLink } from "./CatalogLink";
 import { InlineMetricChart } from "./InlineMetricChart";
 import { observedDelta } from "./activity-series.mjs";
+import { TrendDelta } from "./TrendDelta";
 import { RepositoryPackagesCell } from "./RepositoryPackagesCell";
 import { PackageDependenciesCell } from "./PackageDependenciesCell";
 import {
@@ -37,9 +38,10 @@ function HyphenBreakText({ value }: { value: string }) {
 
 function StarDelta({ points }: { points: Array<Record<string, unknown>> }) {
   const delta = observedDelta(points.flatMap((point) => typeof point.value === "number" ? [{ label: String(point.observed_at || point.date || ""), value: point.value }] : []));
-  if (!delta) return null;
-  const change = `${delta.change > 0 ? "+" : ""}${delta.change.toLocaleString()}`;
-  return <span className="block type-caption tabular-nums text-ink-muted" title={`Star change between ${delta.first.label.slice(0, 10)} and ${delta.last.label.slice(0, 10)} UTC`}><span className="sr-only">Star change: </span>{change} · {delta.days ? `${delta.days}d` : "<1d"}</span>;
+  if (delta?.change === 0) return null;
+  return <div className="tabular-nums"><TrendDelta value={delta?.change}
+    description={delta ? `star change between ${delta.first.label.slice(0, 10)} and ${delta.last.label.slice(0, 10)} UTC` : "Insufficient star history"}
+    period={delta ? (delta.days ? `${delta.days}d` : "<1d") : undefined} /></div>;
 }
 
 function LatestRelease({ value }: { value: unknown }) {

@@ -1,5 +1,5 @@
 import { useQuery } from "@tanstack/react-query";
-import { TrendingDown, TrendingUp } from "lucide-react";
+import { TrendDelta } from "./TrendDelta";
 import { getContributors, type ContributorCollection } from "../../api/catalog";
 import { useSearchParams } from "../../router";
 import { CatalogLink } from "./CatalogLink";
@@ -10,8 +10,8 @@ import { ContributorTypeBadge, contributorTypeLabel } from "./ContributorTypeBad
 const columns = [
   ["name", "Contributor", "py-2 text-left"],
   ["type", "Type", "hidden w-24 sm:table-cell"],
-  ["repositories", "Repos", "w-[23%] text-right sm:w-[18%]"],
-  ["contributions", "Contributions", "w-[30%] text-right"],
+  ["repositories", "Repos", "w-[23%] pr-2 text-right sm:w-[18%] sm:pr-4"],
+  ["contributions", "Contributions", "w-[30%] text-center"],
 ] as const;
 
 const medals = ["🥇", "🥈", "🥉"];
@@ -24,13 +24,7 @@ function Rank({ rank }: { rank?: number | null }) {
 }
 
 function Delta({ value, label }: { value?: number; label: string }) {
-  if (value === 0) return null;
-  const signed = value == null ? "—" : value > 0 ? `+${value.toLocaleString()}` : value.toLocaleString();
-  const title = value == null ? "Insufficient history for the 30-day comparison" : `${signed} ${label} vs. the preceding 30 days`;
-  const Icon = value == null ? null : value > 0 ? TrendingUp : TrendingDown;
-  return <span className={`type-control ${value == null ? "text-ink-muted" : value > 0 ? "text-success" : "text-danger"}`} title={title}>
-    <span aria-hidden="true" className="inline-flex items-center gap-px">{Icon && <Icon className="h-3 w-3 shrink-0" />}{signed}</span><span className="sr-only">{title}</span>
-  </span>;
+  return <TrendDelta value={value} description={value == null ? "Insufficient history for the 30-day comparison" : `${label} vs. the preceding 30 days`} />;
 }
 
 export function ContributorDirectory() {
@@ -75,8 +69,8 @@ export function ContributorDirectory() {
             <span className="sm:hidden"><ContributorTypeBadge value={row.account_type} /></span>
           </td>
           <td className="hidden sm:table-cell"><ContributorTypeBadge value={row.account_type} /></td>
-          <td className="text-right tabular-nums"><span className="inline-flex items-baseline gap-0.5 whitespace-nowrap sm:gap-1">{row.repository_count.toLocaleString()}<Delta value={row.activity_delta?.active_repositories} label="active repositories" /></span></td>
-          <td className="text-right tabular-nums"><span className="inline-flex items-baseline gap-0.5 whitespace-nowrap sm:gap-1">{row.contributions.toLocaleString()}<Delta value={row.activity_delta?.commits} label="attributed commits" /></span></td>
+          <td className="pr-2 text-right tabular-nums sm:pr-4"><span className="inline-flex items-baseline gap-0.5 whitespace-nowrap sm:gap-1">{row.repository_count.toLocaleString()}<Delta value={row.activity_delta?.active_repositories} label="active repositories" /></span></td>
+          <td className="text-center tabular-nums"><span className="inline-flex items-baseline gap-0.5 whitespace-nowrap sm:gap-1">{row.contributions.toLocaleString()}<Delta value={row.activity_delta?.commits} label="attributed commits" /></span></td>
         </tr>)}
       </tbody>
     </table>{!collection.data.records.length && <p>No contributors match these filters.</p>}<nav aria-label="Contributor pagination" className="flex justify-end gap-3"><button disabled={collection.data.page <= 1} onClick={() => change("page", String(collection.data.page - 1))}>Previous</button><button disabled={collection.data.page >= collection.data.page_count} onClick={() => change("page", String(collection.data.page + 1))}>Next</button></nav></>}
