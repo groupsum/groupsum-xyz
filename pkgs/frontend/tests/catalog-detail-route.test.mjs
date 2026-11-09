@@ -2,6 +2,7 @@ import assert from "node:assert/strict";
 import test from "node:test";
 
 import { catalogDetailSegments } from "../src/features/catalog/catalog-detail-route.mjs";
+import { staticMemberHref } from "../src/features/catalog/static-member-href.mjs";
 
 test("catalog detail paths decode route segments exactly once", () => {
   assert.deepEqual(
@@ -26,4 +27,13 @@ test("catalog detail paths ignore query and fragment state", () => {
     catalogDetailSegments("/catalog/packages/pypi/example?tab=history#releases"),
     ["catalog", "packages", "pypi", "example"],
   );
+});
+
+test("static member links use the document URL without changing encoded keys or suffixes", () => {
+  assert.equal(staticMemberHref("/catalog/repositories/groupsum/groupsum-xyz"), "/catalog/repositories/groupsum/groupsum-xyz/");
+  assert.equal(staticMemberHref("/catalog/packages/npm/%40org%2Fpkg/?q=x#dependencies"), "/catalog/packages/npm/%40org%2Fpkg/?q=x#dependencies");
+  assert.equal(staticMemberHref("/catalog/packages/pypi/6w-a78d1072#release-history"), "/catalog/packages/pypi/6w-a78d1072/#release-history");
+  for (const href of ["/catalog/repositories", "/contributors/github/cobycloud", "https://groupsum.xyz/catalog/packages/pypi/6w", "//example.com/catalog/packages/pypi/6w"]) {
+    assert.equal(staticMemberHref(href), href);
+  }
 });

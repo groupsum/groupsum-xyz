@@ -1,6 +1,7 @@
 import React from "react";
 import { repositoryColumns, packageColumns, columnSortValue } from "./catalog-column-sorts";
 import { CatalogLink } from "./CatalogLink";
+import { staticMemberHref } from "./static-member-href.mjs";
 import { InlineMetricChart } from "./InlineMetricChart";
 import { observedDelta } from "./activity-series.mjs";
 import { TrendDelta } from "./TrendDelta";
@@ -18,7 +19,6 @@ import {
 import { CatalogPill, compactNumber } from "./CatalogVisuals";
 import { valueRecord, valueRecords, type CatalogRecord } from "./CatalogRecordShared";
 
-type Navigate = (path: string) => void;
 
 function SortHeader({ label, sortKey, visibility, ascending, sort, onSort }: { label: string; sortKey: string; visibility: string; ascending: boolean; sort?: string; onSort?: (value: string) => void }) {
   const asc = columnSortValue(sortKey, true);
@@ -27,8 +27,8 @@ function SortHeader({ label, sortKey, visibility, ascending, sort, onSort }: { l
   return <th scope="col" aria-sort={direction} className={`px-2 py-3 ${visibility}`}><button type="button" onClick={() => onSort?.(direction ? (direction === "ascending" ? desc : asc) : ascending ? asc : desc)} className="min-h-6 text-left [overflow-wrap:normal] hover:text-accent" aria-label={sortKey === "stars" ? "Sort repositories by star count" : `Sort by ${label.toLowerCase()}`}>{label}<span aria-hidden="true"> {direction === "ascending" ? "↑" : direction === "descending" ? "↓" : "↕"}</span></button></th>;
 }
 
-function RecordLink({ route, onNavigate, children }: { route: string; onNavigate: Navigate; children: React.ReactNode }) {
-  return <a href={route} onClick={(event) => { event.preventDefault(); onNavigate(route); }} className="font-semibold text-ink hover:text-accent">{children}</a>;
+function RecordLink({ route, children }: { route: string; children: React.ReactNode }) {
+  return <a href={staticMemberHref(route)} className="font-semibold text-ink hover:text-accent">{children}</a>;
 }
 
 function HyphenBreakText({ value }: { value: string }) {
@@ -69,7 +69,7 @@ function LatestRelease({ value }: { value: unknown }) {
     : <span title={label} className={className}>{content}</span>;
 }
 
-function ContributorLinks({ value, onNavigate, limit = 2 }: { value: unknown; onNavigate: Navigate; limit?: number }) {
+function ContributorLinks({ value, limit = 2 }: { value: unknown; limit?: number }) {
   const tooltipPrefix = React.useId();
   const contributors = valueRecords(value);
   if (!contributors.length) return <span className="type-caption text-ink-muted">Not observed</span>;
@@ -118,7 +118,7 @@ function CommitBars({ points }: { points: Array<Record<string, unknown>> }) {
   return <InlineMetricChart compact bars label="Daily commits" points={points.slice(-30).map((point) => ({ label: String(point.date), value: Number(point.count) }))} />;
 }
 
-export function RepositoryCollectionTable({ records, onNavigate, sort, onSort }: { records: CatalogRecord[]; onNavigate: Navigate; sort?: string; onSort?: (value: string) => void }) {
+export function RepositoryCollectionTable({ records, sort, onSort }: { records: CatalogRecord[]; sort?: string; onSort?: (value: string) => void }) {
   return <div className="min-w-0 border-y border-[var(--color-border-soft)]">
       <table className="type-record-table catalog-density-table catalog-repository-table w-full table-fixed text-left" aria-label="Repository catalog records">
         <colgroup><col className="w-[43%] md:w-[28%] lg:w-[20%]" /><col className="hidden w-[10%] lg:table-column" /><col className="w-[24%] md:w-[15%] lg:w-[11%]" /><col className="hidden w-[6%] xl:table-column" /><col className="hidden w-[16%] md:table-column lg:w-[13%]" /><col className="hidden w-[12%] xl:table-column" /><col className="w-[23%] md:w-[12%] lg:w-[8%]" /><col className="hidden w-[11%] lg:table-column" /><col className="hidden w-[9%] lg:table-column" /><col className="w-[10%] md:w-[5%] lg:w-[3%]" /></colgroup>
@@ -127,16 +127,16 @@ export function RepositoryCollectionTable({ records, onNavigate, sort, onSort }:
           const metrics = valueRecord(record.metrics);
           const history = valueRecord(record.history);
           return <tr key={record.id} className="group h-[4.5rem] hover:bg-canvas">
-            <td className="min-w-0 px-3 py-2 align-middle"><div className="flex min-w-0 items-center gap-2"><GitBranch className="h-4 w-4 shrink-0 text-accent" /><RecordLink route={String(record.route)} onNavigate={onNavigate}><span className="line-clamp-2 break-words leading-snug"><HyphenBreakText value={String(record.name)} /></span></RecordLink></div></td>
+            <td className="min-w-0 px-3 py-2 align-middle"><div className="flex min-w-0 items-center gap-2"><GitBranch className="h-4 w-4 shrink-0 text-accent" /><RecordLink route={String(record.route)}><span className="line-clamp-2 break-words leading-snug"><HyphenBreakText value={String(record.name)} /></span></RecordLink></div></td>
             <td className="hidden min-w-0 truncate px-2 py-2 align-middle text-ink-muted lg:table-cell" title={String(record.owner || "Not recorded")}>{String(record.owner || "Not recorded")}</td>
             <td className="min-w-0 !overflow-visible px-2 py-2 align-middle"><div className="min-w-0 space-y-1"><span className="inline-flex items-center gap-1"><Star className="h-3 w-3 fill-signal text-signal" /><strong className="tabular-nums text-ink">{compactNumber(Number(metrics.stars || 0))}</strong></span><StarDelta points={valueRecords(history.stars)} /></div></td>
             <td className="hidden min-w-0 px-2 py-2 align-middle xl:table-cell"><span className="inline-flex items-center gap-1 font-semibold tabular-nums"><GitFork className="h-3 w-3 text-ink-muted" />{compactNumber(Number(metrics.forks || 0))}</span></td>
             <td className="hidden min-w-0 !overflow-visible px-2 py-2 align-middle md:table-cell"><CommitBars points={valueRecords(record.commit_activity)} /></td>
-            <td className="hidden min-w-0 !overflow-visible px-2 py-2 align-middle xl:table-cell"><ContributorLinks value={record.contributors} onNavigate={onNavigate} limit={2} /></td>
+            <td className="hidden min-w-0 !overflow-visible px-2 py-2 align-middle xl:table-cell"><ContributorLinks value={record.contributors} limit={2} /></td>
             <td className="min-w-0 px-2 py-2 align-middle"><RepositoryPackagesCell record={record} /></td>
             <td className="hidden min-w-0 px-2 py-2 align-middle lg:table-cell"><LatestRelease value={record.latest_release} /></td>
             <td className="hidden min-w-0 px-2 py-2 align-middle lg:table-cell">{record.ssot_governed ? <CatalogPill compact tone="signal"><span className="whitespace-nowrap">Governed</span></CatalogPill> : <span className="type-caption text-ink-muted">Not observed</span>}</td>
-            <td className="min-w-0 px-2 py-2 text-right align-middle"><RecordLink route={String(record.route)} onNavigate={onNavigate}><ChevronRight className="ml-auto h-4 w-4 text-accent transition-transform group-hover:translate-x-0.5" /></RecordLink></td>
+            <td className="min-w-0 px-2 py-2 text-right align-middle"><RecordLink route={String(record.route)}><ChevronRight className="ml-auto h-4 w-4 text-accent transition-transform group-hover:translate-x-0.5" /></RecordLink></td>
           </tr>;
         })}</tbody>
       </table>
@@ -149,13 +149,13 @@ function PublicationBadge({ record }: { record: CatalogRecord }) {
 }
 
 
-export function PackageCollectionTable({ records, onNavigate, sort, onSort }: { records: CatalogRecord[]; onNavigate: Navigate; sort?: string; onSort?: (value: string) => void }) {
+export function PackageCollectionTable({ records, sort, onSort }: { records: CatalogRecord[]; sort?: string; onSort?: (value: string) => void }) {
   return <>
 
     <div className="min-w-0 border-y border-[var(--color-border-soft)]">
       <table className="type-record-table catalog-density-table catalog-package-table text-left" aria-label="Package catalog records">
         <thead className="type-ui-label bg-canvas text-ink-muted"><tr>{packageColumns.map(([label, key, visibility, ascending]) => <SortHeader key={key} {...{ label, sortKey: key, visibility, ascending, sort, onSort }} />)}<th className="px-2 py-3"><span className="sr-only">Action</span></th></tr></thead>
-        <tbody className="divide-y divide-[var(--color-border-soft)]">{records.map((record) => { const repository = valueRecords(record.repositories)[0] || {}; const repositoryLabel = repository.owner ? `${String(repository.owner)}/${String(repository.name)}` : "Not linked"; return <tr key={record.id} className="h-[4.5rem] hover:bg-canvas"><td className="px-3 py-2"><div className="flex min-w-0 items-center gap-2"><Package className="h-3.5 w-3.5 shrink-0 text-signal" /><RecordLink route={String(record.route)} onNavigate={onNavigate}><span className="line-clamp-2 break-words leading-snug" title={String(record.name)}>{String(record.name)}</span></RecordLink></div></td><td className="px-2 py-2"><span className="inline-flex w-fit max-w-full truncate rounded border border-[var(--color-border-soft)] bg-surface px-1.5 py-0.5 type-caption" title={String(record.ecosystem || "unknown")}>{String(record.ecosystem || "unknown")}</span></td><td className="hidden px-2 py-2 text-accent lg:table-cell"><span className="line-clamp-2 break-words" title={repositoryLabel}>{repositoryLabel}</span></td><td className="hidden px-2 py-2 lg:table-cell"><PublicationBadge record={record} /></td><td className="px-2 py-2 type-technical font-bold"><span className="block truncate" title={String(record.latest_version || "Not recorded")}>{String(record.latest_version || "Not recorded")}</span></td><td className="hidden min-w-0 !overflow-visible px-2 py-2 tabular-nums md:table-cell"><PackageDependenciesCell record={record} /></td><td className="hidden truncate px-2 py-2 font-semibold tabular-nums text-accent xl:table-cell">{compactNumber(Number(record.dependent_count || 0))}</td><td className="hidden truncate px-2 py-2 text-success xl:table-cell" title={String(record.license_expression || "Not observed")}>{String(record.license_expression || "Not observed")}</td><td className="px-2 py-2 text-right"><RecordLink route={String(record.route)} onNavigate={onNavigate}><ChevronRight className="ml-auto h-4 w-4 text-accent" /></RecordLink></td></tr>; })}</tbody>
+        <tbody className="divide-y divide-[var(--color-border-soft)]">{records.map((record) => { const repository = valueRecords(record.repositories)[0] || {}; const repositoryLabel = repository.owner ? `${String(repository.owner)}/${String(repository.name)}` : "Not linked"; return <tr key={record.id} className="h-[4.5rem] hover:bg-canvas"><td className="px-3 py-2"><div className="flex min-w-0 items-center gap-2"><Package className="h-3.5 w-3.5 shrink-0 text-signal" /><RecordLink route={String(record.route)}><span className="line-clamp-2 break-words leading-snug" title={String(record.name)}>{String(record.name)}</span></RecordLink></div></td><td className="px-2 py-2"><span className="inline-flex w-fit max-w-full truncate rounded border border-[var(--color-border-soft)] bg-surface px-1.5 py-0.5 type-caption" title={String(record.ecosystem || "unknown")}>{String(record.ecosystem || "unknown")}</span></td><td className="hidden px-2 py-2 text-accent lg:table-cell"><span className="line-clamp-2 break-words" title={repositoryLabel}>{repositoryLabel}</span></td><td className="hidden px-2 py-2 lg:table-cell"><PublicationBadge record={record} /></td><td className="px-2 py-2 type-technical font-bold"><span className="block truncate" title={String(record.latest_version || "Not recorded")}>{String(record.latest_version || "Not recorded")}</span></td><td className="hidden min-w-0 !overflow-visible px-2 py-2 tabular-nums md:table-cell"><PackageDependenciesCell record={record} /></td><td className="hidden truncate px-2 py-2 font-semibold tabular-nums text-accent xl:table-cell">{compactNumber(Number(record.dependent_count || 0))}</td><td className="hidden truncate px-2 py-2 text-success xl:table-cell" title={String(record.license_expression || "Not observed")}>{String(record.license_expression || "Not observed")}</td><td className="px-2 py-2 text-right"><RecordLink route={String(record.route)}><ChevronRight className="ml-auto h-4 w-4 text-accent" /></RecordLink></td></tr>; })}</tbody>
       </table>
     </div>
   </>;
