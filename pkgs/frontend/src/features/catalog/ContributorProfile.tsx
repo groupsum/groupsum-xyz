@@ -27,7 +27,7 @@ export function ContributorProfile({ provider, login }: { provider: string; logi
       <p className="type-body-sm text-ink-muted">Totals reflect what the source reported for these repositories, not the contributor’s entire GitHub activity.</p>
       {version.public_projection_available && !model.isPlaceholderData && <ContributorActivity key={`${version.snapshot_id}:${provider}:${login}`} snapshotId={version.snapshot_id} provider={provider} login={login} />}
       <h2 id="contributor-repositories" className="type-display-sm scroll-mt-24">Repositories <span className="type-control text-ink-muted">({repositories.length.toLocaleString()})</span></h2>
-      <table className="type-technical w-full table-fixed text-left [overflow-wrap:anywhere]" aria-labelledby="contributor-repositories">
+      <table className="type-technical w-full table-fixed text-left [overflow-wrap:anywhere]" aria-label="Contributor repositories">
         <thead className="type-ui-label"><tr>{([["name", "Repository"], ["contributions", "Contributions"]] as const).map(([key, label]) => {
           const active = key === repoSort.key;
           return <th key={key} scope="col" className={key === "name" ? "py-2" : "w-[35%] text-right"} aria-sort={active ? repoSort.ascending ? "ascending" : "descending" : undefined}><button type="button" className="min-h-8 hover:text-accent focus-visible:outline" onClick={() => setRepoSort({ key, ascending: active ? !repoSort.ascending : key === "name" })}>{label}<span aria-hidden="true"> {active ? repoSort.ascending ? "↑" : "↓" : "↕"}</span></button></th>;
