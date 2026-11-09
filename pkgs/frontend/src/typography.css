@@ -1,28 +1,26 @@
 :root {
   --type-display-xl-size: clamp(2rem, 1.65rem + 1.45vw, 3rem);
   --type-display-lg-size: clamp(1.875rem, 1.68rem + 0.8vw, 2.25rem);
+  --type-display-sm-size: 1rem;
   --type-heading-md-size: 1rem;
   --type-heading-sm-size: 0.875rem;
   --type-body-lg-size: 1rem;
   --type-body-md-size: 0.875rem;
   --type-body-sm-size: 0.75rem;
+  --type-caption-size: 0.625rem;
   --type-label-size: 0.6875rem;
   --type-control-size: 0.75rem;
   --type-technical-size: 0.75rem;
   --type-metric-size: 1.25rem;
 }
 
-button,
-input,
-select,
-textarea,
-nav a,
-nav button {
-  font-family: var(--font-sans) !important;
+:where(button, input, select, textarea, nav a) {
+  font-family: var(--font-sans);
 }
 
 .type-display-xl,
 .type-display-lg,
+.type-display-sm,
 .type-heading-md,
 .type-heading-sm {
   color: var(--color-ink);
@@ -44,6 +42,12 @@ nav button {
   line-height: 1.1;
 }
 
+.type-display-sm {
+  font-size: var(--type-display-sm-size);
+  font-weight: 700;
+  line-height: 1.25;
+}
+
 .type-heading-md {
   font-family: var(--font-sans);
   font-size: var(--type-heading-md-size);
@@ -62,7 +66,8 @@ nav button {
 .type-body-lg,
 .type-body-md,
 .type-body-sm,
-.type-ui-label,
+.type-caption,
+.type-record-table,
 .type-control {
   font-family: var(--font-sans);
 }
@@ -70,8 +75,12 @@ nav button {
 .type-body-lg { font-size: var(--type-body-lg-size); line-height: 1.65; }
 .type-body-md { font-size: var(--type-body-md-size); line-height: 1.6; }
 .type-body-sm { font-size: var(--type-body-sm-size); line-height: 1.5; }
+.type-caption { font-size: var(--type-caption-size); line-height: 1.35; }
+.type-record-table { font-size: var(--type-body-sm-size); line-height: 1.35; }
 
-.type-ui-label {
+.type-ui-label,
+.type-record-table thead :is(th, button) {
+  font-family: var(--font-display);
   font-size: var(--type-label-size);
   font-weight: 700;
   letter-spacing: 0.075em;

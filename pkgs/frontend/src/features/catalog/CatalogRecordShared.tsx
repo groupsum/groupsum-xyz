@@ -148,7 +148,7 @@ export function ReleaseTimeline({ points, label }: { points: TimelinePoint[]; la
     <div className="flex h-28 items-end gap-1.5" aria-hidden="true">
       {points.map((point) => <div key={point.month} className="group flex min-w-0 flex-1 flex-col items-center justify-end gap-1"><span className="text-[9px] font-mono tabular-nums text-ink-muted opacity-0 group-hover:opacity-100">{point.count}</span><span className="w-full min-w-1 rounded-t-sm bg-accent" style={{ height: `${Math.max(8, (point.count / max) * 88)}px` }} /></div>)}
     </div>
-    <figcaption className="flex flex-wrap justify-between gap-2 text-[10px] font-mono text-ink-muted"><span>{points[0].month}</span><span>{points.reduce((total, point) => total + point.count, 0).toLocaleString()} dated releases</span><span>{points.at(-1)?.month}</span></figcaption>
+    <figcaption className="flex flex-wrap justify-between gap-2 type-caption text-ink-muted"><span>{points[0].month}</span><span>{points.reduce((total, point) => total + point.count, 0).toLocaleString()} dated releases</span><span>{points.at(-1)?.month}</span></figcaption>
   </figure>;
 }
 
@@ -159,7 +159,7 @@ export function DetailRows({ rows }: { rows: Array<[string, React.ReactNode]> })
     <dl className="border-y border-[var(--color-border-soft)] divide-y divide-[var(--color-border-soft)]">
       {visible.map(([label, value]) => (
         <div key={label} className="py-3 sm:py-4 sm:flex sm:items-baseline sm:gap-8">
-          <dt className="text-[10px] font-mono uppercase tracking-wide text-ink-muted sm:w-44 sm:shrink-0">{label}</dt>
+          <dt className="type-ui-label text-ink-muted sm:w-44 sm:shrink-0">{label}</dt>
           <dd className="text-sm text-ink mt-1 sm:mt-0 min-w-0 break-words">{value}</dd>
         </div>
       ))}
@@ -185,7 +185,7 @@ export function LegalContext({ record, detail = false }: { record: CatalogRecord
       ["License file", licenseFile ? <a href={String(licenseFile.url)} target="_blank" rel="noreferrer" className="text-accent hover:underline">{String(licenseFile.path || licenseFile.name || "View license")}</a> : null],
       ["Notice file", noticeFile ? <a href={String(noticeFile.url)} target="_blank" rel="noreferrer" className="text-accent hover:underline">{String(noticeFile.path || noticeFile.name || "View notice")}</a> : null],
     ]} />
-    {detail && legal.length > 0 && <ul className="divide-y divide-[var(--color-border-soft)]">{legal.map((item, index) => <li key={`${String(item.kind)}-${String(item.path || item.expression || item.url)}-${index}`} className="py-3 sm:flex sm:justify-between gap-4"><div><span className="text-[10px] font-mono uppercase text-accent">{humanLabel(String(item.kind || "legal evidence"))} · {humanLabel(String(item.scope || "direct"))}</span><p className="text-sm text-ink">{String(item.name || item.path || "License or notice")}</p>{item.expression && <p className="text-xs text-ink-muted mt-1">{String(item.expression)}</p>}</div>{item.url && <a href={String(item.url)} target="_blank" rel="noreferrer" className="shrink-0 text-xs font-mono text-accent hover:underline">View evidence</a>}</li>)}</ul>}
+    {detail && legal.length > 0 && <ul className="divide-y divide-[var(--color-border-soft)]">{legal.map((item, index) => <li key={`${String(item.kind)}-${String(item.path || item.expression || item.url)}-${index}`} className="py-3 sm:flex sm:justify-between gap-4"><div><span className="type-ui-label text-accent">{humanLabel(String(item.kind || "legal evidence"))} · {humanLabel(String(item.scope || "direct"))}</span><p className="type-body-md text-ink">{String(item.name || item.path || "License or notice")}</p>{item.expression && <p className="type-technical text-ink-muted mt-1">{String(item.expression)}</p>}</div>{item.url && <a href={String(item.url)} target="_blank" rel="noreferrer" className="shrink-0 type-control text-accent hover:underline">View evidence</a>}</li>)}</ul>}
   </div>;
 }
 

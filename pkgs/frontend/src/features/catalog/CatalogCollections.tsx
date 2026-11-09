@@ -100,7 +100,7 @@ export function CatalogSnapshotBand({
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
               {repositories.map((repository) => (
                 <button key={repository.id} onClick={() => onNavigate(repository.route)} className="min-h-[16rem] text-left p-4 bg-canvas border border-[var(--color-border-soft)] rounded-[var(--radius-sm)] hover:border-accent transition-colors cursor-pointer space-y-3">
-                  <div><span className="text-[10px] font-mono uppercase text-accent">{repository.owner}</span>
+                  <div><span className="type-ui-label text-accent">{repository.owner}</span>
                   <h3 className="text-sm font-semibold text-ink mt-1">{repository.name}</h3>
                   <p className="text-[11px] text-ink-muted leading-relaxed line-clamp-2 mt-1">{repository.description}</p>
                   </div>
@@ -157,7 +157,7 @@ export function LinkedResourceSections({ sections, onNavigate }: { sections: unk
       <ul className="divide-y divide-[var(--color-border-soft)]">
         {members.map((member) => <li key={String(member.id)} className="flex flex-wrap items-center gap-x-5 gap-y-3 py-3">
           <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-[3px] border border-[var(--color-border-soft)] bg-canvas text-accent"><Icon className="h-4 w-4" aria-hidden="true" /></span>
-          <div className="min-w-0 flex-[1_1_20rem]"><p className="break-words text-sm font-semibold text-ink">{String(member.name || "Untitled resource")}</p>{member.summary && <p className="mt-0.5 text-xs leading-relaxed text-ink-muted">{String(member.summary)}</p>}<p className="mt-1 text-[9px] font-mono uppercase tracking-wide text-ink-muted">{humanLabel(String(member.relationship || "linked"))} · {humanLabel(String(member.direction || "observed"))}</p></div>
+          <div className="min-w-0 flex-[1_1_20rem]"><p className="break-words text-sm font-semibold text-ink">{String(member.name || "Untitled resource")}</p>{member.summary && <p className="mt-0.5 text-xs leading-relaxed text-ink-muted">{String(member.summary)}</p>}<p className="mt-1 type-ui-label text-ink-muted">{humanLabel(String(member.relationship || "linked"))} · {humanLabel(String(member.direction || "observed"))}</p></div>
           <div className="flex flex-wrap items-center gap-3">{member.route && <a href={String(member.route)} onClick={(event) => { event.preventDefault(); onNavigate(String(member.route)); }} className="inline-flex min-h-10 items-center text-xs font-mono font-semibold text-accent hover:underline">View {label.toLowerCase()}</a>}{member.source_url && !isCurrentPageLink(member.source_url) && <a href={String(member.source_url)} target="_blank" rel="noreferrer" className="inline-flex min-h-10 items-center gap-1 text-xs font-mono text-accent hover:underline">Source <ExternalLink className="h-3.5 w-3.5" /></a>}</div>
         </li>)}
       </ul>

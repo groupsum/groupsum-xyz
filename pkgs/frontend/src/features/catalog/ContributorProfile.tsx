@@ -51,7 +51,7 @@ export function ContributorProfile({ provider, login }: { provider: string; logi
       </header>
       <h2 id="contributor-repositories" className="type-display-sm scroll-mt-24">Repositories <span className="type-control text-ink-muted">({repositories.length.toLocaleString()})</span></h2>
       {!!weeks.length && <p className="type-body-sm text-ink-muted">One block per UTC week. Color intensity shows commit volume, muted blocks mean zero, and dotted outlines mark incomplete coverage. Select a week for details.</p>}
-      <table className="type-technical w-full table-fixed text-left [overflow-wrap:anywhere]" aria-label="Contributor repositories">
+      <table className="type-record-table w-full table-fixed text-left [overflow-wrap:anywhere]" aria-label="Contributor repositories">
         <thead className="type-ui-label bg-canvas text-ink-muted"><tr>{([["name", "Repository"], ["activity", "Weekly commits"], ["contributions", "Contributions"]] as const).map(([key, label]) => {
           if (key === "activity") return <th key={key} scope="col" className="w-[44%] sm:w-[38%]">{label}</th>;
           const active = key === repoSort.key;

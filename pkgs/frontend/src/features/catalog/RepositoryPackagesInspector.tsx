@@ -28,7 +28,7 @@ export function RepositoryPackagesInspector({ repository, ecosystem, onEcosystem
     {collection.isError && <div role="alert" className="type-body-sm py-4 text-danger">Packages could not be loaded. <button type="button" onClick={() => collection.refetch()} className="underline">Retry</button></div>}
     {collection.data && <>
       <p className="type-body-sm text-ink-muted" role="status">{collection.data.count.toLocaleString()} matching packages · Page {collection.data.page} of {collection.data.page_count}</p>
-      {collection.data.records.length ? <table className="w-full table-fixed text-left text-xs" aria-label={`Packages in ${repository}`}>
+      {collection.data.records.length ? <table className="type-record-table w-full table-fixed text-left" aria-label={`Packages in ${repository}`}>
         <thead className="type-ui-label"><tr><th scope="col" className="w-[65%] py-2">Package</th><th scope="col" className="w-[25%]">Version</th><th scope="col" className="w-[10%]"><span className="sr-only">Publication</span></th></tr></thead>
         <tbody className="divide-y divide-[var(--color-border-soft)]">{collection.data.records.map((item) => {
           const published = item.published || item.publication_status === "published";

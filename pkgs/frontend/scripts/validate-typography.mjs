@@ -1,4 +1,4 @@
-import { existsSync, readFileSync } from "node:fs";
+import { existsSync, readdirSync, readFileSync } from "node:fs";
 import { resolve } from "node:path";
 
 const root = resolve(import.meta.dirname, "..");
@@ -14,11 +14,14 @@ const visuals = source("src/features/catalog/CatalogVisuals.tsx");
 for (const role of [
   "type-display-xl",
   "type-display-lg",
+  "type-display-sm",
   "type-heading-md",
   "type-heading-sm",
   "type-body-lg",
   "type-body-md",
   "type-body-sm",
+  "type-caption",
+  "type-record-table",
   "type-ui-label",
   "type-control",
   "type-technical",
@@ -37,8 +40,17 @@ if (!indexCss.includes(".catalog-density-card") || !indexCss.includes(".catalog-
   failures.push("Compact catalog spacing is not defined unconditionally.");
 }
 
-if (!typographyCss.includes("nav button") || !typographyCss.includes("font-family: var(--font-sans) !important")) {
-  failures.push("Interactive controls are not globally pinned to the interface typeface.");
+if (!typographyCss.includes(":where(button, input, select, textarea, nav a)") ||
+    !typographyCss.includes(".type-record-table thead :is(th, button)")) {
+  failures.push("Controls and sortable table labels must use their distinct shared type roles.");
+}
+
+const definedRoles = new Set([...typographyCss.matchAll(/\.(type-[\w-]+)\b/g)].map(match => match[1]));
+for (const file of readdirSync(resolve(root, "src"), { recursive: true }).filter(path => /\.tsx$/.test(path))) {
+  const contents = source(`src/${file}`);
+  for (const role of new Set(contents.match(/\btype-(?:display|heading|body|ui|control|technical|metric|caption|record)[\w-]*[\w]/g))) {
+    if (!definedRoles.has(role) && role !== "type-body") failures.push(`${file} uses undefined typography role ${role}`);
+  }
 }
 
 if (!indexCss.includes('--font-mono: "JetBrains Mono"')) {
