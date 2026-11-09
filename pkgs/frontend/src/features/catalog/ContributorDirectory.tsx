@@ -9,7 +9,7 @@ import { ContributorTypeBadge, contributorTypeLabel } from "./ContributorTypeBad
 const columns = [
   ["name", "Contributor", "py-2 text-left"],
   ["type", "Type", "hidden w-24 sm:table-cell"],
-  ["repositories", "Repos", "w-[18%] text-right"],
+  ["repositories", "Repos", "w-[23%] text-right sm:w-[18%]"],
   ["contributions", "Contributions", "w-[30%] text-right"],
 ] as const;
 
@@ -25,7 +25,10 @@ function Rank({ rank }: { rank?: number | null }) {
 function Delta({ value, label }: { value?: number; label: string }) {
   const signed = value == null ? "—" : value > 0 ? `+${value.toLocaleString()}` : value.toLocaleString();
   const title = value == null ? "Insufficient history for the 30-day comparison" : `${signed} ${label} vs. the preceding 30 days`;
-  return <span className={`type-control block ${value ? "text-accent" : "text-ink-muted"}`} title={title}><span aria-hidden="true">{signed}</span><span className="sr-only">{title}</span></span>;
+  const trend = value == null || value === 0 ? undefined : value > 0 ? "up" : "down";
+  return <span className={`type-control ${trend === "up" ? "text-success" : trend === "down" ? "text-danger" : "text-ink-muted"}`} title={title}>
+    <span aria-hidden="true">{trend === "up" ? "⬆️" : trend === "down" ? "⬇️" : ""}{signed}</span><span className="sr-only">{title}</span>
+  </span>;
 }
 
 export function ContributorDirectory() {
@@ -70,8 +73,8 @@ export function ContributorDirectory() {
             <span className="sm:hidden"><ContributorTypeBadge value={row.account_type} /></span>
           </td>
           <td className="hidden sm:table-cell"><ContributorTypeBadge value={row.account_type} /></td>
-          <td className="text-right tabular-nums">{row.repository_count.toLocaleString()}<Delta value={row.activity_delta?.active_repositories} label="active repositories" /></td>
-          <td className="text-right tabular-nums">{row.contributions.toLocaleString()}<Delta value={row.activity_delta?.commits} label="attributed commits" /></td>
+          <td className="text-right tabular-nums"><span className="inline-flex items-baseline gap-0.5 whitespace-nowrap sm:gap-1">{row.repository_count.toLocaleString()}<Delta value={row.activity_delta?.active_repositories} label="active repositories" /></span></td>
+          <td className="text-right tabular-nums"><span className="inline-flex items-baseline gap-0.5 whitespace-nowrap sm:gap-1">{row.contributions.toLocaleString()}<Delta value={row.activity_delta?.commits} label="attributed commits" /></span></td>
         </tr>)}
       </tbody>
     </table>{!collection.data.records.length && <p>No contributors match these filters.</p>}<nav aria-label="Contributor pagination" className="flex justify-end gap-3"><button disabled={collection.data.page <= 1} onClick={() => change("page", String(collection.data.page - 1))}>Previous</button><button disabled={collection.data.page >= collection.data.page_count} onClick={() => change("page", String(collection.data.page + 1))}>Next</button></nav></>}
