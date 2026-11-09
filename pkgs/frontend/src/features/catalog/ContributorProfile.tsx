@@ -29,14 +29,14 @@ export function ContributorProfile({ provider, login }: { provider: string; logi
     {model.isPending ? <p role="status">Loading contributor profile…</p> : model.isError ? <div role="alert"><h1 className="type-display-lg break-words [overflow-wrap:anywhere]">{String(model.error).includes("404") ? "Contributor not found" : "Contributor unavailable"}</h1><p className="type-body-sm">{String(model.error).includes("404") ? "This identity is not in the current catalog." : "The profile could not be loaded."}</p><button onClick={() => model.refetch()} className="type-control text-accent">Retry</button></div> : <>
       <CatalogPageMetadata record={{ ...model.data.item, route: String(model.data.item.route || `/contributors/${provider}/${encodeURIComponent(login)}`), title: `${model.data.item.name || login} contributor | GroupSum catalog`, description: `${model.data.item.account_type || "Public"} contributor observed across ${model.data.repositories.length} public catalog repositories.`, schemaFamily: "contributor-profile", profileUrl: model.data.item.url }} />
       <header className="min-w-0 space-y-3 border-b border-[var(--color-border-soft)] pb-3">
-        <div className="grid max-w-xl min-w-0 gap-4 sm:grid-cols-[minmax(0,1fr)_minmax(0,15rem)]">
-          <div className="flex min-w-0 items-start gap-3">
+        <div className="flex max-w-xl min-w-0 flex-col gap-4 sm:flex-row sm:flex-wrap">
+          <div className="flex min-w-0 max-w-full items-start gap-3">
             {model.data.item.avatar_url && <img src={String(model.data.item.avatar_url)} alt="" width="48" height="48" className="h-12 w-12 shrink-0" />}
             <div className="min-w-0">
-              <h1 className="type-display-lg [overflow-wrap:anywhere]">{String(model.data.item.name || login)}</h1>
+              <h1 className="type-display-lg overflow-hidden text-ellipsis [overflow-wrap:normal] [word-break:normal]" title={String(model.data.item.name || login)}>{String(model.data.item.name || login)}</h1>
               <div className="type-body-sm flex flex-wrap items-center gap-2 text-ink-muted">
                 <ContributorTypeBadge value={model.data.item.account_type} />
-                {model.data.item.login && <span className="[overflow-wrap:anywhere]">@{model.data.item.login}</span>}
+                {model.data.item.login && <span className="min-w-0 max-w-full overflow-hidden text-ellipsis [overflow-wrap:normal] [word-break:normal]" title={`@${model.data.item.login}`}>@{model.data.item.login}</span>}
               </div>
             </div>
           </div>
