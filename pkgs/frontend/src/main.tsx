@@ -1,10 +1,20 @@
-import {StrictMode} from 'react';
+import {StrictMode, useEffect, useState, type ComponentType} from 'react';
 import {createRoot, hydrateRoot} from 'react-dom/client';
 import {BrowserRouter} from './router';
 import {QueryClient, QueryClientProvider} from '@tanstack/react-query';
 import App from './App.tsx';
 import './index.css';
-import { CatalogFreshness } from './features/catalog/CatalogFreshness';
+function DeferredCatalogFreshness() {
+  const [Check, setCheck] = useState<ComponentType>();
+  useEffect(() => {
+    let mounted = true;
+    void import('./features/catalog/CatalogFreshness').then(({ CatalogFreshness }) => {
+      if (mounted) setCheck(() => CatalogFreshness);
+    }).catch(() => { /* The snapshot already rendered remains usable if this chunk cannot load. */ });
+    return () => { mounted = false; };
+  }, []);
+  return Check ? <Check /> : null;
+}
 
 const serializedModel = document.getElementById('groupsum-api-snapshot');
 if (serializedModel?.textContent) {
@@ -27,7 +37,7 @@ const application = (
     <QueryClientProvider client={queryClient}>
       <BrowserRouter initialLocation={initialLocation}>
         <App />
-        <CatalogFreshness />
+        <DeferredCatalogFreshness />
       </BrowserRouter>
     </QueryClientProvider>
   </StrictMode>

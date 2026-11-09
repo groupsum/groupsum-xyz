@@ -25,6 +25,7 @@ main :is(section, article, header, dl)[class*="rounded"] {
 .catalog-density-table tbody tr:hover { background: var(--table-hover); }
 .catalog-density-table a { min-width: 0; }
 .catalog-density-table th { overflow-wrap: anywhere; }
+.catalog-package-table th:nth-child(6) { overflow-wrap: normal; font-size: 9px; letter-spacing: normal; }
 .catalog-density-table tbody { font-family: var(--font-sans); font-size: .75rem; }
 .catalog-density-table :is(strong, time) { font-variant-numeric: tabular-nums; }
 .theme-picker { font-size: .75rem; }

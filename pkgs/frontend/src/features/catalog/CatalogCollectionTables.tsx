@@ -1,4 +1,5 @@
 import React from "react";
+import { repositoryColumns, packageColumns, columnSortValue } from "./catalog-column-sorts";
 import { CatalogLink } from "./CatalogLink";
 import { InlineMetricChart } from "./InlineMetricChart";
 import { RepositoryPackagesCell } from "./RepositoryPackagesCell";
@@ -17,6 +18,13 @@ import { humanLabel, valueRecord, valueRecords, type CatalogRecord } from "./Cat
 
 type Navigate = (path: string) => void;
 
+function SortHeader({ label, sortKey, visibility, ascending, sort, onSort }: { label: string; sortKey: string; visibility: string; ascending: boolean; sort?: string; onSort?: (value: string) => void }) {
+  const asc = columnSortValue(sortKey, true);
+  const desc = columnSortValue(sortKey, false);
+  const direction = sort === asc ? "ascending" : sort === desc ? "descending" : undefined;
+  return <th scope="col" aria-sort={direction} className={`px-2 py-3 ${visibility}`}><button type="button" onClick={() => onSort?.(direction ? (direction === "ascending" ? desc : asc) : ascending ? asc : desc)} className="min-h-6 text-left [overflow-wrap:normal] hover:text-accent" aria-label={sortKey === "stars" ? "Sort repositories by star count" : `Sort by ${label.toLowerCase()}`}>{label}<span aria-hidden="true"> {direction === "ascending" ? "↑" : direction === "descending" ? "↓" : "↕"}</span></button></th>;
+}
+
 function RecordLink({ route, onNavigate, children }: { route: string; onNavigate: Navigate; children: React.ReactNode }) {
   return <a href={route} onClick={(event) => { event.preventDefault(); onNavigate(route); }} className="font-semibold text-ink hover:text-accent">{children}</a>;
 }
@@ -27,7 +35,7 @@ function HyphenBreakText({ value }: { value: string }) {
 }
 
 function MiniLine({ points, label }: { points: Array<Record<string, unknown>>; label: string }) {
-  return <InlineMetricChart label={label} points={points.map((point) => ({ label: String(point.observed_at || point.date || "Observation"), value: Number(point.value) }))} />;
+  return <InlineMetricChart compact label={label} points={points.map((point) => ({ label: String(point.observed_at || point.date || "Observation"), value: Number(point.value) }))} />;
 }
 
 function LatestRelease({ value }: { value: unknown }) {
@@ -81,7 +89,7 @@ function ContributorLinks({ value, onNavigate, limit = 2 }: { value: unknown; on
         const tooltipId = `${tooltipPrefix}-${index}`;
         return <li key={String(contributor.id || contributor.login || contributor.name || index)} className="group/share relative flex min-w-0 items-center gap-1.5">
           <span className="min-w-0 flex-1">{contributorControl(contributor, index, tooltipId)}</span>
-          {observedTotal > 0 && <span aria-hidden="true" className="h-1.5 w-6 shrink-0 overflow-hidden rounded-full bg-[var(--chart-track)]"><span className="block h-full rounded-full bg-accent" style={{ width: `${share}%` }} /></span>}
+          {observedTotal > 0 && <span aria-hidden="true" className="shrink-0 tabular-nums text-[10px] text-ink-muted">{Math.round(share)}%</span>}
           <span id={tooltipId} role="tooltip" className="invisible absolute left-0 top-full z-50 w-max max-w-52 rounded border border-[var(--color-border-soft)] bg-surface-raised px-2 py-1 text-[10px] text-ink shadow-lg group-hover/share:visible group-focus-within/share:visible">
             {String(contributor.login || contributor.name || `Contributor ${index + 1}`)}: {count.toLocaleString("en-US")} contributions{observedTotal > 0 ? ` (${share.toLocaleString("en-US", { maximumFractionDigits: 2 })}% of observed contributions)` : " (share unavailable)"}
           </span>
@@ -101,14 +109,14 @@ function ContributorLinks({ value, onNavigate, limit = 2 }: { value: unknown; on
 }
 
 function CommitBars({ points }: { points: Array<Record<string, unknown>> }) {
-  return <InlineMetricChart bars label="Daily commits" points={points.slice(-30).map((point) => ({ label: String(point.date), value: Number(point.count) }))} />;
+  return <InlineMetricChart compact bars label="Daily commits" points={points.slice(-30).map((point) => ({ label: String(point.date), value: Number(point.count) }))} />;
 }
 
 export function RepositoryCollectionTable({ records, onNavigate, sort, onSort }: { records: CatalogRecord[]; onNavigate: Navigate; sort?: string; onSort?: (value: string) => void }) {
   return <div className="min-w-0 border-y border-[var(--color-border-soft)]">
       <table className="catalog-density-table catalog-repository-table w-full table-fixed text-left text-xs" aria-label="Repository catalog records">
         <colgroup><col className="w-[43%] md:w-[28%] lg:w-[20%]" /><col className="hidden w-[10%] lg:table-column" /><col className="w-[24%] md:w-[15%] lg:w-[11%]" /><col className="hidden w-[6%] xl:table-column" /><col className="hidden w-[16%] md:table-column lg:w-[13%]" /><col className="hidden w-[12%] xl:table-column" /><col className="w-[23%] md:w-[12%] lg:w-[8%]" /><col className="hidden w-[11%] lg:table-column" /><col className="hidden w-[9%] lg:table-column" /><col className="w-[10%] md:w-[5%] lg:w-[3%]" /></colgroup>
-        <thead className="type-ui-label bg-canvas text-ink-muted"><tr><th className="px-3 py-3">Repository</th><th className="hidden px-2 py-3 lg:table-cell">Organization</th><th className="px-2 py-3" aria-sort={sort === "stars" ? "descending" : sort === "stars_asc" ? "ascending" : "none"}><button type="button" onClick={() => onSort?.(sort === "stars" ? "stars_asc" : "stars")} aria-label="Sort repositories by star count" className="inline-flex min-h-6 items-center gap-1">Stars <span aria-hidden="true">{sort === "stars" ? "↓" : sort === "stars_asc" ? "↑" : "↕"}</span></button></th><th className="hidden px-2 py-3 xl:table-cell">Forks</th><th className="hidden px-2 py-3 md:table-cell">30-Day Commits</th><th className="hidden px-2 py-3 xl:table-cell">Contributors</th><th className="px-2 py-3">Packages</th><th className="hidden px-2 py-3 lg:table-cell">Latest Release</th><th className="hidden px-2 py-3 lg:table-cell">Governance</th><th className="px-2 py-3 text-right"><span className="sr-only">Action</span></th></tr></thead>
+        <thead className="type-ui-label bg-canvas text-ink-muted"><tr>{repositoryColumns.map(([label, key, visibility, ascending]) => <SortHeader key={key} {...{ label, sortKey: key, visibility, ascending, sort, onSort }} />)}<th className="hidden px-2 py-3 lg:table-cell">Governance</th><th className="px-2 py-3"><span className="sr-only">Action</span></th></tr></thead>
         <tbody className="type-technical divide-y divide-[var(--color-border-soft)]">{records.map((record) => {
           const metrics = valueRecord(record.metrics);
           const history = valueRecord(record.history);
@@ -121,7 +129,7 @@ export function RepositoryCollectionTable({ records, onNavigate, sort, onSort }:
             <td className="hidden min-w-0 !overflow-visible px-2 py-2 align-middle xl:table-cell"><ContributorLinks value={record.contributors} onNavigate={onNavigate} limit={2} /></td>
             <td className="min-w-0 px-2 py-2 align-middle"><RepositoryPackagesCell record={record} /></td>
             <td className="hidden min-w-0 px-2 py-2 align-middle lg:table-cell"><LatestRelease value={record.latest_release} /></td>
-            <td className="hidden min-w-0 px-2 py-2 align-middle lg:table-cell">{record.ssot_governed ? <CatalogPill compact tone="accent"><span className="whitespace-nowrap">Governed</span></CatalogPill> : <span className="text-[10px] text-ink-muted">Not observed</span>}</td>
+            <td className="hidden min-w-0 px-2 py-2 align-middle lg:table-cell">{record.ssot_governed ? <CatalogPill compact tone="signal"><span className="whitespace-nowrap">Governed</span></CatalogPill> : <span className="text-[10px] text-ink-muted">Not observed</span>}</td>
             <td className="min-w-0 px-2 py-2 text-right align-middle"><RecordLink route={String(record.route)} onNavigate={onNavigate}><ChevronRight className="ml-auto h-4 w-4 text-accent transition-transform group-hover:translate-x-0.5" /></RecordLink></td>
           </tr>;
         })}</tbody>
@@ -131,16 +139,16 @@ export function RepositoryCollectionTable({ records, onNavigate, sort, onSort }:
 
 function PublicationBadge({ record }: { record: CatalogRecord }) {
   const published = record.published || record.publication_status === "published";
-  return <CatalogPill compact tone={published ? "accent" : "neutral"} Icon={published ? BadgeCheck : CircleDot}>{published ? "Published" : humanLabel(String(record.publication_status || "Candidate"))}</CatalogPill>;
+  return <CatalogPill compact tone={published ? "signal" : "neutral"} Icon={published ? BadgeCheck : CircleDot}>{published ? "Published" : ["manifest-private", "manifest_private"].includes(String(record.publication_status)) ? "Private" : humanLabel(String(record.publication_status || "Candidate"))}</CatalogPill>;
 }
 
 
-export function PackageCollectionTable({ records, onNavigate }: { records: CatalogRecord[]; onNavigate: Navigate }) {
+export function PackageCollectionTable({ records, onNavigate, sort, onSort }: { records: CatalogRecord[]; onNavigate: Navigate; sort?: string; onSort?: (value: string) => void }) {
   return <>
 
     <div className="min-w-0 border-y border-[var(--color-border-soft)]">
       <table className="catalog-density-table catalog-package-table text-left text-xs" aria-label="Package catalog records">
-        <thead className="type-ui-label bg-canvas text-ink-muted"><tr><th className="px-3 py-3">Package</th><th className="px-2 py-3">Ecosystem</th><th className="hidden px-2 py-3 lg:table-cell">Repository</th><th className="hidden px-2 py-3 lg:table-cell">Publication</th><th className="px-2 py-3">Latest</th><th className="hidden px-2 py-3 md:table-cell">Dependencies</th><th className="hidden px-2 py-3 xl:table-cell">Dependents</th><th className="hidden px-2 py-3 xl:table-cell">License</th><th className="px-2 py-3"><span className="sr-only">Action</span></th></tr></thead>
+        <thead className="type-ui-label bg-canvas text-ink-muted"><tr>{packageColumns.map(([label, key, visibility, ascending]) => <SortHeader key={key} {...{ label, sortKey: key, visibility, ascending, sort, onSort }} />)}<th className="px-2 py-3"><span className="sr-only">Action</span></th></tr></thead>
         <tbody className="type-technical divide-y divide-[var(--color-border-soft)]">{records.map((record) => { const repository = valueRecords(record.repositories)[0] || {}; const repositoryLabel = repository.owner ? `${String(repository.owner)}/${String(repository.name)}` : "Not linked"; return <tr key={record.id} className="h-[4.5rem] hover:bg-canvas"><td className="px-3 py-2"><div className="flex min-w-0 items-center gap-2"><Package className="h-3.5 w-3.5 shrink-0 text-signal" /><RecordLink route={String(record.route)} onNavigate={onNavigate}><span className="line-clamp-2 break-words leading-snug" title={String(record.name)}>{String(record.name)}</span></RecordLink></div></td><td className="px-2 py-2"><span className="inline-flex w-fit max-w-full truncate rounded border border-[var(--color-border-soft)] bg-surface px-1.5 py-0.5 text-[10px]" title={String(record.ecosystem || "unknown")}>{String(record.ecosystem || "unknown")}</span></td><td className="hidden px-2 py-2 text-accent lg:table-cell"><span className="line-clamp-2 break-words" title={repositoryLabel}>{repositoryLabel}</span></td><td className="hidden px-2 py-2 lg:table-cell"><PublicationBadge record={record} /></td><td className="px-2 py-2 font-bold tabular-nums"><span className="block truncate" title={String(record.latest_version || "Not recorded")}>{String(record.latest_version || "Not recorded")}</span></td><td className="hidden min-w-0 !overflow-visible px-2 py-2 tabular-nums md:table-cell"><PackageDependenciesCell record={record} /></td><td className="hidden truncate px-2 py-2 font-semibold tabular-nums text-accent xl:table-cell">{compactNumber(Number(record.dependent_count || 0))}</td><td className="hidden truncate px-2 py-2 text-success xl:table-cell" title={String(record.license_expression || "Not observed")}>{String(record.license_expression || "Not observed")}</td><td className="px-2 py-2 text-right"><RecordLink route={String(record.route)} onNavigate={onNavigate}><ChevronRight className="ml-auto h-4 w-4 text-accent" /></RecordLink></td></tr>; })}</tbody>
       </table>
     </div>

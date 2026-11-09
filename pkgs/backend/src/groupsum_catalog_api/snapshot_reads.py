@@ -11,6 +11,7 @@ from typing import Any
 from tigrbl import JSONResponse, Response
 
 from .projections.read_models import ALIASES, VERSION, project, valid_read_models
+from .projections.repository_star_history import attach_star_history
 from .tables.catalog_snapshot import CatalogSnapshot
 from .tables.catalog_snapshot_source import CatalogSnapshotSource
 
@@ -54,7 +55,7 @@ def read_bundle(session, snapshot):
     return None
 
 
-def public_projection(session, alias, params, request_headers=None):
+async def public_projection(session, alias, params, request_headers=None):
     """None means legacy live projection; explicit pins must never silently use live rows."""
     if alias not in ALIASES:
         if params.get("snapshot_id") and alias in {
@@ -118,6 +119,8 @@ def public_projection(session, alias, params, request_headers=None):
         result = project(bundle, alias, params)
         if set(result) == {"detail"}:
             return JSONResponse(result, status_code=404, headers={"Cache-Control": "no-store"})
+        if alias == "catalog_repositories" and params.get("star_history") == "1":
+            result = await attach_star_history(session, snapshot, result)
         result = {**result, "snapshot_id": snapshot.id, "projection_version": VERSION}
         content = json.dumps(
             result, sort_keys=True, separators=(",", ":"), ensure_ascii=False, default=str

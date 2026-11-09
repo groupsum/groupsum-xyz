@@ -107,7 +107,14 @@ def _coerce_row(table: type, row: dict[str, Any]) -> dict[str, Any]:
             and not isinstance(raw, datetime)
         ):
             parsed = datetime.fromisoformat(str(raw).replace("Z", "+00:00"))
-            value[name] = parsed if parsed.tzinfo else parsed.replace(tzinfo=UTC)
+            parsed = parsed if parsed.tzinfo else parsed.replace(tzinfo=UTC)
+            # DuckDB's TIMESTAMP has no zone. Bind UTC wall time rather than
+            # letting the connection's local zone coerce an aware datetime.
+            value[name] = (
+                parsed.astimezone(UTC).replace(tzinfo=None)
+                if table is MetricObservation
+                else parsed
+            )
     return value
 
 
@@ -117,11 +124,19 @@ async def _persist_batch(
     records: list[dict[str, Any]],
     *,
     append_only: bool,
-) -> dict[str, Any]:
+) -> dict[str, Any] | JSONResponse:
     primary_keys = [column.name for column in table.__table__.primary_key.columns]
     if len(primary_keys) != 1:
         raise ValueError(f"{table.__name__} must have one primary key")
     primary_key = primary_keys[0]
+    sealed_metrics = False
+    if table is MetricObservation:
+        catalog, release_catalog = CatalogSnapshot.acquire(op_alias="read")
+        try:
+            snapshot = await _maybe_await(catalog.get(CatalogSnapshot, snapshot_id))
+            sealed_metrics = snapshot is not None and snapshot.status == "complete"
+        finally:
+            release_catalog()
     created = existing = 0
     session, release = table.acquire(op_alias="create")
     try:
@@ -134,6 +149,11 @@ async def _persist_batch(
                 existing += 1
                 continue
             if current is None:
+                if sealed_metrics:
+                    await _maybe_await(session.rollback())
+                    return JSONResponse(
+                        {"detail": "Snapshot metrics are finalized"}, status_code=409
+                    )
                 session.add(table(**row))
                 created += 1
             else:
@@ -289,9 +309,7 @@ def _internal_paths() -> tuple[PathSpec, ...]:
                     PathSpec(
                         path=binding.path,
                         kind="resource",
-                        tables=(
-                            _table_spec(table, replace(operation, bindings=(binding,))),
-                        ),
+                        tables=(_table_spec(table, replace(operation, bindings=(binding,))),),
                     )
                 )
     return tuple(paths)

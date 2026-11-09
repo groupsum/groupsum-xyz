@@ -88,7 +88,7 @@ def _bind_get(
         scoped["payload"] = params
         scoped["query_params"] = params
         scoped["path_params"] = params
-        result = public_projection(scoped["db"], alias, params, binding_headers(ctx))
+        result = await public_projection(scoped["db"], alias, params, binding_headers(ctx))
         if result is None:
             result = operation(cls, _operation_context(scoped, fixed or {}))
         if inspect.isawaitable(result):
@@ -348,7 +348,6 @@ for path, alias, table, target, operation in (
     ),
 ):
     _bind_get(path, table=table, alias=alias, target=target, operation=operation)
-
 
 
 class PublicApiRouterSpec(defineRouterSpec(name="public-api", paths=public_paths())):

@@ -52,14 +52,15 @@ def fixture_models(name="original"):
     return build_read_models(repos, packages, [], [])
 
 
-def seed(session, identifier, models, current=True, complete=True):
+def seed(session, identifier, models, current=True, complete=True, at=None):
     content = json.dumps({"_public_read_model": models}, sort_keys=True).encode()
     digest = hashlib.sha256(content).hexdigest()
-    now = datetime.now(UTC)
+    now = at or datetime.now(UTC)
     session.add(
         CatalogSnapshot(
             id=identifier,
             collected_at=now,
+            completed_at=now if complete else None,
             status="complete" if complete else "pending",
             source_digest=digest,
             is_current=current,
@@ -97,7 +98,8 @@ def test_read_models_remove_duplicate_inventories_and_preserve_collection_totals
     assert project(models, "catalog_packages", {})["count"] == 1
 
 
-def test_snapshot_cache_does_not_read_mutated_live_rows(tmp_path):
+@pytest.mark.anyio
+async def test_snapshot_cache_does_not_read_mutated_live_rows(tmp_path):
     engine = create_engine(f"sqlite:///{tmp_path / 'cache.sqlite'}")
     for table in (CatalogSnapshot, CatalogSnapshotSource, Repository):
         table.__table__.create(engine)
@@ -106,7 +108,7 @@ def test_snapshot_cache_does_not_read_mutated_live_rows(tmp_path):
     with Session(engine) as session:
         seed(session, "snapshot:one", fixture_models())
         args = {"route_key": "actual-route", "snapshot_id": "snapshot:one"}
-        first = public_projection(session, "catalog_package", args)
+        first = await public_projection(session, "catalog_package", args)
         session.add(
             Repository(
                 id="new-live-row",
@@ -117,24 +119,32 @@ def test_snapshot_cache_does_not_read_mutated_live_rows(tmp_path):
             )
         )
         session.commit()
-        second = public_projection(session, "catalog_package", args)
+        second = await public_projection(session, "catalog_package", args)
         assert first.body == second.body
         assert second.headers.get("x-catalog-cache") == "HIT"
         assert json.loads(second.body)["item"]["name"] == "original"
         etag = second.headers.get("etag")
-        conditional = public_projection(session, "catalog_package", args, {"if-none-match": etag})
+        conditional = await public_projection(
+            session, "catalog_package", args, {"if-none-match": etag}
+        )
         assert conditional.status_code == 304 and conditional.body == b""
         session.execute(update(CatalogSnapshot).values(is_current=False))
         session.commit()
         seed(session, "snapshot:two", fixture_models("new"))
         assert (
             json.loads(
-                public_projection(session, "catalog_package", {"route_key": "actual-route"}).body
+                (
+                    await public_projection(
+                        session, "catalog_package", {"route_key": "actual-route"}
+                    )
+                ).body
             )["item"]["name"]
             == "new"
         )
         assert (
-            json.loads(public_projection(session, "catalog_package", args).body)["item"]["name"]
+            json.loads((await public_projection(session, "catalog_package", args)).body)["item"][
+                "name"
+            ]
             == "original"
         )
 
@@ -174,7 +184,8 @@ async def test_actual_http_snapshot_pinning_headers_304_and_legacy_fallback(tmp_
         assert (await client.get(path + "&q=unrelated")).headers["etag"] == first.headers["etag"]
 
 
-def test_legacy_snapshot_pins_fail_closed_and_corrupt_bundles_are_not_cached(tmp_path):
+@pytest.mark.anyio
+async def test_legacy_snapshot_pins_fail_closed_and_corrupt_bundles_are_not_cached(tmp_path):
     engine = create_engine(f"sqlite:///{tmp_path / 'legacy.sqlite'}")
     for table in (CatalogSnapshot, CatalogSnapshotSource):
         table.__table__.create(engine)
@@ -183,8 +194,8 @@ def test_legacy_snapshot_pins_fail_closed_and_corrupt_bundles_are_not_cached(tmp
         seed(session, "legacy", fixture_models())
         session.execute(update(CatalogSnapshot).values(completeness={}))
         session.commit()
-        assert public_projection(session, "catalog_packages", {}) is None
-        pinned = public_projection(session, "catalog_packages", {"snapshot_id": "legacy"})
+        assert await public_projection(session, "catalog_packages", {}) is None
+        pinned = await public_projection(session, "catalog_packages", {"snapshot_id": "legacy"})
         assert pinned.status_code == 409 and pinned.headers.get("cache-control") == "no-store"
         session.execute(
             update(CatalogSnapshot).values(completeness={"public_projection_version": "1"})
@@ -196,8 +207,79 @@ def test_legacy_snapshot_pins_fail_closed_and_corrupt_bundles_are_not_cached(tmp
         )
         session.commit()
         with pytest.raises(ValueError, match="chunk"):
-            public_projection(session, "catalog_packages", {"snapshot_id": "legacy"})
+            await public_projection(session, "catalog_packages", {"snapshot_id": "legacy"})
         assert not _bundles
+
+
+@pytest.mark.anyio
+async def test_pinned_repository_page_reads_only_finalized_star_history(tmp_path, monkeypatch):
+    monkeypatch.setenv("GROUPSUM_CATALOG_INTERNAL_TOKEN", "test-token")
+    _responses.clear()
+    database = tmp_path / "catalog.sqlite"
+    app = build_app(database, tmp_path / "metrics.duckdb")
+    headers = {"Authorization": "Bearer test-token"}
+
+    def measurement(snapshot, day, value):
+        return {
+            "measurement_id": f"{snapshot}:stars",
+            "snapshot_id": snapshot,
+            "subject_type": "source.repository",
+            "subject_id": "r",
+            "metric_key": "stars",
+            "numeric_value": value,
+            "unit": "count",
+            "observed_at": f"2026-11-{day:02}T00:00:00Z",
+        }
+
+    async with httpx.AsyncClient(
+        transport=httpx.ASGITransport(app=app), base_url="http://test"
+    ) as client:
+
+        async def publish(row):
+            return await client.post(
+                "/internal/v1/catalog/metrics",
+                headers=headers,
+                json={
+                    "snapshot_id": row["snapshot_id"],
+                    "records": [row],
+                },
+            )
+
+        rows = [
+            measurement("old", 1, 0),
+            measurement("selected", 2, 3),
+            measurement("newer", 2, 8),
+            measurement("pending", 1, 9),
+        ]
+        for row in rows:
+            response = await publish(row)
+            assert response.status_code == 200, response.text
+        with Session(create_engine(f"sqlite:///{database}")) as session:
+            for index, row in enumerate(rows, start=1):
+                identifier = row["snapshot_id"]
+                seed(
+                    session,
+                    identifier,
+                    fixture_models(identifier),
+                    current=identifier == "newer",
+                    complete=identifier != "pending",
+                    at=datetime(2026, 11, index, tzinfo=UTC),
+                )
+
+        plain = await client.get("/api/v1/catalog/repositories?snapshot_id=selected")
+        assert plain.json()["records"][0]["history"]["stars"] == []
+        path = "/api/v1/catalog/repositories?snapshot_id=selected&star_history=1"
+        enriched = await client.get(path)
+        assert enriched.status_code == 200, enriched.text
+        assert enriched.headers["x-catalog-snapshot"] == "selected"
+        assert enriched.json()["records"][0]["history"]["stars"] == [
+            {"observed_at": "2026-11-01T00:00:00+00:00", "value": 0.0},
+            {"observed_at": "2026-11-02T00:00:00+00:00", "value": 3.0},
+        ]
+        warm = await client.get(path, headers={"If-None-Match": enriched.headers["etag"]})
+        assert warm.status_code == 304 and warm.headers["x-catalog-cache"] == "HIT"
+        assert (await publish(rows[1])).status_code == 200
+        assert (await publish({**rows[1], "measurement_id": "late"})).status_code == 409
 
 
 @pytest.mark.anyio

@@ -4,6 +4,8 @@ import math
 from collections import Counter
 from typing import Any
 
+from .catalog_column_sorts import COLUMN_SORTS
+
 
 def payload(ctx: Any) -> dict[str, Any]:
     values = dict(ctx.get("payload", {}) or {}) if hasattr(ctx, "get") else dict(ctx.payload)
@@ -276,6 +278,19 @@ def _filter(values: list[dict], params: Any) -> list[dict]:
                 str(item.get("id") or ""),
             )
         )
+    elif sort.removesuffix("_asc").removesuffix("_desc") in COLUMN_SORTS:
+        key = sort.removesuffix("_asc").removesuffix("_desc")
+        filtered.sort(
+            key=lambda item: (str(item.get("name") or "").casefold(), str(item.get("id") or ""))
+        )
+        observed = [(item, COLUMN_SORTS[key](item)) for item in filtered]
+        present = [(item, value) for item, value in observed if value is not None]
+        present.sort(
+            key=lambda pair: pair[1], reverse=sort.endswith("_desc") or not sort.endswith("_asc")
+        )
+        filtered = [item for item, _ in present] + [
+            item for item, value in observed if value is None
+        ]
     else:
         filtered.sort(key=lambda item: str(item.get("name") or item.get("title") or "").casefold())
     return filtered

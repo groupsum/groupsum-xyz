@@ -11,5 +11,6 @@ export function useCatalogCollection(dataset: CatalogDataset, query: CatalogQuer
     queryFn: ({ signal }) => listCatalog(dataset, query, signal),
     placeholderData: keepPreviousData,
     initialData: initial,
+    initialDataUpdatedAt: dataset === "repositories" ? 0 : undefined,
   });
 }

@@ -95,6 +95,7 @@ function routeRecord(dataset: CatalogDataset, record: CatalogRecord): CatalogRec
 
 export async function listCatalog(dataset: CatalogDataset, query: CatalogQuery, signal?: AbortSignal): Promise<CatalogCollection> {
   const params = new URLSearchParams();
+  if (dataset === "repositories") params.set("star_history", "1");
   Object.entries(query).forEach(([key, value]) => {
     if (value !== undefined && value !== "") params.set(key, String(value));
   });
