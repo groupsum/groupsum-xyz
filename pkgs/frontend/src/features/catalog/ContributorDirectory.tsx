@@ -6,6 +6,7 @@ import { CatalogLink } from "./CatalogLink";
 import { CatalogPageMetadata } from "./CatalogPageMetadata";
 import { useCatalogVersion } from "../../api/catalog-version";
 import { ContributorTypeBadge, contributorTypeLabel } from "./ContributorTypeBadge";
+import { ContributorActivityDate } from "./ContributorActivityDate";
 
 const columns = [
   ["name", "Contributor", "py-2 text-left"],
@@ -53,7 +54,7 @@ export function ContributorDirectory() {
       <p>Ranked by source-reported contributions across catalog repositories.</p>
       <p>Ties share a rank, and search preserves rank within the selected group.</p>
     </div>}
-    <p className="type-body-sm text-ink-muted">Last updated: {version.collected_at ? <time dateTime={version.collected_at.replace(" ", "T")}>{version.collected_at.slice(0, 10)} UTC</time> : "Unavailable"}. Deltas compare the latest 30 days with the preceding 30 days: attributed commits and repositories with attributed commits.</p>
+    <p className="type-body-sm text-ink-muted">Last updated: <ContributorActivityDate value={version.collected_at} fallback="Unavailable" />. Deltas compare the latest 30 days with the preceding 30 days: attributed commits and repositories with attributed commits.</p>
     <div className="flex flex-wrap gap-2"><label className="type-body-sm min-w-0 flex-[1_1_15rem]">Search contributors<input type="search" value={query.q} onChange={(event) => change("q", event.target.value)} className="block min-h-9 w-full border border-[var(--color-border-soft)] bg-surface px-2" /></label><label className="type-body-sm">{leaderboard ? "Rank group" : "Account type"}<select value={query.account_type} onChange={(event) => change("account_type", event.target.value)} className="block min-h-9 border border-[var(--color-border-soft)] bg-surface px-2">{leaderboard ? <><option value="User">Individuals</option><option value="Bot">Automation</option></> : <><option value="">All accounts</option>{["User", "Bot", "Anonymous"].map((type) => <option key={type} value={type}>{contributorTypeLabel(type)}</option>)}</>}</select></label>{!leaderboard && <label className="type-body-sm">Sort<select value={query.sort} onChange={(event) => change("sort", event.target.value)} className="block min-h-9 border border-[var(--color-border-soft)] bg-surface px-2">{columns.flatMap(([key, label]) => ["asc", "desc"].map((direction) => <option key={key + direction} value={key + "_" + direction}>{label} ({direction === "asc" ? "ascending" : "descending"})</option>))}</select></label>}</div>
     {collection.isPending && <p role="status">Loading contributors…</p>}{collection.isError && <p role="alert">Directory could not be loaded. <button onClick={() => collection.refetch()}>Retry</button></p>}
     {collection.data && <><p role="status" className="type-body-sm text-ink-muted">{collection.data.count} contributors · Page {collection.data.page} of {collection.data.page_count}{collection.isFetching ? " · Updating…" : ""}</p><table className="type-record-table w-full table-fixed text-left [overflow-wrap:anywhere]" aria-label={leaderboard ? "Contributor leaderboard" : "Contributor directory"}><thead className="type-ui-label bg-canvas text-ink-muted"><tr>{leaderboard && <th scope="col" className="w-10 text-center sm:w-16">Rank</th>}{columns.map(([key, label, className]) => {

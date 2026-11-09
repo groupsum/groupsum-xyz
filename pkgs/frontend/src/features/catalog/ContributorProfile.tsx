@@ -5,6 +5,7 @@ import { CatalogLink } from "./CatalogLink";
 import { CatalogPageMetadata } from "./CatalogPageMetadata";
 import { useCatalogVersion } from "../../api/catalog-version";
 import { ContributorTypeBadge } from "./ContributorTypeBadge";
+import { ContributorActivityDate } from "./ContributorActivityDate";
 import { ContributorAchievements, ContributorCommitSparkline, ContributorHeatstrip, ContributorTimeline, useContributorActivity, type ActivitySelection } from "./ContributorActivity";
 
 export function ContributorProfile({ provider, login }: { provider: string; login: string; onNavigate?: (path: string) => void }) {
@@ -47,7 +48,7 @@ export function ContributorProfile({ provider, login }: { provider: string; logi
           </div>
         </div>
         {showActivity && activity.data && <ContributorAchievements model={activity.data} />}
-        <p className="type-control text-right text-ink-muted">Last updated {version.collected_at || model.data.item.observed_at ? `${String(version.collected_at || model.data.item.observed_at).slice(0, 10)} UTC` : "—"}</p>
+        <p className="type-control text-right text-ink-muted">Last updated <ContributorActivityDate value={version.collected_at || model.data.item.observed_at} /></p>
       </header>
       <h2 id="contributor-repositories" className="type-display-sm scroll-mt-24">Repositories <span className="type-control text-ink-muted">({repositories.length.toLocaleString()})</span></h2>
       {!!weeks.length && <p className="type-body-sm text-ink-muted">One block per UTC week. Color intensity shows commit volume, muted blocks mean zero, and dotted outlines mark incomplete coverage. Select a week for details.</p>}
