@@ -30,6 +30,7 @@ export default defineConfig({
           if (id.includes("node_modules/lucide-react")) return "icons";
           if (id.includes("/src/mdwrk/")) return "mdwrk-runtime";
           if (id.includes("/src/features/catalog/SsotEntityDetail")) return "ssot-detail";
+          if (/\/src\/features\/catalog\/Repository(Detail|ImplementationPanels|SourceObservations)/.test(id)) return "repository-detail";
           if (/\/src\/features\/catalog\/RepositoryPackages(Inspector|Panel)/.test(id)) return "package-inspector";
           if (/\/src\/features\/catalog\/(PackageRelationships|PackageReleaseHistory|ActivityInspector|InspectorPopover)/.test(id)) return "catalog-inspectors";
           if (/\/src\/features\/catalog\/Contributor(Profile|Directory|TypeBadge|Activity)/.test(id)) return "contributor-pages";

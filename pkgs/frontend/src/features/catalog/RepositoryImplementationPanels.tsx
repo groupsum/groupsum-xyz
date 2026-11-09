@@ -1,7 +1,8 @@
-import React from "react";
-import { ArrowRight, BadgeCheck, Box, Braces, Code2, Package } from "lucide-react";
+import { Box, Braces, Code2 } from "lucide-react";
+import { CatalogLink } from "./CatalogLink";
 import { CatalogPill } from "./CatalogVisuals";
 import { humanLabel, valueRecords } from "./CatalogRecordShared";
+import { publicationLabel } from "./package-publication";
 
 const languageColors: Record<string, string> = {
   Python: "#3572A5",
@@ -29,22 +30,26 @@ export function RepositoryLanguagePanel({ languagesValue, technologiesValue }: {
   if (!languages.length && !technologies.length) return null;
   const total = languages.reduce((sum, item) => sum + item.bytes, 0);
   const normalized = languages.map((item) => ({ ...item, percentage: total ? item.bytes * 100 / total : item.percentage }));
-  return <section className="space-y-4 rounded-[4px] border border-[var(--color-border-soft)] bg-surface-raised p-4 sm:p-5" aria-labelledby="repository-languages-title">
+  return <section className="space-y-4 " aria-labelledby="repository-languages-title">
     {languages.length > 0 && <div className="space-y-3"><div className="flex flex-wrap items-end justify-between gap-2"><h2 id="repository-languages-title" className="flex min-w-0 items-start gap-2 font-serif text-xl font-bold text-ink [overflow-wrap:anywhere]"><Code2 className="h-4.5 w-4.5 shrink-0 text-accent" />Programming languages</h2><span className="text-[9px] font-mono text-ink-muted">{(total / 1024).toLocaleString(undefined, { maximumFractionDigits: 1 })} KB analyzed</span></div><div className="flex h-2 overflow-hidden rounded-[2px] bg-[var(--color-surface)]" aria-label="Programming language proportions">{normalized.map((item) => <span key={item.name} style={{ width: `${Math.max(item.percentage, 0.15)}%`, backgroundColor: languageColors[item.name] || "#6B7280" }} title={`${item.name}: ${item.percentage.toFixed(1)}%`} />)}</div><ul className="flex flex-wrap gap-x-4 gap-y-2">{normalized.map((item) => <li key={item.name} className="inline-flex items-center gap-1.5 type-caption text-ink-muted"><span className="h-2 w-2 rounded-full" style={{ backgroundColor: languageColors[item.name] || "#6B7280" }} /><strong className="font-medium text-ink">{item.name}</strong>{item.percentage.toFixed(item.percentage >= 10 ? 1 : 2)}%</li>)}</ul></div>}
     {technologies.length > 0 && <div className={`${languages.length ? "border-t border-[var(--color-border-soft)] pt-4" : ""} space-y-2.5`}><h3 className="flex items-center gap-2 text-[10px] font-mono font-bold uppercase tracking-wide text-ink"><Braces className="h-3.5 w-3.5 text-signal" />Categorical technologies <span className="font-normal text-ink-muted">separate taxonomy</span></h3><ul className="flex flex-wrap gap-2">{technologies.map((technology) => <li key={technology}><CatalogPill Icon={Box}>{technology}</CatalogPill></li>)}</ul></div>}
   </section>;
 }
 
-export function ContainedPackageList({ packagesValue, onNavigate }: { packagesValue: unknown; onNavigate: (path: string) => void }) {
+export function ContainedPackageList({ packagesValue }: { packagesValue: unknown }) {
   const packages = valueRecords(packagesValue);
-  if (!packages.length) return <p className="text-sm text-ink-muted">No package manifests were observed in this repository.</p>;
-  return <ul className="grid gap-2.5">{packages.map((pkg) => {
-    const published = pkg.published || pkg.publication_status === "published";
-    const route = String(pkg.route || "");
-    return <li key={String(pkg.id)} className="rounded-[4px] border border-[var(--color-border-soft)] bg-[var(--color-surface-raised)] px-3 py-3 sm:px-4">
-      <div className="flex flex-wrap items-start justify-between gap-3"><div className="flex min-w-0 flex-[1_1_24rem] items-start gap-2.5"><Package className="mt-0.5 h-4 w-4 shrink-0 text-signal" /><div className="min-w-0"><div className="flex flex-wrap items-center gap-2"><strong className="break-all text-xs text-ink">{String(pkg.name)}</strong><span className="rounded-[3px] border border-[var(--color-border-soft)] bg-surface-raised px-1.5 py-0.5 text-[9px] font-mono text-ink-muted">{String(pkg.ecosystem || "package")}</span></div><p className="mt-1 break-all type-caption text-ink-muted">Manifest: <span className="text-ink">{String(pkg.manifest_path || "Not recorded")}</span></p></div></div><CatalogPill tone={published ? "signal" : "neutral"} Icon={published ? BadgeCheck : Box}>{published ? "Published" : publicationLabel(pkg.publication_status || pkg.package_kind || "Candidate")}</CatalogPill></div>
-      <div className="mt-3 flex flex-wrap items-end justify-between gap-3 border-t border-[var(--color-border-soft)] pt-2.5"><dl className="flex flex-wrap gap-x-6 gap-y-2 type-ui-label text-ink-muted"><div><dt>Version</dt><dd className="mt-0.5 text-[11px] font-semibold normal-case text-ink">{String(pkg.latest_version || "Not recorded")}</dd></div><div><dt>Dependencies</dt><dd className="mt-0.5 text-[11px] font-semibold normal-case text-ink">{Number(pkg.dependency_count || 0).toLocaleString()}</dd></div><div><dt>Releases</dt><dd className="mt-0.5 text-[11px] font-semibold normal-case text-ink">{Number(pkg.release_count || 0).toLocaleString()}</dd></div><div><dt>License</dt><dd className="mt-0.5 text-[11px] font-semibold normal-case text-ink">{pkg.license_url ? <a href={String(pkg.license_url)} target="_blank" rel="noreferrer" className="text-accent hover:underline">{String(pkg.license_expression || "Observed license")}</a> : String(pkg.license_expression || "Not observed")}{Number(pkg.notice_count || 0) > 0 ? ` · ${Number(pkg.notice_count).toLocaleString()} notice${Number(pkg.notice_count) === 1 ? "" : "s"}` : ""}</dd></div></dl>{route && <a href={route} onClick={(event) => { event.preventDefault(); onNavigate(route); }} className="inline-flex min-h-9 items-center gap-1 text-[10px] font-mono font-semibold text-accent hover:underline">Inspect package <ArrowRight className="h-3.5 w-3.5" /></a>}</div>
-    </li>;
-  })}</ul>;
+  if (!packages.length) return <p className="type-body-sm text-ink-muted">No package manifests were observed in this repository.</p>;
+  return <table className="w-full table-fixed text-left type-record-table">
+    <thead><tr className="text-ink-muted"><th scope="col" className="w-[39%] py-2">Package</th><th scope="col" className="w-[17%] py-2">Registry</th><th scope="col" className="w-[20%] py-2">Version</th><th scope="col" className="py-2">Publication</th></tr></thead>
+    <tbody className="divide-y divide-[var(--color-border-soft)]">{packages.map((pkg) => {
+      const published = pkg.published || pkg.publication_status === "published";
+      const route = String(pkg.route || "");
+      return <tr key={String(pkg.id)}>
+        <th scope="row" className="py-2 pr-2 font-semibold [overflow-wrap:anywhere]">{route ? <CatalogLink href={route} className="text-accent hover:underline">{String(pkg.name)}</CatalogLink> : String(pkg.name)}</th>
+        <td className="py-2 pr-2 [overflow-wrap:anywhere]">{String(pkg.ecosystem || "—")}</td>
+        <td className="py-2 pr-2 tabular-nums [overflow-wrap:anywhere]">{String(pkg.latest_version || "—")}</td>
+        <td className="py-2">{published ? <CatalogPill tone="signal" compact>Published</CatalogPill> : publicationLabel(pkg.publication_status || pkg.package_kind || "Candidate")}</td>
+      </tr>;
+    })}</tbody>
+  </table>;
 }
-import { publicationLabel } from "./package-publication";

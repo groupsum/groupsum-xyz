@@ -23,14 +23,16 @@ try {
       await noOverflow();
       if (width === 320) { await page.evaluate(() => { document.documentElement.style.fontSize = "200%"; }); await noOverflow(); await page.evaluate(() => { document.documentElement.style.fontSize = ""; }); }
       await page.getByRole("table", { name: "Contributor repositories" }).getByRole("link", { name: "fixture/multi-package" }).click();
-      const trigger = page.getByRole("button", { name: "Inspect Stars", exact: true });
+      const trigger = page.getByRole("button", { name: "Inspect Daily commits", exact: true });
+      const stars = page.getByRole("row", { name: /^Stars/ });
+      await stars.getByLabel("Exact observations for Stars").click();
+      assert.match(await stars.getByRole("list").textContent(), /5/);
       await trigger.click();
-      const activity = page.getByRole("dialog", { name: "Stars observed activity", exact: true });
+      const activity = page.getByRole("dialog", { name: "Daily commits observed activity", exact: true });
       await activity.getByRole("combobox", { name: "Range" }).selectOption("0");
-      await activity.getByRole("checkbox", { name: "Interval changes" }).check();
       await activity.getByText("Exact values", { exact: true }).click();
-      assert.ok((await activity.getByRole("table").textContent()).includes("-5"));
-      const slider = activity.getByRole("slider", { name: "Stars observation" });
+      assert.ok(await activity.getByRole("table").locator("tbody tr").count());
+      const slider = activity.getByRole("slider", { name: "Daily commits observation" });
       await slider.focus(); await page.keyboard.press("Home"); assert.equal(await slider.inputValue(), "0");
       const box = await activity.boundingBox(); assert.ok(box.x >= 0 && box.x + box.width <= width + 1);
       await page.keyboard.press("Escape"); await activity.waitFor({ state: "hidden" });

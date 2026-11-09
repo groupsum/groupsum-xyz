@@ -38,11 +38,11 @@ requireMarkers(
   "catalog collection routing",
 );
 requireMarkers(
-  ["ReleaseTimeline", "Package release statistics", "Repository release summary", "isCurrentPageLink"],
+  ["ReleaseTimeline", "Package release statistics", "GitHub releases", "Package-registry releases", "isCurrentPageLink"],
   "release and evidence UIX",
 );
 requireMarkers(
-  ["LegalContext", "license_url", "notice_count", "Its license belongs with the package"],
+  ["LegalContext", "No repository license observed", "Packages report their own licenses"],
   "ownership-aware legal UIX",
 );
 requireMarkers(

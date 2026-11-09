@@ -1,97 +1,11 @@
-import React, { lazy, Suspense, useEffect, useMemo, useState } from "react";
-import { CatalogLink } from "./CatalogLink";
+import { lazy, Suspense } from "react";
+import { Activity, BadgeCheck, CalendarDays, Code2, ExternalLink, FileCode2 } from "lucide-react";
+import { CatalogPill, FactPanel, MetricBand, metricIcons } from "./CatalogVisuals";
+import { DetailRows, DetailSection, formatDate, humanLabel, LegalContext, monthlyReleaseActivity, recordTitle, ReleaseTimeline, resourceIcon, valueRecord, valueRecords, valueStrings, type CatalogRecord } from "./CatalogRecordShared";
+import { LinkedResourceSections } from "./CatalogCollections";
+
 const PackageRelationships = lazy(() => import("./PackageRelationships"));
 const PackageReleaseHistory = lazy(() => import("./PackageReleaseHistory"));
-import type { RepositorySignals } from "../../api/catalog";
-import { Activity, ArrowLeft, ArrowRight, BadgeCheck, BookOpen, Boxes, Braces, CalendarDays, CircleDot, Code2, ExternalLink, FileCode2, GitBranch, Globe2, Package, Scale, ServerCog, ShieldCheck, Users } from "lucide-react";
-import { RepositorySignalStrip } from "./RepositorySignals";
-import { EntityOwnership } from "./EntityIdentity";
-import { CatalogPill, CollectionHeader, ContextRailCard, FactPanel, MemberRowCard, RecordIdentityCard, SurfaceCard, factIcons, MetricBand, metricIcons, type MetricItem } from "./CatalogVisuals";
-import { ExplorerFilterToolbar, TypeBadge, type ExplorerFilters } from "./CatalogExplorerUI";
-import { useCatalogCollection } from "../../hooks/useCatalogCollection";
-import type { CatalogViewRecord } from "../../types/catalog-view";
-
-import { DetailRows, DetailSection, formatDate, humanLabel, isCurrentPageLink, LegalContext, monthlyReleaseActivity, recordTitle, ReleaseTimeline, repositorySignals, resourceIcon, SsotGovernanceSection, valueRecord, valueRecords, valueStrings, type CatalogRecord } from "./CatalogRecordShared";
-import { LinkedResourceSections } from "./CatalogCollections";
-import { ContainedPackageList, RepositoryLanguagePanel } from "./RepositoryImplementationPanels";
-
-export function RepositoryDetail({ record, onNavigate }: { record: CatalogRecord; onNavigate: (path: string) => void }) {
-  const commit = valueRecord(record.latest_commit);
-  const release = valueRecord(record.latest_release);
-  const deployment = valueRecord(record.latest_deployment);
-  const packages = valueRecords(record.packages);
-  const githubReleases = valueRecords(record.github_releases);
-  const contributors = valueRecords(record.contributors).sort(
-    (left, right) => Number(right.contributions || 0) - Number(left.contributions || 0),
-  );
-  const packageReleasePoints = new Map<string, number>();
-  for (const pkg of packages) for (const point of valueRecords(pkg.release_activity)) {
-    const month = String(point.month || "");
-    if (month) packageReleasePoints.set(month, (packageReleasePoints.get(month) || 0) + Number(point.count || 0));
-  }
-  for (const point of monthlyReleaseActivity(githubReleases)) packageReleasePoints.set(point.month, (packageReleasePoints.get(point.month) || 0) + point.count);
-  const repositoryReleaseTimeline = [...packageReleasePoints.entries()].sort(([left], [right]) => left.localeCompare(right)).slice(-24).map(([month, count]) => ({ month, count }));
-  const packageReleaseCount = packages.reduce((total, pkg) => total + Number(pkg.release_count || 0), 0);
-  return (
-    <>
-      <DetailSection title="Repository overview">
-        <FactPanel items={[
-          { label: "Repository owner", icon: factIcons.owner, value: String(record.owner || "Not recorded") },
-          { label: "Visibility", icon: factIcons.status, value: humanLabel(String(record.visibility || "not recorded")) },
-          { label: "Default branch", icon: factIcons.branch, value: String(record.default_branch || "Not recorded") },
-          { label: "License", icon: Scale, value: String(record.license || "Not declared") },
-          { label: "Created", icon: CalendarDays, value: formatDate(record.created_at as string | undefined) },
-          { label: "Last pushed", icon: Activity, value: formatDate(record.pushed_at as string | undefined) },
-        ]} />
-        <LegalContext record={record} />
-      </DetailSection>
-      <DetailSection title="Observed activity" intro="Repository-owned counts and persisted activity. A single observation is never presented as a trend.">
-        <RepositorySignalStrip signals={repositorySignals(record)} />
-        <MetricBand label="Additional repository metrics" items={Object.entries(valueRecord(record.metrics)).filter(([key]) => !["stars", "forks", "watchers", "contributors", "commits", "relationships"].includes(key)).map(([key, value]) => ({ label: humanLabel(key), value: Number(value || 0), icon: metricIcons[key] }))} />
-      </DetailSection>
-      <DetailSection title="Contributors" intro="Specific contributor identities and repository-scoped contribution totals observed from GitHub's contributors API.">
-        {contributors.length > 0 ? <ol className="grid gap-3 sm:grid-cols-2 xl:grid-cols-3" aria-label={`Contributors to ${recordTitle(record)}`}>
-          {contributors.map((contributor, index) => {
-            const login = String(contributor.login || contributor.name || `Contributor ${index + 1}`);
-            const displayName = String(contributor.name || contributor.login || login);
-            const href = String(contributor.url || "");
-            return <li key={String(contributor.id || contributor.login || contributor.name || index)} className="flex min-w-0 items-center gap-3 rounded-[var(--radius-md)] border border-[var(--color-border-soft)] bg-[var(--color-surface-raised)] p-3">
-              <span className="grid h-9 w-9 shrink-0 place-items-center rounded-full border border-[var(--color-border-soft)] bg-canvas text-ink-muted"><Users className="h-4 w-4" /></span>
-              <div className="min-w-0 flex-1"><CatalogLink href={String(contributor.profile_route || `/contributors/github/${encodeURIComponent(login)}`)} className="block truncate text-left text-sm font-semibold text-accent hover:underline" title={displayName}>{displayName}</CatalogLink><p className="truncate type-caption text-ink-muted">{contributor.login ? `@${login}` : "Anonymous Git contributor"}</p><p className="mt-1 type-caption tabular-nums text-ink-muted">{Number(contributor.contributions || 0).toLocaleString()} contributions</p></div>
-              {href && <a href={href} target="_blank" rel="noreferrer" aria-label={`Open ${displayName}'s GitHub profile`} className="grid min-h-11 min-w-11 place-items-center text-accent hover:text-ink"><ExternalLink className="h-4 w-4" /></a>}
-            </li>;
-          })}
-        </ol> : <p className="text-sm text-ink-muted">No contributor identities were reported by the available GitHub observation.</p>}
-      </DetailSection>
-      <RepositoryLanguagePanel languagesValue={record.languages} technologiesValue={record.technologies} />
-      <DetailSection title="Release activity" intro="Repository analytics aggregate its GitHub releases and the registry releases owned by contained packages. Individual package histories remain on their package records.">
-        <MetricBand label="Repository release summary" items={[
-          { label: "Package releases", value: packageReleaseCount, icon: metricIcons.releases },
-          { label: "GitHub releases", value: githubReleases.length, icon: metricIcons.releases },
-          { label: "Packages", value: packages.length, icon: Package },
-          { label: "Published packages", value: packages.filter((pkg) => pkg.published).length, icon: BadgeCheck },
-        ]} />
-        <ReleaseTimeline points={repositoryReleaseTimeline} label="Monthly releases across this repository and its packages" />
-      </DetailSection>
-      {record.ssot_governance && Boolean(record.ssot_governance.governed) && <SsotGovernanceSection governance={record.ssot_governance} />}
-      <DetailSection title="Latest observed events">
-        <DetailRows rows={[
-          ["Commit", commit.message ? <span>{String(commit.message)}{commit.url && <> · <a href={String(commit.url)} target="_blank" rel="noreferrer" className="text-accent hover:underline">View commit</a></>}</span> : "No commit observed"],
-          ["Commit date", formatDate(commit.committed_at as string | undefined)],
-          ["Release", release.tag ? <span>{String(release.name || release.tag)}{release.url && <> · <a href={String(release.url)} target="_blank" rel="noreferrer" className="text-accent hover:underline">View release</a></>}</span> : "No GitHub release observed"],
-          ["Release date", formatDate(release.published_at as string | undefined)],
-          ["Deployment", deployment.environment ? `${String(deployment.environment)} · ${humanLabel(String(deployment.state || "state not recorded"))}` : "No deployment observed"],
-          ["Deployment update", deployment.updated_at ? formatDate(String(deployment.updated_at)) : null],
-          ["Deployment log", deployment.log_url ? <a href={String(deployment.log_url)} target="_blank" rel="noreferrer" className="text-accent hover:underline">View deployment log</a> : null],
-        ]} />
-      </DetailSection>
-      <DetailSection title="Contained packages" intro="Every package is a child resource owned by this repository. Its license belongs with the package rather than the repository-level legal summary.">
-        <ContainedPackageList packagesValue={packages} onNavigate={onNavigate} />
-      </DetailSection>
-      <LinkedResourceSections sections={record.linked_sections} onNavigate={onNavigate} />
-    </>
-  );
-}
 
 export function PackageDetail({ record, onNavigate }: { record: CatalogRecord; onNavigate: (path: string) => void }) {
   const releases = valueRecords(record.releases);
