@@ -3,7 +3,7 @@ import type { RecordCollectionPageModel } from "./catalog.generated";
 
 export * from "./catalog.generated";
 
-export type ContributorRecord = CatalogRecord & { name: string; provider: string; login?: string; route: string; account_type: string; repository_count: number; contributions: number; observed_at?: string; avatar_url?: string; url?: string };
+export type ContributorRecord = CatalogRecord & { name: string; provider: string; login?: string; route: string; account_type: string; repository_count: number; contributions: number; rank?: number; observed_at?: string; avatar_url?: string; url?: string };
 export type ContributorCollection = { kind: "contributor_collection"; count: number; page: number; page_count: number; account_types: string[]; records: ContributorRecord[] };
 export async function getContributors(query: Record<string, string | number>, signal?: AbortSignal): Promise<ContributorCollection> {
   const response = await catalogFetch(`/api/v1/contributors?${new URLSearchParams(Object.entries(query).map(([key, value]) => [key, String(value)]))}`, { signal });

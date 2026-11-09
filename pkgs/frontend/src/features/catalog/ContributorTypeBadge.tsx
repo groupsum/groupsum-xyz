@@ -1,6 +1,6 @@
 export function contributorTypeLabel(value: unknown) {
   const type = String(value || "").toLowerCase();
-  return type === "bot" ? "Bot" : type === "user" ? "Individual" : "Unlinked identity";
+  return type === "bot" ? "Bot" : type === "user" ? "Individual" : "Anonymous";
 }
 
 export function ContributorTypeBadge({ value }: { value: unknown }) {

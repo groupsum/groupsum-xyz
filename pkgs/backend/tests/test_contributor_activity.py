@@ -123,3 +123,36 @@ def test_contributor_headers_sort_before_pagination():
         page = project(model, "contributors", {"sort": sort, "page_size": "1"})
         assert page["records"][0]["id"] == first
     assert model["contributors"] == people
+
+
+def test_leaderboard_ranks_within_groups_before_search_and_pagination():
+    people = [
+        {
+            "id": name,
+            "name": name,
+            "account_type": kind,
+            "repository_count": 1,
+            "contributions": count,
+        }
+        for name, kind, count in [
+            ("Alpha", "User", 12),
+            ("Bravo", "User", 12),
+            ("Charlie", "User", 3),
+            ("Automation", "Bot", 200),
+            ("Unknown", "Anonymous", 250),
+        ]
+    ]
+    model = build_read_models([], [], [], people)
+
+    def leaderboard(**params):
+        return project(model, "contributors", {"sort": "leaderboard", **params})["records"]
+
+    assert [(row["id"], row["rank"]) for row in leaderboard()] == [
+        ("Alpha", 1),
+        ("Bravo", 1),
+        ("Charlie", 3),
+    ]
+    assert leaderboard(page_size="1", page="2")[0]["rank"] == 1
+    assert leaderboard(q="Charlie")[0]["rank"] == 3
+    assert leaderboard(account_type="Bot")[0]["rank"] == 1
+    assert all("rank" not in row for row in people)

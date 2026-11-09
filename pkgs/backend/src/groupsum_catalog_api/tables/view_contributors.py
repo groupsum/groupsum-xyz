@@ -40,15 +40,31 @@ def contributor_collection(table, ctx):
         if "frozen_contributors" in ctx
         else projected_contributors(table, ctx["db"])
     )
+    sort = str(params.get("sort") or "contributions")
+    types = sorted({row["account_type"] for row in values})
+    account_type = params.get("account_type")
+    if sort == "leaderboard":
+        account_type = "Bot" if account_type == "Bot" else "User"
+    if account_type:
+        values = [row for row in values if row["account_type"] == account_type]
+    if sort == "leaderboard":
+        ranked = []
+        for position, row in enumerate(
+            sorted(
+                values, key=lambda row: (-row["contributions"], row["name"].casefold(), row["id"])
+            ),
+            start=1,
+        ):
+            rank = position
+            if ranked and ranked[-1]["contributions"] == row["contributions"]:
+                rank = ranked[-1]["rank"]
+            ranked.append({**row, "rank": rank})
+        values = ranked
     search = str(params.get("q") or "").strip().casefold()
     if search:
         values = [
             row for row in values if search in f"{row['name']} {row.get('login') or ''}".casefold()
         ]
-    types = sorted({row["account_type"] for row in values})
-    if params.get("account_type"):
-        values = [row for row in values if row["account_type"] == params["account_type"]]
-    sort = str(params.get("sort") or "contributions")
     values = sorted(
         values,
         key=lambda row: (
@@ -56,7 +72,7 @@ def contributor_collection(table, ctx):
                 -row["repository_count"]
                 if sort == "repositories"
                 else -row["contributions"]
-                if sort == "contributions"
+                if sort in {"contributions", "leaderboard"}
                 else 0
             ),
             row["name"].casefold(),
@@ -75,7 +91,7 @@ def contributor_collection(table, ctx):
         def sort_value(row):
             if key == "type":
                 return {"bot": "bot", "user": "individual"}.get(
-                    str(row[field]).casefold(), "unlinked identity"
+                    str(row[field]).casefold(), "anonymous"
                 )
             return str(row[field]).casefold() if key == "name" else row[field]
 

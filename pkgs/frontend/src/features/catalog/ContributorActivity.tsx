@@ -14,6 +14,7 @@ type Activity = {
 };
 type Timeline = { page: number; page_count: number; records: { id: string; label: string; at: string; url: string }[] };
 const date = (value: string) => new Intl.DateTimeFormat("en-US", { month: "short", day: "numeric", timeZone: "UTC" }).format(new Date(value));
+const badge = "type-control inline-flex min-h-8 max-w-full flex-wrap items-center gap-x-2 rounded-full border border-[var(--color-border-muted)] px-3 py-1 text-signal [overflow-wrap:anywhere]";
 
 async function read<T>(path: string, params: Record<string, string>, snapshotId: string, signal: AbortSignal): Promise<T> {
   const response = await catalogFetch(`${path}?${new URLSearchParams(params)}`, { signal });
@@ -31,9 +32,14 @@ export function ContributorActivity({ provider, login, snapshotId }: { provider:
     <ActivityGrid model={activity.data} path={path} snapshotId={snapshotId} />
     {activity.data.achievements.length > 0 && <section aria-labelledby="milestones-heading" className="space-y-2 border-t border-[var(--color-border-soft)] pt-3">
       <h2 id="milestones-heading" className="type-display-sm">Milestones</h2>
-      <ul className="divide-y divide-[var(--color-border-soft)]">{activity.data.achievements.map((item) => <li key={item.id} className="type-body-sm flex flex-wrap items-baseline gap-x-3 gap-y-1 py-2">
-        <strong>{item.label}</strong>{item.at && <time dateTime={item.at}>{date(item.at)}</time>}<span className="text-ink-muted">{item.reason}</span>
-        {item.evidence.map(({ label, url }) => url.startsWith("/") ? <CatalogLink className="text-accent underline" key={url} href={url}>{label}</CatalogLink> : <a key={url} className="text-accent underline" href={url} target="_blank" rel="noreferrer">{label} ↗</a>)}
+      <ul className="flex flex-wrap gap-2">{activity.data.achievements.map((item) => <li key={item.id} className="min-w-0 max-w-full">
+        {item.id === "multi-repo" ? <a href="#contributor-repositories" className={badge + " hover:underline focus-visible:outline"}>{item.label}</a> : <>
+          <span className={badge}>{item.label}{item.at && <time className="text-ink-muted" dateTime={item.at}>{date(item.at)}</time>}</span>
+          <div className="type-body-sm flex flex-wrap gap-x-2 px-3 text-ink-muted [overflow-wrap:anywhere]">
+            <span>{item.reason}</span>
+            {item.evidence.map(({ label, url }) => url.startsWith("/") ? <CatalogLink className="text-accent underline" key={url} href={url}>{label}</CatalogLink> : <a key={url} className="text-accent underline" href={url} target="_blank" rel="noreferrer">{label} ↗</a>)}
+          </div>
+        </>}
       </li>)}</ul>
     </section>}
   </>;
@@ -80,7 +86,7 @@ function ActivityGrid({ model, path, snapshotId }: { model: Activity; path: stri
   const button = "min-h-9 rounded border border-[var(--color-border-soft)] px-2 text-accent focus-visible:outline disabled:opacity-50";
   return <section aria-labelledby="activity-heading" className="min-w-0 space-y-3 border-t border-[var(--color-border-soft)] pt-3">
     <h2 id="activity-heading" className="type-display-sm">Activity by repository</h2>
-    {!model.identity_linked ? <p className="type-body-sm">No linked account is available for commit attribution.</p> : !covered ? <p className="type-body-sm">No attributable commit history has been collected for this profile in this snapshot.</p> : <>
+    {!model.identity_linked ? <p className="type-body-sm">This profile is anonymous, so commits can’t be matched to a linked account.</p> : !weeks.length ? <p className="type-body-sm">This catalog snapshot doesn’t include commit history linked to this profile. The contribution totals below are reported separately by the source.</p> : !covered ? <p className="type-body-sm">This profile has no attributable commits or complete coverage in the observed window.</p> : <>
       <div className="flex flex-wrap items-center gap-3">
         <p className="type-body-sm"><strong>{model.commit_count.toLocaleString()} observed commits</strong> · {date(weeks[0])}–{date(model.through!)} UTC</p>
         <svg width="104" height="22" viewBox="0 0 104 22" aria-hidden="true" className="text-signal">

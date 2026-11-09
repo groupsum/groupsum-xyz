@@ -70,8 +70,13 @@ function apiSnapshot(url: string): unknown | null {
     const people = JSON.parse(fs.readFileSync(path.join(process.cwd(), "catalog/generated/site/contributors.json"), "utf8")) as Array<Record<string, unknown> & { route: string; repositories: unknown[]; account_type: string }>;
     if (pathname === "/contributors") {
       const key = (person: typeof people[number]) => String(person.name || "").toLowerCase();
-      const ordered = [...people].sort((a, b) => key(a) < key(b) ? -1 : key(a) > key(b) ? 1 : String(a.id).localeCompare(String(b.id), "en-US"));
-      return { static_path: pathname, kind: "contributor_collection", count: people.length, page: 1, page_count: Math.max(1, Math.ceil(people.length / 50)), account_types: [...new Set(people.map((person) => person.account_type))].sort(), records: ordered.slice(0, 50).map(({ repositories: _repos, ...person }) => person) };
+      const ordered = people.filter((person) => person.account_type === "User").sort((a, b) => Number(b.contributions ?? 0) - Number(a.contributions ?? 0)
+        || (key(a) < key(b) ? -1 : key(a) > key(b) ? 1 : String(a.id).localeCompare(String(b.id), "en-US")));
+      let rank = 0;
+      return { static_path: pathname, kind: "contributor_collection", count: ordered.length, page: 1, page_count: Math.max(1, Math.ceil(ordered.length / 50)), account_types: [...new Set(people.map((person) => person.account_type))].sort(), records: ordered.slice(0, 50).map(({ repositories: _repos, ...person }, index) => {
+        if (index === 0 || person.contributions !== ordered[index - 1].contributions) rank = index + 1;
+        return { ...person, rank };
+      }) };
     }
     const person = people.find((item) => item.route === pathname);
     if (!person) return null;
