@@ -26,16 +26,27 @@ export function ContributorProfile({ provider, login }: { provider: string; logi
     {model.isPending ? <p role="status">Loading contributor profile…</p> : model.isError ? <div role="alert"><h1 className="type-display-lg break-words [overflow-wrap:anywhere]">{String(model.error).includes("404") ? "Contributor not found" : "Contributor unavailable"}</h1><p className="type-body-sm">{String(model.error).includes("404") ? "This identity is not in the current catalog." : "The profile could not be loaded."}</p><button onClick={() => model.refetch()} className="type-control text-accent">Retry</button></div> : <>
       <CatalogPageMetadata record={{ ...model.data.item, route: String(model.data.item.route || `/contributors/${provider}/${encodeURIComponent(login)}`), title: `${model.data.item.name || login} contributor | GroupSum catalog`, description: `${model.data.item.account_type || "Public"} contributor observed across ${model.data.repositories.length} public catalog repositories.`, schemaFamily: "contributor-profile", profileUrl: model.data.item.url }} />
       <header className="min-w-0 space-y-3 border-b border-[var(--color-border-soft)] pb-3">
-        <div className="flex min-w-0 flex-wrap items-start gap-3">
-        {model.data.item.avatar_url && <img src={String(model.data.item.avatar_url)} alt="" width="48" height="48" className="h-12 w-12 shrink-0" />}
-        <div className="min-w-0 flex-1"><h1 className="type-display-lg [overflow-wrap:anywhere]">{String(model.data.item.name || login)}</h1><div className="type-body-sm flex flex-wrap items-center gap-2 text-ink-muted"><ContributorTypeBadge value={model.data.item.account_type} />{model.data.item.login && <span className="[overflow-wrap:anywhere]">@{model.data.item.login}</span>}</div></div>
-        {model.data.item.url && <a href={String(model.data.item.url)} target="_blank" rel="noreferrer" className="type-control text-accent">{provider === "github" ? "View GitHub profile" : "View public profile"} ↗</a>}
+        <div className="flex min-w-0 flex-wrap items-center gap-x-5 gap-y-2">
+          <div className="flex min-w-0 max-w-full items-start gap-3">
+            {model.data.item.avatar_url && <img src={String(model.data.item.avatar_url)} alt="" width="48" height="48" className="h-12 w-12 shrink-0" />}
+            <div className="min-w-0">
+              <h1 className="type-display-lg [overflow-wrap:anywhere]">{String(model.data.item.name || login)}</h1>
+              <div className="type-body-sm flex flex-wrap items-center gap-2 text-ink-muted">
+                <ContributorTypeBadge value={model.data.item.account_type} />
+                {model.data.item.login && <span className="[overflow-wrap:anywhere]">@{model.data.item.login}</span>}
+              </div>
+            </div>
+          </div>
+          <p className="flex max-w-full min-w-0 flex-col gap-1 [overflow-wrap:anywhere]">
+            <strong className="type-metric text-accent">{repositories.reduce((total, row) => total + row.contributions, 0).toLocaleString()}</strong>
+            <span className="type-ui-label text-ink-muted">Source-reported contributions</span>
+          </p>
+          {model.data.item.url && <a href={String(model.data.item.url)} target="_blank" rel="noreferrer" className="type-control text-accent sm:ml-auto sm:self-start">{provider === "github" ? "View GitHub profile" : "View public profile"} ↗</a>}
         </div>
         {showActivity && activity.data && <ContributorAchievements model={activity.data} />}
-        <div className="type-body-sm flex min-w-0 flex-wrap items-center gap-x-4 gap-y-1 text-ink-muted" aria-label="Catalog activity summary" role="group">
-          <span><strong className="text-ink">{repositories.reduce((total, row) => total + row.contributions, 0).toLocaleString()}</strong> source-reported contributions</span>
+        <div className="type-body-sm flex min-w-0 flex-wrap items-end gap-x-4 gap-y-1 text-ink-muted" aria-label="Catalog activity summary" role="group">
           {showActivity && (activity.isPending ? <span role="status">Loading activity…</span> : activity.isError ? <span role="alert">Activity could not be loaded. <button type="button" className="text-accent underline" onClick={() => activity.refetch()}>Retry</button></span> : <ContributorCommitSparkline model={activity.data} />)}
-          <span>Last updated {version.collected_at || model.data.item.observed_at ? `${String(version.collected_at || model.data.item.observed_at).slice(0, 10)} UTC` : "—"}</span>
+          <span className="type-control ml-auto text-right">Last updated {version.collected_at || model.data.item.observed_at ? `${String(version.collected_at || model.data.item.observed_at).slice(0, 10)} UTC` : "—"}</span>
         </div>
       </header>
       <h2 id="contributor-repositories" className="type-display-sm scroll-mt-24">Repositories <span className="type-control text-ink-muted">({repositories.length.toLocaleString()})</span></h2>
