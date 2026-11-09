@@ -1,4 +1,5 @@
 import { useQuery } from "@tanstack/react-query";
+import { TrendingDown, TrendingUp } from "lucide-react";
 import { getContributors, type ContributorCollection } from "../../api/catalog";
 import { useSearchParams } from "../../router";
 import { CatalogLink } from "./CatalogLink";
@@ -23,11 +24,12 @@ function Rank({ rank }: { rank?: number | null }) {
 }
 
 function Delta({ value, label }: { value?: number; label: string }) {
+  if (value === 0) return null;
   const signed = value == null ? "—" : value > 0 ? `+${value.toLocaleString()}` : value.toLocaleString();
   const title = value == null ? "Insufficient history for the 30-day comparison" : `${signed} ${label} vs. the preceding 30 days`;
-  const trend = value == null || value === 0 ? undefined : value > 0 ? "up" : "down";
-  return <span className={`type-control ${trend === "up" ? "text-success" : trend === "down" ? "text-danger" : "text-ink-muted"}`} title={title}>
-    <span aria-hidden="true">{trend === "up" ? "⬆️" : trend === "down" ? "⬇️" : ""}{signed}</span><span className="sr-only">{title}</span>
+  const Icon = value == null ? null : value > 0 ? TrendingUp : TrendingDown;
+  return <span className={`type-control ${value == null ? "text-ink-muted" : value > 0 ? "text-success" : "text-danger"}`} title={title}>
+    <span aria-hidden="true" className="inline-flex items-center gap-px">{Icon && <Icon className="h-3 w-3 shrink-0" />}{signed}</span><span className="sr-only">{title}</span>
   </span>;
 }
 
