@@ -30,18 +30,15 @@ export function ContributorProfile({ provider, login }: { provider: string; logi
       <CatalogPageMetadata record={{ ...model.data.item, route: String(model.data.item.route || `/contributors/${provider}/${encodeURIComponent(login)}`), title: `${model.data.item.name || login} contributor | GroupSum catalog`, description: `${model.data.item.account_type || "Public"} contributor observed across ${model.data.repositories.length} public catalog repositories.`, schemaFamily: "contributor-profile", profileUrl: model.data.item.url }} />
       <header className="min-w-0 space-y-3 border-b border-[var(--color-border-soft)] pb-3">
         <div className="grid min-w-0 gap-4 sm:grid-cols-[minmax(0,1fr)_minmax(0,15rem)]">
-          <div className="min-w-0 space-y-3">
-            <div className="flex min-w-0 items-start gap-3">
-              {model.data.item.avatar_url && <img src={String(model.data.item.avatar_url)} alt="" width="48" height="48" className="h-12 w-12 shrink-0" />}
-              <div className="min-w-0">
-                <h1 className="type-display-lg [overflow-wrap:anywhere]">{String(model.data.item.name || login)}</h1>
-                <div className="type-body-sm flex flex-wrap items-center gap-2 text-ink-muted">
-                  <ContributorTypeBadge value={model.data.item.account_type} />
-                  {model.data.item.login && <span className="[overflow-wrap:anywhere]">@{model.data.item.login}</span>}
-                </div>
+          <div className="flex min-w-0 items-start gap-3">
+            {model.data.item.avatar_url && <img src={String(model.data.item.avatar_url)} alt="" width="48" height="48" className="h-12 w-12 shrink-0" />}
+            <div className="min-w-0">
+              <h1 className="type-display-lg [overflow-wrap:anywhere]">{String(model.data.item.name || login)}</h1>
+              <div className="type-body-sm flex flex-wrap items-center gap-2 text-ink-muted">
+                <ContributorTypeBadge value={model.data.item.account_type} />
+                {model.data.item.login && <span className="[overflow-wrap:anywhere]">@{model.data.item.login}</span>}
               </div>
             </div>
-            {showActivity && activity.data && <ContributorAchievements model={activity.data} />}
           </div>
           <div className="flex w-full max-w-60 min-w-0 flex-col gap-1 [overflow-wrap:anywhere]" aria-label="Catalog activity summary" role="group">
             <strong className="type-metric text-accent">{repositories.reduce((total, row) => total + row.contributions, 0).toLocaleString()}</strong>
@@ -49,6 +46,7 @@ export function ContributorProfile({ provider, login }: { provider: string; logi
             {showActivity && (activity.isPending ? <span role="status" className="type-body-sm text-ink-muted">Loading activity…</span> : activity.isError ? <span role="alert" className="type-body-sm text-ink-muted">Activity could not be loaded. <button type="button" className="text-accent underline" onClick={() => activity.refetch()}>Retry</button></span> : <ContributorCommitSparkline model={activity.data} />)}
           </div>
         </div>
+        {showActivity && activity.data && <ContributorAchievements model={activity.data} />}
         <p className="type-control text-right text-ink-muted">Last updated {version.collected_at || model.data.item.observed_at ? `${String(version.collected_at || model.data.item.observed_at).slice(0, 10)} UTC` : "—"}</p>
       </header>
       <h2 id="contributor-repositories" className="type-display-sm scroll-mt-24">Repositories <span className="type-control text-ink-muted">({repositories.length.toLocaleString()})</span></h2>
