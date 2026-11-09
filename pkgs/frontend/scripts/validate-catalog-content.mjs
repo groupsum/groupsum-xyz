@@ -13,6 +13,7 @@ const visit = (directory) => {
 visit(frontend);
 const source = sourceFiles.map((file) => fs.readFileSync(file, "utf8")).join("\n");
 const collectionTables = fs.readFileSync(path.join(frontend, "features/catalog/CatalogCollectionTables.tsx"), "utf8");
+const typography = fs.readFileSync(path.join(frontend, "typography.css"), "utf8");
 
 const requireMarkers = (markers, concern) => {
   for (const marker of markers) {
@@ -57,7 +58,17 @@ if (!source.includes("cursor-default select-none")) throw new Error("catalog tag
 if (source.includes("function LegalSection") || source.includes('<DetailSection title="License and notices"')) throw new Error("legal data remains detached from its owner");
 if (source.includes("border-b border-r")) throw new Error("metric summaries draw unnecessary inner cell borders");
 if (/[ÃÂâ�]/u.test(source)) throw new Error("catalog frontend source contains mojibake");
-if ((collectionTables.match(/<table className="[^"]*text-xs"/g) || []).length !== 2) throw new Error("repository and package tables must use text-xs body typography");
+for (const table of ["catalog-repository-table", "catalog-package-table"]) {
+  const classes = [...collectionTables.matchAll(/<table className="([^"]+)"/g)]
+    .map(([, value]) => value.split(/\s+/))
+    .find((tokens) => tokens.includes(table));
+  if (!classes?.includes("type-record-table")) throw new Error(`${table} must use the shared type-record-table role`);
+}
+const tableTypography = typography.match(/(?:^|\n)\.type-record-table\s*\{([^}]+)\}/)?.[1] ?? "";
+if (!/\bfont-size:\s*var\(--type-body-sm-size\)\s*;/.test(tableTypography) ||
+    !/--type-body-sm-size:\s*0\.75rem\s*;/.test(typography)) {
+  throw new Error("type-record-table must use the compact 0.75rem body size token");
+}
 if ((collectionTables.match(/<thead className="[^"]*type-ui-label/g) || []).length !== 2) throw new Error("repository and package table headers must use the semantic UI label role");
 if (!collectionTables.includes("function HyphenBreakText") || !collectionTables.includes("<wbr />")) throw new Error("repository names lack explicit hyphen-aware wrapping");
 if (source.includes('aria-label="Ownership hierarchy" className="overflow-x-auto')) throw new Error("record breadcrumbs must wrap instead of scrolling");
