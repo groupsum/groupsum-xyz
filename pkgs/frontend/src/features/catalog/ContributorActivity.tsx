@@ -105,10 +105,8 @@ export function ContributorHeatstrip({ repository, weeks, cells, peak, onSelect 
           event.preventDefault();
           (event.currentTarget.parentElement?.children[target] as HTMLElement | undefined)?.focus();
         }}>
-        <span aria-hidden="true" className={`grid h-3 w-full place-items-end rounded-[2px] border border-[var(--color-border-muted)] ${cell.complete ? "" : "border-dashed"}`}
-          style={cell.count ? { backgroundColor: `color-mix(in srgb, var(--color-signal) ${25 + 70 * cell.count / peak}%, transparent)` } : undefined}>
-          {cell.complete && !cell.count && <span className="mb-px h-px w-full bg-current" />}
-        </span>
+        <span aria-hidden="true" className={`block h-3 w-full rounded-[2px] ${!cell.complete ? "border border-dotted border-[var(--color-border-muted)]" : !cell.count ? "border border-[var(--color-border-muted)] bg-surface-raised" : ""}`}
+          style={cell.count ? { backgroundColor: `color-mix(in srgb, var(--color-signal) ${25 + 70 * cell.count / peak}%, var(--color-surface))` } : undefined} />
       </button>;
     })}
   </div>;
