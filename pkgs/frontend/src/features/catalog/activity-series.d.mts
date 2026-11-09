@@ -1,1 +1,2 @@
 export function observationSeries(points: Array<{ label: string; value: number }>, days?: number, changes?: boolean): Array<{ label: string; value: number; time: number; from?: string }>;
+export function observedDelta(points: Parameters<typeof observationSeries>[0]): { change: number; first: ReturnType<typeof observationSeries>[number]; last: ReturnType<typeof observationSeries>[number]; days: number } | null;

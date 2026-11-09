@@ -9,3 +9,12 @@ export function observationSeries(points, days = 0, changes = false) {
   const result = changes ? sorted.slice(1).map((point, index) => ({ ...point, value: point.value - sorted[index].value, from: sorted[index].label })) : sorted;
   return result.filter((point) => !days || point.time > end - days * 86400000);
 }
+
+export function observedDelta(points) {
+  const series = observationSeries(points);
+  const last = series.at(-1);
+  if (!last) return null;
+  const first = series.find((point) => point.time >= last.time - 30 * 86400000);
+  if (!first || first === last) return null;
+  return { change: last.value - first.value, first, last, days: Math.floor((last.time - first.time) / 86400000) };
+}

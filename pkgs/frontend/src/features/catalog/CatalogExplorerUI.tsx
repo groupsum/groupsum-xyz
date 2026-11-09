@@ -1,6 +1,7 @@
 import React from "react";
 import { ArrowUpDown, Search, X } from "lucide-react";
 import { CatalogPill } from "./CatalogVisuals";
+import { publicationLabel } from "./package-publication";
 
 export type ExplorerFilters = {
   search: string;
@@ -13,13 +14,13 @@ export type ExplorerFilters = {
 
 type Option = { label: string; value: string };
 
-function SelectFilter({ label, value, options, onChange }: { label: string; value: string; options: string[]; onChange: (value: string) => void }) {
+function SelectFilter({ label, value, options, onChange, optionLabel }: { label: string; value: string; options: string[]; onChange: (value: string) => void; optionLabel?: (value: string) => string }) {
   if (!options.length) return null;
   return <label className="min-w-0 max-w-full">
     <span className="sr-only">{label}</span>
     <select value={value} onChange={(event) => onChange(event.target.value)} className="type-control min-w-0 max-w-full w-full rounded-lg border border-[var(--color-border-soft)] bg-surface-raised px-3 py-2 text-ink focus:border-accent focus:outline-none focus:ring-2 focus:ring-accent">
       <option value="">{label}</option>
-      {options.map((option) => <option key={option} value={option}>{option}</option>)}
+      {options.map((option) => <option key={option} value={option}>{optionLabel ? optionLabel(option) : option}</option>)}
     </select>
   </label>;
 }
@@ -37,7 +38,7 @@ export function ExplorerFilterToolbar({ filters, onChange, owners = [], ecosyste
       </label>
       <SelectFilter label="All Owners / Orgs" value={filters.owner} options={owners} onChange={(value) => update({ owner: value })} />
       <SelectFilter label="All Ecosystems" value={filters.ecosystem} options={ecosystems} onChange={(value) => update({ ecosystem: value })} />
-      <SelectFilter label="All Publication States" value={filters.publication} options={publications} onChange={(value) => update({ publication: value })} />
+      <SelectFilter label="All Publication States" value={filters.publication} options={publications} optionLabel={publicationLabel} onChange={(value) => update({ publication: value })} />
       <SelectFilter label="All Resource Types" value={filters.resourceType} options={resourceTypes} onChange={(value) => update({ resourceType: value })} />
       <label className="relative ml-auto flex min-w-0 max-w-full items-center gap-1">
         <ArrowUpDown className="h-3.5 w-3.5 shrink-0 text-ink-muted" aria-hidden="true" />

@@ -2,6 +2,7 @@ import React from "react";
 import { repositoryColumns, packageColumns, columnSortValue } from "./catalog-column-sorts";
 import { CatalogLink } from "./CatalogLink";
 import { InlineMetricChart } from "./InlineMetricChart";
+import { observedDelta } from "./activity-series.mjs";
 import { RepositoryPackagesCell } from "./RepositoryPackagesCell";
 import { PackageDependenciesCell } from "./PackageDependenciesCell";
 import {
@@ -14,7 +15,7 @@ import {
   Star,
 } from "lucide-react";
 import { CatalogPill, compactNumber } from "./CatalogVisuals";
-import { humanLabel, valueRecord, valueRecords, type CatalogRecord } from "./CatalogRecordShared";
+import { valueRecord, valueRecords, type CatalogRecord } from "./CatalogRecordShared";
 
 type Navigate = (path: string) => void;
 
@@ -34,8 +35,11 @@ function HyphenBreakText({ value }: { value: string }) {
   return <>{segments.map((segment, index) => <React.Fragment key={`${segment}-${index}`}>{segment}{index < segments.length - 1 ? <>-<wbr /></> : null}</React.Fragment>)}</>;
 }
 
-function MiniLine({ points, label }: { points: Array<Record<string, unknown>>; label: string }) {
-  return <InlineMetricChart compact label={label} points={points.map((point) => ({ label: String(point.observed_at || point.date || "Observation"), value: Number(point.value) }))} />;
+function StarDelta({ points }: { points: Array<Record<string, unknown>> }) {
+  const delta = observedDelta(points.flatMap((point) => typeof point.value === "number" ? [{ label: String(point.observed_at || point.date || ""), value: point.value }] : []));
+  if (!delta) return null;
+  const change = `${delta.change > 0 ? "+" : ""}${delta.change.toLocaleString()}`;
+  return <span className="block text-[10px] tabular-nums text-ink-muted" title={`Star change between ${delta.first.label.slice(0, 10)} and ${delta.last.label.slice(0, 10)} UTC`}><span className="sr-only">Star change: </span>{change} · {delta.days ? `${delta.days}d` : "<1d"}</span>;
 }
 
 function LatestRelease({ value }: { value: unknown }) {
@@ -123,7 +127,7 @@ export function RepositoryCollectionTable({ records, onNavigate, sort, onSort }:
           return <tr key={record.id} className="group h-[4.5rem] hover:bg-canvas">
             <td className="min-w-0 px-3 py-2 align-middle"><div className="flex min-w-0 items-center gap-2"><GitBranch className="h-4 w-4 shrink-0 text-accent" /><RecordLink route={String(record.route)} onNavigate={onNavigate}><span className="line-clamp-2 break-words leading-snug"><HyphenBreakText value={String(record.name)} /></span></RecordLink></div></td>
             <td className="hidden min-w-0 truncate px-2 py-2 align-middle text-ink-muted lg:table-cell" title={String(record.owner || "Not recorded")}>{String(record.owner || "Not recorded")}</td>
-            <td className="min-w-0 !overflow-visible px-2 py-2 align-middle"><div className="min-w-0 space-y-1"><span className="inline-flex items-center gap-1"><Star className="h-3 w-3 fill-signal text-signal" /><strong className="tabular-nums text-ink">{compactNumber(Number(metrics.stars || 0))}</strong></span><div className="hidden overflow-visible lg:block"><MiniLine points={valueRecords(history.stars)} label="Stars" /></div></div></td>
+            <td className="min-w-0 !overflow-visible px-2 py-2 align-middle"><div className="min-w-0 space-y-1"><span className="inline-flex items-center gap-1"><Star className="h-3 w-3 fill-signal text-signal" /><strong className="tabular-nums text-ink">{compactNumber(Number(metrics.stars || 0))}</strong></span><StarDelta points={valueRecords(history.stars)} /></div></td>
             <td className="hidden min-w-0 px-2 py-2 align-middle xl:table-cell"><span className="inline-flex items-center gap-1 font-semibold tabular-nums"><GitFork className="h-3 w-3 text-ink-muted" />{compactNumber(Number(metrics.forks || 0))}</span></td>
             <td className="hidden min-w-0 !overflow-visible px-2 py-2 align-middle md:table-cell"><CommitBars points={valueRecords(record.commit_activity)} /></td>
             <td className="hidden min-w-0 !overflow-visible px-2 py-2 align-middle xl:table-cell"><ContributorLinks value={record.contributors} onNavigate={onNavigate} limit={2} /></td>
@@ -139,7 +143,7 @@ export function RepositoryCollectionTable({ records, onNavigate, sort, onSort }:
 
 function PublicationBadge({ record }: { record: CatalogRecord }) {
   const published = record.published || record.publication_status === "published";
-  return <CatalogPill compact tone={published ? "signal" : "neutral"} Icon={published ? BadgeCheck : CircleDot}>{published ? "Published" : ["manifest-private", "manifest_private"].includes(String(record.publication_status)) ? "Private" : humanLabel(String(record.publication_status || "Candidate"))}</CatalogPill>;
+  return <CatalogPill compact tone={published ? "signal" : "neutral"} Icon={published ? BadgeCheck : CircleDot}>{published ? "Published" : publicationLabel(record.publication_status || record.package_kind || "Candidate")}</CatalogPill>;
 }
 
 
@@ -154,3 +158,4 @@ export function PackageCollectionTable({ records, onNavigate, sort, onSort }: { 
     </div>
   </>;
 }
+import { publicationLabel } from "./package-publication";

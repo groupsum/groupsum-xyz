@@ -1,6 +1,7 @@
 import React, { lazy, Suspense, useEffect, useMemo, useState } from "react";
 import { CatalogLink } from "./CatalogLink";
 const PackageRelationships = lazy(() => import("./PackageRelationships"));
+const PackageReleaseHistory = lazy(() => import("./PackageReleaseHistory"));
 import type { RepositorySignals } from "../../api/catalog";
 import { Activity, ArrowLeft, ArrowRight, BadgeCheck, BookOpen, Boxes, Braces, CalendarDays, CircleDot, Code2, ExternalLink, FileCode2, GitBranch, Globe2, Package, Scale, ServerCog, ShieldCheck, Users } from "lucide-react";
 import { RepositorySignalStrip } from "./RepositorySignals";
@@ -110,7 +111,7 @@ export function PackageDetail({ record, onNavigate }: { record: CatalogRecord; o
           { label: "Downloads", value: downloadTotal || (typeof record.downloads === "number" ? record.downloads : "Not reported"), icon: metricIcons.downloads },
         ]} />
         <ReleaseTimeline points={monthlyReleaseActivity(releases)} label={`Monthly release history for ${recordTitle(record)}`} />
-        {releases.length > 0 ? <ol className="divide-y divide-[var(--color-border-soft)]" aria-label="Package releases">{releases.map((release) => <li key={String(release.id)} className="grid gap-3 py-4 sm:grid-cols-[minmax(0,1fr)_auto] sm:items-center"><div className="min-w-0"><div className="flex flex-wrap items-center gap-2"><span className="text-[10px] font-mono uppercase text-accent">{humanLabel(String(release.release_kind || "release"))}</span>{release.prerelease && <CatalogPill>Prerelease</CatalogPill>}{release.draft && <CatalogPill>Draft</CatalogPill>}</div><h3 className="mt-1 break-all font-serif text-lg font-bold text-ink">{String(release.version || "Unversioned release")}</h3><p className="mt-1 text-xs text-ink-muted">Published {formatDate(release.published_at as string | undefined)} · observed {formatDate(release.observed_at as string | undefined)}{typeof release.downloads === "number" ? ` · ${Number(release.downloads).toLocaleString()} downloads` : ""}</p></div><div className="flex flex-wrap items-center gap-3">{release.route && <a href={String(release.route)} onClick={(event) => { event.preventDefault(); onNavigate(String(release.route)); }} className="inline-flex min-h-11 items-center text-xs font-mono font-semibold text-accent hover:underline">Release record</a>}{release.url && <a href={String(release.url)} target="_blank" rel="noreferrer" className="inline-flex min-h-11 items-center gap-1 text-xs font-mono text-accent hover:underline">Registry source <ExternalLink className="h-3.5 w-3.5" /></a>}</div></li>)}</ol> : <p className="text-sm text-ink-muted">No release records were reported by the package registry.</p>}
+        <Suspense fallback={<p role="status">Loading releases…</p>}><PackageReleaseHistory key={record.id} releases={releases} /></Suspense>
       </DetailSection>
     </>
   );

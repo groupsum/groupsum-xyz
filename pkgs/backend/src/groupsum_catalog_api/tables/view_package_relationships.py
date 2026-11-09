@@ -3,10 +3,9 @@ from __future__ import annotations
 import ast
 import json
 import re
-from collections import Counter
 from urllib.parse import quote
 
-from .view_common import _page, current_entity_query, package_resource, payload, source_record
+from .view_common import current_entity_query, package_resource, payload, source_record
 
 
 def normalized_name(ecosystem, name):
@@ -126,35 +125,6 @@ def package_relationships(table, ctx):
         )
         .all()
     )
-    values = resolve_relationships(item, rows, direction)
-    facets = {
-        "scope": dict(Counter(edge["scope"] for edge in values)),
-        "resolution": dict(Counter(edge["resolution"] for edge in values)),
-    }
-    search = str(params.get("q") or "").strip().casefold()
-    for field in ("scope", "resolution"):
-        if params.get(field):
-            values = [edge for edge in values if edge[field] == params[field]]
-    if params.get("optional") in {"true", "false"}:
-        values = [edge for edge in values if edge["optional"] == (params["optional"] == "true")]
-    if search:
-        values = [
-            edge
-            for edge in values
-            if search in f"{edge['name']} {edge.get('requirement') or ''}".casefold()
-        ]
-    values.sort(key=lambda edge: (edge["name"].casefold(), edge["scope"], edge["id"]))
-    selected, page, page_size, page_count = _page(values, params)
-    return {
-        "kind": "package_relationship_collection",
-        "direction": direction,
-        "count": len(values),
-        "page": page,
-        "page_size": page_size,
-        "page_count": page_count,
-        "facets": facets,
-        "dependency_count": len(item["dependencies"]),
-        "dependent_count": len(item["dependents"]),
-        "coverage": "Direct relationships within the current catalog; not global dependent counts.",
-        "records": selected,
-    }
+    from ..projections.read_models import relationship_page
+
+    return relationship_page(item, resolve_relationships(item, rows, direction), params)

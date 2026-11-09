@@ -1,5 +1,6 @@
 import pytest
 
+from groupsum_catalog_api.projections.read_models import relationship_page
 from groupsum_catalog_api.tables.view_common import _filter, _page
 
 
@@ -35,3 +36,26 @@ def test_unobserved_release_is_last_in_both_directions():
     ]
     for direction in ("asc", "desc"):
         assert _filter(rows, {"sort": f"latest_release_{direction}"})[0]["id"] == "known"
+
+
+def test_relationship_ownership_and_scope_sort_precedes_pagination():
+    records = [
+        ("aardvark", "external", "dependencies"),
+        ("able", "resolved", "dependency-groups.dev"),
+        ("zebra", "resolved", "dependencies"),
+        ("yak", "resolved", "dependencies"),
+    ]
+    values = [
+        {"id": name, "name": name, "resolution": status, "scope": scope, "optional": False}
+        for name, status, scope in records
+    ]
+    item = {"dependencies": values, "dependents": []}
+    params = {"sort": "ownership", "page_size": 2}
+    first = relationship_page(item, list(values), params)
+    second = relationship_page(item, list(values), {**params, "page": 2})
+    assert [row["name"] for row in first["records"] + second["records"]] == [
+        "yak",
+        "zebra",
+        "able",
+        "aardvark",
+    ]

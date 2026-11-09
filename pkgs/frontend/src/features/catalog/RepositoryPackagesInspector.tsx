@@ -33,7 +33,7 @@ export function RepositoryPackagesInspector({ repository, ecosystem, onEcosystem
         <tbody className="divide-y divide-[var(--color-border-soft)]">{collection.data.records.map((item) => {
           const published = item.published || item.publication_status === "published";
           const Icon = published ? BadgeCheck : CircleDot;
-          const status = String(item.publication_status || "Not observed");
+          const status = publicationLabel(published ? "published" : item.publication_status);
           return <tr key={item.id}><td className="py-2 pr-2"><a href={String(item.route)} className="block truncate font-semibold text-accent hover:underline" title={`${item.name} (${item.ecosystem})`}>{String(item.name)}</a><span className="type-body-sm text-ink-muted">{String(item.ecosystem)}</span></td><td className="pr-2"><span className="block truncate tabular-nums" title={String(item.latest_version || "Not observed")}>{String(item.latest_version || "—")}</span></td><td><span title={status} aria-label={status} className={published ? "text-success" : "text-ink-muted"}><Icon className="h-4 w-4" aria-hidden="true" /><span className="sr-only">{status}</span></span></td></tr>;
         })}</tbody>
       </table> : <p className="type-body-sm py-4 text-ink-muted">{query || ecosystem || publication ? "No packages match these filters. Clear search or choose another status or ecosystem." : "No packages were observed in this repository."}</p>}
@@ -42,3 +42,4 @@ export function RepositoryPackagesInspector({ repository, ecosystem, onEcosystem
     <a href={`/catalog/packages?${allParams}`} className="type-control inline-block min-h-8 text-accent hover:underline">View all repository packages →</a>
   </div>;
 }
+import { publicationLabel } from "./package-publication";

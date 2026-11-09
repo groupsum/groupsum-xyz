@@ -165,7 +165,10 @@ def relationship_page(item, values, params):
             for edge in values
             if search in f"{edge['name']} {edge.get('requirement') or ''}".casefold()
         ]
-    values.sort(key=lambda edge: (edge["name"].casefold(), edge["scope"], edge["id"]))
+    if params.get("sort") == "ownership":
+        values.sort(key=_relationship_ownership_key)
+    else:
+        values.sort(key=lambda edge: (edge["name"].casefold(), edge["scope"], edge["id"]))
     selected, page, size, pages = _page(values, params)
     return {
         "kind": "package_relationship_collection",
@@ -180,3 +183,19 @@ def relationship_page(item, values, params):
         "coverage": "Direct relationships within the current catalog; not global dependent counts.",
         "records": selected,
     }
+
+
+def _relationship_ownership_key(edge):
+    ownership = {"resolved": 0, "ambiguous": 1, "unresolved": 2, "external": 3}
+    scope = edge["scope"].casefold()
+    if "dev" in scope or "test" in scope or scope.startswith("dependency-groups."):
+        rank = 4
+    elif "build" in scope:
+        rank = 3
+    elif "peer" in scope:
+        rank = 2
+    elif edge["optional"]:
+        rank = 1
+    else:
+        rank = 0
+    return ownership[edge["resolution"]], rank, scope, edge["name"].casefold(), edge["id"]
