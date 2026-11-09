@@ -10,7 +10,6 @@ import {
   GitFork,
   GitBranch,
   Package,
-  ShieldCheck,
   Star,
 } from "lucide-react";
 import { CatalogPill, compactNumber } from "./CatalogVisuals";
@@ -57,28 +56,35 @@ function LatestRelease({ value }: { value: unknown }) {
 }
 
 function ContributorLinks({ value, onNavigate, limit = 2 }: { value: unknown; onNavigate: Navigate; limit?: number }) {
+  const tooltipPrefix = React.useId();
   const contributors = valueRecords(value);
   if (!contributors.length) return <span className="text-[10px] text-ink-muted">Not observed</span>;
   const visible = contributors.slice(0, limit);
   const remaining = contributors.slice(limit);
   const observedTotal = contributors.reduce((total, item) => total + Number(item.contributions || 0), 0);
-  const contributorControl = (contributor: Record<string, unknown>, index: number) => {
+  const contributorControl = (contributor: Record<string, unknown>, index: number, descriptionId?: string) => {
     const login = String(contributor.login || contributor.name || `Contributor ${index + 1}`);
     const label = contributor.login ? `@${login}` : login;
     const provider = String(contributor.provider || "github");
     const href = String(contributor.url || "");
     const className = "block w-full truncate text-left text-[10px] text-accent hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent";
     return contributor.login || contributor.profile_route
-        ? <CatalogLink href={String(contributor.profile_route || `/contributors/${encodeURIComponent(provider)}/${encodeURIComponent(login)}`)} className={className} title={`${label}: ${Number(contributor.contributions || 0).toLocaleString()} contributions`}>{label}</CatalogLink>
-        : href ? <a href={href} target="_blank" rel="noreferrer" className={className}>{label}</a>
-        : <span className="block truncate text-[10px] text-ink-muted" title={label}>{label}</span>;
+        ? <CatalogLink href={String(contributor.profile_route || `/contributors/${encodeURIComponent(provider)}/${encodeURIComponent(login)}`)} className={className} aria-describedby={descriptionId} title={descriptionId ? undefined : `${label}: ${Number(contributor.contributions || 0).toLocaleString("en-US")} contributions`}>{label}</CatalogLink>
+        : href ? <a href={href} target="_blank" rel="noreferrer" className={className} aria-describedby={descriptionId}>{label}</a>
+        : <span className="block truncate text-[10px] text-ink-muted focus-visible:outline focus-visible:outline-accent" tabIndex={descriptionId ? 0 : undefined} aria-describedby={descriptionId} title={descriptionId ? undefined : label}>{label}</span>;
   };
   return <div className="relative min-w-0 space-y-1">
     <ul className="space-y-0.5" aria-label={`${contributors.length} observed contributors`}>
       {visible.map((contributor, index) => {
-        return <li key={String(contributor.id || contributor.login || contributor.name || index)} className="min-w-0">
-          {contributorControl(contributor, index)}
-          {observedTotal > 0 && <span className="block h-0.5 w-full bg-[var(--chart-track)]" role="img" aria-label={`${String(contributor.login || contributor.name)}: ${Number(contributor.contributions || 0).toLocaleString()} contributions; share of observed contributor counts, not 30-day commits`}><span className="block h-full bg-accent" style={{ width: `${Number(contributor.contributions || 0) / observedTotal * 100}%` }} /></span>}
+        const count = Number(contributor.contributions || 0);
+        const share = observedTotal > 0 ? count / observedTotal * 100 : 0;
+        const tooltipId = `${tooltipPrefix}-${index}`;
+        return <li key={String(contributor.id || contributor.login || contributor.name || index)} className="group/share relative flex min-w-0 items-center gap-1.5">
+          <span className="min-w-0 flex-1">{contributorControl(contributor, index, tooltipId)}</span>
+          {observedTotal > 0 && <span aria-hidden="true" className="h-1.5 w-6 shrink-0 overflow-hidden rounded-full bg-[var(--chart-track)]"><span className="block h-full rounded-full bg-accent" style={{ width: `${share}%` }} /></span>}
+          <span id={tooltipId} role="tooltip" className="invisible absolute left-0 top-full z-50 w-max max-w-52 rounded border border-[var(--color-border-soft)] bg-surface-raised px-2 py-1 text-[10px] text-ink shadow-lg group-hover/share:visible group-focus-within/share:visible">
+            {String(contributor.login || contributor.name || `Contributor ${index + 1}`)}: {count.toLocaleString("en-US")} contributions{observedTotal > 0 ? ` (${share.toLocaleString("en-US", { maximumFractionDigits: 2 })}% of observed contributions)` : " (share unavailable)"}
+          </span>
         </li>;
       })}
     </ul>
@@ -115,7 +121,7 @@ export function RepositoryCollectionTable({ records, onNavigate, sort, onSort }:
             <td className="hidden min-w-0 !overflow-visible px-2 py-2 align-middle xl:table-cell"><ContributorLinks value={record.contributors} onNavigate={onNavigate} limit={2} /></td>
             <td className="min-w-0 px-2 py-2 align-middle"><RepositoryPackagesCell record={record} /></td>
             <td className="hidden min-w-0 px-2 py-2 align-middle lg:table-cell"><LatestRelease value={record.latest_release} /></td>
-            <td className="hidden min-w-0 px-2 py-2 align-middle lg:table-cell">{record.ssot_governed ? <CatalogPill tone="accent" Icon={ShieldCheck}>Governed</CatalogPill> : <span className="text-[10px] text-ink-muted">Not observed</span>}</td>
+            <td className="hidden min-w-0 px-2 py-2 align-middle lg:table-cell">{record.ssot_governed ? <CatalogPill compact tone="accent"><span className="whitespace-nowrap">Governed</span></CatalogPill> : <span className="text-[10px] text-ink-muted">Not observed</span>}</td>
             <td className="min-w-0 px-2 py-2 text-right align-middle"><RecordLink route={String(record.route)} onNavigate={onNavigate}><ChevronRight className="ml-auto h-4 w-4 text-accent transition-transform group-hover:translate-x-0.5" /></RecordLink></td>
           </tr>;
         })}</tbody>
