@@ -116,6 +116,13 @@ def project(models: dict[str, Any], alias: str, params: dict[str, Any]):
             detail=alias == "contributor_detail",
             activity=models.get("contributor_activity"),
         )
+        if alias == "contributors" and params.get("activity_deltas") == "1":
+            from .contributor_activity import activity_deltas
+
+            activity = models.get("contributor_activity", {})
+            for row in result["records"]:
+                data = activity.get(row["id"], {}) if row.get("provider_id") else {}
+                row["activity_delta"] = activity_deltas(data, models.get("_commit_coverage", {}))
         if (
             alias == "contributor_detail"
             and params.get("activity") in {"1", "timeline"}

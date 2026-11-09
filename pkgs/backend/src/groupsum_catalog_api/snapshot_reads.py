@@ -46,8 +46,16 @@ def read_bundle(session, snapshot):
     content = b"".join(chunks)
     if hashlib.sha256(content).hexdigest() != snapshot.source_digest:
         raise ValueError("Invalid immutable snapshot source digest")
-    bundle = json.loads(content).get("_public_read_model")
+    source = json.loads(content)
+    bundle = source.get("_public_read_model")
     if valid_read_models(bundle):
+        bundle["_commit_coverage"] = {
+            repo["full_name"]: bounds
+            for repo in source.get("repositories", [])
+            if repo.get("full_name")
+            and repo.get("visibility") == "public"
+            and (bounds := (repo.get("activity") or {}).get("commit_coverage"))
+        }
         _bundles[key] = bundle
         while len(_bundles) > 2:
             _bundles.popitem(last=False)

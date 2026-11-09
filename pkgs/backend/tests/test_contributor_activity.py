@@ -1,5 +1,32 @@
-from groupsum_catalog_api.projections.contributor_activity import build_contributor_activity
+from groupsum_catalog_api.projections.contributor_activity import (
+    activity_deltas,
+    build_contributor_activity,
+)
 from groupsum_catalog_api.projections.read_models import build_read_models, project
+
+
+def test_deltas_use_exact_windows_and_require_full_coverage():
+    data = {
+        "through": "2026-11-09T12:00:00Z",
+        "weeks": ["2026-08-17"],
+        "repositories": [{"name": "org/a"}, {"name": "org/b"}],
+        "events": [
+            {"at": "2026-09-10T12:00:00Z", "repository": "org/b"},
+            {"at": "2026-10-10T12:00:00Z", "repository": "org/a"},
+            {"at": "2026-10-10T12:00:01Z", "repository": "org/a"},
+            {"at": "2026-11-09T12:00:00Z", "repository": "org/b"},
+            {"at": "2026-11-09T12:00:01Z", "repository": "org/b"},
+        ],
+    }
+    bounds = {"since": "2026-09-01T00:00:00Z", "until": data["through"]}
+    coverage = {"org/a": bounds, "org/b": bounds}
+    assert activity_deltas(data, coverage) == {"commits": 1, "active_repositories": 1}
+    assert activity_deltas({**data, "events": []}, coverage) == {
+        "commits": 0,
+        "active_repositories": 0,
+    }
+    assert activity_deltas(data, {"org/a": bounds}) is None
+    assert activity_deltas(data, {**coverage, "org/b": {**bounds, "until": "2026-11-09"}}) is None
 
 
 def test_activity_uses_only_linked_public_commits_and_preserves_coverage():

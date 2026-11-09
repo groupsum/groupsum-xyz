@@ -14,7 +14,6 @@ const columns = [
 ] as const;
 
 const medals = ["🥇", "🥈", "🥉"];
-const windowDate = new Intl.DateTimeFormat("en-US", { month: "short", day: "numeric", year: "numeric", timeZone: "UTC" });
 const viewButton = "min-h-9 rounded border border-[var(--color-border-muted)] px-3 aria-pressed:border-current aria-pressed:text-accent focus-visible:outline";
 
 function Rank({ rank }: { rank?: number | null }) {
@@ -23,15 +22,20 @@ function Rank({ rank }: { rank?: number | null }) {
   return medal ? <span title={`Rank ${rank}`}><span aria-hidden="true">{medal}</span><span className="sr-only">{rank}</span></span> : <span className="text-ink-muted">{rank}</span>;
 }
 
+function Delta({ value, label }: { value?: number; label: string }) {
+  const signed = value == null ? "—" : value > 0 ? `+${value.toLocaleString()}` : value.toLocaleString();
+  const title = value == null ? "Insufficient history for the 30-day comparison" : `${signed} ${label} vs. the preceding 30 days`;
+  return <span className={`type-control block ${value ? "text-accent" : "text-ink-muted"}`} title={title}><span aria-hidden="true">{signed}</span><span className="sr-only">{title}</span></span>;
+}
+
 export function ContributorDirectory() {
   const version = useCatalogVersion();
   const [params, setParams] = useSearchParams();
   const leaderboard = params.get("view") === "leaderboard"
     || (!params.has("view") && !params.has("sort") && !params.has("account_type"));
-  const recent = leaderboard && params.get("ranking") === "recent";
-  const query = { q: params.get("q") || "", account_type: leaderboard ? params.get("account_type") === "Bot" ? "Bot" : "User" : params.get("account_type") || "", sort: leaderboard ? recent ? "leaderboard_recent" : "leaderboard" : params.get("sort") || "contributions_desc", page: Number(params.get("page") || 1), page_size: 50 };
+  const query = { q: params.get("q") || "", account_type: leaderboard ? params.get("account_type") === "Bot" ? "Bot" : "User" : params.get("account_type") || "", sort: leaderboard ? "leaderboard" : params.get("sort") || "contributions_desc", page: Number(params.get("page") || 1), page_size: 50, activity_deltas: 1 };
   const snapshot = globalThis.__GROUPSUM_API_SNAPSHOT__ as (ContributorCollection & { static_path?: string; static_snapshot_id?: string }) | null;
-  const collection = useQuery({ queryKey: ["contributors", query, version.snapshot_id], queryFn: ({ signal }) => getContributors(query, signal), initialData: params.size === 0 && snapshot?.static_path === "/contributors" && version.snapshot_id === snapshot.static_snapshot_id ? snapshot : undefined, staleTime: 60_000 });
+  const collection = useQuery({ queryKey: ["contributors", query, version.snapshot_id], queryFn: ({ signal }) => getContributors(query, signal), initialData: params.size === 0 && snapshot?.static_path === "/contributors" && version.snapshot_id === snapshot.static_snapshot_id ? snapshot : undefined, initialDataUpdatedAt: 0, staleTime: 60_000 });
   const change = (key: string, value: string) => {
     const next = new URLSearchParams(params);
     next.set(key, value);
@@ -41,44 +45,33 @@ export function ContributorDirectory() {
     if (key === "account_type" && leaderboard) next.set("view", "leaderboard");
     setParams(next, { replace: key === "q" });
   };
-  const activityWindow = collection.data?.activity_window;
   return <article className="mx-auto max-w-[var(--content-max)] space-y-4 px-4 py-8 sm:px-6"><CatalogPageMetadata record={{ route: "/contributors", title: "Contributors | GroupSum catalog", description: "People and automation observed contributing to catalog repositories.", schemaFamily: "catalog-collection", items: collection.data?.records || [], itemCount: collection.data?.count || 0 }} /><header><h1 className="type-display-lg break-words [overflow-wrap:anywhere]">Contributors</h1><p className="type-body-sm text-ink-muted">People and automation observed contributing to catalog repositories.</p></header>
     <div role="group" aria-label="Contributor view" className="type-control flex flex-wrap gap-2">
       <button type="button" aria-pressed={leaderboard} onClick={() => !leaderboard && change("view", "leaderboard")} className={viewButton}>Leaderboard</button>
       <button type="button" aria-pressed={!leaderboard} onClick={() => leaderboard && change("view", "directory")} className={viewButton}>Directory</button>
     </div>
-    {leaderboard && <div role="group" aria-label="Ranking metric" className="type-control flex flex-wrap gap-2">
-      <button type="button" aria-pressed={!recent} onClick={() => recent && change("ranking", "contributions")} className={viewButton}>Contributions</button>
-      <button type="button" aria-pressed={recent} onClick={() => !recent && change("ranking", "recent")} className={viewButton}>Recent activity</button>
-    </div>}
     {leaderboard && <div className="type-body-sm text-ink-muted">
-      {recent ? <>
-        {activityWindow && <p className="font-semibold">{windowDate.formatRange(new Date(activityWindow.start), new Date(activityWindow.end))} UTC</p>}
-        <p>Attributed default-branch commits in the last four complete weeks. Contributors with missing or partial history are unranked.</p>
-        {collection.data && !activityWindow && <p>This snapshot has no attributable activity history.</p>}
-      </> : <p>Ranked by source-reported contributions across catalog repositories.</p>}
+      <p>Ranked by source-reported contributions across catalog repositories.</p>
       <p>Ties share a rank, and search preserves rank within the selected group.</p>
     </div>}
+    <p className="type-body-sm text-ink-muted">Last updated: {version.collected_at ? <time dateTime={version.collected_at.replace(" ", "T")}>{version.collected_at.slice(0, 10)} UTC</time> : "Unavailable"}. Deltas compare the latest 30 days with the preceding 30 days: attributed commits and repositories with attributed commits.</p>
     <div className="flex flex-wrap gap-2"><label className="type-body-sm min-w-0 flex-[1_1_15rem]">Search contributors<input type="search" value={query.q} onChange={(event) => change("q", event.target.value)} className="block min-h-9 w-full border border-[var(--color-border-soft)] bg-surface px-2" /></label><label className="type-body-sm">{leaderboard ? "Rank group" : "Account type"}<select value={query.account_type} onChange={(event) => change("account_type", event.target.value)} className="block min-h-9 border border-[var(--color-border-soft)] bg-surface px-2">{leaderboard ? <><option value="User">Individuals</option><option value="Bot">Automation</option></> : <><option value="">All accounts</option>{["User", "Bot", "Anonymous"].map((type) => <option key={type} value={type}>{contributorTypeLabel(type)}</option>)}</>}</select></label>{!leaderboard && <label className="type-body-sm">Sort<select value={query.sort} onChange={(event) => change("sort", event.target.value)} className="block min-h-9 border border-[var(--color-border-soft)] bg-surface px-2">{columns.flatMap(([key, label]) => ["asc", "desc"].map((direction) => <option key={key + direction} value={key + "_" + direction}>{label} ({direction === "asc" ? "ascending" : "descending"})</option>))}</select></label>}</div>
     {collection.isPending && <p role="status">Loading contributors…</p>}{collection.isError && <p role="alert">Directory could not be loaded. <button onClick={() => collection.refetch()}>Retry</button></p>}
-    {collection.data && <><p role="status" className="type-body-sm text-ink-muted">{collection.data.count} contributors · Page {collection.data.page} of {collection.data.page_count}{collection.isFetching ? " · Updating…" : ""}</p><table className="type-technical w-full table-fixed text-left [overflow-wrap:anywhere]" aria-label={leaderboard ? "Contributor leaderboard" : "Contributor directory"}><thead className="type-ui-label"><tr>{leaderboard && <th scope="col" className="w-10 sm:w-16">Rank</th>}{columns.map(([key, label, className]) => {
+    {collection.data && <><p role="status" className="type-body-sm text-ink-muted">{collection.data.count} contributors · Page {collection.data.page} of {collection.data.page_count}{collection.isFetching ? " · Updating…" : ""}</p><table className="type-technical w-full table-fixed text-left [overflow-wrap:anywhere]" aria-label={leaderboard ? "Contributor leaderboard" : "Contributor directory"}><thead className="type-ui-label"><tr>{leaderboard && <th scope="col" className="w-10 text-center sm:w-16">Rank</th>}{columns.map(([key, label, className]) => {
       const active = leaderboard ? key === "contributions" : query.sort.startsWith(key + "_");
       const ascending = query.sort.endsWith("_asc");
-      if (recent && key === "contributions") return <th key={key} scope="col" className={className} aria-sort="descending">Commits</th>;
       return <th key={key} scope="col" className={className} aria-sort={active ? ascending ? "ascending" : "descending" : undefined}><button type="button" className="min-h-8 text-inherit hover:text-accent focus-visible:outline" onClick={() => change("sort", key + "_" + (active ? ascending ? "desc" : "asc" : key === "name" || key === "type" ? "asc" : "desc"))}>{label}<span aria-hidden="true"> {active ? ascending ? "↑" : "↓" : "↕"}</span></button></th>;
     })}</tr></thead>
       <tbody className="divide-y divide-[var(--color-border-soft)]">
         {collection.data.records.map((row) => <tr key={row.id}>
-          {leaderboard && <td className="tabular-nums"><Rank rank={row.rank} /></td>}
+          {leaderboard && <td className="text-center tabular-nums"><Rank rank={row.rank} /></td>}
           <td className="py-2 pr-2">
             <CatalogLink href={row.route} className="block truncate text-accent" title={row.name}>{row.name}</CatalogLink>
             <span className="sm:hidden"><ContributorTypeBadge value={row.account_type} /></span>
           </td>
           <td className="hidden sm:table-cell"><ContributorTypeBadge value={row.account_type} /></td>
-          <td className="text-right">{row.repository_count}</td>
-          <td className="text-right tabular-nums">{recent
-            ? row.recent_commits?.toLocaleString() ?? <span title="Incomplete history"><span aria-hidden="true">—</span><span className="sr-only">Incomplete history</span></span>
-            : row.contributions.toLocaleString()}</td>
+          <td className="text-right tabular-nums">{row.repository_count.toLocaleString()}<Delta value={row.activity_delta?.active_repositories} label="active repositories" /></td>
+          <td className="text-right tabular-nums">{row.contributions.toLocaleString()}<Delta value={row.activity_delta?.commits} label="attributed commits" /></td>
         </tr>)}
       </tbody>
     </table>{!collection.data.records.length && <p>No contributors match these filters.</p>}<nav aria-label="Contributor pagination" className="flex justify-end gap-3"><button disabled={collection.data.page <= 1} onClick={() => change("page", String(collection.data.page - 1))}>Previous</button><button disabled={collection.data.page >= collection.data.page_count} onClick={() => change("page", String(collection.data.page + 1))}>Next</button></nav></>}

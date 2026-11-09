@@ -24,6 +24,37 @@ def _monday(value):
     )
 
 
+def activity_deltas(data, coverage):
+    """Compare two adjacent 30-day windows ending at the snapshot cutoff."""
+    through = _date(data.get("through"))
+    weeks = data.get("weeks") or []
+    repos = {row["name"] for row in data.get("repositories", [])}
+    if through is None or not weeks or not repos or "events" not in data:
+        return None
+    middle = through - timedelta(days=30)
+    start = middle - timedelta(days=30)
+    first = _date(weeks[0])
+    if first is None or first > start:
+        return None
+    for repo in repos:
+        bounds = coverage.get(repo) or {}
+        since, until = _date(bounds.get("since")), _date(bounds.get("until"))
+        if since is None or until is None or since > start or until < through:
+            return None
+    counts = [0, 0]
+    active = [set(), set()]
+    for event in data.get("events", []):
+        at = _date(event.get("at"))
+        if at is not None and start < at <= through and event["repository"] in repos:
+            window = int(at > middle)
+            counts[window] += 1
+            active[window].add(event["repository"])
+    return {
+        "commits": counts[1] - counts[0],
+        "active_repositories": len(active[1]) - len(active[0]),
+    }
+
+
 def recent_activity_counts(activity, people):
     """Compare four complete UTC weeks, never scoring incomplete repository coverage."""
     cutoff = next(

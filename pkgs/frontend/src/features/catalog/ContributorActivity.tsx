@@ -1,20 +1,24 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useQuery } from "@tanstack/react-query";
 import { catalogFetch } from "../../api/client";
 import { CatalogLink } from "./CatalogLink";
 
 type Evidence = { label: string; url: string };
+type Cell = { count: number; complete: boolean };
 type Activity = {
   weeks?: string[];
-  repositories?: { name: string; route: string; cells: { count: number; complete: boolean }[] }[];
+  repositories?: { name: string; route: string; cells: Cell[] }[];
   through?: string;
   identity_linked: boolean;
   commit_count: number;
   achievements: { id: string; label: string; reason: string; at?: string; evidence: Evidence[] }[];
 };
+export type ActivitySelection = Cell & { repository: string; week: string };
 type Timeline = { page: number; page_count: number; records: { id: string; label: string; at: string; url: string }[] };
-const date = (value: string) => new Intl.DateTimeFormat("en-US", { month: "short", day: "numeric", timeZone: "UTC" }).format(new Date(value));
+const day = new Intl.DateTimeFormat("en-US", { month: "short", day: "numeric", timeZone: "UTC" });
+const date = (value: string) => day.format(new Date(value));
 const badge = "type-control inline-flex min-h-8 max-w-full flex-wrap items-center gap-x-2 rounded-full border border-[var(--color-border-muted)] px-3 py-1 text-signal [overflow-wrap:anywhere]";
+const button = "min-h-9 rounded border border-[var(--color-border-soft)] px-2 text-accent focus-visible:outline disabled:opacity-50";
 
 async function read<T>(path: string, params: Record<string, string>, snapshotId: string, signal: AbortSignal): Promise<T> {
   const response = await catalogFetch(`${path}?${new URLSearchParams(params)}`, { signal });
@@ -23,117 +27,122 @@ async function read<T>(path: string, params: Record<string, string>, snapshotId:
   return response.json();
 }
 
-export function ContributorActivity({ provider, login, snapshotId }: { provider: string; login: string; snapshotId: string }) {
+export function useContributorActivity(provider: string, login: string, snapshotId: string, enabled: boolean) {
   const path = `/api/v1/contributors/${encodeURIComponent(provider)}/${encodeURIComponent(login)}`;
-  const activity = useQuery({ queryKey: ["contributor-activity", path, snapshotId], queryFn: ({ signal }) => read<Activity>(path, { activity: "1" }, snapshotId, signal), staleTime: Infinity, retry: false });
-  if (activity.isPending) return <p role="status" className="type-body-sm">Loading activity…</p>;
-  if (activity.isError) return <p role="alert" className="type-body-sm">Activity could not be loaded. <button type="button" className="text-accent underline" onClick={() => activity.refetch()}>Retry</button></p>;
-  return <>
-    <ActivityGrid model={activity.data} path={path} snapshotId={snapshotId} />
-    {activity.data.achievements.length > 0 && <section aria-labelledby="milestones-heading" className="space-y-2 border-t border-[var(--color-border-soft)] pt-3">
-      <h2 id="milestones-heading" className="type-display-sm">Milestones</h2>
-      <ul className="flex flex-wrap gap-2">{activity.data.achievements.map((item) => <li key={item.id} className="min-w-0 max-w-full">
-        {item.id === "multi-repo" ? <a href="#contributor-repositories" className={badge + " hover:underline focus-visible:outline"}>{item.label}</a> : <>
-          <span className={badge}>{item.label}{item.at && <time className="text-ink-muted" dateTime={item.at}>{date(item.at)}</time>}</span>
-          <div className="type-body-sm flex flex-wrap gap-x-2 px-3 text-ink-muted [overflow-wrap:anywhere]">
-            <span>{item.reason}</span>
-            {item.evidence.map(({ label, url }) => url.startsWith("/") ? <CatalogLink className="text-accent underline" key={url} href={url}>{label}</CatalogLink> : <a key={url} className="text-accent underline" href={url} target="_blank" rel="noreferrer">{label} ↗</a>)}
-          </div>
-        </>}
-      </li>)}</ul>
-    </section>}
-  </>;
+  const activity = useQuery({ queryKey: ["contributor-activity", path, snapshotId], queryFn: ({ signal }) => read<Activity>(path, { activity: "1" }, snapshotId, signal), enabled, staleTime: Infinity, retry: false });
+  return { ...activity, path };
 }
 
-function ActivityGrid({ model, path, snapshotId }: { model: Activity; path: string; snapshotId: string }) {
-  const weeks = model.weeks || [];
-  const repos = model.repositories || [];
-  const [wide, setWide] = useState(false);
-  const [windowOffset, setWindowOffset] = useState(0);
-  const [repoPage, setRepoPage] = useState(0);
-  const [list, setList] = useState(false);
-  const [focus, setFocus] = useState("");
-  const [readout, setReadout] = useState("");
-  const [selection, setSelection] = useState<{ repository: string; week: string; count: number; complete: boolean }>();
-  const [timelinePage, setTimelinePage] = useState(1);
-  useEffect(() => {
-    const media = matchMedia("(min-width: 850px)");
-    const change = () => { setWide(media.matches); setWindowOffset(0); };
-    change();
-    media.addEventListener("change", change);
-    return () => media.removeEventListener("change", change);
-  }, []);
-  const span = wide ? 13 : 4;
-  const end = Math.max(0, weeks.length - windowOffset * span);
-  const start = Math.max(0, end - span);
-  const visibleWeeks = weeks.slice(start, end);
-  const visibleRepos = repos.slice(repoPage * 6, (repoPage + 1) * 6);
-  const peak = Math.max(1, ...repos.flatMap((repo) => repo.cells.map((cell) => cell.count)));
-  const totals = weeks.map((_, index) => repos.reduce((sum, row) => sum + (row.cells[index]?.count || 0), 0));
-  const high = Math.max(1, ...totals);
-  const timeline = useQuery({
-    queryKey: ["contributor-timeline", path, snapshotId, selection?.repository, selection?.week, timelinePage],
-    queryFn: ({ signal }) => read<Timeline>(path, { activity: "timeline", repository: selection!.repository, week: selection!.week, page: String(timelinePage), page_size: "15" }, snapshotId, signal),
-    enabled: !!selection?.count, staleTime: Infinity, retry: false,
-  });
-  const firstKey = visibleRepos[0] && visibleWeeks[0] ? `${visibleRepos[0].name}:${visibleWeeks[0]}` : "";
-  const activeKey = visibleRepos.some((repo) => visibleWeeks.some((week) => `${repo.name}:${week}` === focus)) ? focus : firstKey;
-  const show = (repository: string, week: string, cell: { count: number; complete: boolean }) => {
-    setSelection({ repository, week, ...cell });
-    setTimelinePage(1);
-  };
-  const covered = repos.some((repo) => repo.cells.some((cell) => cell.complete || cell.count > 0));
-  const button = "min-h-9 rounded border border-[var(--color-border-soft)] px-2 text-accent focus-visible:outline disabled:opacity-50";
-  return <section aria-labelledby="activity-heading" className="min-w-0 space-y-3 border-t border-[var(--color-border-soft)] pt-3">
-    <h2 id="activity-heading" className="type-display-sm">Activity by repository</h2>
-    {!model.identity_linked ? <p className="type-body-sm">This profile is anonymous, so commits can’t be matched to a linked account.</p> : !weeks.length ? <p className="type-body-sm">This catalog snapshot doesn’t include commit history linked to this profile. The contribution totals below are reported separately by the source.</p> : !covered ? <p className="type-body-sm">This profile has no attributable commits or complete coverage in the observed window.</p> : <>
-      <div className="flex flex-wrap items-center gap-3">
-        <p className="type-body-sm"><strong>{model.commit_count.toLocaleString()} observed commits</strong> · {date(weeks[0])}–{date(model.through!)} UTC</p>
-        <svg width="104" height="22" viewBox="0 0 104 22" aria-hidden="true" className="text-signal">
-          {totals.map((count, index) => <rect key={weeks[index]} x={index * 8} y={22 - count / high * 22} width="5" height={count / high * 22} fill="currentColor" />)}
-        </svg>
-      </div>
-      <p className="type-body-sm text-ink-muted">Public default-branch commits linked to this account. Weeks start Monday (UTC). Dashed cells are incomplete or not collected; blank solid cells are observed zeros. Darker fill means more commits (up to {peak}).</p>
-      <div className="type-control flex flex-wrap gap-2">
-        <button type="button" className={button} disabled={start === 0} onClick={() => setWindowOffset(windowOffset + 1)}>Earlier weeks</button>
-        <button type="button" className={button} disabled={windowOffset === 0} onClick={() => setWindowOffset(windowOffset - 1)}>Later weeks</button>
-        <button type="button" className={button} aria-pressed={list} onClick={() => setList(!list)}>List view</button>
-      </div>
-      {list ? <ul className="type-body-sm space-y-1">{visibleRepos.flatMap((repo) => visibleWeeks.map((week, column) => {
-        const cell = repo.cells[start + column];
-        return <li key={`${repo.name}:${week}`}><button type="button" className="text-left text-accent underline" onClick={() => show(repo.name, week, cell)}>{repo.name} · {date(week)} · {cell.count || (cell.complete ? 0 : "Not fully observed")}{cell.count > 0 ? " commits" : ""}</button></li>;
-      }))}</ul> :
-      <table className="w-full table-fixed border-separate border-spacing-1 text-left" aria-label="Observed commits by repository and week">
-        <thead><tr><th scope="col" className="w-1/3 text-xs">Repository</th>{visibleWeeks.map((week) => <th key={week} scope="col" className="text-center text-[10px] leading-tight">{date(week)}</th>)}</tr></thead>
-        <tbody>{visibleRepos.map((repo, row) => <tr key={repo.name}>
-          <th scope="row" className="text-xs font-normal [overflow-wrap:anywhere]"><CatalogLink className="text-accent" href={repo.route}>{repo.name}</CatalogLink></th>
-          {visibleWeeks.map((week, column) => {
-            const cell = repo.cells[start + column];
-            const key = `${repo.name}:${week}`;
-            const label = `${repo.name}, week of ${date(week)}: ${cell.count || cell.complete ? `${cell.count} observed commits` : "not fully observed"}${!cell.complete && cell.count ? ", partial coverage" : ""}`;
-            return <td key={week}><button type="button" data-cell={`${row}-${column}`} tabIndex={activeKey === key ? 0 : -1} onFocus={() => { setFocus(key); setReadout(label); }} onPointerEnter={() => setReadout(label)} aria-label={label} aria-pressed={selection?.repository === repo.name && selection.week === week}
-              className={`block min-h-7 w-full rounded-sm border border-[var(--color-border-muted)] focus-visible:outline focus-visible:outline-accent aria-pressed:outline ${cell.complete ? "" : "border-dashed"}`}
-              style={cell.count ? { backgroundColor: `color-mix(in srgb, var(--color-signal) ${20 + 70 * cell.count / peak}%, transparent)` } : undefined}
-              onClick={() => show(repo.name, week, cell)}
-              onKeyDown={(event) => {
-                const offset = { ArrowLeft: [0, -1], ArrowRight: [0, 1], ArrowUp: [-1, 0], ArrowDown: [1, 0] }[event.key];
-                if (!offset) return;
-                event.preventDefault();
-                event.currentTarget.closest("table")?.querySelector<HTMLButtonElement>(`[data-cell="${row + offset[0]}-${column + offset[1]}"]`)?.focus();
-              }} /></td>;
-          })}
-        </tr>)}</tbody>
-      </table>}
-      {!list && <p aria-live="polite" className="type-body-sm min-h-6 text-ink-muted [overflow-wrap:anywhere]">{readout || "Focus or point to a week for its count. Use the arrow keys to move between cells."}</p>}
-      {repos.length > 6 && <nav aria-label="Activity repositories" className="type-control flex flex-wrap gap-2"><button className={button} type="button" disabled={!repoPage} onClick={() => setRepoPage(repoPage - 1)}>Previous repositories</button><button className={button} type="button" disabled={(repoPage + 1) * 6 >= repos.length} onClick={() => setRepoPage(repoPage + 1)}>Next repositories</button></nav>}
-      {selection && <section aria-label="Selected activity timeline" className="type-body-sm space-y-2 border-t border-[var(--color-border-soft)] pt-2">
-        <h3 className="font-semibold break-words">{selection.repository} · Week of {date(selection.week)}</h3>
-        {!selection.count ? <p>{selection.complete ? "No linked commits in this week." : "This week was not fully observed."}</p> : timeline.isPending ? <p role="status">Loading commits…</p> : timeline.isError ? <p role="alert">Commits could not be loaded. <button className={button} onClick={() => timeline.refetch()}>Retry</button></p> : <>
-          {!selection.complete && <p className="text-ink-muted">Partial coverage · showing the commits we observed.</p>}
-          <ol className="space-y-1">{timeline.data.records.map((event) => <li key={event.id} className="flex flex-wrap gap-x-2 [overflow-wrap:anywhere]"><time dateTime={event.at}>{date(event.at)}</time><a className="text-accent underline" href={event.url} target="_blank" rel="noreferrer">{event.label} ↗</a></li>)}</ol>
-          {timeline.data.page_count > 1 && <nav aria-label="Timeline pages" className="flex gap-2"><button className={button} disabled={timelinePage <= 1} onClick={() => setTimelinePage(timelinePage - 1)}>Previous</button><button className={button} disabled={timelinePage >= timeline.data.page_count} onClick={() => setTimelinePage(timelinePage + 1)}>Next</button></nav>}
-        </>}
-      </section>}
-    </>}
+function weekLabel(week: string, cell?: Cell) {
+  const count = cell?.count ?? 0;
+  return `Week of ${date(week)}: ${cell?.complete || count ? `${count} observed commits${cell?.complete ? "" : " (partial coverage)"}` : "not fully observed"}`;
+}
+
+export function ContributorCommitSparkline({ model }: { model: Activity }) {
+  const weeks = model.weeks ?? [];
+  const repositories = model.repositories ?? [];
+  if (!model.identity_linked || !weeks.length || !repositories.length) {
+    return <p className="type-body-sm text-ink-muted">{model.identity_linked ? "No linked commit history in this snapshot." : "Commits cannot be attributed to an anonymous profile."}</p>;
+  }
+  const totals = weeks.map((_, i) => ({
+    count: repositories.reduce((sum, repo) => sum + (repo.cells[i]?.count ?? 0), 0),
+    complete: repositories.every((repo) => repo.cells[i]?.complete === true),
+  }));
+  const max = Math.max(1, ...totals.map((cell) => cell.count));
+  return <section aria-label="Weekly commit activity" className="flex min-w-0 flex-wrap items-center gap-x-3 gap-y-1">
+    <svg width={weeks.length * 10} height="24" viewBox={`0 0 ${weeks.length * 10} 24`} role="img"
+      aria-label={weeks.map((week, i) => weekLabel(week, totals[i])).join("; ")} className="max-w-full text-signal">
+      {totals.map((cell, i) => {
+        const height = cell.count ? 3 + 19 * cell.count / max : 2;
+        return <rect key={weeks[i]} x={i * 10 + 1} y={23 - height} width="6" height={height} rx="0.5"
+          fill={cell.complete || cell.count ? "currentColor" : "none"} stroke={cell.complete ? "none" : "currentColor"}
+          strokeDasharray={cell.complete ? undefined : "1 2"} opacity={cell.complete ? 1 : 0.6}>
+          <title>{weekLabel(weeks[i], cell)}</title>
+        </rect>;
+      })}
+    </svg>
+    <p className="type-body-sm text-ink-muted"><strong>{model.commit_count.toLocaleString()} observed commits</strong> · {date(weeks[0])}{model.through && `–${date(model.through)}`} UTC</p>
   </section>;
+}
+
+export function ContributorAchievements({ model }: { model: Activity }) {
+  if (!model.achievements.length) return null;
+  return <section aria-labelledby="achievements-heading" className="space-y-2">
+    <h2 id="achievements-heading" className="type-ui-label text-ink-muted">Achievements</h2>
+    <ul className="flex flex-wrap gap-2">{model.achievements.map((item) => {
+      const tooltipId = `achievement-${item.id}`;
+      const href = item.id === "multi-repo" ? "#contributor-repositories" : item.evidence[0]?.url;
+      const className = badge + " hover:underline focus-visible:outline";
+      return <li key={item.id} className="group relative min-w-0 max-w-full">
+        {href?.startsWith("/") ? <CatalogLink href={href} className={className} aria-describedby={tooltipId}>{item.label}</CatalogLink>
+          : href ? <a href={href} className={className} aria-describedby={tooltipId} target={href.startsWith("#") ? undefined : "_blank"} rel="noreferrer">{item.label}</a>
+          : <span className={className} aria-describedby={tooltipId} tabIndex={0}>{item.label}</span>}
+        <span id={tooltipId} role="tooltip" className="type-body-sm invisible absolute inset-x-0 top-full z-20 rounded border border-[var(--color-border-muted)] bg-surface-raised px-2 py-1 text-ink shadow-lg group-hover:visible group-focus-within:visible">
+          {item.reason}{item.at && <> · <time dateTime={item.at}>{date(item.at)}</time></>}
+        </span>
+      </li>;
+    })}</ul>
+  </section>;
+}
+
+export function ContributorHeatstrip({ repository, weeks, cells, peak, onSelect }: {
+  repository: string; weeks: string[]; cells?: Cell[]; peak: number; onSelect: (selection: ActivitySelection) => void;
+}) {
+  const [focus, setFocus] = useState(0);
+  if (!weeks.length) return <span className="text-ink-muted">—</span>;
+  return <div role="group" aria-label={`${repository} weekly commit activity`} className="grid w-full max-w-64 gap-px sm:gap-1"
+    style={{ gridTemplateColumns: `repeat(${weeks.length}, minmax(0, 1fr))` }}>
+    {weeks.map((week, i) => {
+      const cell = cells?.[i] ?? { count: 0, complete: false };
+      const label = weekLabel(week, cell);
+      return <button key={week} type="button" tabIndex={i === focus ? 0 : -1} aria-label={label} title={label}
+        data-week={week} data-coverage={cell.complete ? cell.count ? "observed" : "zero" : "partial"}
+        className="grid min-h-7 min-w-0 place-items-center text-signal focus-visible:outline focus-visible:outline-accent"
+        onFocus={() => setFocus(i)} onClick={() => onSelect({ repository, week, ...cell })}
+        onKeyDown={(event) => {
+          const target = event.key === "ArrowRight" ? i + 1 : event.key === "ArrowLeft" ? i - 1 : event.key === "Home" ? 0 : event.key === "End" ? weeks.length - 1 : null;
+          if (target === null) return;
+          event.preventDefault();
+          (event.currentTarget.parentElement?.children[target] as HTMLElement | undefined)?.focus();
+        }}>
+        <span aria-hidden="true" className={`grid h-3 w-full place-items-end rounded-[2px] border border-[var(--color-border-muted)] ${cell.complete ? "" : "border-dashed"}`}
+          style={cell.count ? { backgroundColor: `color-mix(in srgb, var(--color-signal) ${25 + 70 * cell.count / peak}%, transparent)` } : undefined}>
+          {cell.complete && !cell.count && <span className="mb-px h-px w-full bg-current" />}
+        </span>
+      </button>;
+    })}
+  </div>;
+}
+
+export function ContributorTimeline({ selection, path, snapshotId, onClose }: {
+  selection: ActivitySelection; path: string; snapshotId: string; onClose: () => void;
+}) {
+  const [page, setPage] = useState(1);
+  const dialog = useRef<HTMLDialogElement>(null);
+  useEffect(() => {
+    const element = dialog.current;
+    const trigger = document.activeElement;
+    element?.showModal();
+    return () => {
+      element?.close();
+      if (trigger instanceof HTMLElement) trigger.focus();
+    };
+  }, []);
+  const timeline = useQuery({
+    queryKey: ["contributor-timeline", path, snapshotId, selection.repository, selection.week, page],
+    queryFn: ({ signal }) => read<Timeline>(path, { activity: "timeline", repository: selection.repository, week: selection.week, page: String(page), page_size: "15" }, snapshotId, signal),
+    enabled: selection.count > 0, staleTime: Infinity, retry: false,
+  });
+  return <dialog ref={dialog} aria-labelledby="contributor-timeline-heading" onCancel={(event) => { event.preventDefault(); onClose(); }}
+    className="m-auto max-h-[80dvh] w-[min(34rem,calc(100%_-_2rem))] space-y-2 rounded border border-[var(--color-border-muted)] bg-surface p-4 text-ink backdrop:bg-black/50 type-body-sm">
+    <div className="flex items-start justify-between gap-2">
+      <h2 id="contributor-timeline-heading" className="font-semibold [overflow-wrap:anywhere]">{selection.repository} · Week of {date(selection.week)}</h2>
+      <button type="button" className={button} onClick={onClose}>Close</button>
+    </div>
+    {!selection.count ? <p>{selection.complete ? "No linked commits in this week." : "This week was not fully observed."}</p> : timeline.isPending ? <p role="status">Loading commits…</p> : timeline.isError ? <p role="alert">Commits could not be loaded. <button type="button" className={button} onClick={() => timeline.refetch()}>Retry</button></p> : <>
+      {!selection.complete && <p className="text-ink-muted">Partial coverage · showing the commits we observed.</p>}
+      <ol className="space-y-1">{timeline.data.records.map((event) => <li key={event.id} className="flex flex-wrap gap-x-2 [overflow-wrap:anywhere]"><time dateTime={event.at}>{date(event.at)}</time><a className="text-accent underline" href={event.url} target="_blank" rel="noreferrer">{event.label} ↗</a></li>)}</ol>
+      {timeline.data.page_count > 1 && <nav aria-label="Timeline pages" className="flex gap-2"><button type="button" className={button} disabled={page <= 1} onClick={() => setPage(page - 1)}>Previous</button><button type="button" className={button} disabled={page >= timeline.data.page_count} onClick={() => setPage(page + 1)}>Next</button></nav>}
+    </>}
+  </dialog>;
 }
