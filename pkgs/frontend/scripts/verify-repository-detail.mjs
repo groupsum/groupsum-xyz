@@ -32,6 +32,10 @@ try {
     page.on("pageerror", (error) => errors.push(error.message));
     page.on("request", (request) => requests.push(new URL(request.url()).pathname));
     if (!live) {
+      if (width < 600) await page.route("**/assets/repository-detail-*.js", async (route) => {
+        await new Promise((done) => setTimeout(done, 1000));
+        await route.continue();
+      });
       await page.route("**/api/v1/catalog/version", (route) => route.abort());
       await page.route("**/api/v1/entities/**/metrics?*", (route) => route.fulfill({ json: { points: [
         { metric_key: "stars", observed_at: "2026-10-17T12:00:00Z", numeric_value: 2 },
@@ -44,6 +48,7 @@ try {
     assert.match(document, /Latest observed events/);
     assert.match(document, /Release activity/);
     assert.match(document, /application\/ld\+json/);
+    assert.match(document, /<button[^>]+disabled=""[^>]+aria-label="Inspect Daily commits"/);
     const header = page.locator("article header").first();
     await header.getByRole("heading", { name: "groupsum-xyz", exact: true }).waitFor();
     assert.equal(await header.getByText("License & notices", { exact: true }).count(), 1);
@@ -57,14 +62,19 @@ try {
     assert.ok(!requests.some((url) => /\/snapshots$|\/observations$/.test(url)));
     const chart = header.getByRole("button", { name: "Inspect Daily commits" });
     assert.equal(await page.getByRole("button", { name: "Inspect Daily commits" }).count(), 1);
-    await chart.focus();
-    await page.keyboard.press("Enter");
+    await chart.and(page.locator("button:enabled")).waitFor();
+    if (width < 600) await chart.tap();
+    else await chart.press("Enter");
     const dialog = page.getByRole("dialog", { name: "Daily commits observed activity" });
     await dialog.waitFor();
+    const bounds = await dialog.boundingBox();
+    assert.ok(bounds && bounds.x >= 0 && bounds.x + bounds.width <= width + 1);
     await dialog.getByText("Exact values", { exact: true }).click();
     assert.ok(await dialog.locator("tbody tr").count());
-    await page.keyboard.press("Escape");
+    if (width < 600) await dialog.getByRole("button", { name: "Close Daily commits observed activity" }).tap();
+    else await page.keyboard.press("Escape");
     await dialog.waitFor({ state: "hidden" });
+    assert.ok(await chart.evaluate((element) => element === document.activeElement));
     if (!live) {
       await page.getByLabel("Exact observations for Stars").click();
       assert.match(await page.getByRole("row", { name: /^Stars/ }).textContent(), /-2/);

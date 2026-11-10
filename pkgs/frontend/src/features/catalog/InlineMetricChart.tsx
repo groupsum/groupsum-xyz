@@ -1,7 +1,10 @@
-import { lazy, Suspense, useId, useRef, useState } from "react";
+import { lazy, Suspense, useId, useRef, useState, useSyncExternalStore } from "react";
 import { observationSeries } from "./activity-series.mjs";
 const ActivityInspector = lazy(() => import("./ActivityInspector"));
 export type ChartPoint = { label: string; value: number };
+const subscribe = () => () => {};
+const clientReady = () => true;
+const serverReady = () => false;
 
 export function ActivityMarks({ points, bars = false, active, onSelect, large = false }: {
   points: ReturnType<typeof observationSeries>; bars?: boolean; active?: number; onSelect?: (index: number) => void; large?: boolean;
@@ -21,13 +24,15 @@ export function ActivityMarks({ points, bars = false, active, onSelect, large = 
 
 export function InlineMetricChart({ points, label, bars = false, expanded = false, compact = false }: { points: ChartPoint[]; label: string; bars?: boolean; expanded?: boolean; compact?: boolean }) {
   const id = useId(); const anchor = useRef<HTMLButtonElement>(null); const [open, setOpen] = useState(false); const [active, setActive] = useState<number>();
+  // The prerendered button is visible before the lazy route has attached its handlers.
+  const ready = useSyncExternalStore(subscribe, clientReady, serverReady);
   const valid = observationSeries(points, 30);
   if (!valid.length) return compact && !bars ? null : <span className="type-body-sm text-ink-muted">Not observed</span>;
   const delta = valid.length > 1 ? valid.at(-1)!.value - valid[0].value : null;
   const selected = active === undefined ? null : valid[Math.min(active, valid.length - 1)];
   const total = valid.reduce((sum, point) => sum + point.value, 0);
   const summary = bars ? `${total.toLocaleString()} commits · ${valid.length} observed days` : delta === null ? "1 observation" : `${delta >= 0 ? "+" : ""}${delta.toLocaleString()} · ${valid.length} observations`;
-  return <div className="min-w-0"><button ref={anchor} aria-haspopup="dialog" aria-expanded={open} aria-controls={id} aria-label={`Inspect ${label}`} title={`${label}: ${valid.at(-1)!.value}; ${summary}`} onClick={() => setOpen(true)} onFocus={() => setActive(valid.length - 1)} onBlur={() => setActive(undefined)} onPointerLeave={() => setActive(undefined)} className="block min-h-8 w-full min-w-0 text-left text-accent">
+  return <div className="min-w-0"><button type="button" ref={anchor} disabled={!ready} aria-busy={!ready} aria-haspopup="dialog" aria-expanded={open} aria-controls={id} aria-label={`Inspect ${label}`} title={`${label}: ${valid.at(-1)!.value}; ${summary}`} onClick={() => setOpen(true)} onFocus={() => setActive(valid.length - 1)} onBlur={() => setActive(undefined)} onPointerLeave={() => setActive(undefined)} className="block min-h-8 w-full min-w-0 text-left text-accent disabled:cursor-wait">
     <ActivityMarks points={valid} bars={bars} onSelect={setActive} /><span className={compact ? "block text-[10px] leading-tight text-ink-muted" : "type-body-sm block truncate text-ink-muted"}>{selected ? `${new Date(selected.time).toLocaleDateString("en-US", { month: "short", day: "numeric", timeZone: "UTC" })}: ${selected.value.toLocaleString()}` : compact ? (bars ? `${total.toLocaleString()} commits · ${valid.length}d obs.` : delta === null ? "1 obs." : `${delta >= 0 ? "+" : ""}${delta.toLocaleString()} · ${valid.length} obs.`) : summary}</span>
   </button>{open && <Suspense fallback={<span role="status">Loading activity…</span>}><ActivityInspector id={id} anchor={anchor} label={label} points={points} bars={bars} expanded={expanded} initialTime={selected?.time ?? valid.at(-1)!.time} onClose={() => setOpen(false)} /></Suspense>}</div>;
 }
