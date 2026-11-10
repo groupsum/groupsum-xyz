@@ -74,6 +74,21 @@ try {
       await page.getByRole("combobox", { name: "Color theme" }).selectOption(theme);
       assert.ok(await noOverflow(), `${width}px overflow in ${theme}`);
     }
+    await page.goto(origin + "/catalog/repositories/groupsum/ad-measurement-media-governance-pack/");
+    assert.equal(await page.locator("article header summary").filter({ hasText: "Legal evidence" }).count(), 0);
+    const releaseActivity = page.locator("#release-activity");
+    assert.equal(await releaseActivity.locator("details").count(), 0);
+    for (const label of ["GitHub releases", "Package-registry releases"]) {
+      const series = releaseActivity.getByRole("group", { name: `${label} by month` });
+      const tick = series.getByRole("button").first();
+      if (width < 600) await tick.tap(); else await tick.hover();
+      const tooltip = series.getByRole("tooltip");
+      assert.equal(await tooltip.textContent(), await tick.getAttribute("aria-label"));
+      await tick.focus();
+      await page.keyboard.press("Escape");
+      await tooltip.waitFor({ state: "hidden" });
+    }
+    assert.ok(await noOverflow(), `${width}px release chart overflow`);
     assert.deepEqual(errors, []);
     await page.close();
     console.log(`Repository layout verified at ${width}px in six themes`);

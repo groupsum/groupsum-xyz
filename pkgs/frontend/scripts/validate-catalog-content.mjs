@@ -42,7 +42,7 @@ requireMarkers(
   "release and evidence UIX",
 );
 requireMarkers(
-  ["LegalContext", "No repository license observed", "Packages report their own licenses"],
+  ["LegalContext", "No repository license observed", "License file", "Notice file"],
   "ownership-aware legal UIX",
 );
 requireMarkers(

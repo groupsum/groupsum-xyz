@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { useQuery } from "@tanstack/react-query";
 import { getEntityMetrics } from "../../api/catalog";
 import { useCatalogVersion } from "../../api/catalog-version";
@@ -37,6 +38,28 @@ function ObservedSteps({ points, start, end, label }: { points: Sample[]; start:
   </details>;
 }
 
+function ReleaseSparkline({ label, calendar, points, max }: { label: string; calendar: string[]; points: TimelinePoint[]; max: number }) {
+  const [active, setActive] = useState<TimelinePoint | null>(null);
+  const counts = new Map(points.map((point) => [point.month, point.count]));
+  const readout = ({ month, count }: TimelinePoint) => `${month} · ${count.toLocaleString()} ${count === 1 ? "release" : "releases"}`;
+  return <div role="group" aria-label={`${label} by month`} className="relative flex h-8 min-w-0 gap-px text-signal"
+    onPointerLeave={(event) => { if (!event.currentTarget.contains(document.activeElement)) setActive(null); }}
+    onBlur={(event) => { if (!event.currentTarget.contains(event.relatedTarget)) setActive(null); }}
+    onKeyDown={(event) => { if (event.key === "Escape" && active) { event.stopPropagation(); setActive(null); } }}>
+    {calendar.map((month) => {
+      const count = counts.get(month);
+      if (!count) return <span key={month} className="min-w-0 flex-1" aria-hidden="true" />;
+      const point = { month, count };
+      return <button key={month} type="button" aria-label={readout(point)}
+        className="flex min-w-0 flex-1 cursor-pointer items-end rounded-sm hover:bg-[var(--color-signal-soft)] focus-visible:bg-[var(--color-signal-soft)]"
+        onPointerEnter={() => setActive(point)} onFocus={() => setActive(point)} onClick={() => setActive(point)}>
+        <span aria-hidden="true" className="w-full rounded-t-sm bg-current" style={{ height: `${Math.max(5, count / max * 100)}%` }} />
+      </button>;
+    })}
+    {active && <span role="tooltip" className="pointer-events-none absolute right-0 bottom-full z-20 max-w-full rounded border border-[var(--color-border-soft)] bg-surface-raised px-2 py-1 type-caption text-ink shadow-lg">{readout(active)}</span>}
+  </div>;
+}
+
 function ReleaseActivity({ record }: { record: CatalogRecord }) {
   const github = monthlyReleaseActivity(valueRecords(record.github_releases));
   const registry = new Map<string, number>();
@@ -59,13 +82,8 @@ function ReleaseActivity({ record }: { record: CatalogRecord }) {
     {calendar.length > 0 && <p className="type-caption text-ink-muted">{calendar[0]} to {calendar.at(-1)} · UTC · Dated releases observed</p>}
     {shown.map(([label, points]) => <div key={label} className="grid gap-x-4 gap-y-1 border-t border-[var(--color-border-soft)] py-2 sm:grid-cols-[12rem_minmax(0,1fr)]">
       <span className="type-body-sm font-semibold">{label}</span>
-      {points.length ? <details>
-        <summary className="cursor-pointer text-signal" aria-label={`Exact monthly counts for ${label}`}><span aria-hidden="true" className="inline-flex h-7 w-[calc(100%-1rem)] items-end gap-px align-middle">{calendar.map((month) => {
-          const count = points.find((p) => p.month === month)?.count;
-          return <span key={month} className="min-w-0 flex-1 rounded-t-sm bg-current" title={count ? `${month}: ${count}` : undefined} style={{ height: count ? `${Math.max(5, count / max * 100)}%` : 0 }} />;
-        })}</span></summary>
-        <ul className="type-caption">{points.map((p) => <li key={p.month}>{p.month} · {p.count.toLocaleString()}</li>)}</ul>
-      </details> : <p className="type-body-sm text-ink-muted">No dated releases observed in {calendar.length ? "this window" : "the catalog"}.</p>}
+      {points.length ? <ReleaseSparkline label={label} calendar={calendar} points={points} max={max} />
+        : <p className="type-body-sm text-ink-muted">No dated releases observed in {calendar.length ? "this window" : "the catalog"}.</p>}
     </div>)}
   </section>;
 }

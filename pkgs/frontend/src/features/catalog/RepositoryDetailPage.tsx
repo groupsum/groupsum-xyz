@@ -48,16 +48,10 @@ function RepositoryHeader({ record, primaryUrl }: { record: CatalogRecord; prima
       {record.ssot_governance?.governed && <CatalogPill tone="signal" Icon={ShieldCheck}>SSOT governed</CatalogPill>}
       {record.created_at && <span>Created <ContributorActivityDate value={record.created_at} /></span>}
     </div>
-    <div className="space-y-1">
-      <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1 type-body-sm [overflow-wrap:anywhere]">
+    <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1 type-body-sm [overflow-wrap:anywhere]">
         <span className="type-ui-label text-ink-muted">License &amp; notices</span>
         <span>{expression ? String(expression) : "No repository license observed"}</span>
         {legalFiles.map((row, index) => <a key={index} className={link} href={String(row.url)} target="_blank" rel="noreferrer">{row.kind === "license-file" ? "License file" : "Notice file"}</a>)}
-      </div>
-      {(legal.length > 0 || expression) && <RepositoryDisclosure label="Legal evidence">
-        <p>Repository-scoped, source-reported legal metadata. Packages report their own licenses.</p>
-        <ul>{legal.map((row, index) => <li key={index}>{humanLabel(String(row.kind || "evidence"))} · {String(row.path || row.expression || row.name || row.scope || "Repository")}</li>)}</ul>
-      </RepositoryDisclosure>}
     </div>
     <div id="latest-observed-events" className="space-y-1 border-t border-[var(--color-border-soft)] pt-3">
       <h2 className="type-ui-label text-ink-muted">Latest observed events</h2>
