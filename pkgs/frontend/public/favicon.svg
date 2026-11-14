@@ -1,16 +1,8 @@
-<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <!-- Rounded container background representing field notes card -->
-  <rect width="32" height="32" rx="6" fill="#faf8f2"/>
-  <rect x="0.5" y="0.5" width="31" height="31" rx="5.5" stroke="rgba(23, 33, 30, 0.1)"/>
-  
-  <!-- Subtle coordinate lines -->
-  <line x1="6" y1="16" x2="26" y2="16" stroke="#17211e" stroke-width="0.5" stroke-opacity="0.2" />
-  <line x1="16" y1="6" x2="16" y2="26" stroke="#17211e" stroke-width="0.5" stroke-opacity="0.2" />
-  
-  <!-- Structured trace path -->
-  <path d="M 6 22 L 14 14 L 20 20 L 26 8" stroke="#176b5b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-  
-  <!-- Central signal node -->
-  <circle cx="14" cy="14" r="2.5" fill="#c98232" />
-  <circle cx="26" cy="8" r="3" fill="#17211e" />
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <rect width="64" height="64" rx="12" fill="#faf8f2"/>
+  <g fill="#176b5b">
+    <polygon points="19,10 37,10 50,31 34,31 34,26 29,26"/>
+    <polygon points="20,17 28,30 28,32 24,32 24,38 15,54 7,40"/>
+    <polygon points="37,34 57,34 47,51 20,51 25,42 29,42 29,38 35,38"/>
+  </g>
 </svg>

@@ -22,7 +22,7 @@ const cleanTrim = (value, size = 180) => {
   const text = stripHtml(value);
   return text.length > size ? `${text.slice(0, size - 1).trimEnd()}…` : text;
 };
-const defaultImage = { url: `${root}/social/groupsum-default.svg`, type: "image/svg+xml", width: "1200", height: "630", alt: "GroupSum structured software and clear decisions" };
+const defaultImage = { url: `${root}/social/groupsum-default.png`, type: "image/png", width: "1200", height: "630", alt: "GroupSum’s teal geometric mark next to the GroupSum wordmark" };
 const readCatalogDataset = (name) => JSON.parse(fs.readFileSync(`catalog/generated/site/${name}.json`, "utf8"));
 const catalogRepositories = readCatalogDataset("repositories");
 const catalogPackages = readCatalogDataset("packages");

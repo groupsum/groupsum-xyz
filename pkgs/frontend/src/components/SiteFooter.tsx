@@ -36,6 +36,7 @@ export const SiteFooter: React.FC<SiteFooterProps> = ({ onNavigate }) => {
         <div className="flex flex-col justify-between gap-6 border-b border-[var(--color-border-soft)] pb-6 md:flex-row md:items-start">
           <div className="min-w-0 max-w-2xl space-y-1.5">
             <div className="flex flex-wrap items-center gap-2">
+              <img src="/favicon.svg" alt="" width={24} height={24} className="h-6 w-6 shrink-0 rounded-md ring-1 ring-[var(--color-border-soft)]" />
               <strong className="type-heading-sm">GroupSum Catalog Explorer</strong>
               <span className="type-technical rounded-[3px] border border-[var(--color-border-muted)] bg-canvas px-2 py-0.5 font-semibold text-ink">v0.1.0</span>
             </div>

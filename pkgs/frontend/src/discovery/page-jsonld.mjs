@@ -28,7 +28,7 @@ const organization = {
   "@id": stableId(SITE_ROOT, "organization"),
   name: "Groupsum LLC",
   url: `${SITE_ROOT}/`,
-  logo: `${SITE_ROOT}/social/groupsum-default.svg`,
+  logo: `${SITE_ROOT}/assets/groupsum-mark.png`,
   description: "Groupsum builds structured software, platforms, and services for teams that need clear decisions.",
 };
 

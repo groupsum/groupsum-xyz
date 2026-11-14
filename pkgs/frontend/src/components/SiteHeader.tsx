@@ -94,7 +94,7 @@ export const SiteHeader: React.FC<SiteHeaderProps> = ({ currentPath, onNavigate 
         <div className="flex min-h-12 flex-wrap items-center justify-between gap-2">
           <div className="flex min-w-0 flex-[1_1_10rem] items-center gap-3">
           <a href="/" onClick={(event) => navigate("/", event)} className="flex min-w-0 max-w-full items-center gap-2 rounded-lg p-1 focus-visible:outline-3">
-            <span className="grid h-8 w-8 shrink-0 place-items-center rounded-lg bg-ink font-serif text-lg font-bold text-[var(--color-on-accent)] shadow-sm" aria-hidden="true">G</span>
+            <img src="/favicon.svg" alt="" width={32} height={32} className="h-8 w-8 shrink-0 rounded-lg ring-1 ring-[var(--color-border-soft)]" />
             <span className="min-w-0">
               <span className="type-heading-sm block truncate leading-none tracking-tight">GroupSum</span>
               <span className="type-technical mt-1 block truncate text-ink-muted">groupsum.xyz</span>

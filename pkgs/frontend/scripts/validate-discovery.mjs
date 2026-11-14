@@ -3,7 +3,7 @@ import path from "node:path";
 
 const root = "https://groupsum.xyz";
 const dist = "pkgs/frontend/dist";
-const required = ["robots.txt", "sitemap.xml", "sitemap.xsl", "llms.txt", "llms-full.txt", "full-llms.txt", "social/groupsum-default.svg", "catalog/catalog.json", "catalog/summary.json", "catalog/schema.json", "catalog/site/schema.json", "catalog/site/manifest.json", "catalog/site/repositories.json", "catalog/site/packages.json", "catalog/site/resources.json", "catalog/site/resource-types.json", "catalog/site/technologies.json"];
+const required = ["robots.txt", "sitemap.xml", "sitemap.xsl", "llms.txt", "llms-full.txt", "full-llms.txt", "favicon.svg", "assets/groupsum-mark.png", "social/groupsum-default.png", "catalog/catalog.json", "catalog/summary.json", "catalog/schema.json", "catalog/site/schema.json", "catalog/site/manifest.json", "catalog/site/repositories.json", "catalog/site/packages.json", "catalog/site/resources.json", "catalog/site/resource-types.json", "catalog/site/technologies.json"];
 const fail = (message) => { console.error(`discovery validation failed: ${message}`); process.exitCode = 1; };
 for (const file of required) if (!fs.existsSync(path.join(dist, file))) fail(`missing ${dist}/${file}`);
 const robots = fs.readFileSync(path.join(dist, "robots.txt"), "utf8");
